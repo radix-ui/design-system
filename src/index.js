@@ -37,7 +37,7 @@ export Link from './components/Link';
 export List from './components/List';
 export ListItem from './components/ListItem';
 export Section from './components/Select';
-export Slider from './components/Switch';
+export Slider from './components/Slider';
 export Select from './components/Select';
 export Switch from './components/Switch';
 export Text from './components/Text';
