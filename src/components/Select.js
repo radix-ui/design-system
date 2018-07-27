@@ -32,7 +32,7 @@ const IconContainer = styled.div`
   pointer-events: none;
 `;
 
-const Select = () => (
+const Select = (props) => (
   <Wrapper>
     <Menu {...props}>
       {this.props.children}

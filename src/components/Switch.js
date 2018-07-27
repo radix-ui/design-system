@@ -48,7 +48,7 @@ const Dummy = styled.div`
   }
 `;
 
-const Switch = () => (
+const Switch = (props) => (
   <Wrapper>
     <Checkbox
       {...props}
