@@ -32,21 +32,17 @@ const IconContainer = styled.div`
   pointer-events: none;
 `;
 
-export class Select extends React.Component {
-  render () {
-    return (
-      <Wrapper>
-        <Menu>
-          {this.props.children}
-        </Menu>
-        <IconContainer>
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="black">
-            <path d="M8 0L4 4L0 0" transform="translate(3.5 5.5)" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </IconContainer>
-      </Wrapper>
-    )
-  }
-}
+const Select = () => (
+  <Wrapper>
+    <Menu {...props}>
+      {this.props.children}
+    </Menu>
+    <IconContainer>
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="black">
+        <path d="M8 0L4 4L0 0" transform="translate(3.5 5.5)" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </IconContainer>
+  </Wrapper>
+);
 
 export default Select;

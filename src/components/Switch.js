@@ -48,18 +48,14 @@ const Dummy = styled.div`
   }
 `;
 
-export class Switch extends React.Component {
-  render () {
-    return (
-      <Wrapper>
-        <Checkbox
-          type="checkbox"
-          defaultChecked={this.props.checked}
-        />
-        <Dummy></Dummy>
-      </Wrapper>
-    )
-  }
-}
+const Switch = () => (
+  <Wrapper>
+    <Checkbox
+      {...props}
+      type="checkbox"
+    />
+    <Dummy />
+  </Wrapper>
+);
 
 export default Switch;
