@@ -42,7 +42,8 @@ export Select from './components/Select';
 export Switch from './components/Switch';
 export Text from './components/Text';
 
-export Theme from './theme';
+import * as Theme from './theme';
+export { Theme };
 
 export default class extends Component {
   render() {
@@ -79,3 +80,4 @@ export default class extends Component {
     </div>
   }
 }
+
