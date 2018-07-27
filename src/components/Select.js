@@ -35,7 +35,7 @@ const IconContainer = styled.div`
 const Select = (props) => (
   <Wrapper>
     <Menu {...props}>
-      {this.props.children}
+      {props.children}
     </Menu>
     <IconContainer>
       <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="black">

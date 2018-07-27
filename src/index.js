@@ -42,6 +42,8 @@ export Select from './components/Select';
 export Switch from './components/Switch';
 export Text from './components/Text';
 
+export Theme from './theme';
+
 export default class extends Component {
   render() {
     return <div>
