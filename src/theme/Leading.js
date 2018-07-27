@@ -1,0 +1,9 @@
+export const LEADING_100 = '20px';
+export const LEADING_200 = '25px';
+export const LEADING_300 = '30px';
+export const LEADING_400 = '35px';
+export const LEADING_500 = '40px';
+export const LEADING_600 = '45px';
+export const LEADING_700 = '50px';
+export const LEADING_800 = '55px';
+export const LEADING_900 = '60px';
