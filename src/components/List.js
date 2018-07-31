@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
 const List = styled.ul`
+  display: inline-block;
   list-style: none;
   padding: 0;
 
