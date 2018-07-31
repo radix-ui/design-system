@@ -1,6 +1,6 @@
 {
   "name": "radix-ds",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Design system and component libray for Modulz.",
   "main": "lib/index.js",
   "module": "es/index.js",
