@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
 const Text = styled.span`
-  color: ${theme.GRAY_900};
   display: block;
   font-family: 'UntitledSans',apple-system,BlinkMacSystemFont;
   ${p => p.size1 && css`
