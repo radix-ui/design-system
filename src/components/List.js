@@ -5,6 +5,7 @@ const List = styled.ul`
   display: inline-block;
   list-style: none;
   padding: 0;
+  width: 100%;
 
   ${props => props.rounded && css`
     border-radius: ${theme.BORDERRADIUS_200};
