@@ -36,7 +36,7 @@ export LinesButton from './components/LinesButton';
 export Link from './components/Link';
 export List from './components/List';
 export ListItem from './components/ListItem';
-export Section from './components/Select';
+export Section from './components/Section';
 export Slider from './components/Slider';
 export Select from './components/Select';
 export Switch from './components/Switch';
@@ -80,4 +80,3 @@ export default class extends Component {
     </div>
   }
 }
-
