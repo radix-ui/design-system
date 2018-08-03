@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 // Note that it's not necessary to import before exporting
 // We only need to import if we want to use these in the little demo generated below
+import AspectRatio from './components/AspectRatio';
 import Badge from './components/Badge';
 import Box from './components/Box';
 import Button from './components/Button';
@@ -23,6 +24,7 @@ import Text from './components/Text';
 
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
+export AspectRatio from './components/AspectRatio';
 export Badge from './components/Badge';
 export Box from './components/Box';
 export Button from './components/Button';
@@ -77,6 +79,15 @@ export default class extends Component {
       <LinesButton>
         LinesButton
       </LinesButton>
+      <Box
+        style={{
+          width: '300px',
+        }}
+      >
+        <AspectRatio>
+          AspectRatio
+        </AspectRatio>
+      </Box>
     </div>
   }
 }
