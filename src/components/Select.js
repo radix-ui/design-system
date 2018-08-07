@@ -11,6 +11,7 @@ const Menu = styled.select`
   background-color: transparent;
   height: ${theme.SPACING_500};
   line-height: ${theme.SPACING_500};
+  font-family: inherit;
   padding: 0;
   font-size: ${theme.FONTSIZE_300};
   border-radius: 0;
