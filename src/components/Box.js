@@ -147,6 +147,8 @@ const Box = styled.div`
   ${p => p.alignmiddle && css` vertical-align: middle; `}
 
   ${p => p.oyauto && css` overflow-y: auto; `}
+
+  ${p => p.relative && css` position: relative; `}
 `;
 
 export default Box;
