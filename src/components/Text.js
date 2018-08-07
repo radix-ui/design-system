@@ -87,6 +87,7 @@ const Text = styled.span`
   ${p => p.ml9 && css`margin-left: ${theme.SPACING_900};`}
   ${p => p.white && css`color: ${theme.WHITE};`}
   ${p => p.black && css`color: ${theme.BLACK};`}
+  ${p => p.gray500 && css`color: ${theme.GRAY_500};`}
   ${p => p.gray600 && css`color: ${theme.GRAY_600};`}
   ${p => p.gray900 && css`color: ${theme.GRAY_900};`}
   ${p => p.left && css`text-align: left;`}
