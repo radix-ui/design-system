@@ -5,3 +5,4 @@ export * from './Shadow.js';
 export * from './Spacing.js';
 export * from './Type.js';
 export * from './Leading.js';
+export * from './Typeface.js';

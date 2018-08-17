@@ -7,6 +7,7 @@ const Badge = styled.span`
   align-items: center;
   font-family: ${theme.UNTITLEDSANSMEDIUM};
   font-size: ${theme.FONTSIZE_100};
+  font-weight: 500;
   height: ${theme.SPACING_300};
   padding: 0 ${theme.SPACING_200};
   text-transform: uppercase;
