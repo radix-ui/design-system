@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
-const Badge = styled.div`
+const Badge = styled.span`
   display: inline-flex;
   align-items: center;
   font-family: 'UntitledSans-Medium';
@@ -16,6 +16,12 @@ const Badge = styled.div`
   white-space: nowrap;
   user-select: none;
   vertical-align: middle;
+
+  ${props => props.size2 && css`
+    font-size: ${theme.FONTSIZE_200};
+    height: ${theme.SPACING_400};
+    padding: 0 ${theme.SPACING_300};
+  `}
 
   ${props => props.gray && css`
     box-shadow: inset 0 0 0 1px ${theme.GRAY_400};
