@@ -9,6 +9,7 @@ const Flexbox = Box.extend`
 
   ${p => p.wrap && css` flex-wrap: wrap `}
 
+  ${p => p.ai_baseline && css` align-items: baseline `}
   ${p => p.ai_center && css` align-items: center `}
   ${p => p.ai_stretch && css` align-items: stretch `}
   ${p => p.ai_flexstart && css` align-items: flex-start `}
