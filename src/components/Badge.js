@@ -5,7 +5,7 @@ import * as theme from './../theme/';
 const Badge = styled.span`
   display: inline-flex;
   align-items: center;
-  font-family: 'UntitledSans-Medium';
+  font-family: ${theme.UNTITLEDSANSMEDIUM};
   font-size: ${theme.FONTSIZE_100};
   height: ${theme.SPACING_300};
   padding: 0 ${theme.SPACING_200};
