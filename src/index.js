@@ -17,10 +17,11 @@ import Link from './components/Link';
 import List from './components/List';
 import ListItem from './components/ListItem';
 import Section from './components/Section';
-import Slider from './components/Switch';
+import Slider from './components/Slider';
 import Select from './components/Select';
 import Switch from './components/Switch';
 import Text from './components/Text';
+import ToggleButtons from './components/ToggleButtons';
 
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
@@ -43,6 +44,7 @@ export Slider from './components/Slider';
 export Select from './components/Select';
 export Switch from './components/Switch';
 export Text from './components/Text';
+export ToggleButtons from './components/ToggleButtons';
 
 import * as Theme from './theme';
 export { Theme };
@@ -69,13 +71,13 @@ export default class extends Component {
               </Button>
             </Box>
             <Box
+              gray100
               w50
               pb8
               pl4
+              p4
             >
-              <Button>
-                Button
-              </Button>
+              <ToggleButtons />
             </Box>
             <Box
               w50
@@ -189,9 +191,57 @@ export default class extends Component {
               pb8
               pl4
             >
+              <Select>
+                <option>342</option>
+                <option>342</option>
+                <option>342</option>
+                <option>342</option>
+                <option>342</option>
+              </Select>
+            </Box>
+            <Box
+              w50
+              pb8
+              pr4
+            >
               <LinesButton>
                 LinesButton
               </LinesButton>
+            </Box>
+            <Box
+              w50
+              pb8
+              pl4
+            >
+              <Slider
+                type="range"/>
+            </Box>
+            <Box
+              w50
+              pb8
+              pr4
+            >
+              <Switch />
+            </Box>
+            <Box
+              w50
+              pb8
+              pl4
+            >
+              <List>
+                <ListItem>
+                  List item 1
+                </ListItem>
+                <ListItem>
+                  List item 2
+                </ListItem>
+                <ListItem>
+                  List item 3
+                </ListItem>
+                <ListItem>
+                  List item 4
+                </ListItem>
+              </List>
             </Box>
           </Flexbox>
         </Container>
