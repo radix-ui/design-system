@@ -16,7 +16,7 @@ import LinesButton from './components/LinesButton';
 import Link from './components/Link';
 import List from './components/List';
 import ListItem from './components/ListItem';
-import Section from './components/Select';
+import Section from './components/Section';
 import Slider from './components/Switch';
 import Select from './components/Select';
 import Switch from './components/Switch';
@@ -50,44 +50,153 @@ export { Theme };
 export default class extends Component {
   render() {
     return <div>
-      <Button>
-        Button
-      </Button>
-      <Text>
-        Text
-      </Text>
-      <Heading>
-        Heading
-      </Heading>
-      <Badge>
-        Badge
-      </Badge>
-      <Box>
-        Box
-      </Box>
-      <Container>
-        Container
-      </Container>
-      <Divider>
-        Divider
-      </Divider>
-      <Flexbox>
-        Flexbox
-      </Flexbox>
-      <Image />
-      <Input />
-      <LinesButton>
-        LinesButton
-      </LinesButton>
-      <Box
-        style={{
-          width: '300px',
-        }}
+      <Section
+        size3
       >
-        <AspectRatio>
-          AspectRatio
-        </AspectRatio>
-      </Box>
+        <Container
+          size2
+        >
+          <Flexbox
+            wrap
+            >
+            <Box
+              w50
+              pb8
+              pr4
+            >
+              <Button>
+                Button
+              </Button>
+            </Box>
+            <Box
+              w50
+              pb8
+              pl4
+            >
+              <Button>
+                Button
+              </Button>
+            </Box>
+            <Box
+              w50
+              pb8
+              pr4
+            >
+            <Text size8>
+              Text
+            </Text>
+            <Text size7>
+              Text
+            </Text>
+            <Text size6>
+              Text
+            </Text>
+            <Text size5>
+              Text
+            </Text>
+            <Text size4>
+              Text
+            </Text>
+            <Text size3>
+              Text
+            </Text>
+            <Text size2>
+              Text
+            </Text>
+            <Text size1>
+              Text
+            </Text>
+            </Box>
+            <Box
+              w50
+              pb8
+              pl4
+            >
+              <Heading size6>
+                Heading
+              </Heading>
+              <Heading size5>
+                Heading
+              </Heading>
+              <Heading size4>
+                Heading
+              </Heading>
+              <Heading size3>
+                Heading
+              </Heading>
+              <Heading size2>
+                Heading
+              </Heading>
+              <Heading size1>
+                Heading
+              </Heading>
+            </Box>
+            <Box
+              w50
+              pb8
+              pr4
+            >
+              <Badge
+                gray
+              >
+                Badge
+              </Badge>
+              <Badge
+                blue
+              >
+                Badge
+              </Badge>
+              <Badge
+                green
+              >
+                Badge
+              </Badge>
+              <Badge
+                yellow
+              >
+                Badge
+              </Badge>
+              <Badge
+                red
+              >
+                Badge
+              </Badge>
+              <Badge
+                size2
+                gray
+              >
+                Badge
+              </Badge>
+            </Box>
+            <Box
+              w50
+              pb8
+              pl4
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+              />
+            </Box>
+            <Box
+              w50
+              pb8
+              pr4
+            >
+              <Input />
+            </Box>
+            <Box
+              w50
+              pb8
+              pl4
+            >
+              <LinesButton>
+                LinesButton
+              </LinesButton>
+            </Box>
+          </Flexbox>
+        </Container>
+      </Section>
+
     </div>
   }
 }
