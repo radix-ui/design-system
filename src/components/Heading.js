@@ -98,6 +98,10 @@ const Heading = styled.h3`
   ${p => p.gray500 && css`color: ${theme.GRAY_500};`}
   ${p => p.gray600 && css`color: ${theme.GRAY_600};`}
   ${p => p.gray900 && css`color: ${theme.GRAY_900};`}
+
+  ${p => p.left && css`text-align: left;`}
+  ${p => p.center && css`text-align: center;`}
+  ${p => p.right && css`text-align: right;`}
 `;
 
 Heading.propTypes = {
