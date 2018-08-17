@@ -139,6 +139,8 @@ const Box = styled.div`
   ${p => p.fg1 && css` flex-grow: 1; `}
   ${p => p.fs0 && css` flex-shrink: 0; `}
   ${p => p.fs1 && css` flex-shrink: 1; `}
+  ${p => p.fb0 && css` flex-basis: 0; `}
+  ${p => p.fb_auto && css` flex-basis: auto; `}
 
   ${p => p.table && css` display: table; `}
   ${p => p.tablerow && css` display: table-row; `}
