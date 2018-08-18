@@ -24,6 +24,7 @@ import Text from './components/Text';
 import ToggleButtonGroup from './components/ToggleButtonGroup';
 import ToggleButton from './components/ToggleButton';
 import Code from './components/Code';
+import Avatar from './components/Avatar';
 
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
@@ -49,6 +50,7 @@ export Text from './components/Text';
 export ToggleButtonGroup from './components/ToggleButtonGroup';
 export ToggleButton from './components/ToggleButton';
 export Code from './components/Code';
+export Avatar from './components/Avatar';
 
 import * as Theme from './theme';
 export { Theme };
@@ -268,6 +270,187 @@ export default class extends Component {
                 This really long paragraph text has a <Code>piece of code</Code> right in the middle of it. The reason the parapgraph is so long is
               so we can test how the code element affects lines below it.
               </Text>
+            </Box>
+            <Box
+              w50
+              pb8
+              pl4
+            >
+              <Avatar>
+                <Image
+                  rounded
+                  src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                  width="35"
+                  height="35"
+                />
+              </Avatar>
+              <Flexbox
+                mt4
+                ai_center
+              >
+                <Avatar
+                  size1
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="20"
+                    height="20"
+                  />
+                </Avatar>
+                <Avatar
+                  size2
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="25"
+                    height="25"
+                  />
+                </Avatar>
+                <Avatar
+                  size3
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="35"
+                    height="35"
+                  />
+                </Avatar>
+                <Avatar
+                  size4
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="45"
+                    height="45"
+                  />
+                </Avatar>
+                <Avatar
+                  size5
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="65"
+                    height="65"
+                  />
+                </Avatar>
+                <Avatar
+                  size6
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="80"
+                    height="80"
+                  />
+                </Avatar>
+              </Flexbox>
+              <Flexbox
+                mt4
+              >
+                <Avatar
+                  color
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="35"
+                    height="35"
+                  />
+                </Avatar>
+                <Avatar
+                  blue
+                  color
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="35"
+                    height="35"
+                  />
+                </Avatar>
+                <Avatar
+                  green
+                  color
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="35"
+                    height="35"
+                  />
+                </Avatar>
+                <Avatar
+                  yellow
+                  color
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="35"
+                    height="35"
+                  />
+                </Avatar>
+                <Avatar
+                  red
+                  color
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="35"
+                    height="35"
+                  />
+                </Avatar>
+              </Flexbox>
+              <Flexbox
+                mt4
+              >
+                <Avatar
+                  inline
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="35"
+                    height="35"
+                  />
+                </Avatar>
+                <Avatar
+                  inline
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="35"
+                    height="35"
+                  />
+                </Avatar>
+                <Avatar
+                  inline
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="35"
+                    height="35"
+                  />
+                </Avatar>
+                <Avatar
+                  inline
+                >
+                  <Image
+                    rounded
+                    src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    width="35"
+                    height="35"
+                  />
+                </Avatar>
+              </Flexbox>
             </Box>
           </Flexbox>
         </Container>
