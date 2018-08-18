@@ -122,6 +122,9 @@ export default class extends Component {
                 <Button disabled>
                   Button
                 </Button>
+                <Button waiting>
+                  Button
+                </Button>
               </Flexbox>
             </Box>
             <Box

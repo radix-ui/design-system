@@ -23,6 +23,7 @@ const Button = styled.button`
   min-width: ${theme.SPACING_500};
   outline: none;
   padding: 0 ${theme.SPACING_200};
+  position: relative;
   pointer-events: auto;
   text-align: center;
   text-decoration: none;
@@ -104,6 +105,37 @@ const Button = styled.button`
     color: ${theme.GRAY_500};
     cursor: not-allowed;
   }
+
+  @keyframes stripes {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(50%); }
+  }
+
+  ${p => p.waiting && css`
+    background-color: ${theme.GRAY_200};
+    overflow: hidden;
+    color: transparent;
+    pointer-events: none;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background-image: linear-gradient(
+        -60deg,
+        transparent 33%,
+        rgba(0, 0, 0, .05) 33%,
+        rgba(0,0, 0, .05) 66%,
+        transparent 66%
+      );
+      background-size: ${theme.SPACING_500} ${theme.SPACING_500};
+      color: transparent;
+      pointer-events: none;
+      animation: stripes 5s linear infinite;
+    }
+  `}
 
   ${p => p.left && css`
     border-radius: ${theme.BORDERRADIUS_100} 0 0 ${theme.BORDERRADIUS_100};
