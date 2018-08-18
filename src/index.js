@@ -21,7 +21,8 @@ import Slider from './components/Slider';
 import Select from './components/Select';
 import Switch from './components/Switch';
 import Text from './components/Text';
-import ToggleButtons from './components/ToggleButtons';
+import ToggleButtonGroup from './components/ToggleButtonGroup';
+import ToggleButton from './components/ToggleButton';
 
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
@@ -44,7 +45,8 @@ export Slider from './components/Slider';
 export Select from './components/Select';
 export Switch from './components/Switch';
 export Text from './components/Text';
-export ToggleButtons from './components/ToggleButtons';
+export ToggleButtonGroup from './components/ToggleButtonGroup';
+export ToggleButton from './components/ToggleButton';
 
 import * as Theme from './theme';
 export { Theme };
@@ -77,7 +79,18 @@ export default class extends Component {
               pl4
               p4
             >
-              <ToggleButtons />
+              <ToggleButtonGroup>
+                <ToggleButton
+                  group="group"
+                  defaultChecked="true"
+                />
+                <ToggleButton
+                  group="group"
+                />
+                <ToggleButton
+                  group="group"
+                />
+              </ToggleButtonGroup>
             </Box>
             <Box
               w50
