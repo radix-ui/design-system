@@ -61,7 +61,7 @@ const ToggleButton = (props) => (
     />
     <Dummy>
       <svg width="25" height="25" viewBox="0 0 25 25" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 0H0" transform="translate(4.5 4.5)" stroke-linecap="round"/>
+        <path d="M16 0H0" transform="translate(4.5 4.5)" strokeLinecap="round"/>
         <rect x="0.5" y="0.5" width="8" height="4" transform="translate(8 4)"/>
         <rect x="0.5" y="0.5" width="8" height="4" transform="translate(8 8)"/>
       </svg>

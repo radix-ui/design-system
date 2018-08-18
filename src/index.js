@@ -74,9 +74,55 @@ export default class extends Component {
               pb8
               pr4
             >
-              <Button>
-                Button
-              </Button>
+              <Flexbox
+                ai_center
+              >
+                <Button>
+                  Button
+                </Button>
+                <Button size2>
+                  Button
+                </Button>
+              </Flexbox>
+              <Flexbox
+                mt4
+              >
+                <Button blue>
+                  Button
+                </Button>
+                <Button yellow>
+                  Button
+                </Button>
+                <Button red>
+                  Button
+                </Button>
+                <Button green>
+                  Button
+                </Button>
+              </Flexbox>
+              <Flexbox
+                mt4
+              >
+                <Button left>
+                  Button
+                </Button>
+                <Button middle>
+                  Button
+                </Button>
+                <Button right>
+                  Button
+                </Button>
+              </Flexbox>
+              <Flexbox
+                mt4
+              >
+                <Button active>
+                  Button
+                </Button>
+                <Button disabled>
+                  Button
+                </Button>
+              </Flexbox>
             </Box>
             <Box
               w50

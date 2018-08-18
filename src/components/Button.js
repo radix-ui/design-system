@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
@@ -12,9 +14,9 @@ const Button = styled.button`
   cursor: pointer;
   display: inline-flex;
   flex-shrink: 0;
-  font-family: 'UntitledSans-Medium',apple-system,BlinkMacSystemFont;
+  font-family: ${theme.UNTITLEDSANSMEDIUM};
   font-size: ${theme.FONTSIZE_200};
-  font-weight: 400;
+  font-weight: 500;
   height: ${theme.SPACING_500};
   justify-content: center;
   line-height: 1;
@@ -24,11 +26,146 @@ const Button = styled.button`
   pointer-events: auto;
   text-align: center;
   text-decoration: none;
-  transition-property: all;
-  transition-duration: 80ms;
-  transition-timing-function: ease;
   user-select: none;
   white-space: nowrap;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px ${theme.GRAY_500};
+  }
+
+  &:active {
+    background-color: ${theme.GRAY_200};
+    box-shadow: inset 0 0 0 1px ${theme.GRAY_500};
+  }
+
+  ${p => p.size2 && css`
+    font-size: ${theme.FONTSIZE_300};
+    height: ${theme.SPACING_600};
+    min-width: ${theme.SPACING_600};
+    padding: 0 ${theme.SPACING_300};
+  `}
+
+  ${p => p.blue && css`
+    background-color: ${theme.BLUE_100};
+    box-shadow: inset 0 0 0 1px ${theme.BLUE_400};
+    color: ${theme.BLUE_600};
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px ${theme.BLUE_500};
+    }
+
+    &:active {
+      background-color: ${theme.BLUE_200};
+      box-shadow: inset 0 0 0 1px ${theme.BLUE_500};
+    }
+  `}
+
+  ${p => p.green && css`
+    background-color: ${theme.GREEN_100};
+    box-shadow: inset 0 0 0 1px ${theme.GREEN_400};
+    color: ${theme.GREEN_600};
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px ${theme.GREEN_500};
+    }
+
+    &:active {
+      background-color: ${theme.GREEN_200};
+      box-shadow: inset 0 0 0 1px ${theme.GREEN_500};
+    }
+  `}
+
+  ${p => p.yellow && css`
+    background-color: ${theme.YELLOW_100};
+    box-shadow: inset 0 0 0 1px ${theme.YELLOW_400};
+    color: ${theme.YELLOW_600};
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px ${theme.YELLOW_500};
+    }
+
+    &:active {
+      background-color: ${theme.YELLOW_200};
+      box-shadow: inset 0 0 0 1px ${theme.YELLOW_500};
+    }
+  `}
+
+  ${p => p.red && css`
+    background-color: ${theme.RED_100};
+    box-shadow: inset 0 0 0 1px ${theme.RED_400};
+    color: ${theme.RED_600};
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px ${theme.RED_500};
+    }
+
+    &:active {
+      background-color: ${theme.RED_200};
+      box-shadow: inset 0 0 0 1px ${theme.RED_500};
+    }
+  `}
+
+  ${p => p.active && css`
+    background-color: ${theme.GRAY_200};
+    box-shadow: inset 0 1px 1px 0 rgba(0,0,0,.1), inset 0 0 0 1px ${theme.GRAY_400};
+    color: ${theme.GRAY_600};
+
+    &:hover,
+    &:active {
+      box-shadow: inset 0 1px 1px 0 rgba(0,0,0,.1), inset 0 0 0 1px ${theme.GRAY_500};
+    }
+
+    &:active {
+      background-color: ${theme.GRAY_300};
+    }
+  `}
+
+  &:disabled {
+    background-color: ${theme.GRAY_200};
+    box-shadow: inset 0 0 0 1px ${theme.GRAY_300};
+    color: ${theme.GRAY_500};
+    cursor: not-allowed;
+  }
+
+  ${p => p.left && css`
+    border-radius: ${theme.BORDERRADIUS_100} 0 0 ${theme.BORDERRADIUS_100};
+    z-index: 2;
+
+    &:hover {
+      z-index: 3;
+    }
+  `}
+
+  ${p => p.middle && css`
+    border-radius: 0;
+    margin-left: -1px;
+    z-index: 1;
+
+    &:hover {
+      z-index: 3;
+    }
+  `}
+
+  ${p => p.right && css`
+    border-radius: 0 ${theme.BORDERRADIUS_100} ${theme.BORDERRADIUS_100} 0;
+    margin-left: -1px;
+    z-index: 0;
+
+    &:hover {
+      z-index: 3;
+    }
+  `}
 `;
+
+Button.propTypes = {
+  mode: PropTypes.oneOf([
+    'size1',
+    'size2'
+  ])
+}
+
+Button.defaultProps = {
+  size: 'size2'
+};
 
 export default Button;
