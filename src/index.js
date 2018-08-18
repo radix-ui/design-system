@@ -25,6 +25,7 @@ import ToggleButtonGroup from './components/ToggleButtonGroup';
 import ToggleButton from './components/ToggleButton';
 import Code from './components/Code';
 import Avatar from './components/Avatar';
+import Tooltip from './components/Tooltip';
 
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
@@ -51,6 +52,7 @@ export ToggleButtonGroup from './components/ToggleButtonGroup';
 export ToggleButton from './components/ToggleButton';
 export Code from './components/Code';
 export Avatar from './components/Avatar';
+export Tooltip from './components/Tooltip';
 
 import * as Theme from './theme';
 export { Theme };
@@ -451,6 +453,44 @@ export default class extends Component {
                   />
                 </Avatar>
               </Flexbox>
+            </Box>
+            <Box
+              w50
+              pb8
+              pr4
+            >
+              <Tooltip
+                data-tooltip="tooltip here"
+                data-tooltip-position="top"
+              >
+                <Button>
+                  Tooltip
+                </Button>
+              </Tooltip>
+              <Tooltip
+                data-tooltip="tooltip here"
+                data-tooltip-position="right"
+              >
+                <Button>
+                  Tooltip
+                </Button>
+              </Tooltip>
+              <Tooltip
+                data-tooltip="tooltip here"
+                data-tooltip-position="bottom"
+              >
+                <Button>
+                  Tooltip
+                </Button>
+              </Tooltip>
+              <Tooltip
+                data-tooltip="tooltip here"
+                data-tooltip-position="left"
+              >
+                <Button>
+                  Tooltip
+                </Button>
+              </Tooltip>
             </Box>
           </Flexbox>
         </Container>
