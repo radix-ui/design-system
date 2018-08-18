@@ -23,6 +23,7 @@ import Switch from './components/Switch';
 import Text from './components/Text';
 import ToggleButtonGroup from './components/ToggleButtonGroup';
 import ToggleButton from './components/ToggleButton';
+import Code from './components/Code';
 
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
@@ -47,6 +48,7 @@ export Switch from './components/Switch';
 export Text from './components/Text';
 export ToggleButtonGroup from './components/ToggleButtonGroup';
 export ToggleButton from './components/ToggleButton';
+export Code from './components/Code';
 
 import * as Theme from './theme';
 export { Theme };
@@ -73,11 +75,9 @@ export default class extends Component {
               </Button>
             </Box>
             <Box
-              gray100
               w50
               pb8
               pl4
-              p4
             >
               <ToggleButtonGroup>
                 <ToggleButton
@@ -255,6 +255,19 @@ export default class extends Component {
                   List item 4
                 </ListItem>
               </List>
+            </Box>
+            <Box
+              w50
+              pb8
+              pr4
+            >
+              <Text
+                size3
+                lh3
+              >
+                This really long paragraph text has a <Code>piece of code</Code> right in the middle of it. The reason the parapgraph is so long is
+              so we can test how the code element affects lines below it.
+              </Text>
             </Box>
           </Flexbox>
         </Container>
