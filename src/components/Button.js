@@ -76,33 +76,11 @@ const Button = styled.button`
   `}
 
   ${p => p.yellow && css`
-    background-color: ${theme.YELLOW_100};
-    box-shadow: inset 0 0 0 1px ${theme.YELLOW_400};
     color: ${theme.YELLOW_600};
-
-    &:hover {
-      box-shadow: inset 0 0 0 1px ${theme.YELLOW_500};
-    }
-
-    &:active {
-      background-color: ${theme.YELLOW_200};
-      box-shadow: inset 0 0 0 1px ${theme.YELLOW_500};
-    }
   `}
 
   ${p => p.red && css`
-    background-color: ${theme.RED_100};
-    box-shadow: inset 0 0 0 1px ${theme.RED_400};
     color: ${theme.RED_600};
-
-    &:hover {
-      box-shadow: inset 0 0 0 1px ${theme.RED_500};
-    }
-
-    &:active {
-      background-color: ${theme.RED_200};
-      box-shadow: inset 0 0 0 1px ${theme.RED_500};
-    }
   `}
 
   ${p => p.active && css`

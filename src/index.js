@@ -90,13 +90,13 @@ export default class extends Component {
                 <Button blue>
                   Button
                 </Button>
+                <Button green>
+                  Button
+                </Button>
                 <Button yellow>
                   Button
                 </Button>
                 <Button red>
-                  Button
-                </Button>
-                <Button green>
                   Button
                 </Button>
               </Flexbox>
