@@ -26,6 +26,7 @@ import ToggleButton from './components/ToggleButton';
 import Code from './components/Code';
 import Avatar from './components/Avatar';
 import Tooltip from './components/Tooltip';
+import Progress from './components/Progress';
 
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
@@ -53,6 +54,7 @@ export ToggleButton from './components/ToggleButton';
 export Code from './components/Code';
 export Avatar from './components/Avatar';
 export Tooltip from './components/Tooltip';
+export Progress from './components/Progress';
 
 import * as Theme from './theme';
 export { Theme };
@@ -124,6 +126,38 @@ export default class extends Component {
                 </Button>
                 <Button waiting>
                   Button
+                </Button>
+              </Flexbox>
+              <Flexbox
+                ai_center
+                mt4
+              >
+                <Button
+                  blue
+                >
+                  <Box
+                    mr1
+                  >
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block' }}>
+                      <path d="M5 0L0 4L5 8" transform="translate(2.5 3.5)" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M0 0H10" transform="translate(2.5 7.5)" strokeLinecap="round"/>
+                    </svg>
+                  </Box>
+                  Back
+                </Button>
+                <Button
+                  size2
+                  blue
+                >
+                  <Box
+                    mr2
+                  >
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block' }}>
+                      <path d="M0 0H14" transform="translate(5.5 12.5)" strokeLinecap="round"/>
+                      <path d="M0 14V0" transform="translate(12.5 5.5)" strokeLinecap="round"/>
+                    </svg>
+                  </Box>
+                  Follow
                 </Button>
               </Flexbox>
             </Box>
@@ -540,6 +574,19 @@ export default class extends Component {
                   Tooltip
                 </Button>
               </Tooltip>
+            </Box>
+            <Box
+              w50
+              pb8
+              pl4
+            >
+              <Progress></Progress>
+              <Flexbox
+                mt4
+                ai_center
+              >
+                <Progress></Progress>
+              </Flexbox>
             </Box>
           </Flexbox>
         </Container>
