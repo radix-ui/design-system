@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
-const Button = styled.button`
+const Button = styled.button.attrs({
+  type: 'button',
+})`
   align-items: center;
   appearance: none;
   background-color: ${theme.GRAY_100};
@@ -107,8 +109,9 @@ const Button = styled.button`
   }
 
   @keyframes stripes {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(50%); }
+    100% {
+      transform: translateX(${theme.SPACING_800});
+    }
   }
 
   ${p => p.waiting && css`
@@ -118,22 +121,20 @@ const Button = styled.button`
     pointer-events: none;
     &::before {
       position: absolute;
-      content: "";
+      content: '';
       top: 0;
-      left: 0;
+      left: -100%;
       width: 200%;
-      height: 200%;
+      height: 100%;
       background-image: linear-gradient(
-        -60deg,
+        -45deg,
         transparent 33%,
-        rgba(0, 0, 0, .05) 33%,
-        rgba(0,0, 0, .05) 66%,
+        rgba(0,0,0,.05) 33%,
+        rgba(0,0,0,.05) 66%,
         transparent 66%
       );
-      background-size: ${theme.SPACING_500} ${theme.SPACING_500};
-      color: transparent;
-      pointer-events: none;
-      animation: stripes 5s linear infinite;
+      background-size: ${theme.SPACING_800} ${theme.SPACING_600};
+      animation: stripes 500ms linear infinite;
     }
   `}
 

@@ -87,50 +87,50 @@ export default class extends Component {
                 </Button>
               </Flexbox>
               <Flexbox
-                mt4
+                mt6
               >
-                <Button blue>
-                  Button
+                <Button size2 blue>
+                  Blue
                 </Button>
-                <Button green>
-                  Button
+                <Button size2 green>
+                  Green
                 </Button>
-                <Button yellow>
-                  Button
+                <Button size2 yellow>
+                  Yellow
                 </Button>
-                <Button red>
-                  Button
+                <Button size2 red>
+                  Red
                 </Button>
               </Flexbox>
               <Flexbox
-                mt4
+                mt6
               >
-                <Button left>
-                  Button
+                <Button size2 left>
+                  Left
                 </Button>
-                <Button middle>
-                  Button
+                <Button size2 middle>
+                  Middle
                 </Button>
-                <Button right>
-                  Button
+                <Button size2 right>
+                  Right
                 </Button>
               </Flexbox>
               <Flexbox
-                mt4
+                mt6
               >
-                <Button active>
-                  Button
+                <Button size2 active>
+                  Active
                 </Button>
-                <Button disabled>
-                  Button
+                <Button size2 disabled>
+                  Disabled
                 </Button>
-                <Button waiting>
-                  Button
+                <Button size2 waiting>
+                  Waiting
                 </Button>
               </Flexbox>
               <Flexbox
                 ai_center
-                mt4
+                mt6
               >
                 <Button
                   blue
@@ -589,6 +589,7 @@ export default class extends Component {
                 >
                   <Progress
                     size1
+                    blue
                     currentValue="50"
                   ></Progress>
                 </Box>
@@ -598,6 +599,7 @@ export default class extends Component {
                 >
                   <Progress
                     size2
+                    blue
                     currentValue="50"
                   ></Progress>
                 </Box>
@@ -606,6 +608,7 @@ export default class extends Component {
                 >
                   <Progress
                     size3
+                    blue
                     currentValue="50"
                   ></Progress>
                 </Box>

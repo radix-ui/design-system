@@ -46,7 +46,7 @@ const Inner = styled.div`
       top: 0;
       left: -100%;
       width: 200%;
-      height: ${theme.SPACING_200};
+      height: 100%;
       background-image: linear-gradient(
         -45deg,
         transparent 33%,
@@ -55,7 +55,7 @@ const Inner = styled.div`
         transparent 66%
       );
       background-size: ${theme.SPACING_300} ${theme.SPACING_200};
-      animation: stripes 1s linear infinite;
+      animation: stripes 500ms linear infinite;
     }
   `}
 `;
