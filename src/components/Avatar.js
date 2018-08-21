@@ -1,7 +1,9 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
-const Avatar = styled.div`
+const Container = styled.div`
   align-items: center;
   background-color: ${theme.BLUE_500};
   box-shadow: inset 0 0 0 1px rgba(0,0,0,.05);
@@ -90,5 +92,22 @@ const Avatar = styled.div`
     box-shadow: inset 0 0 0 1px rgba(0,0,0,.05), 0 0 0 2px white;
   `}
 `;
+
+const Image = styled.img`
+  border-radius: 50%;
+  display: block;
+  max-width: 100%;
+`;
+
+const Avatar = (props) => (
+  <Container {...props}>
+    <Image
+      src={props.url}
+      width={props.size}
+      height={props.size}
+      alt={props.caption}
+    />
+  </Container>
+);
 
 export default Avatar;
