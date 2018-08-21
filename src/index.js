@@ -580,12 +580,78 @@ export default class extends Component {
               pb8
               pl4
             >
-              <Progress></Progress>
               <Flexbox
-                mt4
                 ai_center
               >
-                <Progress></Progress>
+                <Box
+                  fg1
+                  mr4
+                >
+                  <Progress
+                    size1
+                    currentValue="50"
+                  ></Progress>
+                </Box>
+                <Box
+                  fg1
+                  mr4
+                >
+                  <Progress
+                    size2
+                    currentValue="50"
+                  ></Progress>
+                </Box>
+                <Box
+                  fg1
+                >
+                  <Progress
+                    size3
+                    currentValue="50"
+                  ></Progress>
+                </Box>
+              </Flexbox>
+              <Flexbox
+                mt6
+                ai_center
+              >
+                <Progress
+                  size2
+                  blue
+                  currentValue="50"
+                ></Progress>
+              </Flexbox>
+              <Box
+                mt6
+                mb2
+              >
+                <Progress
+                  size2
+                  blue
+                  currentValue="75"
+                ></Progress>
+              </Box>
+              <Flexbox
+                ai_baseline
+              >
+                <Box
+                  mr1
+                  fg1
+                >
+                  <Text
+                    size1
+                    gray600
+                  >
+                    Uploading 1 / 10
+                  </Text>
+                </Box>
+                <Box>
+                  <Text
+                    size1
+                    tnum
+                  >
+                    75%
+                  </Text>
+                </Box>
               </Flexbox>
             </Box>
           </Flexbox>
