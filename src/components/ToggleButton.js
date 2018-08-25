@@ -17,11 +17,10 @@ const Radio = styled.input`
   z-index: -1;
 
   &:checked + div {
-    background-color: ${theme.GRAY_300};
-    box-shadow: inset 0 0 0 1px ${theme.GRAY_500};
-    color: ${theme.GRAY_900};
+    background-color: ${theme.BLUE_500};
+    box-shadow: inset 0 0 0 1px ${theme.BLUE_500};
+    color: white;
     cursor: default;
-    z-index: 3 !important;
   }
 `;
 
@@ -50,6 +49,35 @@ const Dummy = styled.div`
   &:hover {
     box-shadow: inset 0 0 0 1px ${theme.GRAY_500};
   }
+
+  ${p => p.left && css`
+    border-radius: ${theme.BORDERRADIUS_100} 0 0 ${theme.BORDERRADIUS_100};
+    z-index: 2;
+
+    &:hover {
+      z-index: 3;
+    }
+  `}
+
+  ${p => p.middle && css`
+    border-radius: 0;
+    margin-left: -1px;
+    z-index: 1;
+
+    &:hover {
+      z-index: 3;
+    }
+  `}
+
+  ${p => p.right && css`
+    border-radius: 0 ${theme.BORDERRADIUS_100} ${theme.BORDERRADIUS_100} 0;
+    margin-left: -1px;
+    z-index: 0;
+
+    &:hover {
+      z-index: 3;
+    }
+  `}
 `;
 
 const ToggleButton = (props) => (
@@ -57,9 +85,9 @@ const ToggleButton = (props) => (
     <Radio
       {...props}
       type="radio"
-      name="{props.group}"
+      name={props.group}
     />
-    <Dummy>
+    <Dummy {...props}>
       <svg width="25" height="25" viewBox="0 0 25 25" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path d="M16 0H0" transform="translate(4.5 4.5)" strokeLinecap="round"/>
         <rect x="0.5" y="0.5" width="8" height="4" transform="translate(8 4)"/>

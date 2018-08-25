@@ -93,7 +93,15 @@ const Container = styled.div`
   `}
 `;
 
+const Initial = styled.span`
+  display: block;
+  text-transform: uppercase;
+`;
+
 const Image = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
   border-radius: 50%;
   display: block;
   max-width: 100%;
@@ -101,6 +109,7 @@ const Image = styled.img`
 
 const Avatar = (props) => (
   <Container {...props}>
+    <Initial>{props.initial}</Initial>
     <Image
       src={props.url}
       width={props.size}

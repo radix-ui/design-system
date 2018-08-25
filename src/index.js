@@ -21,12 +21,12 @@ import Slider from './components/Slider';
 import Select from './components/Select';
 import Switch from './components/Switch';
 import Text from './components/Text';
-import ToggleButtonGroup from './components/ToggleButtonGroup';
 import ToggleButton from './components/ToggleButton';
 import Code from './components/Code';
 import Avatar from './components/Avatar';
 import Tooltip from './components/Tooltip';
 import Progress from './components/Progress';
+import Radio from './components/Radio';
 
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
@@ -49,12 +49,12 @@ export Slider from './components/Slider';
 export Select from './components/Select';
 export Switch from './components/Switch';
 export Text from './components/Text';
-export ToggleButtonGroup from './components/ToggleButtonGroup';
 export ToggleButton from './components/ToggleButton';
 export Code from './components/Code';
 export Avatar from './components/Avatar';
 export Tooltip from './components/Tooltip';
 export Progress from './components/Progress';
+export Radio from './components/Radio';
 
 import * as Theme from './theme';
 export { Theme };
@@ -166,18 +166,21 @@ export default class extends Component {
               pb8
               pl4
             >
-              <ToggleButtonGroup>
+              <Flexbox>
                 <ToggleButton
+                  left
                   group="group"
                   defaultChecked="true"
                 />
                 <ToggleButton
+                  middle
                   group="group"
                 />
                 <ToggleButton
+                  right
                   group="group"
                 />
-              </ToggleButtonGroup>
+            </Flexbox>
             </Box>
             <Box
               w50
@@ -284,7 +287,9 @@ export default class extends Component {
               pb8
               pr4
             >
-              <Input />
+              <Input
+                placeholder="Type something..."
+              />
             </Box>
             <Box
               w50
@@ -368,14 +373,18 @@ export default class extends Component {
                 <Box
                   mr4
                 >
-                  <Avatar>
-                    C
-                  </Avatar>
+                  <Avatar
+                    url="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                    size="35"
+                    initial="C"
+                    caption="Text for screenreader"
+                  />
                 </Box>
                 <Box>
                   <Avatar
                     url="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
                     size="35"
+                    initial="C"
                     caption="Text for screenreader"
                   />
                 </Box>
@@ -386,38 +395,48 @@ export default class extends Component {
               pb8
               pr4
             >
-              <Tooltip
-                data-tooltip="tooltip here"
-                data-tooltip-position="top"
-              >
-                <Button>
-                  Tooltip
-                </Button>
-              </Tooltip>
-              <Tooltip
-                data-tooltip="tooltip here"
-                data-tooltip-position="right"
-              >
-                <Button>
-                  Tooltip
-                </Button>
-              </Tooltip>
-              <Tooltip
-                data-tooltip="tooltip here"
-                data-tooltip-position="bottom"
-              >
-                <Button>
-                  Tooltip
-                </Button>
-              </Tooltip>
-              <Tooltip
-                data-tooltip="tooltip here"
-                data-tooltip-position="left"
-              >
-                <Button>
-                  Tooltip
-                </Button>
-              </Tooltip>
+              <Flexbox>
+                <Tooltip
+                  data-tooltip="Tooltip content"
+                  data-position="top"
+                >
+                  <Button
+                    left
+                  >
+                    Tooltip
+                  </Button>
+                </Tooltip>
+                <Tooltip
+                  data-tooltip="Tooltip content"
+                  data-position="right"
+                >
+                  <Button
+                    middle
+                  >
+                    Tooltip
+                  </Button>
+                </Tooltip>
+                <Tooltip
+                  data-tooltip="Tooltip content"
+                  data-position="bottom"
+                >
+                  <Button
+                    middle
+                  >
+                    Tooltip
+                  </Button>
+                </Tooltip>
+                <Tooltip
+                  data-tooltip="Tooltip content"
+                  data-position="left"
+                >
+                  <Button
+                    right
+                  >
+                    Tooltip
+                  </Button>
+                </Tooltip>
+              </Flexbox>
             </Box>
             <Box
               w50
@@ -499,6 +518,19 @@ export default class extends Component {
                     75%
                   </Text>
                 </Box>
+              </Flexbox>
+            </Box>
+            <Box
+              w50
+              pb8
+              pr4
+            >
+              <Flexbox>
+                <Radio
+                  defaultChecked="true"
+                  group="whatever" />
+                <Radio
+                  group="whatever" />
               </Flexbox>
             </Box>
           </Flexbox>

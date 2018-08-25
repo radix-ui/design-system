@@ -142,7 +142,8 @@ const Button = styled.button.attrs({
     border-radius: ${theme.BORDERRADIUS_100} 0 0 ${theme.BORDERRADIUS_100};
     z-index: 2;
 
-    &:hover {
+    &:hover,
+    &:active {
       z-index: 3;
     }
   `}
@@ -152,7 +153,8 @@ const Button = styled.button.attrs({
     margin-left: -1px;
     z-index: 1;
 
-    &:hover {
+    &:hover,
+    &:active {
       z-index: 3;
     }
   `}
@@ -162,7 +164,8 @@ const Button = styled.button.attrs({
     margin-left: -1px;
     z-index: 0;
 
-    &:hover {
+    &:hover,
+    &:active {
       z-index: 3;
     }
   `}

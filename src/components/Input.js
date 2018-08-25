@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import * as theme from './../theme/';
 
-const Input = styled.input`
+const Input = styled.input.attrs({
+  type: 'text',
+})`
   background-color: transparent;
   font-family: inherit;
   height: ${theme.SPACING_500};

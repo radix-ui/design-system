@@ -11,7 +11,7 @@ const Link = styled.a`
     text-decoration: underline;
   }
 
-  ${props => props.large && css`
+  ${props => props.size2 && css`
     font-size: ${theme.FONTSIZE_500};
   `}
 
