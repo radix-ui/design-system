@@ -86,13 +86,13 @@ const Dummy = styled.div`
 `;
 
 const ToggleButton = (props) => {
-  const { children, ...nonChildrenProps } = props;
+  const { children, group, ...nonChildrenProps } = props;
   return (
     <Wrapper>
       <Radio
-        {...nonChildrenProps}
         type="radio"
-        name={props.group}
+        name={group}
+        {...nonChildrenProps}
       />
       <Dummy>
         {children}
