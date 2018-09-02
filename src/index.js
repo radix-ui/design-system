@@ -173,15 +173,9 @@ export default class extends Component {
                   left
                   group="group"
                   defaultChecked="true"
-                />
-                <ToggleButton
-                  middle
-                  group="group"
-                />
-                <ToggleButton
-                  right
-                  group="group"
-                />
+                >
+                  few
+                </ToggleButton>
             </Flexbox>
             </Box>
             <Box

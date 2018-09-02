@@ -9,6 +9,11 @@ const Wrapper = styled.label`
   vertical-align: middle;
   flex-grow: 1;
   flex-basis: 0;
+  font-family: ${theme.UNTITLEDSANSMEDIUM};
+  font-size: ${theme.FONTSIZE_200};
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
 `;
 
 const Radio = styled.input`
@@ -87,12 +92,8 @@ const ToggleButton = (props) => (
       type="radio"
       name={props.group}
     />
-    <Dummy {...props}>
-      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 0H0" transform="translate(4.5 4.5)" strokeLinecap="round"/>
-        <rect x="0.5" y="0.5" width="8" height="4" transform="translate(8 4)"/>
-        <rect x="0.5" y="0.5" width="8" height="4" transform="translate(8 8)"/>
-      </svg>
+    <Dummy>
+      {props.children}
     </Dummy>
   </Wrapper>
 );
