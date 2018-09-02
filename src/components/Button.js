@@ -30,6 +30,7 @@ const Button = styled.button.attrs({
   text-align: center;
   text-decoration: none;
   user-select: none;
+  vertical-align: middle;
   white-space: nowrap;
 
   &:hover {

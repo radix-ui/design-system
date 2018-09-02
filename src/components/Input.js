@@ -14,6 +14,7 @@ const Input = styled.input.attrs({
   border: none;
   outline: none;
   box-shadow: inset 0 -1px 0 0 ${theme.GRAY_400};
+  vertical-align: middle;
   width: 100%;
 
   &::-webkit-input-placeholder {
