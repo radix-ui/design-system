@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import * as theme from './../theme/';
 
-const Slider = styled.input`
+const Slider = styled.input.attrs({
+  type: 'range',
+})`
   appearance: none;
   display: block;
   padding: ${theme.SPACING_100} 0;

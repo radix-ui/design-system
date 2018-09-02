@@ -318,8 +318,7 @@ export default class extends Component {
               pb8
               pl4
             >
-              <Slider
-                type="range"/>
+              <Slider />
             </Box>
             <Box
               w50
