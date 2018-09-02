@@ -27,6 +27,7 @@ import Avatar from './components/Avatar';
 import Tooltip from './components/Tooltip';
 import Progress from './components/Progress';
 import Radio from './components/Radio';
+import IndicatorButton from './components/IndicatorButton';
 
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
@@ -55,6 +56,7 @@ export Avatar from './components/Avatar';
 export Tooltip from './components/Tooltip';
 export Progress from './components/Progress';
 export Radio from './components/Radio';
+export IndicatorButton from './components/IndicatorButton';
 
 import * as Theme from './theme';
 export { Theme };
@@ -530,6 +532,38 @@ export default class extends Component {
                   group="whatever" />
                 <Radio
                   group="whatever" />
+              </Flexbox>
+            </Box>
+            <Box
+              w50
+              pb8
+              pl4
+            >
+              <Flexbox
+                ai_center
+              >
+                <Box
+                  mr3
+                >
+                  <IndicatorButton
+                    active
+                  />
+                </Box>
+                <Box
+                  mr3
+                >
+                  <IndicatorButton />
+                </Box>
+                <Box
+                  mr3
+                >
+                  <IndicatorButton />
+                </Box>
+                <Box
+                  mr3
+                >
+                  <IndicatorButton />
+                </Box>
               </Flexbox>
             </Box>
           </Flexbox>
