@@ -12,6 +12,7 @@ import Flexbox from './components/Flexbox';
 import Heading from './components/Heading';
 import Status from './components/Status';
 import Image from './components/Image';
+import BackgroundImage from './components/BackgroundImage';
 import Input from './components/Input';
 import LinesButton from './components/LinesButton';
 import GhostButton from './components/GhostButton';
@@ -63,6 +64,7 @@ export IndicatorButton from './components/IndicatorButton';
 export GhostButton from './components/GhostButton';
 export Grid from './components/Grid';
 export Status from './components/Status';
+export BackgroundImage from './components/BackgroundImage';
 
 import * as Theme from './theme';
 export { Theme };
@@ -681,7 +683,14 @@ export default class extends Component {
               <Image
                 src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
               />
-          </div>
+            </div>
+            <div>
+              <AspectRatio>
+                <BackgroundImage
+                  src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                />
+              </AspectRatio>
+            </div>
             <div>
               <Input
                 placeholder="Type something..."
