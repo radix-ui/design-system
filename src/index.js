@@ -168,15 +168,216 @@ export default class extends Component {
               pb8
               pl4
             >
-              <Flexbox>
+              <Flexbox
+                mb6
+              >
                 <ToggleButton
                   left
-                  group="group"
+                  group="direction"
                   defaultChecked="true"
                 >
-                  few
+                  Row
                 </ToggleButton>
-            </Flexbox>
+                <ToggleButton
+                  right
+                  group="direction"
+                >
+                  Column
+                </ToggleButton>
+              </Flexbox>
+              <Flexbox
+                mb6
+              >
+                <ToggleButton
+                  left
+                  group="justify"
+                  defaultChecked="true"
+                >
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      display: 'block'
+                    }}
+                  >
+                    <path d="M4.5 4.5V20.5" strokeLinecap="round"/>
+                    <rect x="4.5" y="8.5" width="4" height="8"/>
+                    <rect x="8.5" y="8.5" width="4" height="8"/>
+                  </svg>
+                </ToggleButton>
+                <ToggleButton
+                  middle
+                  group="justify"
+                >
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      display: 'block'
+                    }}
+                  >
+                    <path d="M12.5 4.5V20.5" strokeLinecap="round"/>
+                    <rect x="8.5" y="8.5" width="4" height="8"/>
+                    <rect x="12.5" y="8.5" width="4" height="8"/>
+                  </svg>
+                </ToggleButton>
+                <ToggleButton
+                  middle
+                  group="justify"
+                >
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      display: 'block'
+                    }}
+                  >
+                    <path d="M20.5 4.5V20.5" strokeLinecap="round"/>
+                    <rect x="12.5" y="8.5" width="4" height="8"/>
+                    <rect x="16.5" y="8.5" width="4" height="8"/>
+                  </svg>
+                </ToggleButton>
+                <ToggleButton
+                  middle
+                  group="justify"
+                >
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      display: 'block'
+                    }}
+                  >
+                    <path d="M20.5 4.5V20.5" strokeLinecap="round"/>
+                    <path d="M4.5 4.5V20.5" strokeLinecap="round"/>
+                    <rect x="4.5" y="8.5" width="4" height="8"/>
+                    <rect x="16.5" y="8.5" width="4" height="8"/>
+                  </svg>
+                </ToggleButton>
+                <ToggleButton
+                  right
+                  group="justify"
+                >
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      display: 'block'
+                    }}
+                  >
+                    <path d="M20.5 4.5V20.5" strokeLinecap="round"/>
+                    <path d="M4.5 4.5V20.5" strokeLinecap="round"/>
+                    <path d="M12.5 4.5V20.5" strokeLinecap="round"/>
+                    <rect x="6.5" y="8.5" width="4" height="8"/>
+                    <rect x="14.5" y="8.5" width="4" height="8"/>
+                  </svg>
+                </ToggleButton>
+              </Flexbox>
+              <Flexbox
+                mb6
+              >
+                <ToggleButton
+                  left
+                  group="align"
+                  defaultChecked="true"
+                >
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      display: 'block'
+                    }}
+                  >
+                    <path d="M4 16.5H13"/>
+                    <path d="M4 12.5H21"/>
+                    <path d="M4 8.5H13"/>
+                  </svg>
+                </ToggleButton>
+                <ToggleButton
+                  middle
+                  group="align"
+                >
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      display: 'block'
+                    }}
+                  >
+                    <path d="M8 16.5H17"/>
+                    <path d="M4 12.5H21"/>
+                    <path d="M8 8.5H17"/>
+                  </svg>
+                </ToggleButton>
+                <ToggleButton
+                  middle
+                  group="align"
+                >
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      display: 'block'
+                    }}
+                  >
+                    <path d="M12 16.5H21"/>
+                    <path d="M4 12.5H21"/>
+                    <path d="M12 8.5H21"/>
+                  </svg>
+                </ToggleButton>
+                <ToggleButton
+                  right
+                  group="align"
+                >
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      display: 'block'
+                    }}
+                  >
+                    <path d="M4 16.5H21"/>
+                    <path d="M4 12.5H21"/>
+                    <path d="M4 8.5H21"/>
+                  </svg>
+                </ToggleButton>
+              </Flexbox>
             </Box>
             <Box
               w50

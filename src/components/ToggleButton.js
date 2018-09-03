@@ -4,16 +4,28 @@ import * as theme from './../theme/';
 
 const Wrapper = styled.label`
   position: relative;
-  display: inline-flex;
-  height: ${theme.SPACING_500};
   vertical-align: middle;
   flex-grow: 1;
   flex-basis: 0;
-  font-family: ${theme.UNTITLEDSANSMEDIUM};
-  font-size: ${theme.FONTSIZE_200};
-  font-weight: 500;
-  line-height: 1;
-  white-space: nowrap;
+  height: ${theme.SPACING_500};
+
+  ${p => p.middle && css`
+    margin-left: -1px;
+    z-index: 1;
+
+    &:hover {
+      z-index: 3;
+    }
+  `}
+
+  ${p => p.right && css`
+    margin-left: -1px;
+    z-index: 0;
+
+    &:hover {
+      z-index: 3;
+    }
+  `}
 `;
 
 const Radio = styled.input`
@@ -37,14 +49,17 @@ const Dummy = styled.div`
   width: 100%;
   height: 100%;
   align-items: center;
+  display: inline-flex;
+  font-family: ${theme.UNTITLEDSANSMEDIUM};
+  font-size: ${theme.FONTSIZE_200};
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
   appearance: none;
-  background-color: transparent;
   box-shadow: inset 0 0 0 1px ${theme.GRAY_400};
   border: none;
-  border-radius: ${theme.BORDERRADIUS_100};
   color: ${theme.GRAY_600};
   cursor: pointer;
-  display: inline-flex;
   flex-shrink: 0;
   justify-content: center;
   line-height: 1;
@@ -57,44 +72,27 @@ const Dummy = styled.div`
 
   ${p => p.left && css`
     border-radius: ${theme.BORDERRADIUS_100} 0 0 ${theme.BORDERRADIUS_100};
-    z-index: 2;
-
-    &:hover {
-      z-index: 3;
-    }
-  `}
-
-  ${p => p.middle && css`
-    border-radius: 0;
-    margin-left: -1px;
-    z-index: 1;
-
-    &:hover {
-      z-index: 3;
-    }
   `}
 
   ${p => p.right && css`
     border-radius: 0 ${theme.BORDERRADIUS_100} ${theme.BORDERRADIUS_100} 0;
-    margin-left: -1px;
-    z-index: 0;
-
-    &:hover {
-      z-index: 3;
-    }
   `}
 `;
 
 const ToggleButton = (props) => {
   const { children, group, ...nonChildrenProps } = props;
   return (
-    <Wrapper>
+    <Wrapper
+      {...nonChildrenProps}
+    >
       <Radio
         type="radio"
         name={group}
         {...nonChildrenProps}
       />
-      <Dummy>
+      <Dummy
+        {...nonChildrenProps}
+      >
         {children}
       </Dummy>
     </Wrapper>
