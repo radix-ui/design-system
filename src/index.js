@@ -29,6 +29,7 @@ import Tooltip from './components/Tooltip';
 import Progress from './components/Progress';
 import Radio from './components/Radio';
 import IndicatorButton from './components/IndicatorButton';
+import Grid from './components/Grid';
 
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
@@ -59,6 +60,7 @@ export Progress from './components/Progress';
 export Radio from './components/Radio';
 export IndicatorButton from './components/IndicatorButton';
 export GhostButton from './components/GhostButton';
+export Grid from './components/Grid';
 
 import * as Theme from './theme';
 export { Theme };
@@ -72,14 +74,8 @@ export default class extends Component {
         <Container
           size2
         >
-          <Flexbox
-            wrap
-            >
-            <Box
-              w50
-              pb8
-              pr4
-            >
+          <Grid>
+            <div>
               <Flexbox
                 ai_center
               >
@@ -164,12 +160,8 @@ export default class extends Component {
                   Follow
                 </Button>
               </Flexbox>
-            </Box>
-            <Box
-              w50
-              pb8
-              pl4
-            >
+            </div>
+            <div>
               <Flexbox
                 mb6
               >
@@ -380,12 +372,8 @@ export default class extends Component {
                   </svg>
                 </ToggleButton>
               </Flexbox>
-            </Box>
-            <Box
-              w50
-              pb8
-              pr4
-            >
+            </div>
+            <div>
               <Flexbox
                 ai_center
               >
@@ -519,12 +507,8 @@ export default class extends Component {
                   Bookmark
                 </GhostButton>
               </Flexbox>
-            </Box>
-            <Box
-              w50
-              pb8
-              pr4
-            >
+            </div>
+            <div>
             <Text size8>
               Text
             </Text>
@@ -549,12 +533,8 @@ export default class extends Component {
             <Text size1>
               Text
             </Text>
-            </Box>
-            <Box
-              w50
-              pb8
-              pl4
-            >
+          </div>
+            <div>
               <Heading size6>
                 Heading
               </Heading>
@@ -573,12 +553,8 @@ export default class extends Component {
               <Heading size1>
                 Heading
               </Heading>
-            </Box>
-            <Box
-              w50
-              pb8
-              pr4
-            >
+            </div>
+            <div>
               <Badge
                 gray
               >
@@ -610,30 +586,18 @@ export default class extends Component {
               >
                 Badge
               </Badge>
-            </Box>
-            <Box
-              w50
-              pb8
-              pl4
-            >
+            </div>
+            <div>
               <Image
                 src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
               />
-            </Box>
-            <Box
-              w50
-              pb8
-              pr4
-            >
+          </div>
+            <div>
               <Input
                 placeholder="Type something..."
               />
-            </Box>
-            <Box
-              w50
-              pb8
-              pl4
-            >
+          </div>
+            <div>
               <Select>
                 <option>342</option>
                 <option>342</option>
@@ -641,35 +605,19 @@ export default class extends Component {
                 <option>342</option>
                 <option>342</option>
               </Select>
-            </Box>
-            <Box
-              w50
-              pb8
-              pr4
-            >
+            </div>
+            <div>
               <LinesButton>
                 LinesButton
               </LinesButton>
-            </Box>
-            <Box
-              w50
-              pb8
-              pl4
-            >
+            </div>
+            <div>
               <Slider />
-            </Box>
-            <Box
-              w50
-              pb8
-              pr4
-            >
+            </div>
+            <div>
               <Switch />
-            </Box>
-            <Box
-              w50
-              pb8
-              pl4
-            >
+            </div>
+            <div>
               <List>
                 <ListItem>
                   List item 1
@@ -684,12 +632,8 @@ export default class extends Component {
                   List item 4
                 </ListItem>
               </List>
-            </Box>
-            <Box
-              w50
-              pb8
-              pr4
-            >
+            </div>
+            <div>
               <Text
                 size3
                 lh3
@@ -697,12 +641,8 @@ export default class extends Component {
                 This really long paragraph text has a <Code>piece of code</Code> right in the middle of it. The reason the parapgraph is so long is
               so we can test how the code element affects lines below it.
               </Text>
-            </Box>
-            <Box
-              w50
-              pb8
-              pl4
-            >
+            </div>
+            <div>
               <Flexbox
                 mt4
                 ai_center
@@ -726,12 +666,8 @@ export default class extends Component {
                   />
                 </Box>
               </Flexbox>
-            </Box>
-            <Box
-              w50
-              pb8
-              pr4
-            >
+            </div>
+            <div>
               <Flexbox>
                 <Tooltip
                   data-tooltip="Tooltip content"
@@ -774,12 +710,8 @@ export default class extends Component {
                   </Button>
                 </Tooltip>
               </Flexbox>
-            </Box>
-            <Box
-              w50
-              pb8
-              pl4
-            >
+            </div>
+            <div>
               <Flexbox
                 ai_center
               >
@@ -856,12 +788,8 @@ export default class extends Component {
                   </Text>
                 </Box>
               </Flexbox>
-            </Box>
-            <Box
-              w50
-              pb8
-              pr4
-            >
+            </div>
+            <div>
               <Flexbox>
                 <Radio
                   defaultChecked="true"
@@ -869,12 +797,8 @@ export default class extends Component {
                 <Radio
                   group="whatever" />
               </Flexbox>
-            </Box>
-            <Box
-              w50
-              pb8
-              pl4
-            >
+            </div>
+            <div>
               <Flexbox
                 ai_center
               >
@@ -901,8 +825,8 @@ export default class extends Component {
                   <IndicatorButton />
                 </Box>
               </Flexbox>
-            </Box>
-          </Flexbox>
+            </div>
+          </Grid>
         </Container>
       </Section>
 
