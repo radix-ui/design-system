@@ -10,6 +10,7 @@ import Container from './components/Container';
 import Divider from './components/Divider';
 import Flexbox from './components/Flexbox';
 import Heading from './components/Heading';
+import Status from './components/Status';
 import Image from './components/Image';
 import Input from './components/Input';
 import LinesButton from './components/LinesButton';
@@ -61,6 +62,7 @@ export Radio from './components/Radio';
 export IndicatorButton from './components/IndicatorButton';
 export GhostButton from './components/GhostButton';
 export Grid from './components/Grid';
+export Status from './components/Status';
 
 import * as Theme from './theme';
 export { Theme };
@@ -509,31 +511,119 @@ export default class extends Component {
               </Flexbox>
             </div>
             <div>
-            <Text size8>
-              Text
-            </Text>
-            <Text size7>
-              Text
-            </Text>
-            <Text size6>
-              Text
-            </Text>
-            <Text size5>
-              Text
-            </Text>
-            <Text size4>
-              Text
-            </Text>
-            <Text size3>
-              Text
-            </Text>
-            <Text size2>
-              Text
-            </Text>
-            <Text size1>
-              Text
-            </Text>
-          </div>
+              <Flexbox
+                ai_center
+              >
+                <Box
+                  mr4
+                >
+                  <Status />
+                </Box>
+                <Status size2 />
+              </Flexbox>
+              <Flexbox
+                mt6
+              >
+                <Box
+                  mr4
+                >
+                  <Status
+                    size2
+                  />
+                </Box>
+                <Box
+                  mr4
+                >
+                  <Status
+                    size2
+                    blue
+                  />
+                </Box>
+                <Box
+                  mr4
+                >
+                  <Status
+                    size2
+                    green
+                  />
+                </Box>
+                <Box
+                  mr4
+                >
+                  <Status
+                    size2
+                    yellow
+                  />
+                </Box>
+                <Box
+                  mr4
+                >
+                  <Status
+                    size2
+                    red
+                  />
+                </Box>
+              </Flexbox>
+              <Flexbox
+                mt6
+              >
+              <Box
+                mr4
+              >
+                <Status
+                  size2
+                >
+                  8
+                </Status>
+              </Box>
+              <Box
+                mr4
+              >
+                <Status
+                  size2
+                  red
+                >
+                  248
+                </Status>
+              </Box>
+              <Box
+                mr4
+              >
+                <Status
+                  size2
+                  green
+                >
+                  2k+
+                </Status>
+              </Box>
+              </Flexbox>
+            </div>
+            <div>
+              <Text size8>
+                Text
+              </Text>
+              <Text size7>
+                Text
+              </Text>
+              <Text size6>
+                Text
+              </Text>
+              <Text size5>
+                Text
+              </Text>
+              <Text size4>
+                Text
+              </Text>
+              <Text size3>
+                Text
+              </Text>
+              <Text size2>
+                Text
+              </Text>
+              <Text size1>
+                Text
+              </Text>
+            </div>
             <div>
               <Heading size6>
                 Heading
