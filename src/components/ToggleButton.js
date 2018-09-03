@@ -9,6 +9,12 @@ const Wrapper = styled.label`
   flex-basis: 0;
   height: ${theme.SPACING_500};
 
+  ${p => p.left && css`
+    &:hover {
+      z-index: 3;
+    }
+  `}
+
   ${p => p.middle && css`
     margin-left: -1px;
     z-index: 1;

@@ -13,6 +13,7 @@ import Heading from './components/Heading';
 import Image from './components/Image';
 import Input from './components/Input';
 import LinesButton from './components/LinesButton';
+import GhostButton from './components/GhostButton';
 import Link from './components/Link';
 import List from './components/List';
 import ListItem from './components/ListItem';
@@ -57,6 +58,7 @@ export Tooltip from './components/Tooltip';
 export Progress from './components/Progress';
 export Radio from './components/Radio';
 export IndicatorButton from './components/IndicatorButton';
+export GhostButton from './components/GhostButton';
 
 import * as Theme from './theme';
 export { Theme };
@@ -377,6 +379,145 @@ export default class extends Component {
                     <path d="M4 8.5H21"/>
                   </svg>
                 </ToggleButton>
+              </Flexbox>
+            </Box>
+            <Box
+              w50
+              pb8
+              pr4
+            >
+              <Flexbox
+                ai_center
+              >
+                <GhostButton>
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ display: 'block' }}
+                  >
+                    <path d="M5 0L0 4L5 8" transform="translate(2.5 3.5)" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M0 0H10" transform="translate(2.5 7.5)" strokeLinecap="round"/>
+                  </svg>
+                </GhostButton>
+                <GhostButton
+                  size2
+                >
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    stroke="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ display: 'block' }}
+                  >
+                    <path d="M7.5 4.5V20.5L12.5 16.5L17.5 20.5V4.5H7.5Z" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M7 6.5H15"/>
+                  </svg>
+                </GhostButton>
+              </Flexbox>
+              <Flexbox
+                ai_center
+                mt6
+              >
+                <GhostButton
+                  padded
+                >
+                  <Box
+                    mr1
+                  >
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 15 15"
+                      fill="none"
+                      stroke="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{ display: 'block' }}
+                    >
+                      <path d="M5 0L0 4L5 8" transform="translate(2.5 3.5)" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M0 0H10" transform="translate(2.5 7.5)" strokeLinecap="round"/>
+                    </svg>
+                  </Box>
+                  Button
+                </GhostButton>
+                <GhostButton
+                  padded
+                  size2
+                >
+                  <Box
+                    mr1
+                  >
+                    <svg
+                      width="25"
+                      height="25"
+                      viewBox="0 0 25 25"
+                      fill="none"
+                      stroke="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{ display: 'block' }}
+                    >
+                      <path d="M7.5 4.5V20.5L12.5 16.5L17.5 20.5V4.5H7.5Z" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M7 6.5H15"/>
+                    </svg>
+                  </Box>
+                  Bookmark
+                </GhostButton>
+              </Flexbox>
+              <Flexbox
+                ai_center
+                mt6
+              >
+                <GhostButton
+                  padded
+                  active
+                  size2
+                >
+                  <Box
+                    mr1
+                  >
+                    <svg
+                      width="25"
+                      height="25"
+                      viewBox="0 0 25 25"
+                      fill="none"
+                      stroke="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{ display: 'block' }}
+                    >
+                      <path d="M7.5 4.5V20.5L12.5 16.5L17.5 20.5V4.5H7.5Z" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M7 6.5H15"/>
+                    </svg>
+                  </Box>
+                  Bookmark
+                </GhostButton>
+                <GhostButton
+                  padded
+                  disabled
+                  size2
+                >
+                  <Box
+                    mr1
+                  >
+                    <svg
+                      width="25"
+                      height="25"
+                      viewBox="0 0 25 25"
+                      fill="none"
+                      stroke="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{ display: 'block' }}
+                    >
+                      <path d="M7.5 4.5V20.5L12.5 16.5L17.5 20.5V4.5H7.5Z" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M7 6.5H15"/>
+                    </svg>
+                  </Box>
+                  Bookmark
+                </GhostButton>
               </Flexbox>
             </Box>
             <Box
