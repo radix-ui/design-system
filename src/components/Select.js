@@ -39,8 +39,19 @@ const Select = (props) => (
       {props.children}
     </Menu>
     <IconContainer>
-      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="black">
-        <path d="M8 0L4 4L0 0" transform="translate(3.5 5.5)" strokeLinecap="round" strokeLinejoin="round"/>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="15"
+        height="15"
+        viewBox="0 0 15 15"
+        fill="none"
+        stroke="currentColor"
+        style={{
+          display: 'block'
+        }}
+      >
+        <path d="M14.5 5.5L12.5 3.5L10.5 5.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M14.5 9.5L12.5 11.5L10.5 9.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     </IconContainer>
   </Wrapper>
