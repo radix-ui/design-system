@@ -10,6 +10,7 @@ import Container from './components/Container';
 import Divider from './components/Divider';
 import Flexbox from './components/Flexbox';
 import Heading from './components/Heading';
+import Title from './components/Title';
 import Status from './components/Status';
 import Image from './components/Image';
 import BackgroundImage from './components/BackgroundImage';
@@ -65,6 +66,7 @@ export GhostButton from './components/GhostButton';
 export Grid from './components/Grid';
 export Status from './components/Status';
 export BackgroundImage from './components/BackgroundImage';
+export Title from './components/Title';
 
 import * as Theme from './theme';
 export { Theme };
@@ -645,6 +647,27 @@ export default class extends Component {
               <Heading size1>
                 Heading
               </Heading>
+            </div>
+            <div>
+              <Box
+                mb6
+              >
+                <Title size1>
+                  Some heading
+                </Title>
+              </Box>
+              <Box
+                mb6
+              >
+                <Title size2>
+                  Some heading
+                </Title>
+              </Box>
+              <Box>
+                <Title size3>
+                  Some heading
+                </Title>
+              </Box>
             </div>
             <div>
               <Badge
