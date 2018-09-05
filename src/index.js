@@ -8,6 +8,7 @@ import Box from './components/Box';
 import Button from './components/Button';
 import Container from './components/Container';
 import Divider from './components/Divider';
+import Textarea from './components/Textarea';
 import Flexbox from './components/Flexbox';
 import Heading from './components/Heading';
 import Title from './components/Title';
@@ -67,6 +68,7 @@ export Grid from './components/Grid';
 export Status from './components/Status';
 export BackgroundImage from './components/BackgroundImage';
 export Title from './components/Title';
+export Textarea from './components/Textarea';
 
 import * as Theme from './theme';
 export { Theme };
@@ -718,7 +720,12 @@ export default class extends Component {
               <Input
                 placeholder="Type something..."
               />
-          </div>
+            </div>
+            <div>
+              <Textarea
+                placeholder="Type something..."
+              />
+            </div>
             <div>
               <Select>
                 <option>342</option>
