@@ -8,8 +8,8 @@ const Heading = styled.h3`
   font-family: 'UntitledSans',apple-system,BlinkMacSystemFont;
 
   ${p => p.size1 && css`
-    font-size: ${theme.FONTSIZE_400};
-    letter-spacing: -.001em;
+    font-size: ${theme.FONTSIZE_300};
+    letter-spacing: -.0125em;
     margin-left: -.05em;
   `}
 
