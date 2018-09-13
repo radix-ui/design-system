@@ -4,7 +4,11 @@ import * as theme from './../theme/';
 
 const Container = styled.div`
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 100%;
+
+  ${props => props.ratio_169 && css`
+    padding-bottom: 56.25%;
+  `}
 `;
 
 const Content = styled.div`
@@ -16,7 +20,7 @@ const Content = styled.div`
 `;
 
 const AspectRatio = (props) => (
-  <Container>
+  <Container {...props}>
     <Content {...props}>
       {props.children}
     </Content>

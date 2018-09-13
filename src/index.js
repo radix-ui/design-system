@@ -715,6 +715,11 @@ export default class extends Component {
                   src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
                 />
               </AspectRatio>
+              <AspectRatio ratio_169>
+                <BackgroundImage
+                  src="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
+                />
+              </AspectRatio>
             </div>
             <div>
               <Input
