@@ -46,6 +46,15 @@ const Dummy = styled.div`
     transition: transform 100ms ease;
     border-radius: 50%;
   }
+
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: ${theme.SPACING_300};
+  }
 `;
 
 const Switch = (props) => (
