@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
 const Input = styled.input.attrs({
@@ -33,6 +33,10 @@ const Input = styled.input.attrs({
   // &:focus {
   //   box-shadow: inset 0 -1px 0 0 ${theme.BLUE_500};
   // }
+
+  ${p => p.tnum && css`
+    font-feature-settings: 'tnum';
+  `}
 `;
 
 export default Input;
