@@ -5,6 +5,11 @@ const Tooltip = styled.div`
   position: relative;
   display: inline-block;
 
+  &::before,
+  &::after {
+    transition: none;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -84,6 +89,8 @@ const Tooltip = styled.div`
   &:hover::after,
   &:hover::before {
     opacity: 1;
+    transition: 0ms opacity linear;
+    transition-delay: 750ms;
   }
 `;
 
