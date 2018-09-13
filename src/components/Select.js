@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import * as theme from './../theme/';
 
 const Wrapper = styled.div`
-  position: relative
+  position: relative;
+  padding-right: ${theme.SPACING_300};
+  box-shadow: inset 0 -1px 0 0 ${theme.GRAY_400};
 `;
 
 const Menu = styled.select`
@@ -17,7 +19,6 @@ const Menu = styled.select`
   border-radius: 0;
   border: none;
   outline: none;
-  box-shadow: inset 0 -1px 0 0 ${theme.GRAY_400};
   width: 100%;
 `;
 

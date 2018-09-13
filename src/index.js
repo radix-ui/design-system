@@ -727,13 +727,15 @@ export default class extends Component {
               />
             </div>
             <div>
-              <Select>
-                <option>342</option>
-                <option>342</option>
-                <option>342</option>
-                <option>342</option>
-                <option>342</option>
-              </Select>
+              <div style={{width: '100px'}}>
+                <Select>
+                  <option>342 wfwef wef feew fewfew </option>
+                  <option>342</option>
+                  <option>342</option>
+                  <option>342</option>
+                  <option>342</option>
+                </Select>
+              </div>
             </div>
             <div>
               <LinesButton>
