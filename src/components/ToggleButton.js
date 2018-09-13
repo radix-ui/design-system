@@ -40,10 +40,11 @@ const Radio = styled.input`
   z-index: -1;
 
   &:checked + div {
-    background-color: ${theme.BLUE_500};
-    box-shadow: inset 0 0 0 1px ${theme.BLUE_500};
-    color: white;
+    background-color: ${theme.BLUE_100};
+    box-shadow: inset 0 0 0 1px ${theme.BLUE_300};
+    color: ${theme.BLUE_600};
     cursor: default;
+    z-index: 3;
   }
 `;
 
