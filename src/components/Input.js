@@ -9,7 +9,7 @@ const Input = styled.input.attrs({
   height: ${theme.SPACING_500};
   line-height: ${theme.SPACING_500};
   padding: 0;
-  font-size: ${theme.FONTSIZE_300};
+  font-size: ${theme.FONTSIZE_200};
   border-radius: 0;
   border: none;
   outline: none;

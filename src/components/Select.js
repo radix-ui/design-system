@@ -13,7 +13,7 @@ const Menu = styled.select`
   line-height: ${theme.SPACING_500};
   font-family: inherit;
   padding: 0;
-  font-size: ${theme.FONTSIZE_300};
+  font-size: ${theme.FONTSIZE_200};
   border-radius: 0;
   border: none;
   outline: none;
