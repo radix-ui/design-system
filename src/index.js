@@ -755,18 +755,26 @@ export default class extends Component {
             </div>
             <div>
               <List>
-                <ListItem>
-                  List item 1
-                </ListItem>
-                <ListItem>
-                  List item 2
-                </ListItem>
-                <ListItem>
-                  List item 3
-                </ListItem>
-                <ListItem>
-                  List item 4
-                </ListItem>
+                <li>
+                  <ListItem highlighted>
+                    <Text size2>Gray</Text>
+                  </ListItem>
+                </li>
+                <li>
+                  <ListItem active>
+                    <Text size2>Orange</Text>
+                  </ListItem>
+                </li>
+                <li>
+                  <ListItem>
+                    <Text size2>Gray</Text>
+                  </ListItem>
+                </li>
+                <li>
+                  <ListItem>
+                    <Text size2>Gray</Text>
+                  </ListItem>
+                </li>
               </List>
             </div>
             <div>
