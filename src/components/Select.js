@@ -4,7 +4,6 @@ import * as theme from './../theme/';
 
 const Wrapper = styled.div`
   position: relative;
-  padding-right: ${theme.SPACING_300};
   box-shadow: inset 0 -1px 0 0 ${theme.GRAY_400};
 `;
 
@@ -17,6 +16,7 @@ const Menu = styled.select`
   padding: 0;
   font-size: ${theme.FONTSIZE_200};
   border-radius: 0;
+  padding-right: ${theme.SPACING_300};
   border: none;
   outline: none;
   width: 100%;
