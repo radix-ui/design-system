@@ -8,6 +8,7 @@ const Wrapper = styled.label`
   flex-grow: 1;
   flex-basis: 0;
   height: ${theme.SPACING_500};
+  min-width: ${theme.SPACING_500};
 
   ${p => p.left && css`
     &:hover {
