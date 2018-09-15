@@ -32,6 +32,7 @@ import Avatar from './components/Avatar';
 import Tooltip from './components/Tooltip';
 import Progress from './components/Progress';
 import Radio from './components/Radio';
+import Checkbox from './components/Checkbox';
 import IndicatorButton from './components/IndicatorButton';
 import Grid from './components/Grid';
 
@@ -62,6 +63,7 @@ export Avatar from './components/Avatar';
 export Tooltip from './components/Tooltip';
 export Progress from './components/Progress';
 export Radio from './components/Radio';
+export Checkbox from './components/Checkbox';
 export IndicatorButton from './components/IndicatorButton';
 export GhostButton from './components/GhostButton';
 export Grid from './components/Grid';
@@ -942,6 +944,13 @@ export default class extends Component {
                   group="whatever" />
                 <Radio
                   group="whatever" />
+              </Flexbox>
+            </div>
+            <div>
+              <Flexbox>
+                <Checkbox
+                  defaultChecked="true"
+                  group="hello" />
               </Flexbox>
             </div>
             <div>
