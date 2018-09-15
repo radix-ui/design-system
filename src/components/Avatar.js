@@ -19,6 +19,7 @@ const Container = styled.div`
   width: ${theme.SPACING_600};
   height: ${theme.SPACING_600};
   user-select: none;
+  vertical-align: middle;
 
   ${props => props.size1 && css`
     width: ${theme.SPACING_400};
