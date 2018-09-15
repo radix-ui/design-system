@@ -724,6 +724,8 @@ export default class extends Component {
             <div>
               <Input
                 placeholder="Type something..."
+                disabled
+                value="45"
               />
             </div>
             <div>

@@ -30,9 +30,20 @@ const Input = styled.input.attrs({
     opacity:  1;
   }
 
-  // &:focus {
-  //   box-shadow: inset 0 -1px 0 0 ${theme.BLUE_500};
-  // }
+  &:focus {
+    box-shadow: inset 0 -1px 0 0 ${theme.BLUE_500};
+  }
+
+  &:read-only {
+    box-shadow: inset 0 -1px 0 0 ${theme.GRAY_300};
+    color: ${theme.GRAY_600};
+  }
+
+  &:disabled {
+    box-shadow: inset 0 -1px 0 0 ${theme.GRAY_300};
+    color: ${theme.GRAY_500};
+    cursor: not-allowed;
+  }
 
   ${p => p.tnum && css`
     font-feature-settings: 'tnum';
