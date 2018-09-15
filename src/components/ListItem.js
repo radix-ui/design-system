@@ -12,10 +12,10 @@ const ListItem = styled.button.attrs({
   line-height: 1;
   min-height: ${theme.SPACING_600};
   outline: none;
-  padding-bottom: ${theme.SPACING_200};
-  padding-left: ${theme.SPACING_400};
-  padding-right: ${theme.SPACING_400};
-  padding-top: ${theme.SPACING_200};
+  padding-bottom: ${theme.SPACING_100};
+  padding-left: ${theme.SPACING_200};
+  padding-right: ${theme.SPACING_200};
+  padding-top: ${theme.SPACING_100};
   text-align: left;
   text-decoration: none;
   user-select: none;
