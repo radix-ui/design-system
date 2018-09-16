@@ -19,6 +19,10 @@ const Input = styled.input`
     color: transparent;
   }
 
+  &:focus + div {
+    box-shadow: inset 0 0 0 1px ${theme.BLUE_500};
+  }
+
   &:checked + div {
     background-color: ${theme.BLUE_500};
     color: white;
@@ -39,6 +43,9 @@ const Dummy = styled.div`
   box-shadow: inset 0 0 0 1px ${theme.GRAY_400};
   &:hover {
     box-shadow: inset 0 0 0 1px ${theme.GRAY_500};
+  }
+  &:focus {
+    box-shadow: inset 0 0 0 1px ${theme.BLUE_500};
   }
 `;
 
