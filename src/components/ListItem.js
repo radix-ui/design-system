@@ -13,8 +13,8 @@ const ListItem = styled.button.attrs({
   min-height: ${theme.SPACING_600};
   outline: none;
   padding-bottom: ${theme.SPACING_100};
-  padding-left: ${theme.SPACING_200};
-  padding-right: ${theme.SPACING_200};
+  padding-left: ${theme.SPACING_300};
+  padding-right: ${theme.SPACING_300};
   padding-top: ${theme.SPACING_100};
   text-align: left;
   text-decoration: none;
@@ -31,7 +31,7 @@ const ListItem = styled.button.attrs({
   }
 
   ${props => props.active && css`
-    background-color: ${theme.BLUE_100};
+    background-color: ${theme.BLUE_200};
     color: ${theme.BLUE_600};
     cursor: default;
     pointer-events: none;

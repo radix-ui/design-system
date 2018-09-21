@@ -45,6 +45,10 @@ const Input = styled.input.attrs({
     cursor: not-allowed;
   }
 
+  ${p => p.ta_center && css`
+    text-align: center;
+  `}
+
   ${p => p.tnum && css`
     font-feature-settings: 'tnum';
   `}

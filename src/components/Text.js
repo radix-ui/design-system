@@ -90,11 +90,16 @@ const Text = styled.span`
   ${p => p.gray500 && css`color: ${theme.GRAY_500};`}
   ${p => p.gray600 && css`color: ${theme.GRAY_600};`}
   ${p => p.gray900 && css`color: ${theme.GRAY_900};`}
+
   ${p => p.left && css`text-align: left;`}
   ${p => p.center && css`text-align: center;`}
   ${p => p.right && css`text-align: right;`}
+
   ${p => p.nowrap && css`white-space: nowrap;`}
+
   ${p => p.tnum && css`font-feature-settings: 'tnum';`}
+
+  ${p => p.us_none && css`user-select: none;`}
 `;
 
 export default Text;

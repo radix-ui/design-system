@@ -5,6 +5,7 @@ import * as theme from './../theme/';
 const Container = styled.div`
   position: relative;
   padding-bottom: 100%;
+  width: 100%;
 
   ${props => props.ratio_169 && css`
     padding-bottom: 56.25%;

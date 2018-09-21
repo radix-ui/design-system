@@ -102,6 +102,12 @@ const Heading = styled.h3`
   ${p => p.left && css`text-align: left;`}
   ${p => p.center && css`text-align: center;`}
   ${p => p.right && css`text-align: right;`}
+
+  ${p => p.nowrap && css`white-space: nowrap;`}
+
+  ${p => p.tnum && css`font-feature-settings: 'tnum';`}
+
+  ${p => p.us_none && css`user-select: none;`}
 `;
 
 Heading.propTypes = {

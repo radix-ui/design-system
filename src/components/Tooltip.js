@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
 const Tooltip = styled.div`
+  flex-grow: 1;
   position: relative;
   display: inline-block;
 
