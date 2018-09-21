@@ -18,6 +18,7 @@ import BackgroundImage from './components/BackgroundImage';
 import Input from './components/Input';
 import LinesButton from './components/LinesButton';
 import GhostButton from './components/GhostButton';
+import CheckboxButton from './components/CheckboxButton';
 import Link from './components/Link';
 import List from './components/List';
 import ListItem from './components/ListItem';
@@ -58,6 +59,7 @@ export Select from './components/Select';
 export Switch from './components/Switch';
 export Text from './components/Text';
 export ToggleButton from './components/ToggleButton';
+export CheckboxButton from './components/CheckboxButton';
 export Code from './components/Code';
 export Avatar from './components/Avatar';
 export Tooltip from './components/Tooltip';
@@ -516,6 +518,26 @@ export default class extends Component {
                   </Box>
                   Bookmark
                 </GhostButton>
+              </Flexbox>
+            </div>
+            <div>
+              <Flexbox>
+                <CheckboxButton
+                  defaultChecked="true"
+                >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  stroke="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{ display: 'block' }}
+                >
+                  <path d="M5 0L0 4L5 8" transform="translate(2.5 3.5)" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M0 0H10" transform="translate(2.5 7.5)" strokeLinecap="round"/>
+                </svg>
+                </CheckboxButton>
               </Flexbox>
             </div>
             <div>
