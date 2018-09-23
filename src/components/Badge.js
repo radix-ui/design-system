@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
+import HoverZone from './HoverZone';
 
 const Badge = styled.span`
   display: inline-flex;

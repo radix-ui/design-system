@@ -37,6 +37,8 @@ import Checkbox from './components/Checkbox';
 import IndicatorButton from './components/IndicatorButton';
 import Grid from './components/Grid';
 import PillTab from './components/PillTab';
+import HoverZone from './components/HoverZone';
+import HoverZonePanel from './components/HoverZonePanel';
 
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
@@ -75,6 +77,8 @@ export BackgroundImage from './components/BackgroundImage';
 export Title from './components/Title';
 export Textarea from './components/Textarea';
 export PillTab from './components/PillTab';
+export HoverZone from './components/HoverZone';
+export HoverZonePanel from './components/HoverZonePanel';
 
 import * as Theme from './theme';
 export { Theme };
@@ -740,6 +744,26 @@ export default class extends Component {
               >
                 Badge
               </Badge>
+            </div>
+            <div>
+              <HoverZone>
+                <HoverZonePanel>
+                  <GhostButton>
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 15 15"
+                      fill="none"
+                      stroke="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{ display: 'block' }}
+                    >
+                      <path d="M5 0L0 4L5 8" transform="translate(2.5 3.5)" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M0 0H10" transform="translate(2.5 7.5)" strokeLinecap="round"/>
+                    </svg>
+                  </GhostButton>
+                </HoverZonePanel>
+              </HoverZone>
             </div>
             <div>
               <Image
