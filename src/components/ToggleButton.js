@@ -71,7 +71,6 @@ const Dummy = styled.div`
   cursor: pointer;
   flex-shrink: 0;
   justify-content: center;
-  line-height: 1;
   outline: none;
   user-select: none;
 

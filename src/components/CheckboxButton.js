@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
 const Wrapper = styled.label`
+  display: block;
   position: relative;
   vertical-align: middle;
   height: ${theme.SPACING_300};

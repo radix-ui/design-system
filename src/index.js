@@ -36,6 +36,7 @@ import Radio from './components/Radio';
 import Checkbox from './components/Checkbox';
 import IndicatorButton from './components/IndicatorButton';
 import Grid from './components/Grid';
+import PillTab from './components/PillTab';
 
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
@@ -73,6 +74,7 @@ export Status from './components/Status';
 export BackgroundImage from './components/BackgroundImage';
 export Title from './components/Title';
 export Textarea from './components/Textarea';
+export PillTab from './components/PillTab';
 
 import * as Theme from './theme';
 export { Theme };
@@ -384,6 +386,17 @@ export default class extends Component {
                   </svg>
                 </ToggleButton>
               </Flexbox>
+            </div>
+            <div>
+              <PillTab left>
+                Theme
+              </PillTab>
+              <PillTab middle active>
+                Editor
+              </PillTab>
+              <PillTab right>
+                Composer
+              </PillTab>
             </div>
             <div>
               <Flexbox
