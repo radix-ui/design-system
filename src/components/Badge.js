@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
 const Badge = styled.span`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   font-family: ${theme.UNTITLEDSANSMEDIUM};
   font-size: ${theme.FONTSIZE_100};
