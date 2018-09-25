@@ -880,9 +880,7 @@ export default class extends Component {
                   data-tooltip="Tooltip content"
                   data-position="top"
                 >
-                  <Button
-                    left
-                  >
+                  <Button>
                     Tooltip
                   </Button>
                 </Tooltip>
@@ -890,9 +888,7 @@ export default class extends Component {
                   data-tooltip="Tooltip content"
                   data-position="right"
                 >
-                  <Button
-                    middle
-                  >
+                  <Button>
                     Tooltip
                   </Button>
                 </Tooltip>
@@ -900,9 +896,7 @@ export default class extends Component {
                   data-tooltip="Tooltip content"
                   data-position="bottom"
                 >
-                  <Button
-                    middle
-                  >
+                  <Button>
                     Tooltip
                   </Button>
                 </Tooltip>
@@ -910,9 +904,7 @@ export default class extends Component {
                   data-tooltip="Tooltip content"
                   data-position="left"
                 >
-                  <Button
-                    right
-                  >
+                  <Button>
                     Tooltip
                   </Button>
                 </Tooltip>

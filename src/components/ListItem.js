@@ -34,6 +34,8 @@ const ListItem = styled.button.attrs({
     background-color: ${theme.BLUE_200};
     color: ${theme.BLUE_600};
     cursor: default;
+    font-family: ${theme.UNTITLEDSANSMEDIUM};
+    font-weight: 500;
     pointer-events: none;
   `}
 

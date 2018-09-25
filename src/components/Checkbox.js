@@ -4,8 +4,8 @@ import * as theme from './../theme/';
 
 const Wrapper = styled.label`
   position: relative;
-  width: ${theme.SPACING_400};
-  height: ${theme.SPACING_400};
+  width: ${theme.SPACING_300};
+  height: ${theme.SPACING_300};
   vertical-align: middle;
   cursor: pointer;
 `;

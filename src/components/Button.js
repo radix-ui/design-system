@@ -117,6 +117,7 @@ const Button = styled.button.attrs({
 
   ${p => p.waiting && css`
     background-color: ${theme.GRAY_200};
+    box-shadow: inset 0 1px 1px 0 rgba(0,0,0,.1), inset 0 0 0 1px ${theme.GRAY_400};
     overflow: hidden;
     color: transparent;
     pointer-events: none;

@@ -51,13 +51,13 @@ const GhostButton = styled.button.attrs({
   }
 
   ${p => p.active && css`
-    background-color: ${theme.GRAY_200};
-    box-shadow: inset 0 1px 0 0 ${theme.GRAY_400};
+    background-color: ${theme.GRAY_300};
+    box-shadow: inset 0 1px 0 0 ${theme.GRAY_500};
     &:hover {
       background-color: ${theme.GRAY_300};
     }
     &:active {
-      box-shadow: inset 0 1px 0 0 ${theme.GRAY_400};
+      box-shadow: inset 0 1px 0 0 ${theme.GRAY_500};
     }
   `}
 

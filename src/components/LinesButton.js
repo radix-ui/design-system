@@ -42,7 +42,7 @@ const LinesButton = styled.button`
     background-color: ${theme.WHITE};
     box-shadow: inset 0 0 0 1px ${theme.BLUE_300};
     transition-property: all;
-    transition-duration: 100ms;
+    transition-duration: 50ms;
     transition-timing-function: ease;
   }
 
@@ -62,9 +62,11 @@ const LinesButton = styled.button`
       transparent 1px,
       transparent 6px
     );
+    pointer-events: none;
   }
 
-  &:hover::before {
+  &:hover::before,
+  &:active::before {
     box-shadow: inset 0 0 0 1px ${theme.BLUE_500};
   }
 
