@@ -11,16 +11,6 @@ import Position from './../utilities/Position';
 import FlexItem from './../utilities/FlexItem';
 
 const Box = styled.div`
-  ${Margin}
-  ${NegativeMargin}
-  ${Padding}
-  ${TextAlign}
-  ${Height}
-  ${Width}
-  ${Overflow}
-  ${Position}
-  ${FlexItem}
-
   ${p => p.white && css` background-color: white; `}
   ${p => p.black && css` background-color: black; `}
 
@@ -58,6 +48,16 @@ const Box = styled.div`
   ${p => p.tablecell && css` display: table-cell; `}
 
   ${p => p.alignmiddle && css` vertical-align: middle; `}
+
+  ${Margin}
+  ${NegativeMargin}
+  ${Padding}
+  ${TextAlign}
+  ${Height}
+  ${Width}
+  ${Overflow}
+  ${Position}
+  ${FlexItem}
 `;
 
 export default Box;

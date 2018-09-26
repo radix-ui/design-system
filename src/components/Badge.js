@@ -4,8 +4,6 @@ import * as theme from './../theme/';
 import Margin from './../utilities/Margin';
 
 const Badge = styled.span`
-  ${Margin}
-
   display: inline-flex;
   align-items: center;
   font-family: ${theme.UNTITLEDSANSMEDIUM};
@@ -51,6 +49,8 @@ const Badge = styled.span`
     box-shadow: inset 0 0 0 1px ${theme.RED_500};
     color: ${theme.RED_500};
   `}
+
+  ${Margin}
 `;
 
 Badge.propTypes = {

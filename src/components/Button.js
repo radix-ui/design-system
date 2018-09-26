@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
+import Margin from './../utilities/Margin';
 
 const Button = styled.button.attrs({
   type: 'button',
@@ -171,6 +172,8 @@ const Button = styled.button.attrs({
       z-index: 3;
     }
   `}
+
+  ${Margin}
 `;
 
 Button.propTypes = {

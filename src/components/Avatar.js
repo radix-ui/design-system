@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
+import Margin from './../utilities/Margin';
 
 const Container = styled.div`
   align-items: center;
@@ -92,6 +93,8 @@ const Container = styled.div`
     margin-left: -4px;
     box-shadow: inset 0 0 0 1px rgba(0,0,0,.05), 0 0 0 2px white;
   `}
+
+  ${Margin}
 `;
 
 const Initial = styled.span`

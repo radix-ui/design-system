@@ -5,10 +5,6 @@ import Leading from './../utilities/Leading';
 import TextAlign from './../utilities/TextAlign';
 
 const Text = styled.span`
-  ${Leading}
-  ${Margin}
-  ${TextAlign}
-
   display: block;
   font-family: 'UntitledSans',apple-system,BlinkMacSystemFont;
 
@@ -222,6 +218,10 @@ const Text = styled.span`
   ${p => p.tnum && css`font-feature-settings: 'tnum';`}
 
   ${p => p.us_none && css`user-select: none;`}
+
+  ${Leading}
+  ${Margin}
+  ${TextAlign}
 `;
 
 export default Text;

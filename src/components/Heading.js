@@ -6,10 +6,6 @@ import Leading from './../utilities/Leading';
 import TextAlign from './../utilities/TextAlign';
 
 const Heading = styled.h3`
-  ${Leading}
-  ${Margin}
-  ${TextAlign}
-
   color: ${theme.GRAY_900};
   margin: 0;
   font-family: 'UntitledSans',apple-system,BlinkMacSystemFont;
@@ -27,7 +23,7 @@ const Heading = styled.h3`
   `}
 
   ${p => p.size3 && css`
-    font-size: ${theme.FONTSIZE_600};
+    font-size: ${theme.FONTSIZE_500};
     letter-spacing: -.012em;
     margin-left: -.075em;
   `}
@@ -64,7 +60,7 @@ const Heading = styled.h3`
     `}
 
     ${p => p.bp1_size3 && css`
-      font-size: ${theme.FONTSIZE_600};
+      font-size: ${theme.FONTSIZE_500};
       letter-spacing: -.012em;
       margin-left: -.075em;
     `}
@@ -102,7 +98,7 @@ const Heading = styled.h3`
     `}
 
     ${p => p.bp2_size3 && css`
-      font-size: ${theme.FONTSIZE_600};
+      font-size: ${theme.FONTSIZE_500};
       letter-spacing: -.012em;
       margin-left: -.075em;
     `}
@@ -140,7 +136,7 @@ const Heading = styled.h3`
     `}
 
     ${p => p.bp3_size3 && css`
-      font-size: ${theme.FONTSIZE_600};
+      font-size: ${theme.FONTSIZE_500};
       letter-spacing: -.012em;
       margin-left: -.075em;
     `}
@@ -178,7 +174,7 @@ const Heading = styled.h3`
     `}
 
     ${p => p.bp4_size3 && css`
-      font-size: ${theme.FONTSIZE_600};
+      font-size: ${theme.FONTSIZE_500};
       letter-spacing: -.012em;
       margin-left: -.075em;
     `}
@@ -219,6 +215,10 @@ const Heading = styled.h3`
   ${p => p.tnum && css`font-feature-settings: 'tnum';`}
 
   ${p => p.us_none && css`user-select: none;`}
+
+  ${Leading}
+  ${Margin}
+  ${TextAlign}
 `;
 
 Heading.propTypes = {

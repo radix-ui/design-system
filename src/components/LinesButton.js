@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
+import Margin from './../utilities/Margin';
 
 const LinesButton = styled.button`
   position: relative;
@@ -126,6 +127,8 @@ const LinesButton = styled.button`
       box-shadow: 0 0 0 1px hsl(348, 70%, 60%);
     }
   `}
+
+  ${Margin}
 `;
 
 export default LinesButton;
