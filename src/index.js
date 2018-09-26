@@ -15,6 +15,7 @@ import Title from './components/Title';
 import Status from './components/Status';
 import Image from './components/Image';
 import BackgroundImage from './components/BackgroundImage';
+import GhostInput from './components/GhostInput';
 import Input from './components/Input';
 import LinesButton from './components/LinesButton';
 import GhostButton from './components/GhostButton';
@@ -79,6 +80,7 @@ export Textarea from './components/Textarea';
 export PillTab from './components/PillTab';
 export HoverZone from './components/HoverZone';
 export HoverZonePanel from './components/HoverZonePanel';
+export GhostInput from './components/GhostInput';
 
 import * as Theme from './theme';
 export { Theme };
@@ -787,6 +789,12 @@ export default class extends Component {
                 placeholder="Type something..."
                 disabled
                 value="45"
+              />
+            </div>
+            <div>
+              <GhostInput
+                placeholder="Type something..."
+                defaultValue="ghost input"
               />
             </div>
             <div>
