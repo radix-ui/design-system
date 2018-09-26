@@ -15,12 +15,12 @@ const Title = styled.h3`
   `}
 
   ${p => p.size2 && css`
-    font-size: ${theme.FONTSIZE_300};
+    font-size: ${theme.FONTSIZE_200};
     letter-spacing: .135em;
   `}
 
   ${p => p.size3 && css`
-    font-size: ${theme.FONTSIZE_500};
+    font-size: ${theme.FONTSIZE_400};
     letter-spacing: .05em;
   `}
 

@@ -1,257 +1,12 @@
-import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 import * as theme from './../theme/';
 
-const Heading = styled.h3`
-  color: ${theme.GRAY_900};
-  margin: 0;
-  font-family: 'UntitledSans',apple-system,BlinkMacSystemFont;
-
-  ${p => p.size1 && css`
-    font-size: ${theme.FONTSIZE_300};
-    letter-spacing: -.0125em;
-    margin-left: -.05em;
-  `}
-
-  ${p => p.size2 && css`
-    font-size: ${theme.FONTSIZE_400};
-    letter-spacing: -.005em;
-    margin-left: -.06em;
-  `}
-
-  ${p => p.size3 && css`
-    font-size: ${theme.FONTSIZE_600};
-    letter-spacing: -.012em;
-    margin-left: -.075em;
-  `}
-
-  ${p => p.size4 && css`
-    font-size: ${theme.FONTSIZE_700};
-    letter-spacing: -.028em;
-    margin-left: -.085em;
-  `}
-
-  ${p => p.size5 && css`
-    font-size: ${theme.FONTSIZE_800};
-    letter-spacing: -.038em;
-    margin-left: -.088em;
-  `}
-
-  ${p => p.size6 && css`
-    font-size: ${theme.FONTSIZE_900};
-    letter-spacing: -.042em;
-    margin-left: -.09em;
-  `}
-
-  @media (min-width: ${theme.BREAKPOINT_100}) {
-    ${p => p.bp1_size1 && css`
-      font-size: ${theme.FONTSIZE_300};
-      letter-spacing: -.0125em;
-      margin-left: -.05em;
-    `}
-
-    ${p => p.bp1_size2 && css`
-      font-size: ${theme.FONTSIZE_400};
-      letter-spacing: -.005em;
-      margin-left: -.06em;
-    `}
-
-    ${p => p.bp1_size3 && css`
-      font-size: ${theme.FONTSIZE_600};
-      letter-spacing: -.012em;
-      margin-left: -.075em;
-    `}
-
-    ${p => p.bp1_size4 && css`
-      font-size: ${theme.FONTSIZE_700};
-      letter-spacing: -.028em;
-      margin-left: -.085em;
-    `}
-
-    ${p => p.bp1_size5 && css`
-      font-size: ${theme.FONTSIZE_800};
-      letter-spacing: -.038em;
-      margin-left: -.088em;
-    `}
-
-    ${p => p.bp1_size6 && css`
-      font-size: ${theme.FONTSIZE_900};
-      letter-spacing: -.042em;
-      margin-left: -.09em;
-    `}
-  }
-
-  @media (min-width: ${theme.BREAKPOINT_200}) {
-    ${p => p.bp2_size1 && css`
-      font-size: ${theme.FONTSIZE_300};
-      letter-spacing: -.0125em;
-      margin-left: -.05em;
-    `}
-
-    ${p => p.bp2_size2 && css`
-      font-size: ${theme.FONTSIZE_400};
-      letter-spacing: -.005em;
-      margin-left: -.06em;
-    `}
-
-    ${p => p.bp2_size3 && css`
-      font-size: ${theme.FONTSIZE_600};
-      letter-spacing: -.012em;
-      margin-left: -.075em;
-    `}
-
-    ${p => p.bp2_size4 && css`
-      font-size: ${theme.FONTSIZE_700};
-      letter-spacing: -.028em;
-      margin-left: -.085em;
-    `}
-
-    ${p => p.bp2_size5 && css`
-      font-size: ${theme.FONTSIZE_800};
-      letter-spacing: -.038em;
-      margin-left: -.088em;
-    `}
-
-    ${p => p.bp2_size6 && css`
-      font-size: ${theme.FONTSIZE_900};
-      letter-spacing: -.042em;
-      margin-left: -.09em;
-    `}
-  }
-
-  @media (min-width: ${theme.BREAKPOINT_300}) {
-    ${p => p.bp3_size1 && css`
-      font-size: ${theme.FONTSIZE_300};
-      letter-spacing: -.0125em;
-      margin-left: -.05em;
-    `}
-
-    ${p => p.bp3_size2 && css`
-      font-size: ${theme.FONTSIZE_400};
-      letter-spacing: -.005em;
-      margin-left: -.06em;
-    `}
-
-    ${p => p.bp3_size3 && css`
-      font-size: ${theme.FONTSIZE_600};
-      letter-spacing: -.012em;
-      margin-left: -.075em;
-    `}
-
-    ${p => p.bp3_size4 && css`
-      font-size: ${theme.FONTSIZE_700};
-      letter-spacing: -.028em;
-      margin-left: -.085em;
-    `}
-
-    ${p => p.bp3_size5 && css`
-      font-size: ${theme.FONTSIZE_800};
-      letter-spacing: -.038em;
-      margin-left: -.088em;
-    `}
-
-    ${p => p.bp3_size6 && css`
-      font-size: ${theme.FONTSIZE_900};
-      letter-spacing: -.042em;
-      margin-left: -.09em;
-    `}
-  }
-
-  @media (min-width: ${theme.BREAKPOINT_400}) {
-    ${p => p.bp4_size1 && css`
-      font-size: ${theme.FONTSIZE_300};
-      letter-spacing: -.0125em;
-      margin-left: -.05em;
-    `}
-
-    ${p => p.bp4_size2 && css`
-      font-size: ${theme.FONTSIZE_400};
-      letter-spacing: -.005em;
-      margin-left: -.06em;
-    `}
-
-    ${p => p.bp4_size3 && css`
-      font-size: ${theme.FONTSIZE_600};
-      letter-spacing: -.012em;
-      margin-left: -.075em;
-    `}
-
-    ${p => p.bp4_size4 && css`
-      font-size: ${theme.FONTSIZE_700};
-      letter-spacing: -.028em;
-      margin-left: -.085em;
-    `}
-
-    ${p => p.bp4_size5 && css`
-      font-size: ${theme.FONTSIZE_800};
-      letter-spacing: -.038em;
-      margin-left: -.088em;
-    `}
-
-    ${p => p.bp4_size6 && css`
-      font-size: ${theme.FONTSIZE_900};
-      letter-spacing: -.042em;
-      margin-left: -.09em;
-    `}
-  }
-
-  ${p => p.lh1 && css`line-height: ${theme.LEADING_100};`}
-  ${p => p.lh2 && css`line-height: ${theme.LEADING_200};`}
-  ${p => p.lh3 && css`line-height: ${theme.LEADING_300};`}
-  ${p => p.lh4 && css`line-height: ${theme.LEADING_400};`}
-  ${p => p.lh5 && css`line-height: ${theme.LEADING_500};`}
-  ${p => p.lh6 && css`line-height: ${theme.LEADING_600};`}
-  ${p => p.lh7 && css`line-height: ${theme.LEADING_700};`}
-  ${p => p.lh8 && css`line-height: ${theme.LEADING_800};`}
-  ${p => p.lh9 && css`line-height: ${theme.LEADING_900};`}
-
-  @media (min-width: ${theme.BREAKPOINT_100}) {
-    ${p => p.bp1_lh1 && css`line-height: ${theme.LEADING_100};`}
-    ${p => p.bp1_lh2 && css`line-height: ${theme.LEADING_200};`}
-    ${p => p.bp1_lh3 && css`line-height: ${theme.LEADING_300};`}
-    ${p => p.bp1_lh4 && css`line-height: ${theme.LEADING_400};`}
-    ${p => p.bp1_lh5 && css`line-height: ${theme.LEADING_500};`}
-    ${p => p.bp1_lh6 && css`line-height: ${theme.LEADING_600};`}
-    ${p => p.bp1_lh7 && css`line-height: ${theme.LEADING_700};`}
-    ${p => p.bp1_lh8 && css`line-height: ${theme.LEADING_800};`}
-    ${p => p.bp1_lh9 && css`line-height: ${theme.LEADING_900};`}
-  }
-
-  @media (min-width: ${theme.BREAKPOINT_200}) {
-    ${p => p.bp2_lh1 && css`line-height: ${theme.LEADING_100};`}
-    ${p => p.bp2_lh2 && css`line-height: ${theme.LEADING_200};`}
-    ${p => p.bp2_lh3 && css`line-height: ${theme.LEADING_300};`}
-    ${p => p.bp2_lh4 && css`line-height: ${theme.LEADING_400};`}
-    ${p => p.bp2_lh5 && css`line-height: ${theme.LEADING_500};`}
-    ${p => p.bp2_lh6 && css`line-height: ${theme.LEADING_600};`}
-    ${p => p.bp2_lh7 && css`line-height: ${theme.LEADING_700};`}
-    ${p => p.bp2_lh8 && css`line-height: ${theme.LEADING_800};`}
-    ${p => p.bp2_lh9 && css`line-height: ${theme.LEADING_900};`}
-  }
-
-  @media (min-width: ${theme.BREAKPOINT_300}) {
-    ${p => p.bp3_lh1 && css`line-height: ${theme.LEADING_100};`}
-    ${p => p.bp3_lh2 && css`line-height: ${theme.LEADING_200};`}
-    ${p => p.bp3_lh3 && css`line-height: ${theme.LEADING_300};`}
-    ${p => p.bp3_lh4 && css`line-height: ${theme.LEADING_400};`}
-    ${p => p.bp3_lh5 && css`line-height: ${theme.LEADING_500};`}
-    ${p => p.bp3_lh6 && css`line-height: ${theme.LEADING_600};`}
-    ${p => p.bp3_lh7 && css`line-height: ${theme.LEADING_700};`}
-    ${p => p.bp3_lh8 && css`line-height: ${theme.LEADING_800};`}
-    ${p => p.bp3_lh9 && css`line-height: ${theme.LEADING_900};`}
-  }
-
-  @media (min-width: ${theme.BREAKPOINT_400}) {
-    ${p => p.bp4_lh1 && css`line-height: ${theme.LEADING_100};`}
-    ${p => p.bp4_lh2 && css`line-height: ${theme.LEADING_200};`}
-    ${p => p.bp4_lh3 && css`line-height: ${theme.LEADING_300};`}
-    ${p => p.bp4_lh4 && css`line-height: ${theme.LEADING_400};`}
-    ${p => p.bp4_lh5 && css`line-height: ${theme.LEADING_500};`}
-    ${p => p.bp4_lh6 && css`line-height: ${theme.LEADING_600};`}
-    ${p => p.bp4_lh7 && css`line-height: ${theme.LEADING_700};`}
-    ${p => p.bp4_lh8 && css`line-height: ${theme.LEADING_800};`}
-    ${p => p.bp4_lh9 && css`line-height: ${theme.LEADING_900};`}
-  }
+const Margin = css`
+  ${p => p.m0 && css` margin: 0; `}
+  ${p => p.mt0 && css` margin-top: 0; `}
+  ${p => p.mr0 && css` margin-right: 0; `}
+  ${p => p.mb0 && css` margin-bottom: 0; `}
+  ${p => p.ml0 && css` margin-left: 0; `}
 
   ${p => p.m1 && css` margin: ${theme.SPACING_100}; `}
   ${p => p.mt1 && css` margin-top: ${theme.SPACING_100}; `}
@@ -308,6 +63,12 @@ const Heading = styled.h3`
   ${p => p.ml9 && css` margin-left: ${theme.SPACING_900}; `}
 
   @media (min-width: ${theme.BREAKPOINT_100}) {
+    ${p => p.bp1_m0 && css` margin: 0; `}
+    ${p => p.bp1_mt0 && css` margin-top: 0; `}
+    ${p => p.bp1_mr0 && css` margin-right: 0; `}
+    ${p => p.bp1_mb0 && css` margin-bottom: 0; `}
+    ${p => p.bp1_ml0 && css` margin-left: 0; `}
+
     ${p => p.bp1_m1 && css` margin: ${theme.SPACING_100}; `}
     ${p => p.bp1_mt1 && css` margin-top: ${theme.SPACING_100}; `}
     ${p => p.bp1_mr1 && css` margin-right: ${theme.SPACING_100}; `}
@@ -364,6 +125,12 @@ const Heading = styled.h3`
   }
 
   @media (min-width: ${theme.BREAKPOINT_200}) {
+    ${p => p.bp2_m0 && css` margin: 0; `}
+    ${p => p.bp2_mt0 && css` margin-top: 0; `}
+    ${p => p.bp2_mr0 && css` margin-right: 0; `}
+    ${p => p.bp2_mb0 && css` margin-bottom: 0; `}
+    ${p => p.bp2_ml0 && css` margin-left: 0; `}
+
     ${p => p.bp2_m1 && css` margin: ${theme.SPACING_100}; `}
     ${p => p.bp2_mt1 && css` margin-top: ${theme.SPACING_100}; `}
     ${p => p.bp2_mr1 && css` margin-right: ${theme.SPACING_100}; `}
@@ -420,6 +187,12 @@ const Heading = styled.h3`
   }
 
   @media (min-width: ${theme.BREAKPOINT_300}) {
+    ${p => p.bp3_m0 && css` margin: 0; `}
+    ${p => p.bp3_mt0 && css` margin-top: 0; `}
+    ${p => p.bp3_mr0 && css` margin-right: 0; `}
+    ${p => p.bp3_mb0 && css` margin-bottom: 0; `}
+    ${p => p.bp3_ml0 && css` margin-left: 0; `}
+
     ${p => p.bp3_m1 && css` margin: ${theme.SPACING_100}; `}
     ${p => p.bp3_mt1 && css` margin-top: ${theme.SPACING_100}; `}
     ${p => p.bp3_mr1 && css` margin-right: ${theme.SPACING_100}; `}
@@ -476,6 +249,12 @@ const Heading = styled.h3`
   }
 
   @media (min-width: ${theme.BREAKPOINT_400}) {
+    ${p => p.bp4_m0 && css` margin: 0; `}
+    ${p => p.bp4_mt0 && css` margin-top: 0; `}
+    ${p => p.bp4_mr0 && css` margin-right: 0; `}
+    ${p => p.bp4_mb0 && css` margin-bottom: 0; `}
+    ${p => p.bp4_ml0 && css` margin-left: 0; `}
+
     ${p => p.bp4_m1 && css` margin: ${theme.SPACING_100}; `}
     ${p => p.bp4_mt1 && css` margin-top: ${theme.SPACING_100}; `}
     ${p => p.bp4_mr1 && css` margin-right: ${theme.SPACING_100}; `}
@@ -530,58 +309,6 @@ const Heading = styled.h3`
     ${p => p.bp4_mb9 && css` margin-bottom: ${theme.SPACING_900}; `}
     ${p => p.bp4_ml9 && css` margin-left: ${theme.SPACING_900}; `}
   }
-
-  ${p => p.white && css`color: ${theme.WHITE};`}
-  ${p => p.black && css`color: ${theme.BLACK};`}
-
-  ${p => p.gray500 && css`color: ${theme.GRAY_500};`}
-  ${p => p.gray600 && css`color: ${theme.GRAY_600};`}
-  ${p => p.gray900 && css`color: ${theme.GRAY_900};`}
-
-  ${p => p.left && css`text-align: left;`}
-  ${p => p.center && css`text-align: center;`}
-  ${p => p.right && css`text-align: right;`}
-
-  @media (min-width: ${theme.BREAKPOINT_100}) {
-    ${p => p.bp1_left && css`text-align: left;`}
-    ${p => p.bp1_center && css`text-align: center;`}
-    ${p => p.bp1_right && css`text-align: right;`}
-  }
-
-  @media (min-width: ${theme.BREAKPOINT_200}) {
-    ${p => p.bp2_left && css`text-align: left;`}
-    ${p => p.bp2_center && css`text-align: center;`}
-    ${p => p.bp2_right && css`text-align: right;`}
-  }
-
-  @media (min-width: ${theme.BREAKPOINT_300}) {
-    ${p => p.bp3_left && css`text-align: left;`}
-    ${p => p.bp3_center && css`text-align: center;`}
-    ${p => p.bp3_right && css`text-align: right;`}
-  }
-
-  @media (min-width: ${theme.BREAKPOINT_400}) {
-    ${p => p.bp4_left && css`text-align: left;`}
-    ${p => p.bp4_center && css`text-align: center;`}
-    ${p => p.bp4_right && css`text-align: right;`}
-  }
-
-  ${p => p.nowrap && css`white-space: nowrap;`}
-
-  ${p => p.tnum && css`font-feature-settings: 'tnum';`}
-
-  ${p => p.us_none && css`user-select: none;`}
 `;
 
-Heading.propTypes = {
-  mode: PropTypes.oneOf([
-    'size1',
-    'size2',
-    'size3',
-    'size4',
-    'size5',
-    'size6'
-  ])
-}
-
-export default Heading;
+export default Margin;
