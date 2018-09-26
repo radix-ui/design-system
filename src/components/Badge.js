@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
-import HoverZone from './HoverZone';
+import Margin from './../utilities/Margin';
 
 const Badge = styled.span`
+  ${Margin}
+
   display: inline-flex;
   align-items: center;
   font-family: ${theme.UNTITLEDSANSMEDIUM};
