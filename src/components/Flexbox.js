@@ -7,6 +7,8 @@ const Flexbox = Box.extend`
 
   ${p => p.row && css` flex-direction: row `}
   ${p => p.column && css` flex-direction: column `}
+  ${p => p.row_reverse && css` flex-direction: row-reverse `}
+  ${p => p.column_reverse && css` flex-direction: column-reverse `}
 
   ${p => p.wrap && css` flex-wrap: wrap `}
 
@@ -25,6 +27,8 @@ const Flexbox = Box.extend`
   @media (min-width: ${theme.BREAKPOINT_100}) {
     ${p => p.bp1_row && css` flex-direction: row `}
     ${p => p.bp1_column && css` flex-direction: column `}
+    ${p => p.bp1_row_reverse && css` flex-direction: row-reverse `}
+    ${p => p.bp1_column_reverse && css` flex-direction: column-reverse `}
 
     ${p => p.bp1_wrap && css` flex-wrap: wrap `}
 
@@ -44,6 +48,8 @@ const Flexbox = Box.extend`
   @media (min-width: ${theme.BREAKPOINT_200}) {
     ${p => p.bp2_row && css` flex-direction: row `}
     ${p => p.bp2_column && css` flex-direction: column `}
+    ${p => p.bp2_row_reverse && css` flex-direction: row-reverse `}
+    ${p => p.bp2_column_reverse && css` flex-direction: column-reverse `}
 
     ${p => p.bp2_wrap && css` flex-wrap: wrap `}
 
@@ -63,6 +69,8 @@ const Flexbox = Box.extend`
   @media (min-width: ${theme.BREAKPOINT_300}) {
     ${p => p.bp3_row && css` flex-direction: row `}
     ${p => p.bp3_column && css` flex-direction: column `}
+    ${p => p.bp3_row_reverse && css` flex-direction: row-reverse `}
+    ${p => p.bp3_column_reverse && css` flex-direction: column-reverse `}
 
     ${p => p.bp3_wrap && css` flex-wrap: wrap `}
 
@@ -82,6 +90,8 @@ const Flexbox = Box.extend`
   @media (min-width: ${theme.BREAKPOINT_400}) {
     ${p => p.bp4_row && css` flex-direction: row `}
     ${p => p.bp4_column && css` flex-direction: column `}
+    ${p => p.bp4_row_reverse && css` flex-direction: row-reverse `}
+    ${p => p.bp4_column_reverse && css` flex-direction: column-reverse `}
 
     ${p => p.bp4_wrap && css` flex-wrap: wrap `}
 

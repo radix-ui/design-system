@@ -4,12 +4,12 @@ import * as theme from './../theme/';
 
 const Wrapper = styled.label`
   display: block;
-  position: relative;
-  vertical-align: middle;
-  flex-grow: 1;
   flex-basis: 0;
+  flex-grow: 1;
   height: ${theme.SPACING_500};
   min-width: ${theme.SPACING_500};
+  position: relative;
+  vertical-align: middle;
 
   ${p => p.left && css`
     &:hover {

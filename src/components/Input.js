@@ -5,15 +5,15 @@ const Input = styled.input.attrs({
   type: 'text',
 })`
   background-color: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: inset 0 -1px 0 0 ${theme.GRAY_400};
   font-family: inherit;
+  font-size: ${theme.FONTSIZE_200};
   height: ${theme.SPACING_500};
   line-height: ${theme.SPACING_500};
-  padding: 0;
-  font-size: ${theme.FONTSIZE_200};
-  border-radius: 0;
-  border: none;
   outline: none;
-  box-shadow: inset 0 -1px 0 0 ${theme.GRAY_400};
+  padding: 0;
   vertical-align: middle;
   width: 100%;
 

@@ -4,18 +4,18 @@ import * as theme from './../theme/';
 
 const Section = styled.section`
   ${props => props.size1 && css`
-    padding-top: ${theme.SPACING_400};
     padding-bottom: ${theme.SPACING_400};
+    padding-top: ${theme.SPACING_400};
   `}
 
   ${props => props.size2 && css`
-    padding-top: ${theme.SPACING_600};
     padding-bottom: ${theme.SPACING_600};
+    padding-top: ${theme.SPACING_600};
   `}
 
   ${props => props.size3 && css`
-    padding-top: ${theme.SPACING_900};
     padding-bottom: ${theme.SPACING_900};
+    padding-top: ${theme.SPACING_900};
   `}
 
   ${props => props.expanded && css`

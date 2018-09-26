@@ -4,24 +4,24 @@ import * as theme from './../theme/';
 import Margin from './../utilities/Margin';
 
 const Badge = styled.span`
-  display: inline-flex;
   align-items: center;
+  background-color: transparent;
+  border-radius: 9999px;
+  display: inline-flex;
   font-family: ${theme.UNTITLEDSANSMEDIUM};
   font-size: ${theme.FONTSIZE_100};
   font-weight: 500;
   height: ${theme.SPACING_300};
+  letter-spacing: .134em;
   padding: 0 ${theme.SPACING_200};
   text-transform: uppercase;
-  background-color: transparent;
-  border-radius: 9999px;
-  letter-spacing: .134em;
-  white-space: nowrap;
   user-select: none;
   vertical-align: middle;
+  white-space: nowrap;
 
   ${props => props.size2 && css`
-    font-size: ${theme.FONTSIZE_200};
     height: ${theme.SPACING_400};
+    font-size: ${theme.FONTSIZE_200};
     padding: 0 ${theme.SPACING_300};
   `}
 

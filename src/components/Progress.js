@@ -5,9 +5,9 @@ import * as theme from './../theme/';
 
 const Outer = styled.div`
   background-color: ${theme.GRAY_300};
-  width: 100%;
   border-radius: 9999px;
   overflow: hidden;
+  width: 100%;
 
   ${p => p.size1 && css`
     height: ${theme.SPACING_100};
@@ -24,10 +24,10 @@ const Outer = styled.div`
 
 const Inner = styled.div`
   background-color: ${theme.GRAY_400};
+  height: 100%;
   transition-property: width;
   transition-duration: 300ms;
   transition-timing-function: ease;
-  height: 100%;
 
   @keyframes stripes {
     100% {

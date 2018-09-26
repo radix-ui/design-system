@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 import Margin from './../utilities/Margin';
+import NegativeMargin from './../utilities/NegativeMargin';
 import Leading from './../utilities/Leading';
 import TextAlign from './../utilities/TextAlign';
 
@@ -221,6 +222,7 @@ const Text = styled.span`
 
   ${Leading}
   ${Margin}
+  ${NegativeMargin}
   ${TextAlign}
 `;
 

@@ -2,13 +2,14 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 import Margin from './../utilities/Margin';
+import NegativeMargin from './../utilities/NegativeMargin';
 import Leading from './../utilities/Leading';
 import TextAlign from './../utilities/TextAlign';
 
 const Heading = styled.h3`
   color: ${theme.GRAY_900};
-  margin: 0;
   font-family: 'UntitledSans',apple-system,BlinkMacSystemFont;
+  margin: 0;
 
   ${p => p.size1 && css`
     font-size: ${theme.FONTSIZE_300};
@@ -218,6 +219,7 @@ const Heading = styled.h3`
 
   ${Leading}
   ${Margin}
+  ${NegativeMargin}
   ${TextAlign}
 `;
 
