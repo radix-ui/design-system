@@ -1,8 +1,8 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 import Box from './Box.js';
 
-const Flexbox = Box.extend`
+const Flexbox = styled(Box)`
   display: flex;
 
   ${p => p.row && css` flex-direction: row `}

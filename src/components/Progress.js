@@ -1,7 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import * as theme from './../theme/';
+
+const animation = keyframes`
+  100% {
+    transform: translateX(${theme.SPACING_300});
+  }
+`
 
 const Outer = styled.div`
   background-color: ${theme.GRAY_300};
@@ -29,12 +35,6 @@ const Inner = styled.div`
   transition-duration: 300ms;
   transition-timing-function: ease;
 
-  @keyframes stripes {
-    100% {
-      transform: translateX(${theme.SPACING_300});
-    }
-  }
-
   ${p => p.blue && css`
     position: relative;
     background-color: ${theme.BLUE_500};
@@ -55,7 +55,7 @@ const Inner = styled.div`
         transparent 66%
       );
       background-size: ${theme.SPACING_300} ${theme.SPACING_200};
-      animation: stripes 500ms linear infinite;
+      animation: ${animation} 500ms linear infinite;
     }
   `}
 `;

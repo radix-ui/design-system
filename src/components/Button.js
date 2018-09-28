@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import * as theme from './../theme/';
 import Margin from './../utilities/Margin';
+
+const stripesAnimation = keyframes`
+  100% {
+    transform: translateX(${theme.SPACING_800});
+  }
+`
 
 const Button = styled.button.attrs({
   type: 'button',
@@ -110,12 +116,6 @@ const Button = styled.button.attrs({
     cursor: not-allowed;
   }
 
-  @keyframes stripes {
-    100% {
-      transform: translateX(${theme.SPACING_800});
-    }
-  }
-
   ${p => p.waiting && css`
     background-color: ${theme.GRAY_200};
     box-shadow: inset 0 1px 1px 0 rgba(0,0,0,.1), inset 0 0 0 1px ${theme.GRAY_400};
@@ -137,7 +137,7 @@ const Button = styled.button.attrs({
         transparent 66%
       );
       background-size: ${theme.SPACING_800} ${theme.SPACING_600};
-      animation: stripes 500ms linear infinite;
+      animation: ${stripesAnimation} 500ms linear infinite;
     }
   `}
 

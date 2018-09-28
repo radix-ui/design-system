@@ -19,13 +19,13 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "styled-components": "^3.3.3"
+    "styled-components": "^4.0.0-beta.9"
   },
   "peerDependencies": {
     "react": "16.x"
   },
   "devDependencies": {
-    "nwb": "0.21.x",
+    "nwb": "^0.23.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
