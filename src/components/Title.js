@@ -13,17 +13,17 @@ const Title = styled.h3`
   text-transform: uppercase;
 
   ${p => p.size1 && css`
-    font-size: ${theme.FONTSIZE_100};
-    letter-spacing: .135em;
-  `}
-
-  ${p => p.size2 && css`
     font-size: ${theme.FONTSIZE_200};
     letter-spacing: .135em;
   `}
 
+  ${p => p.size2 && css`
+    font-size: ${theme.FONTSIZE_300};
+    letter-spacing: .135em;
+  `}
+
   ${p => p.size3 && css`
-    font-size: ${theme.FONTSIZE_400};
+    font-size: ${theme.FONTSIZE_500};
     letter-spacing: .05em;
   `}
 

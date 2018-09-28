@@ -6,7 +6,7 @@ const PillTab = styled.a`
   align-items: center;
   display: inline-flex;
   font-family: ${theme.UNTITLEDSANSMEDIUM};
-  font-size: ${theme.FONTSIZE_200};
+  font-size: ${theme.FONTSIZE_300};
   font-weight: 500;
   line-height: 1;
   white-space: nowrap;

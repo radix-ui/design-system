@@ -9,7 +9,7 @@ const LinesButton = styled.button`
   justify-content: center;
   appearance: none;
   user-select: none;
-  font-family: 'UntitledSans-Medium';
+  font-family: ${theme.UNTITLEDSANSMEDIUM};
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
@@ -20,10 +20,9 @@ const LinesButton = styled.button`
   transition-property: all;
   transition-duration: 100ms;
   transition-timing-function: ease;
-
   z-index: 0;
   border-radius: 0;
-  font-size: ${theme.FONTSIZE_300};
+  font-size: ${theme.FONTSIZE_400};
   height: ${theme.SPACING_700};
   min-width: ${theme.SPACING_600};
   line-height: ${theme.SPACING_600};

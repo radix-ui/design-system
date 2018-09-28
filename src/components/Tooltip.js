@@ -34,7 +34,7 @@ const Tooltip = styled.div`
     background-color: ${theme.GRAY_900};
     color: #fff;
     padding: ${theme.SPACING_100};
-    font-size: ${theme.FONTSIZE_200};
+    font-size: ${theme.FONTSIZE_300};
     border-radius: ${theme.BORDERRADIUS_100};
     z-index: 99;
     opacity: 0;

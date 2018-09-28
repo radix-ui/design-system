@@ -7,7 +7,7 @@ const Textarea = styled.textarea`
   height: ${theme.SPACING_500};
   line-height: ${theme.SPACING_500};
   padding: 0;
-  font-size: ${theme.FONTSIZE_200};
+  font-size: ${theme.FONTSIZE_300};
   border-radius: 0;
   border: none;
   outline: none;

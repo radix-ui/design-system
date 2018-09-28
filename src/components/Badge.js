@@ -20,7 +20,7 @@ const Badge = styled.span`
   white-space: nowrap;
 
   ${props => props.size2 && css`
-    height: ${theme.SPACING_400};
+    height: ${theme.SPACING_500};
     font-size: ${theme.FONTSIZE_200};
     padding: 0 ${theme.SPACING_300};
   `}

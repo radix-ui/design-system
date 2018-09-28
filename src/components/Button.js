@@ -24,7 +24,7 @@ const Button = styled.button.attrs({
   display: inline-flex;
   flex-shrink: 0;
   font-family: ${theme.UNTITLEDSANSMEDIUM};
-  font-size: ${theme.FONTSIZE_200};
+  font-size: ${theme.FONTSIZE_300};
   font-weight: 500;
   height: ${theme.SPACING_500};
   justify-content: center;
@@ -50,7 +50,7 @@ const Button = styled.button.attrs({
   }
 
   ${p => p.size2 && css`
-    font-size: ${theme.FONTSIZE_300};
+    font-size: ${theme.FONTSIZE_400};
     height: ${theme.SPACING_600};
     min-width: ${theme.SPACING_600};
     padding: 0 ${theme.SPACING_300};

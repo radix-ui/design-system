@@ -648,25 +648,25 @@ export default class extends Component {
               </Flexbox>
             </div>
             <div>
-              <Text size8>
+              <Text size8 mb3>
                 Text
               </Text>
-              <Text size7>
+              <Text size7 mb3>
                 Text
               </Text>
-              <Text size6>
+              <Text size6 mb3>
                 Text
               </Text>
-              <Text size5>
+              <Text size5 mb3>
                 Text
               </Text>
-              <Text size4>
+              <Text size4 mb3>
                 Text
               </Text>
-              <Text size3>
+              <Text size3 mb3>
                 Text
               </Text>
-              <Text size2>
+              <Text size2 mb3>
                 Text
               </Text>
               <Text size1>
@@ -674,19 +674,19 @@ export default class extends Component {
               </Text>
             </div>
             <div>
-              <Heading size6>
+              <Heading size6 mb3>
                 Heading
               </Heading>
-              <Heading size5>
+              <Heading size5 mb3>
                 Heading
               </Heading>
-              <Heading size4>
+              <Heading size4 mb3>
                 Heading
               </Heading>
-              <Heading size3>
+              <Heading size3 mb3>
                 Heading
               </Heading>
-              <Heading size2>
+              <Heading size2 mb3>
                 Heading
               </Heading>
               <Heading size1>
@@ -794,7 +794,7 @@ export default class extends Component {
             <div>
               <GhostInput
                 placeholder="Type something..."
-                defaultValue="ghost input"
+                defaultValue="Ghost input"
               />
             </div>
             <div>
@@ -828,29 +828,29 @@ export default class extends Component {
               <List>
                 <li>
                   <ListItem highlighted>
-                    <Text size2>Gray</Text>
+                    <Text size3>Gray</Text>
                   </ListItem>
                 </li>
                 <li>
                   <ListItem active>
-                    <Text size2>Orange</Text>
+                    <Text size3>Orange</Text>
                   </ListItem>
                 </li>
                 <li>
                   <ListItem>
-                    <Text size2>Gray</Text>
+                    <Text size3>Gray</Text>
                   </ListItem>
                 </li>
                 <li>
                   <ListItem>
-                    <Text size2>Gray</Text>
+                    <Text size3>Gray</Text>
                   </ListItem>
                 </li>
               </List>
             </div>
             <div>
               <Text
-                size3
+                size4
                 lh3
               >
                 This really long paragraph text has a <Code>piece of code</Code> right in the middle of it. The reason the parapgraph is so long is
@@ -980,7 +980,7 @@ export default class extends Component {
                   fg1
                 >
                   <Text
-                    size1
+                    size2
                     gray600
                   >
                     Uploading 1 / 10
@@ -988,7 +988,7 @@ export default class extends Component {
                 </Box>
                 <Box>
                   <Text
-                    size1
+                    size2
                     tnum
                   >
                     75%

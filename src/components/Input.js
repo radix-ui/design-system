@@ -9,7 +9,7 @@ const Input = styled.input.attrs({
   border-radius: 0;
   box-shadow: inset 0 -1px 0 0 ${theme.GRAY_400};
   font-family: inherit;
-  font-size: ${theme.FONTSIZE_200};
+  font-size: ${theme.FONTSIZE_300};
   height: ${theme.SPACING_500};
   line-height: ${theme.SPACING_500};
   outline: none;

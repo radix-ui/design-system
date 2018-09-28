@@ -12,189 +12,189 @@ const Heading = styled.h3`
   margin: 0;
 
   ${p => p.size1 && css`
-    font-size: ${theme.FONTSIZE_300};
+    font-size: ${theme.FONTSIZE_400};
     letter-spacing: -.0125em;
     margin-left: -.05em;
   `}
 
   ${p => p.size2 && css`
-    font-size: ${theme.FONTSIZE_400};
+    font-size: ${theme.FONTSIZE_600};
     letter-spacing: -.005em;
     margin-left: -.06em;
   `}
 
   ${p => p.size3 && css`
-    font-size: ${theme.FONTSIZE_500};
+    font-size: ${theme.FONTSIZE_800};
     letter-spacing: -.012em;
     margin-left: -.075em;
   `}
 
   ${p => p.size4 && css`
-    font-size: ${theme.FONTSIZE_700};
+    font-size: ${theme.FONTSIZE_900};
     letter-spacing: -.028em;
     margin-left: -.085em;
   `}
 
   ${p => p.size5 && css`
-    font-size: ${theme.FONTSIZE_800};
-    letter-spacing: -.038em;
+    font-size: ${theme.FONTSIZE_1000};
+    letter-spacing: -.042em;
     margin-left: -.088em;
   `}
 
   ${p => p.size6 && css`
-    font-size: ${theme.FONTSIZE_900};
-    letter-spacing: -.042em;
+    font-size: ${theme.FONTSIZE_1100};
+    letter-spacing: -.052em;
     margin-left: -.09em;
   `}
 
   @media (min-width: ${theme.BREAKPOINT_100}) {
     ${p => p.bp1_size1 && css`
-      font-size: ${theme.FONTSIZE_300};
+      font-size: ${theme.FONTSIZE_400};
       letter-spacing: -.0125em;
       margin-left: -.05em;
     `}
 
     ${p => p.bp1_size2 && css`
-      font-size: ${theme.FONTSIZE_400};
+      font-size: ${theme.FONTSIZE_600};
       letter-spacing: -.005em;
       margin-left: -.06em;
     `}
 
     ${p => p.bp1_size3 && css`
-      font-size: ${theme.FONTSIZE_500};
+      font-size: ${theme.FONTSIZE_800};
       letter-spacing: -.012em;
       margin-left: -.075em;
     `}
 
     ${p => p.bp1_size4 && css`
-      font-size: ${theme.FONTSIZE_700};
+      font-size: ${theme.FONTSIZE_900};
       letter-spacing: -.028em;
       margin-left: -.085em;
     `}
 
     ${p => p.bp1_size5 && css`
-      font-size: ${theme.FONTSIZE_800};
-      letter-spacing: -.038em;
+      font-size: ${theme.FONTSIZE_1000};
+      letter-spacing: -.042em;
       margin-left: -.088em;
     `}
 
     ${p => p.bp1_size6 && css`
-      font-size: ${theme.FONTSIZE_900};
-      letter-spacing: -.042em;
+      font-size: ${theme.FONTSIZE_1100};
+      letter-spacing: -.052em;
       margin-left: -.09em;
     `}
   }
 
   @media (min-width: ${theme.BREAKPOINT_200}) {
     ${p => p.bp2_size1 && css`
-      font-size: ${theme.FONTSIZE_300};
+      font-size: ${theme.FONTSIZE_400};
       letter-spacing: -.0125em;
       margin-left: -.05em;
     `}
 
     ${p => p.bp2_size2 && css`
-      font-size: ${theme.FONTSIZE_400};
+      font-size: ${theme.FONTSIZE_600};
       letter-spacing: -.005em;
       margin-left: -.06em;
     `}
 
     ${p => p.bp2_size3 && css`
-      font-size: ${theme.FONTSIZE_500};
+      font-size: ${theme.FONTSIZE_800};
       letter-spacing: -.012em;
       margin-left: -.075em;
     `}
 
     ${p => p.bp2_size4 && css`
-      font-size: ${theme.FONTSIZE_700};
+      font-size: ${theme.FONTSIZE_900};
       letter-spacing: -.028em;
       margin-left: -.085em;
     `}
 
     ${p => p.bp2_size5 && css`
-      font-size: ${theme.FONTSIZE_800};
-      letter-spacing: -.038em;
+      font-size: ${theme.FONTSIZE_1000};
+      letter-spacing: -.042em;
       margin-left: -.088em;
     `}
 
     ${p => p.bp2_size6 && css`
-      font-size: ${theme.FONTSIZE_900};
-      letter-spacing: -.042em;
+      font-size: ${theme.FONTSIZE_1100};
+      letter-spacing: -.052em;
       margin-left: -.09em;
     `}
   }
 
   @media (min-width: ${theme.BREAKPOINT_300}) {
     ${p => p.bp3_size1 && css`
-      font-size: ${theme.FONTSIZE_300};
+      font-size: ${theme.FONTSIZE_400};
       letter-spacing: -.0125em;
       margin-left: -.05em;
     `}
 
     ${p => p.bp3_size2 && css`
-      font-size: ${theme.FONTSIZE_400};
+      font-size: ${theme.FONTSIZE_600};
       letter-spacing: -.005em;
       margin-left: -.06em;
     `}
 
     ${p => p.bp3_size3 && css`
-      font-size: ${theme.FONTSIZE_500};
+      font-size: ${theme.FONTSIZE_800};
       letter-spacing: -.012em;
       margin-left: -.075em;
     `}
 
     ${p => p.bp3_size4 && css`
-      font-size: ${theme.FONTSIZE_700};
+      font-size: ${theme.FONTSIZE_900};
       letter-spacing: -.028em;
       margin-left: -.085em;
     `}
 
     ${p => p.bp3_size5 && css`
-      font-size: ${theme.FONTSIZE_800};
-      letter-spacing: -.038em;
+      font-size: ${theme.FONTSIZE_1000};
+      letter-spacing: -.042em;
       margin-left: -.088em;
     `}
 
     ${p => p.bp3_size6 && css`
-      font-size: ${theme.FONTSIZE_900};
-      letter-spacing: -.042em;
+      font-size: ${theme.FONTSIZE_1100};
+      letter-spacing: -.052em;
       margin-left: -.09em;
     `}
   }
 
   @media (min-width: ${theme.BREAKPOINT_400}) {
     ${p => p.bp4_size1 && css`
-      font-size: ${theme.FONTSIZE_300};
+      font-size: ${theme.FONTSIZE_400};
       letter-spacing: -.0125em;
       margin-left: -.05em;
     `}
 
     ${p => p.bp4_size2 && css`
-      font-size: ${theme.FONTSIZE_400};
+      font-size: ${theme.FONTSIZE_600};
       letter-spacing: -.005em;
       margin-left: -.06em;
     `}
 
     ${p => p.bp4_size3 && css`
-      font-size: ${theme.FONTSIZE_500};
+      font-size: ${theme.FONTSIZE_800};
       letter-spacing: -.012em;
       margin-left: -.075em;
     `}
 
     ${p => p.bp4_size4 && css`
-      font-size: ${theme.FONTSIZE_700};
+      font-size: ${theme.FONTSIZE_900};
       letter-spacing: -.028em;
       margin-left: -.085em;
     `}
 
     ${p => p.bp4_size5 && css`
-      font-size: ${theme.FONTSIZE_800};
-      letter-spacing: -.038em;
+      font-size: ${theme.FONTSIZE_1000};
+      letter-spacing: -.042em;
       margin-left: -.088em;
     `}
 
     ${p => p.bp4_size6 && css`
-      font-size: ${theme.FONTSIZE_900};
-      letter-spacing: -.042em;
+      font-size: ${theme.FONTSIZE_1100};
+      letter-spacing: -.052em;
       margin-left: -.09em;
     `}
   }
