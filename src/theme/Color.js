@@ -17,10 +17,10 @@ export const GRAY_200 = 'hsl(208, 28%, 97%)';
 export const GRAY_300 = 'hsl(208, 24%, 93%)';
 export const GRAY_400 = 'hsl(208, 20%, 86%)';
 export const GRAY_500 = 'hsl(208, 16%, 76%)';
-export const GRAY_600 = 'hsl(208, 12%, 50%)';
-export const GRAY_700 = 'hsl(208, 16%, 18%)';
-export const GRAY_800 = 'hsl(208, 20%, 13%)';
-export const GRAY_900 = 'hsl(208, 24%, 10%)';
+export const GRAY_600 = 'hsl(208, 12%, 46%)';
+export const GRAY_700 = 'hsl(208, 16%, 15%)';
+export const GRAY_800 = 'hsl(208, 20%, 10%)';
+export const GRAY_900 = 'hsl(208, 24%, 7%)';
 
 export const BLUE_100 = 'hsl(208, 99%, 99%)';
 export const BLUE_200 = 'hsl(208, 96%, 97%)';
