@@ -22,6 +22,90 @@ const Section = styled.section`
     height: 100vh;
   `}
 
+  @media (min-width: ${theme.BREAKPOINT_100}) {
+    ${props => props.bp1_size1 && css`
+      padding-bottom: ${theme.SPACING_400};
+      padding-top: ${theme.SPACING_400};
+    `}
+
+    ${props => props.bp1_size2 && css`
+      padding-bottom: ${theme.SPACING_600};
+      padding-top: ${theme.SPACING_600};
+    `}
+
+    ${props => props.bp1_size3 && css`
+      padding-bottom: ${theme.SPACING_900};
+      padding-top: ${theme.SPACING_900};
+    `}
+
+    ${props => props.bp1_expanded && css`
+      height: 100vh;
+    `}
+  }
+
+  @media (min-width: ${theme.BREAKPOINT_200}) {
+    ${props => props.bp2_size1 && css`
+      padding-bottom: ${theme.SPACING_400};
+      padding-top: ${theme.SPACING_400};
+    `}
+
+    ${props => props.bp2_size2 && css`
+      padding-bottom: ${theme.SPACING_600};
+      padding-top: ${theme.SPACING_600};
+    `}
+
+    ${props => props.bp2_size3 && css`
+      padding-bottom: ${theme.SPACING_900};
+      padding-top: ${theme.SPACING_900};
+    `}
+
+    ${props => props.bp2_expanded && css`
+      height: 100vh;
+    `}
+  }
+
+  @media (min-width: ${theme.BREAKPOINT_300}) {
+    ${props => props.bp3_size1 && css`
+      padding-bottom: ${theme.SPACING_400};
+      padding-top: ${theme.SPACING_400};
+    `}
+
+    ${props => props.bp3_size2 && css`
+      padding-bottom: ${theme.SPACING_600};
+      padding-top: ${theme.SPACING_600};
+    `}
+
+    ${props => props.bp3_size3 && css`
+      padding-bottom: ${theme.SPACING_900};
+      padding-top: ${theme.SPACING_900};
+    `}
+
+    ${props => props.bp3_expanded && css`
+      height: 100vh;
+    `}
+  }
+
+  @media (min-width: ${theme.BREAKPOINT_400}) {
+    ${props => props.bp4_size1 && css`
+      padding-bottom: ${theme.SPACING_400};
+      padding-top: ${theme.SPACING_400};
+    `}
+
+    ${props => props.bp4_size2 && css`
+      padding-bottom: ${theme.SPACING_600};
+      padding-top: ${theme.SPACING_600};
+    `}
+
+    ${props => props.bp4_size3 && css`
+      padding-bottom: ${theme.SPACING_900};
+      padding-top: ${theme.SPACING_900};
+    `}
+
+    ${props => props.bp4_expanded && css`
+      height: 100vh;
+    `}
+  }
+
   ${p => p.white && css` background-color: white; `}
   ${p => p.black && css` background-color: black; `}
 
