@@ -5,6 +5,7 @@ import Margin from './../utilities/Margin';
 import NegativeMargin from './../utilities/NegativeMargin';
 import Leading from './../utilities/Leading';
 import TextAlign from './../utilities/TextAlign';
+import Color from './../utilities/Color';
 
 const Heading = styled.h3`
   color: ${theme.GRAY_900};
@@ -199,13 +200,6 @@ const Heading = styled.h3`
     `}
   }
 
-  ${p => p.white && css`color: ${theme.WHITE};`}
-  ${p => p.black && css`color: ${theme.BLACK};`}
-
-  ${p => p.gray500 && css`color: ${theme.GRAY_500};`}
-  ${p => p.gray600 && css`color: ${theme.GRAY_600};`}
-  ${p => p.gray900 && css`color: ${theme.GRAY_900};`}
-
   ${p => p.bold && css`
     font-weight: 500;
     font-family: ${theme.UNTITLEDSANSMEDIUM};
@@ -221,6 +215,7 @@ const Heading = styled.h3`
   ${Margin}
   ${NegativeMargin}
   ${TextAlign}
+  ${Color}
 `;
 
 Heading.propTypes = {
