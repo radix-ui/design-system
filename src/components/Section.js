@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 import BackgroundColor from './../utilities/BackgroundColor';
+import NegativeMargin from './../utilities/NegativeMargin';
 
 const Section = styled.section`
   ${props => props.size1 && css`
@@ -108,6 +109,7 @@ const Section = styled.section`
   }
 
   ${BackgroundColor}
+  ${NegativeMargin}
 `;
 
 Section.propTypes = {
