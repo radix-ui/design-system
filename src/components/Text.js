@@ -28,17 +28,17 @@ const Text = styled.span`
   `}
   ${p => p.size5 && css`
     font-size: ${theme.FONTSIZE_600};
-    letter-spacing: -.012em;
+    letter-spacing: -.006em;
     margin-left: -.075em;
   `}
   ${p => p.size6 && css`
     font-size: ${theme.FONTSIZE_700};
-    letter-spacing: -.028em;
+    letter-spacing: -.008em;
     margin-left: -.085em;
   `}
   ${p => p.size7 && css`
     font-size: ${theme.FONTSIZE_800};
-    letter-spacing: -.038em;
+    letter-spacing: -.018em;
     margin-left: -.088em;
   `}
   ${p => p.size8 && css`
@@ -66,17 +66,17 @@ const Text = styled.span`
     `}
     ${p => p.bp1_size5 && css`
       font-size: ${theme.FONTSIZE_600};
-      letter-spacing: -.012em;
+      letter-spacing: -.006em;
       margin-left: -.075em;
     `}
     ${p => p.bp1_size6 && css`
       font-size: ${theme.FONTSIZE_700};
-      letter-spacing: -.028em;
+      letter-spacing: -.008em;
       margin-left: -.085em;
     `}
     ${p => p.bp1_size7 && css`
       font-size: ${theme.FONTSIZE_800};
-      letter-spacing: -.038em;
+      letter-spacing: -.018em;
       margin-left: -.088em;
     `}
     ${p => p.bp1_size8 && css`
@@ -105,17 +105,17 @@ const Text = styled.span`
     `}
     ${p => p.bp2_size5 && css`
       font-size: ${theme.FONTSIZE_600};
-      letter-spacing: -.012em;
+      letter-spacing: -.006em;
       margin-left: -.075em;
     `}
     ${p => p.bp2_size6 && css`
       font-size: ${theme.FONTSIZE_700};
-      letter-spacing: -.028em;
+      letter-spacing: -.008em;
       margin-left: -.085em;
     `}
     ${p => p.bp2_size7 && css`
       font-size: ${theme.FONTSIZE_800};
-      letter-spacing: -.038em;
+      letter-spacing: -.018em;
       margin-left: -.088em;
     `}
     ${p => p.bp2_size8 && css`
@@ -144,17 +144,17 @@ const Text = styled.span`
     `}
     ${p => p.bp3_size5 && css`
       font-size: ${theme.FONTSIZE_600};
-      letter-spacing: -.012em;
+      letter-spacing: -.006em;
       margin-left: -.075em;
     `}
     ${p => p.bp3_size6 && css`
       font-size: ${theme.FONTSIZE_700};
-      letter-spacing: -.028em;
+      letter-spacing: -.008em;
       margin-left: -.085em;
     `}
     ${p => p.bp3_size7 && css`
       font-size: ${theme.FONTSIZE_800};
-      letter-spacing: -.038em;
+      letter-spacing: -.018em;
       margin-left: -.088em;
     `}
     ${p => p.bp3_size8 && css`
@@ -183,17 +183,17 @@ const Text = styled.span`
     `}
     ${p => p.bp4_size5 && css`
       font-size: ${theme.FONTSIZE_600};
-      letter-spacing: -.012em;
+      letter-spacing: -.006em;
       margin-left: -.075em;
     `}
     ${p => p.bp4_size6 && css`
       font-size: ${theme.FONTSIZE_700};
-      letter-spacing: -.028em;
+      letter-spacing: -.008em;
       margin-left: -.085em;
     `}
     ${p => p.bp4_size7 && css`
       font-size: ${theme.FONTSIZE_800};
-      letter-spacing: -.038em;
+      letter-spacing: -.018em;
       margin-left: -.088em;
     `}
     ${p => p.bp4_size8 && css`
