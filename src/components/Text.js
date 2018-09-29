@@ -43,7 +43,7 @@ const Text = styled.span`
   `}
   ${p => p.size8 && css`
     font-size: ${theme.FONTSIZE_900};
-    letter-spacing: -.042em;
+    letter-spacing: -.024em;
     margin-left: -.09em;
   `}
 
@@ -81,7 +81,7 @@ const Text = styled.span`
     `}
     ${p => p.bp1_size8 && css`
       font-size: ${theme.FONTSIZE_900};
-      letter-spacing: -.042em;
+      letter-spacing: -.024em;
       margin-left: -.09em;
     `}
   }
@@ -120,7 +120,7 @@ const Text = styled.span`
     `}
     ${p => p.bp2_size8 && css`
       font-size: ${theme.FONTSIZE_900};
-      letter-spacing: -.042em;
+      letter-spacing: -.024em;
       margin-left: -.09em;
     `}
   }
@@ -159,7 +159,7 @@ const Text = styled.span`
     `}
     ${p => p.bp3_size8 && css`
       font-size: ${theme.FONTSIZE_900};
-      letter-spacing: -.042em;
+      letter-spacing: -.024em;
       margin-left: -.09em;
     `}
   }
@@ -198,7 +198,7 @@ const Text = styled.span`
     `}
     ${p => p.bp4_size8 && css`
       font-size: ${theme.FONTSIZE_900};
-      letter-spacing: -.042em;
+      letter-spacing: -.024em;
       margin-left: -.09em;
     `}
   }
