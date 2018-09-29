@@ -210,6 +210,8 @@ const Text = styled.span`
     font-family: ${theme.UNTITLEDSANSMEDIUM};
   `}
 
+  ${p => p.inline && css`display: inline;`}
+
   ${p => p.tnum && css`font-feature-settings: 'tnum';`}
 
   ${p => p.us_none && css`user-select: none;`}
