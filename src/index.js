@@ -674,10 +674,10 @@ export default class extends Component {
               </Text>
             </div>
             <div>
-              <Heading size6 mb3>
+              <Heading size6 bold mb3>
                 Heading
               </Heading>
-              <Heading size5 mb3>
+              <Heading size5 bold mb3>
                 Heading
               </Heading>
               <Heading size4 mb3>

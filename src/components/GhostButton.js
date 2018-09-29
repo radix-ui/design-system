@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
+import Margin from './../utilities/Margin';
 
 const GhostButton = styled.button.attrs({
   type: 'button',
@@ -71,6 +72,8 @@ const GhostButton = styled.button.attrs({
     height: ${theme.SPACING_600};
     min-width: ${theme.SPACING_600};
   `}
+
+  ${Margin}
 `;
 
 GhostButton.propTypes = {
