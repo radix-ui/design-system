@@ -8,4 +8,4 @@ export const FONTSIZE_700 = '1.313rem'; // 21px Longform paragraph
 export const FONTSIZE_800 = '1.438rem'; // 23px Longform paragraph
 export const FONTSIZE_900 = '1.688rem'; // 27px Subtitle
 export const FONTSIZE_1000 = '2.563rem'; // 41px Title reduced
-export const FONTSIZE_1100 = '3.063rem'; // 49px Title
+export const FONTSIZE_1100 = '3.625rem'; // 58px Title

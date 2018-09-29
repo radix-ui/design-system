@@ -5,12 +5,13 @@ import Box from './Box.js';
 const Flexbox = styled(Box)`
   display: flex;
 
-  ${p => p.row && css` flex-direction: row `}
-  ${p => p.column && css` flex-direction: column `}
-  ${p => p.row_reverse && css` flex-direction: row-reverse `}
-  ${p => p.column_reverse && css` flex-direction: column-reverse `}
+  ${p => p.fd_row && css` flex-direction: row `}
+  ${p => p.fd_column && css` flex-direction: column `}
+  ${p => p.fd_row_reverse && css` flex-direction: row-reverse `}
+  ${p => p.fd_column_reverse && css` flex-direction: column-reverse `}
 
-  ${p => p.wrap && css` flex-wrap: wrap `}
+  ${p => p.fw_wrap && css` flex-wrap: wrap `}
+  ${p => p.fw_nowrap && css` flex-wrap: nowrap `}
 
   ${p => p.ai_baseline && css` align-items: baseline `}
   ${p => p.ai_center && css` align-items: center `}
@@ -25,12 +26,13 @@ const Flexbox = styled(Box)`
   ${p => p.jc_flexend && css` justify-content: flex-end `}
 
   @media (min-width: ${theme.BREAKPOINT_100}) {
-    ${p => p.bp1_row && css` flex-direction: row `}
-    ${p => p.bp1_column && css` flex-direction: column `}
-    ${p => p.bp1_row_reverse && css` flex-direction: row-reverse `}
-    ${p => p.bp1_column_reverse && css` flex-direction: column-reverse `}
+    ${p => p.bp1_fd_row && css` flex-direction: row `}
+    ${p => p.bp1_fd_column && css` flex-direction: column `}
+    ${p => p.bp1_fd_row_reverse && css` flex-direction: row-reverse `}
+    ${p => p.bp1_fd_column_reverse && css` flex-direction: column-reverse `}
 
-    ${p => p.bp1_wrap && css` flex-wrap: wrap `}
+    ${p => p.bp1_fw_wrap && css` flex-wrap: wrap `}
+    ${p => p.bp1_fw_nowrap && css` flex-wrap: nowrap `}
 
     ${p => p.bp1_ai_baseline && css` align-items: baseline `}
     ${p => p.bp1_ai_center && css` align-items: center `}
@@ -46,12 +48,13 @@ const Flexbox = styled(Box)`
   }
 
   @media (min-width: ${theme.BREAKPOINT_200}) {
-    ${p => p.bp2_row && css` flex-direction: row `}
-    ${p => p.bp2_column && css` flex-direction: column `}
-    ${p => p.bp2_row_reverse && css` flex-direction: row-reverse `}
-    ${p => p.bp2_column_reverse && css` flex-direction: column-reverse `}
+    ${p => p.bp2_fd_row && css` flex-direction: row `}
+    ${p => p.bp2_fd_column && css` flex-direction: column `}
+    ${p => p.bp2_fd_row_reverse && css` flex-direction: row-reverse `}
+    ${p => p.bp2_fd_column_reverse && css` flex-direction: column-reverse `}
 
-    ${p => p.bp2_wrap && css` flex-wrap: wrap `}
+    ${p => p.bp2_fw_wrap && css` flex-wrap: wrap `}
+    ${p => p.bp2_fw_nowrap && css` flex-wrap: nowrap `}
 
     ${p => p.bp2_ai_baseline && css` align-items: baseline `}
     ${p => p.bp2_ai_center && css` align-items: center `}
@@ -67,12 +70,13 @@ const Flexbox = styled(Box)`
   }
 
   @media (min-width: ${theme.BREAKPOINT_300}) {
-    ${p => p.bp3_row && css` flex-direction: row `}
-    ${p => p.bp3_column && css` flex-direction: column `}
-    ${p => p.bp3_row_reverse && css` flex-direction: row-reverse `}
-    ${p => p.bp3_column_reverse && css` flex-direction: column-reverse `}
+    ${p => p.bp3_fd_row && css` flex-direction: row `}
+    ${p => p.bp3_fd_column && css` flex-direction: column `}
+    ${p => p.bp3_fd_row_reverse && css` flex-direction: row-reverse `}
+    ${p => p.bp3_fd_column_reverse && css` flex-direction: column-reverse `}
 
-    ${p => p.bp3_wrap && css` flex-wrap: wrap `}
+    ${p => p.bp3_fw_wrap && css` flex-wrap: wrap `}
+    ${p => p.bp3_fw_nowrap && css` flex-wrap: nowrap `}
 
     ${p => p.bp3_ai_baseline && css` align-items: baseline `}
     ${p => p.bp3_ai_center && css` align-items: center `}
@@ -88,12 +92,13 @@ const Flexbox = styled(Box)`
   }
 
   @media (min-width: ${theme.BREAKPOINT_400}) {
-    ${p => p.bp4_row && css` flex-direction: row `}
-    ${p => p.bp4_column && css` flex-direction: column `}
-    ${p => p.bp4_row_reverse && css` flex-direction: row-reverse `}
-    ${p => p.bp4_column_reverse && css` flex-direction: column-reverse `}
+    ${p => p.bp4_fd_row && css` flex-direction: row `}
+    ${p => p.bp4_fd_column && css` flex-direction: column `}
+    ${p => p.bp4_fd_row_reverse && css` flex-direction: row-reverse `}
+    ${p => p.bp4_fd_column_reverse && css` flex-direction: column-reverse `}
 
-    ${p => p.bp4_wrap && css` flex-wrap: wrap `}
+    ${p => p.bp4_fw_wrap && css` flex-wrap: wrap `}
+    ${p => p.bp4_fw_nowrap && css` flex-wrap: nowrap `}
 
     ${p => p.bp4_ai_baseline && css` align-items: baseline `}
     ${p => p.bp4_ai_center && css` align-items: center `}
