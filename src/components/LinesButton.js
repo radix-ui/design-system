@@ -66,7 +66,8 @@ const LinesButton = styled.button`
   }
 
   &:hover::before,
-  &:active::before {
+  &:active::before,
+  &:focus:before {
     box-shadow: inset 0 0 0 1px ${theme.BLUE_500};
   }
 

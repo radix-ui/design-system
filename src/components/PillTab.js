@@ -20,6 +20,7 @@ const PillTab = styled.a`
   flex-grow: 1;
   flex-basis: 0;
   position: relative;
+  text-decoration: none;
   height: ${theme.SPACING_500};
   padding: 0 ${theme.SPACING_400};
   min-width: ${theme.SPACING_500};

@@ -12,6 +12,7 @@ const Text = styled.span`
 
   ${p => p.size1 && css`
     font-size: ${theme.FONTSIZE_200};
+    letter-spacing: .032em;
   `}
   ${p => p.size2 && css`
     font-size: ${theme.FONTSIZE_300};
