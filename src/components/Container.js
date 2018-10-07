@@ -2,21 +2,27 @@ import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
 const Container = styled.div`
-  padding-left: ${theme.SPACING_500};
-  padding-right: ${theme.SPACING_500};
   margin-left: auto;
   margin-right: auto;
 
   ${props => props.size1 && css`
+    padding-left: ${theme.SPACING_500};
+    padding-right: ${theme.SPACING_500};
     max-width: 100%;
   `}
   ${props => props.size2 && css`
+    padding-left: ${theme.SPACING_500};
+    padding-right: ${theme.SPACING_500};
     max-width: 65rem;
   `}
   ${props => props.size3 && css`
+    padding-left: ${theme.SPACING_500};
+    padding-right: ${theme.SPACING_500};
     max-width: 45rem;
   `}
   ${props => props.size4 && css`
+    padding-left: ${theme.SPACING_500};
+    padding-right: ${theme.SPACING_500};
     max-width: 25rem;
   `}
 
