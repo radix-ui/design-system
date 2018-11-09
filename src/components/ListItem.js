@@ -45,7 +45,7 @@ const ListItem = styled.button.attrs({
 
     &:hover,
     &:focus {
-      background-color: ${Theme.BLUE_500};
+      background-color: ${theme.BLUE_500};
     }
   `}
 
