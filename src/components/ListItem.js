@@ -39,6 +39,16 @@ const ListItem = styled.button.attrs({
     pointer-events: none;
   `}
 
+  ${props => props.selected && css`
+    background-color: ${theme.BLUE_500};
+    color: ${theme.WHITE};
+
+    &:hover,
+    &:focus {
+      background-color: ${Theme.BLUE_500};
+    }
+  `}
+
   ${props => props.highlighted && css`
     background-color: ${theme.BLUE_100};
     &:hover {
