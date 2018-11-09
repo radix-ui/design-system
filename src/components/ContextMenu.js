@@ -7,7 +7,7 @@ const ContextMenu = styled.nav`
     0 3px 10px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   position: fixed;
-  z-index: ${theme.ZINDEX_CONTEXT_MENU}
+  z-index: ${theme.ZINDEX_CONTEXT_MENU};
 
   ${props => props.top && css`
     top: ${props.top};

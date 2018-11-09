@@ -6,3 +6,4 @@ export * from './Spacing.js';
 export * from './Type.js';
 export * from './Leading.js';
 export * from './Typeface.js';
+export * from './ZIndex.js';
