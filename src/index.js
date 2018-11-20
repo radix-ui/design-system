@@ -24,6 +24,7 @@ import CheckboxButton from './components/CheckboxButton';
 import Link from './components/Link';
 import List from './components/List';
 import ListItem from './components/ListItem';
+import MenuItem from './components/MenuItem';
 import Section from './components/Section';
 import Slider from './components/Slider';
 import Select from './components/Select';
@@ -59,6 +60,7 @@ export LinesButton from './components/LinesButton';
 export Link from './components/Link';
 export List from './components/List';
 export ListItem from './components/ListItem';
+export MenuItem from './components/MenuItem';
 export Section from './components/Section';
 export Slider from './components/Slider';
 export Select from './components/Select';
@@ -827,27 +829,103 @@ export default class extends Component {
               <Switch />
             </div>
             <div>
-              <List>
+              <List pt_1 pb_1>
+                <MenuItem highlighted>
+                  <Text size3>Gray</Text>
+                </MenuItem>
+                <MenuItem active>
+                  <Text size3>Orange</Text>
+                </MenuItem>
+                <MenuItem>
+                  <Text size3>Gray</Text>
+                </MenuItem>
+                <MenuItem>
+                  <Text size3>Gray</Text>
+                </MenuItem>
+              </List>
+            </div>
+            <div>
+              <List pt_1 pb_1>
+                <ListItem>
+                  <Flexbox ai_center>
+                    <Box mr_2>
+                      <Avatar
+                        size4
+                        url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                        size="45"
+                        initial="C"
+                        caption="Text for screenreader"
+                      />
+                    </Box>
+                    <Box fg_1>
+                      <Flexbox ai_center jc_spacebetween>
+                        <Flexbox ai_baseline mb_1>
+                          <Text size2 bold mr_1>Colm Tuite</Text>
+                          <Text size1 color_gray600>@colmtuite</Text>
+                        </Flexbox>
+                        <GhostButton size1 style={{width: '15px',height: '15px'}}>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                            <path d="M2.5 12.5L12.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M12.5 12.5L2.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </GhostButton>
+                      </Flexbox>
+                      <Button blue>
+                        Follow
+                      </Button>
+                    </Box>
+                  </Flexbox>
+                </ListItem>
                 <li>
-                  <ListItem highlighted>
-                    <Text size3>Gray</Text>
-                  </ListItem>
+                  <Divider
+                    mt_1
+                    mb_1
+                  />
                 </li>
-                <li>
-                  <ListItem active>
-                    <Text size3>Orange</Text>
-                  </ListItem>
-                </li>
-                <li>
-                  <ListItem>
-                    <Text size3>Gray</Text>
-                  </ListItem>
-                </li>
-                <li>
-                  <ListItem>
-                    <Text size3>Gray</Text>
-                  </ListItem>
-                </li>
+                <ListItem>
+                  <Flexbox ai_center>
+                    <Box mr_2>
+                      <Avatar
+                        size4
+                        url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                        size="45"
+                        initial="C"
+                        caption="Text for screenreader"
+                      />
+                    </Box>
+                    <Box fg_1>
+                      <Flexbox ai_center jc_spacebetween>
+                        <Flexbox ai_baseline mb_1>
+                          <Text size2 bold mr_1>Colm Tuite</Text>
+                          <Text size1 color_gray600>@colmtuite</Text>
+                        </Flexbox>
+                        <GhostButton size1 style={{width: '15px',height: '15px'}}>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                            <path d="M2.5 12.5L12.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M12.5 12.5L2.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </GhostButton>
+                      </Flexbox>
+                      <Button blue>
+                        Follow
+                      </Button>
+                    </Box>
+                  </Flexbox>
+                </ListItem>
               </List>
             </div>
             <div>
@@ -1019,24 +1097,24 @@ export default class extends Component {
                 ai_center
               >
                 <Box
-                  mr3
+                  mr_3
                 >
                   <IndicatorButton
                     active
                   />
                 </Box>
                 <Box
-                  mr3
+                  mr_3
                 >
                   <IndicatorButton />
                 </Box>
                 <Box
-                  mr3
+                  mr_3
                 >
                   <IndicatorButton />
                 </Box>
                 <Box
-                  mr3
+                  mr_3
                 >
                   <IndicatorButton />
                 </Box>
@@ -1045,6 +1123,1856 @@ export default class extends Component {
           </Grid>
         </Container>
       </Section>
+      
+      <Section
+        size3
+      >
+        <Container
+          size2
+        >
+          <Flexbox ai_flexstart>
+                      
+            <Box
+              mr_7
+              style={{
+                minWidth: '180px',
+                boxShadow: '0 7px 30px 0 hsla(208,25%,10%,.2)',
+                borderRadius: '5px',
+                zIndex: '9'
+              }}
+            >
+              <List pt_1 pb_1>
+                <li>
+                  <MenuItem>
+                    <Text size2>First link</Text>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem>
+                    <Text size2>Second link</Text>
+                  </MenuItem>
+                </li>
+              </List>
+            </Box>
+          
+            <Box
+              mr_7
+              style={{
+                minWidth: '180px',
+                boxShadow: '0 7px 30px 0 hsla(208,25%,10%,.2)',
+                borderRadius: '5px',
+                zIndex: '9'
+              }}
+            >
+              <List pt_1 pb_1>
+                <li>
+                  <MenuItem>
+                    <Flexbox
+                      ai_center
+                    >
+                      <Box mr_4>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="25"
+                          height="25"
+                          viewBox="0 0 25 25"
+                          fill="none"
+                          stroke="currentColor"
+                        >
+                          <path d="M5.5 11.9142V20.5H10.5V15C10.5 14.7239 10.7239 14.5 11 14.5H14C14.2761 14.5 14.5 14.7239 14.5 15V20.5H19.5V11.9142C19.5 11.649 19.3946 11.3946 19.2071 11.2071L12.5 4.5L5.79289 11.2071C5.60536 11.3946 5.5 11.649 5.5 11.9142Z" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </Box>
+                      <Text size2>Back to files</Text>
+                    </Flexbox>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem>
+                    <Box mr_4>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                      <circle cx="12.5" cy="12.5" r="8"/>
+                      <path d="M5.5 16C9.875 17.3333 15.125 17.3333 19.5 16" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M5.5 9C10 7.66666 15 7.66667 19.5 9" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M12.5 20.5C6.5 18 6.49999 7 12.5 4.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M12.5 20.5C18.5 18 18.5 7 12.5001 4.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M4.5 12.5H20.5"/>
+                      <path d="M12.5 4.5V20.5"/>
+                      </svg>
+                    </Box>
+                    <Text size2>Medium Partner Program</Text>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem>
+                    <Box mr_4>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                      <circle cx="12.5" cy="12.5" r="3"/>
+                      <circle cx="12.5" cy="12.5" r="8"/>
+                      <path d="M6.5 18.5L10.5 14.5"/>
+                      <path d="M14.5 10.5L18.5 6.5"/>
+                      <path d="M10.5 10.5L6.5 6.5"/>
+                      <path d="M18 18L14.5 14.5"/>
+                      </svg>
+                    </Box>
+                    <Text size2>Help & Support</Text>
+                  </MenuItem>
+                </li>
+                <li>
+                  <Divider
+                    mt_1
+                    mb_1
+                  />
+                </li>
+                <li>
+                  <MenuItem>
+                    <Box mr_4>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                      <rect x="4.5" y="8.5" width="16" height="12" rx="1.5"/>
+                      <path d="M5.5 8C5.5 7.17157 6.17157 6.5 7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8Z"/>
+                      <path d="M6.5 6C6.5 5.17157 7.17157 4.5 8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6Z"/>
+                      <path d="M9.5 17.5L15.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M15.5 17.5L9.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Box>
+                    <Text size2>Log out</Text>
+                  </MenuItem>
+                </li>
+                <li>
+                  <Divider
+                    mt_1
+                    mb_1
+                  />
+                </li>
+                <li>
+                  <MenuItem pl_8>
+                    <Text size2>Log out</Text>
+                  </MenuItem>
+                </li>
+              </List>
+            </Box>
+            
+            <Box
+              mr_7
+              style={{
+                width: '300px',
+                boxShadow: '0 7px 30px 0 hsla(208,25%,10%,.2)',
+                borderRadius: '5px',
+                zIndex: '9'
+              }}
+            >
+              <List pt_1 pb_1>
+                <MenuItem>
+                  <Box>
+                    <Box mb_1>
+                      <Flexbox ai_center>
+                        <Box mr_4>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 25 25"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                          <rect x="4.5" y="8.5" width="16" height="12" rx="1.5"/>
+                          <path d="M5.5 8C5.5 7.17157 6.17157 6.5 7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8Z"/>
+                          <path d="M6.5 6C6.5 5.17157 7.17157 4.5 8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6Z"/>
+                          <path d="M9.5 17.5L15.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M15.5 17.5L9.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </Box>
+                        <Text size3 lh_1 bold>Log out</Text>
+                      </Flexbox>
+                    </Box>
+                    <Text size2 lh_1 color_gray600 ml_7>How to scale meaningful design in a multi-device world</Text>
+                  </Box>
+                </MenuItem>
+                <MenuItem>
+                  <Box>
+                    <Box mb_1>
+                      <Flexbox ai_center>
+                        <Box mr_4>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 25 25"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                          <rect x="4.5" y="8.5" width="16" height="12" rx="1.5"/>
+                          <path d="M5.5 8C5.5 7.17157 6.17157 6.5 7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8Z"/>
+                          <path d="M6.5 6C6.5 5.17157 7.17157 4.5 8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6Z"/>
+                          <path d="M9.5 17.5L15.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M15.5 17.5L9.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </Box>
+                        <Text size3 lh_1 bold>Log out</Text>
+                      </Flexbox>
+                    </Box>
+                    <Text size2 lh_1 color_gray600 ml_7>How to scale meaningful design in a multi-device world</Text>
+                  </Box>
+                </MenuItem>
+              </List>
+            </Box>
+          </Flexbox>
+          
+        </Container>
+      </Section>
+      
+      <Section
+        size3
+      >
+        <Container
+          size2
+        >
+          <Flexbox ai_flexstart>
+                      
+            <Box
+              mr_7
+              style={{
+                minWidth: '220px'
+              }}
+            >
+              <List pb_1>
+                <li>
+                  <MenuItem rounded active>
+                    <Flexbox ai_center>
+                      <Box mr_4>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="25"
+                          height="25"
+                          viewBox="0 0 25 25"
+                          fill="none"
+                          stroke="currentColor"
+                        >
+                        <rect x="4.5" y="8.5" width="16" height="12" rx="1.5"/>
+                        <path d="M7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8C5.5 7.17157 6.17157 6.5 7 6.5Z"/>
+                        <path d="M8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6C6.5 5.17157 7.17157 4.5 8 4.5Z"/>
+                        <path d="M5 9L12.5 15.5L20 9" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M5 20L10.5 14.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M20 20L14.5 14.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </Box>
+                      <Text size3 bold>Inbox</Text>
+                    </Flexbox>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem rounded>
+                  <Flexbox ai_center>
+                    <Box mr_4>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                      <path d="M7.5 4.5V20.5L12.5 16.5L17.5 20.5V4.5H7.5Z" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M7 6.5H15"/>
+                      </svg>
+                    </Box>
+                    <Text size3>Bookmarked</Text>
+                  </Flexbox>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem rounded>
+                  <Flexbox ai_center>
+                    <Box mr_4>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <circle cx="12.5" cy="12.5" r="8"/>
+                        <path d="M13 7.5C13 7.22386 12.7761 7 12.5 7C12.2239 7 12 7.22386 12 7.5H13ZM12.5 12.5H12C12 12.6326 12.0527 12.7598 12.1464 12.8536L12.5 12.5ZM14.1464 14.8536C14.3417 15.0488 14.6583 15.0488 14.8536 14.8536C15.0488 14.6583 15.0488 14.3417 14.8536 14.1464L14.1464 14.8536ZM12 7.5V12.5H13V7.5H12ZM12.1464 12.8536L14.1464 14.8536L14.8536 14.1464L12.8536 12.1464L12.1464 12.8536Z" fill="black" stroke="none"/>
+                      </svg>
+                    </Box>
+                    <Text size3>Snoozed</Text>
+                  </Flexbox>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem rounded>
+                  <Flexbox ai_center>
+                    <Box mr_4>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                      <circle cx="12.5" cy="12.5" r="8"/>
+                      <path d="M15.5 9.5L11.5 15.5L9.5 13.456" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Box>
+                    <Text size3>Important</Text>
+                  </Flexbox>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem rounded>
+                  <Flexbox ai_center>
+                    <Box mr_4>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                      <path d="M22.5 12.5L4.5 4.5V11.5L17.5 12.5L4.5 13.5V20.5L22.5 12.5Z" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Box>
+                    <Text size3>Sent</Text>
+                  </Flexbox>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem rounded>
+                  <Flexbox ai_center>
+                    <Box mr_4>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                      <path d="M6.5 19.5V5.5C6.5 4.94772 6.94772 4.5 7.5 4.5H13.0858C13.351 4.5 13.6054 4.60536 13.7929 4.79289L18.2071 9.20711C18.3946 9.39464 18.5 9.649 18.5 9.91421V19.5C18.5 20.0523 18.0523 20.5 17.5 20.5H7.5C6.94772 20.5 6.5 20.0523 6.5 19.5Z" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9.5 16.5H15.5" strokeLinecap="round"/>
+                      <path d="M9.5 12.5H15.5" strokeLinecap="round"/>
+                      <path d="M9.5 8.5H10.5" strokeLinecap="round"/>
+                      <path d="M13.5 5V9.5H18" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Box>
+                    <Text size3>Drafts</Text>
+                  </Flexbox>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem rounded>
+                  <Flexbox ai_center>
+                    <Box mr_4>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                      <rect x="7.5" y="8.5" width="10" height="12" rx="0.5" strokeLinecap="round" strokeLinejoin="bevel"/>
+                      <rect x="6.5" y="6.5" width="12" height="2" rx="1"/>
+                      <path d="M10.5 4.5H14.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M10.5 11V18"/>
+                      <path d="M12.5 11V18"/>
+                      <path d="M14.5 11V18"/>
+                      </svg>
+                    </Box>
+                    <Text size3>Trash</Text>
+                  </Flexbox>
+                  </MenuItem>
+                </li>
+              </List>
+            </Box>
+            
+            <Box
+              mr_7
+              style={{
+                minWidth: '220px'
+              }}
+            >
+              <List pt_1 pb_1>
+                <li>
+                  <Divider
+                    mt_1
+                    mb_1
+                  />
+                </li>
+                <li>
+                  <HoverZone>
+                    <MenuItem active>
+                      <Text size3 bold>Size 1</Text>
+                    </MenuItem>
+                    <HoverZonePanel
+                      position_absolute
+                      width_100
+                      height_100
+                      pr_1
+                      style={{
+                        top: '0',
+                        left: '0',
+                      }}
+                    >
+                      <Flexbox
+                        height_100
+                        jc_flexend
+                        ai_center
+                      >
+                        <GhostButton>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="currentColor"
+                            stroke="none"
+                          >
+                            <circle cx="7.5" cy="2.5" r="1.5"/>
+                            <circle cx="7.5" cy="7.5" r="1.5"/>
+                            <circle cx="7.5" cy="12.5" r="1.5"/>
+                          </svg>
+                        </GhostButton>
+                      </Flexbox>
+                    </HoverZonePanel>
+                  </HoverZone>
+                </li>
+                <li>
+                  <HoverZone>
+                    <MenuItem>
+                      <Text size3>Size 2</Text>
+                    </MenuItem>
+                    <HoverZonePanel
+                      position_absolute
+                      width_100
+                      height_100
+                      pr_1
+                      style={{
+                        top: '0',
+                        left: '0',
+                      }}
+                    >
+                      <Flexbox
+                        height_100
+                        jc_flexend
+                        ai_center
+                      >
+                        <GhostButton>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="currentColor"
+                            stroke="none"
+                          >
+                            <circle cx="7.5" cy="2.5" r="1.5"/>
+                            <circle cx="7.5" cy="7.5" r="1.5"/>
+                            <circle cx="7.5" cy="12.5" r="1.5"/>
+                          </svg>
+                        </GhostButton>
+                      </Flexbox>
+                    </HoverZonePanel>
+                  </HoverZone>
+                </li>
+                <li>
+                  <Divider
+                    mt_1
+                    mb_1
+                  />
+                </li>
+                <li>
+                  <HoverZone>
+                    <MenuItem>
+                      <Text size3>Left</Text>
+                    </MenuItem>
+                    <HoverZonePanel
+                      position_absolute
+                      width_100
+                      height_100
+                      pr_1
+                      style={{
+                        top: '0',
+                        left: '0',
+                      }}
+                    >
+                      <Flexbox
+                        height_100
+                        jc_flexend
+                        ai_center
+                      >
+                        <GhostButton>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="currentColor"
+                            stroke="none"
+                          >
+                            <circle cx="7.5" cy="2.5" r="1.5"/>
+                            <circle cx="7.5" cy="7.5" r="1.5"/>
+                            <circle cx="7.5" cy="12.5" r="1.5"/>
+                          </svg>
+                        </GhostButton>
+                      </Flexbox>
+                    </HoverZonePanel>
+                  </HoverZone>
+                </li>
+                <li>
+                  <HoverZone>
+                    <MenuItem>
+                      <Text size3>Middle</Text>
+                    </MenuItem>
+                    <HoverZonePanel
+                      position_absolute
+                      width_100
+                      height_100
+                      pr_1
+                      style={{
+                        top: '0',
+                        left: '0',
+                      }}
+                    >
+                      <Flexbox
+                        height_100
+                        jc_flexend
+                        ai_center
+                      >
+                        <GhostButton>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="currentColor"
+                            stroke="none"
+                          >
+                            <circle cx="7.5" cy="2.5" r="1.5"/>
+                            <circle cx="7.5" cy="7.5" r="1.5"/>
+                            <circle cx="7.5" cy="12.5" r="1.5"/>
+                          </svg>
+                        </GhostButton>
+                      </Flexbox>
+                    </HoverZonePanel>
+                  </HoverZone>
+                </li>
+                <li>
+                  <HoverZone>
+                    <MenuItem>
+                      <Text size3>Right</Text>
+                    </MenuItem>
+                    <HoverZonePanel
+                      position_absolute
+                      width_100
+                      height_100
+                      pr_1
+                      style={{
+                        top: '0',
+                        left: '0',
+                      }}
+                    >
+                      <Flexbox
+                        height_100
+                        jc_flexend
+                        ai_center
+                      >
+                        <GhostButton>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="currentColor"
+                            stroke="none"
+                          >
+                            <circle cx="7.5" cy="2.5" r="1.5"/>
+                            <circle cx="7.5" cy="7.5" r="1.5"/>
+                            <circle cx="7.5" cy="12.5" r="1.5"/>
+                          </svg>
+                        </GhostButton>
+                      </Flexbox>
+                    </HoverZonePanel>
+                  </HoverZone>
+                </li>
+              </List>
+            </Box>
+            
+            <Box
+              mr_7
+              style={{
+                maxWidth: '480px',
+                boxShadow: '0 7px 30px 0 hsla(208,25%,10%,.2)',
+                borderRadius: '5px',
+                zIndex: '9'
+              }}
+            >
+              <List pt_1 pb_1>
+                <li>
+                  <HoverZone>
+                    <MenuItem pt_2 pb_2 pr_6>
+                      <Flexbox
+                        ai_flexstart
+                      >
+                        <Box mr_4>
+                          <Avatar
+                            url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                            size="35"
+                            initial="C"
+                            caption="Text for screenreader"
+                          />
+                        </Box>
+                        <Box>
+                          <Box mb_1>
+                            <Text size3 lh_1 inline><Text inline bold>Rick Beato</Text> <Text color_gray600 inline>uploaded:</Text> What do John Mayer and Kurt Cobain have in common?</Text>
+                          </Box>
+                          <Text size1 color_gray600>10 hours ago</Text>
+                        </Box>
+                        <Box
+                          mr_4
+                          ml_4
+                          position_relative
+                          overflow_hidden
+                          fs_0
+                          style={{
+                            width: '86px',
+                            height: '48px',
+                          }}
+                        >
+                          <Box
+                            position_absolute
+                            width_100
+                            style={{
+                              top: '50%',
+                              left: '0',
+                              transform: 'translateY(-50%)'
+                            }}
+                          >
+                            <Image
+                              src="https://i.ytimg.com/vi/EJyezLhvtuc/hqdefault.jpg"
+                              width="86"
+                              height="64.5"
+                            />
+                          </Box>
+                        </Box>
+                      </Flexbox>
+                    </MenuItem>
+                    <HoverZonePanel
+                      position_absolute
+                      width_100
+                      height_100
+                      pt_2
+                      pr_3
+                      style={{
+                        top: '0',
+                        left: '0',
+                      }}
+                    >
+                      <Flexbox
+                        height_100
+                        jc_flexend
+                      >
+                        <GhostButton>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="currentColor"
+                            stroke="none"
+                          >
+                            <circle cx="7.5" cy="2.5" r="1.5"/>
+                            <circle cx="7.5" cy="7.5" r="1.5"/>
+                            <circle cx="7.5" cy="12.5" r="1.5"/>
+                          </svg>
+                        </GhostButton>
+                      </Flexbox>
+                    </HoverZonePanel>
+                  </HoverZone>
+                </li>
+                <li>
+                  <HoverZone>
+                    <MenuItem pt_2 pb_2 pr_6>
+                      <Flexbox
+                        ai_flexstart
+                      >
+                        <Box mr_4>
+                          <Avatar
+                            url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                            size="35"
+                            initial="C"
+                            caption="Text for screenreader"
+                          />
+                        </Box>
+                        <Box>
+                          <Box mb_1>
+                            <Text size3 lh_1 inline><Text inline bold>Mateus Asato</Text> <Text color_gray600 inline>uploaded:</Text> A Aquarela De Toquinho</Text>
+                          </Box>
+                          <Text size1 color_gray600>20 hours ago</Text>
+                        </Box>
+                        <Box
+                          mr_4
+                          ml_4
+                          position_relative
+                          overflow_hidden
+                          fs_0
+                          style={{
+                            width: '86px',
+                            height: '48px',
+                          }}
+                        >
+                          <Box
+                            position_absolute
+                            width_100
+                            style={{
+                              top: '50%',
+                              left: '0',
+                              transform: 'translateY(-50%)'
+                            }}
+                          >
+                            <Image
+                              src="https://i.ytimg.com/vi/EJyezLhvtuc/hqdefault.jpg"
+                              width="86"
+                              height="64.5"
+                            />
+                          </Box>
+                        </Box>
+                      </Flexbox>
+                    </MenuItem>
+                    <HoverZonePanel
+                      position_absolute
+                      width_100
+                      height_100
+                      pt_2
+                      pr_3
+                      style={{
+                        top: '0',
+                        left: '0',
+                      }}
+                    >
+                      <Flexbox
+                        height_100
+                        jc_flexend
+                      >
+                        <GhostButton>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="currentColor"
+                            stroke="none"
+                          >
+                            <circle cx="7.5" cy="2.5" r="1.5"/>
+                            <circle cx="7.5" cy="7.5" r="1.5"/>
+                            <circle cx="7.5" cy="12.5" r="1.5"/>
+                          </svg>
+                        </GhostButton>
+                      </Flexbox>
+                    </HoverZonePanel>
+                  </HoverZone>
+                </li>
+                <li>
+                  <HoverZone>
+                    <MenuItem pt_2 pb_2 pr_6>
+                      <Flexbox
+                        ai_flexstart
+                      >
+                        <Box mr_4>
+                          <Avatar
+                            url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                            size="35"
+                            initial="C"
+                            caption="Text for screenreader"
+                          />
+                        </Box>
+                        <Box>
+                          <Box mb_1>
+                            <Text size3 lh_1 inline><Text inline bold>Doug Polk Poker</Text> <Text color_gray600 inline>uploaded:</Text> THE CRAZIEST CALL I'VE EVER SEEN IN POKER</Text>
+                          </Box>
+                          <Text size1 color_gray600>9 Nov 2018</Text>
+                        </Box>
+                        <Box
+                          mr_4
+                          ml_4
+                          position_relative
+                          overflow_hidden
+                          fs_0
+                          style={{
+                            width: '86px',
+                            height: '48px',
+                          }}
+                        >
+                          <Box
+                            position_absolute
+                            width_100
+                            style={{
+                              top: '50%',
+                              left: '0',
+                              transform: 'translateY(-50%)'
+                            }}
+                          >
+                            <Image
+                              src="https://i.ytimg.com/vi/EJyezLhvtuc/hqdefault.jpg"
+                              width="86"
+                              height="64.5"
+                            />
+                          </Box>
+                        </Box>
+                      </Flexbox>
+                    </MenuItem>
+                    <HoverZonePanel
+                      position_absolute
+                      width_100
+                      height_100
+                      pt_2
+                      pr_3
+                      style={{
+                        top: '0',
+                        left: '0',
+                      }}
+                    >
+                      <Flexbox
+                        height_100
+                        jc_flexend
+                      >
+                        <GhostButton>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="currentColor"
+                            stroke="none"
+                          >
+                            <circle cx="7.5" cy="2.5" r="1.5"/>
+                            <circle cx="7.5" cy="7.5" r="1.5"/>
+                            <circle cx="7.5" cy="12.5" r="1.5"/>
+                          </svg>
+                        </GhostButton>
+                      </Flexbox>
+                    </HoverZonePanel>
+                  </HoverZone>
+                </li>
+              </List>
+            </Box>
+
+          </Flexbox>
+          
+        </Container>
+      </Section>
+      
+      <Section
+        size3
+      >
+        <Container
+          size2
+        >
+          <Flexbox ai_flexstart>
+            
+            <Box
+              mr_7
+              style={{
+                minWidth: '180px',
+                maxWidth: '400px',
+                boxShadow: '0 7px 30px 0 hsla(208,25%,10%,.2)',
+                borderRadius: '5px',
+                zIndex: '9'
+              }}
+            >
+              <List pt_1 pb_1>
+              
+                <ListItem
+                  padding_2
+                  highlighted
+                >
+                  <Flexbox
+                    fd_column
+                    mr_2
+                  >
+                    <GhostButton
+                      mb_2
+                      color_blue500
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="15"
+                        height="15"
+                        viewBox="0 0 15 15"
+                        fill="currentColor"
+                        stroke="none"
+                      >
+                        <circle cx="7.5" cy="7.5" r="6"/>
+                      </svg>
+                    </GhostButton>
+                    <GhostButton>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="15"
+                        height="15"
+                        viewBox="0 0 15 15"
+                        fill="currentColor"
+                        stroke="none"
+                      >
+                        <circle cx="2.5" cy="7.5" r="1.5"/>
+                        <circle cx="7.5" cy="7.5" r="1.5"/>
+                        <circle cx="12.5" cy="7.5" r="1.5"/>
+                      </svg>
+                    </GhostButton>
+                  </Flexbox>
+                  <Box>
+                    <Box
+                      padding_2
+                      bc_gray300
+                    > 
+                      <Box
+                        padding_2
+                        bc_white
+                      >
+                        <Text
+                          size3
+                          lh_1
+                        >
+                          Editor > Radio groups need a setting so you can turn them off (italics in text)
+                        </Text>
+                      </Box>
+                    </Box>
+                    <Box
+                      padding_2
+                      style={{
+                        boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.1)'
+                      }}
+                    >
+                      <button type="submit">
+                        <Flexbox
+                          ai_center
+                        >
+                          <Box pl_1 pr_3>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="15"
+                              height="15"
+                              viewBox="0 0 15 15"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M11.5 5.5L7.5 9.5L3.5 5.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </Box>
+                          <Text size1>Hide previous card activity</Text>
+                        </Flexbox>
+                      </button>
+                      <Flexbox
+                        ai_center
+                        mt_2
+                      >
+                        <Box mr_2>
+                          <Avatar
+                            size2
+                            url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                            size="25"
+                            initial="C"
+                            caption="Text for screenreader"
+                          />
+                        </Box>
+                        <Text size2 bold>Colm Tuite</Text>
+                      </Flexbox>
+                      <Flexbox
+                        ai_center
+                        pl_6
+                        pt_1
+                      >
+                        <Box mr_2>
+                          <GhostButton>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="25"
+                              height="25"
+                              viewBox="0 0 25 25"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                            <circle cx="12.5" cy="12.5" r="8"/>
+                            <path d="M13.5 9.5L16.5 12.5L13.5 15.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M8.5 12.5H16.5" strokeLinecap="round"/>
+                            </svg>
+                          </GhostButton>
+                        </Box>
+                        <Flexbox
+                          ai_baseline
+                        >
+                          <Text size2 mr_2>Created card</Text>
+                          <Text size1 color_gray600>8 Nov at 21:26</Text>
+                        </Flexbox>
+                      </Flexbox>
+                      <Flexbox
+                        ai_center
+                        pl_6
+                        pt_1
+                      >
+                        <Box mr_2>
+                          <GhostButton>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="25"
+                              height="25"
+                              viewBox="0 0 25 25"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <circle cx="12.5" cy="12.5" r="8"/>
+                              <path d="M15.5 9.5L11.5 15.5L9.5 13.456" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </GhostButton>
+                        </Box>
+                        <Flexbox
+                          ai_baseline
+                        >
+                          <Text size2 mr_2>Moved to Editor Radar</Text>
+                          <Text size1 color_gray600>8 Nov at 21:51</Text>
+                        </Flexbox>
+                      </Flexbox>
+                      <Flexbox
+                        ai_center
+                        mt_2
+                      >
+                        <Box mr_2>
+                          <Avatar
+                            size2
+                            url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                            size="25"
+                            initial="C"
+                            caption="Text for screenreader"
+                          />
+                        </Box>
+                        <Text size2 bold>Colm Tuite</Text>
+                      </Flexbox>
+                      <Flexbox
+                        ai_center
+                        pl_6
+                        pt_1
+                      >
+                        <Box mr_2>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 25 25"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                          <circle cx="12.5" cy="12.5" r="8"/>
+                          <path d="M13.5 9.5L16.5 12.5L13.5 15.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M8.5 12.5H16.5" strokeLinecap="round"/>
+                          </svg>
+                        </Box>
+                        <Flexbox
+                          ai_baseline
+                        >
+                          <Text size2 mr_2>Created card</Text>
+                          <Text size1 color_gray600>8 Nov at 21:26</Text>
+                        </Flexbox>
+                      </Flexbox>
+                      <Flexbox
+                        ai_center
+                        pl_6
+                        pt_1
+                      >
+                        <Box mr_2>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 25 25"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                            <circle cx="12.5" cy="12.5" r="8"/>
+                            <path d="M15.5 9.5L11.5 15.5L9.5 13.456" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </Box>
+                        <Flexbox
+                          ai_baseline
+                        >
+                          <Text size2 mr_2>Moved to Editor Radar</Text>
+                          <Text size1 color_gray600>8 Nov at 21:51</Text>
+                        </Flexbox>
+                      </Flexbox>
+                    </Box>
+                  </Box>
+                </ListItem>
+              
+                <ListItem
+                  padding_2
+                >
+                  <Flexbox
+                    fd_column
+                    mr_2
+                  >
+                    <GhostButton
+                      mb_2
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="15"
+                        height="15"
+                        viewBox="0 0 15 15"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <circle cx="7.5" cy="7.5" r="6"/>
+                        <path d="M9.5 5.5L6.83333 9.5L5.5 8.13736" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </GhostButton>
+                    <GhostButton>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="15"
+                        height="15"
+                        viewBox="0 0 15 15"
+                        fill="currentColor"
+                        stroke="none"
+                      >
+                        <circle cx="2.5" cy="7.5" r="1.5"/>
+                        <circle cx="7.5" cy="7.5" r="1.5"/>
+                        <circle cx="12.5" cy="7.5" r="1.5"/>
+                      </svg>
+                    </GhostButton>
+                  </Flexbox>
+                  <Box>
+                    <Box
+                      padding_2
+                      bc_gray300
+                    > 
+                      <Box
+                        padding_2
+                        bc_white
+                      >
+                        <Text
+                          size3
+                          lh_1
+                        >
+                          Editor > Radio groups need a setting so you can turn them off (italics in text)
+                        </Text>
+                      </Box>
+                    </Box>
+                    <Box
+                      padding_2
+                      bc_gray200
+                    >
+                      <Flexbox
+                        ai_center
+                      >
+                        <Box pl_1 pr_3>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                            <path d="M11.5 5.5L7.5 9.5L3.5 5.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </Box>
+                        <Text size1>Hide previous card activity</Text>
+                      </Flexbox>
+                      <Flexbox
+                        ai_center
+                        mt_2
+                      >
+                        <Box mr_2>
+                          <Avatar
+                            size2
+                            url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                            size="25"
+                            initial="C"
+                            caption="Text for screenreader"
+                          />
+                        </Box>
+                        <Text size2 bold>Colm Tuite</Text>
+                      </Flexbox>
+                      <Flexbox
+                        ai_center
+                        pl_6
+                        pt_1
+                      >
+                        <Box mr_2>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 25 25"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                          <circle cx="12.5" cy="12.5" r="8"/>
+                          <path d="M13.5 9.5L16.5 12.5L13.5 15.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M8.5 12.5H16.5" strokeLinecap="round"/>
+                          </svg>
+                        </Box>
+                        <Flexbox
+                          ai_baseline
+                        >
+                          <Text size2 mr_2>Created card</Text>
+                          <Text size1 color_gray600>8 Nov at 21:26</Text>
+                        </Flexbox>
+                      </Flexbox>
+                      <Flexbox
+                        ai_center
+                        pl_6
+                        pt_1
+                      >
+                        <Box mr_2>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 25 25"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                            <circle cx="12.5" cy="12.5" r="8"/>
+                            <path d="M15.5 9.5L11.5 15.5L9.5 13.456" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </Box>
+                        <Flexbox
+                          ai_baseline
+                        >
+                          <Text size2 mr_2>Moved to Editor Radar</Text>
+                          <Text size1 color_gray600>8 Nov at 21:51</Text>
+                        </Flexbox>
+                      </Flexbox>
+                      <Flexbox
+                        ai_center
+                        mt_2
+                      >
+                        <Box mr_2>
+                          <Avatar
+                            size2
+                            url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                            size="25"
+                            initial="C"
+                            caption="Text for screenreader"
+                          />
+                        </Box>
+                        <Text size2 bold>Colm Tuite</Text>
+                      </Flexbox>
+                      <Flexbox
+                        ai_center
+                        pl_6
+                        pt_1
+                      >
+                        <Box mr_2>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 25 25"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                          <circle cx="12.5" cy="12.5" r="8"/>
+                          <path d="M13.5 9.5L16.5 12.5L13.5 15.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M8.5 12.5H16.5" strokeLinecap="round"/>
+                          </svg>
+                        </Box>
+                        <Flexbox
+                          ai_baseline
+                        >
+                          <Text size2 mr_2>Created card</Text>
+                          <Text size1 color_gray600>8 Nov at 21:26</Text>
+                        </Flexbox>
+                      </Flexbox>
+                      <Flexbox
+                        ai_center
+                        pl_6
+                        pt_1
+                      >
+                        <Box mr_2>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 25 25"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                            <circle cx="12.5" cy="12.5" r="8"/>
+                            <path d="M15.5 9.5L11.5 15.5L9.5 13.456" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </Box>
+                        <Flexbox
+                          ai_baseline
+                        >
+                          <Text size2 mr_2>Moved to Editor Radar</Text>
+                          <Text size1 color_gray600>8 Nov at 21:51</Text>
+                        </Flexbox>
+                      </Flexbox>
+                    </Box>
+                  </Box>
+                </ListItem>
+                
+              </List>
+            </Box>
+
+          </Flexbox>
+          
+        </Container>
+      </Section>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      {/*
+      <Box bc_gray300 pt_9 height_100>
+        <Box position_fixed width_100 bc_white pt_1 pb_1 as="header" style={{top: '0', zIndex: '9'}}>
+          <Container size1 height_100>
+            <Flexbox jc_spacebetween>
+              <Flexbox>
+                <Box>Home</Box>
+                <Box>Moments</Box>
+                <Box>Notifications</Box>
+                <Box>Messages</Box>
+              </Flexbox>
+              <Flexbox ai_center>
+                <Box mr_4>
+                  <Input placeholder="Search Twitter" />
+                </Box>
+                <Box mr_4>
+                  <Avatar
+                    url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                    size="35"
+                    initial="C"
+                    caption="Text for screenreader"
+                  />
+                </Box>
+                <Box>
+                  <Button size2 blue>
+                    Tweet
+                  </Button>
+                </Box>
+              </Flexbox>
+            </Flexbox>
+          </Container>
+        </Box>
+        <Container size1>
+          <Flexbox nml_3>
+            <Box ml_3 fg_1 fb_0>
+              <Box bc_white mb_2>
+                <AspectRatio ratio_169>
+                  <BackgroundImage
+                    src="https://images.unsplash.com/photo-1541944561160-54e0cd4a7e17?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=41729b83bd458d869d7f906d0635f5b5&auto=format&fit=crop&w=1500&q=80"
+                  >
+                    
+                  </BackgroundImage>
+                </AspectRatio>
+                <Box padding_2>
+                  <Flexbox mb_3>
+                    <Box mr_2>
+                      <Box bc_white padding_1 nmt_7 position_absolute style={{borderRadius: '50%'}}>
+                        <Avatar
+                          size6
+                          url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                          size="80"
+                          initial="C"
+                          caption="Text for screenreader"
+                        />
+                      </Box>
+                    </Box>
+                    <Box pl_9 ml_2>
+                      <Text size5 bold mb_1>Colm Tuite</Text>
+                      <Text size2 color_gray600>@colmtuite</Text>
+                    </Box>
+                  </Flexbox>
+                  <Flexbox>
+                    <Box fg_1 fb_0>
+                      <Text size2 bold color_gray600 mb_1>Tweets</Text>
+                      <Text size4 bold>5111</Text>
+                    </Box>
+                    <Box fg_1 fb_0>
+                      <Text size2 bold color_gray600 mb_1>Following</Text>
+                      <Text size4 bold>549</Text>
+                    </Box>
+                    <Box fg_1 fb_0>
+                      <Text size2 bold color_gray600 mb_1>Followers</Text>
+                      <Text size4 bold>2365</Text>
+                    </Box>
+                  </Flexbox>
+                </Box>
+              </Box>
+              <Box padding_2 bc_white>
+                wfwfe
+              </Box>
+            </Box>
+            <Box ml_3 style={{width: '590px'}}>
+              <Box bc_white>
+                <Box pt_2 pb_2 pl_3 bc_gray200>
+                  <Flexbox>
+                    <Box mr_2>
+                      <Avatar
+                        url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                        size="35"
+                        initial="C"
+                        caption="Text for screenreader"
+                      />
+                    </Box>
+                    <Input size3 placeholder="What's happening?" />
+                  </Flexbox>
+                </Box>
+                <Flexbox padding_3>
+                  <Box mr_2>
+                    <Avatar
+                      size4
+                      url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                      size="45"
+                      initial="C"
+                      caption="Text for screenreader"
+                    />
+                  </Box>
+                  <Box fg_1>
+                    <Box>
+                      <AspectRatio ratio_169>
+                        <BackgroundImage
+                          src="https://images.unsplash.com/photo-1541944561160-54e0cd4a7e17?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=41729b83bd458d869d7f906d0635f5b5&auto=format&fit=crop&w=1500&q=80"
+                        >
+                          
+                        </BackgroundImage>
+                      </AspectRatio>
+                      <Box padding_2>
+                        <Text size3 lh_1 bold mb_1>Building successful design systems with a well integrated research</Text>
+                        <Text size3 lh_1 mb_1>A guide for using research when (or before) starting to build a design system.</Text>
+                        <Text size2 lh_1 color_gray600>publication.design.systems</Text>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Flexbox>
+                <Flexbox padding_2>
+                  <Box mr_2>
+                    <Avatar
+                      size4
+                      url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                      size="45"
+                      initial="C"
+                      caption="Text for screenreader"
+                    />
+                  </Box>
+                  <Text size3 lh_1 as="p">As someone who both design and code, I couldn't agree more. I keep jumping from design to code, editing things back and forth, and it got me thinking that there gotta be a better way. Sadly, up until now, there isn't. And that's why I'm so looking forward to trying @Modulz</Text>
+                </Flexbox>
+                <Flexbox padding_2>
+                  <Box mr_2>
+                    <Avatar
+                      size4
+                      url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                      size="45"
+                      initial="C"
+                      caption="Text for screenreader"
+                    />
+                  </Box>
+                  <Text size3 lh_1 as="p">As someone who both design and code, I couldn't agree more. I keep jumping from design to code, editing things back and forth, and it got me thinking that there gotta be a better way. Sadly, up until now, there isn't. And that's why I'm so looking forward to trying @Modulz</Text>
+                </Flexbox>
+                <Flexbox padding_2>
+                  <Box mr_2>
+                    <Avatar
+                      size4
+                      url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                      size="45"
+                      initial="C"
+                      caption="Text for screenreader"
+                    />
+                  </Box>
+                  <Text size3 lh_1 as="p">As someone who both design and code, I couldn't agree more. I keep jumping from design to code, editing things back and forth, and it got me thinking that there gotta be a better way. Sadly, up until now, there isn't. And that's why I'm so looking forward to trying @Modulz</Text>
+                </Flexbox>
+                <Flexbox padding_2>
+                  <Box mr_2>
+                    <Avatar
+                      size4
+                      url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                      size="45"
+                      initial="C"
+                      caption="Text for screenreader"
+                    />
+                  </Box>
+                  <Text size3 lh_1 as="p">As someone who both design and code, I couldn't agree more. I keep jumping from design to code, editing things back and forth, and it got me thinking that there gotta be a better way. Sadly, up until now, there isn't. And that's why I'm so looking forward to trying @Modulz</Text>
+                </Flexbox>
+                <Flexbox padding_2>
+                  <Box mr_2>
+                    <Avatar
+                      size4
+                      url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                      size="45"
+                      initial="C"
+                      caption="Text for screenreader"
+                    />
+                  </Box>
+                  <Text size3 lh_1 as="p">As someone who both design and code, I couldn't agree more. I keep jumping from design to code, editing things back and forth, and it got me thinking that there gotta be a better way. Sadly, up until now, there isn't. And that's why I'm so looking forward to trying @Modulz</Text>
+                </Flexbox>
+                <Flexbox padding_2>
+                  <Box mr_2>
+                    <Avatar
+                      size4
+                      url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                      size="45"
+                      initial="C"
+                      caption="Text for screenreader"
+                    />
+                  </Box>
+                  <Text size3 lh_1 as="p">As someone who both design and code, I couldn't agree more. I keep jumping from design to code, editing things back and forth, and it got me thinking that there gotta be a better way. Sadly, up until now, there isn't. And that's why I'm so looking forward to trying @Modulz</Text>
+                </Flexbox>
+                <Flexbox padding_2>
+                  <Box mr_2>
+                    <Avatar
+                      size4
+                      url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                      size="45"
+                      initial="C"
+                      caption="Text for screenreader"
+                    />
+                  </Box>
+                  <Text size3 lh_1 as="p">As someone who both design and code, I couldn't agree more. I keep jumping from design to code, editing things back and forth, and it got me thinking that there gotta be a better way. Sadly, up until now, there isn't. And that's why I'm so looking forward to trying @Modulz</Text>
+                </Flexbox>
+                <Flexbox padding_2>
+                  <Box mr_2>
+                    <Avatar
+                      size4
+                      url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                      size="45"
+                      initial="C"
+                      caption="Text for screenreader"
+                    />
+                  </Box>
+                  <Text size3 lh_1 as="p">As someone who both design and code, I couldn't agree more. I keep jumping from design to code, editing things back and forth, and it got me thinking that there gotta be a better way. Sadly, up until now, there isn't. And that's why I'm so looking forward to trying @Modulz</Text>
+                </Flexbox>
+                <Flexbox padding_2>
+                  <Box mr_2>
+                    <Avatar
+                      size4
+                      url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                      size="45"
+                      initial="C"
+                      caption="Text for screenreader"
+                    />
+                  </Box>
+                  <Text size3 lh_1 as="p">As someone who both design and code, I couldn't agree more. I keep jumping from design to code, editing things back and forth, and it got me thinking that there gotta be a better way. Sadly, up until now, there isn't. And that's why I'm so looking forward to trying @Modulz</Text>
+                </Flexbox>
+              </Box>
+            </Box>
+            <Box ml_3 fg_1 fb_0>
+              <Box bc_white>
+                <Flexbox ai_baseline>
+                  <Heading size1 bold>Who to follow</Heading>
+                  <Text size1 color_gray600>Refresh</Text>
+                  <Text size1 color_gray600>View all</Text>
+                </Flexbox>
+              <List pt_1 pb_1>
+                <ListItem>
+                  <Flexbox ai_center>
+                    <Box mr_2>
+                      <Avatar
+                        size4
+                        url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                        size="45"
+                        initial="C"
+                        caption="Text for screenreader"
+                      />
+                    </Box>
+                    <Box fg_1>
+                      <Flexbox ai_center jc_spacebetween>
+                        <Flexbox ai_baseline mb_1>
+                          <Text size2 bold mr_1>Colm Tuite</Text>
+                          <Text size1 color_gray600>@colmtuite</Text>
+                        </Flexbox>
+                        <GhostButton size1 style={{width: '15px',height: '15px'}}>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                            <path d="M2.5 12.5L12.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M12.5 12.5L2.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </GhostButton>
+                      </Flexbox>
+                      <Button>
+                        Follow
+                      </Button>
+                    </Box>
+                  </Flexbox>
+                </ListItem>
+                <li>
+                  <Divider
+                    mt_1
+                    mb_1
+                  />
+                </li>
+                <ListItem>
+                  <Flexbox ai_center>
+                    <Box mr_2>
+                      <Avatar
+                        size4
+                        url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                        size="45"
+                        initial="C"
+                        caption="Text for screenreader"
+                      />
+                    </Box>
+                    <Box fg_1>
+                      <Flexbox ai_center jc_spacebetween>
+                        <Flexbox ai_baseline mb_1>
+                          <Text size2 bold mr_1>Colm Tuite</Text>
+                          <Text size1 color_gray600>@colmtuite</Text>
+                        </Flexbox>
+                        <GhostButton size1 style={{width: '15px',height: '15px'}}>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                            <path d="M2.5 12.5L12.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M12.5 12.5L2.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </GhostButton>
+                      </Flexbox>
+                      <Button>
+                        Follow
+                      </Button>
+                    </Box>
+                  </Flexbox>
+                </ListItem>
+                <li>
+                  <Divider
+                    mt_1
+                    mb_1
+                  />
+                </li>
+                <MenuItem>
+                  <Box mr_3>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 25 25"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path d="M5.5 11.9142V20.5H10.5V15C10.5 14.7239 10.7239 14.5 11 14.5H14C14.2761 14.5 14.5 14.7239 14.5 15V20.5H19.5V11.9142C19.5 11.649 19.3946 11.3946 19.2071 11.2071L12.5 4.5L5.79289 11.2071C5.60536 11.3946 5.5 11.649 5.5 11.9142Z" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </Box>
+                  <Text size2>Log out</Text>
+                </MenuItem>
+                <MenuItem>
+                  <Box mr_3>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 25 25"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                    <circle cx="12.5" cy="12.5" r="8"/>
+                    <path d="M5.5 16C9.875 17.3333 15.125 17.3333 19.5 16" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M5.5 9C10 7.66666 15 7.66667 19.5 9" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12.5 20.5C6.5 18 6.49999 7 12.5 4.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12.5 20.5C18.5 18 18.5 7 12.5001 4.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M4.5 12.5H20.5"/>
+                    <path d="M12.5 4.5V20.5"/>
+                    </svg>
+                  </Box>
+                  <Text size2>Log out</Text>
+                </MenuItem>
+                <MenuItem>
+                  <Box mr_3>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 25 25"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                    <circle cx="12.5" cy="12.5" r="3"/>
+                    <circle cx="12.5" cy="12.5" r="8"/>
+                    <path d="M6.5 18.5L10.5 14.5"/>
+                    <path d="M14.5 10.5L18.5 6.5"/>
+                    <path d="M10.5 10.5L6.5 6.5"/>
+                    <path d="M18 18L14.5 14.5"/>
+                    </svg>
+                  </Box>
+                  <Text size2>Log out</Text>
+                </MenuItem>
+                <li>
+                  <Divider
+                    mt_1
+                    mb_1
+                  />
+                </li>
+                <MenuItem>
+                  <Box mr_3>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 25 25"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                    <rect x="4.5" y="8.5" width="16" height="12" rx="1.5"/>
+                    <path d="M5.5 8C5.5 7.17157 6.17157 6.5 7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8Z"/>
+                    <path d="M6.5 6C6.5 5.17157 7.17157 4.5 8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6Z"/>
+                    <path d="M9.5 17.5L15.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M15.5 17.5L9.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </Box>
+                  <Text size2>Log out</Text>
+                </MenuItem>
+                <li>
+                  <Divider
+                    mt_1
+                    mb_1
+                  />
+                </li>
+                <MenuItem>
+                  <Box>
+                    <Box mb_1>
+                      <Flexbox ai_center>
+                        <Box mr_4>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 25 25"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                          <rect x="4.5" y="8.5" width="16" height="12" rx="1.5"/>
+                          <path d="M5.5 8C5.5 7.17157 6.17157 6.5 7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8Z"/>
+                          <path d="M6.5 6C6.5 5.17157 7.17157 4.5 8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6Z"/>
+                          <path d="M9.5 17.5L15.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M15.5 17.5L9.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </Box>
+                        <Text size3 lh_1 bold>Log out</Text>
+                      </Flexbox>
+                    </Box>
+                    <Text size2 lh_1 color_gray600 ml_7>How to scale meaningful design in a multi-device world</Text>
+                  </Box>
+                </MenuItem>
+                <MenuItem>
+                  <Box>
+                    <Box mb_1>
+                      <Flexbox ai_center>
+                        <Box mr_4>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 25 25"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                          <rect x="4.5" y="8.5" width="16" height="12" rx="1.5"/>
+                          <path d="M5.5 8C5.5 7.17157 6.17157 6.5 7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8Z"/>
+                          <path d="M6.5 6C6.5 5.17157 7.17157 4.5 8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6Z"/>
+                          <path d="M9.5 17.5L15.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M15.5 17.5L9.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </Box>
+                        <Text size3 lh_1 bold>Log out</Text>
+                      </Flexbox>
+                    </Box>
+                    <Text size2 lh_1 color_gray600 ml_7>How to scale meaningful design in a multi-device world</Text>
+                  </Box>
+                </MenuItem>
+                <MenuItem>
+                  <Box>
+                    <Box mb_1>
+                      <Flexbox ai_center>
+                        <Box mr_4>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 25 25"
+                            fill="none"
+                            stroke="currentColor"
+                          >
+                          <rect x="4.5" y="8.5" width="16" height="12" rx="1.5"/>
+                          <path d="M5.5 8C5.5 7.17157 6.17157 6.5 7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8Z"/>
+                          <path d="M6.5 6C6.5 5.17157 7.17157 4.5 8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6Z"/>
+                          <path d="M9.5 17.5L15.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M15.5 17.5L9.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </Box>
+                        <Text size3 lh_1 bold>Log out</Text>
+                      </Flexbox>
+                    </Box>
+                    <Text size2 lh_1 color_gray600 ml_7>How to scale meaningful design in a multi-device world</Text>
+                  </Box>
+                </MenuItem>
+              </List>
+              </Box>
+            </Box>
+          </Flexbox>
+        </Container>
+      </Box> */}
 
     </div>
   }

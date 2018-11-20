@@ -12,6 +12,7 @@ const Container = styled.div`
   color: white;
   display: inline-flex;
   font-family: ${theme.UNTITLEDSANSMEDIUM};
+  flex-shrink: 0;
   justify-content: center;
   font-weight: 500;
   font-size: ${theme.FONTSIZE_300};

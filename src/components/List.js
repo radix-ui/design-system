@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 import Margin from './../utilities/Margin';
+import Padding from './../utilities/Padding';
 
 const List = styled.ul`
   display: inline-block;
@@ -9,6 +10,7 @@ const List = styled.ul`
   min-width: 100%;
 
   ${Margin}
+  ${Padding}
 `;
 
 export default List;

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
+import Color from './../utilities/Color';
 import Margin from './../utilities/Margin';
 
 const GhostButton = styled.button.attrs({
@@ -25,6 +26,7 @@ const GhostButton = styled.button.attrs({
   min-width: ${theme.SPACING_500};
   outline: none;
   padding: 0;
+  pointer-events: auto;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -73,6 +75,7 @@ const GhostButton = styled.button.attrs({
     min-width: ${theme.SPACING_600};
   `}
 
+  ${Color}
   ${Margin}
 `;
 

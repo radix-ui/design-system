@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
+import Margin from './../utilities/Margin';
 
 const Divider = styled.div`
   background-color: ${theme.GRAY_300};
@@ -34,6 +35,8 @@ const Divider = styled.div`
       height: 100%;
     `}
   `}
+
+  ${Margin}
 `;
 
 export default Divider;

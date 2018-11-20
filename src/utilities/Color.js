@@ -9,6 +9,8 @@ const Color = css`
   ${p => p.color_gray600 && css`color: ${theme.GRAY_600};`}
   ${p => p.color_gray900 && css`color: ${theme.GRAY_900};`}
 
+  ${p => p.color_blue500 && css`color: ${theme.BLUE_500};`}
+
   @media (min-width: ${theme.BREAKPOINT_100}) {
     ${p => p.bp1_color_white && css`color: ${theme.WHITE};`}
     ${p => p.bp1_color_black && css`color: ${theme.BLACK};`}
@@ -16,6 +18,8 @@ const Color = css`
     ${p => p.bp1_color_gray500 && css`color: ${theme.GRAY_500};`}
     ${p => p.bp1_color_gray600 && css`color: ${theme.GRAY_600};`}
     ${p => p.bp1_color_gray900 && css`color: ${theme.GRAY_900};`}
+
+    ${p => p.bp1_color_blue500 && css`color: ${theme.BLUE_500};`}
   }
 
   @media (min-width: ${theme.BREAKPOINT_200}) {
@@ -25,6 +29,8 @@ const Color = css`
     ${p => p.bp2_color_gray500 && css`color: ${theme.GRAY_500};`}
     ${p => p.bp2_color_gray600 && css`color: ${theme.GRAY_600};`}
     ${p => p.bp2_color_gray900 && css`color: ${theme.GRAY_900};`}
+
+    ${p => p.bp2_color_blue500 && css`color: ${theme.BLUE_500};`}
   }
 
   @media (min-width: ${theme.BREAKPOINT_300}) {
@@ -34,6 +40,8 @@ const Color = css`
     ${p => p.bp3_color_gray500 && css`color: ${theme.GRAY_500};`}
     ${p => p.bp3_color_gray600 && css`color: ${theme.GRAY_600};`}
     ${p => p.bp3_color_gray900 && css`color: ${theme.GRAY_900};`}
+
+    ${p => p.bp3_color_blue500 && css`color: ${theme.BLUE_500};`}
   }
 
   @media (min-width: ${theme.BREAKPOINT_400}) {
@@ -43,6 +51,8 @@ const Color = css`
     ${p => p.bp4_color_gray500 && css`color: ${theme.GRAY_500};`}
     ${p => p.bp4_color_gray600 && css`color: ${theme.GRAY_600};`}
     ${p => p.bp4_color_gray900 && css`color: ${theme.GRAY_900};`}
+
+    ${p => p.bp4_color_blue500 && css`color: ${theme.BLUE_500};`}
   }
 `;
 

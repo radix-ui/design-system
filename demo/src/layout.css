@@ -187,3 +187,7 @@ textarea {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+
+svg {
+  display: block;
+}
