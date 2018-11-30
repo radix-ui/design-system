@@ -88,18 +88,20 @@ const Dummy = styled.div`
 `;
 
 const ToggleButton = (props) => {
-  const { children, group, ...nonChildrenProps } = props;
+  const { children, group, onClick, onChange, ...otherProps } = props;
   return (
     <Wrapper
-      {...nonChildrenProps}
+      {...otherProps}
     >
       <Radio
         type="radio"
         name={group}
-        {...nonChildrenProps}
+        onClick={onClick}
+        onChange={onChange}
+        {...otherProps}
       />
       <Dummy
-        {...nonChildrenProps}
+        {...otherProps}
       >
         {children}
       </Dummy>
