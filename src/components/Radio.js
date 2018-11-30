@@ -39,14 +39,16 @@ const Dummy = styled.div`
   transform: translateX(-50%) translateY(-50%);
 `;
 
-const Radio = (props) => (
+const Radio = ({ group, onClick, onChange, ...otherProps }) => (
   <Wrapper>
     <Input
-      {...props}
+      {...otherProps}
       type="radio"
-      name={props.group}
+      name={group}
+      onClick={onClick}
+      onChange={onChange}
     />
-    <Dummy {...props}></Dummy>
+    <Dummy {...otherProps}></Dummy>
   </Wrapper>
 );
 
