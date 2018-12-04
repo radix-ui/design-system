@@ -25,8 +25,7 @@ const MenuItem = styled.button.attrs({
   user-select: none;
   width: 100%;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: ${theme.GRAY_200};
   }
 
@@ -34,23 +33,26 @@ const MenuItem = styled.button.attrs({
     background-color: ${theme.GRAY_300};
   }
 
+  &:focus {
+    box-shadow: inset 0 0 0 1px ${theme.BLUE_300};
+  }
+
   ${props => props.active && css`
-    background-color: ${theme.BLUE_200};
-    color: ${theme.BLUE_600};
+    background-color: ${theme.BLUE_500};
+    color: white;
     cursor: default;
     font-family: ${theme.UNTITLEDSANSMEDIUM};
     font-weight: 500;
     pointer-events: none;
+
+    &:focus {
+      box-shadow: none;
+    }
   `}
 
   ${props => props.selected && css`
-    background-color: ${theme.BLUE_500};
-    color: ${theme.WHITE};
-
-    &:hover,
-    &:focus {
-      background-color: ${theme.BLUE_500};
-    }
+    background-color: ${theme.BLUE_100};
+    box-shadow: inset 0 0 0 1px ${theme.BLUE_300};
   `}
 
   ${props => props.highlighted && css`
@@ -69,13 +71,6 @@ const MenuItem = styled.button.attrs({
 
   ${props => props.size2 && css`
     min-height: ${theme.SPACING_700};
-  `}
-
-  ${props => props.rounded && css`
-    border-radius: 9999px;
-    padding-left: ${theme.SPACING_500};
-    padding-right: ${theme.SPACING_500};
-    margin-top: ${theme.SPACING_100};
   `}
 
   ${Padding}

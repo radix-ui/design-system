@@ -830,24 +830,166 @@ export default class extends Component {
             </div>
             <div>
               <List pt_1 pb_1>
-                <MenuItem highlighted>
-                  <Text size3>Gray</Text>
-                </MenuItem>
-                <MenuItem active>
-                  <Text size3>Orange</Text>
-                </MenuItem>
-                <MenuItem>
-                  <Text size3>Gray</Text>
-                </MenuItem>
-                <MenuItem>
-                  <Text size3>Gray</Text>
-                </MenuItem>
+                <li>
+                  <MenuItem>
+                    <Text size3>First link</Text>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem>
+                    <Text size3>Second link</Text>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem>
+                    <Text size3>Third link</Text>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem>
+                    <Text size3>Fourth link</Text>
+                  </MenuItem>
+                </li>
+              </List>
+            </div>
+            <div>
+              <List pt_1 pb_1>
+                <li>
+                  <MenuItem>
+                    <Text size3>Variant one</Text>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem active>
+                    <Text size3>Variant two</Text>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem>
+                    <Text size3>Variant three</Text>
+                  </MenuItem>
+                </li>
+              </List>
+            </div>
+            <div>
+              <List pt_1 pb_1>
+                <li>
+                  <MenuItem pt_2 pb_2 pl_4 pr_4 highlighted>
+                    <Flexbox ai_center width_100>
+                      <Box mr_2>
+                        <Avatar
+                          size4
+                          url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                          size="45"
+                          initial="C"
+                          caption="Text for screenreader"
+                        />
+                      </Box>
+                      <Box fg_1>
+                        <Flexbox ai_center jc_spacebetween>
+                          <Flexbox ai_baseline mb_1>
+                            <Text size2 bold mr_1>Colm Tuite</Text>
+                            <Text size1 color_gray600>@colmtuite</Text>
+                          </Flexbox>
+                          <GhostButton size1 style={{width: '15px',height: '15px'}}>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="15"
+                              height="15"
+                              viewBox="0 0 15 15"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M2.5 12.5L12.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M12.5 12.5L2.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </GhostButton>
+                        </Flexbox>
+                        <Text size2 lh_1 color_gray600>A little message snippet.</Text>
+                      </Box>
+                    </Flexbox>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem pt_2 pb_2 pl_4 pr_4>
+                    <Flexbox ai_center width_100>
+                      <Box mr_2>
+                        <Avatar
+                          size4
+                          url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                          size="45"
+                          initial="C"
+                          caption="Text for screenreader"
+                        />
+                      </Box>
+                      <Box fg_1>
+                        <Flexbox ai_center jc_spacebetween>
+                          <Flexbox ai_baseline mb_1>
+                            <Text size2 bold mr_1>Colm Tuite</Text>
+                            <Text size1 color_gray600>@colmtuite</Text>
+                          </Flexbox>
+                          <GhostButton size1 style={{width: '15px',height: '15px'}}>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="15"
+                              height="15"
+                              viewBox="0 0 15 15"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M2.5 12.5L12.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M12.5 12.5L2.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </GhostButton>
+                        </Flexbox>
+                        <Text size2 lh_1 color_gray600>A little message snippet.</Text>
+                      </Box>
+                    </Flexbox>
+                  </MenuItem>
+                </li>
+                <li>
+                  <MenuItem pt_2 pb_2 pl_4 pr_4>
+                    <Flexbox ai_center width_100>
+                      <Box mr_2>
+                        <Avatar
+                          size4
+                          url="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                          size="45"
+                          initial="C"
+                          caption="Text for screenreader"
+                        />
+                      </Box>
+                      <Box fg_1>
+                        <Flexbox ai_center jc_spacebetween>
+                          <Flexbox ai_baseline mb_1>
+                            <Text size2 bold mr_1>Colm Tuite</Text>
+                            <Text size1 color_gray600>@colmtuite</Text>
+                          </Flexbox>
+                          <GhostButton size1 style={{width: '15px',height: '15px'}}>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="15"
+                              height="15"
+                              viewBox="0 0 15 15"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M2.5 12.5L12.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M12.5 12.5L2.5 2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </GhostButton>
+                        </Flexbox>
+                        <Text size2 lh_1 color_gray600>A little message snippet.</Text>
+                      </Box>
+                    </Flexbox>
+                  </MenuItem>
+                </li>
               </List>
             </div>
             <div>
               <List pt_1 pb_1>
                 <ListItem>
-                  <Flexbox ai_center>
+                  <Flexbox ai_center width_100>
                     <Box mr_2>
                       <Avatar
                         size4
@@ -890,7 +1032,7 @@ export default class extends Component {
                   />
                 </li>
                 <ListItem>
-                  <Flexbox ai_center>
+                  <Flexbox ai_center width_100>
                     <Box mr_2>
                       <Avatar
                         size4
@@ -931,7 +1073,7 @@ export default class extends Component {
             <div>
               <Text
                 size4
-                lh3
+                lh_3
               >
                 This really long paragraph text has a <Code>piece of code</Code> right in the middle of it. The reason the parapgraph is so long is
               so we can test how the code element affects lines below it.
