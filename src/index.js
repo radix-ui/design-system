@@ -6,6 +6,7 @@ import AspectRatio from './components/AspectRatio';
 import Badge from './components/Badge';
 import Box from './components/Box';
 import Button from './components/Button';
+import ChromelessButton from './components/ChromelessButton';
 import Container from './components/Container';
 import ContextMenu from './components/ContextMenu';
 import Divider from './components/Divider';
@@ -50,6 +51,7 @@ export AspectRatio from './components/AspectRatio';
 export Badge from './components/Badge';
 export Box from './components/Box';
 export Button from './components/Button';
+export ChromelessButton from './components/ChromelessButton';
 export Container from './components/Container';
 export ContextMenu from './components/ContextMenu';
 export Divider from './components/Divider';
@@ -185,6 +187,15 @@ export default class extends Component {
                   </Box>
                   Follow
                 </Button>
+              </Flexbox>
+            </div>
+            <div>
+              <Flexbox
+                ai_center
+              >
+                <ChromelessButton>
+                  ChromelessButton
+                </ChromelessButton>
               </Flexbox>
             </div>
             <div>
