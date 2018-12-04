@@ -3,9 +3,7 @@ import * as theme from './../theme/';
 
 import Padding from './../utilities/Padding';
 
-const MenuItem = styled.button.attrs({
-  type: 'button',
-})`
+const MenuItem = styled.a`
   align-items: center;
   background-color: transparent;
   border: none;
@@ -34,7 +32,7 @@ const MenuItem = styled.button.attrs({
   }
 
   &:focus {
-    box-shadow: inset 0 0 0 1px ${theme.BLUE_300};
+    box-shadow: 0 0 0 1px ${theme.BLUE_300};
   }
 
   ${props => props.active && css`
@@ -52,14 +50,12 @@ const MenuItem = styled.button.attrs({
 
   ${props => props.selected && css`
     background-color: ${theme.BLUE_100};
-    box-shadow: inset 0 0 0 1px ${theme.BLUE_300};
+    box-shadow: 0 0 0 1px ${theme.BLUE_300};
   `}
 
   ${props => props.highlighted && css`
-    background-color: ${theme.BLUE_100};
-    &:hover {
-      background-color: ${theme.BLUE_200};
-    }
+    background-color: ${theme.BLUE_200};
+    &:hover,
     &:active {
       background-color: ${theme.BLUE_200};
     }
