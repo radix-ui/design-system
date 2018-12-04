@@ -115,7 +115,7 @@ export default class extends Component {
                 </Button>
               </Flexbox>
               <Flexbox
-                mt6
+                mt_6
               >
                 <Button size2 blue>
                   Blue
@@ -131,7 +131,7 @@ export default class extends Component {
                 </Button>
               </Flexbox>
               <Flexbox
-                mt6
+                mt_6
               >
                 <Button size2 left>
                   Left
@@ -144,7 +144,7 @@ export default class extends Component {
                 </Button>
               </Flexbox>
               <Flexbox
-                mt6
+                mt_6
               >
                 <Button size2 active>
                   Active
@@ -158,7 +158,7 @@ export default class extends Component {
               </Flexbox>
               <Flexbox
                 ai_center
-                mt6
+                mt_6
               >
                 <Button
                   blue
@@ -200,7 +200,7 @@ export default class extends Component {
             </div>
             <div>
               <Flexbox
-                mb6
+                mb_6
               >
                 <ToggleButton
                   left
@@ -217,7 +217,7 @@ export default class extends Component {
                 </ToggleButton>
               </Flexbox>
               <Flexbox
-                mb6
+                mb_6
               >
                 <ToggleButton
                   left
@@ -325,7 +325,7 @@ export default class extends Component {
                 </ToggleButton>
               </Flexbox>
               <Flexbox
-                mb6
+                mb_6
               >
                 <ToggleButton
                   left
@@ -458,7 +458,7 @@ export default class extends Component {
               </Flexbox>
               <Flexbox
                 ai_center
-                mt6
+                mt_6
               >
                 <GhostButton
                   padded
@@ -506,7 +506,7 @@ export default class extends Component {
               </Flexbox>
               <Flexbox
                 ai_center
-                mt6
+                mt_6
               >
                 <GhostButton
                   padded
@@ -581,24 +581,24 @@ export default class extends Component {
                 ai_center
               >
                 <Box
-                  mr4
+                  mr_4
                 >
                   <Status />
                 </Box>
                 <Status size2 />
               </Flexbox>
               <Flexbox
-                mt6
+                mt_6
               >
                 <Box
-                  mr4
+                  mr_4
                 >
                   <Status
                     size2
                   />
                 </Box>
                 <Box
-                  mr4
+                  mr_4
                 >
                   <Status
                     size2
@@ -606,7 +606,7 @@ export default class extends Component {
                   />
                 </Box>
                 <Box
-                  mr4
+                  mr_4
                 >
                   <Status
                     size2
@@ -614,7 +614,7 @@ export default class extends Component {
                   />
                 </Box>
                 <Box
-                  mr4
+                  mr_4
                 >
                   <Status
                     size2
@@ -622,7 +622,7 @@ export default class extends Component {
                   />
                 </Box>
                 <Box
-                  mr4
+                  mr_4
                 >
                   <Status
                     size2
@@ -631,10 +631,10 @@ export default class extends Component {
                 </Box>
               </Flexbox>
               <Flexbox
-                mt6
+                mt_6
               >
               <Box
-                mr4
+                mr_4
               >
                 <Status
                   size2
@@ -643,7 +643,7 @@ export default class extends Component {
                 </Status>
               </Box>
               <Box
-                mr4
+                mr_4
               >
                 <Status
                   size2
@@ -653,7 +653,7 @@ export default class extends Component {
                 </Status>
               </Box>
               <Box
-                mr4
+                mr_4
               >
                 <Status
                   size2
@@ -665,25 +665,25 @@ export default class extends Component {
               </Flexbox>
             </div>
             <div>
-              <Text size8 mb3>
+              <Text size8 mb_3>
                 Text
               </Text>
-              <Text size7 mb3>
+              <Text size7 mb_3>
                 Text
               </Text>
-              <Text size6 mb3>
+              <Text size6 mb_3>
                 Text
               </Text>
-              <Text size5 mb3>
+              <Text size5 mb_3>
                 Text
               </Text>
-              <Text size4 mb3>
+              <Text size4 mb_3>
                 Text
               </Text>
-              <Text size3 mb3>
+              <Text size3 mb_3>
                 Text
               </Text>
-              <Text size2 mb3>
+              <Text size2 mb_3>
                 Text
               </Text>
               <Text size1>
@@ -691,19 +691,19 @@ export default class extends Component {
               </Text>
             </div>
             <div>
-              <Heading size6 bold mb3>
+              <Heading size6 bold mb_3>
                 Heading
               </Heading>
-              <Heading size5 bold mb3>
+              <Heading size5 bold mb_3>
                 Heading
               </Heading>
-              <Heading size4 mb3>
+              <Heading size4 mb_3>
                 Heading
               </Heading>
-              <Heading size3 mb3>
+              <Heading size3 mb_3>
                 Heading
               </Heading>
-              <Heading size2 mb3>
+              <Heading size2 mb_3>
                 Heading
               </Heading>
               <Heading size1>
@@ -712,14 +712,14 @@ export default class extends Component {
             </div>
             <div>
               <Box
-                mb6
+                mb_6
               >
                 <Title size1>
                   Some heading
                 </Title>
               </Box>
               <Box
-                mb6
+                mb_6
               >
                 <Title size2>
                   Some heading
@@ -856,7 +856,7 @@ export default class extends Component {
                 ai_center
               >
                 <Box
-                  mr4
+                  mr_4
                 >
                   <Avatar
                     url="https://images.unsplash.com/photo-1534387435-e9ff5846dac5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d47fe3447c889fe7857b3d14dd3ce8ad&auto=format&fit=crop&w=802&q=80"
@@ -917,7 +917,7 @@ export default class extends Component {
               >
                 <Box
                   fg1
-                  mr4
+                  mr_4
                 >
                   <Progress
                     size1
@@ -927,7 +927,7 @@ export default class extends Component {
                 </Box>
                 <Box
                   fg1
-                  mr4
+                  mr_4
                 >
                   <Progress
                     size2
@@ -946,7 +946,7 @@ export default class extends Component {
                 </Box>
               </Flexbox>
               <Flexbox
-                mt6
+                mt_6
                 ai_center
               >
                 <Progress
@@ -956,7 +956,7 @@ export default class extends Component {
                 ></Progress>
               </Flexbox>
               <Box
-                mt6
+                mt_6
                 mb2
               >
                 <Progress
