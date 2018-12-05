@@ -1,9 +1,5 @@
-import styled, { css } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import MenuItem from './MenuItem.js';
 
-const MenuItemButton = styled(MenuItem).attrs({
-  type: 'button',
-})`
-`;
-
-export default MenuItemButton;
+export default props => <MenuItem role={undefined} type="button" as="button" {...props} />;

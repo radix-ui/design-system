@@ -840,7 +840,7 @@ export default class extends Component {
             </div>
             <div>
               <Switch />
-            </div>            
+            </div>
             <div>
               <Text
                 size4
@@ -1036,7 +1036,7 @@ export default class extends Component {
           </Grid>
         </Container>
       </Section>
-      
+
       <Section
         size3
       >
@@ -1044,7 +1044,7 @@ export default class extends Component {
           size2
         >
           <Flexbox ai_flexstart>
-                      
+
             <Box
               mr_7
               style={{
@@ -1067,7 +1067,7 @@ export default class extends Component {
                 </li>
               </List>
             </Box>
-          
+
             <Box
               mr_7
               style={{
@@ -1184,7 +1184,7 @@ export default class extends Component {
                 </li>
               </List>
             </Box>
-            
+
             <Box
               mr_7
               style={{
@@ -1250,10 +1250,10 @@ export default class extends Component {
               </List>
             </Box>
           </Flexbox>
-          
+
         </Container>
       </Section>
-      
+
       <Section
         size3
       >
@@ -1261,7 +1261,7 @@ export default class extends Component {
           size2
         >
           <Flexbox ai_flexstart>
-                      
+
             <Box
               mr_7
               style={{
@@ -1270,7 +1270,7 @@ export default class extends Component {
             >
               <List pb_1>
                 <li>
-                  <MenuItem rounded active>
+                  <MenuItemButton rounded active>
                     <Flexbox ai_center>
                       <Box mr_4>
                         <svg
@@ -1291,30 +1291,30 @@ export default class extends Component {
                       </Box>
                       <Text size3 bold>Inbox</Text>
                     </Flexbox>
-                  </MenuItem>
+                  </MenuItemButton>
                 </li>
                 <li>
-                  <MenuItem as="button">
-                  <Flexbox ai_center>
-                    <Box mr_4>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        viewBox="0 0 25 25"
-                        fill="none"
-                        stroke="currentColor"
-                      >
-                      <path d="M7.5 4.5V20.5L12.5 16.5L17.5 20.5V4.5H7.5Z" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M7 6.5H15"/>
-                      </svg>
-                    </Box>
-                    <Text size3>Bookmarked</Text>
-                  </Flexbox>
-                  </MenuItem>
+                  <MenuItemButton>
+                    <Flexbox ai_center>
+                      <Box mr_4>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="25"
+                          height="25"
+                          viewBox="0 0 25 25"
+                          fill="none"
+                          stroke="currentColor"
+                        >
+                        <path d="M7.5 4.5V20.5L12.5 16.5L17.5 20.5V4.5H7.5Z" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M7 6.5H15"/>
+                        </svg>
+                      </Box>
+                      <Text size3>Bookmarked</Text>
+                    </Flexbox>
+                  </MenuItemButton>
                 </li>
                 <li>
-                  <MenuItem as="button">
+                  <MenuItemButton>
                   <Flexbox ai_center>
                     <Box mr_4>
                       <svg
@@ -1331,10 +1331,10 @@ export default class extends Component {
                     </Box>
                     <Text size3>Snoozed</Text>
                   </Flexbox>
-                  </MenuItem>
+                  </MenuItemButton>
                 </li>
                 <li>
-                  <MenuItem as="button">
+                  <MenuItemButton>
                   <Flexbox ai_center>
                     <Box mr_4>
                       <svg
@@ -1351,10 +1351,10 @@ export default class extends Component {
                     </Box>
                     <Text size3>Important</Text>
                   </Flexbox>
-                  </MenuItem>
+                  </MenuItemButton>
                 </li>
                 <li>
-                  <MenuItem as="button">
+                  <MenuItemButton>
                   <Flexbox ai_center>
                     <Box mr_4>
                       <svg
@@ -1370,10 +1370,10 @@ export default class extends Component {
                     </Box>
                     <Text size3>Sent</Text>
                   </Flexbox>
-                  </MenuItem>
+                  </MenuItemButton>
                 </li>
                 <li>
-                  <MenuItem as="button">
+                  <MenuItemButton>
                   <Flexbox ai_center>
                     <Box mr_4>
                       <svg
@@ -1393,10 +1393,10 @@ export default class extends Component {
                     </Box>
                     <Text size3>Drafts</Text>
                   </Flexbox>
-                  </MenuItem>
+                  </MenuItemButton>
                 </li>
                 <li>
-                  <MenuItem as="button">
+                  <MenuItemButton as="button">
                   <Flexbox ai_center>
                     <Box mr_4>
                       <svg
@@ -1417,11 +1417,11 @@ export default class extends Component {
                     </Box>
                     <Text size3>Trash</Text>
                   </Flexbox>
-                  </MenuItem>
+                  </MenuItemButton>
                 </li>
               </List>
             </Box>
-            
+
             <Box
               mr_7
               style={{
@@ -1633,11 +1633,11 @@ export default class extends Component {
                 </li>
               </List>
             </Box>
-            
+
           </Flexbox>
-          
+
           <Flexbox ai_flexstart mt_9>
-            
+
             <Box
               mr_7
               style={{
@@ -1730,7 +1730,7 @@ export default class extends Component {
                 </ListItem>
               </List>
             </Box>
-            
+
             <Box
               mr_7
               style={{
@@ -1854,7 +1854,7 @@ export default class extends Component {
                 </li>
               </List>
             </Box>
-            
+
             <Box
               mr_7
               style={{
@@ -2115,10 +2115,10 @@ export default class extends Component {
             </Box>
 
           </Flexbox>
-          
+
         </Container>
       </Section>
-      
+
       <Section
         size3
       >
@@ -2126,7 +2126,7 @@ export default class extends Component {
           size2
         >
           <Flexbox ai_flexstart>
-            
+
             <Box
               mr_7
               style={{
@@ -2138,7 +2138,7 @@ export default class extends Component {
               }}
             >
               <List pt_1 pb_1>
-              
+
                 <ListItem
                   padding_2
                   highlighted
@@ -2181,7 +2181,7 @@ export default class extends Component {
                     <Box
                       padding_2
                       bc_gray300
-                    > 
+                    >
                       <Box
                         padding_2
                         bc_white
@@ -2358,7 +2358,7 @@ export default class extends Component {
                     </Box>
                   </Box>
                 </ListItem>
-              
+
                 <ListItem
                   padding_2
                 >
@@ -2400,7 +2400,7 @@ export default class extends Component {
                     <Box
                       padding_2
                       bc_gray300
-                    > 
+                    >
                       <Box
                         padding_2
                         bc_white
@@ -2569,46 +2569,46 @@ export default class extends Component {
                     </Box>
                   </Box>
                 </ListItem>
-                
+
               </List>
             </Box>
 
           </Flexbox>
-          
+
         </Container>
       </Section>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       {/*
       <Box bc_gray300 pt_9 height_100>
         <Box position_fixed width_100 bc_white pt_1 pb_1 as="header" style={{top: '0', zIndex: '9'}}>
@@ -2649,7 +2649,7 @@ export default class extends Component {
                   <BackgroundImage
                     src="https://images.unsplash.com/photo-1541944561160-54e0cd4a7e17?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=41729b83bd458d869d7f906d0635f5b5&auto=format&fit=crop&w=1500&q=80"
                   >
-                    
+
                   </BackgroundImage>
                 </AspectRatio>
                 <Box padding_2>
@@ -2721,7 +2721,7 @@ export default class extends Component {
                         <BackgroundImage
                           src="https://images.unsplash.com/photo-1541944561160-54e0cd4a7e17?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=41729b83bd458d869d7f906d0635f5b5&auto=format&fit=crop&w=1500&q=80"
                         >
-                          
+
                         </BackgroundImage>
                       </AspectRatio>
                       <Box padding_2>

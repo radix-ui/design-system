@@ -3,7 +3,7 @@ import * as theme from './../theme/';
 
 import Padding from './../utilities/Padding';
 
-const MenuItem = styled.a`
+const MenuItem = styled.div.attrs({ role: 'button' })`
   align-items: center;
   background-color: transparent;
   border: none;
