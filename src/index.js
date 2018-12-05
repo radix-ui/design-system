@@ -1557,7 +1557,7 @@ export default class extends Component {
                 </li>
                 <li>
                   <HoverZone>
-                    <MenuItem>
+                    <MenuItem selected>
                       <Text size3>Middle</Text>
                     </MenuItem>
                     <HoverZonePanel
