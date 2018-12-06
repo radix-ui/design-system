@@ -1058,14 +1058,14 @@ export default class extends Component {
             >
               <List pt_1 pb_1>
                 <li>
-                  <MenuItem>
+                  <MenuItemLink href="#">
                     <Text size2>First link</Text>
-                  </MenuItem>
+                  </MenuItemLink>
                 </li>
                 <li>
-                  <MenuItem>
+                  <MenuItemLink href="#">
                     <Text size2>Second link</Text>
-                  </MenuItem>
+                  </MenuItemLink>
                 </li>
               </List>
             </Box>
@@ -1081,7 +1081,7 @@ export default class extends Component {
             >
               <List pt_1 pb_1>
                 <li>
-                  <MenuItem>
+                  <MenuItemLink href="#">
                     <Flexbox
                       ai_center
                     >
@@ -1099,10 +1099,10 @@ export default class extends Component {
                       </Box>
                       <Text size2>Back to files</Text>
                     </Flexbox>
-                  </MenuItem>
+                  </MenuItemLink>
                 </li>
                 <li>
-                  <MenuItem>
+                  <MenuItemLink href="#">
                     <Box mr_4>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -1122,10 +1122,10 @@ export default class extends Component {
                       </svg>
                     </Box>
                     <Text size2>Medium Partner Program</Text>
-                  </MenuItem>
+                  </MenuItemLink>
                 </li>
                 <li>
-                  <MenuItem>
+                  <MenuItemLink href="#">
                     <Box mr_4>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -1144,7 +1144,7 @@ export default class extends Component {
                       </svg>
                     </Box>
                     <Text size2>Help & Support</Text>
-                  </MenuItem>
+                  </MenuItemLink>
                 </li>
                 <li>
                   <Divider
@@ -1153,7 +1153,7 @@ export default class extends Component {
                   />
                 </li>
                 <li>
-                  <MenuItem>
+                  <MenuItemLink href="#">
                     <Box mr_4>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -1171,7 +1171,7 @@ export default class extends Component {
                       </svg>
                     </Box>
                     <Text size2>Log out</Text>
-                  </MenuItem>
+                  </MenuItemLink>
                 </li>
                 <li>
                   <Divider
@@ -1180,9 +1180,9 @@ export default class extends Component {
                   />
                 </li>
                 <li>
-                  <MenuItem pl_8>
+                  <MenuItemButton pl_8>
                     <Text size2>Log out</Text>
-                  </MenuItem>
+                  </MenuItemButton>
                 </li>
               </List>
             </Box>
@@ -1197,58 +1197,62 @@ export default class extends Component {
               }}
             >
               <List pt_1 pb_1>
-                <MenuItem>
-                  <Box>
-                    <Box mb_1>
-                      <Flexbox ai_center>
-                        <Box mr_4>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="25"
-                            height="25"
-                            viewBox="0 0 25 25"
-                            fill="none"
-                            stroke="currentColor"
-                          >
-                          <rect x="4.5" y="8.5" width="16" height="12" rx="1.5"/>
-                          <path d="M5.5 8C5.5 7.17157 6.17157 6.5 7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8Z"/>
-                          <path d="M6.5 6C6.5 5.17157 7.17157 4.5 8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6Z"/>
-                          <path d="M9.5 17.5L15.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M15.5 17.5L9.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        </Box>
-                        <Text size3 lh_1 bold>Log out</Text>
-                      </Flexbox>
+                <li>
+                  <MenuItemButton>
+                    <Box>
+                      <Box mb_1>
+                        <Flexbox ai_center>
+                          <Box mr_4>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="25"
+                              height="25"
+                              viewBox="0 0 25 25"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                            <rect x="4.5" y="8.5" width="16" height="12" rx="1.5"/>
+                            <path d="M5.5 8C5.5 7.17157 6.17157 6.5 7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8Z"/>
+                            <path d="M6.5 6C6.5 5.17157 7.17157 4.5 8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6Z"/>
+                            <path d="M9.5 17.5L15.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M15.5 17.5L9.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </Box>
+                          <Text size3 lh_1 bold>Log out</Text>
+                        </Flexbox>
+                      </Box>
+                      <Text size2 lh_1 color_gray600 ml_7>How to scale meaningful design in a multi-device world</Text>
                     </Box>
-                    <Text size2 lh_1 color_gray600 ml_7>How to scale meaningful design in a multi-device world</Text>
-                  </Box>
-                </MenuItem>
-                <MenuItem>
-                  <Box>
-                    <Box mb_1>
-                      <Flexbox ai_center>
-                        <Box mr_4>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="25"
-                            height="25"
-                            viewBox="0 0 25 25"
-                            fill="none"
-                            stroke="currentColor"
-                          >
-                          <rect x="4.5" y="8.5" width="16" height="12" rx="1.5"/>
-                          <path d="M5.5 8C5.5 7.17157 6.17157 6.5 7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8Z"/>
-                          <path d="M6.5 6C6.5 5.17157 7.17157 4.5 8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6Z"/>
-                          <path d="M9.5 17.5L15.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M15.5 17.5L9.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        </Box>
-                        <Text size3 lh_1 bold>Log out</Text>
-                      </Flexbox>
+                  </MenuItemButton>
+                </li>
+                <li>
+                  <MenuItemButton>
+                    <Box>
+                      <Box mb_1>
+                        <Flexbox ai_center>
+                          <Box mr_4>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="25"
+                              height="25"
+                              viewBox="0 0 25 25"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                            <rect x="4.5" y="8.5" width="16" height="12" rx="1.5"/>
+                            <path d="M5.5 8C5.5 7.17157 6.17157 6.5 7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8Z"/>
+                            <path d="M6.5 6C6.5 5.17157 7.17157 4.5 8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6Z"/>
+                            <path d="M9.5 17.5L15.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M15.5 17.5L9.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </Box>
+                          <Text size3 lh_1 bold>Log out</Text>
+                        </Flexbox>
+                      </Box>
+                      <Text size2 lh_1 color_gray600 ml_7>How to scale meaningful design in a multi-device world</Text>
                     </Box>
-                    <Text size2 lh_1 color_gray600 ml_7>How to scale meaningful design in a multi-device world</Text>
-                  </Box>
-                </MenuItem>
+                  </MenuItemButton>
+                </li>
               </List>
             </Box>
           </Flexbox>
@@ -1272,7 +1276,7 @@ export default class extends Component {
             >
               <List pb_1>
                 <li>
-                  <MenuItemButton rounded active>
+                  <MenuItemLink active href="#">
                     <Flexbox ai_center>
                       <Box mr_4>
                         <svg
@@ -1293,10 +1297,10 @@ export default class extends Component {
                       </Box>
                       <Text size3 bold>Inbox</Text>
                     </Flexbox>
-                  </MenuItemButton>
+                  </MenuItemLink>
                 </li>
                 <li>
-                  <MenuItemButton>
+                  <MenuItemLink href="#">
                     <Flexbox ai_center>
                       <Box mr_4>
                         <svg
@@ -1313,10 +1317,10 @@ export default class extends Component {
                       </Box>
                       <Text size3>Bookmarked</Text>
                     </Flexbox>
-                  </MenuItemButton>
+                  </MenuItemLink>
                 </li>
                 <li>
-                  <MenuItemButton>
+                  <MenuItemLink href="#">
                   <Flexbox ai_center>
                     <Box mr_4>
                       <svg
@@ -1333,10 +1337,10 @@ export default class extends Component {
                     </Box>
                     <Text size3>Snoozed</Text>
                   </Flexbox>
-                  </MenuItemButton>
+                  </MenuItemLink>
                 </li>
                 <li>
-                  <MenuItemButton>
+                  <MenuItemLink href="#">
                   <Flexbox ai_center>
                     <Box mr_4>
                       <svg
@@ -1353,10 +1357,10 @@ export default class extends Component {
                     </Box>
                     <Text size3>Important</Text>
                   </Flexbox>
-                  </MenuItemButton>
+                  </MenuItemLink>
                 </li>
                 <li>
-                  <MenuItemButton>
+                  <MenuItemLink href="#">
                   <Flexbox ai_center>
                     <Box mr_4>
                       <svg
@@ -1372,10 +1376,10 @@ export default class extends Component {
                     </Box>
                     <Text size3>Sent</Text>
                   </Flexbox>
-                  </MenuItemButton>
+                  </MenuItemLink>
                 </li>
                 <li>
-                  <MenuItemButton>
+                  <MenuItemLink href="#">
                   <Flexbox ai_center>
                     <Box mr_4>
                       <svg
@@ -1395,10 +1399,10 @@ export default class extends Component {
                     </Box>
                     <Text size3>Drafts</Text>
                   </Flexbox>
-                  </MenuItemButton>
+                  </MenuItemLink>
                 </li>
                 <li>
-                  <MenuItemButton as="button">
+                  <MenuItemLink>
                   <Flexbox ai_center>
                     <Box mr_4>
                       <svg
@@ -1419,80 +1423,6 @@ export default class extends Component {
                     </Box>
                     <Text size3>Trash</Text>
                   </Flexbox>
-                  </MenuItemButton>
-                </li>
-              </List>
-            </Box>
-
-            <Box
-              mr_7
-              style={{
-                minWidth: '220px'
-              }}
-            >
-              <List pb_1>
-                <li>
-                  <MenuItemLink href="https://www.modulz.app">
-                    <Flexbox ai_center>
-                      <Box mr_4>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="25"
-                          height="25"
-                          viewBox="0 0 25 25"
-                          fill="none"
-                          stroke="currentColor"
-                        >
-                          <rect x="4.5" y="8.5" width="16" height="12" rx="1.5" />
-                          <path d="M7 6.5H18C18.8284 6.5 19.5 7.17157 19.5 8V8.5H5.5V8C5.5 7.17157 6.17157 6.5 7 6.5Z" />
-                          <path d="M8 4.5H17C17.8284 4.5 18.5 5.17157 18.5 6V6.5H6.5V6C6.5 5.17157 7.17157 4.5 8 4.5Z" />
-                          <path d="M5 9L12.5 15.5L20 9" strokeLinecap="round" strokeLinejoin="round" />
-                          <path d="M5 20L10.5 14.5" strokeLinecap="round" strokeLinejoin="round" />
-                          <path d="M20 20L14.5 14.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </Box>
-                      <Text size3 bold>MenuItemLink 1</Text>
-                    </Flexbox>
-                  </MenuItemLink>
-                </li>
-                <li>
-                  <MenuItemLink href="https://www.modulz.app">
-                    <Flexbox ai_center>
-                      <Box mr_4>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="25"
-                          height="25"
-                          viewBox="0 0 25 25"
-                          fill="none"
-                          stroke="currentColor"
-                        >
-                          <path d="M7.5 4.5V20.5L12.5 16.5L17.5 20.5V4.5H7.5Z" strokeLinecap="round" strokeLinejoin="round" />
-                          <path d="M7 6.5H15" />
-                        </svg>
-                      </Box>
-                      <Text size3>MenuItemLink 2</Text>
-                    </Flexbox>
-                  </MenuItemLink>
-                </li>
-                <li>
-                  <MenuItemLink href="https://www.modulz.app">
-                    <Flexbox ai_center>
-                      <Box mr_4>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="25"
-                          height="25"
-                          viewBox="0 0 25 25"
-                          fill="none"
-                          stroke="currentColor"
-                        >
-                          <circle cx="12.5" cy="12.5" r="8" />
-                          <path d="M13 7.5C13 7.22386 12.7761 7 12.5 7C12.2239 7 12 7.22386 12 7.5H13ZM12.5 12.5H12C12 12.6326 12.0527 12.7598 12.1464 12.8536L12.5 12.5ZM14.1464 14.8536C14.3417 15.0488 14.6583 15.0488 14.8536 14.8536C15.0488 14.6583 15.0488 14.3417 14.8536 14.1464L14.1464 14.8536ZM12 7.5V12.5H13V7.5H12ZM12.1464 12.8536L14.1464 14.8536L14.8536 14.1464L12.8536 12.1464L12.1464 12.8536Z" fill="black" stroke="none" />
-                        </svg>
-                      </Box>
-                      <Text size3>MenuItemLink 3</Text>
-                    </Flexbox>
                   </MenuItemLink>
                 </li>
               </List>
