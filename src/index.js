@@ -104,12 +104,59 @@ export default class extends Component {
         <Container
           size2
         >
-          <Grid>
+          <Grid cells_2 size3>
+            <div>
+              <Grid cells_2 size1 mb_2>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+              </Grid>
+              <Grid cells_5 size1 mb_2>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+              </Grid>
+              <Grid cells_3 size1>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+                <div>
+                  <Box bc_blue500 padding_1></Box>
+                </div>
+              </Grid>
+            </div>
             <div>
               <Flexbox
                 ai_center
               >
-                <Button>
+                <Button mr_4>
                   Button
                 </Button>
                 <Button size2>
@@ -119,16 +166,16 @@ export default class extends Component {
               <Flexbox
                 mt_6
               >
-                <Button size2 blue>
+                <Button mr_4 size2 blue>
                   Blue
                 </Button>
-                <Button size2 green>
+                <Button mr_4 size2 green>
                   Green
                 </Button>
-                <Button size2 yellow>
+                <Button mr_4 size2 yellow>
                   Yellow
                 </Button>
-                <Button size2 red>
+                <Button mr_4 size2 red>
                   Red
                 </Button>
               </Flexbox>
@@ -148,13 +195,13 @@ export default class extends Component {
               <Flexbox
                 mt_6
               >
-                <Button size2 active>
+                <Button mr_4 size2 active>
                   Active
                 </Button>
-                <Button size2 disabled>
+                <Button mr_4 size2 disabled>
                   Disabled
                 </Button>
-                <Button size2 waiting>
+                <Button mr_4 size2 waiting>
                   Waiting
                 </Button>
               </Flexbox>
@@ -164,9 +211,10 @@ export default class extends Component {
               >
                 <Button
                   blue
+                  mr_4
                 >
                   <Box
-                    mr1
+                    mr_1
                   >
                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block' }}>
                       <path d="M5 0L0 4L5 8" transform="translate(2.5 3.5)" strokeLinecap="round" strokeLinejoin="round"/>
@@ -180,7 +228,7 @@ export default class extends Component {
                   blue
                 >
                   <Box
-                    mr2
+                    mr_2
                   >
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block' }}>
                       <path d="M0 0H14" transform="translate(5.5 12.5)" strokeLinecap="round"/>
@@ -466,7 +514,7 @@ export default class extends Component {
                   padded
                 >
                   <Box
-                    mr1
+                    mr_1
                   >
                     <svg
                       width="15"
@@ -488,7 +536,7 @@ export default class extends Component {
                   size2
                 >
                   <Box
-                    mr1
+                    mr_1
                   >
                     <svg
                       width="25"
@@ -516,7 +564,7 @@ export default class extends Component {
                   size2
                 >
                   <Box
-                    mr1
+                    mr_1
                   >
                     <svg
                       width="25"
@@ -539,7 +587,7 @@ export default class extends Component {
                   size2
                 >
                   <Box
-                    mr1
+                    mr_1
                   >
                     <svg
                       width="25"
@@ -918,7 +966,7 @@ export default class extends Component {
                 ai_center
               >
                 <Box
-                  fg1
+                  fg_1
                   mr_4
                 >
                   <Progress
@@ -928,7 +976,7 @@ export default class extends Component {
                   ></Progress>
                 </Box>
                 <Box
-                  fg1
+                  fg_1
                   mr_4
                 >
                   <Progress
@@ -938,7 +986,7 @@ export default class extends Component {
                   ></Progress>
                 </Box>
                 <Box
-                  fg1
+                  fg_1
                 >
                   <Progress
                     size3
@@ -971,8 +1019,8 @@ export default class extends Component {
                 ai_baseline
               >
                 <Box
-                  mr1
-                  fg1
+                  mr_1
+                  fg_1
                 >
                   <Text
                     size2
