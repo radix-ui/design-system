@@ -5,7 +5,8 @@ import Margin from './../utilities/Margin';
 const Grid = styled.div`
   display: grid;
 
-  ${p => p.size1 && css` grid-gap: ${theme.SPACING_200}; `}
+  ${p => p.size0 && css` grid-gap: 0; `}
+  ${p => p.size1 && css` grid-gap: ${theme.SPACING_400}; `}
   ${p => p.size2 && css` grid-gap: ${theme.SPACING_700}; `}
   ${p => p.size3 && css` grid-gap: ${theme.SPACING_900}; `}
 
@@ -47,7 +48,7 @@ const Grid = styled.div`
   ${p => p.jc_flexend && css` justify-content: flex-end `}
 
   @media (min-width: ${theme.BREAKPOINT_100}) {
-    ${p => p.bp1_size1 && css` grid-gap: ${theme.SPACING_200}; `}
+    ${p => p.bp1_size1 && css` grid-gap: ${theme.SPACING_400}; `}
     ${p => p.bp1_size2 && css` grid-gap: ${theme.SPACING_700}; `}
     ${p => p.bp1_size3 && css` grid-gap: ${theme.SPACING_900}; `}
 
@@ -90,7 +91,7 @@ const Grid = styled.div`
   }
 
   @media (min-width: ${theme.BREAKPOINT_200}) {
-    ${p => p.bp2_size1 && css` grid-gap: ${theme.SPACING_200}; `}
+    ${p => p.bp2_size1 && css` grid-gap: ${theme.SPACING_400}; `}
     ${p => p.bp2_size2 && css` grid-gap: ${theme.SPACING_700}; `}
     ${p => p.bp2_size3 && css` grid-gap: ${theme.SPACING_900}; `}
 
@@ -133,7 +134,7 @@ const Grid = styled.div`
   }
 
   @media (min-width: ${theme.BREAKPOINT_300}) {
-    ${p => p.bp3_size1 && css` grid-gap: ${theme.SPACING_200}; `}
+    ${p => p.bp3_size1 && css` grid-gap: ${theme.SPACING_400}; `}
     ${p => p.bp3_size2 && css` grid-gap: ${theme.SPACING_700}; `}
     ${p => p.bp3_size3 && css` grid-gap: ${theme.SPACING_900}; `}
 
@@ -176,7 +177,7 @@ const Grid = styled.div`
   }
 
   @media (min-width: ${theme.BREAKPOINT_400}) {
-    ${p => p.bp4_size1 && css` grid-gap: ${theme.SPACING_200}; `}
+    ${p => p.bp4_size1 && css` grid-gap: ${theme.SPACING_400}; `}
     ${p => p.bp4_size2 && css` grid-gap: ${theme.SPACING_700}; `}
     ${p => p.bp4_size3 && css` grid-gap: ${theme.SPACING_900}; `}
 

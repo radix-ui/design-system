@@ -6,6 +6,7 @@ import AspectRatio from './components/AspectRatio';
 import Badge from './components/Badge';
 import Box from './components/Box';
 import Button from './components/Button';
+import Card from './components/Card';
 import ChromelessButton from './components/ChromelessButton';
 import Container from './components/Container';
 import ContextMenu from './components/ContextMenu';
@@ -52,6 +53,7 @@ export AspectRatio from './components/AspectRatio';
 export Badge from './components/Badge';
 export Box from './components/Box';
 export Button from './components/Button';
+export Card from './components/Card';
 export ChromelessButton from './components/ChromelessButton';
 export Container from './components/Container';
 export ContextMenu from './components/ContextMenu';
@@ -150,6 +152,87 @@ export default class extends Component {
                 <div>
                   <Box bc_blue500 padding_1></Box>
                 </div>
+              </Grid>
+            </div>
+            <div>
+              <div
+                style={{
+                  position: 'relative',
+                  overflow: 'hidden',
+                  width: '200px',
+                  height: '200px',
+                }}
+              >
+                <Card
+                  style={{
+                    position: 'absolute',
+                    backgroundImage: 'url("https://images.unsplash.com/photo-1544284381-d4043c89656e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80")',
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    width: '100%',
+                    height: '100%',
+                  }}
+                >
+                </Card>
+              </div>
+            </div>
+            <div>
+              <Grid cells_2 size1>
+                <Box>
+                  <Card border padding_4>
+                    <Heading size1 lh_1 color_gray600 mb_1>
+                      Nona Willis Aronowitz
+                    </Heading>
+                    <Heading size2 bold lh_2>
+                      Hate Amazon? Try Living Without It.
+                    </Heading>
+                    <Text size3 lh_2 mt_1>
+                      My dad was a longtime labor activist. He despises what Jeff Bezos built, but he can’t quit it.
+                    </Text>
+                    <Text size2 color_gray600 mt_2 as="time">
+                      Dec. 8
+                    </Text>
+                  </Card>
+                </Box>
+                <Box>
+                  <Card perspective padding_4>
+                    <Heading size1 bold lh_1>
+                      China, Facing Difficult Balancing Act, Summons U.S. Envoy Over Huawei Arrest
+                    </Heading>
+                    <Text size2 lh_1 mt_1>
+                      China’s leadership is seeking to maintain a recent thaw with the United States while lashing out at the arrest of a top Chinese tech executive.
+                    </Text>
+                    <Text size1 color_gray600 mt_2 as="time">
+                      15m ago
+                    </Text>
+                  </Card>
+                </Box>
+                <Box>
+                  <Card ghost padding_4>
+                    <Heading size1 bold lh_1>
+                      China, Facing Difficult Balancing Act, Summons U.S. Envoy Over Huawei Arrest
+                    </Heading>
+                    <Text size2 lh_1 mt_1>
+                      China’s leadership is seeking to maintain a recent thaw with the United States while lashing out at the arrest of a top Chinese tech executive.
+                    </Text>
+                    <Text size1 color_gray600 mt_2 as="time">
+                      15m ago
+                    </Text>
+                  </Card>
+                </Box>
+                <Box nml_4>
+                  <Card ghost padding_4>
+                    <Heading size1 bold lh_1>
+                      China, Facing Difficult Balancing Act, Summons U.S. Envoy Over Huawei Arrest
+                    </Heading>
+                    <Text size2 lh_1 mt_1>
+                      China’s leadership is seeking to maintain a recent thaw with the United States while lashing out at the arrest of a top Chinese tech executive.
+                    </Text>
+                    <Text size1 color_gray600 mt_2 as="time">
+                      15m ago
+                    </Text>
+                  </Card>
+                </Box>
               </Grid>
             </div>
             <div>
