@@ -11,7 +11,7 @@ const Overlay = styled.div`
   transition-property: opacity;
   transition-timing-function: linear;
   width: 100%;
-  z-index: 8;
+  z-index: 7;
 
   ${p => p.active && css`
     left: 0;
