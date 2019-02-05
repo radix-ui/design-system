@@ -14,6 +14,7 @@ import Divider from './components/Divider';
 import Textarea from './components/Textarea';
 import Flexbox from './components/Flexbox';
 import Heading from './components/Heading';
+import Overlay from './components/Overlay';
 import Title from './components/Title';
 import Status from './components/Status';
 import Image from './components/Image';
@@ -62,6 +63,7 @@ export Flexbox from './components/Flexbox';
 export Heading from './components/Heading';
 export Image from './components/Image';
 export Input from './components/Input';
+export Overlay from './components/Overlay';
 export LinesButton from './components/LinesButton';
 export Link from './components/Link';
 export List from './components/List';
@@ -100,6 +102,7 @@ export { Theme };
 export default class extends Component {
   render() {
     return <div>
+    <Overlay active></Overlay>
       <Section
         size3
       >
