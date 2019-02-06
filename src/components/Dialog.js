@@ -55,35 +55,38 @@ const Panel = styled.div`
   `}
 `;
 
-const Dialog = (props) => (
-  <Container>
-    <Box
-      position_absolute
-      pt_1
-      pr_1
-      style={{
-        top: '0',
-        right: '0'
-      }}
-    >
-      <GhostButton size2>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
-          fill="none"
-          stroke="currentColor"
-        >
-          <path d="M7.5 17.5L17.5 7.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M17.5 17.5L7.5 7.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </GhostButton>
-    </Box>
-    <Panel size2 expanded active>
-      {props.children}
-    </Panel>
-  </Container>
-);
+const Dialog = (props) => {
+  const { children, ...nonChildrenProps } = props;
+  return (
+    <Container>
+      <Box
+        position_absolute
+        pt_1
+        pr_1
+        style={{
+          top: '0',
+          right: '0'
+        }}
+      >
+        <GhostButton size2>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 25 25"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path d="M7.5 17.5L17.5 7.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M17.5 17.5L7.5 7.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </GhostButton>
+      </Box>
+      <Panel {...nonChildrenProps}>
+        {children}
+      </Panel>
+    </Container>
+  );
+};
 
 export default Dialog;

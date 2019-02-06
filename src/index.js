@@ -105,7 +105,7 @@ export default class extends Component {
   render() {
     return <div>
       <Overlay active></Overlay>
-      <Dialog active>
+      <Dialog size2 active>
         <Flexbox fd_column height_100>
           <Box padding_4 fs_0>
             <Heading size2 bold>
@@ -113,36 +113,6 @@ export default class extends Component {
             </Heading>
           </Box>
           <Box pl_4 pr_4 oy_auto fg_1>
-            <Text size3 lh_2>
-              Absolutely any content can go inside the dialog. No restrictions at all.
-            </Text>
-            <Text size3 lh_2>
-              Absolutely any content can go inside the dialog. No restrictions at all.
-            </Text>
-            <Text size3 lh_2>
-              Absolutely any content can go inside the dialog. No restrictions at all.
-            </Text>
-            <Text size3 lh_2>
-              Absolutely any content can go inside the dialog. No restrictions at all.
-            </Text>
-            <Text size3 lh_2>
-              Absolutely any content can go inside the dialog. No restrictions at all.
-            </Text>
-            <Text size3 lh_2>
-              Absolutely any content can go inside the dialog. No restrictions at all.
-            </Text>
-            <Text size3 lh_2>
-              Absolutely any content can go inside the dialog. No restrictions at all.
-            </Text>
-            <Text size3 lh_2>
-              Absolutely any content can go inside the dialog. No restrictions at all.
-            </Text>
-            <Text size3 lh_2>
-              Absolutely any content can go inside the dialog. No restrictions at all.
-            </Text>
-            <Text size3 lh_2>
-              Absolutely any content can go inside the dialog. No restrictions at all.
-            </Text>
             <Text size3 lh_2>
               Absolutely any content can go inside the dialog. No restrictions at all.
             </Text>
