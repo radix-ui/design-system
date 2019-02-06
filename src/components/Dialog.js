@@ -55,7 +55,7 @@ const Panel = styled.div`
   `}
 `;
 
-const Dialog = () => (
+const Dialog = (props) => (
   <Container>
     <Box
       position_absolute
@@ -81,58 +81,7 @@ const Dialog = () => (
       </GhostButton>
     </Box>
     <Panel size2 expanded active>
-      <Flexbox fd_column height_100>
-        <Box padding_4 fs_0>
-          <Heading size2 bold>
-            Heading
-          </Heading>
-        </Box>
-        <Box pl_4 pr_4 oy_auto fg_1>
-          <Text size3 lh_2>
-            Absolutely any content can go inside the dialog. No restrictions at all.
-          </Text>
-          <Text size3 lh_2>
-            Absolutely any content can go inside the dialog. No restrictions at all.
-          </Text>
-          <Text size3 lh_2>
-            Absolutely any content can go inside the dialog. No restrictions at all.
-          </Text>
-          <Text size3 lh_2>
-            Absolutely any content can go inside the dialog. No restrictions at all.
-          </Text>
-          <Text size3 lh_2>
-            Absolutely any content can go inside the dialog. No restrictions at all.
-          </Text>
-          <Text size3 lh_2>
-            Absolutely any content can go inside the dialog. No restrictions at all.
-          </Text>
-          <Text size3 lh_2>
-            Absolutely any content can go inside the dialog. No restrictions at all.
-          </Text>
-          <Text size3 lh_2>
-            Absolutely any content can go inside the dialog. No restrictions at all.
-          </Text>
-          <Text size3 lh_2>
-            Absolutely any content can go inside the dialog. No restrictions at all.
-          </Text>
-          <Text size3 lh_2>
-            Absolutely any content can go inside the dialog. No restrictions at all.
-          </Text>
-          <Text size3 lh_2>
-            Absolutely any content can go inside the dialog. No restrictions at all.
-          </Text>
-        </Box>
-        <Box padding_4 fs_0>
-          <Flexbox jc_flexend>
-            <Button size2 mr_4>
-              Cancel
-            </Button>
-            <Button size2 blue>
-              Accept
-            </Button>
-          </Flexbox>
-        </Box>
-      </Flexbox>
+      {props.children}
     </Panel>
   </Container>
 );
