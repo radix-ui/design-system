@@ -2,11 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 import Box from './Box';
-import Flexbox from './Flexbox';
 import GhostButton from './GhostButton';
-import Heading from './Heading';
-import Text from './Text';
-import Button from './Button';
 
 const Container = styled.div`
   display: flex;
