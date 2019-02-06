@@ -15,7 +15,7 @@ import Textarea from './components/Textarea';
 import Flexbox from './components/Flexbox';
 import Heading from './components/Heading';
 import Overlay from './components/Overlay';
-import Modal from './components/Dialog';
+import Dialog from './components/Dialog';
 import Title from './components/Title';
 import Status from './components/Status';
 import Image from './components/Image';
@@ -65,7 +65,7 @@ export Heading from './components/Heading';
 export Image from './components/Image';
 export Input from './components/Input';
 export Overlay from './components/Overlay';
-export Modal from './components/Dialog';
+export Dialog from './components/Dialog';
 export LinesButton from './components/LinesButton';
 export Link from './components/Link';
 export List from './components/List';
@@ -105,7 +105,7 @@ export default class extends Component {
   render() {
     return <div>
       <Overlay active></Overlay>
-      <Modal active></Modal>
+      <Dialog active></Dialog>
       <Section
         size3
       >

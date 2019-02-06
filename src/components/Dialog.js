@@ -21,7 +21,7 @@ const Container = styled.div`
   zIndex: 9;
 `;
 
-const Dialog = styled.div`
+const Panel = styled.div`
   background-color: white;
   border-radius: ${theme.BORDERRADIUS_200};
   box-shadow:
@@ -55,7 +55,7 @@ const Dialog = styled.div`
   `}
 `;
 
-const Modal = () => (
+const Dialog = () => (
   <Container>
     <Box
       position_absolute
@@ -80,7 +80,7 @@ const Modal = () => (
         </svg>
       </GhostButton>
     </Box>
-    <Dialog size2 expanded active>
+    <Panel size2 expanded active>
       <Flexbox fd_column height_100>
         <Box padding_4 fs_0>
           <Heading size2 bold>
@@ -133,8 +133,8 @@ const Modal = () => (
           </Flexbox>
         </Box>
       </Flexbox>
-    </Dialog>
+    </Panel>
   </Container>
 );
 
-export default Modal;
+export default Dialog;
