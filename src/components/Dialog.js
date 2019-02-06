@@ -18,7 +18,7 @@ const Container = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  zIndex: 9;
+  z-index: 9;
 `;
 
 const Panel = styled.div`
