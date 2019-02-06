@@ -29,7 +29,7 @@ const Panel = styled.div`
   transition-duration: 80ms;
   transition-property: opacity, transform;
   transition-timing-function: linear;
-  transform: translateY(-5px);
+  transform: translateY(5px);
   width: 100%;
   z-index: 8;
 
