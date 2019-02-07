@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
-const Slider = styled.input.attrs({
+const Thumb = styled.input.attrs({
   type: 'range',
 })`
   appearance: none;
@@ -16,7 +17,7 @@ const Slider = styled.input.attrs({
     width: 100%;
     height: 3px;
     cursor: pointer;
-    background-color: ${theme.GRAY_400};
+    background-color: transparent;
     border-radius: 9999px;
     border: none;
   }
@@ -25,7 +26,7 @@ const Slider = styled.input.attrs({
     width: 100%;
     height: 3px;
     cursor: pointer;
-    background-color: ${theme.GRAY_400};
+    background-color: transparent;
     border-radius: 9999px;
     border: none;
   }
@@ -74,5 +75,50 @@ const Slider = styled.input.attrs({
     }
   }
 `;
+
+const Track = styled.div`
+  height: 3px;
+  background-color: ${theme.GRAY_400};
+  width: 100%;
+  border-radius: 9999px;
+  pointer-events: none;
+  position: absolute;
+`;
+
+const SelectedTrack = styled.div`
+  height: 3px;
+  background: ${theme.BLUE_500};
+  border-radius: 9999px;
+
+  ${({ percentageWidth }) => css`
+    width: ${percentageWidth}%;
+  `}
+`
+
+const Input = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Slider = (props) => {
+  const { min = 0, max = 0 } = props;
+  const [value, setValue] = useState(props.value || 0);
+  const onChange = (event) => {
+    const newValue = event.target.value;
+    setValue(newValue);
+    if (props.onChange) {
+      props.onChange(value);
+    }
+  };
+  const percentage = ((value - min) * 100) / (max - min || 1);
+  return (
+    <Input>
+      <Track>
+        <SelectedTrack percentageWidth={percentage} />
+      </Track>
+      <Thumb {...props} value={value} onChange={onChange} />
+    </Input>
+  );
+};
 
 export default Slider;

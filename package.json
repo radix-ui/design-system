@@ -19,6 +19,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "jest": "^24.1.0",
     "styled-components": "^4.0.3"
   },
   "peerDependencies": {
