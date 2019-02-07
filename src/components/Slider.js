@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
@@ -101,22 +102,58 @@ const Input = styled.div`
 const Slider = (props) => {
   const { min = 0, max = 0 } = props;
   const [value, setValue] = useState(props.value || 0);
-  const onChange = (event) => {
+  const percentage = ((value - min) * 100) / (max - min || 100);
+
+  const handleChange = (event) => {
     const newValue = event.target.value;
     setValue(newValue);
     if (props.onChange) {
       props.onChange(value);
     }
   };
-  const percentage = ((value - min) * 100) / (max - min || 100);
+
+  const handleKeyDown = (event) => {
+    if (props.onKeyDown) {
+      props.onKeyDown(event);
+    }
+
+    if (event.shiftKey) {
+      if (event.keyCode === 37) {
+        setValue(Math.max(props.min, parseInt(value, 10) - props.largeStep));
+      } else if (event.keyCode === 39) {
+        setValue(Math.min(props.max, parseInt(value, 10) + props.largeStep));
+      }
+    }
+  };
+
   return (
     <Input>
       <Track>
         <InnerTrack style={{ width: `${percentage}%` }} />
       </Track>
-      <Thumb {...props} value={value} onChange={onChange} />
+      <Thumb
+        {...props}
+        value={value}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+      />
     </Input>
   );
+};
+
+Slider.propTypes = {
+  onKeyDown: PropTypes.func,
+  onChange: PropTypes.func,
+  largeStep: PropTypes.number,
+  step: PropTypes.number,
+  value: PropTypes.number,
+}
+
+Slider.defaultProps = {
+  step: 1,
+  largeStep: 10,
+  min: 0,
+  max: 100,
 };
 
 export default Slider;

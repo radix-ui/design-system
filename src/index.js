@@ -998,7 +998,7 @@ export default class extends Component {
               </LinesButton>
             </div>
             <div>
-              <Slider value="2" />
+              <Slider value={2} />
             </div>
             <div>
               <Switch />
