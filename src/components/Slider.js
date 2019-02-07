@@ -83,21 +83,19 @@ const Track = styled.div`
   border-radius: 9999px;
   pointer-events: none;
   position: absolute;
+  z-index: -1;
 `;
 
-const SelectedTrack = styled.div`
+const InnerTrack = styled.div`
   height: 3px;
   background: ${theme.BLUE_500};
   border-radius: 9999px;
-
-  ${({ percentageWidth }) => css`
-    width: ${percentageWidth}%;
-  `}
 `
 
 const Input = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
 `;
 
 const Slider = (props) => {
@@ -110,11 +108,11 @@ const Slider = (props) => {
       props.onChange(value);
     }
   };
-  const percentage = ((value - min) * 100) / (max - min || 1);
+  const percentage = ((value - min) * 100) / (max - min || 100);
   return (
     <Input>
       <Track>
-        <SelectedTrack percentageWidth={percentage} />
+        <InnerTrack style={{ width: `${percentage}%` }} />
       </Track>
       <Thumb {...props} value={value} onChange={onChange} />
     </Input>
