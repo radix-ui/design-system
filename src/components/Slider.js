@@ -145,12 +145,12 @@ Slider.propTypes = {
   onKeyDown: PropTypes.func,
   onChange: PropTypes.func,
   largeStep: PropTypes.number,
-  step: PropTypes.number,
+  step: PropTypes.string,
   value: PropTypes.number,
 }
 
 Slider.defaultProps = {
-  step: 1,
+  step: "1",
   largeStep: 10,
   min: 0,
   max: 100,
