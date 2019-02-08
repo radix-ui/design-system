@@ -15,12 +15,9 @@ const Thumb = styled.input.attrs({
   background: transparent;
 
   &::-webkit-slider-runnable-track {
-    width: 100%;
     height: 3px;
-    cursor: pointer;
     background-color: transparent;
     border-radius: 9999px;
-    border: none;
   }
 
   &::-moz-range-track {
