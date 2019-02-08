@@ -19,18 +19,15 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
     "styled-components": "^4.0.3"
-  },
-  "peerDependencies": {
-    "react": "16.x"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.8.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "nwb": "^0.23.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
     "sinon": "^7.2.3"
   },
   "author": "Colm Tuite",

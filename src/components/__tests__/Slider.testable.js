@@ -2,7 +2,6 @@ import expect from 'expect';
 import React from 'react';
 import { mount } from 'enzyme';
 import Slider from 'src/components/Slider';
-import sinon from 'sinon';
 
 describe('Slider', () => {
   it('passes through all props to the underlying input component', () => {
@@ -68,11 +67,11 @@ describe('Slider', () => {
   });
 
   it('calls onChange with change event whenever a value changes', () => {
-    const spy = sinon.spy();
-    const wrapper = mount(<Slider value={10} onChange={spy} />);
+    let spy = false;
+    const wrapper = mount(<Slider value={10} onChange={() => (spy = true)} />);
     const input = wrapper.find('input');
     const psuedoEvent = { target: { value: 20 } };
     input.simulate('change', psuedoEvent);
-    expect(spy.calledWithMatch(sinon.match(psuedoEvent))).toBe(true);
+    expect(spy).toBe(true);
   });
 });

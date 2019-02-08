@@ -13,8 +13,8 @@ var config = {
 
 if (isTest) {
   config.karma = {
-    testContext: 'tests/config.test.js',
-  }
+    testContext: 'config.test.js',
+  };
 }
 
 module.exports = config;
