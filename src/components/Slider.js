@@ -88,7 +88,7 @@ const Track = styled.div`
 `;
 
 const InnerTrack = styled.div`
-  height: 3px;
+  height: 100%;
   background: ${theme.BLUE_500};
   border-radius: 9999px;
 `
