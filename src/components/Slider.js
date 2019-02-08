@@ -108,7 +108,7 @@ const Slider = (props) => {
     const newValue = event.target.value;
     setValue(newValue);
     if (props.onChange) {
-      props.onChange(value);
+      props.onChange(event);
     }
   };
 
