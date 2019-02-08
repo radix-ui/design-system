@@ -119,9 +119,9 @@ const Slider = (props) => {
 
     if (event.shiftKey) {
       if (event.keyCode === 37) {
-        setValue(Math.max(props.min, parseInt(value, 10) - props.largeStep));
+        setValue(Math.max(props.min, parseInt(value, 10) - props.largeStep + 1));
       } else if (event.keyCode === 39) {
-        setValue(Math.min(props.max, parseInt(value, 10) + props.largeStep));
+        setValue(Math.min(props.max, parseInt(value, 10) + props.largeStep - 1));
       }
     }
   };
