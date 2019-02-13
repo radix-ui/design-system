@@ -104,8 +104,8 @@ export { Theme };
 export default class extends Component {
   render() {
     return <div>
-      <Overlay active></Overlay>
-      <Dialog size2 active>
+      <Overlay></Overlay>
+      <Dialog size2>
         <Flexbox fd_column height_100>
           <Box padding_4 fs_0>
             <Heading size2 bold>
@@ -998,7 +998,7 @@ export default class extends Component {
               </LinesButton>
             </div>
             <div>
-              <Slider />
+              <Slider value={2} />
             </div>
             <div>
               <Switch />
