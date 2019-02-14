@@ -45,6 +45,27 @@ const Input = styled.input.attrs({
     cursor: not-allowed;
   }
 
+  ${p => p.paddedLeft && css`
+    padding-left: ${theme.SPACING_400};
+  `}
+
+  ${p => p.paddedRight && css`
+    padding-right: ${theme.SPACING_400};
+  `}
+
+  ${p => p.size2 && css`
+    font-size: ${theme.FONTSIZE_400};
+    height: ${theme.SPACING_600};
+
+    ${p => p.paddedLeft && css`
+      padding-left: ${theme.SPACING_600};
+    `}
+
+    ${p => p.paddedRight && css`
+      padding-right: ${theme.SPACING_600};
+    `}
+  `}
+
   ${p => p.ta_center && css`
     text-align: center;
   `}

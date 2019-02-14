@@ -1028,11 +1028,105 @@ export default class extends Component {
               </AspectRatio>
             </div>
             <div>
-              <Input
-                placeholder="Type something..."
-                disabled
-                value="45"
-              />
+              <Box mb_6>
+                <Input
+                  placeholder="Type something..."
+                />
+              </Box>
+              <Box mb_6>
+                <Input
+                  size2
+                  placeholder="Type something..."
+                />
+              </Box>
+              <Box mb_4>
+                <Box position_relative>
+                  <Input
+                    size2
+                    placeholder="e.g. joe@example.com"
+                    paddedLeft
+                    type="email"
+                  />
+                  <Box position_absolute height_100 width_100 color_gray600 style={{top: '0', left: '0', pointerEvents: 'none'}}>
+                    <Flexbox height_100 ai_center>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <path d="M5 8L12.5 13.5L20 8" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M5 17L10.5 12.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M20 17L14.5 12.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M4.5 8V17C4.5 17.2761 4.72386 17.5 5 17.5H20C20.2761 17.5 20.5 17.2761 20.5 17V8C20.5 7.72386 20.2761 7.5 20 7.5H5C4.72386 7.5 4.5 7.72386 4.5 8Z" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </Flexbox>
+                  </Box>
+                </Box>
+              </Box>
+              <Box mb_6>
+                <Box position_relative>
+                  <Input
+                    size2
+                    placeholder="Type something..."
+                    paddedLeft
+                    type="password"
+                  />
+                  <Box position_absolute height_100 width_100 color_gray600 style={{top: '0', left: '0', pointerEvents: 'none'}}>
+                    <Flexbox height_100 ai_center>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 25 25"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <rect x="4.5" y="11.5" width="16" height="9" rx="1.5"/>
+                        <path d="M7.5 9.5C7.5 6.73858 9.73858 4.5 12.5 4.5C15.2614 4.5 17.5 6.73858 17.5 9.5V11.5H7.5V9.5Z"/>
+                      </svg>
+                    </Flexbox>
+                  </Box>
+                </Box>
+              </Box>
+              <Box mb_6>
+                <Box position_relative>
+                  <Input
+                    placeholder="Search..."
+                    paddedRight
+                  />
+                  <Box position_absolute height_100 width_100 color_gray600 style={{top: '0', left: '0', pointerEvents: 'none'}}>
+                    <Flexbox height_100 ai_center jc_flexend>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="15"
+                        height="15"
+                        viewBox="0 0 15 15"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <circle cx="6.5" cy="6.5" r="4" />
+                        <path d="M9.85355 9.14645C9.65829 8.95118 9.34171 8.95118 9.14645 9.14645C8.95118 9.34171 8.95118 9.65829 9.14645 9.85355L9.85355 9.14645ZM12.1464 12.8536C12.3417 13.0488 12.6583 13.0488 12.8536 12.8536C13.0488 12.6583 13.0488 12.3417 12.8536 12.1464L12.1464 12.8536ZM9.14645 9.85355L12.1464 12.8536L12.8536 12.1464L9.85355 9.14645L9.14645 9.85355Z" fill="currentColor" stroke="none"/>
+                      </svg>
+                    </Flexbox>
+                  </Box>
+                </Box>
+              </Box>
+              <Box mb_6>
+                <Input
+                  placeholder="Type something..."
+                  disabled
+                />
+              </Box>
+              <Box>
+                <Input
+                  placeholder="Type something..."
+                  readOnly
+                  defaultValue="This is selectable but not editable"
+                />
+              </Box>
             </div>
             <div>
               <GhostInput
