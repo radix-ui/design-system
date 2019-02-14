@@ -10,6 +10,7 @@ import Overflow from './../utilities/Overflow';
 import Position from './../utilities/Position';
 import FlexItem from './../utilities/FlexItem';
 import BackgroundColor from './../utilities/BackgroundColor';
+import PointerEvents from './../utilities/PointerEvents';
 
 const Box = styled.div`
   ${p => p.border && css` border: 1px solid; `}
@@ -37,6 +38,7 @@ const Box = styled.div`
   ${Overflow}
   ${Position}
   ${FlexItem}
+  ${PointerEvents}
 `;
 
 export default Box;
