@@ -1159,9 +1159,22 @@ export default class extends Component {
               </div>
             </div>
             <div>
-              <LinesButton>
-                LinesButton
-              </LinesButton>
+              <Box mb_6>
+                <LinesButton size1 gray mr_6>
+                  Lines Button
+                </LinesButton>
+                <LinesButton gray mr_6>
+                  Lines Button
+                </LinesButton>
+              </Box>
+              <Box>
+                <LinesButton blue mr_6>
+                  Lines Button
+                </LinesButton>
+                <LinesButton green>
+                  Lines Button
+                </LinesButton>
+              </Box>
             </div>
             <div>
               <Slider value={2} />

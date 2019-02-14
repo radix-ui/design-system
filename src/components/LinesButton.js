@@ -14,6 +14,7 @@ const LinesButton = styled.button`
   cursor: pointer;
   white-space: nowrap;
   text-transform: uppercase;
+  line-height: 1;
   border: none;
   outline: none;
   letter-spacing: .05em;
@@ -25,10 +26,8 @@ const LinesButton = styled.button`
   font-size: ${theme.FONTSIZE_400};
   height: ${theme.SPACING_700};
   min-width: ${theme.SPACING_600};
-  line-height: ${theme.SPACING_600};
   padding: 0 ${theme.SPACING_400};
   background-color: transparent;
-  color: ${theme.BLACK};
 
   &::before {
     content: "";
@@ -40,7 +39,6 @@ const LinesButton = styled.button`
     left: 0;
     z-index: -1;
     background-color: ${theme.WHITE};
-    box-shadow: inset 0 0 0 1px ${theme.BLUE_300};
     transition-property: all;
     transition-duration: 50ms;
     transition-timing-function: ease;
@@ -55,20 +53,7 @@ const LinesButton = styled.button`
     top: 6px;
     left: 6px;
     z-index: -2;
-    background-image: repeating-linear-gradient(
-      -45deg,
-      ${theme.BLUE_500},
-      ${theme.BLUE_500} 1px,
-      transparent 1px,
-      transparent 6px
-    );
     pointer-events: none;
-  }
-
-  &:hover::before,
-  &:active::before,
-  &:focus:before {
-    box-shadow: inset 0 0 0 1px ${theme.BLUE_500};
   }
 
   &:active {
@@ -79,52 +64,73 @@ const LinesButton = styled.button`
     transform: translate(-6px, -6px);
   }
 
-  ${p => p.small && css`
-    font-size: ${theme.FONTSIZE_100};
-    height: ${theme.SPACING_400};
-    min-width: ${theme.SPACING_400};
-    line-height: ${theme.SPACING_400};
+  ${p => p.size1 && css`
+    font-size: ${theme.FONTSIZE_300};
+    height: ${theme.SPACING_600};
+    min-width: ${theme.SPACING_600};
+    padding: 0 ${theme.SPACING_300};
   `}
 
-  ${p => p.primary && css`
-    background-color: ${theme.BLUE_100};
-    color: ${theme.BLUE_700};
-    box-shadow: 0 0 0 1px ${theme.BLUE_300}, 0 3px 6px 0 hsla(200, 30%, 10%, .05), 0 1px 3px 0 hsla(200, 30%, 10%, .1);
-
-    &:hover {
-      box-shadow: 0 0 0 1px ${theme.BLUE_500}, 0 7px 14px 0 hsla(200, 30%, 10%, .05), 0 3px 6px 0 hsla(200, 30%, 10%, .1);
+  ${p => p.gray && css`
+    color: ${theme.GRAY_600};
+    &::before {
+      box-shadow: inset 0 0 0 1px ${theme.GRAY_400};
     }
-
-    &:active {
-      box-shadow: 0 0 0 1px ${theme.BLUE_500};
+    &::after {
+      background-image: repeating-linear-gradient(
+        -45deg,
+        ${theme.GRAY_500},
+        ${theme.GRAY_500} 1px,
+        transparent 1px,
+        transparent 6px
+      );
     }
-  `}
-
-  ${p => p.positive && css`
-    background-color: ${theme.GREEN_100};
-    color: ${theme.GREEN_700};
-    box-shadow: 0 0 0 1px hsl(138, 50%, 70%), 0 3px 6px 0 hsla(200, 30%, 10%, .05), 0 1px 3px 0 hsla(200, 30%, 10%, .1);
-
-    &:hover {
-      box-shadow: 0 0 0 1px hsl(138, 50%, 50%), 0 7px 14px 0 hsla(200, 30%, 10%, .05), 0 3px 6px 0 hsla(200, 30%, 10%, .1);
-    }
-
-    &:active {
-      box-shadow: 0 0 0 1px hsl(138, 50%, 50%);
+    &:hover::before,
+    &:active::before,
+    &:focus::before {
+      box-shadow: inset 0 0 0 1px ${theme.GRAY_500};
     }
   `}
 
-  ${p => p.negative && css`
-    background-color: ${theme.BLUE_100};
-    color: ${theme.BLUE_700};
-    box-shadow: 0 0 0 1px hsl(348, 70%, 80%), 0 3px 6px 0 hsla(200, 30%, 10%, .05), 0 1px 3px 0 hsla(200, 30%, 10%, .1);
-
-    &:hover {
-      box-shadow: 0 0 0 1px hsl(348, 70%, 60%), 0 7px 14px 0 hsla(200, 30%, 10%, .05), 0 3px 6px 0 hsla(200, 30%, 10%, .1);
+  ${p => p.blue && css`
+    color: ${theme.BLUE_500};
+    &::before {
+      box-shadow: inset 0 0 0 1px ${theme.BLUE_300};
     }
+    &::after {
+      background-image: repeating-linear-gradient(
+        -45deg,
+        ${theme.BLUE_500},
+        ${theme.BLUE_500} 1px,
+        transparent 1px,
+        transparent 6px
+      );
+    }
+    &:hover::before,
+    &:active::before,
+    &:focus::before {
+      box-shadow: inset 0 0 0 1px ${theme.BLUE_500};
+    }
+  `}
 
-    &:active {
-      box-shadow: 0 0 0 1px hsl(348, 70%, 60%);
+  ${p => p.green && css`
+    color: ${theme.GREEN_500};
+    &::before {
+      box-shadow: inset 0 0 0 1px ${theme.GREEN_300};
+    }
+    &::after {
+      background-image: repeating-linear-gradient(
+        -45deg,
+        ${theme.GREEN_500},
+        ${theme.GREEN_500} 1px,
+        transparent 1px,
+        transparent 6px
+      );
+    }
+    &:hover::before,
+    &:active::before,
+    &:focus::before {
+      box-shadow: inset 0 0 0 1px ${theme.GREEN_500};
     }
   `}
 
