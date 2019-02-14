@@ -1135,9 +1135,17 @@ export default class extends Component {
               />
             </div>
             <div>
-              <Textarea
-                placeholder="Type something..."
-              />
+              <Box mb_6>
+                <Textarea
+                  placeholder="Type something..."
+                />
+              </Box>
+              <Box>
+                <Textarea
+                  size2
+                  placeholder="Type something..."
+                />
+              </Box>
             </div>
             <div>
               <div style={{width: '100px'}}>
