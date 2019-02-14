@@ -42,6 +42,7 @@ import Avatar from './components/Avatar';
 import Tooltip from './components/Tooltip';
 import Progress from './components/Progress';
 import Radio from './components/Radio';
+import Table from './components/Table';
 import Checkbox from './components/Checkbox';
 import IndicatorButton from './components/IndicatorButton';
 import Grid from './components/Grid';
@@ -90,6 +91,7 @@ export IndicatorButton from './components/IndicatorButton';
 export GhostButton from './components/GhostButton';
 export Grid from './components/Grid';
 export Status from './components/Status';
+export Table from './components/Table';
 export BackgroundImage from './components/BackgroundImage';
 export Title from './components/Title';
 export Textarea from './components/Textarea';
@@ -104,8 +106,8 @@ export { Theme };
 export default class extends Component {
   render() {
     return <div>
-      <Overlay active></Overlay>
-      <Dialog size2 active>
+      <Overlay></Overlay>
+      <Dialog size2>
         <Flexbox fd_column height_100>
           <Box padding_4 fs_0>
             <Heading size2 bold>
@@ -582,6 +584,68 @@ export default class extends Component {
               <PillTab right>
                 Composer
               </PillTab>
+            </div>
+            <div>
+              <Table>
+                <Text size3 as="caption">This is a table caption</Text>
+                <thead>
+                  <tr>
+                    <th>
+                      <Text size3 bold>Movie</Text>
+                    </th>
+                    <th>
+                      <Text size3 bold>Movie</Text>
+                    </th>
+                    <th>
+                      <Text size3 bold>Movie</Text>
+                    </th>
+                    <th>
+                      <Text size3 bold>Movie</Text>
+                    </th>
+                    <th>
+                      <Text size3 bold>Movie</Text>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <Text size3>Harry Potter and the Deathly Hallows—Part 2</Text>
+                    </td>
+                    <td>
+                      <Text size3>Orange</Text>
+                    </td>
+                    <td>
+                      <Text size3>Orange</Text>
+                    </td>
+                    <td>
+                      <Text size3>Orange</Text>
+                    </td>
+                    <td>
+                      <Text size3>Orange</Text>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <Text size3>Harry Potter and the Deathly Hallows—Part 2</Text>
+                    </td>
+                    <td>
+                      <Text size3>Orange</Text>
+                    </td>
+                    <td>
+                      <Text size3>Orange</Text>
+                    </td>
+                    <td>
+                      <Text size3>Orange</Text>
+                    </td>
+                    <td>
+                      <Text size3>Orange</Text>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                </tfoot>
+              </Table>
             </div>
             <div>
               <Flexbox
