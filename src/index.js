@@ -1047,7 +1047,7 @@ export default class extends Component {
                     paddedLeft
                     type="email"
                   />
-                  <Box position_absolute height_100 width_100 color_gray600 pe_none style={{top: '0', left: '0'}}>
+                  <Box position_absolute height_100 width_100 color_gray600 pe_none top_0 left_0>
                     <Flexbox height_100 ai_center>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -1074,7 +1074,7 @@ export default class extends Component {
                     paddedLeft
                     type="password"
                   />
-                  <Box position_absolute height_100 width_100 color_gray600 pe_none style={{top: '0', left: '0'}}>
+                  <Box position_absolute height_100 width_100 color_gray600 pe_none top_0 left_0>
                     <Flexbox height_100 ai_center>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -1097,7 +1097,7 @@ export default class extends Component {
                     placeholder="Search..."
                     paddedRight
                   />
-                  <Box position_absolute height_100 width_100 color_gray600 pe_none style={{top: '0', left: '0'}}>
+                  <Box position_absolute height_100 width_100 color_gray600 pe_none top_0 left_0>
                     <Flexbox height_100 ai_center jc_flexend>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
