@@ -7,6 +7,7 @@ import Badge from './components/Badge';
 import Box from './components/Box';
 import Button from './components/Button';
 import Card from './components/Card';
+import CardLink from './components/CardLink';
 import ChromelessButton from './components/ChromelessButton';
 import Container from './components/Container';
 import ContextMenu from './components/ContextMenu';
@@ -57,6 +58,7 @@ export Badge from './components/Badge';
 export Box from './components/Box';
 export Button from './components/Button';
 export Card from './components/Card';
+export CardLink from './components/CardLink';
 export ChromelessButton from './components/ChromelessButton';
 export Container from './components/Container';
 export ContextMenu from './components/ContextMenu';
@@ -263,6 +265,65 @@ export default class extends Component {
                       15m ago
                     </Text>
                   </Card>
+                </Box>
+              </Grid>
+            </div>
+            <div>
+              <Grid cells_2 size1>
+                <Box>
+                  <CardLink as="a" href="https://www.modulz.app" border padding_4>
+                    <Heading size1 lh_1 color_gray600 mb_1>
+                      Nona Willis Aronowitz
+                    </Heading>
+                    <Heading size2 bold lh_2>
+                      Hate Amazon? Try Living Without It.
+                    </Heading>
+                    <Text size3 lh_2 mt_1>
+                      My dad was a longtime labor activist. He despises what Jeff Bezos built, but he can’t quit it.
+                    </Text>
+                    <Text size2 color_gray600 mt_2 as="time">
+                      Dec. 8
+                    </Text>
+                  </CardLink>
+                </Box>
+                <Box>
+                  <CardLink as="a" href="https://www.modulz.app" perspective padding_4>
+                    <Heading size1 bold lh_1>
+                      China, Facing Difficult Balancing Act, Summons U.S. Envoy Over Huawei Arrest
+                    </Heading>
+                    <Text size2 lh_1 mt_1>
+                      China’s leadership is seeking to maintain a recent thaw with the United States while lashing out at the arrest of a top Chinese tech executive.
+                    </Text>
+                    <Text size1 color_gray600 mt_2 as="time">
+                      15m ago
+                    </Text>
+                  </CardLink>
+                </Box>
+                <Box>
+                  <CardLink as="a" href="https://www.modulz.app" ghost padding_4>
+                    <Heading size1 bold lh_1>
+                      China, Facing Difficult Balancing Act, Summons U.S. Envoy Over Huawei Arrest
+                    </Heading>
+                    <Text size2 lh_1 mt_1>
+                      China’s leadership is seeking to maintain a recent thaw with the United States while lashing out at the arrest of a top Chinese tech executive.
+                    </Text>
+                    <Text size1 color_gray600 mt_2 as="time">
+                      15m ago
+                    </Text>
+                  </CardLink>
+                </Box>
+                <Box nml_4>
+                  <CardLink as="a" href="https://www.modulz.app" ghost padding_4>
+                    <Heading size1 bold lh_1>
+                      China, Facing Difficult Balancing Act, Summons U.S. Envoy Over Huawei Arrest
+                    </Heading>
+                    <Text size2 lh_1 mt_1>
+                      China’s leadership is seeking to maintain a recent thaw with the United States while lashing out at the arrest of a top Chinese tech executive.
+                    </Text>
+                    <Text size1 color_gray600 mt_2 as="time">
+                      15m ago
+                    </Text>
+                  </CardLink>
                 </Box>
               </Grid>
             </div>
