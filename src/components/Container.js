@@ -4,6 +4,7 @@ import * as theme from './../theme/';
 const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
+  flex-grow: 1;
 
   ${props => props.size1 && css`
     padding-left: ${theme.SPACING_500};
