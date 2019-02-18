@@ -65,7 +65,7 @@ const Dialog = ({
   root,
   ...panelProps,
 }) => {
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
   const close = () => setActive(false);
 
   const handleOverlayClick = (event) => {
