@@ -8,7 +8,7 @@ const ListItem = styled.li`
   display: flex;
   line-height: 1;
   width: 100%;
-  min-height: ${theme.SPACING_600};
+  min-height: 31px;
   padding-bottom: ${theme.SPACING_100};
   padding-left: ${theme.SPACING_400};
   padding-right: ${theme.SPACING_400};
