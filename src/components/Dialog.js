@@ -162,10 +162,7 @@ const Dialog = ({
 
 Dialog.propTypes = {
   dismissable: PropTypes.bool,
-  content: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node,
-  ]).isRequired,
+  content: PropTypes.func,
   root: PropTypes.instanceOf(Element),
 };
 
