@@ -63,9 +63,10 @@ const Dialog = ({
   content: Content,
   dismissable,
   root,
+  active: initiallyActive,
   ...panelProps,
 }) => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(initiallyActive);
   const close = () => setActive(false);
 
   const handleOverlayClick = (event) => {
@@ -161,13 +162,20 @@ const Dialog = ({
 };
 
 Dialog.propTypes = {
+  // Whether or not the dialog can be dismissed without manually calling the provided close() function
   dismissable: PropTypes.bool,
+  // Whether or not the dialog is initially rendered as active
+  active: PropTypes.bool,
+  // The content to render inside the panel of the dialog
   content: PropTypes.func,
+  // A DOM node to mount the dialog in via React.createPortal().
+  // Defaults to a div in the body element of the document.
   root: PropTypes.instanceOf(Element),
 };
 
 Dialog.defaultProps = {
   dismissable: true,
+  active: false,
 };
 
 export default Dialog;
