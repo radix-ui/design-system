@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import * as theme from './../theme/';
+
 import Box from './Box';
 import GhostButton from './GhostButton';
+import Overlay from './Overlay';
+
+import * as theme from './../theme/';
 
 const Container = styled.div`
   display: flex;
@@ -11,10 +16,11 @@ const Container = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 9;
+  pointer-events: none;
 `;
 
 const Panel = styled.div`
@@ -32,6 +38,7 @@ const Panel = styled.div`
   transform: translateY(5px);
   width: 100%;
   z-index: 8;
+  pointer-events: auto;
 
   ${p => p.size1 && css`
     max-width: 800px;
@@ -51,38 +58,119 @@ const Panel = styled.div`
   `}
 `;
 
-const Dialog = (props) => {
-  const { children, ...nonChildrenProps } = props;
+const Dialog = ({
+  children,
+  content: Content,
+  dismissable,
+  root,
+  ...panelProps,
+}) => {
+  const [active, setActive] = useState(true);
+  const close = () => setActive(false);
+
+  const handleOverlayClick = (event) => {
+    if (dismissable) {
+      close();
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (!active) {
+      return;
+    }
+
+    // Close dialog if escape key is pressed
+    if (event.keyCode === 27) {
+      event.preventDefault();
+      event.stopPropagation();
+      close();
+    }
+  };
+  
+  const handleWheel = (event) => {
+    if (active) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('wheel', handleWheel);
+    return () => {
+      document.removeEventListener('wheel', handleWheel);
+      document.removeEventListener('keydown', handleKeyDown);
+    }
+  });
+  
+
+  // Get reference to root element to mount dialog into, or create it if it doesn't already exist
+  let rootNode = root || document.getElementById('dialog-root');
+  if (!rootNode) {
+    rootNode = document.body.appendChild(document.createElement('div'));
+    rootNode.id = 'dialog-root';
+  };
+
   return (
-    <Container>
-      <Box
-        position_absolute
-        pt_1
-        pr_1
-        style={{
-          top: '0',
-          right: '0'
-        }}
-      >
-        <GhostButton size2>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            viewBox="0 0 25 25"
-            fill="none"
-            stroke="currentColor"
-          >
-            <path d="M7.5 17.5L17.5 7.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M17.5 17.5L7.5 7.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </GhostButton>
-      </Box>
-      <Panel {...nonChildrenProps}>
-        {children}
-      </Panel>
-    </Container>
+    <React.Fragment>
+      <div onClick={() => setActive(true)}>{children}</div>
+      {ReactDOM.createPortal(
+        <React.Fragment>
+          <Overlay active={active} onClick={handleOverlayClick} />
+          <Container>
+            <Box
+              position_fixed
+              pt_1
+              pr_1
+              style={{
+                top: 0,
+                right: 0,
+                display: active ? 'block' : 'none'
+              }}
+            >
+              {dismissable && (
+                <GhostButton size2 onClick={close}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path d="M7.5 17.5L17.5 7.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M17.5 17.5L7.5 7.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </GhostButton>
+              )}
+            </Box>
+            <Panel
+              active={active}
+              onClick={(event) => event.stopPropagation()}
+              onKeyDown={handleKeyDown}
+              {...panelProps}
+            >
+              <Content close={close} />
+            </Panel>
+          </Container>
+        </React.Fragment>,
+        rootNode,
+      )}
+    </React.Fragment>
   );
+};
+
+Dialog.propTypes = {
+  dismissable: PropTypes.bool,
+  content: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node,
+  ]).isRequired,
+  root: PropTypes.instanceOf(Element),
+};
+
+Dialog.defaultProps = {
+  dismissable: true,
 };
 
 export default Dialog;
