@@ -33,7 +33,6 @@ const Button = styled.button.attrs({
   outline: none;
   padding: 0 ${theme.SPACING_200};
   position: relative;
-  pointer-events: auto;
   text-align: center;
   text-decoration: none;
   user-select: none;
