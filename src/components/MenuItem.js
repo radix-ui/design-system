@@ -12,12 +12,10 @@ const MenuItem = styled.div.attrs({ role: 'button' })`
   cursor: pointer;
   display: flex;
   line-height: 1;
-  min-height: ${theme.SPACING_600};
+  min-height: 31px;
   outline: none;
-  padding-bottom: ${theme.SPACING_100};
   padding-left: ${theme.SPACING_400};
   padding-right: ${theme.SPACING_400};
-  padding-top: ${theme.SPACING_100};
   text-align: left;
   text-decoration: none;
   user-select: none;
