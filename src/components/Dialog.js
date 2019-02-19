@@ -48,7 +48,47 @@ const Panel = styled.div`
   ${p => p.size2 && css`
     max-width: 400px;
   `}
+  
+  @media screen and (min-width: ${theme.BREAKPOINT_100}) {
+    ${p => p.bp1_size1 && css`
+      max-width: 800px;
+    `}
 
+    ${p => p.bp1_size2 && css`
+      max-width: 400px;
+    `}
+  }
+
+  @media screen and (min-width: ${theme.BREAKPOINT_200}) {
+    ${p => p.bp2_size1 && css`
+      max-width: 800px;
+    `}
+
+    ${p => p.bp2_size2 && css`
+      max-width: 400px;
+    `}
+  }
+
+  @media screen and (min-width: ${theme.BREAKPOINT_300}) {
+    ${p => p.bp3_size1 && css`
+      max-width: 800px;
+    `}
+
+    ${p => p.bp3_size2 && css`
+      max-width: 400px;
+    `}
+  }
+
+  @media screen and (min-width: ${theme.BREAKPOINT_400}) {
+    ${p => p.bp4_size1 && css`
+      max-width: 800px;
+    `}
+
+    ${p => p.bp4_size2 && css`
+      max-width: 400px;
+    `}
+  }
+  
   ${p => p.expanded && css`
     height: 100%;
   `}
