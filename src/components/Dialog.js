@@ -38,7 +38,7 @@ const Panel = styled.div`
   transform: translateY(5px);
   width: 100%;
   z-index: 8;
-  pointer-events: auto;
+  pointer-events: none;
 
   ${p => p.size1 && css`
     max-width: 800px;
@@ -54,6 +54,7 @@ const Panel = styled.div`
 
   ${p => p.active && css`
     opacity: 1;
+    pointer-events: auto;
     transform: translateY(0);
   `}
 `;

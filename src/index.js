@@ -412,11 +412,6 @@ export default class extends Component {
                   </Box>
                   Follow
                 </Button>
-                <Dialog content={demoDialog} size2>
-                  <Button ml_2 size2 blue>
-                    Open Dialog
-                  </Button>
-                </Dialog>
               </Flexbox>
             </div>
             <div>
@@ -1439,6 +1434,13 @@ export default class extends Component {
                   <IndicatorButton />
                 </Box>
               </Flexbox>
+            </div>
+            <div>
+              <Dialog content={demoDialog} size2>
+                <Button ml_2 size2 blue>
+                  Open Dialog
+                </Button>
+              </Dialog>
             </div>
           </Grid>
         </Container>
