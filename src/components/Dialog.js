@@ -123,9 +123,9 @@ const Dialog = ({
               position_fixed
               pt_1
               pr_1
+              top_0
+              right_0
               style={{
-                top: 0,
-                right: 0,
                 display: active ? 'block' : 'none'
               }}
             >
