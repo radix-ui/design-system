@@ -30,6 +30,7 @@ const Panel = styled.div`
     0 10px 38px -10px hsla(208,24%,7%,.35),
     0 10px 20px -15px hsla(208,24%,7%,.2);
   max-height: 100%;
+  min-height: 100px;
   opacity: 0;
   overflow: hidden;
   transition-duration: 80ms;
