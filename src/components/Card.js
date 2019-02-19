@@ -17,6 +17,7 @@ const Card = styled.div`
       height: 100%;
       box-shadow: inset 0 0 0 1px ${theme.GRAY_400};
       border-radius: ${theme.BORDERRADIUS_200};
+      pointer-events: none;
     }
   `}
 
@@ -32,6 +33,7 @@ const Card = styled.div`
         0 10px 38px -10px hsla(208,24%,7%,.35),
         0 10px 20px -15px hsla(208,24%,7%,.2);
       border-radius: ${theme.BORDERRADIUS_200};
+      pointer-events: none;
     }
   `}
 
