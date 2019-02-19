@@ -156,7 +156,7 @@ const Dialog = ({
 
   return (
     <React.Fragment>
-      <div onClick={() => setActive(true)}>{children}</div>
+      <span onClick={() => setActive(true)}>{children}</span>
       {ReactDOM.createPortal(
         <React.Fragment>
           <Overlay active={active} onClick={handleOverlayClick} />
