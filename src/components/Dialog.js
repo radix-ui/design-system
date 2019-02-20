@@ -21,6 +21,10 @@ const Container = styled.div`
   left: 0;
   z-index: 9;
   pointer-events: none;
+  
+  ${p => p.active && css`
+    pointer-events: auto;
+  `}
 `;
 
 const Panel = styled.div`
@@ -167,9 +171,6 @@ const Dialog = ({
               pr_1
               top_0
               right_0
-              style={{
-                display: active ? 'block' : 'none'
-              }}
             >
               {dismissable && (
                 <GhostButton size2 onClick={close}>
