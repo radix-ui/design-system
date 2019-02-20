@@ -133,10 +133,19 @@ const Dialog = ({
       close();
     }
   };
+  
+  const handleWheel = (event) => {
+    if (active) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  }
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('wheel', handleWheel);
     return () => {
+      document.removeEventListener('wheel', handleWheel);
       document.removeEventListener('keydown', handleKeyDown);
     }
   });
@@ -162,6 +171,11 @@ const Dialog = ({
               pr_1
               top_0
               right_0
+              style={{
+                transition: 'opacity 80ms linear',
+                opacity: active ? '1' : '0',
+                pointerEvents: active ? 'auto' : 'none',
+              }}
             >
               {dismissable && (
                 <GhostButton size2 onClick={close}>
