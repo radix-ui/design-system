@@ -135,6 +135,7 @@ export default class extends Component {
     );
 
     return <div>
+      <Tooltip />
       <Alert gray>
         <Container size1>
           <Flexbox jc_center ai_center>
@@ -1329,38 +1330,37 @@ export default class extends Component {
             </div>
             <div>
               <Flexbox>
-                <Tooltip
-                  data-tooltip="Tooltip content"
-                  data-position="top"
+                <Button
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="top"
+                  data-tooltip-alignment="middle"
                 >
-                  <Button>
-                    Tooltip
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  data-tooltip="Tooltip content"
-                  data-position="right"
+                  Tooltip
+                </Button>
+                <Button
+                  ml_2
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="right"
+                  data-tooltip-alignment="middle"
                 >
-                  <Button>
-                    Tooltip
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  data-tooltip="Tooltip content"
-                  data-position="bottom"
+                  Tooltip
+                </Button>
+                <Button
+                  ml_2
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="bottom"
+                  data-tooltip-alignment="middle"
                 >
-                  <Button>
-                    Tooltip
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  data-tooltip="Tooltip content"
-                  data-position="left"
+                  Tooltip
+                </Button>
+                <Button
+                  ml_2
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="left"
+                  data-tooltip-alignment="middle"
                 >
-                  <Button>
-                    Tooltip
-                  </Button>
-                </Tooltip>
+                  Tooltip
+                </Button>
               </Flexbox>
             </div>
             <div>
