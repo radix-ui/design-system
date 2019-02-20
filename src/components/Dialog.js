@@ -129,19 +129,10 @@ const Dialog = ({
       close();
     }
   };
-  
-  const handleWheel = (event) => {
-    if (active) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-  }
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
-    document.addEventListener('wheel', handleWheel);
     return () => {
-      document.removeEventListener('wheel', handleWheel);
       document.removeEventListener('keydown', handleKeyDown);
     }
   });
