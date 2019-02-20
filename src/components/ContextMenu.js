@@ -8,7 +8,7 @@ const ContextMenu = styled.div`
     0 10px 38px -10px hsla(208,24%,7%,.35),
     0 10px 20px -15px hsla(208,24%,7%,.2);
   padding-bottom: ${theme.SPACING_100};
-  padding-top: ${theme.SPACING_100}
+  padding-top: ${theme.SPACING_100};
   position: fixed;
   z-index: ${theme.ZINDEX_CONTEXT_MENU};
 
