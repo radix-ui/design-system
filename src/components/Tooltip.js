@@ -27,8 +27,6 @@ const StyledArrow = styled.div`
   position: relative;
 
   &::after {
-    top: 100%;
-    left: 50%;
     border: solid transparent;
     content: '';
     height: 0;
@@ -36,30 +34,37 @@ const StyledArrow = styled.div`
     position: absolute;
     pointer-events: none;
     border-color: transparent;
-    border-left-color: hsla(0,0%,0%,.8);
     margin-left: 0;
     border-width: 5px;
   }
   
-  ${(props) => props.top && css`
-    border-top-color: hsla(0,0%,0%,.8);
+  ${(props) => props.direction === 'top' && css`
+    &::after {
+      border-top-color: hsla(0,0%,0%,.8);
+    }
   `}
   
-  ${(props) => props.right && css`
-    border-right-color: hsla(0,0%,0%,.8);
+  ${(props) => props.direction === 'right' && css`
+    &::after {
+      border-right-color: hsla(0,0%,0%,.8);
+    }
   `}
   
-  ${(props) => props.bottom && css`
-    border-bottom-color: hsla(0,0%,0%,.8);
+  ${(props) => props.direction === 'bottom' && css`
+    &::after {
+      border-bottom-color: hsla(0,0%,0%,.8);
+    }
   `}
   
-  ${(props) => props.left && css`
-    border-left-color: hsla(0,0%,0%,.8);
+  ${(props) => props.direction === 'left' && css`
+    &::after {
+      border-left-color: hsla(0,0%,0%,.8);
+    }
   `}
 `;
 
-const ARROW_HEIGHT = 10;
-const ARROW_WIDTH = 10;
+const ARROW_HEIGHT = 5;
+const ARROW_WIDTH = 5;
 
 const getBounds = (element) => element.getBoundingClientRect();
 
