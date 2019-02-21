@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState, useLayoutEffect } from 'react';
 import styled, { css } from 'styled-components';
 import Text from './Text';
 
+const RECENTLY_ACTIVE_THRESHOLD = 800;
+
 const StyledTooltipContainer = styled.div`
   z-index: 1000;
   pointer-events: none;
@@ -174,7 +176,7 @@ const Tooltip = () => {
           clearTimeout(unactiveTimeout);
           setUnactiveTimeout(setTimeout(
             () => setRecentlyActive(false),
-            1000,
+            RECENTLY_ACTIVE_THRESHOLD,
           ));
         }
         setState({ ...state, target: null, active: false });
