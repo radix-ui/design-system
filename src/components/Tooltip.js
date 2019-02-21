@@ -249,7 +249,6 @@ const Tooltip = () => {
   });
 
   const { layout = {} } = state;
-  console.log(state, active);
   return (
     <StyledTooltipContainer active={active}>
       <StyledArrow direction={state.direction} style={{ ...layout.arrowPosition }} />
