@@ -135,6 +135,7 @@ export default class extends Component {
     );
 
     return <div>
+      <Tooltip />
       <Alert gray>
         <Container size1>
           <Flexbox jc_center ai_center>
@@ -1328,39 +1329,66 @@ export default class extends Component {
               </Flexbox>
             </div>
             <div>
-              <Flexbox>
-                <Tooltip
-                  data-tooltip="Tooltip content"
-                  data-position="top"
+              <Flexbox fw_wrap>
+                <Button
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="top"
+                  data-tooltip-alignment="center"
+                  mr_6
                 >
-                  <Button>
-                    Tooltip
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  data-tooltip="Tooltip content"
-                  data-position="right"
+                  Tooltip top
+                </Button>
+                <Button
+                  mr_6
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="right"
+                  data-tooltip-alignment="center"
                 >
-                  <Button>
-                    Tooltip
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  data-tooltip="Tooltip content"
-                  data-position="bottom"
+                  Tooltip right
+                </Button>
+                <Button
+                  mr_6
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="bottom"
+                  data-tooltip-alignment="center"
                 >
-                  <Button>
-                    Tooltip
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  data-tooltip="Tooltip content"
-                  data-position="left"
+                  Tooltip bottom
+                </Button>
+                <Button
+                  mr_6
+                  mt_6
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="left"
+                  data-tooltip-alignment="center"
                 >
-                  <Button>
-                    Tooltip
-                  </Button>
-                </Tooltip>
+                  Tooltip left
+                </Button>
+              </Flexbox>
+              <Flexbox fw_wrap mt_6>
+                <Button
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="top"
+                  data-tooltip-alignment="start"
+                  mr_6
+                >
+                  Tooltip start
+                </Button>
+                <Button
+                  mr_6
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="right"
+                  data-tooltip-alignment="center"
+                >
+                  Tooltip middle
+                </Button>
+                <Button
+                  mr_6
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="bottom"
+                  data-tooltip-alignment="end"
+                >
+                  Tooltip end
+                </Button>
               </Flexbox>
             </div>
             <div>
