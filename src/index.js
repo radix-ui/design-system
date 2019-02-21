@@ -1329,37 +1329,65 @@ export default class extends Component {
               </Flexbox>
             </div>
             <div>
-              <Flexbox>
+              <Flexbox fw_wrap>
                 <Button
                   data-tooltip-content="Tooltip content"
                   data-tooltip-direction="top"
                   data-tooltip-alignment="middle"
+                  mr_6
                 >
-                  Tooltip
+                  Tooltip top
                 </Button>
                 <Button
-                  ml_2
+                  mr_6
                   data-tooltip-content="Tooltip content"
                   data-tooltip-direction="right"
                   data-tooltip-alignment="middle"
                 >
-                  Tooltip
+                  Tooltip right
                 </Button>
                 <Button
-                  ml_2
+                  mr_6
                   data-tooltip-content="Tooltip content"
                   data-tooltip-direction="bottom"
                   data-tooltip-alignment="middle"
                 >
-                  Tooltip
+                  Tooltip bottom
                 </Button>
                 <Button
-                  ml_2
+                  mr_6
+                  mt_6
                   data-tooltip-content="Tooltip content"
                   data-tooltip-direction="left"
                   data-tooltip-alignment="middle"
                 >
-                  Tooltip
+                  Tooltip left
+                </Button>
+              </Flexbox>
+              <Flexbox fw_wrap mt_6>
+                <Button
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="top"
+                  data-tooltip-alignment="start"
+                  mr_6
+                >
+                  Tooltip start
+                </Button>
+                <Button
+                  mr_6
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="right"
+                  data-tooltip-alignment="middle"
+                >
+                  Tooltip middle
+                </Button>
+                <Button
+                  mr_6
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="bottom"
+                  data-tooltip-alignment="end"
+                >
+                  Tooltip end
                 </Button>
               </Flexbox>
             </div>
