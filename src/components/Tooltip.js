@@ -11,7 +11,7 @@ const StyledTooltipContainer = styled.div`
   transition-property: opacity;
 
   ${(props) => props.active && css`
-    transition-delay: 800ms;
+    transition-delay: ${props.recentlyActive ? 0 : '800ms'};
     opacity: 1;
   `}
 `;
@@ -155,6 +155,8 @@ const Tooltip = () => {
     dirty: false,
     active: false,
   });
+  const [recentlyActive, setRecentlyActive] = useState(false);
+  const [unactiveTimeout, setUnactiveTimeout] = useState(null);
   const tooltip = useRef(null);
 
   useEffect(() => {
@@ -166,11 +168,16 @@ const Tooltip = () => {
 
       // If two consecutive attention events occur to the same element, we can hide the tooltip
       if (!tooltipContent || target === state.target) {
-        setState({
-          ...state,
-          target: null,
-          active: false,
-        });
+        // If we were just active but are disabling now, set recentlyActive to true and set a timer to turn it off
+        if (state.active) {
+          setRecentlyActive(true);
+          clearTimeout(unactiveTimeout);
+          setUnactiveTimeout(setTimeout(
+            () => setRecentlyActive(false),
+            1000,
+          ));
+        }
+        setState({ ...state, target: null, active: false });
       } else {
         if (target.tabIndex === -1) {
           console.warn('🚨 tabIndex has not been defined on a component with data-tooltip-content attribute!');
@@ -217,7 +224,7 @@ const Tooltip = () => {
 
   const { layout = {} } = state;
   return (
-    <StyledTooltipContainer active={state.active}>
+    <StyledTooltipContainer active={state.active} recentlyActive={recentlyActive}>
       <StyledArrow direction={state.direction} style={{ ...layout.arrowPosition }} />
       <StyledTooltipPanel ref={tooltip} style={{ ...layout.tooltipPosition }}>
         <Text nowrap size2 color_white>
