@@ -161,12 +161,17 @@ const Tooltip = () => {
   const [activeTimeout, setActiveTimeout] = useState(null);
   const [unactiveTimeout, setUnactiveTimeout] = useState(null);
   const tooltip = useRef(null);
+  const disableTooltip = () => setActive(false);
 
   useEffect(() => {
     // Build mouseover listener
     const handleAttention = (event) => {
       const target = event.target;
-      if (!(target instanceof HTMLElement)) { return; }
+      if (!(target instanceof HTMLElement)) {
+        setActive(false);
+        return;
+      }
+
       const { tooltipContent, tooltipDirection, tooltipAlignment } = target.dataset;
       
       // If two consecutive attention events occur to the same element, we can hide the tooltip
@@ -217,17 +222,20 @@ const Tooltip = () => {
     window.addEventListener('mouseover', handleAttention);
     window.addEventListener('focusin', handleAttention);
     window.addEventListener('click', handleAttention);
+    window.addEventListener('blur', disableTooltip);
 
     return () => {
       window.removeEventListener('mouseover', handleAttention);
       window.removeEventListener('focusin', handleAttention);
       window.removeEventListener('click', handleAttention);
+      window.removeEventListener('blur', disableTooltip);
     };
   });
 
   useLayoutEffect(() => {
     const { direction, alignment, target } = state;
-    if (!active || !state.dirty || !state.target) { return; }
+    if (!state.target) return setActive(false);
+    if (!active || !state.dirty) { return; }
 
     // We've just rendered the tooltip. If there is content, determine tooltip's new position based on that content:
     const newLayout = getTooltipLayout(
@@ -241,6 +249,7 @@ const Tooltip = () => {
   });
 
   const { layout = {} } = state;
+  console.log(state, active);
   return (
     <StyledTooltipContainer active={active}>
       <StyledArrow direction={state.direction} style={{ ...layout.arrowPosition }} />
