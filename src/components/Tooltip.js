@@ -8,27 +8,23 @@ const StyledTooltipContainer = styled.div`
   opacity: 0;
   position: fixed;
   transition-delay: 0ms;
+  transition-property: opacity;
 
-  ${(props) =>
-    props.active &&
-    css`
-      transition-property: opacity;
-      transition-duration: 100ms;
-      transition-delay: 750ms;
-      opacity: 1;
-    `}
+  ${(props) => props.active && css`
+    transition-delay: 800ms;
+    opacity: 1;
+  `}
 `;
 
 const StyledTooltipPanel = styled.div`
-  border-radius: 3px;
+  border-radius: 4px;
   position: fixed;
-  background: rgba(0, 0, 0, 0.95);
+  background: hsla(0,0%,0%,.8);
   padding: 7px;
 `;
 
 const StyledArrow = styled.div`
   position: relative;
-  background: black;
 
   &::after {
     top: 100%;
@@ -39,11 +35,27 @@ const StyledArrow = styled.div`
     width: 0;
     position: absolute;
     pointer-events: none;
-    border-color: rgba(136, 183, 213, 0);
-    border-top-color: black;
+    border-color: transparent;
+    border-left-color: hsla(0,0%,0%,.8);
+    margin-left: 0;
     border-width: 5px;
-    margin-left: -5px;
   }
+  
+  ${(props) => props.top && css`
+    border-top-color: hsla(0,0%,0%,.8);
+  `}
+  
+  ${(props) => props.right && css`
+    border-right-color: hsla(0,0%,0%,.8);
+  `}
+  
+  ${(props) => props.bottom && css`
+    border-bottom-color: hsla(0,0%,0%,.8);
+  `}
+  
+  ${(props) => props.left && css`
+    border-left-color: hsla(0,0%,0%,.8);
+  `}
 `;
 
 const ARROW_HEIGHT = 10;
