@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useLayoutEffect } from 'react';
 import styled, { css } from 'styled-components';
 import Text from './Text';
 
+const ACTIVE_DELAY = 800;
 const RECENTLY_ACTIVE_THRESHOLD = 800;
 
 const StyledTooltipContainer = styled.div`
@@ -13,7 +14,6 @@ const StyledTooltipContainer = styled.div`
   transition-property: opacity;
 
   ${(props) => props.active && css`
-    transition-delay: ${props.recentlyActive ? 0 : '800ms'};
     opacity: 1;
   `}
 `;
@@ -155,9 +155,10 @@ const Tooltip = () => {
     content: '',
     layout: {},
     dirty: false,
-    active: false,
   });
   const [recentlyActive, setRecentlyActive] = useState(false);
+  const [active, setActive] = useState(false);
+  const [activeTimeout, setActiveTimeout] = useState(null);
   const [unactiveTimeout, setUnactiveTimeout] = useState(null);
   const tooltip = useRef(null);
 
@@ -167,11 +168,11 @@ const Tooltip = () => {
       const target = event.target;
       if (!(target instanceof HTMLElement)) { return; }
       const { tooltipContent, tooltipDirection, tooltipAlignment } = target.dataset;
-
+      
       // If two consecutive attention events occur to the same element, we can hide the tooltip
       if (!tooltipContent || target === state.target) {
         // If we were just active but are disabling now, set recentlyActive to true and set a timer to turn it off
-        if (state.active) {
+        if (active) {
           setRecentlyActive(true);
           clearTimeout(unactiveTimeout);
           setUnactiveTimeout(setTimeout(
@@ -179,7 +180,14 @@ const Tooltip = () => {
             RECENTLY_ACTIVE_THRESHOLD,
           ));
         }
-        setState({ ...state, target: null, active: false });
+
+        // If we are not refocusing on the current target, there is a new element without tooltip data being focused,
+        // so set target to null so we know to hide the tooltip. Otherwise, maintain the current target so that we know
+        // we can hide the tooltip and keep it hidden until we receive a new target
+        const targetBeingRefocused = target === state.target;
+        setState({ ...state, target: targetBeingRefocused ? state.target : null });
+        setActive(false);
+        clearTimeout(activeTimeout);
       } else {
         if (target.tabIndex === -1) {
           console.warn('🚨 tabIndex has not been defined on a component with data-tooltip-content attribute!');
@@ -195,25 +203,33 @@ const Tooltip = () => {
           content: tooltipContent,
           layout: {},
           dirty: true,
-          active: true,
         });
+
+        clearTimeout(activeTimeout);
+        if (recentlyActive) {
+          setActive(true);
+        } else {
+          setActiveTimeout(setTimeout(() => setActive(true), ACTIVE_DELAY));
+        }
       }
     };
 
     window.addEventListener('mouseover', handleAttention);
     window.addEventListener('focusin', handleAttention);
+    window.addEventListener('click', handleAttention);
 
     return () => {
       window.removeEventListener('mouseover', handleAttention);
       window.removeEventListener('focusin', handleAttention);
+      window.removeEventListener('click', handleAttention);
     };
   });
 
   useLayoutEffect(() => {
-    if (!state.active || !state.dirty) { return; }
+    const { direction, alignment, target } = state;
+    if (!active || !state.dirty || !state.target) { return; }
 
     // We've just rendered the tooltip. If there is content, determine tooltip's new position based on that content:
-    const { direction, alignment, target } = state;
     const newLayout = getTooltipLayout(
       alignment,
       direction,
@@ -226,7 +242,7 @@ const Tooltip = () => {
 
   const { layout = {} } = state;
   return (
-    <StyledTooltipContainer active={state.active} recentlyActive={recentlyActive}>
+    <StyledTooltipContainer active={active}>
       <StyledArrow direction={state.direction} style={{ ...layout.arrowPosition }} />
       <StyledTooltipPanel ref={tooltip} style={{ ...layout.tooltipPosition }}>
         <Text nowrap size2 color_white>

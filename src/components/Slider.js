@@ -125,8 +125,6 @@ const Slider = (props) => {
     }
   };
 
-  console.log(value);
-
   return (
     <Input>
       <Track>
