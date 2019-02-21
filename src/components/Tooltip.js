@@ -36,35 +36,29 @@ const StyledArrow = styled.div`
     border-color: transparent;
     margin-left: 0;
     border-width: 5px;
-  }
-  
-  ${(props) => props.direction === 'top' && css`
-    &::after {
+    top: 100%;
+    left: 50%;
+
+    ${(props) => props.direction === 'top' && css`
       border-top-color: hsla(0,0%,0%,.8);
-    }
-  `}
-  
-  ${(props) => props.direction === 'right' && css`
-    &::after {
+    `}
+
+    ${(props) => props.direction === 'right' && css`
       border-right-color: hsla(0,0%,0%,.8);
-    }
-  `}
-  
-  ${(props) => props.direction === 'bottom' && css`
-    &::after {
+    `}
+
+    ${(props) => props.direction === 'bottom' && css`
       border-bottom-color: hsla(0,0%,0%,.8);
-    }
-  `}
-  
-  ${(props) => props.direction === 'left' && css`
-    &::after {
+    `}
+
+    ${(props) => props.direction === 'left' && css`
       border-left-color: hsla(0,0%,0%,.8);
-    }
-  `}
+    `}
+  }
 `;
 
-const ARROW_HEIGHT = 5;
-const ARROW_WIDTH = 5;
+const ARROW_HEIGHT = 10;
+const ARROW_WIDTH = 10;
 
 const getBounds = (element) => element.getBoundingClientRect();
 
@@ -74,8 +68,8 @@ const getTooltipLayout = (
   tooltipBounds,
   targetBounds,
 ) => {
-  // Determine the middle of the target, as the both the placement of the tooltip body and the arrow are relative to it
-  const targetMiddle = {
+  // Determine the center of the target, as the both the placement of the tooltip body and the arrow are relative to it
+  const targetCenter = {
     left: targetBounds.left + targetBounds.width / 2,
     top: targetBounds.top + targetBounds.height / 2,
   };
@@ -83,14 +77,14 @@ const getTooltipLayout = (
   // Values for the tooltip's left edge which place it at the following positions
   const left = {
     start: targetBounds.left,
-    middle: targetMiddle.left - tooltipBounds.width / 2,
+    center: targetCenter.left - tooltipBounds.width / 2,
     end: targetBounds.right - tooltipBounds.width,
   };
 
   // Values for the tooltip's top edge which place it at the following positions
   const top = {
     start: targetBounds.top,
-    middle: targetMiddle.top - tooltipBounds.height / 2,
+    center: targetCenter.top - tooltipBounds.height / 2,
     end: targetBounds.bottom - tooltipBounds.height,
   };
 
@@ -106,22 +100,22 @@ const getTooltipLayout = (
   const tooltipPositionCalculations = {
     top: {
       start: () => ({ left: left.start, top: origin.top }),
-      middle: () => ({ left: left.middle, top: origin.top }),
+      center: () => ({ left: left.center, top: origin.top }),
       end: () => ({ left: left.end, top: origin.top }),
     },
     right: {
       start: () => ({ left: origin.right, top: top.start }),
-      middle: () => ({ left: origin.right, top: top.middle }),
+      center: () => ({ left: origin.right, top: top.center }),
       end: () => ({ left: origin.right, top: top.end }),
     },
     bottom: {
       start: () => ({ left: left.start, top: origin.bottom }),
-      middle: () => ({ left: left.middle, top: origin.bottom }),
+      center: () => ({ left: left.center, top: origin.bottom }),
       end: () => ({ left: left.end, top: origin.bottom }),
     },
     left: {
       start: () => ({ left: origin.left, top: top.start }),
-      middle: () => ({ left: origin.left, top: top.middle }),
+      center: () => ({ left: origin.left, top: top.center }),
       end: () => ({ left: origin.left, top: top.end }),
     },
   };
@@ -129,18 +123,18 @@ const getTooltipLayout = (
   const arrowPositionCalculations = {
     top: () => ({
       top: targetBounds.top - ARROW_HEIGHT,
-      left: targetMiddle.left - ARROW_WIDTH / 2,
+      left: targetCenter.left - ARROW_WIDTH / 2,
     }),
     right: () => ({
-      top: targetMiddle.top - ARROW_HEIGHT / 2,
+      top: targetCenter.top - ARROW_HEIGHT / 2,
       left: targetBounds.right,
     }),
     bottom: () => ({
       top: targetBounds.bottom,
-      left: targetMiddle.left - ARROW_WIDTH / 2,
+      left: targetCenter.left - ARROW_WIDTH / 2,
     }),
     left: () => ({
-      top: targetMiddle.top - ARROW_HEIGHT / 2,
+      top: targetCenter.top - ARROW_HEIGHT / 2,
       left: targetBounds.left - ARROW_WIDTH,
     }),
   };
@@ -152,7 +146,15 @@ const getTooltipLayout = (
 };
 
 const Tooltip = () => {
-  const [state, setState] = useState({});
+  const [state, setState] = useState({
+    target: null,
+    direction: 'start',
+    alignment: 'bottom',
+    content: '',
+    layout: {},
+    dirty: false,
+    active: false,
+  });
   const tooltip = useRef(null);
 
   useEffect(() => {
@@ -162,9 +164,13 @@ const Tooltip = () => {
       if (!(target instanceof HTMLElement)) { return; }
       const { tooltipContent, tooltipDirection, tooltipAlignment } = target.dataset;
 
+      // If two consecutive attention events occur to the same element, we can hide the tooltip
       if (!tooltipContent || target === state.target) {
-        // If two consecutive attention events occur to the same element, we can hide the tooltip
-        setState({ ...state, target: null, active: false });
+        setState({
+          ...state,
+          target: null,
+          active: false,
+        });
       } else {
         if (target.tabIndex === -1) {
           console.warn('🚨 tabIndex has not been defined on a component with data-tooltip-content attribute!');
@@ -173,7 +179,7 @@ const Tooltip = () => {
         // Otherwise, we should show it for this element
         setState({
           target,
-          // start | middle | end
+          // start | center | end
           direction: (tooltipDirection || 'start'),
           // top | right | bottom | left
           alignment: (tooltipAlignment || 'bottom'),

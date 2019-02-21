@@ -1333,7 +1333,7 @@ export default class extends Component {
                 <Button
                   data-tooltip-content="Tooltip content"
                   data-tooltip-direction="top"
-                  data-tooltip-alignment="middle"
+                  data-tooltip-alignment="center"
                   mr_6
                 >
                   Tooltip top
@@ -1342,7 +1342,7 @@ export default class extends Component {
                   mr_6
                   data-tooltip-content="Tooltip content"
                   data-tooltip-direction="right"
-                  data-tooltip-alignment="middle"
+                  data-tooltip-alignment="center"
                 >
                   Tooltip right
                 </Button>
@@ -1350,7 +1350,7 @@ export default class extends Component {
                   mr_6
                   data-tooltip-content="Tooltip content"
                   data-tooltip-direction="bottom"
-                  data-tooltip-alignment="middle"
+                  data-tooltip-alignment="center"
                 >
                   Tooltip bottom
                 </Button>
@@ -1359,7 +1359,7 @@ export default class extends Component {
                   mt_6
                   data-tooltip-content="Tooltip content"
                   data-tooltip-direction="left"
-                  data-tooltip-alignment="middle"
+                  data-tooltip-alignment="center"
                 >
                   Tooltip left
                 </Button>
@@ -1377,7 +1377,7 @@ export default class extends Component {
                   mr_6
                   data-tooltip-content="Tooltip content"
                   data-tooltip-direction="right"
-                  data-tooltip-alignment="middle"
+                  data-tooltip-alignment="center"
                 >
                   Tooltip middle
                 </Button>
