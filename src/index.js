@@ -18,6 +18,7 @@ import Flexbox from './components/Flexbox';
 import Heading from './components/Heading';
 import Overlay from './components/Overlay';
 import Dialog from './components/Dialog';
+import { DialogContextProvider } from './components/DialogContext';
 import Title from './components/Title';
 import Status from './components/Status';
 import Image from './components/Image';
@@ -109,32 +110,32 @@ export { Theme };
 
 export default class extends Component {
   render() {
-    const demoDialog = ({ close }) => (
-      <Flexbox fd_column height_100>
-        <Box padding_4 fs_0>
-          <Heading size2 bold>
-            Heading
-          </Heading>
-        </Box>
-        <Box pl_4 pr_4 oy_auto fg_1>
-          <Text size3 lh_2>
-            Absolutely any content can go inside the dialog. No restrictions at all.
-          </Text>
-        </Box>
-        <Box padding_4 fs_0>
-          <Flexbox jc_flexend>
-            <Button size2 mr_4 onClick={close}>
-              Cancel
-            </Button>
-            <Button size2 blue onClick={close}>
-              Accept
-            </Button>
-          </Flexbox>
-        </Box>
-      </Flexbox>
-    );
+    // const demoDialog = ({ close }) => (
+    //   <Flexbox fd_column height_100>
+    //     <Box padding_4 fs_0>
+    //       <Heading size2 bold>
+    //         Heading
+    //       </Heading>
+    //     </Box>
+    //     <Box pl_4 pr_4 oy_auto fg_1>
+    //       <Text size3 lh_2>
+    //         Absolutely any content can go inside the dialog. No restrictions at all.
+    //       </Text>
+    //     </Box>
+    //     <Box padding_4 fs_0>
+    //       <Flexbox jc_flexend>
+    //         <Button size2 mr_4 onClick={close}>
+    //           Cancel
+    //         </Button>
+    //         <Button size2 blue onClick={close}>
+    //           Accept
+    //         </Button>
+    //       </Flexbox>
+    //     </Box>
+    //   </Flexbox>
+    // );
 
-    return <div>
+    return <DialogContextProvider>
       <Tooltip />
       <Alert gray>
         <Container size1>
@@ -1514,10 +1515,15 @@ export default class extends Component {
               </Flexbox>
             </div>
             <div>
-              <Dialog content={demoDialog} size2>
-                <Button ml_2 size2 blue>
-                  Open Dialog
-                </Button>
+              <Dialog
+                size2
+                trigger={
+                  <Button ml_2 size2 blue>
+                    Open Dialog
+                  </Button>
+                }
+              >
+                {() => <div>Hello World</div>}
               </Dialog>
             </div>
           </Grid>
@@ -3599,6 +3605,6 @@ export default class extends Component {
         </Container>
       </Box> */}
 
-    </div>
+    </DialogContextProvider>
   }
 }
