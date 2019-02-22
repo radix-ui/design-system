@@ -9,7 +9,7 @@ const StyledTooltipContainer = styled.div`
   z-index: 1000;
   pointer-events: none;
   opacity: 0;
-  position: fixed;
+  position: absolute;
   transition-delay: 0ms;
   transition-property: opacity;
 
@@ -20,7 +20,7 @@ const StyledTooltipContainer = styled.div`
 
 const StyledTooltipPanel = styled.div`
   border-radius: 4px;
-  position: fixed;
+  position: absolute;
   background: hsla(0,0%,0%,.8);
   padding: 7px;
 `;
@@ -62,7 +62,22 @@ const StyledArrow = styled.div`
 const ARROW_HEIGHT = 10;
 const ARROW_WIDTH = 10;
 
-const getBounds = (element) => element.getBoundingClientRect();
+const getBounds = (element) => {
+  const { left, top, right, bottom, width, height } = element.getBoundingClientRect();
+  return {
+    left: left + window.scrollX,
+    top: top + window.scrollY,
+    right: right + window.scrollX,
+    bottom: bottom + window.scrollY,
+    width,
+    height,
+  };
+};
+
+const roundCoordinates = ({ top, left }) => ({
+  top: Math.round(top),
+  left: Math.round(left),
+});
 
 const getTooltipLayout = (
   alignment,
@@ -124,37 +139,39 @@ const getTooltipLayout = (
 
   const arrowPositionCalculations = {
     top: () => ({
-      top: targetBounds.top - ARROW_HEIGHT,
       left: targetCenter.left - ARROW_WIDTH / 2,
+      top: targetBounds.top - ARROW_HEIGHT,
     }),
     right: () => ({
-      top: targetCenter.top - ARROW_HEIGHT / 2,
       left: targetBounds.right,
+      top: targetCenter.top - ARROW_HEIGHT / 2,
     }),
     bottom: () => ({
-      top: targetBounds.bottom,
       left: targetCenter.left - ARROW_WIDTH / 2,
+      top: targetBounds.bottom,
     }),
     left: () => ({
-      top: targetCenter.top - ARROW_HEIGHT / 2,
       left: targetBounds.left - ARROW_WIDTH,
+      top: targetCenter.top - ARROW_HEIGHT / 2,
     }),
   };
 
   return {
-    tooltipPosition: tooltipPositionCalculations[direction][alignment](),
-    arrowPosition: arrowPositionCalculations[direction](),
+    tooltipPosition: roundCoordinates(tooltipPositionCalculations[direction][alignment]()),
+    arrowPosition: roundCoordinates(arrowPositionCalculations[direction]()),
   };
 };
 
 const Tooltip = () => {
   const [state, setState] = useState({
-    target: null,
-    direction: 'start',
+    // top | right | bottom | left
     alignment: 'bottom',
+    // start | center | end
+    direction: 'start',
+    dirty: false,
     content: '',
     layout: {},
-    dirty: false,
+    target: null,
   });
   const [recentlyActive, setRecentlyActive] = useState(false);
   const [active, setActive] = useState(false);
@@ -201,9 +218,7 @@ const Tooltip = () => {
         // Otherwise, we should show it for this element
         setState({
           target,
-          // start | center | end
           direction: (tooltipDirection || 'start'),
-          // top | right | bottom | left
           alignment: (tooltipAlignment || 'bottom'),
           content: tooltipContent,
           layout: {},
