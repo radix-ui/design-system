@@ -205,6 +205,12 @@ const Heading = styled.h3`
     font-family: ${theme.UNTITLEDSANSMEDIUM};
   `}
 
+  ${p => p.truncate && css`
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  `}
+
   ${p => p.nowrap && css`white-space: nowrap;`}
 
   ${p => p.tnum && css`font-feature-settings: 'tnum';`}
