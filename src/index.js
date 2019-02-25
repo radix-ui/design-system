@@ -18,7 +18,7 @@ import Flexbox from './components/Flexbox';
 import Heading from './components/Heading';
 import Overlay from './components/Overlay';
 import Dialog from './components/Dialog';
-import { DialogContextProvider } from './components/DialogContext';
+import { DialogRoot } from './components/DialogRoot';
 import Title from './components/Title';
 import Status from './components/Status';
 import Image from './components/Image';
@@ -72,6 +72,7 @@ export Image from './components/Image';
 export Input from './components/Input';
 export Overlay from './components/Overlay';
 export Dialog from './components/Dialog';
+export { DialogRoot } from './components/DialogRoot';
 export LinesButton from './components/LinesButton';
 export Link from './components/Link';
 export List from './components/List';
@@ -135,7 +136,7 @@ export default class extends Component {
     //   </Flexbox>
     // );
 
-    return <DialogContextProvider>
+    return <DialogRoot>
       <Tooltip />
       <Alert gray>
         <Container size1>
@@ -3628,6 +3629,6 @@ export default class extends Component {
         </Container>
       </Box> */}
 
-    </DialogContextProvider>
+    </DialogRoot>
   }
 }

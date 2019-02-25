@@ -6,7 +6,7 @@ import Box from './Box';
 import GhostButton from './GhostButton';
 import Overlay from './Overlay';
 /* Theme */
-import * as theme from './../theme/';
+import * as theme from '../theme';
 
 // The number of milliseconds it takes to close the dialog
 const DIALOG_CLOSE_TRANSITION_LENGTH = 80;
@@ -136,7 +136,7 @@ const reducer = (state, action) => {
   }
 }
 
-const DialogContextProvider = ({ children }) => {
+const DialogRoot = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const panelRef = useRef(null);
   const activeDialog = state.dialogs[0] || {};
@@ -229,7 +229,7 @@ const DialogContextProvider = ({ children }) => {
 
 export {
   DialogContext,
-  DialogContextProvider,
+  DialogRoot,
   DialogContextConsumer,
   Actions,
 };
