@@ -1,5 +1,5 @@
 /* Libaries */
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
 /* Components */
 import Box from './Box';
@@ -7,6 +7,9 @@ import GhostButton from './GhostButton';
 import Overlay from './Overlay';
 /* Theme */
 import * as theme from './../theme/';
+
+// The number of milliseconds it takes to close the dialog
+const DIALOG_CLOSE_TRANSITION_LENGTH = 80;
 
 /* Styles */
 const Container = styled.div`
@@ -37,7 +40,7 @@ const Panel = styled.div`
   min-height: 100px;
   opacity: 0;
   overflow: hidden;
-  transition-duration: 80ms;
+  transition-duration: ${DIALOG_CLOSE_TRANSITION_LENGTH}ms;
   transition-property: opacity, transform;
   transition-timing-function: linear;
   transform: translateY(5px);
@@ -96,20 +99,41 @@ const Panel = styled.div`
 
 /* Component */
 const DialogContext = createContext();
+const DialogContextConsumer = DialogContext.Consumer;
+
 const initialState = {
   dialogs: [],
+  closeTimer: null,
+  closing: false,
+};
+
+const Actions = {
+  OPEN: 'OPEN',
+  BEGIN_CLOSING: 'BEGIN_CLOSING',
+  CLOSE: 'CLOSE',
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'open':
+    case Actions.OPEN:
+      clearTimeout(state.closeTimer);
       return {
         ...state,
+        closing: false,
+        closeTimer: null,
         dialogs: [action.dialog, ...state.dialogs],
       };
-    case 'close':
+    case Actions.BEGIN_CLOSING:
       return {
         ...state,
+        closing: true,
+        closeTimer: action.closeTimer,
+      };
+    case Actions.CLOSE:
+      return {
+        ...state,
+        closing: false,
+        closeTimer: null,
         dialogs: state.dialogs.filter((dialog) => dialog !== action.dialog),
       };
     default:
@@ -119,9 +143,29 @@ const reducer = (state, action) => {
 
 const DialogContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const active = !!state.dialogs[0];
+  const active = !!state.dialogs[0] && !state.closing;
   const activeDialog = state.dialogs[0] || {};
-  const close = () => dispatch({ type: 'close', dialog: activeDialog });
+  const panelRef = useRef(null);
+
+  // Close handler needs to not remove children of dialog until the dialog hide transition has fully completed in order
+  // to avoid disgusting content reflows onscreen during close transition
+  const close = () => {
+    const handler = () => dispatch({ type: Actions.CLOSE, dialog: activeDialog });
+
+    if (panelRef.current) {
+      panelRef.current.addEventListener('transitionend', handler);
+    }
+
+    dispatch({
+      type: Actions.BEGIN_CLOSING,
+      finishClosing: () => {
+        if (panelRef.current) {
+          panelRef.current.removeEventListener('transitionend', handler);
+        }
+      },
+    });
+  };
+
   const handleOverlayClick = () => {
     if (activeDialog.dismissable) {
       close();
@@ -140,11 +184,16 @@ const DialogContextProvider = ({ children }) => {
       close();
     }
   };
+  
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  });
 
   return (
     <DialogContext.Provider value={{ state, dispatch }}>
       {children}
-      <Overlay active={active} onClick={handleOverlayClick} />
+      <Overlay active={active || state.closing} onClick={handleOverlayClick} />
       <Container>
         <Box
           position_fixed
@@ -153,7 +202,7 @@ const DialogContextProvider = ({ children }) => {
           top_0
           right_0
           style={{
-            transition: 'opacity 80ms linear',
+            transition: `opacity ${DIALOG_CLOSE_TRANSITION_LENGTH}ms linear`,
             opacity: active ? '1' : '0',
             pointerEvents: active ? 'auto' : 'none',
           }}
@@ -177,8 +226,8 @@ const DialogContextProvider = ({ children }) => {
         <Panel
           active={active}
           onClick={(event) => event.stopPropagation()}
-          onKeyDown={handleKeyDown}
           {...activeDialog.panelProps}
+          ref={panelRef}
         >
           {activeDialog.children && <activeDialog.children close={close} />}
         </Panel>
@@ -187,10 +236,9 @@ const DialogContextProvider = ({ children }) => {
   );
 };
 
-const DialogContextConsumer = DialogContext.Consumer;
-
 export {
   DialogContext,
   DialogContextProvider,
   DialogContextConsumer,
+  Actions,
 };

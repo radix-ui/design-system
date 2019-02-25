@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 /* Store */
-import { DialogContext } from './DialogContext';
+import { DialogContext, Actions as DialogActions } from './DialogContext';
 
 const Dialog = ({
   children,
@@ -12,12 +12,10 @@ const Dialog = ({
   ...panelProps,
 }) => {
   const { dispatch } = useContext(DialogContext);
-  const openDialog = () => {
-    dispatch({
-      type: 'open',
-      dialog: { children, dismissable, panelProps },
-    });
-  };
+  const openDialog = () => dispatch({
+    type: DialogActions.OPEN,
+    dialog: { children, dismissable, panelProps },
+  });
 
   if (initiallyActive) {
     openDialog();
