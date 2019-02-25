@@ -138,27 +138,27 @@ const reducer = (state, action) => {
 
 const DialogContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const active = !!state.dialogs[0] && !state.closing;
-  const activeDialog = state.dialogs[0] || {};
   const panelRef = useRef(null);
+  const activeDialog = state.dialogs[0] || {};
+  const active = !!state.dialogs[0] && !state.closing;
 
   // Close handler needs to not remove children of dialog until the dialog hide transition has fully completed in order
   // to avoid disgusting content reflows onscreen during close transition
   const close = () => {
-    const handler = () => dispatch({ type: Actions.CLOSE, dialog: activeDialog });
+    const handler = () => {
+      dispatch({ type: Actions.CLOSE, dialog: activeDialog });
+
+      // Handler cleans up after itself
+      if (panelRef.current) {
+        panelRef.current.removeEventListener('transitionend', handler);
+      }
+    };
 
     if (panelRef.current) {
       panelRef.current.addEventListener('transitionend', handler);
     }
 
-    dispatch({
-      type: Actions.BEGIN_CLOSING,
-      finishClosing: () => {
-        if (panelRef.current) {
-          panelRef.current.removeEventListener('transitionend', handler);
-        }
-      },
-    });
+    dispatch({ type: Actions.BEGIN_CLOSING });
   };
 
   const handleOverlayClick = () => {
