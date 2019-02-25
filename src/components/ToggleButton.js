@@ -87,8 +87,20 @@ const Dummy = styled.div`
   `}
 `;
 
-const ToggleButton = ({ children, group, onClick, onChange, ...otherProps }) => (
+const ToggleButton = ({
+  children,
+  group,
+  onClick,
+  onChange,
+  'data-tooltip-content': dataTooltipContent,
+  'data-tooltip-direction': dataTooltipDirection,
+  'data-tooltip-alignment': dataTooltipAlignment,
+  ...otherProps,
+}) => (
   <Wrapper
+    data-tooltip-content={dataTooltipContent}
+    data-tooltip-direction={dataTooltipDirection}
+    data-tooltip-alignment={dataTooltipAlignment}
     {...otherProps}
   >
     <Radio
