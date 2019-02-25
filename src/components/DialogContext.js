@@ -172,13 +172,9 @@ const DialogContextProvider = ({ children }) => {
     }
   };
 
+  // Close dialog if escape key is pressed
   const handleKeyDown = (event) => {
-    if (!active || !activeDialog.dismissable) {
-      return;
-    }
-
-    // Close dialog if escape key is pressed
-    if (event.keyCode === 27) {
+    if (event.keyCode === 27 && active && activeDialog.dismissable) {
       event.preventDefault();
       event.stopPropagation();
       close();
@@ -193,7 +189,7 @@ const DialogContextProvider = ({ children }) => {
   return (
     <DialogContext.Provider value={{ state, dispatch }}>
       {children}
-      <Overlay active={active || state.closing} onClick={handleOverlayClick} />
+      <Overlay active={active} onClick={handleOverlayClick} />
       <Container>
         <Box
           position_fixed
