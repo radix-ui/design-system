@@ -103,7 +103,6 @@ const DialogContextConsumer = DialogContext.Consumer;
 
 const initialState = {
   dialogs: [],
-  closeTimer: null,
   closing: false,
 };
 
@@ -116,24 +115,20 @@ const Actions = {
 const reducer = (state, action) => {
   switch (action.type) {
     case Actions.OPEN:
-      clearTimeout(state.closeTimer);
       return {
         ...state,
         closing: false,
-        closeTimer: null,
         dialogs: [action.dialog, ...state.dialogs],
       };
     case Actions.BEGIN_CLOSING:
       return {
         ...state,
         closing: true,
-        closeTimer: action.closeTimer,
       };
     case Actions.CLOSE:
       return {
         ...state,
         closing: false,
-        closeTimer: null,
         dialogs: state.dialogs.filter((dialog) => dialog !== action.dialog),
       };
     default:
