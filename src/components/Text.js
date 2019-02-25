@@ -211,6 +211,12 @@ const Text = styled.span`
     font-family: ${theme.UNTITLEDSANSMEDIUM};
   `}
 
+  ${p => p.truncate && css`
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  `}
+
   ${p => p.inline && css`display: inline;`}
 
   ${p => p.tnum && css`font-feature-settings: 'tnum';`}
