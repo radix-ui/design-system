@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 // Note that it's not necessary to import before exporting
 // We only need to import if we want to use these in the little demo generated below
 import AspectRatio from './components/AspectRatio';
+import Alert from './components/Alert';
 import Badge from './components/Badge';
 import Box from './components/Box';
 import Button from './components/Button';
@@ -54,6 +55,7 @@ import HoverZonePanel from './components/HoverZonePanel';
 // It's necessary to export any components that we want to use elsewhere
 // with the "export x from 'radix'" syntax
 export AspectRatio from './components/AspectRatio';
+export Alert from './components/Alert';
 export Badge from './components/Badge';
 export Box from './components/Box';
 export Button from './components/Button';
@@ -107,32 +109,62 @@ export { Theme };
 
 export default class extends Component {
   render() {
+    const demoDialog = ({ close }) => (
+      <Flexbox fd_column height_100>
+        <Box padding_4 fs_0>
+          <Heading size2 bold>
+            Heading
+          </Heading>
+        </Box>
+        <Box pl_4 pr_4 oy_auto fg_1>
+          <Text size3 lh_2>
+            Absolutely any content can go inside the dialog. No restrictions at all.
+          </Text>
+        </Box>
+        <Box padding_4 fs_0>
+          <Flexbox jc_flexend>
+            <Button size2 mr_4 onClick={close}>
+              Cancel
+            </Button>
+            <Button size2 blue onClick={close}>
+              Accept
+            </Button>
+          </Flexbox>
+        </Box>
+      </Flexbox>
+    );
+
     return <div>
-      <Overlay></Overlay>
-      <Dialog size2>
-        <Flexbox fd_column height_100>
-          <Box padding_4 fs_0>
-            <Heading size2 bold>
-              Heading
-            </Heading>
-          </Box>
-          <Box pl_4 pr_4 oy_auto fg_1>
-            <Text size3 lh_2>
-              Absolutely any content can go inside the dialog. No restrictions at all.
+      <Tooltip />
+      <Alert gray>
+        <Container size1>
+          <Flexbox jc_center ai_center>
+            <Text>
+              <Text as="strong" inline bold>
+                Modulz 2.0
+              </Text>
+              —The next step in visual coding.
             </Text>
-          </Box>
-          <Box padding_4 fs_0>
-            <Flexbox jc_flexend>
-              <Button size2 mr_4>
-                Cancel
-              </Button>
-              <Button size2 blue>
-                Accept
-              </Button>
-            </Flexbox>
-          </Box>
-        </Flexbox>
-      </Dialog>
+            <Divider vertical size1 ml_2 mr_2 />
+            <Link>
+              Learn more
+              <Box ml_1>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7.5 3.5L12.5 7.5L7.5 11.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2.5 7.5H12.5" strokeLinecap="round"/>
+                </svg>
+              </Box>
+            </Link>
+          </Flexbox>
+        </Container>
+      </Alert>
       <Section
         size3
       >
@@ -240,38 +272,28 @@ export default class extends Component {
                     </Text>
                   </Card>
                 </Box>
-                <Box>
-                  <Card ghost padding_4>
-                    <Heading size1 bold lh_1>
-                      China, Facing Difficult Balancing Act, Summons U.S. Envoy Over Huawei Arrest
-                    </Heading>
-                    <Text size2 lh_1 mt_1>
-                      China’s leadership is seeking to maintain a recent thaw with the United States while lashing out at the arrest of a top Chinese tech executive.
-                    </Text>
-                    <Text size1 color_gray600 mt_2 as="time">
-                      15m ago
-                    </Text>
-                  </Card>
-                </Box>
-                <Box nml_4>
-                  <Card ghost padding_4>
-                    <Heading size1 bold lh_1>
-                      China, Facing Difficult Balancing Act, Summons U.S. Envoy Over Huawei Arrest
-                    </Heading>
-                    <Text size2 lh_1 mt_1>
-                      China’s leadership is seeking to maintain a recent thaw with the United States while lashing out at the arrest of a top Chinese tech executive.
-                    </Text>
-                    <Text size1 color_gray600 mt_2 as="time">
-                      15m ago
-                    </Text>
-                  </Card>
-                </Box>
               </Grid>
             </div>
             <div>
               <Grid cells_2 size1>
                 <Box>
                   <CardLink as="a" href="https://www.modulz.app" border padding_4>
+                    <Heading size1 lh_1 color_gray600 mb_1>
+                      Nona Willis Aronowitz
+                    </Heading>
+                    <Heading size2 bold lh_2>
+                      Hate Amazon? Try Living Without It.
+                    </Heading>
+                    <Text size3 lh_2 mt_1>
+                      My dad was a longtime labor activist. He despises what Jeff Bezos built, but he can’t quit it.
+                    </Text>
+                    <Text size2 color_gray600 mt_2 as="time">
+                      Dec. 8
+                    </Text>
+                  </CardLink>
+                </Box>
+                <Box>
+                  <CardLink as="button" border selected padding_4>
                     <Heading size1 lh_1 color_gray600 mb_1>
                       Nona Willis Aronowitz
                     </Heading>
@@ -312,20 +334,49 @@ export default class extends Component {
                     </Text>
                   </CardLink>
                 </Box>
-                <Box nml_4>
-                  <CardLink as="a" href="https://www.modulz.app" ghost padding_4>
-                    <Heading size1 bold lh_1>
-                      China, Facing Difficult Balancing Act, Summons U.S. Envoy Over Huawei Arrest
-                    </Heading>
-                    <Text size2 lh_1 mt_1>
-                      China’s leadership is seeking to maintain a recent thaw with the United States while lashing out at the arrest of a top Chinese tech executive.
-                    </Text>
-                    <Text size1 color_gray600 mt_2 as="time">
-                      15m ago
-                    </Text>
-                  </CardLink>
-                </Box>
               </Grid>
+            </div>
+            <div>
+              <Box
+                ai_center
+                mb_6
+              >
+                <Alert rounded gray>
+                  <Text size2>You have been logged out.</Text>
+                </Alert>
+              </Box>
+              <Box
+                ai_center
+                mb_6
+              >
+                <Alert rounded blue>
+                  <Text size2>We have launched a new product!</Text>
+                </Alert>
+              </Box>
+              <Box
+                ai_center
+                mb_6
+              >
+                <Alert rounded green>
+                  <Text size2>Password changed successfully.</Text>
+                </Alert>
+              </Box>
+              <Box
+                ai_center
+                mb_6
+              >
+                <Alert rounded yellow>
+                  <Text size2>Mate, you messed up your password.</Text>
+                </Alert>
+              </Box>
+              <Box
+                ai_center
+                mb_6
+              >
+                <Alert rounded red>
+                  <Text size2>You have been logged out.</Text>
+                </Alert>
+              </Box>
             </div>
             <div>
               <Flexbox
@@ -1121,7 +1172,7 @@ export default class extends Component {
                         <path d="M5 8L12.5 13.5L20 8" strokeLinecap="round" strokeLinejoin="round"/>
                         <path d="M5 17L10.5 12.5" strokeLinecap="round" strokeLinejoin="round"/>
                         <path d="M20 17L14.5 12.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M4.5 8V17C4.5 17.2761 4.72386 17.5 5 17.5H20C20.2761 17.5 20.5 17.2761 20.5 17V8C20.5 7.72386 20.2761 7.5 20 7.5H5C4.72386 7.5 4.5 7.72386 4.5 8Z" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4.5 8V17C4.5 17.2761 4.72386 17.5 5 17.5H20C20.2761 17.5 20.5 17.2761 20.5 17V8C20.5 7.72386 20.2761 7.5 20 7.5H5C4.72386 7.5 4.5 7.72386 4.5 8Z" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </Flexbox>
                   </Box>
@@ -1278,39 +1329,66 @@ export default class extends Component {
               </Flexbox>
             </div>
             <div>
-              <Flexbox>
-                <Tooltip
-                  data-tooltip="Tooltip content"
-                  data-position="top"
+              <Flexbox fw_wrap>
+                <Button
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="top"
+                  data-tooltip-alignment="center"
+                  mr_6
                 >
-                  <Button>
-                    Tooltip
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  data-tooltip="Tooltip content"
-                  data-position="right"
+                  Tooltip top
+                </Button>
+                <Button
+                  mr_6
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="right"
+                  data-tooltip-alignment="center"
                 >
-                  <Button>
-                    Tooltip
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  data-tooltip="Tooltip content"
-                  data-position="bottom"
+                  Tooltip right
+                </Button>
+                <Button
+                  mr_6
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="bottom"
+                  data-tooltip-alignment="center"
                 >
-                  <Button>
-                    Tooltip
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  data-tooltip="Tooltip content"
-                  data-position="left"
+                  Tooltip bottom
+                </Button>
+                <Button
+                  mr_6
+                  mt_6
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="left"
+                  data-tooltip-alignment="center"
                 >
-                  <Button>
-                    Tooltip
-                  </Button>
-                </Tooltip>
+                  Tooltip left
+                </Button>
+              </Flexbox>
+              <Flexbox fw_wrap mt_6>
+                <Button
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="top"
+                  data-tooltip-alignment="start"
+                  mr_6
+                >
+                  Tooltip start
+                </Button>
+                <Button
+                  mr_6
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="right"
+                  data-tooltip-alignment="center"
+                >
+                  Tooltip middle
+                </Button>
+                <Button
+                  mr_6
+                  data-tooltip-content="Tooltip content"
+                  data-tooltip-direction="bottom"
+                  data-tooltip-alignment="end"
+                >
+                  Tooltip end
+                </Button>
               </Flexbox>
             </div>
             <div>
@@ -1434,6 +1512,13 @@ export default class extends Component {
                   <IndicatorButton />
                 </Box>
               </Flexbox>
+            </div>
+            <div>
+              <Dialog content={demoDialog} size2>
+                <Button ml_2 size2 blue>
+                  Open Dialog
+                </Button>
+              </Dialog>
             </div>
           </Grid>
         </Container>

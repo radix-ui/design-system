@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 import * as theme from './../theme/';
 
+
 const flexitemPropsKeys = ['fg_0','fg_1','fs_0','fs_1','fb_0','fb_auto','as_flexstart','as_center','as_flexend','as_stretch']
 
 const FlexItem = p => css`
@@ -84,6 +85,7 @@ const FlexItem = p => css`
       ${p.bp4_as_baseline && ` align-self: baseline; `}
     }
   `}
+
 `;
 
 export default FlexItem;

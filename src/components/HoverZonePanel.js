@@ -11,10 +11,12 @@ const HoverZonePanel = styled.div`
 
   ${HoverZone}:hover & {
     opacity: 1;
+    pointer-events: auto;
   }
 
   ${p => p.forceShow && css`
     opacity: 1;
+    pointer-events: auto;
   `}
 
   ${Height}

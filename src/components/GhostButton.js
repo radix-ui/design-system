@@ -26,7 +26,6 @@ const GhostButton = styled.button.attrs({
   min-width: ${theme.SPACING_500};
   outline: none;
   padding: 0;
-  pointer-events: auto;
   position: relative;
   text-align: center;
   text-decoration: none;

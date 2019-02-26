@@ -6,7 +6,9 @@ const Overlay = styled.div`
   left: -9999px;
   opacity: 0;
   position: fixed;
-  top: -9999px;
+  left: 0;
+  pointer-events: none;
+  top: 0;
   transition-duration: 80ms;
   transition-property: opacity;
   transition-timing-function: linear;
@@ -14,9 +16,8 @@ const Overlay = styled.div`
   z-index: 7;
 
   ${p => p.active && css`
-    left: 0;
     opacity: 1;
-    top: 0;
+    pointer-events: auto;
   `}
 
   ${p => p.absolute && css`

@@ -1,17 +1,15 @@
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 
-const borderRadius = '4px';
-const ContextMenu = styled.nav`
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 40px 80px hsla(208, 34%, 10%, 0.045), 0 15px 35px hsla(208, 44%, 10%, 0.045),
-  0 3px 10px rgba(0, 0, 0, 0.08);
-  position: fixed;
-  padding-top: ${theme.SPACING_100};
-  padding-bottom: ${theme.SPACING_100};
+const ContextMenu = styled.div`
   background-color: ${theme.WHITE};
-  border-radius: ${borderRadius};
+  border-radius: ${theme.BORDERRADIUS_100};
+  box-shadow:
+    0 10px 38px -10px hsla(208,24%,7%,.35),
+    0 10px 20px -15px hsla(208,24%,7%,.2);
+  padding-bottom: ${theme.SPACING_100};
+  padding-top: ${theme.SPACING_100};
+  position: fixed;
   z-index: ${theme.ZINDEX_CONTEXT_MENU};
 
   ${props => props.top && css`
@@ -27,6 +25,5 @@ const ContextMenu = styled.nav`
     right: ${props.right};
   `}
 `;
-
 
 export default ContextMenu;

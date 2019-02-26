@@ -12,12 +12,10 @@ const MenuItem = styled.div.attrs({ role: 'button' })`
   cursor: pointer;
   display: flex;
   line-height: 1;
-  min-height: ${theme.SPACING_600};
+  min-height: 31px;
   outline: none;
-  padding-bottom: ${theme.SPACING_100};
-  padding-left: ${theme.SPACING_400};
-  padding-right: ${theme.SPACING_400};
-  padding-top: ${theme.SPACING_100};
+  padding-left: ${theme.SPACING_300};
+  padding-right: ${theme.SPACING_300};
   text-align: left;
   text-decoration: none;
   user-select: none;
@@ -50,7 +48,6 @@ const MenuItem = styled.div.attrs({ role: 'button' })`
 
   ${props => props.selected && css`
     background-color: ${theme.BLUE_100};
-    box-shadow: 0 0 0 1px ${theme.BLUE_300};
   `}
 
   ${props => props.highlighted && css`

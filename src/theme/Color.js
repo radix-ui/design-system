@@ -54,7 +54,7 @@ export const YELLOW_900 = 'hsl(52, 100%, 10%)';
 
 export const RED_100 = 'hsl(0, 100%, 99%)';
 export const RED_200 = 'hsl(0, 100%, 97%)';
-export const RED_300 = 'hsl(0, 85%, 72%)';
+export const RED_300 = 'hsl(0, 85%, 92%)';
 export const RED_400 = 'hsl(0, 85%, 78%)';
 export const RED_500 = 'hsl(0, 100%, 65%)';
 export const RED_600 = 'hsl(0, 100%, 45%)';
