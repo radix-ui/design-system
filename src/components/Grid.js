@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components';
 import * as theme from './../theme/';
 import Margin from './../utilities/Margin';
-
+const gridPropsKeys = ['size0','size1','size2','size3',
+'cells_1','cells_2', 'cells_3','cells_4','cells_5','cells_6','cells_7','cells_8', 'cells_9','cells_10','cells_11','cells_12',
+'ai_center','ai_end','ai_start','ai_stretch',
+'ji_center','ji_end','ji_start','ji_stretch',
+'ac_center','ac_spacebetween','ac_spacearound','ac_spaceevenly','ac_flexstart','ac_flexend',
+'jc_center','jc_spacebetween','jc_spacearound', 'jc_spaceevenly', 'jc_flexstart', 'jc_flexend']
 const Grid = styled.div`
   display: grid;
 
@@ -47,6 +52,8 @@ const Grid = styled.div`
   ${p => p.jc_flexstart && css` justify-content: flex-start `}
   ${p => p.jc_flexend && css` justify-content: flex-end `}
 
+
+  ${p => gridPropsKeys.some(prop => p[`bp1_${prop}`]) && css`
   @media (min-width: ${theme.BREAKPOINT_100}) {
     ${p => p.bp1_size1 && css` grid-gap: ${theme.SPACING_400}; `}
     ${p => p.bp1_size2 && css` grid-gap: ${theme.SPACING_700}; `}
@@ -89,7 +96,8 @@ const Grid = styled.div`
     ${p => p.bp1_jc_flexstart && css` justify-content: flex-start `}
     ${p => p.bp1_jc_flexend && css` justify-content: flex-end `}
   }
-
+  `}
+  ${p => gridPropsKeys.some(prop => p[`bp2_${prop}`]) && css`
   @media (min-width: ${theme.BREAKPOINT_200}) {
     ${p => p.bp2_size1 && css` grid-gap: ${theme.SPACING_400}; `}
     ${p => p.bp2_size2 && css` grid-gap: ${theme.SPACING_700}; `}
@@ -132,7 +140,9 @@ const Grid = styled.div`
     ${p => p.bp2_jc_flexstart && css` justify-content: flex-start `}
     ${p => p.bp2_jc_flexend && css` justify-content: flex-end `}
   }
+  `}
 
+  ${p => gridPropsKeys.some(prop => p[`bp3_${prop}`]) && css`
   @media (min-width: ${theme.BREAKPOINT_300}) {
     ${p => p.bp3_size1 && css` grid-gap: ${theme.SPACING_400}; `}
     ${p => p.bp3_size2 && css` grid-gap: ${theme.SPACING_700}; `}
@@ -175,7 +185,9 @@ const Grid = styled.div`
     ${p => p.bp3_jc_flexstart && css` justify-content: flex-start `}
     ${p => p.bp3_jc_flexend && css` justify-content: flex-end `}
   }
+  `}
 
+  ${p => gridPropsKeys.some(prop => p[`bp4_${prop}`]) && css`
   @media (min-width: ${theme.BREAKPOINT_400}) {
     ${p => p.bp4_size1 && css` grid-gap: ${theme.SPACING_400}; `}
     ${p => p.bp4_size2 && css` grid-gap: ${theme.SPACING_700}; `}
@@ -218,6 +230,7 @@ const Grid = styled.div`
     ${p => p.bp4_jc_flexstart && css` justify-content: flex-start `}
     ${p => p.bp4_jc_flexend && css` justify-content: flex-end `}
   }
+  `}
 
   ${Margin}
 `;

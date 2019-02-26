@@ -1,6 +1,18 @@
 import { css } from 'styled-components';
 import * as theme from './../theme/';
 
+const marginPropsKeys = [
+  'margin_0', 'mt_0', 'mr_0', 'mb_0', 'ml_0',
+  'margin_1', 'mt_1', 'mr_1', 'mb_1', ' ml_1',
+  'margin_2', 'mt_2', 'mr_2', 'mb_2', 'ml_2',
+  'margin_3', 'mt_3', 'mr_3', 'mb_3', 'ml_3',
+  'margin_4', 'mt_4', 'mr_4', 'mb_4', 'ml_4',
+  'margin_5', 'mt_5', 'mr_5', 'mb_5', 'ml_5',
+  'margin_6', 'mt_6', 'mr_6', 'mb_6', 'ml_6',
+  'margin_7', 'mt_7', 'mr_7', 'mb_7', 'ml_7',
+  'margin_8', 'mt_8', 'mr_8', 'mb_8', 'ml_8',
+  'margin_9', 'mt_9', 'mr_9', 'mb_9', 'ml_9']
+
 const Margin = p => css`
 
   ${p.margin_0 && ` margin: 0; `}
@@ -8,7 +20,7 @@ const Margin = p => css`
   ${p.mr_0 && ` margin-right: 0; `}
   ${p.mb_0 && ` margin-bottom: 0; `}
   ${p.ml_0 && ` margin-left: 0; `}
-
+  
   ${p.margin_1 && ` margin: ${theme.SPACING_100}; `}
   ${p.mt_1 && ` margin-top: ${theme.SPACING_100}; `}
   ${p.mr_1 && ` margin-right: ${theme.SPACING_100}; `}
@@ -63,14 +75,7 @@ const Margin = p => css`
   ${p.mb_9 && ` margin-bottom: ${theme.SPACING_900}; `}
   ${p.ml_9 && ` margin-left: ${theme.SPACING_900}; `}
 
-${(p.bp1_margin_0 || p.bp1_mt_0 || p.bp1_mr_0 || p.bp1_mb_0 || p.bp1_ml_0 || p.bp1_margin_1 || p.bp1_mt_1 || p.bp1_mr_1 || p.bp1_mb_1 || 
-  p.bp1_ml_1 || p.bp1_margin_2 || p.bp1_mt_2 || p.bp1_mr_2 || p.bp1_mb_2 || p.bp1_ml_2 || p.bp1_margin_3 || p.bp1_mt_3 || 
-  p.bp1_mr_3 || p.bp1_mb_3 || p.bp1_ml_3 || p.bp1_margin_4 || p.bp1_mt_4 || p.bp1_mr_4 || p.bp1_mb_4 || p.bp1_ml_4 || p.bp1_margin_5 || p.bp1_mt_5 ||
-  p.bp1_mr_5 || p.bp1_mb_5 || p.bp1_ml_5 || p.bp1_margin_6 || p.bp1_mt_6 || p.bp1_mr_6 || p.bp1_mb_6 || p.bp1_ml_6 ||
-  p.bp1_margin_7 || p.bp1_mt_7 || p.bp1_mr_7 || p.bp1_mb_7 || p.bp1_ml_7 || 
-  p.bp1_margin_8 || p.bp1_mt_8 || p.bp1_mr_8 || p.bp1_mb_8 || p.bp1_ml_8 || 
-  p.bp1_margin_9 || p.bp1_mt_9 || p.bp1_mr_9 || p.bp1_mb_9 || p.bp1_ml_9) && css`
-  
+  ${p => marginPropsKeys.some(prop => p[`bp1_${prop}`])  && css`
     @media (min-width: ${theme.BREAKPOINT_100}) {
       ${p.bp1_margin_0 && ` margin: 0; `}
       ${p.bp1_mt_0 && ` margin-top: 0; `}
@@ -134,14 +139,7 @@ ${(p.bp1_margin_0 || p.bp1_mt_0 || p.bp1_mr_0 || p.bp1_mb_0 || p.bp1_ml_0 || p.b
     }
   `}
 
-  ${(p.bp2_margin_0 || p.bp2_mt_0 || p.bp2_mr_0 || p.bp2_mb_0 || p.bp2_ml_0 || p.bp2_margin_1 || p.bp2_mt_1 || p.bp2_mr_1 || p.bp2_mb_1 || 
-  p.bp2_ml_1 || p.bp2_margin_2 || p.bp2_mt_2 || p.bp2_mr_2 || p.bp2_mb_2 || p.bp2_ml_2 || p.bp2_margin_3 || p.bp2_mt_3 || 
-  p.bp2_mr_3 || p.bp2_mb_3 || p.bp2_ml_3 || p.bp2_margin_4 || p.bp2_mt_4 || p.bp2_mr_4 || p.bp2_mb_4 || p.bp2_ml_4 || p.bp2_margin_5 || p.bp2_mt_5 ||
-  p.bp2_mr_5 || p.bp2_mb_5 || p.bp2_ml_5 || p.bp2_margin_6 || p.bp2_mt_6 || p.bp2_mr_6 || p.bp2_mb_6 || p.bp2_ml_6 ||
-  p.bp2_margin_7 || p.bp2_mt_7 || p.bp2_mr_7 || p.bp2_mb_7 || p.bp2_ml_7 || 
-  p.bp2_margin_8 || p.bp2_mt_8 || p.bp2_mr_8 || p.bp2_mb_8 || p.bp2_ml_8 || 
-  p.bp2_margin_9 || p.bp2_mt_9 || p.bp2_mr_9 || p.bp2_mb_9 || p.bp2_ml_9) && css`
-  
+  ${p => marginPropsKeys.some(prop => p[`bp2_${prop}`]) && css`
     @media (min-width: ${theme.BREAKPOINT_200}) {
       ${p.bp2_margin_0 && ` margin: 0; `}
       ${p.bp2_mt_0 && ` margin-top: 0; `}
@@ -205,14 +203,7 @@ ${(p.bp1_margin_0 || p.bp1_mt_0 || p.bp1_mr_0 || p.bp1_mb_0 || p.bp1_ml_0 || p.b
     }
   `}
 
-  ${(p.bp3_margin_0 || p.bp3_mt_0 || p.bp3_mr_0 || p.bp3_mb_0 || p.bp3_ml_0 || p.bp3_margin_1 || p.bp3_mt_1 || p.bp3_mr_1 || p.bp3_mb_1 || 
-  p.bp3_ml_1 || p.bp3_margin_2 || p.bp3_mt_2 || p.bp3_mr_2 || p.bp3_mb_2 || p.bp3_ml_2 || p.bp3_margin_3 || p.bp3_mt_3 || 
-  p.bp3_mr_3 || p.bp3_mb_3 || p.bp3_ml_3 || p.bp3_margin_4 || p.bp3_mt_4 || p.bp3_mr_4 || p.bp3_mb_4 || p.bp3_ml_4 || p.bp3_margin_5 || p.bp3_mt_5 ||
-  p.bp3_mr_5 || p.bp3_mb_5 || p.bp3_ml_5 || p.bp3_margin_6 || p.bp3_mt_6 || p.bp3_mr_6 || p.bp3_mb_6 || p.bp3_ml_6 ||
-  p.bp3_margin_7 || p.bp3_mt_7 || p.bp3_mr_7 || p.bp3_mb_7 || p.bp3_ml_7 || 
-  p.bp3_margin_8 || p.bp3_mt_8 || p.bp3_mr_8 || p.bp3_mb_8 || p.bp3_ml_8 || 
-  p.bp3_margin_9 || p.bp3_mt_9 || p.bp3_mr_9 || p.bp3_mb_9 || p.bp3_ml_9) && css`
-  
+  ${p => marginPropsKeys.some(prop => p[`bp3_${prop}`]) && css`
     @media (min-width: ${theme.BREAKPOINT_300}) {
       ${p.bp3_margin_0 && ` margin: 0; `}
       ${p.bp3_mt_0 && ` margin-top: 0; `}
@@ -276,14 +267,7 @@ ${(p.bp1_margin_0 || p.bp1_mt_0 || p.bp1_mr_0 || p.bp1_mb_0 || p.bp1_ml_0 || p.b
     }
   `}
 
-  ${(p.bp4_margin_0 || p.bp4_mt_0 || p.bp4_mr_0 || p.bp4_mb_0 || p.bp4_ml_0 || p.bp4_margin_1 || p.bp4_mt_1 || p.bp4_mr_1 || p.bp4_mb_1 || 
-  p.bp4_ml_1 || p.bp4_margin_2 || p.bp4_mt_2 || p.bp4_mr_2 || p.bp4_mb_2 || p.bp4_ml_2 || p.bp4_margin_3 || p.bp4_mt_3 || 
-  p.bp4_mr_3 || p.bp4_mb_3 || p.bp4_ml_3 || p.bp4_margin_4 || p.bp4_mt_4 || p.bp4_mr_4 || p.bp4_mb_4 || p.bp4_ml_4 || p.bp4_margin_5 || p.bp4_mt_5 ||
-  p.bp4_mr_5 || p.bp4_mb_5 || p.bp4_ml_5 || p.bp4_margin_6 || p.bp4_mt_6 || p.bp4_mr_6 || p.bp4_mb_6 || p.bp4_ml_6 ||
-  p.bp4_margin_7 || p.bp4_mt_7 || p.bp4_mr_7 || p.bp4_mb_7 || p.bp4_ml_7 || 
-  p.bp4_margin_8 || p.bp4_mt_8 || p.bp4_mr_8 || p.bp4_mb_8 || p.bp4_ml_8 || 
-  p.bp4_margin_9 || p.bp4_mt_9 || p.bp4_mr_9 || p.bp4_mb_9 || p.bp4_ml_9) && css`
-  
+  ${p => marginPropsKeys.some(prop => p[`bp4_${prop}`]) && css`
     @media (min-width: ${theme.BREAKPOINT_400}) {
       ${p.bp4_margin_0 && ` margin: 0; `}
       ${p.bp4_mt_0 && ` margin-top: 0; `}

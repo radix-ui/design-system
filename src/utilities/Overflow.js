@@ -1,6 +1,10 @@
 import { css } from 'styled-components';
 import * as theme from './../theme/';
-
+const overflowPropsKeys = [
+  'overflow_visible','overflow_hidden','overflow_scroll','overflow_auto',
+  'ox_visible','ox_hidden','ox_scroll','ox_auto',
+  'oy_visible','oy_hidden','oy_scroll','ox_auto'
+]
 const Overflow = p => css`
   ${p.overflow_visible && ` overflow: visible; `}
   ${p.overflow_hidden && ` overflow: hidden; `}
@@ -17,6 +21,7 @@ const Overflow = p => css`
   ${p.oy_scroll && ` overflow-y: scroll; `}
   ${p.oy_auto && ` overflow-y: auto; `}
 
+  ${overflowPropsKeys.some(prop => p[`bp1_${prop}`]) && css`
   @media (min-width: ${theme.BREAKPOINT_100}) {
     ${p.bp1_overflow_visible && ` overflow: visible; `}
     ${p.bp1_overflow_hidden && ` overflow: hidden; `}
@@ -33,7 +38,8 @@ const Overflow = p => css`
     ${p.bp1_oy_scroll && ` overflow-y: scroll; `}
     ${p.bp1_oy_auto && ` overflow-y: auto; `}
   }
-
+`}
+  ${overflowPropsKeys.some(prop => p[`bp2_${prop}`]) && css`
   @media (min-width: ${theme.BREAKPOINT_200}) {
     ${p.bp2_overflow_visible && ` overflow: visible; `}
     ${p.bp2_overflow_hidden && ` overflow: hidden; `}
@@ -50,7 +56,9 @@ const Overflow = p => css`
     ${p.bp2_oy_scroll && ` overflow-y: scroll; `}
     ${p.bp2_oy_auto && ` overflow-y: auto; `}
   }
+`}
 
+  ${overflowPropsKeys.some(prop => p[`bp3_${prop}`]) && css`
   @media (min-width: ${theme.BREAKPOINT_300}) {
     ${p.bp3_overflow_visible && ` overflow: visible; `}
     ${p.bp3_overflow_hidden && ` overflow: hidden; `}
@@ -67,7 +75,9 @@ const Overflow = p => css`
     ${p.bp3_oy_scroll && ` overflow-y: scroll; `}
     ${p.bp3_oy_auto && ` overflow-y: auto; `}
   }
+`}
 
+  ${overflowPropsKeys.some(prop => p[`bp4_${prop}`]) && css`
   @media (min-width: ${theme.BREAKPOINT_400}) {
     ${p.bp4_overflow_visible && ` overflow: visible; `}
     ${p.bp4_overflow_hidden && ` overflow: hidden; `}
@@ -84,6 +94,7 @@ const Overflow = p => css`
     ${p.bp4_oy_scroll && ` overflow-y: scroll; `}
     ${p.bp4_oy_auto && ` overflow-y: auto; `}
   }
+`}
 `;
 
 export default Overflow;
