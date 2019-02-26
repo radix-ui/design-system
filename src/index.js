@@ -72,7 +72,7 @@ export Image from './components/Image';
 export Input from './components/Input';
 export Overlay from './components/Overlay';
 export Dialog from './components/Dialog';
-export DialogRoot;
+export { DialogRoot } from './components/DialogRoot';
 export LinesButton from './components/LinesButton';
 export Link from './components/Link';
 export List from './components/List';
