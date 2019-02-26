@@ -5,7 +5,7 @@ import NegativeMargin from './../utilities/NegativeMargin';
 import Leading from './../utilities/Leading';
 import TextAlign from './../utilities/TextAlign';
 import Color from './../utilities/Color';
-
+const textPropsKeys = ['size1', 'size2', 'size3', 'size4', 'size5', 'size6','size7', 'size8']
 const Text = styled.span`
   display: block;
   font-family: 'UntitledSans',apple-system,BlinkMacSystemFont;
@@ -48,6 +48,7 @@ const Text = styled.span`
     margin-left: -.09em;
   `}
 
+  ${p => textPropsKeys.some(prop => p[`bp1_${prop}`]) && css`
   @media (min-width: ${theme.BREAKPOINT_100}) {
     ${p => p.bp1_size1 && css`
       font-size: ${theme.FONTSIZE_200};
@@ -86,7 +87,9 @@ const Text = styled.span`
       margin-left: -.09em;
     `}
   }
+  `}
 
+  ${p => textPropsKeys.some(prop => p[`bp2_${prop}`]) && css`
   @media (min-width: ${theme.BREAKPOINT_200}) {
     ${p => p.bp2_size1 && css`
       font-size: ${theme.FONTSIZE_200};
@@ -125,7 +128,9 @@ const Text = styled.span`
       margin-left: -.09em;
     `}
   }
+  `}
 
+  ${p => textPropsKeys.some(prop => p[`bp3_${prop}`]) && css`
   @media (min-width: ${theme.BREAKPOINT_300}) {
     ${p => p.bp3_size1 && css`
       font-size: ${theme.FONTSIZE_200};
@@ -164,7 +169,9 @@ const Text = styled.span`
       margin-left: -.09em;
     `}
   }
+  `}
 
+  ${p => textPropsKeys.some(prop => p[`bp4_${prop}`]) && css`
   @media (min-width: ${theme.BREAKPOINT_400}) {
     ${p => p.bp4_size1 && css`
       font-size: ${theme.FONTSIZE_200};
@@ -203,6 +210,7 @@ const Text = styled.span`
       margin-left: -.09em;
     `}
   }
+  `}
 
   ${p => p.nowrap && css`white-space: nowrap;`}
 

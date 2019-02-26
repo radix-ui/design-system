@@ -1,239 +1,257 @@
 import { css } from 'styled-components';
 import * as theme from './../theme/';
+const negativemarginPropsKeys = [
+  'nmt_1','nmr_1','nmb_1','nml_1',
+  'nmt_2','nmr_2','nmb_2','nml_2',
+  'nmt_3','nmr_3','nmb_3','nml_3',
+  'nmt_4','nmr_4','nmb_4','nml_4',
+  'nmt_5','nmr_5','nmb_5','nml_5',
+  'nmt_6','nmr_6','nmb_6','nml_6',
+  'nmt_7','nmr_7','nmb_7','nml_7',
+  'nmt_8','nmr_8','nmb_8','nml_8',
+  'nmt_9','nmr_9','nmb_9','nml_9'
+]
+const NegativeMargin = p => css`
+  ${p.nmt_1 && ` margin-top: -${theme.SPACING_100}; `}
+  ${p.nmr_1 && ` margin-right: -${theme.SPACING_100}; `}
+  ${p.nmb_1 && ` margin-bottom: -${theme.SPACING_100}; `}
+  ${p.nml_1 && ` margin-left: -${theme.SPACING_100}; `}
 
-const NegativeMargin = css`
-  ${p => p.nmt_1 && css` margin-top: -${theme.SPACING_100}; `}
-  ${p => p.nmr_1 && css` margin-right: -${theme.SPACING_100}; `}
-  ${p => p.nmb_1 && css` margin-bottom: -${theme.SPACING_100}; `}
-  ${p => p.nml_1 && css` margin-left: -${theme.SPACING_100}; `}
+  ${p.nmt_2 && ` margin-top: -${theme.SPACING_200}; `}
+  ${p.nmr_2 && ` margin-right: -${theme.SPACING_200}; `}
+  ${p.nmb_2 && ` margin-bottom: -${theme.SPACING_200}; `}
+  ${p.nml_2 && ` margin-left: -${theme.SPACING_200}; `}
 
-  ${p => p.nmt_2 && css` margin-top: -${theme.SPACING_200}; `}
-  ${p => p.nmr_2 && css` margin-right: -${theme.SPACING_200}; `}
-  ${p => p.nmb_2 && css` margin-bottom: -${theme.SPACING_200}; `}
-  ${p => p.nml_2 && css` margin-left: -${theme.SPACING_200}; `}
+  ${p.nmt_3 && ` margin-top: -${theme.SPACING_300}; `}
+  ${p.nmr_3 && ` margin-right: -${theme.SPACING_300}; `}
+  ${p.nmb_3 && ` margin-bottom: -${theme.SPACING_300}; `}
+  ${p.nml_3 && ` margin-left: -${theme.SPACING_300}; `}
 
-  ${p => p.nmt_3 && css` margin-top: -${theme.SPACING_300}; `}
-  ${p => p.nmr_3 && css` margin-right: -${theme.SPACING_300}; `}
-  ${p => p.nmb_3 && css` margin-bottom: -${theme.SPACING_300}; `}
-  ${p => p.nml_3 && css` margin-left: -${theme.SPACING_300}; `}
+  ${p.nmt_4 && ` margin-top: -${theme.SPACING_400}; `}
+  ${p.nmr_4 && ` margin-right: -${theme.SPACING_400}; `}
+  ${p.nmb_4 && ` margin-bottom: -${theme.SPACING_400}; `}
+  ${p.nml_4 && ` margin-left: -${theme.SPACING_400}; `}
 
-  ${p => p.nmt_4 && css` margin-top: -${theme.SPACING_400}; `}
-  ${p => p.nmr_4 && css` margin-right: -${theme.SPACING_400}; `}
-  ${p => p.nmb_4 && css` margin-bottom: -${theme.SPACING_400}; `}
-  ${p => p.nml_4 && css` margin-left: -${theme.SPACING_400}; `}
+  ${p.nmt_5 && ` margin-top: -${theme.SPACING_500}; `}
+  ${p.nmr_5 && ` margin-right: -${theme.SPACING_500}; `}
+  ${p.nmb_5 && ` margin-bottom: -${theme.SPACING_500}; `}
+  ${p.nml_5 && ` margin-left: -${theme.SPACING_500}; `}
 
-  ${p => p.nmt_5 && css` margin-top: -${theme.SPACING_500}; `}
-  ${p => p.nmr_5 && css` margin-right: -${theme.SPACING_500}; `}
-  ${p => p.nmb_5 && css` margin-bottom: -${theme.SPACING_500}; `}
-  ${p => p.nml_5 && css` margin-left: -${theme.SPACING_500}; `}
+  ${p.nmt_6 && ` margin-top: -${theme.SPACING_600}; `}
+  ${p.nmr_6 && ` margin-right: -${theme.SPACING_600}; `}
+  ${p.nmb_6 && ` margin-bottom: -${theme.SPACING_600}; `}
+  ${p.nml_6 && ` margin-left: -${theme.SPACING_600}; `}
 
-  ${p => p.nmt_6 && css` margin-top: -${theme.SPACING_600}; `}
-  ${p => p.nmr_6 && css` margin-right: -${theme.SPACING_600}; `}
-  ${p => p.nmb_6 && css` margin-bottom: -${theme.SPACING_600}; `}
-  ${p => p.nml_6 && css` margin-left: -${theme.SPACING_600}; `}
+  ${p.nmt_7 && ` margin-top: -${theme.SPACING_700}; `}
+  ${p.nmr_7 && ` margin-right: -${theme.SPACING_700}; `}
+  ${p.nmb_7 && ` margin-bottom: -${theme.SPACING_700}; `}
+  ${p.nml_7 && ` margin-left: -${theme.SPACING_700}; `}
 
-  ${p => p.nmt_7 && css` margin-top: -${theme.SPACING_700}; `}
-  ${p => p.nmr_7 && css` margin-right: -${theme.SPACING_700}; `}
-  ${p => p.nmb_7 && css` margin-bottom: -${theme.SPACING_700}; `}
-  ${p => p.nml_7 && css` margin-left: -${theme.SPACING_700}; `}
+  ${p.nmt_8 && ` margin-top: -${theme.SPACING_800}; `}
+  ${p.nmr_8 && ` margin-right: -${theme.SPACING_800}; `}
+  ${p.nmb_8 && ` margin-bottom: -${theme.SPACING_800}; `}
+  ${p.nml_8 && ` margin-left: -${theme.SPACING_800}; `}
 
-  ${p => p.nmt_8 && css` margin-top: -${theme.SPACING_800}; `}
-  ${p => p.nmr_8 && css` margin-right: -${theme.SPACING_800}; `}
-  ${p => p.nmb_8 && css` margin-bottom: -${theme.SPACING_800}; `}
-  ${p => p.nml_8 && css` margin-left: -${theme.SPACING_800}; `}
+  ${p.nmt_9 && ` margin-top: -${theme.SPACING_900}; `}
+  ${p.nmr_9 && ` margin-right: -${theme.SPACING_900}; `}
+  ${p.nmb_9 && ` margin-bottom: -${theme.SPACING_900}; `}
+  ${p.nml_9 && ` margin-left: -${theme.SPACING_900}; `}
 
-  ${p => p.nmt_9 && css` margin-top: -${theme.SPACING_900}; `}
-  ${p => p.nmr_9 && css` margin-right: -${theme.SPACING_900}; `}
-  ${p => p.nmb_9 && css` margin-bottom: -${theme.SPACING_900}; `}
-  ${p => p.nml_9 && css` margin-left: -${theme.SPACING_900}; `}
+  ${negativemarginPropsKeys.some(prop => p[`bp1_${prop}`]) && css`
+    @media (min-width: ${theme.BREAKPOINT_100}) {
+      ${p.bp1_nmt_1 && ` margin-top: -${theme.SPACING_100}; `}
+      ${p.bp1_nmr_1 && ` margin-right: -${theme.SPACING_100}; `}
+      ${p.bp1_nmb_1 && ` margin-bottom: -${theme.SPACING_100}; `}
+      ${p.bp1_nml_1 && ` margin-left: -${theme.SPACING_100}; `}
 
-  @media (min-width: ${theme.BREAKPOINT_100}) {
-    ${p => p.bp1_nmt_1 && css` margin-top: -${theme.SPACING_100}; `}
-    ${p => p.bp1_nmr_1 && css` margin-right: -${theme.SPACING_100}; `}
-    ${p => p.bp1_nmb_1 && css` margin-bottom: -${theme.SPACING_100}; `}
-    ${p => p.bp1_nml_1 && css` margin-left: -${theme.SPACING_100}; `}
+      ${p.bp1_nmt_2 && ` margin-top: -${theme.SPACING_200}; `}
+      ${p.bp1_nmr_2 && ` margin-right: -${theme.SPACING_200}; `}
+      ${p.bp1_nmb_2 && ` margin-bottom: -${theme.SPACING_200}; `}
+      ${p.bp1_nml_2 && ` margin-left: -${theme.SPACING_200}; `}
 
-    ${p => p.bp1_nmt_2 && css` margin-top: -${theme.SPACING_200}; `}
-    ${p => p.bp1_nmr_2 && css` margin-right: -${theme.SPACING_200}; `}
-    ${p => p.bp1_nmb_2 && css` margin-bottom: -${theme.SPACING_200}; `}
-    ${p => p.bp1_nml_2 && css` margin-left: -${theme.SPACING_200}; `}
+      ${p.bp1_nmt_3 && ` margin-top: -${theme.SPACING_300}; `}
+      ${p.bp1_nmr_3 && ` margin-right: -${theme.SPACING_300}; `}
+      ${p.bp1_nmb_3 && ` margin-bottom: -${theme.SPACING_300}; `}
+      ${p.bp1_nml_3 && ` margin-left: -${theme.SPACING_300}; `}
 
-    ${p => p.bp1_nmt_3 && css` margin-top: -${theme.SPACING_300}; `}
-    ${p => p.bp1_nmr_3 && css` margin-right: -${theme.SPACING_300}; `}
-    ${p => p.bp1_nmb_3 && css` margin-bottom: -${theme.SPACING_300}; `}
-    ${p => p.bp1_nml_3 && css` margin-left: -${theme.SPACING_300}; `}
+      ${p.bp1_nmt_4 && ` margin-top: -${theme.SPACING_400}; `}
+      ${p.bp1_nmr_4 && ` margin-right: -${theme.SPACING_400}; `}
+      ${p.bp1_nmb_4 && ` margin-bottom: -${theme.SPACING_400}; `}
+      ${p.bp1_nml_4 && ` margin-left: -${theme.SPACING_400}; `}
 
-    ${p => p.bp1_nmt_4 && css` margin-top: -${theme.SPACING_400}; `}
-    ${p => p.bp1_nmr_4 && css` margin-right: -${theme.SPACING_400}; `}
-    ${p => p.bp1_nmb_4 && css` margin-bottom: -${theme.SPACING_400}; `}
-    ${p => p.bp1_nml_4 && css` margin-left: -${theme.SPACING_400}; `}
+      ${p.bp1_nmt_5 && ` margin-top: -${theme.SPACING_500}; `}
+      ${p.bp1_nmr_5 && ` margin-right: -${theme.SPACING_500}; `}
+      ${p.bp1_nmb_5 && ` margin-bottom: -${theme.SPACING_500}; `}
+      ${p.bp1_nml_5 && ` margin-left: -${theme.SPACING_500}; `}
 
-    ${p => p.bp1_nmt_5 && css` margin-top: -${theme.SPACING_500}; `}
-    ${p => p.bp1_nmr_5 && css` margin-right: -${theme.SPACING_500}; `}
-    ${p => p.bp1_nmb_5 && css` margin-bottom: -${theme.SPACING_500}; `}
-    ${p => p.bp1_nml_5 && css` margin-left: -${theme.SPACING_500}; `}
+      ${p.bp1_nmt_6 && ` margin-top: -${theme.SPACING_600}; `}
+      ${p.bp1_nmr_6 && ` margin-right: -${theme.SPACING_600}; `}
+      ${p.bp1_nmb_6 && ` margin-bottom: -${theme.SPACING_600}; `}
+      ${p.bp1_nml_6 && ` margin-left: -${theme.SPACING_600}; `}
 
-    ${p => p.bp1_nmt_6 && css` margin-top: -${theme.SPACING_600}; `}
-    ${p => p.bp1_nmr_6 && css` margin-right: -${theme.SPACING_600}; `}
-    ${p => p.bp1_nmb_6 && css` margin-bottom: -${theme.SPACING_600}; `}
-    ${p => p.bp1_nml_6 && css` margin-left: -${theme.SPACING_600}; `}
+      ${p.bp1_nmt_7 && ` margin-top: -${theme.SPACING_700}; `}
+      ${p.bp1_nmr_7 && ` margin-right: -${theme.SPACING_700}; `}
+      ${p.bp1_nmb_7 && ` margin-bottom: -${theme.SPACING_700}; `}
+      ${p.bp1_nml_7 && ` margin-left: -${theme.SPACING_700}; `}
 
-    ${p => p.bp1_nmt_7 && css` margin-top: -${theme.SPACING_700}; `}
-    ${p => p.bp1_nmr_7 && css` margin-right: -${theme.SPACING_700}; `}
-    ${p => p.bp1_nmb_7 && css` margin-bottom: -${theme.SPACING_700}; `}
-    ${p => p.bp1_nml_7 && css` margin-left: -${theme.SPACING_700}; `}
+      ${p.bp1_nmt_8 && ` margin-top: -${theme.SPACING_800}; `}
+      ${p.bp1_nmr_8 && ` margin-right: -${theme.SPACING_800}; `}
+      ${p.bp1_nmb_8 && ` margin-bottom: -${theme.SPACING_800}; `}
+      ${p.bp1_nml_8 && ` margin-left: -${theme.SPACING_800}; `}
 
-    ${p => p.bp1_nmt_8 && css` margin-top: -${theme.SPACING_800}; `}
-    ${p => p.bp1_nmr_8 && css` margin-right: -${theme.SPACING_800}; `}
-    ${p => p.bp1_nmb_8 && css` margin-bottom: -${theme.SPACING_800}; `}
-    ${p => p.bp1_nml_8 && css` margin-left: -${theme.SPACING_800}; `}
+      ${p.bp1_nmt_9 && ` margin-top: -${theme.SPACING_900}; `}
+      ${p.bp1_nmr_9 && ` margin-right: -${theme.SPACING_900}; `}
+      ${p.bp1_nmb_9 && ` margin-bottom: -${theme.SPACING_900}; `}
+      ${p.bp1_nml_9 && ` margin-left: -${theme.SPACING_900}; `}
+    }
+  `}
 
-    ${p => p.bp1_nmt_9 && css` margin-top: -${theme.SPACING_900}; `}
-    ${p => p.bp1_nmr_9 && css` margin-right: -${theme.SPACING_900}; `}
-    ${p => p.bp1_nmb_9 && css` margin-bottom: -${theme.SPACING_900}; `}
-    ${p => p.bp1_nml_9 && css` margin-left: -${theme.SPACING_900}; `}
-  }
+  ${negativemarginPropsKeys.some(prop => p[`bp2_${prop}`]) && css`
+    @media (min-width: ${theme.BREAKPOINT_200}) {
+      ${p.bp2_nmt_1 && ` margin-top: -${theme.SPACING_100}; `}
+      ${p.bp2_nmr_1 && ` margin-right: -${theme.SPACING_100}; `}
+      ${p.bp2_nmb_1 && ` margin-bottom: -${theme.SPACING_100}; `}
+      ${p.bp2_nml_1 && ` margin-left: -${theme.SPACING_100}; `}
 
-  @media (min-width: ${theme.BREAKPOINT_200}) {
-    ${p => p.bp2_nmt_1 && css` margin-top: -${theme.SPACING_100}; `}
-    ${p => p.bp2_nmr_1 && css` margin-right: -${theme.SPACING_100}; `}
-    ${p => p.bp2_nmb_1 && css` margin-bottom: -${theme.SPACING_100}; `}
-    ${p => p.bp2_nml_1 && css` margin-left: -${theme.SPACING_100}; `}
+      ${p.bp2_nmt_2 && ` margin-top: -${theme.SPACING_200}; `}
+      ${p.bp2_nmr_2 && ` margin-right: -${theme.SPACING_200}; `}
+      ${p.bp2_nmb_2 && ` margin-bottom: -${theme.SPACING_200}; `}
+      ${p.bp2_nml_2 && ` margin-left: -${theme.SPACING_200}; `}
 
-    ${p => p.bp2_nmt_2 && css` margin-top: -${theme.SPACING_200}; `}
-    ${p => p.bp2_nmr_2 && css` margin-right: -${theme.SPACING_200}; `}
-    ${p => p.bp2_nmb_2 && css` margin-bottom: -${theme.SPACING_200}; `}
-    ${p => p.bp2_nml_2 && css` margin-left: -${theme.SPACING_200}; `}
+      ${p.bp2_nmt_3 && ` margin-top: -${theme.SPACING_300}; `}
+      ${p.bp2_nmr_3 && ` margin-right: -${theme.SPACING_300}; `}
+      ${p.bp2_nmb_3 && ` margin-bottom: -${theme.SPACING_300}; `}
+      ${p.bp2_nml_3 && ` margin-left: -${theme.SPACING_300}; `}
 
-    ${p => p.bp2_nmt_3 && css` margin-top: -${theme.SPACING_300}; `}
-    ${p => p.bp2_nmr_3 && css` margin-right: -${theme.SPACING_300}; `}
-    ${p => p.bp2_nmb_3 && css` margin-bottom: -${theme.SPACING_300}; `}
-    ${p => p.bp2_nml_3 && css` margin-left: -${theme.SPACING_300}; `}
+      ${p.bp2_nmt_4 && ` margin-top: -${theme.SPACING_400}; `}
+      ${p.bp2_nmr_4 && ` margin-right: -${theme.SPACING_400}; `}
+      ${p.bp2_nmb_4 && ` margin-bottom: -${theme.SPACING_400}; `}
+      ${p.bp2_nml_4 && ` margin-left: -${theme.SPACING_400}; `}
 
-    ${p => p.bp2_nmt_4 && css` margin-top: -${theme.SPACING_400}; `}
-    ${p => p.bp2_nmr_4 && css` margin-right: -${theme.SPACING_400}; `}
-    ${p => p.bp2_nmb_4 && css` margin-bottom: -${theme.SPACING_400}; `}
-    ${p => p.bp2_nml_4 && css` margin-left: -${theme.SPACING_400}; `}
+      ${p.bp2_nmt_5 && ` margin-top: -${theme.SPACING_500}; `}
+      ${p.bp2_nmr_5 && ` margin-right: -${theme.SPACING_500}; `}
+      ${p.bp2_nmb_5 && ` margin-bottom: -${theme.SPACING_500}; `}
+      ${p.bp2_nml_5 && ` margin-left: -${theme.SPACING_500}; `}
 
-    ${p => p.bp2_nmt_5 && css` margin-top: -${theme.SPACING_500}; `}
-    ${p => p.bp2_nmr_5 && css` margin-right: -${theme.SPACING_500}; `}
-    ${p => p.bp2_nmb_5 && css` margin-bottom: -${theme.SPACING_500}; `}
-    ${p => p.bp2_nml_5 && css` margin-left: -${theme.SPACING_500}; `}
+      ${p.bp2_nmt_6 && ` margin-top: -${theme.SPACING_600}; `}
+      ${p.bp2_nmr_6 && ` margin-right: -${theme.SPACING_600}; `}
+      ${p.bp2_nmb_6 && ` margin-bottom: -${theme.SPACING_600}; `}
+      ${p.bp2_nml_6 && ` margin-left: -${theme.SPACING_600}; `}
 
-    ${p => p.bp2_nmt_6 && css` margin-top: -${theme.SPACING_600}; `}
-    ${p => p.bp2_nmr_6 && css` margin-right: -${theme.SPACING_600}; `}
-    ${p => p.bp2_nmb_6 && css` margin-bottom: -${theme.SPACING_600}; `}
-    ${p => p.bp2_nml_6 && css` margin-left: -${theme.SPACING_600}; `}
+      ${p.bp2_nmt_7 && ` margin-top: -${theme.SPACING_700}; `}
+      ${p.bp2_nmr_7 && ` margin-right: -${theme.SPACING_700}; `}
+      ${p.bp2_nmb_7 && ` margin-bottom: -${theme.SPACING_700}; `}
+      ${p.bp2_nml_7 && ` margin-left: -${theme.SPACING_700}; `}
 
-    ${p => p.bp2_nmt_7 && css` margin-top: -${theme.SPACING_700}; `}
-    ${p => p.bp2_nmr_7 && css` margin-right: -${theme.SPACING_700}; `}
-    ${p => p.bp2_nmb_7 && css` margin-bottom: -${theme.SPACING_700}; `}
-    ${p => p.bp2_nml_7 && css` margin-left: -${theme.SPACING_700}; `}
+      ${p.bp2_nmt_8 && ` margin-top: -${theme.SPACING_800}; `}
+      ${p.bp2_nmr_8 && ` margin-right: -${theme.SPACING_800}; `}
+      ${p.bp2_nmb_8 && ` margin-bottom: -${theme.SPACING_800}; `}
+      ${p.bp2_nml_8 && ` margin-left: -${theme.SPACING_800}; `}
 
-    ${p => p.bp2_nmt_8 && css` margin-top: -${theme.SPACING_800}; `}
-    ${p => p.bp2_nmr_8 && css` margin-right: -${theme.SPACING_800}; `}
-    ${p => p.bp2_nmb_8 && css` margin-bottom: -${theme.SPACING_800}; `}
-    ${p => p.bp2_nml_8 && css` margin-left: -${theme.SPACING_800}; `}
+      ${p.bp2_nmt_9 && ` margin-top: -${theme.SPACING_900}; `}
+      ${p.bp2_nmr_9 && ` margin-right: -${theme.SPACING_900}; `}
+      ${p.bp2_nmb_9 && ` margin-bottom: -${theme.SPACING_900}; `}
+      ${p.bp2_nml_9 && ` margin-left: -${theme.SPACING_900}; `}
+    }
+  `}
 
-    ${p => p.bp2_nmt_9 && css` margin-top: -${theme.SPACING_900}; `}
-    ${p => p.bp2_nmr_9 && css` margin-right: -${theme.SPACING_900}; `}
-    ${p => p.bp2_nmb_9 && css` margin-bottom: -${theme.SPACING_900}; `}
-    ${p => p.bp2_nml_9 && css` margin-left: -${theme.SPACING_900}; `}
-  }
+  ${negativemarginPropsKeys.some(prop => p[`bp3_${prop}`]) && css`
+    @media (min-width: ${theme.BREAKPOINT_300}) {
+      ${p.bp3_nmt_1 && ` margin-top: -${theme.SPACING_100}; `}
+      ${p.bp3_nmr_1 && ` margin-right: -${theme.SPACING_100}; `}
+      ${p.bp3_nmb_1 && ` margin-bottom: -${theme.SPACING_100}; `}
+      ${p.bp3_nml_1 && ` margin-left: -${theme.SPACING_100}; `}
 
-  @media (min-width: ${theme.BREAKPOINT_300}) {
-    ${p => p.bp3_nmt_1 && css` margin-top: -${theme.SPACING_100}; `}
-    ${p => p.bp3_nmr_1 && css` margin-right: -${theme.SPACING_100}; `}
-    ${p => p.bp3_nmb_1 && css` margin-bottom: -${theme.SPACING_100}; `}
-    ${p => p.bp3_nml_1 && css` margin-left: -${theme.SPACING_100}; `}
+      ${p.bp3_nmt_2 && ` margin-top: -${theme.SPACING_200}; `}
+      ${p.bp3_nmr_2 && ` margin-right: -${theme.SPACING_200}; `}
+      ${p.bp3_nmb_2 && ` margin-bottom: -${theme.SPACING_200}; `}
+      ${p.bp3_nml_2 && ` margin-left: -${theme.SPACING_200}; `}
 
-    ${p => p.bp3_nmt_2 && css` margin-top: -${theme.SPACING_200}; `}
-    ${p => p.bp3_nmr_2 && css` margin-right: -${theme.SPACING_200}; `}
-    ${p => p.bp3_nmb_2 && css` margin-bottom: -${theme.SPACING_200}; `}
-    ${p => p.bp3_nml_2 && css` margin-left: -${theme.SPACING_200}; `}
+      ${p.bp3_nmt_3 && ` margin-top: -${theme.SPACING_300}; `}
+      ${p.bp3_nmr_3 && ` margin-right: -${theme.SPACING_300}; `}
+      ${p.bp3_nmb_3 && ` margin-bottom: -${theme.SPACING_300}; `}
+      ${p.bp3_nml_3 && ` margin-left: -${theme.SPACING_300}; `}
 
-    ${p => p.bp3_nmt_3 && css` margin-top: -${theme.SPACING_300}; `}
-    ${p => p.bp3_nmr_3 && css` margin-right: -${theme.SPACING_300}; `}
-    ${p => p.bp3_nmb_3 && css` margin-bottom: -${theme.SPACING_300}; `}
-    ${p => p.bp3_nml_3 && css` margin-left: -${theme.SPACING_300}; `}
+      ${p.bp3_nmt_4 && ` margin-top: -${theme.SPACING_400}; `}
+      ${p.bp3_nmr_4 && ` margin-right: -${theme.SPACING_400}; `}
+      ${p.bp3_nmb_4 && ` margin-bottom: -${theme.SPACING_400}; `}
+      ${p.bp3_nml_4 && ` margin-left: -${theme.SPACING_400}; `}
 
-    ${p => p.bp3_nmt_4 && css` margin-top: -${theme.SPACING_400}; `}
-    ${p => p.bp3_nmr_4 && css` margin-right: -${theme.SPACING_400}; `}
-    ${p => p.bp3_nmb_4 && css` margin-bottom: -${theme.SPACING_400}; `}
-    ${p => p.bp3_nml_4 && css` margin-left: -${theme.SPACING_400}; `}
+      ${p.bp3_nmt_5 && ` margin-top: -${theme.SPACING_500}; `}
+      ${p.bp3_nmr_5 && ` margin-right: -${theme.SPACING_500}; `}
+      ${p.bp3_nmb_5 && ` margin-bottom: -${theme.SPACING_500}; `}
+      ${p.bp3_nml_5 && ` margin-left: -${theme.SPACING_500}; `}
 
-    ${p => p.bp3_nmt_5 && css` margin-top: -${theme.SPACING_500}; `}
-    ${p => p.bp3_nmr_5 && css` margin-right: -${theme.SPACING_500}; `}
-    ${p => p.bp3_nmb_5 && css` margin-bottom: -${theme.SPACING_500}; `}
-    ${p => p.bp3_nml_5 && css` margin-left: -${theme.SPACING_500}; `}
+      ${p.bp3_nmt_6 && ` margin-top: -${theme.SPACING_600}; `}
+      ${p.bp3_nmr_6 && ` margin-right: -${theme.SPACING_600}; `}
+      ${p.bp3_nmb_6 && ` margin-bottom: -${theme.SPACING_600}; `}
+      ${p.bp3_nml_6 && ` margin-left: -${theme.SPACING_600}; `}
 
-    ${p => p.bp3_nmt_6 && css` margin-top: -${theme.SPACING_600}; `}
-    ${p => p.bp3_nmr_6 && css` margin-right: -${theme.SPACING_600}; `}
-    ${p => p.bp3_nmb_6 && css` margin-bottom: -${theme.SPACING_600}; `}
-    ${p => p.bp3_nml_6 && css` margin-left: -${theme.SPACING_600}; `}
+      ${p.bp3_nmt_7 && ` margin-top: -${theme.SPACING_700}; `}
+      ${p.bp3_nmr_7 && ` margin-right: -${theme.SPACING_700}; `}
+      ${p.bp3_nmb_7 && ` margin-bottom: -${theme.SPACING_700}; `}
+      ${p.bp3_nml_7 && ` margin-left: -${theme.SPACING_700}; `}
 
-    ${p => p.bp3_nmt_7 && css` margin-top: -${theme.SPACING_700}; `}
-    ${p => p.bp3_nmr_7 && css` margin-right: -${theme.SPACING_700}; `}
-    ${p => p.bp3_nmb_7 && css` margin-bottom: -${theme.SPACING_700}; `}
-    ${p => p.bp3_nml_7 && css` margin-left: -${theme.SPACING_700}; `}
+      ${p.bp3_nmt_8 && ` margin-top: -${theme.SPACING_800}; `}
+      ${p.bp3_nmr_8 && ` margin-right: -${theme.SPACING_800}; `}
+      ${p.bp3_nmb_8 && ` margin-bottom: -${theme.SPACING_800}; `}
+      ${p.bp3_nml_8 && ` margin-left: -${theme.SPACING_800}; `}
 
-    ${p => p.bp3_nmt_8 && css` margin-top: -${theme.SPACING_800}; `}
-    ${p => p.bp3_nmr_8 && css` margin-right: -${theme.SPACING_800}; `}
-    ${p => p.bp3_nmb_8 && css` margin-bottom: -${theme.SPACING_800}; `}
-    ${p => p.bp3_nml_8 && css` margin-left: -${theme.SPACING_800}; `}
+      ${p.bp3_nmt_9 && ` margin-top: -${theme.SPACING_900}; `}
+      ${p.bp3_nmr_9 && ` margin-right: -${theme.SPACING_900}; `}
+      ${p.bp3_nmb_9 && ` margin-bottom: -${theme.SPACING_900}; `}
+      ${p.bp3_nml_9 && ` margin-left: -${theme.SPACING_900}; `}
+    }
+  `}
 
-    ${p => p.bp3_nmt_9 && css` margin-top: -${theme.SPACING_900}; `}
-    ${p => p.bp3_nmr_9 && css` margin-right: -${theme.SPACING_900}; `}
-    ${p => p.bp3_nmb_9 && css` margin-bottom: -${theme.SPACING_900}; `}
-    ${p => p.bp3_nml_9 && css` margin-left: -${theme.SPACING_900}; `}
-  }
+  ${negativemarginPropsKeys.some(prop => p[`bp4_${prop}`]) && css`
+    @media (min-width: ${theme.BREAKPOINT_400}) {
+      ${p.bp4_nmt_1 && ` margin-top: -${theme.SPACING_100}; `}
+      ${p.bp4_nmr_1 && ` margin-right: -${theme.SPACING_100}; `}
+      ${p.bp4_nmb_1 && ` margin-bottom: -${theme.SPACING_100}; `}
+      ${p.bp4_nml_1 && ` margin-left: -${theme.SPACING_100}; `}
 
-  @media (min-width: ${theme.BREAKPOINT_400}) {
-    ${p => p.bp4_nmt_1 && css` margin-top: -${theme.SPACING_100}; `}
-    ${p => p.bp4_nmr_1 && css` margin-right: -${theme.SPACING_100}; `}
-    ${p => p.bp4_nmb_1 && css` margin-bottom: -${theme.SPACING_100}; `}
-    ${p => p.bp4_nml_1 && css` margin-left: -${theme.SPACING_100}; `}
+      ${p.bp4_nmt_2 && ` margin-top: -${theme.SPACING_200}; `}
+      ${p.bp4_nmr_2 && ` margin-right: -${theme.SPACING_200}; `}
+      ${p.bp4_nmb_2 && ` margin-bottom: -${theme.SPACING_200}; `}
+      ${p.bp4_nml_2 && ` margin-left: -${theme.SPACING_200}; `}
 
-    ${p => p.bp4_nmt_2 && css` margin-top: -${theme.SPACING_200}; `}
-    ${p => p.bp4_nmr_2 && css` margin-right: -${theme.SPACING_200}; `}
-    ${p => p.bp4_nmb_2 && css` margin-bottom: -${theme.SPACING_200}; `}
-    ${p => p.bp4_nml_2 && css` margin-left: -${theme.SPACING_200}; `}
+      ${p.bp4_nmt_3 && ` margin-top: -${theme.SPACING_300}; `}
+      ${p.bp4_nmr_3 && ` margin-right: -${theme.SPACING_300}; `}
+      ${p.bp4_nmb_3 && ` margin-bottom: -${theme.SPACING_300}; `}
+      ${p.bp4_nml_3 && ` margin-left: -${theme.SPACING_300}; `}
 
-    ${p => p.bp4_nmt_3 && css` margin-top: -${theme.SPACING_300}; `}
-    ${p => p.bp4_nmr_3 && css` margin-right: -${theme.SPACING_300}; `}
-    ${p => p.bp4_nmb_3 && css` margin-bottom: -${theme.SPACING_300}; `}
-    ${p => p.bp4_nml_3 && css` margin-left: -${theme.SPACING_300}; `}
+      ${p.bp4_nmt_4 && ` margin-top: -${theme.SPACING_400}; `}
+      ${p.bp4_nmr_4 && ` margin-right: -${theme.SPACING_400}; `}
+      ${p.bp4_nmb_4 && ` margin-bottom: -${theme.SPACING_400}; `}
+      ${p.bp4_nml_4 && ` margin-left: -${theme.SPACING_400}; `}
 
-    ${p => p.bp4_nmt_4 && css` margin-top: -${theme.SPACING_400}; `}
-    ${p => p.bp4_nmr_4 && css` margin-right: -${theme.SPACING_400}; `}
-    ${p => p.bp4_nmb_4 && css` margin-bottom: -${theme.SPACING_400}; `}
-    ${p => p.bp4_nml_4 && css` margin-left: -${theme.SPACING_400}; `}
+      ${p.bp4_nmt_5 && ` margin-top: -${theme.SPACING_500}; `}
+      ${p.bp4_nmr_5 && ` margin-right: -${theme.SPACING_500}; `}
+      ${p.bp4_nmb_5 && ` margin-bottom: -${theme.SPACING_500}; `}
+      ${p.bp4_nml_5 && ` margin-left: -${theme.SPACING_500}; `}
 
-    ${p => p.bp4_nmt_5 && css` margin-top: -${theme.SPACING_500}; `}
-    ${p => p.bp4_nmr_5 && css` margin-right: -${theme.SPACING_500}; `}
-    ${p => p.bp4_nmb_5 && css` margin-bottom: -${theme.SPACING_500}; `}
-    ${p => p.bp4_nml_5 && css` margin-left: -${theme.SPACING_500}; `}
+      ${p.bp4_nmt_6 && ` margin-top: -${theme.SPACING_600}; `}
+      ${p.bp4_nmr_6 && ` margin-right: -${theme.SPACING_600}; `}
+      ${p.bp4_nmb_6 && ` margin-bottom: -${theme.SPACING_600}; `}
+      ${p.bp4_nml_6 && ` margin-left: -${theme.SPACING_600}; `}
 
-    ${p => p.bp4_nmt_6 && css` margin-top: -${theme.SPACING_600}; `}
-    ${p => p.bp4_nmr_6 && css` margin-right: -${theme.SPACING_600}; `}
-    ${p => p.bp4_nmb_6 && css` margin-bottom: -${theme.SPACING_600}; `}
-    ${p => p.bp4_nml_6 && css` margin-left: -${theme.SPACING_600}; `}
+      ${p.bp4_nmt_7 && ` margin-top: -${theme.SPACING_700}; `}
+      ${p.bp4_nmr_7 && ` margin-right: -${theme.SPACING_700}; `}
+      ${p.bp4_nmb_7 && ` margin-bottom: -${theme.SPACING_700}; `}
+      ${p.bp4_nml_7 && ` margin-left: -${theme.SPACING_700}; `}
 
-    ${p => p.bp4_nmt_7 && css` margin-top: -${theme.SPACING_700}; `}
-    ${p => p.bp4_nmr_7 && css` margin-right: -${theme.SPACING_700}; `}
-    ${p => p.bp4_nmb_7 && css` margin-bottom: -${theme.SPACING_700}; `}
-    ${p => p.bp4_nml_7 && css` margin-left: -${theme.SPACING_700}; `}
+      ${p.bp4_nmt_8 && ` margin-top: -${theme.SPACING_800}; `}
+      ${p.bp4_nmr_8 && ` margin-right: -${theme.SPACING_800}; `}
+      ${p.bp4_nmb_8 && ` margin-bottom: -${theme.SPACING_800}; `}
+      ${p.bp4_nml_8 && ` margin-left: -${theme.SPACING_800}; `}
 
-    ${p => p.bp4_nmt_8 && css` margin-top: -${theme.SPACING_800}; `}
-    ${p => p.bp4_nmr_8 && css` margin-right: -${theme.SPACING_800}; `}
-    ${p => p.bp4_nmb_8 && css` margin-bottom: -${theme.SPACING_800}; `}
-    ${p => p.bp4_nml_8 && css` margin-left: -${theme.SPACING_800}; `}
-
-    ${p => p.bp4_nmt_9 && css` margin-top: -${theme.SPACING_900}; `}
-    ${p => p.bp4_nmr_9 && css` margin-right: -${theme.SPACING_900}; `}
-    ${p => p.bp4_nmb_9 && css` margin-bottom: -${theme.SPACING_900}; `}
-    ${p => p.bp4_nml_9 && css` margin-left: -${theme.SPACING_900}; `}
-  }
+      ${p.bp4_nmt_9 && ` margin-top: -${theme.SPACING_900}; `}
+      ${p.bp4_nmr_9 && ` margin-right: -${theme.SPACING_900}; `}
+      ${p.bp4_nmb_9 && ` margin-bottom: -${theme.SPACING_900}; `}
+      ${p.bp4_nml_9 && ` margin-left: -${theme.SPACING_900}; `}
+    }
+  `}
 `;
 
 export default NegativeMargin;
