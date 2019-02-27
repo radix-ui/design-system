@@ -689,7 +689,7 @@ export default class extends Component {
               </Flexbox>
             </div>
             <div>
-              <PillTab left>
+              <PillTab left disabled>
                 Theme
               </PillTab>
               <PillTab middle active>
