@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
+/* Libraries */
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import * as theme from './../theme/';
 
 const Thumb = styled.input.attrs({
@@ -96,29 +97,25 @@ const Input = styled.div`
   position: relative;
 `;
 
-const Slider = (props) => {
-  const { min = 0, max = 0 } = props;
-  const [value, setValue] = useState(props.value || 0);
+const Slider = ({
+  value,
+  min = 0,
+  max = 0,
+  largeStep,
+  onKeyDown,
+  onChange,
+  ...props,
+}) => {
   const percentage = ((value - min) * 100) / (max - min || 100);
-
-  const handleChange = (event) => {
-    const newValue = event.target.value;
-    setValue(newValue);
-    if (props.onChange) {
-      props.onChange(event);
-    }
-  };
-
+  const handleChange = (event) => onChange(parseInt(event.target.value, 10));
   const handleKeyDown = (event) => {
-    if (props.onKeyDown) {
-      props.onKeyDown(event);
-    }
+    onKeyDown(event);
 
     if (event.shiftKey) {
       if (event.keyCode === 37) {
-        setValue(Math.max(props.min, parseInt(value, 10) - props.largeStep));
+        onChange(Math.max(min, parseInt(value, 10) - largeStep));
       } else if (event.keyCode === 39) {
-        setValue(Math.min(props.max, parseInt(value, 10) + props.largeStep));
+        onChange(Math.min(max, parseInt(value, 10) + largeStep));
       }
 
       event.preventDefault();
@@ -149,10 +146,17 @@ Slider.propTypes = {
 }
 
 Slider.defaultProps = {
-  step: "1",
+  step: '1',
   largeStep: 10,
   min: 0,
   max: 100,
+  onChange: () => undefined,
+  onKeyDown: () => undefined,
+};
+
+export const SliderWrapper = ({ value: initialValue }) => {
+  const [value, setValue] = useState(initialValue);
+  return <Slider value={value} onChange={setValue} />;
 };
 
 export default Slider;

@@ -35,7 +35,7 @@ import MenuItem from './components/MenuItem';
 import MenuItemButton from './components/MenuItemButton';
 import MenuItemLink from './components/MenuItemLink';
 import Section from './components/Section';
-import Slider from './components/Slider';
+import Slider, { SliderWrapper } from './components/Slider';
 import Select from './components/Select';
 import Switch from './components/Switch';
 import Text from './components/Text';
@@ -1291,7 +1291,7 @@ export default class extends Component {
               </Box>
             </div>
             <div>
-              <Slider value={2} />
+              <SliderWrapper value={2} />
             </div>
             <div>
               <Switch />
