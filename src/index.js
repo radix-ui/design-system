@@ -1332,6 +1332,17 @@ export default class extends Component {
             </div>
             <div>
               <Flexbox fw_wrap>
+                <ToggleButton
+                  value="left"
+                  left
+                  data-tooltip-content="Align left"
+                  data-tooltip-direction="top"
+                  data-tooltip-alignment="center"
+                >
+                  ToggleButtun Tooltip Test
+                </ToggleButton>
+              </Flexbox>
+              <Flexbox fw_wrap mt_6>
                 <Button
                   data-tooltip-content="Tooltip content"
                   data-tooltip-direction="top"

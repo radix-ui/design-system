@@ -98,9 +98,6 @@ const ToggleButton = ({
   ...otherProps,
 }) => (
   <Wrapper
-    data-tooltip-content={dataTooltipContent}
-    data-tooltip-direction={dataTooltipDirection}
-    data-tooltip-alignment={dataTooltipAlignment}
     {...otherProps}
   >
     <Radio
@@ -112,6 +109,9 @@ const ToggleButton = ({
     />
     <Dummy
       {...otherProps}
+      data-tooltip-content={dataTooltipContent}
+      data-tooltip-direction={dataTooltipDirection}
+      data-tooltip-alignment={dataTooltipAlignment}
     >
       {children}
     </Dummy>
