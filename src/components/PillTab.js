@@ -63,6 +63,12 @@ const PillTab = styled.a`
     cursor: default;
     z-index: 3;
   `}
+  
+  ${p => p.disabled && css`
+    background-color: ${theme.GRAY_200};
+    color: ${theme.GRAY_500};
+    pointer-events: none;
+  `}
 `;
 
 export default PillTab;
