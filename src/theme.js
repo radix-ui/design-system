@@ -108,54 +108,6 @@ export const theme = {
   },
 };
 
-// Button "style" variants
-// https://styled-system.com/theme-specification#element-variants
-theme.buttons = {
-  blue: {
-    color: getColor("blues.5"),
-    backgroundColor: getColor("blues.0"),
-    boxShadow: `inset 0 0 0 1px ${getColor("blues.3")}`,
-    "&:hover": {
-      boxShadow: `inset 0 0 0 1px ${getColor("blues.4")}`,
-    },
-    "&:active": {
-      backgroundColor: getColor("blues.1"),
-      boxShadow: `inset 0 0 0 1px ${getColor("blues.4")}`,
-    },
-  },
-  green: {
-    color: getColor("greens.5"),
-    backgroundColor: getColor("greens.0"),
-    boxShadow: `inset 0 0 0 1px ${getColor("greens.3")}`,
-    "&:hover": {
-      boxShadow: `inset 0 0 0 1px ${getColor("greens.4")}`,
-    },
-    "&:active": {
-      backgroundColor: getColor("greens.1"),
-      boxShadow: `inset 0 0 0 1px ${getColor("greens.4")}`,
-    },
-  },
-  yellow: {
-    color: getColor("yellows.5"),
-  },
-  red: {
-    color: getColor("reds.5"),
-  },
-  active: {
-    color: getColor("grays.5"),
-    backgroundColor: getColor("grays.1"),
-    boxShadow: `inset 0 1px 1px 0 ${getColor("blacks.4")}, inset 0 0 0 1px ${getColor("grays.3")}`,
-    "&:hover": {
-      boxShadow: `inset 0 1px 1px 0 ${getColor("blacks.4")}, inset 0 0 0 1px ${getColor(
-        "grays.4"
-      )}`,
-    },
-    "&:active": {
-      backgroundColor: getColor("grays.2"),
-    },
-  },
-};
-
-function getColor(key, fallback) {
+export function getColor(key, fallback) {
   return themeGet(`colors.${key}`, fallback)({ theme });
 }
