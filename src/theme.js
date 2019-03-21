@@ -108,6 +108,6 @@ export const theme = {
   },
 };
 
-export function getColor(key, fallback) {
+export function themeColor(key, fallback) {
   return themeGet(`colors.${key}`, fallback)({ theme });
 }
