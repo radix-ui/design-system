@@ -110,7 +110,6 @@ export const Button = styled.button`
     cursor: not-allowed;
   }
 
-
 	${space}
 	${buttonStyle}
 	${buttonSizeStyle}
@@ -119,7 +118,7 @@ export const Button = styled.button`
     props.waiting &&
     css`
 			background-color: ${themeColor("grays.2")};
-			box-shadow: inset 0 1px 1px 0 ${themeColor("blacks.4")}, inset 0 0 0 1px ${themeColor("grays.4")};
+			box-shadow: inset 0 1px 1px 0 ${themeColor("blacks.4")}, inset 0 0 0 1px ${themeColor("grays.3")};
     	color: transparent
 			overflow: hidden;
 			pointer-events: none;

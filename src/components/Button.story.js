@@ -1,10 +1,7 @@
 import React from "react";
-import "styled-components/macro";
 import { storiesOf } from "@storybook/react";
 import { Box } from "./Box";
 import { Button } from "./Button";
-import { theme } from "../theme";
-import { themeGet } from "styled-system";
 
 storiesOf("Components|Button", module).add("default", () => (
   <>
