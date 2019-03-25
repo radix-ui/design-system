@@ -1,6 +1,14 @@
-import styled from "styled-components/macro";
+import styled, { css, keyframes } from "styled-components/macro";
 import { theme, themeColor } from "../theme";
 import { space, buttonStyle, themeGet, variant } from "styled-system";
+
+const waitingAnimation = props => keyframes`
+  100% {
+    transform: translateX(${
+      props.size === "medium" ? themeGet("space.9")(props) : themeGet("space.7")(props)
+    })
+	}
+`;
 
 // Button "style" variants
 // https://styled-system.com/theme-specification#element-variants
@@ -63,7 +71,8 @@ theme.sizes = {
 
 const buttonSizeStyle = variant({ key: "sizes", prop: "size" });
 
-export const ButtonV2 = styled.button`
+export const Button = styled.button`
+	align-items: center;
 	appearance: none;
 	background-color: ${themeColor("grays.0")};
 	box-shadow: inset 0 0 0 1px ${themeColor("grays.3")};
@@ -71,6 +80,7 @@ export const ButtonV2 = styled.button`
 	border-radius: ${themeGet("radii.1")};
 	color: ${themeColor("grays.5")};
 	cursor: pointer;
+	display: inline-flex;
 	/* TODO: add font-family: ${theme.UNTITLEDSANSMEDIUM}; missing in theme */
 	font-size: ${themeGet("fontSizes.2")};
 	font-weight: 500;
@@ -100,11 +110,43 @@ export const ButtonV2 = styled.button`
     cursor: not-allowed;
   }
 
+
 	${space}
 	${buttonStyle}
 	${buttonSizeStyle}
+
+	${props =>
+    props.waiting &&
+    css`
+			background-color: ${themeColor("grays.2")};
+			box-shadow: inset 0 1px 1px 0 ${themeColor("blacks.4")}, inset 0 0 0 1px ${themeColor("grays.4")};
+    	color: transparent
+			overflow: hidden;
+			pointer-events: none;
+			position: relative;
+
+			&::before {
+				position: absolute;
+				content: " ";
+				top: 0;
+				left: -100%;
+				width: 200%;
+				height: 100%;
+				background-image: linear-gradient(
+					-45deg,
+					transparent 33%,
+					rgba(0, 0, 0, 0.05) 33%,
+					rgba(0, 0, 0, 0.05) 66%,
+					transparent 66%
+				);
+				background-size: ${props =>
+          props.size === "medium"
+            ? `${themeGet("space.9")(props)} ${themeGet("space.6")(props)}`
+            : `${themeGet("space.7")(props)} ${themeGet("space.5")(props)}`}
+				animation: ${waitingAnimation} 500ms linear infinite;
+		`}
 `;
 
-ButtonV2.defaultProps = {
+Button.defaultProps = {
   theme,
 };
