@@ -2,6 +2,10 @@ import { themeGet } from "styled-system";
 
 export const theme = {
   breakpoints: ["38em", "62em", "68em", "110em"],
+  fonts: {
+    normal: 'apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
+    mono: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
+  },
   fontSizes: [
     ".5625rem",
     ".6875rem",

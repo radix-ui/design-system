@@ -81,7 +81,7 @@ export const Button = styled.button`
 	color: ${themeColor("grays.5")};
 	cursor: pointer;
 	display: inline-flex;
-	/* TODO: add font-family: ${theme.UNTITLEDSANSMEDIUM}; missing in theme */
+	font-family: ${themeGet("fonts.normal")};
 	font-size: ${themeGet("fontSizes.2")};
 	font-weight: 500;
 	height: ${themeGet("space.5")};
