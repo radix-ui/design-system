@@ -103,7 +103,7 @@ const InnerTrack = styled.div`
 `;
 
 export const Slider = props => {
-  const isControlled = Boolean(props.value) && Boolean(props.onChange);
+  const isControlled = props.value !== undefined && props.onChange !== undefined;
   const { min, max } = props;
   const [value, setValue] = useState(props.value || props.defaultValue);
   const percentage = ((value - min) * 100) / (max - min || 100);
