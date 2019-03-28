@@ -7,10 +7,12 @@ import { Slider } from "./Slider";
 storiesOf("Components|Slider", module).add("default", () => (
   <>
     <Box mb="4">
+      <p>Uncontrolled</p>
       <Slider defaultValue="20" />
     </Box>
 
-    <Box mb="4">
+    <Box mt="4" mb="4">
+      <p>Controlled</p>
       <Component initialState={{ value: 50 }}>
         {({ state, setState }) => (
           <>
@@ -19,6 +21,7 @@ storiesOf("Components|Slider", module).add("default", () => (
               onChange={event => setState({ value: event.target.value })}
             />
             <div>
+              <p>Current value is {state.value}</p>
               <button onClick={() => setState({ value: 0 })}>change to 0</button>
               <button onClick={() => setState({ value: 50 })}>change to 50</button>
               <button onClick={() => setState({ value: 100 })}>change to 100</button>
