@@ -7,37 +7,37 @@ storiesOf("Components|Text", module).add("default", () => (
   <>
     <Box mb="4">
       <Text as="p" fontSize={0}>
-        Text
+        Radix
       </Text>
       <Text as="p" fontSize={1}>
-        Text
+        Radix
       </Text>
       <Text as="p" fontSize={2}>
-        Text
+        Radix
       </Text>
       <Text as="p" fontSize={3}>
-        Text
+        Radix
       </Text>
       <Text as="p" fontSize={4}>
-        Text
+        Radix
       </Text>
       <Text as="p" fontSize={5}>
-        Text
+        Radix
       </Text>
       <Text as="p" fontSize={6}>
-        Text
+        Radix
       </Text>
       <Text as="p" fontSize={7}>
-        Text
+        Radix
       </Text>
       <Text as="p" fontSize={8}>
-        Text
+        Radix
       </Text>
       <Text as="p" fontSize={9}>
-        Text
+        Radix
       </Text>
       <Text as="p" fontSize={10}>
-        Text
+        Radix
       </Text>
     </Box>
 
