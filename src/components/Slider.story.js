@@ -3,12 +3,13 @@ import Component from "react-component-component";
 import { storiesOf } from "@storybook/react";
 import { Box } from "./Box";
 import { Slider } from "./Slider";
+import { Button } from "./Button";
 
 storiesOf("Components|Slider", module).add("default", () => (
   <>
     <Box mb="4">
       <p>Uncontrolled</p>
-      <Slider defaultValue="20" />
+      <Slider />
     </Box>
 
     <Box mt="4" mb="4">
@@ -22,9 +23,15 @@ storiesOf("Components|Slider", module).add("default", () => (
             />
             <div>
               <p>Current value is {state.value}</p>
-              <button onClick={() => setState({ value: 0 })}>change to 0</button>
-              <button onClick={() => setState({ value: 50 })}>change to 50</button>
-              <button onClick={() => setState({ value: 100 })}>change to 100</button>
+              <Button mx="1" onClick={() => setState({ value: 0 })}>
+                change to 0
+              </Button>
+              <Button mx="1" onClick={() => setState({ value: 50 })}>
+                change to 50
+              </Button>
+              <Button mx="1" onClick={() => setState({ value: 100 })}>
+                change to 100
+              </Button>
             </div>
           </>
         )}

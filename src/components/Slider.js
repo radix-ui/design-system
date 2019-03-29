@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 
 const trackStyle = css`
   background-color: transparent;
-  border-radius: 9999px;
+  border-radius: ${TRACK_HEIGHT}px;
   height: ${TRACK_HEIGHT}px;
 `;
 
@@ -102,48 +102,25 @@ const InnerTrack = styled.div`
   background-color: ${themeColor("blues.3")};
 `;
 
-export const Slider = props => {
-  const isControlled = props.value !== undefined && props.onChange !== undefined;
-  const { min, max } = props;
-  const [value, setValue] = useState(props.value || props.defaultValue);
-  const percentage = ((value - min) * 100) / (max - min || 100);
+export const Slider = ({ min, max, value, onChange, props }) => {
+  const isControlled = value !== undefined && onChange !== undefined;
+  const [stateValue, setStateValue] = useState(value || 0);
+  const percentage = ((stateValue - min) * 100) / (max - min || 100);
 
-  useEffect(() => setValue(props.value), [props.value]);
-
-  const handleChange = event => {
-    const newValue = event.target.value;
-    setValue(newValue);
-
+  // keep local state in sync with `value` prop
+  useEffect(() => {
     if (isControlled) {
-      props.onChange(event);
+      setStateValue(value);
     }
-  };
-
-  const handleKeyDown = event => {
-    if (props.onKeyDown) {
-      props.onKeyDown(event);
-    }
-
-    if (event.shiftKey) {
-      event.preventDefault();
-      const { keyCode } = event;
-
-      if (keyCode === 37 || keyCode === 40) {
-        setValue(Math.max(props.min, parseInt(value, 10) - props.largeStep));
-      } else if (keyCode === 39 || keyCode === 38) {
-        setValue(Math.min(props.max, parseInt(value, 10) + props.largeStep));
-      }
-    }
-  };
+  }, [value]);
 
   return (
     <Wrapper>
       <Input
         {...props}
         type="range"
-        value={value}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
+        value={stateValue}
+        onChange={isControlled ? onChange : event => setStateValue(event.target.value)}
       />
       <Track>
         <InnerTrack style={{ width: `${percentage}%` }} />
@@ -153,9 +130,7 @@ export const Slider = props => {
 };
 
 Slider.defaultProps = {
-  defaultValue: 0,
   step: "1",
-  largeStep: 10,
   min: 0,
   max: 100,
 };
