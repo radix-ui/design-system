@@ -1,10 +1,11 @@
 /* Libaries */
-import React, { createContext, useReducer, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
 /* Components */
 import Box from './Box';
 import GhostButton from './GhostButton';
 import Overlay from './Overlay';
+import { DialogContext, Actions } from './DialogProvider';
 /* Theme */
 import * as theme from '../theme';
 
@@ -97,47 +98,8 @@ const Panel = styled.div`
   `}
 `;
 
-/* Component */
-const DialogContext = createContext();
-const DialogContextConsumer = DialogContext.Consumer;
-
-const initialState = {
-  dialogs: [],
-  closing: false,
-};
-
-const Actions = {
-  OPEN: 'OPEN',
-  BEGIN_CLOSING: 'BEGIN_CLOSING',
-  CLOSE: 'CLOSE',
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case Actions.OPEN:
-      return {
-        ...state,
-        closing: false,
-        dialogs: [action.dialog, ...state.dialogs],
-      };
-    case Actions.BEGIN_CLOSING:
-      return {
-        ...state,
-        closing: true,
-      };
-    case Actions.CLOSE:
-      return {
-        ...state,
-        closing: false,
-        dialogs: state.dialogs.filter((dialog) => dialog !== action.dialog),
-      };
-    default:
-      return state;
-  }
-}
-
 const DialogRoot = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const { state, dispatch } = useContext(DialogContext);
   const panelRef = useRef(null);
   const activeDialog = state.dialogs[0] || {};
   const active = !!state.dialogs[0] && !state.closing;
@@ -175,61 +137,56 @@ const DialogRoot = ({ children }) => {
       close();
     }
   };
-  
+
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   });
 
-  return (
-    <DialogContext.Provider value={{ state, dispatch }}>
-      {children}
-      <Overlay active={active} onClick={handleOverlayClick} />
-      <Container>
-        <Box
-          position_fixed
-          pt_1
-          pr_1
-          top_0
-          right_0
-          style={{
-            transition: `opacity ${DIALOG_CLOSE_TRANSITION_LENGTH}ms linear`,
-            opacity: active ? '1' : '0',
-            pointerEvents: active ? 'auto' : 'none',
-          }}
-        >
-          {activeDialog.dismissable && (
-            <GhostButton size2 onClick={close}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="25"
-                viewBox="0 0 25 25"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path d="M7.5 17.5L17.5 7.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M17.5 17.5L7.5 7.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </GhostButton>
-          )}
-        </Box>
-        <Panel
-          active={active}
-          onClick={(event) => event.stopPropagation()}
-          {...activeDialog.panelProps}
-          ref={panelRef}
-        >
-          {activeDialog.children && <activeDialog.children close={close} />}
-        </Panel>
-      </Container>
-    </DialogContext.Provider>
-  );
+  const container = (
+    <Container>
+      <Box
+        position_fixed
+        pt_1
+        pr_1
+        top_0
+        right_0
+        style={{
+          transition: `opacity ${DIALOG_CLOSE_TRANSITION_LENGTH}ms linear`,
+          opacity: active ? '1' : '0',
+          pointerEvents: active ? 'auto' : 'none',
+        }}
+      >
+        {activeDialog.dismissable && (
+          <GhostButton size2 onClick={close}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path d="M7.5 17.5L17.5 7.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M17.5 17.5L7.5 7.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </GhostButton>
+        )}
+      </Box>
+      <Panel
+        active={active}
+        onClick={(event) => event.stopPropagation()}
+        {...activeDialog.panelProps}
+        ref={panelRef}
+      >
+        {activeDialog.children && <activeDialog.children close={close} />}
+      </Panel>
+    </Container>
+  )
+
+  return typeof children === 'function'
+    ? children({active, onClick: handleOverlayClick, children: container})
+    : <Overlay active={active} onClick={handleOverlayClick}>{container}</Overlay>;
 };
 
-export {
-  DialogContext,
-  DialogRoot,
-  DialogContextConsumer,
-  Actions,
-};
+export default DialogRoot;

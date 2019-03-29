@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 /* Store */
-import { DialogContext, Actions as DialogActions } from './DialogRoot';
+import { DialogContext, Actions as DialogActions } from './DialogProvider';
 
 const Dialog = ({
   children,
