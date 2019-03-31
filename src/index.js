@@ -17,8 +17,9 @@ import Textarea from './components/Textarea';
 import Flexbox from './components/Flexbox';
 import Heading from './components/Heading';
 import Overlay from './components/Overlay';
+import { DialogProvider } from './components/DialogProvider';
 import Dialog from './components/Dialog';
-import { DialogRoot } from './components/DialogRoot';
+import DialogRoot from './components/DialogRoot';
 import Title from './components/Title';
 import Status from './components/Status';
 import Image from './components/Image';
@@ -71,8 +72,9 @@ export Heading from './components/Heading';
 export Image from './components/Image';
 export Input from './components/Input';
 export Overlay from './components/Overlay';
+export { DialogProvider } from './components/DialogProvider';
 export Dialog from './components/Dialog';
-export { DialogRoot } from './components/DialogRoot';
+export DialogRoot from './components/DialogRoot';
 export LinesButton from './components/LinesButton';
 export Link from './components/Link';
 export List from './components/List';
@@ -109,6 +111,10 @@ export GhostInput from './components/GhostInput';
 import * as Theme from './theme';
 export { Theme };
 
+const Providers = ({children}) => (
+  <DialogProvider>{children}</DialogProvider>
+)
+
 export default class extends Component {
   render() {
     // const demoDialog = ({ close }) => (
@@ -136,7 +142,7 @@ export default class extends Component {
     //   </Flexbox>
     // );
 
-    return <DialogRoot>
+    return <Providers>
       <Tooltip />
       <Alert gray>
         <Container size1>
@@ -3640,6 +3646,7 @@ export default class extends Component {
         </Container>
       </Box> */}
 
-    </DialogRoot>
+    <DialogRoot />
+    </Providers>
   }
 }
