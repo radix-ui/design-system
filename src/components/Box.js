@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 import { theme } from "../theme";
 import {
+  alignSelf,
   borders,
   bottom,
   boxShadow,
@@ -8,7 +9,9 @@ import {
   display,
   flex,
   height,
+  justifySelf,
   left,
+  maxWidth,
   opacity,
   overflow,
   position,
@@ -18,11 +21,10 @@ import {
   top,
   width,
   zIndex,
-  justifySelf,
-  alignSelf,
 } from "styled-system";
 
 export const Box = styled.div`
+  ${alignSelf}
 	${borders}
   ${bottom}
   ${boxShadow}
@@ -30,7 +32,9 @@ export const Box = styled.div`
   ${display}
   ${flex}
   ${height}
+  ${justifySelf}
   ${left}
+	${maxWidth}
   ${opacity}
   ${overflow}
   ${position}
@@ -40,8 +44,6 @@ export const Box = styled.div`
   ${top}
   ${width}
   ${zIndex}
-  ${justifySelf}
-  ${alignSelf}
 `;
 
 Box.defaultProps = {

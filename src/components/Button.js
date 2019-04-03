@@ -98,6 +98,10 @@ export const Button = styled.button`
     box-shadow: inset 0 0 0 1px ${themeColor("grays.4")};
   }
 
+	&:focus {
+    box-shadow: inset 0 0 0 1px ${themeColor("grays.4")};
+  }
+
   &:active {
     background-color: ${themeColor("grays.1")};
     box-shadow: inset 0 0 0 1px ${themeColor("grays.4")};

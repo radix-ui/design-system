@@ -4,16 +4,17 @@ import { storiesOf } from "@storybook/react";
 import { Box } from "./Box";
 import { Slider } from "./Slider";
 import { Button } from "./Button";
+import { Text } from "./Text";
 
 storiesOf("Components|Slider", module).add("default", () => (
   <>
     <Box mb="4">
-      <p>Uncontrolled</p>
+      <Text as="p">Uncontrolled</Text>
       <Slider />
     </Box>
 
     <Box mt="4" mb="4">
-      <p>Controlled</p>
+      <Text as="p">Controlled</Text>
       <Component initialState={{ value: 50 }}>
         {({ state, setState }) => (
           <>
@@ -22,7 +23,9 @@ storiesOf("Components|Slider", module).add("default", () => (
               onChange={event => setState({ value: event.target.value })}
             />
             <div>
-              <p>Current value is {state.value}</p>
+              <Text as="p" fontSize="3" my="3">
+                Current value is {state.value}
+              </Text>
               <Button mx="1" onClick={() => setState({ value: 0 })}>
                 change to 0
               </Button>
