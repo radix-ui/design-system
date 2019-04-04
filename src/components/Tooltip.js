@@ -50,6 +50,7 @@ const BaseTooltip = styled.span`
     text-align: center;
     word-wrap: break-word;
     white-space: pre;
+    font-weight: 400;
     pointer-events: none;
     background: hsla(0, 0%, 0%, .8); /* TODO: add to theme */
     border-radius: ${themeGet("radii.1")};
