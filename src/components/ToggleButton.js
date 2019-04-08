@@ -11,10 +11,12 @@ const Wrapper = styled.label`
   flex-basis: 0;
   flex-grow: 1;
 
-  z-index: ${props => props.checked && `1`};
-
   & + & {
     margin-left: -1px;
+  }
+
+  &:hover {
+    z-index: 2;
   }
 `;
 
