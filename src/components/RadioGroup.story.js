@@ -3,6 +3,7 @@ import Component from "react-component-component";
 import { storiesOf } from "@storybook/react";
 import { Box } from "./Box";
 import { Text } from "./Text";
+import { Button } from "./Button";
 import { RadioGroup, Radio } from "./RadioGroup";
 
 storiesOf("Components|RadioGroup", module).add("default", () => (
@@ -21,14 +22,19 @@ storiesOf("Components|RadioGroup", module).add("default", () => (
       <Text as="p">Controlled</Text>
       <Component initialState={{ value: "wrap" }}>
         {({ state, setState }) => (
-          <RadioGroup
-            name="flexWrap"
-            value={state.value}
-            onChange={event => setState({ value: event.target.value })}
-          >
-            <Radio value="wrap">Wrap</Radio>
-            <Radio value="nowrap">Nowrap</Radio>
-          </RadioGroup>
+          <>
+            <RadioGroup
+              name="flexWrap"
+              value={state.value}
+              onChange={event => setState({ value: event.target.value })}
+            >
+              <Radio value="wrap">Wrap</Radio>
+              <Radio value="nowrap">Nowrap</Radio>
+            </RadioGroup>
+            <Button my="3" onClick={() => setState({ value: "nowrap" })}>
+              select nowrap
+            </Button>
+          </>
         )}
       </Component>
     </Box>

@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-export function RadioGroup({ children, value, onChange, name, ...props }) {
+export function RadioGroup({ as: Component = "div", children, value, onChange, name, ...props }) {
   const isControlled = Boolean(value);
 
   return (
-    <div {...props}>
+    <Component {...props}>
       {React.Children.map(children, radio =>
         React.cloneElement(radio, {
           name,
@@ -13,7 +13,7 @@ export function RadioGroup({ children, value, onChange, name, ...props }) {
           ...(isControlled ? { checked: value === radio.props.value } : {}),
         })
       )}
-    </div>
+    </Component>
   );
 }
 
