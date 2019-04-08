@@ -18,15 +18,11 @@ const Wrapper = styled.label`
   }
 `;
 
-Wrapper.defaultProps = { theme };
-
 const Radio = styled.input`
   position: absolute;
   opacity: 0;
   z-index: -1;
 `;
-
-Radio.defaultProps = { theme };
 
 const FakeRadio = styled.span`
   height: ${themeGet("space.5")};
@@ -60,6 +56,11 @@ const FakeRadio = styled.span`
     color: ${themeColor("blues.5")};
     z-index: 1;
   }
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px ${themeColor("grays.4")};
+    z-index: 1;
+  }
 `;
 
 FakeRadio.defaultProps = { theme };
@@ -74,5 +75,3 @@ export const ToggleButton = ({ children, ...props }) => (
     <FakeRadio>{children}</FakeRadio>
   </Wrapper>
 );
-
-ToggleButton.defaultProps = { theme };
