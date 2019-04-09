@@ -6,7 +6,9 @@ import { Button } from "./Button";
 storiesOf("Components|Button", module).add("default", () => (
   <>
     <Box mb="4">
-      <Button mr="4">Hello Button</Button>
+      <Button mr="4" color="red">
+        Button
+      </Button>
       <Button size="medium">Button</Button>
     </Box>
 
