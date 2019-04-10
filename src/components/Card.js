@@ -11,7 +11,7 @@ theme.cards = {
     position: "relative",
     transition: "opacity 80ms linear, transform 150ms ease",
     "&::before, &::after": {
-      content: JSON.stringify(""),
+      content: `""`,
       position: "absolute",
       top: 0,
       left: 0,
@@ -36,7 +36,7 @@ theme.cards = {
     position: "relative",
     transition: "opacity 80ms linear, transform 150ms ease",
     "&::before, &::after": {
-      content: JSON.stringify(""),
+      content: `""`,
       position: "absolute",
       top: 0,
       left: 0,
