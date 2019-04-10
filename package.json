@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@reach/dialog": "^0.1.4",
+    "polished": "^3.2.0",
     "react": "^16.8.4",
     "react-component-component": "^1.2.1",
     "react-dom": "^16.8.4",
