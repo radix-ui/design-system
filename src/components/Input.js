@@ -4,6 +4,7 @@ import * as theme from './../theme/';
 const Input = styled.input.attrs({
   type: 'text',
 })`
+  appearance: none;
   background-color: transparent;
   border: none;
   border-radius: 0;
