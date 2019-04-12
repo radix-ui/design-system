@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { color, space, width, textAlign, themeGet, variant } from "styled-system";
+import { color, space, width, maxWidth, textAlign, themeGet, variant } from "styled-system";
 import { theme, themeColor } from "../theme";
 
 theme.inputs = {
@@ -72,6 +72,7 @@ export const Input = styled.input`
   ${space}
   ${textAlign}
   ${width}
+  ${maxWidth}
 	${inputStyle}
 	${inputSizeStyle}
 `;
