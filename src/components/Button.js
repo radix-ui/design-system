@@ -60,7 +60,7 @@ theme.buttons = {
   },
 };
 
-theme.sizes = {
+theme.buttonSizes = {
   medium: {
     fontSize: themeGet("fontSizes.3")({ theme }),
     padding: `0 ${themeGet("space.3")({ theme })}`,
@@ -69,7 +69,7 @@ theme.sizes = {
   },
 };
 
-const buttonSizeStyle = variant({ key: "sizes", prop: "size" });
+const buttonSizeStyle = variant({ key: "buttonSizes", prop: "size" });
 
 export const Button = styled.button`
 	align-items: center;
