@@ -48,15 +48,12 @@ storiesOf("Components|GhostButton", module).add("default", () => (
       <GhostButton mr="4" disabled>
         {back}
       </GhostButton>
-
       <GhostButton mr="4" variant="active">
         {back}
       </GhostButton>
-
       <GhostButton mr="4" px={2}>
         <Box mr={1}>{back}</Box> Back
       </GhostButton>
-
       <GhostButton mr="4" px={2}>
         Back
       </GhostButton>
@@ -72,11 +69,9 @@ storiesOf("Components|GhostButton", module).add("default", () => (
       <GhostButton size="medium" variant="active" mr="4">
         {Bookmark}
       </GhostButton>
-
       <GhostButton size="medium" mr="4" px={2}>
         <Box mr={1}>{Bookmark}</Box> Bookmark
       </GhostButton>
-
       <GhostButton size="medium" mr="4" px={2}>
         Bookmark
       </GhostButton>
