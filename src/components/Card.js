@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { space, width, maxWidth, themeGet, variant } from "styled-system";
+import { color, space, width, maxWidth, themeGet, variant } from "styled-system";
 import { transparentize } from "polished";
 import { theme, themeColor } from "../theme";
 
@@ -67,6 +67,7 @@ export const Card = styled.div`
   padding: ${themeGet("space.4")};
   border-radius: ${themeGet("radii.2")};
 
+	${color}
   ${space}
 	${width}
 	${maxWidth}
