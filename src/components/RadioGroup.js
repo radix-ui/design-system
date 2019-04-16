@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import omit from "lodash.omit";
+import pick from "lodash.pick";
 import { space, themeGet } from "styled-system";
 import { theme, themeColor } from "../theme";
 
@@ -68,32 +70,31 @@ const FakeRadio = styled.div`
     background-color: currentColor;
   }
 
-  input:checked + & {
+  ${Input}:checked + & {
     color: ${themeColor("blues.4")};
   }
 
-  input:hover + & {
+  ${Input}:hover + & {
     box-shadow: inset 0 0 0 1px ${themeColor("grays.4")};
   }
 
-  input:focus + & {
+  ${Input}:focus + & {
     box-shadow: inset 0 0 0 1px ${themeColor("blues.4")};
   }
 `;
 
 FakeRadio.defaultProps = { theme };
 
-export function Radio({ children, value, defaultChecked, checked, onChange, name, ...props }) {
+// eslint-disable-next-line
+const spacePropNames = Object.keys(space.propTypes);
+
+export function Radio({ children, ...props }) {
+  const spaceProps = pick(props, spacePropNames);
+  const inputProps = omit(props, spacePropNames);
+
   return (
-    <RadioWrapper {...props}>
-      <Input
-        type="radio"
-        value={value}
-        onChange={onChange}
-        defaultChecked={defaultChecked}
-        checked={checked}
-        name={name}
-      />
+    <RadioWrapper {...spaceProps}>
+      <Input type="radio" {...inputProps} />
       <FakeRadio />
       {children && <TextWrapper>{children}</TextWrapper>}
     </RadioWrapper>

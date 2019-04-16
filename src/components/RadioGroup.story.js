@@ -20,9 +20,9 @@ storiesOf("Components|RadioGroup", module).add("default", () => (
 
     <Box mb="4">
       <Text as="p">Uncontrolled and without children</Text>
-      <RadioGroup name="flexDirection">
-        <Radio value="row" defaultChecked />
-        <Radio value="column" />
+      <RadioGroup name="flexGrow">
+        <Radio value="true" defaultChecked />
+        <Radio value="false" />
       </RadioGroup>
     </Box>
 
@@ -36,12 +36,10 @@ storiesOf("Components|RadioGroup", module).add("default", () => (
               value={state.value}
               onChange={event => setState({ value: event.target.value })}
             >
-              <Radio ml={0} value="wrap">
+              <Radio value="wrap" disabled>
                 Wrap
               </Radio>
-              <Radio ml={0} value="nowrap">
-                Nowrap
-              </Radio>
+              <Radio value="nowrap">Nowrap</Radio>
             </RadioGroup>
             <Button my="3" onClick={() => setState({ value: "nowrap" })}>
               select nowrap

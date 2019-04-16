@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@reach/dialog": "^0.1.4",
+    "lodash.omit": "^4.5.0",
+    "lodash.pick": "^4.4.0",
     "polished": "^3.2.0",
     "react": "^16.8.4",
     "react-component-component": "^1.2.1",
