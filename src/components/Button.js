@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from "styled-components/macro";
+import styled, { css, keyframes } from "styled-components";
 import { theme, themeColor } from "../theme";
 import { space, buttonStyle, themeGet, variant } from "styled-system";
 
