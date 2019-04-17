@@ -3,8 +3,9 @@ import { themeGet } from "styled-system";
 export const theme = {
   breakpoints: ["38em", "62em", "68em", "110em"],
   fonts: {
-    normal: 'apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
-    mono: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
+    normal:
+      'apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
+    mono: 'Consolas, "Liberation Mono", Menlo, Courier, monospace'
   },
   fontSizes: [
     ".5625rem",
@@ -17,7 +18,7 @@ export const theme = {
     "1.438rem",
     "1.688rem",
     "2.188rem",
-    "3.625rem",
+    "3.625rem"
   ],
   space: [
     "0",
@@ -29,7 +30,7 @@ export const theme = {
     "2.1875rem",
     "2.8125rem",
     "4.063rem",
-    "5rem",
+    "5rem"
   ],
   radii: [0, ".1875rem", ".5rem", "625rem"],
   colors: {
@@ -39,7 +40,7 @@ export const theme = {
       "hsla(0, 0%, 0%, .7)",
       "hsla(0, 0%, 0%, .5)",
       "hsla(0, 0%, 0%, .3)",
-      "hsla(0, 0%, 0%, .1)",
+      "hsla(0, 0%, 0%, .1)"
     ],
     white: "hsl(0, 0%, 100%)",
     whites: [
@@ -47,7 +48,7 @@ export const theme = {
       "hsla(0, 0%, 100%, .7)",
       "hsla(0, 0%, 100%, .5)",
       "hsla(0, 0%, 100%, .3)",
-      "hsla(0, 0%, 100%, .1)",
+      "hsla(0, 0%, 100%, .1)"
     ],
     gray: "hsl(208, 16%, 76%)",
     grays: [
@@ -59,7 +60,7 @@ export const theme = {
       "hsl(208, 12%, 46%)",
       "hsl(208, 16%, 15%)",
       "hsl(208, 20%, 10%)",
-      "hsl(208, 24%, 7%)",
+      "hsl(208, 24%, 7%)"
     ],
     blue: "hsl(208, 98%, 50%)",
     blues: [
@@ -71,7 +72,7 @@ export const theme = {
       "hsl(208, 82%, 45%)",
       "hsl(208, 99%, 35%)",
       "hsl(208, 99%, 12%)",
-      "hsl(208, 99%, 10%)",
+      "hsl(208, 99%, 10%)"
     ],
     green: "hsl(142, 68%, 42%)",
     greens: [
@@ -83,7 +84,7 @@ export const theme = {
       "hsl(142, 62%, 40%)",
       "hsl(142, 60%, 38%)",
       "hsl(142, 60%, 12%)",
-      "hsl(142, 60%, 10%)",
+      "hsl(142, 60%, 10%)"
     ],
     yellow: "hsl(52, 100%, 46%)",
     yellows: [
@@ -95,7 +96,7 @@ export const theme = {
       "hsl(52, 100%, 40%)",
       "hsl(52, 100%, 18%)",
       "hsl(52, 100%, 13%)",
-      "hsl(52, 100%, 10%)",
+      "hsl(52, 100%, 10%)"
     ],
     red: "hsl(0, 100%, 45%)",
     reds: [
@@ -107,9 +108,9 @@ export const theme = {
       "hsl(0, 100%, 45%)",
       "hsl(0, 100%, 40%)",
       "hsl(0, 100%, 12%)",
-      "hsl(0, 100%, 10%)",
-    ],
-  },
+      "hsl(0, 100%, 10%)"
+    ]
+  }
 };
 
 export function themeColor(key, fallback) {

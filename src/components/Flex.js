@@ -8,7 +8,7 @@ import {
   alignItems,
   justifyContent,
   justifyItems,
-  order,
+  order
 } from "styled-system";
 
 import { Box } from "./Box";
@@ -26,5 +26,5 @@ export const Flex = styled(Box)`
 `;
 
 Flex.defaultProps = {
-  theme,
+  theme
 };

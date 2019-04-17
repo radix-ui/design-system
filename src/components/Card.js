@@ -1,11 +1,18 @@
 import styled, { css } from "styled-components";
-import { color, space, width, maxWidth, themeGet, variant } from "styled-system";
+import {
+  color,
+  space,
+  width,
+  maxWidth,
+  themeGet,
+  variant
+} from "styled-system";
 import { transparentize } from "polished";
 import { theme, themeColor } from "../theme";
 
 theme.cards = {
   border: {
-    boxShadow: `inset 0 0 0 1px ${themeColor("grays.3")}`,
+    boxShadow: `inset 0 0 0 1px ${themeColor("grays.3")}`
   },
   shadow: {
     position: "relative",
@@ -21,16 +28,19 @@ theme.cards = {
       pointerEvents: "none",
       transitionProperty: "all",
       transitionDuration: "80ms",
-      transitionTimingFunction: "linear",
+      transitionTimingFunction: "linear"
     },
     "&::before": {
-      boxShadow: `0 10px 38px -10px ${transparentize(0.65, themeColor("grays.8"))},
-        0 10px 20px -15px ${transparentize(0.8, themeColor("grays.8"))}`,
+      boxShadow: `0 10px 38px -10px ${transparentize(
+        0.65,
+        themeColor("grays.8")
+      )},
+        0 10px 20px -15px ${transparentize(0.8, themeColor("grays.8"))}`
     },
     "&::after": {
       boxShadow: `inset 0 0 0 1px ${themeColor("blues.4")}`,
-      opacity: 0,
-    },
+      opacity: 0
+    }
   },
   ghost: {
     position: "relative",
@@ -46,18 +56,21 @@ theme.cards = {
       pointerEvents: "none",
       transitionProperty: "all",
       transitionDuration: "80ms",
-      transitionTimingFunction: "linear",
+      transitionTimingFunction: "linear"
     },
     "&::before": {
-      boxShadow: `0 10px 38px -10px ${transparentize(0.65, themeColor("grays.8"))},
+      boxShadow: `0 10px 38px -10px ${transparentize(
+        0.65,
+        themeColor("grays.8")
+      )},
         0 10px 20px -15px ${transparentize(0.8, themeColor("grays.8"))}`,
-      opacity: 0,
+      opacity: 0
     },
     "&::after": {
       boxShadow: `inset 0 0 0 1px ${themeColor("blues.4")}`,
-      opacity: 0,
-    },
-  },
+      opacity: 0
+    }
+  }
 };
 
 const cardStyle = variant({ key: "cards", prop: "variant" });

@@ -7,15 +7,15 @@ theme.ghostButtons = {
     backgroundColor: themeColor("grays.2"),
     boxShadow: `inset 0 1px 0 0 ${themeColor("grays.4")}`,
     "&:hover": {
-      backgroundColor: themeColor("grays.2"),
+      backgroundColor: themeColor("grays.2")
     },
     "&:focus": {
-      boxShadow: `inset 0 1px 0 0 ${themeColor("grays.4")}`,
+      boxShadow: `inset 0 1px 0 0 ${themeColor("grays.4")}`
     },
     "&:active": {
-      boxShadow: `inset 0 1px 0 0 ${themeColor("grays.4")}`,
-    },
-  },
+      boxShadow: `inset 0 1px 0 0 ${themeColor("grays.4")}`
+    }
+  }
 };
 
 theme.ghostButtonSizes = {
@@ -25,9 +25,9 @@ theme.ghostButtonSizes = {
     fontSize: themeGet("fontSizes.3")({ theme }),
     "& svg": {
       width: themeGet("space.5")({ theme }),
-      height: themeGet("space.5")({ theme }),
-    },
-  },
+      height: themeGet("space.5")({ theme })
+    }
+  }
 };
 
 const ghostButtonStyle = variant({ key: "ghostButtons", prop: "variant" });

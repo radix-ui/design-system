@@ -9,7 +9,7 @@ import {
   lineHeight,
   fontWeight,
   letterSpacing,
-  themeGet,
+  themeGet
 } from "styled-system";
 import { theme, themeColor } from "../theme";
 

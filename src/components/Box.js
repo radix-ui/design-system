@@ -20,7 +20,7 @@ import {
   textAlign,
   top,
   width,
-  zIndex,
+  zIndex
 } from "styled-system";
 
 export const Box = styled.div`
@@ -47,5 +47,5 @@ export const Box = styled.div`
 `;
 
 Box.defaultProps = {
-  theme,
+  theme
 };

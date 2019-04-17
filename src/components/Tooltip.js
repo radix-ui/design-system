@@ -216,5 +216,5 @@ export function Tooltip({ text, ...props }) {
 
 Tooltip.defaultProps = {
   theme,
-  position: "top",
+  position: "top"
 };

@@ -1,5 +1,13 @@
 import styled from "styled-components";
-import { color, space, fontSize, textAlign, lineHeight, fontWeight, themeGet } from "styled-system";
+import {
+  color,
+  space,
+  fontSize,
+  textAlign,
+  lineHeight,
+  fontWeight,
+  themeGet
+} from "styled-system";
 import { theme, themeColor } from "../theme";
 
 export const Heading = styled.h1`

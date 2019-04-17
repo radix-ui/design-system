@@ -37,7 +37,9 @@ storiesOf("Components|Select", module).add("default", () => (
             <Button mr="2" onClick={() => setState({ value: "option2" })}>
               Select option 2
             </Button>
-            <Button onClick={() => setState({ value: "option3" })}>Select option 3</Button>
+            <Button onClick={() => setState({ value: "option3" })}>
+              Select option 3
+            </Button>
           </>
         )}
       </Component>

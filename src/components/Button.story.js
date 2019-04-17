@@ -85,8 +85,16 @@ storiesOf("Components|Button", module).add("default", () => (
             xmlns="http://www.w3.org/2000/svg"
             style={{ display: "block" }}
           >
-            <path d="M0 0H14" transform="translate(5.5 12.5)" strokeLinecap="round" />
-            <path d="M0 14V0" transform="translate(12.5 5.5)" strokeLinecap="round" />
+            <path
+              d="M0 0H14"
+              transform="translate(5.5 12.5)"
+              strokeLinecap="round"
+            />
+            <path
+              d="M0 14V0"
+              transform="translate(12.5 5.5)"
+              strokeLinecap="round"
+            />
           </svg>
         </Box>
         Follow
@@ -102,8 +110,16 @@ storiesOf("Components|Button", module).add("default", () => (
             xmlns="http://www.w3.org/2000/svg"
             style={{ display: "block" }}
           >
-            <path d="M0 0H14" transform="translate(5.5 12.5)" strokeLinecap="round" />
-            <path d="M0 14V0" transform="translate(12.5 5.5)" strokeLinecap="round" />
+            <path
+              d="M0 0H14"
+              transform="translate(5.5 12.5)"
+              strokeLinecap="round"
+            />
+            <path
+              d="M0 14V0"
+              transform="translate(12.5 5.5)"
+              strokeLinecap="round"
+            />
           </svg>
         </Box>
         Follow

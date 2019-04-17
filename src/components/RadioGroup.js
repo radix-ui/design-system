@@ -5,7 +5,14 @@ import pick from "lodash.pick";
 import { space, themeGet } from "styled-system";
 import { theme, themeColor } from "../theme";
 
-export function RadioGroup({ as: Component = "div", children, value, onChange, name, ...props }) {
+export function RadioGroup({
+  as: Component = "div",
+  children,
+  value,
+  onChange,
+  name,
+  ...props
+}) {
   const isControlled = Boolean(value);
 
   return (
@@ -14,7 +21,7 @@ export function RadioGroup({ as: Component = "div", children, value, onChange, n
         React.cloneElement(radio, {
           name,
           onChange,
-          ...(isControlled ? { checked: value === radio.props.value } : {}),
+          ...(isControlled ? { checked: value === radio.props.value } : {})
         })
       )}
     </Component>

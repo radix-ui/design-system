@@ -13,7 +13,11 @@ const emailIcon = (
     fill="none"
     stroke="currentColor"
   >
-    <path d="M5 8L12.5 13.5L20 8" strokeLinecap="round" strokeLinejoin="round" />
+    <path
+      d="M5 8L12.5 13.5L20 8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
     <path d="M5 17L10.5 12.5" strokeLinecap="round" strokeLinejoin="round" />
     <path d="M20 17L14.5 12.5" strokeLinecap="round" strokeLinejoin="round" />
     <path
@@ -70,7 +74,12 @@ storiesOf("Components|Input", module).add("default", () => (
     </Box>
 
     <Box mb="4" position="relative">
-      <Input size="medium" placeholder="e.g. joe@example.com" type="email" paddingLeft={6} />
+      <Input
+        size="medium"
+        placeholder="e.g. joe@example.com"
+        type="email"
+        paddingLeft={6}
+      />
 
       <Box
         position="absolute"

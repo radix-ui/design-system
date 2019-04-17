@@ -5,7 +5,9 @@ import { space, buttonStyle, themeGet, variant } from "styled-system";
 const waitingAnimation = props => keyframes`
   100% {
     transform: translateX(${
-      props.size === "medium" ? themeGet("space.9")(props) : themeGet("space.7")(props)
+      props.size === "medium"
+        ? themeGet("space.9")(props)
+        : themeGet("space.7")(props)
     })
 	}
 `;
@@ -18,46 +20,46 @@ theme.buttons = {
     backgroundColor: themeColor("blues.0"),
     boxShadow: `inset 0 0 0 1px ${themeColor("blues.3")}`,
     "&:hover": {
-      boxShadow: `inset 0 0 0 1px ${themeColor("blues.4")}`,
+      boxShadow: `inset 0 0 0 1px ${themeColor("blues.4")}`
     },
     "&:active": {
       backgroundColor: themeColor("blues.1"),
-      boxShadow: `inset 0 0 0 1px ${themeColor("blues.4")}`,
-    },
+      boxShadow: `inset 0 0 0 1px ${themeColor("blues.4")}`
+    }
   },
   green: {
     color: themeColor("greens.5"),
     backgroundColor: themeColor("greens.0"),
     boxShadow: `inset 0 0 0 1px ${themeColor("greens.3")}`,
     "&:hover": {
-      boxShadow: `inset 0 0 0 1px ${themeColor("greens.4")}`,
+      boxShadow: `inset 0 0 0 1px ${themeColor("greens.4")}`
     },
     "&:active": {
       backgroundColor: themeColor("greens.1"),
-      boxShadow: `inset 0 0 0 1px ${themeColor("greens.4")}`,
-    },
+      boxShadow: `inset 0 0 0 1px ${themeColor("greens.4")}`
+    }
   },
   yellow: {
-    color: themeColor("yellows.5"),
+    color: themeColor("yellows.5")
   },
   red: {
-    color: themeColor("reds.5"),
+    color: themeColor("reds.5")
   },
   active: {
     color: themeColor("grays.5"),
     backgroundColor: themeColor("grays.1"),
-    boxShadow: `inset 0 1px 1px 0 ${themeColor("blacks.4")}, inset 0 0 0 1px ${themeColor(
-      "grays.3"
-    )}`,
+    boxShadow: `inset 0 1px 1px 0 ${themeColor(
+      "blacks.4"
+    )}, inset 0 0 0 1px ${themeColor("grays.3")}`,
     "&:hover": {
-      boxShadow: `inset 0 1px 1px 0 ${themeColor("blacks.4")}, inset 0 0 0 1px ${themeColor(
-        "grays.4"
-      )}`,
+      boxShadow: `inset 0 1px 1px 0 ${themeColor(
+        "blacks.4"
+      )}, inset 0 0 0 1px ${themeColor("grays.4")}`
     },
     "&:active": {
-      backgroundColor: themeColor("grays.2"),
-    },
-  },
+      backgroundColor: themeColor("grays.2")
+    }
+  }
 };
 
 theme.buttonSizes = {
@@ -65,8 +67,8 @@ theme.buttonSizes = {
     fontSize: themeGet("fontSizes.3")({ theme }),
     padding: `0 ${themeGet("space.3")({ theme })}`,
     height: themeGet("space.6")({ theme }),
-    minWidth: themeGet("space.6")({ theme }),
-  },
+    minWidth: themeGet("space.6")({ theme })
+  }
 };
 
 const buttonSizeStyle = variant({ key: "buttonSizes", prop: "size" });
@@ -122,7 +124,9 @@ export const Button = styled.button`
     props.waiting &&
     css`
 			background-color: ${themeColor("grays.2")};
-			box-shadow: inset 0 1px 1px 0 ${themeColor("blacks.4")}, inset 0 0 0 1px ${themeColor("grays.3")};
+			box-shadow: inset 0 1px 1px 0 ${themeColor(
+        "blacks.4"
+      )}, inset 0 0 0 1px ${themeColor("grays.3")};
     	color: transparent
 			overflow: hidden;
 			pointer-events: none;
@@ -151,5 +155,5 @@ export const Button = styled.button`
 `;
 
 Button.defaultProps = {
-  theme,
+  theme
 };

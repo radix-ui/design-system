@@ -1,22 +1,30 @@
 import styled, { css } from "styled-components";
-import { color, space, width, maxWidth, textAlign, themeGet, variant } from "styled-system";
+import {
+  color,
+  space,
+  width,
+  maxWidth,
+  textAlign,
+  themeGet,
+  variant
+} from "styled-system";
 import { theme, themeColor } from "../theme";
 
 theme.inputs = {
   ghost: {
     boxShadow: "none",
     "&:focus": {
-      boxShadow: "none",
-    },
-  },
+      boxShadow: "none"
+    }
+  }
 };
 
 theme.inputSizes = {
   medium: {
     fontSize: themeGet("fontSizes.3")({ theme }),
     height: themeGet("space.6")({ theme }),
-    lineHeight: themeGet("space.6")({ theme }),
-  },
+    lineHeight: themeGet("space.6")({ theme })
+  }
 };
 
 const placeholderStyle = css`

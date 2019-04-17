@@ -60,11 +60,19 @@ export function Select({ children, value, onChange, ...props }) {
           fill="none"
           stroke="currentColor"
           style={{
-            display: "block",
+            display: "block"
           }}
         >
-          <path d="M14.5 5.5L12.5 3.5L10.5 5.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M14.5 9.5L12.5 11.5L10.5 9.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path
+            d="M14.5 5.5L12.5 3.5L10.5 5.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M14.5 9.5L12.5 11.5L10.5 9.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       </IconWrapper>
     </Wrapper>

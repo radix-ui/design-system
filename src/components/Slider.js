@@ -120,7 +120,9 @@ export const Slider = ({ min, max, value, onChange, props }) => {
         {...props}
         type="range"
         value={stateValue}
-        onChange={isControlled ? onChange : event => setStateValue(event.target.value)}
+        onChange={
+          isControlled ? onChange : event => setStateValue(event.target.value)
+        }
       />
       <Track>
         <InnerTrack style={{ width: `${percentage}%` }} />
@@ -132,5 +134,5 @@ export const Slider = ({ min, max, value, onChange, props }) => {
 Slider.defaultProps = {
   step: "1",
   min: 0,
-  max: 100,
+  max: 100
 };
