@@ -1,13 +1,15 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Box } from "./Box";
-import { Button } from "./Button";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Box } from './Box';
+import { Button } from './Button';
 
-storiesOf("Components|Button", module).add("default", () => (
+storiesOf('Components|Button', module).add('default', () => (
   <>
     <Box mb="4">
       <Button mr="4">Button</Button>
-      <Button size="medium">Button</Button>
+      <Button size="medium" variant="benoit">
+        Button
+      </Button>
     </Box>
 
     <Box mb="4">
@@ -83,7 +85,7 @@ storiesOf("Components|Button", module).add("default", () => (
             fill="none"
             stroke="currentColor"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ display: "block" }}
+            style={{ display: 'block' }}
           >
             <path
               d="M0 0H14"
@@ -108,7 +110,7 @@ storiesOf("Components|Button", module).add("default", () => (
             fill="none"
             stroke="currentColor"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ display: "block" }}
+            style={{ display: 'block' }}
           >
             <path
               d="M0 0H14"

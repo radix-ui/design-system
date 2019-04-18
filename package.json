@@ -1,9 +1,15 @@
 {
   "name": "radix-poc",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.1-0",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@reach/dialog": "^0.2.1",
+    "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
     "polished": "^3.2.0",
@@ -16,13 +22,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public --ci",
     "build-storybook": "build-storybook -s public",
     "prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}\"",
-    "format": "npm run prettier -- --write "
+    "format": "npm run prettier -- --write ",
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "release": "np"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,7 +52,10 @@
     "@types/styled-components": "^4.1.14",
     "@types/styled-system": "^4.1.0",
     "babel-loader": "8.0.5",
+    "np": "^4.0.2",
     "prettier": "^1.17.0",
-    "typescript": "^3.4.3"
+    "rollup": "^1.10.0",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "typescript": "3.3.3333"
   }
 }

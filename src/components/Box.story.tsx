@@ -12,6 +12,7 @@ storiesOf("Components|Box", module).add("default", () => (
         <Box height={50} bg="blue" mb="4" />
         <Box height={50} bg="blue" mb="4" />
         <Box height={50} bg="blue" />
+        <Box borderRadius={2} paddingRight={1} marginRight={1} />
       </Box>
     </Box>
   </>
