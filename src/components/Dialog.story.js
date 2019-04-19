@@ -1,12 +1,12 @@
-import React from "react";
-import Component from "react-component-component";
-import { storiesOf } from "@storybook/react";
-import { Box } from "./Box";
-import { Text } from "./Text";
-import { Dialog } from "./Dialog";
-import { Button } from "./Button";
+import React from 'react';
+import Component from 'react-component-component';
+import { storiesOf } from '@storybook/react';
+import { Box } from './Box';
+import { Text } from './Text';
+import { Dialog } from './Dialog';
+import { Button } from './Button';
 
-storiesOf("Components|Dialog", module).add("default", () => (
+storiesOf('Components|Dialog', module).add('default', () => (
   <>
     <Box mb="4">
       <Text as="p" mb="2">

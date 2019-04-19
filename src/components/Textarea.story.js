@@ -1,9 +1,9 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Box } from "./Box";
-import { Textarea } from "./Textarea";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Box } from './Box';
+import { Textarea } from './Textarea';
 
-storiesOf("Components|Textarea", module).add("default", () => (
+storiesOf('Components|Textarea', module).add('default', () => (
   <Box maxWidth="300px">
     <Box mb="4">
       <Textarea padding={1} placeholder="Your email" />

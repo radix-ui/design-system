@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { theme } from "../theme";
+import styled from 'styled-components';
 import {
   flexBasis,
   FlexBasisProps,
@@ -17,8 +16,8 @@ import {
   JustifyItemsProps,
   order,
   OrderProps,
-} from "styled-system";
-import { Box } from "./Box";
+} from 'styled-system';
+import { Box } from './Box';
 
 type FlexProps = FlexBasisProps &
   FlexDirectionProps &
@@ -40,7 +39,3 @@ export const Flex = styled(Box)<FlexProps>`
 	${justifyItems}
 	${order}
 `;
-
-Flex.defaultProps = {
-  theme,
-};

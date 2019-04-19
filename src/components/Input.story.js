@@ -1,8 +1,8 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Box } from "./Box";
-import { Flex } from "./Flex";
-import { Input } from "./Input";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Box } from './Box';
+import { Flex } from './Flex';
+import { Input } from './Input';
 
 const emailIcon = (
   <svg
@@ -46,7 +46,7 @@ const searchIcon = (
   </svg>
 );
 
-storiesOf("Components|Input", module).add("default", () => (
+storiesOf('Components|Input', module).add('default', () => (
   <Box maxWidth="300px">
     <Box mb="4">
       <Input placeholder="Your email" />
@@ -61,7 +61,7 @@ storiesOf("Components|Input", module).add("default", () => (
         top={0}
         right={0}
         color="grays.5"
-        style={{ pointerEvents: "none" }}
+        style={{ pointerEvents: 'none' }}
       >
         <Flex alignItems="center" height="100%">
           {searchIcon}
@@ -87,7 +87,7 @@ storiesOf("Components|Input", module).add("default", () => (
         top={0}
         left={0}
         color="grays.5"
-        style={{ pointerEvents: "none" }}
+        style={{ pointerEvents: 'none' }}
       >
         <Flex alignItems="center" height="100%">
           {emailIcon}

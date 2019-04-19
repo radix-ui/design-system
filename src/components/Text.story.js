@@ -1,9 +1,9 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Box } from "./Box";
-import { Text } from "./Text";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Box } from './Box';
+import { Text } from './Text';
 
-storiesOf("Components|Text", module).add("default", () => (
+storiesOf('Components|Text', module).add('default', () => (
   <>
     <Box mb="4">
       <Text as="p" fontSize={0}>

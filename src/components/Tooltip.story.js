@@ -1,12 +1,12 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Box } from "./Box";
-import { Flex } from "./Flex";
-import { Button } from "./Button";
-import { Text } from "./Text";
-import { Tooltip } from "./Tooltip";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Box } from './Box';
+import { Flex } from './Flex';
+import { Button } from './Button';
+import { Text } from './Text';
+import { Tooltip } from './Tooltip';
 
-storiesOf("Components|Tooltip", module).add("default", () => (
+storiesOf('Components|Tooltip', module).add('default', () => (
   <>
     <Box mb="6" mt="6" ml="200px">
       <Text>Tooltip on Buttons</Text>
@@ -116,7 +116,7 @@ storiesOf("Components|Tooltip", module).add("default", () => (
         Tooltip on Text
       </Text>
       <Text fontSize="3" color="blue" fontWeight="bold">
-        This panel contains information about CSS{" "}
+        This panel contains information about CSS{' '}
         <Tooltip text="Content, padding, border, and margin">
           <Text color="black">Box Model</Text>.
         </Tooltip>

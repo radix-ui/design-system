@@ -1,9 +1,9 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Box } from "./Box";
-import { Heading } from "./Heading";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Box } from './Box';
+import { Heading } from './Heading';
 
-storiesOf("Components|Heading", module).add("default", () => (
+storiesOf('Components|Heading', module).add('default', () => (
   <>
     <Box mb="4">
       <Heading fontSize="10" mb="3">

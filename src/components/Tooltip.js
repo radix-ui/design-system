@@ -1,7 +1,7 @@
-import React from "react";
-import styled, { css, keyframes } from "styled-components";
-import { themeGet } from "styled-system";
-import { theme, themeColor } from "../theme";
+import React from 'react';
+import styled, { css, keyframes } from 'styled-components';
+import { themeGet } from 'styled-system';
+import { themeColor } from '../theme';
 
 const tooltipAppear = keyframes`
 	from {
@@ -13,8 +13,8 @@ const tooltipAppear = keyframes`
 	}
 `;
 
-const ARROW_SIZE = "6px";
-const OFFSET = "6px";
+const ARROW_SIZE = '6px';
+const OFFSET = '6px';
 
 const BaseTooltip = styled.span`
   position: relative;
@@ -42,18 +42,18 @@ const BaseTooltip = styled.span`
     content: attr(aria-label);
     position: absolute;
     z-index: 1000000;
-    font-family: ${themeGet("fonts.normal")};
-    font-size: ${themeGet("fontSizes.2")};
-    line-height: ${themeGet("fontSizes.2")};
-    padding: ${themeGet("space.2")} ${themeGet("space.2")};
-    color: ${themeColor("white")};
+    font-family: ${themeGet('fonts.normal')};
+    font-size: ${themeGet('fontSizes.2')};
+    line-height: ${themeGet('fontSizes.2')};
+    padding: ${themeGet('space.2')} ${themeGet('space.2')};
+    color: ${themeColor('white')};
     text-align: center;
     word-wrap: break-word;
     white-space: pre;
     font-weight: 400;
     pointer-events: none;
     background: hsla(0, 0%, 0%, .8); /* TODO: add to theme */
-    border-radius: ${themeGet("radii.1")};
+    border-radius: ${themeGet('radii.1')};
 		display: none;
     opacity: 0;
   }
@@ -74,7 +74,7 @@ const BaseTooltip = styled.span`
   }
 
   ${props =>
-    props.position === "top" &&
+    props.position === 'top' &&
     css`
       &::before {
         top: calc(-${ARROW_SIZE} - ${OFFSET});
@@ -92,7 +92,7 @@ const BaseTooltip = styled.span`
     `}
 
   ${props =>
-    props.position === "bottom" &&
+    props.position === 'bottom' &&
     css`
       &::before {
         bottom: calc(-${ARROW_SIZE} - ${OFFSET});
@@ -110,7 +110,7 @@ const BaseTooltip = styled.span`
     `}
 
 	${props =>
-    props.position === "right" &&
+    props.position === 'right' &&
     css`
       &::before {
         right: calc(-${ARROW_SIZE} - ${OFFSET});
@@ -128,7 +128,7 @@ const BaseTooltip = styled.span`
     `}
 
 		${props =>
-      props.position === "left" &&
+      props.position === 'left' &&
       css`
         &::before {
           left: calc(-${ARROW_SIZE} - ${OFFSET});
@@ -146,8 +146,8 @@ const BaseTooltip = styled.span`
       `}
 
 			${props =>
-        props.align === "start" &&
-        (props.position === "top" || props.position === "bottom") &&
+        props.align === 'start' &&
+        (props.position === 'top' || props.position === 'bottom') &&
         css`
           &::before {
             left: ${ARROW_SIZE};
@@ -161,8 +161,8 @@ const BaseTooltip = styled.span`
         `}
 
 			${props =>
-        props.align === "end" &&
-        (props.position === "top" || props.position === "bottom") &&
+        props.align === 'end' &&
+        (props.position === 'top' || props.position === 'bottom') &&
         css`
           &::before {
             right: ${ARROW_SIZE};
@@ -178,8 +178,8 @@ const BaseTooltip = styled.span`
         `}
 
 		${props =>
-      props.align === "start" &&
-      (props.position === "right" || props.position === "left") &&
+      props.align === 'start' &&
+      (props.position === 'right' || props.position === 'left') &&
       css`
         &::before {
           top: ${ARROW_SIZE};
@@ -193,8 +193,8 @@ const BaseTooltip = styled.span`
       `}
 
 		${props =>
-      props.align === "end" &&
-      (props.position === "right" || props.position === "left") &&
+      props.align === 'end' &&
+      (props.position === 'right' || props.position === 'left') &&
       css`
         &::before {
           top: auto;
@@ -215,6 +215,5 @@ export function Tooltip({ text, ...props }) {
 }
 
 Tooltip.defaultProps = {
-  theme,
-  position: "top"
+  position: 'top',
 };

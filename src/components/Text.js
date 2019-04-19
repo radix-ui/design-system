@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import {
   color,
   space,
@@ -9,14 +9,14 @@ import {
   lineHeight,
   fontWeight,
   letterSpacing,
-  themeGet
-} from "styled-system";
-import { theme, themeColor } from "../theme";
+  themeGet,
+} from 'styled-system';
+import { themeColor } from '../theme';
 
 export const Text = styled.span`
-	font-family: ${themeGet("fonts.normal")};
-	font-size: ${themeGet("fontSizes.4")};
-	color: ${themeColor("grays.7")};
+	font-family: ${themeGet('fonts.normal')};
+	font-size: ${themeGet('fontSizes.4')};
+	color: ${themeColor('grays.7')};
 	margin: 0;
 	padding: 0;
 
@@ -30,5 +30,3 @@ export const Text = styled.span`
   ${fontWeight}
   ${letterSpacing}
 `;
-
-Text.defaultProps = { theme };

@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { width, space, themeGet } from "styled-system";
-import { theme, themeColor } from "../theme";
+import React from 'react';
+import styled from 'styled-components';
+import { width, space, themeGet } from 'styled-system';
+import { themeColor } from '../theme';
 
 const ICON_SIZE = 15;
 
@@ -11,29 +11,25 @@ const Wrapper = styled.div`
   ${space}
 `;
 
-Wrapper.defaultProps = { theme };
-
 const StyledSelect = styled.select`
   appearance: none;
   background-color: transparent;
-  height: ${themeGet("space.5")};
-  line-height: ${themeGet("space.5")};
-  font-family: ${themeGet("fonts.normal")};
+  height: ${themeGet('space.5')};
+  line-height: ${themeGet('space.5')};
+  font-family: ${themeGet('fonts.normal')};
   padding: 0;
-  font-size: ${themeGet("fontSizes.2")};
+  font-size: ${themeGet('fontSizes.2')};
   border-radius: 0;
-  padding-right: ${themeGet("space.3")};
+  padding-right: ${themeGet('space.3')};
   border: none;
   outline: none;
   width: 100%;
-  box-shadow: inset 0 -1px 0 0 ${themeColor("grays.3")};
+  box-shadow: inset 0 -1px 0 0 ${themeColor('grays.3')};
 
   &:focus {
-    box-shadow: inset 0 -1px 0 0 ${themeColor("blues.4")};
+    box-shadow: inset 0 -1px 0 0 ${themeColor('blues.4')};
   }
 `;
-
-StyledSelect.defaultProps = { theme };
 
 const IconWrapper = styled.div`
   position: absolute;
@@ -60,7 +56,7 @@ export function Select({ children, value, onChange, ...props }) {
           fill="none"
           stroke="currentColor"
           style={{
-            display: "block"
+            display: 'block',
           }}
         >
           <path
@@ -78,5 +74,3 @@ export function Select({ children, value, onChange, ...props }) {
     </Wrapper>
   );
 }
-
-Select.defaultProps = { theme };

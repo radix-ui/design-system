@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import {
   alignSelf,
   flex,
@@ -6,34 +6,34 @@ import {
   maxWidth,
   space,
   themeGet,
-  variant
-} from "styled-system";
-import { theme } from "../theme";
+  variant,
+} from 'styled-system';
+import { theme } from '../theme';
 
 theme.containerSizes = {
   small: {
-    paddingLeft: themeGet("space.5")({ theme }),
-    paddingRight: themeGet("space.5")({ theme }),
-    maxWidth: "25rem"
+    paddingLeft: themeGet('space.5')({ theme }),
+    paddingRight: themeGet('space.5')({ theme }),
+    maxWidth: '25rem',
   },
   medium: {
-    paddingLeft: themeGet("space.5")({ theme }),
-    paddingRight: themeGet("space.5")({ theme }),
-    maxWidth: "45rem"
+    paddingLeft: themeGet('space.5')({ theme }),
+    paddingRight: themeGet('space.5')({ theme }),
+    maxWidth: '45rem',
   },
   large: {
-    paddingLeft: themeGet("space.5")({ theme }),
-    paddingRight: themeGet("space.5")({ theme }),
-    maxWidth: "65rem"
+    paddingLeft: themeGet('space.5')({ theme }),
+    paddingRight: themeGet('space.5')({ theme }),
+    maxWidth: '65rem',
   },
   fluid: {
-    paddingLeft: themeGet("space.5")({ theme }),
-    paddingRight: themeGet("space.5")({ theme }),
-    maxWidth: "100%"
-  }
+    paddingLeft: themeGet('space.5')({ theme }),
+    paddingRight: themeGet('space.5')({ theme }),
+    maxWidth: '100%',
+  },
 };
 
-const containerStyle = variant({ key: "containerSizes", prop: "size" });
+const containerStyle = variant({ key: 'containerSizes', prop: 'size' });
 
 export const Container = styled.div`
 	margin-left: auto;
@@ -47,7 +47,3 @@ export const Container = styled.div`
   ${space}
 	${containerStyle}
 `;
-
-Container.defaultProps = {
-  theme
-};

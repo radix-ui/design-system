@@ -1,10 +1,10 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Box } from "./Box";
-import { Text } from "./Text";
-import { Container } from "./Container";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Box } from './Box';
+import { Text } from './Text';
+import { Container } from './Container';
 
-storiesOf("Components|Container", module).add("default", () => (
+storiesOf('Components|Container', module).add('default', () => (
   <>
     <Box marginBottom={4}>
       <Container>

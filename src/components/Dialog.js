@@ -1,9 +1,9 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
-import { transparentize } from "polished";
-import { DialogOverlay, DialogContent } from "@reach/dialog";
-import "@reach/dialog/styles.css";
-import { theme } from "../theme";
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
+import { transparentize } from 'polished';
+import { DialogOverlay, DialogContent } from '@reach/dialog';
+import '@reach/dialog/styles.css';
+import { theme } from '../theme';
 
 export const Dialog = ({ isOpen, onDismiss, children, variant, ...props }) => {
   return (
@@ -17,11 +17,11 @@ export const Dialog = ({ isOpen, onDismiss, children, variant, ...props }) => {
 
 const overlayEnterKeyframes = keyframes`
 	0% {
-		background-color: ${transparentize(1, "white")};
+		background-color: ${transparentize(1, 'white')};
 	}
 
 	100% {
-		background-color: ${transparentize(0.5, "white")};
+		background-color: ${transparentize(0.5, 'white')};
 	}
 `;
 

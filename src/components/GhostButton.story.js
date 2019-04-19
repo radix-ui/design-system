@@ -1,7 +1,7 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Box } from "./Box";
-import { GhostButton } from "./GhostButton";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Box } from './Box';
+import { GhostButton } from './GhostButton';
 
 const Bookmark = (
   <svg
@@ -11,7 +11,7 @@ const Bookmark = (
     fill="none"
     stroke="currentColor"
     xmlns="http://www.w3.org/2000/svg"
-    style={{ display: "block" }}
+    style={{ display: 'block' }}
   >
     <path
       d="M7.5 4.5V20.5L12.5 16.5L17.5 20.5V4.5H7.5Z"
@@ -41,7 +41,7 @@ const back = (
   </svg>
 );
 
-storiesOf("Components|GhostButton", module).add("default", () => (
+storiesOf('Components|GhostButton', module).add('default', () => (
   <>
     <Box mb="4">
       <GhostButton mr="4">{back}</GhostButton>

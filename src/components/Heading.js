@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import {
   color,
   space,
@@ -6,13 +6,13 @@ import {
   textAlign,
   lineHeight,
   fontWeight,
-  themeGet
-} from "styled-system";
-import { theme, themeColor } from "../theme";
+  themeGet,
+} from 'styled-system';
+import { themeColor } from '../theme';
 
 export const Heading = styled.h1`
-	color: ${themeColor("grays.8")};
-  font-family: ${themeGet("fonts.normal")};
+	color: ${themeColor('grays.8')};
+  font-family: ${themeGet('fonts.normal')};
   margin: 0;
 
 	${color}
@@ -22,5 +22,3 @@ export const Heading = styled.h1`
   ${lineHeight}
   ${fontWeight}
 `;
-
-Heading.defaultProps = { theme };

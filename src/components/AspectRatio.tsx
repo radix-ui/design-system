@@ -39,5 +39,3 @@ export const AspectRatio: FC<AspectRatioProps> = ({
     </Wrapper>
   );
 };
-
-AspectRatio.defaultProps = { theme };

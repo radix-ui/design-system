@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import omit from "lodash.omit";
-import pick from "lodash.pick";
-import { space, themeGet } from "styled-system";
-import { theme, themeColor } from "../theme";
+import React from 'react';
+import styled from 'styled-components';
+import omit from 'lodash.omit';
+import pick from 'lodash.pick';
+import { space, themeGet } from 'styled-system';
+import { themeColor } from '../theme';
 
 export function RadioGroup({
-  as: Component = "div",
+  as: Component = 'div',
   children,
   value,
   onChange,
@@ -21,7 +21,7 @@ export function RadioGroup({
         React.cloneElement(radio, {
           name,
           onChange,
-          ...(isControlled ? { checked: value === radio.props.value } : {})
+          ...(isControlled ? { checked: value === radio.props.value } : {}),
         })
       )}
     </Component>
@@ -33,8 +33,6 @@ const RadioWrapper = styled.label`
 
   ${space}
 `;
-
-RadioWrapper.defaultProps = { theme };
 
 const Input = styled.input`
   appearance: none;
@@ -49,27 +47,25 @@ const Input = styled.input`
 `;
 
 const TextWrapper = styled.span`
-  line-height: ${themeGet("space.5")};
-  font-family: ${themeGet("fonts.normal")};
-  font-size: ${themeGet("fontSizes.2")};
-  margin-left: ${themeGet("space.1")};
-  margin-right: ${themeGet("space.3")};
+  line-height: ${themeGet('space.5')};
+  font-family: ${themeGet('fonts.normal')};
+  font-size: ${themeGet('fontSizes.2')};
+  margin-left: ${themeGet('space.1')};
+  margin-right: ${themeGet('space.3')};
 `;
 
-TextWrapper.defaultProps = { theme };
-
 const FakeRadio = styled.div`
-  width: ${themeGet("space.4")};
-  height: ${themeGet("space.4")};
+  width: ${themeGet('space.4')};
+  height: ${themeGet('space.4')};
   border-radius: 50%;
-  box-shadow: inset 0 0 0 1px ${themeColor("grays.3")};
+  box-shadow: inset 0 0 0 1px ${themeColor('grays.3')};
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: transparent;
 
   &::before {
-    content: "";
+    content: '';
     width: 50%;
     height: 50%;
     color: inherit;
@@ -78,19 +74,17 @@ const FakeRadio = styled.div`
   }
 
   ${Input}:checked + & {
-    color: ${themeColor("blues.4")};
+    color: ${themeColor('blues.4')};
   }
 
   ${Input}:hover + & {
-    box-shadow: inset 0 0 0 1px ${themeColor("grays.4")};
+    box-shadow: inset 0 0 0 1px ${themeColor('grays.4')};
   }
 
   ${Input}:focus + & {
-    box-shadow: inset 0 0 0 1px ${themeColor("blues.4")};
+    box-shadow: inset 0 0 0 1px ${themeColor('blues.4')};
   }
 `;
-
-FakeRadio.defaultProps = { theme };
 
 // eslint-disable-next-line
 const spacePropNames = Object.keys(space.propTypes);
@@ -107,5 +101,3 @@ export function Radio({ children, ...props }) {
     </RadioWrapper>
   );
 }
-
-Radio.defaultProps = { theme };

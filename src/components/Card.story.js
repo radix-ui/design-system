@@ -1,11 +1,11 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Flex } from "./Flex";
-import { Heading } from "./Heading";
-import { Text } from "./Text";
-import { Card, CardLink } from "./Card";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Flex } from './Flex';
+import { Heading } from './Heading';
+import { Text } from './Text';
+import { Card, CardLink } from './Card';
 
-storiesOf("Components|Card", module).add("default", () => (
+storiesOf('Components|Card', module).add('default', () => (
   <>
     <Flex>
       <Card variant="border" m={4} maxWidth="300px">

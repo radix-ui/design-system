@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { theme } from "../theme";
+import styled from 'styled-components';
+
 import {
   alignSelf,
   AlignSelfProps,
@@ -41,7 +41,7 @@ import {
   WidthProps,
   zIndex,
   ZIndexProps,
-} from "styled-system";
+} from 'styled-system';
 
 type BoxProps = AlignSelfProps &
   BordersProps &
@@ -86,7 +86,3 @@ export const Box = styled.div<BoxProps>`
 	${width}
 	${zIndex}
 `;
-
-Box.defaultProps = {
-  theme,
-};

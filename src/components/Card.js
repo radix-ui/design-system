@@ -1,84 +1,84 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 import {
   color,
   space,
   width,
   maxWidth,
   themeGet,
-  variant
-} from "styled-system";
-import { transparentize } from "polished";
-import { theme, themeColor } from "../theme";
+  variant,
+} from 'styled-system';
+import { transparentize } from 'polished';
+import { theme, themeColor } from '../theme';
 
 theme.cards = {
   border: {
-    boxShadow: `inset 0 0 0 1px ${themeColor("grays.3")}`
+    boxShadow: `inset 0 0 0 1px ${themeColor('grays.3')}`,
   },
   shadow: {
-    position: "relative",
-    transition: "opacity 80ms linear, transform 150ms ease",
-    "&::before, &::after": {
+    position: 'relative',
+    transition: 'opacity 80ms linear, transform 150ms ease',
+    '&::before, &::after': {
       content: `""`,
-      position: "absolute",
+      position: 'absolute',
       top: 0,
       left: 0,
-      width: "100%",
-      height: "100%",
-      borderRadius: "inherit",
-      pointerEvents: "none",
-      transitionProperty: "all",
-      transitionDuration: "80ms",
-      transitionTimingFunction: "linear"
+      width: '100%',
+      height: '100%',
+      borderRadius: 'inherit',
+      pointerEvents: 'none',
+      transitionProperty: 'all',
+      transitionDuration: '80ms',
+      transitionTimingFunction: 'linear',
     },
-    "&::before": {
+    '&::before': {
       boxShadow: `0 10px 38px -10px ${transparentize(
         0.65,
-        themeColor("grays.8")
+        themeColor('grays.8')
       )},
-        0 10px 20px -15px ${transparentize(0.8, themeColor("grays.8"))}`
+        0 10px 20px -15px ${transparentize(0.8, themeColor('grays.8'))}`,
     },
-    "&::after": {
-      boxShadow: `inset 0 0 0 1px ${themeColor("blues.4")}`,
-      opacity: 0
-    }
+    '&::after': {
+      boxShadow: `inset 0 0 0 1px ${themeColor('blues.4')}`,
+      opacity: 0,
+    },
   },
   ghost: {
-    position: "relative",
-    transition: "opacity 80ms linear, transform 150ms ease",
-    "&::before, &::after": {
+    position: 'relative',
+    transition: 'opacity 80ms linear, transform 150ms ease',
+    '&::before, &::after': {
       content: `""`,
-      position: "absolute",
+      position: 'absolute',
       top: 0,
       left: 0,
-      width: "100%",
-      height: "100%",
-      borderRadius: "inherit",
-      pointerEvents: "none",
-      transitionProperty: "all",
-      transitionDuration: "80ms",
-      transitionTimingFunction: "linear"
+      width: '100%',
+      height: '100%',
+      borderRadius: 'inherit',
+      pointerEvents: 'none',
+      transitionProperty: 'all',
+      transitionDuration: '80ms',
+      transitionTimingFunction: 'linear',
     },
-    "&::before": {
+    '&::before': {
       boxShadow: `0 10px 38px -10px ${transparentize(
         0.65,
-        themeColor("grays.8")
+        themeColor('grays.8')
       )},
-        0 10px 20px -15px ${transparentize(0.8, themeColor("grays.8"))}`,
-      opacity: 0
+        0 10px 20px -15px ${transparentize(0.8, themeColor('grays.8'))}`,
+      opacity: 0,
     },
-    "&::after": {
-      boxShadow: `inset 0 0 0 1px ${themeColor("blues.4")}`,
-      opacity: 0
-    }
-  }
+    '&::after': {
+      boxShadow: `inset 0 0 0 1px ${themeColor('blues.4')}`,
+      opacity: 0,
+    },
+  },
 };
 
-const cardStyle = variant({ key: "cards", prop: "variant" });
+const cardStyle = variant({ key: 'cards', prop: 'variant' });
 
 export const Card = styled.div`
   position: relative;
-  padding: ${themeGet("space.4")};
-  border-radius: ${themeGet("radii.2")};
+  padding: ${themeGet('space.4')};
+  border-radius: ${themeGet('radii.2')};
 
 	${color}
   ${space}
@@ -87,7 +87,7 @@ export const Card = styled.div`
 	${cardStyle}
 `;
 
-Card.defaultProps = { variant: "border", theme };
+Card.defaultProps = { variant: 'border' };
 
 export const CardLink = styled(Card)`
   display: block;
@@ -96,19 +96,19 @@ export const CardLink = styled(Card)`
 
 
   ${props =>
-    props.variant === "border" &&
+    props.variant === 'border' &&
     css`
       &:hover {
-        box-shadow: inset 0 0 0 1px ${themeColor("grays.4")};
+        box-shadow: inset 0 0 0 1px ${themeColor('grays.4')};
       }
 
       &:focus {
-        box-shadow: inset 0 0 0 1px ${themeColor("blues.4")};
+        box-shadow: inset 0 0 0 1px ${themeColor('blues.4')};
       }
     `}
 
   ${props =>
-    props.variant === "shadow" &&
+    props.variant === 'shadow' &&
     css`
       &:hover {
         transform: translateY(-2px);
@@ -121,13 +121,13 @@ export const CardLink = styled(Card)`
       }
 
       &:active {
-        background-color: ${themeColor("grays.0")};
+        background-color: ${themeColor('grays.0')};
         transform: translateY(0);
       }
     `}
 
   ${props =>
-    props.variant === "ghost" &&
+    props.variant === 'ghost' &&
     css`
       &:hover,
       &:focus {
@@ -146,4 +146,4 @@ export const CardLink = styled(Card)`
     `};
 `;
 
-CardLink.defaultProps = { as: "a", variant: "border", theme };
+CardLink.defaultProps = { as: 'a', variant: 'border' };

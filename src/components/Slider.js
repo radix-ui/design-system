@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import styled, { css } from "styled-components";
-import { themeGet } from "styled-system";
-import { theme, themeColor } from "../theme";
+import React, { useState, useEffect } from 'react';
+import styled, { css } from 'styled-components';
+import { themeGet } from 'styled-system';
+import { themeColor } from '../theme';
 
 const TRACK_HEIGHT = 3;
 
@@ -22,15 +22,15 @@ const thumbStyle = css`
   background-color: white;
   border: none;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 1px ${themeColor("grays.4")};
-  height: ${themeGet("space.3")};
+  box-shadow: inset 0 0 0 1px ${themeColor('grays.4')};
+  height: ${themeGet('space.3')};
   margin-top: -6px;
   transition: transform 100ms ease;
-  width: ${themeGet("space.3")};
+  width: ${themeGet('space.3')};
 `;
 
 const thumbFocusStyle = css`
-  box-shadow: inset 0 0 0 1px ${themeColor("blues.4")};
+  box-shadow: inset 0 0 0 1px ${themeColor('blues.4')};
 `;
 
 const Input = styled.input`
@@ -38,7 +38,7 @@ const Input = styled.input`
   background: transparent;
   cursor: pointer;
   display: block;
-  padding: ${themeGet("space.1")} 0;
+  padding: ${themeGet('space.1')} 0;
   margin: 0;
   width: 100%;
 
@@ -60,7 +60,7 @@ const Input = styled.input`
 
   &:hover {
     &::-webkit-slider-thumb {
-      box-shadow: inset 0 0 0 1px ${themeColor("grays.5")};
+      box-shadow: inset 0 0 0 1px ${themeColor('grays.5')};
     }
   }
 
@@ -83,11 +83,9 @@ const Input = styled.input`
   }
 `;
 
-Input.defaultProps = { theme };
-
 const Track = styled.div`
   ${trackStyle}
-	background-color: ${themeColor("grays.3")};
+	background-color: ${themeColor('grays.3')};
 	position: absolute;
   left: 0;
   top: 50%;
@@ -99,7 +97,7 @@ const Track = styled.div`
 const InnerTrack = styled.div`
   ${trackStyle}
   height: 100%;
-  background-color: ${themeColor("blues.3")};
+  background-color: ${themeColor('blues.3')};
 `;
 
 export const Slider = ({ min, max, value, onChange, props }) => {
@@ -132,7 +130,7 @@ export const Slider = ({ min, max, value, onChange, props }) => {
 };
 
 Slider.defaultProps = {
-  step: "1",
+  step: '1',
   min: 0,
-  max: 100
+  max: 100,
 };
