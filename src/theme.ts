@@ -4,7 +4,7 @@ export const theme: Theme = {
   breakpoints: ['38em', '62em', '68em', '110em'],
   fonts: {
     normal:
-      'apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
+      '"UntitledSans", apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
     mono: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
   },
   // @ts-ignore
