@@ -1,8 +1,8 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Box } from "./Box";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Box } from './Box';
 
-storiesOf("Components|Box", module).add("default", () => (
+storiesOf('Components|Box', module).add('default', () => (
   <>
     <Box mb={4}>
       <Box width={120} height={120} bg="black" />
