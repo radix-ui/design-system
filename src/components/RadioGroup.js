@@ -4,6 +4,7 @@ import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { space, themeGet } from 'styled-system';
 import { themeColor } from '../theme';
+import { ToggleButton } from './ToggleButton';
 
 export function RadioGroup({
   as: Component = 'div',
@@ -17,13 +18,15 @@ export function RadioGroup({
 
   return (
     <Component {...props}>
-      {React.Children.map(children, radio =>
-        React.cloneElement(radio, {
-          name,
-          onChange,
-          ...(isControlled ? { checked: value === radio.props.value } : {}),
-        })
-      )}
+      {React.Children.map(children, radio => {
+        const { type } = radio;
+        if (type === 'input' || type === Radio || type === ToggleButton)
+          return React.cloneElement(radio, {
+            name,
+            onChange,
+            ...(isControlled ? { checked: value === radio.props.value } : {}),
+          });
+      })}
     </Component>
   );
 }

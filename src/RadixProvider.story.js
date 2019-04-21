@@ -17,11 +17,6 @@ const colorfulTheme = {
     orange: 'orange',
     turquoise: 'turquoise',
   },
-  buttonSizes: {
-    medium: {
-      height: 50,
-    },
-  },
 };
 
 storiesOf('Theme|RadixProvider', module).add('typescale', () => (
@@ -39,81 +34,85 @@ storiesOf('Theme|RadixProvider', module).add('typescale', () => (
       const setScale = e => setState({ theme: makeScale(e.target.value) });
 
       return (
-        <RadixProvider theme={state.theme}>
-          <>
-            <Flex
-              flexDirection="column"
-              textAlign="center"
-              alignItems="flex-start"
-              style={{ position: 'fixed', right: 20, top: 20 }}
-            >
-              <Box mb={2}>Type scales</Box>
+        <>
+          <Flex
+            flexDirection="column"
+            textAlign="center"
+            alignItems="flex-start"
+            style={{ position: 'absolute', right: 20, top: 20 }}
+          >
+            <Box mb={2}>Type scales</Box>
+            <label>
+              <input
+                type="radio"
+                name="scale"
+                key="default"
+                value="default"
+                defaultChecked
+                onChange={() => setState({ theme })}
+              />
+              default
+            </label>
+            {[
+              'minorSecond',
+              'majorThird',
+              'goldenSection',
+              'minorSixth',
+              'perfectFifth',
+            ].map(scale => (
               <label>
                 <input
+                  key={scale}
                   type="radio"
                   name="scale"
-                  value="default"
-                  defaultChecked
-                  onChange={() => setState({ theme })}
+                  value={scale}
+                  onChange={setScale}
                 />
-                default
+                {scale}
               </label>
-              {[
-                'minorSecond',
-                'majorThird',
-                'goldenSection',
-                'minorSixth',
-                'perfectFifth',
-              ].map(scale => (
-                <label>
-                  <input
-                    key={scale}
-                    type="radio"
-                    name="scale"
-                    value={scale}
-                    onChange={setScale}
-                  />
-                  {scale}
-                </label>
-              ))}
-            </Flex>
-            <Box>
-              <Text as="p" fontSize={0}>
-                Radix
-              </Text>
-              <Text as="p" fontSize={1}>
-                Radix
-              </Text>
-              <Text as="p" fontSize={2}>
-                Radix
-              </Text>
-              <Text as="p" fontSize={3}>
-                Radix
-              </Text>
-              <Text as="p" fontSize={4}>
-                Radix
-              </Text>
-              <Text as="p" fontSize={5}>
-                Radix
-              </Text>
-              <Text as="p" fontSize={6}>
-                Radix
-              </Text>
-              <Text as="p" fontSize={7}>
-                Radix
-              </Text>
-              <Text as="p" fontSize={8}>
-                Radix
-              </Text>
-              <Text as="p" fontSize={9}>
-                Radix
-              </Text>
-              <Text as="p" fontSize={10}>
-                Radix
-              </Text>
-            </Box>
-          </>
-        </RadixProvider>
+            ))}
+          </Flex>
+
+          <RadixProvider theme={state.theme}>
+            <>
+              <Box>
+                <Text as="p" fontSize={0}>
+                  Radix
+                </Text>
+                <Text as="p" fontSize={1}>
+                  Radix
+                </Text>
+                <Text as="p" fontSize={2}>
+                  Radix
+                </Text>
+                <Text as="p" fontSize={3}>
+                  Radix
+                </Text>
+                <Text as="p" fontSize={4}>
+                  Radix
+                </Text>
+                <Text as="p" fontSize={5}>
+                  Radix
+                </Text>
+                <Text as="p" fontSize={6}>
+                  Radix
+                </Text>
+                <Text as="p" fontSize={7}>
+                  Radix
+                </Text>
+                <Text as="p" fontSize={8}>
+                  Radix
+                </Text>
+                <Text as="p" fontSize={9}>
+                  Radix
+                </Text>
+                <Text as="p" fontSize={10}>
+                  Radix
+                </Text>
+              </Box>
+            </>
+          </RadixProvider>
+        </>
       );
     }}
   </Component>

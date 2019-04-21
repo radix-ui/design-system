@@ -2,9 +2,11 @@ import React from 'react';
 import Component from 'react-component-component';
 import { storiesOf } from '@storybook/react';
 import { Box } from './Box';
+import { Flex } from './Flex';
 import { Text } from './Text';
 import { Button } from './Button';
 import { RadioGroup, Radio } from './RadioGroup';
+import { Card } from './Card';
 
 storiesOf('Components|RadioGroup', module).add('default', () => (
   <>
@@ -36,9 +38,7 @@ storiesOf('Components|RadioGroup', module).add('default', () => (
               value={state.value}
               onChange={event => setState({ value: event.target.value })}
             >
-              <Radio value="wrap" disabled>
-                Wrap
-              </Radio>
+              <Radio value="wrap">Wrap</Radio>
               <Radio value="nowrap">Nowrap</Radio>
             </RadioGroup>
             <Button my="3" onClick={() => setState({ value: 'nowrap' })}>
@@ -47,6 +47,18 @@ storiesOf('Components|RadioGroup', module).add('default', () => (
           </>
         )}
       </Component>
+    </Box>
+    <Box mb="4">
+      <Text as="p" mb={2}>
+        Card style
+      </Text>
+
+      <Card p={0}>
+        <Flex as="label" p={4} alignItems="center">
+          <input type="checkbox" value="row" />
+          Test
+        </Flex>
+      </Card>
     </Box>
   </>
 ));
