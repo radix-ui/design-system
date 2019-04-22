@@ -21,6 +21,7 @@ const Input = styled.input`
   z-index: 0;
   outline: none;
   margin: 0;
+  opacity: 0;
 `;
 
 const TextWrapper = styled.span`
