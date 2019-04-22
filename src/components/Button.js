@@ -1,5 +1,63 @@
+import merge from 'lodash.merge';
 import styled, { css, keyframes } from 'styled-components';
-import { space, buttonStyle, themeGet, variant } from 'styled-system';
+import { space, buttonStyle, themeGet, variant, Theme } from 'styled-system';
+
+export function makeButtons(theme: Theme) {
+  return merge(
+    {
+      blue: {
+        color: themeGet('colors.blues.5')({ theme }),
+        backgroundColor: themeGet('colors.blues.0')({ theme }),
+        boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.3')({ theme })}`,
+        '&:hover': {
+          boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')({ theme })}`,
+        },
+        '&:active': {
+          backgroundColor: themeGet('colors.blues.1')({ theme }),
+          boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')({ theme })}`,
+        },
+      },
+      green: {
+        color: themeGet('colors.greens.5')({ theme }),
+        backgroundColor: themeGet('colors.greens.0')({ theme }),
+        boxShadow: `inset 0 0 0 1px ${themeGet('colors.greens.3')({ theme })}`,
+        '&:hover': {
+          boxShadow: `inset 0 0 0 1px ${themeGet('colors.greens.4')({
+            theme,
+          })}`,
+        },
+        '&:active': {
+          backgroundColor: themeGet('colors.greens.1')({ theme }),
+          boxShadow: `inset 0 0 0 1px ${themeGet('colors.greens.4')({
+            theme,
+          })}`,
+        },
+      },
+      yellow: {
+        color: themeGet('colors.yellows.5')({ theme }),
+      },
+      red: {
+        color: themeGet('colors.reds.5')({ theme }),
+      },
+      active: {
+        color: themeGet('colors.grays.5')({ theme }),
+        backgroundColor: themeGet('colors.grays.1')({ theme }),
+        boxShadow: `inset 0 1px 1px 0 ${themeGet('colors.blacks.4')({
+          theme,
+        })}, inset 0 0 0 1px ${themeGet('colors.grays.3')({ theme })}`,
+        '&:hover': {
+          boxShadow: `inset 0 1px 1px 0 ${themeGet('colors.blacks.4')({
+            theme,
+          })}, inset 0 0 0 1px ${themeGet('colors.grays.4')({ theme })}`,
+        },
+        '&:active': {
+          backgroundColor: themeGet('colors.grays.2')({ theme }),
+        },
+      },
+    },
+    theme.buttons
+  );
+}
 
 const waitingAnimation = props => keyframes`
   100% {

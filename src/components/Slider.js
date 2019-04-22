@@ -77,7 +77,7 @@ const Input = styled.input`
   }
 
   /* remove focus border in Firefox:
-	https://css-tricks.com/sliding-nightmare-understanding-range-input */
+  https://css-tricks.com/sliding-nightmare-understanding-range-input */
   ::-moz-focus-outer {
     border: 0;
   }
@@ -85,12 +85,12 @@ const Input = styled.input`
 
 const Track = styled.div`
   ${trackStyle}
-	background-color: ${themeColor('grays.3')};
-	position: absolute;
+  background-color: ${themeColor('grays.3')};
+  position: absolute;
   left: 0;
   top: 50%;
   right: 0;
-	z-index: -1;
+  z-index: -1;
   transform: translateY(-50%);
 `;
 

@@ -14,17 +14,17 @@ import {
 import { themeColor } from '../theme';
 
 export const Text = styled.span`
-	font-family: ${themeGet('fonts.normal')};
-	font-size: ${themeGet('fontSizes.4')};
-	color: ${themeColor('grays.7')};
-	margin: 0;
-	padding: 0;
+  font-family: ${themeGet('fonts.normal')};
+  font-size: ${themeGet('fontSizes.4')};
+  color: ${themeColor('grays.7')};
+  margin: 0;
+  padding: 0;
 
-	${color}
-	${space}
-	${fontSize}
-	${fontStyle}
-	${fontFamily}
+  ${color}
+  ${space}
+  ${fontSize}
+  ${fontStyle}
+  ${fontFamily}
   ${textAlign}
   ${lineHeight}
   ${fontWeight}

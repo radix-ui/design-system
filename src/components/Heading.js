@@ -11,13 +11,13 @@ import {
 import { themeColor } from '../theme';
 
 export const Heading = styled.h1`
-	color: ${themeColor('grays.8')};
+  color: ${themeColor('grays.8')};
   font-family: ${themeGet('fonts.normal')};
   margin: 0;
 
-	${color}
-	${space}
-	${fontSize}
+  ${color}
+  ${space}
+  ${fontSize}
   ${textAlign}
   ${lineHeight}
   ${fontWeight}

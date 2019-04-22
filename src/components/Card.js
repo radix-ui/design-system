@@ -80,11 +80,11 @@ export const Card = styled.div`
   padding: ${themeGet('space.4')};
   border-radius: ${themeGet('radii.2')};
 
-	${color}
+  ${color}
   ${space}
-	${width}
-	${maxWidth}
-	${cardStyle}
+  ${width}
+  ${maxWidth}
+  ${cardStyle}
 `;
 
 Card.defaultProps = { variant: 'border' };

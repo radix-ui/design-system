@@ -16,13 +16,13 @@ export const Dialog = ({ isOpen, onDismiss, children, variant, ...props }) => {
 };
 
 const overlayEnterKeyframes = keyframes`
-	0% {
-		background-color: ${transparentize(1, 'white')};
-	}
+  0% {
+    background-color: ${transparentize(1, 'white')};
+  }
 
-	100% {
-		background-color: ${transparentize(0.5, 'white')};
-	}
+  100% {
+    background-color: ${transparentize(0.5, 'white')};
+  }
 `;
 
 const Overlay = styled(DialogOverlay)`
@@ -35,16 +35,16 @@ const Overlay = styled(DialogOverlay)`
 `;
 
 const wrapperEnterKeyframes = keyframes`
-	0% {
-		opacity: 0;
-		transform: translate3d(0, 5px, 0);
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		transform: translate3d(0, 0, 0)
-	}
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 5px, 0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0)
+  }
 `;
 
 const Content = styled(DialogContent)`

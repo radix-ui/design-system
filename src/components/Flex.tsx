@@ -30,12 +30,12 @@ type FlexProps = FlexBasisProps &
 
 export const Flex = styled(Box)<FlexProps>`
   display: flex;
-	${flexBasis}
-	${flexDirection}
-	${flexWrap}
-	${alignContent}
-	${alignItems}
-	${justifyContent}
-	${justifyItems}
-	${order}
+  ${flexBasis}
+  ${flexDirection}
+  ${flexWrap}
+  ${alignContent}
+  ${alignItems}
+  ${justifyContent}
+  ${justifyItems}
+  ${order}
 `;

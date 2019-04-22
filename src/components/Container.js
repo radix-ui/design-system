@@ -36,14 +36,14 @@ theme.containerSizes = {
 const containerStyle = variant({ key: 'containerSizes', prop: 'size' });
 
 export const Container = styled.div`
-	margin-left: auto;
-	margin-right: auto;
-	flex: 1;
+  margin-left: auto;
+  margin-right: auto;
+  flex: 1;
 
   ${alignSelf}
   ${flex}
   ${justifySelf}
-	${maxWidth}
+  ${maxWidth}
   ${space}
-	${containerStyle}
+  ${containerStyle}
 `;

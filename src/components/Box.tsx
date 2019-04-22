@@ -65,24 +65,24 @@ type BoxProps = AlignSelfProps &
   ZIndexProps;
 
 export const Box = styled.div<BoxProps>`
-	${alignSelf}
-	${borders}
-	${bottom}
-	${boxShadow}
-	${color}
-	${display}
-	${flex}
-	${height}
-	${justifySelf}
-	${left}
-	${maxWidth}
-	${opacity}
-	${overflow}
-	${position}
-	${right}
-	${space}
-	${textAlign}
-	${top}
-	${width}
-	${zIndex}
+  ${alignSelf}
+  ${borders}
+  ${bottom}
+  ${boxShadow}
+  ${color}
+  ${display}
+  ${flex}
+  ${height}
+  ${justifySelf}
+  ${left}
+  ${maxWidth}
+  ${opacity}
+  ${overflow}
+  ${position}
+  ${right}
+  ${space}
+  ${textAlign}
+  ${top}
+  ${width}
+  ${zIndex}
 `;

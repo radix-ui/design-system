@@ -9,6 +9,7 @@ import { Flex } from './components/Flex';
 import { Text } from './components/Text';
 import { Divider } from './components/Divider';
 import { Heading } from './components/Heading';
+import { Button } from './components/Button';
 
 const colorfulTheme = {
   ...theme,
@@ -18,6 +19,13 @@ const colorfulTheme = {
     brightPink: 'hotpink',
     orange: 'orange',
     turquoise: 'turquoise',
+  },
+  buttons: {
+    pedro: {
+      background: 'gold',
+      color: 'royalblue',
+      boxShadow: 'inset 0 0 0 1px royalblue',
+    },
   },
 };
 
@@ -138,6 +146,8 @@ storiesOf('Theme|RadixProvider', module).add('colourful', () => (
         <Heading as="h2" color="red">
           My red
         </Heading>
+
+        <Button variant="pedro">Pedro's button</Button>
       </Box>
     </>
   </RadixProvider>

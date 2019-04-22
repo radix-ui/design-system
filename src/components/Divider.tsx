@@ -15,7 +15,7 @@ import {
   variant,
 } from 'styled-system';
 
-export const makeDividerVariants = (theme: Theme) => ({
+export const makeDividers = (theme: Theme) => ({
   ...theme,
   dividers: {
     horizontal: {
@@ -38,12 +38,12 @@ const dividerStyle = variant({ key: 'dividers', prop: 'variant' });
 export const Divider = styled.div<DividerProps>`
   background-color: ${themeGet('colors.grays.2')};
 
-	${height}
-	${maxHeight}
-	${maxWidth}
-	${space}
-	${width}
-${dividerStyle}
+  ${height}
+  ${maxHeight}
+  ${maxWidth}
+  ${space}
+  ${width}
+  ${dividerStyle}
 `;
 
 Divider.defaultProps = { variant: 'horizontal' };

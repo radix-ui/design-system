@@ -4,13 +4,13 @@ import { themeGet } from 'styled-system';
 import { themeColor } from '../theme';
 
 const tooltipAppear = keyframes`
-	from {
-		opacity: 0;
-	}
+  from {
+    opacity: 0;
+  }
 
-	to {
-		opacity: 1;
-	}
+  to {
+    opacity: 1;
+  }
 `;
 
 const ARROW_SIZE = '6px';
@@ -20,10 +20,10 @@ const BaseTooltip = styled.span`
   position: relative;
   display: inline-flex;
   align-items: center;
-	align-self: stretch;
-	text-align: inherit;
-	width: inherit;
-	justify-content: inherit;
+  align-self: stretch;
+  text-align: inherit;
+  width: inherit;
+  justify-content: inherit;
 
   &::before {
     content: "";
@@ -34,7 +34,7 @@ const BaseTooltip = styled.span`
     width: 0px;
     height: 0px;
     border: ${ARROW_SIZE} solid transparent;
-		display: none;
+    display: none;
     opacity: 0;
   }
 
@@ -54,7 +54,7 @@ const BaseTooltip = styled.span`
     pointer-events: none;
     background: hsla(0, 0%, 0%, .8); /* TODO: add to theme */
     border-radius: ${themeGet('radii.1')};
-		display: none;
+    display: none;
     opacity: 0;
   }
 
@@ -109,7 +109,7 @@ const BaseTooltip = styled.span`
       }
     `}
 
-	${props =>
+  ${props =>
     props.position === 'right' &&
     css`
       &::before {
@@ -127,7 +127,7 @@ const BaseTooltip = styled.span`
       }
     `}
 
-		${props =>
+    ${props =>
       props.position === 'left' &&
       css`
         &::before {
@@ -145,7 +145,7 @@ const BaseTooltip = styled.span`
         }
       `}
 
-			${props =>
+      ${props =>
         props.align === 'start' &&
         (props.position === 'top' || props.position === 'bottom') &&
         css`
@@ -160,7 +160,7 @@ const BaseTooltip = styled.span`
           }
         `}
 
-			${props =>
+      ${props =>
         props.align === 'end' &&
         (props.position === 'top' || props.position === 'bottom') &&
         css`
@@ -177,7 +177,7 @@ const BaseTooltip = styled.span`
           }
         `}
 
-		${props =>
+    ${props =>
       props.align === 'start' &&
       (props.position === 'right' || props.position === 'left') &&
       css`
@@ -192,7 +192,7 @@ const BaseTooltip = styled.span`
         }
       `}
 
-		${props =>
+    ${props =>
       props.align === 'end' &&
       (props.position === 'right' || props.position === 'left') &&
       css`

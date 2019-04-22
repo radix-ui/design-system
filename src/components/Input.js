@@ -49,7 +49,7 @@ export const Input = styled.input`
   padding: 0;
   vertical-align: middle;
   width: 100%;
-	box-sizing: border-box;
+  box-sizing: border-box;
 
   &::-webkit-input-placeholder {
     ${placeholderStyle}
@@ -81,8 +81,8 @@ export const Input = styled.input`
   ${textAlign}
   ${width}
   ${maxWidth}
-	${inputStyle}
-	${inputSizeStyle}
+  ${inputStyle}
+  ${inputSizeStyle}
 `;
 
 Input.defaultProps = { type: 'text' };
