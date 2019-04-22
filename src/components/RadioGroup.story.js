@@ -48,17 +48,5 @@ storiesOf('Components|RadioGroup', module).add('default', () => (
         )}
       </Component>
     </Box>
-    <Box mb="4">
-      <Text as="p" mb={2}>
-        Card style
-      </Text>
-
-      <Card p={0}>
-        <Flex as="label" p={4} alignItems="center">
-          <input type="checkbox" value="row" />
-          Test
-        </Flex>
-      </Card>
-    </Box>
   </>
 ));
