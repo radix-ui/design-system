@@ -45,6 +45,7 @@ const FakeCheckbox = styled.div`
   align-items: center;
   justify-content: center;
   color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   ${Input}:hover + & {
     box-shadow: inset 0 0 0 1px ${themeColor('grays.4')};
