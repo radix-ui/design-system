@@ -64,6 +64,7 @@ const TextWrapper = styled.span`
 const FakeRadio = styled.div`
   width: ${themeGet('space.4')};
   height: ${themeGet('space.4')};
+  color: transparent;
   border-radius: 50%;
   box-shadow: inset 0 0 0 1px ${themeColor('grays.3')};
   display: inline-flex;
