@@ -3,6 +3,8 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { themeGet } from 'styled-system';
 import merge from 'lodash.merge';
 import { theme as defaultTheme } from './theme';
+import { makeDividerVariants } from './components/Divider';
+
 import UntitledSansWoff from './fonts/UntitledSansWeb-Regular.woff';
 import UntitledSansWoff2 from './fonts/UntitledSansWeb-Regular.woff2';
 import UntitledSansMediumWoff from './fonts/UntitledSansWeb-Medium.woff';
@@ -56,6 +58,7 @@ function makeTheme(theme) {
     ...theme,
     buttons: makeButtons(theme),
     buttonSizes: makeButtonSizes(theme),
+    ...makeDividerVariants(theme),
   };
 }
 

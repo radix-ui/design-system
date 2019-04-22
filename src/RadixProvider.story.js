@@ -7,11 +7,13 @@ import { theme } from './theme';
 import { Box } from './components/Box';
 import { Flex } from './components/Flex';
 import { Text } from './components/Text';
+import { Divider } from './components/Divider';
 import { Heading } from './components/Heading';
 
 const colorfulTheme = {
   ...theme,
   colors: {
+    ...theme.colors,
     purple: 'rgb(113, 20, 234)',
     brightPink: 'hotpink',
     orange: 'orange',
@@ -123,6 +125,7 @@ storiesOf('Theme|RadixProvider', module).add('colourful', () => (
     <>
       <Box>
         <Heading color="orange">My colourful theme 🌈</Heading>
+        <Divider my={5} />
         <Heading as="h2" color="purple">
           My purple
         </Heading>
