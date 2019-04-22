@@ -22,6 +22,7 @@ const Input = styled.input`
   outline: none;
   margin: 0;
   opacity: 0;
+  tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
 const TextWrapper = styled.span`

@@ -47,6 +47,8 @@ const Input = styled.input`
   z-index: 0;
   outline: none;
   margin: 0;
+  opacity: 0;
+  tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
 const TextWrapper = styled.span`
@@ -67,7 +69,6 @@ const FakeRadio = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: transparent;
 
   &::before {
     content: '';
