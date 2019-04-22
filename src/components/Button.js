@@ -59,6 +59,20 @@ export function makeButtons(theme: Theme) {
   );
 }
 
+export function makeButtonSizes(theme) {
+  return merge(
+    {
+      medium: {
+        fontSize: themeGet('fontSizes.3')({ theme }),
+        padding: `0 ${themeGet('space.3')({ theme })}`,
+        height: themeGet('space.6')({ theme }),
+        minWidth: themeGet('space.6')({ theme }),
+      },
+    },
+    theme.buttonSizes
+  );
+}
+
 const waitingAnimation = props => keyframes`
   100% {
     transform: translateX(${
