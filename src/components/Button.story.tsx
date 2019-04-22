@@ -58,19 +58,19 @@ storiesOf('Components|Button', module).add('default', () => (
     </Box>
 
     <Box mb="4">
-      <Button disabled="disabled" mr="4">
+      <Button disabled={true} mr="4">
         Disabled
       </Button>
-      <Button disabled="disabled" size="medium">
+      <Button disabled={true} size="medium">
         Disabled
       </Button>
     </Box>
 
     <Box mb="4">
-      <Button waiting mr="4">
+      <Button variant="waiting" mr="4">
         Waiting
       </Button>
-      <Button waiting size="medium">
+      <Button variant="waiting" size="medium">
         Waiting
       </Button>
     </Box>
