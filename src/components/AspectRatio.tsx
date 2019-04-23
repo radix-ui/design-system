@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { color, ColorProps, space, SpaceProps, Theme } from 'styled-system';
-import { StyledSystemProps } from '../types/StyledSystemProps';
 import { theme } from '../theme';
 
-type WrapperProps = StyledSystemProps<'div', ColorProps & SpaceProps>;
+type WrapperProps = ColorProps & SpaceProps;
 
-const Wrapper: FC<WrapperProps> = styled.div`
+const Wrapper = styled.div`
   position: relative;
   width: 100%;
 

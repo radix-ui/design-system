@@ -1,15 +1,21 @@
 import styled, { css } from 'styled-components';
 import {
   color,
+  ColorProps,
   space,
+  SpaceProps,
   width,
+  WidthProps,
   maxWidth,
+  MaxWidthProps,
   themeGet,
   variant,
 } from 'styled-system';
 import { transparentize } from 'polished';
 import { theme, themeColor } from '../theme';
 
+// @ts-ignore
+// Add buttonsSizes to Theme
 theme.cards = {
   border: {
     boxShadow: `inset 0 0 0 1px ${themeColor('grays.3')}`,
@@ -73,9 +79,15 @@ theme.cards = {
   },
 };
 
+type Variants = 'border' | 'shadow' | 'ghost';
 const cardStyle = variant({ key: 'cards', prop: 'variant' });
 
-export const Card = styled.div`
+type CardProps = ColorProps &
+  SpaceProps &
+  WidthProps &
+  MaxWidthProps & { variant?: Variants };
+
+const cardCSS = css`
   position: relative;
   padding: ${themeGet('space.4')};
   border-radius: ${themeGet('radii.2')};
@@ -87,13 +99,18 @@ export const Card = styled.div`
   ${cardStyle}
 `;
 
+export const Card = styled.div<CardProps>`
+  ${cardCSS}
+`;
+
 Card.defaultProps = { variant: 'border' };
 
-export const CardLink = styled(Card)`
+export const CardLink = styled.a<CardProps>`
+  ${cardCSS}
+
   display: block;
   text-decoration: none;
   outline: 0;
-
 
   ${props =>
     props.variant === 'border' &&
@@ -146,4 +163,4 @@ export const CardLink = styled(Card)`
     `};
 `;
 
-CardLink.defaultProps = { as: 'a', variant: 'border' };
+CardLink.defaultProps = { variant: 'border' };

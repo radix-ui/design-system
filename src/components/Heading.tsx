@@ -1,32 +1,37 @@
 import styled from 'styled-components';
 import {
   color,
+  ColorProps,
   space,
+  SpaceProps,
   fontSize,
-  fontFamily,
-  fontStyle,
+  FontSizeProps,
   textAlign,
+  TextAlignProps,
   lineHeight,
+  LineHeightProps,
   fontWeight,
-  letterSpacing,
+  FontWeightProps,
   themeGet,
 } from 'styled-system';
 import { themeColor } from '../theme';
 
-export const Text = styled.span`
+type HeadingProps = ColorProps &
+  SpaceProps &
+  FontSizeProps &
+  TextAlignProps &
+  LineHeightProps &
+  FontWeightProps;
+
+export const Heading = styled.h1<HeadingProps>`
+  color: ${themeColor('grays.8')};
   font-family: ${themeGet('fonts.normal')};
-  font-size: ${themeGet('fontSizes.4')};
-  color: ${themeColor('grays.7')};
   margin: 0;
-  padding: 0;
 
   ${color}
   ${space}
   ${fontSize}
-  ${fontStyle}
-  ${fontFamily}
   ${textAlign}
   ${lineHeight}
   ${fontWeight}
-  ${letterSpacing}
 `;

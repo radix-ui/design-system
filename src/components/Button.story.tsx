@@ -7,9 +7,7 @@ storiesOf('Components|Button', module).add('default', () => (
   <>
     <Box mb="4">
       <Button mr="4">Button</Button>
-      <Button size="medium" variant="benoit">
-        Button
-      </Button>
+      <Button size="medium">Button</Button>
     </Box>
 
     <Box mb="4">
