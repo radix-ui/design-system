@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Component from 'react-component-component';
 import { storiesOf } from '@storybook/react';
 import { Box } from './Box';
 import { Button } from './Button';

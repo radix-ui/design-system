@@ -14,7 +14,6 @@
     "lodash.pick": "^4.4.0",
     "polished": "^3.2.0",
     "react": "^16.8.6",
-    "react-component-component": "^1.2.1",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
     "styled-components": "^4.2.0",

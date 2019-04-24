@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { transparentize } from 'polished';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 import '@reach/dialog/styles.css';
-import { theme } from '../theme';
+import { themeGet } from 'styled-system';
 
-export const Dialog = ({ isOpen, onDismiss, children, variant, ...props }) => {
+type DialogProps = {
+  isOpen?: boolean;
+  onDismiss?: () => void;
+};
+
+export const Dialog: FC<DialogProps> = ({
+  isOpen,
+  onDismiss,
+  children,
+  ...props
+}) => {
   return (
     <Overlay isOpen={isOpen} onDismiss={onDismiss}>
-      <Content {...props} variant={variant}>
-        {children}
-      </Content>
+      <Content {...props}>{children}</Content>
     </Overlay>
   );
 };
@@ -49,7 +57,7 @@ const wrapperEnterKeyframes = keyframes`
 
 const Content = styled(DialogContent)`
   &[data-reach-dialog-content] {
-    border-radius: ${theme.radii[2]};
+    border-radius: ${themeGet('radii.2')};
     box-shadow: 0 10px 38px -10px hsla(208, 24%, 7%, 0.35),
       0 10px 20px -15px hsla(208, 24%, 7%, 0.2);
     width: auto;
