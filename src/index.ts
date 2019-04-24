@@ -1,3 +1,5 @@
+export { RadixProvider } from './RadixProvider';
+
 export { AspectRatio } from './components/AspectRatio';
 export { Box } from './components/Box';
 export { Button } from './components/Button';
