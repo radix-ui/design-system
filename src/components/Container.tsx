@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 import {
   alignSelf,
+  AlignSelfProps,
   flex,
+  FlexProps,
   justifySelf,
+  JustifySelfProps,
   maxWidth,
+  MaxWidthProps,
   space,
+  SpaceProps,
   themeGet,
   variant,
 } from 'styled-system';
 import { theme } from '../theme';
 
+// @ts-ignore
 theme.containerSizes = {
   small: {
     paddingLeft: themeGet('space.5')({ theme }),
@@ -35,7 +41,15 @@ theme.containerSizes = {
 
 const containerStyle = variant({ key: 'containerSizes', prop: 'size' });
 
-export const Container = styled.div`
+type SizeProps = 'small' | 'medium' | 'large' | 'fluid';
+
+type ContainerProps = AlignSelfProps &
+  FlexProps &
+  JustifySelfProps &
+  MaxWidthProps &
+  SpaceProps & { size?: SizeProps };
+
+export const Container = styled.div<ContainerProps>`
   margin-left: auto;
   margin-right: auto;
   flex: 1;

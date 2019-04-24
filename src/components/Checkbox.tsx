@@ -1,11 +1,44 @@
-import React from 'react';
+import React, { FC, ComponentProps } from 'react';
 import styled from 'styled-components';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { space, themeGet } from 'styled-system';
+import { space, SpaceProps, themeGet } from 'styled-system';
 import { themeColor } from '../theme';
 
-const CheckboxWrapper = styled.label`
+type CheckboxProps = SpaceProps & ComponentProps<'input'>;
+
+// @ts-ignore
+const spacePropNames = Object.keys(space.propTypes);
+
+export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
+  const spaceProps = pick(props, spacePropNames);
+  const inputProps = omit(props, spacePropNames);
+
+  return (
+    <CheckboxWrapper {...spaceProps}>
+      <Input type="checkbox" {...inputProps} />
+      <FakeCheckbox>
+        <CheckedIcon
+          width="15"
+          height="15"
+          viewBox="0 0 15 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke="currentColor"
+        >
+          <path
+            d="M11.5 3.5L6.5 11.5L3.5 8.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </CheckedIcon>
+      </FakeCheckbox>
+      {children && <TextWrapper>{children}</TextWrapper>}
+    </CheckboxWrapper>
+  );
+};
+
+const CheckboxWrapper = styled.label<SpaceProps>`
   position: relative;
 
   ${space}
@@ -22,7 +55,7 @@ const Input = styled.input`
   outline: none;
   margin: 0;
   opacity: 0;
-  tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
 const TextWrapper = styled.span`
@@ -65,34 +98,3 @@ const FakeCheckbox = styled.div`
 const CheckedIcon = styled.svg`
   display: block;
 `;
-
-// eslint-disable-next-line
-const spacePropNames = Object.keys(space.propTypes);
-
-export function Checkbox({ children, ...props }) {
-  const spaceProps = pick(props, spacePropNames);
-  const inputProps = omit(props, spacePropNames);
-
-  return (
-    <CheckboxWrapper {...spaceProps}>
-      <Input type="checkbox" {...inputProps} />
-      <FakeCheckbox>
-        <CheckedIcon
-          width="15"
-          height="15"
-          viewBox="0 0 15 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          stroke="currentColor"
-        >
-          <path
-            d="M11.5 3.5L6.5 11.5L3.5 8.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </CheckedIcon>
-      </FakeCheckbox>
-      {children && <TextWrapper>{children}</TextWrapper>}
-    </CheckboxWrapper>
-  );
-}

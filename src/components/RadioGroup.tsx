@@ -1,35 +1,62 @@
-import React from 'react';
+import React, {
+  FC,
+  ComponentProps,
+  ChangeEventHandler,
+  ReactElement,
+} from 'react';
 import styled from 'styled-components';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { space, themeGet } from 'styled-system';
 import { themeColor } from '../theme';
-import { ToggleButton } from './ToggleButton';
 
-export function RadioGroup({
-  as: Component = 'div',
+interface RadioGroupProps extends ComponentProps<'div'> {
+  name: string;
+  value?: string;
+  as?: any;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  children: ReactElement<RadioProps>[];
+}
+
+export const RadioGroup: FC<RadioGroupProps> = ({
   children,
   value,
   onChange,
   name,
   ...props
-}) {
+}) => {
   const isControlled = Boolean(value);
 
   return (
-    <Component {...props}>
-      {React.Children.map(children, radio => {
-        const { type } = radio;
-        if (type === 'input' || type === Radio || type === ToggleButton)
-          return React.cloneElement(radio, {
-            name,
-            onChange,
-            ...(isControlled ? { checked: value === radio.props.value } : {}),
-          });
-      })}
-    </Component>
+    <div {...props}>
+      {React.Children.map(children, (radio: ReactElement<RadioProps>) =>
+        React.cloneElement(radio, {
+          name,
+          onChange,
+          ...(isControlled ? { checked: value === radio.props.value } : {}),
+        })
+      )}
+    </div>
   );
-}
+};
+
+// @ts-ignore
+const spacePropNames = Object.keys(space.propTypes);
+
+type RadioProps = ComponentProps<'input'>;
+
+export const Radio: FC<RadioProps> = ({ children, ...props }) => {
+  const spaceProps = pick(props, spacePropNames);
+  const inputProps = omit(props, spacePropNames);
+
+  return (
+    <RadioWrapper {...spaceProps}>
+      <Input type="radio" {...inputProps} />
+      <FakeRadio />
+      {children && <TextWrapper>{children}</TextWrapper>}
+    </RadioWrapper>
+  );
+};
 
 const RadioWrapper = styled.label`
   position: relative;
@@ -92,19 +119,3 @@ const FakeRadio = styled.div`
     box-shadow: inset 0 0 0 1px ${themeColor('blues.4')};
   }
 `;
-
-// eslint-disable-next-line
-const spacePropNames = Object.keys(space.propTypes);
-
-export function Radio({ children, ...props }) {
-  const spaceProps = pick(props, spacePropNames);
-  const inputProps = omit(props, spacePropNames);
-
-  return (
-    <RadioWrapper {...spaceProps}>
-      <Input type="radio" {...inputProps} />
-      <FakeRadio />
-      {children && <TextWrapper>{children}</TextWrapper>}
-    </RadioWrapper>
-  );
-}

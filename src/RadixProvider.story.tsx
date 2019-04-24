@@ -30,7 +30,7 @@ const colorfulTheme = {
   },
 };
 
-function Typescale() {
+function TypescaleStory() {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   const makeScale = (scale: ModularScaleRatio): Theme => {
@@ -43,8 +43,6 @@ function Typescale() {
       }),
     };
   };
-
-  console.log(theme.fontSizes);
 
   const setScale = (e: ChangeEvent<HTMLInputElement>) =>
     setTheme(makeScale(e.target.value as ModularScaleRatio));
@@ -130,7 +128,9 @@ function Typescale() {
   );
 }
 
-storiesOf('Theme|RadixProvider', module).add('typescale', () => <Typescale />);
+storiesOf('Theme|RadixProvider', module).add('typescale', () => (
+  <TypescaleStory />
+));
 
 storiesOf('Theme|RadixProvider', module).add('colourful', () => (
   <RadixProvider theme={colorfulTheme}>

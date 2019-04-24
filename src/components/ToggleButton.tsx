@@ -1,9 +1,56 @@
-import React from 'react';
+import React, {
+  ReactElement,
+  ChangeEventHandler,
+  FC,
+  forwardRef,
+  ComponentPropsWithRef,
+} from 'react';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 import { themeColor } from '../theme';
 import { Flex } from './Flex';
-import { RadioGroup } from './RadioGroup';
+
+type ToggleButtonGroupProps = {
+  name: string;
+  value?: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  children: ReactElement<ToggleButtonProps>[];
+};
+
+export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
+  children,
+  value,
+  onChange,
+  name,
+  ...props
+}) => {
+  const isControlled = Boolean(value);
+
+  return (
+    <Flex {...props}>
+      {React.Children.map(children, (child: ReactElement<ToggleButtonProps>) =>
+        React.cloneElement(child, {
+          name,
+          onChange,
+          ...(isControlled ? { checked: value === child.props.value } : {}),
+        })
+      )}
+    </Flex>
+  );
+};
+
+type Ref = HTMLInputElement;
+type ToggleButtonProps = ComponentPropsWithRef<'input'>;
+
+export const ToggleButton = forwardRef<Ref, ToggleButtonProps>((props, ref) => {
+  const { children, ...inputProps } = props;
+  return (
+    <Wrapper>
+      <Radio {...inputProps} type="radio" ref={ref} />
+      {children && <FakeRadio>{children}</FakeRadio>}
+    </Wrapper>
+  );
+});
 
 const Wrapper = styled.label`
   display: inline-flex;
@@ -64,14 +111,3 @@ const FakeRadio = styled.span`
     z-index: 1;
   }
 `;
-
-export function ToggleButtonGroup(props) {
-  return <RadioGroup as={Flex} {...props} />;
-}
-
-export const ToggleButton = ({ children, ...props }) => (
-  <Wrapper>
-    <Radio {...props} type="radio" />
-    <FakeRadio>{children}</FakeRadio>
-  </Wrapper>
-);

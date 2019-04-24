@@ -7,14 +7,14 @@ storiesOf('Components|ToggleButton', module).add('default', () => (
   <>
     <Box width="500px" mb="4">
       <ToggleButtonGroup name="direction">
-        <ToggleButton defaultChecked="true">Row</ToggleButton>
+        <ToggleButton defaultChecked>Row</ToggleButton>
         <ToggleButton>Column</ToggleButton>
       </ToggleButtonGroup>
     </Box>
 
     <Box width="500px">
       <ToggleButtonGroup name="align">
-        <ToggleButton defaultChecked="true">
+        <ToggleButton defaultChecked>
           <svg
             width="25"
             height="25"
