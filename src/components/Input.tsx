@@ -1,15 +1,21 @@
 import styled, { css } from 'styled-components';
 import {
   color,
+  ColorProps,
   space,
+  SpaceProps,
   width,
+  WidthProps,
   maxWidth,
+  MaxWidthProps,
   textAlign,
+  TextAlignProps,
   themeGet,
   variant,
 } from 'styled-system';
 import { theme, themeColor } from '../theme';
 
+// @ts-ignore
 theme.inputs = {
   ghost: {
     boxShadow: 'none',
@@ -19,6 +25,7 @@ theme.inputs = {
   },
 };
 
+// @ts-ignore
 theme.inputSizes = {
   medium: {
     fontSize: themeGet('fontSizes.3')({ theme }),
@@ -27,15 +34,23 @@ theme.inputSizes = {
   },
 };
 
+const inputStyle = variant({ key: 'inputs', prop: 'variant' });
+const inputSizeStyle = variant({ key: 'inputSizes', prop: 'size' });
+
+type VariantProps = 'ghost';
+type SizeProps = 'medium';
+export type InputProps = ColorProps &
+  SpaceProps &
+  WidthProps &
+  MaxWidthProps &
+  TextAlignProps & { variant?: VariantProps; size?: SizeProps };
+
 const placeholderStyle = css`
   color: ${themeColor('grays.4')};
   opacity: 1;
 `;
 
-const inputStyle = variant({ key: 'inputs', prop: 'variant' });
-const inputSizeStyle = variant({ key: 'inputSizes', prop: 'size' });
-
-export const Input = styled.input`
+export const Input = styled.input<InputProps>`
   appearance: none;
   background-color: transparent;
   border: none;

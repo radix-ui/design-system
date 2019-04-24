@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { space, themeGet, variant } from 'styled-system';
+import { space, SpaceProps, themeGet, variant } from 'styled-system';
 import { theme, themeColor } from '../theme';
 
+// @ts-ignore
 theme.ghostButtons = {
   active: {
     backgroundColor: themeColor('grays.2'),
@@ -18,6 +19,7 @@ theme.ghostButtons = {
   },
 };
 
+// @ts-ignore
 theme.ghostButtonSizes = {
   medium: {
     minHeight: themeGet('space.6')({ theme }),
@@ -30,10 +32,18 @@ theme.ghostButtonSizes = {
   },
 };
 
+type Variants = 'active';
+type Sizes = 'medium';
+
 const ghostButtonStyle = variant({ key: 'ghostButtons', prop: 'variant' });
 const ghostButtonSizeStyle = variant({ key: 'ghostButtonSizes', prop: 'size' });
 
-export const GhostButton = styled.button`
+type GhostButtonProps = SpaceProps & {
+  variant?: Variants;
+  size?: Sizes;
+};
+
+export const GhostButton = styled.button<GhostButtonProps>`
   align-items: center;
   appearance: none;
   background-color: transparent;

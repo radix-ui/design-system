@@ -1,8 +1,9 @@
 import React, {
-  FC,
   ComponentProps,
   ChangeEventHandler,
   ReactElement,
+  forwardRef,
+  ComponentPropsWithRef,
 } from 'react';
 import styled from 'styled-components';
 import omit from 'lodash.omit';
@@ -10,25 +11,20 @@ import pick from 'lodash.pick';
 import { space, themeGet } from 'styled-system';
 import { themeColor } from '../theme';
 
-interface RadioGroupProps extends ComponentProps<'div'> {
+type RadioGroupProps = ComponentProps<'div'> & {
   name: string;
   value?: string;
   as?: any;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   children: ReactElement<RadioProps>[];
-}
+};
 
-export const RadioGroup: FC<RadioGroupProps> = ({
-  children,
-  value,
-  onChange,
-  name,
-  ...props
-}) => {
+export const RadioGroup = (props: RadioGroupProps) => {
+  const { name, value, onChange, children, ...rootProps } = props;
   const isControlled = Boolean(value);
 
   return (
-    <div {...props}>
+    <div {...rootProps}>
       {React.Children.map(children, (radio: ReactElement<RadioProps>) =>
         React.cloneElement(radio, {
           name,
@@ -40,23 +36,33 @@ export const RadioGroup: FC<RadioGroupProps> = ({
   );
 };
 
-// @ts-ignore
-const spacePropNames = Object.keys(space.propTypes);
+// TODO: Styled System is missing some spacing props in `propTypes`
+// https://github.com/styled-system/styled-system/issues/466
+const spacePropNames = [
+  // @ts-ignore
+  ...Object.keys(space.propTypes),
+  'mx',
+  'my',
+  'px',
+  'py',
+];
 
-type RadioProps = ComponentProps<'input'>;
+type RadioProps = ComponentPropsWithRef<'input'>;
+type Ref = HTMLInputElement;
 
-export const Radio: FC<RadioProps> = ({ children, ...props }) => {
-  const spaceProps = pick(props, spacePropNames);
+export const Radio = forwardRef<Ref, RadioProps>((props, ref) => {
+  const { children } = props;
+  const systemProps = pick(props, spacePropNames);
   const inputProps = omit(props, spacePropNames);
 
   return (
-    <RadioWrapper {...spaceProps}>
-      <Input type="radio" {...inputProps} />
+    <RadioWrapper {...systemProps}>
+      <Input type="radio" {...inputProps} ref={ref} />
       <FakeRadio />
       {children && <TextWrapper>{children}</TextWrapper>}
     </RadioWrapper>
   );
-};
+});
 
 const RadioWrapper = styled.label`
   position: relative;

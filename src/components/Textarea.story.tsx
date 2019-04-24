@@ -12,5 +12,9 @@ storiesOf('Components|Textarea', module).add('default', () => (
     <Box mb="4">
       <Textarea size="medium" placeholder="Your email" />
     </Box>
+
+    <Box mb="4">
+      <Textarea variant="ghost" placeholder="Your email" />
+    </Box>
   </Box>
 ));

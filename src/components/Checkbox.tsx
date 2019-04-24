@@ -7,8 +7,16 @@ import { themeColor } from '../theme';
 
 type CheckboxProps = SpaceProps & ComponentProps<'input'>;
 
-// @ts-ignore
-const spacePropNames = Object.keys(space.propTypes);
+// TODO: Styled System is missing some spacing props in `propTypes`
+// https://github.com/styled-system/styled-system/issues/466
+const spacePropNames = [
+  // @ts-ignore
+  ...Object.keys(space.propTypes),
+  'mx',
+  'my',
+  'px',
+  'py',
+];
 
 export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
   const spaceProps = pick(props, spacePropNames);

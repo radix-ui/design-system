@@ -1,7 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ChangeEventHandler } from 'react';
 import styled, { css } from 'styled-components';
 import { themeGet } from 'styled-system';
 import { themeColor } from '../theme';
+
+type SliderProps = {
+  min?: number;
+  max?: number;
+  value?: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+};
+
+export const Slider = ({
+  min = 0,
+  max = 100,
+  value,
+  onChange,
+  ...props
+}: SliderProps) => {
+  const isControlled = value !== undefined && onChange !== undefined;
+  const [stateValue, setStateValue] = useState<number>(Number(value) || 0);
+
+  const percentage = ((stateValue - min) * 100) / (max - min || 100);
+
+  // keep local state in sync with `value` prop
+  useEffect(() => {
+    if (isControlled) {
+      setStateValue(Number(value));
+    }
+  }, [value]);
+
+  return (
+    <Wrapper>
+      <Input
+        {...props}
+        type="range"
+        value={stateValue}
+        min={min}
+        max={max}
+        onChange={
+          isControlled
+            ? onChange
+            : event => setStateValue(Number(event.target.value))
+        }
+      />
+      <Track>
+        <InnerTrack style={{ width: `${percentage}%` }} />
+      </Track>
+    </Wrapper>
+  );
+};
+
+Slider.defaultProps = {
+  step: '1',
+};
 
 const TRACK_HEIGHT = 3;
 
@@ -99,38 +150,3 @@ const InnerTrack = styled.div`
   height: 100%;
   background-color: ${themeColor('blues.3')};
 `;
-
-export const Slider = ({ min, max, value, onChange, props }) => {
-  const isControlled = value !== undefined && onChange !== undefined;
-  const [stateValue, setStateValue] = useState(value || 0);
-  const percentage = ((stateValue - min) * 100) / (max - min || 100);
-
-  // keep local state in sync with `value` prop
-  useEffect(() => {
-    if (isControlled) {
-      setStateValue(value);
-    }
-  }, [value]);
-
-  return (
-    <Wrapper>
-      <Input
-        {...props}
-        type="range"
-        value={stateValue}
-        onChange={
-          isControlled ? onChange : event => setStateValue(event.target.value)
-        }
-      />
-      <Track>
-        <InnerTrack style={{ width: `${percentage}%` }} />
-      </Track>
-    </Wrapper>
-  );
-};
-
-Slider.defaultProps = {
-  step: '1',
-  min: 0,
-  max: 100,
-};

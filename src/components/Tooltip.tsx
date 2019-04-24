@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { themeGet } from 'styled-system';
 import { themeColor } from '../theme';
+
+type BaseTooltipProps = {
+  position?: 'top' | 'bottom' | 'right' | 'left';
+  align?: 'start' | 'end';
+};
+
+type TooltipProps = BaseTooltipProps & {
+  text: string;
+};
+
+export const Tooltip: FC<TooltipProps> = ({ text, ...props }) => {
+  if (!text) {
+    return null;
+  }
+  return <BaseTooltip aria-label={text} {...props} />;
+};
+
+Tooltip.defaultProps = {
+  position: 'top',
+};
 
 const tooltipAppear = keyframes`
   from {
@@ -16,7 +36,7 @@ const tooltipAppear = keyframes`
 const ARROW_SIZE = '6px';
 const OFFSET = '6px';
 
-const BaseTooltip = styled.span`
+const BaseTooltip = styled.span<BaseTooltipProps>`
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -209,11 +229,3 @@ const BaseTooltip = styled.span`
         }
       `}
 `;
-
-export function Tooltip({ text, ...props }) {
-  return <BaseTooltip aria-label={text} {...props} />;
-}
-
-Tooltip.defaultProps = {
-  position: 'top',
-};

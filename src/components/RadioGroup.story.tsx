@@ -6,7 +6,7 @@ import { Button } from './Button';
 import { RadioGroup, Radio } from './RadioGroup';
 
 function RadioGroupStory() {
-  const [wrap, setWrap] = useState('wrap');
+  const [value, setValue] = useState('wrap');
   return (
     <>
       <Box mb="4">
@@ -32,13 +32,13 @@ function RadioGroupStory() {
         <>
           <RadioGroup
             name="flexWrap"
-            value={wrap}
-            onChange={event => setWrap(event.target.value)}
+            value={value}
+            onChange={event => setValue(event.target.value)}
           >
             <Radio value="wrap">Wrap</Radio>
             <Radio value="nowrap">Nowrap</Radio>
           </RadioGroup>
-          <Button my="3" onClick={() => setWrap('nowrap')}>
+          <Button my="3" onClick={() => setValue('nowrap')}>
             select nowrap
           </Button>
         </>
