@@ -7,7 +7,7 @@ type WrapperProps = ColorProps & SpaceProps;
 type AspectRatioProps = WrapperProps & {
   ratio?: number;
   theme?: Theme;
-};
+} & any;
 
 export const AspectRatio: FC<AspectRatioProps> = ({
   ratio = 1 / 1,

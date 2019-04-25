@@ -6,7 +6,7 @@ export const BaseTextarea = styled(Input)`
   min-height: 80px;
 `;
 
-type TextaereaProps = InputProps & ComponentProps<'textarea'>;
+type TextaereaProps = InputProps & ComponentProps<'textarea'> & any;
 
 export const Textarea: FC<TextaereaProps> = props => (
   <BaseTextarea {...props} />

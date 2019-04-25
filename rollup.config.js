@@ -22,10 +22,10 @@ export default {
   plugins: [
     url({
       include: ['**/*.woff', '**/*.woff2'],
+      limit: Infinity,
     }),
     typescript({
       clean: true,
-      abortOnError: false,
       typescript: require('typescript'),
     }),
   ],
