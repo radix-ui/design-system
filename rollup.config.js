@@ -1,5 +1,4 @@
 import typescript from 'rollup-plugin-typescript2';
-import url from 'rollup-plugin-url';
 import pkg from './package.json';
 
 export default {
@@ -20,10 +19,6 @@ export default {
     '@reach/dialog/styles.css',
   ],
   plugins: [
-    url({
-      include: ['**/*.woff', '**/*.woff2'],
-      limit: Infinity,
-    }),
     typescript({
       clean: true,
       typescript: require('typescript'),

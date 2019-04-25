@@ -7,6 +7,10 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
   "dependencies": {
     "@reach/dialog": "^0.2.3",
     "@types/styled-components": "^4.1.14",
@@ -15,15 +19,10 @@
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
     "polished": "^3.2.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0",
     "styled-components": "^4.2.0",
     "styled-system": "^4.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public --ci",
     "build-storybook": "build-storybook -s public",
     "prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}\"",
@@ -31,9 +30,6 @@
     "build": "rollup -c",
     "watch": "rollup -cw",
     "release": "np"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": [
     ">0.2%",
@@ -55,7 +51,6 @@
     "prettier": "^1.17.0",
     "rollup": "^1.10.1",
     "rollup-plugin-typescript2": "^0.21.0",
-    "rollup-plugin-url": "^2.2.1",
     "typescript": "3.3.3333"
   }
 }

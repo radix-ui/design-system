@@ -1,4 +1,3 @@
-/// <reference types="react-scripts" />
 declare module '@reach/dialog';
 declare module 'lodash.merge';
 declare module 'lodash.omit';

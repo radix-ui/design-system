@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "./dist",
-    "module": "esnext",
-    "outDir": "./dist",
-    "target": "es5",
-    "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "declaration": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "noEmit": true,
     "jsx": "react",
-    "lib": ["dom", "dom.iterable", "esnext"]
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es5"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "src/**/*.story.*"]
