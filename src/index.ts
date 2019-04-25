@@ -7,6 +7,7 @@ export { Card } from './components/Card';
 export { Checkbox } from './components/Checkbox';
 export { Container } from './components/Container';
 export { Dialog } from './components/Dialog';
+export { Divider } from './components/Divider';
 export { Flex } from './components/Flex';
 export { GhostButton } from './components/GhostButton';
 export { Heading } from './components/Heading';
