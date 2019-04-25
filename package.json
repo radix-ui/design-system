@@ -1,15 +1,14 @@
 {
   "name": "radix-poc",
-  "version": "0.0.7-0",
+  "version": "0.0.5-0",
   "main": "dist/index.js",
-  "umd:main": "dist/index.umd.js",
-  "module": "dist/index.mjs",
-  "source": "src/index.ts",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
   "types": "dist/index.d.ts",
   "dependencies": {
     "@reach/dialog": "^0.2.3",
-    "@types/styled-components": "^4.1.14",
-    "@types/styled-system": "^4.1.0",
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
@@ -18,7 +17,9 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0",
     "styled-components": "^4.2.0",
-    "styled-system": "^4.1.0"
+    "styled-system": "^4.1.0",
+    "@types/styled-components": "^4.1.14",
+    "@types/styled-system": "^4.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,8 +30,7 @@
     "format": "npm run prettier -- --write ",
     "build": "rollup -c",
     "watch": "rollup -cw",
-    "release": "np",
-    "mb": "microbundle --jsx react -f es,cjs"
+    "release": "np"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,7 +51,6 @@
     "@types/react-dom": "^16.8.4",
     "@types/storybook__react": "^4.0.1",
     "babel-loader": "8.0.5",
-    "microbundle": "^0.11.0",
     "np": "^5.0.0",
     "prettier": "^1.17.0",
     "rollup": "^1.10.1",

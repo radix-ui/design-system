@@ -26,5 +26,3 @@ yarn-error.log*
 # build
 .rpt2_cache/
 dist/
-.rts2_cache_cjs/
-.rts2_cache_es/
