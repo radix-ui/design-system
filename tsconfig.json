@@ -5,7 +5,6 @@
     "module": "esnext",
     "outDir": "./dist",
     "target": "es5",
-    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -14,9 +13,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "noEmit": true,
-    "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "isolatedModules": true
+    "jsx": "react",
+    "lib": ["dom", "dom.iterable", "esnext"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
