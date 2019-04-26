@@ -7,6 +7,16 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
+  "scripts": {
+    "storybook": "start-storybook -p 9009 -s public --ci",
+    "build-storybook": "build-storybook -s public",
+    "prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}\"",
+    "format": "npm run prettier -- --write ",
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "release": "np",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src"
+  },
   "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
@@ -22,33 +32,6 @@
     "styled-components": "^4.2.0",
     "styled-system": "^4.1.0"
   },
-  "scripts": {
-    "storybook": "start-storybook -p 9009 -s public --ci",
-    "build-storybook": "build-storybook -s public",
-    "prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}\"",
-    "format": "npm run prettier -- --write ",
-    "build": "rollup -c",
-    "watch": "rollup -cw",
-    "release": "np",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
-      "git add"
-    ]
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@storybook/addon-options": "5.0.10",
@@ -76,5 +59,22 @@
     "rollup-plugin-typescript2": "^0.21.0",
     "rollup-plugin-url": "^2.2.1",
     "typescript": "3.3.3333"
-  }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
+      "git add"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
