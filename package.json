@@ -29,7 +29,19 @@
     "format": "npm run prettier -- --write ",
     "build": "rollup -c",
     "watch": "rollup -cw",
-    "release": "np"
+    "release": "np",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
+      "git add"
+    ]
   },
   "browserslist": [
     ">0.2%",
@@ -46,7 +58,18 @@
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
     "@types/storybook__react": "^4.0.1",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "babel-eslint": "9.x",
     "babel-loader": "8.0.5",
+    "eslint": "5.x",
+    "eslint-config-react-app": "^4.0.0",
+    "eslint-plugin-flowtype": "2.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "1.5.0",
+    "husky": "^2.1.0",
+    "lint-staged": "^8.1.5",
     "np": "^5.0.0",
     "prettier": "^1.17.0",
     "rollup": "^1.10.1",
