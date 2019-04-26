@@ -9,6 +9,7 @@ export { Container } from './components/Container';
 export { Dialog } from './components/Dialog';
 export { Divider } from './components/Divider';
 export { Flex } from './components/Flex';
+export { Grid } from './components/Grid';
 export { GhostButton } from './components/GhostButton';
 export { Heading } from './components/Heading';
 export { Input } from './components/Input';
