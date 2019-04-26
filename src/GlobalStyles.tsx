@@ -1,8 +1,26 @@
 import { createGlobalStyle } from 'styled-components';
 import { themeGet } from 'styled-system';
+import {
+  UntitledSansWoff,
+  UntitledSansWoff2,
+  UntitledSansMediumWoff,
+  UntitledSansMediumWoff2,
+} from './fonts';
 
 export const GlobalStyles = createGlobalStyle`
   * { box-sizing: border-box; }
+
+  @font-face {
+    font-family: 'UntitledSans';
+    src: local('UntitledSans'), url(${UntitledSansWoff}) format('woff2'),
+         local('UntitledSans'), url(${UntitledSansWoff2}) format('woff');
+  }
+
+  @font-face {
+    font-family: 'UntitledSans-Medium';
+    src: local('UntitledSans-Medium'), url(${UntitledSansMediumWoff}) format('woff2'),
+         local('UntitledSans-Medium'), url(${UntitledSansMediumWoff2}) format('woff');
+  }
 
   html {
     font-size: 100%;
