@@ -11,10 +11,10 @@
     "storybook": "start-storybook -p 9009 -s public --ci",
     "build-storybook": "build-storybook -s public",
     "prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}\"",
-    "format": "npm run prettier -- --write ",
+    "format": "yarn prettier -- --write ",
     "build": "rollup -c",
     "watch": "rollup -cw",
-    "release": "np",
+    "release": "yarn build && np",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src"
   },
   "peerDependencies": {
