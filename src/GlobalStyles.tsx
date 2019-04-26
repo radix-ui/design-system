@@ -37,4 +37,8 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: normal;
     color: inherit;
   }
+
+  svg {
+    vertical-align: middle;
+  }
 `;
