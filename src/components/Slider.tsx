@@ -27,7 +27,7 @@ export const Slider = ({
     if (isControlled) {
       setStateValue(Number(value));
     }
-  }, [value]);
+  }, [value, isControlled]);
 
   return (
     <Wrapper>
