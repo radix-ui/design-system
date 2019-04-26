@@ -5,6 +5,7 @@ export { Box } from './components/Box';
 export { Button } from './components/Button';
 export { Card } from './components/Card';
 export { Checkbox } from './components/Checkbox';
+export { CheckboxButton } from './components/CheckboxButton';
 export { Container } from './components/Container';
 export { Dialog } from './components/Dialog';
 export { Divider } from './components/Divider';
