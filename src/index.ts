@@ -12,6 +12,7 @@ export { Flex } from './components/Flex';
 export { GhostButton } from './components/GhostButton';
 export { Heading } from './components/Heading';
 export { Input } from './components/Input';
+export { Link } from './components/Link';
 export { RadioGroup, Radio } from './components/RadioGroup';
 export { Select } from './components/Select';
 export { Slider } from './components/Slider';
