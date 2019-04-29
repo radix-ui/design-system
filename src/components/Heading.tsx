@@ -25,8 +25,9 @@ type HeadingProps = ColorProps &
 
 export const Heading = styled.h1<HeadingProps>`
   color: ${themeColor('grays.8')};
-  font-family: ${themeGet('fonts.normal')};
+  font-family: ${themeGet('fonts.medium')};
   margin: 0;
+  font-weight: 500;
 
   ${color}
   ${space}
