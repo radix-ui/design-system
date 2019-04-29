@@ -42,8 +42,9 @@ import {
   zIndex,
   ZIndexProps,
 } from 'styled-system';
+import { FC, ComponentProps } from 'react';
 
-type BoxProps = AlignSelfProps &
+export type BoxProps = AlignSelfProps &
   BordersProps &
   BottomProps &
   BoxShadowProps &
@@ -62,9 +63,10 @@ type BoxProps = AlignSelfProps &
   TextAlignProps &
   TopProps &
   WidthProps &
-  ZIndexProps;
+  ZIndexProps &
+  ComponentProps<'div'>;
 
-export const Box = styled.div<BoxProps>`
+export const Box: FC<BoxProps> = styled.div`
   ${alignSelf}
   ${borders}
   ${bottom}
