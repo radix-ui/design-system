@@ -91,6 +91,8 @@ const Input = styled.input`
   padding: ${themeGet('space.1')} 0;
   margin: 0;
   width: 100%;
+  position: relative;
+  z-index: 1;
 
   &::-webkit-slider-runnable-track {
     ${trackStyle}
@@ -140,7 +142,7 @@ const Track = styled.div`
   left: 0;
   top: 50%;
   right: 0;
-  z-index: -1;
+  z-index: 0;
   transform: translateY(-50%);
 `;
 
