@@ -21,9 +21,9 @@ import {
   gridAutoRows,
   GridAutoRowsProps,
   gridTemplateColumns,
-  GridTemplatesColumnsProps,
+  GridTemplateColumnsProps,
   gridTemplateRows,
-  GridTemplatesRowsProps,
+  GridTemplateRowsProps,
   gridTemplateAreas,
   GridTemplatesAreasProps,
   gridArea,
@@ -42,8 +42,8 @@ type GridProps = AlignContentProps &
   GridAutoFlowProps &
   GridAutoColumnsProps &
   GridAutoRowsProps &
-  GridTemplatesColumnsProps &
-  GridTemplatesRowsProps &
+  GridTemplateColumnsProps &
+  GridTemplateRowsProps &
   GridTemplatesAreasProps &
   GridAreaProps &
   SpaceProps;
