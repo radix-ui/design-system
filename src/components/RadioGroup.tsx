@@ -4,6 +4,7 @@ import React, {
   ReactElement,
   forwardRef,
   ComponentPropsWithRef,
+  FC,
 } from 'react';
 import styled from 'styled-components';
 import omit from 'lodash.omit';
@@ -48,7 +49,7 @@ const spacePropNames = [
 type RadioProps = ComponentPropsWithRef<'input'>;
 type Ref = HTMLInputElement;
 
-export const Radio = forwardRef<Ref, RadioProps>((props, ref) => {
+export const Radio: FC = forwardRef<Ref, RadioProps>((props, ref) => {
   const { children } = props;
   const systemProps = pick(props, spacePropNames);
   const inputProps = omit(props, spacePropNames);
