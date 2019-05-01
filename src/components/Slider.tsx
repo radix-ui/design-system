@@ -1,7 +1,6 @@
 import React, { useState, useEffect, ChangeEventHandler } from 'react';
 import styled, { css } from 'styled-components';
 import { themeGet } from 'styled-system';
-import { themeColor } from '../theme';
 
 type SliderProps = {
   min?: number;
@@ -73,7 +72,7 @@ const thumbStyle = css`
   background-color: white;
   border: none;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 1px ${themeColor('grays.4')};
+  box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')};
   height: ${themeGet('space.3')};
   margin-top: -6px;
   transition: transform 100ms ease;
@@ -81,7 +80,7 @@ const thumbStyle = css`
 `;
 
 const thumbFocusStyle = css`
-  box-shadow: inset 0 0 0 1px ${themeColor('blues.4')};
+  box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.4')};
 `;
 
 const Input = styled.input`
@@ -111,7 +110,7 @@ const Input = styled.input`
 
   &:hover {
     &::-webkit-slider-thumb {
-      box-shadow: inset 0 0 0 1px ${themeColor('grays.5')};
+      box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.5')};
     }
   }
 
@@ -136,7 +135,7 @@ const Input = styled.input`
 
 const Track = styled.div`
   ${trackStyle}
-  background-color: ${themeColor('grays.3')};
+  background-color: ${themeGet('colors.grays.3')};
   position: absolute;
   left: 0;
   top: 50%;
@@ -148,5 +147,5 @@ const Track = styled.div`
 const InnerTrack = styled.div`
   ${trackStyle}
   height: 100%;
-  background-color: ${themeColor('blues.3')};
+  background-color: ${themeGet('colors.blues.3')};
 `;

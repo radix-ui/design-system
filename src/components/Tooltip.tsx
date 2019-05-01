@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { themeGet } from 'styled-system';
-import { themeColor } from '../theme';
 
 type BaseTooltipProps = {
   position?: 'top' | 'bottom' | 'right' | 'left';
@@ -66,7 +65,7 @@ const BaseTooltip = styled.span<BaseTooltipProps>`
     font-size: ${themeGet('fontSizes.2')};
     line-height: ${themeGet('fontSizes.2')};
     padding: ${themeGet('space.2')} ${themeGet('space.2')};
-    color: ${themeColor('white')};
+    color: ${themeGet('colors.white')};
     text-align: center;
     word-wrap: break-word;
     white-space: pre;

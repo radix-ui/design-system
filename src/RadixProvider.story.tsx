@@ -36,8 +36,6 @@ function TypescaleStory() {
   const makeScale = (scale: ModularScaleRatio): Theme => {
     return {
       ...theme,
-      // @ts-ignore
-      // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/34794
       fontSizes: [-4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6].map(n => {
         return modularScale(n, '1rem', scale);
       }),

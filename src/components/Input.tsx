@@ -13,7 +13,7 @@ import {
   themeGet,
   variant,
 } from 'styled-system';
-import { theme, themeColor } from '../theme';
+import { theme } from '../theme';
 
 // @ts-ignore
 theme.inputs = {
@@ -46,7 +46,7 @@ export type InputProps = ColorProps &
   TextAlignProps & { variant?: VariantProps; size?: SizeProps };
 
 const placeholderStyle = css`
-  color: ${themeColor('grays.4')};
+  color: ${themeGet('colors.grays.4')};
   opacity: 1;
 `;
 
@@ -55,7 +55,7 @@ export const Input = styled.input<InputProps>`
   background-color: transparent;
   border: none;
   border-radius: 0;
-  box-shadow: inset 0 -1px 0 0 ${themeColor('grays.3')};
+  box-shadow: inset 0 -1px 0 0 ${themeGet('colors.grays.3')};
   font-family: ${themeGet('fonts.normal')};
   font-size: ${themeGet('fontSizes.2')};
   height: ${themeGet('space.5')};
@@ -77,17 +77,17 @@ export const Input = styled.input<InputProps>`
   }
 
   &:focus {
-    box-shadow: inset 0 -1px 0 0 ${themeColor('blues.4')};
+    box-shadow: inset 0 -1px 0 0 ${themeGet('colors.blues.4')};
   }
 
   &:read-only {
-    box-shadow: inset 0 -1px 0 0 ${themeColor('grays.2')};
-    color: ${themeColor('grays.5')};
+    box-shadow: inset 0 -1px 0 0 ${themeGet('colors.grays.2')};
+    color: ${themeGet('colors.grays.5')};
   }
 
   &:disabled {
-    box-shadow: inset 0 -1px 0 0 ${themeColor('grays.2')};
-    color: ${themeColor('grays.4')};
+    box-shadow: inset 0 -1px 0 0 ${themeGet('colors.grays.2')};
+    color: ${themeGet('colors.grays.4')};
     cursor: not-allowed;
   }
 

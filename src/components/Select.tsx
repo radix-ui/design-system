@@ -2,23 +2,20 @@ import React, { ComponentProps, FC } from 'react';
 import styled from 'styled-components';
 import { space, SpaceProps, width, WidthProps, themeGet } from 'styled-system';
 import pick from 'lodash.pick';
-import { themeColor } from '../theme';
 
 type SelectProps = ComponentProps<'select'> & WrapperProps;
 
 // TODO: Styled System is missing some spacing props in `propTypes`
 // https://github.com/styled-system/styled-system/issues/466
 const spacePropNames = [
-  // @ts-ignore
-  ...Object.keys(space.propTypes),
+  ...Object.keys(space.propTypes || {}),
   'mx',
   'my',
   'px',
   'py',
 ];
 
-// @ts-ignore
-const widthPropNames = Object.keys(width.propTypes);
+const widthPropNames = Object.keys(width.propTypes || {});
 
 export const Select: FC<SelectProps> = ({
   children,
@@ -84,10 +81,10 @@ const StyledSelect = styled.select`
   border: none;
   outline: none;
   width: 100%;
-  box-shadow: inset 0 -1px 0 0 ${themeColor('grays.3')};
+  box-shadow: inset 0 -1px 0 0 ${themeGet('colors.grays.3')};
 
   &:focus {
-    box-shadow: inset 0 -1px 0 0 ${themeColor('blues.4')};
+    box-shadow: inset 0 -1px 0 0 ${themeGet('colors.blues.4')};
   }
 `;
 

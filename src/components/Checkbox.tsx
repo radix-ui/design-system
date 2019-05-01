@@ -3,15 +3,13 @@ import styled from 'styled-components';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { space, SpaceProps, themeGet } from 'styled-system';
-import { themeColor } from '../theme';
 
 type CheckboxProps = SpaceProps & ComponentProps<'input'>;
 
 // TODO: Styled System is missing some spacing props in `propTypes`
 // https://github.com/styled-system/styled-system/issues/466
 const spacePropNames = [
-  // @ts-ignore
-  ...Object.keys(space.propTypes),
+  ...Object.keys(space.propTypes || {}),
   'mx',
   'my',
   'px',
@@ -80,7 +78,7 @@ const FakeCheckbox = styled.div`
   width: ${themeGet('space.3')};
   height: ${themeGet('space.3')};
   border-radius: ${themeGet('radii.1')};
-  box-shadow: inset 0 0 0 1px ${themeColor('grays.3')};
+  box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.3')};
   display: inline-flex;
   vertical-align: middle;
   align-items: center;
@@ -89,17 +87,17 @@ const FakeCheckbox = styled.div`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   ${Input}:hover + & {
-    box-shadow: inset 0 0 0 1px ${themeColor('grays.4')};
+    box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')};
   }
 
   ${Input}:focus + & {
-    box-shadow: inset 0 0 0 1px ${themeColor('blues.4')};
+    box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.4')};
   }
 
   ${Input}:checked + & {
-    background-color: ${themeColor('blues.4')};
-    box-shadow: inset 0 0 0 1px ${themeColor('blues.4')};
-    color: ${themeColor('white')};
+    background-color: ${themeGet('colors.blues.4')};
+    box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.4')};
+    color: ${themeGet('colors.white')};
   }
 `;
 

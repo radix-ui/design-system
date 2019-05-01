@@ -9,7 +9,6 @@ import styled from 'styled-components';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { space, themeGet } from 'styled-system';
-import { themeColor } from '../theme';
 
 type RadioGroupProps = ComponentProps<'div'> & {
   name: string;
@@ -39,8 +38,7 @@ export const RadioGroup = (props: RadioGroupProps) => {
 // TODO: Styled System is missing some spacing props in `propTypes`
 // https://github.com/styled-system/styled-system/issues/466
 const spacePropNames = [
-  // @ts-ignore
-  ...Object.keys(space.propTypes),
+  ...Object.keys(space.propTypes || {}),
   'mx',
   'my',
   'px',
@@ -99,7 +97,7 @@ const FakeRadio = styled.div`
   height: ${themeGet('space.4')};
   color: transparent;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 1px ${themeColor('grays.3')};
+  box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.3')};
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -114,14 +112,14 @@ const FakeRadio = styled.div`
   }
 
   ${Input}:checked + & {
-    color: ${themeColor('blues.4')};
+    color: ${themeGet('colors.blues.4')};
   }
 
   ${Input}:hover + & {
-    box-shadow: inset 0 0 0 1px ${themeColor('grays.4')};
+    box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')};
   }
 
   ${Input}:focus + & {
-    box-shadow: inset 0 0 0 1px ${themeColor('blues.4')};
+    box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.4')};
   }
 `;

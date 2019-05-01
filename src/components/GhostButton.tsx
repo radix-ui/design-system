@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 import { space, SpaceProps, themeGet, variant } from 'styled-system';
-import { theme, themeColor } from '../theme';
+import { theme } from '../theme';
 
 // @ts-ignore
 theme.ghostButtons = {
   active: {
-    backgroundColor: themeColor('grays.2'),
-    boxShadow: `inset 0 1px 0 0 ${themeColor('grays.4')}`,
+    backgroundColor: themeGet('colors.grays.2'),
+    boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')}`,
     '&:hover': {
-      backgroundColor: themeColor('grays.2'),
+      backgroundColor: themeGet('colors.grays.2'),
     },
     '&:focus': {
-      boxShadow: `inset 0 1px 0 0 ${themeColor('grays.4')}`,
+      boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')}`,
     },
     '&:active': {
-      boxShadow: `inset 0 1px 0 0 ${themeColor('grays.4')}`,
+      boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')}`,
     },
   },
 };
@@ -49,7 +49,7 @@ export const GhostButton = styled.button<GhostButtonProps>`
   background-color: transparent;
   border: none;
   border-radius: 9999px;
-  color: ${themeColor('grays.5')};
+  color: ${themeGet('colors.grays.5')};
   display: inline-flex;
   flex-shrink: 0;
   font-family: ${themeGet('fonts.normal')};
@@ -74,20 +74,20 @@ export const GhostButton = styled.button<GhostButtonProps>`
   }
 
   &:hover {
-    background-color: ${themeColor('grays.1')};
+    background-color: ${themeGet('colors.grays.1')};
   }
 
   &:focus {
-    box-shadow: inset 0 0 0 1px ${themeColor('blues.4')};
+    box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.4')};
   }
 
   &:active {
-    background-color: ${themeColor('grays.2')};
+    background-color: ${themeGet('colors.grays.2')};
     box-shadow: none;
   }
 
   &:disabled {
-    color: ${themeColor('grays.4')};
+    color: ${themeGet('colors.grays.4')};
     cursor: not-allowed;
     pointer-events: none;
   }

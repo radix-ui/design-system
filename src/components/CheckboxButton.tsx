@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { space, SpaceProps, themeGet } from 'styled-system';
-import { themeColor } from '../theme';
 
 type CheckboxButton = SpaceProps &
   ComponentProps<'input'> & { children: ReactNode };
@@ -67,6 +66,6 @@ const FakeCheckbox = styled.div`
   }
 
   ${Input}:checked + & {
-    color: ${themeColor('blue')};
+    color: ${themeGet('colors.blue')};
   }
 `;

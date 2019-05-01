@@ -14,7 +14,6 @@ import {
   FontWeightProps,
   themeGet,
 } from 'styled-system';
-import { themeColor } from '../theme';
 
 type HeadingProps = ColorProps &
   SpaceProps &
@@ -24,7 +23,7 @@ type HeadingProps = ColorProps &
   FontWeightProps;
 
 export const Heading = styled.h1<HeadingProps>`
-  color: ${themeColor('grays.8')};
+  color: ${themeGet('colors.grays.8')};
   font-family: ${themeGet('fonts.medium')};
   margin: 0;
   font-weight: 500;

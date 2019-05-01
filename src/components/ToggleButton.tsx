@@ -7,7 +7,6 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
-import { themeColor } from '../theme';
 import { Flex } from './Flex';
 
 type ToggleButtonGroupProps = {
@@ -86,8 +85,8 @@ const FakeRadio = styled.span`
   line-height: 1;
   white-space: nowrap;
 
-  box-shadow: inset 0 0 0 1px ${themeColor('grays.3')};
-  color: ${themeColor('grays.5')};
+  box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.3')};
+  color: ${themeGet('colors.grays.5')};
 
   ${Wrapper}:first-child & {
     border-top-left-radius: ${themeGet('radii.1')};
@@ -100,14 +99,14 @@ const FakeRadio = styled.span`
   }
 
   ${Radio}:checked + & {
-    background-color: ${themeColor('blues.0')};
-    box-shadow: inset 0 0 0 1px ${themeColor('blues.2')};
-    color: ${themeColor('blues.5')};
+    background-color: ${themeGet('colors.blues.0')};
+    box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.2')};
+    color: ${themeGet('colors.blues.5')};
     z-index: 1;
   }
 
   &:hover {
-    box-shadow: inset 0 0 0 1px ${themeColor('grays.4')};
+    box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')};
     z-index: 1;
   }
 `;

@@ -12,13 +12,13 @@ import {
   variant,
 } from 'styled-system';
 import { transparentize } from 'polished';
-import { theme, themeColor } from '../theme';
+import { theme } from '../theme';
 
 // @ts-ignore
 // Add buttonsSizes to Theme
 theme.cards = {
   border: {
-    boxShadow: `inset 0 0 0 1px ${themeColor('grays.3')}`,
+    boxShadow: `inset 0 0 0 1px ${themeGet('colors.grays.3')}`,
   },
   shadow: {
     position: 'relative',
@@ -39,12 +39,12 @@ theme.cards = {
     '&::before': {
       boxShadow: `0 10px 38px -10px ${transparentize(
         0.65,
-        themeColor('grays.8')
+        themeGet('colors.grays.8')
       )},
-        0 10px 20px -15px ${transparentize(0.8, themeColor('grays.8'))}`,
+        0 10px 20px -15px ${transparentize(0.8, themeGet('colors.grays.8'))}`,
     },
     '&::after': {
-      boxShadow: `inset 0 0 0 1px ${themeColor('blues.4')}`,
+      boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')}`,
       opacity: 0,
     },
   },
@@ -67,13 +67,13 @@ theme.cards = {
     '&::before': {
       boxShadow: `0 10px 38px -10px ${transparentize(
         0.65,
-        themeColor('grays.8')
+        themeGet('colors.grays.8')
       )},
-        0 10px 20px -15px ${transparentize(0.8, themeColor('grays.8'))}`,
+        0 10px 20px -15px ${transparentize(0.8, themeGet('colors.grays.8'))}`,
       opacity: 0,
     },
     '&::after': {
-      boxShadow: `inset 0 0 0 1px ${themeColor('blues.4')}`,
+      boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')}`,
       opacity: 0,
     },
   },
@@ -116,11 +116,11 @@ export const CardLink = styled.a<CardProps>`
     props.variant === 'border' &&
     css`
       &:hover {
-        box-shadow: inset 0 0 0 1px ${themeColor('grays.4')};
+        box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')};
       }
 
       &:focus {
-        box-shadow: inset 0 0 0 1px ${themeColor('blues.4')};
+        box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.4')};
       }
     `}
 
@@ -138,7 +138,7 @@ export const CardLink = styled.a<CardProps>`
       }
 
       &:active {
-        background-color: ${themeColor('grays.0')};
+        background-color: ${themeGet('colors.grays.0')};
         transform: translateY(0);
       }
     `}

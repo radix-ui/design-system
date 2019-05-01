@@ -9,8 +9,6 @@ export const theme: Theme = {
       '"UntitledSans-Medium", apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
     mono: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
   },
-  // @ts-ignore
-  // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/34794
   fontSizes: [
     '.5625rem',
     '.6875rem',
@@ -24,8 +22,6 @@ export const theme: Theme = {
     '2.188rem',
     '3.625rem',
   ],
-  // @ts-ignore
-  // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/34794
   space: [
     '0',
     '.3125rem',
@@ -39,8 +35,6 @@ export const theme: Theme = {
     '5rem',
   ],
   radii: [0, '.1875rem', '.5rem', '625rem'],
-  // @ts-ignore
-  // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/34794
   colors: {
     black: 'hsl(0, 0%, 0%)',
     blacks: [
@@ -120,7 +114,3 @@ export const theme: Theme = {
     ],
   },
 };
-
-export function themeColor(key: string, fallback?: string) {
-  return themeGet(`colors.${key}`, fallback)({ theme });
-}

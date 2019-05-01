@@ -20,7 +20,6 @@ import {
   LetterSpacingProps,
   themeGet,
 } from 'styled-system';
-import { themeColor } from '../theme';
 
 type TextProps = ColorProps &
   SpaceProps &
@@ -35,7 +34,7 @@ type TextProps = ColorProps &
 export const Text = styled.span<TextProps>`
   font-family: ${themeGet('fonts.normal')};
   font-size: ${themeGet('fontSizes.4')};
-  color: ${themeColor('grays.7')};
+  color: ${themeGet('colors.grays.7')};
   margin: 0;
   padding: 0;
 
