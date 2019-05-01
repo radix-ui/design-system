@@ -41,17 +41,18 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
 type Ref = HTMLInputElement;
 type ToggleButtonProps = ComponentPropsWithRef<'input'>;
 
-export const ToggleButton: FC = forwardRef<Ref, ToggleButtonProps>(
-  (props, ref) => {
-    const { children, ...inputProps } = props;
-    return (
-      <Wrapper>
-        <Radio {...inputProps} type="radio" ref={ref} />
-        {children && <FakeRadio>{children}</FakeRadio>}
-      </Wrapper>
-    );
-  }
-);
+export const ToggleButton: FC<ToggleButtonProps> = forwardRef<
+  Ref,
+  ToggleButtonProps
+>((props, ref) => {
+  const { children, ...inputProps } = props;
+  return (
+    <Wrapper>
+      <Radio {...inputProps} type="radio" ref={ref} />
+      {children && <FakeRadio>{children}</FakeRadio>}
+    </Wrapper>
+  );
+});
 
 const Wrapper = styled.label`
   display: inline-flex;

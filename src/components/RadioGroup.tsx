@@ -49,19 +49,21 @@ const spacePropNames = [
 type RadioProps = ComponentPropsWithRef<'input'>;
 type Ref = HTMLInputElement;
 
-export const Radio: FC = forwardRef<Ref, RadioProps>((props, ref) => {
-  const { children } = props;
-  const systemProps = pick(props, spacePropNames);
-  const inputProps = omit(props, spacePropNames);
+export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>(
+  (props, ref) => {
+    const { children } = props;
+    const systemProps = pick(props, spacePropNames);
+    const inputProps = omit(props, spacePropNames);
 
-  return (
-    <RadioWrapper {...systemProps}>
-      <Input type="radio" {...inputProps} ref={ref} />
-      <FakeRadio />
-      {children && <TextWrapper>{children}</TextWrapper>}
-    </RadioWrapper>
-  );
-});
+    return (
+      <RadioWrapper {...systemProps}>
+        <Input type="radio" {...inputProps} ref={ref} />
+        <FakeRadio />
+        {children && <TextWrapper>{children}</TextWrapper>}
+      </RadioWrapper>
+    );
+  }
+);
 
 const RadioWrapper = styled.label`
   position: relative;
