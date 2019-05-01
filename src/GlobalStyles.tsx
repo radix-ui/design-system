@@ -34,6 +34,7 @@ export const GlobalStyles = createGlobalStyle`
   button,
   select,
   textarea {
+    font-family: inherit;
     font-size: inherit;
     font-weight: normal;
     color: inherit;
