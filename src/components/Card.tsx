@@ -11,79 +11,82 @@ import {
   themeGet,
   variant,
 } from 'styled-system';
+import merge from 'lodash.merge';
 import { transparentize } from 'polished';
-import { theme } from '../theme';
+import { Theme } from 'styled-system';
 
-// @ts-ignore
-// Add buttonsSizes to Theme
-theme.cards = {
-  border: {
-    boxShadow: `inset 0 0 0 1px ${themeGet('colors.grays.3')({ theme })}`,
-  },
-  shadow: {
-    position: 'relative',
-    transition: 'opacity 80ms linear, transform 150ms ease',
-    '&::before, &::after': {
-      content: `""`,
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      borderRadius: 'inherit',
-      pointerEvents: 'none',
-      transitionProperty: 'all',
-      transitionDuration: '80ms',
-      transitionTimingFunction: 'linear',
-    },
-    '&::before': {
-      boxShadow: `0 10px 38px -10px ${transparentize(
-        0.65,
-        themeGet('colors.grays.8')({ theme })
-      )},
-        0 10px 20px -15px ${transparentize(
-          0.8,
-          themeGet('colors.grays.8')({ theme })
-        )}`,
-    },
-    '&::after': {
-      boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')({ theme })}`,
-      opacity: 0,
-    },
-  },
-  ghost: {
-    position: 'relative',
-    transition: 'opacity 80ms linear, transform 150ms ease',
-    '&::before, &::after': {
-      content: `""`,
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      borderRadius: 'inherit',
-      pointerEvents: 'none',
-      transitionProperty: 'all',
-      transitionDuration: '80ms',
-      transitionTimingFunction: 'linear',
-    },
-    '&::before': {
-      boxShadow: `0 10px 38px -10px ${transparentize(
-        0.65,
-        themeGet('colors.grays.8')({ theme })
-      )},
-        0 10px 20px -15px ${transparentize(
-          0.8,
-          themeGet('colors.grays.8')({ theme })
-        )}`,
-      opacity: 0,
-    },
-    '&::after': {
-      boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')({ theme })}`,
-      opacity: 0,
-    },
-  },
-};
+export function makeCards(theme: Theme) {
+  return {
+    cards: merge({
+      border: {
+        boxShadow: `inset 0 0 0 1px ${themeGet('colors.grays.3')({ theme })}`,
+      },
+      shadow: {
+        position: 'relative',
+        transition: 'opacity 80ms linear, transform 150ms ease',
+        '&::before, &::after': {
+          content: `""`,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          borderRadius: 'inherit',
+          pointerEvents: 'none',
+          transitionProperty: 'all',
+          transitionDuration: '80ms',
+          transitionTimingFunction: 'linear',
+        },
+        '&::before': {
+          boxShadow: `0 10px 38px -10px ${transparentize(
+            0.65,
+            themeGet('colors.grays.8')({ theme })
+          )},
+            0 10px 20px -15px ${transparentize(
+              0.8,
+              themeGet('colors.grays.8')({ theme })
+            )}`,
+        },
+        '&::after': {
+          boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')({ theme })}`,
+          opacity: 0,
+        },
+      },
+      ghost: {
+        position: 'relative',
+        transition: 'opacity 80ms linear, transform 150ms ease',
+        '&::before, &::after': {
+          content: `""`,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          borderRadius: 'inherit',
+          pointerEvents: 'none',
+          transitionProperty: 'all',
+          transitionDuration: '80ms',
+          transitionTimingFunction: 'linear',
+        },
+        '&::before': {
+          boxShadow: `0 10px 38px -10px ${transparentize(
+            0.65,
+            themeGet('colors.grays.8')({ theme })
+          )},
+            0 10px 20px -15px ${transparentize(
+              0.8,
+              themeGet('colors.grays.8')({ theme })
+            )}`,
+          opacity: 0,
+        },
+        '&::after': {
+          boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')({ theme })}`,
+          opacity: 0,
+        },
+      },
+    }),
+  };
+}
 
 type Variants = 'border' | 'shadow' | 'ghost';
 const cardStyle = variant({ key: 'cards', prop: 'variant' });

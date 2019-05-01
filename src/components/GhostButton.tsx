@@ -1,36 +1,47 @@
 import styled from 'styled-components';
-import { space, SpaceProps, themeGet, variant } from 'styled-system';
+import { space, SpaceProps, themeGet, variant, Theme } from 'styled-system';
+import merge from 'lodash.merge';
 import { theme } from '../theme';
 
-// @ts-ignore
-theme.ghostButtons = {
-  active: {
-    backgroundColor: themeGet('colors.grays.2'),
-    boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')}`,
-    '&:hover': {
-      backgroundColor: themeGet('colors.grays.2'),
-    },
-    '&:focus': {
-      boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')}`,
-    },
-    '&:active': {
-      boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')}`,
-    },
-  },
-};
+export function makeGhostButtons(theme: Theme) {
+  return {
+    ghostButtons: merge({
+      active: {
+        backgroundColor: themeGet('colors.grays.2')({ theme }),
+        boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')({ theme })}`,
+        '&:hover': {
+          backgroundColor: themeGet('colors.grays.2')({ theme }),
+        },
+        '&:focus': {
+          boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')({ theme })}`,
+        },
+        '&:active': {
+          boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')({ theme })}`,
+        },
+      },
+    }),
+  };
+}
 
-// @ts-ignore
-theme.ghostButtonSizes = {
-  medium: {
-    minHeight: themeGet('space.6')({ theme }),
-    minWidth: themeGet('space.6')({ theme }),
-    fontSize: themeGet('fontSizes.3')({ theme }),
-    '& svg': {
-      width: themeGet('space.5')({ theme }),
-      height: themeGet('space.5')({ theme }),
-    },
-  },
-};
+export function makeGhostButtonSizes(theme: Theme) {
+  return {
+    ghostButtonSizes: merge({
+      active: {
+        backgroundColor: themeGet('colors.grays.2')({ theme }),
+        boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')({ theme })}`,
+        '&:hover': {
+          backgroundColor: themeGet('colors.grays.2')({ theme }),
+        },
+        '&:focus': {
+          boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')({ theme })}`,
+        },
+        '&:active': {
+          boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')({ theme })}`,
+        },
+      },
+    }),
+  };
+}
 
 type Variants = 'active';
 type Sizes = 'medium';

@@ -12,27 +12,34 @@ import {
   TextAlignProps,
   themeGet,
   variant,
+  Theme,
 } from 'styled-system';
-import { theme } from '../theme';
+import merge from 'lodash.merge';
 
-// @ts-ignore
-theme.inputs = {
-  ghost: {
-    boxShadow: 'none',
-    '&:focus': {
-      boxShadow: 'none',
-    },
-  },
-};
+export function makeInputs(theme: Theme) {
+  return {
+    inputs: merge({
+      ghost: {
+        boxShadow: 'none',
+        '&:focus': {
+          boxShadow: 'none',
+        },
+      },
+    }),
+  };
+}
 
-// @ts-ignore
-theme.inputSizes = {
-  medium: {
-    fontSize: themeGet('fontSizes.3')({ theme }),
-    height: themeGet('space.6')({ theme }),
-    lineHeight: themeGet('space.6')({ theme }),
-  },
-};
+export function makeInputSizes(theme: Theme) {
+  return {
+    inputs: merge({
+      medium: {
+        fontSize: themeGet('fontSizes.3')({ theme }),
+        height: themeGet('space.6')({ theme }),
+        lineHeight: themeGet('space.6')({ theme }),
+      },
+    }),
+  };
+}
 
 const inputStyle = variant({ key: 'inputs', prop: 'variant' });
 const inputSizeStyle = variant({ key: 'inputSizes', prop: 'size' });

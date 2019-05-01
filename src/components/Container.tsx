@@ -12,32 +12,36 @@ import {
   SpaceProps,
   themeGet,
   variant,
+  Theme,
 } from 'styled-system';
-import { theme } from '../theme';
+import merge from 'lodash.merge';
 
-// @ts-ignore
-theme.containerSizes = {
-  small: {
-    paddingLeft: themeGet('space.5')({ theme }),
-    paddingRight: themeGet('space.5')({ theme }),
-    maxWidth: '25rem',
-  },
-  medium: {
-    paddingLeft: themeGet('space.5')({ theme }),
-    paddingRight: themeGet('space.5')({ theme }),
-    maxWidth: '45rem',
-  },
-  large: {
-    paddingLeft: themeGet('space.5')({ theme }),
-    paddingRight: themeGet('space.5')({ theme }),
-    maxWidth: '65rem',
-  },
-  fluid: {
-    paddingLeft: themeGet('space.5')({ theme }),
-    paddingRight: themeGet('space.5')({ theme }),
-    maxWidth: '100%',
-  },
-};
+export function makeContainerSizes(theme: Theme) {
+  return {
+    containerSizes: merge({
+      small: {
+        paddingLeft: themeGet('space.5')({ theme }),
+        paddingRight: themeGet('space.5')({ theme }),
+        maxWidth: '25rem',
+      },
+      medium: {
+        paddingLeft: themeGet('space.5')({ theme }),
+        paddingRight: themeGet('space.5')({ theme }),
+        maxWidth: '45rem',
+      },
+      large: {
+        paddingLeft: themeGet('space.5')({ theme }),
+        paddingRight: themeGet('space.5')({ theme }),
+        maxWidth: '65rem',
+      },
+      fluid: {
+        paddingLeft: themeGet('space.5')({ theme }),
+        paddingRight: themeGet('space.5')({ theme }),
+        maxWidth: '100%',
+      },
+    }),
+  };
+}
 
 const containerStyle = variant({ key: 'containerSizes', prop: 'size' });
 

@@ -27,6 +27,7 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1;
     font-family: ${themeGet('fonts.normal')};
     color: ${themeGet('colors.grays.7')};
+    background-color: ${themeGet('colors.white')};
   }
 
   input,

@@ -5,6 +5,13 @@ import { Theme } from 'styled-system';
 import { makeDividers } from './components/Divider';
 import { makeButtons, makeButtonSizes } from './components/Button';
 import { GlobalStyles } from './GlobalStyles';
+import { makeCards } from './components/Card';
+import { makeContainerSizes } from './components/Container';
+import {
+  makeGhostButtons,
+  makeGhostButtonSizes,
+} from './components/GhostButton';
+import { makeInputSizes, makeInputs } from './components/Input';
 
 type RadixProviderProps = {
   theme?: Theme;
@@ -30,5 +37,11 @@ function makeTheme(theme: Theme) {
     ...makeButtons(theme),
     ...makeButtonSizes(theme),
     ...makeDividers(theme),
+    ...makeCards(theme),
+    ...makeContainerSizes(theme),
+    ...makeGhostButtons(theme),
+    ...makeGhostButtonSizes(theme),
+    ...makeInputs(theme),
+    ...makeInputSizes(theme),
   };
 }
