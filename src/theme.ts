@@ -1,4 +1,4 @@
-import { themeGet, Theme } from 'styled-system';
+import { Theme } from 'styled-system';
 
 export const theme: Theme = {
   breakpoints: ['38em', '62em', '68em', '110em'],

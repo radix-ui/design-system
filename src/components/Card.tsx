@@ -18,7 +18,7 @@ import { theme } from '../theme';
 // Add buttonsSizes to Theme
 theme.cards = {
   border: {
-    boxShadow: `inset 0 0 0 1px ${themeGet('colors.grays.3')}`,
+    boxShadow: `inset 0 0 0 1px ${themeGet('colors.grays.3')({ theme })}`,
   },
   shadow: {
     position: 'relative',
@@ -39,12 +39,15 @@ theme.cards = {
     '&::before': {
       boxShadow: `0 10px 38px -10px ${transparentize(
         0.65,
-        themeGet('colors.grays.8')
+        themeGet('colors.grays.8')({ theme })
       )},
-        0 10px 20px -15px ${transparentize(0.8, themeGet('colors.grays.8'))}`,
+        0 10px 20px -15px ${transparentize(
+          0.8,
+          themeGet('colors.grays.8')({ theme })
+        )}`,
     },
     '&::after': {
-      boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')}`,
+      boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')({ theme })}`,
       opacity: 0,
     },
   },
@@ -67,13 +70,16 @@ theme.cards = {
     '&::before': {
       boxShadow: `0 10px 38px -10px ${transparentize(
         0.65,
-        themeGet('colors.grays.8')
+        themeGet('colors.grays.8')({ theme })
       )},
-        0 10px 20px -15px ${transparentize(0.8, themeGet('colors.grays.8'))}`,
+        0 10px 20px -15px ${transparentize(
+          0.8,
+          themeGet('colors.grays.8')({ theme })
+        )}`,
       opacity: 0,
     },
     '&::after': {
-      boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')}`,
+      boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')({ theme })}`,
       opacity: 0,
     },
   },
