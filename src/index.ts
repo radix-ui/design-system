@@ -16,6 +16,7 @@ export { Heading } from './components/Heading';
 export { Hover } from './components/Hover';
 export { Input } from './components/Input';
 export { Link } from './components/Link';
+export { PillButtonGroup, PillButton } from './components/PillButton';
 export { RadioGroup, Radio } from './components/RadioGroup';
 export { Select } from './components/Select';
 export { Slider } from './components/Slider';
