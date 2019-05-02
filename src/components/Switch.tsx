@@ -2,13 +2,13 @@ import React, { FC, ComponentProps } from 'react';
 import styled from 'styled-components';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { margin, MarginProps, themeGet } from 'styled-system';
+import { space, MarginProps, themeGet } from 'styled-system';
 
 type SwitchProps = MarginProps & ComponentProps<'input'>;
 
 // TODO: Styled System is missing some spacing props in `propTypes`
 // https://github.com/styled-system/styled-system/issues/466
-const marginPropNames = [...Object.keys(margin.propTypes || {}), 'mx', 'my'];
+const marginPropNames = [...Object.keys(space.propTypes || {}), 'mx', 'my'];
 
 export const Switch: FC<SwitchProps> = ({ children, ...props }) => {
   const spaceProps = pick(props, marginPropNames);
@@ -28,7 +28,7 @@ const SwitchWrapper = styled.label<MarginProps>`
   width: ${themeGet('space.6')};
   height: ${themeGet('space.3')};
 
-  ${margin}
+  ${space}
 `;
 
 const Input = styled.input`
