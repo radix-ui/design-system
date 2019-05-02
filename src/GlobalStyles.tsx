@@ -28,6 +28,9 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${themeGet('fonts.normal')};
     color: ${themeGet('colors.grays.7')};
     background-color: ${themeGet('colors.white')};
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   input,
