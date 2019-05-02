@@ -20,6 +20,7 @@ export { PillButtonGroup, PillButton } from './components/PillButton';
 export { RadioGroup, Radio } from './components/RadioGroup';
 export { Select } from './components/Select';
 export { Slider } from './components/Slider';
+export { Switch } from './components/Switch';
 export { Text } from './components/Text';
 export { Textarea } from './components/Textarea';
 export { ToggleButtonGroup, ToggleButton } from './components/ToggleButton';
