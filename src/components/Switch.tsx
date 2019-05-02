@@ -2,17 +2,23 @@ import React, { FC, ComponentProps } from 'react';
 import styled from 'styled-components';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { space, MarginProps, themeGet } from 'styled-system';
+import { space, SpaceProps, themeGet } from 'styled-system';
 
-type SwitchProps = MarginProps & ComponentProps<'input'>;
+type SwitchProps = SpaceProps & ComponentProps<'input'>;
 
 // TODO: Styled System is missing some spacing props in `propTypes`
 // https://github.com/styled-system/styled-system/issues/466
-const marginPropNames = [...Object.keys(space.propTypes || {}), 'mx', 'my'];
+const spacePropNames = [
+  ...Object.keys(space.propTypes || {}),
+  'mx',
+  'my',
+  'px',
+  'py',
+];
 
 export const Switch: FC<SwitchProps> = ({ children, ...props }) => {
-  const spaceProps = pick(props, marginPropNames);
-  const inputProps = omit(props, marginPropNames);
+  const spaceProps = pick(props, spacePropNames);
+  const inputProps = omit(props, spacePropNames);
 
   return (
     <SwitchWrapper {...spaceProps}>
@@ -22,11 +28,12 @@ export const Switch: FC<SwitchProps> = ({ children, ...props }) => {
   );
 };
 
-const SwitchWrapper = styled.label<MarginProps>`
+const SwitchWrapper = styled.label<SpaceProps>`
   position: relative;
   display: inline-block;
   width: ${themeGet('space.6')};
   height: ${themeGet('space.3')};
+  box-sizing: content-box;
 
   ${space}
 `;
