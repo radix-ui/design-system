@@ -1104,6 +1104,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.2.tgz#63985d3d8b02530e0869962f4da09142ee8e200e"
   integrity sha512-n/VQ4mbfr81aqkx/XmVicOLjviMuy02eenSdJY33SVA7S2J42EU0P1H0mOogfYedb3wXA0d/LVtBrgTSm04WEA==
 
+"@modulz/radix-icons@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-0.1.0.tgz#865e8c584384a49118f657da6339bd80aae3d047"
+  integrity sha512-EBeqdtdtP2EwrZT/B7HO2Zlox0jhDhpYREa2uAippWsxJTva+LjE/3V+G/MFlc8nc496pUkyev/V1m0spLkplQ==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"

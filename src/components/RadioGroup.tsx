@@ -46,18 +46,18 @@ const spacePropNames = [
   'py',
 ];
 
-type RadioProps = ComponentPropsWithRef<'input'>;
 type Ref = HTMLInputElement;
+type RadioProps = ComponentPropsWithRef<'input'>;
 
 export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>(
   (props, ref) => {
-    const { children } = props;
-    const systemProps = pick(props, spacePropNames);
-    const inputProps = omit(props, spacePropNames);
+    const { children, ...otherProps } = props;
+    const systemProps = pick(otherProps, spacePropNames);
+    const inputProps = omit(otherProps, spacePropNames);
 
     return (
       <RadioWrapper {...systemProps}>
-        <Input type="radio" {...inputProps} ref={ref} />
+        <Input {...inputProps} type="radio" ref={ref} />
         <FakeRadio />
         {children && <TextWrapper>{children}</TextWrapper>}
       </RadioWrapper>
