@@ -8,7 +8,10 @@ import { Text } from './Text';
 import { Menu, MenuItem, MenuGroup } from './Menu';
 
 storiesOf('Components|Menu', module).add('default', () => (
-  <Grid gridTemplateColumns="repeat(3, 1fr)" gridGap={4}>
+  <Grid
+    gridTemplateColumns={['1fr', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}
+    gridGap={4}
+  >
     <Box mb="4">
       <Menu>
         <MenuItem>

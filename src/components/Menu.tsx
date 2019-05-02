@@ -75,8 +75,6 @@ export const MenuItem = styled.button<MenuItemProps>`
 export const MenuGroup = styled.div`
   border-top: 1px solid ${themeGet('colors.grays.2')};
   border-bottom: 1px solid ${themeGet('colors.grays.2')};
-  /* padding-top: ${themeGet('space.1')}; */
-  /* padding-bottom: ${themeGet('space.1')}; */
   margin-top: ${themeGet('space.1')};
   margin-bottom: ${themeGet('space.1')};
 `;
