@@ -1,51 +1,23 @@
 {
-  "name": "radix-poc",
-  "version": "0.11.0",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "files": [
-    "dist"
+  "name": "@modulz/radix-repo",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "packages/*"
   ],
-  "types": "dist/index.d.ts",
   "scripts": {
-    "storybook": "start-storybook -p 9009 -s public --ci",
-    "build-storybook": "build-storybook -s public",
+    "website": "lerna exec --scope website -- yarn start",
+    "radix-poc": "lerna exec --scope radix-poc -- yarn watch",
+    "start": "npm-run-all --parallel website radix-poc",
     "prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}\"",
     "format": "yarn prettier -- --write ",
-    "build": "rollup -c",
-    "watch": "rollup -cw",
-    "release": "yarn build && np",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src"
-  },
-  "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
-  "dependencies": {
-    "@reach/dialog": "^0.2.8",
-    "@styled-system/css": "^2.0.0",
-    "@types/styled-components": "^4.1.14",
-    "@types/styled-system": "^4.1.2",
-    "lodash.merge": "^4.6.1",
-    "lodash.omit": "^4.5.0",
-    "lodash.pick": "^4.4.0",
-    "polished": "^3.2.0",
-    "styled-components": "^4.2.0",
-    "styled-system": "^4.1.0"
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./packages",
+    "clean": "npm run clean-logs && npm run clean-modules",
+		"clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
+		"clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@modulz/radix-icons": "^0.1.0",
-    "@storybook/addon-options": "5.0.11",
-    "@storybook/addons": "5.0.11",
-    "@storybook/react": "5.0.11",
-    "@types/node": "^11.13.8",
-    "@types/react": "^16.8.15",
-    "@types/react-dom": "^16.8.4",
-    "@types/storybook__react": "^4.0.1",
-    "@typescript-eslint/eslint-plugin": "^1.7.0",
     "babel-eslint": "10.0.1",
-    "babel-loader": "8.0.5",
     "eslint": "5.16.0",
     "eslint-config-react-app": "^4.0.0",
     "eslint-plugin-flowtype": "3.6.1",
@@ -54,13 +26,11 @@
     "eslint-plugin-react": "7.12.4",
     "eslint-plugin-react-hooks": "1.6.0",
     "husky": "^2.1.0",
+    "lerna": "^3.5.0",
     "lint-staged": "^8.1.5",
-    "np": "^5.0.1",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.17.0",
-    "rollup": "^1.10.1",
-    "rollup-plugin-typescript2": "^0.21.0",
-    "rollup-plugin-url": "^2.2.1",
-    "typescript": "3.3.3333"
+    "rimraf": "^2.6.3"
   },
   "husky": {
     "hooks": {
@@ -69,14 +39,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
+      "eslint --fix --ext .js,.jsx,.ts,.tsx ./packages",
       "git add"
     ]
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }

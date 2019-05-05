@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules
 /.pnp
 .pnp.js
 
@@ -10,7 +10,8 @@
 
 # production
 /build
-/storybook-static
+storybook-static
+public
 
 # misc
 .DS_Store
@@ -26,3 +27,4 @@ yarn-error.log*
 # build
 .rpt2_cache/
 dist/
+.cache
