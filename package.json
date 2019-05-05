@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@reach/dialog": "^0.2.8",
+    "@styled-system/css": "^2.0.0",
     "@types/styled-components": "^4.1.14",
     "@types/styled-system": "^4.1.2",
     "lodash.merge": "^4.6.1",

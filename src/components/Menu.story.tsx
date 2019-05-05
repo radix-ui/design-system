@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import RadixIcons from '@modulz/radix-icons';
 import { Box } from './Box';
 import { Flex } from './Flex';
 import { Grid } from './Grid';
 import { Text } from './Text';
 import { Menu, MenuItem, MenuGroup } from './Menu';
+import RadixIcons from '@modulz/radix-icons';
 // @ts-ignore
 const Icon = RadixIcons.default as (typeof RadixIcons);
 
