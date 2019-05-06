@@ -1,25 +1,19 @@
 {
-  "name": "@modulz/radix-repo",
   "private": true,
-  "version": "0.0.0",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "scripts": {
     "start": "npm-run-all --parallel website radix-poc",
     "website": "lerna exec --scope website -- yarn start",
     "website:build": "lerna exec --scope website -- yarn build",
     "radix-poc": "lerna exec --scope radix-poc -- yarn watch",
     "radix-poc:build": "lerna exec --scope radix-poc -- yarn build",
-    "prebuild": "yarn radix-poc:build",
-    "build": "yarn website:build",
+    "build": "yarn radix-poc:build && yarn website:build",
     "prettier": "prettier './**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}' --write",
     "lint": "eslint './packages/**/*.{js,jsx,ts,tsx}'",
     "clean": "npm run clean-logs && npm run clean-modules",
 		"clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
     "clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/",
-    "prerelease": "yarn radix-poc:build",
-    "release": "lerna publish"
+    "release": "yarn radix-poc:build && lerna publish"
   },
   "devDependencies": {
     "babel-eslint": "10.0.1",
