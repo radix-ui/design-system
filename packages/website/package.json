@@ -15,10 +15,13 @@
   },
   "dependencies": {
     "@modulz/radix-icons": "^0.1.0",
+    "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.4.2",
+    "gatsby-plugin-styled-components": "^3.0.7",
     "radix-poc": "^0.11.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0"
   },
   "repository": {
     "type": "git",
