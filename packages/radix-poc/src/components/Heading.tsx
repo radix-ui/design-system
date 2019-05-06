@@ -40,7 +40,7 @@ export const Heading = styled.h1<HeadingProps>`
   ${textAlign}
   ${letterSpacing}
   ${lineHeight}
-  ${fontWeight};
+  ${fontWeight}
 `;
 
 type HeadingSizes = number;

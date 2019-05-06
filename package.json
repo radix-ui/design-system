@@ -18,7 +18,7 @@
     "clean": "npm run clean-logs && npm run clean-modules",
 		"clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
     "clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/",
-    "prerelease": "yarn radix-poc:buildLib",
+    "prerelease": "yarn radix-poc:build",
     "release": "lerna publish"
   },
   "devDependencies": {
