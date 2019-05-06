@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  RadixProvider,
   Container,
   Box,
   Heading,
@@ -20,13 +19,14 @@ import {
   Menu,
   MenuItem,
 } from 'radix-poc';
+import Layout from '../components/Layout';
 
 import RadixIcons from '@modulz/radix-icons';
 const Icon = RadixIcons.default;
 
-export default () => (
-  <>
-    <RadixProvider>
+function IndexPage() {
+  return (
+    <Layout>
       <Container size="medium">
         <Box textAlign="center">
           <Heading py={7}>Radix Design System</Heading>
@@ -247,6 +247,8 @@ export default () => (
           </Box>
         </Box>
       </Container>
-    </RadixProvider>
-  </>
-);
+    </Layout>
+  );
+}
+
+export default IndexPage;
