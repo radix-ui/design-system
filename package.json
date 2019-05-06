@@ -17,7 +17,8 @@
     "clean": "npm run clean-logs && npm run clean-modules",
 		"clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
     "clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/",
-    "publish": "npm-run-all radix-poc:build lerna publish"
+    "prerelease": "yarn radix-poc:build",
+    "release": "lerna publish"
   },
   "devDependencies": {
     "babel-eslint": "10.0.1",
