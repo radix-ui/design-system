@@ -14,8 +14,8 @@
     "radix-poc:buildSB": "lerna exec --scope radix-poc -- yarn build-storybook",
     "radix-poc:build": "npm-run-all --parallel radix-poc:buildLib radix-poc:buildSB",
     "build": "npm-run-all --parallel website:build radix-poc:buildSB",
-    "prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}\" --write",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./packages",
+    "prettier": "prettier './**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}' --write",
+    "lint": "eslint './packages/**/*.{js,jsx,ts,tsx}'",
     "clean": "npm run clean-logs && npm run clean-modules",
 		"clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
     "clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/",
@@ -45,7 +45,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix --ext .js,.jsx,.ts,.tsx ./packages",
+      "eslint --fix",
       "git add"
     ]
   }

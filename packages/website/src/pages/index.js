@@ -24,6 +24,8 @@ import {
 import RadixIcons from '@modulz/radix-icons';
 const Icon = RadixIcons.default;
 
+const a = '';
+
 export default () => (
   <>
     <RadixProvider>
