@@ -13,7 +13,7 @@
     "radix-poc:buildLib": "lerna exec --scope radix-poc -- yarn build",
     "radix-poc:buildSB": "lerna exec --scope radix-poc -- yarn build-storybook",
     "radix-poc:build": "npm-run-all --parallel radix-poc:buildLib radix-poc:buildSB",
-    "ci": "npm-run-all --parallel website:build radix-poc:buildSB",
+    "build": "npm-run-all --parallel website:build radix-poc:buildSB",
     "prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}\" --write",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./packages",
     "clean": "npm run clean-logs && npm run clean-modules",

@@ -4,7 +4,6 @@
   "description": "Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
-  "browser": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
     "dist"
