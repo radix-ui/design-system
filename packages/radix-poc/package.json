@@ -10,8 +10,8 @@
   ],
   "types": "dist/index.d.ts",
   "scripts": {
-    "storybook": "start-storybook -p 9009 -s public --ci",
-    "build-storybook": "build-storybook -s public",
+    "storybook": "start-storybook -p 9009 --ci",
+    "build-storybook": "build-storybook",
     "build": "rollup -c",
     "watch": "rollup -cw",
     "release": "yarn build && np",
