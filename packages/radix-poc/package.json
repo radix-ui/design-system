@@ -1,6 +1,6 @@
 {
   "name": "radix-poc",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
@@ -45,10 +45,7 @@
     "@types/storybook__react": "^4.0.1",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "babel-loader": "8.0.5",
-
-
     "np": "^5.0.1",
-
     "rollup": "^1.10.1",
     "rollup-plugin-typescript2": "^0.21.0",
     "rollup-plugin-url": "^2.2.1",
