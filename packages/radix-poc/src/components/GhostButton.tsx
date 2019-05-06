@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { space, SpaceProps, themeGet, variant, Theme } from 'styled-system';
 import merge from 'lodash.merge';
-import { theme } from '../theme';
 
 export function makeGhostButtons(theme: Theme) {
   return {
