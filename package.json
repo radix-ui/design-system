@@ -7,14 +7,17 @@
   ],
   "scripts": {
     "website": "lerna exec --scope website -- yarn start",
+    "website:build": "lerna exec --scope website -- yarn build",
     "radix-poc": "lerna exec --scope radix-poc -- yarn watch",
+    "radix-poc:build": "lerna exec --scope radix-poc -- yarn build",
     "start": "npm-run-all --parallel website radix-poc",
     "prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}\"",
     "format": "yarn prettier -- --write ",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./packages",
     "clean": "npm run clean-logs && npm run clean-modules",
 		"clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
-		"clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/"
+    "clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/",
+    "publish": "npm-run-all radix-poc:build lerna publish"
   },
   "devDependencies": {
     "babel-eslint": "10.0.1",
