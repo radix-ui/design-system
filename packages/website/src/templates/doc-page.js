@@ -17,7 +17,14 @@ function DocPageTemplate({ data }) {
 
   return (
     <MDXProvider components={components}>
-      <Layout>{children}</Layout>
+      <Layout>
+        <RadixComponents.Container pt={6} size="medium">
+          <RadixComponents.Heading fontSize={6}>
+            {data.mdx.frontmatter.title}
+          </RadixComponents.Heading>
+          {children}
+        </RadixComponents.Container>
+      </Layout>
     </MDXProvider>
   );
 }
