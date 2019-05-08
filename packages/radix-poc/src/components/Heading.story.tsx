@@ -58,7 +58,7 @@ storiesOf('Components|Heading', module).add('RadixHeading', () => (
       <RadixHeading size={4} mb="3">
         Heading 5
       </RadixHeading>
-      <RadixHeading size={5} mb="3">
+      <RadixHeading size={0} mb="3">
         Heading 6
       </RadixHeading>
     </Box>

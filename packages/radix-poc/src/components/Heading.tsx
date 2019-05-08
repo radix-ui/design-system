@@ -43,38 +43,11 @@ export const Heading = styled.h1<HeadingProps>`
   ${fontWeight}
 `;
 
-type HeadingSizes = number;
+type HeadingSizes = 0 | 1 | 2 | 3 | 4 | 5;
 
 type RadixHeadingProps = SpaceProps & {
   size: HeadingSizes | HeadingSizes[];
 };
-
-// const headingSizes = {
-//   fontSizes: {
-//     xxsmall: 3,
-//     xsmall: 5,
-//     small: 7,
-//     medium: 8,
-//     large: 9,
-//     xlarge: 10,
-//   },
-//   letterSpacings: {
-//     xxsmall: '-.0125em',
-//     xsmall: '-.005em',
-//     small: '-.012em',
-//     medium: '-.028em',
-//     large: ' -.042em',
-//     xlarge: ' -.052em',
-//   },
-//   marginLefts: {
-//     xxsmall: '-.05em',
-//     xsmall: '-.06em',
-//     small: '-.075em',
-//     medium: '-.085em',
-//     large: '-.088em',
-//     xlarge: '-.09em',
-//   },
-// };
 
 const headingSizes = {
   fontSizes: [3, 5, 7, 8, 9, 10],
