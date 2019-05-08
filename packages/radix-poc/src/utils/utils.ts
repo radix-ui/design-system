@@ -1,6 +1,6 @@
-import { get, ObjectOrArray } from 'styled-system';
+import { get, ObjectOrArray, StylesProps } from 'styled-system';
 
-function getPropsFromScale(
+export function getPropsFromScale(
   scale: ObjectOrArray<number | string>,
   value: Array<string | number> | string | number
 ): any {

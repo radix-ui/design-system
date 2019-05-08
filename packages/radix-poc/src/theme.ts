@@ -34,6 +34,17 @@ export const theme: Theme = {
     '4.063rem',
     '5rem',
   ],
+  lineHeights: [
+    '20px',
+    '25px',
+    '30px',
+    '35px',
+    '40px',
+    '45px',
+    '50px',
+    '55px',
+    '60px',
+  ],
   radii: [0, '.1875rem', '.5rem', '625rem'],
   colors: {
     black: 'hsl(0, 0%, 0%)',

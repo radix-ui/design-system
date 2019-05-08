@@ -24,7 +24,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 100%;
-    line-height: 1;
+    line-height: 1.1;
     font-family: ${themeGet('fonts.normal')};
     color: ${themeGet('colors.grays.7')};
     background-color: ${themeGet('colors.white')};

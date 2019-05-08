@@ -12,7 +12,7 @@ export { Divider } from './components/Divider';
 export { Flex } from './components/Flex';
 export { Grid } from './components/Grid';
 export { GhostButton } from './components/GhostButton';
-export { Heading, RadixHeading } from './components/Heading';
+export { Heading } from './components/Heading';
 export { Hover } from './components/Hover';
 export { Input } from './components/Input';
 export { Link } from './components/Link';
