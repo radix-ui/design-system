@@ -1,5 +1,6 @@
 import { ComponentProps } from 'react';
 import styled, { css } from 'styled-components';
+import merge from 'lodash.merge';
 import {
   maxWidth,
   MaxWidthProps,
@@ -8,14 +9,35 @@ import {
   themeGet,
   width,
   WidthProps,
+  Theme,
+  variant,
 } from 'styled-system';
 import { transparentize } from 'polished';
 
-type MenuProps = SpaceProps & WidthProps & MaxWidthProps;
+export function makeMenus(theme: Theme) {
+  return {
+    menus: merge(
+      {
+        ghost: {
+          boxShadow: 'none',
+        },
+      },
+      // @ts-ignore
+      theme.menus
+    ),
+  };
+}
+
+type Variants = 'ghost';
+const menuStyle = variant({ key: 'menus', prop: 'variant' });
+
+type MenuProps = SpaceProps &
+  WidthProps &
+  MaxWidthProps & { variant?: Variants };
 
 export const Menu = styled.nav<MenuProps>`
   border-radius: ${themeGet('radii.1')};
-  overflow: hidden;
+  padding: ${themeGet('space.1')} 0;
   ${props => css`
     box-shadow: 0 10px 38px -10px ${transparentize(0.65, themeGet('colors.grays.8')(props))},
       0 10px 20px -15px ${transparentize(0.8, themeGet('colors.grays.8')(props))};
@@ -24,6 +46,7 @@ export const Menu = styled.nav<MenuProps>`
   ${space};
   ${width};
   ${maxWidth};
+  ${menuStyle};
 `;
 
 type MenuItemProps = ComponentProps<'button'> &
@@ -71,6 +94,8 @@ export const MenuItem = styled.button<MenuItemProps>`
 `;
 
 export const MenuGroup = styled.div`
+  padding: ${themeGet('space.1')} 0;
+  margin: ${themeGet('space.1')} 0;
   border-top: 1px solid ${themeGet('colors.grays.2')};
   border-bottom: 1px solid ${themeGet('colors.grays.2')};
 `;

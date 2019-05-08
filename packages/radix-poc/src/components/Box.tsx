@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import {
   alignSelf,
   AlignSelfProps,
@@ -23,6 +22,12 @@ import {
   LeftProps,
   maxWidth,
   MaxWidthProps,
+  maxHeight,
+  MaxHeightProps,
+  minHeight,
+  MinHeightProps,
+  minWidth,
+  MinWidthProps,
   opacity,
   OpacityProps,
   overflow,
@@ -55,6 +60,9 @@ export type BoxProps = AlignSelfProps &
   JustifySelfProps &
   LeftProps &
   MaxWidthProps &
+  MaxHeightProps &
+  MinHeightProps &
+  MinWidthProps &
   OpacityProps &
   OverflowProps &
   PositionProps &
@@ -64,7 +72,7 @@ export type BoxProps = AlignSelfProps &
   TopProps &
   WidthProps &
   ZIndexProps &
-  ComponentProps<'div'>;
+  ComponentProps<'div'> & { as?: any };
 
 export const Box: FC<BoxProps> = styled.div`
   ${alignSelf}
@@ -77,7 +85,10 @@ export const Box: FC<BoxProps> = styled.div`
   ${height}
   ${justifySelf}
   ${left}
+  ${maxHeight}
   ${maxWidth}
+  ${minHeight}
+  ${minWidth}
   ${opacity}
   ${overflow}
   ${position}

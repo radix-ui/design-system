@@ -33,6 +33,10 @@ export const GlobalStyles = createGlobalStyle`
     text-rendering: optimizeLegibility;
   }
 
+  body {
+    margin: 0;
+  }
+
   input,
   button,
   select,

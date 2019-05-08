@@ -12,6 +12,7 @@ import {
   makeGhostButtonSizes,
 } from './components/GhostButton';
 import { makeInputSizes, makeInputs } from './components/Input';
+import { makeMenus } from './components/Menu';
 
 type RadixProviderProps = {
   theme?: Theme;
@@ -43,5 +44,6 @@ function makeTheme(theme: Theme) {
     ...makeGhostButtonSizes(theme),
     ...makeInputs(theme),
     ...makeInputSizes(theme),
+    ...makeMenus(theme),
   };
 }
