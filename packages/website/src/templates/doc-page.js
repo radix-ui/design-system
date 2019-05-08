@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import * as RadixComponents from 'radix-poc';
-import Layout from '../components/Layout';
+import DocLayout from '../components/DocLayout';
 import CodeBlock from '../components/CodeBlock';
 
 export const components = {
@@ -12,20 +13,21 @@ export const components = {
   code: CodeBlock,
 };
 
-function DocPageTemplate({ data }) {
+function DocPageTemplate({ data, location, ...props }) {
   const children = <MDXRenderer children={data.mdx.code.body} />;
+  console.log(props);
 
   return (
-    <MDXProvider components={components}>
-      <Layout>
-        <RadixComponents.Container pt={6} size="medium">
+    <DocLayout pathname={location.pathname}>
+      <MDXProvider components={components}>
+        <RadixComponents.Box>
           <RadixComponents.Heading fontSize={6}>
             {data.mdx.frontmatter.title}
           </RadixComponents.Heading>
           {children}
-        </RadixComponents.Container>
-      </Layout>
-    </MDXProvider>
+        </RadixComponents.Box>
+      </MDXProvider>
+    </DocLayout>
   );
 }
 

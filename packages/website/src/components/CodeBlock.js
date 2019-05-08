@@ -4,8 +4,6 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { useMDXComponents, mdx } from '@mdx-js/react';
 import { Box } from 'radix-poc';
 
-console.log(defaultProps);
-
 export default ({ children, className, live, render, ghost }) => {
   // const language = className.replace(/language-/, '');
   const components = useMDXComponents();

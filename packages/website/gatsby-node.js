@@ -8,7 +8,7 @@ const path = require('path');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
   const postTemplate = path.resolve('./src/templates/doc-page.js');
 
   const allDocs = await graphql(
@@ -46,6 +46,20 @@ exports.createPages = async ({ graphql, actions }) => {
         slug,
       },
     });
+  });
+
+  createRedirect({
+    fromPath: `/`,
+    isPermanent: true,
+    redirectInBrowser: true,
+    toPath: `/docs`,
+  });
+
+  createRedirect({
+    fromPath: `/docs`,
+    isPermanent: true,
+    redirectInBrowser: true,
+    toPath: `/docs/getting-started`,
   });
 };
 
