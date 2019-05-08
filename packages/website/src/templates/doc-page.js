@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
@@ -15,7 +14,6 @@ export const components = {
 
 function DocPageTemplate({ data, location, ...props }) {
   const children = <MDXRenderer children={data.mdx.code.body} />;
-  console.log(props);
 
   return (
     <DocLayout pathname={location.pathname}>

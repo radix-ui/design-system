@@ -21,6 +21,7 @@
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.4.2",
     "gatsby-mdx": "^0.6.3",
+    "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-filesystem": "^2.0.33",
     "prism-react-renderer": "^0.1.6",
