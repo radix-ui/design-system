@@ -26,13 +26,14 @@ function DocLayout({ children, pathname }) {
     <StaticQuery
       query={query}
       render={data => (
-        <Flex minHeight="100vh">
+        <Flex minHeight="100vh" flexDirection={['column', 'row']}>
           <Box
-            maxWidth={200}
-            flex={1}
+            width={['100%', 200]}
+            flex={['1', '0 0 auto']}
             pt={4}
-            borderRight="1px solid"
-            borderColor="grays.2"
+            borderRight={[0, '1px solid']}
+            borderBottom={['1px solid', 0]}
+            borderColor={['grays.2', 'grays.2']}
           >
             <Heading size={1} marginLeft={3} mb={2} bold>
               <Flex alignItems="center">
@@ -88,7 +89,7 @@ function DocLayout({ children, pathname }) {
               })}
             </Menu>
           </Box>
-          <Box p={4} flex={1} maxWidth="45rem">
+          <Box p={4} flex={[1, 1]} maxWidth={['100%', '45rem']}>
             {children}
           </Box>
         </Flex>
