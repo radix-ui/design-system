@@ -34,7 +34,21 @@ storiesOf('Components|Card', module).add('default', () => (
           Today
         </Text>
       </Card>
+      <Card variant="ghost" m={4} maxWidth="300px">
+        <Heading fontSize="5" mb="3">
+          Card
+        </Heading>
+        <Text as="p" mb="3" fontSize="3">
+          China’s leadership is seeking to maintain a recent thaw with the
+          United States while lashing out at the arrest of a top Chinese tech
+          executive.
+        </Text>
+        <Text fontSize="2" color="grays.5">
+          Today
+        </Text>
+      </Card>
     </Flex>
+
     <Flex>
       <CardLink href="https://modulz.app" m={4} maxWidth="300px">
         <Heading fontSize="5" mb="3">

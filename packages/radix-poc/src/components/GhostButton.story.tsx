@@ -30,6 +30,7 @@ const back = (
     fill="none"
     stroke="currentColor"
     xmlns="http://www.w3.org/2000/svg"
+    style={{ display: 'block' }}
   >
     <path
       d="M5 0L0 4L5 8"
@@ -66,11 +67,11 @@ storiesOf('Components|GhostButton', module).add('default', () => (
       <GhostButton size="medium" disabled mr="4">
         {Bookmark}
       </GhostButton>
-      <GhostButton size="medium" variant="active" mr="4">
-        {Bookmark}
-      </GhostButton>
       <GhostButton size="medium" mr="4" px={2}>
         <Box mr={1}>{Bookmark}</Box> Bookmark
+      </GhostButton>
+      <GhostButton size="medium" variant="active" mr="4">
+        {Bookmark}
       </GhostButton>
       <GhostButton size="medium" mr="4" px={2}>
         Bookmark

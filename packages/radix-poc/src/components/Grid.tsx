@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import {
   alignContent,
   AlignContentProps,
@@ -48,22 +48,21 @@ type GridProps = AlignContentProps &
   GridAreaProps &
   SpaceProps;
 
-export const Grid = styled.div<GridProps>`
-  display: grid;
-
-  ${alignContent}
-  ${alignItems}
-  ${gridGap}
-  ${gridColumnGap}
-  ${gridRowGap}
-  ${gridColumn}
-  ${gridRow}
-  ${gridAutoFlow}
-  ${gridAutoColumns}
-  ${gridAutoRows}
-  ${gridTemplateColumns}
-  ${gridTemplateRows}
-  ${gridTemplateAreas}
-  ${gridArea}
-  ${space}
-`;
+export const Grid = styled.div<GridProps>(
+  { display: 'grid' },
+  alignContent,
+  alignItems,
+  gridGap,
+  gridColumnGap,
+  gridRowGap,
+  gridColumn,
+  gridRow,
+  gridAutoFlow,
+  gridAutoColumns,
+  gridAutoRows,
+  gridTemplateColumns,
+  gridTemplateRows,
+  gridTemplateAreas,
+  gridArea,
+  space
+);

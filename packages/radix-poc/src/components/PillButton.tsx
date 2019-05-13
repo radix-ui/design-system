@@ -1,5 +1,6 @@
 import React, { FC, ReactElement } from 'react';
-import styled, { css } from 'styled-components';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
 import { transparentize } from 'polished';
 import { MarginProps, themeGet } from 'styled-system';
 import { Box } from './Box';
@@ -19,64 +20,59 @@ type PillButtonProps = {
   active?: boolean;
 };
 
-export const PillButton = styled.button<PillButtonProps>`
-  appearance: none;
-  border: none;
-  display: inline-flex;
-  align-items: center;
-  flex-basis: 0;
-  flex-grow: 1;
-  position: relative;
-  font-size: ${themeGet('fontSizes.2')};
-  font-family: ${themeGet('fonts.medium')};
-  background-color: transparent;
-  line-height: 1;
-  box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.3')};
-  color: ${themeGet('colors.grays.5')};
-  height: ${themeGet('space.5')};
-  padding: 0 ${themeGet('space.4')};
-  min-width: ${themeGet('space.5')};
-  text-decoration: none;
-  outline: none;
-
-  &:first-child {
-    border-top-left-radius: 9999px;
-    border-bottom-left-radius: 9999px;
+export const PillButton = styled('button')<PillButtonProps>(
+  ({ active, ...props }) =>
+    css({
+      appearance: 'none',
+      display: 'inline-flex',
+      alignItems: 'center',
+      flexBasis: 0,
+      flexGrow: 1,
+      position: 'relative',
+      fontSize: 2,
+      fontFamily: 'medium',
+      fontWeight: 500,
+      backgroundColor: active ? 'grays.1' : 'white',
+      border: '1px solid',
+      borderColor: active ? 'grays.4' : 'grays.3',
+      color: 'grays.5',
+      height: 5,
+      paddingY: 0,
+      paddingX: 4,
+      minWidth: 5,
+      textDecoration: 'none',
+      outline: 'none',
+      zIndex: active ? 1 : 0,
+      margin: 0,
+      marginLeft: -1,
+      pointerEvents: active && 'none',
+      '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+      boxShadow:
+        active &&
+        `inset 0 1px 0 ${transparentize(
+          0.9,
+          themeGet('colors.grays.8')(props)
+        )}`,
+      '&:first-child': {
+        marginLeft: 0,
+        borderTopLeftRadius: 9999,
+        borderBottomLeftRadius: 9999,
+      },
+      '&:last-child': {
+        borderTopRightRadius: 9999,
+        borderBottomRightRadius: 9999,
+      },
+      '&:hover': {
+        borderColor: 'grays.4',
+        zIndex: 2,
+      },
+      '&:disabled': {
+        backgroundColor: 'grays.1',
+        color: 'grays.4',
+        pointerEvents: 'none',
+      },
+    }),
+  {
+    lineHeight: 1,
   }
-
-  &:last-child {
-    border-top-right-radius: 9999px;
-    border-bottom-right-radius: 9999px;
-  }
-
-  & + & {
-    margin-left: -1px;
-  }
-
-  &:hover {
-    box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')};
-    z-index: 1;
-  }
-
-  &:disabled {
-    background-color: ${themeGet('colors.grays.1')};
-    color: ${themeGet('colors.grays.4')};
-    pointer-events: none;
-  }
-
-  ${props =>
-    props.active &&
-    css`
-      background-color: ${themeGet('colors.grays.1')};
-      box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')},
-        inset 0 2px 0 ${transparentize(0.9, themeGet('colors.grays.8')(props))};
-      color: ${themeGet('colors.grays.5')};
-      z-index: 1;
-
-      &:hover {
-        box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')},
-          inset 0 2px 0
-            ${transparentize(0.9, themeGet('colors.grays.8')(props))};
-      }
-    `}
-`;
+);

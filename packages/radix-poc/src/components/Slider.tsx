@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEventHandler } from 'react';
-import styled, { css } from 'styled-components';
-import { themeGet } from 'styled-system';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
 
 type SliderProps = {
   min?: number;
@@ -55,99 +55,98 @@ Slider.defaultProps = {
 
 const TRACK_HEIGHT = 3;
 
-const Wrapper = styled.div`
-  width: 100%;
-  position: relative;
-  display: inline-flex;
-`;
+const Wrapper = styled('div')({
+  width: '100%',
+  position: 'relative',
+  display: 'inline-flex',
+});
 
-const trackStyle = css`
-  background-color: transparent;
-  border-radius: ${TRACK_HEIGHT}px;
-  height: ${TRACK_HEIGHT}px;
-`;
+const trackStyle = {
+  backgroundColor: 'transparent',
+  borderRadius: `${TRACK_HEIGHT}px`,
+  height: `${TRACK_HEIGHT}px`,
+};
 
-const thumbStyle = css`
-  appearance: none;
-  background-color: white;
-  border: none;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')};
-  height: ${themeGet('space.3')};
-  margin-top: -6px;
-  transition: transform 100ms ease;
-  width: ${themeGet('space.3')};
-`;
+const thumbStyle = {
+  appearance: 'none',
+  backgroundColor: 'white',
+  borderRadius: '50%',
+  border: '1px solid',
+  borderColor: 'grays.3',
+  height: 3,
+  marginTop: '-6px',
+  transition: 'transform 100ms ease',
+  width: 3,
+};
 
-const thumbFocusStyle = css`
-  box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.4')};
-`;
+const thumbFocusStyle = {
+  borderColor: 'blues.4',
+};
 
-const Input = styled.input`
-  appearance: none;
-  background: transparent;
-  cursor: pointer;
-  display: block;
-  padding: ${themeGet('space.1')} 0;
-  margin: 0;
-  width: 100%;
-  position: relative;
-  z-index: 1;
+const Input = styled('input')(
+  css({
+    appearance: 'none',
+    background: 'transparent',
+    cursor: 'pointer',
+    display: 'block',
+    paddingY: 1,
+    paddingX: 0,
+    margin: 0,
+    width: '100%',
+    position: 'relative',
+    zIndex: 1,
+    '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+    '&::-webkit-slider-runnable-track': {
+      ...trackStyle,
+    },
+    '&::-moz-range-track': {
+      ...trackStyle,
+    },
+    '&::-webkit-slider-thumb': {
+      ...thumbStyle,
+    },
+    '&::-moz-range-thumb': {
+      ...thumbStyle,
+    },
+    '&:hover': {
+      '&::-webkit-slider-thumb': {
+        borderColor: 'grays.4',
+      },
+    },
+    '&:focus': {
+      outline: 'none',
+      '&::-webkit-slider-thumb': {
+        ...thumbFocusStyle,
+      },
+      '&::-moz-range-thumb': {
+        ...thumbFocusStyle,
+      },
+    },
+    // remove focus border in Firefox:
+    // https://css-tricks.com/sliding-nightmare-understanding-range-input */
+    '::-moz-focus-outer': {
+      border: 0,
+    },
+  })
+);
 
-  &::-webkit-slider-runnable-track {
-    ${trackStyle}
-  }
+const Track = styled('div')(
+  css({
+    ...trackStyle,
+    backgroundColor: 'grays.3',
+    position: 'absolute',
+    left: 0,
+    top: '50%',
+    right: 0,
+    zIndex: 0,
+    transform: 'translateY(-50%)',
+  })
+);
 
-  &::-moz-range-track {
-    ${trackStyle}
-  }
-
-  &::-webkit-slider-thumb {
-    ${thumbStyle}
-  }
-
-  &::-moz-range-thumb {
-    ${thumbStyle}
-  }
-
-  &:hover {
-    &::-webkit-slider-thumb {
-      box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.5')};
-    }
-  }
-
-  &:focus {
-    outline: none;
-
-    &::-webkit-slider-thumb {
-      ${thumbFocusStyle}
-    }
-
-    &::-moz-range-thumb {
-      ${thumbFocusStyle}
-    }
-  }
-
-  /* remove focus border in Firefox:
-  https://css-tricks.com/sliding-nightmare-understanding-range-input */
-  ::-moz-focus-outer {
-    border: 0;
-  }
-`;
-
-const Track = styled.div`
-  ${trackStyle}
-  background-color: ${themeGet('colors.grays.3')};
-  position: absolute;
-  left: 0;
-  top: 50%;
-  right: 0;
-  z-index: 0;
-  transform: translateY(-50%);
-`;
-
-const InnerTrack = styled.div`
-  ${trackStyle}
-  height: 100%;
-  background-color: ${themeGet('colors.blues.3')};
-`;
+const InnerTrack = styled('div')(
+  css({
+    ...trackStyle,
+    height: '100%',
+    backgroundColor: 'blues.3',
+  })
+);

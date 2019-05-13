@@ -5,11 +5,13 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import * as RadixComponents from 'radix-poc';
 import DocLayout from '../components/DocLayout';
 import CodeBlock from '../components/CodeBlock';
+import { Logo } from '../components/Logo';
 
 export const components = {
   ...RadixComponents,
   pre: props => <div {...props} />,
   code: CodeBlock,
+  Logo: Logo,
 };
 
 function DocPageTemplate({ data, location, ...props }) {
@@ -19,7 +21,7 @@ function DocPageTemplate({ data, location, ...props }) {
     <DocLayout pathname={location.pathname}>
       <MDXProvider components={components}>
         <RadixComponents.Box>
-          <RadixComponents.Heading fontSize={6}>
+          <RadixComponents.Heading size={3}>
             {data.mdx.frontmatter.title}
           </RadixComponents.Heading>
           {children}

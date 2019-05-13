@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from '@emotion/styled';
+import { keyframes } from '@emotion/core';
+import css from '@styled-system/css';
 import { transparentize } from 'polished';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 import '@reach/dialog/styles.css';
-import { themeGet } from 'styled-system';
 
 type DialogProps = {
   isOpen?: boolean;
@@ -33,14 +34,14 @@ const overlayEnterKeyframes = keyframes`
   }
 `;
 
-const Overlay = styled(DialogOverlay)`
-  &[data-reach-dialog-overlay] {
-    display: flex;
-    align-items: center;
-    animation: ${overlayEnterKeyframes} 300ms ease-out forwards;
-    z-index: 1;
-  }
-`;
+const Overlay = styled(DialogOverlay)<DialogProps>({
+  '&[data-reach-dialog-overlay]': {
+    display: 'flex',
+    alignItems: 'center',
+    animation: `${overlayEnterKeyframes} 300ms ease-out forwards`,
+    zIndex: 1,
+  },
+});
 
 const wrapperEnterKeyframes = keyframes`
   0% {
@@ -55,20 +56,22 @@ const wrapperEnterKeyframes = keyframes`
   }
 `;
 
-const Content = styled(DialogContent)`
-  &[data-reach-dialog-content] {
-    border-radius: ${themeGet('radii.2')};
-    box-shadow: 0 10px 38px -10px hsla(208, 24%, 7%, 0.35),
-      0 10px 20px -15px hsla(208, 24%, 7%, 0.2);
-    width: auto;
-    max-width: fit-content;
-    min-width: 400px;
-    max-height: 90vh;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    overflow: auto;
-    padding: 0;
-    box-sizing: border-box; /* should this be global? */
-    animation: ${wrapperEnterKeyframes} 250ms ease-out;
-  }
-`;
+const Content = styled(DialogContent)(
+  css({
+    '&[data-reach-dialog-content]': {
+      borderRadius: 2,
+      boxShadow:
+        '0 10px 38px -10px hsla(208, 24%, 7%, 0.35), 0 10px 20px -15px hsla(208, 24%, 7%, 0.2)',
+      width: 'auto',
+      maxWidth: 'fit-content',
+      minWidth: 400,
+      maxHeight: '90vh',
+      marginTop: '5vh',
+      marginBottom: '5vh',
+      overflow: 'auto',
+      padding: 0,
+      boxSizing: 'border-box',
+      animation: `${wrapperEnterKeyframes} 250ms ease-out`,
+    },
+  })
+);

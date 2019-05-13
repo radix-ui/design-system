@@ -5,7 +5,8 @@ import React, {
   forwardRef,
   ComponentPropsWithRef,
 } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
 import { themeGet } from 'styled-system';
 import { Flex } from './Flex';
 
@@ -54,62 +55,59 @@ export const ToggleButton: FC<ToggleButtonProps> = forwardRef<
   );
 });
 
-const Wrapper = styled.label`
-  display: inline-flex;
-  position: relative;
-  flex-basis: 0;
-  flex-grow: 1;
+const Wrapper = styled('label')({
+  display: 'inline-flex',
+  position: 'relative',
+  flexBasis: 0,
+  flexGrow: 1,
+  '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+  '& + &': {
+    marginLeft: -1,
+  },
+  '&:hover': {
+    zIndex: 2,
+  },
+});
 
-  & + & {
-    margin-left: -1px;
-  }
+const Radio = styled('input')({
+  position: 'absolute',
+  opacity: 0,
+  zIndex: 0,
+});
 
-  &:hover {
-    z-index: 2;
-  }
-`;
-
-const Radio = styled.input`
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-`;
-
-const FakeRadio = styled.span`
-  height: ${themeGet('space.5')};
-  width: 100%;
-  min-width: ${themeGet('space.5')};
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: ${themeGet('fonts.normal')};
-  font-size: ${themeGet('fontSizes.2')};
-  font-weight: 500;
-  line-height: 1;
-  white-space: nowrap;
-
-  box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.3')};
-  color: ${themeGet('colors.grays.5')};
-
-  ${Wrapper}:first-child & {
-    border-top-left-radius: ${themeGet('radii.1')};
-    border-bottom-left-radius: ${themeGet('radii.1')};
-  }
-
-  ${Wrapper}:last-child & {
-    border-top-right-radius: ${themeGet('radii.1')};
-    border-bottom-right-radius: ${themeGet('radii.1')};
-  }
-
-  ${Radio}:checked + & {
-    background-color: ${themeGet('colors.blues.0')};
-    box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.2')};
-    color: ${themeGet('colors.blues.5')};
-    z-index: 1;
-  }
-
-  &:hover {
-    box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')};
-    z-index: 1;
-  }
-`;
+const FakeRadio = styled('span')(props =>
+  css({
+    height: 5,
+    width: '100%',
+    minWidth: 5,
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: 'medium',
+    fontWeight: 500,
+    fontSize: 2,
+    lineHeight: 1,
+    whiteSpace: 'nowrap',
+    border: '1px solid',
+    borderColor: 'grays.3',
+    color: 'grays.5',
+    [`${Wrapper}:first-child &`]: {
+      borderTopLeftRadius: themeGet('radii.1')(props),
+      borderBottomLeftRadius: themeGet('radii.1')(props),
+    },
+    [`${Wrapper}:last-child &`]: {
+      borderTopRightRadius: themeGet('radii.1')(props),
+      borderBottomRightRadius: themeGet('radii.1')(props),
+    },
+    [`${Radio}:checked + &`]: {
+      backgroundColor: 'blues.0',
+      borderColor: 'blues.2',
+      color: 'blues.5',
+      zIndex: 1,
+    },
+    '&:hover': {
+      borderColor: 'grays.4',
+      zIndex: 1,
+    },
+  })
+);

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import {
   alignSelf,
   AlignSelfProps,
@@ -47,7 +47,7 @@ import {
   zIndex,
   ZIndexProps,
 } from 'styled-system';
-import { FC, ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 
 export type BoxProps = AlignSelfProps &
   BordersProps &
@@ -74,28 +74,28 @@ export type BoxProps = AlignSelfProps &
   ZIndexProps &
   ComponentProps<'div'> & { as?: any };
 
-export const Box: FC<BoxProps> = styled.div`
-  ${alignSelf}
-  ${borders}
-  ${bottom}
-  ${boxShadow}
-  ${color}
-  ${display}
-  ${flex}
-  ${height}
-  ${justifySelf}
-  ${left}
-  ${maxHeight}
-  ${maxWidth}
-  ${minHeight}
-  ${minWidth}
-  ${opacity}
-  ${overflow}
-  ${position}
-  ${right}
-  ${space}
-  ${textAlign}
-  ${top}
-  ${width}
-  ${zIndex}
-`;
+export const Box = styled('div')<BoxProps>(
+  alignSelf,
+  borders,
+  bottom,
+  boxShadow,
+  color,
+  display,
+  flex,
+  height,
+  justifySelf,
+  left,
+  maxHeight,
+  maxWidth,
+  minHeight,
+  minWidth,
+  opacity,
+  overflow,
+  position,
+  right,
+  space,
+  textAlign,
+  top,
+  width,
+  zIndex
+);

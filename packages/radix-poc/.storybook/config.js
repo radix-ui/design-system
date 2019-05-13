@@ -21,16 +21,18 @@ function ThemeComponent({ children }) {
   const [currentTheme, setCurrentTheme] = useState(theme);
   return (
     <RadixProvider theme={currentTheme}>
-      <Box py={3} mb={6} borderBottom="1px solid" borderColor="grays.3">
-        <Button
-          onClick={() =>
-            setCurrentTheme(currentTheme === theme ? darkTheme : theme)
-          }
-        >
-          Change theme
-        </Button>
+      <Box p={3}>
+        <Box py={3} mb={6} borderBottom="1px solid" borderColor="grays.3">
+          <Button
+            onClick={() =>
+              setCurrentTheme(currentTheme === theme ? darkTheme : theme)
+            }
+          >
+            Change theme
+          </Button>
+        </Box>
+        {children}
       </Box>
-      {children}
     </RadixProvider>
   );
 }

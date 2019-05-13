@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
-import styled, { css } from 'styled-components';
-import merge from 'lodash.merge';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
 import {
   maxWidth,
   MaxWidthProps,
@@ -9,93 +9,82 @@ import {
   themeGet,
   width,
   WidthProps,
-  Theme,
-  variant,
 } from 'styled-system';
 import { transparentize } from 'polished';
 
-export function makeMenus(theme: Theme) {
-  return {
-    menus: merge(
-      {
-        ghost: {
-          boxShadow: 'none',
-        },
-      },
-      // @ts-ignore
-      theme.menus
-    ),
-  };
-}
-
 type Variants = 'ghost';
-const menuStyle = variant({ key: 'menus', prop: 'variant' });
-
 type MenuProps = SpaceProps &
   WidthProps &
   MaxWidthProps & { variant?: Variants };
 
-export const Menu = styled.nav<MenuProps>`
-  border-radius: ${themeGet('radii.1')};
-  padding: ${themeGet('space.1')} 0;
-  ${props => css`
-    box-shadow: 0 10px 38px -10px ${transparentize(0.65, themeGet('colors.grays.8')(props))},
-      0 10px 20px -15px ${transparentize(0.8, themeGet('colors.grays.8')(props))};
-  `}
-
-  ${space};
-  ${width};
-  ${maxWidth};
-  ${menuStyle};
-`;
+export const Menu = styled('nav')<MenuProps>(
+  ({ variant, ...props }) =>
+    css({
+      borderRadius: 1,
+      paddingY: 1,
+      paddingX: 0,
+      boxShadow:
+        variant === 'ghost'
+          ? 'none'
+          : `0 10px 38px -10px ${transparentize(
+              0.65,
+              themeGet('colors.grays.8')(props)
+            )}, 0 10px 20px -15px ${transparentize(
+              0.8,
+              themeGet('colors.grays.8')(props)
+            )}`,
+    }),
+  space,
+  width,
+  maxWidth
+);
 
 type MenuItemProps = ComponentProps<'button'> &
   ComponentProps<'a'> & { active?: boolean };
 
-export const MenuItem = styled.button<MenuItemProps>`
-  align-items: center;
-  background-color: ${props =>
-    props.active ? themeGet('colors.blues.1')(props) : 'transparent'};
-  border: none;
-  box-sizing: border-box;
-  color: inherit;
-  cursor: pointer;
-  display: flex;
-  line-height: 1;
-  min-height: ${themeGet('space.6')};
-  outline: none;
-  padding: ${themeGet('space.1')} ${themeGet('space.3')};
-  text-align: left;
-  text-decoration: none;
-  font-weight: 400;
-  width: 100%;
+export const MenuItem = styled('button')<MenuItemProps>(
+  ({ active, ...props }) =>
+    css({
+      alignItems: 'center',
+      backgroundColor: active ? 'blues.1' : 'transparent',
+      boxSizing: 'border-box',
+      color: 'inherit',
+      display: 'flex',
+      lineHeight: '1em',
+      fontSize: 2,
+      minHeight: 6,
+      border: 0,
+      outline: '1px solid transparent',
+      paddingY: 1,
+      paddingX: 3,
+      textAlign: 'left',
+      textDecoration: 'none',
+      fontWeight: 400,
+      width: '100%',
+      cursor: 'pointer',
+      '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+      appearance: 'none',
+      userSelect: 'none',
+      '&:hover': {
+        backgroundColor: 'grays.1',
+      },
+      '&:active': {
+        backgroundColor: 'grays.2',
+      },
+      '&:focus': {
+        outlineColor: themeGet('colors.blues.2')(props),
+      },
+    })
+);
 
-  &:first-child {
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-  }
-
-  &:last-child {
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
-  }
-
-  &:hover {
-    background-color: ${themeGet('colors.grays.1')};
-  }
-
-  &:active {
-    background-color: ${themeGet('colors.grays.2')};
-  }
-
-  &:focus {
-    box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.2')};
-  }
-`;
-
-export const MenuGroup = styled.div`
-  padding: ${themeGet('space.1')} 0;
-  margin: ${themeGet('space.1')} 0;
-  border-top: 1px solid ${themeGet('colors.grays.2')};
-  border-bottom: 1px solid ${themeGet('colors.grays.2')};
-`;
+export const MenuGroup = styled('div')(
+  css({
+    paddingY: 1,
+    paddingX: 0,
+    marginY: 1,
+    marginX: 0,
+    borderTop: '1px solid',
+    borderBottom: '1px solid',
+    borderColor: 'grays.2',
+  })
+);

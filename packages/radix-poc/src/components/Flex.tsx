@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import {
   flexBasis,
   FlexBasisProps,
@@ -28,14 +28,14 @@ type FlexProps = FlexBasisProps &
   JustifyItemsProps &
   OrderProps;
 
-export const Flex = styled(Box)<FlexProps>`
-  display: flex;
-  ${flexBasis}
-  ${flexDirection}
-  ${flexWrap}
-  ${alignContent}
-  ${alignItems}
-  ${justifyContent}
-  ${justifyItems}
-  ${order}
-`;
+export const Flex = styled(Box)<FlexProps>(
+  { display: 'flex' },
+  flexBasis,
+  flexDirection,
+  flexWrap,
+  alignContent,
+  alignItems,
+  justifyContent,
+  justifyItems,
+  order
+);

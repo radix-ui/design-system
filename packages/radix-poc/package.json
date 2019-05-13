@@ -1,6 +1,6 @@
 {
   "name": "radix-poc",
-  "version": "0.11.1",
+  "version": "0.12.0",
   "description": "Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
@@ -14,23 +14,23 @@
     "build-storybook": "build-storybook",
     "build": "rollup -c",
     "watch": "rollup -cw",
-    "release": "yarn build && np",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src"
+    "release": "yarn build && np"
   },
   "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.11",
     "@reach/dialog": "^0.2.8",
     "@styled-system/css": "^2.0.0",
-    "@types/styled-components": "^4.1.14",
     "@types/styled-system": "^4.1.2",
+    "emotion-theming": "^10.0.10",
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
     "polished": "^3.2.0",
-    "styled-components": "^4.2.0",
     "styled-system": "^4.1.0"
   },
   "devDependencies": {
@@ -45,8 +45,10 @@
     "@types/storybook__react": "^4.0.1",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "babel-loader": "8.0.5",
+    "babel-plugin-emotion": "^10.0.9",
     "np": "^5.0.1",
     "rollup": "^1.10.1",
+    "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-typescript2": "^0.21.0",
     "rollup-plugin-url": "^2.2.1",
     "typescript": "3.3.3333"

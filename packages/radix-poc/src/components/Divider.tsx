@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
 import {
   height,
   HeightProps,
@@ -10,22 +11,7 @@ import {
   SpaceProps,
   width,
   WidthProps,
-  themeGet,
-  Theme,
-  variant,
 } from 'styled-system';
-
-export const makeDividers = (theme: Theme) => ({
-  ...theme,
-  dividers: {
-    horizontal: {
-      height: 1,
-    },
-    vertical: {
-      width: 1,
-    },
-  },
-});
 
 type DividerProps = HeightProps &
   MaxHeightProps &
@@ -33,17 +19,18 @@ type DividerProps = HeightProps &
   SpaceProps &
   WidthProps & { variant?: 'horizontal' | 'vertical' };
 
-const dividerStyle = variant({ key: 'dividers', prop: 'variant' });
-
-export const Divider = styled.div<DividerProps>`
-  background-color: ${themeGet('colors.grays.2')};
-
-  ${height}
-  ${maxHeight}
-  ${maxWidth}
-  ${space}
-  ${width}
-  ${dividerStyle}
-`;
+export const Divider = styled.div<DividerProps>(
+  ({ variant }) =>
+    css({
+      backgroundColor: 'grays.2',
+      height: variant === 'horizontal' && '1px',
+      width: variant === 'vertical' && '1px',
+    }),
+  height,
+  maxHeight,
+  maxWidth,
+  space,
+  width
+);
 
 Divider.defaultProps = { variant: 'horizontal' };

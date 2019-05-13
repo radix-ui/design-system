@@ -102,5 +102,12 @@ storiesOf('Components|Input', module).add('default', () => (
     <Box mb="4">
       <Input variant="ghost" size="medium" placeholder="Ghost input" />
     </Box>
+
+    <Box mb="4">
+      <Input disabled placeholder="Disabled" />
+    </Box>
+    <Box mb="4">
+      <Input readOnly placeholder="Read only" />
+    </Box>
   </Box>
 ));

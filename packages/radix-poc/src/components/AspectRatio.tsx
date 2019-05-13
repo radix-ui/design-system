@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { color, ColorProps, space, SpaceProps, Theme } from 'styled-system';
 
 type WrapperProps = ColorProps & SpaceProps;
@@ -22,18 +22,16 @@ export const AspectRatio: FC<AspectRatioProps> = ({
   );
 };
 
-const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
+const Wrapper = styled('div')(
+  { position: 'relative', width: '100%' },
+  space,
+  color
+);
 
-  ${space}
-  ${color}
-`;
-
-const Inner = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-`;
+const Inner = styled('div')({
+  position: 'absolute',
+  left: 0,
+  top: 0,
+  height: '100%',
+  width: '100%',
+});

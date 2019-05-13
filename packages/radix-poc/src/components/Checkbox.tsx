@@ -1,8 +1,9 @@
 import React, { FC, ComponentProps } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { space, SpaceProps, themeGet } from 'styled-system';
+import { space, SpaceProps } from 'styled-system';
 
 type CheckboxProps = SpaceProps & ComponentProps<'input'>;
 
@@ -44,63 +45,64 @@ export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
   );
 };
 
-const CheckboxWrapper = styled.label<SpaceProps>`
-  position: relative;
+const CheckboxWrapper = styled('label')<SpaceProps>(
+  {
+    position: 'relative',
+  },
+  space
+);
 
-  ${space}
-`;
+const Input = styled('input')({
+  appearance: 'none',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  zIndex: 0,
+  outline: 'none',
+  margin: 0,
+  opacity: 0,
+  '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+});
 
-const Input = styled.input`
-  appearance: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  outline: none;
-  margin: 0;
-  opacity: 0;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-`;
+const TextWrapper = styled('span')(() =>
+  css({
+    lineHeight: 5,
+    fontFamily: 'normal',
+    fontSize: 2,
+    marginLeft: 1,
+    marginRight: 3,
+    userSelect: 'none',
+    verticalAlign: 'middle',
+  })
+);
 
-const TextWrapper = styled.span`
-  line-height: ${themeGet('space.5')};
-  font-family: ${themeGet('fonts.normal')};
-  font-size: ${themeGet('fontSizes.2')};
-  margin-left: ${themeGet('space.1')};
-  margin-right: ${themeGet('space.3')};
-  user-select: none;
-  vertical-align: middle;
-`;
+const FakeCheckbox = styled('div')(
+  css({
+    width: 3,
+    height: 3,
+    borderRadius: 1,
+    border: '1px solid',
+    borderColor: 'grays.3',
+    display: 'inline-flex',
+    verticalAlign: 'middle',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'transparent',
+    '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+    [`${Input}:hover + &`]: {
+      borderColor: 'grays.4',
+    },
+    [`${Input}:focus + &`]: {
+      borderColor: 'blues.4',
+    },
+    [`${Input}:checked + &`]: {
+      backgroundColor: 'blues.4',
+      borderColor: 'blues.4',
+      color: 'white',
+    },
+  })
+);
 
-const FakeCheckbox = styled.div`
-  width: ${themeGet('space.3')};
-  height: ${themeGet('space.3')};
-  border-radius: ${themeGet('radii.1')};
-  box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.3')};
-  display: inline-flex;
-  vertical-align: middle;
-  align-items: center;
-  justify-content: center;
-  color: transparent;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-  ${Input}:hover + & {
-    box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')};
-  }
-
-  ${Input}:focus + & {
-    box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.4')};
-  }
-
-  ${Input}:checked + & {
-    background-color: ${themeGet('colors.blues.4')};
-    box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.4')};
-    color: ${themeGet('colors.white')};
-  }
-`;
-
-const CheckedIcon = styled.svg`
-  display: block;
-`;
+const CheckedIcon = styled('svg')({ display: 'block' });

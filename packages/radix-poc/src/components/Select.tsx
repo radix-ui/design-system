@@ -1,6 +1,7 @@
 import React, { ComponentProps, FC } from 'react';
-import styled from 'styled-components';
-import { space, SpaceProps, width, WidthProps, themeGet } from 'styled-system';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
+import { space, SpaceProps, width, WidthProps } from 'styled-system';
 import pick from 'lodash.pick';
 
 type SelectProps = ComponentProps<'select'> & WrapperProps;
@@ -62,38 +63,41 @@ const ICON_SIZE = 15;
 
 type WrapperProps = SpaceProps & WidthProps;
 
-const Wrapper = styled.div<WrapperProps>`
-  position: relative;
-  ${width}
-  ${space}
-`;
+const Wrapper = styled('div')<WrapperProps>(
+  { position: 'relative' },
+  width,
+  space
+);
 
-const StyledSelect = styled.select`
-  appearance: none;
-  background-color: transparent;
-  height: ${themeGet('space.5')};
-  line-height: ${themeGet('space.5')};
-  font-family: ${themeGet('fonts.normal')};
-  padding: 0;
-  font-size: ${themeGet('fontSizes.2')};
-  border-radius: 0;
-  padding-right: ${themeGet('space.3')};
-  border: none;
-  outline: none;
-  width: 100%;
-  box-shadow: inset 0 -1px 0 0 ${themeGet('colors.grays.3')};
+const StyledSelect = styled('select')(
+  css({
+    appearance: 'none',
+    backgroundColor: 'transparent',
+    height: 5,
+    lineHeight: 1,
+    fontFamily: 'normal',
+    padding: 0,
+    fontSize: 2,
+    borderRadius: 0,
+    paddingRight: 3,
+    border: 'none',
+    outline: 'none',
+    width: '100%',
+    borderBottom: '1px solid',
+    borderColor: 'grays.3',
+    '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+    '&:focus': {
+      borderColor: 'blues.4',
+    },
+  })
+);
 
-  &:focus {
-    box-shadow: inset 0 -1px 0 0 ${themeGet('colors.blues.4')};
-  }
-`;
-
-const IconWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: ${ICON_SIZE}px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-`;
+const IconWrapper = styled('div')({
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  width: `${ICON_SIZE}px`,
+  height: '100%',
+  display: 'flex',
+  alignItems: 'center',
+});

@@ -100,6 +100,7 @@ storiesOf('Components|Menu', module).add('default', () => (
   </Grid>
 ));
 
+// @ts-ignore
 function ItemWithIcon({ children }) {
   return (
     <>
@@ -111,6 +112,7 @@ function ItemWithIcon({ children }) {
   );
 }
 
+// @ts-ignore
 function ItemWithIconAndDesc({ title, desc }) {
   return (
     <>

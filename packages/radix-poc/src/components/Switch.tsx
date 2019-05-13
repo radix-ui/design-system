@@ -1,5 +1,6 @@
 import React, { FC, ComponentProps } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { space, SpaceProps, themeGet } from 'styled-system';
@@ -28,93 +29,86 @@ export const Switch: FC<SwitchProps> = ({ children, ...props }) => {
   );
 };
 
-const SwitchWrapper = styled.label<SpaceProps>`
-  position: relative;
-  display: inline-block;
-  width: ${themeGet('space.6')};
-  height: ${themeGet('space.3')};
-  box-sizing: content-box;
+const SwitchWrapper = styled('label')<SpaceProps>(
+  css({
+    position: 'relative',
+    display: 'inline-block',
+    width: 6,
+    height: 3,
+    boxSizing: 'content-box',
+    '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+  }),
+  space
+);
 
-  ${space}
-`;
+const Input = styled('input')({
+  appearance: 'none',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  zIndex: 0,
+  outline: 'none',
+  margin: 0,
+  opacity: 0,
+});
 
-const Input = styled.input`
-  appearance: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  outline: none;
-  margin: 0;
-  opacity: 0;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-`;
-
-const FakeSwitch = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-
-  &::before {
-    content: '';
-    display: block;
-    height: ${themeGet('space.1')};
-    width: 100%;
-    background-color: ${themeGet('colors.grays.3')};
-    border-radius: 9999px;
-    transition: background-color 100ms ease-out;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: ${themeGet('space.3')};
-    height: ${themeGet('space.3')};
-    top: 0;
-    left: 0;
-    border-radius: 9999px;
-    background-color: ${themeGet('colors.grays.4')};
-    transition: transform 100ms ease-out;
-  }
-
-  ${Input}:checked + & {
-    &::before {
-      background-color: ${themeGet('colors.blues.3')};
-    }
-
-    &::after {
-      background-color: ${themeGet('colors.blues.4')};
-      transform: translateX(${themeGet('space.4')});
-    }
-  }
-
-  ${Input}:disabled + & {
-    cursor: not-allowed;
-
-    &::before {
-      background-color: ${themeGet('colors.grays.2')};
-    }
-
-    &::after {
-      background-color: ${themeGet('colors.grays.3')};
-    }
-  }
-
-  ${Input}:disabled:checked + & {
-    cursor: not-allowed;
-
-    &::before {
-      background-color: ${themeGet('colors.blues.2')};
-    }
-
-    &::after {
-      background-color: ${themeGet('colors.blues.3')};
-    }
-  }
-`;
+const FakeSwitch = styled('div')(props =>
+  css({
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    position: 'relative',
+    zIndex: 1,
+    cursor: 'pointer',
+    '&::before': {
+      content: `''`,
+      display: 'block',
+      height: 1,
+      width: '100%',
+      backgroundColor: 'grays.3',
+      borderRadius: 9999,
+      transition: 'background-color 100ms ease-out',
+    },
+    '&::after': {
+      content: `''`,
+      position: 'absolute',
+      width: 3,
+      height: 3,
+      top: 0,
+      left: 0,
+      borderRadius: 9999,
+      backgroundColor: 'grays.4',
+      transition: 'transform 100ms ease-out',
+    },
+    [`${Input}:checked + &`]: {
+      '&::before': {
+        backgroundColor: 'blues.3',
+      },
+      '&::after': {
+        backgroundColor: 'blues.4',
+        transform: `translateX(${themeGet('space.4')(props)})`,
+      },
+    },
+    [`${Input}:disabled + &`]: {
+      cursor: 'not-allowed',
+      '&::before': {
+        backgroundColor: 'grays.2',
+      },
+      '&::after': {
+        backgroundColor: 'grays.3',
+      },
+    },
+    [`${Input}:disabled:checked + &`]: {
+      cursor: 'not-allowed',
+      '&::before': {
+        backgroundColor: 'blues.2',
+      },
+      '&::after': {
+        backgroundColor: 'blues.3',
+      },
+    },
+  })
+);

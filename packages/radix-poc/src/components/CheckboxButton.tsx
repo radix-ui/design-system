@@ -1,8 +1,9 @@
 import React, { FC, ComponentProps, ReactNode } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { space, SpaceProps, themeGet } from 'styled-system';
+import { space, SpaceProps } from 'styled-system';
 
 type CheckboxButton = SpaceProps &
   ComponentProps<'input'> & { children: ReactNode };
@@ -30,42 +31,43 @@ export const CheckboxButton: FC<CheckboxButton> = ({ children, ...props }) => {
   );
 };
 
-const CheckboxWrapper = styled.label<SpaceProps>`
-  position: relative;
-  ${space};
-`;
+const CheckboxWrapper = styled('label')<SpaceProps>(
+  {
+    position: 'relative',
+  },
+  space
+);
 
-const Input = styled.input`
-  appearance: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  outline: none;
-  margin: 0;
-  opacity: 0;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+const Input = styled('input')({
+  appearance: 'none',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  zIndex: 0,
+  outline: 'none',
+  margin: 0,
+  opacity: 0,
+  '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+  '&:hover': {
+    cursor: 'pointer',
+  },
+});
 
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const FakeCheckbox = styled.div`
-  display: inline-flex;
-  vertical-align: middle;
-  align-items: center;
-  justify-content: center;
-  color: ${themeGet('colors.grays.5')};
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-  ${Input}:focus + & {
-    color: ${themeGet('colors.grays.6')};
-  }
-
-  ${Input}:checked + & {
-    color: ${themeGet('colors.blue')};
-  }
-`;
+const FakeCheckbox = styled('div')(
+  css({
+    display: 'inline-flex',
+    verticalAlign: 'middle',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'grays.5',
+    '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+    [`${Input}:focus + &`]: {
+      color: 'grays.6',
+    },
+    [`${Input}:checked + &`]: {
+      color: 'blues.4',
+    },
+  })
+);

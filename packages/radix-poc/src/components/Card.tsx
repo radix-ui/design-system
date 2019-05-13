@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
 import {
   color,
   ColorProps,
@@ -9,167 +10,82 @@ import {
   maxWidth,
   MaxWidthProps,
   themeGet,
-  variant,
 } from 'styled-system';
-import merge from 'lodash.merge';
 import { transparentize } from 'polished';
-import { Theme } from 'styled-system';
 
-export function makeCards(theme: Theme) {
-  return {
-    cards: merge({
-      border: {
-        boxShadow: `inset 0 0 0 1px ${themeGet('colors.grays.3')({ theme })}`,
+type SystemProps = ColorProps & SpaceProps & WidthProps & MaxWidthProps;
+type CardProps = SystemProps & { variant?: 'shadow' | 'ghost' };
+
+const systemProps = [color, space, width, maxWidth];
+
+const createShadow = (defaultOpacity: any, color: any) => ({
+  position: 'relative',
+  transition: 'opacity 80ms linear, transform 150ms ease',
+  borderColor: 'transparent',
+  '&::before': {
+    content: `""`,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    borderRadius: 'inherit',
+    pointerEvents: 'none',
+    transitionProperty: 'all',
+    transitionDuration: '80ms',
+    transitionTimingFunction: 'linear',
+    boxShadow: `0 10px 38px -10px ${transparentize(0.65, color)},
+      0 10px 20px -15px ${transparentize(0.8, color)}`,
+    opacity: defaultOpacity,
+  },
+});
+
+const baseCard = ({ variant, ...props }: CardProps) =>
+  css({
+    position: 'relative',
+    padding: 4,
+    borderRadius: 2,
+    border: '1px solid transparent',
+    borderColor: 'grays.3',
+    ...(variant === 'ghost'
+      ? createShadow(0, themeGet('colors.grays.8')(props))
+      : {}),
+    ...(variant === 'shadow'
+      ? createShadow(1, themeGet('colors.grays.8')(props))
+      : {}),
+  });
+
+// TODO: Fix color typings
+// @ts-ignore
+export const Card = styled('div')<CardProps>(baseCard, ...systemProps);
+
+// TODO: Fix color typings
+// @ts-ignore
+export const CardLink = styled('a')<CardProps>(
+  baseCard,
+  ({ variant }: CardProps) =>
+    css({
+      display: 'block',
+      textDecoration: 'none',
+      outline: 0,
+      '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+      '&:hover': {
+        borderColor: 'grays.4',
+        ...(variant === 'ghost'
+          ? {
+              '&::before': { opacity: 1 },
+            }
+          : {}),
+        ...(variant === 'shadow' || variant === 'ghost'
+          ? {
+              transform: 'translateY(-2px)',
+              borderColor: 'transparent',
+            }
+          : {}),
       },
-      shadow: {
-        position: 'relative',
-        transition: 'opacity 80ms linear, transform 150ms ease',
-        '&::before, &::after': {
-          content: `""`,
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          borderRadius: 'inherit',
-          pointerEvents: 'none',
-          transitionProperty: 'all',
-          transitionDuration: '80ms',
-          transitionTimingFunction: 'linear',
-        },
-        '&::before': {
-          boxShadow: `0 10px 38px -10px ${transparentize(
-            0.65,
-            themeGet('colors.grays.8')({ theme })
-          )},
-            0 10px 20px -15px ${transparentize(
-              0.8,
-              themeGet('colors.grays.8')({ theme })
-            )}`,
-        },
-        '&::after': {
-          boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')({ theme })}`,
-          opacity: 0,
-        },
-      },
-      ghost: {
-        position: 'relative',
-        transition: 'opacity 80ms linear, transform 150ms ease',
-        '&::before, &::after': {
-          content: `""`,
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          borderRadius: 'inherit',
-          pointerEvents: 'none',
-          transitionProperty: 'all',
-          transitionDuration: '80ms',
-          transitionTimingFunction: 'linear',
-        },
-        '&::before': {
-          boxShadow: `0 10px 38px -10px ${transparentize(
-            0.65,
-            themeGet('colors.grays.8')({ theme })
-          )},
-            0 10px 20px -15px ${transparentize(
-              0.8,
-              themeGet('colors.grays.8')({ theme })
-            )}`,
-          opacity: 0,
-        },
-        '&::after': {
-          boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')({ theme })}`,
-          opacity: 0,
-        },
+      '&:focus': {
+        borderColor: 'blues.4',
       },
     }),
-  };
-}
-
-type Variants = 'border' | 'shadow' | 'ghost';
-const cardStyle = variant({ key: 'cards', prop: 'variant' });
-
-type CardProps = ColorProps &
-  SpaceProps &
-  WidthProps &
-  MaxWidthProps & { variant?: Variants };
-
-const cardCSS = css`
-  position: relative;
-  padding: ${themeGet('space.4')};
-  border-radius: ${themeGet('radii.2')};
-
-  ${color}
-  ${space}
-  ${width}
-  ${maxWidth}
-  ${cardStyle}
-`;
-
-export const Card = styled.div<CardProps>`
-  ${cardCSS}
-`;
-
-Card.defaultProps = { variant: 'border' };
-
-export const CardLink = styled.a<CardProps>`
-  ${cardCSS}
-
-  display: block;
-  text-decoration: none;
-  outline: 0;
-
-  ${props =>
-    props.variant === 'border' &&
-    css`
-      &:hover {
-        box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')};
-      }
-
-      &:focus {
-        box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.4')};
-      }
-    `}
-
-  ${props =>
-    props.variant === 'shadow' &&
-    css`
-      &:hover {
-        transform: translateY(-2px);
-      }
-
-      &:focus {
-        &::after {
-          opacity: 1;
-        }
-      }
-
-      &:active {
-        background-color: ${themeGet('colors.grays.0')};
-        transform: translateY(0);
-      }
-    `}
-
-  ${props =>
-    props.variant === 'ghost' &&
-    css`
-      &:hover,
-      &:focus {
-        transform: translateY(-2px);
-
-        &::before {
-          opacity: 1;
-        }
-      }
-
-      &:focus {
-        &::after {
-          opacity: 1;
-        }
-      }
-    `};
-`;
-
-CardLink.defaultProps = { variant: 'border' };
+  ...systemProps
+);

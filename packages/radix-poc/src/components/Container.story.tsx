@@ -17,40 +17,40 @@ storiesOf('Components|Container', module).add('default', () => (
     </Box>
 
     <Box mb={4}>
-      <Container size="small">
+      <Container size={0}>
         <Box backgroundColor="blue" p={3}>
           <Text as="p" textAlign="center">
-            Small
+            Size 0
           </Text>
         </Box>
       </Container>
     </Box>
 
     <Box mb={4}>
-      <Container size="medium">
+      <Container size={1}>
         <Box backgroundColor="blue" p={3}>
           <Text as="p" textAlign="center">
-            Medium
+            Size 1
           </Text>
         </Box>
       </Container>
     </Box>
 
     <Box mb={4}>
-      <Container size="large">
+      <Container size={2}>
         <Box backgroundColor="blue" p={3}>
           <Text as="p" textAlign="center">
-            Large
+            Size 2
           </Text>
         </Box>
       </Container>
     </Box>
 
     <Box mb={4}>
-      <Container size="fluid">
+      <Container size={[null, 0, 1]}>
         <Box backgroundColor="blue" p={3}>
           <Text as="p" textAlign="center">
-            Fluid
+            Responsive
           </Text>
         </Box>
       </Container>

@@ -22,7 +22,7 @@ function RadioGroupStory() {
       <Box mb="4">
         <Text as="p">Uncontrolled and without children</Text>
         <RadioGroup name="flexGrow">
-          <Radio value="true" defaultChecked />
+          <Radio value="true" defaultChecked mr={1} />
           <Radio value="false" />
         </RadioGroup>
       </Box>

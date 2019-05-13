@@ -1,114 +1,52 @@
-import React, { FC, ComponentPropsWithRef } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import {
   color,
   ColorProps,
-  fontFamily,
-  FontFamilyProps,
-  fontSize,
-  FontSizeProps,
-  fontWeight,
-  FontWeightProps,
-  letterSpacing,
-  LetterSpacingProps,
-  lineHeight,
-  LineHeightProps,
-  overflow,
-  OverflowProps,
   space,
   SpaceProps,
   textAlign,
+  lineHeight,
+  LineHeightProps,
   TextAlignProps,
-  themeGet,
-  style,
   ResponsiveValue,
 } from 'styled-system';
-import { getPropsFromScale } from '../utils/utils';
-import * as CSS from 'csstype';
+import { get } from '../utils/get';
+import css from '@styled-system/css';
 
-const whiteSpace = style({
-  prop: 'whiteSpace',
-});
-
-interface WhiteSpaceProps {
-  whiteSpace?: ResponsiveValue<CSS.WhiteSpaceProperty>;
-}
-
-const textOverflow = style({
-  prop: 'textOverflow',
-});
-
-interface TextOverflowProperty {
-  textOverflow?: ResponsiveValue<CSS.TextOverflowProperty>;
-}
-
-type SystemHeadingProps = FontFamilyProps &
-  FontSizeProps &
-  FontWeightProps &
-  LetterSpacingProps &
-  LineHeightProps &
-  OverflowProps &
+type HeadingProps = ColorProps &
   SpaceProps &
   TextAlignProps &
-  TextOverflowProperty &
-  WhiteSpaceProps &
-  ColorProps;
-
-export const SystemHeading = styled.h1<SystemHeadingProps>`
-  color: ${themeGet('colors.grays.8')};
-  margin: 0;
-  line-height: 1.1;
-
-  ${color}
-  ${fontFamily}
-  ${fontSize}
-  ${fontWeight}
-  ${letterSpacing}
-  ${lineHeight}
-  ${overflow}
-  ${space}
-  ${textAlign}
-  ${textOverflow}
-  ${whiteSpace}
-`;
-
-type Sizes = 0 | 1 | 2 | 3 | 4 | 5;
-type Weights = 'normal' | 'bold';
-
-type HeadingProps = ComponentPropsWithRef<'h1'> &
-  SpaceProps & {
-    size?: Sizes | Sizes[];
-    weight?: Weights | Weights[];
+  LineHeightProps & {
+    size?: ResponsiveValue<0 | 1 | 2 | 3 | 4 | 5>;
+    bold?: boolean;
     truncate?: boolean;
   };
 
-export const Heading: FC<HeadingProps> = ({
-  size = 3,
-  weight = 'normal',
-  truncate = false,
-  ...props
-}) => {
-  return (
-    <SystemHeading
-      color="grays.8"
-      {...props}
-      fontSize={getPropsFromScale([3, 5, 7, 8, 9, 10], size)}
-      letterSpacing={getPropsFromScale(
+// TODO: Fix color typings
+// @ts-ignore
+export const Heading = styled('h1')<HeadingProps>(
+  ({ size, bold, truncate }: HeadingProps) =>
+    css({
+      margin: 0,
+      lineHeight: 1.2,
+      color: 'grays.8',
+      fontSize: get([3, 5, 7, 8, 9, 10], size),
+      letterSpacing: get(
         ['-.0125em', '-.005em', '-.012em', '-.028em', ' -.042em', ' -.052em'],
         size
-      )}
-      marginLeft={getPropsFromScale(
+      ),
+      textIndent: get(
         ['-.05em', '-.06em', '-.075em', '-.085em', '-.088em', '-.09em'],
         size
-      )}
-      fontWeight={getPropsFromScale({ normal: 400, bold: 500 }, weight)}
-      fontFamily={getPropsFromScale(
-        { normal: 'normal', bold: 'medium' },
-        weight
-      )}
-      whiteSpace={truncate ? 'nowrap' : undefined}
-      textOverflow={truncate ? 'ellipsis' : undefined}
-      overflow={truncate ? 'hidden' : undefined}
-    />
-  );
-};
+      ),
+      fontWeight: bold ? '500' : '400',
+      fontFamily: bold ? 'medium' : 'normal',
+      whiteSpace: truncate ? 'nowrap' : undefined,
+      textOverflow: truncate ? 'ellipsis' : undefined,
+      overflow: truncate ? 'hidden' : undefined,
+    }),
+  color,
+  space,
+  textAlign,
+  lineHeight
+);

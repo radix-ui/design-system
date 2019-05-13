@@ -1,11 +1,9 @@
 import React from 'react';
-import Highlight, { defaultProps } from 'prism-react-renderer';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { useMDXComponents, mdx } from '@mdx-js/react';
 import { Box } from 'radix-poc';
 
 export default ({ children, className, live, render, ghost }) => {
-  // const language = className.replace(/language-/, '');
   const components = useMDXComponents();
 
   const liveProviderProps = {
@@ -26,7 +24,8 @@ export default ({ children, className, live, render, ghost }) => {
           />
           <LiveEditor
             style={{
-              backgroundColor: '#eee',
+              // backgroundColor: '#eee',
+              backgroundColor: '#2a2734',
               borderRadius: !ghost && '0 0 3px 3px ',
             }}
           />
@@ -43,20 +42,4 @@ export default ({ children, className, live, render, ghost }) => {
       </LiveProvider>
     </Box>
   );
-
-  // return (
-  //   <Highlight {...defaultProps} code={children} language={language}>
-  //     {({ className, style, tokens, getLineProps, getTokenProps }) => (
-  //       <pre className={className} style={{ ...style, padding: '20px' }}>
-  //         {tokens.map((line, i) => (
-  //           <div key={i} {...getLineProps({ line, key: i })}>
-  //             {line.map((token, key) => (
-  //               <span key={key} {...getTokenProps({ token, key })} />
-  //             ))}
-  //           </div>
-  //         ))}
-  //       </pre>
-  //     )}
-  //   </Highlight>
-  // );
 };

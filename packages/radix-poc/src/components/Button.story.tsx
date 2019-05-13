@@ -29,15 +29,6 @@ storiesOf('Components|Button', module).add('default', () => (
     </Box>
 
     <Box mb="4">
-      <Button variant="yellow" mr="4">
-        Green
-      </Button>
-      <Button variant="yellow" size="medium">
-        Green
-      </Button>
-    </Box>
-
-    <Box mb="4">
       <Button variant="red" mr="4">
         Red
       </Button>

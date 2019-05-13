@@ -6,10 +6,11 @@ import React, {
   ComponentPropsWithRef,
   FC,
 } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { space, themeGet } from 'styled-system';
+import { space, SpaceProps } from 'styled-system';
 
 type RadioGroupProps = ComponentProps<'div'> & {
   name: string;
@@ -47,7 +48,7 @@ const spacePropNames = [
 ];
 
 type Ref = HTMLInputElement;
-type RadioProps = ComponentPropsWithRef<'input'>;
+type RadioProps = SpaceProps & ComponentPropsWithRef<'input'>;
 
 export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>(
   (props, ref) => {
@@ -65,64 +66,64 @@ export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>(
   }
 );
 
-const RadioWrapper = styled.label`
-  position: relative;
+const RadioWrapper = styled('label')<SpaceProps>(
+  { position: 'relative' },
+  space
+);
 
-  ${space}
-`;
+const Input = styled('input')({
+  appearance: 'none',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  zIndex: 0,
+  outline: 'none',
+  margin: 0,
+  opacity: 0,
+  '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+});
 
-const Input = styled.input`
-  appearance: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  outline: none;
-  margin: 0;
-  opacity: 0;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-`;
+const TextWrapper = styled('span')(
+  css({
+    lineHeight: 5,
+    fontFamily: 'normal',
+    fontSize: 2,
+    marginLeft: 1,
+    marginRight: 3,
+    userSelect: 'none',
+    verticalAlign: 'middle',
+  })
+);
 
-const TextWrapper = styled.span`
-  line-height: ${themeGet('space.5')};
-  font-family: ${themeGet('fonts.normal')};
-  font-size: ${themeGet('fontSizes.2')};
-  margin-left: ${themeGet('space.1')};
-  margin-right: ${themeGet('space.3')};
-  user-select: none;
-  vertical-align: middle;
-`;
-
-const FakeRadio = styled.div`
-  width: ${themeGet('space.4')};
-  height: ${themeGet('space.4')};
-  color: transparent;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.3')};
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  &::before {
-    content: '';
-    width: 50%;
-    height: 50%;
-    color: inherit;
-    border-radius: inherit;
-    background-color: currentColor;
-  }
-
-  ${Input}:checked + & {
-    color: ${themeGet('colors.blues.4')};
-  }
-
-  ${Input}:hover + & {
-    box-shadow: inset 0 0 0 1px ${themeGet('colors.grays.4')};
-  }
-
-  ${Input}:focus + & {
-    box-shadow: inset 0 0 0 1px ${themeGet('colors.blues.4')};
-  }
-`;
+const FakeRadio = styled('div')(
+  css({
+    width: 4,
+    height: 4,
+    color: 'transparent',
+    borderRadius: '50%',
+    border: '1px solid',
+    borderColor: 'grays.3',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    '&::before': {
+      content: `''`,
+      width: 2,
+      height: 2,
+      color: 'inherit',
+      borderRadius: 'inherit',
+      backgroundColor: 'currentColor',
+    },
+    [`${Input}:checked + &`]: {
+      color: 'blues.4',
+    },
+    [`${Input}:hover + &`]: {
+      borderColor: 'grays.4',
+    },
+    [`${Input}:focus + &`]: {
+      borderColor: 'blues.4',
+    },
+  })
+);

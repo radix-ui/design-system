@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
 import {
   color,
   ColorProps,
@@ -18,7 +19,6 @@ import {
   FontWeightProps,
   letterSpacing,
   LetterSpacingProps,
-  themeGet,
 } from 'styled-system';
 
 type TextProps = ColorProps &
@@ -29,22 +29,31 @@ type TextProps = ColorProps &
   TextAlignProps &
   LineHeightProps &
   FontWeightProps &
-  LetterSpacingProps;
+  LetterSpacingProps & {
+    truncate?: boolean;
+  };
 
-export const Text = styled.span<TextProps>`
-  font-family: ${themeGet('fonts.normal')};
-  font-size: ${themeGet('fontSizes.4')};
-  color: ${themeGet('colors.grays.7')};
-  margin: 0;
-  padding: 0;
-
-  ${color}
-  ${space}
-  ${fontSize}
-  ${fontStyle}
-  ${fontFamily}
-  ${textAlign}
-  ${lineHeight}
-  ${fontWeight}
-  ${letterSpacing}
-`;
+// TODO: Fix color typings
+// @ts-ignore
+export const Text = styled('span')<TextProps>(
+  ({ truncate }: TextProps) =>
+    css({
+      fontFamily: 'normal',
+      fontSize: 4,
+      color: 'grays.7',
+      margin: 0,
+      padding: 0,
+      whiteSpace: truncate ? 'nowrap' : undefined,
+      textOverflow: truncate ? 'ellipsis' : undefined,
+      overflow: truncate ? 'hidden' : undefined,
+    }),
+  color,
+  space,
+  fontSize,
+  fontStyle,
+  fontFamily,
+  textAlign,
+  lineHeight,
+  fontWeight,
+  letterSpacing
+);

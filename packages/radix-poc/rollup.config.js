@@ -1,5 +1,6 @@
 import typescript from 'rollup-plugin-typescript2';
 import url from 'rollup-plugin-url';
+import babel from 'rollup-plugin-babel';
 import pkg from './package.json';
 
 export default {
@@ -28,6 +29,10 @@ export default {
     typescript({
       clean: true,
       typescript: require('typescript'),
+    }),
+    babel({
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      exclude: 'node_modules/**',
     }),
   ],
 };

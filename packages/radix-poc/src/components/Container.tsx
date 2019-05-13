@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
 import {
   alignSelf,
   AlignSelfProps,
@@ -10,58 +11,32 @@ import {
   MaxWidthProps,
   space,
   SpaceProps,
-  themeGet,
   variant,
-  Theme,
 } from 'styled-system';
-import merge from 'lodash.merge';
-
-export function makeContainerSizes(theme: Theme) {
-  return {
-    containerSizes: merge({
-      small: {
-        paddingLeft: themeGet('space.5')({ theme }),
-        paddingRight: themeGet('space.5')({ theme }),
-        maxWidth: '25rem',
-      },
-      medium: {
-        paddingLeft: themeGet('space.5')({ theme }),
-        paddingRight: themeGet('space.5')({ theme }),
-        maxWidth: '45rem',
-      },
-      large: {
-        paddingLeft: themeGet('space.5')({ theme }),
-        paddingRight: themeGet('space.5')({ theme }),
-        maxWidth: '65rem',
-      },
-      fluid: {
-        paddingLeft: themeGet('space.5')({ theme }),
-        paddingRight: themeGet('space.5')({ theme }),
-        maxWidth: '100%',
-      },
-    }),
-  };
-}
+import { get } from '../utils/get';
 
 const containerStyle = variant({ key: 'containerSizes', prop: 'size' });
 
-type SizeProps = 'small' | 'medium' | 'large' | 'fluid';
+type Sizes = 0 | 1 | 2 | null;
 
 type ContainerProps = AlignSelfProps &
   FlexProps &
   JustifySelfProps &
   MaxWidthProps &
-  SpaceProps & { size?: SizeProps };
+  SpaceProps & { size?: Sizes | Sizes[] };
 
-export const Container = styled.div<ContainerProps>`
-  margin-left: auto;
-  margin-right: auto;
-  flex: 1;
-
-  ${alignSelf}
-  ${flex}
-  ${justifySelf}
-  ${maxWidth}
-  ${space}
-  ${containerStyle}
-`;
+export const Container = styled('div')<ContainerProps>(
+  ({ size }) =>
+    css({
+      marginX: 'auto',
+      paddingX: 5,
+      flex: 1,
+      maxWidth: get(['25rem', '45rem', '65rem'], size),
+    }),
+  alignSelf,
+  flex,
+  justifySelf,
+  maxWidth,
+  space,
+  containerStyle
+);

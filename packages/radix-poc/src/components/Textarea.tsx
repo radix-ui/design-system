@@ -1,13 +1,9 @@
-import React, { FC, ComponentProps } from 'react';
-import styled from 'styled-components';
+import { ComponentProps } from 'react';
+import styled from '@emotion/styled';
 import { Input, InputProps } from './Input';
 
-export const BaseTextarea = styled(Input)`
-  min-height: 80px;
-`;
+type TextaereaProps = InputProps & ComponentProps<'textarea'>;
 
-type TextaereaProps = InputProps & ComponentProps<'textarea'> & any;
-
-export const Textarea: FC<TextaereaProps> = props => (
-  <BaseTextarea {...props} />
-);
+export const Textarea = styled(Input)<TextaereaProps>({
+  minHeight: 80,
+});

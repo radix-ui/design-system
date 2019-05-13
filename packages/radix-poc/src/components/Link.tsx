@@ -1,23 +1,21 @@
-import styled from 'styled-components';
-import {
-  color,
-  ColorProps,
-  fontSize,
-  FontSizeProps,
-  themeGet,
-} from 'styled-system';
+import styled from '@emotion/styled';
+import css from '@styled-system/css';
+import { color, ColorProps, fontSize, FontSizeProps } from 'styled-system';
 
 type LinkProps = ColorProps & FontSizeProps;
 
-export const Link = styled.a<LinkProps>`
-  color: ${themeGet('colors.blue')};
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  ${color}
-  ${fontSize}
-`;
+// TODO: Fix color typings
+// @ts-ignore
+export const Link = styled('a')<LinkProps>(
+  css({
+    color: 'blue',
+    textDecoration: 'none',
+    cursor: 'pointer',
+    '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+    '&:hover': {
+      textDecoration: 'underline',
+    },
+  }),
+  color,
+  fontSize
+);
