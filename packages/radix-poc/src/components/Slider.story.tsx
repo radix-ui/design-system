@@ -19,7 +19,7 @@ function SliderStory() {
         <Slider
           value={value}
           onChange={event => setValue(event.target.value)}
-          min={30}
+          min={0}
         />
         <div>
           <Text as="p" fontSize="3" my="3">
