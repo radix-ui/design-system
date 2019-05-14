@@ -3,7 +3,7 @@
   "private": true,
   "description": "A website for Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
-  "version": "0.0.2",
+  "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
