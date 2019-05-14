@@ -101,6 +101,9 @@ export default ({ children, className, live, render, ghost }) => {
               borderRadius: !ghost && '0 0 3px 3px',
               border: !ghost && `1px solid ${colors.grays[3]}`,
               borderTop: 0,
+              fontSize: radixTheme.fontSizes[3],
+              fontFamily: radixTheme.fonts.mono,
+              lineHeight: radixTheme.lineHeights[0],
             }}
             css={{ textarea: { outline: 0 } }}
           />

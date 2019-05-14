@@ -1,5 +1,6 @@
 ---
 title: Heading
+component: Heading
 ---
 
 ```js live=true
@@ -13,11 +14,15 @@ title: Heading
 </>
 ```
 
-## Supported props
+### System props
 
-| Name     | Type        | Default | Description               |
-| :------- | :---------- | :-----: | :------------------------ |
-| size     | System prop |    3    | mapped to fontSizes scale |
-| weight   | boolean     |  false  | font weight               |
-| truncate | boolean     |  false  | truncate text             |
-| color    | System prop | grays.8 | text color                |
+<SystemProps props={['color', 'space', 'textAlign', 'lineHeight']} />
+
+### Custom props
+
+| Name       | Type               |  Default  | Description               |
+| :--------- | :----------------- | :-------: | :------------------------ |
+| `size`     | Number \| Number[] |    `3`    | mapped to fontSizes scale |
+| `bold`     | Boolean            |  `false`  | font weight               |
+| `truncate` | boolean            |  `false`  | truncate text             |
+| `color`    | System prop        | `grays.8` | text color                |
