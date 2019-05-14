@@ -1,9 +1,4 @@
-import {
-  get as _get,
-  ObjectOrArray,
-  ResponsiveValue,
-  themeGet,
-} from 'styled-system';
+import { ObjectOrArray, ResponsiveValue, themeGet } from 'styled-system';
 
 export function get(
   scale: ObjectOrArray<number | string>,
