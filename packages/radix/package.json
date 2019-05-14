@@ -10,6 +10,7 @@
   ],
   "types": "dist/index.d.ts",
   "repository": "https://github.com/modulz/radix",
+  "license": "MIT",
   "scripts": {
     "storybook": "start-storybook -p 9009 --ci",
     "build-storybook": "build-storybook",
