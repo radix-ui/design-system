@@ -24,12 +24,16 @@ yarn watch
 
 > Useful when developing in `link` mode
 
----
-
-### Build & Release
-
 ### Build
+
+#### Run build
 
 ```sh
 yarn build
 ```
+
+---
+
+### License
+
+MIT © [Modulz](https://modulz.app)

@@ -18,18 +18,20 @@ yarn
 yarn start
 ```
 
----
-
 ### Build & Release
 
-### Build
+#### Build
 
 ```sh
 yarn build
 ```
 
-### Release
+#### Release
 
 ```sh
 yarn release
 ```
+
+### License
+
+MIT © [Modulz](https://modulz.app)
