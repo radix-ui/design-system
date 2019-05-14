@@ -25,7 +25,7 @@ type HeadingProps = ColorProps &
 // TODO: Fix color typings
 // @ts-ignore
 export const Heading = styled('h1')<HeadingProps>(
-  ({ size, bold, truncate }: HeadingProps) =>
+  ({ size = 2, bold, truncate }: HeadingProps) =>
     css({
       margin: 0,
       lineHeight: 1.2,
