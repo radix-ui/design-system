@@ -44,7 +44,7 @@ export const Input = styled('input')<InputProps>(
       verticalAlign: 'middle',
       width: '100%',
       boxSizing: 'border-box',
-      '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       border: 0,
       borderBottom: '1px solid',
       borderColor: variant === 'ghost' ? 'transparent' : 'grays.3',

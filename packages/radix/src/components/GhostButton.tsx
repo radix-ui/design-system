@@ -42,7 +42,7 @@ export const GhostButton = styled.button<GhostButtonProps>(
       userSelect: 'none',
       verticalAlign: 'middle',
       whiteSpace: 'nowrap',
-      '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       '&:hover': {
         backgroundColor: get({ active: 'grays.2' }, variant, 'grays.1'),
       },

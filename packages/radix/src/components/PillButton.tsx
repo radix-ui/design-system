@@ -46,7 +46,7 @@ export const PillButton = styled('button')<PillButtonProps>(
       margin: 0,
       marginLeft: -1,
       pointerEvents: active && 'none',
-      '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       boxShadow:
         active &&
         `inset 0 1px 0 ${transparentize(

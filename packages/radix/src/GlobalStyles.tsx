@@ -22,8 +22,8 @@ export const GlobalStyles = () => {
             fontFamily: 'normal',
             color: 'grays.7',
             backgroundColor: 'white',
-            '-webkit-font-smoothing': 'antialiased',
-            '-moz-osx-font-smoothing': 'grayscale',
+            WebkitFontSmoothing: 'antialiased',
+            MozOsxFontSmoothing: 'grayscale',
             textRendering: 'optimizeLegibility',
           },
           body: {

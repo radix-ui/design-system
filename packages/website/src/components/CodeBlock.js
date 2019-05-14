@@ -1,7 +1,7 @@
 import React from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { useMDXComponents, mdx } from '@mdx-js/react';
-import { Box, theme as radixTheme } from 'radix-poc';
+import { Box, theme as radixTheme } from '@modulz/radix';
 const { colors } = radixTheme;
 
 const theme = {

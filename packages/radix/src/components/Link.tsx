@@ -11,7 +11,7 @@ export const Link = styled('a')<LinkProps>(
     color: 'blue',
     textDecoration: 'none',
     cursor: 'pointer',
-    '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     '&:hover': {
       textDecoration: 'underline',
     },

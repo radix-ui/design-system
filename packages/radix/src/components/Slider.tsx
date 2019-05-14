@@ -95,7 +95,7 @@ const Input = styled('input')(
     width: '100%',
     position: 'relative',
     zIndex: 1,
-    '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     '&::-webkit-slider-runnable-track': {
       ...trackStyle,
     },

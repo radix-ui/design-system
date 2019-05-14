@@ -4,19 +4,19 @@
     "packages/*"
   ],
   "scripts": {
-    "postinstall": "yarn radix-poc:build",
-    "start": "npm-run-all --parallel radix-poc website",
+    "postinstall": "yarn radix:build",
+    "start": "npm-run-all --parallel radix website",
     "website": "lerna exec --scope website -- yarn start",
     "website:build": "lerna exec --scope website -- yarn build",
-    "radix-poc": "lerna exec --scope radix-poc -- yarn watch",
-    "radix-poc:build": "lerna exec --scope radix-poc -- yarn build",
-    "build": "yarn radix-poc:build && yarn website:build",
+    "radix": "lerna exec --scope @modulz/radix -- yarn watch",
+    "radix:build": "lerna exec --scope @modulz/radix -- yarn build",
+    "build": "yarn radix:build && yarn website:build",
     "prettier": "prettier './**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}' --write",
     "lint": "eslint './packages/**/*.{js,jsx,ts,tsx}'",
     "clean": "npm run clean-logs && npm run clean-modules",
     "clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
     "clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/",
-    "release": "yarn radix-poc:build && lerna publish"
+    "release": "yarn radix:build && lerna publish"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.7.0",

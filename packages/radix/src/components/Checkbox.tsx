@@ -63,7 +63,7 @@ const Input = styled('input')({
   outline: 'none',
   margin: 0,
   opacity: 0,
-  '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+  WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
 });
 
 const TextWrapper = styled('span')(() =>
@@ -90,7 +90,7 @@ const FakeCheckbox = styled('div')(
     alignItems: 'center',
     justifyContent: 'center',
     color: 'transparent',
-    '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     [`${Input}:hover + &`]: {
       borderColor: 'grays.4',
     },

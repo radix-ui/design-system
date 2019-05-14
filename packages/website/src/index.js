@@ -1,5 +1,5 @@
 import React from 'react';
-import { RadixProvider } from 'radix-poc';
+import { RadixProvider } from '@modulz/radix';
 
 export const wrapRootElement = ({ element }) => (
   <RadixProvider>{element}</RadixProvider>

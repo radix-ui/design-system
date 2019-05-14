@@ -68,7 +68,7 @@ export const CardLink = styled('a')<CardProps>(
       display: 'block',
       textDecoration: 'none',
       outline: 0,
-      '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       '&:hover': {
         borderColor: 'grays.4',
         ...(variant === 'ghost'

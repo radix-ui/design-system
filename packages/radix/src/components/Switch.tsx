@@ -36,7 +36,7 @@ const SwitchWrapper = styled('label')<SpaceProps>(
     width: 6,
     height: 3,
     boxSizing: 'content-box',
-    '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
   }),
   space
 );

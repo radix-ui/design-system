@@ -1,6 +1,6 @@
 {
-  "name": "radix-poc",
-  "version": "0.12.0",
+  "name": "@modulz/radix",
+  "version": "0.0.0",
   "description": "Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
@@ -9,6 +9,7 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
+  "repository": "https://github.com/modulz/radix",
   "scripts": {
     "storybook": "start-storybook -p 9009 --ci",
     "build-storybook": "build-storybook",

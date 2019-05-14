@@ -1,4 +1,4 @@
-# Radix PoC [![Netlify Status](https://api.netlify.com/api/v1/badges/dbf81c7a-a398-4474-963f-eb0db8b1b94e/deploy-status)](https://app.netlify.com/sites/radix-poc/deploys)
+# Radix [![Netlify Status](https://api.netlify.com/api/v1/badges/dbf81c7a-a398-4474-963f-eb0db8b1b94e/deploy-status)](https://app.netlify.com/sites/radix/deploys)
 
 ### Develop
 

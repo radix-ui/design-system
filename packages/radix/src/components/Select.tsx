@@ -85,7 +85,7 @@ const StyledSelect = styled('select')(
     width: '100%',
     borderBottom: '1px solid',
     borderColor: 'grays.3',
-    '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     '&:focus': {
       borderColor: 'blues.4',
     },

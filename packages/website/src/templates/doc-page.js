@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
-import * as RC from 'radix-poc';
+import * as RC from '@modulz/radix';
 import DocLayout from '../components/DocLayout';
 import CodeBlock from '../components/CodeBlock';
 import { Logo } from '../components/Logo';

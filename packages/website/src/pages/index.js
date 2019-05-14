@@ -18,7 +18,7 @@ import {
   PillButton,
   Menu,
   MenuItem,
-} from 'radix-poc';
+} from '@modulz/radix';
 import Layout from '../components/Layout';
 
 import RadixIcons from '@modulz/radix-icons';

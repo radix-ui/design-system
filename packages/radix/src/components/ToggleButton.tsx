@@ -60,7 +60,7 @@ const Wrapper = styled('label')({
   position: 'relative',
   flexBasis: 0,
   flexGrow: 1,
-  '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+  WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
   '& + &': {
     marginLeft: -1,
   },

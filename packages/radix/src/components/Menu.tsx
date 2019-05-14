@@ -62,7 +62,7 @@ export const MenuItem = styled('button')<MenuItemProps>(
       fontWeight: 400,
       width: '100%',
       cursor: 'pointer',
-      '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       appearance: 'none',
       userSelect: 'none',
       '&:hover': {

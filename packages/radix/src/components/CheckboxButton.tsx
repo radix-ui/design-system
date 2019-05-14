@@ -49,7 +49,7 @@ const Input = styled('input')({
   outline: 'none',
   margin: 0,
   opacity: 0,
-  '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+  WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
   '&:hover': {
     cursor: 'pointer',
   },
@@ -62,7 +62,7 @@ const FakeCheckbox = styled('div')(
     alignItems: 'center',
     justifyContent: 'center',
     color: 'grays.5',
-    '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     [`${Input}:focus + &`]: {
       color: 'grays.6',
     },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
-import { Flex, Box, Menu, MenuItem, MenuGroup, Heading } from 'radix-poc';
+import { Flex, Box, Menu, MenuItem, MenuGroup, Heading } from '@modulz/radix';
 import { Logo } from './Logo';
 
 function DocLayout({ children, pathname }) {

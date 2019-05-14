@@ -1,6 +1,6 @@
 import React from 'react';
 import * as StyledSystem from 'styled-system';
-import { Box, Table, Thead, Tr, Th, Tbody, Td, Code } from 'radix-poc';
+import { Box, Table, Thead, Tr, Th, Tbody, Td, Code } from '@modulz/radix';
 
 export function SystemPropsTable({ props }) {
   return (
@@ -14,12 +14,15 @@ export function SystemPropsTable({ props }) {
         </Thead>
         <Tbody>
           {props.map(prop => (
-            <Tr>
+            <Tr key={prop}>
               <Td>{prop}</Td>
               <Td>
                 <Box>
-                  {Object.keys(StyledSystem[prop].propTypes).map(p => (
-                    <Code mr={1}>{p}</Code>
+                  {// eslint-disable-next-line react/forbid-foreign-prop-types
+                  Object.keys(StyledSystem[prop].propTypes).map(p => (
+                    <Code key={p} mr={1}>
+                      {p}
+                    </Code>
                   ))}
                 </Box>
               </Td>

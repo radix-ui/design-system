@@ -75,7 +75,7 @@ export const Button = styled('button')<ButtonProps>(
       textDecoration: 'none',
       userSelect: 'none',
       whiteSpace: 'nowrap',
-      '-webkitTapHighlightColor': 'rgba(0, 0, 0, 0)',
+      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       '&:hover': {
         borderColor: get(
           {
