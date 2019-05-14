@@ -2,64 +2,29 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
-import * as RadixComponents from 'radix-poc';
+import * as RC from 'radix-poc';
 import DocLayout from '../components/DocLayout';
 import CodeBlock from '../components/CodeBlock';
 import { Logo } from '../components/Logo';
-import * as StyledSystem from 'styled-system';
-
-function SystemProps({ props }) {
-  return (
-    <RadixComponents.Box mb={4}>
-      <RadixComponents.Table>
-        <RadixComponents.Thead>
-          <RadixComponents.Tr>
-            <RadixComponents.Th>Name</RadixComponents.Th>
-            <RadixComponents.Th>Props</RadixComponents.Th>
-          </RadixComponents.Tr>
-        </RadixComponents.Thead>
-        <RadixComponents.Tbody>
-          {props.map(prop => (
-            <RadixComponents.Tr>
-              <RadixComponents.Td>{prop}</RadixComponents.Td>
-              <RadixComponents.Td>
-                <RadixComponents.Box>
-                  {Object.keys(StyledSystem[prop].propTypes).map(p => (
-                    <RadixComponents.Code mr={1}>{p}</RadixComponents.Code>
-                  ))}
-                </RadixComponents.Box>
-              </RadixComponents.Td>
-            </RadixComponents.Tr>
-          ))}
-        </RadixComponents.Tbody>
-      </RadixComponents.Table>
-    </RadixComponents.Box>
-  );
-}
+import { SystemPropsTable } from '../components/SystemPropsTable';
 
 export const components = {
-  ...RadixComponents,
+  ...RC,
   pre: props => <div {...props} />,
   code: CodeBlock,
   Logo: Logo,
-  table: RadixComponents.Table,
-  thead: RadixComponents.Thead,
-  tbody: RadixComponents.Tbody,
-  tfoot: RadixComponents.Tfoot,
-  tr: RadixComponents.Tr,
-  th: RadixComponents.Th,
-  td: RadixComponents.Td,
-  inlineCode: RadixComponents.Code,
-  h1: props => (
-    <RadixComponents.Heading {...props} bold size={3} mt={8} mb={4} />
-  ),
-  h2: props => (
-    <RadixComponents.Heading {...props} bold size={2} mt={8} mb={4} />
-  ),
-  h3: props => (
-    <RadixComponents.Heading {...props} bold size={1} mt={8} mb={4} />
-  ),
-  SystemProps: SystemProps,
+  table: RC.Table,
+  thead: RC.Thead,
+  tbody: RC.Tbody,
+  tfoot: RC.Tfoot,
+  tr: RC.Tr,
+  th: RC.Th,
+  td: RC.Td,
+  inlineCode: RC.Code,
+  h1: props => <RC.Heading {...props} bold size={3} mt={8} mb={4} />,
+  h2: props => <RC.Heading {...props} bold size={2} mt={8} mb={4} />,
+  h3: props => <RC.Heading {...props} bold size={1} mt={8} mb={4} />,
+  SystemProps: SystemPropsTable,
 };
 
 function DocPageTemplate({ data, location, ...props }) {
@@ -68,12 +33,12 @@ function DocPageTemplate({ data, location, ...props }) {
   return (
     <DocLayout pathname={location.pathname}>
       <MDXProvider components={components}>
-        <RadixComponents.Box>
-          <RadixComponents.Heading size={3} bold>
+        <RC.Box>
+          <RC.Heading size={3} bold>
             {data.mdx.frontmatter.title}
-          </RadixComponents.Heading>
+          </RC.Heading>
           {children}
-        </RadixComponents.Box>
+        </RC.Box>
       </MDXProvider>
     </DocLayout>
   );
