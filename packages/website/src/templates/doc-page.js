@@ -12,6 +12,13 @@ export const components = {
   pre: props => <div {...props} />,
   code: CodeBlock,
   Logo: Logo,
+  table: RadixComponents.Table,
+  thead: RadixComponents.Thead,
+  tbody: RadixComponents.Tbody,
+  tfoot: RadixComponents.Tfoot,
+  tr: RadixComponents.Tr,
+  th: RadixComponents.Th,
+  td: RadixComponents.Td,
 };
 
 function DocPageTemplate({ data, location, ...props }) {

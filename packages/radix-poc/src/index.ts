@@ -22,6 +22,7 @@ export { RadioGroup, Radio } from './components/RadioGroup';
 export { Select } from './components/Select';
 export { Slider } from './components/Slider';
 export { Switch } from './components/Switch';
+export { Table, Thead, Tbody, Tfoot, Tr, Th, Td } from './components/Table';
 export { Text } from './components/Text';
 export { Textarea } from './components/Textarea';
 export { ToggleButtonGroup, ToggleButton } from './components/ToggleButton';
