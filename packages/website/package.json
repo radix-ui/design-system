@@ -4,7 +4,6 @@
   "description": "A website for Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "version": "0.0.1-alpha.0",
-  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

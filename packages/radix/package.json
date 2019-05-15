@@ -10,6 +10,7 @@
   ],
   "types": "dist/index.d.ts",
   "repository": "https://github.com/modulz/radix",
+  "private": false,
   "license": "MIT",
   "scripts": {
     "storybook": "start-storybook -p 9009 --ci",
@@ -54,5 +55,6 @@
     "rollup-plugin-typescript2": "^0.21.0",
     "rollup-plugin-url": "^2.2.1",
     "typescript": "3.3.3333"
-  }
+  },
+  "gitHead": "0eac402f65b0a511758e0119b463dccb8f8e9ca1"
 }
