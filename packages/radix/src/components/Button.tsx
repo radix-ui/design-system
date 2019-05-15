@@ -97,6 +97,9 @@ export const Button = styled('button')<ButtonProps>(
           variant,
           'grays.4'
         ),
+        '&::-moz-focus-inner': {
+          border: 0,
+        },
       },
       '&:active': {
         backgroundColor: get(
