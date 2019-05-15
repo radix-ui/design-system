@@ -48,6 +48,7 @@ export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
 const CheckboxWrapper = styled('label')<SpaceProps>(
   {
     position: 'relative',
+    display: 'inline-block',
   },
   space
 );
