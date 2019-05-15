@@ -1,17 +1,15 @@
 {
   "name": "@modulz/radix",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.0",
   "description": "Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "files": [
-    "dist"
-  ],
+  "files": [ "dist" ],
   "types": "dist/index.d.ts",
   "repository": "https://github.com/modulz/radix",
-  "private": false,
   "license": "MIT",
+  "publishConfig": { "access": "public" },
   "scripts": {
     "storybook": "start-storybook -p 9009 --ci",
     "build-storybook": "build-storybook",
