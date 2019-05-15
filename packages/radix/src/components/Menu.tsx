@@ -74,6 +74,9 @@ export const MenuItem = styled('button')<MenuItemProps>(
       '&:focus': {
         outlineColor: themeGet('colors.blues.2')(props),
       },
+      '&::-moz-focus-inner': {
+        border: 0,
+      },
     })
 );
 

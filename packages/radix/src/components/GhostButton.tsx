@@ -66,6 +66,9 @@ export const GhostButton = styled.button<GhostButtonProps>(
         cursor: 'not-allowed',
         pointerEvents: 'none',
       },
+      '&::-moz-focus-inner': {
+        border: 0,
+      },
     }),
   space
 );

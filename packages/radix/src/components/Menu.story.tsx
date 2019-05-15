@@ -5,9 +5,7 @@ import { Flex } from './Flex';
 import { Grid } from './Grid';
 import { Text } from './Text';
 import { Menu, MenuItem, MenuGroup } from './Menu';
-import RadixIcons from '@modulz/radix-icons';
-// @ts-ignore
-const Icon = RadixIcons.default as (typeof RadixIcons);
+import { TrashIcon, HomeIcon } from '@modulz/radix-icons';
 
 storiesOf('Components|Menu', module).add('default', () => (
   <Grid
@@ -105,7 +103,7 @@ function ItemWithIcon({ children }) {
   return (
     <>
       <Box mr={4}>
-        <Icon name="home" size="25" type="outline" />
+        <HomeIcon />
       </Box>
       <Text fontSize={2}>{children}</Text>
     </>
@@ -119,7 +117,7 @@ function ItemWithIconAndDesc({ title, desc }) {
       <Box mb={1}>
         <Flex alignItems="center">
           <Box mr={4}>
-            <Icon name="trash" size="25" type="outline" />
+            <TrashIcon />
           </Box>
           <Text fontSize={3} fontWeight="bold">
             {title}

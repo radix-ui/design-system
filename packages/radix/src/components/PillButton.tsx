@@ -71,6 +71,9 @@ export const PillButton = styled('button')<PillButtonProps>(
         color: 'grays.4',
         pointerEvents: 'none',
       },
+      '&::-moz-focus-inner': {
+        border: 0,
+      },
     }),
   {
     lineHeight: 1,

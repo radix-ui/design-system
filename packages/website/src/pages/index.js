@@ -21,8 +21,7 @@ import {
 } from '@modulz/radix';
 import Layout from '../components/Layout';
 
-import RadixIcons from '@modulz/radix-icons';
-const Icon = RadixIcons.default;
+import { HomeIcon } from '@modulz/radix-icons';
 
 function IndexPage() {
   return (
@@ -225,19 +224,19 @@ function IndexPage() {
                 <Menu>
                   <MenuItem>
                     <Box mr={4}>
-                      <Icon name="home" size="25" type="outline" />
+                      <HomeIcon />
                     </Box>
                     <Text fontSize={2}>Item one</Text>
                   </MenuItem>
                   <MenuItem active>
                     <Box mr={4}>
-                      <Icon name="home" size="25" type="outline" />
+                      <HomeIcon />
                     </Box>
                     <Text fontSize={2}>Item two</Text>
                   </MenuItem>
                   <MenuItem>
                     <Box mr={4}>
-                      <Icon name="home" size="25" type="outline" />
+                      <HomeIcon />
                     </Box>
                     <Text fontSize={2}>Item three</Text>
                   </MenuItem>

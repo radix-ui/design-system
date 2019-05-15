@@ -88,6 +88,7 @@ const StyledSelect = styled('select')(
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     '&:focus': {
       borderColor: 'blues.4',
+      outline: 'none',
     },
   })
 );
