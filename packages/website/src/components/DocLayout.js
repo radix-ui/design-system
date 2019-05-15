@@ -6,7 +6,7 @@ import { Logo } from './Logo';
 function DocLayout({ children, pathname }) {
   const query = graphql`
     query {
-      allMdx {
+      allMdx(sort: { order: ASC, fields: [frontmatter___title] }) {
         edges {
           node {
             id
@@ -29,7 +29,7 @@ function DocLayout({ children, pathname }) {
         <Flex minHeight="100vh" flexDirection={['column', 'row']}>
           <Box
             width={['100%', 200]}
-            flex={['1', '0 0 auto']}
+            flex="0 0 auto"
             pt={4}
             borderRight={[0, '1px solid']}
             borderBottom={['1px solid', 0]}
