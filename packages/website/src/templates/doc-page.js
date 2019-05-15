@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import * as RC from '@modulz/radix';
+import * as RI from '@modulz/radix-icons';
 import DocLayout from '../components/DocLayout';
 import CodeBlock from '../components/CodeBlock';
 import { Logo } from '../components/Logo';
@@ -10,6 +11,7 @@ import { SystemPropsTable } from '../components/SystemPropsTable';
 
 export const components = {
   ...RC,
+  ...RI,
   pre: props => <div {...props} />,
   code: CodeBlock,
   Logo: Logo,
