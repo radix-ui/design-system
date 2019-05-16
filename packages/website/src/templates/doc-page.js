@@ -23,6 +23,7 @@ export const components = {
   th: RC.Th,
   td: RC.Td,
   inlineCode: RC.Code,
+  a: RC.Link,
   h1: props => <RC.Heading {...props} bold size={3} mt={8} mb={4} />,
   h2: props => <RC.Heading {...props} bold size={2} mt={8} mb={4} />,
   h3: props => <RC.Heading {...props} bold size={1} mt={8} mb={4} />,
