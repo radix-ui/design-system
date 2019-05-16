@@ -1,5 +1,6 @@
 ---
-title: Recipe — Variant Group
+title: Variant Group
+recipe: 'true'
 ---
 
 ```js live=true
@@ -15,48 +16,34 @@ title: Recipe — Variant Group
       <PlusIcon size="15" />
     </GhostButton>
   </Flex>
-  <Menu variant="ghost">
-    <MenuItem>
-      <Flex alignItems="center" width="100%">
-        <Text mr="auto" fontSize={2}>
-          Size 1
-        </Text>
-      </Flex>
-    </MenuItem>
-    <MenuItem>
-      <Flex alignItems="center" width="100%">
-        <Text mr="auto" fontSize={2}>
-          Size 2
-        </Text>
-      </Flex>
-    </MenuItem>
-  </Menu>
 
-  <Flex alignItems="center" pl={3}>
-    <Heading size={0} color="grays.5" mr="auto">
-      Color
-    </Heading>
-    <GhostButton>
-      <DotsVerticalIcon size="15" />
-    </GhostButton>
-    <GhostButton>
-      <PlusIcon size="15" />
-    </GhostButton>
-  </Flex>
   <Menu variant="ghost">
-    <MenuItem>
-      <Flex alignItems="center" width="100%">
-        <Text mr="auto" fontSize={2}>
-          Blue
-        </Text>
-      </Flex>
+    <MenuItem
+      contentOnHover={
+        <GhostButton>
+          <DotsVerticalIcon size="15" />
+        </GhostButton>
+      }
+    >
+      Size 1
     </MenuItem>
-    <MenuItem>
-      <Flex alignItems="center" width="100%">
-        <Text mr="auto" fontSize={2}>
-          Red
-        </Text>
-      </Flex>
+    <MenuItem
+      contentOnHover={
+        <GhostButton>
+          <DotsVerticalIcon size="15" />
+        </GhostButton>
+      }
+    >
+      Size 2
+    </MenuItem>
+    <MenuItem
+      contentOnHover={
+        <GhostButton>
+          <DotsVerticalIcon size="15" />
+        </GhostButton>
+      }
+    >
+      Size 4
     </MenuItem>
   </Menu>
 </Box>

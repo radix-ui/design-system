@@ -1,12 +1,31 @@
 import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
-import { Flex, Box, Menu, MenuItem, MenuGroup, Heading } from '@modulz/radix';
+import { Flex, Box, Menu, MenuItem, Heading, Divider } from '@modulz/radix';
 import { Logo } from './Logo';
 
 function DocLayout({ children, pathname }) {
   const query = graphql`
     query {
-      allMdx(sort: { order: ASC, fields: [frontmatter___title] }) {
+      allMdx(
+        sort: { order: ASC, fields: [frontmatter___title] }
+        filter: { frontmatter: { recipe: { ne: "true" } } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+      recipes: allMdx(
+        sort: { order: ASC, fields: [frontmatter___title] }
+        filter: { frontmatter: { recipe: { eq: "true" } } }
+      ) {
         edges {
           node {
             id
@@ -44,29 +63,37 @@ function DocLayout({ children, pathname }) {
               </Flex>
             </Heading>
 
-            <Menu variant="ghost">
-              <MenuGroup>
-                {data.allMdx.edges.map(({ node }) => {
-                  if (
-                    node.frontmatter.title === 'Getting Started' ||
-                    node.frontmatter.title === 'Themes'
-                  ) {
-                    return (
-                      <MenuItem
-                        key={node.frontmatter.title}
-                        as={Link}
-                        to={node.fields.slug}
-                        active={
-                          pathname === node.fields.slug ? 'active' : undefined
-                        }
-                      >
-                        {node.frontmatter.title}
-                      </MenuItem>
-                    );
-                  }
-                  return null;
-                })}
-              </MenuGroup>
+            <Divider />
+
+            <Menu>
+              {data.allMdx.edges.map(({ node }) => {
+                if (
+                  node.frontmatter.title === 'Getting Started' ||
+                  node.frontmatter.title === 'Themes'
+                ) {
+                  return (
+                    <MenuItem
+                      key={node.frontmatter.title}
+                      as={Link}
+                      to={node.fields.slug}
+                      variant={
+                        pathname === node.fields.slug ? 'active' : undefined
+                      }
+                    >
+                      {node.frontmatter.title}
+                    </MenuItem>
+                  );
+                }
+                return null;
+              })}
+            </Menu>
+
+            <Divider mb={1} />
+
+            <Menu>
+              <Heading size={0} bold mx={3} mb={2}>
+                Components
+              </Heading>
               {data.allMdx.edges.map(({ node }) => {
                 if (
                   node.frontmatter.title === 'Getting Started' ||
@@ -79,7 +106,7 @@ function DocLayout({ children, pathname }) {
                     key={node.frontmatter.title}
                     as={Link}
                     to={node.fields.slug}
-                    active={
+                    variant={
                       pathname === node.fields.slug ? 'active' : undefined
                     }
                   >
@@ -87,6 +114,24 @@ function DocLayout({ children, pathname }) {
                   </MenuItem>
                 );
               })}
+            </Menu>
+
+            <Divider mb={1} />
+
+            <Menu>
+              <Heading size={0} bold mx={3} mb={2}>
+                Recipes
+              </Heading>
+              {data.recipes.edges.map(({ node }) => (
+                <MenuItem
+                  key={node.frontmatter.title}
+                  as={Link}
+                  to={node.fields.slug}
+                  variant={pathname === node.fields.slug ? 'active' : undefined}
+                >
+                  {node.frontmatter.title}
+                </MenuItem>
+              ))}
             </Menu>
           </Box>
           <Box p={4} flex={[1, 1]} maxWidth={['100%', '45rem']}>
