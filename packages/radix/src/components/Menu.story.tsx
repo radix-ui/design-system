@@ -47,13 +47,14 @@ storiesOf('Components|Menu', module).add('default', () => (
           Item two
         </MenuItem>
         <MenuItem
+          disabled
           contentOnHover={
             <GhostButton>
               <CircleIcon size="15" />
             </GhostButton>
           }
         >
-          Item three
+          Item three (disabled)
         </MenuItem>
       </Menu>
     </Box>
@@ -91,6 +92,9 @@ storiesOf('Components|Menu', module).add('default', () => (
         <MenuItem>Default</MenuItem>
         <MenuItem variant="selected">Selected</MenuItem>
         <MenuItem variant="active">Active</MenuItem>
+        <MenuItem disabled contentOnHover={<CircleIcon />}>
+          Disabled
+        </MenuItem>
       </Menu>
     </Box>
 

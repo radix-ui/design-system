@@ -55,6 +55,7 @@ export const MenuItem: FC<MenuItemProps> = ({
   children,
   variant,
   icon,
+  disabled,
   contentOnHover,
   ...props
 }) => {
@@ -62,11 +63,11 @@ export const MenuItem: FC<MenuItemProps> = ({
     <Hover as={MenuItemWrapper}>
       {isHovered => (
         <Box position="relative">
-          <BaseMenuItem {...props} variant={variant}>
+          <BaseMenuItem {...props} variant={variant} disabled={disabled}>
             {icon && <Box mr={3}>{icon}</Box>}
             <MenuText>{children}</MenuText>
           </BaseMenuItem>
-          {isHovered && (
+          {isHovered && !disabled && (
             <Flex
               position="absolute"
               top={0}
@@ -108,7 +109,7 @@ const BaseMenuItem = styled('button')<MenuItemProps>(({ variant, ...props }) =>
     backgroundColor: get(
       { active: 'blues.4', selected: 'blues.1' },
       variant,
-      'transparent'
+      'white'
     ),
     border: 0,
     boxSizing: 'border-box',
@@ -130,13 +131,6 @@ const BaseMenuItem = styled('button')<MenuItemProps>(({ variant, ...props }) =>
     userSelect: 'none',
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     width: '100%',
-    [`${MenuItemWrapper}:hover &`]: {
-      backgroundColor: get(
-        { active: 'blues.4', selected: 'blues.1' },
-        variant,
-        'grays.1'
-      ),
-    },
     '&:active': {
       backgroundColor: get(
         { active: 'blues.4', selected: 'blues.1' },
@@ -146,6 +140,20 @@ const BaseMenuItem = styled('button')<MenuItemProps>(({ variant, ...props }) =>
     },
     '&:focus': {
       outlineColor: variant !== 'active' && themeGet('colors.blues.2')(props),
+    },
+    [`${MenuItemWrapper}:hover &`]: {
+      backgroundColor: get(
+        { active: 'blues.4', selected: 'blues.1' },
+        variant,
+        'grays.1'
+      ),
+    },
+    [`${MenuItemWrapper}:hover &:disabled`]: {
+      backgroundColor: 'white',
+    },
+    '&:disabled': {
+      color: 'grays.4',
+      cursor: 'not-allowed',
     },
     '&::-moz-focus-inner': {
       border: 0,

@@ -5,15 +5,15 @@ component: Menu
 
 ```js live=true
 <Menu>
-  <MenuItem>
-    <Text fontSize={2}>Item one</Text>
-  </MenuItem>
-  <MenuItem>
-    <Text fontSize={2}>Item two</Text>
-  </MenuItem>
-  <MenuItem>
-    <Text fontSize={2}>Item three</Text>
-  </MenuItem>
+  <MenuItem>Default</MenuItem>
+  <MenuItem variant="selected">Selected</MenuItem>
+  <MenuItem variant="active">Active</MenuItem>
+  <MenuItem disabled>Disabled</MenuItem>
+  <MenuItem contentOnHover={<CircleIcon />}>With content on hover</MenuItem>
+  <MenuGroup>
+    <MenuItem>Nested in Menu Group</MenuItem>
+  </MenuGroup>
+  <MenuItem icon={<CircleIcon />}>With Icon</MenuItem>
 </Menu>
 ```
 
