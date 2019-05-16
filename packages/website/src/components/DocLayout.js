@@ -5,38 +5,37 @@ import { Logo } from './Logo';
 
 function DocLayout({ children, pathname }) {
   const query = graphql`
-    query {
-      allMdx(
-        sort: { order: ASC, fields: [frontmatter___title] }
-        filter: { frontmatter: { recipe: { ne: "true" } } }
-      ) {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-            }
+    fragment mdxContent on MdxConnection {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+          }
+          fields {
+            slug
           }
         }
       }
+    }
+    query {
+      pinned: allMdx(
+        sort: { order: ASC, fields: [frontmatter___title] }
+        filter: { frontmatter: { pinned: { ne: null } } }
+      ) {
+        ...mdxContent
+      }
+      components: allMdx(
+        sort: { order: ASC, fields: [frontmatter___title] }
+        filter: { frontmatter: { component: { ne: null } } }
+      ) {
+        ...mdxContent
+      }
       recipes: allMdx(
         sort: { order: ASC, fields: [frontmatter___title] }
-        filter: { frontmatter: { recipe: { eq: "true" } } }
+        filter: { frontmatter: { recipe: { ne: null } } }
       ) {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-            }
-            fields {
-              slug
-            }
-          }
-        }
+        ...mdxContent
       }
     }
   `;
@@ -66,26 +65,16 @@ function DocLayout({ children, pathname }) {
             <Divider />
 
             <Menu>
-              {data.allMdx.edges.map(({ node }) => {
-                if (
-                  node.frontmatter.title === 'Getting Started' ||
-                  node.frontmatter.title === 'Themes'
-                ) {
-                  return (
-                    <MenuItem
-                      key={node.frontmatter.title}
-                      as={Link}
-                      to={node.fields.slug}
-                      variant={
-                        pathname === node.fields.slug ? 'active' : undefined
-                      }
-                    >
-                      {node.frontmatter.title}
-                    </MenuItem>
-                  );
-                }
-                return null;
-              })}
+              {data.pinned.edges.map(({ node }) => (
+                <MenuItem
+                  key={node.frontmatter.title}
+                  as={Link}
+                  to={node.fields.slug}
+                  variant={pathname === node.fields.slug ? 'active' : undefined}
+                >
+                  {node.frontmatter.title}
+                </MenuItem>
+              ))}
             </Menu>
 
             <Divider mb={1} />
@@ -94,26 +83,16 @@ function DocLayout({ children, pathname }) {
               <Heading size={0} bold mx={3} mb={2}>
                 Components
               </Heading>
-              {data.allMdx.edges.map(({ node }) => {
-                if (
-                  node.frontmatter.title === 'Getting Started' ||
-                  node.frontmatter.title === 'Themes'
-                ) {
-                  return null;
-                }
-                return (
-                  <MenuItem
-                    key={node.frontmatter.title}
-                    as={Link}
-                    to={node.fields.slug}
-                    variant={
-                      pathname === node.fields.slug ? 'active' : undefined
-                    }
-                  >
-                    {node.frontmatter.title}
-                  </MenuItem>
-                );
-              })}
+              {data.components.edges.map(({ node }) => (
+                <MenuItem
+                  key={node.frontmatter.title}
+                  as={Link}
+                  to={node.fields.slug}
+                  variant={pathname === node.fields.slug ? 'active' : undefined}
+                >
+                  {node.frontmatter.title}
+                </MenuItem>
+              ))}
             </Menu>
 
             <Divider mb={1} />
