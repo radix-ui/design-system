@@ -16,7 +16,7 @@ export const Hover: FC<HoverProps> = ({
   return (
     <Component
       {...props}
-      onMouseEnter={() => setIsHovered(true)}
+      onMouseMove={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {children(isHovered)}
