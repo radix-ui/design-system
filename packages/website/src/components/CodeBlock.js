@@ -49,8 +49,7 @@ const theme = {
     {
       types: ['keyword', 'variable'],
       style: {
-        color: colors.blues[3],
-        fontStyle: 'italic',
+        color: colors.blues[6],
       },
     },
     {
