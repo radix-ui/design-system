@@ -4,19 +4,44 @@ component: Button
 ---
 
 ```js live=true
-<Button>Button</Button>
+<>
+  <Button>New project</Button>
+  <Button disabled ml={3}>
+    New project
+  </Button>
+</>
 ```
 
 ```js live=true
-<Button variant="blue">Button</Button>
+<>
+  <Button variant="blue">Save</Button>
+  <Button variant="green" ml={3}>
+    Copy
+  </Button>
+  <Button variant="red" ml={3}>
+    Delete
+  </Button>
+  <Button variant="active" ml={3}>
+    Add
+  </Button>
+  <Button variant="waiting" ml={3}>
+    Waiting
+  </Button>
+</>
 ```
 
 ```js live=true
-<Button variant="green" size="medium">
-  Button
-</Button>
+<Button size="medium">Button</Button>
 ```
 
 ### System props
 
 <SystemProps props={['space']} />
+
+### Custom props
+
+| Name       | Type                                                |   Default   | Description          |
+| :--------- | :-------------------------------------------------- | :---------: | :------------------- |
+| `variant`  | 'blue' \| 'green' \| 'red' \| 'active' \| 'waiting' | `undefined` | Variant to display   |
+| `size`     | 'medium'                                            | `undefined` | Size to display      |
+| `disabled` | Boolean                                             |   `false`   | Disabled the element |
