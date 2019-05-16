@@ -17,6 +17,25 @@ component: Menu
 </Menu>
 ```
 
+## Menu
+
 ### System props
 
 <SystemProps props={['maxWidth', 'width', 'space']} />
+
+### Custom props
+
+| Name      | Type     |   Default   | Description |
+| :-------- | :------- | :---------: | :---------- |
+| `variant` | 'shadow' | `undefined` |             |
+
+## MenuItem
+
+### Custom props
+
+| Name             | Type                   |   Default   | Description                      |
+| :--------------- | :--------------------- | :---------: | :------------------------------- |
+| `variant`        | 'active' \| 'selected' | `undefined` | Variant to display               |
+| `icon`           | ReactElement           | `undefined` | Icon to display                  |
+| `disabled`       | Boolean                |   `false`   | Disables the element             |
+| `contentOnHover` | ReactElement           | `undefined` | Displays when element is hovered |
