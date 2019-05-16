@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box } from './Box';
-import { Flex } from './Flex';
 import { Grid } from './Grid';
-import { Text } from './Text';
-import { Menu, MenuItem, MenuGroup } from './Menu';
-import { TrashIcon, HomeIcon } from '@modulz/radix-icons';
+import { Menu, MenuGroup, MenuItem } from './Menu';
+import { CircleIcon } from '@modulz/radix-icons';
+import { GhostButton } from './GhostButton';
+import { Heading } from './Heading';
 
 storiesOf('Components|Menu', module).add('default', () => (
   <Grid
@@ -13,68 +13,100 @@ storiesOf('Components|Menu', module).add('default', () => (
     gridGap={4}
   >
     <Box mb="4">
+      <Heading size={0} bold>
+        Default
+      </Heading>
       <Menu>
-        <MenuItem>
-          <Text fontSize={2}>Item one</Text>
+        <MenuItem>Item one</MenuItem>
+        <MenuItem>Item two</MenuItem>
+        <MenuItem>Item three</MenuItem>
+      </Menu>
+    </Box>
+
+    <Box mb="4">
+      <Heading size={0} bold>
+        Menu with content on hover
+      </Heading>
+      <Menu>
+        <MenuItem
+          contentOnHover={
+            <GhostButton>
+              <CircleIcon size="15" />
+            </GhostButton>
+          }
+        >
+          Item one
         </MenuItem>
-        <MenuItem>
-          <Text fontSize={2}>Item two</Text>
+        <MenuItem
+          contentOnHover={
+            <GhostButton>
+              <CircleIcon size="15" />
+            </GhostButton>
+          }
+        >
+          Item two
         </MenuItem>
-        <MenuItem>
-          <Text fontSize={2}>Item three</Text>
+        <MenuItem
+          contentOnHover={
+            <GhostButton>
+              <CircleIcon size="15" />
+            </GhostButton>
+          }
+        >
+          Item three
         </MenuItem>
       </Menu>
     </Box>
 
     <Box mb="4">
+      <Heading size={0} bold>
+        Menu with icon
+      </Heading>
       <Menu>
-        <MenuItem>
-          <ItemWithIcon>Item one</ItemWithIcon>
-        </MenuItem>
-        <MenuItem>
-          <ItemWithIcon>Item two</ItemWithIcon>
-        </MenuItem>
-        <MenuItem>
-          <ItemWithIcon>Item three</ItemWithIcon>
-        </MenuItem>
+        <MenuItem icon={<CircleIcon />}>Item one</MenuItem>
+        <MenuItem icon={<CircleIcon />}>Item two</MenuItem>
+        <MenuItem icon={<CircleIcon />}>Item three</MenuItem>
       </Menu>
     </Box>
 
     <Box mb="4">
+      <Heading size={0} bold>
+        Menu with group
+      </Heading>
       <Menu>
-        <MenuItem>
-          <ItemWithIcon>Item one</ItemWithIcon>
-        </MenuItem>
+        <MenuItem icon={<CircleIcon />}>Item one</MenuItem>
         <MenuGroup>
-          <MenuItem>
-            <ItemWithIcon>Item two</ItemWithIcon>
-          </MenuItem>
-          <MenuItem>
-            <ItemWithIcon>Item three</ItemWithIcon>
-          </MenuItem>
+          <MenuItem icon={<CircleIcon />}>Item two</MenuItem>
+          <MenuItem icon={<CircleIcon />}>Item three</MenuItem>
         </MenuGroup>
-        <MenuItem>
-          <ItemWithIcon>Item four</ItemWithIcon>
-        </MenuItem>
+        <MenuItem icon={<CircleIcon />}>Item four</MenuItem>
       </Menu>
     </Box>
 
     <Box mb="4">
+      <Heading size={0} bold>
+        Menu with variants
+      </Heading>
       <Menu>
-        <MenuItem>
-          <ItemWithIcon>Item one</ItemWithIcon>
-        </MenuItem>
-        <MenuItem active>
-          <ItemWithIcon>Item two</ItemWithIcon>
-        </MenuItem>
-        <MenuItem>
-          <ItemWithIcon>Item three</ItemWithIcon>
-        </MenuItem>
+        <MenuItem>Default</MenuItem>
+        <MenuItem variant="selected">Selected</MenuItem>
+        <MenuItem variant="active">Active</MenuItem>
       </Menu>
     </Box>
 
     <Box mb="4">
-      <Menu>
+      <Heading size={0} bold mb={1}>
+        Menu with shadow variant
+      </Heading>
+      <Menu variant="shadow">
+        <MenuItem icon={<CircleIcon />}>Item one</MenuItem>
+        <MenuItem icon={<CircleIcon />}>Item two</MenuItem>
+        <MenuItem icon={<CircleIcon />}>Item three</MenuItem>
+      </Menu>
+    </Box>
+
+    {/* <Box mb="4">
+      <Menu variant="shadow">
         <MenuItem>
           <ItemWithIconAndDesc
             title="Archive"
@@ -94,39 +126,27 @@ storiesOf('Components|Menu', module).add('default', () => (
           />
         </MenuItem>
       </Menu>
-    </Box>
+    </Box> */}
   </Grid>
 ));
 
 // @ts-ignore
-function ItemWithIcon({ children }) {
-  return (
-    <>
-      <Box mr={4}>
-        <HomeIcon />
-      </Box>
-      <Text fontSize={2}>{children}</Text>
-    </>
-  );
-}
-
-// @ts-ignore
-function ItemWithIconAndDesc({ title, desc }) {
-  return (
-    <>
-      <Box mb={1}>
-        <Flex alignItems="center">
-          <Box mr={4}>
-            <TrashIcon />
-          </Box>
-          <Text fontSize={3} fontWeight="bold">
-            {title}
-          </Text>
-        </Flex>
-        <Text as="p" fontSize={2} color="grays.5" ml={7}>
-          {desc}
-        </Text>
-      </Box>
-    </>
-  );
-}
+// function ItemWithIconAndDesc({ title, desc }) {
+//   return (
+//     <>
+//       <Box mb={1}>
+//         <Flex alignItems="center">
+//           <Box mr={4}>
+//             <TrashIcon />
+//           </Box>
+//           <Text fontSize={3} fontWeight="bold">
+//             {title}
+//           </Text>
+//         </Flex>
+//         <Text as="p" fontSize={2} color="grays.5" ml={7}>
+//           {desc}
+//         </Text>
+//       </Box>
+//     </>
+//   );
+// }

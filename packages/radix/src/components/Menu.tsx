@@ -1,4 +1,4 @@
-import { ComponentProps } from 'react';
+import React, { ComponentProps, FC, ReactElement } from 'react';
 import styled from '@emotion/styled';
 import css from '@styled-system/css';
 import {
@@ -11,8 +11,13 @@ import {
   WidthProps,
 } from 'styled-system';
 import { transparentize } from 'polished';
+import { Text } from './Text';
+import { Box } from './Box';
+import { Flex } from './Flex';
+import { Hover } from './Hover';
+import { get } from '../utils/get';
 
-type Variants = 'ghost';
+type Variants = 'shadow';
 type MenuProps = SpaceProps &
   WidthProps &
   MaxWidthProps & { variant?: Variants };
@@ -24,15 +29,15 @@ export const Menu = styled('nav')<MenuProps>(
       paddingY: 1,
       paddingX: 0,
       boxShadow:
-        variant === 'ghost'
-          ? 'none'
-          : `0 10px 38px -10px ${transparentize(
+        variant === 'shadow'
+          ? `0 10px 38px -10px ${transparentize(
               0.65,
               themeGet('colors.grays.8')(props)
             )}, 0 10px 20px -15px ${transparentize(
               0.8,
               themeGet('colors.grays.8')(props)
-            )}`,
+            )}`
+          : 'none',
     }),
   space,
   width,
@@ -40,44 +45,112 @@ export const Menu = styled('nav')<MenuProps>(
 );
 
 type MenuItemProps = ComponentProps<'button'> &
-  ComponentProps<'a'> & { active?: boolean };
+  ComponentProps<'a'> & {
+    variant?: 'active' | 'selected';
+    icon?: ReactElement;
+    contentOnHover?: ReactElement;
+  };
 
-export const MenuItem = styled('button')<MenuItemProps>(
-  ({ active, ...props }) =>
-    css({
-      alignItems: 'center',
-      backgroundColor: active ? 'blues.1' : 'transparent',
-      boxSizing: 'border-box',
-      color: 'inherit',
-      display: 'flex',
-      lineHeight: '1em',
-      fontSize: 2,
-      minHeight: 6,
+export const MenuItem: FC<MenuItemProps> = ({
+  children,
+  variant,
+  icon,
+  contentOnHover,
+  ...props
+}) => {
+  return (
+    <Hover as={MenuItemWrapper}>
+      {isHovered => (
+        <Box position="relative">
+          <BaseMenuItem {...props} variant={variant}>
+            {icon && <Box mr={3}>{icon}</Box>}
+            <MenuText>{children}</MenuText>
+          </BaseMenuItem>
+          {isHovered && (
+            <Flex
+              position="absolute"
+              top={0}
+              right={0}
+              height="100%"
+              alignItems="center"
+              mr={1}
+            >
+              {contentOnHover}
+            </Flex>
+          )}
+        </Box>
+      )}
+    </Hover>
+  );
+};
+
+export const MenuText: FC = ({ children, ...props }) => {
+  return (
+    <Text
+      {...props}
+      fontSize={2}
+      color="inherit"
+      fontFamily="inherit"
+      fontWeight="inherit"
+    >
+      {children}
+    </Text>
+  );
+};
+
+// This is used to handle the `hover` effect correctly
+const MenuItemWrapper = styled('div')({});
+
+const BaseMenuItem = styled('button')<MenuItemProps>(({ variant, ...props }) =>
+  css({
+    alignItems: 'center',
+    appearance: 'none',
+    backgroundColor: get(
+      { active: 'blues.4', selected: 'blues.1' },
+      variant,
+      'transparent'
+    ),
+    border: 0,
+    boxSizing: 'border-box',
+    color: get({ active: 'white' }, variant, 'grays.7'),
+    cursor: 'pointer',
+    display: 'flex',
+    fontFamily: get({ active: 'medium' }, variant, 'normal'),
+    fontSize: 2,
+    fontWeight: get({ active: 500 }, variant, 400),
+    lineHeight: '1em',
+    minHeight: 6,
+    outline: '1px solid transparent',
+    outlineOffset: '-1px',
+    paddingX: 3,
+    paddingY: 1,
+    position: 'relative',
+    textAlign: 'left',
+    textDecoration: 'none',
+    userSelect: 'none',
+    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+    width: '100%',
+    [`${MenuItemWrapper}:hover &`]: {
+      backgroundColor: get(
+        { active: 'blues.4', selected: 'blues.1' },
+        variant,
+        'grays.1'
+      ),
+    },
+    '&:active': {
+      backgroundColor: get(
+        { active: 'blues.4', selected: 'blues.1' },
+        variant,
+        'grays.2'
+      ),
+    },
+    '&:focus': {
+      outlineColor: variant !== 'active' && themeGet('colors.blues.2')(props),
+    },
+    '&::-moz-focus-inner': {
       border: 0,
-      outline: '1px solid transparent',
-      paddingY: 1,
-      paddingX: 3,
-      textAlign: 'left',
-      textDecoration: 'none',
-      fontWeight: 400,
-      width: '100%',
-      cursor: 'pointer',
-      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-      appearance: 'none',
-      userSelect: 'none',
-      '&:hover': {
-        backgroundColor: 'grays.1',
-      },
-      '&:active': {
-        backgroundColor: 'grays.2',
-      },
-      '&:focus': {
-        outlineColor: themeGet('colors.blues.2')(props),
-      },
-      '&::-moz-focus-inner': {
-        border: 0,
-      },
-    })
+    },
+  })
 );
 
 export const MenuGroup = styled('div')(
