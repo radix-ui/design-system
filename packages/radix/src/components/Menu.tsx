@@ -47,6 +47,7 @@ export const Menu = styled('nav')<MenuProps>(
 type MenuItemProps = ComponentProps<'button'> &
   ComponentProps<'a'> & {
     variant?: 'active' | 'selected';
+    size?: 'medium';
     icon?: ReactElement;
     contentOnHover?: ReactElement;
   };
@@ -89,7 +90,7 @@ export const MenuText: FC = ({ children, ...props }) => {
   return (
     <Text
       {...props}
-      fontSize={2}
+      fontSize="inherit"
       color="inherit"
       fontFamily="inherit"
       fontWeight="inherit"
@@ -102,63 +103,66 @@ export const MenuText: FC = ({ children, ...props }) => {
 // This is used to handle the `hover` effect correctly
 const MenuItemWrapper = styled('div')({});
 
-const BaseMenuItem = styled('button')<MenuItemProps>(({ variant, ...props }) =>
-  css({
-    alignItems: 'center',
-    appearance: 'none',
-    backgroundColor: get(
-      { active: 'blues.4', selected: 'blues.1' },
-      variant,
-      'white'
-    ),
-    border: 0,
-    boxSizing: 'border-box',
-    color: get({ active: 'white' }, variant, 'grays.7'),
-    cursor: 'pointer',
-    display: 'flex',
-    fontFamily: get({ active: 'medium' }, variant, 'normal'),
-    fontSize: 2,
-    fontWeight: get({ active: 500 }, variant, 400),
-    lineHeight: '1em',
-    minHeight: 6,
-    outline: '1px solid transparent',
-    outlineOffset: '-1px',
-    paddingX: 3,
-    paddingY: 1,
-    position: 'relative',
-    textAlign: 'left',
-    textDecoration: 'none',
-    userSelect: 'none',
-    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-    width: '100%',
-    '&:active': {
+const BaseMenuItem = styled('button')<MenuItemProps>(
+  ({ variant, size, ...props }) =>
+    css({
+      alignItems: 'center',
+      appearance: 'none',
       backgroundColor: get(
         { active: 'blues.4', selected: 'blues.1' },
         variant,
-        'grays.2'
+        'white'
       ),
-    },
-    '&:focus': {
-      outlineColor: variant !== 'active' && themeGet('colors.blues.2')(props),
-    },
-    [`${MenuItemWrapper}:hover &`]: {
-      backgroundColor: get(
-        { active: 'blues.4', selected: 'blues.1' },
-        variant,
-        'grays.1'
-      ),
-    },
-    [`${MenuItemWrapper}:hover &:disabled`]: {
-      backgroundColor: 'white',
-    },
-    '&:disabled': {
-      color: 'grays.4',
-      cursor: 'not-allowed',
-    },
-    '&::-moz-focus-inner': {
       border: 0,
-    },
-  })
+      boxSizing: 'border-box',
+      color: get({ active: 'white' }, variant, 'grays.7'),
+      cursor: 'pointer',
+      display: 'flex',
+      fontFamily: get({ active: 'medium' }, variant, 'normal'),
+      // fontSize: get({ medium: 3 }, size, 2),
+      fontSize: 2,
+      fontWeight: get({ active: 500 }, variant, 400),
+      lineHeight: '1em',
+      // minHeight: get({ medium: 7 }, size, 6),
+      minHeight: 6,
+      outline: '1px solid transparent',
+      outlineOffset: '-1px',
+      paddingX: 3,
+      paddingY: 1,
+      position: 'relative',
+      textAlign: 'left',
+      textDecoration: 'none',
+      userSelect: 'none',
+      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+      width: '100%',
+      '&:active': {
+        backgroundColor: get(
+          { active: 'blues.4', selected: 'blues.1' },
+          variant,
+          'grays.2'
+        ),
+      },
+      '&:focus': {
+        outlineColor: variant !== 'active' && themeGet('colors.blues.2')(props),
+      },
+      [`${MenuItemWrapper}:hover &`]: {
+        backgroundColor: get(
+          { active: 'blues.4', selected: 'blues.1' },
+          variant,
+          'grays.1'
+        ),
+      },
+      [`${MenuItemWrapper}:hover &:disabled`]: {
+        backgroundColor: 'white',
+      },
+      '&:disabled': {
+        color: 'grays.4',
+        cursor: 'not-allowed',
+      },
+      '&::-moz-focus-inner': {
+        border: 0,
+      },
+    })
 );
 
 export const MenuGroup = styled('div')(

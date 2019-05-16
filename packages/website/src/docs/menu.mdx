@@ -5,25 +5,35 @@ component: Menu
 
 ```js live=true
 <Menu>
-  <MenuItem>Default</MenuItem>
-  <MenuItem variant="selected">Selected</MenuItem>
-  <MenuItem variant="active">Active</MenuItem>
-  <MenuItem disabled>Disabled</MenuItem>
-  <MenuItem contentOnHover={<CircleIcon />}>With content on hover</MenuItem>
-  <MenuGroup>
-    <MenuItem>Nested in Menu Group</MenuItem>
-  </MenuGroup>
-  <MenuItem icon={<CircleIcon />}>With Icon</MenuItem>
+  <MenuItem>Box</MenuItem>
+  <MenuItem variant="selected">Layout</MenuItem>
+  <MenuItem>Button</MenuItem>
+  <MenuItem>Text</MenuItem>
 </Menu>
 ```
 
 ```js live=true
 <Menu variant="shadow">
-  <MenuItem>Size 1</MenuItem>
-  <MenuItem>Size 2</MenuItem>
-  <MenuItem>Size 3</MenuItem>
+  <MenuItem icon={<ArrowLeftIcon size="25" />}>Back to dasboard</MenuItem>
+  <MenuGroup>
+    <MenuItem icon={<DeviceKeyboardIcon size="25" />}>
+      Keyboard shortcuts
+    </MenuItem>
+    <MenuItem icon={<LifesaverIcon size="25" />}>Community forum</MenuItem>
+  </MenuGroup>
+  <MenuItem icon={<HomeIcon size="25" />}>Go to marketing site</MenuItem>
 </Menu>
 ```
+
+```js live=true
+<Menu variant="shadow">
+  <MenuItem>Edit</MenuItem>
+  <MenuItem disabled>Delete</MenuItem>
+  <MenuItem>Rename</MenuItem>
+</Menu>
+```
+
+For more examples checkout the [Variant Group Recipe](/docs/variant-group)
 
 ## Menu
 
