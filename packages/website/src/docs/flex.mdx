@@ -1,0 +1,31 @@
+---
+title: Flex
+component: Flex
+---
+
+```js live=true
+<Box mb={4}>
+  <Flex>
+    <Box flex="1" height={50} bg="blue" />
+    <Box flex="1" height={50} bg="blue" mx={4} />
+    <Box flex="1" height={50} bg="blue" />
+  </Flex>
+</Box>
+```
+
+### System props
+
+The `Flex` Component also supports [all the props](/docs/box) from `Box`
+
+<SystemProps
+  props={[
+    'flexBasis',
+    'flexDirection',
+    'flexWrap',
+    'alignContent',
+    'alignItems',
+    'justifyContent',
+    'justifyItems',
+    'order',
+  ]}
+/>
