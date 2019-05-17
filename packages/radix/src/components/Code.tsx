@@ -8,8 +8,7 @@ export const Code = styled('code')<SpaceProps>(
     css({
       display: 'inline-block',
       backgroundColor: 'blues.1',
-      color: 'blue',
-      borderColor: 'grays.3',
+      color: 'blues.5',
       borderRadius: 1,
       fontFamily: 'mono',
       fontSize: '0.75em',
