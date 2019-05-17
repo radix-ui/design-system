@@ -1,20 +1,20 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
-import { color, ColorProps, space, SpaceProps, Theme } from 'styled-system';
+import { color, ColorProps, space, SpaceProps } from 'styled-system';
 
 type WrapperProps = ColorProps & SpaceProps;
 
 type AspectRatioProps = WrapperProps & {
-  ratio?: number;
-  theme?: Theme;
-} & any;
+  ratio?: '1:1' | '1:2' | '2:1' | '16:9' | '4:3';
+};
 
 export const AspectRatio: FC<AspectRatioProps> = ({
-  ratio = 1 / 1,
+  ratio = '1:1',
   children,
   ...props
 }) => {
-  const paddingBottom = 100 / ratio;
+  const [n1, n2] = ratio.split(':');
+  const paddingBottom = 100 / (Number(n1) / Number(n2));
   return (
     <Wrapper {...props} style={{ paddingBottom: `${paddingBottom}%` }}>
       <Inner>{children}</Inner>
