@@ -1,0 +1,46 @@
+---
+title: Ghost Button
+component: GhostButton
+---
+
+```js live=true
+<>
+  <GhostButton>
+    <PlusIcon size="15" />
+  </GhostButton>
+
+  <GhostButton variant="active" ml={3}>
+    <PlusIcon size="15" />
+  </GhostButton>
+
+  <GhostButton disabled ml={3}>
+    <PlusIcon size="15" />
+  </GhostButton>
+</>
+```
+
+```js live=true
+<>
+  <GhostButton size="medium">
+    <HamburgerIcon size="25" />
+  </GhostButton>
+  <GhostButton size="medium" variant="active" ml={3}>
+    <HamburgerIcon size="25" />
+  </GhostButton>
+  <GhostButton size="medium" disabled ml={3}>
+    <HamburgerIcon size="25" />
+  </GhostButton>
+</>
+```
+
+### System props
+
+<SystemProps props={['space']} />
+
+### Custom props
+
+| Name       | Type     |   Default   | Description          |
+| :--------- | :------- | :---------: | :------------------- |
+| `variant`  | 'active' | `undefined` | Variant to display   |
+| `size`     | 'medium' | `undefined` | Size to display      |
+| `disabled` | Boolean  |   `false`   | Disables the element |
