@@ -1,0 +1,38 @@
+---
+title: Badge
+component: Badge
+---
+
+```js live=true
+<Badge>Default</Badge>
+```
+
+```js live=true
+<>
+  <Badge variant="blue">Badge</Badge>
+  <Badge variant="green" ml={3}>
+    Badge
+  </Badge>
+  <Badge variant="red" ml={3}>
+    Badge
+  </Badge>
+  <Badge variant="yellow" ml={3}>
+    Badge
+  </Badge>
+</>
+```
+
+```js live=true
+<Badge size="medium">Badge</Badge>
+```
+
+### System props
+
+<SystemProps props={['space']} />
+
+### Custom props
+
+| Name       | Type                                   |   Default   | Description          |
+| :--------- | :------------------------------------- | :---------: | :------------------- |
+| `variant`  | 'blue' \| 'green' \| 'red' \| 'yellow' | `undefined` | Variant to display   |
+| `disabled` | Boolean                                |   `false`   | Disabled the element |
