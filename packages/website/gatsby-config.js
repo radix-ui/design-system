@@ -1,14 +1,14 @@
 module.exports = {
   plugins: [
-    'gatsby-plugin-emotion',
-    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
-        color: 'hsl(208, 98%, 50%)',
+        color: 'tomato',
         showSpinner: false,
       },
     },
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-mdx',
       options: {
