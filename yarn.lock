@@ -7145,6 +7145,14 @@ gatsby-plugin-emotion@^4.0.6:
     "@babel/runtime" "^7.0.0"
     "@emotion/babel-preset-css-prop" "^10.0.5"
 
+gatsby-plugin-nprogress@^2.0.10:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-nprogress/-/gatsby-plugin-nprogress-2.0.10.tgz#4d60e09515270c86b956497e4cc66cede5565db7"
+  integrity sha512-+zDHYeSVaR01rFUXd4H2rSUvDV1yR9/uCKSJ97VIV0IZAIguf8SVxdY3nJIq5umIw1hi37JV0ICAHy91SGCMRQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    nprogress "^0.2.0"
+
 gatsby-plugin-page-creator@^2.0.13:
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.0.13.tgz#ba5d1af97b6fce9e41ae3e617699eed9c3682bde"
@@ -10795,6 +10803,11 @@ npm-which@^3.0.1:
     console-control-strings "~1.1.0"
     gauge "~2.7.3"
     set-blocking "~2.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
 
 nth-check@^1.0.2, nth-check@~1.0.1:
   version "1.0.2"

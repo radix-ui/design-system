@@ -100,10 +100,10 @@ function IndexPage() {
                 <AspectRatio bg="blue" />
               </Box>
               <Box flex="1" mx={4}>
-                <AspectRatio bg="blue" ratio={4 / 5} />
+                <AspectRatio bg="blue" ratio="16:9" />
               </Box>
               <Box flex="1" mx={4}>
-                <AspectRatio bg="blue" ratio={16 / 9} />
+                <AspectRatio bg="blue" ratio="4:3" />
               </Box>
             </Flex>
           </Box>
