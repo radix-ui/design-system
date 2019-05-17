@@ -1,0 +1,38 @@
+---
+title: Tooltip
+component: Tooltip
+---
+
+```js live=true
+<Box width={120}>
+  <ToggleButtonGroup>
+    <ToggleButton defaultChecked>
+      <Tooltip text="Row">
+        <DirectionRowIcon />
+      </Tooltip>
+    </ToggleButton>
+    <ToggleButton>
+      <Tooltip text="Column">
+        <DirectionColumnIcon />
+      </Tooltip>
+    </ToggleButton>
+  </ToggleButtonGroup>
+</Box>
+```
+
+```js live=true
+<Box m="10px">
+  <Tooltip position="bottom" text="Menu">
+    <GhostButton size="medium">
+      <HamburgerIcon size="25" />
+    </GhostButton>
+  </Tooltip>
+</Box>
+```
+
+### Custom props
+
+| Name       | Type                                   | Default | Description           |
+| :--------- | :------------------------------------- | :-----: | :-------------------- |
+| `position` | 'top' \| 'bottom' \| 'right' \| 'left' |  `top`  | Changes the position  |
+| `align`    | 'start' \| 'end'                       | `start` | Changes the alignment |
