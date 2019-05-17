@@ -110,7 +110,7 @@ const BaseTooltip = styled('span')<BaseTooltipProps>(({ position, align }) =>
       fontFamily: 'normal',
       fontSize: 2,
       lineHeight: 0,
-      padding: 2,
+      padding: 1,
       color: 'white',
       textAlign: 'center',
       wordWrap: 'break-word',
