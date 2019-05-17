@@ -63,7 +63,7 @@ function DocLayout({ children, pathname }) {
             borderBottom={['1px solid', 0]}
             borderColor={['grays.2', 'grays.2']}
           >
-            <Heading size={1} ml={3} mb={3} bold>
+            <Heading size={1} ml={3} mb={4} bold>
               <Flex alignItems="center">
                 Radix{' '}
                 <Badge ml={2} variant="gray">
