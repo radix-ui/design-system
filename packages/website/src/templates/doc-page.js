@@ -6,7 +6,6 @@ import * as RC from '@modulz/radix';
 import * as RI from '@modulz/radix-icons';
 import DocLayout from '../components/DocLayout';
 import CodeBlock from '../components/CodeBlock';
-import { Logo } from '../components/Logo';
 import { SystemPropsTable } from '../components/SystemPropsTable';
 
 export const components = {
@@ -14,7 +13,6 @@ export const components = {
   ...RI,
   pre: props => <div {...props} />,
   code: CodeBlock,
-  Logo: Logo,
   table: RC.Table,
   thead: RC.Thead,
   tbody: RC.Tbody,

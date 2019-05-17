@@ -6,10 +6,9 @@ import {
   Menu,
   MenuItem,
   Heading,
-  Text,
+  Badge,
   Divider,
 } from '@modulz/radix';
-import { Logo } from './Logo';
 
 function DocLayout({ children, pathname }) {
   const query = graphql`
@@ -64,21 +63,12 @@ function DocLayout({ children, pathname }) {
             borderBottom={['1px solid', 0]}
             borderColor={['grays.2', 'grays.2']}
           >
-            <Heading size={1} marginLeft={3} mb={2} bold>
+            <Heading size={1} ml={3} mb={3} bold>
               <Flex alignItems="center">
-                <Box mr={2}>
-                  <Logo />
-                </Box>{' '}
                 Radix{' '}
-                <Text
-                  ml={2}
-                  fontSize={0}
-                  color="gray"
-                  fontWeight="bold"
-                  letterSpacing=".15em"
-                >
-                  ALPHA
-                </Text>
+                <Badge ml={2} variant="gray">
+                  Alpha
+                </Badge>
               </Flex>
             </Heading>
 
