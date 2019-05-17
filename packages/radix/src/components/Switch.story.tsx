@@ -12,9 +12,7 @@ function SwitchStory() {
     <>
       <Box mb="4">
         <Text as="p">Uncontrolled</Text>
-        <Switch value="row" defaultChecked mr={1}>
-          Row
-        </Switch>
+        <Switch value="row" defaultChecked mr={1} />
       </Box>
 
       <Box mb="4">
@@ -29,9 +27,7 @@ function SwitchStory() {
             value="accept"
             checked={checked}
             onChange={e => setChecked(e.target.checked)}
-          >
-            Accept
-          </Switch>
+          />
         </Box>
         <Button mt="3" onClick={() => setChecked(!checked)}>
           {checked ? 'uncheck' : 'check'}

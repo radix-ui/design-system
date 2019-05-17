@@ -1,0 +1,24 @@
+---
+title: Pill Nav
+component: PillNav
+---
+
+```js live=true
+<PillNav>
+  <Pill disabled>Settings</Pill>
+  <Pill>Assets</Pill>
+  <Pill active>Components</Pill>
+  <Pill>Screen</Pill>
+</PillNav>
+```
+
+### System props
+
+<SystemProps props={['margin']} />
+
+### Custom props
+
+| Name       | Type    | Default | Description                        |
+| :--------- | :------ | :-----: | :--------------------------------- |
+| `active`   | Boolean | `false` | Changes the syling to active state |
+| `disabled` | Boolean | `false` | Disables the element               |

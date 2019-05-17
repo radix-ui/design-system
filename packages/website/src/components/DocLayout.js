@@ -1,6 +1,14 @@
 import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
-import { Flex, Box, Menu, MenuItem, Heading, Divider } from '@modulz/radix';
+import {
+  Flex,
+  Box,
+  Menu,
+  MenuItem,
+  Heading,
+  Text,
+  Divider,
+} from '@modulz/radix';
 import { Logo } from './Logo';
 
 function DocLayout({ children, pathname }) {
@@ -44,11 +52,14 @@ function DocLayout({ children, pathname }) {
     <StaticQuery
       query={query}
       render={data => (
-        <Flex minHeight="100vh" flexDirection={['column', 'row']}>
+        <Box>
           <Box
+            position={['static', 'fixed']}
             width={['100%', 200]}
-            flex="0 0 auto"
+            height={['auto', '100vh']}
+            overflow="auto"
             pt={4}
+            pb={4}
             borderRight={[0, '1px solid']}
             borderBottom={['1px solid', 0]}
             borderColor={['grays.2', 'grays.2']}
@@ -58,7 +69,16 @@ function DocLayout({ children, pathname }) {
                 <Box mr={2}>
                   <Logo />
                 </Box>{' '}
-                Radix
+                Radix{' '}
+                <Text
+                  ml={2}
+                  fontSize={0}
+                  color="gray"
+                  fontWeight="bold"
+                  letterSpacing=".15em"
+                >
+                  ALPHA
+                </Text>
               </Flex>
             </Heading>
 
@@ -113,10 +133,10 @@ function DocLayout({ children, pathname }) {
               ))}
             </Menu>
           </Box>
-          <Box p={4} flex={[1, 1]} maxWidth={['100%', '45rem']}>
+          <Box p={4} marginLeft={[0, 200]} maxWidth={['100%', '45rem']}>
             {children}
           </Box>
-        </Flex>
+        </Box>
       )}
     />
   );

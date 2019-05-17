@@ -19,7 +19,7 @@ export { Hover } from './components/Hover';
 export { Input } from './components/Input';
 export { Link } from './components/Link';
 export { Menu, MenuItem, MenuGroup } from './components/Menu';
-export { PillButtonGroup, PillButton } from './components/PillButton';
+export { PillNav, Pill } from './components/PillNav';
 export { RadioGroup, Radio } from './components/RadioGroup';
 export { Select } from './components/Select';
 export { Slider } from './components/Slider';

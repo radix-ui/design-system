@@ -67,6 +67,7 @@ export const CardLink = styled('a')<CardProps>(
     css({
       display: 'block',
       textDecoration: 'none',
+      cursor: 'pointer',
       outline: 0,
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       '&:hover': {

@@ -1,0 +1,27 @@
+---
+title: Input with icon
+recipe: 'true'
+---
+
+```js live=true
+<Box position="relative">
+  <Input
+    size="medium"
+    placeholder="Search primitives"
+    type="email"
+    paddingLeft={5}
+  />
+
+  <Flex
+    alignItems="center"
+    position="absolute"
+    height="100%"
+    top={0}
+    left={0}
+    color="grays.5"
+    style={{ pointerEvents: 'none' }}
+  >
+    <MagnifyingGlassIcon size="25" />
+  </Flex>
+</Box>
+```

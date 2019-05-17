@@ -5,22 +5,19 @@ import { transparentize } from 'polished';
 import { MarginProps, themeGet } from 'styled-system';
 import { Box } from './Box';
 
-type PillButtonGroupProps = MarginProps & {
-  children: ReactElement<PillButtonProps>[];
+type PillNavProps = MarginProps & {
+  children: ReactElement<PillProps>[];
 };
 
-export const PillButtonGroup: FC<PillButtonGroupProps> = ({
-  children,
-  ...props
-}) => {
+export const PillNav: FC<PillNavProps> = ({ children, ...props }) => {
   return <Box {...props}>{children}</Box>;
 };
 
-type PillButtonProps = {
+type PillProps = {
   active?: boolean;
 };
 
-export const PillButton = styled('button')<PillButtonProps>(
+export const Pill = styled('button')<PillProps>(
   ({ active, ...props }) =>
     css({
       appearance: 'none',

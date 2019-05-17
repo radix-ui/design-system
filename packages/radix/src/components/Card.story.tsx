@@ -9,7 +9,7 @@ storiesOf('Components|Card', module).add('default', () => (
   <>
     <Flex>
       <Card variant="border" m={4} maxWidth="300px">
-        <Heading fontSize="5" mb="3">
+        <Heading size="3" mb="3">
           Card
         </Heading>
         <Text as="p" mb="3" fontSize="3">
@@ -22,7 +22,7 @@ storiesOf('Components|Card', module).add('default', () => (
         </Text>
       </Card>
       <Card variant="shadow" m={4} maxWidth="300px">
-        <Heading fontSize="5" mb="3">
+        <Heading size="3" mb="3">
           Card
         </Heading>
         <Text as="p" mb="3" fontSize="3">
@@ -35,7 +35,7 @@ storiesOf('Components|Card', module).add('default', () => (
         </Text>
       </Card>
       <Card variant="ghost" m={4} maxWidth="300px">
-        <Heading fontSize="5" mb="3">
+        <Heading size="3" mb="3">
           Card
         </Heading>
         <Text as="p" mb="3" fontSize="3">
@@ -51,7 +51,7 @@ storiesOf('Components|Card', module).add('default', () => (
 
     <Flex>
       <CardLink href="https://modulz.app" m={4} maxWidth="300px">
-        <Heading fontSize="5" mb="3">
+        <Heading size="3" mb="3">
           Card
         </Heading>
         <Text as="p" mb="3" fontSize="3">
@@ -70,7 +70,7 @@ storiesOf('Components|Card', module).add('default', () => (
         m={4}
         maxWidth="300px"
       >
-        <Heading fontSize="5" mb="3">
+        <Heading size="3" mb="3">
           Card
         </Heading>
         <Text as="p" mb="3" fontSize="3">
@@ -89,7 +89,7 @@ storiesOf('Components|Card', module).add('default', () => (
         m={4}
         maxWidth="300px"
       >
-        <Heading fontSize="5" mb="3">
+        <Heading size="3" mb="3">
           Card
         </Heading>
         <Text as="p" mb="3" fontSize="3">

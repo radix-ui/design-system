@@ -1,17 +1,18 @@
 ---
-title: Toggle Button
-component: ToggleButton
+title: Radio Group
+component: RadioGroup
 ---
 
 ```js live=true
-<ToggleButtonGroup name="align">
-  <ToggleButton defaultChecked>Start</ToggleButton>
-  <ToggleButton>Middle</ToggleButton>
-  <ToggleButton>End</ToggleButton>
-</ToggleButtonGroup>
+<RadioGroup name="flexDirection">
+  <Radio value="row" defaultChecked>
+    Row
+  </Radio>
+  <Radio value="column">Column</Radio>
+</RadioGroup>
 ```
 
-## ToggleButton
+## RadioGroup
 
 ### Custom props
 
@@ -19,3 +20,9 @@ component: ToggleButton
 | :--------- | :----------- | :-----: | :------------------------------------------------- |
 | `name`     | String       | `null`  | `name` attribute to be passed down to the children |
 | `children` | ReactElement | `null`  | Children should be `Radio` Elements                |
+
+## Radio
+
+### System Props
+
+<SystemProps props={['space']} />

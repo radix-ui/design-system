@@ -1,0 +1,54 @@
+---
+title: Text
+component: Text
+---
+
+```js live=true
+<Text>
+  With Modulz, our goal is to fix the disconnect between digital product teams.
+</Text>
+```
+
+```js live=true
+<>
+  <Text fontSize={3} as="p" mb={4} color="grays.5">
+    To help designers collaborate with developers, without code.
+  </Text>
+  <Text fontSize={3} as="p" mb={4} color="grays.5">
+    To encourage inclusive digital products by automating accessibility.
+  </Text>
+  <Text fontSize={3} as="p" mb={4} color="grays.5">
+    To reduce bottlenecks by building modern tools which empower whole teams to
+    work on their end products.
+  </Text>
+  <Text fontSize={3} as="p" color="grays.5">
+    To get everyone working on the same product.{' '}
+    <Text fontSize="inherit" color="black">
+      Together.
+    </Text>
+  </Text>
+</>
+```
+
+### System props
+
+<SystemProps
+  props={[
+    'color',
+    'space',
+    'fontSize',
+    'fontFamily',
+    'fontStyle',
+    'textAlign',
+    'lineHeight',
+    'fontWeight',
+    'letterSpacing',
+  ]}
+/>
+
+### Custom props
+
+| Name       | Type         | Default | Description            |
+| :--------- | :----------- | :-----: | :--------------------- |
+| `as`       | ReactElement | `span`  | Root element to render |
+| `truncate` | boolean      | `false` | Truncates the text     |
