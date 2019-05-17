@@ -85,20 +85,20 @@ export default ({ children, className, live, render, ghost }) => {
         >
           <LivePreview
             style={{
-              padding: !ghost && radixTheme.space[4],
-              border: !ghost && `1px solid ${colors.grays[3]}`,
-              borderRadius: !ghost && '3px 3px 0 0',
+              padding: radixTheme.space[4],
+              border: `1px solid ${colors.grays[3]}`,
+              borderRadius: '3px 3px 0 0',
               borderBottom: 0,
             }}
           />
           <LiveEditor
-            padding={!ghost && radixTheme.space[4]}
+            padding={radixTheme.space[4]}
             style={{
               // TODO: Remove hardcoded `backgroundColor`
               // https://github.com/FormidableLabs/react-live/issues/139
               backgroundColor: theme.plain.backgroundColor,
-              borderRadius: !ghost && '0 0 3px 3px',
-              border: !ghost && `1px solid ${colors.grays[3]}`,
+              borderRadius: '0 0 3px 3px',
+              border: `1px solid ${colors.grays[3]}`,
               borderTop: 0,
               fontSize: radixTheme.fontSizes[3],
               fontFamily: radixTheme.fonts.mono,
