@@ -50,7 +50,7 @@ export const Input = styled('input')<InputProps>(
       borderBottom: '1px solid',
       borderColor: variant === 'ghost' ? 'transparent' : 'grays.3',
       '&:focus': {
-        borderColor: variant === 'ghost' ? 'transparent' : 'grays.3',
+        borderColor: variant === 'ghost' ? 'transparent' : 'blues.4',
       },
       '&:read-only': {
         borderColor: 'grays.2',
