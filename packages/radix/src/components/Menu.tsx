@@ -1,5 +1,5 @@
 import React, { ComponentProps, FC, ReactElement } from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import css from '@styled-system/css';
 import {
   maxWidth,
@@ -103,8 +103,8 @@ export const MenuText: FC = ({ children, ...props }) => {
 // This is used to handle the `hover` effect correctly
 const MenuItemWrapper = styled('div')({});
 
-const BaseMenuItem = styled('button')<MenuItemProps>(
-  ({ variant, size, ...props }) =>
+const BaseMenuItem: FC<MenuItemProps> = styled('button')(
+  ({ variant, size, ...props }: MenuItemProps) =>
     css({
       alignItems: 'center',
       appearance: 'none',

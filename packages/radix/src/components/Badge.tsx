@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { space, SpaceProps } from 'styled-system';
 import css from '@styled-system/css';
 import { get } from '../utils/get';

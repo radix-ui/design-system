@@ -5,7 +5,7 @@ import React, {
   forwardRef,
   ComponentPropsWithRef,
 } from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import css from '@styled-system/css';
 import { themeGet } from 'styled-system';
 import { Flex } from './Flex';

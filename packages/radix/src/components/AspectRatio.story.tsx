@@ -7,7 +7,7 @@ import { AspectRatio } from './AspectRatio';
 
 const Label: FC = ({ children }) => (
   <Flex height="100%" width="100%" justifyContent="center" alignItems="center">
-    <Heading fontSize={4}>{children}</Heading>
+    <Heading>{children}</Heading>
   </Flex>
 );
 

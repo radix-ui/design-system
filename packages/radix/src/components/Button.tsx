@@ -1,6 +1,5 @@
-import styled from '@emotion/styled';
-import { keyframes } from '@emotion/core';
-import { space, SpaceProps, themeGet } from 'styled-system';
+import styled, { css as _css, keyframes } from 'styled-components';
+import { space, SpaceProps, themeGet, Theme } from 'styled-system';
 import css from '@styled-system/css';
 import { get } from '../utils/get';
 
@@ -20,6 +19,7 @@ type ButtonProps = SpaceProps & {
   size?: Sizes;
   waiting?: boolean;
   block?: boolean;
+  theme?: Theme;
 };
 
 export const Button = styled('button')<ButtonProps>(
@@ -157,11 +157,16 @@ export const Button = styled('button')<ButtonProps>(
             : `${themeGet('space.7')({ theme })} ${themeGet('space.5')({
                 theme,
               })}`,
-        animation: `${waitingAnimation({
-          theme,
-          size,
-        })} 500ms linear infinite`,
       },
     }),
+  _css`
+      &::before {
+        animation: ${({ theme, size }: ButtonProps) =>
+          _css`${waitingAnimation({
+            theme,
+            size,
+          })} 500ms linear infinite`}
+      }
+    `,
   space
 );
