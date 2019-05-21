@@ -24,6 +24,13 @@ Create an `.env` file an intended directory for easy reuse:
 echo "FIGMA_ACCESS_TOKEN=<token>" >> packages/icons/.env
 ```
 
+## Future
+
+- [ ] Support importing from Sketch
+- [ ] Support importing from a directory of SVGs
+- [ ] Allow the CLI to re-run on existing SVGs in a package ie. after changing the React component template
+- [ ] Publish the `@modulz/generate-icon-lib` CLI Tool for public use
+
 ## Legal
 
 MIT License
