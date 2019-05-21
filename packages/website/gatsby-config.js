@@ -7,7 +7,7 @@ module.exports = {
         showSpinner: false,
       },
     },
-    'gatsby-plugin-emotion',
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-mdx',

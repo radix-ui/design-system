@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { color, ColorProps, space, SpaceProps } from 'styled-system';
 
 type WrapperProps = ColorProps & SpaceProps;
@@ -16,6 +16,8 @@ export const AspectRatio: FC<AspectRatioProps> = ({
   const [n1, n2] = ratio.split(':');
   const paddingBottom = 100 / (Number(n1) / Number(n2));
   return (
+    // TODO: Fix color typings
+    // @ts-ignore
     <Wrapper {...props} style={{ paddingBottom: `${paddingBottom}%` }}>
       <Inner>{children}</Inner>
     </Wrapper>

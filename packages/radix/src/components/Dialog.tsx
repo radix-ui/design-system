@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
-import styled from '@emotion/styled';
-import { keyframes } from '@emotion/core';
+import styled, { css as _css, keyframes } from 'styled-components';
 import css from '@styled-system/css';
 import { transparentize } from 'polished';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
@@ -34,14 +33,20 @@ const overlayEnterKeyframes = keyframes`
   }
 `;
 
-const Overlay = styled(DialogOverlay)<DialogProps>({
-  '&[data-reach-dialog-overlay]': {
-    display: 'flex',
-    alignItems: 'center',
-    animation: `${overlayEnterKeyframes} 300ms ease-out forwards`,
-    zIndex: 1,
+const Overlay = styled(DialogOverlay)<DialogProps>(
+  {
+    '&[data-reach-dialog-overlay]': {
+      display: 'flex',
+      alignItems: 'center',
+      zIndex: 1,
+    },
   },
-});
+  _css`
+    &[data-reach-dialog-overlay] {
+      animation: ${overlayEnterKeyframes} 300ms ease-out forwards;
+    }
+  `
+);
 
 const wrapperEnterKeyframes = keyframes`
   0% {
@@ -71,7 +76,11 @@ const Content = styled(DialogContent)(
       overflow: 'auto',
       padding: 0,
       boxSizing: 'border-box',
-      animation: `${wrapperEnterKeyframes} 250ms ease-out`,
     },
-  })
+  }),
+  _css`
+    &[data-reach-dialog-content] {
+      animation: ${wrapperEnterKeyframes} 250ms ease-out;
+    }
+  `
 );

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ThemeProvider } from 'emotion-theming';
+import { ThemeProvider } from 'styled-components';
 import { theme as defaultTheme } from './theme';
 import { Theme } from 'styled-system';
 import { GlobalStyles } from './GlobalStyles';

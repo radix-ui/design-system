@@ -108,49 +108,5 @@ storiesOf('Components|Menu', module).add('default', () => (
         <MenuItem icon={<CircleIcon />}>Item three</MenuItem>
       </Menu>
     </Box>
-
-    {/* <Box mb="4">
-      <Menu variant="shadow">
-        <MenuItem>
-          <ItemWithIconAndDesc
-            title="Archive"
-            desc="This item will move to the Archives page"
-          />
-        </MenuItem>
-        <MenuItem>
-          <ItemWithIconAndDesc
-            title="Archive"
-            desc="This item will move to the Archives page"
-          />
-        </MenuItem>
-        <MenuItem>
-          <ItemWithIconAndDesc
-            title="Archive"
-            desc="This item will move to the Archives page"
-          />
-        </MenuItem>
-      </Menu>
-    </Box> */}
   </Grid>
 ));
-
-// @ts-ignore
-// function ItemWithIconAndDesc({ title, desc }) {
-//   return (
-//     <>
-//       <Box mb={1}>
-//         <Flex alignItems="center">
-//           <Box mr={4}>
-//             <TrashIcon />
-//           </Box>
-//           <Text fontSize={3} fontWeight="bold">
-//             {title}
-//           </Text>
-//         </Flex>
-//         <Text as="p" fontSize={2} color="grays.5" ml={7}>
-//           {desc}
-//         </Text>
-//       </Box>
-//     </>
-//   );
-// }

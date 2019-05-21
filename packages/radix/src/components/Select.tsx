@@ -1,5 +1,5 @@
 import React, { ComponentProps, FC } from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import css from '@styled-system/css';
 import { space, SpaceProps, width, WidthProps } from 'styled-system';
 import pick from 'lodash.pick';

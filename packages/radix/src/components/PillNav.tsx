@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import css from '@styled-system/css';
 import { transparentize } from 'polished';
 import { MarginProps, themeGet } from 'styled-system';

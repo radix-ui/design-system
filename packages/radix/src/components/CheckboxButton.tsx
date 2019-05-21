@@ -1,5 +1,5 @@
 import React, { FC, ComponentProps, ReactNode } from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
@@ -11,7 +11,8 @@ type CheckboxButton = SpaceProps &
 // TODO: Styled System is missing some spacing props in `propTypes`
 // https://github.com/styled-system/styled-system/issues/466
 const spacePropNames = [
-  // @ts-ignore
+  // TODO: Fix color typings
+  // @ts-ignore// @ts-ignore
   ...Object.keys(space.propTypes),
   'mx',
   'my',

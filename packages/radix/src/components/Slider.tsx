@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ChangeEventHandler } from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import css from '@styled-system/css';
 
 type SliderProps = {
