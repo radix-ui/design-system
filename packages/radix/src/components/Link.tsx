@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import { color, ColorProps, fontSize, FontSizeProps } from 'styled-system';
 
-type LinkProps = ColorProps & FontSizeProps;
+type LinkProps = ColorProps & FontSizeProps & { to?: string };
 
 // TODO: Fix color typings
 // @ts-ignore
