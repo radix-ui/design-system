@@ -16,11 +16,12 @@ import css from '@styled-system/css';
 type VariantProps = 'ghost';
 type SizeProps = 'medium';
 
+// TODO: Fix `size` typing
 export type InputProps = ColorProps &
   SpaceProps &
   WidthProps &
   MaxWidthProps &
-  TextAlignProps & { variant?: VariantProps; size?: SizeProps };
+  TextAlignProps & { variant?: VariantProps; size?: SizeProps & any };
 
 const placeholderStyle = {
   color: 'grays.4',
