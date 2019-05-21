@@ -39,7 +39,7 @@ export const Input = styled('input')<InputProps>(
       fontFamily: 'normal',
       fontSize: size === 'medium' ? 3 : 2,
       height: size === 'medium' ? 6 : 5,
-      lineHeight: size === 'medium' ? 6 : 5,
+      lineHeight: size === 'medium' ? 3 : 1,
       outline: 'none',
       padding: 0,
       verticalAlign: 'middle',
