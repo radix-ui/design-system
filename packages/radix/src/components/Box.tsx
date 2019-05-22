@@ -49,6 +49,7 @@ import {
 } from 'styled-system';
 import { ComponentProps } from 'react';
 
+// TODO: Add `flexGrow`, `flexShrink` and `flexBasis`
 export type BoxProps = AlignSelfProps &
   BordersProps &
   BottomProps &

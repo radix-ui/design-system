@@ -59,9 +59,11 @@ const baseCard = ({ variant, ...props }: CardProps) =>
 // @ts-ignore
 export const Card = styled('div')<CardProps>(baseCard, ...systemProps);
 
+type CardLinkProps = CardProps & { to?: string };
+
 // TODO: Fix color typings
 // @ts-ignore
-export const CardLink = styled('a')<CardProps>(
+export const CardLink = styled('a')<CardLinkProps>(
   baseCard,
   ({ variant }: CardProps) =>
     css({

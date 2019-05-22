@@ -8,7 +8,7 @@ import { Card, CardLink } from './Card';
 storiesOf('Components|Card', module).add('default', () => (
   <>
     <Flex>
-      <Card variant="border" m={4} maxWidth="300px">
+      <Card m={4} maxWidth="300px">
         <Heading size="3" mb="3">
           Card
         </Heading>
