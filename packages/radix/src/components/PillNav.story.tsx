@@ -31,5 +31,14 @@ storiesOf('Components|PillNav', module).add('default', () => (
         <Pill>Screen</Pill>
       </PillNav>
     </Box>
+
+    <Box mb="4">
+      <PillNav pillWidth={140}>
+        <Pill disabled>Settings</Pill>
+        <Pill>Assets</Pill>
+        <Pill>Components</Pill>
+        <Pill>Screen</Pill>
+      </PillNav>
+    </Box>
   </>
 ));

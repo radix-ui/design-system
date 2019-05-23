@@ -7,22 +7,35 @@ import { Box } from './Box';
 
 type PillNavProps = MarginProps & {
   children: ReactElement<PillProps>[];
+  pillWidth?: number;
 };
 
-export const PillNav: FC<PillNavProps> = ({ children, ...props }) => {
-  return <Box {...props}>{children}</Box>;
+export const PillNav: FC<PillNavProps> = ({
+  children,
+  pillWidth,
+  ...props
+}) => {
+  return (
+    <Box {...props}>
+      {React.Children.map(children, (pill: ReactElement<PillProps>) =>
+        React.cloneElement(pill, { pillWidth })
+      )}
+    </Box>
+  );
 };
 
 type PillProps = {
   active?: boolean;
+  pillWidth?: number;
 };
 
 export const Pill = styled('button')<PillProps>(
-  ({ active, ...props }) =>
+  ({ active, pillWidth, ...props }) =>
     css({
       appearance: 'none',
       display: 'inline-flex',
       alignItems: 'center',
+      justifyContent: 'center',
       flexBasis: 0,
       flexGrow: 1,
       position: 'relative',
@@ -37,7 +50,9 @@ export const Pill = styled('button')<PillProps>(
       paddingY: 0,
       paddingX: 4,
       minWidth: 5,
+      width: pillWidth,
       textDecoration: 'none',
+      textAlign: 'center',
       outline: 'none',
       zIndex: active ? 1 : 0,
       margin: 0,
