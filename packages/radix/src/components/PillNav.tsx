@@ -1,14 +1,24 @@
 import React, { FC, ReactElement } from 'react';
 import styled from 'styled-components';
+import { MarginProps, themeGet, style, ResponsiveValue } from 'styled-system';
 import css from '@styled-system/css';
+import * as CSS from 'csstype';
 import { transparentize } from 'polished';
-import { MarginProps, themeGet } from 'styled-system';
 import { Box } from './Box';
 
-type PillNavProps = MarginProps & {
-  children: ReactElement<PillProps>[];
-  pillWidth?: number;
-};
+const pillWidth = style({
+  prop: 'pillWidth',
+  cssProperty: 'width',
+});
+
+interface PillWidthProps {
+  pillWidth?: ResponsiveValue<CSS.WidthProperty<{}>>;
+}
+
+type PillNavProps = MarginProps &
+  PillWidthProps & {
+    children: ReactElement<PillProps>[];
+  };
 
 export const PillNav: FC<PillNavProps> = ({
   children,
@@ -24,9 +34,8 @@ export const PillNav: FC<PillNavProps> = ({
   );
 };
 
-type PillProps = {
+type PillProps = PillWidthProps & {
   active?: boolean;
-  pillWidth?: number;
 };
 
 export const Pill = styled('button')<PillProps>(
@@ -50,7 +59,6 @@ export const Pill = styled('button')<PillProps>(
       paddingY: 0,
       paddingX: 4,
       minWidth: 5,
-      width: pillWidth,
       textDecoration: 'none',
       textAlign: 'center',
       outline: 'none',
@@ -89,5 +97,6 @@ export const Pill = styled('button')<PillProps>(
     }),
   {
     lineHeight: 1,
-  }
+  },
+  pillWidth
 );
