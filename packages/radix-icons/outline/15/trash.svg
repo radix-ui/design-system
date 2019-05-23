@@ -1,0 +1,13 @@
+<svg width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="4.5"
+    y="4.5"
+    width="6"
+    height="8"
+    rx=".5"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="bevel"
+  />
+  <path d="M3.5 4.5h8M5.5 2.5h4" stroke="currentColor" stroke-linecap="round" />
+</svg>

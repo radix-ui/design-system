@@ -10,7 +10,9 @@
     "website:build": "lerna exec --scope website -- yarn build",
     "radix": "lerna exec --scope @modulz/radix -- yarn watch",
     "radix:build": "lerna exec --scope @modulz/radix -- yarn build",
-    "build": "yarn radix:build && yarn website:build",
+    "icons": "lerna exec --scope @modulz/radix-icons -- yarn watch",
+    "icons:build": "lerna exec --scope @modulz/radix-icons -- yarn build",
+    "build": "yarn radix:build && yarn icons:build && yarn website:build",
     "prettier": "prettier './**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}' --write",
     "lint": "eslint './packages/**/*.{js,jsx,ts,tsx}'",
     "clean": "npm run clean-logs && npm run clean-modules",
@@ -19,6 +21,8 @@
     "release": "yarn radix:build && lerna publish"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
     "babel-eslint": "10.0.1",
@@ -34,16 +38,26 @@
     "lint-staged": "^8.1.7",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.17.1",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "yarnhook": "^0.4.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "post-merge": "yarnhook",
+      "post-checkout": "yarnhook",
+      "post-rewrite": "yarnhook"
     }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
       "eslint --fix",
+      "git add"
+    ],
+    "*.{md,json}": [
+      "prettier --write",
       "git add"
     ]
   }
