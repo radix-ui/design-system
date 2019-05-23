@@ -19,7 +19,7 @@
     "generate-src": "generate-icon-lib --file=LLggMY9IV61CYkCSI7LFFUOY",
     "build": "rimraf dist && tsdx build --format es,cjs --entry src/index.tsx",
     "watch": "rimraf dist && tsdx watch --format es,cjs --entry src/index.tsx",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "react": "^16.x",

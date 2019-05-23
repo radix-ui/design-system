@@ -4,7 +4,6 @@
     "packages/*"
   ],
   "scripts": {
-    "postinstall": "yarn radix:build",
     "start": "npm-run-all --parallel radix website",
     "website": "lerna exec --scope website -- yarn start",
     "website:build": "lerna exec --scope website -- yarn build",
@@ -16,9 +15,10 @@
     "prettier": "prettier './**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}' --write",
     "lint": "eslint './packages/**/*.{js,jsx,ts,tsx}'",
     "clean": "npm run clean-logs && npm run clean-modules",
-    "clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
+    "clean-logs": "rimraf ./packages/*/*-debug* && rimraf ./*-debug*",
     "clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/",
-    "release": "yarn radix:build && lerna publish"
+    "release": "lerna publish --conventional-commits",
+    "release:github": "lerna publish --github-release --conventional-commits"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",

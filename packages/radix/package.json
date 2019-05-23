@@ -18,7 +18,8 @@
     "storybook": "start-storybook -p 9009 --ci",
     "build-storybook": "build-storybook",
     "build": "rollup -c",
-    "watch": "rollup -cw"
+    "watch": "rollup -cw",
+    "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "react": "^16.8.6",
