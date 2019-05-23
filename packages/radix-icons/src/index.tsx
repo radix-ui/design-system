@@ -198,6 +198,7 @@ export { default as InputIcon } from './InputIcon';
 export { default as LayoutIcon } from './LayoutIcon';
 export { default as MixerHorizontalIcon } from './MixerHorizontalIcon';
 export { default as RadioIcon } from './RadioIcon';
+export { default as ResetIcon } from './ResetIcon';
 export { default as SectionIcon } from './SectionIcon';
 export { default as SlashIcon } from './SlashIcon';
 export { default as SquareIcon } from './SquareIcon';
