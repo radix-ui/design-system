@@ -1,7 +1,5 @@
 # @modulz/generate-icon-lib
 
-See [top-level readme](https://github.com/modulz/radix-icons) for more details.
-
 ## Usage
 
 ```shell
