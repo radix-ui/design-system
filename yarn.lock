@@ -2066,6 +2066,11 @@
   resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-0.4.0.tgz#5a46e4c09df8514420fdf33a26c2d09ba4143923"
   integrity sha512-NniEgO+vX2p4IYi5FGSGkwDy9C+u1df17B7YlLx25foystxheK4A4UnGrvDPnsyC8AlV0WN9Ht9LhMYTKRmfrw==
 
+"@modulz/radix-icons@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-0.6.0.tgz#e9145cecaa85995562f5fab0b55674adc83063ee"
+  integrity sha512-8Pyt0SVrakyMKvasn1lK8gsPlgwE660iJuXm1V4Xg0ccG7YuDXXDPDxAcMMrTmQNuG7qov3r6DKSibT2LZeSgg==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
