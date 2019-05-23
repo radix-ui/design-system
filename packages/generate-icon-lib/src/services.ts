@@ -1,4 +1,3 @@
-import { Canvas, Document, FileImageResponse, FileResponse } from 'figma-js';
 import { Headers } from 'node-fetch';
 import * as prettier from 'prettier';
 import isOnline from 'is-online';
@@ -20,6 +19,10 @@ import {
   IIcon,
   IDiffSummary,
   ITemplateIcon,
+  IFigmaCanvas,
+  IFigmaDocument,
+  IFigmaFileImageResponse,
+  IFigmaFileResponse,
 } from './types';
 import { getSvgo, fetch, pushObjLeafNodesToArr, handleError } from './utils';
 import chalk from 'chalk';
@@ -171,11 +174,17 @@ export function createFigmaConfig(fileKey: string): IFigmaConfig {
 
 export async function getFigmaDocument(
   config: IFigmaConfig
-): Promise<Document> {
+): Promise<IFigmaDocument> {
   const resp = await fetch(`${config.baseUrl}/v1/files/${config.fileKey}`, {
     headers: config.headers,
   });
-  const data = (await resp.json()) as FileResponse;
+  const data = (await resp.json()) as IFigmaFileResponse;
+  if (data.status === 403 && data.err === 'Invalid token') {
+    throw new CodedError(
+      ERRORS.FIGMA_API,
+      'An invalid token was used. Follow the Auth Guide (https://git.io/fjBfF), and try again.'
+    );
+  }
   return data.document;
 }
 
@@ -191,12 +200,12 @@ export async function renderIdsToSvgs(
   );
 
   // We can't be sure the response, when an error, will have a body that can be streamed to JSON.
-  let data: FileImageResponse = {
+  let data: IFigmaFileImageResponse = {
     err: null,
     images: {},
   };
   if (resp.headers.get('content-type').includes('application/json')) {
-    data = (await resp.json()) as FileImageResponse;
+    data = (await resp.json()) as IFigmaFileImageResponse;
   }
   const error =
     typeof data.err === 'object' ? JSON.stringify(data.err, null, 2) : data.err;
@@ -242,7 +251,7 @@ export async function renderIdsToSvgs(
   return data.images;
 }
 
-export function getIconsPage(document: Document): Canvas | null {
+export function getIconsPage(document: IFigmaDocument): IFigmaCanvas | null {
   const canvas = document.children.find(
     page => page.name.toLowerCase() === 'icons'
   );
@@ -250,7 +259,7 @@ export function getIconsPage(document: Document): Canvas | null {
   return canvas && canvas.type === 'CANVAS' ? canvas : null;
 }
 
-export function getIcons(iconsCanvas: Canvas): IIcons {
+export function getIcons(iconsCanvas: IFigmaCanvas): IIcons {
   return iconsCanvas.children.reduce((icons: IIcons, iconSetNode) => {
     // We technically don't want icon sets to be in Groups, but we should still allow it
     if (iconSetNode.type === 'FRAME' || iconSetNode.type === 'GROUP') {
