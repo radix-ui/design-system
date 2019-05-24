@@ -7,26 +7,39 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { themeGet } from 'styled-system';
+import pick from 'lodash.pick';
+import { space, SpaceProps, themeGet } from 'styled-system';
 import { Flex } from './Flex';
 
-type ToggleButtonGroupProps = {
+type ToggleButtonGroupProps = SpaceProps & {
   name: string;
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   children: ReactElement<ToggleButtonProps>[];
 };
 
+// TODO: Styled System is missing some spacing props in `propTypes`
+// https://github.com/styled-system/styled-system/issues/466
+const spacePropNames = [
+  ...Object.keys(space.propTypes || {}),
+  'mx',
+  'my',
+  'px',
+  'py',
+];
+
 export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
   children,
   value,
   onChange,
   name,
+  ...props
 }) => {
   const isControlled = Boolean(value);
+  const systemProps = pick(props, spacePropNames);
 
   return (
-    <Flex width="100%">
+    <Flex width="100%" {...systemProps}>
       {React.Children.map(children, (child: ReactElement<ToggleButtonProps>) =>
         React.cloneElement(child, {
           name,

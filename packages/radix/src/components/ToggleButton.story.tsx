@@ -6,7 +6,7 @@ import { ToggleButtonGroup, ToggleButton } from './ToggleButton';
 storiesOf('Components|ToggleButton', module).add('default', () => (
   <>
     <Box width="500px" mb="4">
-      <ToggleButtonGroup name="direction">
+      <ToggleButtonGroup name="direction" my={3}>
         <ToggleButton defaultChecked>Row</ToggleButton>
         <ToggleButton>Column</ToggleButton>
       </ToggleButtonGroup>
