@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Flex } from './Flex';
 import { Box } from './Box';
 import { Divider } from './Divider';
 import { Text } from './Text';
@@ -17,13 +16,6 @@ storiesOf('Components|Divider', module).add('default', () => (
         voluptate optio eius.
       </Text>
       <Divider my={6} maxWidth={300} mx="auto" />
-    </Box>
-    <Box mt={8}>
-      <Flex justifyContent="center">
-        <Text fontWeight="bold">Modulz 2.0</Text>
-        <Divider variant="vertical" mx={2} />
-        <Text>The next step in visual coding.</Text>
-      </Flex>
     </Box>
   </>
 ));
