@@ -20,7 +20,7 @@ storiesOf('Components|Code', module).add('default', () => (
     </Box>
 
     <Box mb={4}>
-      <Text as="p" fontSize={1}>
+      <Text as="p" size={1}>
         You can also use <Code>code</Code> in tiny font sizes.
       </Text>
     </Box>

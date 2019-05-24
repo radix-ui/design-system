@@ -5,8 +5,6 @@ import {
   ColorProps,
   space,
   SpaceProps,
-  fontSize,
-  FontSizeProps,
   fontFamily,
   FontFamilyProps,
   fontStyle,
@@ -15,31 +13,59 @@ import {
   TextAlignProps,
   lineHeight,
   LineHeightProps,
-  fontWeight,
-  FontWeightProps,
-  letterSpacing,
-  LetterSpacingProps,
+  ResponsiveValue,
 } from 'styled-system';
+import { get } from '../utils/get';
 
 type TextProps = ColorProps &
   SpaceProps &
-  FontSizeProps &
   FontFamilyProps &
   FontStyleProps &
   TextAlignProps &
-  LineHeightProps &
-  FontWeightProps &
-  LetterSpacingProps & {
+  LineHeightProps & {
+    size?: ResponsiveValue<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
+    bold?: boolean;
     truncate?: boolean;
   };
 
 // TODO: Fix color typings
 // @ts-ignore
 export const Text = styled('span')<TextProps>(
-  ({ truncate }: TextProps) =>
+  ({ size, truncate, bold }: TextProps) =>
     css({
-      fontFamily: 'normal',
-      fontSize: 4,
+      fontWeight: bold ? '500' : '400',
+      fontFamily: bold ? 'medium' : 'normal',
+      fontSize: get([0, 1, 2, 3, 4, 5, 6, 7], size, 'inherit'),
+      letterSpacing: get(
+        [
+          '.032em',
+          '.032em',
+          0,
+          '-.001em',
+          '-.005em',
+          '-.006em',
+          '-.008em',
+          '-.018em',
+          '-.024em',
+        ],
+        size,
+        'inherit'
+      ),
+      textIndent: get(
+        [
+          0,
+          0,
+          0,
+          '-.05em',
+          '-.06em',
+          '-.075em',
+          '-.085em',
+          '-.088em',
+          '-.09em',
+        ],
+        size,
+        'inherit'
+      ),
       color: 'grays.7',
       margin: 0,
       padding: 0,
@@ -49,11 +75,8 @@ export const Text = styled('span')<TextProps>(
     }),
   color,
   space,
-  fontSize,
   fontStyle,
   fontFamily,
   textAlign,
-  lineHeight,
-  fontWeight,
-  letterSpacing
+  lineHeight
 );

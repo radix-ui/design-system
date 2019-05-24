@@ -6,37 +6,32 @@ import { Text } from './Text';
 storiesOf('Components|Text', module).add('default', () => (
   <>
     <Box mb="4">
-      <Text as="p" fontSize={0}>
+      <Text as="p">Default text</Text>
+    </Box>
+
+    <Box mb="4">
+      <Text as="p" size={0}>
         Radix
       </Text>
-      <Text as="p" fontSize={1}>
+      <Text as="p" size={1}>
         Radix
       </Text>
-      <Text as="p" fontSize={2}>
+      <Text as="p" size={2}>
         Radix
       </Text>
-      <Text as="p" fontSize={3}>
+      <Text as="p" size={3}>
         Radix
       </Text>
-      <Text as="p" fontSize={4}>
+      <Text as="p" size={4}>
         Radix
       </Text>
-      <Text as="p" fontSize={5}>
+      <Text as="p" size={5}>
         Radix
       </Text>
-      <Text as="p" fontSize={6}>
+      <Text as="p" size={6}>
         Radix
       </Text>
-      <Text as="p" fontSize={7}>
-        Radix
-      </Text>
-      <Text as="p" fontSize={8}>
-        Radix
-      </Text>
-      <Text as="p" fontSize={9}>
-        Radix
-      </Text>
-      <Text as="p" fontSize={10}>
+      <Text as="p" size={7}>
         Radix
       </Text>
     </Box>
@@ -45,7 +40,7 @@ storiesOf('Components|Text', module).add('default', () => (
       <Text as="p" fontStyle="italic">
         Closing the gap between designers and developers.
       </Text>
-      <Text as="p" fontWeight="bold">
+      <Text as="p" bold>
         Closing the gap between designers and developers.
       </Text>
     </Box>
@@ -78,6 +73,12 @@ storiesOf('Components|Text', module).add('default', () => (
       <Text as="p" textAlign="center" padding="4" truncate>
         When it comes to designing interactive components, complex layouts and
         stateful user interfaces—we need something more powerful.
+      </Text>
+    </Box>
+
+    <Box mb="4">
+      <Text size={5}>
+        Nested text should be able to <Text>inherit font size</Text>
       </Text>
     </Box>
   </>

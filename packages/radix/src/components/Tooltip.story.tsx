@@ -115,7 +115,7 @@ storiesOf('Components|Tooltip', module).add('default', () => (
       <Text as="p" mb="4">
         Tooltip on Text
       </Text>
-      <Text fontSize="3" color="blue" fontWeight="bold">
+      <Text size={3} color="blue" bold>
         This panel contains information about CSS{' '}
         <Tooltip text="Content, padding, border, and margin">
           <Text color="black">Box Model</Text>.

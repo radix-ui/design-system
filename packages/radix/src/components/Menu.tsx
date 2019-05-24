@@ -66,7 +66,7 @@ export const MenuItem: FC<MenuItemProps> = ({
         <Box position="relative">
           <BaseMenuItem {...props} variant={variant} disabled={disabled}>
             {icon && <Box mr={3}>{icon}</Box>}
-            <MenuText>{children}</MenuText>
+            <MenuText variant={variant}>{children}</MenuText>
           </BaseMenuItem>
           {isHovered && !disabled && (
             <Flex
@@ -86,13 +86,12 @@ export const MenuItem: FC<MenuItemProps> = ({
   );
 };
 
-export const MenuText: FC = ({ children }) => {
+export const MenuText: FC<MenuItemProps> = ({ variant, children }) => {
   return (
     <Text
-      fontSize="inherit"
+      size={2}
+      bold={variant === 'active'}
       color="inherit"
-      fontFamily="inherit"
-      fontWeight="inherit"
       as="p"
       style={{ minWidth: '100%' }}
     >
@@ -119,12 +118,7 @@ export const BaseMenuItem: FC<MenuItemProps> = styled('button')(
       color: get({ active: 'white' }, variant, 'grays.7'),
       cursor: 'pointer',
       display: 'flex',
-      fontFamily: get({ active: 'medium' }, variant, 'normal'),
-      // fontSize: get({ medium: 3 }, size, 2),
-      fontSize: 2,
-      fontWeight: get({ active: 500 }, variant, 400),
       lineHeight: '1em',
-      // minHeight: get({ medium: 7 }, size, 6),
       minHeight: 6,
       outline: '1px solid transparent',
       outlineOffset: '-1px',
