@@ -104,7 +104,7 @@ export const MenuText: FC = ({ children }) => {
 // This is used to handle the `hover` effect correctly
 const MenuItemWrapper = styled('div')({});
 
-const BaseMenuItem: FC<MenuItemProps> = styled('button')(
+export const BaseMenuItem: FC<MenuItemProps> = styled('button')(
   ({ variant, size, ...props }: MenuItemProps) =>
     css({
       alignItems: 'center',
