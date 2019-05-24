@@ -82,14 +82,13 @@ export const Pill = styled('button')<PillProps>(
         borderTopRightRadius: 9999,
         borderBottomRightRadius: 9999,
       },
-      '&:hover': {
+      '&:hover:not(:disabled)': {
         borderColor: 'grays.4',
         zIndex: 2,
       },
       '&:disabled': {
         backgroundColor: 'grays.1',
         color: 'grays.4',
-        pointerEvents: 'none',
       },
       '&::-moz-focus-inner': {
         border: 0,
