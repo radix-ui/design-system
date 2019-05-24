@@ -86,14 +86,15 @@ export const MenuItem: FC<MenuItemProps> = ({
   );
 };
 
-export const MenuText: FC = ({ children, ...props }) => {
+export const MenuText: FC = ({ children }) => {
   return (
     <Text
-      {...props}
       fontSize="inherit"
       color="inherit"
       fontFamily="inherit"
       fontWeight="inherit"
+      as="p"
+      style={{ minWidth: '100%' }}
     >
       {children}
     </Text>
