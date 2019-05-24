@@ -20,6 +20,7 @@ export { Input } from './components/Input';
 export { Link } from './components/Link';
 export { Menu, MenuItem, MenuGroup } from './components/Menu';
 export { PillNav, Pill } from './components/PillNav';
+export { Pipe } from './components/Pipe';
 export { RadioGroup, Radio } from './components/RadioGroup';
 export { Select } from './components/Select';
 export { Slider } from './components/Slider';
