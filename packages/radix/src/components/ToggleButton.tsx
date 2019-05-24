@@ -26,7 +26,7 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
   const isControlled = Boolean(value);
 
   return (
-    <Flex>
+    <Flex width="100%">
       {React.Children.map(children, (child: ReactElement<ToggleButtonProps>) =>
         React.cloneElement(child, {
           name,
