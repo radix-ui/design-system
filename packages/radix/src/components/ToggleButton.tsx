@@ -16,7 +16,7 @@ type ToggleButtonGroupProps = SpaceProps & {
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   children: ReactElement<ToggleButtonProps>[];
-  allowUncheck: Boolean;
+  allowUncheck?: Boolean;
 };
 
 // TODO: Styled System is missing some spacing props in `propTypes`
