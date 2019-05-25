@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 
 type SliderProps = {
+  name?: string;
   min?: number;
   max?: number;
   value?: string;
@@ -10,6 +11,7 @@ type SliderProps = {
 };
 
 export const Slider = ({
+  name,
   min = 0,
   max = 100,
   value,
@@ -33,6 +35,7 @@ export const Slider = ({
       <Input
         {...props}
         type="range"
+        name={name}
         value={stateValue}
         min={min}
         max={max}
@@ -147,6 +150,6 @@ const InnerTrack = styled('div')(
   css({
     ...trackStyle,
     height: '100%',
-    backgroundColor: 'blues.3',
+    backgroundColor: 'blues.4',
   })
 );

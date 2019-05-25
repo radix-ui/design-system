@@ -22,7 +22,7 @@ function SliderStory() {
           min={0}
         />
         <div>
-          <Text as="p" fontSize="3" my="3">
+          <Text as="p" size={3} my="3">
             Current value is {value}
           </Text>
           <Button mx="1" onClick={() => setValue('0')}>
