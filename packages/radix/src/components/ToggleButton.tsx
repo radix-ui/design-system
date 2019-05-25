@@ -16,6 +16,7 @@ type ToggleButtonGroupProps = SpaceProps & {
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   children: ReactElement<ToggleButtonProps>[];
+  allowUncheck: Boolean;
 };
 
 // TODO: Styled System is missing some spacing props in `propTypes`
@@ -33,10 +34,17 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
   value,
   onChange,
   name,
+  allowUncheck,
   ...props
 }) => {
   const isControlled = Boolean(value);
   const systemProps = pick(props, spacePropNames);
+
+  if (allowUncheck && !onChange) {
+    console.info(
+      `ToggleButtonGroup: the "allowUncheck" prop only works when if it is a controlled component`
+    );
+  }
 
   return (
     <Flex width="100%" {...systemProps}>
@@ -44,6 +52,19 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
         React.cloneElement(child, {
           name,
           onChange,
+          // TODO: sort this mess out
+          // a better way to allow deselect
+          ...(onChange
+            ? {
+                onClick: (event: any) => {
+                  if (onChange && allowUncheck) {
+                    if (value === event.currentTarget.value) {
+                      onChange({ target: { value: '' } } as any);
+                    }
+                  }
+                },
+              }
+            : {}),
           ...(isControlled ? { checked: value === child.props.value } : {}),
         })
       )}
@@ -103,6 +124,7 @@ const FakeRadio = styled('span')(props =>
     border: '1px solid',
     borderColor: 'grays.3',
     color: 'grays.5',
+    userSelect: 'none',
     [`${Wrapper}:first-child &`]: {
       borderTopLeftRadius: themeGet('radii.1')(props),
       borderBottomLeftRadius: themeGet('radii.1')(props),
