@@ -59,7 +59,9 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
                 onClick: (event: any) => {
                   if (onChange && allowUncheck) {
                     if (value === event.currentTarget.value) {
-                      onChange({ target: { value: '' } } as any);
+                      event.target.value = '';
+                      event.currentTarget.value = '';
+                      onChange(event as any);
                     }
                   }
                 },
