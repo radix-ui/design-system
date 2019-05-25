@@ -38,7 +38,7 @@ const Overlay = styled(DialogOverlay)<DialogProps>(
     '&[data-reach-dialog-overlay]': {
       display: 'flex',
       alignItems: 'center',
-      zIndex: 1,
+      zIndex: 9999,
     },
   },
   _css`
