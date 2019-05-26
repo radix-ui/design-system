@@ -1,4 +1,10 @@
-import React, { ComponentProps, FC, ReactElement } from 'react';
+import React, {
+  ComponentProps,
+  FC,
+  ReactElement,
+  forwardRef,
+  ComponentPropsWithRef,
+} from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import {
@@ -44,47 +50,56 @@ export const Menu = styled('nav')<MenuProps>(
   maxWidth
 );
 
-type MenuItemProps = ComponentProps<'button'> &
-  ComponentProps<'a'> & {
-    variant?: 'active' | 'selected';
-    size?: 'medium';
-    icon?: ReactElement;
-    contentOnHover?: ReactElement;
-  };
-
-export const MenuItem: FC<MenuItemProps> = ({
-  children,
-  variant,
-  icon,
-  disabled,
-  contentOnHover,
-  ...props
-}) => {
-  return (
-    <Hover as={MenuItemWrapper}>
-      {isHovered => (
-        <Box position="relative">
-          <BaseMenuItem {...props} variant={variant} disabled={disabled}>
-            {icon && <Box mr={3}>{icon}</Box>}
-            <MenuText variant={variant}>{children}</MenuText>
-          </BaseMenuItem>
-          {isHovered && !disabled && (
-            <Flex
-              position="absolute"
-              top={0}
-              right={0}
-              height="100%"
-              alignItems="center"
-              mr={1}
-            >
-              {contentOnHover}
-            </Flex>
-          )}
-        </Box>
-      )}
-    </Hover>
-  );
+type MenuItemProps = ComponentPropsWithRef<'button'> & {
+  variant?: 'active' | 'selected';
+  size?: 'medium';
+  icon?: ReactElement;
+  contentOnHover?: ReactElement;
 };
+
+type Ref = HTMLButtonElement;
+
+export const MenuItem: FC<MenuItemProps> = forwardRef<Ref, MenuItemProps>(
+  (props, ref) => {
+    const {
+      children,
+      variant,
+      icon,
+      disabled,
+      contentOnHover,
+      ...menuItemProps
+    } = props;
+    return (
+      <Hover as={MenuItemWrapper}>
+        {isHovered => (
+          <Box position="relative">
+            <BaseMenuItem
+              {...menuItemProps}
+              ref={ref}
+              variant={variant}
+              disabled={disabled}
+            >
+              {icon && <Box mr={3}>{icon}</Box>}
+              <MenuText variant={variant}>{children}</MenuText>
+            </BaseMenuItem>
+            {isHovered && !disabled && (
+              <Flex
+                position="absolute"
+                top={0}
+                right={0}
+                height="100%"
+                alignItems="center"
+                mr={1}
+              >
+                {contentOnHover}
+              </Flex>
+            )}
+          </Box>
+        )}
+      </Hover>
+    );
+  }
+);
 
 export const MenuText: FC<MenuItemProps> = ({ variant, children }) => {
   return (
