@@ -116,7 +116,6 @@ function ToggleButtonGroupStory() {
             name="flexWrap"
             value={value}
             onChange={event => setValue(event.target.value)}
-            allowUncheck
           >
             <ToggleButton value="wrap">Wrap</ToggleButton>
             <ToggleButton value="nowrap">Nowrap</ToggleButton>

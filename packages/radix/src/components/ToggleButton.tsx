@@ -34,17 +34,10 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
   value,
   onChange,
   name,
-  allowUncheck,
   ...props
 }) => {
   const isControlled = Boolean(value);
   const systemProps = pick(props, spacePropNames);
-
-  if (allowUncheck && !onChange) {
-    console.info(
-      `ToggleButtonGroup: the "allowUncheck" prop only works when if it is a controlled component`
-    );
-  }
 
   return (
     <Flex width="100%" {...systemProps}>
@@ -52,21 +45,6 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
         React.cloneElement(child, {
           name,
           onChange,
-          // TODO: sort this mess out
-          // a better way to allow deselect
-          ...(onChange
-            ? {
-                onClick: (event: any) => {
-                  if (onChange && allowUncheck) {
-                    if (value === event.currentTarget.value) {
-                      event.target.value = '';
-                      event.currentTarget.value = '';
-                      onChange(event as any);
-                    }
-                  }
-                },
-              }
-            : {}),
           ...(isControlled ? { checked: value === child.props.value } : {}),
         })
       )}
