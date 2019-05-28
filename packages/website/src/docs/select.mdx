@@ -12,6 +12,21 @@ component: Select
 </Select>
 ```
 
+```js live=true
+<Select variant="highlight">
+  <option value="normal">Normal</option>
+  <option value="mouseover">Mouseover</option>
+  <option value="focused">Focused</option>
+  <option value="pressed">Pressed</option>
+</Select>
+```
+
 ### System props
 
 <SystemProps props={['space', 'width']} />
+
+### Custom props
+
+| Name      | Type        |   Default   | Description        |
+| :-------- | :---------- | :---------: | :----------------- |
+| `variant` | 'highlight' | `undefined` | Variant to display |
