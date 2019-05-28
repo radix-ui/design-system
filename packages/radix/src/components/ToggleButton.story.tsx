@@ -4,9 +4,16 @@ import { Box } from './Box';
 import { Text } from './Text';
 import { Button } from './Button';
 import { ToggleButtonGroup, ToggleButton } from './ToggleButton';
+import {
+  AlignStretchIcon,
+  AlignStartIcon,
+  AlignCenterIcon,
+  AlignBaselineIcon,
+  AlignEndIcon,
+} from '@modulz/radix-icons';
 
 function ToggleButtonGroupStory() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState(null);
   return (
     <>
       <Box width="500px" mb="4">
@@ -19,97 +26,24 @@ function ToggleButtonGroupStory() {
       <Box width="500px">
         <ToggleButtonGroup name="align">
           <ToggleButton defaultChecked>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{
-                display: 'block',
-              }}
-            >
-              <path d="M4.5 4.5V20.5" strokeLinecap="round" />
-              <rect x="4.5" y="8.5" width="4" height="8" />
-              <rect x="8.5" y="8.5" width="4" height="8" />
-            </svg>
+            <AlignStretchIcon size="25" />
           </ToggleButton>
           <ToggleButton>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{
-                display: 'block',
-              }}
-            >
-              <path d="M12.5 4.5V20.5" strokeLinecap="round" />
-              <rect x="8.5" y="8.5" width="4" height="8" />
-              <rect x="12.5" y="8.5" width="4" height="8" />
-            </svg>
+            <AlignStartIcon size="25" />
           </ToggleButton>
           <ToggleButton>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{
-                display: 'block',
-              }}
-            >
-              <path d="M20.5 4.5V20.5" strokeLinecap="round" />
-              <rect x="12.5" y="8.5" width="4" height="8" />
-              <rect x="16.5" y="8.5" width="4" height="8" />
-            </svg>
+            <AlignCenterIcon size="25" />
           </ToggleButton>
           <ToggleButton>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{
-                display: 'block',
-              }}
-            >
-              <path d="M20.5 4.5V20.5" strokeLinecap="round" />
-              <path d="M4.5 4.5V20.5" strokeLinecap="round" />
-              <rect x="4.5" y="8.5" width="4" height="8" />
-              <rect x="16.5" y="8.5" width="4" height="8" />
-            </svg>
+            <AlignBaselineIcon size="25" />
           </ToggleButton>
           <ToggleButton>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              stroke="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{
-                display: 'block',
-              }}
-            >
-              <path d="M20.5 4.5V20.5" strokeLinecap="round" />
-              <path d="M4.5 4.5V20.5" strokeLinecap="round" />
-              <path d="M12.5 4.5V20.5" strokeLinecap="round" />
-              <rect x="6.5" y="8.5" width="4" height="8" />
-              <rect x="14.5" y="8.5" width="4" height="8" />
-            </svg>
+            <AlignEndIcon size="25" />
           </ToggleButton>
         </ToggleButtonGroup>
       </Box>
 
-      <Box my="4">
+      <Box my="4" width={500}>
         <Text as="p">Controlled</Text>
         <>
           <ToggleButtonGroup
@@ -123,6 +57,29 @@ function ToggleButtonGroupStory() {
           <Button my="3" onClick={() => setValue('nowrap')}>
             select nowrap
           </Button>
+        </>
+      </Box>
+
+      <Box my="4" width={500}>
+        <Text as="p">Highlight</Text>
+        <>
+          <ToggleButtonGroup name="align2" variant="highlight">
+            <ToggleButton defaultChecked>
+              <AlignStretchIcon size="25" />
+            </ToggleButton>
+            <ToggleButton>
+              <AlignStartIcon size="25" />
+            </ToggleButton>
+            <ToggleButton>
+              <AlignCenterIcon size="25" />
+            </ToggleButton>
+            <ToggleButton>
+              <AlignBaselineIcon size="25" />
+            </ToggleButton>
+            <ToggleButton>
+              <AlignEndIcon size="25" />
+            </ToggleButton>
+          </ToggleButtonGroup>
         </>
       </Box>
     </>

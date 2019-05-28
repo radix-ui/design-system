@@ -3,8 +3,12 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import { space, SpaceProps, width, WidthProps } from 'styled-system';
 import pick from 'lodash.pick';
+import { get } from '../utils/get';
 
-type SelectProps = ComponentProps<'select'> & WrapperProps;
+type SelectProps = ComponentProps<'select'> &
+  WrapperProps & {
+    variant?: 'highlight';
+  };
 
 // TODO: Styled System is missing some spacing props in `propTypes`
 // https://github.com/styled-system/styled-system/issues/466
@@ -22,13 +26,14 @@ export const Select: FC<SelectProps> = ({
   children,
   value,
   onChange,
+  variant,
   ...props
 }) => {
   const systemProps = pick(props, spacePropNames, widthPropNames);
 
   return (
     <Wrapper {...systemProps}>
-      <StyledSelect value={value} onChange={onChange}>
+      <StyledSelect value={value} onChange={onChange} variant={variant}>
         {children}
       </StyledSelect>
       <IconWrapper>
@@ -69,7 +74,7 @@ const Wrapper = styled('div')<WrapperProps>(
   space
 );
 
-const StyledSelect = styled('select')(
+const StyledSelect = styled('select')<SelectProps>(({ variant }) =>
   css({
     appearance: 'none',
     backgroundColor: 'transparent',
@@ -79,6 +84,7 @@ const StyledSelect = styled('select')(
     padding: 0,
     fontSize: 2,
     borderRadius: 0,
+    color: get({ highlight: 'grays.8' }, variant, 'grays.5'),
     paddingRight: 3,
     border: 'none',
     outline: 'none',
@@ -101,4 +107,5 @@ const IconWrapper = styled('div')({
   height: '100%',
   display: 'flex',
   alignItems: 'center',
+  pointerEvents: 'none',
 });

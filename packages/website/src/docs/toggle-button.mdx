@@ -4,7 +4,15 @@ component: ToggleButton
 ---
 
 ```js live=true
-<ToggleButtonGroup name="align">
+<ToggleButtonGroup name="align1">
+  <ToggleButton defaultChecked>Start</ToggleButton>
+  <ToggleButton>Middle</ToggleButton>
+  <ToggleButton>End</ToggleButton>
+</ToggleButtonGroup>
+```
+
+```js live=true
+<ToggleButtonGroup name="align2" variant="highlight">
   <ToggleButton defaultChecked>Start</ToggleButton>
   <ToggleButton>Middle</ToggleButton>
   <ToggleButton>End</ToggleButton>
@@ -19,7 +27,8 @@ component: ToggleButton
 
 ### Custom props
 
-| Name       | Type         | Default | Description                                        |
-| :--------- | :----------- | :-----: | :------------------------------------------------- |
-| `name`     | String       | `null`  | `name` attribute to be passed down to the children |
-| `children` | ReactElement | `null`  | Children should be `Radio` Elements                |
+| Name       | Type         |   Default   | Description                                        |
+| :--------- | :----------- | :---------: | :------------------------------------------------- |
+| `name`     | String       |   `null`    | `name` attribute to be passed down to the children |
+| `children` | ReactElement |   `null`    | Children should be `Radio` Elements                |
+| `variant`  | 'highlight'  | `undefined` | Variant to display                                 |

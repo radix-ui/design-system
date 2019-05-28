@@ -1,6 +1,7 @@
 import React, { useState, useEffect, ChangeEventHandler } from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
+import { get } from '../utils/get';
 
 type SliderProps = {
   name?: string;
@@ -8,6 +9,7 @@ type SliderProps = {
   max?: number;
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  variant?: 'highlight';
 };
 
 export const Slider = ({
@@ -16,6 +18,7 @@ export const Slider = ({
   max = 100,
   value,
   onChange,
+  variant,
   ...props
 }: SliderProps) => {
   const isControlled = value !== undefined && onChange !== undefined;
@@ -36,7 +39,7 @@ export const Slider = ({
         {...props}
         type="range"
         name={name}
-        value={stateValue}
+        value={String(stateValue)}
         min={min}
         max={max}
         onChange={
@@ -44,9 +47,10 @@ export const Slider = ({
             ? onChange
             : event => setStateValue(Number(event.target.value))
         }
+        variant={variant}
       />
       <Track>
-        <InnerTrack style={{ width: `${percentage}%` }} />
+        <InnerTrack style={{ width: `${percentage}%` }} variant={variant} />
       </Track>
     </Wrapper>
   );
@@ -56,18 +60,21 @@ Slider.defaultProps = {
   step: '1',
 };
 
-const TRACK_HEIGHT = 3;
+const TRACK_HEIGHT = 1;
 
 const Wrapper = styled('div')({
   width: '100%',
   position: 'relative',
-  display: 'inline-flex',
+  display: 'flex',
 });
 
 const trackStyle = {
   backgroundColor: 'transparent',
-  borderRadius: `${TRACK_HEIGHT}px`,
   height: `${TRACK_HEIGHT}px`,
+};
+
+const trackDisabledStyling = {
+  borderColor: 'grays.2',
 };
 
 const thumbStyle = {
@@ -80,19 +87,29 @@ const thumbStyle = {
   marginTop: '-6px',
   transition: 'transform 100ms ease',
   width: 3,
+  color: 'white',
+  boxShadow: '0 0 0 3px currentColor',
 };
 
 const thumbFocusStyle = {
   borderColor: 'blues.4',
 };
 
-const Input = styled('input')(
+const thumbHoverStyle = {
+  borderColor: 'grays.4',
+};
+
+const thumbDisabledStyle = {
+  borderColor: 'grays.2',
+};
+
+const Input = styled('input')<SliderProps>(
   css({
     appearance: 'none',
     background: 'transparent',
     cursor: 'pointer',
     display: 'block',
-    paddingY: 1,
+    paddingY: '7px',
     paddingX: 0,
     margin: 0,
     width: '100%',
@@ -113,11 +130,15 @@ const Input = styled('input')(
     },
     '&:hover': {
       '&::-webkit-slider-thumb': {
-        borderColor: 'grays.4',
+        ...thumbHoverStyle,
+      },
+      '&::-moz-range-thumb': {
+        ...thumbHoverStyle,
       },
     },
     '&:focus': {
       outline: 'none',
+
       '&::-webkit-slider-thumb': {
         ...thumbFocusStyle,
       },
@@ -129,6 +150,21 @@ const Input = styled('input')(
     // https://css-tricks.com/sliding-nightmare-understanding-range-input */
     '::-moz-focus-outer': {
       border: 0,
+    },
+    '&:disabled': {
+      cursor: 'not-allowed',
+      '&::-webkit-slider-runnable-track': {
+        ...trackDisabledStyling,
+      },
+      '&::-moz-range-track': {
+        ...trackDisabledStyling,
+      },
+      '&::-webkit-slider-thumb': {
+        ...thumbDisabledStyle,
+      },
+      '&::-moz-range-thumb': {
+        ...thumbDisabledStyle,
+      },
     },
   })
 );
@@ -143,13 +179,16 @@ const Track = styled('div')(
     right: 0,
     zIndex: 0,
     transform: 'translateY(-50%)',
+    [`${Input}:disabled + &`]: {
+      backgroundColor: 'grays.2',
+    },
   })
 );
 
-const InnerTrack = styled('div')(
+const InnerTrack = styled('div')<SliderProps>(({ variant }) =>
   css({
     ...trackStyle,
     height: '100%',
-    backgroundColor: 'blues.4',
+    backgroundColor: get({ highlight: 'blues.4' }, variant, 'grays.4'),
   })
 );
