@@ -8,7 +8,7 @@ import { Text } from './Text';
 function SliderStory() {
   const [value, setValue] = useState('50');
   return (
-    <>
+    <Box width={350}>
       <Box mb="4">
         <Text as="p">Uncontrolled</Text>
         <Slider />
@@ -36,7 +36,17 @@ function SliderStory() {
           </Button>
         </div>
       </Box>
-    </>
+
+      <Box mb="4">
+        <Text as="p">Highlight</Text>
+        <Slider variant="highlight" />
+      </Box>
+
+      <Box mb="4">
+        <Text as="p">Epxlicit</Text>
+        <Slider disabled />
+      </Box>
+    </Box>
   );
 }
 
