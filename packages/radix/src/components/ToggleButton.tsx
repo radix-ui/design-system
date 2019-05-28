@@ -10,13 +10,14 @@ import css from '@styled-system/css';
 import pick from 'lodash.pick';
 import { space, SpaceProps, themeGet } from 'styled-system';
 import { Flex } from './Flex';
+import { get } from '../utils/get';
 
 type ToggleButtonGroupProps = SpaceProps & {
   name: string;
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   children: ReactElement<ToggleButtonProps>[];
-  allowUncheck?: Boolean;
+  variant?: 'highlight';
 };
 
 // TODO: Styled System is missing some spacing props in `propTypes`
@@ -34,9 +35,10 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
   value,
   onChange,
   name,
+  variant,
   ...props
 }) => {
-  const isControlled = Boolean(value);
+  const isControlled = value !== undefined;
   const systemProps = pick(props, spacePropNames);
 
   return (
@@ -44,8 +46,9 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
       {React.Children.map(children, (child: ReactElement<ToggleButtonProps>) =>
         React.cloneElement(child, {
           name,
-          onChange,
+          ...(isControlled ? { onChange } : {}),
           ...(isControlled ? { checked: value === child.props.value } : {}),
+          variant,
         })
       )}
     </Flex>
@@ -53,17 +56,20 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
 };
 
 type Ref = HTMLInputElement;
-type ToggleButtonProps = ComponentPropsWithRef<'input'>;
+type ToggleButtonProps = ComponentPropsWithRef<'input'> & {
+  variant?: 'highlight';
+};
 
 export const ToggleButton: FC<ToggleButtonProps> = forwardRef<
   Ref,
   ToggleButtonProps
 >((props, ref) => {
-  const { children, ...inputProps } = props;
+  const { children, variant, ...inputProps } = props;
+
   return (
     <Wrapper>
       <Radio {...inputProps} type="radio" ref={ref} />
-      {children && <FakeRadio>{children}</FakeRadio>}
+      {children && <FakeRadio variant={variant}>{children}</FakeRadio>}
     </Wrapper>
   );
 });
@@ -88,7 +94,7 @@ const Radio = styled('input')({
   zIndex: 0,
 });
 
-const FakeRadio = styled('span')(props =>
+const FakeRadio = styled('span')<ToggleButtonProps>(({ variant, ...props }) =>
   css({
     height: 5,
     width: '100%',
@@ -113,14 +119,14 @@ const FakeRadio = styled('span')(props =>
       borderTopRightRadius: themeGet('radii.1')(props),
       borderBottomRightRadius: themeGet('radii.1')(props),
     },
-    [`${Radio}:checked + &`]: {
-      backgroundColor: 'blues.0',
-      borderColor: 'blues.2',
-      color: 'blues.5',
+    [`${Wrapper}:hover &`]: {
+      borderColor: 'grays.4',
       zIndex: 1,
     },
-    '&:hover': {
-      borderColor: 'grays.4',
+    [`${Radio}:checked + &`]: {
+      backgroundColor: get({ highlight: 'blues.0' }, variant, 'grays.0'),
+      borderColor: get({ highlight: 'blues.2' }, variant, 'grays.4'),
+      color: get({ highlight: 'blues.5' }, variant, 'grays.5'),
       zIndex: 1,
     },
   })
