@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import { space, SpaceProps, width, WidthProps } from 'styled-system';
 import pick from 'lodash.pick';
+import omit from 'lodash.omit';
 import { get } from '../utils/get';
 
 type SelectProps = ComponentProps<'select'> &
@@ -30,10 +31,16 @@ export const Select: FC<SelectProps> = ({
   ...props
 }) => {
   const systemProps = pick(props, spacePropNames, widthPropNames);
+  const inputPtops = omit(props, spacePropNames, widthPropNames);
 
   return (
     <Wrapper {...systemProps}>
-      <StyledSelect value={value} onChange={onChange} variant={variant}>
+      <StyledSelect
+        {...inputPtops}
+        value={value}
+        onChange={onChange}
+        variant={variant}
+      >
         {children}
       </StyledSelect>
       <IconWrapper>
@@ -96,16 +103,26 @@ const StyledSelect = styled('select')<SelectProps>(({ variant }) =>
       borderColor: 'blues.4',
       outline: 'none',
     },
+    '&:disabled': {
+      borderColor: 'grays.2',
+      color: 'grays.4',
+      cursor: 'not-allowed',
+    },
   })
 );
 
-const IconWrapper = styled('div')({
-  position: 'absolute',
-  top: 0,
-  right: 0,
-  width: `${ICON_SIZE}px`,
-  height: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  pointerEvents: 'none',
-});
+const IconWrapper = styled('div')(
+  css({
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    width: `${ICON_SIZE}px`,
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    pointerEvents: 'none',
+    [`${StyledSelect}:disabled + &`]: {
+      color: 'grays.4',
+    },
+  })
+);
