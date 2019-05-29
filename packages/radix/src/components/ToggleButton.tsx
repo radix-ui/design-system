@@ -124,7 +124,7 @@ const FakeRadio = styled('span')<ToggleButtonProps>(({ variant, ...props }) =>
       zIndex: 1,
     },
     [`${Radio}:checked + &`]: {
-      backgroundColor: get({ highlight: 'blues.0' }, variant, 'grays.0'),
+      backgroundColor: get({ highlight: 'blues.0' }, variant, 'grays.1'),
       borderColor: get({ highlight: 'blues.2' }, variant, 'grays.4'),
       color: get({ highlight: 'blues.5' }, variant, 'grays.5'),
       zIndex: 1,
