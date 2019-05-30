@@ -38,12 +38,12 @@ function SliderStory() {
       </Box>
 
       <Box mb="4">
-        <Text as="p">Highlight</Text>
+        <Text as="p">Fade</Text>
         <Slider variant="fade" />
       </Box>
 
       <Box mb="4">
-        <Text as="p">Epxlicit</Text>
+        <Text as="p">Disabled</Text>
         <Slider disabled />
       </Box>
     </Box>

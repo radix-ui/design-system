@@ -61,7 +61,7 @@ function ToggleButtonGroupStory() {
       </Box>
 
       <Box my="4" width={500}>
-        <Text as="p">Highlight</Text>
+        <Text as="p">Fade</Text>
         <>
           <ToggleButtonGroup name="align2" variant="fade">
             <ToggleButton defaultChecked>
