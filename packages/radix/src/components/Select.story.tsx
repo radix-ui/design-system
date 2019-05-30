@@ -41,7 +41,7 @@ function SelectStory() {
 
       <Box mb="4">
         <Text as="p">Highlight</Text>
-        <Select mt="4" width="100px" variant="highlight">
+        <Select mt="4" width="100px" variant="fade">
           <option value="option1">Option 1</option>
           <option value="option2">Option 2</option>
           <option value="option3">Option 3</option>

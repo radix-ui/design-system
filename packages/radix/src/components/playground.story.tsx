@@ -27,8 +27,8 @@ storiesOf('Playground', module).add('default', () => (
         <Input value="Auto" width={60} disabled />
       </Box>
       <Box my={4}>
-        <Label>Highlight</Label>
-        <Input value="50%" width={60} variant="highlight" />
+        <Label>Fade</Label>
+        <Input value="50%" width={60} variant="fade" />
       </Box>
     </Box>
 
@@ -44,9 +44,9 @@ storiesOf('Playground', module).add('default', () => (
         </Box>
       </Flex>
       <Flex my={4} alignItems="center">
-        <Label>Highlight</Label>
+        <Label>Fade</Label>
         <Box width={350}>
-          <Select width="100px" variant="highlight">
+          <Select width="100px" variant="fade">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
@@ -79,9 +79,9 @@ storiesOf('Playground', module).add('default', () => (
         </Box>
       </Flex>
       <Flex my={4} alignItems="center">
-        <Label>Highlight</Label>
+        <Label>Fade</Label>
         <Box width={350}>
-          <ToggleButtonGroup name="align2" variant="highlight">
+          <ToggleButtonGroup name="align2" variant="fade">
             <ToggleButton defaultChecked>
               <AlignStretchIcon size="25" />
             </ToggleButton>
@@ -110,9 +110,9 @@ storiesOf('Playground', module).add('default', () => (
         </Box>
       </Flex>
       <Flex my={4} alignItems="center">
-        <Label>Highlight</Label>
+        <Label>Fade</Label>
         <Box width={350}>
-          <Slider variant="highlight" />
+          <Slider variant="fade" />
         </Box>
       </Flex>
     </Box>

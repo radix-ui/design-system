@@ -8,7 +8,7 @@ import { get } from '../utils/get';
 
 type SelectProps = ComponentProps<'select'> &
   WrapperProps & {
-    variant?: 'highlight';
+    variant?: 'fade';
   };
 
 // TODO: Styled System is missing some spacing props in `propTypes`
@@ -91,7 +91,7 @@ const StyledSelect = styled('select')<SelectProps>(({ variant }) =>
     padding: 0,
     fontSize: 2,
     borderRadius: 0,
-    color: get({ highlight: 'grays.8' }, variant, 'grays.5'),
+    color: get({ fade: 'grays.5' }, variant, 'grays.8'),
     paddingRight: 3,
     border: 'none',
     outline: 'none',

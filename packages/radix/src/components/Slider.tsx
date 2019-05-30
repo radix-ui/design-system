@@ -9,7 +9,7 @@ type SliderProps = {
   max?: number;
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
-  variant?: 'highlight';
+  variant?: 'fade';
 };
 
 export const Slider = ({
@@ -189,6 +189,6 @@ const InnerTrack = styled('div')<SliderProps>(({ variant }) =>
   css({
     ...trackStyle,
     height: '100%',
-    backgroundColor: get({ highlight: 'blues.4' }, variant, 'grays.4'),
+    backgroundColor: get({ fade: 'grays.4' }, variant, 'blues.4'),
   })
 );

@@ -14,7 +14,7 @@ import {
 import css from '@styled-system/css';
 import { get } from '../utils/get';
 
-type VariantProps = 'ghost' | 'highlight';
+type VariantProps = 'ghost' | 'fade';
 type SizeProps = 'medium';
 
 // TODO: Fix `size` typing
@@ -37,7 +37,7 @@ export const Input = styled('input')<InputProps>(
       appearance: 'none',
       backgroundColor: 'transparent',
       borderRadius: 0,
-      color: get({ highlight: 'grays.8' }, variant, 'grays.5'),
+      color: get({ fade: 'grays.5' }, variant, 'grays.8'),
       fontFamily: 'normal',
       fontSize: size === 'medium' ? 3 : 2,
       height: size === 'medium' ? 6 : 5,

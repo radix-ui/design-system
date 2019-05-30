@@ -12,13 +12,14 @@ import { space, SpaceProps, themeGet } from 'styled-system';
 import { Flex } from './Flex';
 import { get } from '../utils/get';
 
+type VariantProps = { variant?: 'fade' };
+
 type ToggleButtonGroupProps = SpaceProps & {
   name: string;
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   children: ReactElement<ToggleButtonProps>[];
-  variant?: 'highlight';
-};
+} & VariantProps;
 
 // TODO: Styled System is missing some spacing props in `propTypes`
 // https://github.com/styled-system/styled-system/issues/466
@@ -56,9 +57,7 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
 };
 
 type Ref = HTMLInputElement;
-type ToggleButtonProps = ComponentPropsWithRef<'input'> & {
-  variant?: 'highlight';
-};
+type ToggleButtonProps = ComponentPropsWithRef<'input'> & VariantProps;
 
 export const ToggleButton: FC<ToggleButtonProps> = forwardRef<
   Ref,
@@ -124,9 +123,9 @@ const FakeRadio = styled('span')<ToggleButtonProps>(({ variant, ...props }) =>
       zIndex: 1,
     },
     [`${Radio}:checked + &`]: {
-      backgroundColor: get({ highlight: 'blues.0' }, variant, 'grays.1'),
-      borderColor: get({ highlight: 'blues.2' }, variant, 'grays.4'),
-      color: get({ highlight: 'blues.5' }, variant, 'grays.5'),
+      backgroundColor: get({ fade: 'grays.1' }, variant, 'blues.0'),
+      borderColor: get({ fade: 'grays.4' }, variant, 'blues.2'),
+      color: get({ fade: 'grays.5' }, variant, 'blues.5'),
       zIndex: 1,
     },
   })

@@ -39,7 +39,7 @@ function SliderStory() {
 
       <Box mb="4">
         <Text as="p">Highlight</Text>
-        <Slider variant="highlight" />
+        <Slider variant="fade" />
       </Box>
 
       <Box mb="4">
