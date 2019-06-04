@@ -31,28 +31,28 @@
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
-    "polished": "^3.3.0",
-    "styled-components": "^4.2.0",
+    "polished": "^3.4.0",
+    "styled-components": "^4.2.1",
     "styled-system": "^4.2.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@modulz/radix-icons": "^0.6.0",
+    "@babel/core": "^7.4.5",
+    "@modulz/radix-icons": "^0.8.0",
     "@storybook/addon-options": "5.0.11",
     "@storybook/addons": "5.0.11",
     "@storybook/react": "5.0.11",
-    "@types/node": "^12.0.2",
-    "@types/react": "^16.8.17",
+    "@types/node": "^12.0.4",
+    "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
     "@types/storybook__react": "^4.0.1",
     "@types/styled-components": "^4.1.15",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "babel-loader": "8.0.6",
-    "csstype": "^2.6.4",
-    "rollup": "^1.12.0",
-    "rollup-plugin-typescript2": "^0.21.0",
+    "csstype": "^2.6.5",
+    "rollup": "^1.13.1",
+    "rollup-plugin-typescript2": "^0.21.1",
     "rollup-plugin-url": "^2.2.1",
-    "typescript": "3.3.3333"
+    "typescript": "3.5.1"
   },
   "gitHead": "dcfeb380ad27ceb7795b59093896737c299c5300"
 }

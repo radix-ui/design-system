@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle(
       boxSizing: 'border-box',
     },
     html: {
-      fontSize: '100%',
+      fontSize: 3,
       fontFamily: 'normal',
       color: 'grays.7',
       backgroundColor: 'white',

@@ -8,7 +8,9 @@ import {
   Heading,
   Badge,
   Divider,
+  Text,
 } from '@modulz/radix';
+import NavItem from './NavItem';
 
 function DocLayout({ children, pathname }) {
   const query = graphql`
@@ -76,14 +78,12 @@ function DocLayout({ children, pathname }) {
 
             <Menu>
               {data.pinned.edges.map(({ node }) => (
-                <MenuItem
+                <NavItem
                   key={node.frontmatter.title}
-                  as={Link}
                   to={node.fields.slug}
-                  variant={pathname === node.fields.slug ? 'active' : undefined}
-                >
-                  {node.frontmatter.title}
-                </MenuItem>
+                  active={pathname === node.fields.slug}
+                  label={node.frontmatter.title}
+                />
               ))}
             </Menu>
 
@@ -94,14 +94,12 @@ function DocLayout({ children, pathname }) {
                 Components
               </Heading>
               {data.components.edges.map(({ node }) => (
-                <MenuItem
+                <NavItem
                   key={node.frontmatter.title}
-                  as={Link}
                   to={node.fields.slug}
-                  variant={pathname === node.fields.slug ? 'active' : undefined}
-                >
-                  {node.frontmatter.title}
-                </MenuItem>
+                  active={pathname === node.fields.slug}
+                  label={node.frontmatter.title}
+                />
               ))}
             </Menu>
 
@@ -112,14 +110,12 @@ function DocLayout({ children, pathname }) {
                 Recipes
               </Heading>
               {data.recipes.edges.map(({ node }) => (
-                <MenuItem
+                <NavItem
                   key={node.frontmatter.title}
-                  as={Link}
                   to={node.fields.slug}
-                  variant={pathname === node.fields.slug ? 'active' : undefined}
-                >
-                  {node.frontmatter.title}
-                </MenuItem>
+                  active={pathname === node.fields.slug}
+                  label={node.frontmatter.title}
+                />
               ))}
             </Menu>
           </Box>

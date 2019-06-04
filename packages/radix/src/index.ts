@@ -18,13 +18,7 @@ export { Heading } from './components/Heading';
 export { Hover } from './components/Hover';
 export { Input } from './components/Input';
 export { Link } from './components/Link';
-export {
-  Menu,
-  BaseMenuItem,
-  MenuItem,
-  MenuText,
-  MenuGroup,
-} from './components/Menu';
+export { Menu, MenuItem, MenuGroup } from './components/Menu';
 export { PillNav, Pill } from './components/PillNav';
 export { Pipe } from './components/Pipe';
 export { RadioGroup, Radio } from './components/RadioGroup';

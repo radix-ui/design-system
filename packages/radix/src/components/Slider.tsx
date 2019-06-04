@@ -1,4 +1,9 @@
-import React, { useState, useEffect, ChangeEventHandler } from 'react';
+import React, {
+  useState,
+  useEffect,
+  ChangeEvent,
+  ChangeEventHandler,
+} from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import { get } from '../utils/get';
@@ -45,7 +50,8 @@ export const Slider = ({
         onChange={
           isControlled
             ? onChange
-            : event => setStateValue(Number(event.target.value))
+            : (event: ChangeEvent<HTMLInputElement>) =>
+                setStateValue(Number(event.target.value))
         }
         variant={variant}
       />

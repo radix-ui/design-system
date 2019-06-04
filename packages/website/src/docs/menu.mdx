@@ -14,14 +14,32 @@ component: Menu
 
 ```js live=true
 <Menu variant="shadow">
-  <MenuItem icon={<ArrowLeftIcon size="25" />}>Back to dasboard</MenuItem>
+  <MenuItem>
+    <Box mr={3}>
+      <ArrowLeftIcon size="25" />
+    </Box>{' '}
+    Back to dasboard
+  </MenuItem>
   <MenuGroup>
-    <MenuItem icon={<DeviceKeyboardIcon size="25" />}>
+    <MenuItem>
+      <Box mr={3}>
+        <DeviceKeyboardIcon size="25" />
+      </Box>{' '}
       Keyboard shortcuts
     </MenuItem>
-    <MenuItem icon={<LifesaverIcon size="25" />}>Community forum</MenuItem>
+    <MenuItem>
+      <Box mr={3}>
+        <LifesaverIcon size="25" />
+      </Box>{' '}
+      Community forum
+    </MenuItem>
   </MenuGroup>
-  <MenuItem icon={<HomeIcon size="25" />}>Go to marketing site</MenuItem>
+  <MenuItem>
+    <Box mr={3}>
+      <HomeIcon size="25" />
+    </Box>{' '}
+    Go to marketing site
+  </MenuItem>
 </Menu>
 ```
 
@@ -51,9 +69,7 @@ For more examples checkout the [Variant Group Recipe](/docs/variant-group)
 
 ### Custom props
 
-| Name             | Type                   |   Default   | Description                      |
-| :--------------- | :--------------------- | :---------: | :------------------------------- |
-| `variant`        | 'active' \| 'selected' | `undefined` | Variant to display               |
-| `icon`           | ReactElement           | `undefined` | Icon to display                  |
-| `disabled`       | Boolean                |   `false`   | Disables the element             |
-| `contentOnHover` | ReactElement           | `undefined` | Displays when element is hovered |
+| Name       | Type                   |   Default   | Description          |
+| :--------- | :--------------------- | :---------: | :------------------- |
+| `variant`  | 'active' \| 'selected' | `undefined` | Variant to display   |
+| `disabled` | Boolean                |   `false`   | Disables the element |

@@ -1,10 +1,3 @@
-import React, {
-  ComponentProps,
-  FC,
-  ReactElement,
-  forwardRef,
-  ComponentPropsWithRef,
-} from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import {
@@ -17,10 +10,6 @@ import {
   WidthProps,
 } from 'styled-system';
 import { transparentize } from 'polished';
-import { Text } from './Text';
-import { Box } from './Box';
-import { Flex } from './Flex';
-import { Hover } from './Hover';
 import { get } from '../utils/get';
 
 type Variants = 'shadow';
@@ -50,76 +39,12 @@ export const Menu = styled('nav')<MenuProps>(
   maxWidth
 );
 
-type MenuItemProps = ComponentPropsWithRef<'button'> & {
+type MenuItemProps = {
   variant?: 'active' | 'selected';
-  size?: 'medium';
-  icon?: ReactElement;
-  contentOnHover?: ReactElement;
 };
 
-type Ref = HTMLButtonElement;
-
-export const MenuItem: FC<MenuItemProps> = forwardRef<Ref, MenuItemProps>(
-  (props, ref) => {
-    const {
-      children,
-      variant,
-      icon,
-      disabled,
-      contentOnHover,
-      ...menuItemProps
-    } = props;
-    return (
-      <Hover as={MenuItemWrapper}>
-        {isHovered => (
-          <Box position="relative">
-            <BaseMenuItem
-              {...menuItemProps}
-              ref={ref}
-              variant={variant}
-              disabled={disabled}
-            >
-              {icon && <Box mr={3}>{icon}</Box>}
-              <MenuText variant={variant}>{children}</MenuText>
-            </BaseMenuItem>
-            {isHovered && !disabled && (
-              <Flex
-                position="absolute"
-                top={0}
-                right={0}
-                height="100%"
-                alignItems="center"
-                mr={1}
-              >
-                {contentOnHover}
-              </Flex>
-            )}
-          </Box>
-        )}
-      </Hover>
-    );
-  }
-);
-
-export const MenuText: FC<MenuItemProps> = ({ variant, children }) => {
-  return (
-    <Text
-      size={2}
-      bold={variant === 'active'}
-      color="inherit"
-      as="p"
-      style={{ minWidth: '100%' }}
-    >
-      {children}
-    </Text>
-  );
-};
-
-// This is used to handle the `hover` effect correctly
-const MenuItemWrapper = styled('div')({});
-
-export const BaseMenuItem: FC<MenuItemProps> = styled('button')(
-  ({ variant, size, ...props }: MenuItemProps) =>
+export const MenuItem = styled('button')<MenuItemProps>(
+  ({ variant, ...props }: MenuItemProps) =>
     css({
       alignItems: 'center',
       appearance: 'none',
@@ -133,12 +58,11 @@ export const BaseMenuItem: FC<MenuItemProps> = styled('button')(
       color: get({ active: 'white' }, variant, 'grays.7'),
       cursor: 'pointer',
       display: 'flex',
-      lineHeight: '1em',
       minHeight: 6,
       outline: '1px solid transparent',
       outlineOffset: '-1px',
-      paddingX: 3,
       paddingY: 1,
+      paddingX: 3,
       position: 'relative',
       textAlign: 'left',
       textDecoration: 'none',
@@ -155,14 +79,14 @@ export const BaseMenuItem: FC<MenuItemProps> = styled('button')(
       '&:focus': {
         outlineColor: variant !== 'active' && themeGet('colors.blues.2')(props),
       },
-      [`${MenuItemWrapper}:hover &`]: {
+      [`&:hover`]: {
         backgroundColor: get(
           { active: 'blues.4', selected: 'blues.1' },
           variant,
           'grays.1'
         ),
       },
-      [`${MenuItemWrapper}:hover &:disabled`]: {
+      [`&:hover:disabled`]: {
         backgroundColor: 'white',
       },
       '&:disabled': {
@@ -172,7 +96,10 @@ export const BaseMenuItem: FC<MenuItemProps> = styled('button')(
       '&::-moz-focus-inner': {
         border: 0,
       },
-    })
+    }),
+  {
+    lineHeight: '1',
+  }
 );
 
 export const MenuGroup = styled('div')(
