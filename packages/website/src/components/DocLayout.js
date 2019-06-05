@@ -1,15 +1,6 @@
 import React from 'react';
-import { Link, StaticQuery, graphql } from 'gatsby';
-import {
-  Flex,
-  Box,
-  Menu,
-  MenuItem,
-  Heading,
-  Badge,
-  Divider,
-  Text,
-} from '@modulz/radix';
+import { StaticQuery, graphql } from 'gatsby';
+import { Flex, Box, Menu, Heading, Badge, Divider } from '@modulz/radix';
 import NavItem from './NavItem';
 
 function DocLayout({ children, pathname }) {

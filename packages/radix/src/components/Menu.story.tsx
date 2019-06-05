@@ -27,14 +27,16 @@ function MenuStory() {
         </Heading>
         <Menu>
           <MenuItem ref={menuItemRef} onClick={handleClick}>
-            <Text as="div">
-              <Flex justifyContent="space-between">Item one</Flex>
-            </Text>
+            <Text size={2}>Item one</Text>
           </MenuItem>
           <MenuItem ref={menuItemRef} onClick={handleClick} disabled>
-            Item two
+            <Text size={2} color="inherit">
+              Item two
+            </Text>
           </MenuItem>
-          <MenuItem>Item three</MenuItem>
+          <MenuItem>
+            <Text size={2}>Item three</Text>
+          </MenuItem>
         </Menu>
       </Box>
 
@@ -46,7 +48,7 @@ function MenuStory() {
           <Hover>
             {isHovered => (
               <MenuItem>
-                Wrapped in `Hover`{' '}
+                <Text size={2}>Wrapped in `Hover`</Text>
                 {isHovered && (
                   <Box position="absolute" right={0} mr={3}>
                     <CircleIcon />
@@ -58,7 +60,9 @@ function MenuStory() {
           <Hover>
             {isHovered => (
               <MenuItem variant="active">
-                Wrapped in `Hover`{' '}
+                <Text size={2} color="white">
+                  Wrapped in `Hover`
+                </Text>
                 {isHovered && (
                   <Box position="absolute" right={0} mr={3}>
                     <CircleIcon />
@@ -70,7 +74,9 @@ function MenuStory() {
           <Hover>
             {isHovered => (
               <MenuItem disabled>
-                Wrapped in `Hover`{' '}
+                <Text size={2} color="inherit">
+                  Wrapped in `Hover`
+                </Text>
                 {isHovered && (
                   <Box position="absolute" right={0} mr={3}>
                     <CircleIcon />
@@ -89,21 +95,21 @@ function MenuStory() {
         <Menu>
           <MenuItem>
             <Box mr={3}>
-              <CircleIcon />
+              <CircleIcon size="15" />
             </Box>
-            Item one
-          </MenuItem>
-          <MenuItem variant="active">
-            <Box mr={3}>
-              <CircleIcon />
-            </Box>
-            Item two
+            <Text size={2}>Item one</Text>
           </MenuItem>
           <MenuItem>
             <Box mr={3}>
-              <CircleIcon />
+              <CircleIcon size="15" />
             </Box>
-            Item three
+            <Text size={2}>Item two</Text>
+          </MenuItem>
+          <MenuItem>
+            <Box mr={3}>
+              <CircleIcon size="15" />
+            </Box>
+            <Text size={2}>Item three</Text>
           </MenuItem>
         </Menu>
       </Box>
@@ -113,12 +119,20 @@ function MenuStory() {
           Menu with group
         </Heading>
         <Menu>
-          <MenuItem>Item one</MenuItem>
+          <MenuItem>
+            <Text size={2}>Item one</Text>
+          </MenuItem>
           <MenuGroup>
-            <MenuItem>Item two</MenuItem>
-            <MenuItem>Item three</MenuItem>
+            <MenuItem>
+              <Text size={2}>Item two</Text>
+            </MenuItem>
+            <MenuItem>
+              <Text size={2}>Item three</Text>
+            </MenuItem>
           </MenuGroup>
-          <MenuItem>Item four</MenuItem>
+          <MenuItem>
+            <Text size={2}>Item four</Text>
+          </MenuItem>
         </Menu>
       </Box>
 
@@ -127,10 +141,22 @@ function MenuStory() {
           Menu with variants
         </Heading>
         <Menu>
-          <MenuItem>Default</MenuItem>
-          <MenuItem variant="selected">Selected</MenuItem>
-          <MenuItem variant="active">Active</MenuItem>
-          <MenuItem disabled>Disabled</MenuItem>
+          <MenuItem>
+            <Text size={2}>Default</Text>
+          </MenuItem>
+          <MenuItem variant="selected">
+            <Text size={2}>Selected</Text>
+          </MenuItem>
+          <MenuItem variant="active">
+            <Text size={2} color="white">
+              Active
+            </Text>
+          </MenuItem>
+          <MenuItem disabled>
+            <Text size={2} color="inherit">
+              Disabled
+            </Text>
+          </MenuItem>
         </Menu>
       </Box>
 
@@ -141,21 +167,21 @@ function MenuStory() {
         <Menu variant="shadow">
           <MenuItem>
             <Box mr={3}>
-              <CircleIcon />
+              <CircleIcon size="15" />
             </Box>
-            Item one
+            <Text size={2}>Item one</Text>
           </MenuItem>
           <MenuItem>
             <Box mr={3}>
-              <CircleIcon />
+              <CircleIcon size="15" />
             </Box>
-            Item two
+            <Text size={2}>Item two</Text>
           </MenuItem>
           <MenuItem>
             <Box mr={3}>
-              <CircleIcon />
+              <CircleIcon size="15" />
             </Box>
-            Item three
+            <Text size={2}>Item three</Text>
           </MenuItem>
         </Menu>
       </Box>

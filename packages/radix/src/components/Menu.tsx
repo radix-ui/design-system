@@ -58,7 +58,7 @@ export const MenuItem = styled('button')<MenuItemProps>(
       color: get({ active: 'white' }, variant, 'grays.7'),
       cursor: 'pointer',
       display: 'flex',
-      minHeight: 6,
+      minHeight: '31px',
       outline: '1px solid transparent',
       outlineOffset: '-1px',
       paddingY: 1,
