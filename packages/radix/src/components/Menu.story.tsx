@@ -99,11 +99,13 @@ function MenuStory() {
             </Box>
             <Text size={2}>Item one</Text>
           </MenuItem>
-          <MenuItem>
+          <MenuItem variant="active">
             <Box mr={3}>
               <CircleIcon size="15" />
             </Box>
-            <Text size={2}>Item two</Text>
+            <Text size={2} color="white">
+              Item two
+            </Text>
           </MenuItem>
           <MenuItem>
             <Box mr={3}>

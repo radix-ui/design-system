@@ -32,6 +32,7 @@ export const GlobalStyles = createGlobalStyle(
     },
     svg: {
       verticalAlign: 'middle',
+      display: 'block',
     },
     '@font-face': [
       {
