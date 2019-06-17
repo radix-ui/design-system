@@ -11,6 +11,7 @@ import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { space, SpaceProps } from 'styled-system';
+import propTypes from '@styled-system/prop-types';
 
 type RadioGroupProps = ComponentProps<'div'> & {
   name: string;
@@ -37,15 +38,7 @@ export const RadioGroup = (props: RadioGroupProps) => {
   );
 };
 
-// TODO: Styled System is missing some spacing props in `propTypes`
-// https://github.com/styled-system/styled-system/issues/466
-const spacePropNames = [
-  ...Object.keys(space.propTypes || {}),
-  'mx',
-  'my',
-  'px',
-  'py',
-];
+const spacePropNames = Object.keys(propTypes.space || {});
 
 type Ref = HTMLInputElement;
 type RadioProps = SpaceProps & ComponentPropsWithRef<'input'>;

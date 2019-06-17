@@ -1,18 +1,30 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { space, SpaceProps } from 'styled-system';
-import { get } from '../utils/get';
+import { space, SpaceProps, ResponsiveValue } from 'styled-system';
+import { variant } from '../utils/variant';
 
-type SizeProps = 'default' | 'medium' | 'fluid';
-type PipeProps = SpaceProps & { variant?: SizeProps | SizeProps[] };
+type SizeProps = 'normal' | 'medium' | 'fluid';
+type PipeProps = SpaceProps & { variant?: ResponsiveValue<SizeProps> };
 
 export const Pipe = styled.div<PipeProps>(
-  ({ variant }) =>
-    css({
-      backgroundColor: 'grays.2',
-      height: get({ medium: 7, fluid: '100%' }, variant, 3),
-      width: '1px',
-    }),
-
+  css({
+    backgroundColor: 'grays.2',
+    width: '1px',
+  }),
+  variant({
+    variant: {
+      normal: {
+        height: 3,
+      },
+      medium: {
+        height: 7,
+      },
+      fluid: {
+        height: '100%',
+      },
+    },
+  }),
   space
 );
+
+Pipe.defaultProps = { variant: 'normal' };

@@ -1,6 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 import styled from 'styled-components';
-import { MarginProps, themeGet, style, ResponsiveValue } from 'styled-system';
+import { MarginProps, style, ResponsiveValue } from 'styled-system';
+import themeGet from '@styled-system/theme-get';
 import css from '@styled-system/css';
 import * as CSS from 'csstype';
 import { transparentize } from 'polished';

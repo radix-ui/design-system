@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import { space, SpaceProps } from 'styled-system';
-import { themeGet } from 'styled-system';
+import { themeGet } from '@styled-system/theme-get';
 
 export const Code = styled('code')<SpaceProps>(
   props =>

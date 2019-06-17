@@ -4,18 +4,11 @@ import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { space, SpaceProps } from 'styled-system';
+import propTypes from '@styled-system/prop-types';
 
 type CheckboxProps = SpaceProps & ComponentProps<'input'>;
 
-// TODO: Styled System is missing some spacing props in `propTypes`
-// https://github.com/styled-system/styled-system/issues/466
-const spacePropNames = [
-  ...Object.keys(space.propTypes || {}),
-  'mx',
-  'my',
-  'px',
-  'py',
-];
+const spacePropNames = Object.keys(propTypes.space || {});
 
 export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
   const spaceProps = pick(props, spacePropNames);
@@ -67,7 +60,7 @@ const Input = styled('input')({
   WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
 });
 
-const TextWrapper = styled('span')(() =>
+const TextWrapper = styled('span')(
   css({
     lineHeight: 5,
     fontFamily: 'normal',

@@ -46,6 +46,7 @@ import {
   WidthProps,
   zIndex,
   ZIndexProps,
+  compose,
 } from 'styled-system';
 import { ComponentProps } from 'react';
 
@@ -75,7 +76,7 @@ export type BoxProps = AlignSelfProps &
   ZIndexProps &
   ComponentProps<'div'> & { as?: any };
 
-export const Box = styled('div')<BoxProps>(
+const styleProps = compose(
   alignSelf,
   borders,
   bottom,
@@ -100,3 +101,5 @@ export const Box = styled('div')<BoxProps>(
   width,
   zIndex
 );
+
+export const Box = styled('div')<BoxProps>(styleProps);

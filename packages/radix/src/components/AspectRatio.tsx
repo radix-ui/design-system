@@ -1,12 +1,16 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { color, ColorProps, space, SpaceProps } from 'styled-system';
+import { color, ColorProps, space, SpaceProps, compose } from 'styled-system';
 
 type WrapperProps = ColorProps & SpaceProps;
-
 type AspectRatioProps = WrapperProps & {
   ratio?: '1:1' | '1:2' | '2:1' | '16:9' | '4:3';
 };
+
+const styleProps = compose(
+  space,
+  color
+);
 
 export const AspectRatio: FC<AspectRatioProps> = ({
   ratio = '1:1',
@@ -26,8 +30,7 @@ export const AspectRatio: FC<AspectRatioProps> = ({
 
 const Wrapper = styled('div')(
   { position: 'relative', width: '100%' },
-  space,
-  color
+  styleProps
 );
 
 const Inner = styled('div')({

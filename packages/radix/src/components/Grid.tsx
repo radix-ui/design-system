@@ -30,6 +30,7 @@ import {
   GridAreaProps,
   space,
   SpaceProps,
+  compose,
 } from 'styled-system';
 
 type GridProps = AlignContentProps &
@@ -48,8 +49,7 @@ type GridProps = AlignContentProps &
   GridAreaProps &
   SpaceProps;
 
-export const Grid = styled.div<GridProps>(
-  { display: 'grid' },
+const styleProps = compose(
   alignContent,
   alignItems,
   gridGap,
@@ -66,3 +66,5 @@ export const Grid = styled.div<GridProps>(
   gridArea,
   space
 );
+
+export const Grid = styled.div<GridProps>({ display: 'grid' }, styleProps);

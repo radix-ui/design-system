@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { get } from '../utils/get';
+import { variant } from '../utils/variant';
 
 type SliderProps = {
   name?: string;
@@ -14,7 +14,7 @@ type SliderProps = {
   max?: number;
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
-  variant?: 'fade';
+  variant?: 'normal' | 'fade';
 };
 
 export const Slider = ({
@@ -64,6 +64,7 @@ export const Slider = ({
 
 Slider.defaultProps = {
   step: '1',
+  variant: 'normal',
 };
 
 const TRACK_HEIGHT = 1;
@@ -191,10 +192,19 @@ const Track = styled('div')(
   })
 );
 
-const InnerTrack = styled('div')<SliderProps>(({ variant }) =>
+const InnerTrack = styled('div')<SliderProps>(
   css({
     ...trackStyle,
     height: '100%',
-    backgroundColor: get({ fade: 'grays.4' }, variant, 'blues.4'),
+  }),
+  variant({
+    variant: {
+      normal: {
+        backgroundColor: 'blues.4',
+      },
+      fade: {
+        backgroundColor: 'grays.4',
+      },
+    },
   })
 );

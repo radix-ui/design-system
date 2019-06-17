@@ -8,12 +8,14 @@ import React, {
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import pick from 'lodash.pick';
-import { space, SpaceProps, themeGet } from 'styled-system';
+import { SpaceProps, ResponsiveValue } from 'styled-system';
+import themeGet from '@styled-system/theme-get';
+import propTypes from '@styled-system/prop-types';
 import { Flex } from './Flex';
-import { get } from '../utils/get';
+import { variant } from '../utils/variant';
 
-type VariantProps = { variant?: 'fade' };
-
+type Variants = 'normal' | 'fade';
+type VariantProps = { variant?: ResponsiveValue<Variants> };
 type ToggleButtonGroupProps = SpaceProps & {
   name: string;
   value?: string;
@@ -21,15 +23,7 @@ type ToggleButtonGroupProps = SpaceProps & {
   children: ReactElement<ToggleButtonProps>[];
 } & VariantProps;
 
-// TODO: Styled System is missing some spacing props in `propTypes`
-// https://github.com/styled-system/styled-system/issues/466
-const spacePropNames = [
-  ...Object.keys(space.propTypes || {}),
-  'mx',
-  'my',
-  'px',
-  'py',
-];
+const spacePropNames = Object.keys(propTypes.space || {});
 
 export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
   children,
@@ -73,6 +67,8 @@ export const ToggleButton: FC<ToggleButtonProps> = forwardRef<
   );
 });
 
+ToggleButton.defaultProps = { variant: 'normal' };
+
 const Wrapper = styled('label')({
   display: 'inline-flex',
   position: 'relative',
@@ -93,40 +89,56 @@ const Radio = styled('input')({
   zIndex: 0,
 });
 
-const FakeRadio = styled('span')<ToggleButtonProps>(({ variant, ...props }) =>
-  css({
-    height: 5,
-    width: '100%',
-    minWidth: 5,
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontFamily: 'medium',
-    fontWeight: 500,
-    fontSize: 2,
-    lineHeight: 1,
-    whiteSpace: 'nowrap',
-    border: '1px solid',
-    borderColor: 'grays.3',
-    color: 'grays.5',
-    userSelect: 'none',
-    [`${Wrapper}:first-child &`]: {
-      borderTopLeftRadius: themeGet('radii.1')(props),
-      borderBottomLeftRadius: themeGet('radii.1')(props),
-    },
-    [`${Wrapper}:last-child &`]: {
-      borderTopRightRadius: themeGet('radii.1')(props),
-      borderBottomRightRadius: themeGet('radii.1')(props),
-    },
-    [`${Wrapper}:hover &`]: {
-      borderColor: 'grays.4',
-      zIndex: 1,
-    },
-    [`${Radio}:checked + &`]: {
-      backgroundColor: get({ fade: 'grays.1' }, variant, 'blues.0'),
-      borderColor: get({ fade: 'grays.4' }, variant, 'blues.2'),
-      color: get({ fade: 'grays.5' }, variant, 'blues.5'),
-      zIndex: 1,
+const FakeRadio = styled('span')<ToggleButtonProps>(
+  props =>
+    css({
+      height: 5,
+      width: '100%',
+      minWidth: 5,
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: 'medium',
+      fontWeight: 500,
+      fontSize: 2,
+      lineHeight: 1,
+      whiteSpace: 'nowrap',
+      border: '1px solid',
+      borderColor: 'grays.3',
+      color: 'grays.5',
+      userSelect: 'none',
+      [`${Wrapper}:first-child &`]: {
+        borderTopLeftRadius: themeGet('radii.1')(props),
+        borderBottomLeftRadius: themeGet('radii.1')(props),
+      },
+      [`${Wrapper}:last-child &`]: {
+        borderTopRightRadius: themeGet('radii.1')(props),
+        borderBottomRightRadius: themeGet('radii.1')(props),
+      },
+      [`${Wrapper}:hover &`]: {
+        borderColor: 'grays.4',
+        zIndex: 1,
+      },
+      [`${Radio}:checked + &`]: {
+        zIndex: 1,
+      },
+    }),
+  variant({
+    variant: {
+      normal: {
+        [`${Radio}:checked + &`]: {
+          backgroundColor: 'blues.0',
+          borderColor: 'blues.2',
+          color: 'blues.5',
+        },
+      },
+      fade: {
+        [`${Radio}:checked + &`]: {
+          backgroundColor: 'grays.1',
+          borderColor: 'grays.4',
+          color: 'grays.5',
+        },
+      },
     },
   })
 );

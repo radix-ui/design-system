@@ -7,14 +7,14 @@ storiesOf('Components|Button', module).add('default', () => (
   <>
     <Box mb="4">
       <Button mr="4">Button</Button>
-      <Button size="medium">Button</Button>
+      <Button size="large">Button</Button>
     </Box>
 
     <Box mb="4">
       <Button variant="blue" mr="4">
         Blue
       </Button>
-      <Button variant="blue" size="medium" mr="4">
+      <Button variant="blue" size="large" mr="4">
         Blue
       </Button>
     </Box>
@@ -23,7 +23,7 @@ storiesOf('Components|Button', module).add('default', () => (
       <Button variant="green" mr="4">
         Green
       </Button>
-      <Button variant="green" size="medium">
+      <Button variant="green" size="large">
         Green
       </Button>
     </Box>
@@ -32,7 +32,7 @@ storiesOf('Components|Button', module).add('default', () => (
       <Button variant="red" mr="4">
         Red
       </Button>
-      <Button variant="red" size="medium">
+      <Button variant="red" size="large">
         Red
       </Button>
     </Box>
@@ -41,7 +41,7 @@ storiesOf('Components|Button', module).add('default', () => (
       <Button variant="active" mr="4">
         Active
       </Button>
-      <Button variant="active" size="medium">
+      <Button variant="active" size="large">
         Active
       </Button>
     </Box>
@@ -50,7 +50,7 @@ storiesOf('Components|Button', module).add('default', () => (
       <Button disabled={true} mr="4">
         Disabled
       </Button>
-      <Button disabled={true} size="medium">
+      <Button disabled={true} size="large">
         Disabled
       </Button>
     </Box>
@@ -59,7 +59,7 @@ storiesOf('Components|Button', module).add('default', () => (
       <Button variant="waiting" mr="4">
         Waiting
       </Button>
-      <Button variant="waiting" size="medium">
+      <Button variant="waiting" size="large">
         Waiting
       </Button>
     </Box>
@@ -90,7 +90,7 @@ storiesOf('Components|Button', module).add('default', () => (
         </Box>
         Follow
       </Button>
-      <Button variant="blue" size="medium">
+      <Button variant="blue" size="large">
         <Box as="span" mr="2">
           <svg
             width="25"

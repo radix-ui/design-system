@@ -9,14 +9,23 @@ import {
   WidthProps,
   maxWidth,
   MaxWidthProps,
-  themeGet,
+  ResponsiveValue,
+  compose,
 } from 'styled-system';
+import themeGet from '@styled-system/theme-get';
 import { transparentize } from 'polished';
+import { variant } from '../utils/variant';
 
+type Variants = 'border' | 'shadow' | 'ghost';
 type SystemProps = ColorProps & SpaceProps & WidthProps & MaxWidthProps;
-type CardProps = SystemProps & { variant?: 'shadow' | 'ghost' };
+type CardProps = SystemProps & { variant?: ResponsiveValue<Variants> };
 
-const systemProps = [color, space, width, maxWidth];
+const styleProps = compose(
+  color,
+  space,
+  width,
+  maxWidth
+);
 
 const createShadow = (defaultOpacity: any, color: any) => ({
   position: 'relative',
@@ -40,24 +49,40 @@ const createShadow = (defaultOpacity: any, color: any) => ({
   },
 });
 
-const baseCard = ({ variant, ...props }: CardProps) =>
-  css({
-    position: 'relative',
-    padding: 4,
-    borderRadius: 2,
-    border: '1px solid transparent',
-    borderColor: 'grays.3',
-    ...(variant === 'ghost'
-      ? createShadow(0, themeGet('colors.grays.8')(props))
-      : {}),
-    ...(variant === 'shadow'
-      ? createShadow(1, themeGet('colors.grays.8')(props))
-      : {}),
-  });
+const baseCard = (props: CardProps) =>
+  variant({
+    variant: {
+      border: {
+        position: 'relative',
+        padding: 4,
+        borderRadius: 2,
+        border: '1px solid transparent',
+        borderColor: 'grays.3',
+      },
+      ghost: {
+        position: 'relative',
+        padding: 4,
+        borderRadius: 2,
+        border: '1px solid transparent',
+        ...createShadow(0, themeGet('colors.grays.8')(props)),
+      },
+      shadow: {
+        position: 'relative',
+        padding: 4,
+        borderRadius: 2,
+        border: '1px solid transparent',
+        ...createShadow(1, themeGet('colors.grays.8')(props)),
+      },
+    },
+  })(props);
 
 // TODO: Fix color typings
 // @ts-ignore
-export const Card = styled('div')<CardProps>(baseCard, ...systemProps);
+export const Card = styled('div')<CardProps>(baseCard, styleProps);
+
+Card.defaultProps = {
+  variant: 'border',
+};
 
 type CardLinkProps = CardProps & { to?: string };
 
@@ -90,5 +115,9 @@ export const CardLink = styled('a')<CardLinkProps>(
         borderColor: 'blues.4',
       },
     }),
-  ...systemProps
+  styleProps
 );
+
+CardLink.defaultProps = {
+  variant: 'border',
+};

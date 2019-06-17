@@ -1,27 +1,27 @@
 import React, { ComponentProps, FC } from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { space, SpaceProps, width, WidthProps } from 'styled-system';
+import {
+  space,
+  SpaceProps,
+  width,
+  WidthProps,
+  ResponsiveValue,
+  compose,
+} from 'styled-system';
 import pick from 'lodash.pick';
 import omit from 'lodash.omit';
-import { get } from '../utils/get';
+import { variant } from '../utils/variant';
+import propTypes from '@styled-system/prop-types';
 
+type Variants = 'normal' | 'fade';
 type SelectProps = ComponentProps<'select'> &
   WrapperProps & {
-    variant?: 'fade';
+    variant?: ResponsiveValue<Variants>;
   };
 
-// TODO: Styled System is missing some spacing props in `propTypes`
-// https://github.com/styled-system/styled-system/issues/466
-const spacePropNames = [
-  ...Object.keys(space.propTypes || {}),
-  'mx',
-  'my',
-  'px',
-  'py',
-];
-
-const widthPropNames = Object.keys(width.propTypes || {});
+const spacePropNames = Object.keys(propTypes.space || {});
+const widthPropNames = Object.keys(propTypes.width || {});
 
 export const Select: FC<SelectProps> = ({
   children,
@@ -71,17 +71,22 @@ export const Select: FC<SelectProps> = ({
   );
 };
 
+Select.defaultProps = { variant: 'normal' };
+
 const ICON_SIZE = 15;
 
 type WrapperProps = SpaceProps & WidthProps;
-
-const Wrapper = styled('div')<WrapperProps>(
-  { position: 'relative' },
+const styleProps = compose(
   width,
   space
 );
 
-const StyledSelect = styled('select')<SelectProps>(({ variant }) =>
+const Wrapper = styled('div')<WrapperProps>(
+  { position: 'relative' },
+  styleProps
+);
+
+const StyledSelect = styled('select')<SelectProps>(
   css({
     appearance: 'none',
     backgroundColor: 'transparent',
@@ -91,7 +96,6 @@ const StyledSelect = styled('select')<SelectProps>(({ variant }) =>
     padding: 0,
     fontSize: 2,
     borderRadius: 0,
-    color: get({ fade: 'grays.5' }, variant, 'grays.8'),
     paddingRight: 3,
     border: 'none',
     outline: 'none',
@@ -107,6 +111,16 @@ const StyledSelect = styled('select')<SelectProps>(({ variant }) =>
       borderColor: 'grays.2',
       color: 'grays.4',
       cursor: 'not-allowed',
+    },
+  }),
+  variant({
+    variant: {
+      normal: {
+        color: 'grays.8',
+      },
+      fade: {
+        color: 'grays.5',
+      },
     },
   })
 );
