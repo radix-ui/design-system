@@ -64,3 +64,5 @@ export {
   GridTemplateAreasProps,
 } from './grid/gridTemplateAreas';
 export { gridArea, GridAreaProps } from './grid/gridArea';
+
+export { variant } from './variant';

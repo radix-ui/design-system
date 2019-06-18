@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ResponsiveValue } from 'styled-system';
 import { margin, MarginProps } from '../system';
 import css from '@styled-system/css';
-import { variant } from '../utils/variant';
+import { variant } from '../system';
 
 type Variants = 'gray' | 'blue' | 'green' | 'red' | 'yellow';
 type Sizes = 'normal' | 'large';

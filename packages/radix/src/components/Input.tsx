@@ -15,7 +15,7 @@ import {
   TextAlignProps,
 } from '../system';
 import css from '@styled-system/css';
-import { variant } from '../utils/variant';
+import { variant } from '../system';
 
 type VariantProps = 'normal' | 'ghost' | 'fade';
 type SizeProps = 'normal' | 'large';

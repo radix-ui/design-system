@@ -10,7 +10,7 @@ import {
   LineHeightProps,
   TextAlignProps,
 } from '../system';
-import { variant } from '../utils/variant';
+import { variant } from '../system';
 import css from '@styled-system/css';
 
 type HeadingProps = TextColorProps &

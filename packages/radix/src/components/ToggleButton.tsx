@@ -12,7 +12,7 @@ import { ResponsiveValue } from 'styled-system';
 import { margin, MarginProps } from '../system';
 import themeGet from '@styled-system/theme-get';
 import { Flex } from './Flex';
-import { variant } from '../utils/variant';
+import { variant } from '../system';
 
 type Variants = 'normal' | 'fade';
 type VariantProps = { variant?: ResponsiveValue<Variants> };

@@ -15,7 +15,7 @@ import {
   padding,
   PaddingProps,
 } from '../system';
-import { variant } from '../utils/variant';
+import { variant } from '../system';
 
 type Sizes = 0 | 1 | 2;
 type ContainerProps = AlignSelfProps &

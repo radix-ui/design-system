@@ -5,7 +5,7 @@ import { ResponsiveValue, compose } from 'styled-system';
 import { margin, MarginProps, width, WidthProps } from '../system';
 import pick from 'lodash.pick';
 import omit from 'lodash.omit';
-import { variant } from '../utils/variant';
+import { variant } from '../system';
 
 type Variants = 'normal' | 'fade';
 type SelectProps = ComponentProps<'select'> &

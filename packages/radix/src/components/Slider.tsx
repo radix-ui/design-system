@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { variant } from '../utils/variant';
+import { variant } from '../system';
 
 type SliderProps = {
   name?: string;

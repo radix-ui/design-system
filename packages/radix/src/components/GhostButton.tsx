@@ -8,7 +8,7 @@ import {
   compose,
 } from 'styled-system';
 import themeGet from '@styled-system/theme-get';
-import { variant } from '../utils/variant';
+import { variant } from '../system';
 
 type Variants = 'normal' | 'active';
 type Sizes = 'normal' | 'large';

@@ -17,7 +17,7 @@ import {
   lineHeight,
   LineHeightProps,
 } from '../system';
-import { variant } from '../utils/variant';
+import { variant } from '../system';
 
 type TextProps = TextColorProps &
   MarginProps &

@@ -15,7 +15,7 @@ import {
 } from '../system';
 import themeGet from '@styled-system/theme-get';
 import { transparentize } from 'polished';
-import { variant } from '../utils/variant';
+import { variant } from '../system';
 
 type Variants = 'border' | 'shadow' | 'ghost';
 type SystemProps = TextColorProps &

@@ -3,7 +3,7 @@ import { Theme, ResponsiveValue } from 'styled-system';
 import { margin, MarginProps } from '../system';
 import css from '@styled-system/css';
 import themeGet from '@styled-system/theme-get';
-import { variant } from '../utils/variant';
+import { variant } from '../system';
 
 const waitingAnimation = (props: any) => keyframes`
   100% {
