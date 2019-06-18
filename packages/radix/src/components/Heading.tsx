@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ResponsiveValue, compose } from 'styled-system';
+import css from '@styled-system/css';
 import {
   textColor,
   TextColorProps,
@@ -9,9 +10,8 @@ import {
   lineHeight,
   LineHeightProps,
   TextAlignProps,
+  variant,
 } from '../system';
-import { variant } from '../system';
-import css from '@styled-system/css';
 
 type HeadingProps = TextColorProps &
   MarginProps &

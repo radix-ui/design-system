@@ -6,9 +6,9 @@ import {
   padding,
   PaddingProps,
   compose,
+  variant,
 } from 'styled-system';
 import themeGet from '@styled-system/theme-get';
-import { variant } from '../system';
 
 type Variants = 'normal' | 'active';
 type Sizes = 'normal' | 'large';

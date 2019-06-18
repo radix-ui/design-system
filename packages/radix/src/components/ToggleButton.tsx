@@ -8,11 +8,10 @@ import React, {
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import pick from 'lodash.pick';
-import { ResponsiveValue } from 'styled-system';
-import { margin, MarginProps } from '../system';
 import themeGet from '@styled-system/theme-get';
+import { ResponsiveValue } from 'styled-system';
+import { margin, MarginProps, variant } from '../system';
 import { Flex } from './Flex';
-import { variant } from '../system';
 
 type Variants = 'normal' | 'fade';
 type VariantProps = { variant?: ResponsiveValue<Variants> };

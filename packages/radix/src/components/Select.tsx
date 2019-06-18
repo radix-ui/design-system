@@ -1,11 +1,10 @@
 import React, { ComponentProps, FC } from 'react';
+import pick from 'lodash.pick';
+import omit from 'lodash.omit';
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import { ResponsiveValue, compose } from 'styled-system';
-import { margin, MarginProps, width, WidthProps } from '../system';
-import pick from 'lodash.pick';
-import omit from 'lodash.omit';
-import { variant } from '../system';
+import { margin, MarginProps, width, WidthProps, variant } from '../system';
 
 type Variants = 'normal' | 'fade';
 type SelectProps = ComponentProps<'select'> &

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import { transparentize } from 'polished';
 import css from '@styled-system/css';
+import themeGet from '@styled-system/theme-get';
 import { ResponsiveValue, compose } from 'styled-system';
 import {
   maxWidth,
@@ -10,10 +12,8 @@ import {
   PaddingProps,
   width,
   WidthProps,
+  variant,
 } from '../system';
-import themeGet from '@styled-system/theme-get';
-import { transparentize } from 'polished';
-import { variant } from '../system';
 
 type Variants = 'normal' | 'shadow';
 type MenuProps = MarginProps &

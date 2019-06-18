@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { compose, ResponsiveValue } from 'styled-system';
+import css from '@styled-system/css';
 import {
   textColor,
   TextColorProps,
@@ -13,9 +14,8 @@ import {
   MaxWidthProps,
   textAlign,
   TextAlignProps,
+  variant,
 } from '../system';
-import css from '@styled-system/css';
-import { variant } from '../system';
 
 type VariantProps = 'normal' | 'ghost' | 'fade';
 type SizeProps = 'normal' | 'large';

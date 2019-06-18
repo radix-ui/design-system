@@ -1,9 +1,8 @@
 import styled, { css as _css, keyframes } from 'styled-components';
-import { Theme, ResponsiveValue } from 'styled-system';
-import { margin, MarginProps } from '../system';
 import css from '@styled-system/css';
 import themeGet from '@styled-system/theme-get';
-import { variant } from '../system';
+import { Theme, ResponsiveValue } from 'styled-system';
+import { margin, MarginProps, variant } from '../system';
 
 const waitingAnimation = (props: any) => keyframes`
   100% {

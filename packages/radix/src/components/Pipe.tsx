@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import { ResponsiveValue } from 'styled-system';
-import { margin, MarginProps } from '../system';
-import { variant } from '../system';
+import { margin, MarginProps, variant } from '../system';
 
 type SizeProps = 'normal' | 'medium' | 'fluid';
 type PipeProps = MarginProps & { variant?: ResponsiveValue<SizeProps> };

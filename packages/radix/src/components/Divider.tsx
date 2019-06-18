@@ -8,8 +8,8 @@ import {
   MarginProps,
   padding,
   PaddingProps,
+  variant,
 } from '../system';
-import { variant } from '../system';
 
 type Sizes = 0 | 1 | 2;
 type DividerProps = MaxWidthProps &
