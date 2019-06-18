@@ -2,19 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box } from './Box';
 import { Flex } from './Flex';
-import { Text } from './Text';
 import { Input } from './Input';
-import { Slider } from './Slider';
 import { EnvelopeIcon, MagnifyingGlassIcon } from '@modulz/radix-icons';
-import { ToggleButtonGroup, ToggleButton } from './ToggleButton';
-import {
-  AlignStretchIcon,
-  AlignStartIcon,
-  AlignCenterIcon,
-  AlignBaselineIcon,
-  AlignEndIcon,
-} from '@modulz/radix-icons';
-import { Select } from './Select';
 
 storiesOf('Components|Input', module).add('default', () => (
   <Box maxWidth="300px">

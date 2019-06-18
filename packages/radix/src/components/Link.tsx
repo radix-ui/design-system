@@ -1,22 +1,15 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import {
-  color,
-  ColorProps,
-  fontSize,
-  FontSizeProps,
-  compose,
-} from 'styled-system';
+import { compose } from 'styled-system';
+import { textColor, TextColorProps, fontSize, FontSizeProps } from '../system';
 
-type LinkProps = ColorProps & FontSizeProps & { to?: string };
+type LinkProps = TextColorProps & FontSizeProps & { to?: string };
 
 const styleProps = compose(
-  color,
+  textColor,
   fontSize
 );
 
-// TODO: Fix color typings
-// @ts-ignore
 export const Link = styled('a')<LinkProps>(
   css({
     color: 'blue',

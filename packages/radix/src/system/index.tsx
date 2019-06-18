@@ -11,10 +11,14 @@ export { flexDirection, FlexDirectionProps } from './flexDirection';
 export { flexGrow, FlexGrowProps } from './flexGrow';
 export { flexShrink, FlexShrinkProps } from './flexShrink';
 export { flexWrap, FlexWrapProps } from './flexWrap';
+export { fontSize, FontSizeProps } from './fontSize';
+export { fontStyle, FontStyleProps } from './fontStyle';
+export { fontFamily, FontFamilyProps } from './fontFamily';
 export { height, HeightProps } from './height';
 export { justifySelf, JustifySelfProps } from './justifySelf';
 export { justifyContent, JustifyContentProps } from './justifyContent';
 export { justifyItems, JustifyItemsProps } from './justifyItems';
+export { lineHeight, LineHeightProps } from './lineHeight';
 export { maxWidth, MaxWidthProps } from './maxWidth';
 export { maxHeight, MaxHeightProps } from './maxHeight';
 export { minHeight, MinHeightProps } from './minHeight';
@@ -38,6 +42,7 @@ export { bottom, BottomProps } from './position/bottom';
 export { left, LeftProps } from './position/left';
 
 // Grid Set
+export { gridSet, GridSetProps } from './grid';
 export { gridGap, GridGapProps } from './grid/gridGap';
 export { gridColumnGap, GridColumnGapProps } from './grid/gridColumnGap';
 export { gridRowGap, GridRowGapProps } from './grid/gridRowGap';

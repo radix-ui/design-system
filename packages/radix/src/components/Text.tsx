@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
+import { ResponsiveValue, compose } from 'styled-system';
 import {
-  color,
-  ColorProps,
-  space,
-  SpaceProps,
+  textColor,
+  TextColorProps,
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
   fontFamily,
   FontFamilyProps,
   fontStyle,
@@ -13,13 +16,12 @@ import {
   TextAlignProps,
   lineHeight,
   LineHeightProps,
-  ResponsiveValue,
-  compose,
-} from 'styled-system';
+} from '../system';
 import { variant } from '../utils/variant';
 
-type TextProps = ColorProps &
-  SpaceProps &
+type TextProps = TextColorProps &
+  MarginProps &
+  PaddingProps &
   FontFamilyProps &
   FontStyleProps &
   TextAlignProps &
@@ -30,8 +32,9 @@ type TextProps = ColorProps &
   };
 
 const styleProps = compose(
-  color,
-  space,
+  textColor,
+  margin,
+  padding,
   fontStyle,
   fontFamily,
   textAlign,

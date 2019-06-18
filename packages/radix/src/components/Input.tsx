@@ -1,18 +1,19 @@
 import styled from 'styled-components';
+import { compose, ResponsiveValue } from 'styled-system';
 import {
-  color,
-  ColorProps,
-  space,
-  SpaceProps,
+  textColor,
+  TextColorProps,
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
   width,
   WidthProps,
   maxWidth,
   MaxWidthProps,
   textAlign,
   TextAlignProps,
-  compose,
-  ResponsiveValue,
-} from 'styled-system';
+} from '../system';
 import css from '@styled-system/css';
 import { variant } from '../utils/variant';
 
@@ -20,8 +21,9 @@ type VariantProps = 'normal' | 'ghost' | 'fade';
 type SizeProps = 'normal' | 'large';
 
 // TODO: Fix `size` typing
-export type InputProps = ColorProps &
-  SpaceProps &
+export type InputProps = TextColorProps &
+  MarginProps &
+  PaddingProps &
   WidthProps &
   MaxWidthProps &
   TextAlignProps & {
@@ -30,8 +32,9 @@ export type InputProps = ColorProps &
   };
 
 const styleProps = compose(
-  color,
-  space,
+  textColor,
+  margin,
+  padding,
   textAlign,
   width,
   maxWidth
@@ -42,8 +45,6 @@ const placeholderStyle = {
   opacity: 1,
 };
 
-// TODO: Fix color typings
-// @ts-ignore
 export const Input = styled('input')<InputProps>(
   css({
     appearance: 'none',

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { space, SpaceProps, ResponsiveValue } from 'styled-system';
+import { ResponsiveValue } from 'styled-system';
+import { margin, MarginProps } from '../system';
 import { variant } from '../utils/variant';
 
 type SizeProps = 'normal' | 'medium' | 'fluid';
-type PipeProps = SpaceProps & { variant?: ResponsiveValue<SizeProps> };
+type PipeProps = MarginProps & { variant?: ResponsiveValue<SizeProps> };
 
 export const Pipe = styled.div<PipeProps>(
   css({
@@ -24,7 +25,7 @@ export const Pipe = styled.div<PipeProps>(
       },
     },
   }),
-  space
+  margin
 );
 
 Pipe.defaultProps = { variant: 'normal' };

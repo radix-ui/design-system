@@ -6,30 +6,8 @@ import {
   AlignContentProps,
   alignItems,
   AlignItemsProps,
-  gridGap,
-  GridGapProps,
-  gridColumnGap,
-  GridColumnGapProps,
-  gridRowGap,
-  GridRowGapProps,
-  gridColumn,
-  GridColumnProps,
-  gridRow,
-  GridRowProps,
-  gridAutoFlow,
-  GridAutoFlowProps,
-  gridAutoColumns,
-  GridAutoColumnsProps,
-  gridAutoRows,
-  GridAutoRowsProps,
-  gridTemplateColumns,
-  GridTemplateColumnsProps,
-  gridTemplateRows,
-  GridTemplateRowsProps,
-  gridTemplateAreas,
-  GridTemplateAreasProps,
-  gridArea,
-  GridAreaProps,
+  gridSet,
+  GridSetProps,
   margin,
   MarginProps,
   padding,
@@ -38,36 +16,14 @@ import {
 
 type GridProps = AlignContentProps &
   AlignItemsProps &
-  GridGapProps &
-  GridColumnGapProps &
-  GridRowGapProps &
-  GridColumnProps &
-  GridRowProps &
-  GridAutoFlowProps &
-  GridAutoColumnsProps &
-  GridAutoRowsProps &
-  GridTemplateColumnsProps &
-  GridTemplateRowsProps &
-  GridTemplateAreasProps &
-  GridAreaProps &
+  GridSetProps &
   MarginProps &
   PaddingProps;
 
 const styleProps = compose(
   alignContent,
   alignItems,
-  gridGap,
-  gridColumnGap,
-  gridRowGap,
-  gridColumn,
-  gridRow,
-  gridAutoFlow,
-  gridAutoColumns,
-  gridAutoRows,
-  gridTemplateColumns,
-  gridTemplateRows,
-  gridTemplateAreas,
-  gridArea,
+  gridSet,
   margin,
   padding
 );

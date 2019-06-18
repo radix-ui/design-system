@@ -3,27 +3,27 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { space, SpaceProps } from 'styled-system';
+import { margin, MarginProps } from '../system';
 import themeGet from '@styled-system/theme-get';
-import propTypes from '@styled-system/prop-types';
 
-type SwitchProps = SpaceProps & ComponentProps<'input'>;
+type SwitchProps = MarginProps & ComponentProps<'input'>;
 
-const spacePropNames = Object.keys(propTypes.space || {});
+// @ts-ignore TODO:
+const marginPropNames = margin.propNames;
 
 export const Switch: FC<SwitchProps> = ({ children, ...props }) => {
-  const spaceProps = pick(props, spacePropNames);
-  const inputProps = omit(props, spacePropNames);
+  const marginProps = pick(props, marginPropNames);
+  const inputProps = omit(props, marginPropNames);
 
   return (
-    <SwitchWrapper {...spaceProps}>
+    <SwitchWrapper {...marginProps}>
       <Input type="checkbox" {...inputProps} />
       <FakeSwitch />
     </SwitchWrapper>
   );
 };
 
-const SwitchWrapper = styled('label')<SpaceProps>(
+const SwitchWrapper = styled('label')<MarginProps>(
   css({
     position: 'relative',
     display: 'inline-block',
@@ -32,7 +32,7 @@ const SwitchWrapper = styled('label')<SpaceProps>(
     boxSizing: 'content-box',
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
   }),
-  space
+  margin
 );
 
 const Input = styled('input')({

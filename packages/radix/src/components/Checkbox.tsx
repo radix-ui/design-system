@@ -4,11 +4,10 @@ import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { space, SpaceProps } from 'styled-system';
-import propTypes from '@styled-system/prop-types';
 
 type CheckboxProps = SpaceProps & ComponentProps<'input'>;
-
-const spacePropNames = Object.keys(propTypes.space || {});
+// @ts-ignore TODO:
+const spacePropNames = space.propNames;
 
 export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
   const spaceProps = pick(props, spacePropNames);

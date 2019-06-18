@@ -1,21 +1,20 @@
 import styled from 'styled-components';
+import { ResponsiveValue, compose } from 'styled-system';
 import {
-  color,
-  ColorProps,
-  space,
-  SpaceProps,
+  textColor,
+  TextColorProps,
+  margin,
+  MarginProps,
   textAlign,
   lineHeight,
   LineHeightProps,
   TextAlignProps,
-  ResponsiveValue,
-  compose,
-} from 'styled-system';
+} from '../system';
 import { variant } from '../utils/variant';
 import css from '@styled-system/css';
 
-type HeadingProps = ColorProps &
-  SpaceProps &
+type HeadingProps = TextColorProps &
+  MarginProps &
   TextAlignProps &
   LineHeightProps & {
     size?: ResponsiveValue<0 | 1 | 2 | 3 | 4 | 5>;
@@ -24,8 +23,8 @@ type HeadingProps = ColorProps &
   };
 
 const styleProps = compose(
-  color,
-  space,
+  textColor,
+  margin,
   textAlign,
   lineHeight
 );

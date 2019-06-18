@@ -8,22 +8,23 @@ import React, {
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import pick from 'lodash.pick';
-import { SpaceProps, ResponsiveValue } from 'styled-system';
+import { ResponsiveValue } from 'styled-system';
+import { margin, MarginProps } from '../system';
 import themeGet from '@styled-system/theme-get';
-import propTypes from '@styled-system/prop-types';
 import { Flex } from './Flex';
 import { variant } from '../utils/variant';
 
 type Variants = 'normal' | 'fade';
 type VariantProps = { variant?: ResponsiveValue<Variants> };
-type ToggleButtonGroupProps = SpaceProps & {
+type ToggleButtonGroupProps = MarginProps & {
   name: string;
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   children: ReactElement<ToggleButtonProps>[];
 } & VariantProps;
 
-const spacePropNames = Object.keys(propTypes.space || {});
+// @ts-ignore TODO:
+const marginPropNames = margin.propNames;
 
 export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
   children,
@@ -34,7 +35,7 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
   ...props
 }) => {
   const isControlled = value !== undefined;
-  const systemProps = pick(props, spacePropNames);
+  const systemProps = pick(props, marginPropNames);
 
   return (
     <Flex width="100%" {...systemProps}>

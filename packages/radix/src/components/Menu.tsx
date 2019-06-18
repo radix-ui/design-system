@@ -1,26 +1,29 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
+import { ResponsiveValue, compose } from 'styled-system';
 import {
   maxWidth,
   MaxWidthProps,
-  space,
-  SpaceProps,
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
   width,
   WidthProps,
-  ResponsiveValue,
-  compose,
-} from 'styled-system';
+} from '../system';
 import themeGet from '@styled-system/theme-get';
 import { transparentize } from 'polished';
 import { variant } from '../utils/variant';
 
 type Variants = 'normal' | 'shadow';
-type MenuProps = SpaceProps &
+type MenuProps = MarginProps &
+  PaddingProps &
   WidthProps &
   MaxWidthProps & { variant?: ResponsiveValue<Variants> };
 
 const styleProps = compose(
-  space,
+  margin,
+  padding,
   width,
   maxWidth
 );

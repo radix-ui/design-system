@@ -1,18 +1,11 @@
 import React, { ComponentProps, FC } from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import {
-  space,
-  SpaceProps,
-  width,
-  WidthProps,
-  ResponsiveValue,
-  compose,
-} from 'styled-system';
+import { ResponsiveValue, compose } from 'styled-system';
+import { margin, MarginProps, width, WidthProps } from '../system';
 import pick from 'lodash.pick';
 import omit from 'lodash.omit';
 import { variant } from '../utils/variant';
-import propTypes from '@styled-system/prop-types';
 
 type Variants = 'normal' | 'fade';
 type SelectProps = ComponentProps<'select'> &
@@ -20,8 +13,10 @@ type SelectProps = ComponentProps<'select'> &
     variant?: ResponsiveValue<Variants>;
   };
 
-const spacePropNames = Object.keys(propTypes.space || {});
-const widthPropNames = Object.keys(propTypes.width || {});
+// @ts-ignore TODO:
+const marginPropNames = margin.propNames;
+// @ts-ignore TODO:
+const widthPropNames = width.propNames;
 
 export const Select: FC<SelectProps> = ({
   children,
@@ -30,8 +25,8 @@ export const Select: FC<SelectProps> = ({
   variant,
   ...props
 }) => {
-  const systemProps = pick(props, spacePropNames, widthPropNames);
-  const inputPtops = omit(props, spacePropNames, widthPropNames);
+  const systemProps = pick(props, marginPropNames, widthPropNames);
+  const inputPtops = omit(props, marginPropNames, widthPropNames);
 
   return (
     <Wrapper {...systemProps}>
@@ -75,10 +70,10 @@ Select.defaultProps = { variant: 'normal' };
 
 const ICON_SIZE = 15;
 
-type WrapperProps = SpaceProps & WidthProps;
+type WrapperProps = MarginProps & WidthProps;
 const styleProps = compose(
   width,
-  space
+  margin
 );
 
 const Wrapper = styled('div')<WrapperProps>(

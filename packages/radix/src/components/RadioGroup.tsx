@@ -10,8 +10,7 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { space, SpaceProps } from 'styled-system';
-import propTypes from '@styled-system/prop-types';
+import { margin, MarginProps } from 'styled-system';
 
 type RadioGroupProps = ComponentProps<'div'> & {
   name: string;
@@ -38,16 +37,17 @@ export const RadioGroup = (props: RadioGroupProps) => {
   );
 };
 
-const spacePropNames = Object.keys(propTypes.space || {});
+// @ts-ignore TODO:
+const marginPropNames = margin.propNames;
 
 type Ref = HTMLInputElement;
-type RadioProps = SpaceProps & ComponentPropsWithRef<'input'>;
+type RadioProps = MarginProps & ComponentPropsWithRef<'input'>;
 
 export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>(
   (props, ref) => {
     const { children, ...otherProps } = props;
-    const systemProps = pick(otherProps, spacePropNames);
-    const inputProps = omit(otherProps, spacePropNames);
+    const systemProps = pick(otherProps, marginPropNames);
+    const inputProps = omit(otherProps, marginPropNames);
 
     return (
       <RadioWrapper {...systemProps}>
@@ -59,9 +59,9 @@ export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>(
   }
 );
 
-const RadioWrapper = styled('label')<SpaceProps>(
+const RadioWrapper = styled('label')<MarginProps>(
   { position: 'relative' },
-  space
+  margin
 );
 
 const Input = styled('input')({
