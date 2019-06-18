@@ -1,36 +1,47 @@
-export { alignSelf, AlignSelfProps } from './alignSelf';
-export { alignContent, AlignContentProps } from './alignContent';
-export { alignItems, AlignItemsProps } from './alignItems';
 export { backgroundColor, BackgroundColorProps } from './backgroundColor';
 export { border, BorderProps } from './border';
 export { boxShadow, BoxShadowProps } from './boxShadow';
 export { display, DisplayProps } from './display';
-export { flex, FlexProps } from './flex';
-export { flexBasis, FlexBasisProps } from './flexBasis';
-export { flexDirection, FlexDirectionProps } from './flexDirection';
-export { flexGrow, FlexGrowProps } from './flexGrow';
-export { flexShrink, FlexShrinkProps } from './flexShrink';
-export { flexWrap, FlexWrapProps } from './flexWrap';
+
 export { fontSize, FontSizeProps } from './fontSize';
 export { fontStyle, FontStyleProps } from './fontStyle';
 export { fontFamily, FontFamilyProps } from './fontFamily';
 export { height, HeightProps } from './height';
-export { justifySelf, JustifySelfProps } from './justifySelf';
-export { justifyContent, JustifyContentProps } from './justifyContent';
-export { justifyItems, JustifyItemsProps } from './justifyItems';
+
 export { lineHeight, LineHeightProps } from './lineHeight';
 export { maxWidth, MaxWidthProps } from './maxWidth';
 export { maxHeight, MaxHeightProps } from './maxHeight';
 export { minHeight, MinHeightProps } from './minHeight';
 export { minWidth, MinWidthProps } from './minWidth';
 export { opacity, OpacityProps } from './opacity';
-export { order, OrderProps } from './order';
 export { overflow, OverflowProps } from './overflow';
 export { margin, MarginProps } from './margin';
 export { padding, PaddingProps } from './padding';
 export { textColor, TextColorProps } from './textColor';
 export { textAlign, TextAlignProps } from './textAlign';
 export { width, WidthProps } from './width';
+
+// Flex Parent Set
+export { flexParent, FlexParentSetProps } from './flexParent';
+export { alignContent, AlignContentProps } from './flexParent/alignContent';
+export { alignItems, AlignItemsProps } from './flexParent/alignItems';
+export { flexDirection, FlexDirectionProps } from './flexParent/flexDirection';
+export { flexWrap, FlexWrapProps } from './flexParent/flexWrap';
+export {
+  justifyContent,
+  JustifyContentProps,
+} from './flexParent/justifyContent';
+export { justifyItems, JustifyItemsProps } from './flexParent/justifyItems';
+
+// Flex Item Set
+export { flexItemSet, FlexItemSetProps } from './flexItem';
+export { flex, FlexProps } from './flexItem/flex';
+export { flexGrow, FlexGrowProps } from './flexItem/flexGrow';
+export { flexShrink, FlexShrinkProps } from './flexItem/flexShrink';
+export { flexBasis, FlexBasisProps } from './flexItem/flexBasis';
+export { alignSelf, AlignSelfProps } from './flexItem/alignSelf';
+export { justifySelf, JustifySelfProps } from './flexItem/justifySelf';
+export { order, OrderProps } from './flexItem/order';
 
 // Position Set
 export { positionSet, PositionSetProps } from './position';

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { compose } from 'styled-system';
 import {
-  alignSelf,
-  AlignSelfProps,
   border,
   BorderProps,
   boxShadow,
@@ -11,14 +9,6 @@ import {
   BackgroundColorProps,
   display,
   DisplayProps,
-  flex,
-  FlexProps,
-  flexGrow,
-  FlexGrowProps,
-  flexShrink,
-  FlexShrinkProps,
-  flexBasis,
-  FlexBasisProps,
   opacity,
   OpacityProps,
   height,
@@ -47,19 +37,16 @@ import {
   TextColorProps,
   width,
   WidthProps,
+  flexItemSet,
+  FlexItemSetProps,
 } from '../system';
 import { ComponentProps } from 'react';
 
-export type BoxProps = AlignSelfProps &
-  BorderProps &
+export type BoxProps = BorderProps &
   BoxShadowProps &
   BackgroundColorProps &
   TextColorProps &
   DisplayProps &
-  FlexProps &
-  FlexGrowProps &
-  FlexShrinkProps &
-  FlexBasisProps &
   HeightProps &
   JustifySelfProps &
   MarginProps &
@@ -70,22 +57,18 @@ export type BoxProps = AlignSelfProps &
   OpacityProps &
   OverflowProps &
   PaddingProps &
-  PositionSetProps &
   TextAlignProps &
   WidthProps &
+  PositionSetProps &
+  FlexItemSetProps &
   ComponentProps<'div'> & { as?: any };
 
 const styleProps = compose(
-  alignSelf,
   border,
   boxShadow,
   backgroundColor,
   textColor,
   display,
-  flex,
-  flexGrow,
-  flexShrink,
-  flexBasis,
   height,
   justifySelf,
   margin,
@@ -98,7 +81,8 @@ const styleProps = compose(
   padding,
   textAlign,
   width,
-  positionSet
+  positionSet,
+  flexItemSet
 );
 
 export const Box = styled('div')<BoxProps>(styleProps);

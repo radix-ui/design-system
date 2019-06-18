@@ -1,43 +1,11 @@
 import styled from 'styled-components';
 import { compose } from 'styled-system';
 import { Box } from './Box';
-import {
-  alignContent,
-  AlignContentProps,
-  alignItems,
-  AlignItemsProps,
-  flexBasis,
-  FlexBasisProps,
-  flexDirection,
-  FlexDirectionProps,
-  flexWrap,
-  FlexWrapProps,
-  justifyContent,
-  JustifyContentProps,
-  justifyItems,
-  JustifyItemsProps,
-  order,
-  OrderProps,
-} from '../system';
+import { flexParent, FlexParentSetProps } from '../system';
 
-type FlexProps = FlexBasisProps &
-  FlexDirectionProps &
-  FlexWrapProps &
-  AlignContentProps &
-  AlignItemsProps &
-  JustifyContentProps &
-  JustifyItemsProps &
-  OrderProps;
+const styleProps = compose(flexParent);
 
-const styleProps = compose(
-  flexBasis,
-  flexDirection,
-  flexWrap,
-  alignContent,
-  alignItems,
-  justifyContent,
-  justifyItems,
-  order
+export const Flex = styled(Box)<FlexParentSetProps>(
+  { display: 'flex' },
+  styleProps
 );
-
-export const Flex = styled(Box)<FlexProps>({ display: 'flex' }, styleProps);
