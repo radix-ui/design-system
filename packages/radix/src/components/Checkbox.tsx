@@ -25,11 +25,7 @@ export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
           xmlns="http://www.w3.org/2000/svg"
           stroke="currentColor"
         >
-          <path
-            d="M11.5 3.5L6.5 11.5L3.5 8.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="M11.5 3.5L6.5 11.5L3.5 8.5" strokeLinecap="round" strokeLinejoin="round" />
         </CheckedIcon>
       </FakeCheckbox>
       {children && <TextWrapper>{children}</TextWrapper>}

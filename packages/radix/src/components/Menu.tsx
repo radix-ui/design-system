@@ -41,10 +41,7 @@ export const Menu = styled('nav')<MenuProps>(
           boxShadow: `0 10px 38px -10px ${transparentize(
             0.65,
             themeGet('colors.grays.8')(props)
-          )}, 0 10px 20px -15px ${transparentize(
-            0.8,
-            themeGet('colors.grays.8')(props)
-          )}`,
+          )}, 0 10px 20px -15px ${transparentize(0.8, themeGet('colors.grays.8')(props))}`,
         },
       },
     }),

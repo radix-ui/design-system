@@ -21,11 +21,7 @@ type PillNavProps = MarginProps &
     children: ReactElement<PillProps>[];
   };
 
-export const PillNav: FC<PillNavProps> = ({
-  children,
-  pillWidth,
-  ...props
-}) => {
+export const PillNav: FC<PillNavProps> = ({ children, pillWidth, ...props }) => {
   return (
     <Box {...props}>
       {React.Children.map(children, (pill: ReactElement<PillProps>) =>
@@ -69,11 +65,7 @@ export const Pill = styled('button')<PillProps>(
       pointerEvents: active && 'none',
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       boxShadow:
-        active &&
-        `inset 0 1px 0 ${transparentize(
-          0.9,
-          themeGet('colors.grays.8')(props)
-        )}`,
+        active && `inset 0 1px 0 ${transparentize(0.9, themeGet('colors.grays.8')(props))}`,
       '&:first-child': {
         marginLeft: 0,
         borderTopLeftRadius: 9999,

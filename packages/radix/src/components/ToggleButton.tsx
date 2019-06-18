@@ -53,19 +53,18 @@ export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({
 type Ref = HTMLInputElement;
 type ToggleButtonProps = ComponentPropsWithRef<'input'> & VariantProps;
 
-export const ToggleButton: FC<ToggleButtonProps> = forwardRef<
-  Ref,
-  ToggleButtonProps
->((props, ref) => {
-  const { children, variant, ...inputProps } = props;
+export const ToggleButton: FC<ToggleButtonProps> = forwardRef<Ref, ToggleButtonProps>(
+  (props, ref) => {
+    const { children, variant, ...inputProps } = props;
 
-  return (
-    <Wrapper>
-      <Radio {...inputProps} type="radio" ref={ref} />
-      {children && <FakeRadio variant={variant}>{children}</FakeRadio>}
-    </Wrapper>
-  );
-});
+    return (
+      <Wrapper>
+        <Radio {...inputProps} type="radio" ref={ref} />
+        {children && <FakeRadio variant={variant}>{children}</FakeRadio>}
+      </Wrapper>
+    );
+  }
+);
 
 ToggleButton.defaultProps = { variant: 'normal' };
 

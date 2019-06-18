@@ -12,11 +12,7 @@ storiesOf('Components|Tooltip', module).add('default', () => (
       <Text>Tooltip on Buttons</Text>
       <Flex py="5">
         <Box m="10px">
-          <Tooltip
-            position="top"
-            align="start"
-            text="Tooltip text goes here ⚡️"
-          >
+          <Tooltip position="top" align="start" text="Tooltip text goes here ⚡️">
             <Button>Top / Start</Button>
           </Tooltip>
         </Box>
@@ -34,11 +30,7 @@ storiesOf('Components|Tooltip', module).add('default', () => (
 
       <Flex py="5">
         <Box m="10px">
-          <Tooltip
-            position="bottom"
-            align="start"
-            text="Tooltip text goes here ⚡️"
-          >
+          <Tooltip position="bottom" align="start" text="Tooltip text goes here ⚡️">
             <Button>Bottom / Start</Button>
           </Tooltip>
         </Box>
@@ -48,11 +40,7 @@ storiesOf('Components|Tooltip', module).add('default', () => (
           </Tooltip>
         </Box>
         <Box m="10px">
-          <Tooltip
-            position="bottom"
-            align="end"
-            text="Tooltip text goes here ⚡️"
-          >
+          <Tooltip position="bottom" align="end" text="Tooltip text goes here ⚡️">
             <Button>Bottom / End</Button>
           </Tooltip>
         </Box>
@@ -60,11 +48,7 @@ storiesOf('Components|Tooltip', module).add('default', () => (
 
       <Flex py="5">
         <Box m="10px">
-          <Tooltip
-            position="left"
-            align="start"
-            text="Tooltip text goes here ⚡️"
-          >
+          <Tooltip position="left" align="start" text="Tooltip text goes here ⚡️">
             <Button>Left / Start</Button>
           </Tooltip>
         </Box>
@@ -74,11 +58,7 @@ storiesOf('Components|Tooltip', module).add('default', () => (
           </Tooltip>
         </Box>
         <Box m="10px">
-          <Tooltip
-            position="left"
-            align="end"
-            text="Tooltip text goes here ⚡️"
-          >
+          <Tooltip position="left" align="end" text="Tooltip text goes here ⚡️">
             <Button>Left / End </Button>
           </Tooltip>
         </Box>
@@ -86,11 +66,7 @@ storiesOf('Components|Tooltip', module).add('default', () => (
 
       <Flex py="5">
         <Box m="10px">
-          <Tooltip
-            position="right"
-            align="start"
-            text="Tooltip text goes here ⚡️"
-          >
+          <Tooltip position="right" align="start" text="Tooltip text goes here ⚡️">
             <Button>Right / Start</Button>
           </Tooltip>
         </Box>
@@ -100,11 +76,7 @@ storiesOf('Components|Tooltip', module).add('default', () => (
           </Tooltip>
         </Box>
         <Box m="10px">
-          <Tooltip
-            position="right"
-            align="end"
-            text="Tooltip text goes here ⚡️"
-          >
+          <Tooltip position="right" align="end" text="Tooltip text goes here ⚡️">
             <Button>Right / End </Button>
           </Tooltip>
         </Box>

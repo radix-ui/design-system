@@ -28,10 +28,7 @@ export { alignContent, AlignContentProps } from './flexParent/alignContent';
 export { alignItems, AlignItemsProps } from './flexParent/alignItems';
 export { flexDirection, FlexDirectionProps } from './flexParent/flexDirection';
 export { flexWrap, FlexWrapProps } from './flexParent/flexWrap';
-export {
-  justifyContent,
-  JustifyContentProps,
-} from './flexParent/justifyContent';
+export { justifyContent, JustifyContentProps } from './flexParent/justifyContent';
 export { justifyItems, JustifyItemsProps } from './flexParent/justifyItems';
 
 // Flex Item Set
@@ -63,18 +60,9 @@ export { gridRow, GridRowProps } from './grid/gridRow';
 export { gridAutoFlow, GridAutoFlowProps } from './grid/gridAutoFlow';
 export { gridAutoColumns, GridAutoColumnsProps } from './grid/gridAutoColumns';
 export { gridAutoRows, GridAutoRowsProps } from './grid/gridAutoRows';
-export {
-  gridTemplateColumns,
-  GridTemplateColumnsProps,
-} from './grid/gridTemplateColumns';
-export {
-  gridTemplateRows,
-  GridTemplateRowsProps,
-} from './grid/gridTemplateRows';
-export {
-  gridTemplateAreas,
-  GridTemplateAreasProps,
-} from './grid/gridTemplateAreas';
+export { gridTemplateColumns, GridTemplateColumnsProps } from './grid/gridTemplateColumns';
+export { gridTemplateRows, GridTemplateRowsProps } from './grid/gridTemplateRows';
+export { gridTemplateAreas, GridTemplateAreasProps } from './grid/gridTemplateAreas';
 export { gridArea, GridAreaProps } from './grid/gridArea';
 
 export { variant } from './variant';

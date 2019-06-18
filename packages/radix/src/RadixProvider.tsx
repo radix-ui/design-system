@@ -8,10 +8,7 @@ type RadixProviderProps = {
   theme?: Theme;
 };
 
-export const RadixProvider: FC<RadixProviderProps> = ({
-  theme = defaultTheme,
-  children,
-}) => {
+export const RadixProvider: FC<RadixProviderProps> = ({ theme = defaultTheme, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <>

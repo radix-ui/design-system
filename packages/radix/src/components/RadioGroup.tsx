@@ -43,26 +43,21 @@ const marginPropNames = margin.propNames;
 type Ref = HTMLInputElement;
 type RadioProps = MarginProps & ComponentPropsWithRef<'input'>;
 
-export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>(
-  (props, ref) => {
-    const { children, ...otherProps } = props;
-    const systemProps = pick(otherProps, marginPropNames);
-    const inputProps = omit(otherProps, marginPropNames);
+export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>((props, ref) => {
+  const { children, ...otherProps } = props;
+  const systemProps = pick(otherProps, marginPropNames);
+  const inputProps = omit(otherProps, marginPropNames);
 
-    return (
-      <RadioWrapper {...systemProps}>
-        <Input {...inputProps} type="radio" ref={ref} />
-        <FakeRadio />
-        {children && <TextWrapper>{children}</TextWrapper>}
-      </RadioWrapper>
-    );
-  }
-);
+  return (
+    <RadioWrapper {...systemProps}>
+      <Input {...inputProps} type="radio" ref={ref} />
+      <FakeRadio />
+      {children && <TextWrapper>{children}</TextWrapper>}
+    </RadioWrapper>
+  );
+});
 
-const RadioWrapper = styled('label')<MarginProps>(
-  { position: 'relative' },
-  margin
-);
+const RadioWrapper = styled('label')<MarginProps>({ position: 'relative' }, margin);
 
 const Input = styled('input')({
   appearance: 'none',

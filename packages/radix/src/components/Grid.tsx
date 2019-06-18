@@ -14,11 +14,7 @@ import {
   PaddingProps,
 } from '../system';
 
-type GridProps = AlignContentProps &
-  AlignItemsProps &
-  GridSetProps &
-  MarginProps &
-  PaddingProps;
+type GridProps = AlignContentProps & AlignItemsProps & GridSetProps & MarginProps & PaddingProps;
 
 const styleProps = compose(
   alignContent,

@@ -33,12 +33,7 @@ storiesOf('Components|Input', module).add('default', () => (
     </Box>
 
     <Box mb="4" position="relative">
-      <Input
-        size="large"
-        placeholder="e.g. joe@example.com"
-        type="email"
-        paddingLeft={6}
-      />
+      <Input size="large" placeholder="e.g. joe@example.com" type="email" paddingLeft={6} />
 
       <Box
         position="absolute"

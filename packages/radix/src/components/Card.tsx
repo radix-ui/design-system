@@ -18,11 +18,7 @@ import {
 } from '../system';
 
 type Variants = 'border' | 'shadow' | 'ghost';
-type SystemProps = TextColorProps &
-  MarginProps &
-  PaddingProps &
-  WidthProps &
-  MaxWidthProps;
+type SystemProps = TextColorProps & MarginProps & PaddingProps & WidthProps & MaxWidthProps;
 type CardProps = SystemProps & { variant?: ResponsiveValue<Variants> };
 
 const styleProps = compose(

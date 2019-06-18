@@ -17,10 +17,7 @@ function MenuStory() {
   }
 
   return (
-    <Grid
-      gridTemplateColumns={['1fr', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}
-      gridGap={4}
-    >
+    <Grid gridTemplateColumns={['1fr', 'repeat(2, 1fr)', 'repeat(3, 1fr)']} gridGap={4}>
       <Box mb="4">
         <Heading size={0} fontWeight="bold">
           Default
@@ -204,11 +201,7 @@ function MenuStory() {
             </Box>
           </MenuItem>
           <MenuItem>
-            <Flex
-              alignItems="center"
-              justifyContent="space-between"
-              width="100%"
-            >
+            <Flex alignItems="center" justifyContent="space-between" width="100%">
               <Text as="div" size={3}>
                 Device
               </Text>

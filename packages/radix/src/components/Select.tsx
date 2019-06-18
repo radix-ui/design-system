@@ -17,24 +17,13 @@ const marginPropNames = margin.propNames;
 // @ts-ignore TODO:
 const widthPropNames = width.propNames;
 
-export const Select: FC<SelectProps> = ({
-  children,
-  value,
-  onChange,
-  variant,
-  ...props
-}) => {
+export const Select: FC<SelectProps> = ({ children, value, onChange, variant, ...props }) => {
   const systemProps = pick(props, marginPropNames, widthPropNames);
   const inputPtops = omit(props, marginPropNames, widthPropNames);
 
   return (
     <Wrapper {...systemProps}>
-      <StyledSelect
-        {...inputPtops}
-        value={value}
-        onChange={onChange}
-        variant={variant}
-      >
+      <StyledSelect {...inputPtops} value={value} onChange={onChange} variant={variant}>
         {children}
       </StyledSelect>
       <IconWrapper>
@@ -49,16 +38,8 @@ export const Select: FC<SelectProps> = ({
             display: 'block',
           }}
         >
-          <path
-            d="M14.5 5.5L12.5 3.5L10.5 5.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M14.5 9.5L12.5 11.5L10.5 9.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="M14.5 5.5L12.5 3.5L10.5 5.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M14.5 9.5L12.5 11.5L10.5 9.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </IconWrapper>
     </Wrapper>
@@ -75,10 +56,7 @@ const styleProps = compose(
   margin
 );
 
-const Wrapper = styled('div')<WrapperProps>(
-  { position: 'relative' },
-  styleProps
-);
+const Wrapper = styled('div')<WrapperProps>({ position: 'relative' }, styleProps);
 
 const StyledSelect = styled('select')<SelectProps>(
   css({

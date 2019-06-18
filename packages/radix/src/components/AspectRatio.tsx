@@ -1,12 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { compose } from 'styled-system';
-import {
-  backgroundColor,
-  BackgroundColorProps,
-  margin,
-  MarginProps,
-} from '../system';
+import { backgroundColor, BackgroundColorProps, margin, MarginProps } from '../system';
 
 type WrapperProps = BackgroundColorProps & MarginProps;
 type AspectRatioProps = WrapperProps & {
@@ -18,11 +13,7 @@ const styleProps = compose(
   backgroundColor
 );
 
-export const AspectRatio: FC<AspectRatioProps> = ({
-  ratio = '1:1',
-  children,
-  ...props
-}) => {
+export const AspectRatio: FC<AspectRatioProps> = ({ ratio = '1:1', children, ...props }) => {
   const [n1, n2] = ratio.split(':');
   const paddingBottom = 100 / (Number(n1) / Number(n2));
   return (
@@ -32,10 +23,7 @@ export const AspectRatio: FC<AspectRatioProps> = ({
   );
 };
 
-const Wrapper = styled('div')(
-  { position: 'relative', width: '100%' },
-  styleProps
-);
+const Wrapper = styled('div')({ position: 'relative', width: '100%' }, styleProps);
 
 const Inner = styled('div')({
   position: 'absolute',

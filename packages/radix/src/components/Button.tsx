@@ -6,9 +6,7 @@ import { margin, MarginProps, variant } from '../system';
 
 const waitingAnimation = (props: any) => keyframes`
   100% {
-    transform: translateX(${themeGet(
-      props.size === 'large' ? 'space.9' : 'space.7'
-    )(props)});
+    transform: translateX(${themeGet(props.size === 'large' ? 'space.9' : 'space.7')(props)});
 	}
 `;
 

@@ -44,8 +44,8 @@ storiesOf('Components|Heading', module).add('default', () => (
         mb="3"
         truncate={[false, false, true]}
       >
-        Responsive example. Font size changes. Should be bold on breakpoint 2.
-        Should truncate on breakpoint 3
+        Responsive example. Font size changes. Should be bold on breakpoint 2. Should truncate on
+        breakpoint 3
       </Heading>
       <Heading fontWeight="bold" mb="3">
         Bold

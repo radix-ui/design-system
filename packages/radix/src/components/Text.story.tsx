@@ -66,16 +66,15 @@ storiesOf('Components|Text', module).add('default', () => (
 
     <Box mb="4">
       <Text as="p" textAlign="center" padding="4">
-        Almost all design tools are optimised for illustration. Vector-based
-        tools are great for wireframing and exploration, but when it comes to
-        designing interactive components, complex layouts and stateful user
-        interfaces—we need something more powerful.
+        Almost all design tools are optimised for illustration. Vector-based tools are great for
+        wireframing and exploration, but when it comes to designing interactive components, complex
+        layouts and stateful user interfaces—we need something more powerful.
       </Text>
     </Box>
     <Box mb="4" width={200}>
       <Text as="p" textAlign="center" padding="4" truncate>
-        When it comes to designing interactive components, complex layouts and
-        stateful user interfaces—we need something more powerful.
+        When it comes to designing interactive components, complex layouts and stateful user
+        interfaces—we need something more powerful.
       </Text>
     </Box>
 
