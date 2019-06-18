@@ -82,8 +82,6 @@ const baseCard = (props: CardProps) =>
     },
   })(props);
 
-// TODO: Fix color typings
-// @ts-ignore
 export const Card = styled('div')<CardProps>(baseCard, styleProps);
 
 Card.defaultProps = {
@@ -92,8 +90,6 @@ Card.defaultProps = {
 
 type CardLinkProps = CardProps & { to?: string };
 
-// TODO: Fix color typings
-// @ts-ignore
 export const CardLink = styled('a')<CardLinkProps>(
   baseCard,
   ({ variant }: CardProps) =>

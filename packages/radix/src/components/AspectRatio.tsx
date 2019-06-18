@@ -26,8 +26,6 @@ export const AspectRatio: FC<AspectRatioProps> = ({
   const [n1, n2] = ratio.split(':');
   const paddingBottom = 100 / (Number(n1) / Number(n2));
   return (
-    // TODO: Fix color typings
-    // @ts-ignore
     <Wrapper {...props} style={{ paddingBottom: `${paddingBottom}%` }}>
       <Inner>{children}</Inner>
     </Wrapper>

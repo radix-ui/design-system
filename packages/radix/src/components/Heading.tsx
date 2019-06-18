@@ -29,8 +29,6 @@ const styleProps = compose(
   lineHeight
 );
 
-// TODO: Fix color typings
-// @ts-ignore
 export const Heading = styled('h1')<HeadingProps>(
   css({
     color: 'grays.8',

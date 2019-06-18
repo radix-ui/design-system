@@ -41,8 +41,6 @@ const styleProps = compose(
   lineHeight
 );
 
-// TODO: Fix color typings
-// @ts-ignore
 export const Text = styled('span')<TextProps>(
   css({
     color: 'grays.7',
