@@ -15,8 +15,8 @@ export { overflow, OverflowProps } from './overflow';
 
 export { margin, MarginProps } from './margin';
 export { padding, PaddingProps } from './padding';
-
 export { border, BorderProps } from './border';
+
 export { boxShadow, BoxShadowProps } from './boxShadow';
 export { opacity, OpacityProps } from './opacity';
 export { backgroundColor, BackgroundColorProps } from './backgroundColor';
