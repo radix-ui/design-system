@@ -1,28 +1,34 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
+import { ResponsiveValue, compose } from 'styled-system';
 import {
-  color,
-  ColorProps,
-  space,
-  SpaceProps,
+  textColor,
+  TextColorProps,
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
   width,
   WidthProps,
   maxWidth,
   MaxWidthProps,
-  ResponsiveValue,
-  compose,
-} from 'styled-system';
+} from '../system';
 import themeGet from '@styled-system/theme-get';
 import { transparentize } from 'polished';
 import { variant } from '../utils/variant';
 
 type Variants = 'border' | 'shadow' | 'ghost';
-type SystemProps = ColorProps & SpaceProps & WidthProps & MaxWidthProps;
+type SystemProps = TextColorProps &
+  MarginProps &
+  PaddingProps &
+  WidthProps &
+  MaxWidthProps;
 type CardProps = SystemProps & { variant?: ResponsiveValue<Variants> };
 
 const styleProps = compose(
-  color,
-  space,
+  textColor,
+  margin,
+  padding,
   width,
   maxWidth
 );

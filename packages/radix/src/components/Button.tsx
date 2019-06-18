@@ -1,5 +1,6 @@
 import styled, { css as _css, keyframes } from 'styled-components';
-import { space, SpaceProps, Theme, ResponsiveValue } from 'styled-system';
+import { Theme, ResponsiveValue } from 'styled-system';
+import { margin, MarginProps } from '../system';
 import css from '@styled-system/css';
 import themeGet from '@styled-system/theme-get';
 import { variant } from '../utils/variant';
@@ -15,7 +16,7 @@ const waitingAnimation = (props: any) => keyframes`
 type Variants = 'gray' | 'blue' | 'green' | 'red' | 'active' | 'waiting';
 type Sizes = 'normal' | 'large';
 
-type ButtonProps = SpaceProps & {
+type ButtonProps = MarginProps & {
   variant?: ResponsiveValue<Variants>;
   size?: ResponsiveValue<Sizes>;
   theme?: Theme;
@@ -181,7 +182,7 @@ export const Button = styled('button')<ButtonProps>(
       }
     `,
   { lineHeight: '1' },
-  space
+  margin
 );
 
 Button.defaultProps = {

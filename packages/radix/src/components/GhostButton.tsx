@@ -1,15 +1,27 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { space, SpaceProps } from 'styled-system';
+import {
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
+  compose,
+} from 'styled-system';
 import themeGet from '@styled-system/theme-get';
 import { variant } from '../utils/variant';
 
 type Variants = 'normal' | 'active';
 type Sizes = 'normal' | 'large';
-type GhostButtonProps = SpaceProps & {
-  variant?: Variants;
-  size?: Sizes;
-};
+type GhostButtonProps = MarginProps &
+  PaddingProps & {
+    variant?: Variants;
+    size?: Sizes;
+  };
+
+const styleProps = compose(
+  margin,
+  padding
+);
 
 export const GhostButton = styled.button<GhostButtonProps>(
   css({
@@ -89,7 +101,7 @@ export const GhostButton = styled.button<GhostButtonProps>(
       },
     },
   }),
-  space
+  styleProps
 );
 
 GhostButton.defaultProps = {

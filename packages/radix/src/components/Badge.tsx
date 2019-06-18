@@ -1,12 +1,13 @@
 import styled from 'styled-components';
-import { space, SpaceProps, ResponsiveValue } from 'styled-system';
+import { ResponsiveValue } from 'styled-system';
+import { margin, MarginProps } from '../system';
 import css from '@styled-system/css';
 import { variant } from '../utils/variant';
 
 type Variants = 'gray' | 'blue' | 'green' | 'red' | 'yellow';
 type Sizes = 'normal' | 'large';
 
-type BadgeProps = SpaceProps & {
+type BadgeProps = MarginProps & {
   variant?: ResponsiveValue<Variants>;
   size?: ResponsiveValue<Sizes>;
   waiting?: boolean;
@@ -72,7 +73,7 @@ export const Badge = styled('span')<BadgeProps>(
     },
   }),
   { lineHeight: 1 },
-  space
+  margin
 );
 
 Badge.defaultProps = {

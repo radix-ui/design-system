@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { compose } from 'styled-system';
+
 import {
   alignContent,
   AlignContentProps,
@@ -25,13 +27,14 @@ import {
   gridTemplateRows,
   GridTemplateRowsProps,
   gridTemplateAreas,
-  GridTemplatesAreasProps,
+  GridTemplateAreasProps,
   gridArea,
   GridAreaProps,
-  space,
-  SpaceProps,
-  compose,
-} from 'styled-system';
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
+} from '../system';
 
 type GridProps = AlignContentProps &
   AlignItemsProps &
@@ -45,9 +48,10 @@ type GridProps = AlignContentProps &
   GridAutoRowsProps &
   GridTemplateColumnsProps &
   GridTemplateRowsProps &
-  GridTemplatesAreasProps &
+  GridTemplateAreasProps &
   GridAreaProps &
-  SpaceProps;
+  MarginProps &
+  PaddingProps;
 
 const styleProps = compose(
   alignContent,
@@ -64,7 +68,8 @@ const styleProps = compose(
   gridTemplateRows,
   gridTemplateAreas,
   gridArea,
-  space
+  margin,
+  padding
 );
 
 export const Grid = styled.div<GridProps>({ display: 'grid' }, styleProps);

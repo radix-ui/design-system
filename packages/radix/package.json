@@ -5,9 +5,7 @@
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "types": "dist/index.d.ts",
   "repository": "https://github.com/modulz/radix",
   "license": "MIT",

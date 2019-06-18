@@ -1,28 +1,26 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
+import { ResponsiveValue, compose } from 'styled-system';
 import {
-  // maxWidth,
+  maxWidth,
   MaxWidthProps,
-  space,
-  SpaceProps,
-  system,
-  ResponsiveValue,
-} from 'styled-system';
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
+} from '../system';
 import { variant } from '../utils/variant';
-
-// HACK: Styled System is exposing `size` prop as part of `maxWidth`
-// Remove the object below once it's fixed
-// https://github.com/styled-system/styled-system/issues/562
-const maxWidth = system({
-  maxWidth: {
-    property: 'maxWidth',
-    scale: 'sizes',
-  },
-});
 
 type Sizes = 0 | 1 | 2;
 type DividerProps = MaxWidthProps &
-  SpaceProps & { size?: ResponsiveValue<Sizes> };
+  MarginProps &
+  PaddingProps & { size?: ResponsiveValue<Sizes> };
+
+const styleProps = compose(
+  maxWidth,
+  margin,
+  padding
+);
 
 export const Divider = styled.div<DividerProps>(
   css({
@@ -43,6 +41,5 @@ export const Divider = styled.div<DividerProps>(
       },
     },
   }),
-  maxWidth,
-  space
+  styleProps
 );

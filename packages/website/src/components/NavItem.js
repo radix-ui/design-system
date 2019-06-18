@@ -5,7 +5,7 @@ import { MenuItem, Text } from '@modulz/radix';
 function NavItem({ label, active, ...props }) {
   return (
     <MenuItem as={Link} variant={active ? 'active' : undefined} {...props}>
-      <Text size={2} color={active && 'white'}>
+      <Text size={2} color={active ? 'white' : undefined}>
         {label}
       </Text>
     </MenuItem>

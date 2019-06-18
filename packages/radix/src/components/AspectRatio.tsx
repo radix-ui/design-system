@@ -1,15 +1,21 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { color, ColorProps, space, SpaceProps, compose } from 'styled-system';
+import { compose } from 'styled-system';
+import {
+  backgroundColor,
+  BackgroundColorProps,
+  margin,
+  MarginProps,
+} from '../system';
 
-type WrapperProps = ColorProps & SpaceProps;
+type WrapperProps = BackgroundColorProps & MarginProps;
 type AspectRatioProps = WrapperProps & {
   ratio?: '1:1' | '1:2' | '2:1' | '16:9' | '4:3';
 };
 
 const styleProps = compose(
-  space,
-  color
+  margin,
+  backgroundColor
 );
 
 export const AspectRatio: FC<AspectRatioProps> = ({

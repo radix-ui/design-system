@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { compose } from 'styled-system';
+import { Box } from './Box';
 import {
   alignContent,
   AlignContentProps,
@@ -16,9 +18,7 @@ import {
   JustifyItemsProps,
   order,
   OrderProps,
-  compose,
-} from 'styled-system';
-import { Box } from './Box';
+} from '../system';
 
 type FlexProps = FlexBasisProps &
   FlexDirectionProps &

@@ -1,25 +1,32 @@
 import styled from 'styled-components';
+import { compose } from 'styled-system';
 import {
   alignSelf,
   AlignSelfProps,
-  borders,
-  BordersProps,
-  bottom,
-  BottomProps,
+  border,
+  BorderProps,
   boxShadow,
   BoxShadowProps,
-  color,
-  ColorProps,
+  backgroundColor,
+  BackgroundColorProps,
   display,
   DisplayProps,
   flex,
   FlexProps,
+  flexGrow,
+  FlexGrowProps,
+  flexShrink,
+  FlexShrinkProps,
+  flexBasis,
+  FlexBasisProps,
+  opacity,
+  OpacityProps,
   height,
   HeightProps,
   justifySelf,
   JustifySelfProps,
-  left,
-  LeftProps,
+  margin,
+  MarginProps,
   maxWidth,
   MaxWidthProps,
   maxHeight,
@@ -28,78 +35,70 @@ import {
   MinHeightProps,
   minWidth,
   MinWidthProps,
-  opacity,
-  OpacityProps,
   overflow,
   OverflowProps,
-  position,
-  PositionProps,
-  right,
-  RightProps,
-  space,
-  SpaceProps,
+  padding,
+  PaddingProps,
+  positionSet,
+  PositionSetProps,
   textAlign,
   TextAlignProps,
-  top,
-  TopProps,
+  textColor,
+  TextColorProps,
   width,
   WidthProps,
-  zIndex,
-  ZIndexProps,
-  compose,
-} from 'styled-system';
+} from '../system';
 import { ComponentProps } from 'react';
 
-// TODO: Add `flexGrow`, `flexShrink` and `flexBasis`
 export type BoxProps = AlignSelfProps &
-  BordersProps &
-  BottomProps &
+  BorderProps &
   BoxShadowProps &
-  ColorProps &
+  BackgroundColorProps &
+  TextColorProps &
   DisplayProps &
   FlexProps &
+  FlexGrowProps &
+  FlexShrinkProps &
+  FlexBasisProps &
   HeightProps &
   JustifySelfProps &
-  LeftProps &
+  MarginProps &
   MaxWidthProps &
   MaxHeightProps &
   MinHeightProps &
   MinWidthProps &
   OpacityProps &
   OverflowProps &
-  PositionProps &
-  RightProps &
-  SpaceProps &
+  PaddingProps &
+  PositionSetProps &
   TextAlignProps &
-  TopProps &
   WidthProps &
-  ZIndexProps &
   ComponentProps<'div'> & { as?: any };
 
 const styleProps = compose(
   alignSelf,
-  borders,
-  bottom,
+  border,
   boxShadow,
-  color,
+  backgroundColor,
+  textColor,
   display,
   flex,
+  flexGrow,
+  flexShrink,
+  flexBasis,
   height,
   justifySelf,
-  left,
+  margin,
   maxHeight,
   maxWidth,
   minHeight,
   minWidth,
   opacity,
   overflow,
-  position,
-  right,
-  space,
+  padding,
   textAlign,
-  top,
   width,
-  zIndex
+  positionSet
 );
 
 export const Box = styled('div')<BoxProps>(styleProps);

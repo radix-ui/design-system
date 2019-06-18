@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
+import { ResponsiveValue, compose } from 'styled-system';
 import {
   alignSelf,
   AlignSelfProps,
@@ -7,39 +8,30 @@ import {
   FlexProps,
   justifySelf,
   JustifySelfProps,
-  // maxWidth,
+  maxWidth,
   MaxWidthProps,
-  space,
-  SpaceProps,
-  ResponsiveValue,
-  system,
-  compose,
-} from 'styled-system';
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
+} from '../system';
 import { variant } from '../utils/variant';
-
-// HACK: Styled System is exposing `size` prop as part of `maxWidth`
-// Remove the object below once it's fixed
-// https://github.com/styled-system/styled-system/issues/562
-const maxWidth = system({
-  maxWidth: {
-    property: 'maxWidth',
-    scale: 'sizes',
-  },
-});
 
 type Sizes = 0 | 1 | 2;
 type ContainerProps = AlignSelfProps &
   FlexProps &
   JustifySelfProps &
   MaxWidthProps &
-  SpaceProps & { size?: ResponsiveValue<Sizes> };
+  MarginProps &
+  PaddingProps & { size?: ResponsiveValue<Sizes> };
 
 const styleProps = compose(
   alignSelf,
   flex,
   justifySelf,
   maxWidth,
-  space
+  margin,
+  padding
 );
 
 export const Container = styled('div')<ContainerProps>(
