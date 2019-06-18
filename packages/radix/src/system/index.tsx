@@ -1,25 +1,26 @@
-export { backgroundColor, BackgroundColorProps } from './backgroundColor';
-export { border, BorderProps } from './border';
-export { boxShadow, BoxShadowProps } from './boxShadow';
-export { display, DisplayProps } from './display';
-
 export { fontSize, FontSizeProps } from './fontSize';
 export { fontStyle, FontStyleProps } from './fontStyle';
 export { fontFamily, FontFamilyProps } from './fontFamily';
-export { height, HeightProps } from './height';
-
 export { lineHeight, LineHeightProps } from './lineHeight';
+export { textAlign, TextAlignProps } from './textAlign';
+
+export { display, DisplayProps } from './display';
+export { height, HeightProps } from './height';
 export { maxWidth, MaxWidthProps } from './maxWidth';
 export { maxHeight, MaxHeightProps } from './maxHeight';
 export { minHeight, MinHeightProps } from './minHeight';
 export { minWidth, MinWidthProps } from './minWidth';
-export { opacity, OpacityProps } from './opacity';
+export { width, WidthProps } from './width';
 export { overflow, OverflowProps } from './overflow';
+
 export { margin, MarginProps } from './margin';
 export { padding, PaddingProps } from './padding';
+
+export { border, BorderProps } from './border';
+export { boxShadow, BoxShadowProps } from './boxShadow';
+export { opacity, OpacityProps } from './opacity';
+export { backgroundColor, BackgroundColorProps } from './backgroundColor';
 export { textColor, TextColorProps } from './textColor';
-export { textAlign, TextAlignProps } from './textAlign';
-export { width, WidthProps } from './width';
 
 // Flex Parent Set
 export { flexParent, FlexParentSetProps } from './flexParent';
