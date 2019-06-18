@@ -9,7 +9,7 @@ import {
   BorderLeftProps,
   ResponsiveValue,
   system,
-  CustomStyleDefinitions,
+  Config,
   TLengthStyledSystem,
 } from 'styled-system';
 
@@ -32,7 +32,7 @@ export interface BorderProps<TLength = TLengthStyledSystem>
   borderY?: ResponsiveValue<CSS.BorderProperty<TLength>>;
 }
 
-const config: CustomStyleDefinitions = {
+const config: Config = {
   border: {
     property: 'border',
     scale: 'borders',

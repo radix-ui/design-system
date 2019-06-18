@@ -7,7 +7,6 @@ import { space, SpaceProps } from 'styled-system';
 
 type CheckboxButton = SpaceProps & ComponentProps<'input'> & { children: ReactNode };
 
-// @ts-ignore TODO:
 const spacePropNames = space.propNames;
 
 export const CheckboxButton: FC<CheckboxButton> = ({ children, ...props }) => {

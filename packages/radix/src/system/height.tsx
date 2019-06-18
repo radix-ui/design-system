@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { HeightProps } from 'styled-system';
 
-const config: CustomStyleDefinitions = { height: true };
+const config: Config = { height: true };
 
 export const height = system(config);

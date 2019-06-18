@@ -22,7 +22,6 @@ type ToggleButtonGroupProps = MarginProps & {
   children: ReactElement<ToggleButtonProps>[];
 } & VariantProps;
 
-// @ts-ignore TODO:
 const marginPropNames = margin.propNames;
 
 export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = ({

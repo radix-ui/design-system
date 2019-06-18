@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { margin, MarginProps, padding, PaddingProps, compose, variant } from 'styled-system';
+import { compose } from 'styled-system';
+import { margin, MarginProps, padding, PaddingProps, variant } from '../system';
 import themeGet from '@styled-system/theme-get';
 
 type Variants = 'normal' | 'active';

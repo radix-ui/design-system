@@ -12,9 +12,7 @@ type SelectProps = ComponentProps<'select'> &
     variant?: ResponsiveValue<Variants>;
   };
 
-// @ts-ignore TODO:
 const marginPropNames = margin.propNames;
-// @ts-ignore TODO:
 const widthPropNames = width.propNames;
 
 export const Select: FC<SelectProps> = ({ children, value, onChange, variant, ...props }) => {

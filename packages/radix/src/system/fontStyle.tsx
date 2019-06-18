@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { FontStyleProps } from 'styled-system';
 
-const config: CustomStyleDefinitions = { fontStyle: true };
+const config: Config = { fontStyle: true };
 
 export const fontStyle = system(config);

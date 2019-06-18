@@ -8,7 +8,6 @@ import themeGet from '@styled-system/theme-get';
 
 type SwitchProps = MarginProps & ComponentProps<'input'>;
 
-// @ts-ignore TODO:
 const marginPropNames = margin.propNames;
 
 export const Switch: FC<SwitchProps> = ({ children, ...props }) => {

@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { MaxWidthProps } from 'styled-system';
 
-const config: CustomStyleDefinitions = { maxWidth: true };
+const config: Config = { maxWidth: true };
 
 export const maxWidth = system(config);

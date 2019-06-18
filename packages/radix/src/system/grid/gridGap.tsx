@@ -1,7 +1,7 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { GridGapProps } from 'styled-system';
 
-export const config: CustomStyleDefinitions = {
+export const config: Config = {
   gridGap: {
     property: 'gridGap',
     scale: 'space',

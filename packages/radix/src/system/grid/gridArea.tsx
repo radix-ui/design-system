@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { GridAreaProps } from 'styled-system';
 
-export const config: CustomStyleDefinitions = { gridArea: true };
+export const config: Config = { gridArea: true };
 
 export const gridArea = system(config);

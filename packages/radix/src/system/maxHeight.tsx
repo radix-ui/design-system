@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { MaxHeightProps } from 'styled-system';
 
-const config: CustomStyleDefinitions = { maxHeight: true };
+const config: Config = { maxHeight: true };
 
 export const maxHeight = system(config);

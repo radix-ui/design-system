@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { OverflowProps } from 'styled-system';
 
-const config: CustomStyleDefinitions = { overflow: true };
+const config: Config = { overflow: true };
 
 export const overflow = system(config);

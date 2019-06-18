@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { GridAutoColumnsProps } from 'styled-system';
 
-export const config: CustomStyleDefinitions = { gridAutoColumns: true };
+export const config: Config = { gridAutoColumns: true };
 
 export const gridAutoColumns = system(config);

@@ -1,7 +1,7 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { GridColumnGapProps } from 'styled-system';
 
-export const config: CustomStyleDefinitions = {
+export const config: Config = {
   gridColumnGap: {
     property: 'gridColumnGap',
     scale: 'space',

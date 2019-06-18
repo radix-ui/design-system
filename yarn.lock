@@ -2565,13 +2565,6 @@
   dependencies:
     "@styled-system/core" "^5.0.5"
 
-"@styled-system/prop-types@^5.0.6":
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/@styled-system/prop-types/-/prop-types-5.0.6.tgz#692665c92a30d7f9c26a3fb67b23d457d8b9f1d3"
-  integrity sha512-MHf2I3kSTc5WGaPIm3LIkdw7402fYxHatyaOtO/f4urpYa0KvxSPLyyH03x9jaKb7acHbPa8TZuY3/V/s2CYyA==
-  dependencies:
-    prop-types "^15.7.2"
-
 "@styled-system/shadow@^5.0.5":
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/@styled-system/shadow/-/shadow-5.0.5.tgz#f785e314e3816258c9c18f194e4cae2da1629e0f"

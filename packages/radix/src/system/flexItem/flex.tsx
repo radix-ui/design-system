@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { FlexProps } from 'styled-system';
 
-export const config: CustomStyleDefinitions = { flex: true };
+export const config: Config = { flex: true };
 
 export const flex = system(config);

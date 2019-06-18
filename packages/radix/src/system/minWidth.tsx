@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { MinWidthProps } from 'styled-system';
 
-const config: CustomStyleDefinitions = { minWidth: true };
+const config: Config = { minWidth: true };
 
 export const minWidth = system(config);

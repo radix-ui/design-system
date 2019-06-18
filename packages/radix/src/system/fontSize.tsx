@@ -1,7 +1,7 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { FontSizeProps } from 'styled-system';
 
-const config: CustomStyleDefinitions = {
+const config: Config = {
   fontSize: {
     property: 'fontSize',
     scale: 'fontSizes',

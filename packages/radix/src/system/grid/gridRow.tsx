@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { GridRowProps } from 'styled-system';
 
-export const config: CustomStyleDefinitions = { gridRow: true };
+export const config: Config = { gridRow: true };
 
 export const gridRow = system(config);

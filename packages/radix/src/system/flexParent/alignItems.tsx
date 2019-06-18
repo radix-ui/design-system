@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { AlignItemsProps } from 'styled-system';
 
-export const config: CustomStyleDefinitions = { alignItems: true };
+export const config: Config = { alignItems: true };
 
 export const alignItems = system(config);

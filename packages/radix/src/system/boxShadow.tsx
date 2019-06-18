@@ -1,7 +1,7 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { BoxShadowProps } from 'styled-system';
 
-const config: CustomStyleDefinitions = {
+const config: Config = {
   boxShadow: {
     property: 'boxShadow',
     scale: 'shadows',

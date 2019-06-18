@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { DisplayProps } from 'styled-system';
 
-const config: CustomStyleDefinitions = { display: true };
+const config: Config = { display: true };
 
 export const display = system(config);

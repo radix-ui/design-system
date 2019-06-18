@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { LineHeightProps } from 'styled-system';
 
-const config: CustomStyleDefinitions = { lineHeight: true };
+const config: Config = { lineHeight: true };
 
 export const lineHeight = system(config);

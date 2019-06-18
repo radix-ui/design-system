@@ -1,5 +1,5 @@
 import * as CSS from 'csstype';
-import { system, CustomStyleDefinitions, ResponsiveValue } from 'styled-system';
+import { system, Config, ResponsiveValue } from 'styled-system';
 
 export interface TextColorProps {
   /**
@@ -14,7 +14,7 @@ export interface TextColorProps {
   textColor?: ResponsiveValue<CSS.ColorProperty>;
 }
 
-const config: CustomStyleDefinitions = {
+const config: Config = {
   textColor: {
     property: 'color',
     scale: 'colors',

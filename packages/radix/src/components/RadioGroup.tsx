@@ -37,7 +37,6 @@ export const RadioGroup = (props: RadioGroupProps) => {
   );
 };
 
-// @ts-ignore TODO:
 const marginPropNames = margin.propNames;
 
 type Ref = HTMLInputElement;

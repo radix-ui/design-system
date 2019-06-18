@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { MinHeightProps } from 'styled-system';
 
-const config: CustomStyleDefinitions = { minHeight: true };
+const config: Config = { minHeight: true };
 
 export const minHeight = system(config);

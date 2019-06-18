@@ -1,6 +1,6 @@
-import { system, CustomStyleDefinitions } from 'styled-system';
+import { system, Config } from 'styled-system';
 export { WidthProps } from 'styled-system';
 
-const config: CustomStyleDefinitions = { width: true };
+const config: Config = { width: true };
 
 export const width = system(config);

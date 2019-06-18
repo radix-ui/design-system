@@ -1,5 +1,5 @@
 import * as CSS from 'csstype';
-import { system, CustomStyleDefinitions, ResponsiveValue } from 'styled-system';
+import { system, Config, ResponsiveValue } from 'styled-system';
 
 export interface PositionProps {
   /**
@@ -11,7 +11,7 @@ export interface PositionProps {
   position?: ResponsiveValue<CSS.PositionProperty>;
 }
 
-export const config: CustomStyleDefinitions = {
+export const config: Config = {
   position: true,
 };
 
