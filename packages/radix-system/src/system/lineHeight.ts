@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { LineHeightProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { LineHeightProps } from '@styled-system/core';
 
 const config: Config = {
   lineHeight: {

@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { MaxHeightProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { MaxHeightProps } from '@styled-system/core';
 
 const config: Config = {
   maxHeight: {

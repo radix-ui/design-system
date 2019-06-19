@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { GridAutoFlowProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { GridAutoFlowProps } from '@styled-system/core';
 
 export const config: Config = { gridAutoFlow: true };
 

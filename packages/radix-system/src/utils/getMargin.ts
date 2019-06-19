@@ -1,4 +1,4 @@
-import { get } from 'styled-system';
+import { get } from '@styled-system/core';
 
 const isNumber = (n: number) => typeof n === 'number' && !isNaN(n);
 

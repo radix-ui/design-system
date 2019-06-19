@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { FontFamilyProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { FontFamilyProps } from '@styled-system/core';
 
 const config: Config = {
   fontFamily: {

@@ -6,7 +6,7 @@ import {
   JustifyContentProps,
   FlexWrapProps,
   FlexDirectionProps,
-} from 'styled-system';
+} from '@styled-system/core';
 import { config as alignContentConfig } from './alignContent';
 import { config as alignItemsConfig } from './alignItems';
 import { config as flexDirectionConfig } from './flexDirection';

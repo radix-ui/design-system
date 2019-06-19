@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { FlexProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { FlexProps } from '@styled-system/core';
 
 export const config: Config = { flex: true };
 

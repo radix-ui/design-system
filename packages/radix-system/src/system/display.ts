@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { DisplayProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { DisplayProps } from '@styled-system/core';
 
 const config: Config = { display: true };
 

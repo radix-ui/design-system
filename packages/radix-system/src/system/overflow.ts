@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { OverflowProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { OverflowProps } from '@styled-system/core';
 
 const config: Config = { overflow: true };
 

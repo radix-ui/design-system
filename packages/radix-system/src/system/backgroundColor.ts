@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { BackgroundColorProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { BackgroundColorProps } from '@styled-system/core';
 
 const config: Config = {
   backgroundColor: {

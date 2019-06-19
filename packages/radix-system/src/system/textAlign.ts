@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { TextAlignProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { TextAlignProps } from '@styled-system/core';
 
 const config: Config = { textAlign: true };
 

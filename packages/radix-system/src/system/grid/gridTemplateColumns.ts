@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { GridTemplateColumnsProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { GridTemplateColumnsProps } from '@styled-system/core';
 
 export const config: Config = { gridTemplateColumns: true };
 

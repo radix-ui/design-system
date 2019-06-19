@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { AlignContentProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { AlignContentProps } from '@styled-system/core';
 
 export const config: Config = { alignContent: true };
 

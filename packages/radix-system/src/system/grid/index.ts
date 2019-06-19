@@ -1,4 +1,4 @@
-import { system } from 'styled-system';
+import { system } from '@styled-system/core';
 import { config as gridGapConfig } from './gridGap';
 import { config as gridColumnGapConfig } from './gridColumnGap';
 import { config as gridRowGapConfig } from './gridRowGap';
@@ -11,7 +11,7 @@ import { config as gridTemplateColumnsConfig } from './gridTemplateColumns';
 import { config as gridTemplateRowsConfig } from './gridTemplateRows';
 import { config as gridTemplateAreasConfig } from './gridTemplateAreas';
 import { config as gridAreaConfig } from './gridArea';
-export { GridProps as GridSetProps } from 'styled-system';
+export { GridProps as GridSetProps } from '@styled-system/core';
 
 export const gridSet = system({
   ...gridGapConfig,

@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { GridAreaProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { GridAreaProps } from '@styled-system/core';
 
 export const config: Config = { gridArea: true };
 

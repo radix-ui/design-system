@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { OpacityProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { OpacityProps } from '@styled-system/core';
 
 const config: Config = {
   opacity: true,

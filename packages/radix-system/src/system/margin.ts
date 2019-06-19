@@ -1,6 +1,6 @@
-import { system, Config } from 'styled-system';
+import { system, Config } from '@styled-system/core';
 import { getMargin } from '../utils/getMargin';
-export { MarginProps } from 'styled-system';
+export { MarginProps } from '@styled-system/core';
 
 const config: Config = {
   margin: {

@@ -7,7 +7,7 @@ import {
   JustifySelfProps,
   AlignSelfProps,
   OrderProps,
-} from 'styled-system';
+} from '@styled-system/core';
 import { config as flexConfig } from './flex';
 import { config as flexGrowConfig } from './flexGrow';
 import { config as flexShrinkConfig } from './flexShrink';

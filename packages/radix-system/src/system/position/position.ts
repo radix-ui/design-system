@@ -1,5 +1,5 @@
 import * as CSS from 'csstype';
-import { system, Config, ResponsiveValue } from 'styled-system';
+import { system, Config, ResponsiveValue } from '@styled-system/core';
 
 export interface PositionProps {
   /**

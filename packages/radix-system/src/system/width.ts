@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { WidthProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { WidthProps } from '@styled-system/core';
 
 const config: Config = {
   width: {

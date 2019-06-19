@@ -1,4 +1,4 @@
-import { get, createParser } from 'styled-system';
+import { get, createParser } from '@styled-system/core';
 import css from '@styled-system/css';
 
 export const variant = (config: any) => (props: any) => {

@@ -1,6 +1,5 @@
 {
   "name": "@modulz/radix-system",
-  "private": true,
   "version": "0.0.0",
   "description": "Radix System Library",
   "author": "Pedro Duarte <pedro@modulz.app>",
@@ -22,7 +21,7 @@
   "dependencies": {
     "@styled-system/css": "^5.0.9",
     "@types/styled-system": "^4.2.1",
-    "styled-system": "^5.0.6"
+    "@styled-system/core": "^5.0.5"
   },
   "devDependencies": {
     "csstype": "^2.6.5",

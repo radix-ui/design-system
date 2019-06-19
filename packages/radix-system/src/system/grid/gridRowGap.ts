@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { GridRowGapProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { GridRowGapProps } from '@styled-system/core';
 
 export const config: Config = {
   gridRowGap: {

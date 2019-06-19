@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { PaddingProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { PaddingProps } from '@styled-system/core';
 
 const config: Config = {
   padding: {

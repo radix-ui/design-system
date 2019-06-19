@@ -11,7 +11,7 @@ import {
   system,
   Config,
   TLengthStyledSystem,
-} from 'styled-system';
+} from '@styled-system/core';
 
 export interface BorderProps<TLength = TLengthStyledSystem>
   extends BorderWidthProps,

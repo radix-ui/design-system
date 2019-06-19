@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { GridRowProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { GridRowProps } from '@styled-system/core';
 
 export const config: Config = { gridRow: true };
 

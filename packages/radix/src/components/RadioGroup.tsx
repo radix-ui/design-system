@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { margin, MarginProps } from 'styled-system';
+import { margin, MarginProps } from '@modulz/radix-system';
 
 type RadioGroupProps = ComponentProps<'div'> & {
   name: string;

@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { JustifySelfProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { JustifySelfProps } from '@styled-system/core';
 
 export const config: Config = { justifySelf: true };
 

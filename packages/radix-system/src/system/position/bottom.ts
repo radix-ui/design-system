@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { BottomProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { BottomProps } from '@styled-system/core';
 
 export const config: Config = {
   bottom: true,

@@ -1,5 +1,5 @@
-import { system, Config } from 'styled-system';
-export { ZIndexProps } from 'styled-system';
+import { system, Config } from '@styled-system/core';
+export { ZIndexProps } from '@styled-system/core';
 
 export const config: Config = {
   zIndex: {

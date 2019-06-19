@@ -26,16 +26,14 @@
     "styled-components": "^4.3.1"
   },
   "dependencies": {
+    "@modulz/radix-system": "^0.0.0",
     "@reach/dialog": "^0.2.9",
     "@styled-system/css": "5.0.5",
     "@styled-system/theme-get": "^5.0.6",
-    "@types/styled-system": "^4.2.1",
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
-    "polished": "^3.4.0",
-    "styled-system": "^5.0.6",
-    "@modulz/radix-system": "^0.0.0"
+    "polished": "^3.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
