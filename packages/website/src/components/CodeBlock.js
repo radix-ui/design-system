@@ -110,8 +110,22 @@ export default ({ children, className, live, render, ghost }) => {
 
   return (
     <Box mt={5}>
-      <LiveProvider code={children} {...liveProviderProps} theme={theme}>
-        <LiveEditor disabled />
+      <LiveProvider code={children.trim()} {...liveProviderProps} theme={theme}>
+        <LiveEditor
+          padding={radixTheme.space[4]}
+          style={{
+            // TODO: Remove hardcoded `backgroundColor`
+            // https://github.com/FormidableLabs/react-live/issues/139
+            backgroundColor: theme.plain.backgroundColor,
+            borderRadius: '3px',
+            border: `1px solid ${colors.grays[3]}`,
+            fontSize: radixTheme.fontSizes[3],
+            fontFamily: radixTheme.fonts.mono,
+            lineHeight: radixTheme.lineHeights[0],
+          }}
+          css={{ textarea: { paddingBottom: '0 !important' } }}
+          disabled
+        />
       </LiveProvider>
     </Box>
   );
