@@ -17,6 +17,7 @@
     "@mdx-js/react": "^1.0.16",
     "@mdx-js/tag": "^0.20.3",
     "@modulz/radix": "^0.0.1-alpha.30",
+    "@modulz/radix-system": "^0.0.0",
     "@modulz/radix-icons": "^0.4.0",
     "@types/styled-components": "^4.1.15",
     "gatsby": "^2.4.6",

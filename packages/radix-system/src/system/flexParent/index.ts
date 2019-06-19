@@ -22,7 +22,7 @@ export interface FlexParentSetProps
     FlexWrapProps,
     FlexDirectionProps {}
 
-export const flexParent = system({
+export const flexParentSet = system({
   ...alignContentConfig,
   ...alignItemsConfig,
   ...flexDirectionConfig,

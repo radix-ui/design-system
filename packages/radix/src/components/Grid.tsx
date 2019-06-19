@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { compose } from '@modulz/radix-system';
-
 import {
   alignContent,
   AlignContentProps,

@@ -23,7 +23,7 @@ export { backgroundColor, BackgroundColorProps } from './system/backgroundColor'
 export { textColor, TextColorProps } from './system/textColor';
 
 // Flex Parent Set
-export { flexParent, FlexParentSetProps } from './system/flexParent';
+export { flexParentSet, FlexParentSetProps } from './system/flexParent';
 export { alignContent, AlignContentProps } from './system/flexParent/alignContent';
 export { alignItems, AlignItemsProps } from './system/flexParent/alignItems';
 export { flexDirection, FlexDirectionProps } from './system/flexParent/flexDirection';

@@ -5,21 +5,11 @@ component: Grid
 
 ```js live=true
 <>
-  <Grid
-    gridTemplateColumns="repeat(2, 1fr)"
-    gridTemplateRows="10px"
-    gridGap={4}
-    mb={2}
-  >
+  <Grid gridTemplateColumns="repeat(2, 1fr)" gridTemplateRows="10px" gridGap={4} mb={2}>
     <Box bg="blue" />
     <Box bg="blue" />
   </Grid>
-  <Grid
-    gridTemplateColumns="repeat(5, 1fr)"
-    gridTemplateRows="10px"
-    gridGap={4}
-    mb={2}
-  >
+  <Grid gridTemplateColumns="repeat(5, 1fr)" gridTemplateRows="10px" gridGap={4} mb={2}>
     <Box bg="blue" />
     <Box bg="blue" />
     <Box bg="blue" />
@@ -39,22 +29,4 @@ component: Grid
 
 ### System props
 
-<SystemProps
-  props={[
-    'alignContent',
-    'alignItems',
-    'gridGap',
-    'gridColumnGap',
-    'gridRowGap',
-    'gridColumn',
-    'gridRow',
-    'gridAutoFlow',
-    'gridAutoColumns',
-    'gridAutoRows',
-    'gridTemplateColumns',
-    'gridTemplateRows',
-    'gridTemplateAreas',
-    'gridArea',
-    'space',
-  ]}
-/>
+<SystemProps props={['alignContent', 'alignItems', 'gridSet', 'margin', 'padding']} />
