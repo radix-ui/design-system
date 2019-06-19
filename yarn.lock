@@ -2904,13 +2904,6 @@
     "@types/react-native" "*"
     csstype "^2.2.0"
 
-"@types/styled-system@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-4.2.1.tgz#dc03af329452b5208aba9dc56fdfc6971b9ed2d0"
-  integrity sha512-4wARGJuZz1DzogmGAKhOviaDeZYfOU29ROt/XrWSFTKhTNSpMvq7WyzEUuxPRC70VH57eUB1uxsWrKYND/FgJQ==
-  dependencies:
-    csstype "^2.6.4"
-
 "@types/tmp@^0.0.32":
   version "0.0.32"
   resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.0.32.tgz#0d3cb31022f8427ea58c008af32b80da126ca4e3"
@@ -6183,7 +6176,7 @@ cssstyle@^1.0.0:
   dependencies:
     cssom "0.3.x"
 
-csstype@^2.2.0, csstype@^2.5.7, csstype@^2.6.4, csstype@^2.6.5:
+csstype@^2.2.0, csstype@^2.5.7, csstype@^2.6.5:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.5.tgz#1cd1dff742ebf4d7c991470ae71e12bb6751e034"
   integrity sha512-JsTaiksRsel5n7XwqPAfB0l3TFKdpjW/kgAELf9vrb5adGA7UCPLajKK5s3nFrcFm3Rkyp/Qkgl73ENc1UY3cA==
