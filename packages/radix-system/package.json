@@ -1,6 +1,6 @@
 {
   "name": "@modulz/radix-system",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "description": "Radix System Library",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
@@ -19,8 +19,8 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@styled-system/css": "^5.0.9",
-    "@styled-system/core": "^5.0.5"
+    "@styled-system/core": "^5.0.5",
+    "@styled-system/css": "^5.0.9"
   },
   "devDependencies": {
     "csstype": "^2.6.5",
