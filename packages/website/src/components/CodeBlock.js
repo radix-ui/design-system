@@ -78,11 +78,7 @@ export default ({ children, className, live, render, ghost }) => {
   if (live) {
     return (
       <Box mt={5}>
-        <LiveProvider
-          code={children.trim()}
-          {...liveProviderProps}
-          theme={theme}
-        >
+        <LiveProvider code={children.trim()} {...liveProviderProps} theme={theme}>
           <LivePreview
             style={{
               padding: radixTheme.space[4],
@@ -114,7 +110,7 @@ export default ({ children, className, live, render, ghost }) => {
 
   return (
     <Box mt={5}>
-      <LiveProvider code={children} {...liveProviderProps}>
+      <LiveProvider code={children} {...liveProviderProps} theme={theme}>
         <LiveEditor disabled />
       </LiveProvider>
     </Box>
