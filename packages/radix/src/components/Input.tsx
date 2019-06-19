@@ -15,7 +15,7 @@ import {
   textAlign,
   TextAlignProps,
   variant,
-} from '../system';
+} from '@modulz/radix-system';
 
 type VariantProps = 'normal' | 'ghost' | 'fade';
 type SizeProps = 'normal' | 'large';

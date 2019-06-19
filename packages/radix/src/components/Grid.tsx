@@ -12,7 +12,7 @@ import {
   MarginProps,
   padding,
   PaddingProps,
-} from '../system';
+} from '@modulz/radix-system';
 
 type GridProps = AlignContentProps & AlignItemsProps & GridSetProps & MarginProps & PaddingProps;
 

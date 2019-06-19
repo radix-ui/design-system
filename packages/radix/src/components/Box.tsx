@@ -39,7 +39,7 @@ import {
   WidthProps,
   flexItemSet,
   FlexItemSetProps,
-} from '../system';
+} from '@modulz/radix-system';
 import { ComponentProps } from 'react';
 
 export type BoxProps = BorderProps &

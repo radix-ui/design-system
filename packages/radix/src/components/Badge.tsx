@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ResponsiveValue } from 'styled-system';
-import { margin, MarginProps, variant } from '../system';
+import { margin, MarginProps, variant } from '@modulz/radix-system';
 import css from '@styled-system/css';
 
 type Variants = 'gray' | 'blue' | 'green' | 'red' | 'yellow';

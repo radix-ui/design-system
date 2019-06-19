@@ -15,7 +15,7 @@ import {
   padding,
   PaddingProps,
   variant,
-} from '../system';
+} from '@modulz/radix-system';
 
 type Sizes = 0 | 1 | 2;
 type ContainerProps = AlignSelfProps &

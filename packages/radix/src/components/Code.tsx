@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { margin, MarginProps } from '../system';
+import { margin, MarginProps } from '@modulz/radix-system';
 import { themeGet } from '@styled-system/theme-get';
 
 export const Code = styled('code')<MarginProps>(

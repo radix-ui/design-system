@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import { compose } from 'styled-system';
-import { textColor, TextColorProps, fontSize, FontSizeProps } from '../system';
+import { textColor, TextColorProps, fontSize, FontSizeProps } from '@modulz/radix-system';
 
 type LinkProps = TextColorProps & FontSizeProps & { to?: string };
 

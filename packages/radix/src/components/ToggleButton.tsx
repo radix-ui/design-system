@@ -10,7 +10,7 @@ import css from '@styled-system/css';
 import pick from 'lodash.pick';
 import themeGet from '@styled-system/theme-get';
 import { ResponsiveValue } from 'styled-system';
-import { margin, MarginProps, variant } from '../system';
+import { margin, MarginProps, variant } from '@modulz/radix-system';
 import { Flex } from './Flex';
 
 type Variants = 'normal' | 'fade';

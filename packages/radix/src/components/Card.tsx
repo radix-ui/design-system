@@ -15,7 +15,7 @@ import {
   maxWidth,
   MaxWidthProps,
   variant,
-} from '../system';
+} from '@modulz/radix-system';
 
 type Variants = 'border' | 'shadow' | 'ghost';
 type SystemProps = TextColorProps & MarginProps & PaddingProps & WidthProps & MaxWidthProps;

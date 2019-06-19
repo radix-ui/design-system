@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import { ResponsiveValue } from 'styled-system';
-import { margin, MarginProps, variant } from '../system';
+import { margin, MarginProps, variant } from '@modulz/radix-system';
 
 type SizeProps = 'normal' | 'medium' | 'fluid';
 type PipeProps = MarginProps & { variant?: ResponsiveValue<SizeProps> };

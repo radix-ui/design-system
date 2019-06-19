@@ -13,7 +13,7 @@ import {
   width,
   WidthProps,
   variant,
-} from '../system';
+} from '@modulz/radix-system';
 
 type Variants = 'normal' | 'shadow';
 type MenuProps = MarginProps &

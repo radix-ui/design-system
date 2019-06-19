@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ChangeEvent, ChangeEventHandler } from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { variant } from '../system';
+import { variant } from '@modulz/radix-system';
 
 type SliderProps = {
   name?: string;

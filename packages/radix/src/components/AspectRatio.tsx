@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { compose } from 'styled-system';
-import { backgroundColor, BackgroundColorProps, margin, MarginProps } from '../system';
+import { backgroundColor, BackgroundColorProps, margin, MarginProps } from '@modulz/radix-system';
 
 type WrapperProps = BackgroundColorProps & MarginProps;
 type AspectRatioProps = WrapperProps & {

@@ -1,0 +1,33 @@
+{
+  "name": "@modulz/radix-system",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Radix System Library",
+  "author": "Pedro Duarte <pedro@modulz.app>",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/modulz/radix",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw"
+  },
+  "dependencies": {
+    "@styled-system/css": "^5.0.9",
+    "@types/styled-system": "^4.2.1",
+    "styled-system": "^5.0.6"
+  },
+  "devDependencies": {
+    "csstype": "^2.6.5",
+    "rollup": "^1.15.1",
+    "rollup-plugin-typescript2": "^0.21.1",
+    "typescript": "3.5.1"
+  }
+}

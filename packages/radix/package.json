@@ -34,7 +34,8 @@
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
     "polished": "^3.4.0",
-    "styled-system": "^5.0.6"
+    "styled-system": "^5.0.6",
+    "@modulz/radix-system": "^0.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

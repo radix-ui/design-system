@@ -11,7 +11,7 @@ import {
   LineHeightProps,
   TextAlignProps,
   variant,
-} from '../system';
+} from '@modulz/radix-system';
 
 type HeadingProps = TextColorProps &
   MarginProps &
