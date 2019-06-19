@@ -4,7 +4,6 @@ import * as StyledSystem from 'styled-system';
 import { Box, Table, Thead, Tr, Th, Tbody, Td, Code } from '@modulz/radix';
 
 export function SystemPropsTable({ props }) {
-  return null;
   return (
     <Box mb={4}>
       <Table>
