@@ -65,6 +65,6 @@ export { gridTemplateRows, GridTemplateRowsProps } from './system/grid/gridTempl
 export { gridTemplateAreas, GridTemplateAreasProps } from './system/grid/gridTemplateAreas';
 export { gridArea, GridAreaProps } from './system/grid/gridArea';
 
-export { variant } from './system/variant';
+export { variant } from './utils/variant';
 
 export { system, createParser, compose, get, Theme, ResponsiveValue } from 'styled-system';
