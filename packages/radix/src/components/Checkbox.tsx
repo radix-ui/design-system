@@ -3,18 +3,18 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { space, SpaceProps } from 'styled-system';
+import { margin, MarginProps } from '@modulz/radix-system';
 
-type CheckboxProps = SpaceProps & ComponentProps<'input'>;
-// @ts-ignore TODO:
-const spacePropNames = space.propNames;
+type CheckboxProps = MarginProps & ComponentProps<'input'>;
+
+const marginPropNames = margin.propNames;
 
 export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
-  const spaceProps = pick(props, spacePropNames);
-  const inputProps = omit(props, spacePropNames);
+  const marginProps = pick(props, marginPropNames);
+  const inputProps = omit(props, marginPropNames);
 
   return (
-    <CheckboxWrapper {...spaceProps}>
+    <CheckboxWrapper {...marginProps}>
       <Input type="checkbox" {...inputProps} />
       <FakeCheckbox>
         <CheckedIcon
@@ -33,12 +33,12 @@ export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
   );
 };
 
-const CheckboxWrapper = styled('label')<SpaceProps>(
+const CheckboxWrapper = styled('label')<MarginProps>(
   {
     position: 'relative',
     display: 'inline-block',
   },
-  space
+  margin
 );
 
 const Input = styled('input')({

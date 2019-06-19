@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 import css from '@styled-system/css';
 import themeGet from '@styled-system/theme-get';
-import { ResponsiveValue, compose } from 'styled-system';
 import {
   maxWidth,
   MaxWidthProps,
@@ -13,6 +12,8 @@ import {
   width,
   WidthProps,
   variant,
+  compose,
+  ResponsiveValue,
 } from '@modulz/radix-system';
 
 type Variants = 'normal' | 'shadow';

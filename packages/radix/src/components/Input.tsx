@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { compose, ResponsiveValue } from 'styled-system';
 import css from '@styled-system/css';
 import {
   textColor,
@@ -15,6 +14,8 @@ import {
   textAlign,
   TextAlignProps,
   variant,
+  compose,
+  ResponsiveValue,
 } from '@modulz/radix-system';
 
 type VariantProps = 'normal' | 'ghost' | 'fade';

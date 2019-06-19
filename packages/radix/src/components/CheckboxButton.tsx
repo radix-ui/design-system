@@ -3,29 +3,29 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { space, SpaceProps } from 'styled-system';
+import { margin, MarginProps } from '@modulz/radix-system';
 
-type CheckboxButton = SpaceProps & ComponentProps<'input'> & { children: ReactNode };
+type CheckboxButton = MarginProps & ComponentProps<'input'> & { children: ReactNode };
 
-const spacePropNames = space.propNames;
+const marginPropNames = margin.propNames;
 
 export const CheckboxButton: FC<CheckboxButton> = ({ children, ...props }) => {
-  const spaceProps = pick(props, spacePropNames);
-  const inputProps = omit(props, spacePropNames);
+  const marginProps = pick(props, marginPropNames);
+  const inputProps = omit(props, marginPropNames);
 
   return (
-    <CheckboxWrapper {...spaceProps}>
+    <CheckboxWrapper {...marginProps}>
       <Input type="checkbox" {...inputProps} />
       <FakeCheckbox>{children}</FakeCheckbox>
     </CheckboxWrapper>
   );
 };
 
-const CheckboxWrapper = styled('label')<SpaceProps>(
+const CheckboxWrapper = styled('label')<MarginProps>(
   {
     position: 'relative',
   },
-  space
+  margin
 );
 
 const Input = styled('input')({

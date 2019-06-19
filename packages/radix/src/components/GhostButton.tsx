@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { compose } from 'styled-system';
-import { margin, MarginProps, padding, PaddingProps, variant } from '@modulz/radix-system';
+import { margin, MarginProps, padding, PaddingProps, variant, compose } from '@modulz/radix-system';
 import themeGet from '@styled-system/theme-get';
 
 type Variants = 'normal' | 'active';

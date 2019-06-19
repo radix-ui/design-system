@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { compose } from 'styled-system';
+import { compose } from '@modulz/radix-system';
 
 import {
   alignContent,

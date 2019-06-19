@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { ResponsiveValue, compose } from 'styled-system';
 import {
   alignSelf,
   AlignSelfProps,
@@ -15,6 +14,8 @@ import {
   padding,
   PaddingProps,
   variant,
+  compose,
+  ResponsiveValue,
 } from '@modulz/radix-system';
 
 type Sizes = 0 | 1 | 2;

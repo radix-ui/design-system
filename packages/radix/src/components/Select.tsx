@@ -3,8 +3,15 @@ import pick from 'lodash.pick';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { ResponsiveValue, compose } from 'styled-system';
-import { margin, MarginProps, width, WidthProps, variant } from '@modulz/radix-system';
+import {
+  margin,
+  MarginProps,
+  width,
+  WidthProps,
+  variant,
+  compose,
+  ResponsiveValue,
+} from '@modulz/radix-system';
 
 type Variants = 'normal' | 'fade';
 type SelectProps = ComponentProps<'select'> &

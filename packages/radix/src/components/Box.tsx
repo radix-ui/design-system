@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { compose } from 'styled-system';
 import {
   border,
   BorderProps,
@@ -39,6 +38,7 @@ import {
   WidthProps,
   flexItemSet,
   FlexItemSetProps,
+  compose,
 } from '@modulz/radix-system';
 import { ComponentProps } from 'react';
 

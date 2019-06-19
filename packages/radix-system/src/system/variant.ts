@@ -1,9 +1,7 @@
-// @ts-ignore
 import { get, createParser } from 'styled-system';
 import css from '@styled-system/css';
 
-// @ts-ignore
-export const variant = config => props => {
+export const variant = (config: any) => (props: any) => {
   const prop = Object.keys(config)[0];
   // @ts-ignore
   const getValue = (n, scale) => get(scale, n);

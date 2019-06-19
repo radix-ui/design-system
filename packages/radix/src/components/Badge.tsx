@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { ResponsiveValue } from 'styled-system';
-import { margin, MarginProps, variant } from '@modulz/radix-system';
+import { margin, MarginProps, variant, ResponsiveValue } from '@modulz/radix-system';
 import css from '@styled-system/css';
 
 type Variants = 'gray' | 'blue' | 'green' | 'red' | 'yellow';
@@ -9,8 +8,6 @@ type Sizes = 'normal' | 'large';
 type BadgeProps = MarginProps & {
   variant?: ResponsiveValue<Variants>;
   size?: ResponsiveValue<Sizes>;
-  waiting?: boolean;
-  block?: boolean;
 };
 
 export const Badge = styled('span')<BadgeProps>(

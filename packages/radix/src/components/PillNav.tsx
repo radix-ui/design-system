@@ -1,15 +1,16 @@
 import React, { FC, ReactElement } from 'react';
 import styled from 'styled-components';
-import { MarginProps, style, ResponsiveValue } from 'styled-system';
+import { MarginProps, system, ResponsiveValue } from '@modulz/radix-system';
 import themeGet from '@styled-system/theme-get';
 import css from '@styled-system/css';
 import * as CSS from 'csstype';
 import { transparentize } from 'polished';
 import { Box } from './Box';
 
-const pillWidth = style({
-  prop: 'pillWidth',
-  cssProperty: 'width',
+const pillWidth = system({
+  pillWidth: {
+    property: 'width',
+  },
 });
 
 interface PillWidthProps {
@@ -61,7 +62,7 @@ export const Pill = styled('button')<PillProps>(
       outline: 'none',
       zIndex: active ? 1 : 0,
       margin: 0,
-      marginLeft: -1,
+      marginLeft: '-1px',
       pointerEvents: active && 'none',
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       boxShadow:

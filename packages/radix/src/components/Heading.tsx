@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { ResponsiveValue, compose } from 'styled-system';
 import css from '@styled-system/css';
 import {
   textColor,
@@ -11,6 +10,8 @@ import {
   LineHeightProps,
   TextAlignProps,
   variant,
+  compose,
+  ResponsiveValue,
 } from '@modulz/radix-system';
 
 type HeadingProps = TextColorProps &
