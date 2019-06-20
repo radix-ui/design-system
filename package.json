@@ -20,7 +20,7 @@
     "clean": "npm run clean-logs && npm run clean-modules",
     "clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
     "clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/",
-    "release": "yarn radix:build && lerna publish"
+    "release": "yarn radix-system:build && yarn radix:build && lerna publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",
