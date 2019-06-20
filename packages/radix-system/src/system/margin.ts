@@ -1,6 +1,24 @@
+import * as CSS from 'csstype';
 import { system, Config } from '@styled-system/core';
 import { getMargin } from '../utils/getMargin';
-export { MarginProps } from '@styled-system/core';
+import { Prop, Length } from '../utils/types';
+
+export interface MarginProps {
+  m?: Prop<CSS.MarginProperty<Length>>;
+  margin?: Prop<CSS.MarginProperty<Length>>;
+  mt?: Prop<CSS.MarginTopProperty<Length>>;
+  marginTop?: Prop<CSS.MarginTopProperty<Length>>;
+  mr?: Prop<CSS.MarginRightProperty<Length>>;
+  marginRight?: Prop<CSS.MarginRightProperty<Length>>;
+  mb?: Prop<CSS.MarginBottomProperty<Length>>;
+  marginBottom?: Prop<CSS.MarginBottomProperty<Length>>;
+  ml?: Prop<CSS.MarginLeftProperty<Length>>;
+  marginLeft?: Prop<CSS.MarginLeftProperty<Length>>;
+  mx?: Prop<CSS.MarginProperty<Length>>;
+  marginX?: Prop<CSS.MarginProperty<Length>>;
+  my?: Prop<CSS.MarginProperty<Length>>;
+  marginY?: Prop<CSS.MarginProperty<Length>>;
+}
 
 const config: Config = {
   margin: {

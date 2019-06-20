@@ -1,35 +1,18 @@
 import * as CSS from 'csstype';
-import {
-  BorderWidthProps,
-  BorderStyleProps,
-  BorderColorProps,
-  BorderTopProps,
-  BorderRightProps,
-  BorderBottomProps,
-  BorderLeftProps,
-  ResponsiveValue,
-  system,
-  Config,
-  TLengthStyledSystem,
-} from '@styled-system/core';
+import { system, Config } from '@styled-system/core';
+import { Prop, Length } from '../utils/types';
 
-export interface BorderProps<TLength = TLengthStyledSystem>
-  extends BorderWidthProps,
-    BorderStyleProps,
-    BorderColorProps,
-    BorderTopProps,
-    BorderRightProps,
-    BorderBottomProps,
-    BorderLeftProps {
-  /**
-   * The border CSS property sets an element's border. It's a shorthand for border-width, border-style,
-   * and border-color.
-   *
-   * [MDN reference](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
-   */
-  border?: ResponsiveValue<CSS.BorderProperty<TLength>>;
-  borderX?: ResponsiveValue<CSS.BorderProperty<TLength>>;
-  borderY?: ResponsiveValue<CSS.BorderProperty<TLength>>;
+export interface BorderProps {
+  border?: Prop<CSS.BorderProperty<Length>>;
+  borderWidth?: Prop<CSS.BorderWidthProperty<Length>>;
+  borderStyle?: Prop<CSS.BorderStyleProperty>;
+  borderColor?: Prop<CSS.BorderColorProperty>;
+  borderTop?: Prop<CSS.BorderTopProperty<Length>>;
+  borderRight?: Prop<CSS.BorderRightProperty<Length>>;
+  borderBottom?: Prop<CSS.BorderBottomProperty<Length>>;
+  borderLeft?: Prop<CSS.BorderLeftProperty<Length>>;
+  borderX?: Prop<CSS.BorderProperty<Length>>;
+  borderY?: Prop<CSS.BorderProperty<Length>>;
 }
 
 const config: Config = {

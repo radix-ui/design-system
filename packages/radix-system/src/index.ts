@@ -67,4 +67,6 @@ export { gridArea, GridAreaProps } from './system/grid/gridArea';
 
 export { variant } from './utils/variant';
 
-export { system, createParser, compose, get, Theme, ResponsiveValue } from '@styled-system/core';
+export { system, createParser, compose, get } from '@styled-system/core';
+
+export { Prop as ResponsiveValue } from './utils/types';

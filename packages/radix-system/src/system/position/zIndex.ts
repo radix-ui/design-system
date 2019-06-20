@@ -1,5 +1,10 @@
+import * as CSS from 'csstype';
 import { system, Config } from '@styled-system/core';
-export { ZIndexProps } from '@styled-system/core';
+import { Prop } from '../../utils/types';
+
+export interface ZIndexProps {
+  zIndex?: Prop<CSS.ZIndexProperty>;
+}
 
 export const config: Config = {
   zIndex: {

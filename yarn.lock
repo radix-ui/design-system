@@ -2904,6 +2904,11 @@
     "@types/react-native" "*"
     csstype "^2.2.0"
 
+"@types/styled-system__core@npm:@peduarte/styled-system__core":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@peduarte/styled-system__core/-/styled-system__core-0.0.1.tgz#de78b6aa193c39d9029d3ed036bd481ad6a5b925"
+  integrity sha512-s3CtmKoSZCyOZfe03ftUrOqVhFTryWuQhs0koYOvyoNnsMtV+NDvMSFf/SHxl9uvy/jp20qkkFlIVu0x9WJOFA==
+
 "@types/tmp@^0.0.32":
   version "0.0.32"
   resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.0.32.tgz#0d3cb31022f8427ea58c008af32b80da126ca4e3"

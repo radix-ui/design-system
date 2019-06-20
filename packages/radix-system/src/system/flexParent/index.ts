@@ -1,18 +1,10 @@
-import {
-  system,
-  AlignItemsProps,
-  AlignContentProps,
-  JustifyItemsProps,
-  JustifyContentProps,
-  FlexWrapProps,
-  FlexDirectionProps,
-} from '@styled-system/core';
-import { config as alignContentConfig } from './alignContent';
-import { config as alignItemsConfig } from './alignItems';
-import { config as flexDirectionConfig } from './flexDirection';
-import { config as flexWrapConfig } from './flexWrap';
-import { config as justifyContentConfig } from './justifyContent';
-import { config as justifyItemsConfig } from './justifyItems';
+import { system } from '@styled-system/core';
+import { config as alignContentConfig, AlignContentProps } from './alignContent';
+import { config as alignItemsConfig, AlignItemsProps } from './alignItems';
+import { config as flexDirectionConfig, FlexDirectionProps } from './flexDirection';
+import { config as flexWrapConfig, FlexWrapProps } from './flexWrap';
+import { config as justifyContentConfig, JustifyContentProps } from './justifyContent';
+import { config as justifyItemsConfig, JustifyItemsProps } from './justifyItems';
 
 export interface FlexParentSetProps
   extends AlignItemsProps,
