@@ -1,7 +1,7 @@
 import styled, { css as _css, keyframes } from 'styled-components';
 import css from '@styled-system/css';
 import themeGet from '@styled-system/theme-get';
-import { margin, MarginProps, variant, Theme, ResponsiveValue } from '@modulz/radix-system';
+import { margin, MarginProps, variant, ResponsiveValue } from '@modulz/radix-system';
 
 const waitingAnimation = (props: any) => keyframes`
   100% {
@@ -15,7 +15,8 @@ type Sizes = 'normal' | 'large';
 type ButtonProps = MarginProps & {
   variant?: ResponsiveValue<Variants>;
   size?: ResponsiveValue<Sizes>;
-  theme?: Theme;
+  // TODO: type Theme
+  theme?: any;
 };
 
 export const Button = styled('button')<ButtonProps>(

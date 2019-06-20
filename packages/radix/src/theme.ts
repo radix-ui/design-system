@@ -1,6 +1,5 @@
-import { Theme } from '@modulz/radix-system';
-
-export const theme: Theme = {
+// TODO: type Theme
+export const theme = {
   breakpoints: ['38em', '62em', '68em', '110em'],
   fonts: {
     normal:
