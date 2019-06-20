@@ -1,6 +1,6 @@
 {
   "name": "@modulz/radix",
-  "version": "0.0.1-alpha.31",
+  "version": "0.0.1-alpha.32",
   "description": "Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
@@ -26,7 +26,7 @@
     "styled-components": "^4.3.1"
   },
   "dependencies": {
-    "@modulz/radix-system": "^0.0.1-alpha.0",
+    "@modulz/radix-system": "^0.0.1-alpha.1",
     "@reach/dialog": "^0.2.9",
     "@styled-system/css": "5.0.5",
     "@styled-system/theme-get": "^5.0.6",
