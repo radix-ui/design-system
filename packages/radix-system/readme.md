@@ -2,16 +2,21 @@
 
 # Radix System
 
+```sh
+yarn add @modulz/radix-system
+```
+
 Radix System is built on top of the popular [Styled System](https://github.com/styled-system/styled-system) library by [Brent Jackson](https://github.com/jxnblk).
 
-Since Styled System releasesd v5, it broke down its library into multiple packages, one of them is `@styled-system/core`. This package exposes all the functions needed to built your own API on top of Styled System, and this is exactly what Radix System does.
+Styled System v5 now contains several sub-packages, one of them is `@styled-system/core`. This package exposes all the functions needed to built your own API on top of Styled System, and this is exactly what Radix System does.
 
-The main difference in the Radix System API vs Styled System's are:
+Features of Radix System:
 
-- All functions are independent
-- Includes Typescript typings
+- style functions are independent
+- each Style function has a Typescript interface
 - `color` prop has been renamed to `textColor`
-- Different implementation of the `variant` API
+- `space` has been split into `margin` and `space`
+- custom `variant` API implementation
 
 The [Radix](https://modulz-radix.netlify.com/docs/getting-started) Design System is on top of this.
 
