@@ -15,7 +15,7 @@ import {
   PaddingProps,
   variant,
   compose,
-  ResponsiveValue,
+  Prop,
 } from '@modulz/radix-system';
 
 type Sizes = 0 | 1 | 2;
@@ -24,7 +24,7 @@ type ContainerProps = AlignSelfProps &
   JustifySelfProps &
   MaxWidthProps &
   MarginProps &
-  PaddingProps & { size?: ResponsiveValue<Sizes> };
+  PaddingProps & { size?: Prop<Sizes> };
 
 const styleProps = compose(
   alignSelf,

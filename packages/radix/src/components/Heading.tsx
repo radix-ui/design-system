@@ -11,16 +11,16 @@ import {
   TextAlignProps,
   variant,
   compose,
-  ResponsiveValue,
+  Prop,
 } from '@modulz/radix-system';
 
 type HeadingProps = TextColorProps &
   MarginProps &
   TextAlignProps &
   LineHeightProps & {
-    size?: ResponsiveValue<0 | 1 | 2 | 3 | 4 | 5>;
-    fontWeight?: ResponsiveValue<'normal' | 'bold'>;
-    truncate?: ResponsiveValue<boolean>;
+    size?: Prop<0 | 1 | 2 | 3 | 4 | 5>;
+    fontWeight?: Prop<'normal' | 'bold'>;
+    truncate?: Prop<boolean>;
   };
 
 const styleProps = compose(

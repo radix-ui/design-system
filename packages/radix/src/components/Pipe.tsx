@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { margin, MarginProps, variant, ResponsiveValue } from '@modulz/radix-system';
+import { margin, MarginProps, variant, Prop } from '@modulz/radix-system';
 
 type SizeProps = 'normal' | 'medium' | 'fluid';
-type PipeProps = MarginProps & { variant?: ResponsiveValue<SizeProps> };
+type PipeProps = MarginProps & { variant?: Prop<SizeProps> };
 
 export const Pipe = styled.div<PipeProps>(
   css({

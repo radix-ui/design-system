@@ -15,12 +15,12 @@ import {
   MaxWidthProps,
   variant,
   compose,
-  ResponsiveValue,
+  Prop,
 } from '@modulz/radix-system';
 
 type Variants = 'border' | 'shadow' | 'ghost';
 type SystemProps = TextColorProps & MarginProps & PaddingProps & WidthProps & MaxWidthProps;
-type CardProps = SystemProps & { variant?: ResponsiveValue<Variants> };
+type CardProps = SystemProps & { variant?: Prop<Variants> };
 
 const styleProps = compose(
   textColor,

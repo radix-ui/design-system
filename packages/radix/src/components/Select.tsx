@@ -10,13 +10,13 @@ import {
   WidthProps,
   variant,
   compose,
-  ResponsiveValue,
+  Prop,
 } from '@modulz/radix-system';
 
 type Variants = 'normal' | 'fade';
 type SelectProps = ComponentProps<'select'> &
   WrapperProps & {
-    variant?: ResponsiveValue<Variants>;
+    variant?: Prop<Variants>;
   };
 
 const marginPropNames = margin.propNames;

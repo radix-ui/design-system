@@ -69,4 +69,4 @@ export { variant } from './utils/variant';
 
 export { system, createParser, compose, get } from '@styled-system/core';
 
-export { Prop as ResponsiveValue } from './utils/types';
+export { Prop } from './utils/types';

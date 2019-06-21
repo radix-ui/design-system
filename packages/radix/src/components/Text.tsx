@@ -17,7 +17,7 @@ import {
   LineHeightProps,
   variant,
   compose,
-  ResponsiveValue,
+  Prop,
 } from '@modulz/radix-system';
 
 type TextProps = TextColorProps &
@@ -27,9 +27,9 @@ type TextProps = TextColorProps &
   FontStyleProps &
   TextAlignProps &
   LineHeightProps & {
-    size?: ResponsiveValue<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8>;
-    fontWeight?: ResponsiveValue<'normal' | 'bold'>;
-    truncate?: ResponsiveValue<boolean>;
+    size?: Prop<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8>;
+    fontWeight?: Prop<'normal' | 'bold'>;
+    truncate?: Prop<boolean>;
   };
 
 const styleProps = compose(

@@ -9,11 +9,11 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import pick from 'lodash.pick';
 import themeGet from '@styled-system/theme-get';
-import { margin, MarginProps, variant, ResponsiveValue } from '@modulz/radix-system';
+import { margin, MarginProps, variant, Prop } from '@modulz/radix-system';
 import { Flex } from './Flex';
 
 type Variants = 'normal' | 'fade';
-type VariantProps = { variant?: ResponsiveValue<Variants> };
+type VariantProps = { variant?: Prop<Variants> };
 type ToggleButtonGroupProps = MarginProps & {
   name: string;
   value?: string;

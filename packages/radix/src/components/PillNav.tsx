@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react';
 import styled from 'styled-components';
-import { MarginProps, system, ResponsiveValue } from '@modulz/radix-system';
+import { MarginProps, system, Prop } from '@modulz/radix-system';
 import themeGet from '@styled-system/theme-get';
 import css from '@styled-system/css';
 import * as CSS from 'csstype';
@@ -14,7 +14,7 @@ const pillWidth = system({
 });
 
 interface PillWidthProps {
-  pillWidth?: ResponsiveValue<CSS.WidthProperty<{}>>;
+  pillWidth?: Prop<CSS.WidthProperty<{}>>;
 }
 
 type PillNavProps = MarginProps &

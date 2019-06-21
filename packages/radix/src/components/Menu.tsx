@@ -13,14 +13,14 @@ import {
   WidthProps,
   variant,
   compose,
-  ResponsiveValue,
+  Prop,
 } from '@modulz/radix-system';
 
 type Variants = 'normal' | 'shadow';
 type MenuProps = MarginProps &
   PaddingProps &
   WidthProps &
-  MaxWidthProps & { variant?: ResponsiveValue<Variants> };
+  MaxWidthProps & { variant?: Prop<Variants> };
 
 const styleProps = compose(
   margin,

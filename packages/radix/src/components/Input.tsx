@@ -15,7 +15,7 @@ import {
   TextAlignProps,
   variant,
   compose,
-  ResponsiveValue,
+  Prop,
 } from '@modulz/radix-system';
 
 type VariantProps = 'normal' | 'ghost' | 'fade';
@@ -28,8 +28,8 @@ export type InputProps = TextColorProps &
   WidthProps &
   MaxWidthProps &
   TextAlignProps & {
-    variant?: ResponsiveValue<VariantProps>;
-    size?: ResponsiveValue<SizeProps> & any;
+    variant?: Prop<VariantProps>;
+    size?: Prop<SizeProps> & any;
   };
 
 const styleProps = compose(
