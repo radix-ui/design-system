@@ -14,21 +14,13 @@ Radix is a Component Library built on top of [Radix System](https://github.com/m
 Radix is currently under heavy development, but if you'd like to use it anyway:
 
 ```js
-# NPM
-npm install @moduz/radix
+# npm
+npm install @modulz/radix
 ```
 
 ```js
-# Yarn
-yarn add @moduz/radix
-```
-
-### Use it
-
-All Components can be importated directly:
-
-```js
-import { Heading, Text, Link } from '@radix/modulz';
+# yarn
+yarn add @modulz/radix
 ```
 
 ### Wrap it in `RadixProvider`
@@ -37,6 +29,16 @@ Make sure to wrap your app in `RadixProvider` to get the default theme
 
 ```js
 import { RadixProvider } from '@modulz/radix';
+
+const App = () => <RadixProvider>Hey there👋</RadixProvider>;
+```
+
+### Use it
+
+All Components can be importated directly:
+
+```js
+import { Heading, Text, Link } from '@modulz/radix';
 ```
 
 ### Build stuff with it
