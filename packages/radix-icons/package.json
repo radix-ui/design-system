@@ -5,20 +5,19 @@
   "license": "MIT",
   "description": "Radix Icon Set",
   "author": "Lochlan Bunn <lochlan@modulz.app>",
-  "module": "dist/modulzradix-icons.es.production.js",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "typings": "dist/index.d.ts",
   "files": [
     "outline/",
     "solid/",
     "dist/",
-    "index.js",
     "manifest.json"
   ],
   "scripts": {
     "generate-src": "generate-icon-lib --file=LLggMY9IV61CYkCSI7LFFUOY",
-    "build": "rimraf dist && tsdx build --format es,cjs --entry src/index.tsx",
-    "watch": "rimraf dist && tsdx watch --format es,cjs --entry src/index.tsx",
+    "build": "rollup -c",
+    "watch": "rollup -cw",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
@@ -28,7 +27,9 @@
   "devDependencies": {
     "@modulz/generate-icon-lib": "^0.0.1",
     "rimraf": "^2.6.3",
-    "tsdx": "^0.5.9"
+    "rollup": "^1.13.1",
+    "rollup-plugin-typescript2": "^0.21.1",
+    "typescript": "3.5.1"
   },
   "browserslist": [
     ">0.5%",

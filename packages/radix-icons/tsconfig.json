@@ -1,6 +1,7 @@
 {
   "include": ["src/**/*"],
   "compilerOptions": {
+    "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
@@ -8,6 +9,7 @@
     "noImplicitAny": false,
     "skipLibCheck": true,
     "module": "esnext",
+    "noEmit": true,
     "sourceMap": true,
     "outDir": "dist",
     "target": "es5",
