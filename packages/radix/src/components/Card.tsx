@@ -5,6 +5,8 @@ import themeGet from '@styled-system/theme-get';
 import {
   textColor,
   TextColorProps,
+  backgroundColor,
+  BackgroundColorProps,
   margin,
   MarginProps,
   padding,
@@ -19,7 +21,12 @@ import {
 } from '@modulz/radix-system';
 
 type Variants = 'border' | 'shadow' | 'ghost';
-type SystemProps = TextColorProps & MarginProps & PaddingProps & WidthProps & MaxWidthProps;
+type SystemProps = TextColorProps &
+  BackgroundColorProps &
+  MarginProps &
+  PaddingProps &
+  WidthProps &
+  MaxWidthProps;
 type CardProps = SystemProps & { variant?: Prop<Variants> };
 
 const styleProps = compose(
