@@ -9,8 +9,6 @@ type Sizes = 'medium';
 type BadgeProps = SpaceProps & {
   variant?: Variants;
   size?: Sizes;
-  waiting?: boolean;
-  block?: boolean;
 };
 
 export const Badge = styled('span')<BadgeProps>(
