@@ -94,6 +94,7 @@ export const Button = styled('button')<ButtonProps>(
         },
       },
       red: {
+        backgroundColor: 'grays.0',
         color: 'reds.5',
         borderColor: 'grays.3',
         '&:hover': {
