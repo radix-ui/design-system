@@ -53,17 +53,13 @@ export const Text = styled('span')<TextProps>(
       0: {
         fontSize: 0,
         letterSpacing: '.032em',
-        textIndent: 0,
       },
       1: {
         fontSize: 1,
         letterSpacing: '.032em',
-        textIndent: 0,
       },
       2: {
         fontSize: 2,
-        letterSpacing: '.032em',
-        textIndent: 0,
       },
       3: {
         fontSize: 3,
