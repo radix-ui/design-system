@@ -9,6 +9,7 @@ module.exports = {
     },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-catch-links',
+    'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-mdx',
       options: {
