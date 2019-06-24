@@ -5,20 +5,17 @@ import {
   MaxWidthProps,
   margin,
   MarginProps,
-  padding,
-  PaddingProps,
   variant,
   compose,
   Prop,
 } from '@modulz/radix-system';
 
 type Sizes = 0 | 1 | 2;
-type DividerProps = MaxWidthProps & MarginProps & PaddingProps & { size?: Prop<Sizes> };
+type DividerProps = MaxWidthProps & MarginProps & { size?: Prop<Sizes> };
 
 const styleProps = compose(
   maxWidth,
-  margin,
-  padding
+  margin
 );
 
 export const Divider = styled.div<DividerProps>(
