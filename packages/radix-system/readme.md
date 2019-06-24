@@ -6,43 +6,84 @@
 yarn add @modulz/radix-system
 ```
 
-Radix System is built on top of the popular [Styled System](https://github.com/styled-system/styled-system) library by [Brent Jackson](https://github.com/jxnblk).
+#### Theme-aware responsive style props for building design systems
 
-Styled System v5 now contains several sub-packages, one of them is `@styled-system/core`. This package exposes all the functions needed to built your own API on top of Styled System, and this is exactly what Radix System does.
+Built on top of [@styled-system/core](https://github.com/styled-system/styled-system/tree/master/packages/core) by [Brent Jackson](https://github.com/jxnblk).
 
-Features of Radix System:
+### Install it
 
+Radix System is currently under development, but if you'd like to use it anyway:
+
+```js
+# npm
+npm install @modulz/radix-system
+```
+
+```js
+# yarn
+yarn add @modulz/radix-system
+```
+
+### Features
+
+Radix System is an alternative to Styled System, built on the same [Core package](https://github.com/styled-system/styled-system/tree/master/packages/core) but with a few tweaks:
+
+- Typescript support
 - style functions are independent
-- each Style function has a Typescript interface
-- `color` prop has been renamed to `textColor`
+- `color` style function has been renamed to `textColor`
 - `space` has been split into `margin` and `space`
-- custom `variant` API implementation
+- Theme-aware `variant` API
 
-The [Radix](https://modulz-radix.netlify.com/docs/getting-started) Design System is on top of this.
+### Use it
 
-### Develop
+Import style functions:
 
-#### Install dependencies
+```js
+import styled from 'styled-components';
+import { margin, backgroundColor, compose } from '@modulz/radix-system';
 
-```sh
-yarn
+const styleProps = compose(
+  margin,
+  backgroundColor
+);
+const Box = styled('div')(styleProps);
+
+const App = () => (
+  <Box my={4} bg="blue">
+    Hey there 👋
+  </Box>
+);
 ```
 
-#### Watch compiled lib
+With Typescript:
 
-```sh
-yarn watch
+```js
+import styled from 'styled-components';
+import {
+  margin,
+  MarginProps,
+  backgroundColor,
+  BackgroundColorProps,
+  compose,
+} from '@modulz/radix-system';
+
+const styleProps = compose(
+  margin,
+  backgroundColor
+);
+type BoxProps = MarginProps & BackgroundColorProps;
+const Box = styled('div') < BoxProps > styleProps;
+
+const App = () => (
+  <Box my={4} bg="blue">
+    Hey there 👋
+  </Box>
+);
 ```
 
-> Useful when developing in `link` mode
+### Docs
 
-### Build
-
-#### Run build
-
-```sh
-yarn build
-```
+Proper docs coming soon.
 
 ---
 
