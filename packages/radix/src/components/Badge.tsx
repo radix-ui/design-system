@@ -41,7 +41,7 @@ export const Badge = styled('span')<BadgeProps>(
         'grays.5'
       ),
       display: 'inline-flex',
-      fontFamily: 'medium',
+      fontFamily: 'normal',
       fontSize: size === 'medium' ? 1 : 0,
       fontWeight: 500,
       height: size === 'medium' ? 5 : 3,

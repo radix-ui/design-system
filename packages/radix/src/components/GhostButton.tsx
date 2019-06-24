@@ -26,7 +26,7 @@ export const GhostButton = styled.button<GhostButtonProps>(
       display: 'inline-flex',
       flexShrink: 0,
       alignItems: 'center',
-      fontFamily: 'medium',
+      fontFamily: 'normal',
       fontSize: get({ medium: 3 }, size, 1),
       fontWeight: 500,
       height: get({ medium: 6 }, size, 5),

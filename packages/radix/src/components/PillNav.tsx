@@ -49,7 +49,7 @@ export const Pill = styled('button')<PillProps>(
       flexGrow: 1,
       position: 'relative',
       fontSize: 2,
-      fontFamily: 'medium',
+      fontFamily: 'normal',
       fontWeight: 500,
       backgroundColor: active ? 'grays.1' : 'white',
       border: '1px solid',

@@ -34,7 +34,7 @@ export const Text = styled('span')<TextProps>(
   ({ size, truncate, bold }: TextProps) =>
     css({
       fontWeight: bold ? '500' : '400',
-      fontFamily: bold ? 'medium' : 'normal',
+      fontFamily: 'normal',
       fontSize: get([0, 1, 2, 3, 4, 5, 6, 7], size, 'inherit'),
       letterSpacing: get(
         [

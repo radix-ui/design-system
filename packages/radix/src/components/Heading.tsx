@@ -40,7 +40,7 @@ export const Heading = styled('h1')<HeadingProps>(
         size
       ),
       fontWeight: bold ? '500' : '400',
-      fontFamily: bold ? 'medium' : 'normal',
+      fontFamily: 'normal',
       whiteSpace: truncate ? 'nowrap' : undefined,
       textOverflow: truncate ? 'ellipsis' : undefined,
       overflow: truncate ? 'hidden' : undefined,

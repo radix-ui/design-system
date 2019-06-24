@@ -61,7 +61,7 @@ export const Button = styled('button')<ButtonProps>(
       ),
       cursor: 'pointer',
       display: 'inline-flex',
-      fontFamily: 'medium',
+      fontFamily: 'normal',
       fontWeight: 500,
       fontSize: size === 'medium' ? 3 : 2,
       height: size === 'medium' ? 6 : 5,
