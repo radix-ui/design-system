@@ -70,8 +70,8 @@ const styleProps = compose(
   margin,
   backgroundColor
 );
-type BoxProps = { MarginProps & BackgroundColorProps}
-const Box = styled('div')<BoxProps>(styleProps);
+type BoxProps = MarginProps & BackgroundColorProps;
+const Box = styled('div') < BoxProps > styleProps;
 
 const App = () => (
   <Box my={4} bg="blue">
@@ -79,3 +79,7 @@ const App = () => (
   </Box>
 );
 ```
+
+### Docs
+
+Proper docs coming soon.
