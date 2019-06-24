@@ -51,6 +51,14 @@ export const GlobalStyles = createGlobalStyle(
         url(${UntitledSansMediumWoff2}) format('woff2'),
         url(${UntitledSansMediumWoff}) format('woff')`,
       },
+      {
+        fontFamily: 'UntitledSans-Medium',
+        fontWeight: '500',
+        fontDisplay: 'swap',
+        src: `local('UntitledSans-Medium'),
+        url(${UntitledSansMediumWoff2}) format('woff2'),
+        url(${UntitledSansMediumWoff}) format('woff')`,
+      },
     ],
   }),
   {
