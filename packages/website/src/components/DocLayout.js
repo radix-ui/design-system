@@ -47,7 +47,7 @@ function DocLayout({ children, pathname }) {
         <Box>
           <Box
             position={['static', 'fixed']}
-            width={['100%', 250]}
+            width={['100%', 200, 250]}
             height={['auto', '100vh']}
             overflow={['auto', 'scroll']}
             pt={4}
@@ -111,7 +111,7 @@ function DocLayout({ children, pathname }) {
               ))}
             </Menu>
           </Box>
-          <Box p={4} marginLeft={[0, 250]} maxWidth={['100%']}>
+          <Box p={4} marginLeft={[0, 200, 250]} maxWidth={['100%']}>
             <Container size={1}>{children}</Container>
           </Box>
         </Box>
