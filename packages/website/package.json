@@ -23,6 +23,7 @@
     "gatsby": "^2.4.6",
     "gatsby-mdx": "^0.6.3",
     "gatsby-plugin-catch-links": "^2.0.14",
+    "gatsby-plugin-netlify": "^2.1.0",
     "gatsby-plugin-nprogress": "^2.0.10",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-filesystem": "^2.0.35",
