@@ -21,13 +21,13 @@ component: GhostButton
 
 ```js live=true
 <>
-  <GhostButton size="medium">
+  <GhostButton size="large">
     <HamburgerIcon size="25" />
   </GhostButton>
-  <GhostButton size="medium" variant="active" ml={3}>
+  <GhostButton size="large" variant="active" ml={3}>
     <HamburgerIcon size="25" />
   </GhostButton>
-  <GhostButton size="medium" disabled ml={3}>
+  <GhostButton size="large" disabled ml={3}>
     <HamburgerIcon size="25" />
   </GhostButton>
 </>
@@ -35,12 +35,12 @@ component: GhostButton
 
 ### System props
 
-<SystemProps props={['space']} />
+<SystemProps props={['margin']} />
 
 ### Custom props
 
-| Name       | Type     |   Default   | Description          |
-| :--------- | :------- | :---------: | :------------------- |
-| `variant`  | 'active' | `undefined` | Variant to display   |
-| `size`     | 'medium' | `undefined` | Size to display      |
-| `disabled` | Boolean  |   `false`   | Disables the element |
+| Name       | Type                 | Default  | Description          |
+| :--------- | :------------------- | :------: | :------------------- |
+| `variant`  | 'normal' \| 'active' | `normal` | Variant to display   |
+| `size`     | 'normal' \|'large'   | `normal` | Size to display      |
+| `disabled` | Boolean              | `false`  | Disables the element |

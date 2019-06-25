@@ -25,11 +25,7 @@ function CheckboxStory() {
       <Box mb="4">
         <Text as="p">Controlled</Text>
         <Box>
-          <Checkbox
-            value="accept"
-            checked={checked}
-            onChange={e => setChecked(e.target.checked)}
-          >
+          <Checkbox value="accept" checked={checked} onChange={e => setChecked(e.target.checked)}>
             Accept
           </Checkbox>
         </Box>
@@ -41,6 +37,4 @@ function CheckboxStory() {
   );
 }
 
-storiesOf('Components|Checkbox', module).add('default', () => (
-  <CheckboxStory />
-));
+storiesOf('Components|Checkbox', module).add('default', () => <CheckboxStory />);

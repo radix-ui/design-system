@@ -6,10 +6,10 @@ component: Card
 ```js live=true
 <Card maxWidth={275}>
   <Text as="p" mb="5" size={3}>
-    Illustration tools can't be the source of truth for code. It might demo well
-    with simple examples, but long term it's a dead end.
+    Illustration tools can't be the source of truth for code. It might demo well with simple
+    examples, but long term it's a dead end.
   </Text>
-  <Text size={2} color="grays.5">
+  <Text size={2} textColor="grays.5">
     <Link>Mark Dalgleish</Link>
   </Text>
 </Card>
@@ -18,10 +18,10 @@ component: Card
 ```js live=true
 <Card maxWidth={275} variant="shadow">
   <Text as="p" mb="5" size={3}>
-    Illustration tools can't be the source of truth for code. It might demo well
-    with simple examples, but long term it's a dead end.
+    Illustration tools can't be the source of truth for code. It might demo well with simple
+    examples, but long term it's a dead end.
   </Text>
-  <Text size={2} color="grays.5">
+  <Text size={2} textColor="grays.5">
     <Link>Mark Dalgleish</Link>
   </Text>
 </Card>
@@ -30,10 +30,10 @@ component: Card
 ```js live=true
 <Card maxWidth={275} variant="ghost">
   <Text as="p" mb="5" size={3}>
-    Illustration tools can't be the source of truth for code. It might demo well
-    with simple examples, but long term it's a dead end.
+    Illustration tools can't be the source of truth for code. It might demo well with simple
+    examples, but long term it's a dead end.
   </Text>
-  <Text size={2} color="grays.5">
+  <Text size={2} textColor="grays.5">
     <Link>Mark Dalgleish</Link>
   </Text>
 </Card>
@@ -41,10 +41,10 @@ component: Card
 
 ### System props
 
-<SystemProps props={['color', 'space', 'width', 'maxWidth']} />
+<SystemProps props={['textColor', 'backgroundColor', 'margin', 'padding', 'width', 'maxWidth']} />
 
 ### Custom props
 
-| Name      | Type                |   Default   | Description        |
-| :-------- | :------------------ | :---------: | :----------------- |
-| `variant` | 'shadow' \| 'ghost' | `undefined` | Variant to display |
+| Name      | Type                            | Default  | Description        |
+| :-------- | :------------------------------ | :------: | :----------------- |
+| `variant` | 'shadow' \| 'shadow' \| 'ghost' | `border` | Variant to display |

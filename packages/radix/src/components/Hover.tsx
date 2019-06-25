@@ -6,11 +6,7 @@ type HoverProps = BoxProps & {
   as?: any;
 };
 
-export const Hover: FC<HoverProps> = ({
-  as: Component = Box,
-  children,
-  ...props
-}) => {
+export const Hover: FC<HoverProps> = ({ as: Component = Box, children, ...props }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

@@ -1,68 +1,26 @@
 import styled from 'styled-components';
+import { compose } from '@modulz/radix-system';
 import {
   alignContent,
   AlignContentProps,
   alignItems,
   AlignItemsProps,
-  gridGap,
-  GridGapProps,
-  gridColumnGap,
-  GridColumnGapProps,
-  gridRowGap,
-  GridRowGapProps,
-  gridColumn,
-  GridColumnProps,
-  gridRow,
-  GridRowProps,
-  gridAutoFlow,
-  GridAutoFlowProps,
-  gridAutoColumns,
-  GridAutoColumnsProps,
-  gridAutoRows,
-  GridAutoRowsProps,
-  gridTemplateColumns,
-  GridTemplateColumnsProps,
-  gridTemplateRows,
-  GridTemplateRowsProps,
-  gridTemplateAreas,
-  GridTemplatesAreasProps,
-  gridArea,
-  GridAreaProps,
-  space,
-  SpaceProps,
-} from 'styled-system';
+  gridSet,
+  GridSetProps,
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
+} from '@modulz/radix-system';
 
-type GridProps = AlignContentProps &
-  AlignItemsProps &
-  GridGapProps &
-  GridColumnGapProps &
-  GridRowGapProps &
-  GridColumnProps &
-  GridRowProps &
-  GridAutoFlowProps &
-  GridAutoColumnsProps &
-  GridAutoRowsProps &
-  GridTemplateColumnsProps &
-  GridTemplateRowsProps &
-  GridTemplatesAreasProps &
-  GridAreaProps &
-  SpaceProps;
+type GridProps = AlignContentProps & AlignItemsProps & GridSetProps & MarginProps & PaddingProps;
 
-export const Grid = styled.div<GridProps>(
-  { display: 'grid' },
+const styleProps = compose(
   alignContent,
   alignItems,
-  gridGap,
-  gridColumnGap,
-  gridRowGap,
-  gridColumn,
-  gridRow,
-  gridAutoFlow,
-  gridAutoColumns,
-  gridAutoRows,
-  gridTemplateColumns,
-  gridTemplateRows,
-  gridTemplateAreas,
-  gridArea,
-  space
+  gridSet,
+  margin,
+  padding
 );
+
+export const Grid = styled.div<GridProps>({ display: 'grid' }, styleProps);

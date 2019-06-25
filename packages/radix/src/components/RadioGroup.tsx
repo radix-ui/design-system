@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { space, SpaceProps } from 'styled-system';
+import { margin, MarginProps } from '@modulz/radix-system';
 
 type RadioGroupProps = ComponentProps<'div'> & {
   name: string;
@@ -37,39 +37,26 @@ export const RadioGroup = (props: RadioGroupProps) => {
   );
 };
 
-// TODO: Styled System is missing some spacing props in `propTypes`
-// https://github.com/styled-system/styled-system/issues/466
-const spacePropNames = [
-  ...Object.keys(space.propTypes || {}),
-  'mx',
-  'my',
-  'px',
-  'py',
-];
+const marginPropNames = margin.propNames;
 
 type Ref = HTMLInputElement;
-type RadioProps = SpaceProps & ComponentPropsWithRef<'input'>;
+type RadioProps = MarginProps & ComponentPropsWithRef<'input'>;
 
-export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>(
-  (props, ref) => {
-    const { children, ...otherProps } = props;
-    const systemProps = pick(otherProps, spacePropNames);
-    const inputProps = omit(otherProps, spacePropNames);
+export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>((props, ref) => {
+  const { children, ...otherProps } = props;
+  const systemProps = pick(otherProps, marginPropNames);
+  const inputProps = omit(otherProps, marginPropNames);
 
-    return (
-      <RadioWrapper {...systemProps}>
-        <Input {...inputProps} type="radio" ref={ref} />
-        <FakeRadio />
-        {children && <TextWrapper>{children}</TextWrapper>}
-      </RadioWrapper>
-    );
-  }
-);
+  return (
+    <RadioWrapper {...systemProps}>
+      <Input {...inputProps} type="radio" ref={ref} />
+      <FakeRadio />
+      {children && <TextWrapper>{children}</TextWrapper>}
+    </RadioWrapper>
+  );
+});
 
-const RadioWrapper = styled('label')<SpaceProps>(
-  { position: 'relative' },
-  space
-);
+const RadioWrapper = styled('label')<MarginProps>({ position: 'relative' }, margin);
 
 const Input = styled('input')({
   appearance: 'none',
