@@ -37,7 +37,7 @@ export const GlobalStyles = createGlobalStyle(
     '@font-face': [
       {
         fontFamily: 'UntitledSans',
-        fontWeight: '400',
+        fontWeight: 400,
         fontDisplay: 'swap',
         src: `local('UntitledSans'), url(${UntitledSansWoff2}) format('woff2'), url(${UntitledSansWoff}) format('woff')`,
       },
