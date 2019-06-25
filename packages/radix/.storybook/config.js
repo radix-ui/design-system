@@ -23,11 +23,7 @@ function ThemeComponent({ children }) {
     <RadixProvider theme={currentTheme}>
       <Box p={3}>
         <Box py={3} mb={6} borderBottom="1px solid" borderColor="grays.3">
-          <Button
-            onClick={() =>
-              setCurrentTheme(currentTheme === theme ? darkTheme : theme)
-            }
-          >
+          <Button onClick={() => setCurrentTheme(currentTheme === theme ? darkTheme : theme)}>
             Change theme
           </Button>
         </Box>

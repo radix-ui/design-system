@@ -9,34 +9,51 @@ import {
   JustifySelfProps,
   maxWidth,
   MaxWidthProps,
-  space,
-  SpaceProps,
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
   variant,
-} from 'styled-system';
-import { get } from '../utils/get';
+  compose,
+  Prop,
+} from '@modulz/radix-system';
 
-const containerStyle = variant({ key: 'containerSizes', prop: 'size' });
-
-type Sizes = 0 | 1 | 2 | null;
-
+type Sizes = 0 | 1 | 2;
 type ContainerProps = AlignSelfProps &
   FlexProps &
   JustifySelfProps &
   MaxWidthProps &
-  SpaceProps & { size?: Sizes | Sizes[] };
+  MarginProps &
+  PaddingProps & { size?: Prop<Sizes> };
 
-export const Container = styled('div')<ContainerProps>(
-  ({ size }) =>
-    css({
-      marginX: 'auto',
-      paddingX: 5,
-      flex: 1,
-      maxWidth: get(['25rem', '45rem', '65rem'], size),
-    }),
+const styleProps = compose(
   alignSelf,
   flex,
   justifySelf,
   maxWidth,
-  space,
-  containerStyle
+  margin,
+  padding
+);
+
+export const Container = styled('div')<ContainerProps>(
+  css({
+    marginX: 'auto',
+    paddingX: 5,
+    flex: 1,
+    maxWidth: '25rem',
+  }),
+  variant({
+    size: {
+      0: {
+        maxWidth: '25rem',
+      },
+      1: {
+        maxWidth: '45rem',
+      },
+      2: {
+        maxWidth: '65rem',
+      },
+    },
+  }),
+  styleProps
 );

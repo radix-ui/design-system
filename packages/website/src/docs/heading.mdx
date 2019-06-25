@@ -12,19 +12,18 @@ component: Heading
 ```
 
 ```js live=true
-<Heading size={4} bold>
+<Heading size={4} fontWeight="bold">
   With Modulz
 </Heading>
 ```
 
 ### System props
 
-<SystemProps props={['color', 'space', 'textAlign', 'lineHeight']} />
+<SystemProps props={['textColor', 'margin', 'padding', 'textAlign', 'lineHeight']} />
 
 ### Custom props
 
 | Name       | Type                   | Default | Description           |
 | :--------- | :--------------------- | :-----: | :-------------------- |
 | `size`     | ResponsiveValue<0...5> |   `3`   | Changes the font size |
-| `bold`     | Boolean                | `false` | Makes the text bold   |
 | `truncate` | boolean                | `false` | Truncates the text    |

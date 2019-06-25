@@ -3,26 +3,18 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
-import { space, SpaceProps } from 'styled-system';
+import { margin, MarginProps } from '@modulz/radix-system';
 
-type CheckboxProps = SpaceProps & ComponentProps<'input'>;
+type CheckboxProps = MarginProps & ComponentProps<'input'>;
 
-// TODO: Styled System is missing some spacing props in `propTypes`
-// https://github.com/styled-system/styled-system/issues/466
-const spacePropNames = [
-  ...Object.keys(space.propTypes || {}),
-  'mx',
-  'my',
-  'px',
-  'py',
-];
+const marginPropNames = margin.propNames;
 
 export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
-  const spaceProps = pick(props, spacePropNames);
-  const inputProps = omit(props, spacePropNames);
+  const marginProps = pick(props, marginPropNames);
+  const inputProps = omit(props, marginPropNames);
 
   return (
-    <CheckboxWrapper {...spaceProps}>
+    <CheckboxWrapper {...marginProps}>
       <Input type="checkbox" {...inputProps} />
       <FakeCheckbox>
         <CheckedIcon
@@ -33,11 +25,7 @@ export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
           xmlns="http://www.w3.org/2000/svg"
           stroke="currentColor"
         >
-          <path
-            d="M11.5 3.5L6.5 11.5L3.5 8.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="M11.5 3.5L6.5 11.5L3.5 8.5" strokeLinecap="round" strokeLinejoin="round" />
         </CheckedIcon>
       </FakeCheckbox>
       {children && <TextWrapper>{children}</TextWrapper>}
@@ -45,12 +33,12 @@ export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
   );
 };
 
-const CheckboxWrapper = styled('label')<SpaceProps>(
+const CheckboxWrapper = styled('label')<MarginProps>(
   {
     position: 'relative',
     display: 'inline-block',
   },
-  space
+  margin
 );
 
 const Input = styled('input')({
@@ -67,7 +55,7 @@ const Input = styled('input')({
   WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
 });
 
-const TextWrapper = styled('span')(() =>
+const TextWrapper = styled('span')(
   css({
     lineHeight: 5,
     fontFamily: 'normal',

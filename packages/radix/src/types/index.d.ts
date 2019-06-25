@@ -1,4 +1,5 @@
 declare module '@styled-system/css';
+declare module '@styled-system/theme-get';
 declare module '@reach/dialog';
 declare module 'lodash.merge';
 declare module 'lodash.omit';

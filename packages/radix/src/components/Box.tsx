@@ -1,25 +1,21 @@
 import styled from 'styled-components';
 import {
-  alignSelf,
-  AlignSelfProps,
-  borders,
-  BordersProps,
-  bottom,
-  BottomProps,
+  border,
+  BorderProps,
   boxShadow,
   BoxShadowProps,
-  color,
-  ColorProps,
+  backgroundColor,
+  BackgroundColorProps,
   display,
   DisplayProps,
-  flex,
-  FlexProps,
+  opacity,
+  OpacityProps,
   height,
   HeightProps,
   justifySelf,
   JustifySelfProps,
-  left,
-  LeftProps,
+  margin,
+  MarginProps,
   maxWidth,
   MaxWidthProps,
   maxHeight,
@@ -28,75 +24,65 @@ import {
   MinHeightProps,
   minWidth,
   MinWidthProps,
-  opacity,
-  OpacityProps,
   overflow,
   OverflowProps,
-  position,
-  PositionProps,
-  right,
-  RightProps,
-  space,
-  SpaceProps,
+  padding,
+  PaddingProps,
+  positionSet,
+  PositionSetProps,
   textAlign,
   TextAlignProps,
-  top,
-  TopProps,
+  textColor,
+  TextColorProps,
   width,
   WidthProps,
-  zIndex,
-  ZIndexProps,
-} from 'styled-system';
+  flexItemSet,
+  FlexItemSetProps,
+  compose,
+} from '@modulz/radix-system';
 import { ComponentProps } from 'react';
 
-// TODO: Add `flexGrow`, `flexShrink` and `flexBasis`
-export type BoxProps = AlignSelfProps &
-  BordersProps &
-  BottomProps &
+export type BoxProps = BorderProps &
   BoxShadowProps &
-  ColorProps &
+  BackgroundColorProps &
+  TextColorProps &
   DisplayProps &
-  FlexProps &
   HeightProps &
   JustifySelfProps &
-  LeftProps &
+  MarginProps &
   MaxWidthProps &
   MaxHeightProps &
   MinHeightProps &
   MinWidthProps &
   OpacityProps &
   OverflowProps &
-  PositionProps &
-  RightProps &
-  SpaceProps &
+  PaddingProps &
   TextAlignProps &
-  TopProps &
   WidthProps &
-  ZIndexProps &
+  PositionSetProps &
+  FlexItemSetProps &
   ComponentProps<'div'> & { as?: any };
 
-export const Box = styled('div')<BoxProps>(
-  alignSelf,
-  borders,
-  bottom,
+const styleProps = compose(
+  border,
   boxShadow,
-  color,
+  backgroundColor,
+  textColor,
   display,
-  flex,
   height,
   justifySelf,
-  left,
+  margin,
   maxHeight,
   maxWidth,
   minHeight,
   minWidth,
   opacity,
   overflow,
-  position,
-  right,
-  space,
+  padding,
   textAlign,
-  top,
   width,
-  zIndex
+  positionSet,
+  flexItemSet
 );
+
+export const Box = styled('div')<BoxProps>(styleProps);
