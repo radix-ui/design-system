@@ -56,6 +56,11 @@ type MenuItemProps = PaddingProps &
     variant?: 'normal' | 'active' | 'selected';
   };
 
+const menuItemStyleProps = compose(
+  padding,
+  minHeight
+);
+
 export const MenuItem = styled('button')<MenuItemProps>(
   css({
     alignItems: 'center',
@@ -130,8 +135,7 @@ export const MenuItem = styled('button')<MenuItemProps>(
   {
     lineHeight: '1',
   },
-  padding,
-  minHeight
+  menuItemStyleProps
 );
 
 MenuItem.defaultProps = { variant: 'normal' };
