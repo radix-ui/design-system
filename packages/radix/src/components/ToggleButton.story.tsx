@@ -86,6 +86,4 @@ function ToggleButtonGroupStory() {
   );
 }
 
-storiesOf('Components|ToggleButton', module).add('default', () => (
-  <ToggleButtonGroupStory />
-));
+storiesOf('Components|ToggleButton', module).add('default', () => <ToggleButtonGroupStory />);

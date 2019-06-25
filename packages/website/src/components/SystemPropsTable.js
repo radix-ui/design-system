@@ -1,5 +1,5 @@
 import React from 'react';
-import * as StyledSystem from 'styled-system';
+import * as RadixSystem from '@modulz/radix-system';
 import { Box, Table, Thead, Tr, Th, Tbody, Td, Code } from '@modulz/radix';
 
 export function SystemPropsTable({ props }) {
@@ -18,8 +18,7 @@ export function SystemPropsTable({ props }) {
               <Td>{prop}</Td>
               <Td>
                 <Box>
-                  {// eslint-disable-next-line react/forbid-foreign-prop-types
-                  Object.keys(StyledSystem[prop].propTypes).map(p => (
+                  {RadixSystem[prop].propNames.map(p => (
                     <Code key={p} mr={1}>
                       {p}
                     </Code>

@@ -47,6 +47,4 @@ function RadioGroupStory() {
   );
 }
 
-storiesOf('Components|RadioGroup', module).add('default', () => (
-  <RadioGroupStory />
-));
+storiesOf('Components|RadioGroup', module).add('default', () => <RadioGroupStory />);

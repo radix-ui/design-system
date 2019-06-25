@@ -55,6 +55,4 @@ function CheckboxButtonStory() {
   );
 }
 
-storiesOf('Components|CheckboxButton', module).add('default', () => (
-  <CheckboxButtonStory />
-));
+storiesOf('Components|CheckboxButton', module).add('default', () => <CheckboxButtonStory />);

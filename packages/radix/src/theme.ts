@@ -1,6 +1,5 @@
-import { Theme } from 'styled-system';
-
-export const theme: Theme = {
+// TODO: type Theme
+export const theme = {
   breakpoints: ['38em', '62em', '68em', '110em'],
   fonts: {
     normal:
@@ -22,41 +21,9 @@ export const theme: Theme = {
     '35px',
     '58px',
   ],
-  space: [
-    '0',
-    '5px',
-    '10px',
-    '15px',
-    '20px',
-    '25px',
-    '35px',
-    '45px',
-    '65px',
-    '80px',
-  ],
-  sizes: [
-    '0',
-    '5px',
-    '10px',
-    '15px',
-    '20px',
-    '25px',
-    '35px',
-    '45px',
-    '65px',
-    '80px',
-  ],
-  lineHeights: [
-    '20px',
-    '25px',
-    '30px',
-    '35px',
-    '40px',
-    '45px',
-    '50px',
-    '55px',
-    '60px',
-  ],
+  space: ['0', '5px', '10px', '15px', '20px', '25px', '35px', '45px', '65px', '80px'],
+  sizes: ['0', '5px', '10px', '15px', '20px', '25px', '35px', '45px', '65px', '80px'],
+  lineHeights: ['20px', '25px', '30px', '35px', '40px', '45px', '50px', '55px', '60px'],
   radii: [0, '.1875rem', '.5rem', '625rem'],
   colors: {
     black: 'hsl(0, 0%, 0%)',

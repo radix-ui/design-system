@@ -5,13 +5,13 @@ component: CardLink
 
 ```js live=true
 <CardLink maxWidth={275}>
-  <Heading size={1} mb="3" bold>
+  <Heading size={1} mb="3" fontWeight="bold">
     Design tools are running out of track. Here’s how we can fix them.
   </Heading>
   <Text as="p" mb="4" size={3}>
     An outline of two opposing narratives emerging in the design tool space.
   </Text>
-  <Text size={2} color="grays.5">
+  <Text size={2} textColor="grays.5">
     Today
   </Text>
 </CardLink>
@@ -19,13 +19,13 @@ component: CardLink
 
 ```js live=true
 <CardLink maxWidth={275} variant="shadow">
-  <Heading size={1} mb="3" bold>
+  <Heading size={1} mb="3" fontWeight="bold">
     Design tools are running out of track. Here’s how we can fix them.
   </Heading>
   <Text as="p" mb="4" size={3}>
     An outline of two opposing narratives emerging in the design tool space.
   </Text>
-  <Text size={2} color="grays.5">
+  <Text size={2} textColor="grays.5">
     Today
   </Text>
 </CardLink>
@@ -33,13 +33,13 @@ component: CardLink
 
 ```js live=true
 <CardLink maxWidth={275} variant="ghost">
-  <Heading size={1} mb="3" bold>
+  <Heading size={1} mb="3" fontWeight="bold">
     Design tools are running out of track. Here’s how we can fix them.
   </Heading>
   <Text as="p" mb="4" size={3}>
     An outline of two opposing narratives emerging in the design tool space.
   </Text>
-  <Text size={2} color="grays.5">
+  <Text size={2} textColor="grays.5">
     Today
   </Text>
 </CardLink>
@@ -49,10 +49,10 @@ The `CardLink` component composes the `Card` [component](/docs/card)
 
 ### System props
 
-<SystemProps props={['color', 'space', 'width', 'maxWidth']} />
+<SystemProps props={['textColor', 'backgroundColor', 'margin', 'padding', 'width', 'maxWidth']} />
 
 ### Custom props
 
-| Name      | Type                |   Default   | Description        |
-| :-------- | :------------------ | :---------: | :----------------- |
-| `variant` | 'shadow' \| 'ghost' | `undefined` | Variant to display |
+| Name      | Type                            | Default  | Description        |
+| :-------- | :------------------------------ | :------: | :----------------- |
+| `variant` | 'border' \| 'shadow' \| 'ghost' | `border` | Variant to display |

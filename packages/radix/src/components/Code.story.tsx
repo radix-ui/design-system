@@ -14,8 +14,8 @@ storiesOf('Components|Code', module).add('default', () => (
     </Box>
     <Box mb={4}>
       <Text as="p">
-        You can change the background color of an element by using the{' '}
-        <Code>backgroundColor</Code> prop.
+        You can change the background color of an element by using the <Code>backgroundColor</Code>{' '}
+        prop.
       </Text>
     </Box>
 

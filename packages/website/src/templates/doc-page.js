@@ -22,9 +22,9 @@ export const components = {
   td: RC.Td,
   inlineCode: RC.Code,
   a: RC.Link,
-  h1: props => <RC.Heading {...props} bold size={3} mt={8} mb={4} />,
-  h2: props => <RC.Heading {...props} as="h2" bold size={2} mt={8} mb={4} />,
-  h3: props => <RC.Heading {...props} as="h3" bold size={1} mt={8} mb={4} />,
+  h1: props => <RC.Heading {...props} fontWeight="bold" size={3} mt={8} mb={4} />,
+  h2: props => <RC.Heading {...props} as="h2" fontWeight="bold" size={2} mt={8} mb={4} />,
+  h3: props => <RC.Heading {...props} as="h3" fontWeight="bold" size={1} mt={8} mb={4} />,
   SystemProps: SystemPropsTable,
 };
 
@@ -35,7 +35,7 @@ function DocPageTemplate({ data, location, ...props }) {
     <DocLayout pathname={location.pathname}>
       <MDXProvider components={components}>
         <RC.Box>
-          <RC.Heading size={3} bold>
+          <RC.Heading size={3} fontWeight="bold">
             {data.mdx.frontmatter.title}
           </RC.Heading>
           {children}
