@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { space, SpaceProps } from 'styled-system';
-import { themeGet } from 'styled-system';
+import { margin, MarginProps } from '@modulz/radix-system';
+import { themeGet } from '@styled-system/theme-get';
 
-export const Code = styled('code')<SpaceProps>(
+export const Code = styled('code')<MarginProps>(
   props =>
     css({
       display: 'inline-block',
@@ -18,5 +18,5 @@ export const Code = styled('code')<SpaceProps>(
       paddingX: 1,
       whiteSpace: 'nowrap',
     }),
-  space
+  margin
 );

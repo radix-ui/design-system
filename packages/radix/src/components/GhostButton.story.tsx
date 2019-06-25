@@ -61,19 +61,19 @@ storiesOf('Components|GhostButton', module).add('default', () => (
     </Box>
 
     <Box mb="4">
-      <GhostButton size="medium" mr="4">
+      <GhostButton size="large" mr="4">
         {Bookmark}
       </GhostButton>
-      <GhostButton size="medium" disabled mr="4">
+      <GhostButton size="large" disabled mr="4">
         {Bookmark}
       </GhostButton>
-      <GhostButton size="medium" mr="4" px={2}>
+      <GhostButton size="large" mr="4" px={2}>
         <Box mr={1}>{Bookmark}</Box> Bookmark
       </GhostButton>
-      <GhostButton size="medium" variant="active" mr="4">
+      <GhostButton size="large" variant="active" mr="4">
         {Bookmark}
       </GhostButton>
-      <GhostButton size="medium" mr="4" px={2}>
+      <GhostButton size="large" mr="4" px={2}>
         Bookmark
       </GhostButton>
     </Box>

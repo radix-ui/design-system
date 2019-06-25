@@ -49,14 +49,15 @@ function DocLayout({ children, pathname }) {
             position={['static', 'fixed']}
             width={['100%', 200]}
             height={['auto', '100vh']}
-            overflow="auto"
+            overflow={['auto', 'scroll']}
             pt={4}
-            pb={4}
+            pb={[0, 4]}
             borderRight={[0, '1px solid']}
             borderBottom={['1px solid', 0]}
             borderColor={['grays.2', 'grays.2']}
+            style={{ WebkitOverflowScrolling: 'touch' }}
           >
-            <Heading size={1} ml={3} mb={4} bold>
+            <Heading size={1} ml={3} mb={4} fontWeight="bold">
               <Flex alignItems="center">
                 Radix{' '}
                 <Badge ml={2} variant="gray">

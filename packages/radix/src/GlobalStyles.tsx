@@ -39,9 +39,7 @@ export const GlobalStyles = createGlobalStyle(
         fontFamily: 'UntitledSans',
         fontWeight: '400',
         fontDisplay: 'swap',
-        src: `local('UntitledSans'),
-        url(${UntitledSansWoff2}) format('woff2'),
-        url(${UntitledSansWoff}) format('woff')`,
+        src: `local('UntitledSans'), url(${UntitledSansWoff2}) format('woff2'), url(${UntitledSansWoff}) format('woff')`,
       },
       {
         fontFamily: 'UntitledSans',

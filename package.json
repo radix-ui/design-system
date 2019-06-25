@@ -4,21 +4,23 @@
     "packages/*"
   ],
   "scripts": {
-    "postinstall": "yarn radix:build",
+    "postinstall": "yarn radix-system:build && yarn radix:build",
     "start": "npm-run-all --parallel radix website",
     "website": "lerna exec --scope website -- yarn start",
     "website:build": "lerna exec --scope website -- yarn build",
     "radix": "lerna exec --scope @modulz/radix -- yarn watch",
     "radix:build": "lerna exec --scope @modulz/radix -- yarn build",
+    "radix-system": "lerna exec --scope @modulz/radix-system -- yarn watch",
+    "radix-system:build": "lerna exec --scope @modulz/radix-system -- yarn build",
     "icons": "lerna exec --scope @modulz/radix-icons -- yarn watch",
     "icons:build": "lerna exec --scope @modulz/radix-icons -- yarn build",
-    "build": "yarn radix:build && yarn icons:build && yarn website:build",
+    "build": "yarn radix-system:build && yarn radix:build && yarn icons:build && yarn website:build",
     "prettier": "prettier './**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}' --write",
     "lint": "eslint './packages/**/*.{js,jsx,ts,tsx}'",
     "clean": "npm run clean-logs && npm run clean-modules",
     "clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
     "clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/",
-    "release": "yarn radix:build && lerna publish"
+    "release": "yarn radix-system:build && yarn radix:build && lerna publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",

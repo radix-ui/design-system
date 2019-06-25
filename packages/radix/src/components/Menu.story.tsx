@@ -17,12 +17,9 @@ function MenuStory() {
   }
 
   return (
-    <Grid
-      gridTemplateColumns={['1fr', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}
-      gridGap={4}
-    >
+    <Grid gridTemplateColumns={['1fr', 'repeat(2, 1fr)', 'repeat(3, 1fr)']} gridGap={4}>
       <Box mb="4">
-        <Heading size={0} bold>
+        <Heading size={0} fontWeight="bold">
           Default
         </Heading>
         <Menu>
@@ -30,7 +27,7 @@ function MenuStory() {
             <Text size={2}>Item one</Text>
           </MenuItem>
           <MenuItem ref={menuItemRef} onClick={handleClick} disabled>
-            <Text size={2} color="inherit">
+            <Text size={2} textColor="inherit">
               Item two
             </Text>
           </MenuItem>
@@ -41,7 +38,7 @@ function MenuStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} bold>
+        <Heading size={0} fontWeight="bold">
           Menu with content on hover
         </Heading>
         <Menu>
@@ -60,7 +57,7 @@ function MenuStory() {
           <Hover>
             {isHovered => (
               <MenuItem variant="active">
-                <Text size={2} color="white">
+                <Text size={2} textColor="white">
                   Wrapped in `Hover`
                 </Text>
                 {isHovered && (
@@ -74,7 +71,7 @@ function MenuStory() {
           <Hover>
             {isHovered => (
               <MenuItem disabled>
-                <Text size={2} color="inherit">
+                <Text size={2} textColor="inherit">
                   Wrapped in `Hover`
                 </Text>
                 {isHovered && (
@@ -89,7 +86,7 @@ function MenuStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} bold>
+        <Heading size={0} fontWeight="bold">
           Menu with icon
         </Heading>
         <Menu>
@@ -103,7 +100,7 @@ function MenuStory() {
             <Box mr={3}>
               <CircleIcon size="15" />
             </Box>
-            <Text size={2} color="white">
+            <Text size={2} textColor="white">
               Item two
             </Text>
           </MenuItem>
@@ -117,7 +114,7 @@ function MenuStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} bold>
+        <Heading size={0} fontWeight="bold">
           Menu with group
         </Heading>
         <Menu>
@@ -139,7 +136,7 @@ function MenuStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} bold>
+        <Heading size={0} fontWeight="bold">
           Menu with variants
         </Heading>
         <Menu>
@@ -150,12 +147,12 @@ function MenuStory() {
             <Text size={2}>Selected</Text>
           </MenuItem>
           <MenuItem variant="active">
-            <Text size={2} color="white">
+            <Text size={2} textColor="white">
               Active
             </Text>
           </MenuItem>
           <MenuItem disabled>
-            <Text size={2} color="inherit">
+            <Text size={2} textColor="inherit">
               Disabled
             </Text>
           </MenuItem>
@@ -163,7 +160,7 @@ function MenuStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} bold mb={1}>
+        <Heading size={0} fontWeight="bold" mb={1}>
           Menu with shadow variant
         </Heading>
         <Menu variant="shadow">
@@ -189,31 +186,27 @@ function MenuStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} bold>
+        <Heading size={0} fontWeight="bold">
           Custom
         </Heading>
         <Menu>
           <MenuItem>
             <Box>
-              <Heading size={0} bold mb={1}>
+              <Heading size={0} fontWeight="bold" mb={1}>
                 Heading
               </Heading>
-              <Text as="div" size={1} color="grays.5">
+              <Text as="div" size={1} textColor="grays.5">
                 Some text
               </Text>
             </Box>
           </MenuItem>
           <MenuItem>
-            <Flex
-              alignItems="center"
-              justifyContent="space-between"
-              width="100%"
-            >
+            <Flex alignItems="center" justifyContent="space-between" width="100%">
               <Text as="div" size={3}>
                 Device
               </Text>
 
-              <Text as="div" size={1} color="grays.5">
+              <Text as="div" size={1} textColor="grays.5">
                 200 x 400
               </Text>
             </Flex>

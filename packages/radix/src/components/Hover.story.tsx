@@ -11,9 +11,7 @@ storiesOf('Components|Hover', module).add('default', () => (
   <>
     <Box mb="4">
       <Hover width={280} height={280}>
-        {isHovered => (
-          <Box width={280} height={280} bg={isHovered ? 'blue' : 'green'} />
-        )}
+        {isHovered => <Box width={280} height={280} bg={isHovered ? 'blue' : 'green'} />}
       </Hover>
     </Box>
 
@@ -44,11 +42,7 @@ storiesOf('Components|Hover', module).add('default', () => (
                       xmlns="http://www.w3.org/2000/svg"
                       stroke="hsl(208, 12%, 50%)"
                     >
-                      <path
-                        d="M9.5 2.5H12.5V5.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
+                      <path d="M9.5 2.5H12.5V5.5" strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M6.5 8.5L12.5 2.5" strokeLinecap="round" />
                       <path
                         d="M10.5 9.07143V12C10.5 12.2761 10.2761 12.5 10 12.5H3C2.72386 12.5 2.5 12.2761 2.5 12V5C2.5 4.72386 2.72386 4.5 3 4.5H5.92857"

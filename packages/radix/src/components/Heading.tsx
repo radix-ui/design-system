@@ -1,52 +1,96 @@
 import styled from 'styled-components';
+import css from '@styled-system/css';
 import {
-  color,
-  ColorProps,
-  space,
-  SpaceProps,
+  textColor,
+  TextColorProps,
+  margin,
+  MarginProps,
   textAlign,
   lineHeight,
   LineHeightProps,
   TextAlignProps,
-  ResponsiveValue,
-} from 'styled-system';
-import { get } from '../utils/get';
-import css from '@styled-system/css';
+  variant,
+  compose,
+  Prop,
+} from '@modulz/radix-system';
 
-type HeadingProps = ColorProps &
-  SpaceProps &
+type HeadingProps = TextColorProps &
+  MarginProps &
   TextAlignProps &
   LineHeightProps & {
-    size?: ResponsiveValue<0 | 1 | 2 | 3 | 4 | 5>;
-    bold?: boolean;
-    truncate?: boolean;
+    size?: Prop<0 | 1 | 2 | 3 | 4 | 5>;
+    fontWeight?: Prop<'normal' | 'bold'>;
+    truncate?: Prop<boolean>;
   };
 
-// TODO: Fix color typings
-// @ts-ignore
-export const Heading = styled('h1')<HeadingProps>(
-  ({ size = 2, bold, truncate }: HeadingProps) =>
-    css({
-      margin: 0,
-      lineHeight: 1.2,
-      color: 'grays.8',
-      fontSize: get([3, 5, 7, 8, 9, 10], size),
-      letterSpacing: get(
-        ['-.0125em', '-.005em', '-.012em', '-.028em', ' -.042em', ' -.052em'],
-        size
-      ),
-      textIndent: get(
-        ['-.05em', '-.06em', '-.075em', '-.085em', '-.088em', '-.09em'],
-        size
-      ),
-      fontWeight: bold ? '500' : '400',
-      fontFamily: 'normal',
-      whiteSpace: truncate ? 'nowrap' : undefined,
-      textOverflow: truncate ? 'ellipsis' : undefined,
-      overflow: truncate ? 'hidden' : undefined,
-    }),
-  color,
-  space,
+const styleProps = compose(
+  textColor,
+  margin,
   textAlign,
   lineHeight
 );
+
+export const Heading = styled('h1')<HeadingProps>(
+  css({
+    color: 'grays.8',
+    fontFamily: 'normal',
+    margin: 0,
+    lineHeight: 1.2,
+  }),
+  variant({
+    size: {
+      0: {
+        fontSize: 3,
+        letterSpacing: '-.0125em',
+        textIndent: '-.05em',
+      },
+      1: {
+        fontSize: 5,
+        letterSpacing: '-.005em',
+        textIndent: '-.06em',
+      },
+      2: {
+        fontSize: 7,
+        letterSpacing: '-.012em',
+        textIndent: '-.075em',
+      },
+      3: {
+        fontSize: 8,
+        letterSpacing: '-.028em',
+        textIndent: '-.085em',
+      },
+      4: {
+        fontSize: 9,
+        letterSpacing: '-.042em',
+        textIndent: '-.088em',
+      },
+      5: {
+        fontSize: 10,
+        letterSpacing: '-.052em',
+        textIndent: '-.09em',
+      },
+    },
+  }),
+  variant({
+    truncate: {
+      true: {
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        overflow: 'hidden',
+      },
+    },
+  }),
+  variant({
+    fontWeight: {
+      normal: { fontWeight: 400 },
+      bold: { fontWeight: 500 },
+    },
+  }),
+  styleProps
+);
+
+Heading.defaultProps = {
+  fontWeight: 'normal',
+  truncate: false,
+  size: 2,
+};
