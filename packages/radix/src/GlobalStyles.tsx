@@ -43,7 +43,7 @@ export const GlobalStyles = createGlobalStyle(
       },
       {
         fontFamily: 'UntitledSans',
-        fontWeight: '500',
+        fontWeight: 500,
         fontDisplay: 'swap',
         src: `local('UntitledSans-Medium'),
         url(${UntitledSansMediumWoff2}) format('woff2'),
@@ -51,7 +51,7 @@ export const GlobalStyles = createGlobalStyle(
       },
       {
         fontFamily: 'UntitledSans-Medium',
-        fontWeight: '500',
+        fontWeight: 500,
         fontDisplay: 'swap',
         src: `local('UntitledSans-Medium'),
         url(${UntitledSansMediumWoff2}) format('woff2'),
