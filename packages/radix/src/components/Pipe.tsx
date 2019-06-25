@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import { margin, MarginProps, variant, Prop } from '@modulz/radix-system';
 
-type SizeProps = 'normal' | 'medium' | 'fluid';
+type SizeProps = 'normal' | 'large' | 'fluid';
 type PipeProps = MarginProps & { variant?: Prop<SizeProps> };
 
 export const Pipe = styled.div<PipeProps>(
@@ -15,7 +15,7 @@ export const Pipe = styled.div<PipeProps>(
       normal: {
         height: 3,
       },
-      medium: {
+      large: {
         height: 7,
       },
       fluid: {

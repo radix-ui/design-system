@@ -18,7 +18,7 @@ storiesOf('Components|Pipe', module).add('default', () => (
         <Text size={6} fontWeight="bold">
           Modulz 2.0
         </Text>
-        <Pipe variant="medium" mx={2} />
+        <Pipe variant="large" mx={2} />
         <Text size={6}>The next step in visual coding.</Text>
       </Flex>
 
