@@ -20,12 +20,7 @@ function SelectStory() {
       </Box>
       <Box mb="4">
         <Text as="p">Controlled</Text>
-        <Select
-          my={4}
-          width="100px"
-          value={value}
-          onChange={event => setValue(event.target.value)}
-        >
+        <Select my={4} width="100px" value={value} onChange={event => setValue(event.target.value)}>
           <option value="option1">Option 1</option>
           <option value="option2">Option 2</option>
           <option value="option3">Option 3</option>

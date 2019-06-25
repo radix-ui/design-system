@@ -1,18 +1,20 @@
 import React, { FC, ReactElement } from 'react';
 import styled from 'styled-components';
-import { MarginProps, themeGet, style, ResponsiveValue } from 'styled-system';
+import { MarginProps, system, Prop } from '@modulz/radix-system';
+import themeGet from '@styled-system/theme-get';
 import css from '@styled-system/css';
 import * as CSS from 'csstype';
 import { transparentize } from 'polished';
 import { Box } from './Box';
 
-const pillWidth = style({
-  prop: 'pillWidth',
-  cssProperty: 'width',
+const pillWidth = system({
+  pillWidth: {
+    property: 'width',
+  },
 });
 
 interface PillWidthProps {
-  pillWidth?: ResponsiveValue<CSS.WidthProperty<{}>>;
+  pillWidth?: Prop<CSS.WidthProperty<{}>>;
 }
 
 type PillNavProps = MarginProps &
@@ -20,11 +22,7 @@ type PillNavProps = MarginProps &
     children: ReactElement<PillProps>[];
   };
 
-export const PillNav: FC<PillNavProps> = ({
-  children,
-  pillWidth,
-  ...props
-}) => {
+export const PillNav: FC<PillNavProps> = ({ children, pillWidth, ...props }) => {
   return (
     <Box {...props}>
       {React.Children.map(children, (pill: ReactElement<PillProps>) =>
@@ -64,15 +62,11 @@ export const Pill = styled('button')<PillProps>(
       outline: 'none',
       zIndex: active ? 1 : 0,
       margin: 0,
-      marginLeft: -1,
+      marginLeft: '-1px',
       pointerEvents: active && 'none',
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       boxShadow:
-        active &&
-        `inset 0 1px 0 ${transparentize(
-          0.9,
-          themeGet('colors.grays.8')(props)
-        )}`,
+        active && `inset 0 1px 0 ${transparentize(0.9, themeGet('colors.grays.8')(props))}`,
       '&:first-child': {
         marginLeft: 0,
         borderTopLeftRadius: 9999,

@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { color, ColorProps, fontSize, FontSizeProps } from 'styled-system';
+import { textColor, TextColorProps, fontSize, FontSizeProps, compose } from '@modulz/radix-system';
 
-type LinkProps = ColorProps & FontSizeProps & { to?: string };
+type LinkProps = TextColorProps & FontSizeProps & { to?: string };
 
-// TODO: Fix color typings
-// @ts-ignore
+const styleProps = compose(
+  textColor,
+  fontSize
+);
+
 export const Link = styled('a')<LinkProps>(
   css({
     color: 'blue',
@@ -16,6 +19,5 @@ export const Link = styled('a')<LinkProps>(
       textDecoration: 'underline',
     },
   }),
-  color,
-  fontSize
+  styleProps
 );

@@ -16,11 +16,7 @@ function SliderStory() {
 
       <Box mt="4" mb="4">
         <Text as="p">Controlled</Text>
-        <Slider
-          value={value}
-          onChange={event => setValue(event.target.value)}
-          min={0}
-        />
+        <Slider value={value} onChange={event => setValue(event.target.value)} min={0} />
         <div>
           <Text as="p" size={3} my="3">
             Current value is {value}

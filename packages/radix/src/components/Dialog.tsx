@@ -10,12 +10,7 @@ type DialogProps = {
   onDismiss?: () => void;
 };
 
-export const Dialog: FC<DialogProps> = ({
-  isOpen,
-  onDismiss,
-  children,
-  ...props
-}) => {
+export const Dialog: FC<DialogProps> = ({ isOpen, onDismiss, children, ...props }) => {
   return (
     <Overlay isOpen={isOpen} onDismiss={onDismiss}>
       <Content {...props}>{children}</Content>

@@ -34,45 +34,47 @@ storiesOf('Components|Text', module).add('default', () => (
       <Text as="p" size={7}>
         Radix
       </Text>
+      <Text as="p" size={8}>
+        Radix
+      </Text>
     </Box>
 
     <Box mb="4">
       <Text as="p" fontStyle="italic">
         Closing the gap between designers and developers.
       </Text>
-      <Text as="p" bold>
+      <Text as="p" fontWeight="bold">
         Closing the gap between designers and developers.
       </Text>
     </Box>
 
     <Box mb="4">
-      <Text as="p">The visual code editor</Text>
+      <Text as="p">The Design System spot</Text>
       <Text as="p" color="blue">
-        The visual code editor
+        The Design System spot
       </Text>
       <Text as="p" color="red">
-        The visual code editor
+        The Design System spot
       </Text>
       <Text as="p" color="green">
-        The visual code editor
+        The Design System spot
       </Text>
       <Text as="p" color="gray">
-        The visual code editor
+        The Design System spot
       </Text>
     </Box>
 
     <Box mb="4">
-      <Text as="p" textAlign="center" padding="4" suhdsuhd>
-        Almost all design tools are optimised for illustration. Vector-based
-        tools are great for wireframing and exploration, but when it comes to
-        designing interactive components, complex layouts and stateful user
-        interfaces—we need something more powerful.
+      <Text as="p" textAlign="center" padding="4">
+        Almost all design tools are optimised for illustration. Vector-based tools are great for
+        wireframing and exploration, but when it comes to designing interactive components, complex
+        layouts and stateful user interfaces—we need something more powerful.
       </Text>
     </Box>
     <Box mb="4" width={200}>
       <Text as="p" textAlign="center" padding="4" truncate>
-        When it comes to designing interactive components, complex layouts and
-        stateful user interfaces—we need something more powerful.
+        When it comes to designing interactive components, complex layouts and stateful user
+        interfaces—we need something more powerful.
       </Text>
     </Box>
 

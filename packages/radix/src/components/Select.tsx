@@ -1,46 +1,34 @@
 import React, { ComponentProps, FC } from 'react';
-import styled from 'styled-components';
-import css from '@styled-system/css';
-import { space, SpaceProps, width, WidthProps } from 'styled-system';
 import pick from 'lodash.pick';
 import omit from 'lodash.omit';
-import { get } from '../utils/get';
+import styled from 'styled-components';
+import css from '@styled-system/css';
+import {
+  margin,
+  MarginProps,
+  width,
+  WidthProps,
+  variant,
+  compose,
+  Prop,
+} from '@modulz/radix-system';
 
+type Variants = 'normal' | 'fade';
 type SelectProps = ComponentProps<'select'> &
   WrapperProps & {
-    variant?: 'fade';
+    variant?: Prop<Variants>;
   };
 
-// TODO: Styled System is missing some spacing props in `propTypes`
-// https://github.com/styled-system/styled-system/issues/466
-const spacePropNames = [
-  ...Object.keys(space.propTypes || {}),
-  'mx',
-  'my',
-  'px',
-  'py',
-];
+const marginPropNames = margin.propNames;
+const widthPropNames = width.propNames;
 
-const widthPropNames = Object.keys(width.propTypes || {});
-
-export const Select: FC<SelectProps> = ({
-  children,
-  value,
-  onChange,
-  variant,
-  ...props
-}) => {
-  const systemProps = pick(props, spacePropNames, widthPropNames);
-  const inputPtops = omit(props, spacePropNames, widthPropNames);
+export const Select: FC<SelectProps> = ({ children, value, onChange, variant, ...props }) => {
+  const systemProps = pick(props, marginPropNames, widthPropNames);
+  const inputPtops = omit(props, marginPropNames, widthPropNames);
 
   return (
     <Wrapper {...systemProps}>
-      <StyledSelect
-        {...inputPtops}
-        value={value}
-        onChange={onChange}
-        variant={variant}
-      >
+      <StyledSelect {...inputPtops} value={value} onChange={onChange} variant={variant}>
         {children}
       </StyledSelect>
       <IconWrapper>
@@ -55,33 +43,27 @@ export const Select: FC<SelectProps> = ({
             display: 'block',
           }}
         >
-          <path
-            d="M14.5 5.5L12.5 3.5L10.5 5.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M14.5 9.5L12.5 11.5L10.5 9.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="M14.5 5.5L12.5 3.5L10.5 5.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M14.5 9.5L12.5 11.5L10.5 9.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </IconWrapper>
     </Wrapper>
   );
 };
 
+Select.defaultProps = { variant: 'normal' };
+
 const ICON_SIZE = 15;
 
-type WrapperProps = SpaceProps & WidthProps;
-
-const Wrapper = styled('div')<WrapperProps>(
-  { position: 'relative' },
+type WrapperProps = MarginProps & WidthProps;
+const styleProps = compose(
   width,
-  space
+  margin
 );
 
-const StyledSelect = styled('select')<SelectProps>(({ variant }) =>
+const Wrapper = styled('div')<WrapperProps>({ position: 'relative' }, styleProps);
+
+const StyledSelect = styled('select')<SelectProps>(
   css({
     appearance: 'none',
     backgroundColor: 'transparent',
@@ -91,7 +73,6 @@ const StyledSelect = styled('select')<SelectProps>(({ variant }) =>
     padding: 0,
     fontSize: 2,
     borderRadius: 0,
-    color: get({ fade: 'grays.5' }, variant, 'grays.8'),
     paddingRight: 3,
     border: 'none',
     outline: 'none',
@@ -107,6 +88,16 @@ const StyledSelect = styled('select')<SelectProps>(({ variant }) =>
       borderColor: 'grays.2',
       color: 'grays.4',
       cursor: 'not-allowed',
+    },
+  }),
+  variant({
+    variant: {
+      normal: {
+        color: 'grays.8',
+      },
+      fade: {
+        color: 'grays.5',
+      },
     },
   })
 );

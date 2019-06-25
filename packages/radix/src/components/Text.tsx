@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import {
-  color,
-  ColorProps,
-  space,
-  SpaceProps,
+  textColor,
+  TextColorProps,
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
   fontFamily,
   FontFamilyProps,
   fontStyle,
@@ -13,70 +15,103 @@ import {
   TextAlignProps,
   lineHeight,
   LineHeightProps,
-  ResponsiveValue,
-} from 'styled-system';
-import { get } from '../utils/get';
+  variant,
+  compose,
+  Prop,
+} from '@modulz/radix-system';
 
-type TextProps = ColorProps &
-  SpaceProps &
+type TextProps = TextColorProps &
+  MarginProps &
+  PaddingProps &
   FontFamilyProps &
   FontStyleProps &
   TextAlignProps &
   LineHeightProps & {
-    size?: ResponsiveValue<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
-    bold?: boolean;
-    truncate?: boolean;
+    size?: Prop<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8>;
+    fontWeight?: Prop<'normal' | 'bold'>;
+    truncate?: Prop<boolean>;
   };
 
-// TODO: Fix color typings
-// @ts-ignore
-export const Text = styled('span')<TextProps>(
-  ({ size, truncate, bold }: TextProps) =>
-    css({
-      fontWeight: bold ? '500' : '400',
-      fontFamily: bold ? 'medium' : 'normal',
-      fontSize: get([0, 1, 2, 3, 4, 5, 6, 7], size, 'inherit'),
-      letterSpacing: get(
-        [
-          '.032em',
-          '.032em',
-          0,
-          '-.001em',
-          '-.005em',
-          '-.006em',
-          '-.008em',
-          '-.018em',
-          '-.024em',
-        ],
-        size,
-        'inherit'
-      ),
-      textIndent: get(
-        [
-          0,
-          0,
-          0,
-          '-.05em',
-          '-.06em',
-          '-.075em',
-          '-.085em',
-          '-.088em',
-          '-.09em',
-        ],
-        size,
-        'inherit'
-      ),
-      color: 'grays.7',
-      margin: 0,
-      padding: 0,
-      whiteSpace: truncate ? 'nowrap' : undefined,
-      textOverflow: truncate ? 'ellipsis' : undefined,
-      overflow: truncate ? 'hidden' : undefined,
-    }),
-  color,
-  space,
+const styleProps = compose(
+  textColor,
+  margin,
+  padding,
   fontStyle,
   fontFamily,
   textAlign,
   lineHeight
 );
+
+export const Text = styled('span')<TextProps>(
+  css({
+    color: 'grays.7',
+    fontSize: 'inherit',
+    margin: 0,
+  }),
+  variant({
+    size: {
+      0: {
+        fontSize: 0,
+        letterSpacing: '.032em',
+      },
+      1: {
+        fontSize: 1,
+        letterSpacing: '.032em',
+      },
+      2: {
+        fontSize: 2,
+      },
+      3: {
+        fontSize: 3,
+        letterSpacing: '-.001em',
+        textIndent: '-.05em',
+      },
+      4: {
+        fontSize: 4,
+        letterSpacing: '-.005em',
+        textIndent: '-.06em',
+      },
+      5: {
+        fontSize: 5,
+        letterSpacing: '-.006em',
+        textIndent: '-.075em',
+      },
+      6: {
+        fontSize: 6,
+        letterSpacing: '-.008em',
+        textIndent: '-.085em',
+      },
+      7: {
+        fontSize: 7,
+        letterSpacing: '-.018em',
+        textIndent: '-.088em',
+      },
+      8: {
+        fontSize: 8,
+        letterSpacing: '-.024em',
+        textIndent: '-.09em',
+      },
+    },
+  }),
+  variant({
+    truncate: {
+      true: {
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        overflow: 'hidden',
+      },
+    },
+  }),
+  variant({
+    fontWeight: {
+      normal: { fontWeight: 400, fontFamily: 'normal' },
+      bold: { fontWeight: 500, fontFamily: 'medium' },
+    },
+  }),
+  styleProps
+);
+
+Text.defaultProps = {
+  fontWeight: 'normal',
+  truncate: false,
+};

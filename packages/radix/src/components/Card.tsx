@@ -1,22 +1,41 @@
 import styled from 'styled-components';
+import { transparentize } from 'polished';
 import css from '@styled-system/css';
+import themeGet from '@styled-system/theme-get';
 import {
-  color,
-  ColorProps,
-  space,
-  SpaceProps,
+  textColor,
+  TextColorProps,
+  backgroundColor,
+  BackgroundColorProps,
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
   width,
   WidthProps,
   maxWidth,
   MaxWidthProps,
-  themeGet,
-} from 'styled-system';
-import { transparentize } from 'polished';
+  variant,
+  compose,
+  Prop,
+} from '@modulz/radix-system';
 
-type SystemProps = ColorProps & SpaceProps & WidthProps & MaxWidthProps;
-type CardProps = SystemProps & { variant?: 'shadow' | 'ghost' };
+type Variants = 'border' | 'shadow' | 'ghost';
+type SystemProps = TextColorProps &
+  BackgroundColorProps &
+  MarginProps &
+  PaddingProps &
+  WidthProps &
+  MaxWidthProps;
+type CardProps = SystemProps & { variant?: Prop<Variants> };
 
-const systemProps = [color, space, width, maxWidth];
+const styleProps = compose(
+  textColor,
+  margin,
+  padding,
+  width,
+  maxWidth
+);
 
 const createShadow = (defaultOpacity: any, color: any) => ({
   position: 'relative',
@@ -40,29 +59,41 @@ const createShadow = (defaultOpacity: any, color: any) => ({
   },
 });
 
-const baseCard = ({ variant, ...props }: CardProps) =>
-  css({
-    position: 'relative',
-    padding: 4,
-    borderRadius: 2,
-    border: '1px solid transparent',
-    borderColor: 'grays.3',
-    ...(variant === 'ghost'
-      ? createShadow(0, themeGet('colors.grays.8')(props))
-      : {}),
-    ...(variant === 'shadow'
-      ? createShadow(1, themeGet('colors.grays.8')(props))
-      : {}),
-  });
+const baseCard = (props: CardProps) =>
+  variant({
+    variant: {
+      border: {
+        position: 'relative',
+        padding: 4,
+        borderRadius: 2,
+        border: '1px solid transparent',
+        borderColor: 'grays.3',
+      },
+      ghost: {
+        position: 'relative',
+        padding: 4,
+        borderRadius: 2,
+        border: '1px solid transparent',
+        ...createShadow(0, themeGet('colors.grays.8')(props)),
+      },
+      shadow: {
+        position: 'relative',
+        padding: 4,
+        borderRadius: 2,
+        border: '1px solid transparent',
+        ...createShadow(1, themeGet('colors.grays.8')(props)),
+      },
+    },
+  })(props);
 
-// TODO: Fix color typings
-// @ts-ignore
-export const Card = styled('div')<CardProps>(baseCard, ...systemProps);
+export const Card = styled('div')<CardProps>(baseCard, styleProps);
+
+Card.defaultProps = {
+  variant: 'border',
+};
 
 type CardLinkProps = CardProps & { to?: string };
 
-// TODO: Fix color typings
-// @ts-ignore
 export const CardLink = styled('a')<CardLinkProps>(
   baseCard,
   ({ variant }: CardProps) =>
@@ -90,5 +121,9 @@ export const CardLink = styled('a')<CardLinkProps>(
         borderColor: 'blues.4',
       },
     }),
-  ...systemProps
+  styleProps
 );
+
+CardLink.defaultProps = {
+  variant: 'border',
+};
