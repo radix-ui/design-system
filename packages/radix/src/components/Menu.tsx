@@ -11,6 +11,8 @@ import {
   PaddingProps,
   width,
   WidthProps,
+  minHeight,
+  MinHeightProps,
   variant,
   compose,
   Prop,
@@ -49,9 +51,10 @@ export const Menu = styled('nav')<MenuProps>(
   styleProps
 );
 
-type MenuItemProps = {
-  variant?: 'normal' | 'active' | 'selected';
-};
+type MenuItemProps = PaddingProps &
+  MinHeightProps & {
+    variant?: 'normal' | 'active' | 'selected';
+  };
 
 export const MenuItem = styled('button')<MenuItemProps>(
   css({
@@ -126,7 +129,9 @@ export const MenuItem = styled('button')<MenuItemProps>(
     }),
   {
     lineHeight: '1',
-  }
+  },
+  padding,
+  minHeight
 );
 
 MenuItem.defaultProps = { variant: 'normal' };

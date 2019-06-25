@@ -57,7 +57,7 @@ function DocLayout({ children, pathname }) {
             borderColor={['grays.2', 'grays.2']}
             style={{ WebkitOverflowScrolling: 'touch' }}
           >
-            <Heading size={1} ml={3} mb={4} fontWeight="bold">
+            <Heading size={1} ml={5} mb={4} fontWeight="bold">
               <Flex alignItems="center">
                 Radix{' '}
                 <Badge ml={2} variant="gray">
@@ -82,7 +82,7 @@ function DocLayout({ children, pathname }) {
             <Divider mb={1} />
 
             <Menu>
-              <Heading size={0} fontWeight="bold" mx={3} mb={2}>
+              <Heading size={0} fontWeight="bold" mx={5} mb={2}>
                 Components
               </Heading>
               {data.components.edges.map(({ node }) => (
