@@ -3,7 +3,7 @@ import css from '@styled-system/css';
 import { space, SpaceProps } from 'styled-system';
 import { get } from '../utils/get';
 
-type SizeProps = 'default' | 'medium' | 'fluid';
+type SizeProps = 'small' | 'medium' | 'fluid';
 type PipeProps = SpaceProps & { variant?: SizeProps | SizeProps[] };
 
 export const Pipe = styled.div<PipeProps>(
