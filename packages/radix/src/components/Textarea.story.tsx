@@ -10,7 +10,7 @@ storiesOf('Components|Textara', module).add('default', () => (
     </Box>
 
     <Box mb="4">
-      <Textarea size="medium" placeholder="Your email" />
+      <Textarea size="large" placeholder="Your email" />
     </Box>
 
     <Box mb="4">
