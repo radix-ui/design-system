@@ -59,13 +59,6 @@ exports.createPages = async ({ graphql, actions }) => {
     redirectInBrowser: true,
     toPath: defaultPath,
   });
-
-  createRedirect({
-    fromPath: `/docs/`,
-    isPermanent: true,
-    redirectInBrowser: true,
-    toPath: defaultPath,
-  });
 };
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
