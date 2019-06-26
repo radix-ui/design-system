@@ -6,11 +6,9 @@ import {
   margin,
   MarginProps,
   textAlign,
-  TextAlignProps,
   lineHeight,
   LineHeightProps,
-  fontWeight,
-  FontWeightProps,
+  TextAlignProps,
   variant,
   compose,
   Prop,
@@ -19,9 +17,9 @@ import {
 type HeadingProps = TextColorProps &
   MarginProps &
   TextAlignProps &
-  LineHeightProps &
-  FontWeightProps & {
+  LineHeightProps & {
     size?: Prop<0 | 1 | 2 | 3 | 4 | 5>;
+    fontWeight?: Prop<'normal' | 'bold'>;
     truncate?: Prop<boolean>;
   };
 
@@ -29,8 +27,7 @@ const styleProps = compose(
   textColor,
   margin,
   textAlign,
-  lineHeight,
-  fontWeight
+  lineHeight
 );
 
 export const Heading = styled('h1')<HeadingProps>(
@@ -83,10 +80,17 @@ export const Heading = styled('h1')<HeadingProps>(
       },
     },
   }),
+  variant({
+    fontWeight: {
+      normal: { fontWeight: 400 },
+      bold: { fontWeight: 500 },
+    },
+  }),
   styleProps
 );
 
 Heading.defaultProps = {
+  fontWeight: 'normal',
   truncate: false,
   size: 2,
 };
