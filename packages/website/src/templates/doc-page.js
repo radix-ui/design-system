@@ -4,7 +4,7 @@ import { MDXProvider } from '@mdx-js/react';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import * as RC from '@modulz/radix';
 import * as RI from '@modulz/radix-icons';
-import DocLayout from '../components/DocLayout';
+import Layout from '../components/Layout';
 import CodeBlock from '../components/CodeBlock';
 import { SystemPropsTable } from '../components/SystemPropsTable';
 
@@ -32,7 +32,7 @@ function DocPageTemplate({ data, location, ...props }) {
   const children = <MDXRenderer children={data.mdx.code.body} />;
 
   return (
-    <DocLayout pathname={location.pathname}>
+    <Layout pathname={location.pathname}>
       <MDXProvider components={components}>
         <RC.Box>
           <RC.Heading size={3} fontWeight="bold">
@@ -41,7 +41,7 @@ function DocPageTemplate({ data, location, ...props }) {
           {children}
         </RC.Box>
       </MDXProvider>
-    </DocLayout>
+    </Layout>
   );
 }
 
