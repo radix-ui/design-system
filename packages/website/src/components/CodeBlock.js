@@ -109,9 +109,11 @@ export default ({ children, className, live, render, ghost }) => {
               borderRadius: '0 0 3px 3px',
               border: `1px solid ${colors.grays[2]}`,
               borderTop: 'none',
-              fontSize: radixTheme.fontSizes[2],
+              fontSize: radixTheme.fontSizes[3],
               fontFamily: radixTheme.fonts.mono,
-              lineHeight: 1.5,
+              fontWeight: 400,
+              letterSpacing: '-0.0175em',
+              lineHeight: 1.35,
             }}
             css={{ textarea: { outline: 0 } }}
           />
@@ -132,9 +134,11 @@ export default ({ children, className, live, render, ghost }) => {
             backgroundColor: theme.plain.backgroundColor,
             borderRadius: '3px',
             border: `1px solid ${colors.grays[2]}`,
-            fontSize: radixTheme.fontSizes[2],
+            fontSize: radixTheme.fontSizes[3],
             fontFamily: radixTheme.fonts.mono,
-            lineHeight: 1.5,
+            fontWeight: 400,
+            letterSpacing: '-0.0175em',
+            lineHeight: 1.35,
           }}
           css={{ textarea: { paddingBottom: '0 !important' } }}
           disabled

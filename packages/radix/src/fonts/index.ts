@@ -4,3 +4,5 @@ export { default as UntitledSansMediumWoff } from './UntitledSansWeb-Medium.woff
 export { default as UntitledSansMediumWoff2 } from './UntitledSansWeb-Medium.woff2';
 export { default as PitchSansWebMediumWoff } from './PitchSansWeb-Medium.woff';
 export { default as PitchSansWebMediumWoff2 } from './PitchSansWeb-Medium.woff2';
+export { default as PitchSansWebSemiboldWoff } from './PitchSansWeb-Semibold.woff';
+export { default as PitchSansWebSemiboldWoff2 } from './PitchSansWeb-Semibold.woff2';
