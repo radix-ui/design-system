@@ -5,6 +5,8 @@ import {
   UntitledSansWoff2,
   UntitledSansMediumWoff,
   UntitledSansMediumWoff2,
+  PitchSansWebMediumWoff,
+  PitchSansWebMediumWoff2,
 } from './fonts';
 
 export const GlobalStyles = createGlobalStyle(
@@ -46,6 +48,12 @@ export const GlobalStyles = createGlobalStyle(
         fontWeight: '500',
         fontDisplay: 'swap',
         src: `local('UntitledSans-Medium'), url(${UntitledSansMediumWoff2}) format('woff2'), url(${UntitledSansMediumWoff}) format('woff')`,
+      },
+      {
+        fontFamily: 'PitchSansWeb-Medium',
+        fontWeight: '500',
+        fontDisplay: 'swap',
+        src: `local('PitchSansWeb-Medium'), url(${PitchSansWebMediumWoff2}) format('woff2'), url(${PitchSansWebMediumWoff}) format('woff')`,
       },
     ],
   }),
