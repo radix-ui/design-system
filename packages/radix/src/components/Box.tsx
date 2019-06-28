@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import {
   border,
   BorderProps,
+  borderRadius,
+  BorderRadiusProps,
   boxShadow,
   BoxShadowProps,
   backgroundColor,
@@ -43,6 +45,7 @@ import {
 import { ComponentProps } from 'react';
 
 export type BoxProps = BorderProps &
+  BorderRadiusProps &
   BoxShadowProps &
   BackgroundColorProps &
   TextColorProps &
@@ -65,6 +68,7 @@ export type BoxProps = BorderProps &
 
 const styleProps = compose(
   border,
+  borderRadius,
   boxShadow,
   backgroundColor,
   textColor,

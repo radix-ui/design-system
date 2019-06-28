@@ -7,7 +7,7 @@ const { colors } = radixTheme;
 const theme = {
   plain: {
     color: colors.grays[7],
-    backgroundColor: colors.blues[1],
+    backgroundColor: colors.grays[0],
   },
   styles: [
     {
@@ -73,7 +73,6 @@ const theme = {
     {
       types: ['tag', 'selector', 'keyword'],
       style: {
-        // color: '#00009f',
         color: colors.blues[6],
       },
     },
@@ -84,7 +83,7 @@ export default ({ children, className, live, render, ghost }) => {
   const components = useMDXComponents();
 
   const liveProviderProps = {
-    transformCode: code => '/* @jsx mdx */' + code,
+    transformCode: code => `/* @jsx mdx */ <> ${code} </>`,
     scope: { mdx, ...components },
   };
 
@@ -97,15 +96,11 @@ export default ({ children, className, live, render, ghost }) => {
               padding: radixTheme.space[4],
               border: `1px solid ${colors.grays[2]}`,
               borderRadius: '3px 3px 0 0',
-              borderBottom: 0,
             }}
           />
           <LiveEditor
             padding={radixTheme.space[4]}
             style={{
-              // TODO: Remove hardcoded `backgroundColor`
-              // https://github.com/FormidableLabs/react-live/issues/139
-              backgroundColor: theme.plain.backgroundColor,
               borderRadius: '0 0 3px 3px',
               border: `1px solid ${colors.grays[2]}`,
               borderTop: 'none',
@@ -129,9 +124,6 @@ export default ({ children, className, live, render, ghost }) => {
         <LiveEditor
           padding={radixTheme.space[4]}
           style={{
-            // TODO: Remove hardcoded `backgroundColor`
-            // https://github.com/FormidableLabs/react-live/issues/139
-            backgroundColor: theme.plain.backgroundColor,
             borderRadius: '3px',
             border: `1px solid ${colors.grays[2]}`,
             fontSize: radixTheme.fontSizes[3],
