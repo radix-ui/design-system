@@ -106,6 +106,8 @@ export default ({ children, className, live, render, ghost }) => {
               borderTop: 'none',
               fontSize: radixTheme.fontSizes[2],
               fontFamily: radixTheme.fonts.mono,
+              fontWeight: 400,
+              letterSpacing: '-0.0175em',
               lineHeight: 1.5,
             }}
             css={{ textarea: { outline: 0 } }}
@@ -126,6 +128,8 @@ export default ({ children, className, live, render, ghost }) => {
             border: `1px solid ${colors.grays[3]}`,
             fontSize: radixTheme.fontSizes[2],
             fontFamily: radixTheme.fonts.mono,
+            fontWeight: 400,
+            letterSpacing: '-0.0175em',
             lineHeight: 1.5,
           }}
           css={{ textarea: { paddingBottom: '0 !important' } }}

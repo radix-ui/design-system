@@ -5,6 +5,8 @@ import {
   UntitledSansWoff2,
   UntitledSansMediumWoff,
   UntitledSansMediumWoff2,
+  OperatorMonoBookWoff,
+  OperatorMonoBookWoff2,
 } from './fonts';
 
 export const GlobalStyles = createGlobalStyle(
@@ -46,6 +48,11 @@ export const GlobalStyles = createGlobalStyle(
         fontWeight: '500',
         fontDisplay: 'swap',
         src: `local('UntitledSans-Medium'), url(${UntitledSansMediumWoff2}) format('woff2'), url(${UntitledSansMediumWoff}) format('woff')`,
+      },
+      {
+        fontFamily: 'OperatorMono-Book',
+        fontDisplay: 'swap',
+        src: `local('OperatorMono-Book'), url(${OperatorMonoBookWoff2}) format('woff2'), url(${OperatorMonoBookWoff}) format('woff')`,
       },
     ],
   }),
