@@ -100,7 +100,7 @@ export default ({ children, className, live, render, ghost }) => {
             }}
           />
           <LiveEditor
-            padding={radixTheme.space[4]}
+            padding={radixTheme.space[3]}
             style={{
               borderBottomLeftRadius: radixTheme.radii[2],
               borderBottomRighttRadius: radixTheme.radii[2],
