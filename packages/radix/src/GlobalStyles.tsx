@@ -7,6 +7,12 @@ import {
   UntitledSansMediumWoff2,
   OperatorMonoBookWoff,
   OperatorMonoBookWoff2,
+  OperatorMonoBookItalicWoff,
+  OperatorMonoBookItalicWoff2,
+  OperatorMonoMediumWoff,
+  OperatorMonoMediumWoff2,
+  OperatorMonoMediumItalicWoff,
+  OperatorMonoMediumItalicWoff2,
 } from './fonts';
 
 export const GlobalStyles = createGlobalStyle(
@@ -52,7 +58,22 @@ export const GlobalStyles = createGlobalStyle(
       {
         fontFamily: 'OperatorMono-Book',
         fontDisplay: 'swap',
-        src: `local('OperatorMono-Book'), url(${OperatorMonoBookWoff2}) format('woff2'), url(${OperatorMonoBookWoff}) format('woff')`,
+        src: `local('OperatorMonoSSm-Book'), url(${OperatorMonoBookWoff2}) format('woff2'), url(${OperatorMonoBookWoff}) format('woff')`,
+      },
+      {
+        fontFamily: 'OperatorMono-BookItalic',
+        fontDisplay: 'swap',
+        src: `local('OperatorMonoSSm-BookItalic'), url(${OperatorMonoBookItalicWoff2}) format('woff2'), url(${OperatorMonoBookItalicWoff}) format('woff')`,
+      },
+      {
+        fontFamily: 'OperatorMono-Medium',
+        fontDisplay: 'swap',
+        src: `local('OperatorMonoSSm-Medium'), url(${OperatorMonoMediumWoff2}) format('woff2'), url(${OperatorMonoMediumWoff}) format('woff')`,
+      },
+      {
+        fontFamily: 'OperatorMono-MediumItalic',
+        fontDisplay: 'swap',
+        src: `local('OperatorMonoSSm-MediumItalic'), url(${OperatorMonoMediumItalicWoff2}) format('woff2'), url(${OperatorMonoMediumItalicWoff}) format('woff')`,
       },
     ],
   }),
