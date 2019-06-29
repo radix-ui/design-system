@@ -11,10 +11,10 @@ export const Code = styled('code')<MarginProps>(
     fontFamily: 'mono',
     fontSize: 2,
     letterSpacing: '-0.0175em',
-    lineHeight: 'inherit',
     paddingY: '0.15em',
     paddingX: 1,
     whiteSpace: 'nowrap',
   }),
+  { lineHeight: 1 },
   margin
 );
