@@ -3,29 +3,25 @@ title: Getting Started
 pinned: 'true'
 ---
 
-<Divider size={2} my={6} />
-
 Radix is a Component Library built on top of [Radix System](/docs/radix-system).
 
-<Divider size={2} my={6} />
+### Installing Radix
 
-### Install it
-
-Radix is currently under heavy development, but if you'd like to use it anyway:
+Radix is currently under heavy development, but can install it by running either of these commands:
 
 ```js
-# npm
 npm install @modulz/radix
 ```
 
+or
+
 ```js
-# yarn
 yarn add @modulz/radix
 ```
 
-### Wrap it in `RadixProvider`
+### RadixProvider
 
-Make sure to wrap your app in `RadixProvider` to get the default theme
+Make sure to wrap your app in `RadixProvider to get the default theme
 
 ```js
 import { RadixProvider } from '@modulz/radix';
@@ -33,27 +29,10 @@ import { RadixProvider } from '@modulz/radix';
 const App = () => <RadixProvider>Hey there👋</RadixProvider>;
 ```
 
-### Use it
+### Importing components from Radix
 
-All Components can be importated directly:
+All components can be imported directly.
 
 ```js
 import { Heading, Text, Link } from '@modulz/radix';
-```
-
-### Build stuff with it
-
-```js live=true
-<RadixProvider>
-  <Box bg="grays.1" p={4}>
-    <Heading mb={4} fontWeight="bold">
-      Composing with Radix
-    </Heading>
-    <Text as="p">Browse our list of components to find out more about each one.</Text>
-    <Divider size={1} my={4} />
-    <Text as="p" size={2}>
-      Built by the <Link href="https://modulz.app">Modulz</Link> team.
-    </Text>
-  </Box>
-</RadixProvider>
 ```

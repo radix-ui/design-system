@@ -26,13 +26,13 @@ const theme = {
     {
       types: ['string', 'attr-value'],
       style: {
-        color: '#e3116c',
+        color: '#e22881',
       },
     },
     {
       types: ['punctuation', 'operator'],
       style: {
-        color: '#393A34',
+        color: colors.grays[4],
       },
     },
     {
@@ -73,7 +73,7 @@ const theme = {
     {
       types: ['tag', 'selector', 'keyword'],
       style: {
-        color: colors.blues[6],
+        color: colors.blues[5],
       },
     },
   ],
@@ -89,20 +89,20 @@ export default ({ children, className, live, render, ghost }) => {
 
   if (live) {
     return (
-      <Box my={5}>
+      <Box mt={4}>
         <LiveProvider code={children.trim()} {...liveProviderProps} theme={theme}>
           <LivePreview
             style={{
-              padding: radixTheme.space[4],
-              border: `1px solid ${colors.grays[2]}`,
-              borderRadius: '3px 3px 0 0',
+              padding: radixTheme.space[3],
+              border: `1px solid ${colors.grays[3]}`,
+              borderRadius: '5px 5px 0 0',
             }}
           />
           <LiveEditor
             padding={radixTheme.space[4]}
             style={{
-              borderRadius: '0 0 3px 3px',
-              border: `1px solid ${colors.grays[2]}`,
+              borderRadius: '0 0 5px 5px',
+              border: `1px solid ${colors.grays[3]}`,
               borderTop: 'none',
               fontSize: radixTheme.fontSizes[2],
               fontFamily: radixTheme.fonts.mono,
@@ -117,13 +117,13 @@ export default ({ children, className, live, render, ghost }) => {
   }
 
   return (
-    <Box my={5}>
+    <Box mt={4}>
       <LiveProvider code={children.trim()} {...liveProviderProps} theme={theme}>
         <LiveEditor
-          padding={radixTheme.space[4]}
+          padding={radixTheme.space[3]}
           style={{
-            borderRadius: '3px',
-            border: `1px solid ${colors.grays[2]}`,
+            borderRadius: '5px',
+            border: `1px solid ${colors.grays[3]}`,
             fontSize: radixTheme.fontSizes[2],
             fontFamily: radixTheme.fonts.mono,
             lineHeight: 1.5,
