@@ -6,7 +6,7 @@ export const theme = {
       'UntitledSans, apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
     medium:
       'UntitledSans-Medium, apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
-    mono: 'PitchSansWeb-Medium, Consolas, "Liberation Mono", Menlo, Courier, monospace',
+    mono: 'OperatorMono-Book, Consolas, "Liberation Mono", Menlo, Courier, monospace',
   },
   fontSizes: [
     '9px',

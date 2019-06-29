@@ -9,7 +9,7 @@ export const Code = styled('code')<MarginProps>(
     color: 'blues.5',
     borderRadius: 1,
     fontFamily: 'mono',
-    fontSize: 3,
+    fontSize: 2,
     letterSpacing: '-0.0175em',
     lineHeight: 'inherit',
     paddingY: '0.15em',
