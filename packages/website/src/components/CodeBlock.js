@@ -95,13 +95,15 @@ export default ({ children, className, live, render, ghost }) => {
             style={{
               padding: radixTheme.space[3],
               border: `1px solid ${colors.grays[3]}`,
-              borderRadius: '5px 5px 0 0',
+              borderTopLeftRadius: radixTheme.radii[2],
+              borderTopRighttRadius: radixTheme.radii[2],
             }}
           />
           <LiveEditor
             padding={radixTheme.space[4]}
             style={{
-              borderRadius: '0 0 5px 5px',
+              borderBottomLeftRadius: radixTheme.radii[2],
+              borderBottomRighttRadius: radixTheme.radii[2],
               border: `1px solid ${colors.grays[3]}`,
               borderTop: 'none',
               fontSize: radixTheme.fontSizes[2],
@@ -124,7 +126,7 @@ export default ({ children, className, live, render, ghost }) => {
         <LiveEditor
           padding={radixTheme.space[3]}
           style={{
-            borderRadius: '5px',
+            borderRadius: radixTheme.radii[2],
             border: `1px solid ${colors.grays[3]}`,
             fontSize: radixTheme.fontSizes[2],
             fontFamily: radixTheme.fonts.mono,
