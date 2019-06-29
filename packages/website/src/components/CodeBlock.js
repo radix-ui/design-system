@@ -96,14 +96,14 @@ export default ({ children, className, live, render, ghost }) => {
               padding: radixTheme.space[3],
               border: `1px solid ${colors.grays[3]}`,
               borderTopLeftRadius: radixTheme.radii[2],
-              borderTopRighttRadius: radixTheme.radii[2],
+              borderTopRightRadius: radixTheme.radii[2],
             }}
           />
           <LiveEditor
             padding={radixTheme.space[3]}
             style={{
               borderBottomLeftRadius: radixTheme.radii[2],
-              borderBottomRighttRadius: radixTheme.radii[2],
+              borderBottomRightRadius: radixTheme.radii[2],
               border: `1px solid ${colors.grays[3]}`,
               borderTop: 'none',
               fontSize: radixTheme.fontSizes[2],
