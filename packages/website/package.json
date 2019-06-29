@@ -25,11 +25,13 @@
     "gatsby-plugin-catch-links": "^2.0.14",
     "gatsby-plugin-netlify": "^2.1.0",
     "gatsby-plugin-nprogress": "^2.0.10",
+    "gatsby-plugin-react-helmet": "^3.1.0",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-filesystem": "^2.0.35",
     "prism-react-renderer": "^0.1.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
     "react-live": "^2.1.2",
     "styled-components": "^4.2.0"
   },
