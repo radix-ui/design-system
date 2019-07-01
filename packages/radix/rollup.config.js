@@ -1,5 +1,5 @@
 import typescript from 'rollup-plugin-typescript2';
-import url from 'rollup-plugin-url';
+import copy from 'rollup-plugin-copy';
 import pkg from './package.json';
 
 export default {
@@ -20,10 +20,8 @@ export default {
     '@reach/dialog/styles.css',
   ],
   plugins: [
-    url({
-      include: ['**/*.woff', '**/*.woff2'],
-      destDir: 'dist/fonts',
-      limit: Infinity,
+    copy({
+      targets: [{ src: ['src/**/*.woff', 'src/**/*.woff2'], dest: 'dist/fonts' }],
     }),
     typescript({
       clean: true,
