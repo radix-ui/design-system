@@ -13,9 +13,9 @@ export const RadixProvider: FC<RadixProviderProps> = ({ theme = defaultTheme, ch
   return (
     <ThemeProvider theme={theme}>
       <>
-        <FontStyles />
         <GlobalStyles />
         {children}
+        <FontStyles />
       </>
     </ThemeProvider>
   );
