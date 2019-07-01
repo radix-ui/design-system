@@ -23,7 +23,7 @@ export default {
     url({
       include: ['**/*.woff', '**/*.woff2'],
       destDir: 'dist/fonts',
-      limit: Infinity,
+      limit: 0,
     }),
     typescript({
       clean: true,

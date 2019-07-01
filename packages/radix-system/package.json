@@ -19,14 +19,14 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@styled-system/core": "^5.0.5",
-    "@styled-system/css": "^5.0.9",
+    "@styled-system/core": "^5.0.12",
+    "@styled-system/css": "^5.0.11",
     "@types/styled-system__core": "npm:@peduarte/styled-system__core",
     "csstype": "^2.6.5"
   },
   "devDependencies": {
-    "rollup": "^1.15.1",
-    "rollup-plugin-typescript2": "^0.21.1",
-    "typescript": "3.5.1"
+    "rollup": "^1.16.3",
+    "rollup-plugin-typescript2": "^0.21.2",
+    "typescript": "3.5.2"
   }
 }
