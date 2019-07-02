@@ -4,7 +4,7 @@ import { margin, MarginProps, padding, PaddingProps, variant, compose } from '@m
 import themeGet from '@styled-system/theme-get';
 
 type Variants = 'normal' | 'active';
-type Sizes = 'normal' | 'large';
+type Sizes = 0 | 1;
 type GhostButtonProps = MarginProps &
   PaddingProps & {
     variant?: Variants;
@@ -80,13 +80,13 @@ export const GhostButton = styled.button<GhostButtonProps>(
     }),
   variant({
     size: {
-      normal: {
+      0: {
         fontSize: 1,
         height: 5,
         lineHeight: 1,
         minWidth: 5,
       },
-      large: {
+      1: {
         fontSize: 3,
         height: 6,
         lineHeight: 2,
@@ -99,5 +99,5 @@ export const GhostButton = styled.button<GhostButtonProps>(
 
 GhostButton.defaultProps = {
   variant: 'normal',
-  size: 'normal',
+  size: 0,
 };

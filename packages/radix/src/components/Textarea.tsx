@@ -19,7 +19,7 @@ import {
 } from '@modulz/radix-system';
 
 type VariantProps = 'normal' | 'ghost' | 'fade';
-type SizeProps = 'normal' | 'large';
+type SizeProps = 0 | 1;
 
 // TODO: Fix `size` typing
 export type TextareaProps = TextColorProps &
@@ -77,8 +77,8 @@ export const Textarea = styled('textarea')<TextareaProps>(
   }),
   variant({
     size: {
-      normal: { fontSize: 2, height: 5, lineHeight: 1 },
-      large: { fontSize: 3, height: 6, lineHeight: 3 },
+      0: { fontSize: 2, height: 5, lineHeight: 1 },
+      1: { fontSize: 3, height: 6, lineHeight: 3 },
     },
   }),
   variant({
@@ -104,4 +104,4 @@ export const Textarea = styled('textarea')<TextareaProps>(
   styleProps
 );
 
-Textarea.defaultProps = { variant: 'normal', size: 'normal' };
+Textarea.defaultProps = { variant: 'normal', size: 0 };

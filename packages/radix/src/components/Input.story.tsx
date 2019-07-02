@@ -29,11 +29,11 @@ storiesOf('Components|Input', module).add('default', () => (
     </Box>
 
     <Box mb="4">
-      <Input size="large" placeholder="Your email" />
+      <Input size={1} placeholder="Your email" />
     </Box>
 
     <Box mb="4" position="relative">
-      <Input size="large" placeholder="e.g. joe@example.com" type="email" paddingLeft={6} />
+      <Input size={1} placeholder="e.g. joe@example.com" type="email" paddingLeft={6} />
 
       <Box
         position="absolute"
@@ -54,7 +54,7 @@ storiesOf('Components|Input', module).add('default', () => (
     </Box>
 
     <Box mb="4">
-      <Input variant="ghost" size="large" placeholder="Ghost input" />
+      <Input variant="ghost" size={1} placeholder="Ghost input" />
     </Box>
 
     <Box mb="4">

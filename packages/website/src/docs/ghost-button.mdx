@@ -18,15 +18,15 @@ component: GhostButton
 ```
 
 ```js live=true
-<GhostButton size="large">
+<GhostButton size={1}>
   <HamburgerIcon size="25" />
 </GhostButton>
 
-<GhostButton size="large" variant="active" ml={3}>
+<GhostButton size={1} variant="active" ml={3}>
   <HamburgerIcon size="25" />
 </GhostButton>
 
-<GhostButton size="large" disabled ml={3}>
+<GhostButton size={1} disabled ml={3}>
   <HamburgerIcon size="25" />
 </GhostButton>
 ```
@@ -40,5 +40,5 @@ component: GhostButton
 | Name       | Type                 | Default  | Description          |
 | :--------- | :------------------- | :------: | :------------------- |
 | `variant`  | 'normal' \| 'active' | `normal` | Variant to display   |
-| `size`     | 'normal' \|'large'   | `normal` | Size to display      |
+| `size`     | 0 \| 1               |   `0`    | Size to display      |
 | `disabled` | Boolean              | `false`  | Disables the element |

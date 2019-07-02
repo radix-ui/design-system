@@ -6,7 +6,9 @@ component: Button
 ```js live=true
 <Button>New project</Button>
 ```
+
 ### Color
+
 There are 4 color options to choose from.
 
 ```js live=true
@@ -22,42 +24,40 @@ There are 4 color options to choose from.
 ```
 
 ### Size
+
 There are 2 size options to choose from.
 
 ```js live=true
-<Button>
+<Button size={0}>
   Default
 </Button>
-<Button size="large" ml={6}>
+<Button size={1} ml={6}>
   Large
 </Button>
 ```
 
 ### Active
+
 When a button is active.
 
 ```js live=true
-<Button variant="active">
-  Add
-</Button>
+<Button variant="active">Add</Button>
 ```
 
 ### Waiting
+
 When the user is waiting for the server to respond.
 
 ```js live=true
-<Button variant="waiting">
-  Waiting
-</Button>
+<Button variant="waiting">Waiting</Button>
 ```
 
 ### Disabled
+
 For when your button is disabled.
 
 ```js live=true
-<Button disabled>
-  New project
-</Button>
+<Button disabled>New project</Button>
 ```
 
 ### System props
@@ -66,8 +66,8 @@ For when your button is disabled.
 
 ### Custom props
 
-| Name       | Type                                                          | Default  | Description          |
-| :--------- | :------------------------------------------------------------ | :------: | :------------------- |
-| `variant`  | 'gray' \| 'blue' \| 'green' \| 'red' \| 'active' \| 'waiting' |  `gray`  | Variant to display   |
-| `size`     | 'normal' \| 'large'                                           | `normal` | Size to display      |
-| `disabled` | Boolean                                                       | `false`  | Disables the element |
+| Name       | Type                                                          | Default | Description          |
+| :--------- | :------------------------------------------------------------ | :-----: | :------------------- |
+| `variant`  | 'gray' \| 'blue' \| 'green' \| 'red' \| 'active' \| 'waiting' | `gray`  | Variant to display   |
+| `size`     | 0 \| 1                                                        |   `0`   | Size to display      |
+| `disabled` | Boolean                                                       | `false` | Disables the element |
