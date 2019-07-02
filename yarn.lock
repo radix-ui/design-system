@@ -4238,6 +4238,16 @@ babel-plugin-remove-graphql-queries@^2.7.0:
     babel-plugin-syntax-jsx "^6.18.0"
     lodash "^4.17.11"
 
+babel-plugin-styled-components@^1.10.6:
+  version "1.10.6"
+  resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.10.6.tgz#f8782953751115faf09a9f92431436912c34006b"
+  integrity sha512-gyQj/Zf1kQti66100PhrCRjI5ldjaze9O0M3emXRPAN80Zsf8+e1thpTpaXJXVHXtaM4/+dJEgZHyS9Its+8SA==
+  dependencies:
+    "@babel/helper-annotate-as-pure" "^7.0.0"
+    "@babel/helper-module-imports" "^7.0.0"
+    babel-plugin-syntax-jsx "^6.18.0"
+    lodash "^4.17.11"
+
 babel-plugin-syntax-dynamic-import@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-dynamic-import/-/babel-plugin-syntax-dynamic-import-6.18.0.tgz#8d6a26229c83745a9982a441051572caa179b1da"
@@ -8240,6 +8250,13 @@ gatsby-plugin-react-helmet@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.1.0.tgz#5cc5271334fce7522207f751a24af97bd7eebaf5"
   integrity sha512-QJefYCTvu+WRgnckNipnfvNVUR8+1TsXN+/AZPWJ9OyFUWmgYJO/PyDpIzEEYekDnDMb7gKFFj+UuJ8bSGvj2g==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
+gatsby-plugin-styled-components@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-3.1.0.tgz#ce837299807247cf2c4347bd51aaed4c58c195d9"
+  integrity sha512-VMaq82vU7WsfXj5kOxGJP7w9MOUUxT3mcs4NYZqHGvFU+2+oeO70SJ1WoeB5TSIFEKlNhGUiKTdL6NcMh54/nA==
   dependencies:
     "@babel/runtime" "^7.0.0"
 
