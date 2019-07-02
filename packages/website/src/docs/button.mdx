@@ -5,29 +5,59 @@ component: Button
 
 ```js live=true
 <Button>New project</Button>
-<Button disabled ml={3}>
-  New project
+```
+### Color
+There are 4 color options to choose from.
+
+```js live=true
+<Button variant="blue">
+  Save
+</Button>
+<Button variant="green" ml={6}>
+  Copy
+</Button>
+<Button variant="red" ml={6}>
+  Delete
 </Button>
 ```
 
+### Size
+There are 2 size options to choose from.
+
 ```js live=true
-<Button variant="blue">Save</Button>
-<Button variant="green" ml={3}>
-  Copy
+<Button>
+  Default
 </Button>
-<Button variant="red" ml={3}>
-  Delete
+<Button size="large" ml={6}>
+  Large
 </Button>
-<Button variant="active" ml={3}>
+```
+
+### Active
+When a button is active.
+
+```js live=true
+<Button variant="active">
   Add
 </Button>
-<Button variant="waiting" ml={3}>
+```
+
+### Waiting
+When the user is waiting for the server to respond.
+
+```js live=true
+<Button variant="waiting">
   Waiting
 </Button>
 ```
 
+### Disabled
+For when your button is disabled.
+
 ```js live=true
-<Button size="large">Button</Button>
+<Button disabled>
+  New project
+</Button>
 ```
 
 ### System props

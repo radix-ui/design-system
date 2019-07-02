@@ -13,15 +13,16 @@ Built on top of [@styled-system/core](https://github.com/styled-system/styled-sy
 
 ### Install it
 
-Radix System is currently under development, but if you'd like to use it anyway:
+Radix System is currently under heavy development, but can be installed by running either of these commands:
 
 ```js
-# npm
 npm install @modulz/radix-system
 ```
 
+<br/>
+or
+
 ```js
-# yarn
 yarn add @modulz/radix-system
 ```
 
@@ -56,6 +57,7 @@ const App = () => (
 );
 ```
 
+<br />
 With Typescript:
 
 ```js
@@ -73,7 +75,7 @@ const styleProps = compose(
   backgroundColor
 );
 type BoxProps = MarginProps & BackgroundColorProps;
-const Box = styled('div')<BoxProps>styleProps;
+const Box = styled('div')<BoxProps>(styleProps);
 
 const App = () => (
   <Box my={4} bg="blue">

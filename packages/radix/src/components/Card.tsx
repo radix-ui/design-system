@@ -31,6 +31,7 @@ type CardProps = SystemProps & { variant?: Prop<Variants> };
 
 const styleProps = compose(
   textColor,
+  backgroundColor,
   margin,
   padding,
   width,

@@ -1,13 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import css from '@styled-system/css';
-import {
-  UntitledSansWoff,
-  UntitledSansWoff2,
-  UntitledSansMediumWoff,
-  UntitledSansMediumWoff2,
-  OperatorMonoBookWoff,
-  OperatorMonoBookWoff2,
-} from './fonts';
+import { fontStyles } from './fonts';
 
 export const GlobalStyles = createGlobalStyle(
   css({
@@ -36,27 +29,9 @@ export const GlobalStyles = createGlobalStyle(
       verticalAlign: 'middle',
       display: 'block',
     },
-    '@font-face': [
-      {
-        fontFamily: 'UntitledSans',
-        fontWeight: '400',
-        fontDisplay: 'swap',
-        src: `local('UntitledSans'), url(${UntitledSansWoff2}) format('woff2'), url(${UntitledSansWoff}) format('woff')`,
-      },
-      {
-        fontFamily: 'UntitledSans-Medium',
-        fontWeight: '500',
-        fontDisplay: 'swap',
-        src: `local('UntitledSans-Medium'), url(${UntitledSansMediumWoff2}) format('woff2'), url(${UntitledSansMediumWoff}) format('woff')`,
-      },
-      {
-        fontFamily: 'OperatorMono-Book',
-        fontDisplay: 'swap',
-        src: `local('OperatorMono-Book'), url(${OperatorMonoBookWoff2}) format('woff2'), url(${OperatorMonoBookWoff}) format('woff')`,
-      },
-    ],
   }),
   {
     html: { lineHeight: 1.2 },
-  }
+  },
+  fontStyles
 );
