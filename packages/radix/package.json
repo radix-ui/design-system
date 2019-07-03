@@ -1,6 +1,6 @@
 {
   "name": "@modulz/radix",
-  "version": "0.0.1-alpha.36",
+  "version": "0.0.1-alpha.37",
   "description": "Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
@@ -25,7 +25,7 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@modulz/radix-system": "^0.0.1-alpha.4",
+    "@modulz/radix-system": "^0.0.1-alpha.5",
     "@reach/dialog": "^0.2.9",
     "@styled-system/css": "5.0.11",
     "@styled-system/theme-get": "^5.0.12",
@@ -50,8 +50,8 @@
     "babel-loader": "8.0.6",
     "csstype": "^2.6.5",
     "rollup": "^1.16.3",
-    "rollup-plugin-url": "^2.2.2",
     "rollup-plugin-typescript2": "^0.21.2",
+    "rollup-plugin-url": "^2.2.2",
     "typescript": "3.5.2"
   },
   "gitHead": "dcfeb380ad27ceb7795b59093896737c299c5300"
