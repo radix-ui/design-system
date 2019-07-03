@@ -10,7 +10,7 @@ const waitingAnimation = (props: any) => keyframes`
 `;
 
 type Variants = 'gray' | 'blue' | 'green' | 'red' | 'active' | 'waiting';
-type Sizes = 'normal' | 'large';
+type Sizes = 0 | 1;
 
 type ButtonProps = MarginProps & {
   variant?: Prop<Variants>;
@@ -125,13 +125,13 @@ export const Button = styled('button')<ButtonProps>(
   }),
   variant({
     size: {
-      normal: {
+      0: {
         fontSize: 2,
         paddingX: 2,
         height: 5,
         minWidth: 5,
       },
-      large: {
+      1: {
         fontSize: 3,
         paddingX: 3,
         height: 6,
@@ -161,7 +161,7 @@ export const Button = styled('button')<ButtonProps>(
             transparent 66%
           )`,
         backgroundSize:
-          size === 'large'
+          size === 1
             ? `${themeGet('space.9')({ theme })} ${themeGet('space.6')({
                 theme,
               })}`
@@ -185,5 +185,5 @@ export const Button = styled('button')<ButtonProps>(
 
 Button.defaultProps = {
   variant: 'gray',
-  size: 'normal',
+  size: 0,
 };

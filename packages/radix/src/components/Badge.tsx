@@ -3,7 +3,7 @@ import { margin, MarginProps, variant, Prop } from '@modulz/radix-system';
 import css from '@styled-system/css';
 
 type Variants = 'gray' | 'blue' | 'green' | 'red' | 'yellow';
-type Sizes = 'normal' | 'large';
+type Sizes = 0 | 1;
 
 type BadgeProps = MarginProps & {
   variant?: Prop<Variants>;
@@ -54,13 +54,13 @@ export const Badge = styled('span')<BadgeProps>(
   }),
   variant({
     size: {
-      normal: {
+      0: {
         fontSize: 0,
         height: 3,
         minWidth: 5,
         paddingX: 2,
       },
-      large: {
+      1: {
         fontSize: 1,
         height: 5,
         minWidth: 6,
@@ -74,5 +74,5 @@ export const Badge = styled('span')<BadgeProps>(
 
 Badge.defaultProps = {
   variant: 'gray',
-  size: 'normal',
+  size: 0,
 };

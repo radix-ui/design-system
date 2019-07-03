@@ -7,14 +7,14 @@ storiesOf('Components|Button', module).add('default', () => (
   <>
     <Box mb="4">
       <Button mr="4">Button</Button>
-      <Button size="large">Button</Button>
+      <Button size={1}>Button</Button>
     </Box>
 
     <Box mb="4">
       <Button variant="blue" mr="4">
         Blue
       </Button>
-      <Button variant="blue" size="large" mr="4">
+      <Button variant="blue" size={1} mr="4">
         Blue
       </Button>
     </Box>
@@ -23,7 +23,7 @@ storiesOf('Components|Button', module).add('default', () => (
       <Button variant="green" mr="4">
         Green
       </Button>
-      <Button variant="green" size="large">
+      <Button variant="green" size={1}>
         Green
       </Button>
     </Box>
@@ -32,7 +32,7 @@ storiesOf('Components|Button', module).add('default', () => (
       <Button variant="red" mr="4">
         Red
       </Button>
-      <Button variant="red" size="large">
+      <Button variant="red" size={1}>
         Red
       </Button>
     </Box>
@@ -41,7 +41,7 @@ storiesOf('Components|Button', module).add('default', () => (
       <Button variant="active" mr="4">
         Active
       </Button>
-      <Button variant="active" size="large">
+      <Button variant="active" size={1}>
         Active
       </Button>
     </Box>
@@ -50,7 +50,7 @@ storiesOf('Components|Button', module).add('default', () => (
       <Button disabled={true} mr="4">
         Disabled
       </Button>
-      <Button disabled={true} size="large">
+      <Button disabled={true} size={1}>
         Disabled
       </Button>
     </Box>
@@ -59,14 +59,14 @@ storiesOf('Components|Button', module).add('default', () => (
       <Button variant="waiting" mr="4">
         Waiting
       </Button>
-      <Button variant="waiting" size="large">
+      <Button variant="waiting" size={1}>
         Waiting
       </Button>
     </Box>
 
     <Box mb="4">
       <Button variant="blue" mr="4">
-        <Box as="span" mr="2">
+        <Box as="span" mr={2}>
           <svg
             width="18"
             height="18"
@@ -82,8 +82,8 @@ storiesOf('Components|Button', module).add('default', () => (
         </Box>
         Follow
       </Button>
-      <Button variant="blue" size="large">
-        <Box as="span" mr="2">
+      <Button variant="blue" size={1}>
+        <Box as="span" mr={2}>
           <svg
             width="25"
             height="25"
