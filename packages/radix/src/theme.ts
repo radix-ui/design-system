@@ -111,7 +111,7 @@ export const theme: Theme = {
 // By adding the following aliases, repsonsive props
 // can be used like so:
 // <Text fontSize={{ small: 3, medium: 4, large: 5 }} />
-theme.breakpoints.small = theme.breakpoints[0];
-theme.breakpoints.medium = theme.breakpoints[1];
-theme.breakpoints.large = theme.breakpoints[2];
-theme.breakpoints.xlarge = theme.breakpoints[3];
+theme.breakpoints.small = 0;
+theme.breakpoints.medium = theme.breakpoints[0];
+theme.breakpoints.large = theme.breakpoints[1];
+theme.breakpoints.xlarge = theme.breakpoints[2];
