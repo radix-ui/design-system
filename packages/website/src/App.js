@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { Flex, Box, Menu, Heading, Badge, Divider, Container, GhostButton } from '@modulz/radix';
 import { HamburgerIcon, CrossIcon } from '@modulz/radix-icons';
-import NavItem from './NavItem';
+import NavItem from './components/NavItem';
 
-function Sidebar({ element, props }) {
+function App({ element, props }) {
   const [navOpen, setNavOpen] = useState(false);
 
   const query = graphql`
@@ -170,4 +170,4 @@ function Sidebar({ element, props }) {
   );
 }
 
-export default Sidebar;
+export default App;

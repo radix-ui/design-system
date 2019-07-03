@@ -1,4 +1,4 @@
 import React from 'react';
-import Sidebar from './components/Sidebar';
+import App from './App';
 
-export const wrapPageElement = props => <Sidebar {...props} />;
+export const wrapPageElement = props => <App {...props} />;
