@@ -47,7 +47,7 @@ function MenuStory() {
               <MenuItem>
                 <Text size={2}>Wrapped in `Hover`</Text>
                 {isHovered && (
-                  <Box position="absolute" right={0} mr={3}>
+                  <Box position="absolute" right={3}>
                     <CircleIcon />
                   </Box>
                 )}
@@ -61,7 +61,7 @@ function MenuStory() {
                   Wrapped in `Hover`
                 </Text>
                 {isHovered && (
-                  <Box position="absolute" right={0} mr={3}>
+                  <Box position="absolute" right={3}>
                     <CircleIcon />
                   </Box>
                 )}
@@ -75,7 +75,7 @@ function MenuStory() {
                   Wrapped in `Hover`
                 </Text>
                 {isHovered && (
-                  <Box position="absolute" right={0} mr={3}>
+                  <Box position="absolute" right={3}>
                     <CircleIcon />
                   </Box>
                 )}
@@ -206,7 +206,7 @@ function MenuStory() {
                 Device
               </Text>
 
-              <Text as="div" size={1} textColor="grays.5">
+              <Text size={1} textColor="grays.5">
                 200 x 400
               </Text>
             </Flex>
