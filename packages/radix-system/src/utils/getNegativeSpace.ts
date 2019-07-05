@@ -2,7 +2,7 @@ import { get } from '@styled-system/core';
 
 const isNumber = (n: number) => typeof n === 'number' && !isNaN(n);
 
-export const getMargin = (n: number, scale: any) => {
+export const getNegativeSpace = (n: number, scale: any) => {
   if (!isNumber(n)) {
     return get(scale, n, n);
   }

@@ -3,7 +3,7 @@ import { system, Config } from '@styled-system/core';
 import { Prop, Length } from '../utils/types';
 
 export interface BorderRadiusProps {
-  boxShadow?: Prop<CSS.BorderRadiusProperty<Length>>;
+  borderRadius?: Prop<CSS.BorderRadiusProperty<Length>>;
 }
 
 const config: Config = {
