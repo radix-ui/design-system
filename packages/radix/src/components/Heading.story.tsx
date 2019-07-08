@@ -38,16 +38,11 @@ storiesOf('Components|Heading', module).add('default', () => (
     </Box>
 
     <Box mb={4}>
-      <Heading
-        size={[1, 3, 5]}
-        fontWeight={['normal', 'bold']}
-        mb="3"
-        truncate={[false, false, true]}
-      >
-        Responsive example. Font size changes. Should be bold on breakpoint 2. Should truncate on
-        breakpoint 3
+      <Heading size={[1, 3, 5]} fontWeight={[400, 500]} mb="3" truncate={[false, false, true]}>
+        Responsive example. Font size changes. Should be weight 400 on breakpoint 2. Should truncate
+        on breakpoint 3
       </Heading>
-      <Heading fontWeight="bold" mb="3">
+      <Heading fontWeight={400} mb="3">
         Bold
       </Heading>
     </Box>

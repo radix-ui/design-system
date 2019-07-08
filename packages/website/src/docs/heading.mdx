@@ -7,23 +7,22 @@ component: Heading
 <Heading>Close the gap</Heading>
 ```
 
-```js live=true
-<Heading size={3}>Between designers and developers</Heading>
-```
+### Weight
+
+There are 2 weight options to choose from.
 
 ```js live=true
-<Heading size={4} fontWeight="bold">
-  With Modulz
-</Heading>
+<Heading fontWeight="400">With font weight 400 (default)</Heading>
+<Heading fontWeight="500">With font weight 500</Heading>
 ```
 
 ### System props
 
-<SystemProps props={['textColor', 'margin', 'padding', 'textAlign', 'lineHeight']} />
+<SystemProps props={['textColor', 'margin', 'padding', 'textAlign', 'fontWeight', 'lineHeight']} />
 
 ### Custom props
 
-| Name       | Type                   | Default | Description           |
-| :--------- | :--------------------- | :-----: | :-------------------- |
-| `size`     | ResponsiveValue<0...5> |   `3`   | Changes the font size |
-| `truncate` | boolean                | `false` | Truncates the text    |
+| Name       | Type                    | Default | Description           |
+| :--------- | :---------------------- | :-----: | :-------------------- |
+| `size`     | 0 \| 1 \| 2\| 3\| 4\| 5 |   `3`   | Changes the font size |
+| `truncate` | boolean                 | `false` | Truncates the text    |
