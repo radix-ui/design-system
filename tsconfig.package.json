@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "module": "esnext",
+    "sourceMap": true,
+    "target": "es5",
+    "jsx": "react",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/@types/*",
+        "./node_modules/@types/*",
+        "node_modules/*",
+        "./node_modules/*"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "**/node_modules", "dist", "**/dist"]
+}

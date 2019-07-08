@@ -28,6 +28,7 @@ export default {
     typescript({
       clean: true,
       typescript: require('typescript'),
+      tsconfig: 'tsconfig.build.json',
     }),
   ],
 };
