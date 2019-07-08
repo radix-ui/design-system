@@ -105,7 +105,7 @@ function App({ element, props }) {
               <Box display={[navOpen ? 'block' : 'none', 'block']}>
                 <Divider mb={1} />
                 <Menu>
-                  <Heading size={0} fontWeight="bold" my={2} mx={5}>
+                  <Heading size={0} fontWeight={500} my={2} mx={5}>
                     Overview
                   </Heading>
                   {data.pinned.edges.map(({ node }) => (
@@ -122,7 +122,7 @@ function App({ element, props }) {
                 <Divider mb={1} />
 
                 <Menu>
-                  <Heading size={0} fontWeight="bold" my={2} mx={5}>
+                  <Heading size={0} fontWeight={500} my={2} mx={5}>
                     Components
                   </Heading>
                   {data.components.edges.map(({ node }) => (
@@ -139,7 +139,7 @@ function App({ element, props }) {
                 <Divider mb={1} />
 
                 <Menu>
-                  <Heading size={0} fontWeight="bold" mx={5} mb={2} mt={2}>
+                  <Heading size={0} fontWeight={500} mx={5} mb={2} mt={2}>
                     Recipes
                   </Heading>
                   {data.recipes.edges.map(({ node }) => (

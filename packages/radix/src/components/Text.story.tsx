@@ -43,7 +43,7 @@ storiesOf('Components|Text', module).add('default', () => (
       <Text as="p" fontStyle="italic">
         Closing the gap between designers and developers.
       </Text>
-      <Text as="p" fontWeight="bold">
+      <Text as="p" fontWeight={500}>
         Closing the gap between designers and developers.
       </Text>
     </Box>

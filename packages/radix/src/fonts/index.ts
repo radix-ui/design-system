@@ -15,44 +15,52 @@ import { default as OperatorMonoMediumItalicWoff2 } from './OperatorMonoSSm-Medi
 export const fontStyles = css`
   @font-face {
     font-family: 'UntitledSans';
-    font-weight: '400';
-    font-display: 'swap';
+    font-weight: 400;
+    font-display: swap;
     src: local('UntitledSans'), url(${UntitledSansWoff2}) format('woff2'),
       url(${UntitledSansWoff}) format('woff');
   }
 
   @font-face {
+    font-family: 'UntitledSans';
+    font-weight: 500;
+    font-display: swap;
+    src: local('UntitledSans-Medium'), url(${UntitledSansMediumWoff2}) format('woff2'),
+      url(${UntitledSansMediumWoff}) format('woff');
+  }
+
+  @font-face {
     font-family: 'UntitledSans-Medium';
-    font-weight: '500';
-    font-display: 'swap';
+    font-weight: 500;
+    font-display: swap;
     src: local('UntitledSans-Medium'), url(${UntitledSansMediumWoff2}) format('woff2'),
       url(${UntitledSansMediumWoff}) format('woff');
   }
 
   @font-face {
     font-family: 'OperatorMono-Book';
-    font-display: 'swap';
+    font-display: swap;
     src: local('OperatorMonoSSm-Book'), url(${OperatorMonoBookWoff2}) format('woff2'),
       url(${OperatorMonoBookWoff}) format('woff');
   }
 
   @font-face {
     font-family: 'OperatorMono-BookItalic';
-    font-display: 'swap';
+    font-display: swap;
     src: local('OperatorMonoSSm-BookItalic'), url(${OperatorMonoBookItalicWoff2}) format('woff2'),
       url(${OperatorMonoBookItalicWoff}) format('woff');
   }
 
   @font-face {
     font-family: 'OperatorMono-Medium';
-    font-display: 'swap';
+    font-display: swap;
     src: local('OperatorMonoSSm-Medium'), url(${OperatorMonoMediumWoff2}) format('woff2'),
       url(${OperatorMonoMediumWoff}) format('woff');
   }
 
   @font-face {
     font-family: 'OperatorMono-MediumItalic';
-    font-display: 'swap';
+    font-display: swap;
     src: local('OperatorMonoSSm-MediumItalic'),
       url(${OperatorMonoMediumItalicWoff2}) format('woff2'),
       url(${OperatorMonoMediumItalicWoff}) format('woff');

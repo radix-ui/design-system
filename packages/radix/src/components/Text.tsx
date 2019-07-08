@@ -11,6 +11,7 @@ import {
   FontFamilyProps,
   fontStyle,
   FontStyleProps,
+  fontWeight,
   textAlign,
   TextAlignProps,
   lineHeight,
@@ -27,8 +28,8 @@ type TextProps = TextColorProps &
   FontStyleProps &
   TextAlignProps &
   LineHeightProps & {
+    fontWeight?: Prop<400 | 500>;
     size?: Prop<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8>;
-    fontWeight?: Prop<'normal' | 'bold'>;
     truncate?: Prop<boolean>;
   };
 
@@ -38,6 +39,7 @@ const styleProps = compose(
   padding,
   fontStyle,
   fontFamily,
+  fontWeight,
   textAlign,
   lineHeight
 );
@@ -102,16 +104,7 @@ export const Text = styled('span')<TextProps>(
       },
     },
   }),
-  variant({
-    fontWeight: {
-      normal: { fontWeight: 400, fontFamily: 'normal' },
-      bold: { fontWeight: 500, fontFamily: 'medium' },
-    },
-  }),
   styleProps
 );
 
-Text.defaultProps = {
-  fontWeight: 'normal',
-  truncate: false,
-};
+Text.defaultProps = { truncate: false };
