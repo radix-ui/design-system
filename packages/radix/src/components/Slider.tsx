@@ -1,4 +1,11 @@
-import React, { useState, useEffect, ChangeEvent, ChangeEventHandler } from 'react';
+import React, {
+  useState,
+  useEffect,
+  ChangeEvent,
+  ChangeEventHandler,
+  ComponentPropsWithRef,
+  FC,
+} from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import { variant } from '@modulz/radix-system';
@@ -10,9 +17,9 @@ type SliderProps = {
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   variant?: 'normal' | 'fade';
-};
+} & ComponentPropsWithRef<'input'>;
 
-export const Slider = ({
+export const Slider: FC<SliderProps> = ({
   name,
   min = 0,
   max = 100,
@@ -20,7 +27,7 @@ export const Slider = ({
   onChange,
   variant,
   ...props
-}: SliderProps) => {
+}) => {
   const isControlled = value !== undefined && onChange !== undefined;
   const [stateValue, setStateValue] = useState<number>(Number(value) || 0);
 
