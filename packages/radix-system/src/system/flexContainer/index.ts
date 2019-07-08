@@ -6,7 +6,7 @@ import { config as flexWrapConfig, FlexWrapProps } from './flexWrap';
 import { config as justifyContentConfig, JustifyContentProps } from './justifyContent';
 import { config as justifyItemsConfig, JustifyItemsProps } from './justifyItems';
 
-export interface FlexParentSetProps
+export interface FlexContainerSetProps
   extends AlignItemsProps,
     AlignContentProps,
     JustifyItemsProps,
@@ -14,7 +14,7 @@ export interface FlexParentSetProps
     FlexWrapProps,
     FlexDirectionProps {}
 
-export const flexParentSet = system({
+export const flexContainerSet = system({
   ...alignContentConfig,
   ...alignItemsConfig,
   ...flexDirectionConfig,
