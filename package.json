@@ -4,7 +4,7 @@
     "packages/*"
   ],
   "scripts": {
-    "postinstall": "yarn radix-system:build && yarn radix:build",
+    "postinstall": "yarn radix-system:build && yarn radix:build && yarn icons:build",
     "start": "npm-run-all --parallel radix website",
     "website": "lerna exec --scope website -- yarn start",
     "website:build": "lerna exec --scope website -- yarn build",
