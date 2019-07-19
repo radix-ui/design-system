@@ -104,6 +104,11 @@ export const CardLink = styled('a')<CardLinkProps>(
       cursor: 'pointer',
       outline: 0,
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+      ...(variant === 'shadow' || variant === 'ghost'
+          ? {
+              willChange: 'transform',
+            }
+          : {}),
       '&:hover': {
         borderColor: 'grays.4',
         ...(variant === 'ghost'
