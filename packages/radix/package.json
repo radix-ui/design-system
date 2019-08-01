@@ -18,7 +18,9 @@
     "storybook": "start-storybook -p 9009 --ci",
     "build-storybook": "build-storybook",
     "build": "rollup -c",
-    "watch": "rollup -cw"
+    "watch": "rollup -cw",
+    "link-primitives": "yalc add @modulz/primitives",
+    "unlink-primitives": "yalc remove @modulz/primitives"
   },
   "peerDependencies": {
     "react": "^16.8.6",
@@ -52,7 +54,8 @@
     "rollup": "^1.16.3",
     "rollup-plugin-typescript2": "^0.21.2",
     "rollup-plugin-url": "^2.2.2",
-    "typescript": "3.5.2"
+    "typescript": "3.5.2",
+    "yalc": "^1.0.0-pre.32"
   },
   "gitHead": "dcfeb380ad27ceb7795b59093896737c299c5300"
 }
