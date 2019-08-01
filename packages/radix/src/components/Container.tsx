@@ -1,59 +1,32 @@
-import styled from 'styled-components';
-import css from '@styled-system/css';
+import React from 'react';
 import {
-  alignSelf,
-  AlignSelfProps,
-  flex,
-  FlexProps,
-  justifySelf,
-  JustifySelfProps,
-  maxWidth,
-  MaxWidthProps,
-  margin,
-  MarginProps,
-  padding,
-  PaddingProps,
-  variant,
-  compose,
-  Prop,
-} from '@modulz/radix-system';
+  Container as ContainerPrimitive,
+  ContainerProps as ContainerPrimitiveProps,
+} from '@modulz/primitives';
+import { Prop, variant } from '@modulz/radix-system';
 
 type Sizes = 0 | 1 | 2;
-type ContainerProps = AlignSelfProps &
-  FlexProps &
-  JustifySelfProps &
-  MaxWidthProps &
-  MarginProps &
-  PaddingProps & { size?: Prop<Sizes> };
+type ContainerProps = ContainerPrimitiveProps & { size?: Prop<Sizes> };
 
-const styleProps = compose(
-  alignSelf,
-  flex,
-  justifySelf,
-  maxWidth,
-  margin,
-  padding
-);
-
-export const Container = styled('div')<ContainerProps>(
-  css({
-    marginX: 'auto',
-    paddingX: 5,
-    flex: 1,
-    maxWidth: '25rem',
-  }),
-  variant({
-    size: {
-      0: {
-        maxWidth: '25rem',
+export const Container: React.FC<ContainerProps> = props => (
+  <ContainerPrimitive
+    marginX="auto"
+    paddingX={5}
+    flex={1}
+    maxWidth="25rem"
+    {...props}
+    css={variant({
+      size: {
+        0: {
+          maxWidth: '25rem',
+        },
+        1: {
+          maxWidth: '45rem',
+        },
+        2: {
+          maxWidth: '65rem',
+        },
       },
-      1: {
-        maxWidth: '45rem',
-      },
-      2: {
-        maxWidth: '65rem',
-      },
-    },
-  }),
-  styleProps
+    })}
+  />
 );
