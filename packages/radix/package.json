@@ -19,8 +19,8 @@
     "build-storybook": "build-storybook",
     "build": "rollup -c",
     "watch": "rollup -cw",
-    "link-primitives": "yalc add @modulz/primitives",
-    "unlink-primitives": "yalc remove @modulz/primitives"
+    "link-primitives": "yalc add @modulz/primitives && yarn",
+    "unlink-primitives": "yalc remove @modulz/primitives && yarn"
   },
   "peerDependencies": {
     "react": "^16.8.6",
