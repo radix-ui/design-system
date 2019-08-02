@@ -5,7 +5,7 @@ import { variant } from '@modulz/radix-system';
 import {
   Slider as SliderPrimitive,
   SliderProps as SliderPrimitiveProps,
-  Input,
+  SliderInput as Input,
 } from '@modulz/primitives';
 
 type SliderProps = SliderPrimitiveProps & { theme?: any; variant?: 'normal' | 'fade' };
