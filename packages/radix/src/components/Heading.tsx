@@ -1,10 +1,7 @@
 import React from 'react';
 import css from '@styled-system/css';
 import { variant, Prop } from '@modulz/radix-system';
-import {
-  Heading as HeadingPrimitive,
-  HeadingProps as HeadingPrimitiveProps,
-} from '@modulz/primitives';
+import { Heading as HeadingPrimitive, HeadingProps as HeadingPrimitiveProps } from 'mdlz-prmtz';
 
 type HeadingProps = HeadingPrimitiveProps & {
   fontWeight?: Prop<400 | 500>;

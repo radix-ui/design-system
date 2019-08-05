@@ -1,1 +1,1 @@
-export { Grid } from '@modulz/primitives';
+export { Grid } from 'mdlz-prmtz';

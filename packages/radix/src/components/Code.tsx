@@ -1,6 +1,6 @@
 import React from 'react';
 import css from '@styled-system/css';
-import { Code as CodePrimitive, CodeProps as CodePrimitiveProps } from '@modulz/primitives';
+import { Code as CodePrimitive, CodeProps as CodePrimitiveProps } from 'mdlz-prmtz';
 
 export const Code = (props: CodePrimitiveProps) => (
   <CodePrimitive

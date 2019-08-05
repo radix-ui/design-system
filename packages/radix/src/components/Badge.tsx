@@ -1,7 +1,7 @@
 import React from 'react';
 import css from '@styled-system/css';
 import { variant, Prop } from '@modulz/radix-system';
-import { Badge as BadgePrimitive, BadgeProps as BadgePrimitiveProps } from '@modulz/primitives';
+import { Badge as BadgePrimitive, BadgeProps as BadgePrimitiveProps } from 'mdlz-prmtz';
 
 type Variants = 'gray' | 'blue' | 'green' | 'red' | 'yellow';
 type Sizes = 0 | 1;

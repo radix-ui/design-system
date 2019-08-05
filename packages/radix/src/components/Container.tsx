@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Container as ContainerPrimitive,
   ContainerProps as ContainerPrimitiveProps,
-} from '@modulz/primitives';
+} from 'mdlz-prmtz';
 import { Prop, variant } from '@modulz/radix-system';
 
 type Sizes = 0 | 1 | 2;

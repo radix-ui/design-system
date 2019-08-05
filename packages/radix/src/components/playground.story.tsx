@@ -22,7 +22,7 @@ import {
   DotsVerticalIcon,
 } from '@modulz/radix-icons';
 
-import { Popover } from '@modulz/primitives';
+import { Popover } from 'mdlz-prmtz';
 
 function PopoverExample() {
   const [isOpen, setIsOpen] = React.useState(false);

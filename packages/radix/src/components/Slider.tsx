@@ -6,7 +6,7 @@ import {
   Slider as SliderPrimitive,
   SliderProps as SliderPrimitiveProps,
   SliderInput as Input,
-} from '@modulz/primitives';
+} from 'mdlz-prmtz';
 
 type SliderProps = SliderPrimitiveProps & { theme?: any; variant?: 'normal' | 'fade' };
 

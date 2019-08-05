@@ -1,1 +1,1 @@
-export { AspectRatio } from '@modulz/primitives';
+export { AspectRatio } from 'mdlz-prmtz';

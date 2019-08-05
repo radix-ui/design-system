@@ -19,8 +19,8 @@
     "build-storybook": "build-storybook",
     "build": "rollup -c",
     "watch": "rollup -cw",
-    "link-primitives": "yalc add @modulz/primitives && yarn",
-    "unlink-primitives": "yalc remove @modulz/primitives && yarn"
+    "link-primitives": "yalc add mdlz-prmtz && yarn",
+    "unlink-primitives": "yalc remove mdlz-prmtz && yarn"
   },
   "peerDependencies": {
     "react": "^16.8.6",
@@ -34,6 +34,7 @@
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
+    "mdlz-prmtz": "^0.0.3",
     "polished": "^3.4.1",
     "styled-components": "^4.3.2"
   },

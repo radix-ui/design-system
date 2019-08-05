@@ -1,10 +1,7 @@
 import React from 'react';
 import css from '@styled-system/css';
 import { variant, Prop } from '@modulz/radix-system';
-import {
-  Divider as DividerPrimitive,
-  DividerProps as DividerPrimitiveProps,
-} from '@modulz/primitives';
+import { Divider as DividerPrimitive, DividerProps as DividerPrimitiveProps } from 'mdlz-prmtz';
 
 type Sizes = 0 | 1 | 2;
 type DividerProps = DividerPrimitiveProps & { size?: Prop<Sizes> };

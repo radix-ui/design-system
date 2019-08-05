@@ -11,7 +11,7 @@ import {
   ToggleButtonProps as ToggleButtonPrimitiveProps,
   ToggleButtonWrapper as Wrapper,
   ToggleButtonRadio as Radio,
-} from '@modulz/primitives';
+} from 'mdlz-prmtz';
 
 type Variants = 'normal' | 'fade';
 type VariantProps = { variant?: Prop<Variants> };

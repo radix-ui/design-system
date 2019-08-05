@@ -3,7 +3,7 @@ import { css as _css, keyframes, withTheme } from 'styled-components';
 import css from '@styled-system/css';
 import themeGet from '@styled-system/theme-get';
 import { variant, Prop } from '@modulz/radix-system';
-import { Button as ButtonPrimitive, ButtonProps as ButtonPrimitiveProps } from '@modulz/primitives';
+import { Button as ButtonPrimitive, ButtonProps as ButtonPrimitiveProps } from 'mdlz-prmtz';
 
 const waitingAnimation = (props: ButtonProps) => keyframes`
   100% {
