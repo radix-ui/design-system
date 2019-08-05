@@ -10,6 +10,7 @@ type HeadingProps = HeadingPrimitiveProps & {
   fontWeight?: Prop<400 | 500>;
   size?: Prop<0 | 1 | 2 | 3 | 4 | 5>;
   truncate?: Prop<boolean>;
+  children?: React.ReactNode;
 };
 
 export const Heading = (props: HeadingProps) => (

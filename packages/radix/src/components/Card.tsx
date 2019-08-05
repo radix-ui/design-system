@@ -81,7 +81,7 @@ const baseCard = (props: CardProps) =>
         position: 'relative',
         padding: 4,
         borderRadius: 2,
-        border: '1px solid transparent',
+        border: 'none',
         ...createShadow(1, themeGet('colors.grays.8')(props)),
       },
     },
@@ -105,10 +105,10 @@ export const CardLink = styled('a')<CardLinkProps>(
       outline: 0,
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       ...(variant === 'shadow' || variant === 'ghost'
-          ? {
-              willChange: 'transform',
-            }
-          : {}),
+        ? {
+            willChange: 'transform',
+          }
+        : {}),
       '&:hover': {
         borderColor: 'grays.4',
         ...(variant === 'ghost'
@@ -119,7 +119,7 @@ export const CardLink = styled('a')<CardLinkProps>(
         ...(variant === 'shadow' || variant === 'ghost'
           ? {
               transform: 'translateY(-2px)',
-              borderColor: 'transparent',
+              border: 'none',
             }
           : {}),
       },

@@ -21,9 +21,12 @@ type ButtonProps = {
   theme?: any;
 } & ButtonPrimitiveProps;
 
-export const Button = withTheme((props: ButtonProps) => (
+type Ref = HTMLButtonElement;
+
+export const BaseButton = React.forwardRef<Ref, ButtonProps>((props, ref) => (
   <ButtonPrimitive
     {...props}
+    ref={ref}
     css={[
       css({
         border: '1px solid',
@@ -180,7 +183,9 @@ export const Button = withTheme((props: ButtonProps) => (
   />
 ));
 
-Button.defaultProps = {
+export const Button = withTheme(BaseButton);
+
+BaseButton.defaultProps = {
   variant: 'gray',
   size: 0,
 };
