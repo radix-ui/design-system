@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { Flex } from './Flex';
 import { Heading } from './Heading';
 import { Text } from './Text';
-import { Card, CardLink } from './Card';
+import { Card } from './Card';
+import { CardLink } from './CardLink';
 
 storiesOf('Components|Card', module).add('default', () => (
   <>

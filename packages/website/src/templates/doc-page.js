@@ -27,6 +27,7 @@ export const components = {
   h3: props => (
     <RC.Heading {...props} as="h3" fontWeight={500} size={1} mt={7} mb={1} lineHeight={1} />
   ),
+  h4: props => <RC.Heading {...props} as="h4" fontWeight={500} size={0} lineHeight={1} />,
   p: props => <RC.Text {...props} as="p" size={3} m={0} lineHeight={1} textColor="grays.5" />,
   SystemProps: SystemPropsTable,
 };

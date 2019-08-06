@@ -1,8 +1,9 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": ["packages/*"],
+    "nohoist": ["**/mdlz-prmtz"]
+  },
   "scripts": {
     "postinstall": "yarn radix-system:build && yarn radix:build && yarn icons:build",
     "start": "npm-run-all --parallel radix website",
@@ -46,7 +47,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
+      "pre-commit": "lint-staged && lerna exec --scope @modulz/radix -- yalc check",
       "post-merge": "yarnhook",
       "post-checkout": "yarnhook",
       "post-rewrite": "yarnhook"

@@ -1,42 +1,14 @@
-import styled from 'styled-components';
+import React from 'react';
 import { transparentize } from 'polished';
-import css from '@styled-system/css';
 import themeGet from '@styled-system/theme-get';
-import {
-  textColor,
-  TextColorProps,
-  backgroundColor,
-  BackgroundColorProps,
-  margin,
-  MarginProps,
-  padding,
-  PaddingProps,
-  width,
-  WidthProps,
-  maxWidth,
-  MaxWidthProps,
-  variant,
-  compose,
-  Prop,
-} from '@modulz/radix-system';
+import { variant, Prop } from '@modulz/radix-system';
+import { Card as CardPrimitive, CardProps as CardPrimitiveProps } from 'mdlz-prmtz';
 
-type Variants = 'border' | 'shadow' | 'ghost';
-type SystemProps = TextColorProps &
-  BackgroundColorProps &
-  MarginProps &
-  PaddingProps &
-  WidthProps &
-  MaxWidthProps;
-type CardProps = SystemProps & { variant?: Prop<Variants> };
+export type Variants = 'border' | 'shadow' | 'ghost';
 
-const styleProps = compose(
-  textColor,
-  backgroundColor,
-  margin,
-  padding,
-  width,
-  maxWidth
-);
+type CardProps = CardPrimitiveProps & {
+  variant?: Prop<Variants>;
+};
 
 const createShadow = (defaultOpacity: any, color: any) => ({
   position: 'relative',
@@ -60,7 +32,7 @@ const createShadow = (defaultOpacity: any, color: any) => ({
   },
 });
 
-const baseCard = (props: CardProps) =>
+export const baseCard = (props: CardProps) =>
   variant({
     variant: {
       border: {
@@ -81,55 +53,14 @@ const baseCard = (props: CardProps) =>
         position: 'relative',
         padding: 4,
         borderRadius: 2,
-        border: '1px solid transparent',
+        borderColor: 'transparent',
         ...createShadow(1, themeGet('colors.grays.8')(props)),
       },
     },
   })(props);
 
-export const Card = styled('div')<CardProps>(baseCard, styleProps);
+export const Card = (props: CardProps) => <CardPrimitive {...props} css={baseCard} />;
 
 Card.defaultProps = {
-  variant: 'border',
-};
-
-type CardLinkProps = CardProps & { to?: string };
-
-export const CardLink = styled('a')<CardLinkProps>(
-  baseCard,
-  ({ variant }: CardProps) =>
-    css({
-      display: 'block',
-      textDecoration: 'none',
-      cursor: 'pointer',
-      outline: 0,
-      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-      ...(variant === 'shadow' || variant === 'ghost'
-          ? {
-              willChange: 'transform',
-            }
-          : {}),
-      '&:hover': {
-        borderColor: 'grays.4',
-        ...(variant === 'ghost'
-          ? {
-              '&::before': { opacity: 1 },
-            }
-          : {}),
-        ...(variant === 'shadow' || variant === 'ghost'
-          ? {
-              transform: 'translateY(-2px)',
-              borderColor: 'transparent',
-            }
-          : {}),
-      },
-      '&:focus': {
-        borderColor: 'blues.4',
-      },
-    }),
-  styleProps
-);
-
-CardLink.defaultProps = {
   variant: 'border',
 };

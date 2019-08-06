@@ -1,6 +1,6 @@
 {
   "name": "@modulz/radix",
-  "version": "0.0.1-alpha.38",
+  "version": "0.0.1-alpha.40",
   "description": "Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
@@ -18,20 +18,23 @@
     "storybook": "start-storybook -p 9009 --ci",
     "build-storybook": "build-storybook",
     "build": "rollup -c",
-    "watch": "rollup -cw"
+    "watch": "rollup -cw",
+    "link-primitives": "yalc add mdlz-prmtz && yarn",
+    "unlink-primitives": "yalc remove mdlz-prmtz && yarn"
   },
   "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@modulz/radix-system": "^0.0.1-alpha.5",
+    "@modulz/radix-system": "^0.0.1-alpha.6",
     "@reach/dialog": "^0.2.9",
     "@styled-system/css": "5.0.11",
     "@styled-system/theme-get": "^5.0.12",
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
+    "mdlz-prmtz": "^0.0.6",
     "polished": "^3.4.1",
     "styled-components": "^4.3.2"
   },
@@ -52,7 +55,8 @@
     "rollup": "^1.16.3",
     "rollup-plugin-typescript2": "^0.21.2",
     "rollup-plugin-url": "^2.2.2",
-    "typescript": "3.5.2"
+    "typescript": "3.5.2",
+    "yalc": "^1.0.0-pre.32"
   },
   "gitHead": "dcfeb380ad27ceb7795b59093896737c299c5300"
 }

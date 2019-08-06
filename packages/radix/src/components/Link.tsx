@@ -1,23 +1,6 @@
-import styled from 'styled-components';
-import css from '@styled-system/css';
-import { textColor, TextColorProps, fontSize, FontSizeProps, compose } from '@modulz/radix-system';
+import React from 'react';
+import { Link as LinkPrimitive, LinkProps as LinkPrimitiveProps } from 'mdlz-prmtz';
 
-type LinkProps = TextColorProps & FontSizeProps & { to?: string };
+type LinkProps = LinkPrimitiveProps;
 
-const styleProps = compose(
-  textColor,
-  fontSize
-);
-
-export const Link = styled('a')<LinkProps>(
-  css({
-    color: 'blue',
-    textDecoration: 'none',
-    cursor: 'pointer',
-    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-    '&:hover': {
-      textDecoration: 'underline',
-    },
-  }),
-  styleProps
-);
+export const Link = (props: LinkProps) => <LinkPrimitive {...props} textColor="blue" />;
