@@ -11767,10 +11767,10 @@ mdast-util-toc@^3.0.0:
     unist-util-is "^2.1.2"
     unist-util-visit "^1.1.0"
 
-mdlz-prmtz@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/mdlz-prmtz/-/mdlz-prmtz-0.0.4.tgz#36c9aa7bf5d93da6b000bf523d0078a5d45c5922"
-  integrity sha512-yHm5dzWx6dXZqfTur6ufr0+HruHRkchlAMCK7cUrA2RBidyvMOC66brJv+BfFyGyEaJetkymVtRjC0SbE9L25g==
+mdlz-prmtz@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/mdlz-prmtz/-/mdlz-prmtz-0.0.5.tgz#0614a9719858400590dce120c39d6476468a671d"
+  integrity sha512-d5LBQcdfr0P+g++TSmajNbB/UqP9x2q1M2K7hGjRJMF9BEiB1/8CQaYvoyczpfYlVfxUDB4bVH/Y6PFqNoby0w==
   dependencies:
     "@modulz/radix-icons" "^0.8.0"
     "@modulz/radix-system" "^0.0.1-alpha.6"

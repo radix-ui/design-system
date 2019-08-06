@@ -42,7 +42,7 @@ storiesOf('Components|Heading', module).add('default', () => (
         Responsive example. Font size changes. Should be weight 400 on breakpoint 2. Should truncate
         on breakpoint 3
       </Heading>
-      <Heading fontWeight={400} mb="3">
+      <Heading fontWeight={500} mb="3">
         Bold
       </Heading>
     </Box>
