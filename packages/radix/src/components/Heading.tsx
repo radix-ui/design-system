@@ -8,6 +8,7 @@ type HeadingProps = HeadingPrimitiveProps & {
   size?: Prop<0 | 1 | 2 | 3 | 4 | 5>;
   truncate?: Prop<boolean>;
   children?: React.ReactNode;
+  as?: any;
 };
 
 export const Heading = (props: HeadingProps) => (

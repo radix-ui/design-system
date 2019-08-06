@@ -7,11 +7,11 @@ type TextProps = TextPrimitiveProps & {
   fontWeight?: Prop<400 | 500>;
   size?: Prop<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8>;
   truncate?: Prop<boolean>;
-  // TODO: fix
   as?: any;
+  children?: React.ReactNode;
 };
 
-export const Text: React.FC<TextProps> = props => (
+export const Text = (props: TextProps) => (
   <TextPrimitive
     {...props}
     css={[

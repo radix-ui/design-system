@@ -4,7 +4,11 @@ import { CardLink as CardLinkPrimitive, CardLinkProps as CardLinkPrimitiveProps 
 import { Prop } from '@modulz/radix-system';
 import { baseCard, Variants } from './Card';
 
-type CardLinkProps = CardLinkPrimitiveProps & { to?: string; variant?: Prop<Variants> };
+type CardLinkProps = CardLinkPrimitiveProps & {
+  to?: string;
+  variant?: Prop<Variants>;
+  children?: React.ReactNode;
+};
 
 export const CardLink = (props: CardLinkProps) => (
   <CardLinkPrimitive

@@ -8,6 +8,7 @@ export type Variants = 'border' | 'shadow' | 'ghost';
 
 type CardProps = CardPrimitiveProps & {
   variant?: Prop<Variants>;
+  children?: React.ReactNode;
 };
 
 const createShadow = (defaultOpacity: any, color: any) => ({

@@ -2,7 +2,9 @@ import React from 'react';
 import css from '@styled-system/css';
 import { Code as CodePrimitive, CodeProps as CodePrimitiveProps } from 'mdlz-prmtz';
 
-export const Code = (props: CodePrimitiveProps) => (
+type CodeProps = CodePrimitiveProps & { children?: React.ReactNode };
+
+export const Code = (props: CodeProps) => (
   <CodePrimitive
     {...props}
     css={[

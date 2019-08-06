@@ -6,9 +6,13 @@ import {
 import { Prop, variant } from '@modulz/radix-system';
 
 type Sizes = 0 | 1 | 2;
-type ContainerProps = ContainerPrimitiveProps & { size?: Prop<Sizes> };
+type ContainerProps = ContainerPrimitiveProps & {
+  size?: Prop<Sizes>;
+  children?: React.ReactNode;
+  as?: any;
+};
 
-export const Container: React.FC<ContainerProps> = props => (
+export const Container = (props: ContainerProps) => (
   <ContainerPrimitive
     marginX="auto"
     paddingX={5}

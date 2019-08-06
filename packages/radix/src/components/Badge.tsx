@@ -9,9 +9,11 @@ type Sizes = 0 | 1;
 type BadgeProps = BadgePrimitiveProps & {
   variant?: Prop<Variants>;
   size?: Prop<Sizes>;
+  children?: React.ReactNode;
+  as?: any;
 };
 
-export const Badge = (props: BadgePrimitiveProps) => (
+export const Badge = (props: BadgeProps) => (
   <BadgePrimitive
     {...props}
     css={[

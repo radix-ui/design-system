@@ -1,1 +1,1 @@
-export { Box, BoxProps } from 'mdlz-prmtz';
+export { Box } from 'mdlz-prmtz';
