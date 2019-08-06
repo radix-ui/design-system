@@ -8,6 +8,7 @@ type CardLinkProps = CardLinkPrimitiveProps & {
   to?: string;
   variant?: Prop<Variants>;
   children?: React.ReactNode;
+  as?: any;
 };
 
 export const CardLink = (props: CardLinkProps) => (
