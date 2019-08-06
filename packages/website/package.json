@@ -3,7 +3,7 @@
   "private": true,
   "description": "A website for Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
-  "version": "0.0.1-alpha.42",
+  "version": "0.0.1-alpha.43",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -15,7 +15,7 @@
     "@mdx-js/mdx": "^1.0.21",
     "@mdx-js/react": "^1.0.21",
     "@mdx-js/tag": "^0.20.3",
-    "@modulz/radix": "^0.0.1-alpha.42",
+    "@modulz/radix": "^0.0.1-alpha.43",
     "@modulz/radix-icons": "^0.8.0",
     "@modulz/radix-system": "^0.0.1-alpha.7",
     "babel-plugin-styled-components": "^1.10.6",
