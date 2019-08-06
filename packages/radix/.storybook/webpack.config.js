@@ -5,9 +5,9 @@ module.exports = ({ config, mode }) => {
     ...config.watchOptions,
     ignored: [
       // ignore all `node_modules` except `mdlz-prmtz`
-      /node_modules([\\]+|\/)+(?!@modulz\/primitives)/,
+      /node_modules([\\]+|\/)+(?!mdlz-prmtz)/,
       // ignore all `node_modules` inside `mdlz-prmtz`
-      /\@modulz\/primitives([\\]+|\/)node_modules/,
+      /\mdlz-prmtz([\\]+|\/)node_modules/,
     ],
   };
   config.module.rules.push({

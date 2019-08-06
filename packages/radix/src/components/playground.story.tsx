@@ -42,7 +42,7 @@ function PopoverExample() {
         align="center"
         onDismiss={() => setIsOpen(false)}
       >
-        <Card variant="shadow" p={0} width={120}>
+        <Card variant="shadow" p={0} width={120} borderWidth={0}>
           <Menu>
             <MenuItem>
               <Text size={2}>Rename</Text>
