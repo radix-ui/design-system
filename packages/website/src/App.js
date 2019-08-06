@@ -113,9 +113,10 @@ function App({ element, props }) {
                       key={node.frontmatter.title}
                       to={node.fields.slug}
                       active={pathname === node.fields.slug}
-                      label={node.frontmatter.title}
                       onClick={() => setNavOpen(false)}
-                    />
+                    >
+                      {node.frontmatter.title}
+                    </NavItem>
                   ))}
                 </Menu>
 
@@ -130,9 +131,10 @@ function App({ element, props }) {
                       key={node.frontmatter.title}
                       to={node.fields.slug}
                       active={pathname === node.fields.slug}
-                      label={node.frontmatter.title}
                       onClick={() => setNavOpen(false)}
-                    />
+                    >
+                      {node.frontmatter.title}
+                    </NavItem>
                   ))}
                 </Menu>
 
@@ -147,10 +149,37 @@ function App({ element, props }) {
                       key={node.frontmatter.title}
                       to={node.fields.slug}
                       active={pathname === node.fields.slug}
-                      label={node.frontmatter.title}
                       onClick={() => setNavOpen(false)}
-                    />
+                    >
+                      {node.frontmatter.title}
+                    </NavItem>
                   ))}
+                </Menu>
+
+                <Divider mb={1} />
+
+                <Menu>
+                  <Heading size={0} fontWeight={500} mx={5} mb={2} mt={2}>
+                    Github links
+                  </Heading>
+
+                  <NavItem as="a" href="https://github.com/modulz/radix" isExternal>
+                    Radix
+                  </NavItem>
+                  <NavItem
+                    as="a"
+                    href="https://github.com/modulz/radix/tree/master/packages/radix-system"
+                    isExternal
+                  >
+                    Radix System
+                  </NavItem>
+                  <NavItem
+                    as="a"
+                    href="https://github.com/modulz/radix/tree/master/packages/website"
+                    isExternal
+                  >
+                    Radix Docs
+                  </NavItem>
                 </Menu>
               </Box>
             </Box>
