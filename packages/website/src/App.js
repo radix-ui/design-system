@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { Flex, Box, Menu, Heading, Badge, Divider, Container, GhostButton } from '@modulz/radix';
+import {
+  Flex,
+  Box,
+  Menu,
+  Heading,
+  Badge,
+  Divider,
+  Container,
+  GhostButton,
+  Text,
+  Link,
+} from '@modulz/radix';
 import { HamburgerIcon, CrossIcon } from '@modulz/radix-icons';
 import NavItem from './components/NavItem';
 
@@ -181,6 +192,17 @@ function App({ element, props }) {
                     Radix Docs
                   </NavItem>
                 </Menu>
+
+                <Divider mb={1} />
+
+                <Box px={5} mb={2} mt={3} minHeight={6}>
+                  <Text size={2}>
+                    Powered by{' '}
+                    <Link href="https://modulz.app" title="Modulz">
+                      Modulz
+                    </Link>
+                  </Text>
+                </Box>
               </Box>
             </Box>
 
