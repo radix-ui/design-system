@@ -38,17 +38,17 @@ storiesOf('Components|Tooltip', module).add('default', () => (
         </Tooltip>
 
         <Tooltip label="Right start" side="right" align="start">
-          <Button css={{ gridColumn: '5', gridRow: '2' }} m={1} tabIndex={0} size={1}>
+          <Button css={{ gridColumn: '5', gridRow: '2' }} m={1} size={1}>
             <PinRightIcon size="25" /> <AlignStartIcon size="25" />
           </Button>
         </Tooltip>
         <Tooltip label="Right center" side="right" align="center">
-          <Button css={{ gridColumn: '5', gridRow: '3' }} m={1} tabIndex={0} size={1}>
+          <Button css={{ gridColumn: '5', gridRow: '3' }} m={1} size={1}>
             <PinRightIcon size="25" /> <AlignCenterIcon size="25" />
           </Button>
         </Tooltip>
         <Tooltip label="Right end" side="right" align="end">
-          <Button css={{ gridColumn: '5', gridRow: '4' }} m={1} tabIndex={0} size={1}>
+          <Button css={{ gridColumn: '5', gridRow: '4' }} m={1} size={1}>
             <PinRightIcon size="25" /> <AlignEndIcon size="25" />
           </Button>
         </Tooltip>
