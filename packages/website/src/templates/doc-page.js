@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
@@ -37,6 +38,9 @@ function DocPageTemplate({ data, location, ...props }) {
 
   return (
     <Layout pathname={location.pathname}>
+      <Helmet>
+        <title>Radix — {data.mdx.frontmatter.title}</title>
+      </Helmet>
       <MDXProvider components={components}>
         <RC.Box>
           <RC.Heading size={4} fontWeight={500} mb={2} lineHeight={3}>
