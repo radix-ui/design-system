@@ -14,11 +14,7 @@ export default {
       format: 'es',
     },
   ],
-  external: [
-    ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.peerDependencies || {}),
-    '@reach/dialog/styles.css',
-  ],
+  external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
   plugins: [
     url({
       include: ['**/*.woff', '**/*.woff2'],

@@ -29,6 +29,10 @@ export const BaseButton = React.forwardRef<Ref, ButtonProps>((props, ref) => (
     ref={ref}
     css={[
       css({
+        alignItems: 'center',
+        alignSelf: 'flex-start',
+        justifySelf: 'flex-start',
+        display: 'inline-flex',
         border: '1px solid',
         borderRadius: 1,
         cursor: 'pointer',
@@ -179,6 +183,7 @@ export const BaseButton = React.forwardRef<Ref, ButtonProps>((props, ref) => (
       }
     `,
       { lineHeight: '1' },
+      props.css,
     ]}
   />
 ));

@@ -1,98 +1,102 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box } from './Box';
+import { Grid } from './Grid';
 import { Flex } from './Flex';
 import { Button } from './Button';
-import { Text } from './Text';
 import { Tooltip } from './Tooltip';
+import {
+  PinTopIcon,
+  PinRightIcon,
+  PinBottomIcon,
+  PinLeftIcon,
+  AlignStartIcon,
+  AlignCenterIcon,
+  AlignEndIcon,
+  JustifyStartIcon,
+  JustifyCenterIcon,
+  JustifyEndIcon,
+} from '@modulz/radix-icons';
 
 storiesOf('Components|Tooltip', module).add('default', () => (
   <>
-    <Box mb="6" mt="6" ml="200px">
-      <Text>Tooltip on Buttons</Text>
-      <Flex py="5">
-        <Box m="10px">
-          <Tooltip position="top" align="start" text="Tooltip text goes here ⚡️">
-            <Button>Top / Start</Button>
-          </Tooltip>
-        </Box>
-        <Box m="10px">
-          <Tooltip text="Tooltip text goes here ⚡️">
-            <Button>Top / Center</Button>
-          </Tooltip>
-        </Box>
-        <Box m="10px">
-          <Tooltip position="top" align="end" text="Tooltip text goes here ⚡️">
-            <Button>Top / End</Button>
-          </Tooltip>
-        </Box>
-      </Flex>
+    <Flex width="100vw" height="100vh" alignItems="center" justifyContent="center">
+      <Grid gridTemplateColumns="repeat(5, 1fr)" gridTemplateRows="repeat(5, 1fr)">
+        <Tooltip label="Top start" side="top" align="start">
+          <Button css={{ gridColumn: '2', gridRow: '1' }} m={1} size={1}>
+            <PinTopIcon size="25" /> <JustifyStartIcon size="25" />
+          </Button>
+        </Tooltip>
+        <Tooltip label="Top center" side="top" align="center">
+          <Button css={{ gridColumn: '3', gridRow: '1' }} m={1} size={1}>
+            <PinTopIcon size="25" /> <JustifyCenterIcon size="25" />
+          </Button>
+        </Tooltip>
+        <Tooltip label="Top end" side="top" align="end">
+          <Button css={{ gridColumn: '4', gridRow: '1' }} m={1} size={1}>
+            <PinTopIcon size="25" /> <JustifyEndIcon size="25" />
+          </Button>
+        </Tooltip>
 
-      <Flex py="5">
-        <Box m="10px">
-          <Tooltip position="bottom" align="start" text="Tooltip text goes here ⚡️">
-            <Button>Bottom / Start</Button>
-          </Tooltip>
-        </Box>
-        <Box m="10px">
-          <Tooltip position="bottom" text="Tooltip text goes here ⚡️">
-            <Button>Bottom / Center</Button>
-          </Tooltip>
-        </Box>
-        <Box m="10px">
-          <Tooltip position="bottom" align="end" text="Tooltip text goes here ⚡️">
-            <Button>Bottom / End</Button>
-          </Tooltip>
-        </Box>
-      </Flex>
+        <Tooltip label="Right start" side="right" align="start">
+          <Button css={{ gridColumn: '5', gridRow: '2' }} m={1} tabIndex={0} size={1}>
+            <PinRightIcon size="25" /> <AlignStartIcon size="25" />
+          </Button>
+        </Tooltip>
+        <Tooltip label="Right center" side="right" align="center">
+          <Button css={{ gridColumn: '5', gridRow: '3' }} m={1} tabIndex={0} size={1}>
+            <PinRightIcon size="25" /> <AlignCenterIcon size="25" />
+          </Button>
+        </Tooltip>
+        <Tooltip label="Right end" side="right" align="end">
+          <Button css={{ gridColumn: '5', gridRow: '4' }} m={1} tabIndex={0} size={1}>
+            <PinRightIcon size="25" /> <AlignEndIcon size="25" />
+          </Button>
+        </Tooltip>
 
-      <Flex py="5">
-        <Box m="10px">
-          <Tooltip position="left" align="start" text="Tooltip text goes here ⚡️">
-            <Button>Left / Start</Button>
-          </Tooltip>
-        </Box>
-        <Box m="10px">
-          <Tooltip position="left" text="Tooltip text goes here ⚡️">
-            <Button>Left / Center</Button>
-          </Tooltip>
-        </Box>
-        <Box m="10px">
-          <Tooltip position="left" align="end" text="Tooltip text goes here ⚡️">
-            <Button>Left / End </Button>
-          </Tooltip>
-        </Box>
-      </Flex>
+        <Tooltip label="Bottom end" side="bottom" align="end">
+          <Button css={{ gridColumn: '4', gridRow: '5' }} m={1} size={1}>
+            <PinBottomIcon size="25" /> <JustifyEndIcon size="25" />
+          </Button>
+        </Tooltip>
+        <Tooltip label="Bottom center" side="bottom" align="center">
+          <Button css={{ gridColumn: '3', gridRow: '5' }} m={1} size={1}>
+            <PinBottomIcon size="25" /> <JustifyCenterIcon size="25" />
+          </Button>
+        </Tooltip>
+        <Tooltip label="Bottom start" side="bottom" align="start">
+          <Button css={{ gridColumn: '2', gridRow: '5' }} m={1} size={1}>
+            <PinBottomIcon size="25" /> <JustifyEndIcon size="25" />
+          </Button>
+        </Tooltip>
 
-      <Flex py="5">
-        <Box m="10px">
-          <Tooltip position="right" align="start" text="Tooltip text goes here ⚡️">
-            <Button>Right / Start</Button>
-          </Tooltip>
-        </Box>
-        <Box m="10px">
-          <Tooltip position="right" text="Tooltip text goes here ⚡️">
-            <Button>Right / Center</Button>
-          </Tooltip>
-        </Box>
-        <Box m="10px">
-          <Tooltip position="right" align="end" text="Tooltip text goes here ⚡️">
-            <Button>Right / End </Button>
-          </Tooltip>
-        </Box>
-      </Flex>
-    </Box>
-
-    <Box mb="6" mt="6" ml="200px">
+        <Tooltip label="Left end" side="left" align="end">
+          <Button css={{ gridColumn: '1', gridRow: '4' }} m={1} size={1}>
+            <PinLeftIcon size="25" /> <AlignEndIcon size="25" />
+          </Button>
+        </Tooltip>
+        <Tooltip label="Left center" side="left" align="center">
+          <Button css={{ gridColumn: '1', gridRow: '3' }} m={1} size={1}>
+            <PinLeftIcon size="25" /> <AlignCenterIcon size="25" />
+          </Button>
+        </Tooltip>
+        <Tooltip label="Left start" side="left" align="start">
+          <Button css={{ gridColumn: '1', gridRow: '2' }} m={1} size={1}>
+            <PinLeftIcon size="25" /> <AlignStartIcon size="25" />
+          </Button>
+        </Tooltip>
+      </Grid>
+    </Flex>
+    {/* <Box mb="6" mt="6" ml="200px">
       <Text as="p" mb="4">
         Tooltip on Text
       </Text>
-      <Text size={3} color="blue" bold>
+      <Text size={3} fontWeight={500}>
         This panel contains information about CSS{' '}
-        <Tooltip text="Content, padding, border, and margin">
-          <Text color="black">Box Model</Text>.
+        <Tooltip label="Content, padding, border, and margin">
+          <Link href="http://modulz.app">Box Model</Link>
         </Tooltip>
+        .
       </Text>
-    </Box>
+    </Box> */}
   </>
 ));

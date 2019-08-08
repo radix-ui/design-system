@@ -29,12 +29,12 @@
   "dependencies": {
     "@modulz/radix-system": "^0.0.1-alpha.7",
     "@reach/dialog": "^0.2.9",
-    "@styled-system/css": "5.0.11",
-    "@styled-system/theme-get": "^5.0.12",
+    "@styled-system/css": "5.0.21",
+    "@styled-system/theme-get": "^5.0.21",
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
-    "mdlz-prmtz": "^0.0.7",
+    "mdlz-prmtz": "^0.0.9",
     "polished": "^3.4.1",
     "styled-components": "^4.3.2"
   },
@@ -49,13 +49,12 @@
     "@types/react-dom": "^16.8.4",
     "@types/storybook__react": "^4.0.2",
     "@types/styled-components": "^4.1.16",
-    "@typescript-eslint/eslint-plugin": "^1.11.0",
     "babel-loader": "8.0.6",
     "csstype": "^2.6.5",
     "rollup": "^1.16.3",
-    "rollup-plugin-typescript2": "^0.21.2",
+    "rollup-plugin-typescript2": "^0.22.1",
     "rollup-plugin-url": "^2.2.2",
-    "typescript": "3.5.2",
+    "typescript": "3.5.3",
     "yalc": "^1.0.0-pre.32"
   },
   "gitHead": "dcfeb380ad27ceb7795b59093896737c299c5300"

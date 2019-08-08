@@ -4,35 +4,85 @@ component: Tooltip
 ---
 
 ```js live=true
-<Box width={120}>
-  <ToggleButtonGroup name="direction">
-    <ToggleButton defaultChecked>
-      <Tooltip text="Row">
-        <DirectionRowIcon />
-      </Tooltip>
-    </ToggleButton>
-    <ToggleButton>
-      <Tooltip text="Column">
-        <DirectionColumnIcon />
-      </Tooltip>
-    </ToggleButton>
-  </ToggleButtonGroup>
-</Box>
-```
-
-```js live=true
-<Box m="10px">
-  <Tooltip position="bottom" text="Menu">
-    <GhostButton size="medium">
-      <HamburgerIcon size="25" />
-    </GhostButton>
+<Grid gridTemplateColumns="repeat(5, 1fr)" gridTemplateRows="repeat(5, 1fr)">
+  <Tooltip label="Top start" side="top" align="start">
+    <Button css={{ gridColumn: '2', gridRow: '1' }} m={1} size={1}>
+      <PinTopIcon size="25" /> <JustifyStartIcon size="25" />
+    </Button>
   </Tooltip>
-</Box>
+  <Tooltip label="Top center" side="top" align="center">
+    <Button css={{ gridColumn: '3', gridRow: '1' }} m={1} size={1}>
+      <PinTopIcon size="25" /> <JustifyCenterIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Top end" side="top" align="end">
+    <Button css={{ gridColumn: '4', gridRow: '1' }} m={1} size={1}>
+      <PinTopIcon size="25" /> <JustifyEndIcon size="25" />
+    </Button>
+  </Tooltip>
+
+  <Tooltip label="Right start" side="right" align="start">
+    <Button css={{ gridColumn: '5', gridRow: '2' }} m={1} tabIndex={0} size={1}>
+      <PinRightIcon size="25" /> <AlignStartIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Right center" side="right" align="center">
+    <Button css={{ gridColumn: '5', gridRow: '3' }} m={1} tabIndex={0} size={1}>
+      <PinRightIcon size="25" /> <AlignCenterIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Right end" side="right" align="end">
+    <Button css={{ gridColumn: '5', gridRow: '4' }} m={1} tabIndex={0} size={1}>
+      <PinRightIcon size="25" /> <AlignEndIcon size="25" />
+    </Button>
+  </Tooltip>
+
+  <Tooltip label="Bottom end" side="bottom" align="end">
+    <Button css={{ gridColumn: '4', gridRow: '5' }} m={1} size={1}>
+      <PinBottomIcon size="25" /> <JustifyEndIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Bottom center" side="bottom" align="center">
+    <Button css={{ gridColumn: '3', gridRow: '5' }} m={1} size={1}>
+      <PinBottomIcon size="25" /> <JustifyCenterIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Bottom start" side="bottom" align="start">
+    <Button css={{ gridColumn: '2', gridRow: '5' }} m={1} size={1}>
+      <PinBottomIcon size="25" /> <JustifyEndIcon size="25" />
+    </Button>
+  </Tooltip>
+
+  <Tooltip label="Left end" side="left" align="end">
+    <Button css={{ gridColumn: '1', gridRow: '4' }} m={1} size={1}>
+      <PinLeftIcon size="25" /> <AlignEndIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Left center" side="left" align="center">
+    <Button css={{ gridColumn: '1', gridRow: '3' }} m={1} size={1}>
+      <PinLeftIcon size="25" /> <AlignCenterIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Left start" side="left" align="start">
+    <Button css={{ gridColumn: '1', gridRow: '2' }} m={1} size={1}>
+      <PinLeftIcon size="25" /> <AlignStartIcon size="25" />
+    </Button>
+  </Tooltip>
+</Grid>
 ```
 
 ### Custom props
 
-| Name       | Type                                   | Default | Description           |
-| :--------- | :------------------------------------- | :-----: | :-------------------- |
-| `position` | 'top' \| 'bottom' \| 'right' \| 'left' |  `top`  | Changes the position  |
-| `align`    | 'start' \| 'end'                       | `start` | Changes the alignment |
+| Name                 | Type                                   | Default  | Description                     |
+| :------------------- | :------------------------------------- | :------: | :------------------------------ |
+| `side`               | 'top' \| 'bottom' \| 'right' \| 'left' | `bottom` | Changes the side                |
+| `sideOffset`         | nunber                                 |   `-5`   | Changes the side offset         |
+| `align`              | 'start' \| 'end'                       | `start`  | Changes the alignment           |
+| `alignOffset`        | number                                 |   `0`    | Changes the alignment offset    |
+| `arrow`              | React.ReactNode                        | `Arrow`  | Changes the arrow component     |
+| `arrowOffset`        | number                                 |   `0`    | Changes the arrow offset        |
+| `collisionTolerance` | number                                 |   `0`    | Changes the collision tolerance |
+| `label`              | string                                 |          | Sets the label                  |
+| `ariaLabel`          | string                                 |          | Sets the arial-label            |
+| `children`           | React.ReactNode                        |          | Sets the chilren                |
+| `css`                | CSSProperties                          |          | Changes the CSS                 |
