@@ -3,14 +3,11 @@ import { withTheme } from 'styled-components';
 import css from '@styled-system/css';
 import themeGet from '@styled-system/theme-get';
 import { variant, Prop } from '@modulz/radix-system';
-
 import {
   ToggleButtonGroup as ToggleButtonGroupPrimitive,
   ToggleButtonGroupProps as ToggleButtonGroupPrimitiveProps,
   ToggleButton as ToggleButtonPrimitive,
   ToggleButtonProps as ToggleButtonPrimitiveProps,
-  ToggleButtonWrapper as Wrapper,
-  ToggleButtonRadio as Radio,
 } from 'mdlz-prmtz';
 
 type Variants = 'normal' | 'fade';
@@ -27,62 +24,58 @@ type ToggleButtonProps = ToggleButtonPrimitiveProps &
     theme?: any;
   };
 
-export const ToggleButton = withTheme((props: ToggleButtonProps) => (
-  <ToggleButtonPrimitive
-    {...props}
-    css={[
-      css({
-        height: 5,
-        width: '100%',
-        minWidth: 5,
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontFamily: 'medium',
-        fontWeight: 500,
-        fontSize: 2,
-        lineHeight: 1,
-        whiteSpace: 'nowrap',
-        border: '1px solid',
-        borderColor: 'grays.3',
-        color: 'grays.5',
-        userSelect: 'none',
-        [`${Wrapper}:first-child &`]: {
-          borderTopLeftRadius: themeGet('radii.1')(props),
-          borderBottomLeftRadius: themeGet('radii.1')(props),
-        },
-        [`${Wrapper}:last-child &`]: {
-          borderTopRightRadius: themeGet('radii.1')(props),
-          borderBottomRightRadius: themeGet('radii.1')(props),
-        },
-        [`${Wrapper}:hover &`]: {
-          borderColor: 'grays.4',
-          zIndex: 1,
-        },
-        [`${Radio}:checked + &`]: {
-          zIndex: 1,
-        },
-      }),
-      variant({
-        variant: {
-          normal: {
-            [`${Radio}:checked + &`]: {
+export const ToggleButton = withTheme(
+  React.forwardRef<HTMLButtonElement, ToggleButtonProps>((props, ref) => {
+    return (
+      <ToggleButtonPrimitive
+        {...props}
+        ref={ref}
+        css={[
+          css({
+            height: 5,
+            minWidth: 5,
+            fontFamily: 'medium',
+            fontWeight: 500,
+            fontSize: 2,
+            padding: 0,
+            border: '1px solid',
+            borderColor: 'grays.3',
+            color: 'grays.5',
+            ':first-child': {
+              borderTopLeftRadius: themeGet('radii.1')(props),
+              borderBottomLeftRadius: themeGet('radii.1')(props),
+            },
+            ':last-child ': {
+              borderTopRightRadius: themeGet('radii.1')(props),
+              borderBottomRightRadius: themeGet('radii.1')(props),
+            },
+            ':hover': {
+              borderColor: 'grays.4',
+            },
+            ':focus': {
+              outline: 'none',
+              borderColor: 'grays.4',
+            },
+          }),
+          { lineHeight: 1 },
+        ]}
+        activeCss={variant({
+          variant: {
+            normal: {
               backgroundColor: 'blues.0',
               borderColor: 'blues.2',
               color: 'blues.5',
             },
-          },
-          fade: {
-            [`${Radio}:checked + &`]: {
+            fade: {
               backgroundColor: 'grays.1',
               borderColor: 'grays.4',
               color: 'grays.5',
             },
           },
-        },
-      })(props),
-    ]}
-  />
-));
+        })(props)}
+      />
+    );
+  })
+);
 
 ToggleButton.defaultProps = { variant: 'normal' };
