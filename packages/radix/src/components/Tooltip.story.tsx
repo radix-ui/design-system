@@ -86,17 +86,5 @@ storiesOf('Components|Tooltip', module).add('default', () => (
         </Tooltip>
       </Grid>
     </Flex>
-    {/* <Box mb="6" mt="6" ml="200px">
-      <Text as="p" mb="4">
-        Tooltip on Text
-      </Text>
-      <Text size={3} fontWeight={500}>
-        This panel contains information about CSS{' '}
-        <Tooltip label="Content, padding, border, and margin">
-          <Link href="http://modulz.app">Box Model</Link>
-        </Tooltip>
-        .
-      </Text>
-    </Box> */}
   </>
 ));

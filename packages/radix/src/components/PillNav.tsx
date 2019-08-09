@@ -84,6 +84,10 @@ export const Pill = styled('button')<PillProps>(
         backgroundColor: 'grays.1',
         color: 'grays.4',
       },
+      '&:focus': {
+        borderColor: 'grays.4',
+        zIndex: 2,
+      },
       '&::-moz-focus-inner': {
         border: 0,
       },
