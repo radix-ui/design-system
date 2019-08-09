@@ -3,6 +3,18 @@ title: Tooltip
 component: Tooltip
 ---
 
+<Box display={{small:'block', large:'none'}}>
+
+```js live=true
+<Tooltip label="Hey there, now try focusing" side="bottom" align="center">
+  <Button size={1}>Hover me</Button>
+</Tooltip>
+```
+
+</Box>
+
+<Box display={{small:'none', large:'block'}}>
+
 ```js live=true
 <Grid gridTemplateColumns="repeat(5, 1fr)" gridTemplateRows="repeat(5, 1fr)">
   <Tooltip label="Top start" side="top" align="start">
@@ -70,6 +82,8 @@ component: Tooltip
   </Tooltip>
 </Grid>
 ```
+
+</Box>
 
 ### Custom props
 
