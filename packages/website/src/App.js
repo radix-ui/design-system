@@ -14,6 +14,7 @@ import {
 } from '@modulz/radix';
 import { HamburgerIcon, CrossIcon } from '@modulz/radix-icons';
 import NavItem from './components/NavItem';
+import pkg from '../package.json';
 
 function App({ element, props }) {
   const [navOpen, setNavOpen] = useState(false);
@@ -98,7 +99,7 @@ function App({ element, props }) {
                     </svg>
                   </Box>
                   <Badge ml={3} variant="gray">
-                    Alpha
+                    {pkg.version}
                   </Badge>
                   <Box ml="auto" display={['block', 'none']}>
                     <GhostButton
