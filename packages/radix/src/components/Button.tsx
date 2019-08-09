@@ -30,8 +30,6 @@ export const BaseButton = React.forwardRef<Ref, ButtonProps>((props, ref) => (
     css={[
       css({
         alignItems: 'center',
-        alignSelf: 'flex-start',
-        justifySelf: 'flex-start',
         display: 'inline-flex',
         border: '1px solid',
         borderRadius: 1,
