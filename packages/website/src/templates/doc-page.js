@@ -31,6 +31,10 @@ export const components = {
   h4: props => <RC.Heading {...props} as="h4" fontWeight={500} size={0} lineHeight={1} />,
   p: props => <RC.Text {...props} as="p" size={3} m={0} lineHeight={1} textColor="grays.5" />,
   SystemProps: SystemPropsTable,
+  ToggleButtonGroup: props => {
+    const [value, setValue] = React.useState(props.value);
+    return <RC.ToggleButtonGroup {...props} value={value} onChange={value => setValue(value)} />;
+  },
 };
 
 function DocPageTemplate({ data, location, ...props }) {

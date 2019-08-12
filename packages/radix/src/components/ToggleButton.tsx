@@ -12,11 +12,11 @@ import {
 
 type Variants = 'normal' | 'fade';
 type VariantProps = { variant?: Prop<Variants> };
-type ToggleButtonGroupProps = ToggleButtonGroupPrimitiveProps & VariantProps;
+type ToggleButtonGroupProps<T> = ToggleButtonGroupPrimitiveProps<T> & VariantProps;
 
-export const ToggleButtonGroup = (props: ToggleButtonGroupProps) => (
-  <ToggleButtonGroupPrimitive {...props} />
-);
+export const ToggleButtonGroup = <T extends string | string[] | null>(
+  props: ToggleButtonGroupProps<T>
+) => <ToggleButtonGroupPrimitive {...props} />;
 
 type ToggleButtonProps = ToggleButtonPrimitiveProps &
   VariantProps & {
@@ -38,6 +38,7 @@ export const ToggleButton = withTheme(
             fontWeight: 500,
             fontSize: 2,
             padding: 0,
+            backgroundColor: 'white',
             border: '1px solid',
             borderColor: 'grays.3',
             color: 'grays.5',

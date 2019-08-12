@@ -14,6 +14,7 @@ import {
 
 function ToggleButtonGroupStory() {
   const [value, setValue] = useState('center');
+
   return (
     <>
       <Box width="500px" my={6}>
