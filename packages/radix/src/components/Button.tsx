@@ -14,12 +14,12 @@ const waitingAnimation = (props: ButtonProps) => keyframes`
 type Variants = 'gray' | 'blue' | 'green' | 'red' | 'active' | 'waiting';
 type Sizes = 0 | 1;
 
-type ButtonProps = {
+type ButtonProps = ButtonPrimitiveProps & {
   variant?: Prop<Variants>;
   size?: Prop<Sizes>;
   // TODO: type Theme
   theme?: any;
-} & ButtonPrimitiveProps;
+};
 
 type Ref = HTMLButtonElement;
 

@@ -17,9 +17,10 @@ const placeholderStyle = {
   color: 'grays.4',
 };
 
-export const Input = (props: InputProps) => (
+export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => (
   <InputPrimitive
     {...props}
+    ref={ref}
     css={[
       css({
         appearance: 'none',
@@ -74,6 +75,6 @@ export const Input = (props: InputProps) => (
     ]}
     placeholderCss={placeholderStyle}
   />
-);
+));
 
 Input.defaultProps = { type: 'text', variant: 'normal', size: 0 };
