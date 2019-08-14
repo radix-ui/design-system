@@ -83,7 +83,6 @@ export default ({ children, className, live, render, ghost }) => {
   const components = useMDXComponents();
 
   const liveProviderProps = {
-    transformCode: code => `/* @jsx mdx */ <> ${code} </>`,
     scope: { mdx, ...components },
   };
 
@@ -95,10 +94,12 @@ export default ({ children, className, live, render, ghost }) => {
             style={{
               padding: radixTheme.space[3],
               border: `1px solid ${colors.grays[3]}`,
+              // borderBottom: disabled && 'none',
               borderTopLeftRadius: radixTheme.radii[2],
               borderTopRightRadius: radixTheme.radii[2],
             }}
           />
+
           <LiveEditor
             padding={radixTheme.space[3]}
             style={{
@@ -114,6 +115,7 @@ export default ({ children, className, live, render, ghost }) => {
             }}
             css={{ textarea: { outline: 0 } }}
           />
+
           <LiveError />
         </LiveProvider>
       </Box>
