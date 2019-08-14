@@ -19,55 +19,130 @@ description: An accessible dialog component, useful for helping users make decis
 };
 ```
 
+<!-- ### Props
+
+<PropsTable
+  data={{
+    children: 'ReactNode',
+    isOpen: 'Boolean',
+    canDismiss: 'Boolean',
+    onDismiss: 'Function',
+    refToFocusOnOpen: 'RefObject<HTMLElement>',
+    refToFocusOnClose: 'RefObject<HTMLElement>',
+    css: 'any',
+    contentCss: 'any',
+    overlayCss: 'any',
+  }}
+/> -->
+
 ### children
 
 The content to render inside the Dialog.
-
-```js live
-<Dialog>Dialog content.</Dialog>
-```
 
 ### isOpen
 
 Controls whether the Dialog is open or not.
 
-```js
-const [isOpen, setIsOpen] = React.useState(false);
-
-return <Dialog isOpen={isOpen}>Dialog content</Dialog>;
-```
-
 ### canDismiss
 
-Whether the dialog can be dismissed via click outside or escape key.
+Whether the dialog can be dismissed by clicking outside or pressing the escape key.
 
-```
+```js live wrapInFragment=false
+() => {
+  const [isOpen, setIsOpen] = React.useState(false);
 
-<Dialog canDismiss={false}>
-  Dialog content
-</Dialog>
+  return (
+    <>
+      <Button onClick={() => setIsOpen(true)}>Open dialog</Button>
+      <Dialog isOpen={isOpen} canDismiss={false}>
+        <Box p={6}>
+          <Text as="p" mb={3}>
+            This dialog cannot be dismissed by clicking outside or pressing the
+            escape key.
+          </Text>
+          <Button onClick={() => setIsOpen(false)}>
+            Click to close dialog
+          </Button>
+        </Box>
+      </Dialog>
+    </>
+  );
+};
 ```
 
 ### onDismiss
 
 A function that gets called when the Dialog is dismissed via click outside or escape key.
 
+```js live wrapInFragment=false
+() => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <>
+      <Button onClick={() => setIsOpen(true)}>Open dialog</Button>
+      <Dialog
+        isOpen={isOpen}
+        onDismiss={() => {
+          alert('Dialog dismissed');
+          setIsOpen(false);
+        }}
+      >
+        <Box p={6}>
+          <Text as="p">
+            Dismissing the dialog by clicking outside or by pressing escape will
+            trigger the `onDismiss` callback.
+          </Text>
+        </Box>
+      </Dialog>
+    </>
+  );
+};
+```
+
 ### refToFocusOnOpen
 
 A reference to an element to focus on inside the dialog after it opens. If not provided, it will focus on the first focusable element.
 
+```js live wrapInFragment=false
+() => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const inputRef = React.useRef(null);
+
+  return (
+    <>
+      <Button onClick={() => setIsOpen(true)}>Open dialog</Button>
+
+      <Dialog
+        isOpen={isOpen}
+        onDismiss={() => setIsOpen(false)}
+        refToFocusOnOpen={inputRef}
+      >
+        <Box p={6} position="relative">
+          <Box position="absolute" top={1} right={1}>
+            <GhostButton size={1} onClick={() => setIsOpen(false)}>
+              <CrossIcon />
+            </GhostButton>
+          </Box>
+          <Heading size={0} fontWeight={500}>
+            Confirm password
+          </Heading>
+          <Input ref={inputRef} type="password" placeholder="******" my={4} />
+          <Flex justifyContent="flex-end">
+            <Button mr={3} onClick={() => setIsOpen(false)}>
+              Cancel
+            </Button>
+            <Button variant="blue" onClick={() => setIsOpen(false)}>
+              Confirm
+            </Button>
+          </Flex>
+        </Box>
+      </Dialog>
+    </>
+  );
+};
+```
+
 ### refToFocusOnClose
 
 A reference to an element to focus on outside the dialog after it closes. If not provided, it will focus on the last focused element before the dialog was opened.
-
-### css
-
-The styles to apply to the root element.
-
-### contentCss
-
-The styles to apply to the content element.
-
-### overlayCss
-
-The styles to apply to the overlay element.

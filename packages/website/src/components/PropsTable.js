@@ -26,7 +26,7 @@ export function PropsTable({ data }) {
                   <Link href={`#${slug(value)}`}>{value}</Link>
                 </Code>
               </Td>
-              <Td>
+              <Td style={{ width: '80%' }}>
                 <Box>{key}</Box>
               </Td>
             </Tr>
