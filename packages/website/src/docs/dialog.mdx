@@ -4,7 +4,7 @@ component: Dialog
 description: An accessible dialog component, useful for helping users make decisions and to display critical information.
 ---
 
-```js live
+```js live wrapInFragment=false
 () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -23,19 +23,13 @@ description: An accessible dialog component, useful for helping users make decis
 
 The content to render inside the Dialog.
 
-```js live disabled
+```js live
 <Dialog>Dialog content.</Dialog>
 ```
 
 ### isOpen
 
 Controls whether the Dialog is open or not.
-
-<Example>
-
-<Button>sudhusdh</Button>
-
-</Example>
 
 ```js
 const [isOpen, setIsOpen] = React.useState(false);

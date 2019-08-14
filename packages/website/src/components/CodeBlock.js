@@ -79,10 +79,11 @@ const theme = {
   ],
 };
 
-export default ({ children, className, live, render, ghost }) => {
+export default ({ children, live, wrapInFragment = true }) => {
   const components = useMDXComponents();
 
   const liveProviderProps = {
+    transformCode: code => (wrapInFragment ? code : `<>${code}</>`),
     scope: { mdx, ...components },
   };
 
@@ -94,7 +95,6 @@ export default ({ children, className, live, render, ghost }) => {
             style={{
               padding: radixTheme.space[3],
               border: `1px solid ${colors.grays[3]}`,
-              // borderBottom: disabled && 'none',
               borderTopLeftRadius: radixTheme.radii[2],
               borderTopRightRadius: radixTheme.radii[2],
             }}
