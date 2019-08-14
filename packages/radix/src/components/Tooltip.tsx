@@ -11,10 +11,10 @@ type TooltipProps = TooltipPrimitiveProps & { theme?: any };
 
 export const Tooltip = withTheme((props: TooltipProps) => (
   <TooltipPrimitive
-    {...props}
     arrow={<Arrow width={12} height={6} fill="hsla(0, 0%, 0%, 0.8)" />}
     arrowOffset={6}
     sideOffset={-3}
+    {...props}
     css={css({
       backgroundColor: 'hsla(0, 0%, 0%, 0.8)',
       padding: '7px',

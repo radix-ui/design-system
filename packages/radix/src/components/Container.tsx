@@ -1,4 +1,5 @@
 import React from 'react';
+import css from '@styled-system/css';
 import {
   Container as ContainerPrimitive,
   ContainerProps as ContainerPrimitiveProps,
@@ -12,25 +13,25 @@ type ContainerProps = ContainerPrimitiveProps & {
   as?: any;
 };
 
-export const Container = (props: ContainerProps) => (
+export const Container = React.forwardRef<HTMLDivElement, ContainerProps>((props, ref) => (
   <ContainerPrimitive
-    marginX="auto"
-    paddingX={5}
-    flex={1}
-    maxWidth="25rem"
     {...props}
-    css={variant({
-      size: {
-        0: {
-          maxWidth: '25rem',
+    ref={ref}
+    css={[
+      css({ marginX: 'auto', paddingX: 5, flex: 1, maxWidth: '25rem' }),
+      variant({
+        size: {
+          0: {
+            maxWidth: '25rem',
+          },
+          1: {
+            maxWidth: '45rem',
+          },
+          2: {
+            maxWidth: '65rem',
+          },
         },
-        1: {
-          maxWidth: '45rem',
-        },
-        2: {
-          maxWidth: '65rem',
-        },
-      },
-    })}
+      }),
+    ]}
   />
-);
+));

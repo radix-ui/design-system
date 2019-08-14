@@ -13,9 +13,10 @@ type BadgeProps = BadgePrimitiveProps & {
   as?: any;
 };
 
-export const Badge = (props: BadgeProps) => (
+export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => (
   <BadgePrimitive
     {...props}
+    ref={ref}
     css={[
       css({
         fontFamily: 'medium',
@@ -67,7 +68,7 @@ export const Badge = (props: BadgeProps) => (
       }),
     ]}
   />
-);
+));
 
 Badge.defaultProps = {
   variant: 'gray',

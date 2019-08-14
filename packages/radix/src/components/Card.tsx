@@ -61,7 +61,9 @@ export const baseCard = (props: CardProps) =>
     },
   })(props);
 
-export const Card = (props: CardProps) => <CardPrimitive {...props} css={baseCard} />;
+export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => (
+  <CardPrimitive {...props} ref={ref} css={baseCard} />
+));
 
 Card.defaultProps = {
   variant: 'border',

@@ -11,9 +11,10 @@ type HeadingProps = HeadingPrimitiveProps & {
   as?: any;
 };
 
-export const Heading = (props: HeadingProps) => (
+export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props, ref) => (
   <HeadingPrimitive
     {...props}
+    ref={ref}
     css={[
       css({
         color: 'grays.8',
@@ -66,7 +67,7 @@ export const Heading = (props: HeadingProps) => (
       }),
     ]}
   />
-);
+));
 
 Heading.defaultProps = {
   truncate: false,

@@ -6,9 +6,10 @@ import { Pipe as PipePrimitive, PipeProps as PipePrimitiveProps } from 'mdlz-prm
 type SizeProps = 'normal' | 'large' | 'fluid';
 type PipeProps = PipePrimitiveProps & { variant?: Prop<SizeProps> };
 
-export const Pipe = (props: PipeProps) => (
+export const Pipe = React.forwardRef<HTMLDivElement, PipeProps>((props, ref) => (
   <PipePrimitive
     {...props}
+    ref={ref}
     css={[
       css({
         backgroundColor: 'grays.2',
@@ -28,6 +29,6 @@ export const Pipe = (props: PipeProps) => (
       }),
     ]}
   />
-);
+));
 
 Pipe.defaultProps = { variant: 'normal' };

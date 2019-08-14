@@ -11,9 +11,10 @@ type TextProps = TextPrimitiveProps & {
   children?: React.ReactNode;
 };
 
-export const Text = (props: TextProps) => (
+export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) => (
   <TextPrimitive
     {...props}
+    ref={ref}
     css={[
       css({
         color: 'grays.7',
@@ -64,7 +65,7 @@ export const Text = (props: TextProps) => (
             textIndent: '-.09em',
           },
         },
-      })(props),
+      }),
       variant({
         truncate: {
           true: {
@@ -73,9 +74,9 @@ export const Text = (props: TextProps) => (
             overflow: 'hidden',
           },
         },
-      })(props),
+      }),
     ]}
   />
-);
+));
 
 Text.defaultProps = { truncate: false };

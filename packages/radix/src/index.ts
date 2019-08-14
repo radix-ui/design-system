@@ -2,7 +2,7 @@ export { RadixProvider } from './RadixProvider';
 
 export { AspectRatio } from './components/AspectRatio';
 export { Badge } from './components/Badge';
-export { Box } from './components/Box';
+export { Box, BoxProps } from './components/Box';
 export { Button } from './components/Button';
 export { Card } from './components/Card';
 export { CardLink } from './components/CardLink';

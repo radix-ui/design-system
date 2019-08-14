@@ -1,4 +1,4 @@
-import React, { FC, ComponentProps } from 'react';
+import React, { ComponentProps } from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import omit from 'lodash.omit';
@@ -9,29 +9,31 @@ type CheckboxProps = MarginProps & ComponentProps<'input'>;
 
 const marginPropNames = margin.propNames;
 
-export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => {
-  const marginProps = pick(props, marginPropNames);
-  const inputProps = omit(props, marginPropNames);
+export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>(
+  ({ children, ...props }, ref) => {
+    const marginProps = pick(props, marginPropNames);
+    const inputProps = omit(props, marginPropNames);
 
-  return (
-    <CheckboxWrapper {...marginProps}>
-      <Input type="checkbox" {...inputProps} />
-      <FakeCheckbox>
-        <CheckedIcon
-          width="15"
-          height="15"
-          viewBox="0 0 15 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          stroke="currentColor"
-        >
-          <path d="M11.5 3.5L6.5 11.5L3.5 8.5" strokeLinecap="round" strokeLinejoin="round" />
-        </CheckedIcon>
-      </FakeCheckbox>
-      {children && <TextWrapper>{children}</TextWrapper>}
-    </CheckboxWrapper>
-  );
-};
+    return (
+      <CheckboxWrapper {...marginProps} ref={ref}>
+        <Input type="checkbox" {...inputProps} />
+        <FakeCheckbox>
+          <CheckedIcon
+            width="15"
+            height="15"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="currentColor"
+          >
+            <path d="M11.5 3.5L6.5 11.5L3.5 8.5" strokeLinecap="round" strokeLinejoin="round" />
+          </CheckedIcon>
+        </FakeCheckbox>
+        {children && <TextWrapper>{children}</TextWrapper>}
+      </CheckboxWrapper>
+    );
+  }
+);
 
 const CheckboxWrapper = styled('label')<MarginProps>(
   {

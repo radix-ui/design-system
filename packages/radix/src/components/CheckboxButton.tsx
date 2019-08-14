@@ -1,25 +1,28 @@
-import React, { FC, ComponentProps, ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { margin, MarginProps } from '@modulz/radix-system';
 
-type CheckboxButton = MarginProps & ComponentProps<'input'> & { children: ReactNode };
+type CheckboxButtonProps = MarginProps &
+  React.ComponentPropsWithRef<'input'> & { children: React.ReactNode };
 
 const marginPropNames = margin.propNames;
 
-export const CheckboxButton: FC<CheckboxButton> = ({ children, ...props }) => {
-  const marginProps = pick(props, marginPropNames);
-  const inputProps = omit(props, marginPropNames);
+export const CheckboxButton = React.forwardRef<HTMLLabelElement, CheckboxButtonProps>(
+  ({ children, ...props }, ref) => {
+    const marginProps = pick(props, marginPropNames);
+    const inputProps = omit(props, marginPropNames);
 
-  return (
-    <CheckboxWrapper {...marginProps}>
-      <Input type="checkbox" {...inputProps} />
-      <FakeCheckbox>{children}</FakeCheckbox>
-    </CheckboxWrapper>
-  );
-};
+    return (
+      <CheckboxWrapper {...marginProps} ref={ref}>
+        <Input type="checkbox" {...inputProps} />
+        <FakeCheckbox>{children}</FakeCheckbox>
+      </CheckboxWrapper>
+    );
+  }
+);
 
 const CheckboxWrapper = styled('label')<MarginProps>(
   {

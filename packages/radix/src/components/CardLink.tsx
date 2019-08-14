@@ -11,9 +11,10 @@ type CardLinkProps = CardLinkPrimitiveProps & {
   as?: any;
 };
 
-export const CardLink = (props: CardLinkProps) => (
+export const CardLink = React.forwardRef<HTMLAnchorElement, CardLinkProps>((props, ref) => (
   <CardLinkPrimitive
     {...props}
+    ref={ref}
     css={[
       baseCard,
       ({ variant }: CardLinkProps) =>
@@ -48,7 +49,7 @@ export const CardLink = (props: CardLinkProps) => (
         }),
     ]}
   />
-);
+));
 
 CardLink.defaultProps = {
   variant: 'border',

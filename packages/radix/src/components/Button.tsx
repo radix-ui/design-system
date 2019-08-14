@@ -21,9 +21,7 @@ type ButtonProps = ButtonPrimitiveProps & {
   theme?: any;
 };
 
-type Ref = HTMLButtonElement;
-
-export const BaseButton = React.forwardRef<Ref, ButtonProps>((props, ref) => (
+export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => (
   <ButtonPrimitive
     {...props}
     ref={ref}

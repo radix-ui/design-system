@@ -6,9 +6,10 @@ import { Divider as DividerPrimitive, DividerProps as DividerPrimitiveProps } fr
 type Sizes = 0 | 1 | 2;
 type DividerProps = DividerPrimitiveProps & { size?: Prop<Sizes> };
 
-export const Divider = (props: DividerProps) => (
+export const Divider = React.forwardRef<HTMLDivElement, DividerProps>((props, ref) => (
   <DividerPrimitive
     {...props}
+    ref={ref}
     css={[
       css({
         backgroundColor: 'grays.2',
@@ -28,4 +29,4 @@ export const Divider = (props: DividerProps) => (
       }),
     ]}
   />
-);
+));
