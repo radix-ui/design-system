@@ -8,6 +8,7 @@ import {
   Box,
   Text,
   Divider,
+  Flex,
 } from '@modulz/radix';
 
 console.log(theme);
@@ -28,10 +29,46 @@ export function ThemeSection() {
 
       <Heading>Font Sizes</Heading>
       {Object.entries(theme.fontSizes).map(([key, value]) => (
-        <Text size={5} ml={2}>
+        <Text size={5} mr={2}>
           <span style={{ fontSize: value }}>Aa</span>
         </Text>
       ))}
+
+      <Divider my={8} />
+
+      <Heading>Space scale</Heading>
+      {Object.entries(theme.space).map(([key, value]) => (
+        <Text size={5} mr={2}>
+          {value}
+        </Text>
+      ))}
+
+      <Divider my={8} />
+
+      <Heading>Sizes scale</Heading>
+      {Object.entries(theme.sizes).map(([key, value]) => (
+        <Text size={5} mr={2}>
+          {value}
+        </Text>
+      ))}
+
+      <Divider my={8} />
+
+      <Heading>Line heights scale</Heading>
+      {Object.entries(theme.lineHeights).map(([key, value]) => (
+        <Text size={5} mr={2}>
+          {value}
+        </Text>
+      ))}
+
+      <Divider my={8} />
+
+      <Heading>Radii scale</Heading>
+      <Flex>
+        {Object.entries(theme.radii).map(([key, value]) => (
+          <Box width={50} height={50} borderRadius={value} bg="blue" mr={2}></Box>
+        ))}
+      </Flex>
 
       <Divider my={8} />
 
