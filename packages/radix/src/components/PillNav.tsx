@@ -36,7 +36,7 @@ type PillProps = PillWidthProps & {
   active?: boolean;
 };
 
-export const Pill = styled('button')<PillProps>(
+export const PillButton = styled('button')<PillProps>(
   ({ active, pillWidth, ...props }) =>
     css({
       appearance: 'none',

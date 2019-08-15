@@ -38,6 +38,7 @@ export const baseCard = (props: CardProps) =>
   variant({
     variant: {
       border: {
+        backgroundColor: 'white',
         position: 'relative',
         padding: 4,
         borderRadius: 2,
@@ -45,6 +46,7 @@ export const baseCard = (props: CardProps) =>
         borderColor: 'grays.3',
       },
       ghost: {
+        backgroundColor: 'white',
         position: 'relative',
         padding: 4,
         borderRadius: 2,
@@ -52,6 +54,7 @@ export const baseCard = (props: CardProps) =>
         ...createShadow(0, themeGet('colors.grays.8')(props)),
       },
       shadow: {
+        backgroundColor: 'white',
         position: 'relative',
         padding: 4,
         borderRadius: 2,

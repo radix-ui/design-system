@@ -1,0 +1,259 @@
+---
+title: Popover
+component: Popover
+description: An accessible Popover component that displays rich content as a result of clicking on a target.
+---
+
+```js live removeFragment
+() => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const buttonRef = React.useRef(null);
+
+  return (
+    <>
+      <Button ref={buttonRef} onClick={() => setIsOpen(true)}>
+        Open Popover
+      </Button>
+      <Popover
+        targetRef={buttonRef}
+        isOpen={isOpen}
+        onDismiss={() => setIsOpen(false)}
+      >
+        <Box p={4}>Popover content</Box>
+      </Popover>
+    </>
+  );
+};
+```
+
+### children
+
+<Prop>ReactNode</Prop>
+
+The content to render inside the Popover.
+
+### side
+
+<Prop isOptional default="bottom">
+  top | bottom | right | left
+</Prop>
+
+There are 4 side options to choose from.
+
+```js live removeFragment
+() => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [side, setSide] = React.useState('right');
+  const buttonRef = React.useRef(null);
+
+  return (
+    <>
+      <Button ref={buttonRef} onClick={() => setIsOpen(true)}>
+        Open Popover
+      </Button>
+      <Popover
+        targetRef={buttonRef}
+        isOpen={isOpen}
+        onDismiss={() => setIsOpen(false)}
+        side={side}
+      >
+        <Box p={3}>
+          <Heading size={0} mb={3} fontWeight={500}>
+            Pick a side
+          </Heading>
+          <Select value={side} onChange={event => setSide(event.target.value)}>
+            <option value="top">top</option>
+            <option value="right">right</option>
+            <option value="bottom">bottom</option>
+            <option value="left">left</option>
+          </Select>
+        </Box>
+      </Popover>
+    </>
+  );
+};
+```
+
+### sideOffset
+
+<Prop isOptional default="-3">
+  Number
+</Prop>
+
+Control the side offset distance.
+
+```js live removeFragment
+() => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [sideOffset, setSideOffset] = React.useState(0);
+  const buttonRef = React.useRef(null);
+
+  return (
+    <>
+      <Button ref={buttonRef} onClick={() => setIsOpen(true)}>
+        Open Popover
+      </Button>
+      <Popover
+        targetRef={buttonRef}
+        isOpen={isOpen}
+        onDismiss={() => setIsOpen(false)}
+        side="right"
+        sideOffset={Number(sideOffset)}
+      >
+        <Box p={3}>
+          <Heading size={0} mb={3} fontWeight={500}>
+            Set an side offset
+          </Heading>
+          <Slider
+            min="-10"
+            max="10"
+            value={sideOffset}
+            onChange={event => setSideOffset(event.target.value)}
+          />
+        </Box>
+      </Popover>
+    </>
+  );
+};
+```
+
+### align
+
+<Prop isOptional default="center">
+  start | center | end
+</Prop>
+
+There are 3 alignment options to choose from.
+
+```js live removeFragment
+() => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [align, setAlign] = React.useState('center');
+  const buttonRef = React.useRef(null);
+
+  return (
+    <>
+      <Button ref={buttonRef} onClick={() => setIsOpen(true)}>
+        Open Popover
+      </Button>
+      <Popover
+        targetRef={buttonRef}
+        isOpen={isOpen}
+        onDismiss={() => setIsOpen(false)}
+        side="right"
+        align={align}
+      >
+        <Box p={3}>
+          <Heading size={0} mb={3} fontWeight={500}>
+            Pick an alignment
+          </Heading>
+          <Select
+            value={align}
+            onChange={event => setAlign(event.target.value)}
+          >
+            <option value="start">start</option>
+            <option value="center">center</option>
+            <option value="end">end</option>
+          </Select>
+        </Box>
+      </Popover>
+    </>
+  );
+};
+```
+
+### alignOffset
+
+<Prop isOptional default="0">
+  Number
+</Prop>
+
+Control the alignment offset distance. This only applies when the `align` prop is either `start` or `end`.
+
+```js live removeFragment
+() => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [alignOffset, setAlignOffset] = React.useState(0);
+  const buttonRef = React.useRef(null);
+
+  return (
+    <>
+      <Button ref={buttonRef} onClick={() => setIsOpen(true)}>
+        Open Popover
+      </Button>
+      <Popover
+        targetRef={buttonRef}
+        isOpen={isOpen}
+        onDismiss={() => setIsOpen(false)}
+        side="bottom"
+        align="start"
+        alignOffset={Number(alignOffset)}
+      >
+        <Box p={3}>
+          <Heading size={0} mb={3} fontWeight={500}>
+            Set an alignment offset
+          </Heading>
+          <Slider
+            min="-10"
+            max="10"
+            value={alignOffset}
+            onChange={event => setAlignOffset(event.target.value)}
+          />
+        </Box>
+      </Popover>
+    </>
+  );
+};
+```
+
+### arrowOffset
+
+<Prop isOptional default="6">
+  Number
+</Prop>
+
+Control the arrow offset distance.
+
+```js live removeFragment
+() => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [arrowOffset, setArrowOffset] = React.useState(10);
+  const buttonRef = React.useRef(null);
+
+  return (
+    <>
+      <Button ref={buttonRef} onClick={() => setIsOpen(true)}>
+        Open Popover
+      </Button>
+      <Popover
+        targetRef={buttonRef}
+        isOpen={isOpen}
+        onDismiss={() => setIsOpen(false)}
+        side="bottom"
+        align="start"
+        arrowOffset={Number(arrowOffset)}
+      >
+        <Box p={3}>
+          <Heading size={0} mb={3} fontWeight={500}>
+            Set an arrow offset
+          </Heading>
+          <Slider
+            min="0"
+            max="25"
+            value={arrowOffset}
+            onChange={event => setArrowOffset(event.target.value)}
+          />
+        </Box>
+      </Popover>
+    </>
+  );
+};
+```
+
+### collisionTolerance
+
+<Prop isOptional default="0">
+  Number
+</Prop>
+
+Control the collision tollerance. If it's `0` the collision will trigger as soon as the element has collided.
