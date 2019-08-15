@@ -13,18 +13,17 @@ description: Useful for displaying a list of navigation choices.
 </PillNav>
 ```
 
-### children
-
-<Prop>ReactNode</Prop>
-
-The content to render inside the PillNav.
-
-### pillWidth
-
-<Prop isOpional>CSS.WidthProperty</Prop>
-
-A width value to be passed down to all `Pill` children.
-
-### System props
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    pillWidth: {
+      type: 'CSS.WidthProperty',
+      description: 'The width to apply to its children',
+    },
+  }}
+/>
 
 <SystemProps props={['margin']} />

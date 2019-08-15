@@ -26,17 +26,48 @@ description: An accessible Popover component that displays rich content as a res
 };
 ```
 
-### children
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    side: {
+      type: 'top | bottom | right | left',
+      default: 'bottom',
+      description: 'The side to be positioned',
+    },
+    sideOffset: {
+      type: 'Number',
+      default: '0',
+      description: 'The side offset to apply',
+    },
+    align: {
+      type: 'start | center | end',
+      default: 'center',
+      description: 'The alignment to be positioned',
+    },
+    alignOffset: {
+      type: 'Number',
+      default: '0',
+      description: 'The align offset to apply',
+    },
+    arrowOffset: {
+      type: 'Number',
+      default: '6',
+      description: 'The arrow offset to apply',
+    },
+    collisionTolerance: {
+      type: 'Number',
+      default: '0',
+      description: 'The collision tolerance to apply',
+    },
+  }}
+/>
 
-<Prop>ReactNode</Prop>
+## Examples
 
-The content to render inside the Popover.
-
-### side
-
-<Prop isOptional default="bottom">
-  top | bottom | right | left
-</Prop>
+### Side
 
 There are 4 side options to choose from.
 
@@ -74,11 +105,7 @@ There are 4 side options to choose from.
 };
 ```
 
-### sideOffset
-
-<Prop isOptional default="-3">
-  Number
-</Prop>
+### Side offset
 
 Control the side offset distance.
 
@@ -117,11 +144,7 @@ Control the side offset distance.
 };
 ```
 
-### align
-
-<Prop isOptional default="center">
-  start | center | end
-</Prop>
+### Align
 
 There are 3 alignment options to choose from.
 
@@ -162,11 +185,7 @@ There are 3 alignment options to choose from.
 };
 ```
 
-### alignOffset
-
-<Prop isOptional default="0">
-  Number
-</Prop>
+### Align offset
 
 Control the alignment offset distance. This only applies when the `align` prop is either `start` or `end`.
 
@@ -206,11 +225,7 @@ Control the alignment offset distance. This only applies when the `align` prop i
 };
 ```
 
-### arrowOffset
-
-<Prop isOptional default="6">
-  Number
-</Prop>
+### Arrow offset
 
 Control the arrow offset distance.
 
@@ -249,11 +264,3 @@ Control the arrow offset distance.
   );
 };
 ```
-
-### collisionTolerance
-
-<Prop isOptional default="0">
-  Number
-</Prop>
-
-Control the collision tollerance. If it's `0` the collision will trigger as soon as the element has collided.

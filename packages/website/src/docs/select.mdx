@@ -12,29 +12,18 @@ description: Useful for allowing users to select only one option from a set.
 </Select>
 ```
 
-### children
-
-<Prop>HTMLOptionElement</Prop>
-
-The `option`'s to render inside the Select.
-
-### variant
-
-<Prop isOptional default="normal">
-  normal | fade
-</Prop>
-
-There are 2 variants to choose from.
-
-```js live
-<Select >
-  <option value="normal">Normal</option>
-</Select>
-<Select variant="fade" mt={6}>
-  <option value="normal">Fade</option>
-</Select>
-```
-
-### System props
+<PropsTable
+  data={{
+    children: {
+      type: 'HTMLOptionElement',
+      description: 'The options to render',
+    },
+    variant: {
+      type: 'normal | fade',
+      default: 'normal',
+      description: 'The variant to apply',
+    },
+  }}
+/>
 
 <SystemProps props={['margin', 'width']} />

@@ -8,12 +8,14 @@ description: Useful to keep your content within a desired ratio.
 <AspectRatio bg="blue" ratio="16:9" />
 ```
 
-### side
-
-<Prop default="1:1">1:1 | 1:2 | 2:1 | 16:9 | 4:3</Prop>
-
-Sets the ratio to display.
-
-### System Props
+<PropsTable
+  data={{
+    side: {
+      type: '1:1 | 1:2 | 2:1 | 16:9 | 4:3',
+      default: '1:1',
+      description: 'The ratio to apply',
+    },
+  }}
+/>
 
 <SystemProps props={['margin', 'backgroundColor']} />

@@ -8,17 +8,30 @@ description: Useful to emphasise information to the user, works best with single
 <Badge>Default</Badge>
 ```
 
-### children
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'gray | blue | green | red | yellow',
+      default: 'gray',
+      description: 'The variant to apply',
+    },
+    size: {
+      type: '0 | 1',
+      default: '0',
+      description: 'The  size to apply',
+    },
+  }}
+/>
 
-<Prop>ReactNode</Prop>
+<SystemProps props={['margin']} />
 
-The content to render inside the Badge.
+## Examples
 
-### variant
-
-<Prop isOptional default="gray">
-  gray | blue | green | red | yellow
-</Prop>
+### Variants
 
 There are 5 color variants to choose from.
 
@@ -36,11 +49,7 @@ There are 5 color variants to choose from.
 </Badge>
 ```
 
-### size
-
-<Prop isOptional default="0">
-  0 | 1
-</Prop>
+### Sizes
 
 There are 2 sizes to choose from.
 
@@ -48,7 +57,3 @@ There are 2 sizes to choose from.
 <Badge size={0}>Default</Badge>
 <Badge size={1} ml={6}>Large</Badge>
 ```
-
-### System props
-
-<SystemProps props={['margin']} />

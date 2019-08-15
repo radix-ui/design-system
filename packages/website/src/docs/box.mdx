@@ -5,18 +5,19 @@ description: A primitive useful for layout.
 ---
 
 ```js live
-<Box padding={4} textColor="white" backgroundColor="blue">
+<Box p={6} textColor="white" bg="blue" borderRadius={1}>
   Box
 </Box>
 ```
 
-### children
-
-<Prop>ReactNode</Prop>
-
-The content to render inside the Box.
-
-### System props
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+  }}
+/>
 
 <SystemProps
   props={[

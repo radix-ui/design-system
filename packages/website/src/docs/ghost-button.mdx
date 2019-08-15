@@ -10,17 +10,30 @@ description: Useful to communicate actions to your users via iconography.
 </GhostButton>
 ```
 
-### children
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    size: {
+      type: '0 | 1',
+      default: '0',
+      description: 'The size to apply',
+    },
+    isActive: {
+      type: 'Boolean',
+      default: 'false',
+      description: 'Whether it is active or not',
+    },
+  }}
+/>
 
-<Prop>ReactNode</Prop>
+<SystemProps props={['margin']} />
 
-The content to render inside the GhostButton.
+## Examples
 
 ### size
-
-<Prop isOptional default="0">
-  0 | 1
-</Prop>
 
 There are 2 sizes to choose from.
 
@@ -36,10 +49,6 @@ There are 2 sizes to choose from.
 
 ### isActive
 
-<Prop isOptional default="false">
-  Boolean
-</Prop>
-
 For when your button is active.
 
 ```js live
@@ -47,21 +56,3 @@ For when your button is active.
   <PlusIcon size="15" />
 </GhostButton>
 ```
-
-### disabled
-
-<Prop isOptional default="false">
-  Boolean
-</Prop>
-
-For when your button is disabled.
-
-```js live
-<GhostButton disabled>
-  <PlusIcon size="15" />
-</GhostButton>
-```
-
-### System props
-
-<SystemProps props={['margin']} />

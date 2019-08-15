@@ -10,27 +10,19 @@ description: Useful for horizontally containing your content.
 </Container>
 ```
 
-### children
-
-<Prop>ReactNode</Prop>
-
-The content to render inside the Container.
-
-### size
-
-<Prop isOptional default="0">
-  0 | 1 | 2
-</Prop>
-
-There are 3 sizes to choose from.
-
-```js live
-<Container size={1}>
-  <Box backgroundColor="blue" height={35} />
-</Container>
-```
-
-### System props
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    size: {
+      type: '0 | 1 | 2',
+      default: '0',
+      description: 'The size to apply',
+    },
+  }}
+/>
 
 <SystemProps
   props={['alignSelf', 'flex', 'justifySelf', 'maxWidth', 'margin', 'padding']}

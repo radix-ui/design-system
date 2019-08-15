@@ -19,13 +19,14 @@ description: A primitive useful for grid layouts.
 </Grid>
 ```
 
-### children
-
-<Prop>ReactNode</Prop>
-
-The content to render inside the Grid.
-
-### System props
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+  }}
+/>
 
 <SystemProps
   props={['alignContent', 'alignItems', 'gridSet', 'margin', 'padding']}

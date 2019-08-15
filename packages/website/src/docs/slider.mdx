@@ -8,19 +8,14 @@ description: Useful for allowing users to select a value from a range.
 <Slider value={50} />
 ```
 
-### variant
-
-<Prop isOptional default="normal">
-  normal | fade
-</Prop>
-
-There are 2 variants to choose from.
-
-```js live
-<Slider value={50} />
-<Slider value={50} variant="fade" mt={6}/>
-```
-
-### System props
+<PropsTable
+  data={{
+    variant: {
+      type: 'normal | fade',
+      default: 'normal',
+      description: 'The variant to apply',
+    },
+  }}
+/>
 
 <SystemProps props={['margin']} />

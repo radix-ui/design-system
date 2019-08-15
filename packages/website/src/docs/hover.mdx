@@ -10,8 +10,11 @@ description: Useful to render children conditionally based on hover state.
 </Hover>
 ```
 
-### children
-
-<Prop>Function (isHovered: boolean) => ReactNode</Prop>
-
-A function that gets called when the mouse enters or leaves the component. This function received a `boolean` argument with its current hovered state.
+<PropsTable
+  data={{
+    children: {
+      type: 'Function (isHovered: boolean) => ReactNode',
+      description: 'A function to be called when on enter/leave',
+    },
+  }}
+/>

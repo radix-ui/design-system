@@ -134,35 +134,56 @@ description: An accessible Tooltip component that shows information related to a
 
 </Box>
 
-### children
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render as target',
+    },
+    label: {
+      type: 'String',
+      description: 'The content to render in the Tooltip',
+    },
+    ariaLabel: {
+      type: 'String',
+      description: 'The content to render in the arial-label attributex',
+    },
+    side: {
+      type: 'top | bottom | right | left',
+      default: 'bottom',
+      description: 'The side to be positioned',
+    },
+    sideOffset: {
+      type: 'Number',
+      default: '0',
+      description: 'The side offset to apply',
+    },
+    align: {
+      type: 'start | center | end',
+      default: 'center',
+      description: 'The alignment to be positioned',
+    },
+    alignOffset: {
+      type: 'Number',
+      default: '0',
+      description: 'The align offset to apply',
+    },
+    arrowOffset: {
+      type: 'Number',
+      default: '6',
+      description: 'The arrow offset to apply',
+    },
+    collisionTolerance: {
+      type: 'Number',
+      default: '0',
+      description: 'The collision tolerance to apply',
+    },
+  }}
+/>
 
-<Prop>ReactNode</Prop>
+## Examples
 
-The content to render inside the Tooltip.
-
-### label
-
-<Prop>String</Prop>
-
-The content to render in the Tooltip.
-
-```js live
-<Tooltip label="This is the Tooltip label">
-  <Button>Tooltip</Button>
-</Tooltip>
-```
-
-### arialLabel
-
-<Prop isOptional>String</Prop>
-
-The content to render as the `aria-label` attribute. If not set, it will fallback to `label`.
-
-### side
-
-<Prop isOptional default="bottom">
-  top | bottom | right | left
-</Prop>
+### Side
 
 There are 4 side options to choose from.
 
@@ -184,11 +205,7 @@ There are 4 side options to choose from.
 </Tooltip>
 ```
 
-### sideOffset
-
-<Prop isOptional default="-3">
-  Number
-</Prop>
+### Side offset
 
 Control the side offset distance.
 
@@ -198,11 +215,7 @@ Control the side offset distance.
 </Tooltip>
 ```
 
-### align
-
-<Prop isOptional default="center">
-  start | center | end
-</Prop>
+### Align
 
 There are 3 alignment options to choose from.
 
@@ -220,11 +233,7 @@ There are 3 alignment options to choose from.
 </Tooltip>
 ```
 
-### alignOffset
-
-<Prop isOptional default="0">
-  Number
-</Prop>
+### Align offset
 
 Control the alignment offset distance.
 
@@ -234,11 +243,7 @@ Control the alignment offset distance.
 </Tooltip>
 ```
 
-### arrowOffset
-
-<Prop isOptional default="6">
-  Number
-</Prop>
+### Arrow offset
 
 Control the arrow offset distance.
 
@@ -247,11 +252,3 @@ Control the arrow offset distance.
   <Button>Arrow offset</Button>
 </Tooltip>
 ```
-
-### collisionTolerance
-
-<Prop isOptional default="0">
-  Number
-</Prop>
-
-Control the collision tollerance. If it's `0` the collision will trigger as soon as the element has collided.

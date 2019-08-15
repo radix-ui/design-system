@@ -8,11 +8,28 @@ description: Useful for allowing users to enter, update and select text.
 <Input placeholder="Your e-mail address" />
 ```
 
-### size
+<PropsTable
+  data={{
+    size: {
+      type: '0 | 1',
+      default: '0',
+      description: 'The size to apply',
+    },
+    variant: {
+      type: 'normal | fade | ghost',
+      default: 'normal',
+      description: 'The variant to apply',
+    },
+  }}
+/>
 
-<Prop isOptional default="0">
-  0 | 1
-</Prop>
+<SystemProps
+  props={['textColor', 'margin', 'padding', 'width', 'maxWidth', 'textAlign']}
+/>
+
+## Examples
+
+### Size
 
 There are 2 sizes to choose from.
 
@@ -21,11 +38,7 @@ There are 2 sizes to choose from.
 <Input placeholder="Your e-mail address" mt={6} size={1} />
 ```
 
-### variant
-
-<Prop isOptional default="normal">
-  normal | fade | ghost
-</Prop>
+### Variants
 
 There are 3 variants to choose from.
 
@@ -34,9 +47,3 @@ There are 3 variants to choose from.
 <Input value="your@email.io" mt={6} variant="fade" />
 <Input value="your@email.io" mt={6} variant="ghost" />
 ```
-
-### System props
-
-<SystemProps
-  props={['textColor', 'margin', 'padding', 'width', 'maxWidth', 'textAlign']}
-/>

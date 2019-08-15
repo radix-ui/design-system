@@ -41,7 +41,7 @@ function App({ element, props }) {
         ...mdxContent
       }
       components: allMdx(
-        sort: { order: ASC, fields: [frontmatter___title] }
+        sort: { order: ASC, fields: [frontmatter___component] }
         filter: { frontmatter: { component: { ne: null } } }
       ) {
         ...mdxContent

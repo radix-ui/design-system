@@ -8,17 +8,25 @@ description: Useful for sharing code snippets in a monospaced font.
 <Code>console.log('Radix')</Code>
 ```
 
-### children
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'normal | fade',
+      default: 'normal',
+      description: 'The variant to apply',
+    },
+  }}
+/>
 
-<Prop>ReactNode</Prop>
+<SystemProps props={['margin', 'padding']} />
 
-The content to render inside the Code.
+## Examples
 
-### variant
-
-<Prop isOptional default="normal">
-  normal | fade
-</Prop>
+### Variants
 
 There are 2 variants to choose from.
 
@@ -26,7 +34,3 @@ There are 2 variants to choose from.
 <Code variant="normal">normal</Code>
 <Code variant="fade" ml={6}>fade</Code>
 ```
-
-### System Props
-
-<SystemProps props={['margin', 'padding']} />

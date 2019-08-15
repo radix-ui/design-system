@@ -8,17 +8,44 @@ description: Useful for rendering headlines.
 <Heading>Heading component</Heading>
 ```
 
-### children
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    size: {
+      type: '0 | 1 | 2 | 3 | 4 | 5',
+      default: '2',
+      description: 'The size to apply',
+    },
+    fontWeight: {
+      type: '400 | 500',
+      default: '400',
+      description: 'The font weight to apply',
+    },
+    truncate: {
+      type: 'Boolean',
+      default: 'false',
+      description: 'Whether it should truncate or not',
+    },
+  }}
+/>
 
-<Prop>ReactNode</Prop>
+<SystemProps
+  props={[
+    'textColor',
+    'margin',
+    'padding',
+    'textAlign',
+    'fontWeight',
+    'lineHeight',
+  ]}
+/>
 
-The content to render inside the Heading.
+## Examples
 
-### size
-
-<Prop isOptional default="2">
-  0 | 1 | 2 | 3 | 4 | 5
-</Prop>
+### Size
 
 There are 6 sizes to choose from. Each size handles its own `font-size`, `letter-spacing` and `text-indent` accordingly.
 
@@ -31,11 +58,7 @@ There are 6 sizes to choose from. Each size handles its own `font-size`, `letter
 <Heading size={5} mt={1}>Heading component</Heading>
 ```
 
-### weight
-
-<Prop isOptional default="400">
-  400 | 500
-</Prop>
+### Font weight
 
 There are 2 weight options to choose from.
 
@@ -44,11 +67,7 @@ There are 2 weight options to choose from.
 <Heading fontWeight="500">Heading component</Heading>
 ```
 
-### truncate
-
-<Prop isOptiona default="false">
-  Boolean
-</Prop>
+### Text truncation
 
 When `true` this will truncate your text based on its maximum width.
 
@@ -57,16 +76,3 @@ When `true` this will truncate your text based on its maximum width.
   <Heading truncate>Heading component</Heading>
 </Box>
 ```
-
-### System props
-
-<SystemProps
-  props={[
-    'textColor',
-    'margin',
-    'padding',
-    'textAlign',
-    'fontWeight',
-    'lineHeight',
-  ]}
-/>

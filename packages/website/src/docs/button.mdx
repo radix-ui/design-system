@@ -8,19 +8,42 @@ description: Useful to communicate actions to your users.
 <Button>New project</Button>
 ```
 
-### children
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'gray | blue | green | red',
+      default: 'gray',
+      description: 'The variant to apply',
+    },
+    size: {
+      type: '0 | 1',
+      default: '0',
+      description: 'The size to apply',
+    },
+    isActive: {
+      type: 'Boolean',
+      default: 'false',
+      description: 'Whether it is active or not',
+    },
+    isWaiting: {
+      type: 'Boolean',
+      default: 'false',
+      description: 'Whether it is waiting or not',
+    },
+  }}
+/>
 
-<Prop>ReactNode</Prop>
+<SystemProps props={['margin']} />
 
-The content to render inside the Button.
+## Examples
 
-### variant
+### Colors
 
-<Prop isOptional default="gray">
-  gray | blue | green | red
-</Prop>
-
-There are 4 variants to choose from.
+There are 4 colors to choose from.
 
 ```js live
 <Button variant="gray">
@@ -37,11 +60,7 @@ There are 4 variants to choose from.
 </Button>
 ```
 
-### size
-
-<Prop isOptional default="0">
-  0 | 1
-</Prop>
+### Sizes
 
 There are 2 sizes to choose from.
 
@@ -54,9 +73,7 @@ There are 2 sizes to choose from.
 </Button>
 ```
 
-### isActive
-
-<Prop isOptional>Boolean</Prop>
+### Active state
 
 For when your button is active.
 
@@ -64,26 +81,10 @@ For when your button is active.
 <Button isActive>Add</Button>
 ```
 
-### isWaiting
-
-<Prop isOptional>Boolean</Prop>
+### Waiting state
 
 When the user is waiting for the server to respond.
 
 ```js live
 <Button isWaiting>Waiting</Button>
 ```
-
-### disabled
-
-<Prop isOptional>Boolean</Prop>
-
-For when your button is disabled.
-
-```js live
-<Button disabled>New project</Button>
-```
-
-### System props
-
-<SystemProps props={['margin']} />

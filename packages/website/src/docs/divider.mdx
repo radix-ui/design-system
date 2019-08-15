@@ -8,18 +8,13 @@ description: Useful for displaying a visual separator between parts of content.
 <Divider />
 ```
 
-### size
-
-<Prop isOptional>0 | 1 | 2</Prop>
-
-There are 3 sizes to choose from. If no `size` is provided, it'll render as full-width.
-
-```js live
-<Divider size={0} />
-<Divider size={1} mt={6}/>
-<Divider size={2} mt={6}/>
-```
-
-### System props
+<PropsTable
+  data={{
+    variant: {
+      type: '0 | 1 | 2',
+      description: 'The size to apply',
+    },
+  }}
+/>
 
 <SystemProps props={['maxWidth', 'margin', 'backgroundColor', 'height']} />

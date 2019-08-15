@@ -8,30 +8,20 @@ description: Useful to communicate actions to your users within a PillNav.
 <PillButton>PillButton</PillButton>
 ```
 
-### children
-
-<Prop>ReactNode</Prop>
-
-The content to render inside the PillButton.
-
-### pillWidth
-
-<Prop isOpional>CSS.WidthProperty</Prop>
-
-A value to be set as the width property.
-
-### active
-
-For when your PillButton is active.
-
-```js live
-<PillButton active>PillButton</PillButton>
-```
-
-### disabled
-
-For when your PillButton is disabled.
-
-```js live
-<PillButton disabled>Pill</PillButton>
-```
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    pillWidth: {
+      type: 'CSS.WidthProperty',
+      description: 'The width to apply',
+    },
+    active: {
+      type: 'Boolean',
+      default: 'false',
+      description: 'Whether it is active or not',
+    },
+  }}
+/>

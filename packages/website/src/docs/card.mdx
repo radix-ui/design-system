@@ -16,17 +16,34 @@ description: Useful to group information and actions about a single subject.
 </Card>
 ```
 
-### children
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'normal | shadow | ghost',
+      default: 'normal',
+      description: 'The variant to apply',
+    },
+  }}
+/>
 
-<Prop>ReactNode</Prop>
+<SystemProps
+  props={[
+    'textColor',
+    'backgroundColor',
+    'margin',
+    'padding',
+    'width',
+    'maxWidth',
+  ]}
+/>
 
-The content to render inside the Card.
+## Examples
 
-### variant
-
-<Prop isOptional default="normal">
-  normal | shadow | ghost
-</Prop>
+### Variants
 
 There are 3 variants to choose from.
 
@@ -53,16 +70,3 @@ There are 3 variants to choose from.
   <Button>Action</Button>
 </Card>
 ```
-
-### System props
-
-<SystemProps
-  props={[
-    'textColor',
-    'backgroundColor',
-    'margin',
-    'padding',
-    'width',
-    'maxWidth',
-  ]}
-/>

@@ -18,17 +18,34 @@ description: Useful to group information about a single subject into a link.
 </CardLink>
 ```
 
-### children
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'normal | shadow | ghost',
+      default: 'normal',
+      description: 'The variant to apply',
+    },
+  }}
+/>
 
-<Prop>ReactNode</Prop>
+<SystemProps
+  props={[
+    'textColor',
+    'backgroundColor',
+    'margin',
+    'padding',
+    'width',
+    'maxWidth',
+  ]}
+/>
 
-The content to render inside the CardLink.
+## Examples
 
-### variant
-
-<Prop isOptional default="normal">
-  normal | shadow | ghost
-</Prop>
+### Variants
 
 There are 3 variants to choose from.
 
@@ -59,16 +76,3 @@ There are 3 variants to choose from.
   </Text>
 </CardLink>
 ```
-
-### System props
-
-<SystemProps
-  props={[
-    'textColor',
-    'backgroundColor',
-    'margin',
-    'padding',
-    'width',
-    'maxWidth',
-  ]}
-/>

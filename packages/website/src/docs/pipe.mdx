@@ -8,23 +8,13 @@ description: Useful for displaying a vertical separator between parts of content
 <Pipe />
 ```
 
-### variant
-
-<Prop isOptional default="normal">
-  normal | large | fluid
-</Prop>
-
-There are 3 variants to choose from
-
-```js live
-<Pipe variant="normal" />
-<Pipe variant="large" mt={6}/>
-<Box height={50}>
-
-<Pipe variant="fluid" mt={6}/>
-</Box>
-```
-
-### System props
+<PropsTable
+  data={{
+    variant: {
+      type: 'normal | large | fluid',
+      description: 'The variant to apply',
+    },
+  }}
+/>
 
 <SystemProps props={['margin']} />

@@ -61,9 +61,9 @@ const ColorCard = ({ color, name }) => (
       <AspectRatio width={100} bg={color} ratio="16:9" />
     </Card>
     <Box mt={1}>
-      <Heading as="h3" size={0} fontWeight={500} mb={1}>
+      <RadixHeading as="h3" size={0} fontWeight={500} mb={1}>
         {name}
-      </Heading>
+      </RadixHeading>
       <Text as="p" size={1} textColor="grays.5">
         {color}
       </Text>
