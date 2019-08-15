@@ -40,6 +40,7 @@ export const baseCard = (props: CardProps) =>
       border: {
         backgroundColor: 'white',
         position: 'relative',
+        overflow: 'hidden',
         padding: 4,
         borderRadius: 2,
         border: '1px solid transparent',
@@ -48,6 +49,7 @@ export const baseCard = (props: CardProps) =>
       ghost: {
         backgroundColor: 'white',
         position: 'relative',
+        overflow: 'hidden',
         padding: 4,
         borderRadius: 2,
         border: '1px solid transparent',
@@ -56,6 +58,7 @@ export const baseCard = (props: CardProps) =>
       shadow: {
         backgroundColor: 'white',
         position: 'relative',
+        overflow: 'hidden',
         padding: 4,
         borderRadius: 2,
         borderColor: 'transparent',

@@ -9,6 +9,7 @@ import Layout from '../components/Layout';
 import CodeBlock from '../components/CodeBlock';
 import { SystemPropsTable } from '../components/SystemPropsTable';
 import { PropsTable } from '../components/PropsTable';
+import { ThemeSection } from '../components/ThemeSection';
 
 export const components = {
   ...RC,
@@ -48,6 +49,7 @@ export const components = {
       )}
     </RC.Box>
   ),
+  ThemeSection,
 };
 
 function DocPageTemplate({ data, location, ...props }) {
@@ -57,7 +59,12 @@ function DocPageTemplate({ data, location, ...props }) {
     <Layout pathname={location.pathname}>
       <Helmet>
         <title>Radix — {data.mdx.frontmatter.title}</title>
+        <meta property="og:title" content={`Radix — ${data.mdx.frontmatter.title}`} />
+        <meta property="og:description" content={data.mdx.frontmatter.description} />
+        <meta name="twitter:title" content={`Radix — ${data.mdx.frontmatter.title}`} />
+        <meta name="twitter:description" content={data.mdx.frontmatter.description} />
       </Helmet>
+
       <MDXProvider components={components}>
         <RC.Box>
           <RC.Heading size={4} fontWeight={500} mb={2} lineHeight={3}>
