@@ -1,10 +1,10 @@
 import React from 'react';
 import * as RadixSystem from '@modulz/radix-system';
-import { Box, Table, Thead, Tr, Th, Tbody, Td, Code } from '@modulz/radix';
+import { Box, Table, Thead, Tr, Th, Tbody, Td, Code, Text } from '@modulz/radix';
 
 export function SystemPropsTable({ props }) {
   return (
-    <Box mb={4}>
+    <Box my={4}>
       <Table>
         <Thead>
           <Tr>
@@ -13,17 +13,19 @@ export function SystemPropsTable({ props }) {
           </Tr>
         </Thead>
         <Tbody>
-          {props.map(prop => (
+          {props.sort().map(prop => (
             <Tr key={prop}>
-              <Td>{prop}</Td>
               <Td>
-                <Box>
-                  {RadixSystem[prop].propNames.map(p => (
-                    <Code key={p} mr={1}>
+                <Text textColor="grays.5">{prop}</Text>
+              </Td>
+              <Td style={{ width: '60%' }}>
+                {RadixSystem[prop].propNames.map(p => (
+                  <Box>
+                    <Code key={p} my={1}>
                       {p}
                     </Code>
-                  ))}
-                </Box>
+                  </Box>
+                ))}
               </Td>
             </Tr>
           ))}

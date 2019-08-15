@@ -1,19 +1,61 @@
 ---
 title: Heading
 component: Heading
+description: Useful for rendering headlines.
 ---
 
 ```js live
-<Heading>Close the gap</Heading>
+<Heading>Heading component</Heading>
 ```
 
-### Weight
+### children
+
+<Prop>ReactNode</Prop>
+
+The content to render inside the Heading.
+
+### size
+
+<Prop isOptional default="2">
+  0 | 1 | 2 | 3 | 4 | 5
+</Prop>
+
+There are 6 size options to choose from. Each size handles its own `font-size`, `letter-spacing` and `text-indent` accordingly.
+
+```js live
+<Heading size={0}>Heading component</Heading>
+<Heading size={1} mt={1}>Heading component</Heading>
+<Heading size={2} mt={1}>Heading component</Heading>
+<Heading size={3} mt={1}>Heading component</Heading>
+<Heading size={4} mt={1}>Heading component</Heading>
+<Heading size={5} mt={1}>Heading component</Heading>
+```
+
+### weight
+
+<Prop isOptional default="400">
+  400 | 500
+</Prop>
 
 There are 2 weight options to choose from.
 
 ```js live
-<Heading fontWeight="400">With font weight 400 (default)</Heading>
-<Heading fontWeight="500">With font weight 500</Heading>
+<Heading fontWeight="400">Heading component</Heading>
+<Heading fontWeight="500">Heading component</Heading>
+```
+
+### truncate
+
+<Prop isOptiona default="false">
+  Boolean
+</Prop>
+
+When `true` this will truncate your text based on its maximum width.
+
+```js live
+<Box width={100}>
+  <Heading truncate>Heading component</Heading>
+</Box>
 ```
 
 ### System props
@@ -28,10 +70,3 @@ There are 2 weight options to choose from.
     'lineHeight',
   ]}
 />
-
-### Custom props
-
-| Name       | Type                    | Default | Description           |
-| :--------- | :---------------------- | :-----: | :-------------------- |
-| `size`     | 0 \| 1 \| 2\| 3\| 4\| 5 |   `3`   | Changes the font size |
-| `truncate` | boolean                 | `false` | Truncates the text    |

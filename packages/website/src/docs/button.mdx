@@ -1,18 +1,32 @@
 ---
 title: Button
 component: Button
+description: Useful to communicate actions to your users.
 ---
 
 ```js live
 <Button>New project</Button>
 ```
 
-### Color
+### children
 
-There are 4 color options to choose from.
+<Prop>ReactNode</Prop>
+
+The content to render inside the Button.
+
+### variant
+
+<Prop isOptional default="gray">
+  gray | blue | green | red
+</Prop>
+
+There are 6 variants to choose from.
 
 ```js live
-<Button variant="blue">
+<Button variant="gray">
+  Cancel
+</Button>
+<Button variant="blue" ml={6}>
   Save
 </Button>
 <Button variant="green" ml={6}>
@@ -23,7 +37,11 @@ There are 4 color options to choose from.
 </Button>
 ```
 
-### Size
+### size
+
+<Prop isOptional default="0">
+  0 | 1
+</Prop>
 
 There are 2 size options to choose from.
 
@@ -36,23 +54,29 @@ There are 2 size options to choose from.
 </Button>
 ```
 
-### Active
+### isActive
 
-When a button is active.
+<Prop isOptional>Boolean</Prop>
+
+For when your button is active.
 
 ```js live
-<Button variant="active">Add</Button>
+<Button isActive>Add</Button>
 ```
 
-### Waiting
+### isWaiting
+
+<Prop isOptional>Boolean</Prop>
 
 When the user is waiting for the server to respond.
 
 ```js live
-<Button variant="waiting">Waiting</Button>
+<Button isWaiting>Waiting</Button>
 ```
 
-### Disabled
+### disabled
+
+<Prop isOptional>Boolean</Prop>
 
 For when your button is disabled.
 
@@ -62,10 +86,4 @@ For when your button is disabled.
 
 ### System props
 
-### Custom props
-
-| Name       | Type                                                          | Default | Description          |
-| :--------- | :------------------------------------------------------------ | :-----: | :------------------- |
-| `variant`  | 'gray' \| 'blue' \| 'green' \| 'red' \| 'active' \| 'waiting' | `gray`  | Variant to display   |
-| `size`     | 0 \| 1                                                        |   `0`   | Size to display      |
-| `disabled` | Boolean                                                       | `false` | Disables the element |
+<SystemProps props={['margin']} />

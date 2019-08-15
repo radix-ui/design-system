@@ -10,14 +10,14 @@ import {
   ToggleButtonProps as ToggleButtonPrimitiveProps,
 } from 'mdlz-prmtz';
 
-type Variants = 'normal' | 'fade';
-type VariantProps = { variant?: Prop<Variants> };
-type ToggleButtonGroupProps<T> = ToggleButtonGroupPrimitiveProps<T> & VariantProps;
+type ToggleButtonGroupProps<T> = ToggleButtonGroupPrimitiveProps<T>;
 
 export const ToggleButtonGroup = <T extends string | string[] | null>(
   props: ToggleButtonGroupProps<T>
 ) => <ToggleButtonGroupPrimitive {...props} />;
 
+type Variants = 'normal' | 'fade';
+type VariantProps = { variant?: Prop<Variants> };
 type ToggleButtonProps = ToggleButtonPrimitiveProps &
   VariantProps & {
     // TODO: type Theme

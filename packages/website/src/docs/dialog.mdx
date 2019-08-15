@@ -4,7 +4,7 @@ component: Dialog
 description: An accessible dialog component, useful for helping users make decisions and to display critical information.
 ---
 
-```js live wrapInFragment=false
+```js live removeFragment
 () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -19,35 +19,27 @@ description: An accessible dialog component, useful for helping users make decis
 };
 ```
 
-<!-- ### Props
-
-<PropsTable
-  data={{
-    children: 'ReactNode',
-    isOpen: 'Boolean',
-    canDismiss: 'Boolean',
-    onDismiss: 'Function',
-    refToFocusOnOpen: 'RefObject<HTMLElement>',
-    refToFocusOnClose: 'RefObject<HTMLElement>',
-    css: 'any',
-    contentCss: 'any',
-    overlayCss: 'any',
-  }}
-/> -->
-
 ### children
+
+<Prop>ReactNode</Prop>
 
 The content to render inside the Dialog.
 
 ### isOpen
 
+<Prop>Boolean</Prop>
+
 Controls whether the Dialog is open or not.
 
 ### canDismiss
 
+<Prop isOptional default="true">
+  Boolean
+</Prop>
+
 Whether the dialog can be dismissed by clicking outside or pressing the escape key.
 
-```js live wrapInFragment=false
+```js live removeFragment
 () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -72,9 +64,11 @@ Whether the dialog can be dismissed by clicking outside or pressing the escape k
 
 ### onDismiss
 
+<Prop isOptional>Function</Prop>
+
 A function that gets called when the Dialog is dismissed via click outside or escape key.
 
-```js live wrapInFragment=false
+```js live removeFragment
 () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -102,9 +96,11 @@ A function that gets called when the Dialog is dismissed via click outside or es
 
 ### refToFocusOnOpen
 
+<Prop isOptional>RefObject</Prop>
+
 A reference to an element to focus on inside the dialog after it opens. If not provided, it will focus on the first focusable element.
 
-```js live wrapInFragment=false
+```js live removeFragment
 () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const inputRef = React.useRef(null);
@@ -144,5 +140,7 @@ A reference to an element to focus on inside the dialog after it opens. If not p
 ```
 
 ### refToFocusOnClose
+
+<Prop isOptional>RefObject</Prop>
 
 A reference to an element to focus on outside the dialog after it closes. If not provided, it will focus on the last focused element before the dialog was opened.

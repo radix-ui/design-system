@@ -1,22 +1,38 @@
 ---
 title: Input
 component: Input
+description: Useful for allowing users to enter, update and select text.
 ---
 
 ```js live
 <Input placeholder="Your e-mail address" />
 ```
 
-```js live
-<Input size={1} placeholder="Your e-mail address" />
-```
+### size
+
+<Prop isOptional default="0">
+  0 | 1
+</Prop>
+
+There are 2 size options to choose from.
 
 ```js live
-<Input value="Auto" />
+<Input placeholder="Your e-mail address" />
+<Input placeholder="Your e-mail address" mt={6} size={1} />
 ```
 
+### variant
+
+<Prop isOptional default="normal">
+  normal | fade | ghost
+</Prop>
+
+There are 3 variants to choose from.
+
 ```js live
-<Input value="50px" variant="fade" />
+<Input value="your@email.io" variant="normal" />
+<Input value="your@email.io" mt={6} variant="fade" />
+<Input value="your@email.io" mt={6} variant="ghost" />
 ```
 
 ### System props
@@ -24,10 +40,3 @@ component: Input
 <SystemProps
   props={['textColor', 'margin', 'padding', 'width', 'maxWidth', 'textAlign']}
 />
-
-### Custom props
-
-| Name      | Type                          | Default  | Description        |
-| :-------- | :---------------------------- | :------: | :----------------- |
-| `variant` | 'normal' \| 'ghost' \| 'fade' | `normal` | Variant to display |
-| `size`    | 0 \| 1                        |   `0`    | Size to display    |

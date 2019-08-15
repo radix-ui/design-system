@@ -1,29 +1,29 @@
 ---
 title: Grid
 component: Grid
+description: A primitive useful for grid layouts.
 ---
 
 ```js live
-<Grid gridTemplateColumns="repeat(2, 1fr)" gridTemplateRows="10px" gridGap={4} mb={2}>
-  <Box bg="blue" />
-  <Box bg="blue" />
-</Grid>
-<Grid gridTemplateColumns="repeat(5, 1fr)" gridTemplateRows="10px" gridGap={4} mb={2}>
-  <Box bg="blue" />
-  <Box bg="blue" />
-  <Box bg="blue" />
-  <Box bg="blue" />
-  <Box bg="blue" />
-</Grid>
-<Grid gridTemplateColumns="repeat(3, 1fr)" gridAutoRows="10px" gridGap={4}>
-  <Box bg="blue" />
-  <Box bg="blue" />
-  <Box bg="blue" />
-  <Box bg="blue" />
-  <Box bg="blue" />
-  <Box bg="blue" />
+<Grid gridTemplateColumns="repeat(5, 1fr)" gridGap={6}>
+  <AspectRatio width={5} height={5} bg="blue" />
+  <AspectRatio width={5} height={5} bg="blue" />
+  <AspectRatio width={5} height={5} bg="blue" />
+  <AspectRatio width={5} height={5} bg="blue" />
+  <AspectRatio width={5} height={5} bg="blue" />
+  <AspectRatio width={5} height={5} bg="blue" />
+  <AspectRatio width={5} height={5} bg="blue" />
+  <AspectRatio width={5} height={5} bg="blue" />
+  <AspectRatio width={5} height={5} bg="blue" />
+  <AspectRatio width={5} height={5} bg="blue" />
 </Grid>
 ```
+
+### children
+
+<Prop>ReactNode</Prop>
+
+The content to render inside the Grid.
 
 ### System props
 

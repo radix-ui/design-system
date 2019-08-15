@@ -1,14 +1,38 @@
 ---
 title: Textarea
 component: Textarea
+description: Useful for allowing users to enter, update and select text.
 ---
 
 ```js live
 <Textarea placeholder="Leave your comment here" />
 ```
 
+### size
+
+<Prop isOptional default="0">
+  0 | 1
+</Prop>
+
+There are 2 size options to choose from.
+
 ```js live
-<Textarea size={1} placeholder="Leave your comment here" />
+<Textarea placeholder="Leave your comment here" size={0}/>
+<Textarea placeholder="Leave your comment here" mt={6} size={1}/>
+```
+
+### variant
+
+<Prop isOptional default="normal">
+  normal | fade | ghost
+</Prop>
+
+There are 3 variants to choose from.
+
+```js live
+<Textarea value="This is a comment." />
+<Textarea value="This is a comment." mt={6} variant="fade"/>
+<Textarea value="This is a comment." mt={6} variant="ghost"/>
 ```
 
 ### System props
@@ -16,10 +40,3 @@ component: Textarea
 <SystemProps
   props={['textColor', 'margin', 'padding', 'width', 'maxWidth', 'textAlign']}
 />
-
-### Custom props
-
-| Name      | Type               | Default  | Description        |
-| :-------- | :----------------- | :------: | :----------------- |
-| `variant` | 'normal' \|'ghost' | `normal` | Variant to display |
-| `size`    | 0 \| 1             |   `0`    | Size to display    |

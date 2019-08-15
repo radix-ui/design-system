@@ -1,6 +1,7 @@
 ---
 title: Menu
 component: Menu
+description: Useful for displaying a list of choices.
 ---
 
 ```js live
@@ -17,42 +18,31 @@ component: Menu
 </Menu>
 ```
 
-```js live
-<Menu variant="shadow">
-  <MenuItem>
-    <Box mr={3}>
-      <ArrowLeftIcon size="25" />
-    </Box>{' '}
-    Back to dasboard
-  </MenuItem>
-  <MenuGroup>
-    <MenuItem>
-      <Box mr={3}>
-        <DeviceKeyboardIcon size="25" />
-      </Box>{' '}
-      Keyboard shortcuts
-    </MenuItem>
-    <MenuItem>
-      <Box mr={3}>
-        <LifesaverIcon size="25" />
-      </Box>{' '}
-      Community forum
-    </MenuItem>
-  </MenuGroup>
-  <MenuItem>
-    <Box mr={3}>
-      <HomeIcon size="25" />
-    </Box>{' '}
-    Go to marketing site
-  </MenuItem>
-</Menu>
-```
+### children
+
+<Prop>ReactNode</Prop>
+
+The content to render inside the Menu, ideally these should be [MenuItem](/docs/menu-item/)'s.
+
+### variant
+
+<Prop isOptional default="normal">
+  'normal' | 'shadow'
+</Prop>
+
+There are 2 variants to choose from.
 
 ```js live
 <Menu variant="shadow">
-  <MenuItem>Edit</MenuItem>
-  <MenuItem disabled>Delete</MenuItem>
-  <MenuItem>Rename</MenuItem>
+  <MenuItem>
+    <Text size={2}>Box</Text>
+  </MenuItem>
+  <MenuItem variant="selected">
+    <Text size={2}>Layout</Text>
+  </MenuItem>
+  <MenuItem>
+    <Text size={2}>Button</Text>
+  </MenuItem>
 </Menu>
 ```
 
@@ -61,22 +51,3 @@ component: Menu
 ### System props
 
 <SystemProps props={['maxWidth', 'width', 'margin', 'padding']} />
-
-### Custom props
-
-| Name      | Type                | Default  | Description        |
-| :-------- | :------------------ | :------: | :----------------- |
-| `variant` | 'normal' \|'shadow' | `normal` | Variant to display |
-
-## MenuItem
-
-### System props
-
-<SystemProps props={['minHeight', 'padding']} />
-
-### Custom props
-
-| Name       | Type                               | Default  | Description          |
-| :--------- | :--------------------------------- | :------: | :------------------- |
-| `variant`  | 'normal' \| 'active' \| 'selected' | `normal` | Variant to display   |
-| `disabled` | Boolean                            | `false`  | Disables the element |

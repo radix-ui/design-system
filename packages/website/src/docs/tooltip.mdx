@@ -133,18 +133,124 @@ component: Tooltip
 
 </Box>
 
-### Custom props
+### children
 
-| Name                 | Type                                   | Default  | Description                     |
-| :------------------- | :------------------------------------- | :------: | :------------------------------ |
-| `side`               | 'top' \| 'bottom' \| 'right' \| 'left' | `bottom` | Changes the side                |
-| `sideOffset`         | nunber                                 |   `-5`   | Changes the side offset         |
-| `align`              | 'start' \| 'end'                       | `start`  | Changes the alignment           |
-| `alignOffset`        | number                                 |   `0`    | Changes the alignment offset    |
-| `arrow`              | React.ReactNode                        | `Arrow`  | Changes the arrow component     |
-| `arrowOffset`        | number                                 |   `0`    | Changes the arrow offset        |
-| `collisionTolerance` | number                                 |   `0`    | Changes the collision tolerance |
-| `label`              | string                                 |          | Sets the label                  |
-| `ariaLabel`          | string                                 |          | Sets the arial-label            |
-| `children`           | React.ReactNode                        |          | Sets the chilren                |
-| `css`                | CSSProperties                          |          | Changes the CSS                 |
+<Prop>ReactNode</Prop>
+
+The content to render inside the Tooltip.
+
+### label
+
+<Prop>String</Prop>
+
+The content to render in the Tooltip.
+
+```js live
+<Tooltip label="This is the Tooltip label">
+  <Button>Tooltip</Button>
+</Tooltip>
+```
+
+### arialLabel
+
+<Prop isOptional>String</Prop>
+
+The content to render as the `aria-label` attribute. If not set, it will fallback to `label`.
+
+### side
+
+<Prop isOptional default="bottom">
+  top | bottom | right | left
+</Prop>
+
+There are 4 side options to choose from.
+
+```js live
+<Tooltip label="Tooltip" side="top">
+  <Button>Top</Button>
+</Tooltip>
+
+<Tooltip label="Tooltip" side="bottom">
+  <Button ml={6}>Bottom</Button>
+</Tooltip>
+
+<Tooltip label="Tooltip" side="right">
+  <Button ml={6}>Right</Button>
+</Tooltip>
+
+<Tooltip label="Tooltip" side="left">
+  <Button ml={6}>Left</Button>
+</Tooltip>
+```
+
+### sideOffset
+
+<Prop isOptional default="-3">
+  Number
+</Prop>
+
+Control the side offset distance.
+
+```js live
+<Tooltip label="Tooltip" side="top" sideOffset={6}>
+  <Button>Side offset</Button>
+</Tooltip>
+```
+
+### align
+
+<Prop isOptional default="center">
+  start | center | end
+</Prop>
+
+There are 3 alignment options to choose from.
+
+```js live
+<Tooltip label="Tooltip" align="start">
+  <Button>Start</Button>
+</Tooltip>
+
+<Tooltip label="Tooltip" align="center">
+  <Button mx={6}>Center</Button>
+</Tooltip>
+
+<Tooltip label="Tooltip" align="end">
+  <Button>end</Button>
+</Tooltip>
+```
+
+### alignOffset
+
+<Prop isOptional default="0">
+  Number
+</Prop>
+
+Control the alignment offset distance.
+
+```js live
+<Tooltip label="Tooltip" alignOffset={10} align="start">
+  <Button>Align offset</Button>
+</Tooltip>
+```
+
+### arrowOffset
+
+<Prop isOptional default="6">
+  Number
+</Prop>
+
+Control the arrow offset distance.
+
+```js live
+<Tooltip label="Tooltip" arrowOffset={3}>
+  <Button>Arrow offset</Button>
+</Tooltip>
+```
+
+### collisionTolerance
+
+<Prop isOptional default="0">
+  Number
+</Prop>
+
+Control the collision tollerance. If it's `0` the collision will trigger as soon as the element has collided.

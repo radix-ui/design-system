@@ -1,6 +1,7 @@
 ---
 title: Radio Group
 component: RadioGroup
+description: Useful for simplifying the usage of Radio elements.
 ---
 
 ```js live
@@ -12,17 +13,8 @@ component: RadioGroup
 </RadioGroup>
 ```
 
-## RadioGroup
+### children
 
-### Custom props
+<Prop>ReactNode</Prop>
 
-| Name       | Type         | Default | Description                                        |
-| :--------- | :----------- | :-----: | :------------------------------------------------- |
-| `name`     | String       | `null`  | `name` attribute to be passed down to the children |
-| `children` | ReactElement | `null`  | Children should be `Radio` Elements                |
-
-## Radio
-
-### System Props
-
-<SystemProps props={['margin']} />
+The content to render inside the RadioGroup, ideally these should be [Radio](/docs/radio/)'s.

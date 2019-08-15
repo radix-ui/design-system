@@ -1,10 +1,31 @@
 ---
 title: Container
 component: Container
+description: A layout component useful for horizontally containing your content.
 ---
 
 ```js live
 <Container>
+  <Box backgroundColor="blue" height={35} />
+</Container>
+```
+
+### children
+
+<Prop>ReactNode</Prop>
+
+The content to render inside the Container.
+
+### size
+
+<Prop isOptional default="0">
+  0 | 1 | 2
+</Prop>
+
+There are 3 variants to choose from.
+
+```js live
+<Container size={1}>
   <Box backgroundColor="blue" height={35} />
 </Container>
 ```
@@ -14,9 +35,3 @@ component: Container
 <SystemProps
   props={['alignSelf', 'flex', 'justifySelf', 'maxWidth', 'margin', 'padding']}
 />
-
-### Custom props
-
-| Name   | Type        |   Default   | Description                       |
-| :----- | :---------- | :---------: | :-------------------------------- |
-| `size` | 0 \| 1 \| 2 | `undefined` | Size to display, fluid by defauld |

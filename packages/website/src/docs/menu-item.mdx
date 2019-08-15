@@ -1,0 +1,53 @@
+---
+title: Menu Item
+component: MenuItem
+description: Useful for displaying a choice inside a Menu.
+---
+
+```js live
+<Menu>
+  <MenuItem>
+    <Text size={2}>Menu item one</Text>
+  </MenuItem>
+  <MenuItem>
+    <Text size={2}>Menu item two</Text>
+  </MenuItem>
+  <MenuItem>
+    <Text size={2}>Menu item three</Text>
+  </MenuItem>
+</Menu>
+```
+
+### children
+
+<Prop>ReactNode</Prop>
+
+The content to render inside the Menu.
+
+### variant
+
+<Prop isOptional default="normal">
+  normal | active | selected
+</Prop>
+
+There are 3 variants to choose from.
+
+```js live
+<Menu>
+  <MenuItem variant="normal">
+    <Text size={2}>Menu item one</Text>
+  </MenuItem>
+  <MenuItem variant="active">
+    <Text size={2} textColor="white">
+      Menu item two
+    </Text>
+  </MenuItem>
+  <MenuItem variant="selected">
+    <Text size={2}>Menu item three</Text>
+  </MenuItem>
+</Menu>
+```
+
+### System props
+
+<SystemProps props={['minHeight', 'padding']} />

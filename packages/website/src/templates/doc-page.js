@@ -10,13 +10,9 @@ import CodeBlock from '../components/CodeBlock';
 import { SystemPropsTable } from '../components/SystemPropsTable';
 import { PropsTable } from '../components/PropsTable';
 
-import { State, Observe } from 'mdx-observable';
-
 export const components = {
   ...RC,
   ...RI,
-  State,
-  Observe,
   pre: props => <div {...props} />,
   code: CodeBlock,
   table: RC.Table,
@@ -39,10 +35,19 @@ export const components = {
     <RC.Heading {...props} as="h4" fontWeight={500} size={0} mt={6} mb={1} lineHeight={1} />
   ),
   p: props => <RC.Text {...props} as="p" size={3} lineHeight={1} textColor="grays.5" />,
-  ToggleButtonGroup: props => {
-    const [value, setValue] = React.useState(props.value);
-    return <RC.ToggleButtonGroup {...props} value={value} onChange={value => setValue(value)} />;
-  },
+  Prop: props => (
+    <RC.Box mb={3}>
+      <RC.Text as="p" size={2} lineHeight={1} textColor="grays.5">
+        {props.isOptional && 'optional'}{' '}
+        <RC.Code ml={!props.isOptional && -1}>{props.children}</RC.Code>
+      </RC.Text>
+      {props.default && (
+        <RC.Text as="p" size={2} lineHeight={1} textColor="grays.5">
+          default <RC.Code variant="fade">{props.default}</RC.Code>
+        </RC.Text>
+      )}
+    </RC.Box>
+  ),
 };
 
 function DocPageTemplate({ data, location, ...props }) {

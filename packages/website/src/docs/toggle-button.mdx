@@ -1,15 +1,28 @@
 ---
-title: Toggle Button
-component: ToggleButton
+title: Toggle Button Group
+component: ToggleButtonGroup
+description: Useful for allowing users to select only one option from a set.
 ---
 
-```js live
-<ToggleButtonGroup value="center" onChange={value => setValue(value)}>
-  <ToggleButton value="start">Start</ToggleButton>
-  <ToggleButton value="center">Center</ToggleButton>
-  <ToggleButton value="end">End</ToggleButton>
-</ToggleButtonGroup>
+```js live removeFragment
+() => {
+  const [value, setValue] = React.useState('center');
+
+  return (
+    <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
+      <ToggleButton value="start">Start</ToggleButton>
+      <ToggleButton value="center">Center</ToggleButton>
+      <ToggleButton value="end">End</ToggleButton>
+    </ToggleButtonGroup>
+  );
+};
 ```
+
+### children
+
+<Prop>ReactNode</Prop>
+
+The content to render inside the ToggleButtonGroup.
 
 ```js live
 <ToggleButtonGroup value="center" onChange={value => setValue(value)}>
@@ -25,25 +38,62 @@ component: ToggleButton
 </ToggleButtonGroup>
 ```
 
-## ToggleButtonGroup
-
-### Custom props
-
-| Name       | Type              | Default  | Description                                        |
-| :--------- | :---------------- | :------: | :------------------------------------------------- |
-| `variant`  | 'normal' \|'fade' | `normal` | Variant to display                                 |
-| `value`    | String \| Array   |  `null`  | Value of ToggleButton                              |
-| `onChange` | Function          |  `null`  | Callback when a ToggleButton selection has changed |
-
-## ToggleButton
-
 ### System props
 
 <SystemProps props={['margin']} />
 
-### Custom props
+<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={3}>
+  ToggleButton
+</Heading>
 
-| Name      | Type              | Default  | Description           |
-| :-------- | :---------------- | :------: | :-------------------- |
-| `variant` | 'normal' \|'fade' | `normal` | Variant to display    |
-| `value`   | String            |  `null`  | Value of ToggleButton |
+### children
+
+<Prop>ReactNode</Prop>
+
+The content to render inside the ToggleButton.
+
+### variant
+
+<Prop isOptional default="normal">
+  normal | fade
+</Prop>
+
+There are 2 variants to choose from.
+
+```js live removeFragment
+() => {
+  const [value, setValue] = React.useState('center');
+
+  return (
+    <>
+      <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
+        <ToggleButton value="start" variant="normal">
+          Start
+        </ToggleButton>
+        <ToggleButton value="center" variant="normal">
+          Center
+        </ToggleButton>
+        <ToggleButton value="end" variant="normal">
+          End
+        </ToggleButton>
+      </ToggleButtonGroup>
+
+      <ToggleButtonGroup
+        value={value}
+        onChange={value => setValue(value)}
+        mt={6}
+      >
+        <ToggleButton value="start" variant="fade">
+          Start
+        </ToggleButton>
+        <ToggleButton value="center" variant="fade">
+          Center
+        </ToggleButton>
+        <ToggleButton value="end" variant="fade">
+          End
+        </ToggleButton>
+      </ToggleButtonGroup>
+    </>
+  );
+};
+```

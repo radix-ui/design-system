@@ -1,14 +1,30 @@
 ---
 title: Badge
 component: Badge
+description: Useful to emphasise information to the user, works best with single word values.
 ---
 
 ```js live
 <Badge>Default</Badge>
 ```
 
+### children
+
+<Prop>ReactNode</Prop>
+
+The content to render inside the Badge.
+
+### variant
+
+<Prop isOptional default="gray">
+  gray | blue | green | red | yellow
+</Prop>
+
+There are 5 color variants to choose from.
+
 ```js live
-<Badge variant="blue">Badge</Badge>
+<Badge variant="gray">Badge</Badge>
+<Badge variant="blue" ml={3}>Badge</Badge>
 <Badge variant="green" ml={3}>
   Badge
 </Badge>
@@ -20,17 +36,19 @@ component: Badge
 </Badge>
 ```
 
+### size
+
+<Prop isOptional default="0">
+  0 | 1
+</Prop>
+
+There are 2 size options to choose from.
+
 ```js live
-<Badge size={1}>Badge</Badge>
+<Badge size={0}>Default</Badge>
+<Badge size={1} ml={6}>Large</Badge>
 ```
 
 ### System props
 
 <SystemProps props={['margin']} />
-
-### Custom props
-
-| Name      | Type                                             | Default | Description        |
-| :-------- | :----------------------------------------------- | :-----: | :----------------- |
-| `variant` | 'gray' \| 'blue' \| 'green' \| 'red' \| 'yellow' | `gray`  | Variant to display |
-| `size`    | 0 \| 1                                           |   `0`   | Size to display    |

@@ -79,11 +79,11 @@ const theme = {
   ],
 };
 
-export default ({ children, live, wrapInFragment = true }) => {
+export default ({ children, live, removeFragment }) => {
   const components = useMDXComponents();
 
   const liveProviderProps = {
-    transformCode: code => (wrapInFragment ? code : `<>${code}</>`),
+    transformCode: code => (removeFragment ? code : `<>${code}</>`),
     scope: { mdx, ...components },
   };
 

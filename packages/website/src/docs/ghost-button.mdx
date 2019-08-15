@@ -1,44 +1,65 @@
 ---
 title: Ghost Button
 component: GhostButton
+description: Useful to communicate actions to your users via iconography.
 ---
 
 ```js live
 <GhostButton>
   <PlusIcon size="15" />
 </GhostButton>
+```
 
-<GhostButton variant="active" ml={3}>
+### children
+
+<Prop>ReactNode</Prop>
+
+The content to render inside the GhostButton.
+
+### size
+
+<Prop isOptional default="0">
+  0 | 1
+</Prop>
+
+```js live
+<GhostButton>
   <PlusIcon size="15" />
 </GhostButton>
 
-<GhostButton disabled ml={3}>
+<GhostButton size={1} ml={6}>
+  <HamburgerIcon size="25" />
+</GhostButton>
+```
+
+### isActive
+
+<Prop isOptional default="false">
+  Boolean
+</Prop>
+
+For when your button is active.
+
+```js live
+<GhostButton isActive>
   <PlusIcon size="15" />
 </GhostButton>
 ```
 
+### disabled
+
+<Prop isOptional default="false">
+  Boolean
+</Prop>
+
+For when your button is disabled.
+
 ```js live
-<GhostButton size={1}>
-  <HamburgerIcon size="25" />
-</GhostButton>
-
-<GhostButton size={1} variant="active" ml={3}>
-  <HamburgerIcon size="25" />
-</GhostButton>
-
-<GhostButton size={1} disabled ml={3}>
-  <HamburgerIcon size="25" />
+<GhostButton disabled>
+  <PlusIcon size="15" />
 </GhostButton>
 ```
 
 ### System props
 
 <SystemProps props={['margin']} />
-
-### Custom props
-
-| Name       | Type                 | Default  | Description          |
-| :--------- | :------------------- | :------: | :------------------- |
-| `variant`  | 'normal' \| 'active' | `normal` | Variant to display   |
-| `size`     | 0 \| 1               |   `0`    | Size to display      |
-| `disabled` | Boolean              | `false`  | Disables the element |

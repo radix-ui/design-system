@@ -1,19 +1,19 @@
 ---
 title: Aspect Ratio
 component: AspectRatio
-description: An aspect ratio component, useful to keep your content within a desired ratio.
+description: Useful to keep your content within a desired ratio.
 ---
 
 ```js live
 <AspectRatio bg="blue" ratio="16:9" />
 ```
 
-### Props
+### side
 
-<PropsTable
-  data={{ side: 'Side', margin: 'StyleProp', backgroundColor: 'StyleProp' }}
-/>
-
-### side `Side (default: "top")`
+<Prop default="1:1">1:1 | 1:2 | 2:1 | 16:9 | 4:3</Prop>
 
 Sets the ratio to display.
+
+### System Props
+
+<SystemProps props={['margin', 'backgroundColor']} />

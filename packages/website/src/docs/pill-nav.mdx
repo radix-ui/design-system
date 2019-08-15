@@ -1,16 +1,29 @@
 ---
 title: Pill Nav
 component: PillNav
+description: Useful for displaying a list of navigation choices.
 ---
 
 ```js live
 <PillNav>
-  <Pill disabled>Settings</Pill>
+  <Pill>Settings</Pill>
   <Pill>Assets</Pill>
-  <Pill active>Components</Pill>
+  <Pill>Components</Pill>
   <Pill>Screen</Pill>
 </PillNav>
 ```
+
+### children
+
+<Prop>ReactNode</Prop>
+
+The content to render inside the PillNav.
+
+### pillWidth
+
+<Prop isOpional>CSS.WidthProperty</Prop>
+
+A width value to be passed down to all `Pill` children.
 
 ### System props
 

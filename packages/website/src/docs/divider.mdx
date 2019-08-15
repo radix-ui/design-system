@@ -1,16 +1,27 @@
 ---
 title: Divider
 component: Divider
+description: Useful for displaying a visual separator between parts of content.
 ---
 
 ```js live
 <Divider />
 ```
 
+### variant
+
+<Prop isOptional default="0">
+  0 | 1 | 2
+</Prop>
+
+There are 3 variants to choose from
+
 ```js live
-<Divider variant="vertical" height={50} />
+<Divider size={0} />
+<Divider size={1} mt={6}/>
+<Divider size={2} mt={6}/>
 ```
 
 ### System props
 
-<SystemProps props={['maxWidth', 'margin']} />
+<SystemProps props={['maxWidth', 'margin', 'backgroundColor', 'height']} />

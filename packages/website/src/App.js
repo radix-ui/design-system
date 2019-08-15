@@ -46,12 +46,12 @@ function App({ element, props }) {
       ) {
         ...mdxContent
       }
-      recipes: allMdx(
-        sort: { order: ASC, fields: [frontmatter___title] }
-        filter: { frontmatter: { recipe: { ne: null } } }
-      ) {
-        ...mdxContent
-      }
+      # recipes: allMdx(
+      #   sort: { order: ASC, fields: [frontmatter___title] }
+      #   filter: { frontmatter: { recipe: { ne: null } } }
+      # ) {
+      #   ...mdxContent
+      # }
     }
   `;
 
@@ -152,7 +152,7 @@ function App({ element, props }) {
 
                 <Divider mb={1} />
 
-                <Menu>
+                {/* <Menu>
                   <Heading size={0} fontWeight={500} mx={5} mb={2} mt={2}>
                     Recipes
                   </Heading>
@@ -168,7 +168,7 @@ function App({ element, props }) {
                   ))}
                 </Menu>
 
-                <Divider mb={1} />
+                <Divider mb={1} /> */}
 
                 <Menu>
                   <Heading size={0} fontWeight={500} mx={5} mb={2} mt={2}>
@@ -208,7 +208,8 @@ function App({ element, props }) {
             </Box>
 
             <Box
-              py={8}
+              pt={8}
+              pb={9}
               marginLeft={[0, 200, 250]}
               maxWidth={['100%']}
               display={[navOpen ? 'none' : 'block', 'block']}

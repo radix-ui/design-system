@@ -1,15 +1,16 @@
 ---
 title: Card Link
 component: CardLink
+description: Useful to group information about a single subject into a clickable element.
 ---
 
 ```js live
 <CardLink maxWidth={275}>
-  <Heading size={1} mb="3" fontWeight={500}>
-    Design tools are running out of track. Here’s how we can fix them.
+  <Heading size={1} fontWeight={500}>
+    Card heading
   </Heading>
-  <Text as="p" mb="4" size={3}>
-    An outline of two opposing narratives emerging in the design tool space.
+  <Text as="p" mt={2} mb={4} size={3}>
+    Card copy
   </Text>
   <Text size={2} textColor="grays.5">
     Today
@@ -17,13 +18,27 @@ component: CardLink
 </CardLink>
 ```
 
+### children
+
+<Prop>ReactNode</Prop>
+
+The content to render inside the CardLink.
+
+### variant
+
+<Prop isOptional default="normal">
+  normal | shadow | ghost
+</Prop>
+
+There are 3 variants to choose from.
+
 ```js live
 <CardLink maxWidth={275} variant="shadow">
-  <Heading size={1} mb="3" fontWeight={500}>
-    Design tools are running out of track. Here’s how we can fix them.
+  <Heading size={1} fontWeight={500}>
+    Card heading
   </Heading>
-  <Text as="p" mb="4" size={3}>
-    An outline of two opposing narratives emerging in the design tool space.
+  <Text as="p" mt={2} mb={4} size={3}>
+    Card copy
   </Text>
   <Text size={2} textColor="grays.5">
     Today
@@ -33,19 +48,17 @@ component: CardLink
 
 ```js live
 <CardLink maxWidth={275} variant="ghost">
-  <Heading size={1} mb="3" fontWeight={500}>
-    Design tools are running out of track. Here’s how we can fix them.
+  <Heading size={1} fontWeight={500}>
+    Card heading
   </Heading>
-  <Text as="p" mb="4" size={3}>
-    An outline of two opposing narratives emerging in the design tool space.
+  <Text as="p" mt={2} mb={4} size={3}>
+    Card copy
   </Text>
   <Text size={2} textColor="grays.5">
     Today
   </Text>
 </CardLink>
 ```
-
-The `CardLink` component composes the `Card` [component](/docs/card)
 
 ### System props
 
@@ -59,9 +72,3 @@ The `CardLink` component composes the `Card` [component](/docs/card)
     'maxWidth',
   ]}
 />
-
-### Custom props
-
-| Name      | Type                            | Default  | Description        |
-| :-------- | :------------------------------ | :------: | :----------------- |
-| `variant` | 'border' \| 'shadow' \| 'ghost' | `border` | Variant to display |

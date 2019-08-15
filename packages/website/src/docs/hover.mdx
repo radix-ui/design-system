@@ -1,6 +1,17 @@
 ---
 title: Hover
 component: Hover
+description: A component aware of its hover state.
 ---
 
-WIP
+```js live removeFragment
+<Hover>
+  {isHovered => <Box bg={isHovered ? 'black' : 'blue'} height={9}></Box>}
+</Hover>
+```
+
+### children
+
+<Prop>Function (isHovered: boolean) => ReactNode</Prop>
+
+A function that gets called when the mouse enters or leaves the component. This function received a `boolean` argument with its current hovered state.

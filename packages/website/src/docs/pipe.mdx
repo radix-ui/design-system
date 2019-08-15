@@ -1,22 +1,30 @@
 ---
 title: Pipe
 component: Pipe
+description: Useful for displaying a vertical separator between parts of content.
 ---
 
 ```js live
 <Pipe />
 ```
 
+### variant
+
+<Prop isOptional default="normal">
+  normal | large | fluid
+</Prop>
+
+There are 3 variants to choose from
+
 ```js live
-<Pipe variant="large" />
+<Pipe variant="normal" />
+<Pipe variant="large" mt={6}/>
+<Box height={50}>
+
+<Pipe variant="fluid" mt={6}/>
+</Box>
 ```
 
 ### System props
 
 <SystemProps props={['margin']} />
-
-### Custom props
-
-| Name      | Type                          | Default  | Description        |
-| :-------- | :---------------------------- | :------: | :----------------- |
-| `variant` | 'normal' \| 'large' \| 'fluid | `normal` | Variant to display |
