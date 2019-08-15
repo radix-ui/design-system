@@ -12,11 +12,11 @@ const slug = string => {
 
 export function PropsTable({ data }) {
   return (
-    <Box mt={8} mb={7}>
+    <Box mt={8} mb={7} overflow={['scroll', 'visible']}>
       <Heading as="h3" fontWeight={500} size={2} mt={8} mb={4}>
         Props
       </Heading>
-      <Box>
+      <Box minWidth={['540px', '0']}>
         <Table>
           <Thead>
             <Tr>
