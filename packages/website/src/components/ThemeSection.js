@@ -73,7 +73,10 @@ export function ThemeSection() {
       <Divider my={8} />
 
       <Heading>Colors</Heading>
-      <Grid gridTemplateColumns="repeat(4, 1fr)" gridGap={4}>
+      <Grid
+        gridTemplateColumns={['repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(4, 1fr)']}
+        gridGap={4}
+      >
         {Object.entries(theme.colors).map(([key, value]) => {
           if (Array.isArray(value)) {
             return value.map((color, index) => (
@@ -94,8 +97,9 @@ const ColorCard = ({ color, name }) => (
       variant={
         name.includes('white') || name.includes('.0') || name.includes('.1') ? 'border' : 'ghost'
       }
+      style={{ overflow: 'hidden' }}
     >
-      <AspectRatio width={100} bg={color} ratio="16:9" />
+      <AspectRatio width={100} bg={color} />
     </Card>
     <Box mt={1}>
       <RadixHeading as="h3" size={0} fontWeight={500} mb={1}>
