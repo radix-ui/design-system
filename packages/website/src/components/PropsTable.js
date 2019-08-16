@@ -12,7 +12,12 @@ const slug = string => {
 
 export function PropsTable({ data }) {
   return (
-    <Box mt={8} mb={7} overflow={['scroll', 'visible']}>
+    <Box
+      mt={8}
+      mb={7}
+      overflow={['scroll', 'visible']}
+      style={{ WebkitOverflowScrolling: 'touch' }}
+    >
       <Heading as="h3" fontWeight={500} size={2} mt={8} mb={4}>
         Props
       </Heading>
