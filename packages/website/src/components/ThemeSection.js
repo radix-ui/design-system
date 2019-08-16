@@ -64,11 +64,16 @@ export function ThemeSection() {
       <Divider my={8} />
 
       <Heading>Radii scale</Heading>
-      <Flex>
+      <Grid
+        gridTemplateColumns={['repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(4, 1fr)']}
+        gridGap={4}
+      >
         {Object.entries(theme.radii).map(([key, value]) => (
-          <Box width={50} height={50} borderRadius={value} bg="blue" mr={2}></Box>
+          <AspectRatio width={100}>
+            <Box width="100%" height="100%" borderRadius={value} bg="blue"></Box>
+          </AspectRatio>
         ))}
-      </Flex>
+      </Grid>
 
       <Divider my={8} />
 
