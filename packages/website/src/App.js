@@ -36,7 +36,7 @@ function App({ element, props }) {
     query {
       pinned: allMdx(
         sort: { order: ASC, fields: [frontmatter___title] }
-        filter: { frontmatter: { pinned: { ne: null } } }
+        filter: { frontmatter: { pinned: { ne: null }, hidden: { eq: null } } }
       ) {
         ...mdxContent
       }

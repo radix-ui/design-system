@@ -1,14 +1,15 @@
 import React from 'react';
-import githubSlugger from 'github-slugger';
+// import githubSlugger from 'github-slugger';
 import { Box, Table, Thead, Tr, Th, Tbody, Td, Code, Text, Heading } from '@modulz/radix';
 
-const slugger = githubSlugger();
+// Leaving it here to chill for a while in case we need it
+// const slugger = githubSlugger();
 // Slug function can be used like this:
 // slug(string)
-const slug = string => {
-  slugger.reset();
-  return slugger.slug(string);
-};
+// const slug = string => {
+//   slugger.reset();
+//   return slugger.slug(string);
+// };
 
 export function PropsTable({ data }) {
   return (

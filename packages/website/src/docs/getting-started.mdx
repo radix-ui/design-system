@@ -1,28 +1,29 @@
 ---
 title: Getting Started
 pinned: 'true'
+description: Radix is a design system built with Modulz, for Modulz.
 ---
 
-Radix is a Component Library built on top of [Radix System](/docs/radix-system).
+<!-- Radix is a Component Library built on top of [Radix System](/docs/radix-system). -->
 
 ### Installing Radix
 
 Radix is currently under heavy development, but can be installed by running either of these commands:
 
-```js
+```
 npm install @modulz/radix
 ```
 
 <br />
 or
 
-```js
+```
 yarn add @modulz/radix
 ```
 
-### RadixProvider
+### Radix Provider
 
-Make sure to wrap your app in `RadixProvider` to get the default theme
+Make sure to wrap your app in `RadixProvider` to get the default theme:
 
 ```js
 import { RadixProvider } from '@modulz/radix';
@@ -32,7 +33,7 @@ const App = () => <RadixProvider>Hey there👋</RadixProvider>;
 
 ### Importing components from Radix
 
-All components can be imported directly.
+All components can be imported directly:
 
 ```js
 import { Heading, Text, Link } from '@modulz/radix';
