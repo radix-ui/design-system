@@ -18,7 +18,7 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>((props
     {...props}
     ref={ref}
     css={[
-      css({ marginX: 'auto', paddingX: 5, flex: 1, maxWidth: '25rem' }),
+      css({ marginX: 'auto', paddingX: 5, flex: 1 }),
       variant({
         size: {
           0: {
@@ -35,3 +35,7 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>((props
     ]}
   />
 ));
+
+Container.defaultProps = {
+  size: 0,
+};

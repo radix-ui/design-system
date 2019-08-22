@@ -1,14 +1,22 @@
 ---
 title: Checkbox Button
 component: CheckboxButton
+description: Useful to have a more visual representation of a Checkbox.
 ---
 
-```js live=true
+```js live
 <CheckboxButton>
   <VisibleIcon />
 </CheckboxButton>
 ```
 
-### System Props
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+  }}
+/>
 
 <SystemProps props={['margin', 'padding']} />

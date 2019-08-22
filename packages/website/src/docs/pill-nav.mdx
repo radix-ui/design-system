@@ -1,25 +1,29 @@
 ---
 title: Pill Nav
 component: PillNav
+description: Useful for displaying a list of navigation choices.
 ---
 
-```js live=true
+```js live
 <PillNav>
-  <Pill disabled>Settings</Pill>
-  <Pill>Assets</Pill>
-  <Pill active>Components</Pill>
-  <Pill>Screen</Pill>
+  <PillButton>Settings</PillButton>
+  <PillButton>Assets</PillButton>
+  <PillButton>Components</PillButton>
+  <PillButton>Screen</PillButton>
 </PillNav>
 ```
 
-### System props
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    pillWidth: {
+      type: 'CSS.WidthProperty',
+      description: 'The width to apply to its children',
+    },
+  }}
+/>
 
 <SystemProps props={['margin']} />
-
-### Custom props
-
-| Name        | Type            |   Default   | Description                           |
-| :---------- | :-------------- | :---------: | :------------------------------------ |
-| `active`    | Boolean         |   `false`   | Changes the syling to active state    |
-| `disabled`  | Boolean         |   `false`   | Disables the element                  |
-| `pillWidth` | ResponsiveValue | `undefined` | Sets a fix width to the Pill elements |

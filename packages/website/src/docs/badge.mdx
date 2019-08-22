@@ -1,14 +1,43 @@
 ---
 title: Badge
 component: Badge
+description: Useful to emphasise information to the user, works best with single word values.
 ---
 
-```js live=true
+```js live
 <Badge>Default</Badge>
 ```
 
-```js live=true
-<Badge variant="blue">Badge</Badge>
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'gray | blue | green | red | yellow',
+      default: 'gray',
+      description: 'The variant to apply',
+    },
+    size: {
+      type: '0 | 1',
+      default: '0',
+      description: 'The  size to apply',
+    },
+  }}
+/>
+
+<SystemProps props={['margin']} />
+
+## Examples
+
+### Variants
+
+There are 5 color variants to choose from.
+
+```js live
+<Badge variant="gray">Badge</Badge>
+<Badge variant="blue" ml={3}>Badge</Badge>
 <Badge variant="green" ml={3}>
   Badge
 </Badge>
@@ -20,17 +49,11 @@ component: Badge
 </Badge>
 ```
 
-```js live=true
-<Badge size={1}>Badge</Badge>
+### Sizes
+
+There are 2 sizes to choose from.
+
+```js live
+<Badge size={0}>Default</Badge>
+<Badge size={1} ml={6}>Large</Badge>
 ```
-
-### System props
-
-<SystemProps props={['margin']} />
-
-### Custom props
-
-| Name      | Type                                             | Default | Description        |
-| :-------- | :----------------------------------------------- | :-----: | :----------------- |
-| `variant` | 'gray' \| 'blue' \| 'green' \| 'red' \| 'yellow' | `gray`  | Variant to display |
-| `size`    | 0 \| 1                                           |   `0`   | Size to display    |

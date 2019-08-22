@@ -1,6 +1,7 @@
 ---
 title: Radix System
 pinned: 'true'
+hidden: 'true'
 ---
 
 <Divider size={2} my={6} />
@@ -75,7 +76,7 @@ const styleProps = compose(
   backgroundColor
 );
 type BoxProps = MarginProps & BackgroundColorProps;
-const Box = styled('div')<BoxProps>(styleProps);
+const Box = styled('div') < BoxProps > styleProps;
 
 const App = () => (
   <Box my={4} bg="blue">

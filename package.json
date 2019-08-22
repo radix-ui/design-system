@@ -16,7 +16,7 @@
     "icons": "lerna exec --scope @modulz/radix-icons -- yarn watch",
     "icons:build": "lerna exec --scope @modulz/radix-icons -- yarn build",
     "build": "yarn radix-system:build && yarn radix:build && yarn icons:build && yarn website:build",
-    "prettier": "prettier './**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md}' --write",
+    "prettier": "prettier './**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md,mdx}' --write",
     "lint": "eslint './packages/**/*.{js,jsx,ts,tsx}'",
     "clean": "npm run clean-logs && npm run clean-modules",
     "clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
@@ -59,7 +59,7 @@
       "eslint --fix",
       "git add"
     ],
-    "*.{md,json}": [
+    "*.{md,mdx,json}": [
       "prettier --write",
       "git add"
     ]

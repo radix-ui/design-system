@@ -1,9 +1,10 @@
 ---
 title: Radio Group
 component: RadioGroup
+description: Useful for simplifying the usage of Radio elements.
 ---
 
-```js live=true
+```js live
 <RadioGroup name="flexDirection">
   <Radio value="row" defaultChecked>
     Row
@@ -12,17 +13,11 @@ component: RadioGroup
 </RadioGroup>
 ```
 
-## RadioGroup
-
-### Custom props
-
-| Name       | Type         | Default | Description                                        |
-| :--------- | :----------- | :-----: | :------------------------------------------------- |
-| `name`     | String       | `null`  | `name` attribute to be passed down to the children |
-| `children` | ReactElement | `null`  | Children should be `Radio` Elements                |
-
-## Radio
-
-### System Props
-
-<SystemProps props={['margin']} />
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+  }}
+/>

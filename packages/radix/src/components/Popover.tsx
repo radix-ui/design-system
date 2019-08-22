@@ -18,7 +18,7 @@ export const Popover = ({ children, ...props }: PopoverProps) => {
       arrow={<Arrow width={20} height={10} />}
       {...props}
     >
-      <Card variant="shadow" p={0} width={120} borderWidth={0}>
+      <Card variant="shadow" p={0} borderWidth={0}>
         {children}
       </Card>
     </PopoverPrimitive>

@@ -1,32 +1,29 @@
 ---
 title: Select
 component: Select
+description: Useful for allowing users to select only one option from a set.
 ---
 
-```js live=true
+```js live
 <Select>
-  <option value="normal">Normal</option>
-  <option value="mouseover">Mouseover</option>
-  <option value="focused">Focused</option>
-  <option value="pressed">Pressed</option>
+  <option value="option1">Option one</option>
+  <option value="option2">Option two</option>
+  <option value="option3">Option three</option>
 </Select>
 ```
 
-```js live=true
-<Select variant="fade">
-  <option value="normal">Normal</option>
-  <option value="mouseover">Mouseover</option>
-  <option value="focused">Focused</option>
-  <option value="pressed">Pressed</option>
-</Select>
-```
-
-### System props
+<PropsTable
+  data={{
+    children: {
+      type: 'HTMLOptionElement',
+      description: 'The options to render',
+    },
+    variant: {
+      type: 'normal | fade',
+      default: 'normal',
+      description: 'The variant to apply',
+    },
+  }}
+/>
 
 <SystemProps props={['margin', 'width']} />
-
-### Custom props
-
-| Name      | Type              | Default  | Description        |
-| :-------- | :---------------- | :------: | :----------------- |
-| `variant` | 'normal' \|'fade' | `normal` | Variant to display |

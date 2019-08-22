@@ -1,19 +1,23 @@
 ---
 title: Box
 component: Box
+description: A primitive useful for layout.
 ---
 
-```js live=true
-<Box width="90px" height="90px" backgroundColor="blue" />
-```
-
-```js live=true
-<Box padding={4} textColor="white" backgroundColor="blue">
-  Hey there 👋
+```js live
+<Box p={6} textColor="white" bg="blue" borderRadius={1}>
+  Box
 </Box>
 ```
 
-### System props
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+  }}
+/>
 
 <SystemProps
   props={[

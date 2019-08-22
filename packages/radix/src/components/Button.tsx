@@ -11,11 +11,13 @@ const waitingAnimation = (props: ButtonProps) => keyframes`
 	}
 `;
 
-type Variants = 'gray' | 'blue' | 'green' | 'red' | 'active' | 'waiting';
+type Variants = 'gray' | 'blue' | 'green' | 'red';
 type Sizes = 0 | 1;
 
 type ButtonProps = ButtonPrimitiveProps & {
   variant?: Prop<Variants>;
+  isActive?: boolean;
+  isWaiting?: boolean;
   size?: Prop<Sizes>;
   // TODO: type Theme
   theme?: any;
@@ -109,7 +111,11 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
               borderColor: 'grays.4',
             },
           },
-          active: {
+        },
+      }),
+      variant({
+        isActive: {
+          true: {
             backgroundColor: 'grays.1',
             borderColor: 'grays.3',
             color: 'grays.5',
@@ -123,11 +129,6 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
               backgroundColor: 'grays.1',
               borderColor: 'grays.4',
             },
-          },
-          waiting: {
-            backgroundColor: 'grays.2',
-            borderColor: 'grays.3',
-            color: 'transparent',
           },
         },
       }),
@@ -147,33 +148,40 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
           },
         },
       }),
-      // Code below specifically for the `waiting` variant
-      props.variant === 'waiting' &&
-        css({
-          overflow: 'hidden',
-          position: 'relative',
-          pointerEvents: 'none',
-          '&::before': {
-            position: 'absolute',
-            content: `''`,
-            top: 0,
-            left: '-100%',
-            width: '200%',
-            height: '100%',
-            backgroundImage: `linear-gradient(
-            -45deg,
-            transparent 33%,
-            rgba(0, 0, 0, 0.05) 33%,
-            rgba(0, 0, 0, 0.05) 66%,
-            transparent 66%
-          )`,
-            backgroundSize:
-              props.size === 1
-                ? `${themeGet('space.9')(props)} ${themeGet('space.6')(props)}`
-                : `${themeGet('space.7')(props)} ${themeGet('space.5')(props)}`,
+      variant({
+        isWaiting: {
+          true: {
+            backgroundColor: 'grays.2',
+            borderColor: 'grays.3',
+            color: 'transparent',
+            overflow: 'hidden',
+            position: 'relative',
+            pointerEvents: 'none',
+            '&::before': {
+              position: 'absolute',
+              content: `''`,
+              top: 0,
+              left: '-100%',
+              width: '200%',
+              height: '100%',
+              backgroundImage: `linear-gradient(
+              -45deg,
+              transparent 33%,
+              rgba(0, 0, 0, 0.05) 33%,
+              rgba(0, 0, 0, 0.05) 66%,
+              transparent 66%
+            )`,
+              backgroundSize:
+                props.size === 1
+                  ? `${themeGet('space.9')(props)} ${themeGet('space.6')(props)}`
+                  : `${themeGet('space.7')(props)} ${themeGet('space.5')(props)}`,
+            },
           },
-        }),
-      _css`
+        },
+      }),
+      // Code below specifically for the `isWaiting` variant
+      props.isWaiting &&
+        _css`
       &::before {
         animation: ${waitingAnimation(props)} 500ms linear infinite
       }
