@@ -16,7 +16,8 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "watch": "rollup -cw"
+    "watch": "rollup -cw",
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "@styled-system/core": "^5.1.0",

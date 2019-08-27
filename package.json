@@ -5,8 +5,8 @@
     "nohoist": ["**/mdlz-prmtz"]
   },
   "scripts": {
-    "postinstall": "yarn radix-system:build && yarn radix:build",
-    "start": "npm-run-all --parallel radix website",
+    "init": "yarn radix-system:build && yarn radix:build",
+    "start": "npm-run-all --parallel radix-system radix website",
     "website": "lerna exec --scope website -- yarn start",
     "website:build": "lerna exec --scope website -- yarn build",
     "radix": "lerna exec --scope @modulz/radix -- yarn watch",
@@ -19,7 +19,7 @@
     "clean": "npm run clean-logs && npm run clean-modules",
     "clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
     "clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/",
-    "release": "yarn radix-system:build && yarn radix:build && lerna publish"
+    "release": "lerna publish"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.13.0",

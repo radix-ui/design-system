@@ -20,7 +20,8 @@
     "build": "rollup -c",
     "watch": "rollup -cw",
     "link-primitives": "yalc add mdlz-prmtz && yarn",
-    "unlink-primitives": "yalc remove mdlz-prmtz && yarn"
+    "unlink-primitives": "yalc remove mdlz-prmtz && yarn",
+    "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "react": "^16.8.6",
