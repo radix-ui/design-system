@@ -1,20 +1,49 @@
 ---
 title: Flex
 component: Flex
+description: A primitive useful for flexible layouts.
 ---
 
-```js live=true
-<Box mb={4}>
-  <Flex>
-    <Box flex="1" height={35} bg="blue" />
-    <Box flex="1" height={35} bg="blue" mx={4} />
-    <Box flex="1" height={35} bg="blue" />
-  </Flex>
-</Box>
+```js live
+<Flex>
+  <Box flex="1" height={35} bg="blue" />
+  <Box flex="1" height={35} bg="blue" mx={6} />
+  <Box flex="1" height={35} bg="blue" />
+</Flex>
 ```
 
-### System props
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+  }}
+/>
 
-The `Flex` Component also supports [all the props](/docs/box) from `Box`
-
-<SystemProps props={['flexParentSet']} />
+<SystemProps
+  props={[
+    'flexContainerSet',
+    // everything below is from Box
+    'border',
+    'borderRadius',
+    'boxShadow',
+    'backgroundColor',
+    'display',
+    'opacity',
+    'height',
+    'justifySelf',
+    'margin',
+    'maxWidth',
+    'maxHeight',
+    'minHeight',
+    'minWidth',
+    'overflow',
+    'padding',
+    'positionSet',
+    'textAlign',
+    'textColor',
+    'width',
+    'flexItemSet',
+  ]}
+/>

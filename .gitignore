@@ -28,3 +28,8 @@ yarn-error.log*
 .rpt2_cache/
 dist/
 .cache
+
+# yalc
+# https://github.com/whitecolor/yalc#keep-it-out-of-git
+.yalc
+yalc.lock

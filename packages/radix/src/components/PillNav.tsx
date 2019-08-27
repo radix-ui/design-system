@@ -36,7 +36,7 @@ type PillProps = PillWidthProps & {
   active?: boolean;
 };
 
-export const Pill = styled('button')<PillProps>(
+export const PillButton = styled('button')<PillProps>(
   ({ active, pillWidth, ...props }) =>
     css({
       appearance: 'none',
@@ -83,6 +83,10 @@ export const Pill = styled('button')<PillProps>(
       '&:disabled': {
         backgroundColor: 'grays.1',
         color: 'grays.4',
+      },
+      '&:focus': {
+        borderColor: 'grays.4',
+        zIndex: 2,
       },
       '&::-moz-focus-inner': {
         border: 0,

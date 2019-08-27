@@ -6,6 +6,7 @@ export const Table = styled('table')({
   borderCollapse: 'collapse',
   textAlign: 'left',
 });
+
 export const Thead = styled('thead')({});
 export const Tbody = styled('tbody')({});
 export const Tr = styled('tr')({});
@@ -18,6 +19,7 @@ export const Td = styled('td')(
     fontSize: 2,
   })
 );
+
 export const Th = styled(Td)(
   css({
     fontFamily: 'medium',
@@ -25,4 +27,5 @@ export const Th = styled(Td)(
     borderWidth: 2,
   })
 ).withComponent('th');
+
 export const Tfoot = styled('tfoot')({});

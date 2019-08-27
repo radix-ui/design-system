@@ -1,23 +1,9 @@
-import styled from 'styled-components';
+import React from 'react';
 import css from '@styled-system/css';
-import { textColor, TextColorProps, fontSize, FontSizeProps, compose } from '@modulz/radix-system';
+import { Link as LinkPrimitive, LinkProps as LinkPrimitiveProps } from 'mdlz-prmtz';
 
-type LinkProps = TextColorProps & FontSizeProps & { to?: string };
+type LinkProps = LinkPrimitiveProps & { to?: string; children?: React.ReactNode; as?: any };
 
-const styleProps = compose(
-  textColor,
-  fontSize
-);
-
-export const Link = styled('a')<LinkProps>(
-  css({
-    color: 'blue',
-    textDecoration: 'none',
-    cursor: 'pointer',
-    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-    '&:hover': {
-      textDecoration: 'underline',
-    },
-  }),
-  styleProps
-);
+export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => (
+  <LinkPrimitive {...props} ref={ref} css={css({ color: 'blue' })} />
+));

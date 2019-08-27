@@ -1,76 +1,74 @@
-import styled from 'styled-components';
-import { margin, MarginProps, variant, Prop } from '@modulz/radix-system';
+import React from 'react';
 import css from '@styled-system/css';
+import { variant, Prop } from '@modulz/radix-system';
+import { Badge as BadgePrimitive, BadgeProps as BadgePrimitiveProps } from 'mdlz-prmtz';
 
 type Variants = 'gray' | 'blue' | 'green' | 'red' | 'yellow';
 type Sizes = 0 | 1;
 
-type BadgeProps = MarginProps & {
+type BadgeProps = BadgePrimitiveProps & {
   variant?: Prop<Variants>;
   size?: Prop<Sizes>;
+  children?: React.ReactNode;
+  as?: any;
 };
 
-export const Badge = styled('span')<BadgeProps>(
-  css({
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-    border: '1px solid',
-    borderRadius: 9999,
-    display: 'inline-flex',
-    fontFamily: 'medium',
-    fontWeight: 500,
-    letterSpacing: '.134em',
-    outline: 'none',
-    paddingY: 0,
-    textIndent: '.134em',
-    textTransform: 'uppercase',
-    userSelect: 'none',
-    verticalAlign: 'middle',
-    whiteSpace: 'nowrap',
-  }),
-  variant({
-    variant: {
-      gray: {
-        borderColor: 'grays.3',
-        color: 'grays.5',
-      },
-      blue: {
-        borderColor: 'blues.3',
-        color: 'blues.5',
-      },
-      green: {
-        borderColor: 'greens.3',
-        color: 'greens.5',
-      },
-      red: {
-        borderColor: 'reds.3',
-        color: 'reds.5',
-      },
-      yellow: {
-        borderColor: 'yellows.3',
-        color: 'yellows.5',
-      },
-    },
-  }),
-  variant({
-    size: {
-      0: {
-        fontSize: 0,
-        height: 3,
-        minWidth: 5,
-        paddingX: 2,
-      },
-      1: {
-        fontSize: 1,
-        height: 5,
-        minWidth: 6,
-        paddingX: 3,
-      },
-    },
-  }),
-  { lineHeight: 1 },
-  margin
-);
+export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => (
+  <BadgePrimitive
+    {...props}
+    ref={ref}
+    css={[
+      css({
+        fontFamily: 'medium',
+        fontWeight: 500,
+        letterSpacing: '.134em',
+        padding: 0,
+        textIndent: '.134em',
+        textTransform: 'uppercase',
+      }),
+      variant({
+        variant: {
+          gray: {
+            borderColor: 'grays.3',
+            color: 'grays.5',
+          },
+          blue: {
+            borderColor: 'blues.3',
+            color: 'blues.5',
+          },
+          green: {
+            borderColor: 'greens.3',
+            color: 'greens.5',
+          },
+          red: {
+            borderColor: 'reds.3',
+            color: 'reds.5',
+          },
+          yellow: {
+            borderColor: 'yellows.3',
+            color: 'yellows.5',
+          },
+        },
+      }),
+      variant({
+        size: {
+          0: {
+            fontSize: 0,
+            height: 3,
+            minWidth: 5,
+            paddingX: 2,
+          },
+          1: {
+            fontSize: 1,
+            height: 5,
+            minWidth: 6,
+            paddingX: 3,
+          },
+        },
+      }),
+    ]}
+  />
+));
 
 Badge.defaultProps = {
   variant: 'gray',

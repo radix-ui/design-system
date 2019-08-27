@@ -1,31 +1,49 @@
 ---
 title: Input
 component: Input
+description: Useful for allowing users to enter, update and select text.
 ---
 
-```js live=true
+```js live
 <Input placeholder="Your e-mail address" />
 ```
 
-```js live=true
-<Input size={1} placeholder="Your e-mail address" />
+<PropsTable
+  data={{
+    size: {
+      type: '0 | 1',
+      default: '0',
+      description: 'The size to apply',
+    },
+    variant: {
+      type: 'normal | fade | ghost',
+      default: 'normal',
+      description: 'The variant to apply',
+    },
+  }}
+/>
+
+<SystemProps
+  props={['textColor', 'margin', 'padding', 'width', 'maxWidth', 'textAlign']}
+/>
+
+## Examples
+
+### Size
+
+There are 2 sizes to choose from.
+
+```js live
+<Input placeholder="Your e-mail address" />
+<Input placeholder="Your e-mail address" mt={6} size={1} />
 ```
 
-```js live=true
-<Input value="Auto" />
+### Variants
+
+There are 3 variants to choose from.
+
+```js live
+<Input value="your@email.io" variant="normal" />
+<Input value="your@email.io" mt={6} variant="fade" />
+<Input value="your@email.io" mt={6} variant="ghost" />
 ```
-
-```js live=true
-<Input value="50px" variant="fade" />
-```
-
-### System props
-
-<SystemProps props={['textColor', 'margin', 'padding', 'width', 'maxWidth', 'textAlign']} />
-
-### Custom props
-
-| Name      | Type                          | Default  | Description        |
-| :-------- | :---------------------------- | :------: | :----------------- |
-| `variant` | 'normal' \| 'ghost' \| 'fade' | `normal` | Variant to display |
-| `size`    | 0 \| 1                        |   `0`    | Size to display    |

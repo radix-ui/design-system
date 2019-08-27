@@ -43,23 +43,23 @@ storiesOf('Components|Text', module).add('default', () => (
       <Text as="p" fontStyle="italic">
         Closing the gap between designers and developers.
       </Text>
-      <Text as="p" fontWeight="bold">
+      <Text as="p" fontWeight={500}>
         Closing the gap between designers and developers.
       </Text>
     </Box>
 
     <Box mb="4">
       <Text as="p">The Design System spot</Text>
-      <Text as="p" color="blue">
+      <Text as="p" textColor="blue">
         The Design System spot
       </Text>
-      <Text as="p" color="red">
+      <Text as="p" textColor="red">
         The Design System spot
       </Text>
-      <Text as="p" color="green">
+      <Text as="p" textColor="green">
         The Design System spot
       </Text>
-      <Text as="p" color="gray">
+      <Text as="p" textColor="gray">
         The Design System spot
       </Text>
     </Box>

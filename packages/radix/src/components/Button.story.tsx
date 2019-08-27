@@ -38,10 +38,10 @@ storiesOf('Components|Button', module).add('default', () => (
     </Box>
 
     <Box mb="4">
-      <Button variant="active" mr="4">
+      <Button isActive mr="4">
         Active
       </Button>
-      <Button variant="active" size={1}>
+      <Button isActive size={1}>
         Active
       </Button>
     </Box>
@@ -56,10 +56,10 @@ storiesOf('Components|Button', module).add('default', () => (
     </Box>
 
     <Box mb="4">
-      <Button variant="waiting" mr="4">
+      <Button isWaiting mr="4">
         Waiting
       </Button>
-      <Button variant="waiting" size={1}>
+      <Button isWaiting size={1}>
         Waiting
       </Button>
     </Box>

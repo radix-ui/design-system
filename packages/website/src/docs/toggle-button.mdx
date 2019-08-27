@@ -1,34 +1,96 @@
 ---
-title: Toggle Button
-component: ToggleButton
+title: Toggle Button Group
+component: ToggleButtonGroup
+description: Useful for allowing users to select one or more options from a set.
 ---
 
-```js live=true
-<ToggleButtonGroup name="align1">
-  <ToggleButton defaultChecked>Start</ToggleButton>
-  <ToggleButton>Middle</ToggleButton>
-  <ToggleButton>End</ToggleButton>
-</ToggleButtonGroup>
+```js live removeFragment
+() => {
+  const [value, setValue] = React.useState('center');
+
+  return (
+    <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
+      <ToggleButton value="start">Start</ToggleButton>
+      <ToggleButton value="center">Center</ToggleButton>
+      <ToggleButton value="end">End</ToggleButton>
+    </ToggleButtonGroup>
+  );
+};
 ```
 
-```js live=true
-<ToggleButtonGroup name="align2" variant="fade">
-  <ToggleButton defaultChecked>Start</ToggleButton>
-  <ToggleButton>Middle</ToggleButton>
-  <ToggleButton>End</ToggleButton>
-</ToggleButtonGroup>
-```
-
-## ToggleButton
-
-### System props
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+  }}
+/>
 
 <SystemProps props={['margin']} />
 
-### Custom props
+<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={3}>
+  ToggleButton
+</Heading>
 
-| Name       | Type              | Default  | Description                                        |
-| :--------- | :---------------- | :------: | :------------------------------------------------- |
-| `variant`  | 'normal' \|'fade' | `normal` | Variant to display                                 |
-| `name`     | String            |  `null`  | `name` attribute to be passed down to the children |
-| `children` | ReactElement      |  `null`  | Children should be `Radio` Elements                |
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'normal | fade',
+      default: 'normal',
+      description: 'The variant to apply',
+    },
+  }}
+/>
+
+## Examples
+
+### Variants
+
+<Prop isOptional default="normal">
+  normal | fade
+</Prop>
+
+There are 2 variants to choose from.
+
+```js live removeFragment
+() => {
+  const [value, setValue] = React.useState('center');
+
+  return (
+    <>
+      <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
+        <ToggleButton value="start" variant="normal">
+          Start
+        </ToggleButton>
+        <ToggleButton value="center" variant="normal">
+          Center
+        </ToggleButton>
+        <ToggleButton value="end" variant="normal">
+          End
+        </ToggleButton>
+      </ToggleButtonGroup>
+
+      <ToggleButtonGroup
+        value={value}
+        onChange={value => setValue(value)}
+        mt={6}
+      >
+        <ToggleButton value="start" variant="fade">
+          Start
+        </ToggleButton>
+        <ToggleButton value="center" variant="fade">
+          Center
+        </ToggleButton>
+        <ToggleButton value="end" variant="fade">
+          End
+        </ToggleButton>
+      </ToggleButtonGroup>
+    </>
+  );
+};
+```

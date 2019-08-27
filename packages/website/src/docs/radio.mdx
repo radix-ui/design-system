@@ -1,0 +1,23 @@
+---
+title: Radio
+component: Radio
+description: Useful for allowing users to select only one option from a set.
+---
+
+```js live
+<Radio name="direction" value="row" defaultChecked>
+  Row
+</Radio>
+<Radio name="direction" value="column">Column</Radio>
+```
+
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+  }}
+/>
+
+<SystemProps props={['margin']} />

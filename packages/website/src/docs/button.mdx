@@ -1,18 +1,55 @@
 ---
 title: Button
 component: Button
+description: Useful to communicate actions to your users.
 ---
 
-```js live=true
+```js live
 <Button>New project</Button>
 ```
 
-### Color
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'gray | blue | green | red',
+      default: 'gray',
+      description: 'The variant to apply',
+    },
+    size: {
+      type: '0 | 1',
+      default: '0',
+      description: 'The size to apply',
+    },
+    isActive: {
+      type: 'Boolean',
+      default: 'false',
+      description: 'Whether it is active or not',
+    },
+    isWaiting: {
+      type: 'Boolean',
+      default: 'false',
+      description: 'Whether it is waiting or not',
+    },
+  }}
+/>
 
-There are 4 color options to choose from.
+<SystemProps props={['margin']} />
 
-```js live=true
-<Button variant="blue">
+## Examples
+
+### Colors
+
+There are 4 colors to choose from.
+
+```js live
+<Button variant="gray">
+  Cancel
+</Button>
+<Button variant="blue" ml={6}>
   Save
 </Button>
 <Button variant="green" ml={6}>
@@ -23,11 +60,11 @@ There are 4 color options to choose from.
 </Button>
 ```
 
-### Size
+### Sizes
 
-There are 2 size options to choose from.
+There are 2 sizes to choose from.
 
-```js live=true
+```js live
 <Button size={0}>
   Default
 </Button>
@@ -36,38 +73,18 @@ There are 2 size options to choose from.
 </Button>
 ```
 
-### Active
+### Active state
 
-When a button is active.
+For when your button is active.
 
-```js live=true
-<Button variant="active">Add</Button>
+```js live
+<Button isActive>Add</Button>
 ```
 
-### Waiting
+### Waiting state
 
 When the user is waiting for the server to respond.
 
-```js live=true
-<Button variant="waiting">Waiting</Button>
+```js live
+<Button isWaiting>Waiting</Button>
 ```
-
-### Disabled
-
-For when your button is disabled.
-
-```js live=true
-<Button disabled>New project</Button>
-```
-
-### System props
-
-<SystemProps props={['margin']} />
-
-### Custom props
-
-| Name       | Type                                                          | Default | Description          |
-| :--------- | :------------------------------------------------------------ | :-----: | :------------------- |
-| `variant`  | 'gray' \| 'blue' \| 'green' \| 'red' \| 'active' \| 'waiting' | `gray`  | Variant to display   |
-| `size`     | 0 \| 1                                                        |   `0`   | Size to display      |
-| `disabled` | Boolean                                                       | `false` | Disables the element |

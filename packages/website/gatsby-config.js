@@ -11,9 +11,11 @@ module.exports = {
     },
     'gatsby-plugin-catch-links',
     {
-      resolve: 'gatsby-mdx',
+      resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.md', '.mdx'],
+
+        remarkPlugins: [require('remark-slug'), require('remark-autolink-headings')],
       },
     },
     {

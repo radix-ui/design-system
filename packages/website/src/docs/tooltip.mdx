@@ -1,38 +1,254 @@
 ---
 title: Tooltip
 component: Tooltip
+description: An accessible Tooltip component that shows information related to an element when it is hovered or focused.
 ---
 
-```js live=true
-<Box width={120}>
-  <ToggleButtonGroup name="direction">
-    <ToggleButton defaultChecked>
-      <Tooltip text="Row">
-        <DirectionRowIcon />
-      </Tooltip>
-    </ToggleButton>
-    <ToggleButton>
-      <Tooltip text="Column">
-        <DirectionColumnIcon />
-      </Tooltip>
-    </ToggleButton>
-  </ToggleButtonGroup>
-</Box>
+<Box display={{small:'block', large:'none'}}>
+
+```js live
+<Tooltip label="Hey there, now try focusing" side="bottom" align="center">
+  <Button size={1}>Hover me</Button>
+</Tooltip>
 ```
 
-```js live=true
-<Box m="10px">
-  <Tooltip position="bottom" text="Menu">
-    <GhostButton size="medium">
-      <HamburgerIcon size="25" />
-    </GhostButton>
+</Box>
+
+<Box display={{small:'none', large:'block'}}>
+
+```js live
+<Grid gridTemplateColumns="repeat(5, 1fr)" gridTemplateRows="repeat(5, 1fr)">
+  <Tooltip label="Top start" side="top" align="start">
+    <Button
+      css={{ gridColumn: '2', gridRow: '1', justifyContent: 'center' }}
+      m={1}
+      size={1}
+    >
+      <PinTopIcon size="25" /> <JustifyStartIcon size="25" />
+    </Button>
   </Tooltip>
-</Box>
+  <Tooltip label="Top center" side="top" align="center">
+    <Button
+      css={{ gridColumn: '3', gridRow: '1', justifyContent: 'center' }}
+      m={1}
+      size={1}
+    >
+      <PinTopIcon size="25" /> <JustifyCenterIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Top end" side="top" align="end">
+    <Button
+      css={{ gridColumn: '4', gridRow: '1', justifyContent: 'center' }}
+      m={1}
+      size={1}
+    >
+      <PinTopIcon size="25" /> <JustifyEndIcon size="25" />
+    </Button>
+  </Tooltip>
+
+  <Tooltip label="Right start" side="right" align="start">
+    <Button
+      css={{ gridColumn: '5', gridRow: '2', justifyContent: 'center' }}
+      m={1}
+      size={1}
+    >
+      <PinRightIcon size="25" /> <AlignStartIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Right center" side="right" align="center">
+    <Button
+      css={{ gridColumn: '5', gridRow: '3', justifyContent: 'center' }}
+      m={1}
+      size={1}
+    >
+      <PinRightIcon size="25" /> <AlignCenterIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Right end" side="right" align="end">
+    <Button
+      css={{ gridColumn: '5', gridRow: '4', justifyContent: 'center' }}
+      m={1}
+      size={1}
+    >
+      <PinRightIcon size="25" /> <AlignEndIcon size="25" />
+    </Button>
+  </Tooltip>
+
+  <Tooltip label="Bottom end" side="bottom" align="end">
+    <Button
+      css={{ gridColumn: '4', gridRow: '5', justifyContent: 'center' }}
+      m={1}
+      size={1}
+    >
+      <PinBottomIcon size="25" /> <JustifyEndIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Bottom center" side="bottom" align="center">
+    <Button
+      css={{ gridColumn: '3', gridRow: '5', justifyContent: 'center' }}
+      m={1}
+      size={1}
+    >
+      <PinBottomIcon size="25" /> <JustifyCenterIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Bottom start" side="bottom" align="start">
+    <Button
+      css={{ gridColumn: '2', gridRow: '5', justifyContent: 'center' }}
+      m={1}
+      size={1}
+    >
+      <PinBottomIcon size="25" /> <JustifyEndIcon size="25" />
+    </Button>
+  </Tooltip>
+
+  <Tooltip label="Left end" side="left" align="end">
+    <Button
+      css={{ gridColumn: '1', gridRow: '4', justifyContent: 'center' }}
+      m={1}
+      size={1}
+    >
+      <PinLeftIcon size="25" /> <AlignEndIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Left center" side="left" align="center">
+    <Button
+      css={{ gridColumn: '1', gridRow: '3', justifyContent: 'center' }}
+      m={1}
+      size={1}
+    >
+      <PinLeftIcon size="25" /> <AlignCenterIcon size="25" />
+    </Button>
+  </Tooltip>
+  <Tooltip label="Left start" side="left" align="start">
+    <Button
+      css={{ gridColumn: '1', gridRow: '2', justifyContent: 'center' }}
+      m={1}
+      size={1}
+    >
+      <PinLeftIcon size="25" /> <AlignStartIcon size="25" />
+    </Button>
+  </Tooltip>
+</Grid>
 ```
 
-### Custom props
+</Box>
 
-| Name       | Type                                   | Default | Description           |
-| :--------- | :------------------------------------- | :-----: | :-------------------- |
-| `position` | 'top' \| 'bottom' \| 'right' \| 'left' |  `top`  | Changes the position  |
-| `align`    | 'start' \| 'end'                       | `start` | Changes the alignment |
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render as target',
+    },
+    label: {
+      type: 'String',
+      description: 'The content to render in the Tooltip',
+    },
+    ariaLabel: {
+      type: 'String',
+      description: 'The content to render in the arial-label attributex',
+    },
+    side: {
+      type: 'top | bottom | right | left',
+      default: 'bottom',
+      description: 'The side to be positioned',
+    },
+    sideOffset: {
+      type: 'Number',
+      default: '0',
+      description: 'The side offset to apply',
+    },
+    align: {
+      type: 'start | center | end',
+      default: 'center',
+      description: 'The alignment to be positioned',
+    },
+    alignOffset: {
+      type: 'Number',
+      default: '0',
+      description: 'The align offset to apply',
+    },
+    arrowOffset: {
+      type: 'Number',
+      default: '6',
+      description: 'The arrow offset to apply',
+    },
+    collisionTolerance: {
+      type: 'Number',
+      default: '0',
+      description: 'The collision tolerance to apply',
+    },
+  }}
+/>
+
+## Examples
+
+### Side
+
+There are 4 side options to choose from.
+
+```js live
+<Tooltip label="Tooltip" side="top">
+  <Button>Top</Button>
+</Tooltip>
+
+<Tooltip label="Tooltip" side="bottom">
+  <Button ml={6}>Bottom</Button>
+</Tooltip>
+
+<Tooltip label="Tooltip" side="right">
+  <Button ml={6}>Right</Button>
+</Tooltip>
+
+<Tooltip label="Tooltip" side="left">
+  <Button ml={6}>Left</Button>
+</Tooltip>
+```
+
+### Side offset
+
+Control the side offset distance.
+
+```js live
+<Tooltip label="Tooltip" side="top" sideOffset={6}>
+  <Button>Side offset</Button>
+</Tooltip>
+```
+
+### Align
+
+There are 3 alignment options to choose from.
+
+```js live
+<Tooltip label="Tooltip" align="start">
+  <Button>Start</Button>
+</Tooltip>
+
+<Tooltip label="Tooltip" align="center">
+  <Button mx={6}>Center</Button>
+</Tooltip>
+
+<Tooltip label="Tooltip" align="end">
+  <Button>end</Button>
+</Tooltip>
+```
+
+### Align offset
+
+Control the alignment offset distance.
+
+```js live
+<Tooltip label="Tooltip" alignOffset={10} align="start">
+  <Button>Align offset</Button>
+</Tooltip>
+```
+
+### Arrow offset
+
+Control the arrow offset distance.
+
+```js live
+<Tooltip label="Tooltip" arrowOffset={3}>
+  <Button>Arrow offset</Button>
+</Tooltip>
+```

@@ -1,37 +1,96 @@
 ---
 title: Text
 component: Text
+description: A primitive useful for rendering text.
 ---
 
-```js live=true
-<Text>With Modulz, our goal is to fix the disconnect between digital product teams.</Text>
-```
-
-```js live=true
-<Text size={3} as="p" mb={4} textColor="grays.5">
-  To help designers collaborate with developers, without code.
-</Text>
-<Text size={3} as="p" mb={4} textColor="grays.5">
-  To encourage inclusive digital products by automating accessibility.
-</Text>
-<Text size={3} as="p" mb={4} textColor="grays.5">
-  To reduce bottlenecks by building modern tools which empower whole teams to work on their end
-  products.
-</Text>
-<Text size={3} as="p" textColor="grays.5">
-  To get everyone working on the same product. <Text textColor="black">Together.</Text>
+```js live
+<Text>
+  With Modulz, our goal is to fix the disconnect between digital product teams.
 </Text>
 ```
 
-### System props
-
-<SystemProps
-  props={['textColor', 'margin', 'padding', 'fontStyle', 'fontFamily', 'textAlign', 'lineHeight']}
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    size: {
+      type: '0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8',
+      default: '2',
+      description: 'The size to apply',
+    },
+    fontWeight: {
+      type: '400 | 500',
+      default: '400',
+      description: 'The font weight to apply',
+    },
+    truncate: {
+      type: 'Boolean',
+      default: 'false',
+      description: 'Whether it should truncate or not',
+    },
+  }}
 />
 
-### Custom props
+<SystemProps
+  props={[
+    'textColor',
+    'margin',
+    'padding',
+    'fontStyle',
+    'fontFamily',
+    'fontWeight',
+    'textAlign',
+    'lineHeight',
+  ]}
+/>
 
-| Name       | Type                   |  Default  | Description           |
-| :--------- | :--------------------- | :-------: | :-------------------- |
-| `size`     | ResponsiveValue<0...8> | `inherit` | Changes the font size |
-| `truncate` | boolean                |  `false`  | Truncates the text    |
+## Examples
+
+### Size
+
+There are 9 sizes to choose from. Each size handles its own `font-size`, `letter-spacing` and `text-indent` accordingly.
+
+```js live
+<Text as="p" mt={1} size={0}>Text component</Text>
+<Text as="p" mt={1} size={1}>Text component</Text>
+<Text as="p" mt={1} size={2}>Text component</Text>
+<Text as="p" mt={1} size={3}>Text component</Text>
+<Text as="p" mt={1} size={4}>Text component</Text>
+<Text as="p" mt={1} size={5}>Text component</Text>
+<Text as="p" mt={1} size={6}>Text component</Text>
+<Text as="p" mt={1} size={7}>Text component</Text>
+<Text as="p" mt={1} size={8}>Text component</Text>
+```
+
+### Font weight
+
+<Prop isOptional default="400">
+  400 | 500
+</Prop>
+
+There are 2 weight options to choose from.
+
+```js live
+<Text fontWeight="400">Text component</Text>
+<Text fontWeight="500">Text component</Text>
+```
+
+### Text truncation
+
+<Prop isOptiona default="false">
+  Boolean
+</Prop>
+
+When `true` this will truncate your text based on its maximum width.
+
+```js live
+<Box width={100}>
+  <Text as="p" truncate>
+    With Modulz, our goal is to fix the disconnect between digital product
+    teams.
+  </Text>
+</Box>
+```

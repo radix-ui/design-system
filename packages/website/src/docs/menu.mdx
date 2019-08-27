@@ -1,9 +1,10 @@
 ---
 title: Menu
 component: Menu
+description: Useful for displaying a list of choices.
 ---
 
-```js live=true
+```js live
 <Menu>
   <MenuItem>
     <Text size={2}>Box</Text>
@@ -17,66 +18,40 @@ component: Menu
 </Menu>
 ```
 
-```js live=true
-<Menu variant="shadow">
-  <MenuItem>
-    <Box mr={3}>
-      <ArrowLeftIcon size="25" />
-    </Box>{' '}
-    Back to dasboard
-  </MenuItem>
-  <MenuGroup>
-    <MenuItem>
-      <Box mr={3}>
-        <DeviceKeyboardIcon size="25" />
-      </Box>{' '}
-      Keyboard shortcuts
-    </MenuItem>
-    <MenuItem>
-      <Box mr={3}>
-        <LifesaverIcon size="25" />
-      </Box>{' '}
-      Community forum
-    </MenuItem>
-  </MenuGroup>
-  <MenuItem>
-    <Box mr={3}>
-      <HomeIcon size="25" />
-    </Box>{' '}
-    Go to marketing site
-  </MenuItem>
-</Menu>
-```
-
-```js live=true
-<Menu variant="shadow">
-  <MenuItem>Edit</MenuItem>
-  <MenuItem disabled>Delete</MenuItem>
-  <MenuItem>Rename</MenuItem>
-</Menu>
-```
-
-## Menu
-
-### System props
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'normal | shadow',
+      default: 'normal',
+      description: 'The variant to apply',
+    },
+  }}
+/>
 
 <SystemProps props={['maxWidth', 'width', 'margin', 'padding']} />
 
-### Custom props
+## Examples
 
-| Name      | Type                | Default  | Description        |
-| :-------- | :------------------ | :------: | :----------------- |
-| `variant` | 'normal' \|'shadow' | `normal` | Variant to display |
+### Variants
 
-## MenuItem
+<Prop isOptional default="normal"></Prop>
 
-### System props
+There are 2 variants to choose from.
 
-<SystemProps props={['minHeight', 'padding']} />
-
-### Custom props
-
-| Name       | Type                               | Default  | Description          |
-| :--------- | :--------------------------------- | :------: | :------------------- |
-| `variant`  | 'normal' \| 'active' \| 'selected' | `normal` | Variant to display   |
-| `disabled` | Boolean                            | `false`  | Disables the element |
+```js live
+<Menu variant="shadow">
+  <MenuItem>
+    <Text size={2}>Box</Text>
+  </MenuItem>
+  <MenuItem variant="selected">
+    <Text size={2}>Layout</Text>
+  </MenuItem>
+  <MenuItem>
+    <Text size={2}>Button</Text>
+  </MenuItem>
+</Menu>
+```

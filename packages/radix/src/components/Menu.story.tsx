@@ -19,7 +19,7 @@ function MenuStory() {
   return (
     <Grid gridTemplateColumns={['1fr', 'repeat(2, 1fr)', 'repeat(3, 1fr)']} gridGap={4}>
       <Box mb="4">
-        <Heading size={0} fontWeight="bold">
+        <Heading size={0} fontWeight={500}>
           Default
         </Heading>
         <Menu>
@@ -38,7 +38,7 @@ function MenuStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} fontWeight="bold">
+        <Heading size={0} fontWeight={500}>
           Menu with content on hover
         </Heading>
         <Menu>
@@ -47,7 +47,7 @@ function MenuStory() {
               <MenuItem>
                 <Text size={2}>Wrapped in `Hover`</Text>
                 {isHovered && (
-                  <Box position="absolute" right={0} mr={3}>
+                  <Box position="absolute" right={3}>
                     <CircleIcon />
                   </Box>
                 )}
@@ -61,7 +61,7 @@ function MenuStory() {
                   Wrapped in `Hover`
                 </Text>
                 {isHovered && (
-                  <Box position="absolute" right={0} mr={3}>
+                  <Box position="absolute" right={3}>
                     <CircleIcon />
                   </Box>
                 )}
@@ -75,7 +75,7 @@ function MenuStory() {
                   Wrapped in `Hover`
                 </Text>
                 {isHovered && (
-                  <Box position="absolute" right={0} mr={3}>
+                  <Box position="absolute" right={3}>
                     <CircleIcon />
                   </Box>
                 )}
@@ -86,7 +86,7 @@ function MenuStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} fontWeight="bold">
+        <Heading size={0} fontWeight={500}>
           Menu with icon
         </Heading>
         <Menu>
@@ -114,7 +114,7 @@ function MenuStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} fontWeight="bold">
+        <Heading size={0} fontWeight={500}>
           Menu with group
         </Heading>
         <Menu>
@@ -136,7 +136,7 @@ function MenuStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} fontWeight="bold">
+        <Heading size={0} fontWeight={500}>
           Menu with variants
         </Heading>
         <Menu>
@@ -160,7 +160,7 @@ function MenuStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} fontWeight="bold" mb={1}>
+        <Heading size={0} fontWeight={500} mb={1}>
           Menu with shadow variant
         </Heading>
         <Menu variant="shadow">
@@ -186,13 +186,13 @@ function MenuStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} fontWeight="bold">
+        <Heading size={0} fontWeight={500}>
           Custom
         </Heading>
         <Menu>
           <MenuItem>
             <Box>
-              <Heading size={0} fontWeight="bold" mb={1}>
+              <Heading size={0} fontWeight={500} mb={1}>
                 Heading
               </Heading>
               <Text as="div" size={1} textColor="grays.5">
@@ -206,7 +206,7 @@ function MenuStory() {
                 Device
               </Text>
 
-              <Text as="div" size={1} textColor="grays.5">
+              <Text size={1} textColor="grays.5">
                 200 x 400
               </Text>
             </Flex>

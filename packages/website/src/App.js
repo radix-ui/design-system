@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { Flex, Box, Menu, Heading, Badge, Divider, Container, GhostButton } from '@modulz/radix';
+import {
+  Flex,
+  Box,
+  Menu,
+  Heading,
+  Badge,
+  Divider,
+  Container,
+  GhostButton,
+  Text,
+  Link,
+} from '@modulz/radix';
 import { HamburgerIcon, CrossIcon } from '@modulz/radix-icons';
 import NavItem from './components/NavItem';
+import pkg from '../package.json';
 
 function App({ element, props }) {
   const [navOpen, setNavOpen] = useState(false);
@@ -24,22 +36,22 @@ function App({ element, props }) {
     query {
       pinned: allMdx(
         sort: { order: ASC, fields: [frontmatter___title] }
-        filter: { frontmatter: { pinned: { ne: null } } }
+        filter: { frontmatter: { pinned: { ne: null }, hidden: { eq: null } } }
       ) {
         ...mdxContent
       }
       components: allMdx(
-        sort: { order: ASC, fields: [frontmatter___title] }
+        sort: { order: ASC, fields: [frontmatter___component] }
         filter: { frontmatter: { component: { ne: null } } }
       ) {
         ...mdxContent
       }
-      recipes: allMdx(
-        sort: { order: ASC, fields: [frontmatter___title] }
-        filter: { frontmatter: { recipe: { ne: null } } }
-      ) {
-        ...mdxContent
-      }
+      # recipes: allMdx(
+      #   sort: { order: ASC, fields: [frontmatter___title] }
+      #   filter: { frontmatter: { recipe: { ne: null } } }
+      # ) {
+      #   ...mdxContent
+      # }
     }
   `;
 
@@ -87,7 +99,7 @@ function App({ element, props }) {
                     </svg>
                   </Box>
                   <Badge ml={3} variant="gray">
-                    Alpha
+                    {pkg.version}
                   </Badge>
                   <Box ml="auto" display={['block', 'none']}>
                     <GhostButton
@@ -105,7 +117,7 @@ function App({ element, props }) {
               <Box display={[navOpen ? 'block' : 'none', 'block']}>
                 <Divider mb={1} />
                 <Menu>
-                  <Heading size={0} fontWeight="bold" my={2} mx={5}>
+                  <Heading size={0} fontWeight={500} my={2} mx={5}>
                     Overview
                   </Heading>
                   {data.pinned.edges.map(({ node }) => (
@@ -113,16 +125,17 @@ function App({ element, props }) {
                       key={node.frontmatter.title}
                       to={node.fields.slug}
                       active={pathname === node.fields.slug}
-                      label={node.frontmatter.title}
                       onClick={() => setNavOpen(false)}
-                    />
+                    >
+                      {node.frontmatter.title}
+                    </NavItem>
                   ))}
                 </Menu>
 
                 <Divider mb={1} />
 
                 <Menu>
-                  <Heading size={0} fontWeight="bold" my={2} mx={5}>
+                  <Heading size={0} fontWeight={500} my={2} mx={5}>
                     Components
                   </Heading>
                   {data.components.edges.map(({ node }) => (
@@ -130,16 +143,17 @@ function App({ element, props }) {
                       key={node.frontmatter.title}
                       to={node.fields.slug}
                       active={pathname === node.fields.slug}
-                      label={node.frontmatter.title}
                       onClick={() => setNavOpen(false)}
-                    />
+                    >
+                      {node.frontmatter.title}
+                    </NavItem>
                   ))}
                 </Menu>
 
                 <Divider mb={1} />
 
-                <Menu>
-                  <Heading size={0} fontWeight="bold" mx={5} mb={2} mt={2}>
+                {/* <Menu>
+                  <Heading size={0} fontWeight={500} mx={5} mb={2} mt={2}>
                     Recipes
                   </Heading>
                   {data.recipes.edges.map(({ node }) => (
@@ -147,16 +161,55 @@ function App({ element, props }) {
                       key={node.frontmatter.title}
                       to={node.fields.slug}
                       active={pathname === node.fields.slug}
-                      label={node.frontmatter.title}
                       onClick={() => setNavOpen(false)}
-                    />
+                    >
+                      {node.frontmatter.title}
+                    </NavItem>
                   ))}
                 </Menu>
+
+                <Divider mb={1} /> */}
+
+                <Menu>
+                  <Heading size={0} fontWeight={500} mx={5} mb={2} mt={2}>
+                    Github links
+                  </Heading>
+
+                  <NavItem as="a" href="https://github.com/modulz/radix" isExternal>
+                    Radix
+                  </NavItem>
+                  <NavItem
+                    as="a"
+                    href="https://github.com/modulz/radix/tree/master/packages/radix-system"
+                    isExternal
+                  >
+                    Radix System
+                  </NavItem>
+                  <NavItem
+                    as="a"
+                    href="https://github.com/modulz/radix/tree/master/packages/website"
+                    isExternal
+                  >
+                    Radix Docs
+                  </NavItem>
+                </Menu>
+
+                <Divider mb={1} />
+
+                <Box px={5} mb={2} mt={3} minHeight={6}>
+                  <Text size={2}>
+                    Powered by{' '}
+                    <Link href="https://modulz.app" title="Modulz">
+                      Modulz
+                    </Link>
+                  </Text>
+                </Box>
               </Box>
             </Box>
 
             <Box
-              py={8}
+              pt={8}
+              pb={9}
               marginLeft={[0, 200, 250]}
               maxWidth={['100%']}
               display={[navOpen ? 'none' : 'block', 'block']}

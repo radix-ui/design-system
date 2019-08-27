@@ -15,38 +15,37 @@ function DialogStory() {
           Basic Dialog
         </Text>
 
-        {open1 && (
-          <Dialog onDismiss={() => setOpen1(false)}>
-            <Box maxWidth="600px" padding="4">
-              <Text>Hello from Dialog</Text>
-              <Button ml="3" onClick={() => setOpen1(false)}>
-                Close
-              </Button>
-            </Box>
-          </Dialog>
-        )}
+        <Dialog onDismiss={() => setOpen1(false)} isOpen={open1}>
+          <Box maxWidth="600px" padding="4">
+            <Text>Hello from Dialog</Text>
+            <Button ml="3" onClick={() => setOpen1(false)}>
+              Close
+            </Button>
+          </Box>
+        </Dialog>
+
         <Button onClick={() => setOpen1(true)}>Open</Button>
       </Box>
       <Box mb="4">
         <Text as="p" mb="2">
           Dialog with long content
         </Text>
-        {open2 && (
-          <Dialog onDismiss={() => setOpen2(false)}>
-            <Box maxWidth="600px" padding="4">
-              <Text>Hello from Dialog</Text>
-              <Button ml="3" onClick={() => setOpen2(false)}>
-                Close
-              </Button>
-              <Box height="100px" bg="grays.1" mt="3" />
-              <Box height="100px" bg="grays.2" />
-              <Box height="100px" bg="grays.3" />
-              <Box height="100px" bg="grays.4" />
-              <Box height="100px" bg="grays.5" />
-              <Box height="100px" bg="grays.6" mb="3" />
-            </Box>
-          </Dialog>
-        )}
+
+        <Dialog onDismiss={() => setOpen2(false)} isOpen={open2}>
+          <Box maxWidth="600px" padding="4">
+            <Text>Hello from Dialog</Text>
+            <Button ml="3" onClick={() => setOpen2(false)}>
+              Close
+            </Button>
+            <Box height="100px" bg="grays.1" mt="3" />
+            <Box height="100px" bg="grays.2" />
+            <Box height="100px" bg="grays.3" />
+            <Box height="100px" bg="grays.4" />
+            <Box height="100px" bg="grays.5" />
+            <Box height="100px" bg="grays.6" mb="3" />
+          </Box>
+        </Dialog>
+
         <Button onClick={() => setOpen2(true)}>Open</Button>
       </Box>
     </>

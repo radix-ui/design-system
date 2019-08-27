@@ -1,0 +1,27 @@
+---
+title: Pill Button
+component: PillButton
+description: Useful to communicate actions to your users within a PillNav.
+---
+
+```js live
+<PillButton>PillButton</PillButton>
+```
+
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    pillWidth: {
+      type: 'CSS.WidthProperty',
+      description: 'The width to apply',
+    },
+    active: {
+      type: 'Boolean',
+      default: 'false',
+      description: 'Whether it is active or not',
+    },
+  }}
+/>

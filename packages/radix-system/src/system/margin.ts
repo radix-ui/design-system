@@ -1,6 +1,6 @@
 import * as CSS from 'csstype';
 import { system, Config } from '@styled-system/core';
-import { getMargin } from '../utils/getMargin';
+import { getNegativeSpace } from '../utils/getNegativeSpace';
 import { Prop, Length } from '../utils/types';
 
 export interface MarginProps {
@@ -24,37 +24,37 @@ const config: Config = {
   margin: {
     property: 'margin',
     scale: 'space',
-    transform: getMargin,
+    transform: getNegativeSpace,
   },
   marginTop: {
     property: 'marginTop',
     scale: 'space',
-    transform: getMargin,
+    transform: getNegativeSpace,
   },
   marginRight: {
     property: 'marginRight',
     scale: 'space',
-    transform: getMargin,
+    transform: getNegativeSpace,
   },
   marginBottom: {
     property: 'marginBottom',
     scale: 'space',
-    transform: getMargin,
+    transform: getNegativeSpace,
   },
   marginLeft: {
     property: 'marginLeft',
     scale: 'space',
-    transform: getMargin,
+    transform: getNegativeSpace,
   },
   marginX: {
     properties: ['marginLeft', 'marginRight'],
     scale: 'space',
-    transform: getMargin,
+    transform: getNegativeSpace,
   },
   marginY: {
     properties: ['marginTop', 'marginBottom'],
     scale: 'space',
-    transform: getMargin,
+    transform: getNegativeSpace,
   },
 };
 

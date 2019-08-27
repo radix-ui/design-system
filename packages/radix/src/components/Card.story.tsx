@@ -3,13 +3,14 @@ import { storiesOf } from '@storybook/react';
 import { Flex } from './Flex';
 import { Heading } from './Heading';
 import { Text } from './Text';
-import { Card, CardLink } from './Card';
+import { Card } from './Card';
+import { CardLink } from './CardLink';
 
 storiesOf('Components|Card', module).add('default', () => (
   <>
     <Flex>
       <Card m={4} maxWidth="300px">
-        <Heading size={1} mb="3" fontWeight="bold">
+        <Heading size={1} mb="3" fontWeight={500}>
           Card
         </Heading>
         <Text as="p" mb="3" size={3}>
@@ -21,7 +22,7 @@ storiesOf('Components|Card', module).add('default', () => (
         </Text>
       </Card>
       <Card variant="shadow" m={4} maxWidth="300px">
-        <Heading size={1} mb="3" fontWeight="bold">
+        <Heading size={1} mb="3" fontWeight={500}>
           Card
         </Heading>
         <Text as="p" mb="3" size={3}>
@@ -33,7 +34,7 @@ storiesOf('Components|Card', module).add('default', () => (
         </Text>
       </Card>
       <Card variant="ghost" m={4} maxWidth="300px">
-        <Heading size={1} mb="3" fontWeight="bold">
+        <Heading size={1} mb="3" fontWeight={500}>
           Card
         </Heading>
         <Text as="p" mb="3" size={3}>
@@ -48,7 +49,7 @@ storiesOf('Components|Card', module).add('default', () => (
 
     <Flex>
       <CardLink href="https://modulz.app" m={4} maxWidth="300px">
-        <Heading size={1} mb="3" fontWeight="bold">
+        <Heading size={1} mb="3" fontWeight={500}>
           Card
         </Heading>
         <Text as="p" mb="3" size={3}>
@@ -61,7 +62,7 @@ storiesOf('Components|Card', module).add('default', () => (
       </CardLink>
 
       <CardLink variant="shadow" href="https://modulz.app" m={4} maxWidth="300px">
-        <Heading size={1} mb="3" fontWeight="bold">
+        <Heading size={1} mb="3" fontWeight={500}>
           Card
         </Heading>
         <Text as="p" mb="3" size={3}>
@@ -74,7 +75,7 @@ storiesOf('Components|Card', module).add('default', () => (
       </CardLink>
 
       <CardLink variant="ghost" href="https://modulz.app" m={4} maxWidth="300px">
-        <Heading size={1} mb="3" fontWeight="bold">
+        <Heading size={1} mb="3" fontWeight={500}>
           Card
         </Heading>
         <Text as="p" mb="3" size={3}>

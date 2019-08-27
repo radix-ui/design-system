@@ -1,6 +1,7 @@
 export { fontSize, FontSizeProps } from './system/fontSize';
 export { fontStyle, FontStyleProps } from './system/fontStyle';
 export { fontFamily, FontFamilyProps } from './system/fontFamily';
+export { fontWeight, FontWeightProps } from './system/fontWeight';
 export { lineHeight, LineHeightProps } from './system/lineHeight';
 export { textAlign, TextAlignProps } from './system/textAlign';
 
@@ -23,14 +24,14 @@ export { opacity, OpacityProps } from './system/opacity';
 export { backgroundColor, BackgroundColorProps } from './system/backgroundColor';
 export { textColor, TextColorProps } from './system/textColor';
 
-// Flex Parent Set
-export { flexParentSet, FlexParentSetProps } from './system/flexParent';
-export { alignContent, AlignContentProps } from './system/flexParent/alignContent';
-export { alignItems, AlignItemsProps } from './system/flexParent/alignItems';
-export { flexDirection, FlexDirectionProps } from './system/flexParent/flexDirection';
-export { flexWrap, FlexWrapProps } from './system/flexParent/flexWrap';
-export { justifyContent, JustifyContentProps } from './system/flexParent/justifyContent';
-export { justifyItems, JustifyItemsProps } from './system/flexParent/justifyItems';
+// Flex Container Set
+export { flexContainerSet, FlexContainerSetProps } from './system/flexContainer';
+export { alignContent, AlignContentProps } from './system/flexContainer/alignContent';
+export { alignItems, AlignItemsProps } from './system/flexContainer/alignItems';
+export { flexDirection, FlexDirectionProps } from './system/flexContainer/flexDirection';
+export { flexWrap, FlexWrapProps } from './system/flexContainer/flexWrap';
+export { justifyContent, JustifyContentProps } from './system/flexContainer/justifyContent';
+export { justifyItems, JustifyItemsProps } from './system/flexContainer/justifyItems';
 
 // Flex Item Set
 export { flexItemSet, FlexItemSetProps } from './system/flexItem';

@@ -1,59 +1,41 @@
-import styled from 'styled-components';
+import React from 'react';
 import css from '@styled-system/css';
 import {
-  alignSelf,
-  AlignSelfProps,
-  flex,
-  FlexProps,
-  justifySelf,
-  JustifySelfProps,
-  maxWidth,
-  MaxWidthProps,
-  margin,
-  MarginProps,
-  padding,
-  PaddingProps,
-  variant,
-  compose,
-  Prop,
-} from '@modulz/radix-system';
+  Container as ContainerPrimitive,
+  ContainerProps as ContainerPrimitiveProps,
+} from 'mdlz-prmtz';
+import { Prop, variant } from '@modulz/radix-system';
 
 type Sizes = 0 | 1 | 2;
-type ContainerProps = AlignSelfProps &
-  FlexProps &
-  JustifySelfProps &
-  MaxWidthProps &
-  MarginProps &
-  PaddingProps & { size?: Prop<Sizes> };
+type ContainerProps = ContainerPrimitiveProps & {
+  size?: Prop<Sizes>;
+  children?: React.ReactNode;
+  as?: any;
+};
 
-const styleProps = compose(
-  alignSelf,
-  flex,
-  justifySelf,
-  maxWidth,
-  margin,
-  padding
-);
+export const Container = React.forwardRef<HTMLDivElement, ContainerProps>((props, ref) => (
+  <ContainerPrimitive
+    {...props}
+    ref={ref}
+    css={[
+      css({ marginX: 'auto', paddingX: 5, flex: 1 }),
+      variant({
+        size: {
+          0: {
+            maxWidth: '25rem',
+          },
+          1: {
+            maxWidth: '45rem',
+          },
+          2: {
+            maxWidth: '65rem',
+          },
+        },
+      }),
+    ]}
+  />
+));
 
-export const Container = styled('div')<ContainerProps>(
-  css({
-    marginX: 'auto',
-    paddingX: 5,
-    flex: 1,
-    maxWidth: '25rem',
-  }),
-  variant({
-    size: {
-      0: {
-        maxWidth: '25rem',
-      },
-      1: {
-        maxWidth: '45rem',
-      },
-      2: {
-        maxWidth: '65rem',
-      },
-    },
-  }),
-  styleProps
-);
+Container.defaultProps = {
+  size: 0,
+};
