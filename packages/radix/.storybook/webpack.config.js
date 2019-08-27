@@ -16,7 +16,6 @@ module.exports = ({ config, mode }) => {
     include: [
       path.resolve(__dirname, '../src'),
       path.resolve(__dirname, '../../radix/src'),
-      path.resolve(__dirname, '../../radix-icons/src'),
       path.resolve(__dirname, '../../radix-system/src'),
     ],
     options: {
@@ -27,7 +26,6 @@ module.exports = ({ config, mode }) => {
   config.resolve.alias = {
     ...(config.resolve.alias || {}),
     '@modulz/radix': path.resolve(__dirname, '../../radix/src'),
-    '@modulz/radix-icons': path.resolve(__dirname, '../../radix-icons/src'),
     '@modulz/radix-system': path.resolve(__dirname, '../../radix-system/src'),
   };
   return config;
