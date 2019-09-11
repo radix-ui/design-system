@@ -7,7 +7,7 @@ storiesOf('Components|Badge', module).add('default', () => (
   <>
     <Box mb="4">
       <Badge mr="4">Badge</Badge>
-      <Badge size={0}>Badge</Badge>
+      <Badge size={1}>Badge</Badge>
     </Box>
 
     <Box mb="4">

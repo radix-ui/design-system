@@ -15,13 +15,6 @@ export const Tooltip = withTheme((props: TooltipProps) => (
     arrowOffset={6}
     sideOffset={-3}
     {...props}
-    getAnimationConfig={isVisible => ({
-      immediate: isVisible ? false : true,
-      from: { opacity: 0 },
-      enter: { opacity: 1 },
-      leave: { opacity: 0 },
-      config: { mass: 1, tension: 1000, friction: 0, clamp: true },
-    })}
     css={css({
       backgroundColor: 'hsla(0, 0%, 0%, 0.8)',
       padding: '7px',

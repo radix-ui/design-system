@@ -6,10 +6,11 @@
   },
   "scripts": {
     "init": "yarn radix-system:build && yarn radix:build",
-    "start": "npm-run-all --parallel radix-system radix website",
+    "start": "npm-run-all --parallel radix-system radix radix:storybook website",
     "website": "lerna exec --scope website -- yarn start",
     "website:build": "lerna exec --scope website -- yarn build",
     "radix": "lerna exec --scope @modulz/radix -- yarn watch",
+    "radix:storybook": "lerna exec --scope @modulz/radix -- yarn storybook",
     "radix:build": "lerna exec --scope @modulz/radix -- yarn build",
     "radix-system": "lerna exec --scope @modulz/radix-system -- yarn watch",
     "radix-system:build": "lerna exec --scope @modulz/radix-system -- yarn build",

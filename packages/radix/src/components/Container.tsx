@@ -18,7 +18,7 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>((props
     {...props}
     ref={ref}
     css={[
-      css({ marginX: 'auto', paddingX: 5, flex: 1 }),
+      css({ paddingX: 5, flex: 1 }),
       variant({
         size: {
           0: {
