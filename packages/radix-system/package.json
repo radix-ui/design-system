@@ -29,5 +29,6 @@
     "rollup": "^1.19.4",
     "rollup-plugin-typescript2": "^0.22.1",
     "typescript": "3.5.3"
-  }
+  },
+  "gitHead": "e51368d9799b57de62046ffb59a158a72dfa2053"
 }
