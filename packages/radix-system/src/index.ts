@@ -2,6 +2,7 @@ export { fontSize, FontSizeProps } from './system/fontSize';
 export { fontStyle, FontStyleProps } from './system/fontStyle';
 export { fontFamily, FontFamilyProps } from './system/fontFamily';
 export { fontWeight, FontWeightProps } from './system/fontWeight';
+export { fill, FillProps } from './system/fill';
 export { lineHeight, LineHeightProps } from './system/lineHeight';
 export { textAlign, TextAlignProps } from './system/textAlign';
 
