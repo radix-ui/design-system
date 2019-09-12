@@ -17,6 +17,12 @@ export const Popover = ({ children, ...props }: PopoverProps) => {
       align="center"
       arrow={<Arrow width={20} height={10} />}
       {...props}
+      getAnimationConfig={() => ({
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+        immediate: true,
+      })}
     >
       <Card variant="shadow" p={0} borderWidth={0}>
         {children}
