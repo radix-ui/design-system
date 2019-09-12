@@ -4,7 +4,7 @@ import { Code as CodePrimitive, CodeProps as CodePrimitiveProps } from 'mdlz-prm
 import { variant, Prop } from '@modulz/radix-system';
 
 type Variants = 'normal' | 'fade';
-type CodeProps = CodePrimitiveProps & { children?: React.ReactNode; variant: Prop<Variants> };
+type CodeProps = CodePrimitiveProps & { children?: React.ReactNode; variant?: Prop<Variants> };
 
 export const Code = React.forwardRef<HTMLElement, CodeProps>((props, ref) => (
   <CodePrimitive

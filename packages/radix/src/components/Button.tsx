@@ -157,6 +157,15 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
             overflow: 'hidden',
             position: 'relative',
             pointerEvents: 'none',
+            '&:hover': {
+              borderColor: 'grays.3',
+            },
+            '&:focus': {
+              borderColor: 'grays.3',
+            },
+            '&:active': {
+              borderColor: 'grays.3',
+            },
             '&::before': {
               position: 'absolute',
               content: `''`,
