@@ -34,7 +34,7 @@
     "lodash.merge": "^4.6.1",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
-    "mdlz-prmtz": "^0.0.21",
+    "mdlz-prmtz": "^0.0.22",
     "polished": "^3.4.1",
     "styled-components": "^4.3.2"
   },
