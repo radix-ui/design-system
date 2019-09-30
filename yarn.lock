@@ -10300,10 +10300,10 @@ mdast-util-toc@^3.1.0:
     unist-util-is "^2.1.2"
     unist-util-visit "^1.1.0"
 
-mdlz-prmtz@^0.0.22:
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/mdlz-prmtz/-/mdlz-prmtz-0.0.22.tgz#dab5ac08320bf2cf2f975812f839ccef2cd7c033"
-  integrity sha512-H2PqTed+PI31wd2swiRHnmWO1+CvKUErVOSilluJMb+XIjgrWDnjNYiWu2HpqQOe1KvjRgLtDXD3TSep/aULVA==
+mdlz-prmtz@^0.0.38:
+  version "0.0.38"
+  resolved "https://registry.yarnpkg.com/mdlz-prmtz/-/mdlz-prmtz-0.0.38.tgz#121c63baa4ca7af14b50d88ec3875ff21be39f74"
+  integrity sha512-0DGLeYpGlQBUyKu0WkcOBVjKB3Nfb3F8dwklDilS8qJQoer/9GMK2sjkeD6gItwqpL9raGkbt8toJllwYkhJwQ==
   dependencies:
     "@modulz/radix-icons" "^0.8.2"
     "@modulz/radix-system" "^0.0.1-alpha.9"
@@ -10311,7 +10311,7 @@ mdlz-prmtz@^0.0.22:
     "@styled-system/theme-get" "^5.1.2"
     lodash.omit "^4.5.0"
     lodash.pick "^4.4.0"
-    react-focus-on "^3.1.0"
+    react-focus-on "^3.1.2"
     react-spring "^8.0.27"
     resize-observer-polyfill "^1.5.1"
 
@@ -12851,10 +12851,10 @@ react-focus-lock@^2.1.0:
     react-clientside-effect "^1.2.2"
     use-sidecar "^1.0.1"
 
-react-focus-on@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/react-focus-on/-/react-focus-on-3.1.0.tgz#e89da19c33b35c6ebeecd412a59118e6485bed89"
-  integrity sha512-r82Ehq0Iq1uTDJo+MJo2uAZF8RCx/gpb1KZ0JR6OOLjwWMmslYuGegwGjaEn56gM4au8fLQmQAwx7Uu6yk6Cog==
+react-focus-on@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/react-focus-on/-/react-focus-on-3.1.2.tgz#6697e5744c7aad331c7f6b317a53a94bcc690d2b"
+  integrity sha512-KfMjCxaWhAYdtNm8D3IfjFIC9U/8ZkdyvcOO+QhY17Q4A3UgdH3Xj2f1U3GeQJFAdT62eet/pBSHZUwt8kSMRQ==
   dependencies:
     aria-hidden "^1.1.1"
     react-focus-lock "^2.1.0"
