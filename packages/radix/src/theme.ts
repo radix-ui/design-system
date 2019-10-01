@@ -1,13 +1,17 @@
-// TODO: type Theme
-type Theme = any;
+type RadixBreakpoints<T> = Array<T> & {
+  small: 0;
+  medium: '38em';
+  large: '62em';
+  xlarge: '68em';
+};
 
-export const theme: Theme = {
-  breakpoints: ['38em', '62em', '68em', '110em'],
+export const theme = {
+  breakpoints: ['38em', '62em', '68em', '110em'] as RadixBreakpoints<any>,
   fonts: {
     normal:
-      'UntitledSans, apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
+      'UntitledSans, -apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
     medium:
-      'UntitledSans-Medium, apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
+      'UntitledSans-Medium, -apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
     mono: 'OperatorMono-Book, Consolas, "Liberation Mono", Menlo, Courier, monospace',
   },
   fontSizes: [
@@ -26,7 +30,7 @@ export const theme: Theme = {
   space: ['0', '5px', '10px', '15px', '20px', '25px', '35px', '45px', '65px', '80px'],
   sizes: ['0', '5px', '10px', '15px', '20px', '25px', '35px', '45px', '65px', '80px'],
   lineHeights: ['20px', '25px', '30px', '35px', '40px', '45px', '50px', '55px', '60px'],
-  radii: [0, '3px', '5px', '10px'],
+  radii: ['0', '3px', '5px', '10px'],
   colors: {
     black: 'hsl(0, 0%, 0%)',
     blacks: [
@@ -105,7 +109,7 @@ export const theme: Theme = {
       'hsl(0, 100%, 10%)',
     ],
   },
-};
+} as const;
 
 // Breakpoint aliases
 // By adding the following aliases, repsonsive props
