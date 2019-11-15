@@ -58,6 +58,7 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
           borderColor: 'grays.2',
           color: 'grays.4',
           cursor: 'not-allowed',
+          pointerEvents: 'none',
         },
       }),
       variant({
