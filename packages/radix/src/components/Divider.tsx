@@ -12,7 +12,7 @@ export const Divider = React.forwardRef<HTMLDivElement, DividerProps>((props, re
     ref={ref}
     css={[
       css({
-        backgroundColor: 'grays.2',
+        backgroundColor: 'gray300',
       }),
       variant({
         size: {

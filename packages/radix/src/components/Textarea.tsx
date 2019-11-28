@@ -42,7 +42,7 @@ const styleProps = compose(
 );
 
 const placeholderStyle = {
-  color: 'grays.4',
+  color: 'gray500',
   opacity: 1,
 };
 
@@ -51,7 +51,7 @@ export const Textarea = styled('textarea')<TextareaProps>(
     appearance: 'none',
     backgroundColor: 'transparent',
     borderRadius: 0,
-    color: 'grays.8',
+    color: 'gray900',
     fontFamily: 'normal',
     outline: 'none',
     padding: 0,
@@ -63,12 +63,12 @@ export const Textarea = styled('textarea')<TextareaProps>(
     borderBottom: '1px solid',
     minHeight: 9,
     '&:read-only': {
-      borderColor: 'grays.2',
-      color: 'grays.5',
+      borderColor: 'gray300',
+      color: 'gray600',
     },
     '&:disabled': {
-      borderColor: 'grays.2',
-      color: 'grays.4',
+      borderColor: 'gray300',
+      color: 'gray500',
       cursor: 'not-allowed',
     },
     '&::-webkit-input-placeholder': placeholderStyle,
@@ -84,16 +84,16 @@ export const Textarea = styled('textarea')<TextareaProps>(
   variant({
     variant: {
       normal: {
-        borderColor: 'grays.3',
+        borderColor: 'gray400',
         '&:focus': {
-          borderColor: 'blues.4',
+          borderColor: 'blue500',
         },
       },
       fade: {
-        borderColor: 'grays.3',
-        color: 'grays.5',
+        borderColor: 'gray400',
+        color: 'gray600',
         '&:focus': {
-          borderColor: 'blues.4',
+          borderColor: 'blue500',
         },
       },
       ghost: {

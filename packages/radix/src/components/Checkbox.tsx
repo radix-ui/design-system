@@ -75,7 +75,7 @@ const FakeCheckbox = styled('div')(
     height: 3,
     borderRadius: 1,
     border: '1px solid',
-    borderColor: 'grays.3',
+    borderColor: 'gray400',
     display: 'inline-flex',
     verticalAlign: 'middle',
     alignItems: 'center',
@@ -83,14 +83,14 @@ const FakeCheckbox = styled('div')(
     color: 'transparent',
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     [`${Input}:hover + &`]: {
-      borderColor: 'grays.4',
+      borderColor: 'gray500',
     },
     [`${Input}:focus + &`]: {
-      borderColor: 'blues.4',
+      borderColor: 'blue500',
     },
     [`${Input}:checked + &`]: {
-      backgroundColor: 'blues.4',
-      borderColor: 'blues.4',
+      backgroundColor: 'blue500',
+      borderColor: 'blue500',
       color: 'white',
     },
   })

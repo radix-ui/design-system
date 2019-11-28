@@ -36,7 +36,7 @@ export function PropsTable({ data }) {
               return (
                 <Tr key={key}>
                   <Td>
-                    <Text textColor="grays.5">
+                    <Text textColor="gray600">
                       <Code variant="fade">{key}</Code>
                     </Text>
                   </Td>
@@ -44,7 +44,7 @@ export function PropsTable({ data }) {
                     <Code>{value.type}</Code>
                   </Td>
                   <Td>
-                    <Text textColor="grays.5">{value.description}</Text>
+                    <Text textColor="gray600">{value.description}</Text>
                   </Td>
                 </Tr>
               );

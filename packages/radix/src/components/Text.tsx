@@ -17,7 +17,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) =>
     ref={ref}
     css={[
       css({
-        color: 'grays.7',
+        color: 'gray800',
         fontSize: 'inherit',
         margin: 0,
       }),

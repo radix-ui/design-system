@@ -30,24 +30,24 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, ref) 
         variant({
           variant: {
             gray: {
-              borderColor: 'grays.3',
-              color: 'grays.5',
+              borderColor: 'gray400',
+              color: 'gray600',
             },
             blue: {
-              borderColor: 'blues.3',
-              color: 'blues.5',
+              borderColor: 'blue400',
+              color: 'blue600',
             },
             green: {
-              borderColor: 'greens.3',
-              color: 'greens.5',
+              borderColor: 'green400',
+              color: 'green600',
             },
             red: {
-              borderColor: 'reds.3',
-              color: 'reds.5',
+              borderColor: 'red400',
+              color: 'red600',
             },
             yellow: {
-              borderColor: 'yellows.3',
-              color: 'yellows.5',
+              borderColor: 'yellow400',
+              color: 'yellow600',
             },
           },
         }),

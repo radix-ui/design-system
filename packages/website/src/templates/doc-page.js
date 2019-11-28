@@ -35,15 +35,15 @@ export const components = {
   h4: props => (
     <RC.Heading {...props} as="h4" fontWeight={500} size={0} mt={6} mb={1} lineHeight={1} />
   ),
-  p: props => <RC.Text {...props} as="p" size={3} lineHeight={1} textColor="grays.5" />,
+  p: props => <RC.Text {...props} as="p" size={3} lineHeight={1} textColor="gray600" />,
   Prop: props => (
     <RC.Box mb={3}>
-      <RC.Text as="p" size={2} lineHeight={1} textColor="grays.5">
+      <RC.Text as="p" size={2} lineHeight={1} textColor="gray600">
         {props.isOptional && 'optional'}{' '}
         <RC.Code ml={!props.isOptional && -1}>{props.children}</RC.Code>
       </RC.Text>
       {props.default && (
-        <RC.Text as="p" size={2} lineHeight={1} textColor="grays.5">
+        <RC.Text as="p" size={2} lineHeight={1} textColor="gray600">
           default <RC.Code variant="fade">{props.default}</RC.Code>
         </RC.Text>
       )}
@@ -70,7 +70,7 @@ function DocPageTemplate({ data, location, ...props }) {
           <RC.Heading size={4} fontWeight={500} mb={2} lineHeight={3}>
             {data.mdx.frontmatter.title}
           </RC.Heading>
-          <RC.Heading size={1} mb={7} as="h2" lineHeight={2} textColor="grays.5">
+          <RC.Heading size={1} mb={7} as="h2" lineHeight={2} textColor="gray600">
             {data.mdx.frontmatter.description}
           </RC.Heading>
           {children}

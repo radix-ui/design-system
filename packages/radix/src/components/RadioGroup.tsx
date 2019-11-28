@@ -91,7 +91,7 @@ const FakeRadio = styled('div')(
     color: 'transparent',
     borderRadius: '50%',
     border: '1px solid',
-    borderColor: 'grays.3',
+    borderColor: 'gray400',
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -104,13 +104,13 @@ const FakeRadio = styled('div')(
       backgroundColor: 'currentColor',
     },
     [`${Input}:checked + &`]: {
-      color: 'blues.4',
+      color: 'blue500',
     },
     [`${Input}:hover + &`]: {
-      borderColor: 'grays.4',
+      borderColor: 'gray500',
     },
     [`${Input}:focus + &`]: {
-      borderColor: 'blues.4',
+      borderColor: 'blue500',
     },
   })
 );

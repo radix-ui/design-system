@@ -20,7 +20,7 @@ export function SystemPropsTable({ props }) {
             {props.sort().map(prop => (
               <Tr key={prop}>
                 <Td>
-                  <Text textColor="grays.5">
+                  <Text textColor="gray600">
                     <Code>{prop}</Code>
                   </Text>
                 </Td>

@@ -22,12 +22,12 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>((props, ref) => (
       variant({
         variant: {
           normal: {
-            backgroundColor: 'blues.1',
-            color: 'blues.5',
+            backgroundColor: 'blue200',
+            color: 'blue600',
           },
           fade: {
-            backgroundColor: 'grays.1',
-            color: 'grays.5',
+            backgroundColor: 'gray200',
+            color: 'gray600',
           },
         },
       }),

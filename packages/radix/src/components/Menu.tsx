@@ -43,8 +43,8 @@ export const Menu = styled('nav')<MenuProps>(
         shadow: {
           boxShadow: `0 10px 38px -10px ${transparentize(
             0.65,
-            themeGet('colors.grays.8')(props)
-          )}, 0 10px 20px -15px ${transparentize(0.8, themeGet('colors.grays.8')(props))}`,
+            themeGet('colors.gray900')(props)
+          )}, 0 10px 20px -15px ${transparentize(0.8, themeGet('colors.gray900')(props))}`,
         },
       },
     }),
@@ -84,7 +84,7 @@ export const MenuItem = styled('button')<MenuItemProps>(
       backgroundColor: 'white',
     },
     '&:disabled': {
-      color: 'grays.4',
+      color: 'gray500',
       cursor: 'not-allowed',
     },
     '&::-moz-focus-inner': {
@@ -96,38 +96,38 @@ export const MenuItem = styled('button')<MenuItemProps>(
       variant: {
         normal: {
           backgroundColor: 'white',
-          color: 'grays.7',
+          color: 'gray800',
           '&:hover': {
-            backgroundColor: 'grays.1',
+            backgroundColor: 'gray200',
           },
           '&:active': {
-            backgroundColor: 'grays.2',
+            backgroundColor: 'gray300',
           },
           '&:focus': {
-            outlineColor: themeGet('colors.blues.2')(props),
+            outlineColor: themeGet('colors.blue300')(props),
           },
         },
         active: {
-          backgroundColor: 'blues.4',
+          backgroundColor: 'blue500',
           color: 'white',
           '&:hover': {
-            backgroundColor: 'blues.4',
+            backgroundColor: 'blue500',
           },
           '&:active': {
-            backgroundColor: 'blues.4',
+            backgroundColor: 'blue500',
           },
         },
         selected: {
-          backgroundColor: 'blues.1',
-          color: 'grays.7',
+          backgroundColor: 'blue200',
+          color: 'gray800',
           '&:hover': {
-            backgroundColor: 'blues.1',
+            backgroundColor: 'blue200',
           },
           '&:active': {
-            backgroundColor: 'blues.1',
+            backgroundColor: 'blue200',
           },
           '&:focus': {
-            outlineColor: themeGet('colors.blues.2')(props),
+            outlineColor: themeGet('colors.blue300')(props),
           },
         },
       },
@@ -148,6 +148,6 @@ export const MenuGroup = styled('div')(
     marginX: 0,
     borderTop: '1px solid',
     borderBottom: '1px solid',
-    borderColor: 'grays.2',
+    borderColor: 'gray300',
   })
 );

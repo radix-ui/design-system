@@ -17,7 +17,7 @@ storiesOf('Components|Card', module).add('default', () => (
           China’s leadership is seeking to maintain a recent thaw with the United States while
           lashing out at the arrest of a top Chinese tech executive.
         </Text>
-        <Text size={2} color="grays.5">
+        <Text size={2} color="gray600">
           Today
         </Text>
       </Card>
@@ -29,7 +29,7 @@ storiesOf('Components|Card', module).add('default', () => (
           China’s leadership is seeking to maintain a recent thaw with the United States while
           lashing out at the arrest of a top Chinese tech executive.
         </Text>
-        <Text size={2} color="grays.5">
+        <Text size={2} color="gray600">
           Today
         </Text>
       </Card>
@@ -41,7 +41,7 @@ storiesOf('Components|Card', module).add('default', () => (
           China’s leadership is seeking to maintain a recent thaw with the United States while
           lashing out at the arrest of a top Chinese tech executive.
         </Text>
-        <Text size={2} color="grays.5">
+        <Text size={2} color="gray600">
           Today
         </Text>
       </Card>
@@ -56,7 +56,7 @@ storiesOf('Components|Card', module).add('default', () => (
           China’s leadership is seeking to maintain a recent thaw with the United States while
           lashing out at the arrest of a top Chinese tech executive.
         </Text>
-        <Text size={2} color="grays.5">
+        <Text size={2} color="gray600">
           Today
         </Text>
       </CardLink>
@@ -69,7 +69,7 @@ storiesOf('Components|Card', module).add('default', () => (
           China’s leadership is seeking to maintain a recent thaw with the United States while
           lashing out at the arrest of a top Chinese tech executive.
         </Text>
-        <Text size={2} color="grays.5">
+        <Text size={2} color="gray600">
           Today
         </Text>
       </CardLink>
@@ -82,7 +82,7 @@ storiesOf('Components|Card', module).add('default', () => (
           China’s leadership is seeking to maintain a recent thaw with the United States while
           lashing out at the arrest of a top Chinese tech executive.
         </Text>
-        <Text size={2} color="grays.5">
+        <Text size={2} color="gray600">
           Today
         </Text>
       </CardLink>

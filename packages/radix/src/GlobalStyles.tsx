@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle(
     html: {
       fontSize: 3,
       fontFamily: 'normal',
-      color: 'grays.7',
+      color: 'gray800',
       backgroundColor: 'white',
       WebkitFontSmoothing: 'antialiased',
       MozOsxFontSmoothing: 'grayscale',

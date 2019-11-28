@@ -50,13 +50,13 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
           },
         },
         '&:active': {
-          backgroundColor: 'grays.1',
-          borderColor: 'grays.4',
+          backgroundColor: 'gray200',
+          borderColor: 'gray500',
         },
         '&:disabled': {
-          backgroundColor: 'grays.1',
-          borderColor: 'grays.2',
-          color: 'grays.4',
+          backgroundColor: 'gray200',
+          borderColor: 'gray300',
+          color: 'gray500',
           cursor: 'not-allowed',
           pointerEvents: 'none',
         },
@@ -64,52 +64,52 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
       variant({
         variant: {
           gray: {
-            backgroundColor: 'grays.0',
-            borderColor: 'grays.3',
-            color: 'grays.5',
+            backgroundColor: 'gray100',
+            borderColor: 'gray400',
+            color: 'gray600',
             '&:hover': {
-              borderColor: 'grays.4',
+              borderColor: 'gray500',
             },
             '&:focus': {
-              borderColor: 'grays.4',
+              borderColor: 'gray500',
             },
           },
           blue: {
-            backgroundColor: 'blues.0',
-            borderColor: 'blues.3',
-            color: 'blues.5',
+            backgroundColor: 'blue100',
+            borderColor: 'blue400',
+            color: 'blue600',
             '&:hover': {
-              borderColor: 'blues.4',
+              borderColor: 'blue500',
             },
             '&:focus': {
-              borderColor: 'blues.4',
+              borderColor: 'blue500',
             },
             '&:active': {
-              backgroundColor: 'blues.1',
-              borderColor: 'blues.4',
+              backgroundColor: 'blue200',
+              borderColor: 'blue500',
             },
           },
           green: {
-            backgroundColor: 'greens.0',
-            borderColor: 'greens.3',
-            color: 'greens.5',
+            backgroundColor: 'green100',
+            borderColor: 'green400',
+            color: 'green600',
             '&:hover': {
-              borderColor: 'greens.4',
+              borderColor: 'green500',
             },
             '&:focus': {
-              borderColor: 'greens.4',
+              borderColor: 'green500',
             },
             '&:active': {
-              backgroundColor: 'greens.1',
-              borderColor: 'greens.4',
+              backgroundColor: 'green200',
+              borderColor: 'green500',
             },
           },
           red: {
-            backgroundColor: 'grays.0',
-            color: 'reds.5',
-            borderColor: 'grays.3',
+            backgroundColor: 'gray100',
+            color: 'red600',
+            borderColor: 'gray400',
             '&:hover': {
-              borderColor: 'grays.4',
+              borderColor: 'gray500',
             },
           },
         },
@@ -117,18 +117,18 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
       variant({
         isActive: {
           true: {
-            backgroundColor: 'grays.1',
-            borderColor: 'grays.3',
-            color: 'grays.5',
+            backgroundColor: 'gray200',
+            borderColor: 'gray400',
+            color: 'gray600',
             '&:hover': {
-              borderColor: 'grays.4',
+              borderColor: 'gray500',
             },
             '&:focus': {
-              borderColor: 'grays.4',
+              borderColor: 'gray500',
             },
             '&:active': {
-              backgroundColor: 'grays.1',
-              borderColor: 'grays.4',
+              backgroundColor: 'gray200',
+              borderColor: 'gray500',
             },
           },
         },
@@ -152,20 +152,20 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
       variant({
         isWaiting: {
           true: {
-            backgroundColor: 'grays.2',
-            borderColor: 'grays.3',
+            backgroundColor: 'gray300',
+            borderColor: 'gray400',
             color: 'transparent',
             overflow: 'hidden',
             position: 'relative',
             pointerEvents: 'none',
             '&:hover': {
-              borderColor: 'grays.3',
+              borderColor: 'gray400',
             },
             '&:focus': {
-              borderColor: 'grays.3',
+              borderColor: 'gray400',
             },
             '&:active': {
-              borderColor: 'grays.3',
+              borderColor: 'gray400',
             },
             '&::before': {
               position: 'absolute',

@@ -15,7 +15,7 @@ export const Td = styled('td')(
     paddingY: 3,
     paddingRight: 3,
     borderBottom: '1px solid',
-    borderColor: 'grays.3',
+    borderColor: 'gray400',
     fontSize: 2,
   })
 );

@@ -78,25 +78,25 @@ const StyledSelect = styled('select')<SelectProps>(
     outline: 'none',
     width: '100%',
     borderBottom: '1px solid',
-    borderColor: 'grays.3',
+    borderColor: 'gray400',
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     '&:focus': {
-      borderColor: 'blues.4',
+      borderColor: 'blue500',
       outline: 'none',
     },
     '&:disabled': {
-      borderColor: 'grays.2',
-      color: 'grays.4',
+      borderColor: 'gray300',
+      color: 'gray500',
       cursor: 'not-allowed',
     },
   }),
   variant({
     variant: {
       normal: {
-        color: 'grays.8',
+        color: 'gray900',
       },
       fade: {
-        color: 'grays.5',
+        color: 'gray600',
       },
     },
   })
@@ -113,7 +113,7 @@ const IconWrapper = styled('div')(
     alignItems: 'center',
     pointerEvents: 'none',
     [`${StyledSelect}:disabled + &`]: {
-      color: 'grays.4',
+      color: 'gray500',
     },
   })
 );

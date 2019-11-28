@@ -16,20 +16,20 @@ export const Slider = withTheme((props: SliderProps) => (
     sliderCss={css({ paddingY: '7px' })}
     thumbCss={css({
       color: 'white',
-      borderColor: 'grays.3',
+      borderColor: 'gray400',
       boxShadow: `0 0 0 3px currentColor`,
-      [`${Input}:hover&`]: { borderColor: 'grays.4' },
-      [`${Input}:focus&`]: { borderColor: 'blues.4' },
-      [`${Input}:disabled&`]: { borderColor: 'grays.2' },
+      [`${Input}:hover&`]: { borderColor: 'gray500' },
+      [`${Input}:focus&`]: { borderColor: 'blue500' },
+      [`${Input}:disabled&`]: { borderColor: 'gray300' },
     })}
     trackCss={css({
-      backgroundColor: 'grays.3',
-      [`${Input}:disabled + &`]: { backgroundColor: 'grays.2' },
+      backgroundColor: 'gray400',
+      [`${Input}:disabled + &`]: { backgroundColor: 'gray300' },
     })}
     innerTrackCss={variant({
       variant: {
-        normal: { backgroundColor: 'blues.4' },
-        fade: { backgroundColor: 'grays.4' },
+        normal: { backgroundColor: 'blue500' },
+        fade: { backgroundColor: 'gray500' },
       },
     })(props)}
   />

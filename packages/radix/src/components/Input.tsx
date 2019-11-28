@@ -14,7 +14,7 @@ export type InputProps = InputPrimitiveProps & {
 };
 
 const placeholderStyle = {
-  color: 'grays.4',
+  color: 'gray500',
 };
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => (
@@ -26,7 +26,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
         appearance: 'none',
         backgroundColor: 'transparent',
         borderRadius: 0,
-        color: 'grays.8',
+        color: 'gray900',
         fontFamily: 'normal',
         outline: 'none',
         padding: 0,
@@ -37,12 +37,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
         border: 0,
         borderBottom: '1px solid',
         '&:read-only': {
-          borderColor: 'grays.2',
-          color: 'grays.5',
+          borderColor: 'gray300',
+          color: 'gray600',
         },
         '&:disabled': {
-          borderColor: 'grays.2',
-          color: 'grays.4',
+          borderColor: 'gray300',
+          color: 'gray500',
           cursor: 'not-allowed',
         },
       }),
@@ -55,16 +55,16 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
       variant({
         variant: {
           normal: {
-            borderColor: 'grays.3',
+            borderColor: 'gray400',
             '&:focus': {
-              borderColor: 'blues.4',
+              borderColor: 'blue500',
             },
           },
           fade: {
-            borderColor: 'grays.3',
-            color: 'grays.5',
+            borderColor: 'gray400',
+            color: 'gray600',
             '&:focus': {
-              borderColor: 'blues.4',
+              borderColor: 'blue500',
             },
           },
           ghost: {

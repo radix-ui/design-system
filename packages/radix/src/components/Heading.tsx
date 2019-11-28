@@ -17,7 +17,7 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
     ref={ref}
     css={[
       css({
-        color: 'grays.8',
+        color: 'gray900',
         lineHeight: 1.2,
         fontWeight: 400,
         fontFamily: 'normal',

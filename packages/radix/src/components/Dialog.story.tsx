@@ -37,12 +37,12 @@ function DialogStory() {
             <Button ml="3" onClick={() => setOpen2(false)}>
               Close
             </Button>
-            <Box height="100px" bg="grays.1" mt="3" />
-            <Box height="100px" bg="grays.2" />
-            <Box height="100px" bg="grays.3" />
-            <Box height="100px" bg="grays.4" />
-            <Box height="100px" bg="grays.5" />
-            <Box height="100px" bg="grays.6" mb="3" />
+            <Box height="100px" bg="gray200" mt="3" />
+            <Box height="100px" bg="gray300" />
+            <Box height="100px" bg="gray400" />
+            <Box height="100px" bg="gray500" />
+            <Box height="100px" bg="gray600" />
+            <Box height="100px" bg="gray700" mb="3" />
           </Box>
         </Dialog>
 

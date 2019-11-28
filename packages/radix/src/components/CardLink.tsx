@@ -30,7 +30,7 @@ export const CardLink = React.forwardRef<HTMLAnchorElement, CardLinkProps>((prop
               }
             : {}),
           '&:hover': {
-            borderColor: 'grays.4',
+            borderColor: 'gray500',
             ...(variant === 'ghost'
               ? {
                   '&::before': { opacity: 1 },
@@ -44,7 +44,7 @@ export const CardLink = React.forwardRef<HTMLAnchorElement, CardLinkProps>((prop
               : {}),
           },
           '&:focus': {
-            borderColor: 'blues.4',
+            borderColor: 'blue500',
           },
         }),
     ]}

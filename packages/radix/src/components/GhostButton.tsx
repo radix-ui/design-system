@@ -22,7 +22,7 @@ export const GhostButton = styled.button<GhostButtonProps>(
       backgroundColor: 'transparent',
       border: 'none',
       borderRadius: 9999,
-      color: 'grays.5',
+      color: 'gray600',
       display: 'inline-flex',
       flexShrink: 0,
       alignItems: 'center',
@@ -40,18 +40,18 @@ export const GhostButton = styled.button<GhostButtonProps>(
       whiteSpace: 'nowrap',
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       '&:disabled': {
-        color: 'grays.4',
+        color: 'gray500',
         cursor: 'not-allowed',
         pointerEvents: 'none',
       },
       '&:hover': {
-        backgroundColor: 'grays.1',
+        backgroundColor: 'gray200',
       },
       '&:focus': {
-        boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')(props)}`,
+        boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue500')(props)}`,
       },
       '&:active': {
-        backgroundColor: 'grays.2',
+        backgroundColor: 'gray300',
       },
       '&::-moz-focus-inner': {
         border: 0,
@@ -61,16 +61,16 @@ export const GhostButton = styled.button<GhostButtonProps>(
     variant({
       isActive: {
         true: {
-          backgroundColor: 'grays.2',
+          backgroundColor: 'gray300',
           '&:hover': {
-            backgroundColor: 'grays.2',
+            backgroundColor: 'gray300',
           },
           '&:focus': {
-            boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')(props)}`,
+            boxShadow: `inset 0 1px 0 0 ${themeGet('colors.gray500')(props)}`,
           },
           '&:active': {
-            backgroundColor: 'grays.2',
-            boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')(props)}`,
+            backgroundColor: 'gray300',
+            boxShadow: `inset 0 1px 0 0 ${themeGet('colors.gray500')(props)}`,
           },
         },
       },

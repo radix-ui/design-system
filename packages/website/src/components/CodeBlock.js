@@ -6,8 +6,8 @@ const { colors } = radixTheme;
 
 const theme = {
   plain: {
-    color: colors.grays[7],
-    backgroundColor: colors.grays[0],
+    color: colors.gray800,
+    backgroundColor: colors.gray100,
   },
   styles: [
     {
@@ -32,7 +32,7 @@ const theme = {
     {
       types: ['punctuation', 'operator'],
       style: {
-        color: colors.grays[4],
+        color: colors.gray500,
       },
     },
     {
@@ -73,7 +73,7 @@ const theme = {
     {
       types: ['tag', 'selector', 'keyword'],
       style: {
-        color: colors.blues[5],
+        color: colors.blue600,
       },
     },
   ],
@@ -94,7 +94,7 @@ export default ({ children, live, removeFragment }) => {
           <LivePreview
             style={{
               padding: radixTheme.space[3],
-              border: `1px solid ${colors.grays[3]}`,
+              border: `1px solid ${colors.gray400}`,
               borderTopLeftRadius: radixTheme.radii[2],
               borderTopRightRadius: radixTheme.radii[2],
             }}
@@ -105,7 +105,7 @@ export default ({ children, live, removeFragment }) => {
             style={{
               borderBottomLeftRadius: radixTheme.radii[2],
               borderBottomRightRadius: radixTheme.radii[2],
-              border: `1px solid ${colors.grays[3]}`,
+              border: `1px solid ${colors.gray400}`,
               borderTop: 'none',
               fontSize: radixTheme.fontSizes[2],
               fontFamily: radixTheme.fonts.mono,
@@ -129,7 +129,7 @@ export default ({ children, live, removeFragment }) => {
           padding={radixTheme.space[3]}
           style={{
             borderRadius: radixTheme.radii[2],
-            border: `1px solid ${colors.grays[3]}`,
+            border: `1px solid ${colors.gray400}`,
             fontSize: radixTheme.fontSizes[2],
             fontFamily: radixTheme.fonts.mono,
             fontWeight: 400,

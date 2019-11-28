@@ -61,7 +61,7 @@ const FakeSwitch = styled('div')(props =>
       display: 'block',
       height: 1,
       width: '100%',
-      backgroundColor: 'grays.3',
+      backgroundColor: 'gray400',
       borderRadius: 9999,
       transition: 'background-color 100ms ease-out',
     },
@@ -73,34 +73,34 @@ const FakeSwitch = styled('div')(props =>
       top: 0,
       left: 0,
       borderRadius: 9999,
-      backgroundColor: 'grays.4',
+      backgroundColor: 'gray500',
       transition: 'transform 100ms ease-out',
     },
     [`${Input}:checked + &`]: {
       '&::before': {
-        backgroundColor: 'blues.3',
+        backgroundColor: 'blue400',
       },
       '&::after': {
-        backgroundColor: 'blues.4',
+        backgroundColor: 'blue500',
         transform: `translateX(${themeGet('space.4')(props)})`,
       },
     },
     [`${Input}:disabled + &`]: {
       cursor: 'not-allowed',
       '&::before': {
-        backgroundColor: 'grays.2',
+        backgroundColor: 'gray300',
       },
       '&::after': {
-        backgroundColor: 'grays.3',
+        backgroundColor: 'gray400',
       },
     },
     [`${Input}:disabled:checked + &`]: {
       cursor: 'not-allowed',
       '&::before': {
-        backgroundColor: 'blues.2',
+        backgroundColor: 'blue300',
       },
       '&::after': {
-        backgroundColor: 'blues.3',
+        backgroundColor: 'blue400',
       },
     },
   })

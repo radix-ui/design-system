@@ -49,10 +49,10 @@ export const PillButton = styled('button')<PillProps>(
       fontSize: 2,
       fontFamily: 'medium',
       fontWeight: 500,
-      backgroundColor: active ? 'grays.1' : 'white',
+      backgroundColor: active ? 'gray200' : 'white',
       border: '1px solid',
-      borderColor: active ? 'grays.4' : 'grays.3',
-      color: 'grays.5',
+      borderColor: active ? 'gray500' : 'gray400',
+      color: 'gray600',
       height: 5,
       paddingY: 0,
       paddingX: 4,
@@ -66,7 +66,7 @@ export const PillButton = styled('button')<PillProps>(
       pointerEvents: active && 'none',
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       boxShadow:
-        active && `inset 0 1px 0 ${transparentize(0.9, themeGet('colors.grays.8')(props))}`,
+        active && `inset 0 1px 0 ${transparentize(0.9, themeGet('colors.gray900')(props))}`,
       '&:first-child': {
         marginLeft: 0,
         borderTopLeftRadius: 9999,
@@ -77,15 +77,15 @@ export const PillButton = styled('button')<PillProps>(
         borderBottomRightRadius: 9999,
       },
       '&:hover:not(:disabled)': {
-        borderColor: 'grays.4',
+        borderColor: 'gray500',
         zIndex: 2,
       },
       '&:disabled': {
-        backgroundColor: 'grays.1',
-        color: 'grays.4',
+        backgroundColor: 'gray200',
+        color: 'gray500',
       },
       '&:focus': {
-        borderColor: 'grays.4',
+        borderColor: 'gray500',
         zIndex: 2,
       },
       '&::-moz-focus-inner': {

@@ -19,7 +19,7 @@ storiesOf('Components|Input', module).add('default', () => (
         height="100%"
         top={0}
         right={0}
-        color="grays.5"
+        color="gray600"
         style={{ pointerEvents: 'none' }}
       >
         <Flex alignItems="center" height="100%">
@@ -40,7 +40,7 @@ storiesOf('Components|Input', module).add('default', () => (
         height="100%"
         top={0}
         left={0}
-        color="grays.5"
+        color="gray600"
         style={{ pointerEvents: 'none' }}
       >
         <Flex alignItems="center" height="100%">

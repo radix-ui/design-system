@@ -40,8 +40,8 @@ export const ToggleButton = withTheme(
             padding: 0,
             backgroundColor: 'white',
             border: '1px solid',
-            borderColor: 'grays.3',
-            color: 'grays.5',
+            borderColor: 'gray400',
+            color: 'gray600',
             ':first-child': {
               borderTopLeftRadius: themeGet('radii.1')(props),
               borderBottomLeftRadius: themeGet('radii.1')(props),
@@ -51,11 +51,11 @@ export const ToggleButton = withTheme(
               borderBottomRightRadius: themeGet('radii.1')(props),
             },
             ':hover': {
-              borderColor: 'grays.4',
+              borderColor: 'gray500',
             },
             ':focus': {
               outline: 'none',
-              borderColor: 'grays.4',
+              borderColor: 'gray500',
             },
           }),
           { lineHeight: 1 },
@@ -63,14 +63,14 @@ export const ToggleButton = withTheme(
         activeCss={variant({
           variant: {
             normal: {
-              backgroundColor: 'blues.0',
-              borderColor: 'blues.2',
-              color: 'blues.5',
+              backgroundColor: 'blue100',
+              borderColor: 'blue300',
+              color: 'blue600',
             },
             fade: {
-              backgroundColor: 'grays.1',
-              borderColor: 'grays.4',
-              color: 'grays.5',
+              backgroundColor: 'gray200',
+              borderColor: 'gray500',
+              color: 'gray600',
             },
           },
         })(props)}

@@ -15,11 +15,11 @@ storiesOf('Components|Box', module).add('default', () => (
       </Box>
     </Box>
 
-    <Box border="4px solid" borderColor="reds.6" bg="reds.4" height={50} padding={1} margin={4} />
+    <Box border="4px solid" borderColor="red700" bg="red500" height={50} padding={1} margin={4} />
 
     <Box my={4} position="relative" width="100%" height="200px" bg="black">
       <Box bg="blue" padding={5} position="absolute" top="10px" left="10px" zIndex={1} />
-      <Box bg="blues.6" padding={5} position="absolute" top="15px" left="15px" />
+      <Box bg="blue700" padding={5} position="absolute" top="15px" left="15px" />
       Hello
     </Box>
 
