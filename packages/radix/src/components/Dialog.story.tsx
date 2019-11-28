@@ -41,8 +41,8 @@ function DialogStory() {
             <Box height="100px" bg="gray300" />
             <Box height="100px" bg="gray400" />
             <Box height="100px" bg="gray500" />
-            <Box height="100px" bg="gray600" />
-            <Box height="100px" bg="gray700" mb="3" />
+            <Box height="100px" bg="gray700" />
+            <Box height="100px" bg="gray800" mb="3" />
           </Box>
         </Dialog>
 

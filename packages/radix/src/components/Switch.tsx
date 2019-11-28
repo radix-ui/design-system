@@ -78,10 +78,10 @@ const FakeSwitch = styled('div')(props =>
     },
     [`${Input}:checked + &`]: {
       '&::before': {
-        backgroundColor: 'blue400',
+        backgroundColor: 'blue500',
       },
       '&::after': {
-        backgroundColor: 'blue500',
+        backgroundColor: 'blue600',
         transform: `translateX(${themeGet('space.4')(props)})`,
       },
     },
@@ -97,10 +97,10 @@ const FakeSwitch = styled('div')(props =>
     [`${Input}:disabled:checked + &`]: {
       cursor: 'not-allowed',
       '&::before': {
-        backgroundColor: 'blue300',
+        backgroundColor: 'blue400',
       },
       '&::after': {
-        backgroundColor: 'blue400',
+        backgroundColor: 'blue500',
       },
     },
   })

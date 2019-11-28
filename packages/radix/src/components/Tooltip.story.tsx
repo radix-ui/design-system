@@ -21,7 +21,7 @@ storiesOf('Components|Tooltip', module).add('default', () => (
   <>
     <Flex width="100vw" height="100vh" alignItems="center" justifyContent="center">
       <Grid gridTemplateColumns="repeat(5, 1fr)" gridTemplateRows="repeat(5, 1fr)">
-        <Tooltip label="Top start" side="top" align="start">
+        <Tooltip isOpen label="Top start" side="top" align="start">
           <Button css={{ gridColumn: '2', gridRow: '1', justifyContent: 'center' }} m={1} size={1}>
             <PinTopIcon size="25" /> <JustifyStartIcon size="25" />
           </Button>

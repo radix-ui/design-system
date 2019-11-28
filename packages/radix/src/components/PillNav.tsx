@@ -52,7 +52,7 @@ export const PillButton = styled('button')<PillProps>(
       backgroundColor: active ? 'gray200' : 'white',
       border: '1px solid',
       borderColor: active ? 'gray500' : 'gray400',
-      color: 'gray600',
+      color: 'gray700',
       height: 5,
       paddingY: 0,
       paddingX: 4,

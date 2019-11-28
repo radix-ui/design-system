@@ -25,11 +25,9 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) =>
         size: {
           0: {
             fontSize: 0,
-            letterSpacing: '.032em',
           },
           1: {
             fontSize: 1,
-            letterSpacing: '.032em',
           },
           2: {
             fontSize: 2,

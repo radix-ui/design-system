@@ -73,7 +73,7 @@ const theme = {
     {
       types: ['tag', 'selector', 'keyword'],
       style: {
-        color: colors.blue600,
+        color: colors.blue700,
       },
     },
   ],

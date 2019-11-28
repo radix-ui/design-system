@@ -64,7 +64,7 @@ export const Textarea = styled('textarea')<TextareaProps>(
     minHeight: 9,
     '&:read-only': {
       borderColor: 'gray300',
-      color: 'gray600',
+      color: 'gray700',
     },
     '&:disabled': {
       borderColor: 'gray300',
@@ -86,14 +86,14 @@ export const Textarea = styled('textarea')<TextareaProps>(
       normal: {
         borderColor: 'gray400',
         '&:focus': {
-          borderColor: 'blue500',
+          borderColor: 'blue600',
         },
       },
       fade: {
         borderColor: 'gray400',
-        color: 'gray600',
+        color: 'gray700',
         '&:focus': {
-          borderColor: 'blue500',
+          borderColor: 'blue600',
         },
       },
       ghost: {

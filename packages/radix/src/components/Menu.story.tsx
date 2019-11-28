@@ -195,7 +195,7 @@ function MenuStory() {
               <Heading size={0} fontWeight={500} mb={1}>
                 Heading
               </Heading>
-              <Text as="div" size={1} textColor="gray600">
+              <Text as="div" size={1} textColor="gray700">
                 Some text
               </Text>
             </Box>
@@ -206,7 +206,7 @@ function MenuStory() {
                 Device
               </Text>
 
-              <Text size={1} textColor="gray600">
+              <Text size={1} textColor="gray700">
                 200 x 400
               </Text>
             </Flex>

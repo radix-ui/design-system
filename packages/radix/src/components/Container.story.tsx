@@ -8,7 +8,7 @@ storiesOf('Components|Container', module).add('default', () => (
   <>
     <Box marginBottom={4}>
       <Container>
-        <Box backgroundColor="blue" p={3}>
+        <Box backgroundColor="blue600" p={3}>
           <Text as="p" textAlign="center">
             Default
           </Text>
@@ -18,7 +18,7 @@ storiesOf('Components|Container', module).add('default', () => (
 
     <Box mb={4}>
       <Container size={0}>
-        <Box backgroundColor="blue" p={3}>
+        <Box backgroundColor="blue600" p={3}>
           <Text as="p" textAlign="center">
             Size 0
           </Text>
@@ -28,7 +28,7 @@ storiesOf('Components|Container', module).add('default', () => (
 
     <Box mb={4}>
       <Container size={1}>
-        <Box backgroundColor="blue" p={3}>
+        <Box backgroundColor="blue600" p={3}>
           <Text as="p" textAlign="center">
             Size 1
           </Text>
@@ -38,7 +38,7 @@ storiesOf('Components|Container', module).add('default', () => (
 
     <Box mb={4}>
       <Container size={2}>
-        <Box backgroundColor="blue" p={3}>
+        <Box backgroundColor="blue600" p={3}>
           <Text as="p" textAlign="center">
             Size 2
           </Text>
@@ -48,7 +48,7 @@ storiesOf('Components|Container', module).add('default', () => (
 
     <Box mb={4}>
       <Container size={[null, 0, 1]}>
-        <Box backgroundColor="blue" p={3}>
+        <Box backgroundColor="blue600" p={3}>
           <Text as="p" textAlign="center">
             Responsive
           </Text>

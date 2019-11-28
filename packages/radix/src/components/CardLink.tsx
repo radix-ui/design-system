@@ -44,7 +44,7 @@ export const CardLink = React.forwardRef<HTMLAnchorElement, CardLinkProps>((prop
               : {}),
           },
           '&:focus': {
-            borderColor: 'blue500',
+            borderColor: 'blue600',
           },
         }),
     ]}

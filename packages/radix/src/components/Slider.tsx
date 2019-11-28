@@ -13,25 +13,48 @@ type SliderProps = SliderPrimitiveProps & { theme?: any; variant?: 'normal' | 'f
 export const Slider = withTheme((props: SliderProps) => (
   <SliderPrimitive
     {...props}
-    sliderCss={css({ paddingY: '7px' })}
-    thumbCss={css({
-      color: 'white',
-      borderColor: 'gray400',
-      boxShadow: `0 0 0 3px currentColor`,
-      [`${Input}:hover&`]: { borderColor: 'gray500' },
-      [`${Input}:focus&`]: { borderColor: 'blue500' },
-      [`${Input}:disabled&`]: { borderColor: 'gray300' },
-    })}
-    trackCss={css({
-      backgroundColor: 'gray400',
-      [`${Input}:disabled + &`]: { backgroundColor: 'gray300' },
-    })}
-    innerTrackCss={variant({
-      variant: {
-        normal: { backgroundColor: 'blue500' },
-        fade: { backgroundColor: 'gray500' },
+    sliderCss={css({
+      paddingTop: '6px',
+      paddingBottom: '7px',
+      '&:hover': {
+        cursor: 'default',
       },
-    })(props)}
+    })}
+    thumbCss={css({
+      height: '12px',
+      width: '12px',
+      borderRadius: '6px',
+      color: 'white',
+      border: 0,
+      boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.25), 0px 1px 3px rgba(0, 0, 0, 0.2)',
+      // [`${Input}:hover&`]: { borderColor: 'gray500' },
+      // [`${Input}:focus&`]: { borderColor: 'blue600' },
+      [`${Input}:disabled&`]: {
+        boxShadow: 'none',
+        backgroundColor: 'gray400',
+      },
+    })}
+    trackCss={[
+      css({
+        backgroundColor: 'gray400',
+        color: 'gray400',
+        height: '2px',
+        borderRadius: '1px',
+        top: '11px',
+        transform: 'none',
+        [`${Input}:disabled + &`]: { backgroundColor: 'gray300', color: 'gray400' },
+      }),
+      variant({
+        variant: {
+          normal: { color: 'blue600' },
+          fade: { color: 'gray500' }, // TODO: Remove this variant
+        },
+      })(props),
+    ]}
+    innerTrackCss={css({
+      borderRadius: 'inherit',
+      backgroundColor: 'currentColor', // inherit `color` property of `trackCss`
+    })}
   />
 ));
 

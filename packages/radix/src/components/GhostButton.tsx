@@ -22,7 +22,7 @@ export const GhostButton = styled.button<GhostButtonProps>(
       backgroundColor: 'transparent',
       border: 'none',
       borderRadius: 9999,
-      color: 'gray600',
+      color: 'gray800',
       display: 'inline-flex',
       flexShrink: 0,
       alignItems: 'center',
@@ -40,18 +40,20 @@ export const GhostButton = styled.button<GhostButtonProps>(
       whiteSpace: 'nowrap',
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       '&:disabled': {
-        color: 'gray500',
+        color: 'gray600',
         cursor: 'not-allowed',
-        pointerEvents: 'none',
+        pointerEvents: 'none', // TODO: Review in Primitives
       },
       '&:hover': {
         backgroundColor: 'gray200',
-      },
-      '&:focus': {
-        boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+        boxShadow: `0 0 0 1px ${themeGet('colors.gray200')(props)}`,
       },
       '&:active': {
         backgroundColor: 'gray300',
+        boxShadow: `0 0 0 1px ${themeGet('colors.gray300')(props)}`,
+      },
+      '&:focus': {
+        boxShadow: `0 0 0 2px ${themeGet('colors.blue500')(props)}`,
       },
       '&::-moz-focus-inner': {
         border: 0,
@@ -61,16 +63,19 @@ export const GhostButton = styled.button<GhostButtonProps>(
     variant({
       isActive: {
         true: {
-          backgroundColor: 'gray300',
+          backgroundColor: 'blue200',
+          color: 'blue600',
+          boxShadow: `0 0 0 1px ${themeGet('colors.blue200')(props)}`,
           '&:hover': {
-            backgroundColor: 'gray300',
-          },
-          '&:focus': {
-            boxShadow: `inset 0 1px 0 0 ${themeGet('colors.gray500')(props)}`,
+            backgroundColor: 'blue200',
+            boxShadow: `0 0 0 1px ${themeGet('colors.blue200')(props)}`,
           },
           '&:active': {
-            backgroundColor: 'gray300',
-            boxShadow: `inset 0 1px 0 0 ${themeGet('colors.gray500')(props)}`,
+            backgroundColor: 'blue300',
+            boxShadow: `0 0 0 1px ${themeGet('colors.blue300')(props)}`,
+          },
+          '&:focus': {
+            boxShadow: `0 0 0 2px ${themeGet('colors.blue500')(props)}`,
           },
         },
       },

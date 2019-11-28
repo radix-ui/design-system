@@ -50,7 +50,7 @@ storiesOf('Components|Text', module).add('default', () => (
 
     <Box mb="4">
       <Text as="p">The Design System spot</Text>
-      <Text as="p" textColor="blue">
+      <Text as="p" textColor="blue600">
         The Design System spot
       </Text>
       <Text as="p" textColor="red">

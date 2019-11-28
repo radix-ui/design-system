@@ -104,13 +104,13 @@ const FakeRadio = styled('div')(
       backgroundColor: 'currentColor',
     },
     [`${Input}:checked + &`]: {
-      color: 'blue500',
+      color: 'blue600',
     },
     [`${Input}:hover + &`]: {
       borderColor: 'gray500',
     },
     [`${Input}:focus + &`]: {
-      borderColor: 'blue500',
+      borderColor: 'blue600',
     },
   })
 );

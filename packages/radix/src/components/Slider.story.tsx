@@ -42,6 +42,10 @@ function SliderStory() {
         <Text as="p">Disabled</Text>
         <Slider disabled />
       </Box>
+      <Box mb="4">
+        <Text as="p">Disabled</Text>
+        <Slider value="50" disabled />
+      </Box>
     </Box>
   );
 }

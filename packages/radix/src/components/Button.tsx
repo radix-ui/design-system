@@ -33,7 +33,7 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
         display: 'inline-flex',
         border: '1px solid',
         borderRadius: 1,
-        cursor: 'pointer',
+        cursor: 'default',
         fontFamily: 'medium',
         fontWeight: 500,
         outline: 'none',
@@ -54,11 +54,11 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
           borderColor: 'gray500',
         },
         '&:disabled': {
-          backgroundColor: 'gray200',
+          backgroundColor: 'gray100',
           borderColor: 'gray300',
           color: 'gray500',
           cursor: 'not-allowed',
-          pointerEvents: 'none',
+          pointerEvents: 'none', // TODO: Remove this when update Primitives
         },
       }),
       variant({
@@ -66,50 +66,66 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
           gray: {
             backgroundColor: 'gray100',
             borderColor: 'gray400',
-            color: 'gray600',
+            color: 'gray800',
             '&:hover': {
               borderColor: 'gray500',
             },
-            '&:focus': {
+            '&:active': {
+              backgroundColor: 'gray200',
               borderColor: 'gray500',
+            },
+            '&:focus': {
+              borderColor: 'blue500',
+              boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
             },
           },
           blue: {
             backgroundColor: 'blue100',
             borderColor: 'blue400',
-            color: 'blue600',
+            color: 'blue700',
             '&:hover': {
-              borderColor: 'blue500',
-            },
-            '&:focus': {
               borderColor: 'blue500',
             },
             '&:active': {
               backgroundColor: 'blue200',
               borderColor: 'blue500',
             },
+            '&:focus': {
+              borderColor: 'blue500',
+              boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+            },
           },
           green: {
             backgroundColor: 'green100',
             borderColor: 'green400',
-            color: 'green600',
+            color: 'green700',
             '&:hover': {
-              borderColor: 'green500',
-            },
-            '&:focus': {
               borderColor: 'green500',
             },
             '&:active': {
               backgroundColor: 'green200',
               borderColor: 'green500',
             },
+            '&:focus': {
+              borderColor: 'green500',
+              boxShadow: `0 0 0 1px ${props.theme.colors.green500}`,
+            },
           },
           red: {
             backgroundColor: 'gray100',
-            color: 'red600',
             borderColor: 'gray400',
+            color: 'red700',
             '&:hover': {
-              borderColor: 'gray500',
+              backgroundColor: 'red100',
+              borderColor: 'red400',
+            },
+            '&:active': {
+              backgroundColor: 'red200',
+              borderColor: 'red500',
+            },
+            '&:focus': {
+              borderColor: 'red500',
+              boxShadow: `0 0 0 1px ${props.theme.colors.red500}`,
             },
           },
         },
@@ -117,18 +133,19 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
       variant({
         isActive: {
           true: {
-            backgroundColor: 'gray200',
-            borderColor: 'gray400',
-            color: 'gray600',
+            backgroundColor: 'blue200',
+            borderColor: 'blue500',
+            color: 'blue700',
             '&:hover': {
-              borderColor: 'gray500',
-            },
-            '&:focus': {
-              borderColor: 'gray500',
+              borderColor: 'blue600',
             },
             '&:active': {
-              backgroundColor: 'gray200',
-              borderColor: 'gray500',
+              backgroundColor: 'blue300',
+              borderColor: 'blue600',
+            },
+            '&:focus': {
+              borderColor: 'blue500',
+              boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
             },
           },
         },
@@ -152,7 +169,7 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
       variant({
         isWaiting: {
           true: {
-            backgroundColor: 'gray300',
+            backgroundColor: 'gray200',
             borderColor: 'gray400',
             color: 'transparent',
             overflow: 'hidden',
@@ -177,8 +194,8 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
               backgroundImage: `linear-gradient(
               -45deg,
               transparent 33%,
-              rgba(0, 0, 0, 0.05) 33%,
-              rgba(0, 0, 0, 0.05) 66%,
+              rgba(0, 0, 0, 0.03) 33%,
+              rgba(0, 0, 0, 0.03) 66%,
               transparent 66%
             )`,
               backgroundSize:

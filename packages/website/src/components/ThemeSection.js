@@ -152,7 +152,7 @@ const ColorCard = ({ color, name, props }) => (
         <RadixHeading as="h4" size={0} fontWeight={500} mt={2} mb={1}>
           <span style={{ textTransform: 'capitalize' }}>{name}</span>
         </RadixHeading>
-        <Text as="p" size={0} textColor="gray600" mb={2}>
+        <Text as="p" size={0} textColor="gray700" mb={2}>
           <span style={{ textTransform: 'uppercase' }}>
             {color.replace(/\(|\)/g, ' ').replace('.', '0.')}
           </span>
@@ -174,7 +174,7 @@ const SectionTitle = props => (
   <Text
     size={2}
     marginY={0}
-    textColor="gray600"
+    textColor="gray700"
     style={{ textTransform: 'capitalize' }}
     {...props}
   />

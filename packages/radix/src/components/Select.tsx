@@ -1,7 +1,9 @@
 import React, { ComponentProps, FC } from 'react';
+import themeGet from '@styled-system/theme-get';
 import pick from 'lodash.pick';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
+import { CaretSortIcon } from '@modulz/radix-icons';
 import css from '@styled-system/css';
 import {
   margin,
@@ -13,7 +15,7 @@ import {
   Prop,
 } from '@modulz/radix-system';
 
-type Variants = 'normal' | 'fade';
+type Variants = 'normal' | 'fade' | 'ghost';
 type SelectProps = ComponentProps<'select'> &
   WrapperProps & {
     variant?: Prop<Variants>;
@@ -32,20 +34,7 @@ export const Select: FC<SelectProps> = ({ children, value, onChange, variant, ..
         {children}
       </StyledSelect>
       <IconWrapper>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={ICON_SIZE}
-          height={ICON_SIZE}
-          viewBox="0 0 15 15"
-          fill="none"
-          stroke="currentColor"
-          style={{
-            display: 'block',
-          }}
-        >
-          <path d="M14.5 5.5L12.5 3.5L10.5 5.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M14.5 9.5L12.5 11.5L10.5 9.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+        <CaretSortIcon size="15" />
       </IconWrapper>
     </Wrapper>
   );
@@ -64,39 +53,49 @@ const styleProps = compose(
 const Wrapper = styled('div')<WrapperProps>({ position: 'relative' }, styleProps);
 
 const StyledSelect = styled('select')<SelectProps>(
-  css({
-    appearance: 'none',
-    backgroundColor: 'transparent',
-    height: 5,
-    lineHeight: 1,
-    fontFamily: 'normal',
-    padding: 0,
-    fontSize: 2,
-    borderRadius: 0,
-    paddingRight: 3,
-    border: 'none',
-    outline: 'none',
-    width: '100%',
-    borderBottom: '1px solid',
-    borderColor: 'gray400',
-    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-    '&:focus': {
-      borderColor: 'blue500',
+  props =>
+    css({
+      appearance: 'none',
+      backgroundColor: 'gray100',
+      height: 5,
+      lineHeight: 1,
+      fontFamily: 'normal',
+      padding: 0,
+      fontSize: 1,
+      paddingLeft: 1,
+      paddingRight: 3,
       outline: 'none',
-    },
-    '&:disabled': {
+      width: '100%',
+      borderRadius: 1,
+      border: '1px solid',
       borderColor: 'gray300',
-      color: 'gray500',
-      cursor: 'not-allowed',
-    },
-  }),
+      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+      '&:focus': {
+        borderColor: 'blue500',
+        boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+      },
+      '&:disabled': {
+        borderColor: 'gray300',
+        color: 'gray500',
+        cursor: 'not-allowed',
+      },
+    })(props),
+  { lineHeight: 1 },
   variant({
     variant: {
       normal: {
-        color: 'gray900',
+        color: 'gray800',
       },
+      // TODO: Consider Removing
       fade: {
-        color: 'gray600',
+        color: 'gray700',
+      },
+      ghost: {
+        backgroundColor: 'transparent',
+        borderColor: 'transparent',
+        '&:focus': {
+          borderColor: 'blue500',
+        },
       },
     },
   })
@@ -106,7 +105,7 @@ const IconWrapper = styled('div')(
   css({
     position: 'absolute',
     top: 0,
-    right: 0,
+    right: '1px',
     width: `${ICON_SIZE}px`,
     height: '100%',
     display: 'flex',

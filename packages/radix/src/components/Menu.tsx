@@ -104,17 +104,17 @@ export const MenuItem = styled('button')<MenuItemProps>(
             backgroundColor: 'gray300',
           },
           '&:focus': {
-            outlineColor: themeGet('colors.blue300')(props),
+            outlineColor: themeGet('colors.blue400')(props),
           },
         },
         active: {
-          backgroundColor: 'blue500',
+          backgroundColor: 'blue600',
           color: 'white',
           '&:hover': {
-            backgroundColor: 'blue500',
+            backgroundColor: 'blue600',
           },
           '&:active': {
-            backgroundColor: 'blue500',
+            backgroundColor: 'blue600',
           },
         },
         selected: {
@@ -127,7 +127,7 @@ export const MenuItem = styled('button')<MenuItemProps>(
             backgroundColor: 'blue200',
           },
           '&:focus': {
-            outlineColor: themeGet('colors.blue300')(props),
+            outlineColor: themeGet('colors.blue400')(props),
           },
         },
       },

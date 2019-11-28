@@ -23,11 +23,11 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>((props, ref) => (
         variant: {
           normal: {
             backgroundColor: 'blue200',
-            color: 'blue600',
+            color: 'blue700',
           },
           fade: {
             backgroundColor: 'gray200',
-            color: 'gray600',
+            color: 'gray700',
           },
         },
       }),

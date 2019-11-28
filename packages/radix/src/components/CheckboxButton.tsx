@@ -54,13 +54,13 @@ const FakeCheckbox = styled('div')(
     verticalAlign: 'middle',
     alignItems: 'center',
     justifyContent: 'center',
-    color: 'gray600',
+    color: 'gray700',
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     [`${Input}:focus + &`]: {
-      color: 'gray700',
+      color: 'gray800',
     },
     [`${Input}:checked + &`]: {
-      color: 'blue500',
+      color: 'blue600',
     },
   })
 );

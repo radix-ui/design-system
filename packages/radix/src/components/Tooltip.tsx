@@ -1,4 +1,5 @@
 import React from 'react';
+import themeGet from '@styled-system/theme-get';
 import css from '@styled-system/css';
 import { withTheme } from 'styled-components';
 import {
@@ -11,7 +12,7 @@ type TooltipProps = TooltipPrimitiveProps & { theme?: any };
 
 export const Tooltip = withTheme((props: TooltipProps) => (
   <TooltipPrimitive
-    arrow={<Arrow width={12} height={6} fill="hsla(0, 0%, 0%, 0.8)" />}
+    arrow={<Arrow width={12} height={6} fill={themeGet('colors.gray800')(props)} />}
     arrowOffset={6}
     sideOffset={-3}
     {...props}
@@ -22,10 +23,12 @@ export const Tooltip = withTheme((props: TooltipProps) => (
       immediate: true,
     })}
     css={css({
-      backgroundColor: 'hsla(0, 0%, 0%, 0.8)',
-      padding: '7px',
+      backgroundColor: 'gray800',
+      paddingY: 0,
+      paddingX: 1,
+      lineHeight: 1,
       borderRadius: 1,
-      fontSize: 2,
+      fontSize: 1,
     })}
   />
 ));

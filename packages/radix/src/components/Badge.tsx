@@ -20,7 +20,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, ref) 
       ref={ref}
       css={[
         css({
-          fontFamily: 'medium',
+          fontFamily: 'normal',
           fontWeight: 500,
           letterSpacing: '.134em',
           padding: 0,
@@ -30,24 +30,28 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, ref) 
         variant({
           variant: {
             gray: {
-              borderColor: 'gray400',
-              color: 'gray600',
+              borderColor: 'gray300',
+              color: 'gray800',
             },
             blue: {
-              borderColor: 'blue400',
-              color: 'blue600',
+              backgroundColor: 'blue100',
+              borderColor: 'blue300',
+              color: 'blue700',
             },
             green: {
-              borderColor: 'green400',
-              color: 'green600',
+              backgroundColor: 'green100',
+              borderColor: 'green300',
+              color: 'green700',
             },
             red: {
-              borderColor: 'red400',
-              color: 'red600',
+              backgroundColor: 'red100',
+              borderColor: 'red300',
+              color: 'red700',
             },
             yellow: {
-              borderColor: 'yellow400',
-              color: 'yellow600',
+              backgroundColor: 'yellow100',
+              borderColor: 'yellow300',
+              color: 'yellow700',
             },
           },
         }),

@@ -175,7 +175,7 @@ storiesOf('Playground', module).add('popover', () => <PopoverExample />);
 //   <Text
 //     mr={3}
 //     textAlign="right"
-//     color="gray600"
+//     color="gray700"
 //     size={2}
 //     style={{ width: 60, display: 'inline-block' }}
 //     {...props}

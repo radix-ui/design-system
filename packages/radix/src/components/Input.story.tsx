@@ -18,8 +18,8 @@ storiesOf('Components|Input', module).add('default', () => (
         position="absolute"
         height="100%"
         top={0}
-        right={0}
-        color="gray600"
+        right={1}
+        color="gray700"
         style={{ pointerEvents: 'none' }}
       >
         <Flex alignItems="center" height="100%">
@@ -39,8 +39,8 @@ storiesOf('Components|Input', module).add('default', () => (
         position="absolute"
         height="100%"
         top={0}
-        left={0}
-        color="gray600"
+        left={1}
+        color="gray700"
         style={{ pointerEvents: 'none' }}
       >
         <Flex alignItems="center" height="100%">
