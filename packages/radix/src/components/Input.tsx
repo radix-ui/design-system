@@ -54,6 +54,7 @@ export const Input = withTheme(
           '&:focus': {
             borderColor: 'blue500',
             boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+            cursor: 'text',
           },
         }),
         variant({
@@ -73,6 +74,7 @@ export const Input = withTheme(
             },
             ghost: {
               borderColor: 'transparent',
+              cursor: 'text',
             },
           },
         }),
