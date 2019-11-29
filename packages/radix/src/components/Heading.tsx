@@ -27,13 +27,13 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
           0: {
             fontSize: 3,
             lineHeight: 2,
-            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.01em',
+            letterSpacing: props.fontWeight === 500 ? '-0.025em' : '-0.01em',
             textIndent: '-0.01em',
           },
           1: {
             fontSize: 5,
             lineHeight: 2,
-            letterSpacing: props.fontWeight === 500 ? '-0.04em' : '-0.02em',
+            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.02em',
             textIndent: '-0.02em',
           },
           2: {

@@ -141,7 +141,7 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
             height: 5,
             minWidth: 5,
             lineHeight: 2,
-            letterSpacing: '-0.035em',
+            letterSpacing: '-0.02em',
           },
           1: {
             fontSize: 2,
@@ -149,7 +149,7 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
             height: 6,
             minWidth: 6,
             lineHeight: 4,
-            letterSpacing: '-0.035em',
+            letterSpacing: '-0.02em',
           },
         },
       }),

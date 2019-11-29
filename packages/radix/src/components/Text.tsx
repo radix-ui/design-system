@@ -26,32 +26,32 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) =>
           0: {
             fontSize: 0,
             lineHeight: 0,
-            letterSpacing: props.fontWeight === 500 ? '-0.015em' : '-0.01em',
+            letterSpacing: props.fontWeight === 500 ? '-0.01em' : 0,
           },
           1: {
             fontSize: 1,
             lineHeight: 2,
-            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.01em',
+            letterSpacing: props.fontWeight === 500 ? '-0.02em' : '-0.01em',
           },
           2: {
             fontSize: 2,
             lineHeight: 2,
-            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.01em',
+            letterSpacing: props.fontWeight === 500 ? '-0.02em' : '-0.01em',
           },
           3: {
             fontSize: 3,
             lineHeight: 2,
-            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.01em',
+            letterSpacing: props.fontWeight === 500 ? '-0.025em' : '-0.01em',
           },
           4: {
             fontSize: 4,
             lineHeight: 2,
-            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.015em',
+            letterSpacing: props.fontWeight === 500 ? '-0.03em' : '-0.015em',
           },
           5: {
             fontSize: 5,
             lineHeight: 2,
-            letterSpacing: props.fontWeight === 500 ? '-0.04em' : '-0.02em',
+            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.02em',
           },
           6: {
             fontSize: 6,
