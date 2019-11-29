@@ -88,25 +88,6 @@ export function ThemeSection() {
           return !Array.isArray(value) && <ColorCard color={value} name={key} key={key} />;
         })}
       </ColorGrid>
-
-      <Divider mt={6} mb={4} />
-
-      <Subheading>Secondary</Subheading>
-
-      {Object.entries(theme.colors).map(
-        ([key, value]) =>
-          Array.isArray(value) && (
-            <Box key={key}>
-              <SectionTitle>{key}</SectionTitle>
-              <ColorGrid>
-                {value.map((color, index) => (
-                  <ColorCard color={color} name={`${key.replace(/s$/, '')} ${index}`} key={color} />
-                ))}
-              </ColorGrid>
-              <Divider mt={4} mb={4} />
-            </Box>
-          )
-      )}
     </>
   );
 }

@@ -26,6 +26,6 @@ export const Dialog = (props: DialogProps) => (
       padding: 0,
       boxSizing: 'border-box',
     })}
-    overlayCss={css({ backgroundColor: 'whites.2' })}
+    overlayCss={{ backgroundColor: 'hsla(0, 0%, 100%, .5)' }}
   />
 );
