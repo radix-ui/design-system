@@ -22,7 +22,7 @@ export const Td = styled('td')(
 
 export const Th = styled(Td)(
   css({
-    fontFamily: 'medium',
+    fontFamily: 'normal',
     fontWeight: 500,
     borderWidth: 2,
   })

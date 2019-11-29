@@ -59,8 +59,8 @@ export const Input = withTheme(
         }),
         variant({
           size: {
-            0: { fontSize: 1, height: 5, lineHeight: 1, paddingX: 1 },
-            1: { fontSize: 2, height: 6, lineHeight: 3, paddingX: 2 },
+            0: { fontSize: 1, height: 5, lineHeight: 2, paddingX: 1 },
+            1: { fontSize: 2, height: 6, lineHeight: 4, paddingX: 2 },
           },
         }),
         variant({

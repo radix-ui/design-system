@@ -5,7 +5,7 @@ import { variant, Prop } from '@modulz/radix-system';
 
 type TextProps = TextPrimitiveProps & {
   fontWeight?: Prop<400 | 500>;
-  size?: Prop<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8>;
+  size?: Prop<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10>;
   truncate?: Prop<boolean>;
   as?: any;
   children?: React.ReactNode;
@@ -25,42 +25,62 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) =>
         size: {
           0: {
             fontSize: 0,
+            lineHeight: 0,
+            letterSpacing: props.fontWeight === 500 ? '-0.015em' : '-0.01em',
+            wordSpacing: props.fontWeight === 500 ? '0.02em' : '-0.025em',
           },
           1: {
             fontSize: 1,
+            lineHeight: 2,
+            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.01em',
+            wordSpacing: props.fontWeight === 500 ? '0.02em' : '-0.025em',
           },
           2: {
             fontSize: 2,
+            lineHeight: 2,
+            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.01em',
+            wordSpacing: props.fontWeight === 500 ? '0.02em' : '-0.025em',
           },
           3: {
             fontSize: 3,
-            letterSpacing: '-.001em',
-            textIndent: '-.05em',
+            lineHeight: 2,
+            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.01em',
+            wordSpacing: props.fontWeight === 500 ? '0.02em' : '-0.025em',
           },
           4: {
             fontSize: 4,
-            letterSpacing: '-.005em',
-            textIndent: '-.06em',
+            lineHeight: 2,
+            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.015em',
           },
           5: {
             fontSize: 5,
-            letterSpacing: '-.006em',
-            textIndent: '-.075em',
+            lineHeight: 2,
+            letterSpacing: props.fontWeight === 500 ? '-0.04em' : '-0.02em',
           },
           6: {
             fontSize: 6,
-            letterSpacing: '-.008em',
-            textIndent: '-.085em',
+            lineHeight: 3,
+            letterSpacing: props.fontWeight === 500 ? '-0.04em' : '-0.02em',
           },
           7: {
             fontSize: 7,
-            letterSpacing: '-.018em',
-            textIndent: '-.088em',
+            lineHeight: 3,
+            letterSpacing: props.fontWeight === 500 ? '-0.04em' : '-0.02em',
           },
           8: {
             fontSize: 8,
-            letterSpacing: '-.024em',
-            textIndent: '-.09em',
+            lineHeight: 4,
+            letterSpacing: props.fontWeight === 500 ? '-0.045em' : '-0.025em',
+          },
+          9: {
+            fontSize: 9,
+            lineHeight: 5,
+            letterSpacing: props.fontWeight === 500 ? '-0.045em' : '-0.025em',
+          },
+          10: {
+            fontSize: 10,
+            lineHeight: 9,
+            letterSpacing: props.fontWeight === 500 ? '-0.05em' : '-0.03em',
           },
         },
       }),

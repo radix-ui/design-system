@@ -34,7 +34,7 @@ export const ToggleButton = withTheme(
           css({
             height: 5,
             minWidth: 5,
-            fontFamily: 'medium',
+            fontFamily: 'normal',
             fontWeight: 500,
             fontSize: 2,
             padding: 0,
@@ -62,7 +62,7 @@ export const ToggleButton = withTheme(
               borderRadius: 1,
             },
           }),
-          { lineHeight: 1 },
+          { lineHeight: '1' },
         ]}
         activeCss={css({
           backgroundColor: 'blue100',

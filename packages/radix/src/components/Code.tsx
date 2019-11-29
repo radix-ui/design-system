@@ -31,7 +31,7 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>((props, ref) => (
           },
         },
       }),
-      { lineHeight: 1 },
+      { lineHeight: '1' },
     ]}
   />
 ));

@@ -26,7 +26,7 @@ export const Tooltip = withTheme((props: TooltipProps) => (
       backgroundColor: 'gray800',
       paddingY: 0,
       paddingX: 1,
-      lineHeight: 1,
+      lineHeight: 2,
       borderRadius: 1,
       fontSize: 1,
     })}

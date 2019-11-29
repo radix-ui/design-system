@@ -5,82 +5,106 @@ import { Text } from './Text';
 
 storiesOf('Components|Text', module).add('default', () => (
   <>
-    <Box mb="4">
+    <Box mb={6}>
       <Text as="p">Default text</Text>
     </Box>
 
-    <Box mb="4">
+    <Box mb={6}>
       <Text as="p" size={0}>
-        Radix
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
+      <Text as="p" size={0} fontWeight={500}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
+      </Text>
+    </Box>
+
+    <Box mb={6}>
       <Text as="p" size={1}>
-        Radix
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
+      <Text as="p" size={1} fontWeight={500}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
+      </Text>
+    </Box>
+
+    <Box mb={6}>
       <Text as="p" size={2}>
-        Radix
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
+      <Text as="p" size={2} fontWeight={500}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
+      </Text>
+    </Box>
+
+    <Box mb={6}>
       <Text as="p" size={3}>
-        Radix
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
+      <Text as="p" size={3} fontWeight={500}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
+      </Text>
+    </Box>
+
+    <Box mb={6}>
       <Text as="p" size={4}>
-        Radix
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
+      <Text as="p" size={4} fontWeight={500}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
+      </Text>
+    </Box>
+
+    <Box mb={6}>
       <Text as="p" size={5}>
-        Radix
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
+      <Text as="p" size={5} fontWeight={500}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
+      </Text>
+    </Box>
+
+    <Box mb={6}>
       <Text as="p" size={6}>
-        Radix
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
+      <Text as="p" size={6} fontWeight={500}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
+      </Text>
+    </Box>
+
+    <Box mb={6}>
       <Text as="p" size={7}>
-        Radix
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
+      <Text as="p" size={7} fontWeight={500}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
+      </Text>
+    </Box>
+
+    <Box mb={6}>
       <Text as="p" size={8}>
-        Radix
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
+      </Text>
+      <Text as="p" size={8} fontWeight={500}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
     </Box>
 
-    <Box mb="4">
-      <Text as="p" fontStyle="italic">
-        Closing the gap between designers and developers.
+    <Box mb={6}>
+      <Text as="p" size={9}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
-      <Text as="p" fontWeight={500}>
-        Closing the gap between designers and developers.
-      </Text>
-    </Box>
-
-    <Box mb="4">
-      <Text as="p">The Design System spot</Text>
-      <Text as="p" textColor="blue600">
-        The Design System spot
-      </Text>
-      <Text as="p" textColor="red">
-        The Design System spot
-      </Text>
-      <Text as="p" textColor="green">
-        The Design System spot
-      </Text>
-      <Text as="p" textColor="gray">
-        The Design System spot
+      <Text as="p" size={9} fontWeight={500}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
     </Box>
 
-    <Box mb="4">
-      <Text as="p" textAlign="center" padding="4">
-        Almost all design tools are optimised for illustration. Vector-based tools are great for
-        wireframing and exploration, but when it comes to designing interactive components, complex
-        layouts and stateful user interfaces—we need something more powerful.
+    <Box mb={6}>
+      <Text as="p" size={10}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
-    </Box>
-    <Box mb="4" width={200}>
-      <Text as="p" textAlign="center" padding="4" truncate>
-        When it comes to designing interactive components, complex layouts and stateful user
-        interfaces—we need something more powerful.
-      </Text>
-    </Box>
-
-    <Box mb="4">
-      <Text size={5}>
-        Nested text should be able to <Text>inherit font size</Text>
+      <Text as="p" size={10} fontWeight={500}>
+        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
     </Box>
   </>

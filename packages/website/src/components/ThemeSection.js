@@ -1,5 +1,4 @@
 import React from 'react';
-import css from '@styled-system/css';
 import {
   theme,
   Heading as RadixHeading,
@@ -20,7 +19,7 @@ export function ThemeSection() {
       {Object.entries(theme.fonts).map(([key, value]) => (
         <Box mb={3} key={key}>
           <SectionTitle>{key}</SectionTitle>
-          <Text as="p" size={key === 'mono' ? 7 : 8} mt={2} mb={6} lineHeight={4} fontFamily={key}>
+          <Text as="p" size={key === 'mono' ? 7 : 8} mt={2} mb={6} lineHeight={5} fontFamily={key}>
             Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
           </Text>
         </Box>

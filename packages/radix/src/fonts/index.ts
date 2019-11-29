@@ -3,14 +3,14 @@ import { default as UntitledSansWoff } from './UntitledSansWeb-Regular.woff';
 import { default as UntitledSansWoff2 } from './UntitledSansWeb-Regular.woff2';
 import { default as UntitledSansMediumWoff } from './UntitledSansWeb-Medium.woff';
 import { default as UntitledSansMediumWoff2 } from './UntitledSansWeb-Medium.woff2';
-import { default as OperatorMonoBookWoff } from './OperatorMonoSSm-Book.woff';
-import { default as OperatorMonoBookWoff2 } from './OperatorMonoSSm-Book.woff2';
-import { default as OperatorMonoBookItalicWoff } from './OperatorMonoSSm-BookItalic.woff';
-import { default as OperatorMonoBookItalicWoff2 } from './OperatorMonoSSm-BookItalic.woff2';
-import { default as OperatorMonoMediumWoff } from './OperatorMonoSSm-Medium.woff';
-import { default as OperatorMonoMediumWoff2 } from './OperatorMonoSSm-Medium.woff2';
-import { default as OperatorMonoMediumItalicWoff } from './OperatorMonoSSm-MediumItalic.woff';
-import { default as OperatorMonoMediumItalicWoff2 } from './OperatorMonoSSm-MediumItalic.woff2';
+import { default as RadixDuoBoldWoff } from './RadixDuo-Bold.woff';
+import { default as RadixDuoBoldWoff2 } from './RadixDuo-Bold.woff2';
+import { default as RadixDuoBoldItalicWoff } from './RadixDuo-BoldItalic.woff';
+import { default as RadixDuoBoldItalicWoff2 } from './RadixDuo-BoldItalic.woff2';
+import { default as RadixDuoItalicWoff } from './RadixDuo-Italic.woff';
+import { default as RadixDuoItalicWoff2 } from './RadixDuo-Italic.woff2';
+import { default as RadixDuoRegularWoff } from './RadixDuo-Regular.woff';
+import { default as RadixDuoRegularWoff2 } from './RadixDuo-Regular.woff2';
 
 export const fontStyles = css`
   @font-face {
@@ -30,39 +30,36 @@ export const fontStyles = css`
   }
 
   @font-face {
-    font-family: 'UntitledSans-Medium';
-    font-weight: 500;
+    font-family: 'RadixDuo';
+    font-weight: 400;
     font-display: swap;
-    src: local('UntitledSans-Medium'), url(${UntitledSansMediumWoff2}) format('woff2'),
-      url(${UntitledSansMediumWoff}) format('woff');
+    src: local('RadixDuo-Regular'), url(${RadixDuoRegularWoff2}) format('woff2'),
+      url(${RadixDuoRegularWoff}) format('woff');
   }
 
   @font-face {
-    font-family: 'OperatorMono-Book';
+    font-family: 'RadixDuo';
+    font-weight: 400;
+    font-style: italic;
     font-display: swap;
-    src: local('OperatorMonoSSm-Book'), url(${OperatorMonoBookWoff2}) format('woff2'),
-      url(${OperatorMonoBookWoff}) format('woff');
+    src: local('RadixDuo-Italic'), url(${RadixDuoItalicWoff2}) format('woff2'),
+      url(${RadixDuoItalicWoff}) format('woff');
   }
 
   @font-face {
-    font-family: 'OperatorMono-BookItalic';
+    font-family: 'RadixDuo';
+    font-weight: 700;
     font-display: swap;
-    src: local('OperatorMonoSSm-BookItalic'), url(${OperatorMonoBookItalicWoff2}) format('woff2'),
-      url(${OperatorMonoBookItalicWoff}) format('woff');
+    src: local('RadixDuo-Bold'), url(${RadixDuoBoldWoff2}) format('woff2'),
+      url(${RadixDuoBoldWoff}) format('woff');
   }
 
   @font-face {
-    font-family: 'OperatorMono-Medium';
+    font-family: 'RadixDuo';
+    font-weight: 700;
+    font-style: italic;
     font-display: swap;
-    src: local('OperatorMonoSSm-Medium'), url(${OperatorMonoMediumWoff2}) format('woff2'),
-      url(${OperatorMonoMediumWoff}) format('woff');
-  }
-
-  @font-face {
-    font-family: 'OperatorMono-MediumItalic';
-    font-display: swap;
-    src: local('OperatorMonoSSm-MediumItalic'),
-      url(${OperatorMonoMediumItalicWoff2}) format('woff2'),
-      url(${OperatorMonoMediumItalicWoff}) format('woff');
+    src: local('RadixDuo-BoldItalic'), url(${RadixDuoBoldItalicWoff2}) format('woff2'),
+      url(${RadixDuoBoldItalicWoff}) format('woff');
   }
 `;

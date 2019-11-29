@@ -59,7 +59,7 @@ const Input = styled('input')({
 
 const TextWrapper = styled('span')(
   css({
-    lineHeight: 5,
+    lineHeight: 6,
     fontFamily: 'normal',
     fontSize: 2,
     marginLeft: 1,

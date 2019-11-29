@@ -77,7 +77,7 @@ const StyledSelect = styled('select')<SelectProps>(
         cursor: 'not-allowed',
       },
     })(props),
-  { lineHeight: 1 },
+  { lineHeight: '1' },
   variant({
     size: {
       0: { fontSize: 1, height: 5, paddingLeft: 1, paddingRight: 3 },

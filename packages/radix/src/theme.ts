@@ -10,9 +10,7 @@ export const theme = {
   fonts: {
     normal:
       'UntitledSans, -apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
-    medium:
-      'UntitledSans-Medium, -apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
-    mono: 'OperatorMono-Book, Consolas, "Liberation Mono", Menlo, Courier, monospace',
+    mono: 'RadixDuo, "Liberation Mono", Menlo, Consolas, monospace',
   },
   fontSizes: [
     '10px',
@@ -29,23 +27,23 @@ export const theme = {
   ],
   space: ['0', '5px', '10px', '15px', '20px', '25px', '35px', '45px', '65px', '80px'],
   sizes: ['0', '5px', '10px', '15px', '20px', '25px', '35px', '45px', '65px', '80px'],
-  lineHeights: ['20px', '25px', '30px', '35px', '40px', '45px', '50px', '55px', '60px'],
+  lineHeights: ['15px', '20px', '25px', '30px', '35px', '40px', '45px', '50px', '55px', '60px'],
   radii: ['0', '3px', '5px', '10px'],
   colors: {
     black: 'hsl(0, 0%, 0%)',
     white: 'hsl(0, 0%, 100%)',
 
-    gray100: 'hsl(210, 14%, 99%)',
-    gray200: 'hsl(210, 27%, 97%)',
-    gray300: 'hsl(210, 12%, 92%)',
-    gray400: 'hsl(210, 10%, 87%)',
-    gray500: 'hsl(210, 9%, 75%)',
+    gray100: 'hsl(211, 11%, 98%)',
+    gray200: 'hsl(210, 18%, 95%)',
+    gray300: 'hsl(210, 16%, 90%)',
+    gray400: 'hsl(210, 10%, 84%)',
+    gray500: 'hsl(210, 10%, 74%)',
     gray600: 'hsl(210, 8%, 62%)',
     gray700: 'hsl(210, 7%, 46%)',
     gray800: 'hsl(210, 7%, 17%)',
     gray900: 'hsl(210, 5%, 9%)',
 
-    blue100: 'hsl(208, 100%, 99%)',
+    blue100: 'hsl(208, 100%, 98%)',
     blue200: 'hsl(208, 100%, 96%)',
     blue300: 'hsl(208, 92%, 92%)',
     blue400: 'hsl(208, 94%, 81%)',
@@ -55,7 +53,7 @@ export const theme = {
     blue800: 'hsl(208, 98%, 14%)',
     blue900: 'hsl(208, 98%, 9%)',
 
-    red100: 'hsl(348, 100%, 99%)',
+    red100: 'hsl(348, 100%, 98%)',
     red200: 'hsl(356, 92%, 97%)',
     red300: 'hsl(357, 87%, 92%)',
     red400: 'hsl(358, 90%, 86%)',
