@@ -3,11 +3,9 @@ import css from '@styled-system/css';
 import { margin, MarginProps, padding, PaddingProps, variant, compose } from '@modulz/radix-system';
 import themeGet from '@styled-system/theme-get';
 
-type Sizes = 0 | 1;
 type GhostButtonProps = MarginProps &
   PaddingProps & {
     isActive?: Boolean;
-    size?: Sizes;
   };
 
 const styleProps = compose(
@@ -28,6 +26,10 @@ export const GhostButton = styled.button<GhostButtonProps>(
       alignItems: 'center',
       fontFamily: 'normal',
       fontWeight: 500,
+      fontSize: 1,
+      height: 5,
+      lineHeight: 2,
+      minWidth: 5,
       justifyContent: 'center',
       outline: 'none',
       paddingY: 0,
@@ -80,25 +82,5 @@ export const GhostButton = styled.button<GhostButtonProps>(
         },
       },
     }),
-  variant({
-    size: {
-      0: {
-        fontSize: 1,
-        height: 5,
-        lineHeight: 2,
-        minWidth: 5,
-      },
-      1: {
-        fontSize: 3,
-        height: 6,
-        lineHeight: 3,
-        minWidth: 6,
-      },
-    },
-  }),
   styleProps
 );
-
-GhostButton.defaultProps = {
-  size: 0,
-};

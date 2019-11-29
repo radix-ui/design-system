@@ -16,11 +16,6 @@ description: Useful to communicate actions to your users via iconography.
       type: 'ReactNode',
       description: 'The content to render',
     },
-    size: {
-      type: '0 | 1',
-      default: '0',
-      description: 'The size to apply',
-    },
     isActive: {
       type: 'Boolean',
       default: 'false',
@@ -32,20 +27,6 @@ description: Useful to communicate actions to your users via iconography.
 <SystemProps props={['margin']} />
 
 ## Examples
-
-### size
-
-There are 2 sizes to choose from.
-
-```js live
-<GhostButton>
-  <PlusIcon  />
-</GhostButton>
-
-<GhostButton size={1} ml={6}>
-  <HamburgerIcon  />
-</GhostButton>
-```
 
 ### isActive
 
