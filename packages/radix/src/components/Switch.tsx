@@ -86,12 +86,12 @@ const FakeSwitch = styled('div')(props =>
         transform: `translateX(${themeGet('space.2')(props)})`,
       },
     },
-    [`${Input}:active + &`]: {
+    [`${Input}:not(:disabled):active + &`]: {
       '&::before': {
         backgroundColor: 'gray400',
       },
     },
-    [`${Input}:active:checked + &`]: {
+    [`${Input}:not(:disabled):active:checked + &`]: {
       '&::before': {
         backgroundColor: 'blue700',
       },
