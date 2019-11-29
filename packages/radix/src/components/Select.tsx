@@ -16,31 +16,33 @@ import {
 } from '@modulz/radix-system';
 
 type Variants = 'normal' | 'ghost';
+type SizeProps = 0 | 1;
 type SelectProps = ComponentProps<'select'> &
   WrapperProps & {
     variant?: Prop<Variants>;
+    size?: Prop<SizeProps>;
   };
 
 const marginPropNames = margin.propNames;
 const widthPropNames = width.propNames;
 
-export const Select: FC<SelectProps> = ({ children, value, onChange, variant, ...props }) => {
+export const Select: FC<SelectProps> = ({ children, value, onChange, variant, size, ...props }) => {
   const systemProps = pick(props, marginPropNames, widthPropNames);
   const inputPtops = omit(props, marginPropNames, widthPropNames);
 
   return (
     <Wrapper {...systemProps}>
-      <StyledSelect {...inputPtops} value={value} onChange={onChange} variant={variant}>
+      <StyledSelect {...inputPtops} value={value} onChange={onChange} variant={variant} size={size}>
         {children}
       </StyledSelect>
-      <IconWrapper>
+      <IconWrapper size={size}>
         <CaretSortIcon size="15" />
       </IconWrapper>
     </Wrapper>
   );
 };
 
-Select.defaultProps = { variant: 'normal' };
+Select.defaultProps = { variant: 'normal', size: 0 };
 
 const ICON_SIZE = 15;
 
@@ -57,13 +59,8 @@ const StyledSelect = styled('select')<SelectProps>(
     css({
       appearance: 'none',
       backgroundColor: 'gray100',
-      height: 5,
-      lineHeight: 1,
       fontFamily: 'normal',
-      padding: 0,
-      fontSize: 1,
-      paddingLeft: 1,
-      paddingRight: 3,
+      paddingY: 0,
       outline: 'none',
       width: '100%',
       borderRadius: 1,
@@ -82,6 +79,17 @@ const StyledSelect = styled('select')<SelectProps>(
     })(props),
   { lineHeight: 1 },
   variant({
+    size: {
+      0: { fontSize: 1, height: 5, paddingLeft: 1, paddingRight: 3 },
+      1: {
+        fontSize: 2,
+        height: 6,
+        paddingLeft: 2,
+        paddingRight: 4,
+      },
+    },
+  }),
+  variant({
     variant: {
       normal: {
         color: 'gray800',
@@ -97,11 +105,13 @@ const StyledSelect = styled('select')<SelectProps>(
   })
 );
 
-const IconWrapper = styled('div')(
+type IconWrapperProps = { size?: Prop<SizeProps> };
+
+const IconWrapper = styled('div')<IconWrapperProps>(props =>
   css({
     position: 'absolute',
     top: 0,
-    right: '1px',
+    right: props.size === 0 ? '1px' : '5px',
     width: `${ICON_SIZE}px`,
     height: '100%',
     display: 'flex',
@@ -110,5 +120,5 @@ const IconWrapper = styled('div')(
     [`${StyledSelect}:disabled + &`]: {
       color: 'gray500',
     },
-  })
+  })(props)
 );

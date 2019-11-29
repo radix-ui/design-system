@@ -18,6 +18,11 @@ description: Useful for allowing users to select only one option from a set.
       type: 'HTMLOptionElement',
       description: 'The options to render',
     },
+    size: {
+      type: '0 | 1',
+      default: '0',
+      description: 'The size to apply',
+    },
     variant: {
       type: 'normal | ghost',
       default: 'normal',
@@ -27,3 +32,35 @@ description: Useful for allowing users to select only one option from a set.
 />
 
 <SystemProps props={['margin', 'width']} />
+
+## Examples
+
+### Size
+
+There are 2 sizes to choose from.
+
+```js live
+<Select>
+  <option>Option 1</option>
+  <option>Option 2</option>
+</Select>
+<Select mt={6} size={1}>
+  <option>Option 1</option>
+  <option>Option 2</option>
+</Select>
+```
+
+### Variants
+
+There are 2 variants to choose from.
+
+```js live
+<Select variant="normal">
+  <option>Option 1</option>
+  <option>Option 2</option>
+</Select>
+<Select mt={6} variant="ghost">
+  <option>Option 1</option>
+  <option>Option 2</option>
+</Select>
+```
