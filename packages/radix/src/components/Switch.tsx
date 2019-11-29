@@ -26,7 +26,7 @@ const SwitchWrapper = styled('label')<MarginProps>(
   css({
     position: 'relative',
     display: 'inline-block',
-    width: 6,
+    width: 5,
     height: 3,
     boxSizing: 'content-box',
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
@@ -55,34 +55,45 @@ const FakeSwitch = styled('div')(props =>
     alignItems: 'center',
     position: 'relative',
     zIndex: 1,
-    cursor: 'pointer',
+    cursor: 'default',
+    userSelect: 'none',
     '&::before': {
       content: `''`,
       display: 'block',
-      height: 1,
+      height: 3,
       width: '100%',
-      backgroundColor: 'gray400',
+      backgroundColor: 'gray300',
       borderRadius: 9999,
       transition: 'background-color 100ms ease-out',
     },
     '&::after': {
       content: `''`,
       position: 'absolute',
-      width: 3,
-      height: 3,
-      top: 0,
-      left: 0,
+      width: '13px',
+      height: '13px',
+      top: '1px',
+      left: '1px',
       borderRadius: 9999,
-      backgroundColor: 'gray500',
+      backgroundColor: 'white',
+      boxShadow: '0px 0px 1px rgba(0, 0, 0, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.2)',
       transition: 'transform 100ms ease-out',
     },
     [`${Input}:checked + &`]: {
       '&::before': {
-        backgroundColor: 'blue500',
+        backgroundColor: 'blue600',
       },
       '&::after': {
-        backgroundColor: 'blue600',
-        transform: `translateX(${themeGet('space.4')(props)})`,
+        transform: `translateX(${themeGet('space.2')(props)})`,
+      },
+    },
+    [`${Input}:active + &`]: {
+      '&::before': {
+        backgroundColor: 'gray400',
+      },
+    },
+    [`${Input}:active:checked + &`]: {
+      '&::before': {
+        backgroundColor: 'blue700',
       },
     },
     [`${Input}:disabled + &`]: {
@@ -91,16 +102,8 @@ const FakeSwitch = styled('div')(props =>
         backgroundColor: 'gray300',
       },
       '&::after': {
-        backgroundColor: 'gray400',
-      },
-    },
-    [`${Input}:disabled:checked + &`]: {
-      cursor: 'not-allowed',
-      '&::before': {
-        backgroundColor: 'blue400',
-      },
-      '&::after': {
-        backgroundColor: 'blue500',
+        backgroundColor: 'gray100',
+        boxShadow: 'none',
       },
     },
   })
