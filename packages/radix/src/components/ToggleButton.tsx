@@ -38,6 +38,7 @@ export const ToggleButton = withTheme(
             fontWeight: 400,
             fontSize: 1,
             letterSpacing: '-0.01em',
+            wordSpacing: '-0.025em',
             padding: 0,
             backgroundColor: 'gray100',
             border: '1px solid',
@@ -68,6 +69,7 @@ export const ToggleButton = withTheme(
         activeCss={css({
           fontWeight: 500,
           letterSpacing: '-0.035em',
+          wordSpacing: '0.02em',
           backgroundColor: 'blue100',
           borderColor: 'transparent',
           color: 'blue800',

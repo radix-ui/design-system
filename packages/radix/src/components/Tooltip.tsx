@@ -29,6 +29,7 @@ export const Tooltip = withTheme((props: TooltipProps) => (
       lineHeight: 2,
       borderRadius: 1,
       fontSize: 1,
+      letterSpacing: '-0.01em',
     })}
   />
 ));
