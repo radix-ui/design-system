@@ -107,8 +107,8 @@ function App({ element, props }) {
                       variant={navOpen ? 'active' : undefined}
                       onClick={() => setNavOpen(!navOpen)}
                     >
-                      {!navOpen && <HamburgerIcon size="25" />}
-                      {navOpen && <CrossIcon size="25" />}
+                      {!navOpen && <HamburgerIcon />}
+                      {navOpen && <CrossIcon />}
                     </GhostButton>
                   </Box>
                 </Flex>

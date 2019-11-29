@@ -44,7 +44,7 @@ storiesOf('Components|Input', module).add('default', () => (
         style={{ pointerEvents: 'none' }}
       >
         <Flex alignItems="center" height="100%">
-          <EnvelopeIcon size="25" />
+          <EnvelopeIcon />
         </Flex>
       </Box>
     </Box>

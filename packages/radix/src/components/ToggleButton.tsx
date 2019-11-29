@@ -2,7 +2,7 @@ import React from 'react';
 import { withTheme } from 'styled-components';
 import css from '@styled-system/css';
 import themeGet from '@styled-system/theme-get';
-import { variant, Prop } from '@modulz/radix-system';
+import { Prop } from '@modulz/radix-system';
 import {
   ToggleButtonGroup as ToggleButtonGroupPrimitive,
   ToggleButtonGroupProps as ToggleButtonGroupPrimitiveProps,
@@ -35,12 +35,13 @@ export const ToggleButton = withTheme(
             height: 5,
             minWidth: 5,
             fontFamily: 'normal',
-            fontWeight: 500,
-            fontSize: 2,
+            fontWeight: 400,
+            fontSize: 1,
+            letterSpacing: '-0.01em',
             padding: 0,
             backgroundColor: 'gray100',
             border: '1px solid',
-            borderColor: 'gray400',
+            borderColor: 'gray400', // TODO: Consider using box shadow for consistency
             color: 'gray700',
             ':first-child': {
               borderTopLeftRadius: themeGet('radii.1')(props),
@@ -65,6 +66,8 @@ export const ToggleButton = withTheme(
           { lineHeight: '1' },
         ]}
         activeCss={css({
+          fontWeight: 500,
+          letterSpacing: '-0.035em',
           backgroundColor: 'blue100',
           borderColor: 'transparent',
           color: 'blue800',

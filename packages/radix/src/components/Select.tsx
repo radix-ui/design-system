@@ -80,9 +80,16 @@ const StyledSelect = styled('select')<SelectProps>(
   { lineHeight: '1' },
   variant({
     size: {
-      0: { fontSize: 1, height: 5, paddingLeft: 1, paddingRight: 3 },
+      0: {
+        fontSize: 1,
+        letterSpacing: '-0.01em',
+        height: 5,
+        paddingLeft: 1,
+        paddingRight: 3,
+      },
       1: {
         fontSize: 2,
+        letterSpacing: '-0.01em',
         height: 6,
         paddingLeft: 2,
         paddingRight: 4,
