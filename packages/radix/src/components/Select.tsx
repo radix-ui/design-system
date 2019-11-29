@@ -15,7 +15,7 @@ import {
   Prop,
 } from '@modulz/radix-system';
 
-type Variants = 'normal' | 'fade' | 'ghost';
+type Variants = 'normal' | 'ghost';
 type SelectProps = ComponentProps<'select'> &
   WrapperProps & {
     variant?: Prop<Variants>;
@@ -85,10 +85,6 @@ const StyledSelect = styled('select')<SelectProps>(
     variant: {
       normal: {
         color: 'gray800',
-      },
-      // TODO: Consider Removing
-      fade: {
-        color: 'gray700',
       },
       ghost: {
         backgroundColor: 'transparent',

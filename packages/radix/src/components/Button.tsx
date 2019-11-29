@@ -16,7 +16,6 @@ type Sizes = 0 | 1;
 
 type ButtonProps = ButtonPrimitiveProps & {
   variant?: Prop<Variants>;
-  isActive?: boolean;
   isWaiting?: boolean;
   size?: Prop<Sizes>;
   // TODO: type Theme
@@ -126,26 +125,6 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
             '&:focus': {
               borderColor: 'red500',
               boxShadow: `0 0 0 1px ${props.theme.colors.red500}`,
-            },
-          },
-        },
-      }),
-      variant({
-        isActive: {
-          true: {
-            backgroundColor: 'blue200',
-            borderColor: 'blue500',
-            color: 'blue700',
-            '&:hover': {
-              borderColor: 'blue600',
-            },
-            '&:active': {
-              backgroundColor: 'blue300',
-              borderColor: 'blue600',
-            },
-            '&:focus': {
-              borderColor: 'blue500',
-              boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
             },
           },
         },

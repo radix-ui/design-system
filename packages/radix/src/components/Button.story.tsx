@@ -38,15 +38,6 @@ storiesOf('Components|Button', module).add('default', () => (
     </Box>
 
     <Box mb="4">
-      <Button isActive mr="4">
-        Active
-      </Button>
-      <Button isActive size={1}>
-        Active
-      </Button>
-    </Box>
-
-    <Box mb="4">
       <Button disabled={true} mr="4">
         Disabled
       </Button>

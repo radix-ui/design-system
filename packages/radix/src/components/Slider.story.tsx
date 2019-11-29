@@ -34,11 +34,6 @@ function SliderStory() {
       </Box>
 
       <Box mb="4">
-        <Text as="p">Fade</Text>
-        <Slider variant="fade" />
-      </Box>
-
-      <Box mb="4">
         <Text as="p">Disabled</Text>
         <Slider disabled />
       </Box>

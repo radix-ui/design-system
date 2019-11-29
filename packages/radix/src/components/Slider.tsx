@@ -8,7 +8,7 @@ import {
   SliderInput as Input,
 } from 'mdlz-prmtz';
 
-type SliderProps = SliderPrimitiveProps & { theme?: any; variant?: 'normal' | 'fade' };
+type SliderProps = SliderPrimitiveProps & { theme?: any };
 
 export const Slider = withTheme((props: SliderProps) => (
   <SliderPrimitive
@@ -27,30 +27,23 @@ export const Slider = withTheme((props: SliderProps) => (
       color: 'white',
       border: 0,
       boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.25), 0px 1px 3px rgba(0, 0, 0, 0.2)',
-      // [`${Input}:hover&`]: { borderColor: 'gray500' },
-      // [`${Input}:focus&`]: { borderColor: 'blue600' },
       [`${Input}:disabled&`]: {
         boxShadow: 'none',
         backgroundColor: 'gray400',
       },
     })}
-    trackCss={[
-      css({
-        backgroundColor: 'gray400',
+    trackCss={css({
+      backgroundColor: 'gray400',
+      color: 'blue600',
+      height: '2px',
+      borderRadius: '1px',
+      top: '11px',
+      transform: 'none',
+      [`${Input}:disabled + &`]: {
+        backgroundColor: 'gray300',
         color: 'gray400',
-        height: '2px',
-        borderRadius: '1px',
-        top: '11px',
-        transform: 'none',
-        [`${Input}:disabled + &`]: { backgroundColor: 'gray300', color: 'gray400' },
-      }),
-      variant({
-        variant: {
-          normal: { color: 'blue600' },
-          fade: { color: 'gray500' }, // TODO: Remove this variant
-        },
-      })(props),
-    ]}
+      },
+    })}
     innerTrackCss={css({
       borderRadius: 'inherit',
       backgroundColor: 'currentColor', // inherit `color` property of `trackCss`
@@ -60,5 +53,4 @@ export const Slider = withTheme((props: SliderProps) => (
 
 Slider.defaultProps = {
   step: '1',
-  variant: 'normal',
 };

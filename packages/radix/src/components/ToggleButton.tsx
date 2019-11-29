@@ -16,7 +16,7 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
   props: ToggleButtonGroupProps<T>
 ) => <ToggleButtonGroupPrimitive {...props} />;
 
-type Variants = 'normal' | 'fade';
+type Variants = 'normal';
 type VariantProps = { variant?: Prop<Variants> };
 type ToggleButtonProps = ToggleButtonPrimitiveProps &
   VariantProps & {
@@ -64,26 +64,16 @@ export const ToggleButton = withTheme(
           }),
           { lineHeight: 1 },
         ]}
-        activeCss={variant({
-          variant: {
-            normal: {
-              backgroundColor: 'blue100',
-              borderColor: 'transparent',
-              color: 'blue800',
-              borderRadius: 1,
-              boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
-              '&:focus': {
-                boxShadow: `0 0 0 2px ${themeGet('colors.blue500')(props)}`,
-              },
-            },
-            fade: {
-              // TODO: Consider removing
-              backgroundColor: 'gray200',
-              borderColor: 'gray500',
-              color: 'gray700',
-            },
+        activeCss={css({
+          backgroundColor: 'blue100',
+          borderColor: 'transparent',
+          color: 'blue800',
+          borderRadius: 1,
+          boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+          '&:focus': {
+            boxShadow: `0 0 0 2px ${themeGet('colors.blue500')(props)}`,
           },
-        })(props)}
+        })}
       />
     );
   })

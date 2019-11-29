@@ -5,7 +5,7 @@ import themeGet from '@styled-system/theme-get';
 import { variant, Prop } from '@modulz/radix-system';
 import { Input as InputPrimitive, InputProps as InputPrimitiveProps } from 'mdlz-prmtz';
 
-type VariantProps = 'normal' | 'ghost' | 'fade';
+type VariantProps = 'normal' | 'ghost';
 type SizeProps = 0 | 1;
 
 // TODO: Fix `size` typing
@@ -67,10 +67,6 @@ export const Input = withTheme(
           variant: {
             normal: {
               borderColor: 'gray300',
-            },
-            fade: {
-              borderColor: 'gray400',
-              color: 'gray700',
             },
             ghost: {
               borderColor: 'transparent',

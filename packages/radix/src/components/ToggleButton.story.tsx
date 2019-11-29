@@ -37,29 +37,6 @@ function ToggleButtonGroupStory() {
         </ToggleButtonGroup>
       </Box>
 
-      <Box width={500} my={6}>
-        <Text as="p">Fade variant</Text>
-        <>
-          <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
-            <ToggleButton value="stretch">
-              <AlignStretchIcon size="25" />
-            </ToggleButton>
-            <ToggleButton value="start" variant="fade">
-              <AlignStartIcon size="25" />
-            </ToggleButton>
-            <ToggleButton value="center" variant="fade">
-              <AlignCenterIcon size="25" />
-            </ToggleButton>
-            <ToggleButton value="baseline" variant="fade">
-              <AlignBaselineIcon size="25" />
-            </ToggleButton>
-            <ToggleButton value="end" variant="fade">
-              <AlignEndIcon size="25" />
-            </ToggleButton>
-          </ToggleButtonGroup>
-        </>
-      </Box>
-
       <Box width="500px" my={6}>
         <Text as="p">With Tooltip</Text>
         <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
