@@ -37,9 +37,8 @@ export const ToggleButton = withTheme(
             fontFamily: 'normal',
             fontWeight: 400,
             fontSize: 1,
-            letterSpacing: '-0.01em',
-            wordSpacing: '-0.025em',
             padding: 0,
+            wordSpacing: '-0.025em',
             backgroundColor: 'gray100',
             border: '1px solid',
             borderColor: 'gray400', // TODO: Consider using box shadow for consistency
@@ -68,7 +67,7 @@ export const ToggleButton = withTheme(
         ]}
         activeCss={css({
           fontWeight: 500,
-          letterSpacing: '-0.035em',
+          letterSpacing: '-0.025em',
           wordSpacing: '0.02em',
           backgroundColor: 'blue100',
           borderColor: 'transparent',

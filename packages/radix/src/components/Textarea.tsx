@@ -43,7 +43,7 @@ const styleProps = compose(
 );
 
 const placeholderStyle = {
-  color: 'gray500',
+  color: 'gray600',
   opacity: 1,
 };
 
@@ -89,15 +89,16 @@ export const Textarea = styled('textarea')<TextareaProps>(
         fontSize: 1,
         letterSpacing: '-0.01em',
         height: 5,
-        lineHeight: 2,
-        paddingX: 1,
+        lineHeight: 1,
+        padding: 1,
       },
       1: {
         fontSize: 2,
         letterSpacing: '-0.01em',
         height: 6,
-        lineHeight: 4,
+        lineHeight: 1,
         paddingX: 2,
+        paddingY: 1,
       },
     },
   }),

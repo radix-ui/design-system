@@ -15,8 +15,7 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>((props, ref) => (
         borderRadius: 1,
         fontFamily: 'mono',
         fontSize: 2,
-        paddingY: '0.15em',
-        lineHeight: 0,
+        lineHeight: 1,
         paddingX: 1,
       }),
       variant({

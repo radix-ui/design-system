@@ -29,11 +29,12 @@ export const BaseBadge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, r
           height: 3, // TODO: Remove `inline-flex` from Primitives and then we can make this `inline-block` and remove height
           minWidth: 5,
           paddingY: 0,
-          paddingX: 1,
+          paddingX: '1.25ch',
           lineHeight: 0,
           textTransform: 'none', // TODO: Remove from Primitives
           letterSpacing: 0, // TODO: Remove from Primitives
           border: 0,
+          wordSpacing: '-0.25em',
         }),
         variant({
           variant: {

@@ -43,7 +43,7 @@ export const baseCard = (props: CardProps) =>
         padding: 4,
         borderRadius: 2,
         border: '1px solid transparent',
-        borderColor: 'gray400',
+        borderColor: 'gray300',
       },
       ghost: {
         backgroundColor: 'white',
