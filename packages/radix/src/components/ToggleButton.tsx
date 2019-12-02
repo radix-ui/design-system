@@ -2,7 +2,7 @@ import React from 'react';
 import { withTheme } from 'styled-components';
 import css from '@styled-system/css';
 import themeGet from '@styled-system/theme-get';
-import { variant, Prop } from '@modulz/radix-system';
+import { Prop } from '@modulz/radix-system';
 import {
   ToggleButtonGroup as ToggleButtonGroupPrimitive,
   ToggleButtonGroupProps as ToggleButtonGroupPrimitiveProps,
@@ -16,7 +16,7 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
   props: ToggleButtonGroupProps<T>
 ) => <ToggleButtonGroupPrimitive {...props} />;
 
-type Variants = 'normal' | 'fade';
+type Variants = 'normal';
 type VariantProps = { variant?: Prop<Variants> };
 type ToggleButtonProps = ToggleButtonPrimitiveProps &
   VariantProps & {
@@ -34,14 +34,15 @@ export const ToggleButton = withTheme(
           css({
             height: 5,
             minWidth: 5,
-            fontFamily: 'medium',
-            fontWeight: 500,
-            fontSize: 2,
+            fontFamily: 'normal',
+            fontWeight: 400,
+            fontSize: 1,
             padding: 0,
-            backgroundColor: 'white',
+            wordSpacing: '-0.025em',
+            backgroundColor: 'gray100',
             border: '1px solid',
-            borderColor: 'grays.3',
-            color: 'grays.5',
+            borderColor: 'gray400', // TODO: Consider using box shadow for consistency
+            color: 'gray700',
             ':first-child': {
               borderTopLeftRadius: themeGet('radii.1')(props),
               borderBottomLeftRadius: themeGet('radii.1')(props),
@@ -51,29 +52,32 @@ export const ToggleButton = withTheme(
               borderBottomRightRadius: themeGet('radii.1')(props),
             },
             ':hover': {
-              borderColor: 'grays.4',
+              borderColor: 'gray500',
+              zIndex: 2, // TODO: Review in Primitives, this removes the overlapping
             },
             ':focus': {
               outline: 'none',
-              borderColor: 'grays.4',
+              borderColor: 'blue500',
+              boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+              zIndex: '5 !important', // TODO: Review in Primitives
+              borderRadius: 1,
             },
           }),
-          { lineHeight: 1 },
+          { lineHeight: '1' },
         ]}
-        activeCss={variant({
-          variant: {
-            normal: {
-              backgroundColor: 'blues.0',
-              borderColor: 'blues.2',
-              color: 'blues.5',
-            },
-            fade: {
-              backgroundColor: 'grays.1',
-              borderColor: 'grays.4',
-              color: 'grays.5',
-            },
+        activeCss={css({
+          fontWeight: 500,
+          letterSpacing: '-0.025em',
+          wordSpacing: '0.02em',
+          backgroundColor: 'blue100',
+          borderColor: 'transparent',
+          color: 'blue800',
+          borderRadius: 1,
+          boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+          '&:focus': {
+            boxShadow: `0 0 0 2px ${themeGet('colors.blue500')(props)}`,
           },
-        })(props)}
+        })}
       />
     );
   })

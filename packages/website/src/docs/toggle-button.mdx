@@ -29,7 +29,7 @@ description: Useful for allowing users to select one or more options from a set.
 
 <SystemProps props={['margin']} />
 
-<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={3}>
+<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
   ToggleButton
 </Heading>
 
@@ -39,58 +39,5 @@ description: Useful for allowing users to select one or more options from a set.
       type: 'ReactNode',
       description: 'The content to render',
     },
-    variant: {
-      type: 'normal | fade',
-      default: 'normal',
-      description: 'The variant to apply',
-    },
   }}
 />
-
-## Examples
-
-### Variants
-
-<Prop isOptional default="normal">
-  normal | fade
-</Prop>
-
-There are 2 variants to choose from.
-
-```js live removeFragment
-() => {
-  const [value, setValue] = React.useState('center');
-
-  return (
-    <>
-      <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
-        <ToggleButton value="start" variant="normal">
-          Start
-        </ToggleButton>
-        <ToggleButton value="center" variant="normal">
-          Center
-        </ToggleButton>
-        <ToggleButton value="end" variant="normal">
-          End
-        </ToggleButton>
-      </ToggleButtonGroup>
-
-      <ToggleButtonGroup
-        value={value}
-        onChange={value => setValue(value)}
-        mt={6}
-      >
-        <ToggleButton value="start" variant="fade">
-          Start
-        </ToggleButton>
-        <ToggleButton value="center" variant="fade">
-          Center
-        </ToggleButton>
-        <ToggleButton value="end" variant="fade">
-          End
-        </ToggleButton>
-      </ToggleButtonGroup>
-    </>
-  );
-};
-```

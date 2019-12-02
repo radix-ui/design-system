@@ -43,7 +43,7 @@ export const baseCard = (props: CardProps) =>
         padding: 4,
         borderRadius: 2,
         border: '1px solid transparent',
-        borderColor: 'grays.3',
+        borderColor: 'gray300',
       },
       ghost: {
         backgroundColor: 'white',
@@ -51,7 +51,7 @@ export const baseCard = (props: CardProps) =>
         padding: 4,
         borderRadius: 2,
         border: '1px solid transparent',
-        ...createShadow(0, themeGet('colors.grays.8')(props)),
+        ...createShadow(0, themeGet('colors.gray900')(props)),
       },
       shadow: {
         backgroundColor: 'white',
@@ -59,7 +59,7 @@ export const baseCard = (props: CardProps) =>
         padding: 4,
         borderRadius: 2,
         borderColor: 'transparent',
-        ...createShadow(1, themeGet('colors.grays.8')(props)),
+        ...createShadow(1, themeGet('colors.gray900')(props)),
       },
     },
   })(props);

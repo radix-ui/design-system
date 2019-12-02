@@ -12,7 +12,7 @@ export const Pipe = React.forwardRef<HTMLDivElement, PipeProps>((props, ref) => 
     ref={ref}
     css={[
       css({
-        backgroundColor: 'grays.2',
+        backgroundColor: 'gray300',
       }),
       variant({
         variant: {

@@ -15,14 +15,14 @@ export const Td = styled('td')(
     paddingY: 3,
     paddingRight: 3,
     borderBottom: '1px solid',
-    borderColor: 'grays.3',
+    borderColor: 'gray400',
     fontSize: 2,
   })
 );
 
 export const Th = styled(Td)(
   css({
-    fontFamily: 'medium',
+    fontFamily: 'normal',
     fontWeight: 500,
     borderWidth: 2,
   })

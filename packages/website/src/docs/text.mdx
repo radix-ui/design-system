@@ -17,7 +17,7 @@ description: A primitive useful for rendering text.
       description: 'The content to render',
     },
     size: {
-      type: '0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8',
+      type: '0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10',
       default: '2',
       description: 'The size to apply',
     },
@@ -51,7 +51,7 @@ description: A primitive useful for rendering text.
 
 ### Size
 
-There are 9 sizes to choose from. Each size handles its own `font-size`, `letter-spacing` and `text-indent` accordingly.
+There are 11 sizes to choose from. Each size handles its own `font-size` and `letter-spacing` accordingly.
 
 ```js live
 <Text as="p" mt={1} size={0}>Text component</Text>
@@ -63,26 +63,20 @@ There are 9 sizes to choose from. Each size handles its own `font-size`, `letter
 <Text as="p" mt={1} size={6}>Text component</Text>
 <Text as="p" mt={1} size={7}>Text component</Text>
 <Text as="p" mt={1} size={8}>Text component</Text>
+<Text as="p" mt={1} size={9}>Text component</Text>
+<Text as="p" mt={1} size={10}>Text component</Text>
 ```
 
 ### Font weight
 
-<Prop isOptional default="400">
-  400 | 500
-</Prop>
-
 There are 2 weight options to choose from.
 
 ```js live
-<Text fontWeight="400">Text component</Text>
-<Text fontWeight="500">Text component</Text>
+<Text as="p" fontWeight="400">Text component</Text>
+<Text as="p" fontWeight="500">Text component</Text>
 ```
 
 ### Text truncation
-
-<Prop isOptiona default="false">
-  Boolean
-</Prop>
 
 When `true` this will truncate your text based on its maximum width.
 

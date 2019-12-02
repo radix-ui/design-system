@@ -16,7 +16,6 @@ type Sizes = 0 | 1;
 
 type ButtonProps = ButtonPrimitiveProps & {
   variant?: Prop<Variants>;
-  isActive?: boolean;
   isWaiting?: boolean;
   size?: Prop<Sizes>;
   // TODO: type Theme
@@ -31,10 +30,10 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
       css({
         alignItems: 'center',
         display: 'inline-flex',
-        border: '1px solid',
+        border: 0,
         borderRadius: 1,
-        cursor: 'pointer',
-        fontFamily: 'medium',
+        cursor: 'default',
+        fontFamily: 'normal',
         fontWeight: 500,
         outline: 'none',
         paddingY: 0,
@@ -50,85 +49,86 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
           },
         },
         '&:active': {
-          backgroundColor: 'grays.1',
-          borderColor: 'grays.4',
+          backgroundColor: 'gray200',
+          boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray500')(props)}`,
         },
         '&:disabled': {
-          backgroundColor: 'grays.1',
-          borderColor: 'grays.2',
-          color: 'grays.4',
+          backgroundColor: 'gray100',
+          boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray300')(props)}`,
+          color: 'gray500',
           cursor: 'not-allowed',
-          pointerEvents: 'none',
+          pointerEvents: 'none', // TODO: Remove this when update Primitives
         },
       }),
       variant({
         variant: {
           gray: {
-            backgroundColor: 'grays.0',
-            borderColor: 'grays.3',
-            color: 'grays.5',
+            backgroundColor: 'gray100',
+            boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray400')(props)}`,
+            color: 'gray800',
             '&:hover': {
-              borderColor: 'grays.4',
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray500')(props)}`,
+            },
+            '&:active': {
+              backgroundColor: 'gray200',
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray500')(props)}`,
             },
             '&:focus': {
-              borderColor: 'grays.4',
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue500')(
+                props
+              )}, 0 0 0 1px ${themeGet('colors.blue500')(props)}`,
             },
           },
           blue: {
-            backgroundColor: 'blues.0',
-            borderColor: 'blues.3',
-            color: 'blues.5',
+            backgroundColor: 'blue100',
+            boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue400')(props)}`,
+            color: 'blue700',
             '&:hover': {
-              borderColor: 'blues.4',
-            },
-            '&:focus': {
-              borderColor: 'blues.4',
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue500')(props)}`,
             },
             '&:active': {
-              backgroundColor: 'blues.1',
-              borderColor: 'blues.4',
+              backgroundColor: 'blue200',
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+            },
+            '&:focus': {
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue500')(
+                props
+              )}, 0 0 0 1px ${themeGet('colors.blue500')(props)}`,
             },
           },
           green: {
-            backgroundColor: 'greens.0',
-            borderColor: 'greens.3',
-            color: 'greens.5',
+            backgroundColor: 'green100',
+            boxShadow: `inset 0 0 0 1px ${themeGet('colors.green400')(props)}`,
+            color: 'green700',
             '&:hover': {
-              borderColor: 'greens.4',
-            },
-            '&:focus': {
-              borderColor: 'greens.4',
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.green500')(props)}`,
             },
             '&:active': {
-              backgroundColor: 'greens.1',
-              borderColor: 'greens.4',
+              backgroundColor: 'green200',
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.green500')(props)}`,
+            },
+            '&:focus': {
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.green500')(
+                props
+              )}, 0 0 0 1px ${themeGet('colors.green500')(props)}`,
             },
           },
           red: {
-            backgroundColor: 'grays.0',
-            color: 'reds.5',
-            borderColor: 'grays.3',
+            backgroundColor: 'gray100',
+            boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray400')(props)}`,
+            color: 'red700',
             '&:hover': {
-              borderColor: 'grays.4',
-            },
-          },
-        },
-      }),
-      variant({
-        isActive: {
-          true: {
-            backgroundColor: 'grays.1',
-            borderColor: 'grays.3',
-            color: 'grays.5',
-            '&:hover': {
-              borderColor: 'grays.4',
-            },
-            '&:focus': {
-              borderColor: 'grays.4',
+              backgroundColor: 'red100',
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.red400')(props)}`,
             },
             '&:active': {
-              backgroundColor: 'grays.1',
-              borderColor: 'grays.4',
+              backgroundColor: 'red200',
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.red500')(props)}`,
+            },
+            '&:focus': {
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.red500')(props)}, 0 0 0 1px ${themeGet(
+                'colors.red500'
+              )(props)}`,
             },
           },
         },
@@ -136,36 +136,34 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
       variant({
         size: {
           0: {
-            fontSize: 2,
+            fontSize: 1,
             paddingX: 2,
             height: 5,
             minWidth: 5,
+            lineHeight: 2,
+            letterSpacing: '-0.02em',
           },
           1: {
-            fontSize: 3,
+            fontSize: 2,
             paddingX: 3,
             height: 6,
             minWidth: 6,
+            lineHeight: 4,
+            letterSpacing: '-0.02em',
           },
         },
       }),
       variant({
         isWaiting: {
           true: {
-            backgroundColor: 'grays.2',
-            borderColor: 'grays.3',
+            backgroundColor: 'gray200',
+            boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray300')(props)}`,
             color: 'transparent',
             overflow: 'hidden',
             position: 'relative',
             pointerEvents: 'none',
-            '&:hover': {
-              borderColor: 'grays.3',
-            },
             '&:focus': {
-              borderColor: 'grays.3',
-            },
-            '&:active': {
-              borderColor: 'grays.3',
+              boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray300')(props)}`,
             },
             '&::before': {
               position: 'absolute',
@@ -177,8 +175,8 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
               backgroundImage: `linear-gradient(
               -45deg,
               transparent 33%,
-              rgba(0, 0, 0, 0.05) 33%,
-              rgba(0, 0, 0, 0.05) 66%,
+              rgba(0, 0, 0, 0.03) 33%,
+              rgba(0, 0, 0, 0.03) 66%,
               transparent 66%
             )`,
               backgroundSize:
@@ -196,15 +194,15 @@ export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((prop
         animation: ${waitingAnimation(props)} 500ms linear infinite
       }
     `,
-      { lineHeight: '1' },
+      // { lineHeight: '1' },
       props.css,
     ]}
   />
 ));
 
-export const Button = withTheme(BaseButton);
-
 BaseButton.defaultProps = {
   variant: 'gray',
   size: 0,
 };
+
+export const Button = withTheme(BaseButton);

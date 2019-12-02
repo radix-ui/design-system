@@ -9,7 +9,7 @@ function NavItem({ children, isExternal, active, ...props }) {
       <Text size={2} textColor={active ? 'white' : undefined} mr={isExternal ? 1 : 0}>
         {children}
       </Text>
-      {isExternal && <ExternalLinkIcon size="15" />}
+      {isExternal && <ExternalLinkIcon />}
     </MenuItem>
   );
 }

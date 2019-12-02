@@ -23,9 +23,9 @@ storiesOf('Components|Pipe', module).add('default', () => (
       </Flex>
 
       <Flex my={4} justifyContent="center" height="200px">
-        <Box height="200px" bg="blue" width="50px" />
+        <Box height="200px" bg="blue600" width="50px" />
         <Pipe variant="fluid" mx={2} />
-        <Box height="200px" bg="blue" width="50px" />
+        <Box height="200px" bg="blue600" width="50px" />
       </Flex>
     </Box>
   </>

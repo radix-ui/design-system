@@ -1,9 +1,11 @@
 import React from 'react';
+import { withTheme } from 'styled-components';
 import css from '@styled-system/css';
+import themeGet from '@styled-system/theme-get';
 import { variant, Prop } from '@modulz/radix-system';
 import { Input as InputPrimitive, InputProps as InputPrimitiveProps } from 'mdlz-prmtz';
 
-type VariantProps = 'normal' | 'ghost' | 'fade';
+type VariantProps = 'normal' | 'ghost';
 type SizeProps = 0 | 1;
 
 // TODO: Fix `size` typing
@@ -11,70 +13,83 @@ export type InputProps = InputPrimitiveProps & {
   variant?: Prop<VariantProps>;
   size?: Prop<SizeProps> & any;
   children?: React.ReactNode;
+  // TODO: type Theme
+  theme?: any;
 };
 
 const placeholderStyle = {
-  color: 'grays.4',
+  color: 'gray600',
 };
 
-export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => (
-  <InputPrimitive
-    {...props}
-    ref={ref}
-    css={[
-      css({
-        appearance: 'none',
-        backgroundColor: 'transparent',
-        borderRadius: 0,
-        color: 'grays.8',
-        fontFamily: 'normal',
-        outline: 'none',
-        padding: 0,
-        verticalAlign: 'middle',
-        width: '100%',
-        boxSizing: 'border-box',
-        WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-        border: 0,
-        borderBottom: '1px solid',
-        '&:read-only': {
-          borderColor: 'grays.2',
-          color: 'grays.5',
-        },
-        '&:disabled': {
-          borderColor: 'grays.2',
-          color: 'grays.4',
-          cursor: 'not-allowed',
-        },
-      }),
-      variant({
-        size: {
-          0: { fontSize: 2, height: 5, lineHeight: 1 },
-          1: { fontSize: 3, height: 6, lineHeight: 3 },
-        },
-      }),
-      variant({
-        variant: {
-          normal: {
-            borderColor: 'grays.3',
-            '&:focus': {
-              borderColor: 'blues.4',
+export const Input = withTheme(
+  React.forwardRef<HTMLInputElement, InputProps>((props, ref) => (
+    <InputPrimitive
+      {...props}
+      ref={ref}
+      css={[
+        css({
+          appearance: 'none',
+          backgroundColor: 'transparent',
+          cursor: 'default',
+          color: 'gray800',
+          fontFamily: 'normal',
+          outline: 'none',
+          paddingY: 0,
+          verticalAlign: 'middle',
+          width: '100%',
+          boxSizing: 'border-box',
+          WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+          border: '1px solid',
+          borderColor: 'gray300',
+          borderRadius: 1,
+          '&:read-only': {
+            borderColor: 'gray300',
+            color: 'gray700',
+          },
+          '&:disabled': {
+            borderColor: 'gray300',
+            color: 'gray500',
+            cursor: 'not-allowed',
+          },
+          '&:focus': {
+            borderColor: 'blue500',
+            boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+            cursor: 'text',
+          },
+        }),
+        variant({
+          size: {
+            0: {
+              fontSize: 1,
+              letterSpacing: '-0.01em',
+              height: 5,
+              lineHeight: 2,
+              paddingX: 1,
+            },
+            1: {
+              fontSize: 2,
+              letterSpacing: '-0.01em',
+              height: 6,
+              lineHeight: 4,
+              paddingX: 2,
             },
           },
-          fade: {
-            borderColor: 'grays.3',
-            color: 'grays.5',
-            '&:focus': {
-              borderColor: 'blues.4',
+        }),
+        variant({
+          variant: {
+            normal: {
+              borderColor: 'gray300',
+            },
+            ghost: {
+              borderColor: 'transparent',
+              cursor: 'text',
             },
           },
-          ghost: {
-            borderColor: 'transparent',
-          },
-        },
-      }),
-    ]}
-    placeholderCss={placeholderStyle}
-  />
-));
+        }),
+      ]}
+      placeholderCss={placeholderStyle}
+    />
+  ))
+);
 
 Input.defaultProps = { type: 'text', variant: 'normal', size: 0 };

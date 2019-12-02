@@ -113,19 +113,19 @@ storiesOf('Playground', module).add('popover', () => <PopoverExample />);
 //         <Box width={350}>
 //           <ToggleButtonGroup name="align">
 //             <ToggleButton defaultChecked>
-//               <AlignStretchIcon size="25" />
+//               <AlignStretchIcon  />
 //             </ToggleButton>
 //             <ToggleButton>
-//               <AlignStartIcon size="25" />
+//               <AlignStartIcon  />
 //             </ToggleButton>
 //             <ToggleButton>
-//               <AlignCenterIcon size="25" />
+//               <AlignCenterIcon  />
 //             </ToggleButton>
 //             <ToggleButton>
-//               <AlignBaselineIcon size="25" />
+//               <AlignBaselineIcon  />
 //             </ToggleButton>
 //             <ToggleButton>
-//               <AlignEndIcon size="25" />
+//               <AlignEndIcon  />
 //             </ToggleButton>
 //           </ToggleButtonGroup>
 //         </Box>
@@ -135,19 +135,19 @@ storiesOf('Playground', module).add('popover', () => <PopoverExample />);
 //         <Box width={350}>
 //           <ToggleButtonGroup name="align2" variant="fade">
 //             <ToggleButton defaultChecked>
-//               <AlignStretchIcon size="25" />
+//               <AlignStretchIcon  />
 //             </ToggleButton>
 //             <ToggleButton>
-//               <AlignStartIcon size="25" />
+//               <AlignStartIcon  />
 //             </ToggleButton>
 //             <ToggleButton>
-//               <AlignCenterIcon size="25" />
+//               <AlignCenterIcon  />
 //             </ToggleButton>
 //             <ToggleButton>
-//               <AlignBaselineIcon size="25" />
+//               <AlignBaselineIcon  />
 //             </ToggleButton>
 //             <ToggleButton>
-//               <AlignEndIcon size="25" />
+//               <AlignEndIcon  />
 //             </ToggleButton>
 //           </ToggleButtonGroup>
 //         </Box>
@@ -175,7 +175,7 @@ storiesOf('Playground', module).add('popover', () => <PopoverExample />);
 //   <Text
 //     mr={3}
 //     textAlign="right"
-//     color="grays.5"
+//     color="gray700"
 //     size={2}
 //     style={{ width: 60, display: 'inline-block' }}
 //     {...props}

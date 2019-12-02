@@ -1,5 +1,4 @@
 import React from 'react';
-import css from '@styled-system/css';
 import {
   theme,
   Heading as RadixHeading,
@@ -20,7 +19,7 @@ export function ThemeSection() {
       {Object.entries(theme.fonts).map(([key, value]) => (
         <Box mb={3} key={key}>
           <SectionTitle>{key}</SectionTitle>
-          <Text as="p" size={key === 'mono' ? 7 : 8} mt={2} mb={6} lineHeight={4} fontFamily={key}>
+          <Text as="p" size={key === 'mono' ? 7 : 8} mt={2} mb={6} lineHeight={5} fontFamily={key}>
             Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
           </Text>
         </Box>
@@ -88,25 +87,6 @@ export function ThemeSection() {
           return !Array.isArray(value) && <ColorCard color={value} name={key} key={key} />;
         })}
       </ColorGrid>
-
-      <Divider mt={6} mb={4} />
-
-      <Subheading>Secondary</Subheading>
-
-      {Object.entries(theme.colors).map(
-        ([key, value]) =>
-          Array.isArray(value) && (
-            <Box key={key}>
-              <SectionTitle>{key}</SectionTitle>
-              <ColorGrid>
-                {value.map((color, index) => (
-                  <ColorCard color={color} name={`${key.replace(/s$/, '')} ${index}`} key={color} />
-                ))}
-              </ColorGrid>
-              <Divider mt={4} mb={4} />
-            </Box>
-          )
-      )}
     </>
   );
 }
@@ -152,7 +132,7 @@ const ColorCard = ({ color, name, props }) => (
         <RadixHeading as="h4" size={0} fontWeight={500} mt={2} mb={1}>
           <span style={{ textTransform: 'capitalize' }}>{name}</span>
         </RadixHeading>
-        <Text as="p" size={0} textColor="grays.5" mb={2}>
+        <Text as="p" size={0} textColor="gray700" mb={2}>
           <span style={{ textTransform: 'uppercase' }}>
             {color.replace(/\(|\)/g, ' ').replace('.', '0.')}
           </span>
@@ -174,7 +154,7 @@ const SectionTitle = props => (
   <Text
     size={2}
     marginY={0}
-    textColor="grays.5"
+    textColor="gray700"
     style={{ textTransform: 'capitalize' }}
     {...props}
   />

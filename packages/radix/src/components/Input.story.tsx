@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Box } from './Box';
 import { Flex } from './Flex';
 import { Input } from './Input';
-import { EnvelopeIcon, MagnifyingGlassIcon } from '@modulz/radix-icons';
+import { MagnifyingGlassIcon } from '@modulz/radix-icons';
 
 storiesOf('Components|Input', module).add('default', () => (
   <Box maxWidth="300px">
@@ -18,12 +18,12 @@ storiesOf('Components|Input', module).add('default', () => (
         position="absolute"
         height="100%"
         top={0}
-        right={0}
-        color="grays.5"
+        right={1}
+        color="gray700"
         style={{ pointerEvents: 'none' }}
       >
         <Flex alignItems="center" height="100%">
-          <MagnifyingGlassIcon size="15" />
+          <MagnifyingGlassIcon />
         </Flex>
       </Box>
     </Box>
@@ -33,18 +33,18 @@ storiesOf('Components|Input', module).add('default', () => (
     </Box>
 
     <Box mb="4" position="relative">
-      <Input size={1} placeholder="e.g. joe@example.com" type="email" paddingLeft={6} />
+      <Input size={1} placeholder="LG Monitor" type="text" paddingLeft={6} />
 
       <Box
         position="absolute"
         height="100%"
         top={0}
-        left={0}
-        color="grays.5"
+        left={1}
+        color="gray700"
         style={{ pointerEvents: 'none' }}
       >
         <Flex alignItems="center" height="100%">
-          <EnvelopeIcon size="25" />
+          <MagnifyingGlassIcon />
         </Flex>
       </Box>
     </Box>

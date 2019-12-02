@@ -17,7 +17,7 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
     ref={ref}
     css={[
       css({
-        color: 'grays.8',
+        color: 'gray900',
         lineHeight: 1.2,
         fontWeight: 400,
         fontFamily: 'normal',
@@ -26,33 +26,39 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
         size: {
           0: {
             fontSize: 3,
-            letterSpacing: '-.0125em',
-            textIndent: '-.05em',
+            lineHeight: 2,
+            letterSpacing: props.fontWeight === 500 ? '-0.025em' : '-0.01em',
+            textIndent: '-0.01em',
           },
           1: {
             fontSize: 5,
-            letterSpacing: '-.005em',
-            textIndent: '-.06em',
+            lineHeight: 2,
+            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.02em',
+            textIndent: '-0.02em',
           },
           2: {
             fontSize: 7,
-            letterSpacing: '-.012em',
-            textIndent: '-.075em',
+            lineHeight: 3,
+            letterSpacing: props.fontWeight === 500 ? '-0.04em' : '-0.02em',
+            textIndent: '-0.025em',
           },
           3: {
             fontSize: 8,
-            letterSpacing: '-.028em',
-            textIndent: '-.085em',
+            lineHeight: 4,
+            letterSpacing: props.fontWeight === 500 ? '-0.045em' : '-0.025em',
+            textIndent: '-0.03em',
           },
           4: {
             fontSize: 9,
-            letterSpacing: '-.042em',
-            textIndent: '-.088em',
+            lineHeight: 5,
+            letterSpacing: props.fontWeight === 500 ? '-0.045em' : '-0.025em',
+            textIndent: '-0.04em',
           },
           5: {
             fontSize: 10,
-            letterSpacing: '-.052em',
-            textIndent: '-.09em',
+            lineHeight: 9,
+            letterSpacing: props.fontWeight === 500 ? '-0.05em' : '-0.03em',
+            textIndent: '-0.04em',
           },
         },
       }),

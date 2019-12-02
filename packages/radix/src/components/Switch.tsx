@@ -26,7 +26,7 @@ const SwitchWrapper = styled('label')<MarginProps>(
   css({
     position: 'relative',
     display: 'inline-block',
-    width: 6,
+    width: 5,
     height: 3,
     boxSizing: 'content-box',
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
@@ -55,52 +55,55 @@ const FakeSwitch = styled('div')(props =>
     alignItems: 'center',
     position: 'relative',
     zIndex: 1,
-    cursor: 'pointer',
+    cursor: 'default',
+    userSelect: 'none',
     '&::before': {
       content: `''`,
       display: 'block',
-      height: 1,
+      height: 3,
       width: '100%',
-      backgroundColor: 'grays.3',
+      backgroundColor: 'gray300',
       borderRadius: 9999,
       transition: 'background-color 100ms ease-out',
     },
     '&::after': {
       content: `''`,
       position: 'absolute',
-      width: 3,
-      height: 3,
-      top: 0,
-      left: 0,
+      width: '13px',
+      height: '13px',
+      top: '1px',
+      left: '1px',
       borderRadius: 9999,
-      backgroundColor: 'grays.4',
+      backgroundColor: 'white',
+      boxShadow: '0px 0px 1px rgba(0, 0, 0, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.2)',
       transition: 'transform 100ms ease-out',
     },
     [`${Input}:checked + &`]: {
       '&::before': {
-        backgroundColor: 'blues.3',
+        backgroundColor: 'blue600',
       },
       '&::after': {
-        backgroundColor: 'blues.4',
-        transform: `translateX(${themeGet('space.4')(props)})`,
+        transform: `translateX(${themeGet('space.2')(props)})`,
+      },
+    },
+    [`${Input}:not(:disabled):active + &`]: {
+      '&::before': {
+        backgroundColor: 'gray400',
+      },
+    },
+    [`${Input}:not(:disabled):active:checked + &`]: {
+      '&::before': {
+        backgroundColor: 'blue700',
       },
     },
     [`${Input}:disabled + &`]: {
       cursor: 'not-allowed',
       '&::before': {
-        backgroundColor: 'grays.2',
+        backgroundColor: 'gray300',
       },
       '&::after': {
-        backgroundColor: 'grays.3',
-      },
-    },
-    [`${Input}:disabled:checked + &`]: {
-      cursor: 'not-allowed',
-      '&::before': {
-        backgroundColor: 'blues.2',
-      },
-      '&::after': {
-        backgroundColor: 'blues.3',
+        backgroundColor: 'gray100',
+        boxShadow: 'none',
       },
     },
   })

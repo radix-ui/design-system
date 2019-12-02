@@ -15,23 +15,21 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>((props, ref) => (
         borderRadius: 1,
         fontFamily: 'mono',
         fontSize: 2,
-        letterSpacing: '-0.0175em',
-        paddingY: '0.15em',
+        lineHeight: 1,
         paddingX: 1,
       }),
       variant({
         variant: {
           normal: {
-            backgroundColor: 'blues.1',
-            color: 'blues.5',
+            backgroundColor: 'blue200',
+            color: 'blue700',
           },
           fade: {
-            backgroundColor: 'grays.1',
-            color: 'grays.5',
+            backgroundColor: 'gray200',
+            color: 'gray700',
           },
         },
       }),
-      { lineHeight: 1 },
     ]}
   />
 ));

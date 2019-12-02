@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import css from '@styled-system/css';
+import themeGet from '@styled-system/theme-get';
 import {
   textColor,
   TextColorProps,
@@ -18,7 +19,7 @@ import {
   Prop,
 } from '@modulz/radix-system';
 
-type VariantProps = 'normal' | 'ghost' | 'fade';
+type VariantProps = 'normal' | 'ghost';
 type SizeProps = 0 | 1;
 
 // TODO: Fix `size` typing
@@ -42,62 +43,73 @@ const styleProps = compose(
 );
 
 const placeholderStyle = {
-  color: 'grays.4',
+  color: 'gray600',
   opacity: 1,
 };
 
 export const Textarea = styled('textarea')<TextareaProps>(
-  css({
-    appearance: 'none',
-    backgroundColor: 'transparent',
-    borderRadius: 0,
-    color: 'grays.8',
-    fontFamily: 'normal',
-    outline: 'none',
-    padding: 0,
-    verticalAlign: 'middle',
-    width: '100%',
-    boxSizing: 'border-box',
-    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-    border: 0,
-    borderBottom: '1px solid',
-    minHeight: 9,
-    '&:read-only': {
-      borderColor: 'grays.2',
-      color: 'grays.5',
-    },
-    '&:disabled': {
-      borderColor: 'grays.2',
-      color: 'grays.4',
-      cursor: 'not-allowed',
-    },
-    '&::-webkit-input-placeholder': placeholderStyle,
-    '&::-moz-placeholder': placeholderStyle,
-    '&:-ms-input-placeholder': placeholderStyle,
-  }),
+  props =>
+    css({
+      appearance: 'none',
+      backgroundColor: 'transparent',
+      cursor: 'default',
+      color: 'gray800',
+      fontFamily: 'normal',
+      outline: 'none',
+      padding: 0,
+      verticalAlign: 'middle',
+      width: '100%',
+      boxSizing: 'border-box',
+      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+      border: '1px solid',
+      borderColor: 'gray300',
+      borderRadius: 1,
+      minHeight: 9,
+      '&:read-only': {
+        borderColor: 'gray300',
+        color: 'gray700',
+      },
+      '&:disabled': {
+        borderColor: 'gray300',
+        color: 'gray500',
+        cursor: 'not-allowed',
+      },
+      '&::-webkit-input-placeholder': placeholderStyle,
+      '&::-moz-placeholder': placeholderStyle,
+      '&:-ms-input-placeholder': placeholderStyle,
+      '&:focus': {
+        borderColor: 'blue500',
+        boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+        cursor: 'text',
+      },
+    }),
   variant({
     size: {
-      0: { fontSize: 2, height: 5, lineHeight: 1 },
-      1: { fontSize: 3, height: 6, lineHeight: 3 },
+      0: {
+        fontSize: 1,
+        letterSpacing: '-0.01em',
+        height: 5,
+        lineHeight: 1,
+        padding: 1,
+      },
+      1: {
+        fontSize: 2,
+        letterSpacing: '-0.01em',
+        height: 6,
+        lineHeight: 1,
+        paddingX: 2,
+        paddingY: 1,
+      },
     },
   }),
   variant({
     variant: {
       normal: {
-        borderColor: 'grays.3',
-        '&:focus': {
-          borderColor: 'blues.4',
-        },
-      },
-      fade: {
-        borderColor: 'grays.3',
-        color: 'grays.5',
-        '&:focus': {
-          borderColor: 'blues.4',
-        },
+        borderColor: 'gray300',
       },
       ghost: {
         borderColor: 'transparent',
+        cursor: 'text',
       },
     },
   }),

@@ -71,7 +71,7 @@ function App({ element, props }) {
               pb={[0, 8]}
               borderRight={[0, '1px solid']}
               borderBottom={['1px solid', 0]}
-              borderColor={['grays.2', 'grays.2']}
+              borderColor={['gray300', 'gray300']}
               style={{ WebkitOverflowScrolling: 'touch', overflowX: 'hidden' }}
             >
               <Box py={2} px={4}>
@@ -107,8 +107,8 @@ function App({ element, props }) {
                       variant={navOpen ? 'active' : undefined}
                       onClick={() => setNavOpen(!navOpen)}
                     >
-                      {!navOpen && <HamburgerIcon size="25" />}
-                      {navOpen && <CrossIcon size="25" />}
+                      {!navOpen && <HamburgerIcon />}
+                      {navOpen && <CrossIcon />}
                     </GhostButton>
                   </Box>
                 </Flex>

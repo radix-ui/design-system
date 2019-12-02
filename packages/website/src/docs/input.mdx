@@ -16,7 +16,7 @@ description: Useful for allowing users to enter, update and select text.
       description: 'The size to apply',
     },
     variant: {
-      type: 'normal | fade | ghost',
+      type: 'normal | ghost',
       default: 'normal',
       description: 'The variant to apply',
     },
@@ -40,10 +40,9 @@ There are 2 sizes to choose from.
 
 ### Variants
 
-There are 3 variants to choose from.
+There are 2 variants to choose from.
 
 ```js live
 <Input value="your@email.io" variant="normal" />
-<Input value="your@email.io" mt={6} variant="fade" />
 <Input value="your@email.io" mt={6} variant="ghost" />
 ```

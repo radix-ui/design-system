@@ -20,15 +20,15 @@ storiesOf('Components|Hover', module).add('default', () => (
         {isHovered => {
           return (
             <Card>
-              <Heading size={1} bold>
+              <Heading size={1} fontWeight={500}>
                 Help us Kickstart Modulz
               </Heading>
-              <Text as="p" size={3} lineHeight={1.2} mt={3} color="grays.5">
+              <Text as="p" size={3} lineHeight={1.2} mt={3} color="gray700">
                 Who we are, what we're building and how you can support us.
               </Text>
               <Flex mt={5} alignItems="center" justifyContent="flex-end">
                 {!isHovered && (
-                  <Text as="p" size={2} lineHeight={0} color="grays.5">
+                  <Text as="p" size={2} lineHeight={0} color="gray700">
                     Oct '18
                   </Text>
                 )}

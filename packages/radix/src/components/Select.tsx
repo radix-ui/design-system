@@ -1,7 +1,9 @@
 import React, { ComponentProps, FC } from 'react';
+import themeGet from '@styled-system/theme-get';
 import pick from 'lodash.pick';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
+import { CaretSortIcon } from '@modulz/radix-icons';
 import css from '@styled-system/css';
 import {
   margin,
@@ -13,45 +15,34 @@ import {
   Prop,
 } from '@modulz/radix-system';
 
-type Variants = 'normal' | 'fade';
+type Variants = 'normal' | 'ghost';
+type SizeProps = 0 | 1;
 type SelectProps = ComponentProps<'select'> &
   WrapperProps & {
     variant?: Prop<Variants>;
+    size?: Prop<SizeProps>;
   };
 
 const marginPropNames = margin.propNames;
 const widthPropNames = width.propNames;
 
-export const Select: FC<SelectProps> = ({ children, value, onChange, variant, ...props }) => {
+export const Select: FC<SelectProps> = ({ children, value, onChange, variant, size, ...props }) => {
   const systemProps = pick(props, marginPropNames, widthPropNames);
   const inputPtops = omit(props, marginPropNames, widthPropNames);
 
   return (
     <Wrapper {...systemProps}>
-      <StyledSelect {...inputPtops} value={value} onChange={onChange} variant={variant}>
+      <StyledSelect {...inputPtops} value={value} onChange={onChange} variant={variant} size={size}>
         {children}
       </StyledSelect>
-      <IconWrapper>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={ICON_SIZE}
-          height={ICON_SIZE}
-          viewBox="0 0 15 15"
-          fill="none"
-          stroke="currentColor"
-          style={{
-            display: 'block',
-          }}
-        >
-          <path d="M14.5 5.5L12.5 3.5L10.5 5.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M14.5 9.5L12.5 11.5L10.5 9.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+      <IconWrapper size={size}>
+        <CaretSortIcon size="15" />
       </IconWrapper>
     </Wrapper>
   );
 };
 
-Select.defaultProps = { variant: 'normal' };
+Select.defaultProps = { variant: 'normal', size: 0 };
 
 const ICON_SIZE = 15;
 
@@ -64,56 +55,77 @@ const styleProps = compose(
 const Wrapper = styled('div')<WrapperProps>({ position: 'relative' }, styleProps);
 
 const StyledSelect = styled('select')<SelectProps>(
-  css({
-    appearance: 'none',
-    backgroundColor: 'transparent',
-    height: 5,
-    lineHeight: 1,
-    fontFamily: 'normal',
-    padding: 0,
-    fontSize: 2,
-    borderRadius: 0,
-    paddingRight: 3,
-    border: 'none',
-    outline: 'none',
-    width: '100%',
-    borderBottom: '1px solid',
-    borderColor: 'grays.3',
-    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-    '&:focus': {
-      borderColor: 'blues.4',
+  props =>
+    css({
+      appearance: 'none',
+      backgroundColor: 'gray100',
+      fontFamily: 'normal',
+      paddingY: 0,
       outline: 'none',
-    },
-    '&:disabled': {
-      borderColor: 'grays.2',
-      color: 'grays.4',
-      cursor: 'not-allowed',
+      width: '100%',
+      borderRadius: 1,
+      border: '1px solid',
+      borderColor: 'gray300',
+      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+      '&:focus': {
+        borderColor: 'blue500',
+        boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+      },
+      '&:disabled': {
+        borderColor: 'gray300',
+        color: 'gray500',
+        cursor: 'not-allowed',
+      },
+    })(props),
+  { lineHeight: '1' },
+  variant({
+    size: {
+      0: {
+        fontSize: 1,
+        letterSpacing: '-0.01em',
+        height: 5,
+        paddingLeft: 1,
+        paddingRight: 3,
+      },
+      1: {
+        fontSize: 2,
+        letterSpacing: '-0.01em',
+        height: 6,
+        paddingLeft: 2,
+        paddingRight: 4,
+      },
     },
   }),
   variant({
     variant: {
       normal: {
-        color: 'grays.8',
+        color: 'gray800',
       },
-      fade: {
-        color: 'grays.5',
+      ghost: {
+        backgroundColor: 'transparent',
+        borderColor: 'transparent',
+        '&:focus': {
+          borderColor: 'blue500',
+        },
       },
     },
   })
 );
 
-const IconWrapper = styled('div')(
+type IconWrapperProps = { size?: Prop<SizeProps> };
+
+const IconWrapper = styled('div')<IconWrapperProps>(props =>
   css({
     position: 'absolute',
     top: 0,
-    right: 0,
+    right: props.size === 0 ? '1px' : '5px',
     width: `${ICON_SIZE}px`,
     height: '100%',
     display: 'flex',
     alignItems: 'center',
     pointerEvents: 'none',
     [`${StyledSelect}:disabled + &`]: {
-      color: 'grays.4',
+      color: 'gray500',
     },
-  })
+  })(props)
 );

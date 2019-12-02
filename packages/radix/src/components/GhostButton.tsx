@@ -3,11 +3,9 @@ import css from '@styled-system/css';
 import { margin, MarginProps, padding, PaddingProps, variant, compose } from '@modulz/radix-system';
 import themeGet from '@styled-system/theme-get';
 
-type Sizes = 0 | 1;
 type GhostButtonProps = MarginProps &
   PaddingProps & {
     isActive?: Boolean;
-    size?: Sizes;
   };
 
 const styleProps = compose(
@@ -22,12 +20,16 @@ export const GhostButton = styled.button<GhostButtonProps>(
       backgroundColor: 'transparent',
       border: 'none',
       borderRadius: 9999,
-      color: 'grays.5',
+      color: 'gray800',
       display: 'inline-flex',
       flexShrink: 0,
       alignItems: 'center',
-      fontFamily: 'medium',
+      fontFamily: 'normal',
       fontWeight: 500,
+      fontSize: 1,
+      height: 5,
+      lineHeight: 2,
+      minWidth: 5,
       justifyContent: 'center',
       outline: 'none',
       paddingY: 0,
@@ -40,18 +42,20 @@ export const GhostButton = styled.button<GhostButtonProps>(
       whiteSpace: 'nowrap',
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       '&:disabled': {
-        color: 'grays.4',
+        color: 'gray600',
         cursor: 'not-allowed',
-        pointerEvents: 'none',
+        pointerEvents: 'none', // TODO: Review in Primitives
       },
       '&:hover': {
-        backgroundColor: 'grays.1',
-      },
-      '&:focus': {
-        boxShadow: `inset 0 0 0 1px ${themeGet('colors.blues.4')(props)}`,
+        backgroundColor: 'gray200',
+        boxShadow: `0 0 0 1px ${themeGet('colors.gray200')(props)}`,
       },
       '&:active': {
-        backgroundColor: 'grays.2',
+        backgroundColor: 'gray300',
+        boxShadow: `0 0 0 1px ${themeGet('colors.gray300')(props)}`,
+      },
+      '&:focus': {
+        boxShadow: `0 0 0 2px ${themeGet('colors.blue500')(props)}`,
       },
       '&::-moz-focus-inner': {
         border: 0,
@@ -61,39 +65,22 @@ export const GhostButton = styled.button<GhostButtonProps>(
     variant({
       isActive: {
         true: {
-          backgroundColor: 'grays.2',
+          backgroundColor: 'blue200',
+          color: 'blue600',
+          boxShadow: `0 0 0 1px ${themeGet('colors.blue200')(props)}`,
           '&:hover': {
-            backgroundColor: 'grays.2',
-          },
-          '&:focus': {
-            boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')(props)}`,
+            backgroundColor: 'blue200',
+            boxShadow: `0 0 0 1px ${themeGet('colors.blue200')(props)}`,
           },
           '&:active': {
-            backgroundColor: 'grays.2',
-            boxShadow: `inset 0 1px 0 0 ${themeGet('colors.grays.4')(props)}`,
+            backgroundColor: 'blue300',
+            boxShadow: `0 0 0 1px ${themeGet('colors.blue300')(props)}`,
+          },
+          '&:focus': {
+            boxShadow: `0 0 0 2px ${themeGet('colors.blue500')(props)}`,
           },
         },
       },
     }),
-  variant({
-    size: {
-      0: {
-        fontSize: 1,
-        height: 5,
-        lineHeight: 1,
-        minWidth: 5,
-      },
-      1: {
-        fontSize: 3,
-        height: 6,
-        lineHeight: 2,
-        minWidth: 6,
-      },
-    },
-  }),
   styleProps
 );
-
-GhostButton.defaultProps = {
-  size: 0,
-};

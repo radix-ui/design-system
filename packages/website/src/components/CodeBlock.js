@@ -6,8 +6,8 @@ const { colors } = radixTheme;
 
 const theme = {
   plain: {
-    color: colors.grays[7],
-    backgroundColor: colors.grays[0],
+    color: colors.gray800,
+    backgroundColor: colors.gray100,
   },
   styles: [
     {
@@ -26,13 +26,13 @@ const theme = {
     {
       types: ['string', 'attr-value'],
       style: {
-        color: '#e22881',
+        color: 'hsl(330, 75%, 45%)',
       },
     },
     {
       types: ['punctuation', 'operator'],
       style: {
-        color: colors.grays[4],
+        color: colors.gray600,
       },
     },
     {
@@ -49,31 +49,31 @@ const theme = {
         'inserted',
       ],
       style: {
-        color: '#36acaa',
+        color: 'hsl(180, 55%, 35%)',
       },
     },
     {
       types: ['atrule', 'keyword', 'attr-name', 'selector'],
       style: {
-        color: '#00a4db',
+        color: 'hsl(195, 90%, 35%)',
       },
     },
     {
       types: ['function', 'deleted', 'tag'],
       style: {
-        color: '#d73a49',
+        color: 'hsl(330, 75%, 45%)',
       },
     },
     {
       types: ['function-variable'],
       style: {
-        color: '#6f42c1',
+        color: 'hsl(180, 50%, 35%)',
       },
     },
     {
       types: ['tag', 'selector', 'keyword'],
       style: {
-        color: colors.blues[5],
+        color: colors.blue700,
       },
     },
   ],
@@ -94,7 +94,7 @@ export default ({ children, live, removeFragment }) => {
           <LivePreview
             style={{
               padding: radixTheme.space[3],
-              border: `1px solid ${colors.grays[3]}`,
+              border: `1px solid ${colors.gray300}`,
               borderTopLeftRadius: radixTheme.radii[2],
               borderTopRightRadius: radixTheme.radii[2],
             }}
@@ -105,12 +105,11 @@ export default ({ children, live, removeFragment }) => {
             style={{
               borderBottomLeftRadius: radixTheme.radii[2],
               borderBottomRightRadius: radixTheme.radii[2],
-              border: `1px solid ${colors.grays[3]}`,
+              border: `1px solid ${colors.gray300}`,
               borderTop: 'none',
               fontSize: radixTheme.fontSizes[2],
               fontFamily: radixTheme.fonts.mono,
               fontWeight: 400,
-              letterSpacing: '-0.0175em',
               lineHeight: 1.5,
             }}
             css={{ textarea: { outline: 0 } }}
@@ -129,7 +128,7 @@ export default ({ children, live, removeFragment }) => {
           padding={radixTheme.space[3]}
           style={{
             borderRadius: radixTheme.radii[2],
-            border: `1px solid ${colors.grays[3]}`,
+            border: `1px solid ${colors.gray300}`,
             fontSize: radixTheme.fontSizes[2],
             fontFamily: radixTheme.fonts.mono,
             fontWeight: 400,
