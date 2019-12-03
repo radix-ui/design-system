@@ -8,14 +8,16 @@ import { Card } from './Card';
 
 type PopoverProps = PopoverPrimitiveProps & {
   isOpen?: boolean;
+  showArrow?: boolean;
 };
 
-export const Popover = ({ children, ...props }: PopoverProps) => {
+export const Popover = ({ children, showArrow, ...props }: PopoverProps) => {
   return (
     <PopoverPrimitive
       side="bottom"
       align="center"
-      arrow={<Arrow width={20} height={10} />}
+      // TODO: Arrow `null` to not render an Arrow Component
+      arrow={showArrow ? <Arrow width={20} height={10} /> : <div />}
       {...props}
       getAnimationConfig={() => ({
         from: { opacity: 0 },
