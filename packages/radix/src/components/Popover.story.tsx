@@ -15,7 +15,7 @@ function PopoverExample() {
     <div
       style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
     >
-      <GhostButton type="button" ref={buttonRef} onClick={() => setIsOpen(true)} size={1}>
+      <GhostButton type="button" ref={buttonRef} onClick={() => setIsOpen(true)}>
         <DotsVerticalIcon />
       </GhostButton>
 
