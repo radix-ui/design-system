@@ -11,7 +11,35 @@ function ToggleButtonGroupStory() {
 
   return (
     <>
-      <Box width="500px" my={6}>
+      <Box width="135px" my={6}>
+        <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
+          <ToggleButton size={0} value="left">
+            <TextAlignLeftIcon />
+          </ToggleButton>
+          <ToggleButton size={0} value="center">
+            <TextAlignCenterIcon />
+          </ToggleButton>
+          <ToggleButton size={0} value="right">
+            <TextAlignRightIcon />
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
+
+      <Box width="135px" my={6}>
+        <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
+          <ToggleButton size={0} value="left">
+            Left
+          </ToggleButton>
+          <ToggleButton size={0} value="center">
+            Center
+          </ToggleButton>
+          <ToggleButton size={0} value="right">
+            Right
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
+
+      <Box width="180px" my={6}>
         <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
           <ToggleButton value="left">
             <TextAlignLeftIcon />
@@ -25,8 +53,10 @@ function ToggleButtonGroupStory() {
         </ToggleButtonGroup>
       </Box>
 
-      <Box width="500px" my={6}>
-        <Text as="p">With Tooltip</Text>
+      <Box width="180px" my={6}>
+        <Text size={1} my={1} as="p">
+          With Tooltip
+        </Text>
         <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
           <Tooltip label="Left" align="center">
             <ToggleButton value="left">Left</ToggleButton>
