@@ -38,18 +38,18 @@ export const ToggleButton = withTheme(
             color: 'gray700',
             wordSpacing: '-0.025em',
             letterSpacing: '0.01em',
-            ':first-child': {
+            '&:first-child': {
               borderTopLeftRadius: themeGet('radii.1')(props),
               borderBottomLeftRadius: themeGet('radii.1')(props),
             },
-            ':last-child ': {
+            '&:last-child ': {
               borderTopRightRadius: themeGet('radii.1')(props),
               borderBottomRightRadius: themeGet('radii.1')(props),
             },
-            ':hover': {
+            '&:hover': {
               zIndex: 2, // TODO: Review in Primitives, this removes the overlapping
             },
-            ':focus': {
+            '&:focus': {
               outline: 'none',
               zIndex: '5 !important', // TODO: Review in Primitives
               borderRadius: 1,
@@ -72,10 +72,10 @@ export const ToggleButton = withTheme(
                  * border.
                  */
                 borderColor: 'transparent',
-                ':hover': {
+                '&:hover': {
                   borderColor: 'transparent',
                 },
-                ':focus': {
+                '&:focus': {
                   borderColor: 'blue500',
                   boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
                 },
@@ -88,10 +88,10 @@ export const ToggleButton = withTheme(
                 lineHeight: 0,
                 borderColor: 'gray400', // TODO: Consider using box shadow for consistency
                 backgroundColor: 'gray100',
-                ':hover': {
+                '&:hover': {
                   borderColor: 'gray500',
                 },
-                ':focus': {
+                '&:focus': {
                   borderColor: 'blue500',
                   boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
                 },
@@ -109,7 +109,7 @@ export const ToggleButton = withTheme(
             color: 'blue800',
             borderRadius: 1,
             boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
-            ':focus': {
+            '&:focus': {
               borderColor: 'blue500',
               boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
             },
