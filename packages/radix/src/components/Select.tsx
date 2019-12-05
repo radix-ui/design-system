@@ -69,6 +69,9 @@ const StyledSelect = styled('select')<SelectProps>(
       borderColor: 'gray300',
       letterSpacing: '-0.01em',
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+      '&:hover': {
+        borderColor: 'gray400',
+      },
       '&:focus': {
         borderColor: 'blue500',
         boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
