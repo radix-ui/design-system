@@ -63,9 +63,11 @@ const StyledSelect = styled('select')<SelectProps>(
       paddingY: 0,
       outline: 'none',
       width: '100%',
+      lineHeight: 0,
       borderRadius: 1,
       border: '1px solid',
       borderColor: 'gray300',
+      letterSpacing: '-0.01em',
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       '&:focus': {
         borderColor: 'blue500',
@@ -77,19 +79,16 @@ const StyledSelect = styled('select')<SelectProps>(
         cursor: 'not-allowed',
       },
     })(props),
-  { lineHeight: '1' },
   variant({
     size: {
       0: {
         fontSize: 1,
-        letterSpacing: '-0.01em',
         height: 5,
         paddingLeft: 1,
         paddingRight: 3,
       },
       1: {
         fontSize: 2,
-        letterSpacing: '-0.01em',
         height: 6,
         paddingLeft: 2,
         paddingRight: 4,
