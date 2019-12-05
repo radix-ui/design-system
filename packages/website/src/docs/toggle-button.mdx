@@ -30,7 +30,7 @@ description: Useful for allowing users to select one or more options from a set.
 <SystemProps props={['margin']} />
 
 <Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
-  ToggleButton
+  Toggle Button
 </Heading>
 
 <PropsTable
@@ -38,6 +38,11 @@ description: Useful for allowing users to select one or more options from a set.
     children: {
       type: 'ReactNode',
       description: 'The content to render',
+    },
+    size: {
+      type: '0 | 1',
+      default: '0',
+      description: 'The size to apply',
     },
   }}
 />

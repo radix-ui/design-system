@@ -76,7 +76,7 @@ const FakeSwitch = styled('div')(props =>
       borderRadius: 9999,
       backgroundColor: 'white',
       boxShadow: '0px 0px 1px rgba(0, 0, 0, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.2)',
-      transition: 'transform 100ms ease-out',
+      transition: 'background-color 100ms ease-out, transform 100ms ease-out',
     },
     [`${Input}:checked + &`]: {
       '&::before': {
@@ -89,6 +89,9 @@ const FakeSwitch = styled('div')(props =>
     [`${Input}:not(:disabled):active + &`]: {
       '&::before': {
         backgroundColor: 'gray400',
+      },
+      '&::after': {
+        backgroundColor: 'gray200',
       },
     },
     [`${Input}:not(:disabled):active:checked + &`]: {
