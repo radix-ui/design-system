@@ -39,6 +39,20 @@ function ToggleButtonGroupStory() {
         </ToggleButtonGroup>
       </Box>
 
+      <Box width="135px" my={6}>
+        <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
+          <ToggleButton size={0} variant="fade" value="left">
+            Left
+          </ToggleButton>
+          <ToggleButton size={0} variant="fade" value="center">
+            Center
+          </ToggleButton>
+          <ToggleButton size={0} variant="fade" value="right">
+            Right
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
+
       <Box width="180px" my={6}>
         <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
           <ToggleButton value="left">
@@ -49,6 +63,28 @@ function ToggleButtonGroupStory() {
           </ToggleButton>
           <ToggleButton value="right">
             <TextAlignRightIcon />
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
+
+      <Box width="180px" my={6}>
+        <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
+          <ToggleButton value="left">Left</ToggleButton>
+          <ToggleButton value="center">Center</ToggleButton>
+          <ToggleButton value="right">Right</ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
+
+      <Box width="180px" my={6}>
+        <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
+          <ToggleButton variant="fade" value="left">
+            Left
+          </ToggleButton>
+          <ToggleButton variant="fade" value="center">
+            Center
+          </ToggleButton>
+          <ToggleButton variant="fade" value="right">
+            Right
           </ToggleButton>
         </ToggleButtonGroup>
       </Box>
