@@ -1,7 +1,6 @@
 import React from 'react';
 import { withTheme } from 'styled-components';
 import css from '@styled-system/css';
-import { variant } from '@modulz/radix-system';
 import {
   Slider as SliderPrimitive,
   SliderProps as SliderPrimitiveProps,

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Text } from './Text';
 import { Box } from './Box';
 import { Button } from './Button';
-import { Select } from './Select';
+import { Select, Option, OptionGroup } from './Select';
 
 function SelectStory() {
   const [value, setValue] = useState('option2');
@@ -12,52 +12,56 @@ function SelectStory() {
     <Box>
       <Box mb="4">
         <Text as="p">Uncontrolled</Text>
-        <Select mt="4" width="100px">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
+        <Select mt={4} ml={6}>
+          <Option value="option1" label="Option 1" />
+          <Option value="option2" label="Option 2" />
+          <Option disabled value="option3" label="Option 3" />
+          <OptionGroup label="Group 1">
+            <Option value="option4" label="Option 4" />
+            <Option value="option5" label="Option 5" />
+          </OptionGroup>
+          <Option value="option6" label="Option 6" />
         </Select>
       </Box>
 
       <Box mb="4">
-        <Text as="p">Controlled</Text>
-        <Select my={4} width="100px" value={value} onChange={event => setValue(event.target.value)}>
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
-        </Select>
-        <Button mr="2" onClick={() => setValue('option1')}>
-          Select option 1
-        </Button>
-        <Button mr="2" onClick={() => setValue('option2')}>
-          Select option 2
-        </Button>
-        <Button onClick={() => setValue('option3')}>Select option 3</Button>
-      </Box>
-
-      <Box mb="4">
-        <Select size={1} mt="4" width="100px">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
+        <Select mt={4} size={1} mt="4" width="100px">
+          <Option value="option1" label="Option 1" />
+          <Option value="option2" label="Option 2" />
+          <Option value="option3" label="Option 3" />
+          <OptionGroup label="Group 1">
+            <Option value="option4" label="Option 4" />
+            <Option value="option5" label="Option 5" />
+          </OptionGroup>
+          <Option value="option6" label="Option 6" />
         </Select>
       </Box>
 
       <Box mb="4">
         <Text as="p">Disabled</Text>
-        <Select mt="4" width="100px" disabled>
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
+        <Select mt={4} width="100px" disabled>
+          <Option value="option1" label="Option 1" />
+          <Option value="option2" label="Option 2" />
+          <Option value="option3" label="Option 3" />
+          <OptionGroup label="Group 1">
+            <Option value="option4" label="Option 4" />
+            <Option value="option5" label="Option 5" />
+          </OptionGroup>
+          <Option value="option6" label="Option 6" />
         </Select>
       </Box>
 
       <Box mb="4">
         <Text as="p">Ghost</Text>
-        <Select mt="4" width="100px" variant="ghost">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
+        <Select mt={4} width="100px" variant="ghost">
+          <Option value="option1" label="Option 1" />
+          <Option value="option2" label="Option 2" />
+          <Option value="option3" label="Option 3" />
+          <OptionGroup label="Group 1">
+            <Option value="option4" label="Option 4" />
+            <Option value="option5" label="Option 5" />
+          </OptionGroup>
+          <Option value="option6" label="Option 6" />
         </Select>
       </Box>
     </Box>
