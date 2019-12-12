@@ -1,8 +1,6 @@
 import React from 'react';
 import styled, { css as _css, keyframes } from 'styled-components';
 import css from '@styled-system/css';
-
-import { Prop } from '@modulz/radix-system';
 import { Button as ButtonPrimitive, ButtonProps as ButtonPrimitiveProps } from 'mdlz-prmtz';
 import { theme } from '../theme';
 
@@ -10,9 +8,9 @@ type Variant = 'gray' | 'blue' | 'green' | 'red';
 type Size = 0 | 1;
 
 export type ButtonProps = ButtonPrimitiveProps & {
-  variant?: Prop<Variant>;
+  variant?: Variant;
   isWaiting?: boolean;
-  size?: Prop<Size>;
+  size?: Size;
 };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -24,27 +22,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         base: {
           button: {
             normal: {
-              alignItems: 'center',
               display: 'inline-flex',
-              border: 0,
-              borderRadius: theme.radii[1],
-              cursor: 'default',
+              alignItems: 'center',
+              justifyContent: 'center',
               fontFamily: theme.fonts.normal,
               fontWeight: 500,
-              position: 'relative',
-              textAlign: 'center',
               textDecoration: 'none',
+              borderRadius: theme.radii[1],
+              cursor: 'default',
+              position: 'relative',
               userSelect: 'none',
               whiteSpace: 'nowrap',
-            },
-            focus: {
-              // We previously had: (need to validate in FF)
-              // '&:focus': {
-              //   '&::-moz-focus-inner': {
-              //     border: 0,
-              //   },
-              // },
-              border: 0,
             },
             active: {
               backgroundColor: theme.colors.gray200,
@@ -145,7 +133,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                   fontSize: theme.fontSizes[1],
                   paddingLeft: theme.space[2],
                   paddingRight: theme.space[2],
-                  height: theme.sizes[5],
                   minWidth: theme.sizes[5],
                   lineHeight: theme.lineHeights[2],
                   letterSpacing: '-0.02em',
@@ -158,7 +145,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                   fontSize: theme.fontSizes[2],
                   paddingLeft: theme.space[3],
                   paddingRight: theme.space[3],
-                  height: theme.sizes[6],
                   minWidth: theme.sizes[6],
                   lineHeight: theme.lineHeights[4],
                   letterSpacing: '-0.02em',
