@@ -1,9 +1,9 @@
 import React from 'react';
 import css from '@styled-system/css';
 import { variant, Prop } from '@modulz/radix-system';
-import { Heading as HeadingPrimitive, HeadingProps as HeadingPrimitiveProps } from 'mdlz-prmtz';
+import { Text as TextPrimitive, TextProps as TextPrimitiveProps } from 'mdlz-prmtz';
 
-type HeadingProps = HeadingPrimitiveProps & {
+type HeadingProps = TextPrimitiveProps & {
   fontWeight?: Prop<400 | 500>;
   size?: Prop<0 | 1 | 2 | 3 | 4 | 5>;
   truncate?: Prop<boolean>;
@@ -12,7 +12,7 @@ type HeadingProps = HeadingPrimitiveProps & {
 };
 
 export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props, ref) => (
-  <HeadingPrimitive
+  <TextPrimitive
     {...props}
     ref={ref}
     css={[
