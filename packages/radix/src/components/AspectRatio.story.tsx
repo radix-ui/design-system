@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box } from './Box';
 import { Flex } from './Flex';
@@ -9,24 +9,24 @@ storiesOf('Components|AspectRatio', module).add('default', () => (
   <Flex>
     <Box m={4} width={300}>
       <AspectRatio bg="blue600" mb={1}>
-        <Label>1:1 (default)</Label>
+        <Flex height="100%" width="100%" justifyContent="center" alignItems="center">
+          <Heading>1:1 (default)</Heading>
+        </Flex>
       </AspectRatio>
     </Box>
     <Box m={4} width={300}>
       <AspectRatio bg="blue600" ratio="4:3" mb={1}>
-        <Label>4:3</Label>
+        <Flex height="100%" width="100%" justifyContent="center" alignItems="center">
+          <Heading>4:3</Heading>
+        </Flex>
       </AspectRatio>
     </Box>
     <Box m={4} width={300}>
       <AspectRatio bg="blue600" ratio="16:9" mb={1}>
-        <Label>16:9</Label>
+        <Flex height="100%" width="100%" justifyContent="center" alignItems="center">
+          <Heading>16:9</Heading>
+        </Flex>
       </AspectRatio>
     </Box>
   </Flex>
 ));
-
-const Label: FC = ({ children }) => (
-  <Flex height="100%" width="100%" justifyContent="center" alignItems="center">
-    <Heading>{children}</Heading>
-  </Flex>
-);
