@@ -1,95 +1,102 @@
 import React from 'react';
-import { withTheme } from 'styled-components';
-import css from '@styled-system/css';
-import themeGet from '@styled-system/theme-get';
-import { variant, Prop } from '@modulz/radix-system';
 import { Input as InputPrimitive, InputProps as InputPrimitiveProps } from 'mdlz-prmtz';
+import { theme } from '../theme';
 
-type VariantProps = 'normal' | 'ghost';
-type SizeProps = 0 | 1;
+type Variant = 'normal' | 'ghost';
+type Size = 0 | 1;
 
-// TODO: Fix `size` typing
 export type InputProps = InputPrimitiveProps & {
-  variant?: Prop<VariantProps>;
-  size?: Prop<SizeProps> & any;
-  children?: React.ReactNode;
-  // TODO: type Theme
-  theme?: any;
+  variant?: Variant;
+  size?: Size & any;
 };
 
-const placeholderStyle = {
-  color: 'gray600',
-};
-
-export const Input = withTheme(
-  React.forwardRef<HTMLInputElement, InputProps>((props, ref) => (
-    <InputPrimitive
-      {...props}
-      ref={ref}
-      css={[
-        css({
-          appearance: 'none',
-          backgroundColor: 'transparent',
-          cursor: 'default',
-          color: 'gray800',
-          fontFamily: 'normal',
-          outline: 'none',
-          paddingY: 0,
-          verticalAlign: 'middle',
-          width: '100%',
-          boxSizing: 'border-box',
-          WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-          border: '1px solid',
-          borderColor: 'gray300',
-          borderRadius: 1,
-          '&:read-only': {
-            borderColor: 'gray300',
-            color: 'gray700',
+export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forwardedRef) => (
+  <InputPrimitive
+    {...props}
+    ref={forwardedRef}
+    styleConfig={{
+      base: {
+        input: {
+          normal: {
+            cursor: 'default',
+            color: theme.colors.gray800,
+            fontFamily: theme.fonts.normal,
+            border: '1px solid',
+            borderColor: theme.colors.gray300,
+            borderRadius: theme.radii[1],
           },
-          '&:disabled': {
-            borderColor: 'gray300',
-            color: 'gray500',
+          readOnly: {
+            borderColor: theme.colors.gray300,
+            color: theme.colors.gray700,
+          },
+          disabled: {
+            borderColor: theme.colors.gray300,
+            color: theme.colors.gray500,
             cursor: 'not-allowed',
           },
-          '&:focus': {
-            borderColor: 'blue500',
-            boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+          focus: {
+            borderColor: theme.colors.blue500,
+            boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
             cursor: 'text',
           },
-        }),
-        variant({
-          size: {
-            0: {
-              fontSize: 1,
-              letterSpacing: '-0.01em',
-              height: 5,
-              lineHeight: 2,
-              paddingX: 1,
-            },
-            1: {
-              fontSize: 2,
-              letterSpacing: '-0.01em',
-              height: 6,
-              lineHeight: 4,
-              paddingX: 2,
+        },
+        placeholder: {
+          normal: {
+            color: theme.colors.gray600,
+          },
+        },
+      },
+      variants: {
+        variant: {
+          normal: {
+            input: {
+              normal: {
+                borderColor: theme.colors.gray300,
+              },
             },
           },
-        }),
-        variant({
-          variant: {
-            normal: {
-              borderColor: 'gray300',
-            },
-            ghost: {
-              borderColor: 'transparent',
-              cursor: 'text',
+          ghost: {
+            input: {
+              normal: {
+                borderColor: 'transparent',
+                cursor: 'text',
+              },
             },
           },
-        }),
-      ]}
-      placeholderCss={placeholderStyle}
-    />
-  ))
-);
+        },
+        size: {
+          0: {
+            input: {
+              normal: {
+                fontSize: theme.fontSizes[1],
+                letterSpacing: '-0.01em',
+                height: theme.sizes[5],
+                lineHeight: theme.lineHeights[2],
+                paddingLeft: theme.space[1],
+                paddingRight: theme.space[1],
+              },
+            },
+          },
+          1: {
+            input: {
+              normal: {
+                fontSize: theme.fontSizes[2],
+                letterSpacing: '-0.01em',
+                height: theme.sizes[6],
+                lineHeight: theme.lineHeights[4],
+                paddingLeft: theme.space[2],
+                paddingRight: theme.space[2],
+              },
+            },
+          },
+        },
+      },
+    }}
+  />
+));
 
-Input.defaultProps = { type: 'text', variant: 'normal', size: 0 };
+Input.defaultProps = {
+  type: 'text',
+  variant: 'normal',
+  size: 0,
+};
