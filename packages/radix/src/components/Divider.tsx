@@ -1,32 +1,47 @@
 import React from 'react';
-import css from '@styled-system/css';
-import { variant, Prop } from '@modulz/radix-system';
 import { Divider as DividerPrimitive, DividerProps as DividerPrimitiveProps } from 'mdlz-prmtz';
+import { theme } from '../theme';
 
-type Sizes = 0 | 1 | 2;
-type DividerProps = DividerPrimitiveProps & { size?: Prop<Sizes> };
+type Size = 0 | 1 | 2;
+export type DividerProps = DividerPrimitiveProps & { size?: Size };
 
-export const Divider = React.forwardRef<HTMLDivElement, DividerProps>((props, ref) => (
+export const Divider = React.forwardRef<HTMLHRElement, DividerProps>((props, forwardedRef) => (
   <DividerPrimitive
     {...props}
-    ref={ref}
-    css={[
-      css({
-        backgroundColor: 'gray300',
-      }),
-      variant({
-        size: {
-          0: {
-            maxWidth: 3,
-          },
-          1: {
-            maxWidth: 6,
-          },
-          2: {
-            maxWidth: 9,
+    ref={forwardedRef}
+    styleConfig={{
+      base: {
+        divider: {
+          normal: {
+            backgroundColor: theme.colors.gray300,
           },
         },
-      }),
-    ]}
+      },
+      variants: {
+        size: {
+          0: {
+            divider: {
+              normal: {
+                maxWidth: theme.sizes[3],
+              },
+            },
+          },
+          1: {
+            divider: {
+              normal: {
+                maxWidth: theme.sizes[6],
+              },
+            },
+          },
+          2: {
+            divider: {
+              normal: {
+                maxWidth: theme.sizes[9],
+              },
+            },
+          },
+        },
+      },
+    }}
   />
 ));

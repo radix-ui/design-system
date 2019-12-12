@@ -1,5 +1,4 @@
 import React from 'react';
-import { Prop } from '@modulz/radix-system';
 import { Badge as BadgePrimitive, BadgeProps as BadgePrimitiveProps } from 'mdlz-prmtz';
 import { theme } from '../theme';
 
@@ -7,15 +6,15 @@ type Variant = 'gray' | 'blue' | 'green' | 'red' | 'yellow';
 type Size = 0 | 1;
 
 export type BadgeProps = BadgePrimitiveProps & {
-  variant?: Prop<Variant>;
-  size?: Prop<Size>;
+  variant?: Variant;
+  size?: Size;
 };
 
-export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => {
+export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, forwardedRef) => {
   return (
     <BadgePrimitive
       {...props}
-      ref={ref}
+      ref={forwardedRef}
       styleConfig={{
         base: {
           badge: {

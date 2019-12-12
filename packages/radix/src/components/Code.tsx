@@ -1,36 +1,48 @@
 import React from 'react';
-import css from '@styled-system/css';
 import { Code as CodePrimitive, CodeProps as CodePrimitiveProps } from 'mdlz-prmtz';
-import { variant, Prop } from '@modulz/radix-system';
+import { theme } from '../theme';
 
-type Variants = 'normal' | 'fade';
-type CodeProps = CodePrimitiveProps & { children?: React.ReactNode; variant?: Prop<Variants> };
+type Variant = 'normal' | 'fade';
+export type CodeProps = CodePrimitiveProps & { variant?: Variant };
 
-export const Code = React.forwardRef<HTMLElement, CodeProps>((props, ref) => (
+export const Code = React.forwardRef<HTMLElement, CodeProps>((props, forwardedRef) => (
   <CodePrimitive
     {...props}
-    ref={ref}
-    css={[
-      css({
-        borderRadius: 1,
-        fontFamily: 'mono',
-        fontSize: 2,
-        lineHeight: 1,
-        paddingX: 1,
-      }),
-      variant({
-        variant: {
+    ref={forwardedRef}
+    styleConfig={{
+      base: {
+        code: {
           normal: {
-            backgroundColor: 'blue200',
-            color: 'blue700',
-          },
-          fade: {
-            backgroundColor: 'gray200',
-            color: 'gray700',
+            fontFamily: theme.fonts.mono,
+            fontSize: theme.fontSizes[2],
+            lineHeight: theme.lineHeights[1],
+            paddingLeft: theme.space[1],
+            paddingRight: theme.space[1],
+            borderRadius: theme.radii[1],
           },
         },
-      }),
-    ]}
+      },
+      variants: {
+        variant: {
+          normal: {
+            code: {
+              normal: {
+                backgroundColor: theme.colors.blue200,
+                color: theme.colors.blue700,
+              },
+            },
+          },
+          fade: {
+            code: {
+              normal: {
+                backgroundColor: theme.colors.gray200,
+                color: theme.colors.gray700,
+              },
+            },
+          },
+        },
+      },
+    }}
   />
 ));
 

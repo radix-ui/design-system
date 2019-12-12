@@ -1,33 +1,48 @@
 import React from 'react';
-import css from '@styled-system/css';
-import { variant, Prop } from '@modulz/radix-system';
 import { Pipe as PipePrimitive, PipeProps as PipePrimitiveProps } from 'mdlz-prmtz';
+import { theme } from '../theme';
 
-type SizeProps = 'normal' | 'large' | 'fluid';
-type PipeProps = PipePrimitiveProps & { variant?: Prop<SizeProps> };
+type Variant = 'normal' | 'large' | 'fluid';
+export type PipeProps = PipePrimitiveProps & { variant?: Variant };
 
-export const Pipe = React.forwardRef<HTMLDivElement, PipeProps>((props, ref) => (
+export const Pipe = React.forwardRef<HTMLDivElement, PipeProps>((props, forwardedRef) => (
   <PipePrimitive
     {...props}
-    ref={ref}
-    css={[
-      css({
-        backgroundColor: 'gray300',
-      }),
-      variant({
-        variant: {
+    ref={forwardedRef}
+    styleConfig={{
+      base: {
+        pipe: {
           normal: {
-            height: 3,
-          },
-          large: {
-            height: 7,
-          },
-          fluid: {
-            height: '100%',
+            backgroundColor: theme.colors.gray300,
           },
         },
-      }),
-    ]}
+      },
+      variants: {
+        variant: {
+          normal: {
+            pipe: {
+              normal: {
+                height: theme.sizes[3],
+              },
+            },
+          },
+          large: {
+            pipe: {
+              normal: {
+                height: theme.sizes[7],
+              },
+            },
+          },
+          fluid: {
+            pipe: {
+              normal: {
+                height: '100%',
+              },
+            },
+          },
+        },
+      },
+    }}
   />
 ));
 

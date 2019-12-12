@@ -45,15 +45,5 @@ storiesOf('Components|Container', module).add('default', () => (
         </Box>
       </Container>
     </Box>
-
-    <Box mb={4}>
-      <Container size={[null, 0, 1]}>
-        <Box backgroundColor="blue600" p={3}>
-          <Text as="p" textAlign="center">
-            Responsive
-          </Text>
-        </Box>
-      </Container>
-    </Box>
   </>
 ));
