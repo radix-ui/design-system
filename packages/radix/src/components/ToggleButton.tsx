@@ -27,11 +27,11 @@ type ToggleButtonProps = ToggleButtonPrimitiveProps & {
 };
 
 export const ToggleButton = withTheme(
-  React.forwardRef<HTMLButtonElement, ToggleButtonProps>((props, ref) => {
+  React.forwardRef<HTMLButtonElement, ToggleButtonProps>((props, forwardedRef) => {
     return (
       <ToggleButtonPrimitive
         {...props}
-        ref={ref}
+        ref={forwardedRef}
         css={[
           css({
             fontWeight: 400,

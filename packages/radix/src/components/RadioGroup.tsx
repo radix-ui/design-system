@@ -42,14 +42,14 @@ const marginPropNames = margin.propNames;
 type Ref = HTMLInputElement;
 export type RadioProps = MarginProps & ComponentPropsWithRef<'input'>;
 
-export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>((props, ref) => {
+export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>((props, forwardedRef) => {
   const { children, ...otherProps } = props;
   const systemProps = pick(otherProps, marginPropNames);
   const inputProps = omit(otherProps, marginPropNames);
 
   return (
     <RadioWrapper {...systemProps}>
-      <Input {...inputProps} type="radio" ref={ref} />
+      <Input {...inputProps} type="radio" ref={forwardedRef} />
       <FakeRadio />
       {children && <TextWrapper>{children}</TextWrapper>}
     </RadioWrapper>
