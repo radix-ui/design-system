@@ -10,7 +10,7 @@ export { Checkbox } from './components/Checkbox';
 export { CheckboxButton } from './components/CheckboxButton';
 export { Code, CodeProps } from './components/Code';
 export { Container, ContainerProps } from './components/Container';
-export { Dialog } from './components/Dialog';
+export { Dialog, DialogProps } from './components/Dialog';
 export { Divider, DividerProps } from './components/Divider';
 export { Flex, FlexProps } from './components/Flex';
 export { Grid, GridProps } from './components/Grid';
