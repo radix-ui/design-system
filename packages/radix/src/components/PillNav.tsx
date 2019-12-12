@@ -17,26 +17,26 @@ interface PillWidthProps {
   pillWidth?: Prop<CSS.WidthProperty<{}>>;
 }
 
-type PillNavProps = MarginProps &
+export type PillNavProps = MarginProps &
   PillWidthProps & {
-    children: ReactElement<PillProps>[];
+    children: ReactElement<PillButtonProps>[];
   };
 
 export const PillNav: FC<PillNavProps> = ({ children, pillWidth, ...props }) => {
   return (
     <Box {...props}>
-      {React.Children.map(children, (pill: ReactElement<PillProps>) =>
+      {React.Children.map(children, (pill: ReactElement<PillButtonProps>) =>
         React.cloneElement(pill, { pillWidth })
       )}
     </Box>
   );
 };
 
-type PillProps = PillWidthProps & {
+export type PillButtonProps = PillWidthProps & {
   active?: boolean;
 };
 
-export const PillButton = styled('button')<PillProps>(
+export const PillButton = styled('button')<PillButtonProps>(
   ({ active, pillWidth, ...props }) =>
     css({
       appearance: 'none',
