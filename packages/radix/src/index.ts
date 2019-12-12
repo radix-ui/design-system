@@ -1,9 +1,9 @@
 export { RadixProvider } from './RadixProvider';
 
-export { AspectRatio } from './components/AspectRatio';
-export { Badge } from './components/Badge';
+export { AspectRatio, AspectRatioProps } from './components/AspectRatio';
+export { Badge, BadgeProps } from './components/Badge';
 export { Box, BoxProps } from './components/Box';
-export { Button } from './components/Button';
+export { Button, ButtonProps } from './components/Button';
 export { Card } from './components/Card';
 export { CardLink } from './components/CardLink';
 export { Checkbox } from './components/Checkbox';
