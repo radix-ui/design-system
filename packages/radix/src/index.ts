@@ -31,6 +31,6 @@ export { Table, Thead, Tbody, Tfoot, Tr, Th, Td } from './components/Table';
 export { Text, TextProps } from './components/Text';
 export { Textarea } from './components/Textarea';
 export { ToggleButtonGroup, ToggleButton } from './components/ToggleButton';
-export { Tooltip } from './components/Tooltip';
+export { Tooltip, TooltipProps } from './components/Tooltip';
 
 export { theme } from './theme';

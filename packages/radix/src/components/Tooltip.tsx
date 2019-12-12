@@ -1,35 +1,38 @@
 import React from 'react';
-import themeGet from '@styled-system/theme-get';
-import css from '@styled-system/css';
-import { withTheme } from 'styled-components';
-import {
-  Arrow,
-  Tooltip as TooltipPrimitive,
-  TooltipProps as TooltipPrimitiveProps,
-} from 'mdlz-prmtz';
+import { Tooltip as TooltipPrimitive, TooltipProps as TooltipPrimitiveProps } from 'mdlz-prmtz';
+import { theme } from '../theme';
 
-type TooltipProps = TooltipPrimitiveProps & { theme?: any };
+export type TooltipProps = TooltipPrimitiveProps;
 
-export const Tooltip = withTheme((props: TooltipProps) => (
+export const Tooltip = (props: TooltipProps) => (
   <TooltipPrimitive
-    arrow={<Arrow width={12} height={6} fill={themeGet('colors.gray800')(props)} />}
     arrowOffset={6}
     sideOffset={-3}
     {...props}
-    getAnimationConfig={() => ({
-      from: { opacity: 0 },
-      enter: { opacity: 1 },
-      leave: { opacity: 0 },
-      immediate: true,
-    })}
-    css={css({
-      backgroundColor: 'gray800',
-      paddingY: 0,
-      paddingX: 1,
-      lineHeight: 2,
-      borderRadius: 1,
-      fontSize: 1,
-      letterSpacing: '-0.01em',
-    })}
+    styleConfig={{
+      base: {
+        content: {
+          normal: {
+            backgroundColor: theme.colors.gray800,
+            paddingTop: 0,
+            paddingRight: theme.space[1],
+            paddingBottom: 0,
+            paddingLeft: theme.space[1],
+            lineHeight: theme.lineHeights[2],
+            borderRadius: theme.radii[1],
+            color: theme.colors.white,
+            fontSize: theme.fontSizes[1],
+            letterSpacing: '-0.01em',
+          },
+        },
+        arrow: {
+          normal: {
+            width: 12,
+            height: 6,
+            fill: theme.colors.gray800,
+          },
+        },
+      },
+    }}
   />
-));
+);
