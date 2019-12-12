@@ -1,1 +1,1 @@
-export { AspectRatio } from 'mdlz-prmtz';
+export { AspectRatio, AspectRatioProps } from 'mdlz-prmtz';

@@ -6,7 +6,7 @@ import pick from 'lodash.pick';
 import { margin, MarginProps } from '@modulz/radix-system';
 import themeGet from '@styled-system/theme-get';
 
-type SwitchProps = MarginProps & ComponentProps<'input'>;
+export type SwitchProps = MarginProps & ComponentProps<'input'>;
 
 const marginPropNames = margin.propNames;
 

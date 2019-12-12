@@ -1,36 +1,48 @@
 export { RadixProvider } from './RadixProvider';
 
-export { AspectRatio } from './components/AspectRatio';
-export { Badge } from './components/Badge';
+export { AspectRatio, AspectRatioProps } from './components/AspectRatio';
+export { Badge, BadgeProps } from './components/Badge';
 export { Box, BoxProps } from './components/Box';
-export { Button } from './components/Button';
-export { Card } from './components/Card';
-export { CardLink } from './components/CardLink';
-export { Checkbox } from './components/Checkbox';
-export { CheckboxButton } from './components/CheckboxButton';
-export { Code } from './components/Code';
-export { Container } from './components/Container';
-export { Dialog } from './components/Dialog';
-export { Divider } from './components/Divider';
-export { Flex } from './components/Flex';
-export { Grid } from './components/Grid';
-export { GhostButton } from './components/GhostButton';
-export { Heading } from './components/Heading';
-export { Hover } from './components/Hover';
-export { Input } from './components/Input';
-export { Link } from './components/Link';
-export { Menu, MenuItem, MenuGroup } from './components/Menu';
-export { PillNav, PillButton } from './components/PillNav';
-export { Pipe } from './components/Pipe';
-export { Popover } from './components/Popover';
-export { RadioGroup, Radio } from './components/RadioGroup';
-export { Select } from './components/Select';
-export { Slider } from './components/Slider';
-export { Switch } from './components/Switch';
+export { Button, ButtonProps } from './components/Button';
+export { Card, CardProps } from './components/Card';
+export { CardLink, CardLinkProps } from './components/CardLink';
+export { Checkbox, CheckboxProps } from './components/Checkbox';
+export { CheckboxButton, CheckboxButtonProps } from './components/CheckboxButton';
+export { Code, CodeProps } from './components/Code';
+export { Container, ContainerProps } from './components/Container';
+export { Dialog, DialogProps } from './components/Dialog';
+export { Divider, DividerProps } from './components/Divider';
+export { Flex, FlexProps } from './components/Flex';
+export { Grid, GridProps } from './components/Grid';
+export { GhostButton, GhostButtonProps } from './components/GhostButton';
+export { Heading, HeadingProps } from './components/Heading';
+export { Hover, HoverProps } from './components/Hover';
+export { Input, InputProps } from './components/Input';
+export { Link, LinkProps } from './components/Link';
+export { Menu, MenuProps, MenuItem, MenuItemProps, MenuGroup } from './components/Menu';
+export { PillNav, PillNavProps, PillButton, PillButtonProps } from './components/PillNav';
+export { Pipe, PipeProps } from './components/Pipe';
+export { Popover, PopoverProps } from './components/Popover';
+export { RadioGroup, RadioGroupProps, Radio, RadioProps } from './components/RadioGroup';
+export {
+  Select,
+  SelectProps,
+  Option,
+  OptionProps,
+  OptionGroup,
+  OptionGroupProps,
+} from './components/Select';
+export { Slider, SliderProps } from './components/Slider';
+export { Switch, SwitchProps } from './components/Switch';
 export { Table, Thead, Tbody, Tfoot, Tr, Th, Td } from './components/Table';
-export { Text } from './components/Text';
-export { Textarea } from './components/Textarea';
-export { ToggleButtonGroup, ToggleButton } from './components/ToggleButton';
-export { Tooltip } from './components/Tooltip';
+export { Text, TextProps } from './components/Text';
+export { Textarea, TextareaProps } from './components/Textarea';
+export {
+  ToggleButtonGroup,
+  ToggleButtonGroupProps,
+  ToggleButton,
+  ToggleButtonProps,
+} from './components/ToggleButton';
+export { Tooltip, TooltipProps } from './components/Tooltip';
 
 export { theme } from './theme';

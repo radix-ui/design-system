@@ -16,14 +16,18 @@ storiesOf('Components|GhostButton', module).add('default', () => (
       <GhostButton mr="4" isActive>
         <ArrowLeftIcon />
       </GhostButton>
-      <GhostButton mr="4" px={2}>
-        <Box mr={1}>
+      <GhostButton mr="4">
+        <Box as="span" mx={1}>
           <ArrowLeftIcon />
-        </Box>{' '}
-        Back
+        </Box>
+        <Box as="span" mr={1}>
+          Back
+        </Box>
       </GhostButton>
-      <GhostButton mr="4" px={2}>
-        Back
+      <GhostButton mr="4">
+        <Box as="span" px={1}>
+          Back
+        </Box>
       </GhostButton>
     </Box>
   </>

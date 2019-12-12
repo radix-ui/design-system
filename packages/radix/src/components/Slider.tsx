@@ -1,55 +1,61 @@
 import React from 'react';
-import { withTheme } from 'styled-components';
-import css from '@styled-system/css';
-import { variant } from '@modulz/radix-system';
 import {
   Slider as SliderPrimitive,
   SliderProps as SliderPrimitiveProps,
   SliderInput as Input,
 } from 'mdlz-prmtz';
+import { theme } from '../theme';
 
-type SliderProps = SliderPrimitiveProps & { theme?: any };
+export type SliderProps = SliderPrimitiveProps;
 
-export const Slider = withTheme((props: SliderProps) => (
-  <SliderPrimitive
-    {...props}
-    sliderCss={css({
-      paddingTop: '6px',
-      paddingBottom: '7px',
-      '&:hover': {
-        cursor: 'default',
-      },
-    })}
-    thumbCss={css({
-      height: '12px',
-      width: '12px',
-      borderRadius: '6px',
-      color: 'white',
-      border: 0,
-      boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.25), 0px 1px 3px rgba(0, 0, 0, 0.2)',
-      [`${Input}:disabled&`]: {
-        boxShadow: 'none',
-        backgroundColor: 'gray400',
-      },
-    })}
-    trackCss={css({
-      backgroundColor: 'gray400',
-      color: 'blue600',
-      height: '2px',
-      borderRadius: '1px',
-      top: '11px',
-      transform: 'none',
-      [`${Input}:disabled + &`]: {
-        backgroundColor: 'gray300',
-        color: 'gray400',
-      },
-    })}
-    innerTrackCss={css({
-      borderRadius: 'inherit',
-      backgroundColor: 'currentColor', // inherit `color` property of `trackCss`
-    })}
-  />
-));
+export const Slider = React.forwardRef<HTMLInputElement, SliderProps>((props, forwardedRef) => {
+  return (
+    <SliderPrimitive
+      {...props}
+      ref={forwardedRef}
+      styleConfig={{
+        base: {
+          slider: {
+            normal: {
+              paddingTop: 6,
+              paddingBottom: 6,
+            },
+          },
+          track: {
+            normal: {
+              backgroundColor: theme.colors.gray400,
+              color: theme.colors.blue600,
+              height: 2,
+              borderRadius: 1,
+              [`${Input}:disabled + &`]: {
+                backgroundColor: theme.colors.gray300,
+                color: theme.colors.gray400,
+              },
+            },
+          },
+          innerTrack: {
+            normal: {
+              borderRadius: 'inherit',
+            },
+          },
+          thumb: {
+            normal: {
+              height: 12,
+              width: 12,
+              borderRadius: 6,
+              color: theme.colors.white,
+              boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.25), 0px 1px 3px rgba(0, 0, 0, 0.2)',
+              [`${Input}:disabled&`]: {
+                boxShadow: 'none',
+                backgroundColor: theme.colors.gray400,
+              },
+            },
+          },
+        },
+      }}
+    />
+  );
+});
 
 Slider.defaultProps = {
   step: '1',

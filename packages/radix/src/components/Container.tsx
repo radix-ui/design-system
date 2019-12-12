@@ -1,38 +1,57 @@
 import React from 'react';
-import css from '@styled-system/css';
 import {
   Container as ContainerPrimitive,
   ContainerProps as ContainerPrimitiveProps,
 } from 'mdlz-prmtz';
-import { Prop, variant } from '@modulz/radix-system';
+import { theme } from '../theme';
 
-type Sizes = 0 | 1 | 2;
-type ContainerProps = ContainerPrimitiveProps & {
-  size?: Prop<Sizes>;
-  children?: React.ReactNode;
+type Size = 0 | 1 | 2;
+
+export type ContainerProps = ContainerPrimitiveProps & {
+  size?: Size;
   as?: any;
 };
 
-export const Container = React.forwardRef<HTMLDivElement, ContainerProps>((props, ref) => (
+export const Container = React.forwardRef<HTMLDivElement, ContainerProps>((props, forwadedRef) => (
   <ContainerPrimitive
     {...props}
-    ref={ref}
-    css={[
-      css({ paddingX: 5, flex: 1 }),
-      variant({
-        size: {
-          0: {
-            maxWidth: '25rem',
-          },
-          1: {
-            maxWidth: '45rem',
-          },
-          2: {
-            maxWidth: '65rem',
+    ref={forwadedRef}
+    styleConfig={{
+      base: {
+        container: {
+          normal: {
+            paddingLeft: theme.space[5],
+            paddingRight: theme.space[5],
+            flex: 1,
           },
         },
-      }),
-    ]}
+      },
+      variants: {
+        size: {
+          0: {
+            container: {
+              normal: {
+                maxWidth: '25rem',
+              },
+            },
+          },
+          1: {
+            container: {
+              normal: {
+                maxWidth: '45rem',
+              },
+            },
+          },
+          2: {
+            container: {
+              normal: {
+                maxWidth: '65rem',
+              },
+            },
+          },
+        },
+      },
+    }}
   />
 ));
 

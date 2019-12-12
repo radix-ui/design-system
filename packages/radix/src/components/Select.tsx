@@ -1,133 +1,161 @@
-import React, { ComponentProps, FC } from 'react';
-import themeGet from '@styled-system/theme-get';
-import pick from 'lodash.pick';
-import omit from 'lodash.omit';
-import styled from 'styled-components';
-import { CaretSortIcon } from '@modulz/radix-icons';
-import css from '@styled-system/css';
-import {
-  margin,
-  MarginProps,
-  width,
-  WidthProps,
-  variant,
-  compose,
-  Prop,
-} from '@modulz/radix-system';
+import React from 'react';
+import { Select as SelectPrimitive, SelectProps as SelectPrimitiveProps } from 'mdlz-prmtz';
+import { transparentize } from 'polished';
+import { theme } from '../theme';
 
-type Variants = 'normal' | 'ghost';
-type SizeProps = 0 | 1;
-type SelectProps = ComponentProps<'select'> &
-  WrapperProps & {
-    variant?: Prop<Variants>;
-    size?: Prop<SizeProps>;
-  };
+export { Option, OptionProps, OptionGroup, OptionGroupProps } from 'mdlz-prmtz';
 
-const marginPropNames = margin.propNames;
-const widthPropNames = width.propNames;
+type Variant = 'normal' | 'ghost';
+type Size = 0 | 1;
 
-export const Select: FC<SelectProps> = ({ children, value, onChange, variant, size, ...props }) => {
-  const systemProps = pick(props, marginPropNames, widthPropNames);
-  const inputPtops = omit(props, marginPropNames, widthPropNames);
+export type SelectProps = SelectPrimitiveProps & { variant?: Variant; size?: Size };
 
+export const Select = (props: SelectProps) => {
   return (
-    <Wrapper {...systemProps}>
-      <StyledSelect {...inputPtops} value={value} onChange={onChange} variant={variant} size={size}>
-        {children}
-      </StyledSelect>
-      <IconWrapper size={size}>
-        <CaretSortIcon size="15" />
-      </IconWrapper>
-    </Wrapper>
+    <SelectPrimitive
+      styleConfig={{
+        base: {
+          button: {
+            normal: {
+              backgroundColor: theme.colors.gray100,
+              fontFamily: theme.fonts.normal,
+              lineHeight: theme.lineHeights[0],
+              borderRadius: theme.radii[1],
+              border: '1px solid',
+              borderColor: theme.colors.gray300,
+              letterSpacing: '-0.01em',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            },
+            hover: {
+              borderColor: theme.colors.gray400,
+            },
+            focus: {
+              borderColor: theme.colors.blue500,
+              boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
+            },
+            disabled: {
+              borderColor: theme.colors.gray300,
+              color: theme.colors.gray500,
+              cursor: 'not-allowed',
+            },
+          },
+          buttonIcon: {
+            normal: {
+              marginLeft: theme.space[2],
+            },
+          },
+          menu: {
+            normal: {
+              backgroundColor: theme.colors.white,
+              borderRadius: theme.radii[1],
+              paddingTop: theme.space[1],
+              paddingBottom: theme.space[1],
+              boxShadow: `0 10px 38px -10px ${transparentize(0.65, theme.colors.gray900)},
+      0 10px 20px -15px ${transparentize(0.8, theme.colors.gray900)}`,
+            },
+          },
+          item: {
+            normal: {
+              fontFamily: theme.fonts.normal,
+              fontSize: theme.fontSizes[1],
+              letterSpacing: '-0.01em',
+              height: theme.sizes[5],
+              paddingLeft: theme.space[5],
+              paddingRight: theme.space[6],
+            },
+            grouped: {
+              paddingLeft: theme.space[6],
+            },
+            highlighted: {
+              backgroundColor: theme.colors.blue600,
+              color: theme.colors.white,
+            },
+            disabled: {
+              color: theme.colors.gray600,
+            },
+          },
+          itemIcon: {
+            normal: {
+              left: theme.space[1],
+            },
+          },
+          label: {
+            normal: {
+              fontFamily: theme.fonts.normal,
+              fontSize: theme.fontSizes[1],
+              letterSpacing: '-0.01em',
+              height: theme.sizes[5],
+              paddingLeft: theme.space[5],
+              color: theme.colors.gray600,
+            },
+          },
+          separator: {
+            normal: {
+              height: '1px',
+              backgroundColor: theme.colors.gray300,
+              marginTop: theme.space[1],
+              marginBottom: theme.space[1],
+            },
+          },
+          scrollIndicator: {
+            normal: {
+              backgroundColor: theme.colors.white,
+              height: theme.sizes[4],
+            },
+          },
+        },
+        variants: {
+          variant: {
+            normal: {
+              button: {
+                normal: {
+                  color: theme.colors.gray800,
+                },
+              },
+            },
+            ghost: {
+              button: {
+                normal: {
+                  backgroundColor: 'transparent',
+                  borderColor: 'transparent',
+                },
+                focus: {
+                  borderColor: theme.colors.blue500,
+                },
+              },
+            },
+          },
+          size: {
+            0: {
+              button: {
+                normal: {
+                  fontSize: theme.fontSizes[1],
+                  height: theme.sizes[5],
+                  paddingLeft: theme.space[1],
+                  paddingRight: theme.space[1],
+                },
+              },
+            },
+            1: {
+              button: {
+                normal: {
+                  fontSize: theme.fontSizes[2],
+                  height: theme.sizes[6],
+                  paddingLeft: theme.space[2],
+                  paddingRight: theme.space[2],
+                },
+              },
+            },
+          },
+        },
+      }}
+      {...props}
+    />
   );
 };
 
-Select.defaultProps = { variant: 'normal', size: 0 };
-
-const ICON_SIZE = 15;
-
-type WrapperProps = MarginProps & WidthProps;
-const styleProps = compose(
-  width,
-  margin
-);
-
-const Wrapper = styled('div')<WrapperProps>({ position: 'relative' }, styleProps);
-
-const StyledSelect = styled('select')<SelectProps>(
-  props =>
-    css({
-      appearance: 'none',
-      backgroundColor: 'gray100',
-      fontFamily: 'normal',
-      paddingY: 0,
-      outline: 'none',
-      width: '100%',
-      lineHeight: 0,
-      borderRadius: 1,
-      border: '1px solid',
-      borderColor: 'gray300',
-      letterSpacing: '-0.01em',
-      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-      '&:hover': {
-        borderColor: 'gray400',
-      },
-      '&:focus': {
-        borderColor: 'blue500',
-        boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
-      },
-      '&:disabled': {
-        borderColor: 'gray300',
-        color: 'gray500',
-        cursor: 'not-allowed',
-      },
-    })(props),
-  variant({
-    size: {
-      0: {
-        fontSize: 1,
-        height: 5,
-        paddingLeft: 1,
-        paddingRight: 3,
-      },
-      1: {
-        fontSize: 2,
-        height: 6,
-        paddingLeft: 2,
-        paddingRight: 4,
-      },
-    },
-  }),
-  variant({
-    variant: {
-      normal: {
-        color: 'gray800',
-      },
-      ghost: {
-        backgroundColor: 'transparent',
-        borderColor: 'transparent',
-        '&:focus': {
-          borderColor: 'blue500',
-        },
-      },
-    },
-  })
-);
-
-type IconWrapperProps = { size?: Prop<SizeProps> };
-
-const IconWrapper = styled('div')<IconWrapperProps>(props =>
-  css({
-    position: 'absolute',
-    top: 0,
-    right: props.size === 0 ? '1px' : '5px',
-    width: `${ICON_SIZE}px`,
-    height: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    pointerEvents: 'none',
-    [`${StyledSelect}:disabled + &`]: {
-      color: 'gray500',
-    },
-  })(props)
-);
+Select.defaultProps = {
+  size: 0,
+};

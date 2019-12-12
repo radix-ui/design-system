@@ -1,1 +1,1 @@
-export { Grid } from 'mdlz-prmtz';
+export { Grid, GridProps } from 'mdlz-prmtz';

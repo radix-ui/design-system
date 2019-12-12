@@ -5,17 +5,17 @@ import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { margin, MarginProps } from '@modulz/radix-system';
 
-type CheckboxProps = MarginProps & ComponentProps<'input'>;
+export type CheckboxProps = MarginProps & ComponentProps<'input'>;
 
 const marginPropNames = margin.propNames;
 
 export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>(
-  ({ children, ...props }, ref) => {
+  ({ children, ...props }, forwaredRef) => {
     const marginProps = pick(props, marginPropNames);
     const inputProps = omit(props, marginPropNames);
 
     return (
-      <CheckboxWrapper {...marginProps} ref={ref}>
+      <CheckboxWrapper {...marginProps} ref={forwaredRef}>
         <Input type="checkbox" {...inputProps} />
         <FakeCheckbox>
           <CheckedIcon

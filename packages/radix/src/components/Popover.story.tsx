@@ -1,10 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Menu, MenuGroup, MenuItem } from './Menu';
-import { Box } from './Box';
-import { Text } from './Text';
+import { Flex } from './Flex';
 import { GhostButton } from './GhostButton';
-import { DotsVerticalIcon } from '@modulz/radix-icons';
+import { DotsVerticalIcon, CrossIcon } from '@modulz/radix-icons';
 
 import { Popover } from './Popover';
 
@@ -20,24 +18,11 @@ function PopoverExample() {
       </GhostButton>
 
       <Popover targetRef={buttonRef} isOpen={isOpen} onDismiss={() => setIsOpen(false)}>
-        <Box width={120}>
-          <Menu>
-            <MenuItem>
-              <Text size={2}>Rename</Text>
-            </MenuItem>
-            <MenuItem>
-              <Text size={2}>Edit</Text>
-            </MenuItem>
-            <MenuGroup>
-              <MenuItem>
-                <Text size={2}>Delete</Text>
-              </MenuItem>
-            </MenuGroup>
-            <MenuItem>
-              <Text size={2}>Copy</Text>
-            </MenuItem>
-          </Menu>
-        </Box>
+        <Flex width={100} height={100} alignItems="center" justifyContent="center">
+          <GhostButton type="button" onClick={() => setIsOpen(false)}>
+            <CrossIcon />
+          </GhostButton>
+        </Flex>
       </Popover>
     </div>
   );

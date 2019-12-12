@@ -1,76 +1,91 @@
 import React from 'react';
-import css from '@styled-system/css';
-import themeGet from '@styled-system/theme-get';
-import { variant, Prop } from '@modulz/radix-system';
 import { Badge as BadgePrimitive, BadgeProps as BadgePrimitiveProps } from 'mdlz-prmtz';
-import { withTheme } from 'styled-components';
+import { theme } from '../theme';
 
-type Variants = 'gray' | 'blue' | 'green' | 'red' | 'yellow';
-type Sizes = 0 | 1;
+type Variant = 'gray' | 'blue' | 'green' | 'red' | 'yellow';
+type Size = 0 | 1;
 
-type BadgeProps = BadgePrimitiveProps & {
-  variant?: Prop<Variants>;
-  size?: Prop<Sizes>;
-  children?: React.ReactNode;
-  as?: any;
-  // TODO: type Theme
-  theme?: any;
+export type BadgeProps = BadgePrimitiveProps & {
+  variant?: Variant;
+  size?: Size;
 };
 
-export const BaseBadge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => {
+export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, forwardedRef) => {
   return (
     <BadgePrimitive
       {...props}
-      ref={ref}
-      css={[
-        css({
-          fontFamily: 'mono',
-          fontSize: 0,
-          height: 3, // TODO: Remove `inline-flex` from Primitives and then we can make this `inline-block` and remove height
-          minWidth: 5,
-          paddingY: 0,
-          paddingX: '1.25ch',
-          lineHeight: 0,
-          textTransform: 'none', // TODO: Remove from Primitives
-          letterSpacing: 0, // TODO: Remove from Primitives
-          border: 0,
-          wordSpacing: '-0.25em',
-        }),
-        variant({
-          variant: {
-            gray: {
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray300')(props)}`,
-              color: 'gray800',
-            },
-            blue: {
-              backgroundColor: 'blue100',
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue300')(props)}`,
-              color: 'blue700',
-            },
-            green: {
-              backgroundColor: 'green100',
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.green300')(props)}`,
-              color: 'green700',
-            },
-            red: {
-              backgroundColor: 'red100',
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.red300')(props)}`,
-              color: 'red700',
-            },
-            yellow: {
-              backgroundColor: 'yellow100',
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.yellow300')(props)}`,
-              color: 'yellow700',
+      ref={forwardedRef}
+      styleConfig={{
+        base: {
+          badge: {
+            normal: {
+              fontFamily: theme.fonts.mono,
+              fontSize: theme.fontSizes[0],
+              lineHeight: theme.lineHeights[0],
+              wordSpacing: '-0.25em',
+              minWidth: theme.sizes[5],
+              paddingTop: 0,
+              paddingBottom: 0,
+              paddingLeft: '1.25ch',
+              paddingRight: '1.25ch',
+              border: 0,
+              borderRadius: 9999,
             },
           },
-        }),
-      ]}
+        },
+        variants: {
+          variant: {
+            gray: {
+              badge: {
+                normal: {
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
+                  color: theme.colors.gray800,
+                },
+              },
+            },
+            blue: {
+              badge: {
+                normal: {
+                  backgroundColor: theme.colors.blue100,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.blue300}`,
+                  color: theme.colors.blue700,
+                },
+              },
+            },
+            green: {
+              badge: {
+                normal: {
+                  backgroundColor: theme.colors.green100,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.green300}`,
+                  color: theme.colors.green700,
+                },
+              },
+            },
+            red: {
+              badge: {
+                normal: {
+                  backgroundColor: theme.colors.red100,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.red300}`,
+                  color: theme.colors.red700,
+                },
+              },
+            },
+            yellow: {
+              badge: {
+                normal: {
+                  backgroundColor: theme.colors.yellow100,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.yellow300}`,
+                  color: theme.colors.yellow700,
+                },
+              },
+            },
+          },
+        },
+      }}
     />
   );
 });
 
-BaseBadge.defaultProps = {
+Badge.defaultProps = {
   variant: 'gray',
 };
-
-export const Badge = withTheme(BaseBadge);

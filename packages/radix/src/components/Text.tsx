@@ -1,95 +1,146 @@
 import React from 'react';
-import css from '@styled-system/css';
 import { Text as TextPrimitive, TextProps as TextPrimitiveProps } from 'mdlz-prmtz';
-import { variant, Prop } from '@modulz/radix-system';
+import { theme } from '../theme';
 
-type TextProps = TextPrimitiveProps & {
-  fontWeight?: Prop<400 | 500>;
-  size?: Prop<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10>;
-  truncate?: Prop<boolean>;
+type FontWeight = 400 | 500;
+type Size = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+
+export type TextProps = TextPrimitiveProps & {
+  fontWeight?: FontWeight;
+  size?: Size;
+  truncate?: boolean;
   as?: any;
-  children?: React.ReactNode;
 };
 
-export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) => (
+export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forwardedRef) => (
   <TextPrimitive
     {...props}
-    ref={ref}
-    css={[
-      css({
-        color: 'gray800',
-        fontSize: 'inherit',
-        margin: 0,
-      }),
-      variant({
+    ref={forwardedRef}
+    styleConfig={{
+      base: {
+        text: {
+          normal: {
+            fontSize: 'inherit',
+            color: theme.colors.gray800,
+            margin: 0,
+          },
+        },
+      },
+      variants: {
         size: {
           0: {
-            fontSize: 0,
-            lineHeight: 0,
-            letterSpacing: props.fontWeight === 500 ? '-0.01em' : 0,
+            text: {
+              normal: {
+                fontSize: theme.fontSizes[0],
+                lineHeight: theme.lineHeights[0],
+                letterSpacing: props.fontWeight === 500 ? '-0.01em' : 0,
+              },
+            },
           },
           1: {
-            fontSize: 1,
-            lineHeight: 2,
-            letterSpacing: props.fontWeight === 500 ? '-0.02em' : '-0.01em',
+            text: {
+              normal: {
+                fontSize: theme.fontSizes[1],
+                lineHeight: theme.lineHeights[2],
+                letterSpacing: props.fontWeight === 500 ? '-0.02em' : '-0.01em',
+              },
+            },
           },
           2: {
-            fontSize: 2,
-            lineHeight: 2,
-            letterSpacing: props.fontWeight === 500 ? '-0.02em' : '-0.01em',
+            text: {
+              normal: {
+                fontSize: theme.fontSizes[2],
+                lineHeight: theme.lineHeights[2],
+                letterSpacing: props.fontWeight === 500 ? '-0.02em' : '-0.01em',
+              },
+            },
           },
           3: {
-            fontSize: 3,
-            lineHeight: 2,
-            letterSpacing: props.fontWeight === 500 ? '-0.025em' : '-0.01em',
+            text: {
+              normal: {
+                fontSize: theme.fontSizes[3],
+                lineHeight: theme.lineHeights[2],
+                letterSpacing: props.fontWeight === 500 ? '-0.025em' : '-0.01em',
+              },
+            },
           },
           4: {
-            fontSize: 4,
-            lineHeight: 2,
-            letterSpacing: props.fontWeight === 500 ? '-0.03em' : '-0.015em',
+            text: {
+              normal: {
+                fontSize: theme.fontSizes[4],
+                lineHeight: theme.lineHeights[2],
+                letterSpacing: props.fontWeight === 500 ? '-0.03em' : '-0.015em',
+              },
+            },
           },
           5: {
-            fontSize: 5,
-            lineHeight: 2,
-            letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.02em',
+            text: {
+              normal: {
+                fontSize: theme.fontSizes[5],
+                lineHeight: theme.lineHeights[2],
+                letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.02em',
+              },
+            },
           },
           6: {
-            fontSize: 6,
-            lineHeight: 3,
-            letterSpacing: props.fontWeight === 500 ? '-0.04em' : '-0.02em',
+            text: {
+              normal: {
+                fontSize: theme.fontSizes[6],
+                lineHeight: theme.lineHeights[3],
+                letterSpacing: props.fontWeight === 500 ? '-0.04em' : '-0.02em',
+              },
+            },
           },
           7: {
-            fontSize: 7,
-            lineHeight: 3,
-            letterSpacing: props.fontWeight === 500 ? '-0.04em' : '-0.02em',
+            text: {
+              normal: {
+                fontSize: theme.fontSizes[7],
+                lineHeight: theme.lineHeights[3],
+                letterSpacing: props.fontWeight === 500 ? '-0.04em' : '-0.02em',
+              },
+            },
           },
           8: {
-            fontSize: 8,
-            lineHeight: 4,
-            letterSpacing: props.fontWeight === 500 ? '-0.045em' : '-0.025em',
+            text: {
+              normal: {
+                fontSize: theme.fontSizes[8],
+                lineHeight: theme.lineHeights[4],
+                letterSpacing: props.fontWeight === 500 ? '-0.045em' : '-0.025em',
+              },
+            },
           },
           9: {
-            fontSize: 9,
-            lineHeight: 5,
-            letterSpacing: props.fontWeight === 500 ? '-0.045em' : '-0.025em',
+            text: {
+              normal: {
+                fontSize: theme.fontSizes[9],
+                lineHeight: theme.lineHeights[5],
+                letterSpacing: props.fontWeight === 500 ? '-0.045em' : '-0.025em',
+              },
+            },
           },
           10: {
-            fontSize: 10,
-            lineHeight: 9,
-            letterSpacing: props.fontWeight === 500 ? '-0.05em' : '-0.03em',
+            text: {
+              normal: {
+                fontSize: theme.fontSizes[10],
+                lineHeight: theme.lineHeights[9],
+                letterSpacing: props.fontWeight === 500 ? '-0.05em' : '-0.03em',
+              },
+            },
           },
         },
-      }),
-      variant({
         truncate: {
           true: {
-            whiteSpace: 'nowrap',
-            textOverflow: 'ellipsis',
-            overflow: 'hidden',
+            text: {
+              normal: {
+                whiteSpace: 'nowrap',
+                textOverflow: 'ellipsis',
+                overflow: 'hidden',
+              },
+            },
           },
         },
-      }),
-    ]}
+      },
+    }}
   />
 ));
 

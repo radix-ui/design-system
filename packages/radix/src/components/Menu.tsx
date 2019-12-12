@@ -19,7 +19,7 @@ import {
 } from '@modulz/radix-system';
 
 type Variants = 'normal' | 'shadow';
-type MenuProps = MarginProps &
+export type MenuProps = MarginProps &
   PaddingProps &
   WidthProps &
   MaxWidthProps & { variant?: Prop<Variants> };
@@ -51,7 +51,7 @@ export const Menu = styled('nav')<MenuProps>(
   styleProps
 );
 
-type MenuItemProps = PaddingProps &
+export type MenuItemProps = PaddingProps &
   MinHeightProps & {
     variant?: 'normal' | 'active' | 'selected';
   };

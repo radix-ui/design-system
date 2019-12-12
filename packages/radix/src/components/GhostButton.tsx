@@ -1,86 +1,80 @@
-import styled from 'styled-components';
-import css from '@styled-system/css';
-import { margin, MarginProps, padding, PaddingProps, variant, compose } from '@modulz/radix-system';
-import themeGet from '@styled-system/theme-get';
+import React from 'react';
+import { Button as ButtonPrimitive, ButtonProps as ButtonPrimitiveProps } from 'mdlz-prmtz';
+import { theme } from '../theme';
 
-type GhostButtonProps = MarginProps &
-  PaddingProps & {
-    isActive?: Boolean;
-  };
+export type GhostButtonProps = ButtonPrimitiveProps & {
+  isActive?: boolean;
+};
 
-const styleProps = compose(
-  margin,
-  padding
-);
-
-export const GhostButton = styled.button<GhostButtonProps>(
-  props =>
-    css({
-      appearance: 'none',
-      backgroundColor: 'transparent',
-      border: 'none',
-      borderRadius: 9999,
-      color: 'gray800',
-      display: 'inline-flex',
-      flexShrink: 0,
-      alignItems: 'center',
-      fontFamily: 'normal',
-      fontWeight: 500,
-      fontSize: 1,
-      height: 5,
-      lineHeight: 2,
-      minWidth: 5,
-      justifyContent: 'center',
-      outline: 'none',
-      paddingY: 0,
-      paddingX: 1,
-      position: 'relative',
-      textAlign: 'center',
-      textDecoration: 'none',
-      userSelect: 'none',
-      verticalAlign: 'middle',
-      whiteSpace: 'nowrap',
-      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-      '&:disabled': {
-        color: 'gray600',
-        cursor: 'not-allowed',
-        pointerEvents: 'none', // TODO: Review in Primitives
-      },
-      '&:hover': {
-        backgroundColor: 'gray200',
-        boxShadow: `0 0 0 1px ${themeGet('colors.gray200')(props)}`,
-      },
-      '&:active': {
-        backgroundColor: 'gray300',
-        boxShadow: `0 0 0 1px ${themeGet('colors.gray300')(props)}`,
-      },
-      '&:focus': {
-        boxShadow: `0 0 0 2px ${themeGet('colors.blue500')(props)}`,
-      },
-      '&::-moz-focus-inner': {
-        border: 0,
-      },
-    }),
-  props =>
-    variant({
-      isActive: {
-        true: {
-          backgroundColor: 'blue200',
-          color: 'blue600',
-          boxShadow: `0 0 0 1px ${themeGet('colors.blue200')(props)}`,
-          '&:hover': {
-            backgroundColor: 'blue200',
-            boxShadow: `0 0 0 1px ${themeGet('colors.blue200')(props)}`,
-          },
-          '&:active': {
-            backgroundColor: 'blue300',
-            boxShadow: `0 0 0 1px ${themeGet('colors.blue300')(props)}`,
-          },
-          '&:focus': {
-            boxShadow: `0 0 0 2px ${themeGet('colors.blue500')(props)}`,
+export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>(
+  (props, forwardedRef) => (
+    <ButtonPrimitive
+      {...props}
+      ref={forwardedRef}
+      styleConfig={{
+        base: {
+          button: {
+            normal: {
+              borderRadius: 9999,
+              color: theme.colors.gray800,
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+              fontFamily: theme.fonts.normal,
+              fontSize: theme.fontSizes[1],
+              fontWeight: 500,
+              lineHeight: theme.lineHeights[2],
+              height: theme.sizes[5],
+              minWidth: theme.sizes[5],
+              paddingTop: 0,
+              paddingBottom: 0,
+              paddingLeft: theme.space[1],
+              paddingRight: theme.space[1],
+              userSelect: 'none',
+              verticalAlign: 'middle',
+              whiteSpace: 'nowrap',
+            },
+            active: {
+              backgroundColor: theme.colors.gray300,
+              boxShadow: `0 0 0 1px ${theme.colors.gray300}`,
+            },
+            hover: {
+              backgroundColor: theme.colors.gray200,
+              boxShadow: `0 0 0 1px ${theme.colors.gray200}`,
+            },
+            disabled: {
+              color: theme.colors.gray600,
+              cursor: 'not-allowed',
+            },
+            focus: {
+              boxShadow: `0 0 0 2px ${theme.colors.blue500}`,
+            },
           },
         },
-      },
-    }),
-  styleProps
+        variants: {
+          isActive: {
+            true: {
+              button: {
+                normal: {
+                  backgroundColor: theme.colors.blue200,
+                  color: theme.colors.blue600,
+                  boxShadow: `0 0 0 1px ${theme.colors.blue200}`,
+                },
+                hover: {
+                  backgroundColor: theme.colors.blue200,
+                  boxShadow: `0 0 0 1px ${theme.colors.blue200}`,
+                },
+                active: {
+                  backgroundColor: theme.colors.blue300,
+                  boxShadow: `0 0 0 1px ${theme.colors.blue300}`,
+                },
+                focus: { boxShadow: `0 0 0 2px ${theme.colors.blue500}` },
+              },
+            },
+          },
+        },
+      }}
+    />
+  )
 );
