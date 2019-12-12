@@ -1,119 +1,102 @@
-import styled from 'styled-components';
-import css from '@styled-system/css';
-import themeGet from '@styled-system/theme-get';
-import {
-  textColor,
-  TextColorProps,
-  margin,
-  MarginProps,
-  padding,
-  PaddingProps,
-  width,
-  WidthProps,
-  maxWidth,
-  MaxWidthProps,
-  textAlign,
-  TextAlignProps,
-  variant,
-  compose,
-  Prop,
-} from '@modulz/radix-system';
+import React from 'react';
+import { Textarea as TextareaPrimitive, TextareaProps as TextareaPrimitiveProps } from 'mdlz-prmtz';
+import { theme } from '../theme';
 
-type VariantProps = 'normal' | 'ghost';
-type SizeProps = 0 | 1;
+type Variant = 'normal' | 'ghost';
+type Size = 0 | 1;
 
-// TODO: Fix `size` typing
-export type TextareaProps = TextColorProps &
-  MarginProps &
-  PaddingProps &
-  WidthProps &
-  MaxWidthProps &
-  TextAlignProps & {
-    variant?: Prop<VariantProps>;
-    size?: Prop<SizeProps> & any;
-  };
-
-const styleProps = compose(
-  textColor,
-  margin,
-  padding,
-  textAlign,
-  width,
-  maxWidth
-);
-
-const placeholderStyle = {
-  color: 'gray600',
-  opacity: 1,
+export type TextareaProps = TextareaPrimitiveProps & {
+  variant?: Variant;
+  size?: Size & any;
 };
 
-export const Textarea = styled('textarea')<TextareaProps>(
-  props =>
-    css({
-      appearance: 'none',
-      backgroundColor: 'transparent',
-      cursor: 'default',
-      color: 'gray800',
-      fontFamily: 'normal',
-      outline: 'none',
-      padding: 0,
-      verticalAlign: 'middle',
-      width: '100%',
-      boxSizing: 'border-box',
-      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-      border: '1px solid',
-      borderColor: 'gray300',
-      borderRadius: 1,
-      minHeight: 9,
-      '&:read-only': {
-        borderColor: 'gray300',
-        color: 'gray700',
-      },
-      '&:disabled': {
-        borderColor: 'gray300',
-        color: 'gray500',
-        cursor: 'not-allowed',
-      },
-      '&::-webkit-input-placeholder': placeholderStyle,
-      '&::-moz-placeholder': placeholderStyle,
-      '&:-ms-input-placeholder': placeholderStyle,
-      '&:focus': {
-        borderColor: 'blue500',
-        boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
-        cursor: 'text',
-      },
-    }),
-  variant({
-    size: {
-      0: {
-        fontSize: 1,
-        letterSpacing: '-0.01em',
-        height: 5,
-        lineHeight: 1,
-        padding: 1,
-      },
-      1: {
-        fontSize: 2,
-        letterSpacing: '-0.01em',
-        height: 6,
-        lineHeight: 1,
-        paddingX: 2,
-        paddingY: 1,
-      },
-    },
-  }),
-  variant({
-    variant: {
-      normal: {
-        borderColor: 'gray300',
-      },
-      ghost: {
-        borderColor: 'transparent',
-        cursor: 'text',
-      },
-    },
-  }),
-  styleProps
+export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+  (props, forwardedRef) => (
+    <TextareaPrimitive
+      {...props}
+      ref={forwardedRef}
+      styleConfig={{
+        base: {
+          textarea: {
+            normal: {
+              cursor: 'default',
+              color: theme.colors.gray800,
+              fontFamily: theme.fonts.normal,
+              border: '1px solid',
+              borderColor: theme.colors.gray300,
+              borderRadius: theme.radii[1],
+              minHeight: theme.sizes[9],
+            },
+            readOnly: {
+              borderColor: theme.colors.gray300,
+              color: theme.colors.gray700,
+            },
+            disabled: {
+              borderColor: theme.colors.gray300,
+              color: theme.colors.gray500,
+              cursor: 'not-allowed',
+            },
+            focus: {
+              borderColor: theme.colors.blue500,
+              boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
+              cursor: 'text',
+            },
+          },
+          placeholder: {
+            normal: {
+              color: theme.colors.gray600,
+            },
+          },
+        },
+        variants: {
+          variant: {
+            normal: {
+              textarea: {
+                normal: {
+                  borderColor: theme.colors.gray300,
+                },
+              },
+            },
+            ghost: {
+              textarea: {
+                normal: {
+                  borderColor: 'transparent',
+                  cursor: 'text',
+                },
+              },
+            },
+          },
+          size: {
+            0: {
+              textarea: {
+                normal: {
+                  fontSize: theme.fontSizes[1],
+                  letterSpacing: '-0.01em',
+                  lineHeight: theme.lineHeights[2],
+                  paddingLeft: theme.space[1],
+                  paddingRight: theme.space[1],
+                },
+              },
+            },
+            1: {
+              textarea: {
+                normal: {
+                  fontSize: theme.fontSizes[2],
+                  letterSpacing: '-0.01em',
+                  lineHeight: theme.lineHeights[4],
+                  paddingLeft: theme.space[2],
+                  paddingRight: theme.space[2],
+                },
+              },
+            },
+          },
+        },
+      }}
+    />
+  )
 );
 
-Textarea.defaultProps = { variant: 'normal', size: 0 };
+Textarea.defaultProps = {
+  variant: 'normal',
+  size: 0,
+};
