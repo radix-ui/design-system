@@ -1,55 +1,73 @@
 import React from 'react';
-import css from '@styled-system/css';
-import { CardLink as CardLinkPrimitive, CardLinkProps as CardLinkPrimitiveProps } from 'mdlz-prmtz';
-import { Prop } from '@modulz/radix-system';
-import { baseCard, Variants } from './Card';
+import merge from 'lodash.merge';
+import {
+  CardLink as CardLinkPrimitive,
+  CardLinkProps as CardLinkPrimitiveProps,
+  StyleConfig,
+  CardLinkParts,
+} from 'mdlz-prmtz';
+import { cardStyleConfig, Variant } from './Card';
+import { theme } from '../theme';
 
-type CardLinkProps = CardLinkPrimitiveProps & {
+export type CardLinkProps = CardLinkPrimitiveProps & {
   to?: string;
-  variant?: Prop<Variants>;
-  children?: React.ReactNode;
+  variant?: Variant;
   as?: any;
 };
 
-export const CardLink = React.forwardRef<HTMLAnchorElement, CardLinkProps>((props, ref) => (
-  <CardLinkPrimitive
-    {...props}
-    ref={ref}
-    css={[
-      baseCard,
-      ({ variant }: CardLinkProps) =>
-        css({
-          display: 'block',
-          textDecoration: 'none',
-          cursor: 'pointer',
-          outline: 0,
-          WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-          ...(variant === 'shadow' || variant === 'ghost'
-            ? {
-                willChange: 'transform',
-              }
-            : {}),
-          '&:hover': {
-            borderColor: 'gray500',
-            ...(variant === 'ghost'
-              ? {
-                  '&::before': { opacity: 1 },
-                }
-              : {}),
-            ...(variant === 'shadow' || variant === 'ghost'
-              ? {
-                  transform: 'translateY(-2px)',
-                  borderColor: 'transparent',
-                }
-              : {}),
+const cardLinkStyleConfigOverides: StyleConfig<CardLinkParts> = {
+  base: {
+    card: {
+      normal: {},
+      focus: {
+        borderColor: theme.colors.blue600,
+      },
+    },
+  },
+  variants: {
+    variant: {
+      border: {
+        card: {
+          normal: {},
+          hover: {
+            borderColor: theme.colors.gray500,
           },
-          '&:focus': {
-            borderColor: 'blue600',
+        },
+      },
+      shadow: {
+        card: {
+          normal: {
+            willChange: 'transform',
           },
-        }),
-    ]}
-  />
-));
+          hover: {
+            transform: 'translateY(-2px)',
+          },
+        },
+      },
+      ghost: {
+        card: {
+          normal: {
+            willChange: 'transform',
+          },
+          hover: {
+            transform: 'translateY(-2px)',
+            '&::before': {
+              opacity: 1,
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
+const cardLinkStyleConfig = merge({}, cardStyleConfig, cardLinkStyleConfigOverides);
+
+export const CardLink = React.forwardRef<HTMLAnchorElement, CardLinkProps>(
+  (props, forwardedRef) => (
+    <CardLinkPrimitive {...props} ref={forwardedRef} styleConfig={cardLinkStyleConfig} />
+  )
+);
 
 CardLink.defaultProps = {
   variant: 'border',
