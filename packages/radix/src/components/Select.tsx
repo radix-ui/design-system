@@ -24,9 +24,8 @@ export const Select = (props: SelectProps) => {
               border: '1px solid',
               borderColor: theme.colors.gray300,
               letterSpacing: '-0.01em',
-              display: 'inline-flex',
-              alignItems: 'center',
               justifyContent: 'space-between',
+              flexWrap: 'wrap', // allows the button to shrink
             },
             hover: {
               borderColor: theme.colors.gray400,
@@ -43,7 +42,7 @@ export const Select = (props: SelectProps) => {
           },
           buttonIcon: {
             normal: {
-              marginLeft: theme.space[2],
+              marginLeft: theme.space[1],
             },
           },
           menu: {
