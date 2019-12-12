@@ -22,7 +22,7 @@ export { Link, LinkProps } from './components/Link';
 export { Menu, MenuProps, MenuItem, MenuItemProps, MenuGroup } from './components/Menu';
 export { PillNav, PillNavProps, PillButton, PillButtonProps } from './components/PillNav';
 export { Pipe, PipeProps } from './components/Pipe';
-export { Popover } from './components/Popover';
+export { Popover, PopoverProps } from './components/Popover';
 export { RadioGroup, RadioGroupProps, Radio, RadioProps } from './components/RadioGroup';
 export {
   Select,
