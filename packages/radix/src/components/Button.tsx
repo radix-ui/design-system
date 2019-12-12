@@ -1,208 +1,229 @@
 import React from 'react';
-import { css as _css, keyframes, withTheme } from 'styled-components';
+import styled, { css as _css, keyframes } from 'styled-components';
 import css from '@styled-system/css';
-import themeGet from '@styled-system/theme-get';
-import { variant, Prop } from '@modulz/radix-system';
+
+import { Prop } from '@modulz/radix-system';
 import { Button as ButtonPrimitive, ButtonProps as ButtonPrimitiveProps } from 'mdlz-prmtz';
+import { theme } from '../theme';
 
-const waitingAnimation = (props: ButtonProps) => keyframes`
-  100% {
-    transform: translateX(${themeGet(props.size === 1 ? 'space.9' : 'space.7')(props)});
-	}
-`;
+type Variant = 'gray' | 'blue' | 'green' | 'red';
+type Size = 0 | 1;
 
-type Variants = 'gray' | 'blue' | 'green' | 'red';
-type Sizes = 0 | 1;
-
-type ButtonProps = ButtonPrimitiveProps & {
-  variant?: Prop<Variants>;
+export type ButtonProps = ButtonPrimitiveProps & {
+  variant?: Prop<Variant>;
   isWaiting?: boolean;
-  size?: Prop<Sizes>;
-  // TODO: type Theme
-  theme?: any;
+  size?: Prop<Size>;
 };
 
-export const BaseButton = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => (
-  <ButtonPrimitive
-    {...props}
-    ref={ref}
-    css={[
-      css({
-        alignItems: 'center',
-        display: 'inline-flex',
-        border: 0,
-        borderRadius: 1,
-        cursor: 'default',
-        fontFamily: 'normal',
-        fontWeight: 500,
-        outline: 'none',
-        paddingY: 0,
-        position: 'relative',
-        textAlign: 'center',
-        textDecoration: 'none',
-        userSelect: 'none',
-        whiteSpace: 'nowrap',
-        WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-        '&:focus': {
-          '&::-moz-focus-inner': {
-            border: 0,
-          },
-        },
-        '&:active': {
-          backgroundColor: 'gray200',
-          boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray500')(props)}`,
-        },
-        '&:disabled': {
-          backgroundColor: 'gray100',
-          boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray300')(props)}`,
-          color: 'gray500',
-          cursor: 'not-allowed',
-          pointerEvents: 'none', // TODO: Remove this when update Primitives
-        },
-      }),
-      variant({
-        variant: {
-          gray: {
-            backgroundColor: 'gray100',
-            boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray400')(props)}`,
-            color: 'gray800',
-            '&:hover': {
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray500')(props)}`,
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, ...props }, ref) => (
+    <ButtonPrimitive
+      {...props}
+      ref={ref}
+      styleConfig={{
+        base: {
+          button: {
+            normal: {
+              alignItems: 'center',
+              display: 'inline-flex',
+              border: 0,
+              borderRadius: theme.radii[1],
+              cursor: 'default',
+              fontFamily: theme.fonts.normal,
+              fontWeight: 500,
+              position: 'relative',
+              textAlign: 'center',
+              textDecoration: 'none',
+              userSelect: 'none',
+              whiteSpace: 'nowrap',
             },
-            '&:active': {
-              backgroundColor: 'gray200',
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray500')(props)}`,
+            focus: {
+              // We previously had: (need to validate in FF)
+              // '&:focus': {
+              //   '&::-moz-focus-inner': {
+              //     border: 0,
+              //   },
+              // },
+              border: 0,
             },
-            '&:focus': {
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue500')(
-                props
-              )}, 0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+            active: {
+              backgroundColor: theme.colors.gray200,
+              boxShadow: `inset 0 0 0 1px ${theme.colors.gray500}`,
             },
-          },
-          blue: {
-            backgroundColor: 'blue100',
-            boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue400')(props)}`,
-            color: 'blue700',
-            '&:hover': {
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue500')(props)}`,
-            },
-            '&:active': {
-              backgroundColor: 'blue200',
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue500')(props)}`,
-            },
-            '&:focus': {
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue500')(
-                props
-              )}, 0 0 0 1px ${themeGet('colors.blue500')(props)}`,
-            },
-          },
-          green: {
-            backgroundColor: 'green100',
-            boxShadow: `inset 0 0 0 1px ${themeGet('colors.green400')(props)}`,
-            color: 'green700',
-            '&:hover': {
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.green500')(props)}`,
-            },
-            '&:active': {
-              backgroundColor: 'green200',
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.green500')(props)}`,
-            },
-            '&:focus': {
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.green500')(
-                props
-              )}, 0 0 0 1px ${themeGet('colors.green500')(props)}`,
-            },
-          },
-          red: {
-            backgroundColor: 'gray100',
-            boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray400')(props)}`,
-            color: 'red700',
-            '&:hover': {
-              backgroundColor: 'red100',
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.red400')(props)}`,
-            },
-            '&:active': {
-              backgroundColor: 'red200',
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.red500')(props)}`,
-            },
-            '&:focus': {
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.red500')(props)}, 0 0 0 1px ${themeGet(
-                'colors.red500'
-              )(props)}`,
+            disabled: {
+              backgroundColor: theme.colors.gray100,
+              boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
+              color: theme.colors.gray500,
+              cursor: 'not-allowed',
             },
           },
         },
-      }),
-      variant({
-        size: {
-          0: {
-            fontSize: 1,
-            paddingX: 2,
-            height: 5,
-            minWidth: 5,
-            lineHeight: 2,
-            letterSpacing: '-0.02em',
+        variants: {
+          variant: {
+            gray: {
+              button: {
+                normal: {
+                  backgroundColor: theme.colors.gray100,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.gray400}`,
+                  color: theme.colors.gray800,
+                },
+                hover: {
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.gray500}`,
+                },
+                active: {
+                  backgroundColor: theme.colors.gray200,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.gray500}`,
+                },
+                focus: {
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.blue500}, 0 0 0 1px ${theme.colors.blue500}`,
+                },
+              },
+            },
+            blue: {
+              button: {
+                normal: {
+                  backgroundColor: theme.colors.blue100,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.blue400}`,
+                  color: theme.colors.blue700,
+                },
+                hover: {
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.blue500}`,
+                },
+                active: {
+                  backgroundColor: theme.colors.blue200,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.blue500}`,
+                },
+                focus: {
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.blue500}, 0 0 0 1px ${theme.colors.blue500}`,
+                },
+              },
+            },
+            green: {
+              button: {
+                normal: {
+                  backgroundColor: theme.colors.green100,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.green400}`,
+                  color: theme.colors.green700,
+                },
+                hover: {
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.green500}`,
+                },
+                active: {
+                  backgroundColor: theme.colors.green200,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.green500}`,
+                },
+                focus: {
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.green500}, 0 0 0 1px ${theme.colors.green500}`,
+                },
+              },
+            },
+            red: {
+              button: {
+                normal: {
+                  backgroundColor: theme.colors.red100,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.red400}`,
+                  color: theme.colors.red700,
+                },
+                hover: {
+                  backgroundColor: theme.colors.red100,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.red500}`,
+                },
+                active: {
+                  backgroundColor: theme.colors.red200,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.red500}`,
+                },
+                focus: {
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.red500}, 0 0 0 1px ${theme.colors.red500}`,
+                },
+              },
+            },
           },
-          1: {
-            fontSize: 2,
-            paddingX: 3,
-            height: 6,
-            minWidth: 6,
-            lineHeight: 4,
-            letterSpacing: '-0.02em',
+          size: {
+            0: {
+              button: {
+                normal: {
+                  fontSize: theme.fontSizes[1],
+                  paddingLeft: theme.space[2],
+                  paddingRight: theme.space[2],
+                  height: theme.sizes[5],
+                  minWidth: theme.sizes[5],
+                  lineHeight: theme.lineHeights[2],
+                  letterSpacing: '-0.02em',
+                },
+              },
+            },
+            1: {
+              button: {
+                normal: {
+                  fontSize: theme.fontSizes[2],
+                  paddingLeft: theme.space[3],
+                  paddingRight: theme.space[3],
+                  height: theme.sizes[6],
+                  minWidth: theme.sizes[6],
+                  lineHeight: theme.lineHeights[4],
+                  letterSpacing: '-0.02em',
+                },
+              },
+            },
+          },
+          isWaiting: {
+            true: {
+              button: {
+                normal: {
+                  backgroundColor: theme.colors.gray200,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
+                  color: 'transparent',
+                  overflow: 'hidden',
+                  pointerEvents: 'none',
+                },
+                focus: {
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
+                },
+              },
+            },
           },
         },
-      }),
-      variant({
-        isWaiting: {
-          true: {
-            backgroundColor: 'gray200',
-            boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray300')(props)}`,
-            color: 'transparent',
-            overflow: 'hidden',
-            position: 'relative',
-            pointerEvents: 'none',
-            '&:focus': {
-              boxShadow: `inset 0 0 0 1px ${themeGet('colors.gray300')(props)}`,
-            },
-            '&::before': {
-              position: 'absolute',
-              content: `''`,
-              top: 0,
-              left: '-100%',
-              width: '200%',
-              height: '100%',
-              backgroundImage: `linear-gradient(
-              -45deg,
-              transparent 33%,
-              rgba(0, 0, 0, 0.03) 33%,
-              rgba(0, 0, 0, 0.03) 66%,
-              transparent 66%
-            )`,
-              backgroundSize:
-                props.size === 1
-                  ? `${themeGet('space.9')(props)} ${themeGet('space.6')(props)}`
-                  : `${themeGet('space.7')(props)} ${themeGet('space.5')(props)}`,
-            },
-          },
-        },
-      }),
-      // Code below specifically for the `isWaiting` variant
-      props.isWaiting &&
-        _css`
-      &::before {
-        animation: ${waitingAnimation(props)} 500ms linear infinite
-      }
-    `,
-      // { lineHeight: '1' },
-      props.css,
-    ]}
-  />
-));
+      }}
+    >
+      {children}
+      {props.isWaiting && <Waiting size={props.size} />}
+    </ButtonPrimitive>
+  )
+);
 
-BaseButton.defaultProps = {
+Button.defaultProps = {
   variant: 'gray',
   size: 0,
 };
 
-export const Button = withTheme(BaseButton);
+const waitingAnimation = (props: ButtonProps) => keyframes`
+  100% {
+    transform: translateX(${props.size === 1 ? theme.space[9] : theme.space[7]});
+	}
+`;
+
+const Waiting = styled('div')<ButtonProps>(
+  props =>
+    css({
+      position: 'absolute',
+      top: 0,
+      left: '-100%',
+      width: '200%',
+      height: '100%',
+      backgroundImage: `linear-gradient(
+                -45deg,
+                transparent 33%,
+                rgba(0, 0, 0, 0.03) 33%,
+                rgba(0, 0, 0, 0.03) 66%,
+                transparent 66%
+              )`,
+      backgroundSize:
+        props.size === 1
+          ? `${theme.space[9]} ${theme.space[6]}`
+          : `${theme.space[7]} ${theme.space[5]}`,
+    })(props),
+
+  props => _css`
+      animation: ${waitingAnimation(props)} 500ms linear infinite
+    `
+);
