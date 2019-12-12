@@ -1,34 +1,33 @@
 import React from 'react';
-import {
-  Popover as PopoverPrimitive,
-  PopoverProps as PopoverPrimitiveProps,
-  Arrow,
-} from 'mdlz-prmtz';
-import { Card } from './Card';
+import { transparentize } from 'polished';
+import { Popover as PopoverPrimitive, PopoverProps as PopoverPrimitiveProps } from 'mdlz-prmtz';
+import { theme } from '../theme';
 
-type PopoverProps = PopoverPrimitiveProps & {
-  isOpen?: boolean;
-  showArrow?: boolean;
-};
+export type PopoverProps = PopoverPrimitiveProps;
 
-export const Popover = ({ children, showArrow, ...props }: PopoverProps) => {
+export const Popover = (props: PopoverProps) => {
   return (
     <PopoverPrimitive
       side="bottom"
       align="center"
-      // TODO: Arrow `null` to not render an Arrow Component
-      arrow={showArrow ? <Arrow width={20} height={10} /> : <div />}
       {...props}
-      getAnimationConfig={() => ({
-        from: { opacity: 0 },
-        enter: { opacity: 1 },
-        leave: { opacity: 0 },
-        immediate: true,
-      })}
-    >
-      <Card variant="shadow" p={0} borderWidth={0}>
-        {children}
-      </Card>
-    </PopoverPrimitive>
+      styleConfig={{
+        base: {
+          content: {
+            normal: {
+              backgroundColor: theme.colors.white,
+              borderRadius: theme.radii[1],
+              boxShadow: `0 10px 38px -10px ${transparentize(0.65, theme.colors.gray900)},
+                          0 10px 20px -15px ${transparentize(0.8, theme.colors.gray900)}`,
+            },
+          },
+          arrow: {
+            normal: {
+              fill: theme.colors.white,
+            },
+          },
+        },
+      }}
+    />
   );
 };
