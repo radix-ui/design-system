@@ -14,10 +14,10 @@ export type ButtonProps = ButtonPrimitiveProps & {
 };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, ...props }, ref) => (
+  ({ children, ...props }, forwardedRef) => (
     <ButtonPrimitive
       {...props}
-      ref={ref}
+      ref={forwardedRef}
       styleConfig={{
         base: {
           button: {
