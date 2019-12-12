@@ -37,7 +37,12 @@ export { Switch, SwitchProps } from './components/Switch';
 export { Table, Thead, Tbody, Tfoot, Tr, Th, Td } from './components/Table';
 export { Text, TextProps } from './components/Text';
 export { Textarea, TextareaProps } from './components/Textarea';
-export { ToggleButtonGroup, ToggleButton } from './components/ToggleButton';
+export {
+  ToggleButtonGroup,
+  ToggleButtonGroupProps,
+  ToggleButton,
+  ToggleButtonProps,
+} from './components/ToggleButton';
 export { Tooltip, TooltipProps } from './components/Tooltip';
 
 export { theme } from './theme';

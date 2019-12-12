@@ -1,99 +1,99 @@
 import React from 'react';
-import { withTheme } from 'styled-components';
-import css from '@styled-system/css';
-import themeGet from '@styled-system/theme-get';
-import { Prop, variant } from '@modulz/radix-system';
 import {
   ToggleButtonGroup as ToggleButtonGroupPrimitive,
   ToggleButtonGroupProps as ToggleButtonGroupPrimitiveProps,
-  ToggleButton as ToggleButtonPrimitive,
-  ToggleButtonProps as ToggleButtonPrimitiveProps,
 } from 'mdlz-prmtz';
+import { theme } from '../theme';
 
-type ToggleButtonGroupProps<T> = ToggleButtonGroupPrimitiveProps<T>;
+export { ToggleButton, ToggleButtonProps } from 'mdlz-prmtz';
+
+type Size = 0 | 1;
+type Variant = 'normal' | 'fade';
+
+export type ToggleButtonGroupProps<T> = ToggleButtonGroupPrimitiveProps<T> & {
+  size?: Size;
+  variant?: Variant;
+};
 
 export const ToggleButtonGroup = <T extends string | string[] | null>(
   props: ToggleButtonGroupProps<T>
-) => <ToggleButtonGroupPrimitive {...props} />;
-
-type Sizes = 0 | 1;
-type Variants = 'normal' | 'fade';
-
-type ToggleButtonProps = ToggleButtonPrimitiveProps & {
-  size?: Prop<Sizes>;
-  variant?: Prop<Variants>;
-  // TODO: type Theme
-  theme?: any;
-};
-
-export const ToggleButton = withTheme(
-  React.forwardRef<HTMLButtonElement, ToggleButtonProps>((props, forwardedRef) => {
-    return (
-      <ToggleButtonPrimitive
-        {...props}
-        ref={forwardedRef}
-        css={[
-          css({
+) => (
+  <ToggleButtonGroupPrimitive
+    {...props}
+    styleConfig={{
+      base: {
+        button: {
+          normal: {
             fontWeight: 400,
-            fontFamily: 'normal',
+            fontFamily: theme.fonts.normal,
             border: '1px solid',
             wordSpacing: '-0.025em',
             letterSpacing: '0.01em',
-            '&:hover': {
-              zIndex: 2, // TODO: Review in Primitives, this removes the overlapping
-            },
-            '&:focus': {
-              outline: 'none',
-              zIndex: '5 !important', // TODO: Review in Primitives
-            },
-          }),
-          variant({
-            size: {
-              0: {
-                height: 3,
-                padding: 0,
-                fontSize: 0,
-                minWidth: 4,
+          },
+        },
+      },
+      variants: {
+        size: {
+          0: {
+            button: {
+              normal: {
+                height: theme.sizes[3],
+                fontSize: theme.fontSizes[0],
+                minWidth: theme.sizes[4],
                 lineHeight: 1.1,
                 '&:first-child': {
                   // TODO: consider adding 2px radius to the theme
-                  borderTopLeftRadius: '2px',
-                  borderBottomLeftRadius: '2px',
+                  borderTopLeftRadius: 2,
+                  borderBottomLeftRadius: 2,
                 },
                 '&:last-child ': {
-                  borderTopRightRadius: '2px',
-                  borderBottomRightRadius: '2px',
-                },
-                '&:focus': {
-                  borderRadius: '2px',
+                  borderTopRightRadius: 2,
+                  borderBottomRightRadius: 2,
                 },
               },
-              1: {
-                height: 5,
-                padding: 0,
-                fontSize: 1,
-                minWidth: 5,
-                lineHeight: 0,
-                '&:first-child': {
-                  borderTopLeftRadius: themeGet('radii.1')(props),
-                  borderBottomLeftRadius: themeGet('radii.1')(props),
-                },
-                '&:last-child ': {
-                  borderTopRightRadius: themeGet('radii.1')(props),
-                  borderBottomRightRadius: themeGet('radii.1')(props),
-                },
-                '&:focus': {
-                  borderRadius: 1,
-                },
+              focus: {
+                borderRadius: 2,
+              },
+              toggled: {
+                // TODO: consider adding 2px radius to the theme
+                borderRadius: 2,
               },
             },
-          }),
-          variant({
-            variant: {
+          },
+          1: {
+            button: {
               normal: {
-                color: 'gray700',
-                borderColor: props.size === 0 ? 'transparent' : 'gray400',
-                backgroundColor: props.size === 0 ? 'white' : 'gray100',
+                height: theme.sizes[5],
+                fontSize: theme.fontSizes[1],
+                minWidth: theme.sizes[5],
+                lineHeight: theme.lineHeights[0],
+                '&:first-child': {
+                  borderTopLeftRadius: theme.radii[1],
+                  borderBottomLeftRadius: theme.radii[1],
+                },
+                '&:last-child ': {
+                  borderTopRightRadius: theme.radii[1],
+                  borderBottomRightRadius: theme.radii[1],
+                },
+              },
+              focus: {
+                borderRadius: theme.radii[1],
+              },
+              toggled: {
+                borderRadius: theme.radii[1],
+              },
+            },
+          },
+        },
+        variant: {
+          normal: {
+            button: {
+              normal: {
+                color: theme.colors.gray700,
+                borderColor: props.size === 0 ? 'transparent' : theme.colors.gray400,
+                backgroundColor: props.size === 0 ? theme.colors.white : theme.colors.gray100,
+              },
+              hover: {
                 /**
                  * TODO: Consider using box shadow for consistency
                  *
@@ -102,76 +102,63 @@ export const ToggleButton = withTheme(
                  * remove the borders and use box-shadows, because we use negative margins to compensate for adjacent
                  * border.
                  */
-                '&:hover': {
-                  borderColor: props.size === 0 ? 'transparent' : 'gray500',
-                },
-                '&:focus': {
-                  borderColor: 'blue500',
-                  boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
-                },
+                borderColor: props.size === 0 ? 'transparent' : theme.colors.gray500,
               },
-              fade: {
-                color: 'gray600',
-                backgroundColor: 'white',
-                borderColor: props.size === 0 ? 'transparent' : 'gray300',
-                '&:hover': {
-                  borderColor: props.size === 0 ? 'transparent' : 'gray300',
-                },
-                '&:focus': {
-                  color: 'gray700',
-                  borderColor: 'blue500',
-                  boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
-                },
+              focus: {
+                borderColor: theme.colors.blue500,
+                boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
               },
-            },
-          }),
-        ]}
-        activeCss={[
-          variant({
-            variant: {
-              normal: {
-                color: 'blue800',
+              toggled: {
+                color: theme.colors.blue800,
                 fontWeight: 500,
                 wordSpacing: '0.02em',
                 letterSpacing: '-0.015em',
                 borderColor: 'transparent',
-                backgroundColor: 'blue100',
-                boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+                backgroundColor: theme.colors.blue100,
+                boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
+                // TODO: we can't do that in modulz (toggled + focus)
                 '&:focus': {
-                  borderColor: 'blue500',
-                  boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+                  borderColor: theme.colors.blue500,
+                  boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
                 },
               },
-              fade: {
-                color: 'gray700',
+            },
+          },
+          fade: {
+            button: {
+              normal: {
+                color: theme.colors.gray600,
+                backgroundColor: theme.colors.white,
+                borderColor: props.size === 0 ? 'transparent' : theme.colors.gray300,
+              },
+              hover: {
+                borderColor: props.size === 0 ? 'transparent' : theme.colors.gray300,
+              },
+              focus: {
+                color: theme.colors.gray700,
+                borderColor: theme.colors.blue500,
+                boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
+              },
+              toggled: {
+                color: theme.colors.gray700,
                 borderColor: 'transparent',
-                backgroundColor: 'gray100',
-                boxShadow: `0 0 0 1px ${themeGet('colors.gray400')(props)}`,
+                backgroundColor: theme.colors.gray100,
+                boxShadow: `0 0 0 1px ${theme.colors.gray400}`,
+                // TODO: we can't do that in modulz (toggled + focus)
                 '&:focus': {
-                  borderColor: 'blue500',
-                  boxShadow: `0 0 0 1px ${themeGet('colors.blue500')(props)}`,
+                  borderColor: theme.colors.blue500,
+                  boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
                 },
               },
             },
-          })(props),
-          variant({
-            size: {
-              0: {
-                // TODO: consider adding 2px radius to the theme
-                borderRadius: '2px',
-              },
-              1: {
-                borderRadius: 1,
-              },
-            },
-          })(props),
-        ]}
-      />
-    );
-  })
+          },
+        },
+      },
+    }}
+  />
 );
 
-ToggleButton.defaultProps = {
+ToggleButtonGroup.defaultProps = {
   size: 1,
   variant: 'normal',
 };
