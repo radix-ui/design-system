@@ -13,13 +13,13 @@ function ToggleButtonGroupStory() {
     <>
       <Box width="135px" my={6}>
         <ToggleButtonGroup size={0} value={value} onChange={value => setValue(value)}>
-          <ToggleButton size={0} value="left">
+          <ToggleButton value="left">
             <TextAlignLeftIcon />
           </ToggleButton>
-          <ToggleButton size={0} value="center">
+          <ToggleButton value="center">
             <TextAlignCenterIcon />
           </ToggleButton>
-          <ToggleButton size={0} value="right">
+          <ToggleButton value="right">
             <TextAlignRightIcon />
           </ToggleButton>
         </ToggleButtonGroup>
@@ -27,15 +27,9 @@ function ToggleButtonGroupStory() {
 
       <Box width="135px" my={6}>
         <ToggleButtonGroup size={0} value={value} onChange={value => setValue(value)}>
-          <ToggleButton size={0} value="left">
-            Left
-          </ToggleButton>
-          <ToggleButton size={0} value="center">
-            Center
-          </ToggleButton>
-          <ToggleButton size={0} value="right">
-            Right
-          </ToggleButton>
+          <ToggleButton value="left">Left</ToggleButton>
+          <ToggleButton value="center">Center</ToggleButton>
+          <ToggleButton value="right">Right</ToggleButton>
         </ToggleButtonGroup>
       </Box>
 
@@ -46,15 +40,9 @@ function ToggleButtonGroupStory() {
           value={value}
           onChange={value => setValue(value)}
         >
-          <ToggleButton size={0} variant="fade" value="left">
-            Left
-          </ToggleButton>
-          <ToggleButton size={0} variant="fade" value="center">
-            Center
-          </ToggleButton>
-          <ToggleButton size={0} variant="fade" value="right">
-            Right
-          </ToggleButton>
+          <ToggleButton value="left">Left</ToggleButton>
+          <ToggleButton value="center">Center</ToggleButton>
+          <ToggleButton value="right">Right</ToggleButton>
         </ToggleButtonGroup>
       </Box>
 

@@ -2,10 +2,10 @@ import React from 'react';
 import {
   ToggleButtonGroup as ToggleButtonGroupPrimitive,
   ToggleButtonGroupProps as ToggleButtonGroupPrimitiveProps,
-  ToggleButton as ToggleButtonPrimitive,
-  ToggleButtonProps as ToggleButtonPrimitiveProps,
 } from 'mdlz-prmtz';
 import { theme } from '../theme';
+
+export { ToggleButton, ToggleButtonProps } from 'mdlz-prmtz';
 
 type Size = 0 | 1;
 type Variant = 'normal' | 'fade';
@@ -162,12 +162,3 @@ ToggleButtonGroup.defaultProps = {
   size: 1,
   variant: 'normal',
 };
-
-export type ToggleButtonProps = ToggleButtonPrimitiveProps & {
-  size?: Size;
-  variant?: Variant;
-};
-
-export const ToggleButton = React.forwardRef<HTMLButtonElement, ToggleButtonProps>(
-  (props, forwardedRef) => <ToggleButtonPrimitive {...props} ref={forwardedRef} />
-);
