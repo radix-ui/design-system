@@ -1,18 +1,17 @@
 import React from 'react';
-import { ThemeContext } from 'styled-components';
 import { Select as SelectPrimitive, SelectProps as SelectPrimitiveProps } from 'mdlz-prmtz';
 import { transparentize } from 'polished';
+import { Prop } from '@modulz/radix-system';
+import { theme } from '../theme';
 
 export { Option, OptionGroup } from 'mdlz-prmtz';
 
 type Variant = 'normal' | 'ghost';
 type Size = 0 | 1;
 
-type SelectProps = SelectPrimitiveProps & { variant?: Variant; size?: Size };
+type SelectProps = SelectPrimitiveProps & { variant?: Prop<Variant>; size?: Prop<Size> };
 
 export const Select = (props: SelectProps) => {
-  const theme = React.useContext(ThemeContext);
-
   return (
     <SelectPrimitive
       styleConfig={{

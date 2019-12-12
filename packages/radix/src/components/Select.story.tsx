@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Text } from './Text';
 import { Box } from './Box';
-import { Button } from './Button';
 import { Select, Option, OptionGroup } from './Select';
 
 function SelectStory() {
-  const [value, setValue] = useState('option2');
-
   return (
-    <Box>
+    <Box ml={6}>
       <Box mb="4">
         <Text as="p">Uncontrolled</Text>
-        <Select mt={4} ml={6}>
+        <Select mt={4}>
           <Option value="option1" label="Option 1" />
           <Option value="option2" label="Option 2" />
           <Option disabled value="option3" label="Option 3" />
@@ -25,7 +22,7 @@ function SelectStory() {
       </Box>
 
       <Box mb="4">
-        <Select mt={4} size={1} mt="4" width="100px">
+        <Select mt={4} size={1} width="100px">
           <Option value="option1" label="Option 1" />
           <Option value="option2" label="Option 2" />
           <Option value="option3" label="Option 3" />
