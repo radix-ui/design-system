@@ -12,7 +12,7 @@ import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { margin, MarginProps } from '@modulz/radix-system';
 
-type RadioGroupProps = ComponentProps<'div'> & {
+export type RadioGroupProps = ComponentProps<'div'> & {
   name: string;
   value?: string;
   as?: any;
@@ -40,7 +40,7 @@ export const RadioGroup = (props: RadioGroupProps) => {
 const marginPropNames = margin.propNames;
 
 type Ref = HTMLInputElement;
-type RadioProps = MarginProps & ComponentPropsWithRef<'input'>;
+export type RadioProps = MarginProps & ComponentPropsWithRef<'input'>;
 
 export const Radio: FC<RadioProps> = forwardRef<Ref, RadioProps>((props, ref) => {
   const { children, ...otherProps } = props;

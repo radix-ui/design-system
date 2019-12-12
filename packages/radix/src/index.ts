@@ -6,8 +6,8 @@ export { Box, BoxProps } from './components/Box';
 export { Button, ButtonProps } from './components/Button';
 export { Card } from './components/Card';
 export { CardLink } from './components/CardLink';
-export { Checkbox } from './components/Checkbox';
-export { CheckboxButton } from './components/CheckboxButton';
+export { Checkbox, CheckboxProps } from './components/Checkbox';
+export { CheckboxButton, CheckboxButtonProps } from './components/CheckboxButton';
 export { Code, CodeProps } from './components/Code';
 export { Container, ContainerProps } from './components/Container';
 export { Dialog, DialogProps } from './components/Dialog';
@@ -16,20 +16,27 @@ export { Flex, FlexProps } from './components/Flex';
 export { Grid, GridProps } from './components/Grid';
 export { GhostButton, GhostButtonProps } from './components/GhostButton';
 export { Heading, HeadingProps } from './components/Heading';
-export { Hover } from './components/Hover';
+export { Hover, HoverProps } from './components/Hover';
 export { Input } from './components/Input';
 export { Link, LinkProps } from './components/Link';
 export { Menu, MenuItem, MenuGroup } from './components/Menu';
 export { PillNav, PillButton } from './components/PillNav';
 export { Pipe, PipeProps } from './components/Pipe';
 export { Popover } from './components/Popover';
-export { RadioGroup, Radio } from './components/RadioGroup';
-export { Select, SelectProps } from './components/Select';
+export { RadioGroup, RadioGroupProps, Radio, RadioProps } from './components/RadioGroup';
+export {
+  Select,
+  SelectProps,
+  Option,
+  OptionProps,
+  OptionGroup,
+  OptionGroupProps,
+} from './components/Select';
 export { Slider, SliderProps } from './components/Slider';
-export { Switch } from './components/Switch';
+export { Switch, SwitchProps } from './components/Switch';
 export { Table, Thead, Tbody, Tfoot, Tr, Th, Td } from './components/Table';
 export { Text, TextProps } from './components/Text';
-export { Textarea } from './components/Textarea';
+export { Textarea, TextareaProps } from './components/Textarea';
 export { ToggleButtonGroup, ToggleButton } from './components/ToggleButton';
 export { Tooltip, TooltipProps } from './components/Tooltip';
 

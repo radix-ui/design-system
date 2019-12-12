@@ -1,7 +1,7 @@
 import React, { useState, FC } from 'react';
 import { Box, BoxProps } from './Box';
 
-type HoverProps = BoxProps & {
+export type HoverProps = BoxProps & {
   children(isHovered: boolean): JSX.Element;
   as?: any;
 };

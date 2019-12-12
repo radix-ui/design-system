@@ -5,7 +5,7 @@ import omit from 'lodash.omit';
 import pick from 'lodash.pick';
 import { margin, MarginProps } from '@modulz/radix-system';
 
-type CheckboxProps = MarginProps & ComponentProps<'input'>;
+export type CheckboxProps = MarginProps & ComponentProps<'input'>;
 
 const marginPropNames = margin.propNames;
 

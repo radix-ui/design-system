@@ -3,7 +3,7 @@ import { Select as SelectPrimitive, SelectProps as SelectPrimitiveProps } from '
 import { transparentize } from 'polished';
 import { theme } from '../theme';
 
-export { Option, OptionGroup } from 'mdlz-prmtz';
+export { Option, OptionProps, OptionGroup, OptionGroupProps } from 'mdlz-prmtz';
 
 type Variant = 'normal' | 'ghost';
 type Size = 0 | 1;
