@@ -25,7 +25,7 @@ export { Pipe, PipeProps } from './components/Pipe';
 export { Popover } from './components/Popover';
 export { RadioGroup, Radio } from './components/RadioGroup';
 export { Select, SelectProps } from './components/Select';
-export { Slider } from './components/Slider';
+export { Slider, SliderProps } from './components/Slider';
 export { Switch } from './components/Switch';
 export { Table, Thead, Tbody, Tfoot, Tr, Th, Td } from './components/Table';
 export { Text, TextProps } from './components/Text';
