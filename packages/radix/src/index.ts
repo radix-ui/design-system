@@ -20,6 +20,22 @@ export { Hover, HoverProps } from './components/Hover';
 export { Input, InputProps } from './components/Input';
 export { Link, LinkProps } from './components/Link';
 export { List, ListProps, ListItem, ListItemProps, ListGroup } from './components/List';
+export {
+  Menu,
+  MenuProps,
+  MenuItem,
+  MenuItemProps,
+  MenuItemCheckbox,
+  MenuItemCheckboxProps,
+  MenuItemRadioGroup,
+  MenuItemRadioGroupProps,
+  MenuItemRadio,
+  MenuItemRadioProps,
+  MenuItemLabel,
+  MenuItemLabelProps,
+  MenuItemSeparator,
+  MenuItemSeparatorProps,
+} from './components/Menu';
 export { PillNav, PillNavProps, PillButton, PillButtonProps } from './components/PillNav';
 export { Pipe, PipeProps } from './components/Pipe';
 export { Popover, PopoverProps } from './components/Popover';

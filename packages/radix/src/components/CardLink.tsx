@@ -15,7 +15,7 @@ export type CardLinkProps = CardLinkPrimitiveProps & {
   as?: any;
 };
 
-const cardLinkStyleConfigOverides: StyleConfig<CardLinkParts> = {
+const cardLinkStyleConfigOverrides: StyleConfig<CardLinkParts> = {
   base: {
     card: {
       normal: {},
@@ -61,7 +61,11 @@ const cardLinkStyleConfigOverides: StyleConfig<CardLinkParts> = {
   },
 };
 
-const cardLinkStyleConfig = merge({}, cardStyleConfig, cardLinkStyleConfigOverides);
+const cardLinkStyleConfig: StyleConfig<CardLinkParts> = merge(
+  {},
+  cardStyleConfig,
+  cardLinkStyleConfigOverrides
+);
 
 export const CardLink = React.forwardRef<HTMLAnchorElement, CardLinkProps>(
   (props, forwardedRef) => (
