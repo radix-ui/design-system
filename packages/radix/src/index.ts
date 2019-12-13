@@ -19,7 +19,7 @@ export { Heading, HeadingProps } from './components/Heading';
 export { Hover, HoverProps } from './components/Hover';
 export { Input, InputProps } from './components/Input';
 export { Link, LinkProps } from './components/Link';
-export { Menu, MenuProps, MenuItem, MenuItemProps, MenuGroup } from './components/Menu';
+export { List, ListProps, ListItem, ListItemProps, ListGroup } from './components/List';
 export { PillNav, PillNavProps, PillButton, PillButtonProps } from './components/PillNav';
 export { Pipe, PipeProps } from './components/Pipe';
 export { Popover, PopoverProps } from './components/Popover';

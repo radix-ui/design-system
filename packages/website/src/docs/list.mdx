@@ -1,21 +1,21 @@
 ---
-title: Menu
-component: Menu
+title: List
+component: List
 description: Useful for displaying a list of choices.
 ---
 
 ```js live
-<Menu>
-  <MenuItem>
+<List>
+  <ListItem>
     <Text size={2}>Box</Text>
-  </MenuItem>
-  <MenuItem variant="selected">
+  </ListItem>
+  <ListItem variant="selected">
     <Text size={2}>Layout</Text>
-  </MenuItem>
-  <MenuItem>
+  </ListItem>
+  <ListItem>
     <Text size={2}>Button</Text>
-  </MenuItem>
-</Menu>
+  </ListItem>
+</List>
 ```
 
 <PropsTable
@@ -31,7 +31,6 @@ description: Useful for displaying a list of choices.
     },
   }}
 />
-
 <SystemProps props={['maxWidth', 'width', 'margin', 'padding']} />
 
 ## Examples
@@ -43,15 +42,15 @@ description: Useful for displaying a list of choices.
 There are 2 variants to choose from.
 
 ```js live
-<Menu variant="shadow">
-  <MenuItem>
+<List variant="shadow">
+  <ListItem>
     <Text size={2}>Box</Text>
-  </MenuItem>
-  <MenuItem variant="selected">
+  </ListItem>
+  <ListItem variant="selected">
     <Text size={2}>Layout</Text>
-  </MenuItem>
-  <MenuItem>
+  </ListItem>
+  <ListItem>
     <Text size={2}>Button</Text>
-  </MenuItem>
-</Menu>
+  </ListItem>
+</List>
 ```

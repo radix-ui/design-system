@@ -19,19 +19,14 @@ import {
 } from '@modulz/radix-system';
 
 type Variants = 'normal' | 'shadow';
-export type MenuProps = MarginProps &
+export type ListProps = MarginProps &
   PaddingProps &
   WidthProps &
   MaxWidthProps & { variant?: Prop<Variants> };
 
-const styleProps = compose(
-  margin,
-  padding,
-  width,
-  maxWidth
-);
+const styleProps = compose(margin, padding, width, maxWidth);
 
-export const Menu = styled('nav')<MenuProps>(
+export const List = styled('nav')<ListProps>(
   css({
     borderRadius: 1,
     paddingY: 1,
@@ -51,17 +46,14 @@ export const Menu = styled('nav')<MenuProps>(
   styleProps
 );
 
-export type MenuItemProps = PaddingProps &
+export type ListItemProps = PaddingProps &
   MinHeightProps & {
     variant?: 'normal' | 'active' | 'selected';
   };
 
-const menuItemStyleProps = compose(
-  padding,
-  minHeight
-);
+const ListItemStyleProps = compose(padding, minHeight);
 
-export const MenuItem = styled('button')<MenuItemProps>(
+export const ListItem = styled('button')<ListItemProps>(
   css({
     alignItems: 'center',
     appearance: 'none',
@@ -135,12 +127,12 @@ export const MenuItem = styled('button')<MenuItemProps>(
   {
     lineHeight: '1',
   },
-  menuItemStyleProps
+  ListItemStyleProps
 );
 
-MenuItem.defaultProps = { variant: 'normal' };
+ListItem.defaultProps = { variant: 'normal' };
 
-export const MenuGroup = styled('div')(
+export const ListGroup = styled('div')(
   css({
     paddingY: 1,
     paddingX: 0,

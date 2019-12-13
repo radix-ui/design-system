@@ -2,18 +2,18 @@ import React, { useRef } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box } from './Box';
 import { Grid } from './Grid';
-import { Menu, MenuGroup, MenuItem } from './Menu';
+import { List, ListGroup, ListItem } from './List';
 import { CircleIcon } from '@modulz/radix-icons';
 import { Heading } from './Heading';
 import { Text } from './Text';
 import { Flex } from './Flex';
 import { Hover } from './Hover';
 
-function MenuStory() {
-  const menuItemRef = useRef(null);
+function ListStory() {
+  const listItemRef = useRef(null);
 
   function handleClick(e: React.MouseEvent) {
-    console.log(menuItemRef.current);
+    console.log(listItemRef.current);
   }
 
   return (
@@ -22,41 +22,41 @@ function MenuStory() {
         <Heading size={0} fontWeight={500}>
           Default
         </Heading>
-        <Menu>
-          <MenuItem ref={menuItemRef} onClick={handleClick}>
+        <List>
+          <ListItem ref={listItemRef} onClick={handleClick}>
             <Text size={2}>Item one</Text>
-          </MenuItem>
-          <MenuItem ref={menuItemRef} onClick={handleClick} disabled>
+          </ListItem>
+          <ListItem ref={listItemRef} onClick={handleClick} disabled>
             <Text size={2} textColor="inherit">
               Item two
             </Text>
-          </MenuItem>
-          <MenuItem>
+          </ListItem>
+          <ListItem>
             <Text size={2}>Item three</Text>
-          </MenuItem>
-        </Menu>
+          </ListItem>
+        </List>
       </Box>
 
       <Box mb="4">
         <Heading size={0} fontWeight={500}>
-          Menu with content on hover
+          List with content on hover
         </Heading>
-        <Menu>
+        <List>
           <Hover>
             {isHovered => (
-              <MenuItem>
+              <ListItem>
                 <Text size={2}>Wrapped in `Hover`</Text>
                 {isHovered && (
                   <Box position="absolute" right={3}>
                     <CircleIcon />
                   </Box>
                 )}
-              </MenuItem>
+              </ListItem>
             )}
           </Hover>
           <Hover>
             {isHovered => (
-              <MenuItem variant="active">
+              <ListItem variant="active">
                 <Text size={2} textColor="white">
                   Wrapped in `Hover`
                 </Text>
@@ -65,12 +65,12 @@ function MenuStory() {
                     <CircleIcon />
                   </Box>
                 )}
-              </MenuItem>
+              </ListItem>
             )}
           </Hover>
           <Hover>
             {isHovered => (
-              <MenuItem disabled>
+              <ListItem disabled>
                 <Text size={2} textColor="inherit">
                   Wrapped in `Hover`
                 </Text>
@@ -79,118 +79,118 @@ function MenuStory() {
                     <CircleIcon />
                   </Box>
                 )}
-              </MenuItem>
+              </ListItem>
             )}
           </Hover>
-        </Menu>
+        </List>
       </Box>
 
       <Box mb="4">
         <Heading size={0} fontWeight={500}>
-          Menu with icon
+          List with icon
         </Heading>
-        <Menu>
-          <MenuItem>
+        <List>
+          <ListItem>
             <Box mr={3}>
               <CircleIcon size="15" />
             </Box>
             <Text size={2}>Item one</Text>
-          </MenuItem>
-          <MenuItem variant="active">
+          </ListItem>
+          <ListItem variant="active">
             <Box mr={3}>
               <CircleIcon size="15" />
             </Box>
             <Text size={2} textColor="white">
               Item two
             </Text>
-          </MenuItem>
-          <MenuItem>
+          </ListItem>
+          <ListItem>
             <Box mr={3}>
               <CircleIcon size="15" />
             </Box>
             <Text size={2}>Item three</Text>
-          </MenuItem>
-        </Menu>
+          </ListItem>
+        </List>
       </Box>
 
       <Box mb="4">
         <Heading size={0} fontWeight={500}>
-          Menu with group
+          List with group
         </Heading>
-        <Menu>
-          <MenuItem>
+        <List>
+          <ListItem>
             <Text size={2}>Item one</Text>
-          </MenuItem>
-          <MenuGroup>
-            <MenuItem>
+          </ListItem>
+          <ListGroup>
+            <ListItem>
               <Text size={2}>Item two</Text>
-            </MenuItem>
-            <MenuItem>
+            </ListItem>
+            <ListItem>
               <Text size={2}>Item three</Text>
-            </MenuItem>
-          </MenuGroup>
-          <MenuItem>
+            </ListItem>
+          </ListGroup>
+          <ListItem>
             <Text size={2}>Item four</Text>
-          </MenuItem>
-        </Menu>
+          </ListItem>
+        </List>
       </Box>
 
       <Box mb="4">
         <Heading size={0} fontWeight={500}>
-          Menu with variants
+          List with variants
         </Heading>
-        <Menu>
-          <MenuItem>
+        <List>
+          <ListItem>
             <Text size={2}>Default</Text>
-          </MenuItem>
-          <MenuItem variant="selected">
+          </ListItem>
+          <ListItem variant="selected">
             <Text size={2}>Selected</Text>
-          </MenuItem>
-          <MenuItem variant="active">
+          </ListItem>
+          <ListItem variant="active">
             <Text size={2} textColor="white">
               Active
             </Text>
-          </MenuItem>
-          <MenuItem disabled>
+          </ListItem>
+          <ListItem disabled>
             <Text size={2} textColor="inherit">
               Disabled
             </Text>
-          </MenuItem>
-        </Menu>
+          </ListItem>
+        </List>
       </Box>
 
       <Box mb="4">
         <Heading size={0} fontWeight={500} mb={1}>
-          Menu with shadow variant
+          List with shadow variant
         </Heading>
-        <Menu variant="shadow">
-          <MenuItem>
+        <List variant="shadow">
+          <ListItem>
             <Box mr={3}>
               <CircleIcon size="15" />
             </Box>
             <Text size={2}>Item one</Text>
-          </MenuItem>
-          <MenuItem>
+          </ListItem>
+          <ListItem>
             <Box mr={3}>
               <CircleIcon size="15" />
             </Box>
             <Text size={2}>Item two</Text>
-          </MenuItem>
-          <MenuItem>
+          </ListItem>
+          <ListItem>
             <Box mr={3}>
               <CircleIcon size="15" />
             </Box>
             <Text size={2}>Item three</Text>
-          </MenuItem>
-        </Menu>
+          </ListItem>
+        </List>
       </Box>
 
       <Box mb="4">
         <Heading size={0} fontWeight={500}>
           Custom
         </Heading>
-        <Menu>
-          <MenuItem>
+        <List>
+          <ListItem>
             <Box>
               <Heading size={0} fontWeight={500} mb={1}>
                 Heading
@@ -199,8 +199,8 @@ function MenuStory() {
                 Some text
               </Text>
             </Box>
-          </MenuItem>
-          <MenuItem>
+          </ListItem>
+          <ListItem>
             <Flex alignItems="center" justifyContent="space-between" width="100%">
               <Text as="div" size={3}>
                 Device
@@ -210,11 +210,11 @@ function MenuStory() {
                 200 x 400
               </Text>
             </Flex>
-          </MenuItem>
-        </Menu>
+          </ListItem>
+        </List>
       </Box>
     </Grid>
   );
 }
 
-storiesOf('Components|Menu', module).add('default', () => <MenuStory />);
+storiesOf('Components|List', module).add('default', () => <ListStory />);

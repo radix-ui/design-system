@@ -1,23 +1,23 @@
 ---
-title: Menu Item
-component: MenuItem
-description: Useful for displaying a choice inside a Menu.
+title: List Item
+component: ListItem
+description: Useful for displaying a choice inside a List.
 ---
 
 ```js live
-<Menu>
-  <MenuItem>
-    <Text size={2}>Menu item one</Text>
-  </MenuItem>
-  <MenuItem variant="active">
+<List>
+  <ListItem>
+    <Text size={2}>List item one</Text>
+  </ListItem>
+  <ListItem variant="active">
     <Text size={2} textColor="white">
-      Menu item two
+      List item two
     </Text>
-  </MenuItem>
-  <MenuItem>
-    <Text size={2}>Menu item three</Text>
-  </MenuItem>
-</Menu>
+  </ListItem>
+  <ListItem>
+    <Text size={2}>List item three</Text>
+  </ListItem>
+</List>
 ```
 
 <PropsTable
@@ -33,5 +33,4 @@ description: Useful for displaying a choice inside a Menu.
     },
   }}
 />
-
 <SystemProps props={['minHeight', 'padding']} />

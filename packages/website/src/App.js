@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import {
   Flex,
   Box,
-  Menu,
+  List,
   Heading,
   Badge,
   Divider,
@@ -116,7 +116,7 @@ function App({ element, props }) {
 
               <Box display={[navOpen ? 'block' : 'none', 'block']}>
                 <Divider mb={1} />
-                <Menu>
+                <List>
                   <Heading size={0} fontWeight={500} my={2} mx={5}>
                     Overview
                   </Heading>
@@ -130,11 +130,11 @@ function App({ element, props }) {
                       {node.frontmatter.title}
                     </NavItem>
                   ))}
-                </Menu>
+                </List>
 
                 <Divider mb={1} />
 
-                <Menu>
+                <List>
                   <Heading size={0} fontWeight={500} my={2} mx={5}>
                     Components
                   </Heading>
@@ -148,11 +148,11 @@ function App({ element, props }) {
                       {node.frontmatter.title}
                     </NavItem>
                   ))}
-                </Menu>
+                </List>
 
                 <Divider mb={1} />
 
-                {/* <Menu>
+                {/* <List>
                   <Heading size={0} fontWeight={500} mx={5} mb={2} mt={2}>
                     Recipes
                   </Heading>
@@ -166,11 +166,11 @@ function App({ element, props }) {
                       {node.frontmatter.title}
                     </NavItem>
                   ))}
-                </Menu>
+                </List>
 
                 <Divider mb={1} /> */}
 
-                <Menu>
+                <List>
                   <Heading size={0} fontWeight={500} mx={5} mb={2} mt={2}>
                     Github links
                   </Heading>
@@ -192,7 +192,7 @@ function App({ element, props }) {
                   >
                     Radix Docs
                   </NavItem>
-                </Menu>
+                </List>
 
                 <Divider mb={1} />
 
