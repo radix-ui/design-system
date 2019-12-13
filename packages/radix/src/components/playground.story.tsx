@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Card } from './Card';
-import { Menu, MenuGroup, MenuItem } from './Menu';
+import { List, ListGroup, ListItem } from './List';
 import { Box } from './Box';
 import { Flex } from './Flex';
 import { Text } from './Text';
@@ -43,22 +43,22 @@ function PopoverExample() {
         onDismiss={() => setIsOpen(false)}
       >
         <Card variant="shadow" p={0} width={120} borderWidth={0}>
-          <Menu>
-            <MenuItem>
+          <List>
+            <ListItem>
               <Text size={2}>Rename</Text>
-            </MenuItem>
-            <MenuItem>
+            </ListItem>
+            <ListItem>
               <Text size={2}>Edit</Text>
-            </MenuItem>
-            <MenuGroup>
-              <MenuItem>
+            </ListItem>
+            <ListGroup>
+              <ListItem>
                 <Text size={2}>Delete</Text>
-              </MenuItem>
-            </MenuGroup>
-            <MenuItem>
+              </ListItem>
+            </ListGroup>
+            <ListItem>
               <Text size={2}>Copy</Text>
-            </MenuItem>
-          </Menu>
+            </ListItem>
+          </List>
         </Card>
       </Popover>
     </div>

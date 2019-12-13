@@ -1,153 +1,92 @@
-import styled from 'styled-components';
+import React from 'react';
 import { transparentize } from 'polished';
-import css from '@styled-system/css';
-import themeGet from '@styled-system/theme-get';
 import {
-  maxWidth,
-  MaxWidthProps,
-  margin,
-  MarginProps,
-  padding,
-  PaddingProps,
-  width,
-  WidthProps,
-  minHeight,
-  MinHeightProps,
-  variant,
-  compose,
-  Prop,
-} from '@modulz/radix-system';
+  Menu as MenuPrimitive,
+  MenuProps as MenuPrimitiveProps,
+  StyleConfig,
+  MenuParts,
+} from 'mdlz-prmtz';
+import { theme } from '../theme';
 
-type Variants = 'normal' | 'shadow';
-export type MenuProps = MarginProps &
-  PaddingProps &
-  WidthProps &
-  MaxWidthProps & { variant?: Prop<Variants> };
+export {
+  MenuItem,
+  MenuItemProps,
+  MenuItemCheckbox,
+  MenuItemCheckboxProps,
+  MenuItemRadioGroup,
+  MenuItemRadioGroupProps,
+  MenuItemRadio,
+  MenuItemRadioProps,
+  MenuItemLabel,
+  MenuItemLabelProps,
+  MenuItemSeparator,
+  MenuItemSeparatorProps,
+} from 'mdlz-prmtz';
 
-const styleProps = compose(
-  margin,
-  padding,
-  width,
-  maxWidth
+export type MenuProps = MenuPrimitiveProps;
+
+export const Menu = (props: MenuProps) => (
+  <MenuPrimitive {...props} styleConfig={menuStyleConfig} />
 );
 
-export const Menu = styled('nav')<MenuProps>(
-  css({
-    borderRadius: 1,
-    paddingY: 1,
-    paddingX: 0,
-  }),
-  props =>
-    variant({
-      variant: {
-        shadow: {
-          boxShadow: `0 10px 38px -10px ${transparentize(
-            0.65,
-            themeGet('colors.gray900')(props)
-          )}, 0 10px 20px -15px ${transparentize(0.8, themeGet('colors.gray900')(props))}`,
-        },
+export const menuStyleConfig: StyleConfig<MenuParts> = {
+  base: {
+    menu: {
+      normal: {
+        backgroundColor: theme.colors.white,
+        borderRadius: theme.radii[1],
+        paddingTop: theme.space[1],
+        paddingBottom: theme.space[1],
+        boxShadow: `0 10px 38px -10px ${transparentize(0.65, theme.colors.gray900)},
+0 10px 20px -15px ${transparentize(0.8, theme.colors.gray900)}`,
       },
-    }),
-  styleProps
-);
-
-export type MenuItemProps = PaddingProps &
-  MinHeightProps & {
-    variant?: 'normal' | 'active' | 'selected';
-  };
-
-const menuItemStyleProps = compose(
-  padding,
-  minHeight
-);
-
-export const MenuItem = styled('button')<MenuItemProps>(
-  css({
-    alignItems: 'center',
-    appearance: 'none',
-    border: 0,
-    boxSizing: 'border-box',
-    cursor: 'pointer',
-    display: 'flex',
-    minHeight: '31px',
-    outline: '1px solid transparent',
-    outlineOffset: '-1px',
-    paddingY: 1,
-    paddingX: 3,
-    position: 'relative',
-    textAlign: 'left',
-    textDecoration: 'none',
-    userSelect: 'none',
-    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-    width: '100%',
-    '&:hover:disabled': {
-      backgroundColor: 'white',
     },
-    '&:disabled': {
-      color: 'gray500',
-      cursor: 'not-allowed',
-    },
-    '&::-moz-focus-inner': {
-      border: 0,
-    },
-  }),
-  props =>
-    variant({
-      variant: {
-        normal: {
-          backgroundColor: 'white',
-          color: 'gray800',
-          '&:hover': {
-            backgroundColor: 'gray200',
-          },
-          '&:active': {
-            backgroundColor: 'gray300',
-          },
-          '&:focus': {
-            outlineColor: themeGet('colors.blue400')(props),
-          },
-        },
-        active: {
-          backgroundColor: 'blue600',
-          color: 'white',
-          '&:hover': {
-            backgroundColor: 'blue600',
-          },
-          '&:active': {
-            backgroundColor: 'blue600',
-          },
-        },
-        selected: {
-          backgroundColor: 'blue200',
-          color: 'gray800',
-          '&:hover': {
-            backgroundColor: 'blue200',
-          },
-          '&:active': {
-            backgroundColor: 'blue200',
-          },
-          '&:focus': {
-            outlineColor: themeGet('colors.blue400')(props),
-          },
-        },
+    item: {
+      normal: {
+        fontFamily: theme.fonts.normal,
+        fontSize: theme.fontSizes[1],
+        letterSpacing: '-0.01em',
+        height: theme.sizes[5],
+        paddingLeft: theme.space[5],
+        paddingRight: theme.space[6],
       },
-    }),
-  {
-    lineHeight: '1',
+      highlighted: {
+        backgroundColor: theme.colors.blue600,
+        color: theme.colors.white,
+      },
+      disabled: {
+        color: theme.colors.gray600,
+      },
+    },
+    itemIcon: {
+      normal: {
+        left: theme.space[1],
+      },
+    },
+    label: {
+      normal: {
+        fontFamily: theme.fonts.normal,
+        fontSize: theme.fontSizes[1],
+        letterSpacing: '-0.01em',
+        height: theme.sizes[5],
+        paddingLeft: theme.space[5],
+        paddingRight: theme.space[6],
+        color: theme.colors.gray600,
+      },
+    },
+    separator: {
+      normal: {
+        height: '1px',
+        backgroundColor: theme.colors.gray300,
+        marginTop: theme.space[1],
+        marginBottom: theme.space[1],
+      },
+    },
+    scrollIndicator: {
+      normal: {
+        backgroundColor: theme.colors.white,
+        height: theme.sizes[4],
+      },
+    },
   },
-  menuItemStyleProps
-);
-
-MenuItem.defaultProps = { variant: 'normal' };
-
-export const MenuGroup = styled('div')(
-  css({
-    paddingY: 1,
-    paddingX: 0,
-    marginY: 1,
-    marginX: 0,
-    borderTop: '1px solid',
-    borderBottom: '1px solid',
-    borderColor: 'gray300',
-  })
-);
+};

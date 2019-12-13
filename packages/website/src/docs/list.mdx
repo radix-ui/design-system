@@ -1,0 +1,71 @@
+---
+title: List
+component: List
+description: Useful for displaying a list of choices.
+---
+
+```js live
+<List>
+  <ListItem>
+    <Text size={2}>Box</Text>
+  </ListItem>
+  <ListItem variant="selected">
+    <Text size={2}>Layout</Text>
+  </ListItem>
+  <ListItem>
+    <Text size={2}>Button</Text>
+  </ListItem>
+</List>
+```
+
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'normal | shadow',
+      default: 'normal',
+      description: 'The variant to apply',
+    },
+  }}
+/>
+<SystemProps props={['maxWidth', 'width', 'margin', 'padding']} />
+<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
+  List Item
+</Heading>
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'normal | active | selected',
+      default: 'normal',
+      description: 'The variant to apply',
+    },
+  }}
+/>
+<SystemProps props={['minHeight', 'padding']} />
+
+## Examples
+
+### Variants
+
+There are 2 variants to choose from.
+
+```js live
+<List variant="shadow">
+  <ListItem>
+    <Text size={2}>Box</Text>
+  </ListItem>
+  <ListItem variant="selected">
+    <Text size={2}>Layout</Text>
+  </ListItem>
+  <ListItem>
+    <Text size={2}>Button</Text>
+  </ListItem>
+</List>
+```
