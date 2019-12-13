@@ -41,6 +41,12 @@ export { Pipe, PipeProps } from './components/Pipe';
 export { Popover, PopoverProps } from './components/Popover';
 export { RadioGroup, RadioGroupProps, Radio, RadioProps } from './components/RadioGroup';
 export {
+  RightClickMenu,
+  RightClickMenuProps,
+  RightClickable,
+  RightClickableProps,
+} from './components/RightClickMenu';
+export {
   Select,
   SelectProps,
   Option,
