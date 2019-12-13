@@ -1,5 +1,5 @@
 ---
-title: Right-Click Menu
+title: Right Click Menu
 component: RightClickMenu
 description: Useful for displaying a list of contextual actions on right click.
 ---
@@ -44,30 +44,28 @@ description: Useful for displaying a list of contextual actions on right click.
     </>
   );
 };
-```
-
-<PropsTable
-  data={{
-    menu: {
-      type: 'Menu element',
-      description: 'The menu to render (see Menu component for usage)',
-    },
-    children: {
-      type: 'ReactNode',
-      description:
-        'The children to render. In particular must contain some RightClickable elements to trigger the menu',
-    },
-  }}
+```<PropsTable
+data={{
+menu: {
+type: 'Menu element',
+description: 'The menu to render (see Menu component for usage)',
+},
+children: {
+type: 'ReactNode',
+description:
+'The children to render. In particular must contain some RightClickable elements to trigger the menu',
+},
+}}
 />
 <Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
   RightClickable
 </Heading>
 <PropsTable
-  data={{
-    children: {
-      type: 'ReactElement',
-      description:
-        'A react element on which to attach the right-click functionality',
-    },
-  }}
+data={{
+children: {
+type: 'ReactElement',
+description:
+'A react element on which to attach the right-click functionality',
+},
+}}
 />
