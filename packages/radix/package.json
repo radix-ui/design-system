@@ -24,37 +24,36 @@
     "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "dependencies": {
     "@modulz/radix-system": "^0.0.1-alpha.9",
-    "@styled-system/css": "5.0.23",
-    "@styled-system/theme-get": "^5.0.21",
-    "lodash.merge": "^4.6.1",
+    "@styled-system/css": "5.1.4",
+    "@styled-system/theme-get": "^5.1.2",
+    "lodash.merge": "^4.6.2",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
     "mdlz-prmtz": "^0.0.40-0",
-    "polished": "^3.4.1",
-    "styled-components": "^4.3.2"
+    "polished": "^3.4.2",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.7.5",
     "@modulz/radix-icons": "^0.8.7",
-    "@storybook/addon-options": "5.1.9",
-    "@storybook/addons": "5.1.9",
-    "@storybook/react": "5.1.9",
-    "@types/node": "^12.0.10",
-    "@types/react": "^16.8.22",
-    "@types/react-dom": "^16.8.4",
-    "@types/storybook__react": "^4.0.2",
-    "@types/styled-components": "^4.1.16",
+    "@storybook/addon-options": "5.2.8",
+    "@storybook/addons": "5.2.8",
+    "@storybook/react": "5.2.8",
+    "@types/node": "^12.12.17",
+    "@types/react": "^16.9.16",
+    "@types/react-dom": "^16.9.4",
+    "@types/styled-components": "^4.4.1",
     "babel-loader": "8.0.6",
-    "csstype": "^2.6.6",
-    "rollup": "^1.19.4",
-    "rollup-plugin-typescript2": "^0.22.1",
-    "rollup-plugin-url": "^2.2.2",
-    "typescript": "3.5.3",
+    "csstype": "^2.6.7",
+    "rollup": "^1.27.12",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "rollup-plugin-url": "^3.0.1",
+    "typescript": "3.7.3",
     "yalc": "^1.0.0-pre.32"
   },
   "gitHead": "e51368d9799b57de62046ffb59a158a72dfa2053"

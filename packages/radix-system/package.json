@@ -20,15 +20,15 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@styled-system/core": "^5.1.0",
-    "@styled-system/css": "^5.0.23",
+    "@styled-system/core": "^5.1.2",
+    "@styled-system/css": "^5.1.4",
     "@types/styled-system__core": "npm:@peduarte/styled-system__core",
-    "csstype": "^2.6.6"
+    "csstype": "^2.6.7"
   },
   "devDependencies": {
-    "rollup": "^1.19.4",
-    "rollup-plugin-typescript2": "^0.22.1",
-    "typescript": "3.5.3"
+    "rollup": "^1.27.12",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "typescript": "3.7.3"
   },
   "gitHead": "e51368d9799b57de62046ffb59a158a72dfa2053"
 }
