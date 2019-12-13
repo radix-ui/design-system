@@ -12,6 +12,7 @@ export { Code, CodeProps } from './components/Code';
 export { Container, ContainerProps } from './components/Container';
 export { Dialog, DialogProps } from './components/Dialog';
 export { Divider, DividerProps } from './components/Divider';
+export { DropdownMenu, DropdownMenuProps } from './components/DropdownMenu';
 export { Flex, FlexProps } from './components/Flex';
 export { Grid, GridProps } from './components/Grid';
 export { GhostButton, GhostButtonProps } from './components/GhostButton';
