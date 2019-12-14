@@ -1937,6 +1937,11 @@
   resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-0.8.7.tgz#d7bb49dd486629a31630885de1dadbcffa9d1f5c"
   integrity sha512-GRO7J/g8oIoLOPedH8Es9h4Iychh0nAIR5nhkM2O8zeKETX8ubjKXVJ1vTzUC0rcnDfjX5fOMQDzW/HWP2GlNQ==
 
+"@modulz/radix-icons@^0.8.8":
+  version "0.8.8"
+  resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-0.8.8.tgz#89d345a105b69c2f83115b7111e06e5cd32a7c9d"
+  integrity sha512-yN6dh+G73BOaeJqGfQH5aqEM/x+gXfFR8XZKBkwejuaO4jDGyOlXIEjxyoqtf4eWuLLlxSjjqeonoBTs6Y9gcQ==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -10615,13 +10620,13 @@ mdast-util-toc@^3.1.0:
     unist-util-is "^2.1.2"
     unist-util-visit "^1.1.0"
 
-mdlz-prmtz@^0.0.40:
-  version "0.0.40"
-  resolved "https://registry.yarnpkg.com/mdlz-prmtz/-/mdlz-prmtz-0.0.40.tgz#89f339ac0a7b2eee95d96bbaf0dd87e12ae8f250"
-  integrity sha512-l7nN0xTCP36Qh/ZzlkTXgnBip2S8q9j0JgivvTscIPBrpV7CjsMasPSG8QpfsUCrfVKSQoiEDZ50g8NQPp65HQ==
+mdlz-prmtz@^0.0.41:
+  version "0.0.41"
+  resolved "https://registry.yarnpkg.com/mdlz-prmtz/-/mdlz-prmtz-0.0.41.tgz#6a5b1acf20ebc3c8124d9926a43bae97b93716a6"
+  integrity sha512-vpodcX8+/EiajFkLZGcbN9YhIhRB5lNvIcxzKr31F3WPGC8nDAEcen/zKkPtP5nzjnuldNMyEqupz0Pwn3R8qg==
   dependencies:
-    "@modulz/radix-icons" "^0.8.7"
-    "@modulz/radix-system" "^0.0.1-alpha.9"
+    "@modulz/radix-icons" "^0.8.8"
+    "@modulz/radix-system" "^0.0.1-alpha.10"
     "@styled-system/css" "5.1.4"
     "@styled-system/theme-get" "^5.1.2"
     lodash.merge "^4.6.2"
