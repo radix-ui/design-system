@@ -29,7 +29,7 @@ export const Dialog = (props: DialogProps) => (
               '0 10px 38px -10px hsla(208, 24%, 7%, 0.35), 0 10px 20px -15px hsla(208, 24%, 7%, 0.2)',
             width: 'auto',
             maxWidth: 'fit-content',
-            minWidth: 400,
+            minWidth: 200,
             maxHeight: '90vh',
             margin: '5vh auto',
             overflow: 'auto',
