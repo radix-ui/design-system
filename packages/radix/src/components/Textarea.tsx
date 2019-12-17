@@ -22,23 +22,19 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               cursor: 'default',
               color: theme.colors.gray800,
               fontFamily: theme.fonts.normal,
-              border: '1px solid',
-              borderColor: theme.colors.gray300,
               borderRadius: theme.radii[1],
               minHeight: theme.sizes[9],
             },
             readOnly: {
-              borderColor: theme.colors.gray300,
               color: theme.colors.gray700,
             },
             disabled: {
-              borderColor: theme.colors.gray300,
+              backgroundColor: theme.colors.gray100,
               color: theme.colors.gray500,
               cursor: 'not-allowed',
             },
             focus: {
-              borderColor: theme.colors.blue500,
-              boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
+              boxShadow: `inset 0 0 0 1px ${theme.colors.blue500}, 0 0 0 1px ${theme.colors.blue500}`,
               cursor: 'text',
             },
           },
@@ -53,14 +49,13 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             normal: {
               textarea: {
                 normal: {
-                  borderColor: theme.colors.gray300,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
                 },
               },
             },
             ghost: {
               textarea: {
                 normal: {
-                  borderColor: 'transparent',
                   cursor: 'text',
                 },
               },
@@ -72,9 +67,8 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
                 normal: {
                   fontSize: theme.fontSizes[1],
                   letterSpacing: '-0.01em',
-                  lineHeight: theme.lineHeights[2],
-                  paddingLeft: theme.space[1],
-                  paddingRight: theme.space[1],
+                  lineHeight: theme.lineHeights[1],
+                  padding: theme.space[1],
                 },
               },
             },
@@ -83,7 +77,9 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
                 normal: {
                   fontSize: theme.fontSizes[2],
                   letterSpacing: '-0.01em',
-                  lineHeight: theme.lineHeights[4],
+                  lineHeight: theme.lineHeights[1],
+                  paddingTop: theme.space[1],
+                  paddingBottom: theme.space[1],
                   paddingLeft: theme.space[2],
                   paddingRight: theme.space[2],
                 },
