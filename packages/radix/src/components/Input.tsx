@@ -21,22 +21,18 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
             cursor: 'default',
             color: theme.colors.gray800,
             fontFamily: theme.fonts.normal,
-            border: '1px solid',
-            borderColor: theme.colors.gray300,
             borderRadius: theme.radii[1],
           },
           readOnly: {
-            borderColor: theme.colors.gray300,
             color: theme.colors.gray700,
           },
           disabled: {
-            borderColor: theme.colors.gray300,
+            backgroundColor: theme.colors.gray100,
             color: theme.colors.gray500,
             cursor: 'not-allowed',
           },
           focus: {
-            borderColor: theme.colors.blue500,
-            boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
+            boxShadow: `inset 0 0 0 1px ${theme.colors.blue500}, 0 0 0 1px ${theme.colors.blue500}`,
             cursor: 'text',
           },
         },
@@ -51,14 +47,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
           normal: {
             input: {
               normal: {
-                borderColor: theme.colors.gray300,
+                boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
               },
             },
           },
           ghost: {
             input: {
               normal: {
-                borderColor: 'transparent',
                 cursor: 'text',
               },
             },
