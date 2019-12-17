@@ -5,7 +5,6 @@ import {
   StyleConfig,
   SelectParts,
 } from 'mdlz-prmtz';
-import { transparentize } from 'polished';
 import merge from 'lodash.merge';
 import { theme } from '../theme';
 import { menuStyleConfig } from './Menu';
@@ -22,6 +21,7 @@ export const Select = (props: SelectProps) => {
 };
 
 Select.defaultProps = {
+  variant: 'normal',
   size: 0,
 };
 
@@ -29,25 +29,17 @@ const selectStyleConfigOverrides: StyleConfig<SelectParts> = {
   base: {
     button: {
       normal: {
-        backgroundColor: theme.colors.gray100,
         fontFamily: theme.fonts.normal,
         lineHeight: theme.lineHeights[0],
         borderRadius: theme.radii[1],
-        border: '1px solid',
-        borderColor: theme.colors.gray300,
         letterSpacing: '-0.01em',
         justifyContent: 'space-between',
         flexWrap: 'wrap', // allows the button to shrink
       },
-      hover: {
-        borderColor: theme.colors.gray400,
-      },
       focus: {
-        borderColor: theme.colors.blue500,
-        boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
+        boxShadow: `inset 0 0 0 1px ${theme.colors.blue500}, 0 0 0 1px ${theme.colors.blue500}`,
       },
       disabled: {
-        borderColor: theme.colors.gray300,
         color: theme.colors.gray500,
         cursor: 'not-allowed',
       },
@@ -69,21 +61,15 @@ const selectStyleConfigOverrides: StyleConfig<SelectParts> = {
       normal: {
         button: {
           normal: {
-            color: theme.colors.gray800,
+            backgroundColor: theme.colors.gray100,
+            boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
+          },
+          hover: {
+            boxShadow: `inset 0 0 0 1px ${theme.colors.gray400}`,
           },
         },
       },
-      ghost: {
-        button: {
-          normal: {
-            backgroundColor: 'transparent',
-            borderColor: 'transparent',
-          },
-          focus: {
-            borderColor: theme.colors.blue500,
-          },
-        },
-      },
+      ghost: {},
     },
     size: {
       0: {
