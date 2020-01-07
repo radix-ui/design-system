@@ -11,7 +11,7 @@ export const Dialog = (props: DialogProps) => (
       base: {
         overlay: {
           normal: {
-            backgroundColor: 'hsla(0, 0%, 100%, .5)',
+            backgroundColor: 'hsla(0, 0%, 0%, 0.1)',
           },
         },
         wrapper: {
