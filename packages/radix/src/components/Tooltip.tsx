@@ -15,9 +15,9 @@ export const Tooltip = (props: TooltipProps) => (
           normal: {
             backgroundColor: theme.colors.gray800,
             paddingTop: 0,
-            paddingRight: theme.space[1],
+            paddingRight: theme.space[2],
             paddingBottom: 0,
-            paddingLeft: theme.space[1],
+            paddingLeft: theme.space[2],
             lineHeight: theme.lineHeights[2],
             borderRadius: theme.radii[1],
             color: theme.colors.white,
