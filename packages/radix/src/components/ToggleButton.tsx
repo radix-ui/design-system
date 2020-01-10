@@ -106,7 +106,6 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
                 borderColor: 'transparent',
                 backgroundColor: theme.colors.blue100,
                 boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
-                // TODO: we can't do that in modulz (toggled + focus)
                 '&:focus': {
                   borderColor: theme.colors.blue500,
                   boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
@@ -134,7 +133,6 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
                 borderColor: 'transparent',
                 backgroundColor: theme.colors.gray100,
                 boxShadow: `0 0 0 1px ${theme.colors.gray400}`,
-                // TODO: we can't do that in modulz (toggled + focus)
                 '&:focus': {
                   borderColor: theme.colors.blue500,
                   boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
