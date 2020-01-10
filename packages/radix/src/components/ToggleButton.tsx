@@ -42,7 +42,6 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
                 minWidth: theme.sizes[4],
                 lineHeight: 1.1,
                 '&:first-child': {
-                  // TODO: consider adding 2px radius to the theme
                   borderTopLeftRadius: 2,
                   borderBottomLeftRadius: 2,
                 },
@@ -55,7 +54,6 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
                 borderRadius: 2,
               },
               toggled: {
-                // TODO: consider adding 2px radius to the theme
                 borderRadius: 2,
               },
             },
