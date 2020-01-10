@@ -92,14 +92,6 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
                 backgroundColor: props.size === 0 ? theme.colors.white : theme.colors.gray100,
               },
               hover: {
-                /**
-                 * TODO: Consider using box shadow for consistency
-                 *
-                 * This isn't too straightforward though. We can’t reliably center elements inside `ToggleButton` —
-                 * like same height icons — unless we remove the borders and use box-shadows instead, but also can’t
-                 * remove the borders and use box-shadows, because we use negative margins to compensate for adjacent
-                 * border.
-                 */
                 borderColor: props.size === 0 ? 'transparent' : theme.colors.gray500,
               },
               focus: {
