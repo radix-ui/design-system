@@ -4,7 +4,6 @@ import { theme as defaultTheme } from './theme';
 import { GlobalStyles } from './GlobalStyles';
 
 type RadixProviderProps = {
-  // TODO: type Theme
   theme?: any;
 };
 
