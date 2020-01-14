@@ -1,12 +1,15 @@
-import React, { useState, Children } from 'react';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 import { addDecorator, configure } from '@storybook/react';
 import { RadixProvider } from '../src/RadixProvider';
-import { Box, Button, theme } from '../src';
+import { Box } from '../src';
 
 function ThemeComponent({ children }) {
-  const [currentTheme, setCurrentTheme] = useState(theme);
   return (
-    <RadixProvider theme={currentTheme}>
+    <RadixProvider>
+      <Helmet>
+        <link rel="stylesheet " href="https://unpkg.com/@modulz/radix-fonts@latest/fonts.css" />
+      </Helmet>
       <Box p={3}>{children}</Box>
     </RadixProvider>
   );
