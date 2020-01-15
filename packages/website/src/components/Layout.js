@@ -7,7 +7,7 @@ function Layout({ children, ...props }) {
       <Helmet>
         <title>Radix</title>
         <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="stylesheet " href="https://cdn.modulz.app/fonts/fonts.css" />
+        <link rel="stylesheet" href="https://cdn.modulz.app/fonts/fonts.css" />
 
         <meta property="og:url" content="https://radix.modulz.app/" />
         <meta property="og:image" content="https://radix.modulz.app/social/hero.png" />
