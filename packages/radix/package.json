@@ -50,7 +50,6 @@
     "@types/styled-components": "^4.4.1",
     "babel-loader": "8.0.6",
     "csstype": "^2.6.7",
-    "react-helmet": "^5.2.1",
     "rollup": "^1.27.12",
     "rollup-plugin-typescript2": "^0.25.3",
     "typescript": "3.7.3",
