@@ -63,5 +63,12 @@ storiesOf('Components|Input', module).add('default', () => (
     <Box mb="4">
       <Input readOnly placeholder="Read only" />
     </Box>
+
+    <Box mb="4">
+      <Input cursor="default" placeholder="Your email" />
+    </Box>
+    <Box mb="4">
+      <Input cursor="text" placeholder="Your email" />
+    </Box>
   </Box>
 ));

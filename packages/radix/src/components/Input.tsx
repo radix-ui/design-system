@@ -3,10 +3,12 @@ import { Input as InputPrimitive, InputProps as InputPrimitiveProps } from 'mdlz
 import { theme } from '../theme';
 
 type Variant = 'normal' | 'ghost';
+type Cursor = 'default' | 'text';
 type Size = 0 | 1;
 
 export type InputProps = InputPrimitiveProps & {
   variant?: Variant;
+  cursor?: Cursor;
   size?: Size & any;
 };
 
@@ -18,7 +20,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       base: {
         input: {
           normal: {
-            cursor: 'default',
             color: theme.colors.gray800,
             fontFamily: theme.fonts.normal,
             borderRadius: theme.radii[1],
@@ -51,13 +52,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
               },
             },
           },
-          ghost: {
-            input: {
-              normal: {
-                cursor: 'text',
-              },
-            },
-          },
         },
         size: {
           0: {
@@ -85,6 +79,22 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
             },
           },
         },
+        cursor: {
+          text: {
+            input: {
+              normal: {
+                cursor: 'text',
+              },
+            },
+          },
+          default: {
+            input: {
+              normal: {
+                cursor: 'default',
+              },
+            },
+          },
+        },
       },
     }}
   />
@@ -93,5 +103,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
 Input.defaultProps = {
   type: 'text',
   variant: 'normal',
+  cursor: 'text',
   size: 0,
 };
