@@ -1932,15 +1932,10 @@
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.9.tgz#b2b85d8ac7bb2797e577050b61aeaf1b26fbd906"
   integrity sha512-FOAjeRHULSWXd6JMuCDwf3zPbe11kP971+Bufrj9M8rQ33ZMtThgKd6IJgzj6tr/+1Rq3czzLI1LAa9x0IC92w==
 
-"@modulz/radix-icons@^0.8.7":
-  version "0.8.7"
-  resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-0.8.7.tgz#d7bb49dd486629a31630885de1dadbcffa9d1f5c"
-  integrity sha512-GRO7J/g8oIoLOPedH8Es9h4Iychh0nAIR5nhkM2O8zeKETX8ubjKXVJ1vTzUC0rcnDfjX5fOMQDzW/HWP2GlNQ==
-
-"@modulz/radix-icons@^0.8.8":
-  version "0.8.8"
-  resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-0.8.8.tgz#89d345a105b69c2f83115b7111e06e5cd32a7c9d"
-  integrity sha512-yN6dh+G73BOaeJqGfQH5aqEM/x+gXfFR8XZKBkwejuaO4jDGyOlXIEjxyoqtf4eWuLLlxSjjqeonoBTs6Y9gcQ==
+"@modulz/radix-icons@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-1.0.1.tgz#e3543fd76d0d6f4e90dbb6fd2306b326dc1d060d"
+  integrity sha512-9uFfvKO0KfjyoC2M37m4sj6SAIzaTaNDWeYfZNrY2p0anrUtdsKOhtENc/QLccfXPeS7N+M3w2ksmtKXw8HV7Q==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -10620,12 +10615,12 @@ mdast-util-toc@^3.1.0:
     unist-util-is "^2.1.2"
     unist-util-visit "^1.1.0"
 
-mdlz-prmtz@^0.0.43:
-  version "0.0.43"
-  resolved "https://registry.yarnpkg.com/mdlz-prmtz/-/mdlz-prmtz-0.0.43.tgz#9c1268c14fef492af2e0e65f7b2f3b3d493541c7"
-  integrity sha512-XUGV4YgTvpLQVPLZCEjzltFUUwOWJS0bFbyVwecyfjtOfhg3EeAN79vD8XJMnf5UJnd6iSqLr5/sier1iALtTQ==
+mdlz-prmtz@^0.0.51:
+  version "0.0.51"
+  resolved "https://registry.yarnpkg.com/mdlz-prmtz/-/mdlz-prmtz-0.0.51.tgz#a8c90f661e9f9df816a8249ef68dc932e4e014d2"
+  integrity sha512-pLBdwtS98EJdGBGC7K6NW2P198eznhInzx7luAld4x84A/WS3/rGSYPqNhpaPwP/Kv61Tjd8LfHWVAqX3QdMnQ==
   dependencies:
-    "@modulz/radix-icons" "^0.8.8"
+    "@modulz/radix-icons" "^1.0.1"
     "@modulz/radix-system" "^0.0.1-alpha.10"
     "@styled-system/css" "5.1.4"
     "@styled-system/theme-get" "^5.1.2"
