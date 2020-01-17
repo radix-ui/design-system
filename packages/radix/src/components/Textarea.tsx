@@ -3,10 +3,12 @@ import { Textarea as TextareaPrimitive, TextareaProps as TextareaPrimitiveProps 
 import { theme } from '../theme';
 
 type Variant = 'normal' | 'ghost';
+type Cursor = 'default' | 'text';
 type Size = 0 | 1;
 
 export type TextareaProps = TextareaPrimitiveProps & {
   variant?: Variant;
+  cursor?: Cursor;
   size?: Size & any;
 };
 
@@ -19,7 +21,6 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         base: {
           textarea: {
             normal: {
-              cursor: 'default',
               color: theme.colors.gray800,
               fontFamily: theme.fonts.normal,
               borderRadius: theme.radii[1],
@@ -53,13 +54,6 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
                 },
               },
             },
-            ghost: {
-              textarea: {
-                normal: {
-                  cursor: 'text',
-                },
-              },
-            },
           },
           size: {
             0: {
@@ -86,6 +80,22 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               },
             },
           },
+          cursor: {
+            text: {
+              textarea: {
+                normal: {
+                  cursor: 'text',
+                },
+              },
+            },
+            default: {
+              textarea: {
+                normal: {
+                  cursor: 'default',
+                },
+              },
+            },
+          },
         },
       }}
     />
@@ -94,5 +104,6 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 
 Textarea.defaultProps = {
   variant: 'normal',
+  cursor: 'text',
   size: 0,
 };

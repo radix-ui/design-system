@@ -20,9 +20,13 @@ description: Useful for allowing users to enter, update and select text.
       default: 'normal',
       description: 'The variant to apply',
     },
+    cursor: {
+      type: 'text | default',
+      default: 'text',
+      description: 'The cursor to apply',
+    },
   }}
 />
-
 <SystemProps
   props={['textColor', 'margin', 'padding', 'width', 'maxWidth', 'textAlign']}
 />
@@ -45,4 +49,13 @@ There are 2 variants to choose from.
 ```js live
 <Input value="your@email.io" variant="normal" />
 <Input value="your@email.io" mt={6} variant="ghost" />
+```
+
+### Cursors
+
+There are 2 cursors to choose from.
+
+```js live
+<Input value="your@email.io" cursor="text" />
+<Input value="your@email.io" mt={6} cursor="default" />
 ```
