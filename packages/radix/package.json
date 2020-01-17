@@ -34,13 +34,13 @@
     "lodash.merge": "^4.6.2",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
-    "mdlz-prmtz": "^0.0.43",
+    "mdlz-prmtz": "^0.0.51",
     "polished": "^3.4.2",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
-    "@modulz/radix-icons": "^0.8.7",
+    "@modulz/radix-icons": "^1.0.1",
     "@storybook/addon-options": "5.2.8",
     "@storybook/addons": "5.2.8",
     "@storybook/react": "5.2.8",
