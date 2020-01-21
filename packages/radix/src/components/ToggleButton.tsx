@@ -29,6 +29,20 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
             border: '1px solid',
             wordSpacing: '-0.025em',
             letterSpacing: '0.01em',
+            '&:first-child': {
+              borderTopLeftRadius: theme.radii[1],
+              borderBottomLeftRadius: theme.radii[1],
+            },
+            '&:last-child ': {
+              borderTopRightRadius: theme.radii[1],
+              borderBottomRightRadius: theme.radii[1],
+            },
+          },
+          focus: {
+            borderRadius: theme.radii[1],
+          },
+          toggled: {
+            borderRadius: theme.radii[1],
           },
         },
       },
@@ -37,24 +51,10 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
           0: {
             button: {
               normal: {
-                height: theme.sizes[3],
+                height: theme.sizes[4],
                 fontSize: theme.fontSizes[0],
-                minWidth: theme.sizes[4],
+                minWidth: theme.sizes[5],
                 lineHeight: 1.1,
-                '&:first-child': {
-                  borderTopLeftRadius: 2,
-                  borderBottomLeftRadius: 2,
-                },
-                '&:last-child ': {
-                  borderTopRightRadius: 2,
-                  borderBottomRightRadius: 2,
-                },
-              },
-              focus: {
-                borderRadius: 2,
-              },
-              toggled: {
-                borderRadius: 2,
               },
             },
           },
@@ -65,20 +65,6 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
                 fontSize: theme.fontSizes[1],
                 minWidth: theme.sizes[5],
                 lineHeight: theme.lineHeights[0],
-                '&:first-child': {
-                  borderTopLeftRadius: theme.radii[1],
-                  borderBottomLeftRadius: theme.radii[1],
-                },
-                '&:last-child ': {
-                  borderTopRightRadius: theme.radii[1],
-                  borderBottomRightRadius: theme.radii[1],
-                },
-              },
-              focus: {
-                borderRadius: theme.radii[1],
-              },
-              toggled: {
-                borderRadius: theme.radii[1],
               },
             },
           },
@@ -88,11 +74,11 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
             button: {
               normal: {
                 color: theme.colors.gray700,
-                borderColor: props.size === 0 ? 'transparent' : theme.colors.gray400,
-                backgroundColor: props.size === 0 ? theme.colors.white : theme.colors.gray100,
+                borderColor: theme.colors.gray400,
+                backgroundColor: theme.colors.gray100,
               },
               hover: {
-                borderColor: props.size === 0 ? 'transparent' : theme.colors.gray500,
+                borderColor: theme.colors.gray500,
               },
               focus: {
                 borderColor: theme.colors.blue500,
@@ -118,10 +104,10 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
               normal: {
                 color: theme.colors.gray600,
                 backgroundColor: theme.colors.white,
-                borderColor: props.size === 0 ? 'transparent' : theme.colors.gray300,
+                borderColor: theme.colors.gray300,
               },
               hover: {
-                borderColor: props.size === 0 ? 'transparent' : theme.colors.gray300,
+                borderColor: theme.colors.gray300,
               },
               focus: {
                 color: theme.colors.gray700,
