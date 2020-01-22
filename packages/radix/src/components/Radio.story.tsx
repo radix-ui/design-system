@@ -37,6 +37,12 @@ function RadioStory() {
             select nowrap
           </Button>
         </>
+
+        <Box mb="4">
+          <Text as="p">Disabled</Text>
+          <Radio disabled name="direction" value="row" defaultChecked mr={1} />
+          <Radio disabled name="direction" value="column" />
+        </Box>
       </Box>
     </>
   );

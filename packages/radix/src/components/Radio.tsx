@@ -24,6 +24,9 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           focus: {
             borderColor: theme.colors.blue600,
           },
+          disabled: {
+            opacity: 0.5,
+          },
         },
         icon: {
           normal: {

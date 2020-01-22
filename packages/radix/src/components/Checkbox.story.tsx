@@ -24,6 +24,12 @@ function CheckboxStory() {
           {checked ? 'uncheck' : 'check'}
         </Button>
       </Box>
+
+      <Box mb="4">
+        <Text as="p">Disabled</Text>
+        <Checkbox disabled value="row" mr={1} />
+        <Checkbox disabled value="row" defaultChecked mr={1} />
+      </Box>
     </>
   );
 }

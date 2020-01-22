@@ -28,6 +28,9 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
             backgroundColor: theme.colors.blue600,
             borderColor: theme.colors.blue600,
           },
+          disabled: {
+            opacity: 0.5,
+          },
         },
         icon: {
           normal: {
