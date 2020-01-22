@@ -1,31 +1,27 @@
 import React from 'react';
-import { Checkbox as CheckboxPrimitive, CheckboxProps as CheckboxPrimitiveProps } from 'mdlz-prmtz';
+import { Radio as RadioPrimitive, RadioProps as RadioPrimitiveProps } from 'mdlz-prmtz';
 import { theme } from '../theme';
 
-export type CheckboxProps = CheckboxPrimitiveProps;
+export type RadioProps = RadioPrimitiveProps;
 
-export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props, forwardedRef) => (
-  <CheckboxPrimitive
+export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forwardedRef) => (
+  <RadioPrimitive
     {...props}
     ref={forwardedRef}
     styleConfig={{
       base: {
-        checkbox: {
+        radio: {
           normal: {
             width: theme.sizes[4],
             height: theme.sizes[4],
-            borderRadius: theme.radii[1],
             border: '1px solid',
             borderColor: theme.colors.gray400,
+            backgroundColor: theme.colors.white,
           },
           hover: {
             borderColor: theme.colors.gray500,
           },
           focus: {
-            borderColor: theme.colors.gray600,
-          },
-          checked: {
-            backgroundColor: theme.colors.blue600,
             borderColor: theme.colors.blue600,
           },
           disabled: {
@@ -34,7 +30,9 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
         },
         icon: {
           normal: {
-            color: theme.colors.white,
+            backgroundColor: theme.colors.blue600,
+            width: theme.sizes[2],
+            height: theme.sizes[2],
           },
         },
       },

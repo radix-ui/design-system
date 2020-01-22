@@ -12,7 +12,12 @@ export { Code, CodeProps } from './components/Code';
 export { Container, ContainerProps } from './components/Container';
 export { Dialog, DialogProps } from './components/Dialog';
 export { Divider, DividerProps } from './components/Divider';
-export { DropdownMenu, DropdownMenuProps } from './components/DropdownMenu';
+export {
+  DropdownMenu,
+  DropdownMenuProps,
+  useDropdownMenu,
+  UseDropdownMenuOptions,
+} from './components/DropdownMenu';
 export { Flex, FlexProps } from './components/Flex';
 export { Grid, GridProps } from './components/Grid';
 export { GhostButton, GhostButtonProps } from './components/GhostButton';
@@ -40,7 +45,7 @@ export {
 export { PillNav, PillNavProps, PillButton, PillButtonProps } from './components/PillNav';
 export { Pipe, PipeProps } from './components/Pipe';
 export { Popover, PopoverProps } from './components/Popover';
-export { RadioGroup, RadioGroupProps, Radio, RadioProps } from './components/RadioGroup';
+export { Radio, RadioProps } from './components/Radio';
 export {
   RightClickMenu,
   RightClickMenuProps,
