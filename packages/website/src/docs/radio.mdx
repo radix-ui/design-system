@@ -5,19 +5,8 @@ description: Useful for allowing users to select only one option from a set.
 ---
 
 ```js live
-<Radio name="direction" value="row" defaultChecked>
-  Row
-</Radio>
-<Radio name="direction" value="column">Column</Radio>
+<Radio name="direction" value="row" defaultChecked mr={1} />
+<Radio name="direction" value="column" />
 ```
-
-<PropsTable
-  data={{
-    children: {
-      type: 'ReactNode',
-      description: 'The content to render',
-    },
-  }}
-/>
 
 <SystemProps props={['margin']} />

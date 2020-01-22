@@ -12,22 +12,13 @@ function CheckboxStory() {
     <>
       <Box mb="4">
         <Text as="p">Uncontrolled</Text>
-        <Checkbox value="row" defaultChecked mr={1}>
-          Row
-        </Checkbox>
-      </Box>
-
-      <Box mb="4">
-        <Text as="p">Uncontrolled and without children</Text>
-        <Checkbox value="true" defaultChecked />
+        <Checkbox value="row" defaultChecked mr={1} />
       </Box>
 
       <Box mb="4">
         <Text as="p">Controlled</Text>
         <Box>
-          <Checkbox value="accept" checked={checked} onChange={e => setChecked(e.target.checked)}>
-            Accept
-          </Checkbox>
+          <Checkbox value="accept" checked={checked} onChange={e => setChecked(e.target.checked)} />
         </Box>
         <Button my="3" onClick={() => setChecked(!checked)}>
           {checked ? 'uncheck' : 'check'}
