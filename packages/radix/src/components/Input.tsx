@@ -61,11 +61,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
                 letterSpacing: '-0.01em',
                 height: theme.sizes[5],
                 lineHeight: theme.lineHeights[0], // Yields nice text selection height in Safari
-
-                // Set padding against text alignment so that long values don't cut off at the other side
-                // "1" makes up for the inset box shadow so that text doesn't overlap with it
-                paddingLeft: props.textAlign === 'left' || !props.textAlign ? theme.space[1] : 1,
-                paddingRight: props.textAlign === 'right' ? theme.space[1] : 1,
+                paddingLeft: theme.space[1],
+                paddingRight: theme.space[1],
               },
             },
           },
@@ -76,11 +73,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
                 letterSpacing: '-0.01em',
                 height: theme.sizes[6],
                 lineHeight: theme.lineHeights[0], // Yields nice text selection height in Safari
-
-                // Set padding against text alignment so that long values don't cut off at the other side
-                // "1" makes up for the inset box shadow so that text doesn't overlap with it
-                paddingLeft: props.textAlign === 'left' || !props.textAlign ? theme.space[2] : 1,
-                paddingRight: props.textAlign === 'right' ? theme.space[2] : 1,
+                paddingLeft: theme.space[2],
+                paddingRight: theme.space[2],
               },
             },
           },
