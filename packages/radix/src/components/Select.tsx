@@ -16,13 +16,13 @@ type Size = 0 | 1;
 
 export type SelectProps = SelectPrimitiveProps & { variant?: Variant; size?: Size };
 
-export const Select = (props: SelectProps) => {
-  return <SelectPrimitive styleConfig={selectStyleConfig} {...props} />;
-};
+export const Select = React.forwardRef<HTMLSelectElement, SelectProps>((props, forwardedRef) => {
+  return <SelectPrimitive ref={forwardedRef} styleConfig={selectStyleConfig} {...props} />;
+});
 
 Select.defaultProps = {
   variant: 'normal',
-  size: 0,
+  size: 0 as const,
 };
 
 const selectStyleConfigOverrides: StyleConfig<SelectParts> = {
