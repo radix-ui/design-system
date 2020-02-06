@@ -40,6 +40,20 @@ yarn build
 yarn release
 ```
 
+#### Deploy site
+
+Staging service
+
+```sh
+yarn deploy:staging
+```
+
+Production service
+
+```sh
+yarn deploy:production
+```
+
 ### License
 
 MIT © [Modulz](https://modulz.app)
