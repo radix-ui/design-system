@@ -1,6 +1,6 @@
 {
   "name": "@modulz/radix",
-  "version": "0.0.1-beta.11",
+  "version": "0.0.1-beta.12",
   "description": "Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
@@ -28,8 +28,8 @@
     "react-dom": "^16.12.0"
   },
   "dependencies": {
-    "@modulz/radix-system": "^0.0.1-alpha.10",
     "@modulz/primitives": "^0.0.1-0",
+    "@modulz/radix-system": "^0.0.1-alpha.10",
     "@styled-system/css": "5.1.4",
     "@styled-system/theme-get": "^5.1.2",
     "lodash.merge": "^4.6.2",
