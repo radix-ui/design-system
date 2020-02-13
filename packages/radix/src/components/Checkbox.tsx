@@ -1,5 +1,8 @@
 import React from 'react';
-import { Checkbox as CheckboxPrimitive, CheckboxProps as CheckboxPrimitiveProps } from 'mdlz-prmtz';
+import {
+  Checkbox as CheckboxPrimitive,
+  CheckboxProps as CheckboxPrimitiveProps,
+} from '@modulz/primitives';
 import { theme } from '../theme';
 
 export type CheckboxProps = CheckboxPrimitiveProps;

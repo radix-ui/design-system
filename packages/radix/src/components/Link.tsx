@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link as LinkPrimitive, LinkProps as LinkPrimitiveProps } from 'mdlz-prmtz';
+import { Link as LinkPrimitive, LinkProps as LinkPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
 export type LinkProps = LinkPrimitiveProps & { to?: string; children?: React.ReactNode; as?: any };

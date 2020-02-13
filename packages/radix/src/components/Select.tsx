@@ -4,12 +4,12 @@ import {
   SelectProps as SelectPrimitiveProps,
   StyleConfig,
   SelectParts,
-} from 'mdlz-prmtz';
+} from '@modulz/primitives';
 import merge from 'lodash.merge';
 import { theme } from '../theme';
 import { menuStyleConfig } from './Menu';
 
-export { Option, OptionProps, OptionGroup, OptionGroupProps } from 'mdlz-prmtz';
+export { Option, OptionProps, OptionGroup, OptionGroupProps } from '@modulz/primitives';
 
 type Variant = 'normal' | 'ghost';
 type Size = 0 | 1;

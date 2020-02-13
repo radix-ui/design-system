@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio as RadioPrimitive, RadioProps as RadioPrimitiveProps } from 'mdlz-prmtz';
+import { Radio as RadioPrimitive, RadioProps as RadioPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
 export type RadioProps = RadioPrimitiveProps;

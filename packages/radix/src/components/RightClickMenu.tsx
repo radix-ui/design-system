@@ -3,4 +3,4 @@ export {
   RightClickMenuProps,
   RightClickable,
   RightClickableProps,
-} from 'mdlz-prmtz';
+} from '@modulz/primitives';

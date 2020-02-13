@@ -1,1 +1,1 @@
-export { Flex, FlexProps } from 'mdlz-prmtz';
+export { Flex, FlexProps } from '@modulz/primitives';
