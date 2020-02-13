@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text as TextPrimitive, TextProps as TextPrimitiveProps } from 'mdlz-prmtz';
+import { Text as TextPrimitive, TextProps as TextPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
 type FontWeight = 400 | 500;

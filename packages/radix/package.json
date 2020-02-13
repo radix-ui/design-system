@@ -29,14 +29,14 @@
   },
   "dependencies": {
     "@modulz/radix-system": "^0.0.1-alpha.10",
+    "@modulz/primitives": "^0.0.1-0",
     "@styled-system/css": "5.1.4",
     "@styled-system/theme-get": "^5.1.2",
     "lodash.merge": "^4.6.2",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
-    "mdlz-prmtz": "^0.0.56",
     "polished": "^3.4.2",
-    "styled-components": "^4.4.1"
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",

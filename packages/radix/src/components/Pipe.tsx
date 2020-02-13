@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pipe as PipePrimitive, PipeProps as PipePrimitiveProps } from 'mdlz-prmtz';
+import { Pipe as PipePrimitive, PipeProps as PipePrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
 type Variant = 'normal' | 'large' | 'fluid';

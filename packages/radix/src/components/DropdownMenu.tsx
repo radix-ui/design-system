@@ -3,4 +3,4 @@ export {
   DropdownMenuProps,
   useDropdownMenu,
   UseDropdownMenuOptions,
-} from 'mdlz-prmtz';
+} from '@modulz/primitives';

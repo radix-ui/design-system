@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge as BadgePrimitive, BadgeProps as BadgePrimitiveProps } from 'mdlz-prmtz';
+import { Badge as BadgePrimitive, BadgeProps as BadgePrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
 type Variant = 'gray' | 'blue' | 'green' | 'red' | 'yellow';

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Container as ContainerPrimitive,
   ContainerProps as ContainerPrimitiveProps,
-} from 'mdlz-prmtz';
+} from '@modulz/primitives';
 import { theme } from '../theme';
 
 type Size = 0 | 1 | 2;

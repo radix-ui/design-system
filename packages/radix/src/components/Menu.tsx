@@ -5,7 +5,7 @@ import {
   MenuProps as MenuPrimitiveProps,
   StyleConfig,
   MenuParts,
-} from 'mdlz-prmtz';
+} from '@modulz/primitives';
 import { theme } from '../theme';
 
 export {
@@ -21,7 +21,7 @@ export {
   MenuItemLabelProps,
   MenuItemSeparator,
   MenuItemSeparatorProps,
-} from 'mdlz-prmtz';
+} from '@modulz/primitives';
 
 export type MenuProps = MenuPrimitiveProps;
 

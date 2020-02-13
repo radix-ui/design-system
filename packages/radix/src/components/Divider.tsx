@@ -1,5 +1,8 @@
 import React from 'react';
-import { Divider as DividerPrimitive, DividerProps as DividerPrimitiveProps } from 'mdlz-prmtz';
+import {
+  Divider as DividerPrimitive,
+  DividerProps as DividerPrimitiveProps,
+} from '@modulz/primitives';
 import { theme } from '../theme';
 
 type Size = 0 | 1 | 2;

@@ -1,5 +1,8 @@
 import React from 'react';
-import { Tooltip as TooltipPrimitive, TooltipProps as TooltipPrimitiveProps } from 'mdlz-prmtz';
+import {
+  Tooltip as TooltipPrimitive,
+  TooltipProps as TooltipPrimitiveProps,
+} from '@modulz/primitives';
 import { theme } from '../theme';
 
 export type TooltipProps = TooltipPrimitiveProps;

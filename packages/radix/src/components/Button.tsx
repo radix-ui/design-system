@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css as _css, keyframes } from 'styled-components';
 import css from '@styled-system/css';
-import { Button as ButtonPrimitive, ButtonProps as ButtonPrimitiveProps } from 'mdlz-prmtz';
+import { Button as ButtonPrimitive, ButtonProps as ButtonPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
 type Variant = 'gray' | 'blue' | 'green' | 'red';

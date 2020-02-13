@@ -1,5 +1,8 @@
 import React from 'react';
-import { Textarea as TextareaPrimitive, TextareaProps as TextareaPrimitiveProps } from 'mdlz-prmtz';
+import {
+  Textarea as TextareaPrimitive,
+  TextareaProps as TextareaPrimitiveProps,
+} from '@modulz/primitives';
 import { theme } from '../theme';
 
 type Variant = 'normal' | 'ghost';

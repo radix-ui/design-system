@@ -34,7 +34,7 @@
     "react-live": "^2.2.2",
     "remark-autolink-headings": "^5.2.1",
     "remark-slug": "^5.1.2",
-    "styled-components": "^4.4.1"
+    "styled-components": "^5.0.1"
   },
   "repository": {
     "type": "git",

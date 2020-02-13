@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button as ButtonPrimitive, ButtonProps as ButtonPrimitiveProps } from 'mdlz-prmtz';
+import { Button as ButtonPrimitive, ButtonProps as ButtonPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
 export type GhostButtonProps = ButtonPrimitiveProps & {
