@@ -3,7 +3,7 @@ import {
   Slider as SliderPrimitive,
   SliderProps as SliderPrimitiveProps,
   SliderInput as Input,
-} from 'mdlz-prmtz';
+} from '@modulz/primitives';
 import { theme } from '../theme';
 
 export type SliderProps = SliderPrimitiveProps;

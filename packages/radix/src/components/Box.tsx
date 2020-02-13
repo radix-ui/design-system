@@ -1,1 +1,1 @@
-export { Box, BoxProps } from 'mdlz-prmtz';
+export { Box, BoxProps } from '@modulz/primitives';

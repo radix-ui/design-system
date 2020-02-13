@@ -2,10 +2,10 @@ import React from 'react';
 import {
   ToggleButtonGroup as ToggleButtonGroupPrimitive,
   ToggleButtonGroupProps as ToggleButtonGroupPrimitiveProps,
-} from 'mdlz-prmtz';
+} from '@modulz/primitives';
 import { theme } from '../theme';
 
-export { ToggleButton, ToggleButtonProps } from 'mdlz-prmtz';
+export { ToggleButton, ToggleButtonProps } from '@modulz/primitives';
 
 type Size = 0 | 1;
 type Variant = 'normal' | 'fade';

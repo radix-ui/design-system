@@ -1,6 +1,9 @@
 import React from 'react';
 import { transparentize } from 'polished';
-import { Popover as PopoverPrimitive, PopoverProps as PopoverPrimitiveProps } from 'mdlz-prmtz';
+import {
+  Popover as PopoverPrimitive,
+  PopoverProps as PopoverPrimitiveProps,
+} from '@modulz/primitives';
 import { theme } from '../theme';
 
 export type PopoverProps = PopoverPrimitiveProps;

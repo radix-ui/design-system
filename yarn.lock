@@ -1932,6 +1932,20 @@
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.9.tgz#b2b85d8ac7bb2797e577050b61aeaf1b26fbd906"
   integrity sha512-FOAjeRHULSWXd6JMuCDwf3zPbe11kP971+Bufrj9M8rQ33ZMtThgKd6IJgzj6tr/+1Rq3czzLI1LAa9x0IC92w==
 
+"@modulz/primitives@^0.0.1-0":
+  version "0.0.1-0"
+  resolved "https://registry.yarnpkg.com/@modulz/primitives/-/primitives-0.0.1-0.tgz#67d59f7d95102ac009e682312677a2170239c15a"
+  integrity sha512-IBEtK2CC0/4P3fUtKymI6q3IYMV/q9COEqc1T/pfbcI5cA+E/n69JuV7lSRTN5uH0dvTwJB2NkiyWWhWdGB/aQ==
+  dependencies:
+    "@modulz/radix-icons" "^1.0.1"
+    "@modulz/radix-system" "^0.0.1-alpha.10"
+    lodash.merge "^4.6.2"
+    lodash.omit "^4.5.0"
+    lodash.pick "^4.4.0"
+    react-focus-on "^3.3.0"
+    react-is "^16.12.0"
+    resize-observer-polyfill "^1.5.1"
+
 "@modulz/radix-icons@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-1.0.1.tgz#e3543fd76d0d6f4e90dbb6fd2306b326dc1d060d"
@@ -10614,22 +10628,6 @@ mdast-util-toc@^3.1.0:
     mdast-util-to-string "^1.0.5"
     unist-util-is "^2.1.2"
     unist-util-visit "^1.1.0"
-
-mdlz-prmtz@^0.0.56:
-  version "0.0.56"
-  resolved "https://registry.yarnpkg.com/mdlz-prmtz/-/mdlz-prmtz-0.0.56.tgz#5cc2e4dfae9782160b3269aa028924bec25be223"
-  integrity sha512-R4ZVt+1JhyGma6YRO36gurD1jhhYUyabbT5I8VZ5HzURU/hbh/TdH8kh0XhwAWsjEdET9U41Nb85A0q5nKXTbA==
-  dependencies:
-    "@modulz/radix-icons" "^1.0.1"
-    "@modulz/radix-system" "^0.0.1-alpha.10"
-    "@styled-system/css" "5.1.4"
-    "@styled-system/theme-get" "^5.1.2"
-    lodash.merge "^4.6.2"
-    lodash.omit "^4.5.0"
-    lodash.pick "^4.4.0"
-    react-focus-on "^3.3.0"
-    react-is "^16.12.0"
-    resize-observer-polyfill "^1.5.1"
 
 mdn-data@2.0.4:
   version "2.0.4"

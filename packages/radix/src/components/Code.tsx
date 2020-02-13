@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code as CodePrimitive, CodeProps as CodePrimitiveProps } from 'mdlz-prmtz';
+import { Code as CodePrimitive, CodeProps as CodePrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
 type Variant = 'normal' | 'fade';

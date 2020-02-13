@@ -6,7 +6,7 @@ import {
   CardProps as CardPrimitiveProps,
   StyleConfig,
   CardParts,
-} from 'mdlz-prmtz';
+} from '@modulz/primitives';
 import { theme } from '../theme';
 
 export type Variant = 'border' | 'shadow' | 'ghost';

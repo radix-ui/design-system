@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input as InputPrimitive, InputProps as InputPrimitiveProps } from 'mdlz-prmtz';
+import { Input as InputPrimitive, InputProps as InputPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
 type Variant = 'normal' | 'ghost';

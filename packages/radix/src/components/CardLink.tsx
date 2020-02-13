@@ -5,7 +5,7 @@ import {
   CardLinkProps as CardLinkPrimitiveProps,
   StyleConfig,
   CardLinkParts,
-} from 'mdlz-prmtz';
+} from '@modulz/primitives';
 import { cardStyleConfig, Variant } from './Card';
 import { theme } from '../theme';
 

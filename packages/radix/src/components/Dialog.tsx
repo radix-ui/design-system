@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dialog as DialogPrimitive, DialogProps as DialogPrimitiveProps } from 'mdlz-prmtz';
+import { Dialog as DialogPrimitive, DialogProps as DialogPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
 export type DialogProps = DialogPrimitiveProps;
