@@ -10,7 +10,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
   const postTemplate = path.resolve('./src/templates/doc-page.js');
-  const defaultPath = '/docs/getting-started';
+  const defaultPath = '/docs/getting-started/';
 
   const allDocs = await graphql(
     `
