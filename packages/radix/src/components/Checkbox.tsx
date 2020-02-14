@@ -18,18 +18,18 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
             width: theme.sizes[4],
             height: theme.sizes[4],
             borderRadius: theme.radii[1],
-            border: '1px solid',
-            borderColor: theme.colors.gray400,
+            border: 0,
+            boxShadow: `inset 0 0 0 1px ${theme.colors.gray400}`,
           },
           hover: {
-            borderColor: theme.colors.gray500,
+            boxShadow: `inset 0 0 0 1px ${theme.colors.gray500}`,
           },
           focus: {
-            borderColor: theme.colors.gray600,
+            boxShadow: `inset 0 0 0 1px ${theme.colors.blue500}, 0 0 0 1px ${theme.colors.blue500}`,
           },
           checked: {
             backgroundColor: theme.colors.blue600,
-            borderColor: theme.colors.blue600,
+            boxShadow: 'none',
           },
           disabled: {
             opacity: 0.5,

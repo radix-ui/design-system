@@ -14,6 +14,9 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, forwa
           normal: {
             color: theme.colors.blue700,
           },
+          focus: {
+            boxShadow: `0 0 0 2px ${theme.colors.blue500}`,
+          },
         },
       },
     }}

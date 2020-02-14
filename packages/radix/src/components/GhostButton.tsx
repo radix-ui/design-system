@@ -48,7 +48,7 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
               cursor: 'not-allowed',
             },
             focus: {
-              boxShadow: `0 0 0 2px ${theme.colors.blue500}`,
+              boxShadow: `0 0 0 2px ${theme.colors.gray500}`,
             },
           },
         },

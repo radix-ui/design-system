@@ -96,7 +96,7 @@ export const ListItem = styled('button')<ListItemProps>(
             backgroundColor: 'gray300',
           },
           '&:focus': {
-            outlineColor: themeGet('colors.blue400')(props),
+            outlineColor: themeGet('colors.gray400')(props),
           },
         },
         active: {
@@ -107,6 +107,9 @@ export const ListItem = styled('button')<ListItemProps>(
           },
           '&:active': {
             backgroundColor: 'blue600',
+          },
+          '&:focus': {
+            outlineColor: themeGet('colors.blue500')(props),
           },
         },
         selected: {
