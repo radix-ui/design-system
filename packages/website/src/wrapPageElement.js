@@ -1,4 +1,9 @@
 import React from 'react';
 import App from './App';
+import { RadixProvider } from '@modulz/radix';
 
-export const wrapPageElement = props => <App {...props} />;
+export const wrapPageElement = props => (
+  <RadixProvider>
+    <App {...props} />
+  </RadixProvider>
+);
