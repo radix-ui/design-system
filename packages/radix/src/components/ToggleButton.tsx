@@ -81,8 +81,8 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
                 borderColor: theme.colors.gray500,
               },
               focus: {
-                borderColor: theme.colors.blue500,
-                boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
+                borderColor: theme.colors.gray500,
+                boxShadow: `0 0 0 1px ${theme.colors.gray500}`,
               },
               toggled: {
                 color: theme.colors.blue800,
@@ -92,7 +92,7 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
                 borderColor: 'transparent',
                 backgroundColor: theme.colors.blue100,
                 boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
-                '&:focus': {
+                '&:not(:disabled):focus': {
                   borderColor: theme.colors.blue500,
                   boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
                 },
@@ -111,15 +111,15 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
               },
               focus: {
                 color: theme.colors.gray700,
-                borderColor: theme.colors.blue500,
-                boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
+                borderColor: theme.colors.gray500,
+                boxShadow: `0 0 0 1px ${theme.colors.gray500}`,
               },
               toggled: {
                 color: theme.colors.gray700,
                 borderColor: 'transparent',
                 backgroundColor: theme.colors.gray100,
                 boxShadow: `0 0 0 1px ${theme.colors.gray400}`,
-                '&:focus': {
+                '&:not(:disabled):focus': {
                   borderColor: theme.colors.blue500,
                   boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
                 },

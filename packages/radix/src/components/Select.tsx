@@ -37,7 +37,7 @@ const selectStyleConfigOverrides: StyleConfig<SelectParts> = {
         flexWrap: 'wrap', // allows the button to shrink
       },
       focus: {
-        boxShadow: `inset 0 0 0 1px ${theme.colors.blue500}, 0 0 0 1px ${theme.colors.blue500}`,
+        boxShadow: `inset 0 0 0 1px ${theme.colors.gray500}, 0 0 0 1px ${theme.colors.gray500}`,
       },
       disabled: {
         color: theme.colors.gray500,

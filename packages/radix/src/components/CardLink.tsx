@@ -20,7 +20,8 @@ const cardLinkStyleConfigOverrides: StyleConfig<CardLinkParts> = {
     card: {
       normal: {},
       focus: {
-        borderColor: theme.colors.blue600,
+        borderColor: theme.colors.blue500,
+        boxShadow: `inset 0 0 0 1px ${theme.colors.blue500}`,
       },
     },
   },
