@@ -15,7 +15,7 @@ function DialogStory() {
           Basic Dialog
         </Text>
 
-        <Dialog onDismiss={() => setOpen1(false)} isOpen={open1}>
+        <Dialog onIsOpenChange={setOpen1} isOpen={open1}>
           <Box maxWidth="600px" padding="4">
             <Text>Hello from Dialog</Text>
             <Button ml="3" onClick={() => setOpen1(false)}>
@@ -31,7 +31,7 @@ function DialogStory() {
           Dialog with long content
         </Text>
 
-        <Dialog onDismiss={() => setOpen2(false)} isOpen={open2}>
+        <Dialog onIsOpenChange={setOpen2} isOpen={open2}>
           <Box maxWidth="600px" padding="4">
             <Text>Hello from Dialog</Text>
             <Button ml="3" onClick={() => setOpen2(false)}>

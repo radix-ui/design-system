@@ -11,7 +11,7 @@ description: An accessible dialog component, useful for helping users make decis
   return (
     <>
       <Button onClick={() => setIsOpen(true)}>Open dialog</Button>
-      <Dialog isOpen={isOpen} onDismiss={() => setIsOpen(false)}>
+      <Dialog isOpen={isOpen} onIsOpenChange={setIsOpen}>
         <Box p={6}>Hello</Box>
       </Dialog>
     </>
@@ -30,14 +30,9 @@ description: An accessible dialog component, useful for helping users make decis
       default: 'false',
       description: 'Whether it is open or not',
     },
-    canDismiss: {
-      type: 'Boolean',
-      default: 'true',
-      description: 'Whether the it can be dismissed',
-    },
-    onDismiss: {
+    onIsOpenChange: {
       type: 'Function',
-      description: 'A function to be called when it is dismissed',
+      description: 'A function to be called when it opens/closes',
     },
     refToFocusOnOpen: {
       type: 'refToFocusOnOpen',
@@ -65,15 +60,15 @@ You can provide a function to get called when the Dialog is dismissed via click 
       <Button onClick={() => setIsOpen(true)}>Open dialog</Button>
       <Dialog
         isOpen={isOpen}
-        onDismiss={() => {
-          alert('Dialog dismissed');
-          setIsOpen(false);
+        onIsOpenChange={isOpen => {
+          alert('Dialog is ', isOpen);
+          setIsOpen(isOpen);
         }}
       >
         <Box p={6}>
           <Text as="p">
             Dismissing the dialog by clicking outside or by pressing escape will
-            trigger the `onDismiss` callback.
+            trigger the `onIsOpenChange` callback.
           </Text>
         </Box>
       </Dialog>
@@ -97,7 +92,7 @@ It is possible to focus a specific element inside the dialog after it opens. If 
 
       <Dialog
         isOpen={isOpen}
-        onDismiss={() => setIsOpen(false)}
+        onIsOpenChange={setIsOpen}
         refToFocusOnOpen={inputRef}
       >
         <Box p={6} position="relative">
