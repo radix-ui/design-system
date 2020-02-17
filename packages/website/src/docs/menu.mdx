@@ -35,84 +35,86 @@ description: Useful for displaying a list of actions. Typically not used directl
     </Box>
   );
 };
-```<PropsTable
-data={{
-children: {
-type:
-'MenuItem | MenuItemLabel | MenuItemSeparator | MenuItemCheckbox | MenuItemRadioGroup',
-description: 'The items to render',
-},
-buttonRef: {
-type: 'React.RefObject',
-description:
-'A reference to a button element used to position the menu below',
-},
-buttonTextRef: {
-type: 'React.RefObject',
-description:
-'A reference to the text element inside of a button, used as extra positioning information when the menu is used to build a Select',
-},
-anchorPoint: {
-type: 'Point (x, y)',
-description:
-'An alternative way to position the menu directly by referencing a point in space, used when opening a menu via right click',
-},
-isOpen: {
-type: 'Boolean',
-default: 'false',
-description: 'Whether it is open or not',
-},
-onIsOpenChange: {
-type: 'Function',
-description: 'A function to be called when it opens/closes',
-},
-highlightedIndex: {
-type: 'Number',
-description: 'The index of the highlighted item (if controlled)',
-},
-onHighlightedIndexChange: {
-type: 'Function (index?: number) => void',
-description: 'A function called when the highlighted item changes',
-},
-defaultHighlightedIndex: {
-type: 'Number',
-description:
-'The index of the item to highlithed by default (if uncontrolled)',
-},
-onItemSelected: {
-type: 'Function (item: Item) => void',
-description: 'A callback function called when an item has been selected',
-},
-calculateMenuPosition: {
-type:
-'Function (options: CalculateMenuPositionOptions) => MenuPosition | undefined',
-description:
-'A function used to specify how to calculate the menu position',
-},
-}}
+```
+
+<PropsTable
+  data={{
+    children: {
+      type:
+        'MenuItem | MenuItemLabel | MenuItemSeparator | MenuItemCheckbox | MenuItemRadioGroup',
+      description: 'The items to render',
+    },
+    buttonRef: {
+      type: 'React.RefObject',
+      description:
+        'A reference to a button element used to position the menu below',
+    },
+    buttonTextRef: {
+      type: 'React.RefObject',
+      description:
+        'A reference to the text element inside of a button, used as extra positioning information when the menu is used to build a Select',
+    },
+    anchorPoint: {
+      type: 'Point (x, y)',
+      description:
+        'An alternative way to position the menu directly by referencing a point in space, used when opening a menu via right click',
+    },
+    isOpen: {
+      type: 'Boolean',
+      default: 'false',
+      description: 'Whether it is open or not',
+    },
+    onIsOpenChange: {
+      type: 'Function',
+      description: 'A function to be called when it opens/closes',
+    },
+    highlightedIndex: {
+      type: 'Number',
+      description: 'The index of the highlighted item (if controlled)',
+    },
+    onHighlightedIndexChange: {
+      type: 'Function (index?: number) => void',
+      description: 'A function called when the highlighted item changes',
+    },
+    defaultHighlightedIndex: {
+      type: 'Number',
+      description:
+        'The index of the item to highlithed by default (if uncontrolled)',
+    },
+    onItemSelected: {
+      type: 'Function (item: Item) => void',
+      description: 'A callback function called when an item has been selected',
+    },
+    calculateMenuPosition: {
+      type:
+        'Function (options: CalculateMenuPositionOptions) => MenuPosition | undefined',
+      description:
+        'A function used to specify how to calculate the menu position',
+    },
+  }}
 />
 <Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
   MenuItem
 </Heading>
 <PropsTable
-data={{
-label: {
-type: 'String',
-description: 'The label to display',
-},
-value: {
-type: 'String',
-description: 'An optional value for the item',
-},
-disabled: {
-type: 'Boolean',
-description: 'Whether it is disabled or not',
-},
-onSelect: {
-type: 'Function',
-description: 'A function called when the item is selected',
-},
-}}
+  data={{
+    label: {
+      type: 'String',
+      description: 'The label to display',
+    },
+    value: {
+      type: 'String',
+      description: 'An optional value for the item',
+    },
+    disabled: {
+      type: 'Boolean',
+      description: 'Whether it is disabled or not',
+    },
+    onSelect: {
+      type: 'Function',
+      description: 'A function called when the item is selected',
+    },
+  }}
 />
 <Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
   MenuItemSeparator
@@ -122,83 +124,83 @@ description: 'A function called when the item is selected',
   MenuItemLabel
 </Heading>
 <PropsTable
-data={{
-children: {
-type: 'String',
-description: 'The label to display',
-},
-}}
+  data={{
+    children: {
+      type: 'String',
+      description: 'The label to display',
+    },
+  }}
 />
 <Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
   MenuItemCheckbox
 </Heading>
 <PropsTable
-data={{
-label: {
-type: 'String',
-description: 'The label to display',
-},
-value: {
-type: 'String',
-description: 'An optional value for the item',
-},
-disabled: {
-type: 'Boolean',
-description: 'Whether it is disabled or not',
-},
-checked: {
-type: 'Boolean',
-description: 'Whether it is checked or not (if controlled)',
-},
-onChange: {
-type: 'Function (checked?: boolean) => void',
-description: 'A function called when it is checked/unchecked',
-},
-defaultChecked: {
-type: 'Boolean',
-description: 'Whether it is initially checked or not (if uncontrolled)',
-},
-}}
+  data={{
+    label: {
+      type: 'String',
+      description: 'The label to display',
+    },
+    value: {
+      type: 'String',
+      description: 'An optional value for the item',
+    },
+    disabled: {
+      type: 'Boolean',
+      description: 'Whether it is disabled or not',
+    },
+    checked: {
+      type: 'Boolean',
+      description: 'Whether it is checked or not (if controlled)',
+    },
+    onChange: {
+      type: 'Function (checked?: boolean) => void',
+      description: 'A function called when it is checked/unchecked',
+    },
+    defaultChecked: {
+      type: 'Boolean',
+      description: 'Whether it is initially checked or not (if uncontrolled)',
+    },
+  }}
 />
 <Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
   MenuItemRadioGroup
 </Heading>
 <PropsTable
-data={{
-children: {
-type: 'MenuItemRadio',
-description: 'The radio items to render',
-},
-value: {
-type: 'String',
-description: 'The selected value (if controlled)',
-},
-onChange: {
-type: 'Function (value?: string) => void',
-description: 'A function called when the selected value changes',
-},
-defaultValue: {
-type: 'String',
-description: 'The default selected value (if uncontrolled)',
-},
-}}
+  data={{
+    children: {
+      type: 'MenuItemRadio',
+      description: 'The radio items to render',
+    },
+    value: {
+      type: 'String',
+      description: 'The selected value (if controlled)',
+    },
+    onChange: {
+      type: 'Function (value?: string) => void',
+      description: 'A function called when the selected value changes',
+    },
+    defaultValue: {
+      type: 'String',
+      description: 'The default selected value (if uncontrolled)',
+    },
+  }}
 />
 <Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
   MenuItemRadio
 </Heading>
 <PropsTable
-data={{
-label: {
-type: 'String',
-description: 'The label to display',
-},
-value: {
-type: 'String',
-description: 'A value for the item',
-},
-disabled: {
-type: 'Boolean',
-description: 'Whether it is disabled or not',
-},
-}}
+  data={{
+    label: {
+      type: 'String',
+      description: 'The label to display',
+    },
+    value: {
+      type: 'String',
+      description: 'A value for the item',
+    },
+    disabled: {
+      type: 'Boolean',
+      description: 'Whether it is disabled or not',
+    },
+  }}
 />
