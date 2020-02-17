@@ -2068,19 +2068,22 @@
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.10.tgz#f6d69866c0857664e70690d7a0bfedb72143adb5"
   integrity sha512-6cDuZeKSCSJ1KvfEQ25Y8OXUjqDJZ+HgUs6dhASWbAX8fxVraTfPsSeRe2bN+4QJDsgUaXaMWBYfRomCr04GGg==
 
-"@modulz/primitives@^0.0.1-0":
-  version "0.0.1-0"
-  resolved "https://registry.yarnpkg.com/@modulz/primitives/-/primitives-0.0.1-0.tgz#67d59f7d95102ac009e682312677a2170239c15a"
-  integrity sha512-IBEtK2CC0/4P3fUtKymI6q3IYMV/q9COEqc1T/pfbcI5cA+E/n69JuV7lSRTN5uH0dvTwJB2NkiyWWhWdGB/aQ==
+"@modulz/primitives@^0.0.1-3":
+  version "0.0.1-3"
+  resolved "https://registry.yarnpkg.com/@modulz/primitives/-/primitives-0.0.1-3.tgz#b6107f85349507beeca8205adecc92f19d76152b"
+  integrity sha512-TSB86Iq8AECa5px1icDimBARQcN0XJNuIw78Fy7wMpHaP8P95ZKxdtoSaapMYz9oA4SE2DwlGcJfGI5NszWGgA==
   dependencies:
     "@modulz/radix-icons" "^1.0.1"
     "@modulz/radix-system" "^0.0.1-alpha.10"
+    aria-hidden "^1.1.1"
+    body-scroll-lock "^2.6.4"
     lodash.merge "^4.6.2"
     lodash.omit "^4.5.0"
     lodash.pick "^4.4.0"
     react-focus-on "^3.3.0"
     react-is "^16.12.0"
     resize-observer-polyfill "^1.5.1"
+    tabbable "^4.0.0"
 
 "@modulz/radix-icons@^1.0.1":
   version "1.0.1"
@@ -4171,6 +4174,11 @@ body-parser@1.19.0:
     qs "6.7.0"
     raw-body "2.4.0"
     type-is "~1.6.17"
+
+body-scroll-lock@^2.6.4:
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-2.6.4.tgz#567abc60ef4d656a79156781771398ef40462e94"
+  integrity sha512-NP08WsovlmxEoZP9pdlqrE+AhNaivlTrz9a0FF37BQsnOrpN48eNqivKkE7SYpM9N+YIPjsdVzfLAUQDBm6OQw==
 
 bonjour@^3.5.0:
   version "3.5.0"
@@ -15453,6 +15461,11 @@ symbol.prototype.description@^1.0.0:
   dependencies:
     es-abstract "^1.16.0"
     has-symbols "^1.0.0"
+
+tabbable@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-4.0.0.tgz#5bff1d1135df1482cf0f0206434f15eadbeb9261"
+  integrity sha512-H1XoH1URcBOa/rZZWxLxHCtOdVUEev+9vo5YdYhC9tCY4wnybX+VQrCYuy9ubkg69fCBxCONJOSLGfw0DWMffQ==
 
 table@^5.2.3:
   version "5.4.6"
