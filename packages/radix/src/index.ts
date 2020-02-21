@@ -62,7 +62,22 @@ export {
 } from './components/Select';
 export { Slider, SliderProps } from './components/Slider';
 export { Switch, SwitchProps } from './components/Switch';
-export { Table, Thead, Tbody, Tfoot, Tr, Th, Td } from './components/Table';
+export {
+  Table,
+  TableProps,
+  Thead,
+  TheadProps,
+  Tfoot,
+  TfootProps,
+  Tbody,
+  TbodyProps,
+  Tr,
+  TrProps,
+  Th,
+  ThProps,
+  Td,
+  TdProps,
+} from './components/Table';
 export { Text, TextProps } from './components/Text';
 export { Textarea, TextareaProps } from './components/Textarea';
 export {

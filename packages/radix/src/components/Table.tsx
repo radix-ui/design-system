@@ -1,31 +1,53 @@
-import styled from 'styled-components';
-import css from '@styled-system/css';
+import React from 'react';
+import { Table as TablePrimitive, TableProps as TablePrimitiveProps } from '@modulz/primitives';
+import { theme } from '../theme';
+export {
+  Thead,
+  TheadProps,
+  Tfoot,
+  TfootProps,
+  Tbody,
+  TbodyProps,
+  Tr,
+  TrProps,
+  Th,
+  ThProps,
+  Td,
+  TdProps,
+} from '@modulz/primitives';
 
-export const Table = styled('table')({
-  width: '100%',
-  borderCollapse: 'collapse',
-  textAlign: 'left',
-});
+export type TableProps = TablePrimitiveProps;
 
-export const Thead = styled('thead')({});
-export const Tbody = styled('tbody')({});
-export const Tr = styled('tr')({});
-export const Td = styled('td')(
-  css({
-    paddingY: 3,
-    paddingRight: 3,
-    borderBottom: '1px solid',
-    borderColor: 'gray400',
-    fontSize: 2,
-  })
-);
-
-export const Th = styled(Td)(
-  css({
-    fontFamily: 'normal',
-    fontWeight: 500,
-    borderWidth: 2,
-  })
-).withComponent('th');
-
-export const Tfoot = styled('tfoot')({});
+export const Table = React.forwardRef<HTMLTableElement, TableProps>((props, forwardedRef) => (
+  <TablePrimitive
+    {...props}
+    ref={forwardedRef}
+    styleConfig={{
+      base: {
+        th: {
+          normal: {
+            paddingTop: theme.space[2],
+            paddingBottom: theme.space[2],
+            paddingRight: theme.space[3],
+            borderBottom: '1px solid',
+            borderColor: theme.colors.gray300,
+            color: theme.colors.gray700,
+            fontSize: theme.fontSizes[1],
+            lineHeight: theme.lineHeights[2],
+          },
+        },
+        td: {
+          normal: {
+            paddingTop: theme.space[2],
+            paddingBottom: theme.space[2],
+            paddingRight: theme.space[3],
+            borderBottom: '1px solid',
+            borderColor: theme.colors.gray300,
+            fontSize: theme.fontSizes[2],
+            lineHeight: theme.lineHeights[2],
+          },
+        },
+      },
+    }}
+  />
+));

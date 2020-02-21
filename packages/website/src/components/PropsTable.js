@@ -39,16 +39,12 @@ export function PropsTable({ data }) {
                 return (
                   <Tr key={key}>
                     <Td>
-                      <Text textColor="gray700">
-                        <Code variant="fade">{key}</Code>
-                      </Text>
+                      <Code variant="fade">{key}</Code>
                     </Td>
                     <Td>
                       <Code>{value.type}</Code>
                     </Td>
-                    <Td>
-                      <Text textColor="gray700">{value.description}</Text>
-                    </Td>
+                    <Td>{value.description}</Td>
                   </Tr>
                 );
               })}

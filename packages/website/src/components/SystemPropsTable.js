@@ -1,6 +1,5 @@
 import React from 'react';
-import * as RadixSystem from '@modulz/radix-system';
-import { Box, Table, Thead, Tr, Th, Tbody, Td, Code, Text, Heading } from '@modulz/radix';
+import { Box, Table, Tr, Tbody, Td, Code, Heading } from '@modulz/radix';
 
 export function SystemPropsTable({ props }) {
   return (
@@ -10,29 +9,12 @@ export function SystemPropsTable({ props }) {
       </Heading>
       <Box my={4}>
         <Table>
-          {/* <Thead>
-          <Tr>
-            <Th>Name</Th>
-            <Th>Props</Th>
-          </Tr>
-        </Thead> */}
           <Tbody>
             {props.sort().map(prop => (
               <Tr key={prop}>
                 <Td>
-                  <Text textColor="gray700">
-                    <Code>{prop}</Code>
-                  </Text>
+                  <Code>{prop}</Code>
                 </Td>
-                {/* <Td style={{ width: '60%' }}>
-                {RadixSystem[prop].propNames.map(p => (
-                  <Box>
-                    <Code key={p} my={1}>
-                      {p}
-                    </Code>
-                  </Box>
-                ))}
-              </Td> */}
               </Tr>
             ))}
           </Tbody>
