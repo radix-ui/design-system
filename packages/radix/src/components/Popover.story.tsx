@@ -17,7 +17,7 @@ function PopoverExample() {
         <DotsVerticalIcon />
       </GhostButton>
 
-      <Popover targetRef={buttonRef} isOpen={isOpen} onIsOpenChange={setIsOpen}>
+      <Popover targetRef={buttonRef} isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <Flex width={100} height={100} alignItems="center" justifyContent="center">
           <GhostButton type="button" onClick={() => setIsOpen(false)}>
             <CrossIcon />
