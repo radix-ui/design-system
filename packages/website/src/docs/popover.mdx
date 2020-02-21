@@ -14,7 +14,11 @@ description: An accessible Popover component that displays rich content as a res
       <Button ref={buttonRef} onClick={() => setIsOpen(true)}>
         Open Popover
       </Button>
-      <Popover targetRef={buttonRef} isOpen={isOpen} onIsOpenChange={setIsOpen}>
+      <Popover
+        targetRef={buttonRef}
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
         <Box p={4}>Popover content</Box>
       </Popover>
     </>
@@ -86,7 +90,7 @@ There are 4 side options to choose from.
       <Popover
         targetRef={buttonRef}
         isOpen={isOpen}
-        onIsOpenChange={setIsOpen}
+        onClose={() => setIsOpen(false)}
         side={side}
       >
         <Box p={3}>
@@ -124,7 +128,7 @@ Control the side offset distance.
       <Popover
         targetRef={buttonRef}
         isOpen={isOpen}
-        onIsOpenChange={setIsOpen}
+        onClose={() => setIsOpen(false)}
         side="right"
         sideOffset={Number(sideOffset)}
       >
@@ -163,7 +167,7 @@ There are 3 alignment options to choose from.
       <Popover
         targetRef={buttonRef}
         isOpen={isOpen}
-        onIsOpenChange={setIsOpen}
+        onClose={() => setIsOpen(false)}
         side="right"
         align={align}
       >
@@ -204,7 +208,7 @@ Control the alignment offset distance. This only applies when the `align` prop i
       <Popover
         targetRef={buttonRef}
         isOpen={isOpen}
-        onIsOpenChange={setIsOpen}
+        onClose={() => setIsOpen(false)}
         side="bottom"
         align="start"
         alignOffset={Number(alignOffset)}
@@ -244,7 +248,7 @@ Control the arrow offset distance.
       <Popover
         targetRef={buttonRef}
         isOpen={isOpen}
-        onIsOpenChange={setIsOpen}
+        onClose={() => setIsOpen(false)}
         side="bottom"
         align="start"
         arrowOffset={Number(arrowOffset)}
