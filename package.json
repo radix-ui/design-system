@@ -6,7 +6,7 @@
   },
   "scripts": {
     "init": "yarn radix-system:build && yarn radix:build",
-    "start": "npm-run-all --parallel radix-system radix radix:storybook website",
+    "start": "npm-run-all init --parallel radix-system radix radix:storybook website",
     "website": "lerna exec --scope website -- yarn start",
     "website:build": "lerna exec --scope website -- yarn build",
     "radix": "lerna exec --scope @modulz/radix -- yarn watch",
