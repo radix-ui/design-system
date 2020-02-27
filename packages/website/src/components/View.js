@@ -21,9 +21,7 @@ export function View({ config }) {
         </Heading>
         <Knobs {...knobProps} />
         <CodeBlock live plain onChange={editorProps.onChange}>
-          {editorProps && editorProps.code
-            ? editorProps.code.split('return ')[1].split('}')[0]
-            : ''}
+          {editorProps.code}
         </CodeBlock>
         <Box mt={4}>
           <Button onClick={actions.formatCode} mr={2}>
