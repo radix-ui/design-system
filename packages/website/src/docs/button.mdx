@@ -4,34 +4,41 @@ component: Button
 description: Useful to communicate actions to your users.
 ---
 
-```js live
-<Button>New project</Button>
-```
-
-<PropsTable
-  data={{
-    children: {
-      type: 'ReactNode',
-      description: 'The content to render',
+<View
+  config={{
+    props: {
+      children: {
+        value: 'New project',
+        type: 'react node',
+        description: 'The content to render',
+      },
+      variant: {
+        type: 'enum',
+        options: ['gray', 'blue', 'green', 'red'],
+        defaultValue: 'gray',
+        description: 'The variant to apply',
+      },
+      size: {
+        type: 'enum',
+        options: [0, 1],
+        defaultValue: '0',
+        description: 'The size to apply',
+      },
+      isWaiting: {
+        type: 'boolean',
+        value: false,
+        description: 'Whether it is waiting or not',
+      },
     },
-    variant: {
-      type: 'gray | blue | green | red',
-      default: 'gray',
-      description: 'The variant to apply',
-    },
-    size: {
-      type: '0 | 1',
-      default: '0',
-      description: 'The size to apply',
-    },
-    isWaiting: {
-      type: 'Boolean',
-      default: 'false',
-      description: 'Whether it is waiting or not',
+    componentName: 'Button',
+    scope: { Button },
+    imports: {
+      '@modulz/radix': {
+        named: ['Button'],
+      },
     },
   }}
 />
-
 <SystemProps props={['margin']} />
 
 ## Examples

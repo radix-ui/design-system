@@ -74,3 +74,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     });
   }
 };
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node: {
+      fs: 'empty',
+    },
+  });
+};

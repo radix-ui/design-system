@@ -10,6 +10,7 @@ import CodeBlock from '../components/CodeBlock';
 import { SystemPropsTable } from '../components/SystemPropsTable';
 import { PropsTable } from '../components/PropsTable';
 import { ThemeSection } from '../components/ThemeSection';
+import { View } from '../components/View';
 
 export const components = {
   ...RC,
@@ -27,6 +28,7 @@ export const components = {
   a: RC.Link,
   SystemProps: SystemPropsTable,
   PropsTable: PropsTable,
+  View,
   h1: props => <RC.Heading {...props} fontWeight={500} size={3} mt={8} mb={4} />,
   h2: props => <RC.Heading {...props} as="h2" fontWeight={500} size={2} mt={8} mb={4} />,
   h3: props => (

@@ -32,6 +32,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-live": "^2.2.2",
+    "react-view": "^2.3.2",
     "remark-autolink-headings": "^5.2.1",
     "remark-slug": "^5.1.2",
     "styled-components": "^5.0.1"

@@ -79,7 +79,7 @@ const theme = {
   ],
 };
 
-export default ({ children, live, removeFragment }) => {
+export default ({ children, live, plain, onChange, removeFragment }) => {
   const components = useMDXComponents();
 
   const liveProviderProps = {
@@ -90,29 +90,36 @@ export default ({ children, live, removeFragment }) => {
   if (live) {
     return (
       <Box mt={4}>
-        <LiveProvider code={children.trim()} {...liveProviderProps} theme={theme}>
-          <LivePreview
-            style={{
-              padding: radixTheme.space[3],
-              border: `1px solid ${colors.gray300}`,
-              borderTopLeftRadius: radixTheme.radii[2],
-              borderTopRightRadius: radixTheme.radii[2],
-            }}
-          />
+        <LiveProvider code={children ? children.trim() : ''} {...liveProviderProps} theme={theme}>
+          {!plain && (
+            <LivePreview
+              style={{
+                padding: radixTheme.space[3],
+                border: `1px solid ${colors.gray300}`,
+                borderTopLeftRadius: radixTheme.radii[2],
+                borderTopRightRadius: radixTheme.radii[2],
+              }}
+            />
+          )}
 
           <LiveEditor
             padding={radixTheme.space[3]}
             style={{
+              ...(plain && {
+                borderTopLeftRadius: radixTheme.radii[2],
+                borderTopRightRadius: radixTheme.radii[2],
+              }),
               borderBottomLeftRadius: radixTheme.radii[2],
               borderBottomRightRadius: radixTheme.radii[2],
               border: `1px solid ${colors.gray300}`,
-              borderTop: 'none',
+              borderTop: plain ? `1px solid ${colors.gray300}` : 'none',
               fontSize: radixTheme.fontSizes[2],
               fontFamily: radixTheme.fonts.mono,
               fontWeight: 400,
               lineHeight: 1.5,
             }}
             css={{ textarea: { outline: 0 } }}
+            onChange={onChange}
           />
 
           <LiveError />
