@@ -54,7 +54,7 @@ export function Knobs({ state, set, error }) {
                 {name}
               </Text>
               <div>
-                <Code>{prop.type}</Code>
+                <Code>{prop.type === PropTypes.Enum ? prop.options.join(' | ') : prop.type}</Code>
               </div>
               <Text as="small" size={2}>
                 {prop.description}
