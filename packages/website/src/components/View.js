@@ -20,7 +20,7 @@ export function View({ config }) {
           Props
         </Heading>
         <Knobs {...knobProps} />
-        <CodeBlock live plain onChange={editorProps.onChange}>
+        <CodeBlock live plain removeFragment onChange={editorProps.onChange}>
           {editorProps.code}
         </CodeBlock>
         <Box mt={4}>
