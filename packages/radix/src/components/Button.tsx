@@ -108,13 +108,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             red: {
               button: {
                 normal: {
-                  backgroundColor: theme.colors.red100,
-                  boxShadow: `inset 0 0 0 1px ${theme.colors.red400}`,
+                  backgroundColor: theme.colors.gray100,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.gray400}`,
                   color: theme.colors.red700,
                 },
                 hover: {
                   backgroundColor: theme.colors.red100,
-                  boxShadow: `inset 0 0 0 1px ${theme.colors.red500}`,
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.red400}`,
                 },
                 active: {
                   backgroundColor: theme.colors.red200,
