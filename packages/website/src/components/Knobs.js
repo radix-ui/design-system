@@ -48,7 +48,7 @@ export function Knobs({ state, set, error }) {
       {Object.keys(state).map(name => {
         const prop = state[name];
         return (
-          <Flex key={name} justifyContent="space-between" alignItems="center">
+          <Flex key={name} justifyContent="space-between" alignItems="center" mb={2}>
             <Grid gridRowGap={1}>
               <Text as="p" size={4}>
                 {name}
@@ -60,14 +60,7 @@ export function Knobs({ state, set, error }) {
                 {prop.description}
               </Text>
             </Grid>
-            <div className="knob">
-              <Knob
-                {...prop}
-                name={name}
-                set={set}
-                error={error.where === name ? error.msg : null}
-              />
-            </div>
+            <Knob {...prop} name={name} set={set} error={error.where === name ? error.msg : null} />
           </Flex>
         );
       })}
