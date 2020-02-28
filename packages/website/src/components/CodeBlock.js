@@ -119,7 +119,9 @@ export default ({ children, live, plain, onChange, removeFragment }) => {
               lineHeight: 1.5,
             }}
             css={{ textarea: { outline: 0 } }}
-            onChange={onChange}
+            {...(typeof onChange === 'function' && {
+              onChange,
+            })}
           />
 
           <LiveError />
