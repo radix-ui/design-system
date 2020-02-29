@@ -45,6 +45,7 @@ export const menuStyleConfig: StyleConfig<MenuParts> = {
       normal: {
         fontFamily: theme.fonts.normal,
         fontSize: theme.fontSizes[1],
+        fontVariantNumeric: 'tabular-nums',
         letterSpacing: '-0.01em',
         height: theme.sizes[5],
         paddingLeft: theme.space[5],
@@ -67,6 +68,7 @@ export const menuStyleConfig: StyleConfig<MenuParts> = {
       normal: {
         fontFamily: theme.fonts.normal,
         fontSize: theme.fontSizes[1],
+        fontVariantNumeric: 'tabular-nums',
         letterSpacing: '-0.01em',
         height: theme.sizes[5],
         paddingLeft: theme.space[5],

@@ -30,6 +30,7 @@ const selectStyleConfigOverrides: StyleConfig<SelectParts> = {
     button: {
       normal: {
         fontFamily: theme.fonts.normal,
+        fontVariantNumeric: 'tabular-nums',
         lineHeight: theme.lineHeights[0],
         borderRadius: theme.radii[1],
         letterSpacing: '-0.01em',

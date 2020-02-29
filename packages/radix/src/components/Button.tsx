@@ -26,6 +26,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               alignItems: 'center',
               justifyContent: 'center',
               fontFamily: theme.fonts.normal,
+              fontVariantNumeric: 'tabular-nums',
               fontWeight: 500,
               textDecoration: 'none',
               borderRadius: theme.radii[1],

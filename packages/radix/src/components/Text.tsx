@@ -21,6 +21,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
         text: {
           normal: {
             fontSize: 'inherit',
+            fontVariantNumeric: 'tabular-nums',
             color: theme.colors.gray800,
             margin: 0,
           },
