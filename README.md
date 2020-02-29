@@ -20,7 +20,7 @@ This repository is a [monorepo](https://github.com/babel/babel/blob/master/doc/d
 yarn
 ```
 
-#### Build Radix library
+#### Initialise after the first install
 
 ```sh
 yarn init
