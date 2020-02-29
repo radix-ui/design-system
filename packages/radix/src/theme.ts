@@ -1,12 +1,12 @@
 type RadixBreakpoints<T> = Array<T> & {
   small: 0;
-  medium: '38em';
-  large: '62em';
-  xlarge: '68em';
+  medium: '600px';
+  large: '1000px';
+  xlarge: '1080px';
 };
 
 export const theme = {
-  breakpoints: ['38em', '62em', '68em', '110em'] as RadixBreakpoints<any>,
+  breakpoints: ['600px', '1000px', '1080px', '1760px'] as RadixBreakpoints<any>,
   fonts: {
     normal:
       'UntitledSans, -apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
