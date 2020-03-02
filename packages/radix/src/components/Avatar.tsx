@@ -12,15 +12,16 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>((props, forw
       base: {
         avatar: {
           normal: {
+            width: theme.sizes[5],
+            height: theme.sizes[5],
+            borderRadius: '100%',
             backgroundColor: theme.colors.gray300,
             color: theme.colors.gray800,
             fontFamily: theme.fonts.normal,
             fontSize: theme.fontSizes[1],
             fontWeight: 500,
             lineHeight: theme.lineHeights[2],
-            width: theme.sizes[5],
-            height: theme.sizes[5],
-            borderRadius: '100%',
+            textTransform: 'uppercase',
           },
         },
       },
