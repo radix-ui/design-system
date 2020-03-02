@@ -1,0 +1,29 @@
+---
+title: Avatar
+component: Avatar
+description: Useful for presenting profile images and initials.
+---
+
+```js live
+<Avatar alt="Modulz" src="https://avatars0.githubusercontent.com/u/28682402">
+  M
+</Avatar>
+```
+
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    alt: {
+      type: 'string',
+      description: 'A text description of the image',
+    },
+    src: {
+      type: 'string',
+      description: 'The URL of the image to use',
+    },
+  }}
+/>
+<SystemProps props={['backgroundColor', 'margin', 'width', 'height']} />
