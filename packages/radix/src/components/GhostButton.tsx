@@ -23,6 +23,7 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
               flexShrink: 0,
               fontFamily: theme.fonts.normal,
               fontSize: theme.fontSizes[1],
+              fontVariantNumeric: 'tabular-nums',
               fontWeight: 500,
               lineHeight: theme.lineHeights[2],
               height: theme.sizes[5],

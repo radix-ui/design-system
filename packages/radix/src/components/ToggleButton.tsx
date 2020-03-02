@@ -26,6 +26,7 @@ export const ToggleButtonGroup = <T extends string | string[] | null>(
           normal: {
             fontWeight: 400,
             fontFamily: theme.fonts.normal,
+            fontVariantNumeric: 'tabular-nums',
             border: '1px solid',
             wordSpacing: '-0.025em',
             letterSpacing: '0.01em',

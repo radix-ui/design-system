@@ -26,6 +26,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             normal: {
               color: theme.colors.gray800,
               fontFamily: theme.fonts.normal,
+              fontVariantNumeric: 'tabular-nums',
               borderRadius: theme.radii[1],
               minHeight: theme.sizes[9],
             },

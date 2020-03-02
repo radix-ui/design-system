@@ -22,6 +22,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
           normal: {
             color: theme.colors.gray800,
             fontFamily: theme.fonts.normal,
+            fontVariantNumeric: 'tabular-nums',
             borderRadius: theme.radii[1],
           },
           readOnly: {

@@ -25,6 +25,7 @@ export const Tooltip = (props: TooltipProps) => (
             borderRadius: theme.radii[1],
             color: theme.colors.white,
             fontSize: theme.fontSizes[1],
+            fontVariantNumeric: 'tabular-nums',
             letterSpacing: '-0.01em',
           },
         },
