@@ -1,6 +1,7 @@
 export { RadixProvider } from './RadixProvider';
 
 export { AspectRatio, AspectRatioProps } from './components/AspectRatio';
+export { Avatar, AvatarProps } from './components/Avatar';
 export { Badge, BadgeProps } from './components/Badge';
 export { Box, BoxProps } from './components/Box';
 export { Button, ButtonProps } from './components/Button';
