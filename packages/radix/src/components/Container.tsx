@@ -31,21 +31,21 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>((props
           0: {
             container: {
               normal: {
-                maxWidth: '25rem',
+                maxWidth: 375,
               },
             },
           },
           1: {
             container: {
               normal: {
-                maxWidth: '45rem',
+                maxWidth: 685,
               },
             },
           },
           2: {
             container: {
               normal: {
-                maxWidth: '65rem',
+                maxWidth: 985,
               },
             },
           },
