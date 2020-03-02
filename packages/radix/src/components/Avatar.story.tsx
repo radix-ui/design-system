@@ -10,10 +10,7 @@ storiesOf('Components|Avatar', module).add('default', () => (
       <Avatar>AV</Avatar>
     </Box>
     <Box m={2}>
-      <Avatar
-        alt="Modulz"
-        src="https://pbs.twimg.com/profile_images/1048700009372442625/OmNS4hKD_400x400.jpg"
-      />
+      <Avatar alt="Modulz" src="https://avatars0.githubusercontent.com/u/28682402" />
     </Box>
   </Flex>
 ));
