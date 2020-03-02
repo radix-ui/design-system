@@ -20,6 +20,12 @@ This repository is a [monorepo](https://github.com/babel/babel/blob/master/doc/d
 yarn
 ```
 
+#### Initialise after the first install
+
+```sh
+yarn init
+```
+
 #### Run website + Radix
 
 ```sh
