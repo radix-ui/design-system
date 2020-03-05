@@ -1,7 +1,7 @@
 import * as CSS from 'csstype';
 import { system, Config } from '@styled-system/core';
-import { getNegativeSpace } from '../utils/getNegativeSpace';
-import { Prop, Length } from '../utils/types';
+import { getNegativeSpace } from '../../utils/getNegativeSpace';
+import { Prop, Length } from '../../utils/types';
 
 export interface MarginProps {
   m?: Prop<CSS.MarginProperty<Length>>;
@@ -20,7 +20,7 @@ export interface MarginProps {
   marginY?: Prop<CSS.MarginProperty<Length>>;
 }
 
-const config: Config = {
+export const config: Config = {
   margin: {
     property: 'margin',
     scale: 'space',

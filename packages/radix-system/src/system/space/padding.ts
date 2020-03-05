@@ -1,6 +1,6 @@
 import * as CSS from 'csstype';
 import { system, Config } from '@styled-system/core';
-import { Prop, Length } from '../utils/types';
+import { Prop, Length } from '../../utils/types';
 
 export interface PaddingProps {
   p?: Prop<CSS.PaddingProperty<Length>>;
@@ -19,7 +19,7 @@ export interface PaddingProps {
   paddingY?: Prop<CSS.PaddingProperty<Length>>;
 }
 
-const config: Config = {
+export const config: Config = {
   padding: {
     property: 'padding',
     scale: 'space',
