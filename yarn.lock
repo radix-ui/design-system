@@ -2068,15 +2068,16 @@
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.10.tgz#f6d69866c0857664e70690d7a0bfedb72143adb5"
   integrity sha512-6cDuZeKSCSJ1KvfEQ25Y8OXUjqDJZ+HgUs6dhASWbAX8fxVraTfPsSeRe2bN+4QJDsgUaXaMWBYfRomCr04GGg==
 
-"@modulz/primitives@^0.0.1-12":
-  version "0.0.1-12"
-  resolved "https://registry.yarnpkg.com/@modulz/primitives/-/primitives-0.0.1-12.tgz#5e2eef5e2d009f5217859e2cbf3beff41d77135b"
-  integrity sha512-zCc/rHBPU80o6OgkIkWWqppEsPONG9JQGDzLfVZpL5yDV4xHQ0Q/mvTM2hs6LiKIxIKR3+QamriNMXuArUg1OA==
+"@modulz/primitives@^0.0.1-13":
+  version "0.0.1-13"
+  resolved "https://registry.yarnpkg.com/@modulz/primitives/-/primitives-0.0.1-13.tgz#63fd276de31f1acfa0440c87637e591f9e04a637"
+  integrity sha512-8iHFs6hpIEwuXS6bk+YrNF7yL+xVGRvlFl9DXPW2Hp0YDb4nfa3s59doiwY2Imhc6v4EwvbDNwLa4E6z1gnafw==
   dependencies:
     "@modulz/radix-icons" "^1.0.1"
     "@modulz/radix-system" "^0.0.1-alpha.10"
     aria-hidden "^1.1.1"
     body-scroll-lock "^2.6.4"
+    focus-options-polyfill "^1.4.0"
     lodash.merge "^4.6.2"
     lodash.omit "^4.5.0"
     lodash.pick "^4.4.0"
@@ -7428,6 +7429,11 @@ focus-lock@^0.6.3, focus-lock@^0.6.6:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/focus-lock/-/focus-lock-0.6.6.tgz#98119a755a38cfdbeda0280eaa77e307eee850c7"
   integrity sha512-Dx69IXGCq1qsUExWuG+5wkiMqVM/zGx/reXSJSLogECwp3x6KeNQZ+NAetgxEFpnC41rD8U3+jRCW68+LNzdtw==
+
+focus-options-polyfill@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/focus-options-polyfill/-/focus-options-polyfill-1.4.0.tgz#7165383e264bd24d02963d4a9322d110d627ade8"
+  integrity sha512-FqRrlu2o9DycNonZVAwdS4k12fNgRip9HIdTosjzOePgYrzH9wH0DeKPTSVdeKaElR4rILQOCAgWQZZSWP/n8A==
 
 follow-redirects@1.5.10:
   version "1.5.10"

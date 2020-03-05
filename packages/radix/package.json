@@ -28,7 +28,7 @@
     "react-dom": "^16.12.0"
   },
   "dependencies": {
-    "@modulz/primitives": "^0.0.1-12",
+    "@modulz/primitives": "^0.0.1-13",
     "@modulz/radix-system": "^0.0.1-alpha.10",
     "@styled-system/css": "5.1.4",
     "@styled-system/theme-get": "^5.1.2",
