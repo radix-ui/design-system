@@ -10,5 +10,5 @@ export const variant = (config: any) => (props: any) => {
     createParser({
       [prop]: getValue,
     })(props)
-  );
+  ) as any;
 };

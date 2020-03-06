@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { padding, PaddingProps } from './padding';
-import { styled } from '../utils/test';
+import { styled } from '../../utils/test';
 
 const Component: React.ComponentType<PaddingProps> = styled`
   ${padding};

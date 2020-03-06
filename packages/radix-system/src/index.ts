@@ -15,8 +15,6 @@ export { minWidth, MinWidthProps } from './system/minWidth';
 export { width, WidthProps } from './system/width';
 export { overflow, OverflowProps } from './system/overflow';
 
-export { margin, MarginProps } from './system/margin';
-export { padding, PaddingProps } from './system/padding';
 export { border, BorderProps } from './system/border';
 export { borderRadius, BorderRadiusProps } from './system/borderRadius';
 
@@ -24,6 +22,11 @@ export { boxShadow, BoxShadowProps } from './system/boxShadow';
 export { opacity, OpacityProps } from './system/opacity';
 export { backgroundColor, BackgroundColorProps } from './system/backgroundColor';
 export { textColor, TextColorProps } from './system/textColor';
+
+// Space set
+export { spaceSet, SpaceSetProps } from './system/space';
+export { margin, MarginProps } from './system/space/margin';
+export { padding, PaddingProps } from './system/space/padding';
 
 // Flex Container Set
 export { flexContainerSet, FlexContainerSetProps } from './system/flexContainer';
@@ -69,6 +72,8 @@ export { gridTemplateAreas, GridTemplateAreasProps } from './system/grid/gridTem
 export { gridArea, GridAreaProps } from './system/grid/gridArea';
 
 export { variant } from './utils/variant';
+
+export { sx, SxProp } from './utils/sx';
 
 export { system, createParser, compose, get } from '@styled-system/core';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { margin, MarginProps } from './margin';
-import { styled } from '../utils/test';
+import { styled } from '../../utils/test';
 
 const Component: React.ComponentType<MarginProps> = styled`
   ${margin};
