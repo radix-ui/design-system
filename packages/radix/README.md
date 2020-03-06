@@ -1,8 +1,8 @@
 > WIP
 
-# Radix 
+# Radix
 
-Radix is a Design System built on top of Radix System.
+Radix is a Design System built on top of Radix System and Modulz Primitives.
 
 ### Develop
 
