@@ -16,7 +16,7 @@
     "@mdx-js/react": "^1.5.5",
     "@modulz/radix": "^0.0.1-beta.23",
     "@modulz/radix-icons": "^1.0.1",
-    "@modulz/radix-system": "^0.0.1-alpha.11",
+    "@modulz/radix-system": "0.0.1-alpha.11",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.19.17",
     "gatsby-plugin-catch-links": "^2.1.25",

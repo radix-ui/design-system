@@ -27,6 +27,7 @@ export { Hover, HoverProps } from './components/Hover';
 export { Input, InputProps } from './components/Input';
 export { Link, LinkProps } from './components/Link';
 export { List, ListProps, ListItem, ListItemProps, ListGroup } from './components/List';
+export { Lock, LockProps } from './components/Lock';
 export {
   Menu,
   MenuProps,
@@ -46,6 +47,7 @@ export {
 export { PillNav, PillNavProps, PillButton, PillButtonProps } from './components/PillNav';
 export { Pipe, PipeProps } from './components/Pipe';
 export { Popover, PopoverProps } from './components/Popover';
+export { Portal, PortalProps } from './components/Portal';
 export { Radio, RadioProps } from './components/Radio';
 export {
   RightClickMenu,
@@ -88,5 +90,6 @@ export {
   ToggleButtonProps,
 } from './components/ToggleButton';
 export { Tooltip, TooltipProps } from './components/Tooltip';
+export { VisuallyHidden, VisuallyHiddenProps } from './components/VisuallyHidden';
 
 export { theme } from './theme';
