@@ -2,7 +2,7 @@
 
 # Radix
 
-Radix is a Design System built on top of Radix System and Modulz Primitives.
+Radix is a Design System built on top of Radix System.
 
 ### Develop
 
