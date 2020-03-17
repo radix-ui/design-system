@@ -214,7 +214,7 @@ function App({ element, props }) {
               maxWidth={['100%']}
               display={[navOpen ? 'none' : 'block', 'block']}
             >
-              <Container size={1}>{element}</Container>
+              <Container size={2}>{element}</Container>
             </Box>
           </>
         );
