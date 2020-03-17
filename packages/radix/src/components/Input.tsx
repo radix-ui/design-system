@@ -59,7 +59,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
             input: {
               normal: {
                 fontSize: theme.fontSizes[1],
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.001em',
                 height: theme.sizes[5],
                 lineHeight: theme.lineHeights[0], // Yields nice text selection height in Safari
                 paddingLeft: theme.space[1],
@@ -71,7 +71,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
             input: {
               normal: {
                 fontSize: theme.fontSizes[2],
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.002em',
                 height: theme.sizes[6],
                 lineHeight: theme.lineHeights[0], // Yields nice text selection height in Safari
                 paddingLeft: theme.space[2],

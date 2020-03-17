@@ -13,16 +13,10 @@ storiesOf('Components|Text', module).add('default', () => (
       <Text as="p" size={0}>
         Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
-      <Text as="p" size={0} fontWeight={500}>
-        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
-      </Text>
     </Box>
 
     <Box mb={6}>
       <Text as="p" size={1}>
-        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
-      </Text>
-      <Text as="p" size={1} fontWeight={500}>
         Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
     </Box>
@@ -31,16 +25,10 @@ storiesOf('Components|Text', module).add('default', () => (
       <Text as="p" size={2}>
         Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
-      <Text as="p" size={2} fontWeight={500}>
-        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
-      </Text>
     </Box>
 
     <Box mb={6}>
       <Text as="p" size={3}>
-        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
-      </Text>
-      <Text as="p" size={3} fontWeight={500}>
         Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
     </Box>
@@ -49,16 +37,10 @@ storiesOf('Components|Text', module).add('default', () => (
       <Text as="p" size={4}>
         Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
-      <Text as="p" size={4} fontWeight={500}>
-        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
-      </Text>
     </Box>
 
     <Box mb={6}>
       <Text as="p" size={5}>
-        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
-      </Text>
-      <Text as="p" size={5} fontWeight={500}>
         Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
     </Box>
@@ -67,16 +49,10 @@ storiesOf('Components|Text', module).add('default', () => (
       <Text as="p" size={6}>
         Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
-      <Text as="p" size={6} fontWeight={500}>
-        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
-      </Text>
     </Box>
 
     <Box mb={6}>
       <Text as="p" size={7}>
-        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
-      </Text>
-      <Text as="p" size={7} fontWeight={500}>
         Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
     </Box>
@@ -85,25 +61,16 @@ storiesOf('Components|Text', module).add('default', () => (
       <Text as="p" size={8}>
         Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
-      <Text as="p" size={8} fontWeight={500}>
-        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
-      </Text>
     </Box>
 
     <Box mb={6}>
       <Text as="p" size={9}>
         Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
-      <Text as="p" size={9} fontWeight={500}>
-        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
-      </Text>
     </Box>
 
     <Box mb={6}>
       <Text as="p" size={10}>
-        Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
-      </Text>
-      <Text as="p" size={10} fontWeight={500}>
         Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
       </Text>
     </Box>

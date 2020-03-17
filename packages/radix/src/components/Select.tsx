@@ -33,7 +33,7 @@ const selectStyleConfigOverrides: StyleConfig<SelectParts> = {
         fontVariantNumeric: 'tabular-nums',
         lineHeight: theme.lineHeights[0],
         borderRadius: theme.radii[1],
-        letterSpacing: '-0.01em',
+        letterSpacing: '-0.001em',
         justifyContent: 'space-between',
         flexWrap: 'wrap', // allows the button to shrink
       },

@@ -9,16 +9,10 @@ storiesOf('Components|Heading', module).add('default', () => (
       <Heading as="p" size={0}>
         The visual code editor
       </Heading>
-      <Heading as="p" size={0} fontWeight={500}>
-        The visual code editor
-      </Heading>
     </Box>
 
     <Box mb={6}>
       <Heading as="p" size={1}>
-        The visual code editor
-      </Heading>
-      <Heading as="p" size={1} fontWeight={500}>
         The visual code editor
       </Heading>
     </Box>
@@ -27,16 +21,10 @@ storiesOf('Components|Heading', module).add('default', () => (
       <Heading as="p" size={2}>
         The visual code editor
       </Heading>
-      <Heading as="p" size={2} fontWeight={500}>
-        The visual code editor
-      </Heading>
     </Box>
 
     <Box mb={6}>
       <Heading as="p" size={3}>
-        The visual code editor
-      </Heading>
-      <Heading as="p" size={3} fontWeight={500}>
         The visual code editor
       </Heading>
     </Box>
@@ -45,16 +33,10 @@ storiesOf('Components|Heading', module).add('default', () => (
       <Heading as="p" size={4}>
         The visual code editor
       </Heading>
-      <Heading as="p" size={4} fontWeight={500}>
-        The visual code editor
-      </Heading>
     </Box>
 
     <Box mb={6}>
       <Heading as="p" size={5}>
-        The visual code editor
-      </Heading>
-      <Heading as="p" size={5} fontWeight={500}>
         The visual code editor
       </Heading>
     </Box>
