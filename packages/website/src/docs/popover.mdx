@@ -97,11 +97,11 @@ There are 4 side options to choose from.
           <Heading size={0} mb={3} fontWeight={500}>
             Pick a side
           </Heading>
-          <Select value={side} onChange={event => setSide(event.target.value)}>
-            <option value="top">top</option>
-            <option value="right">right</option>
-            <option value="bottom">bottom</option>
-            <option value="left">left</option>
+          <Select value={side} onValueChange={setSide}>
+            <Option value="top" label="top" />
+            <Option value="right" label="right" />
+            <Option value="bottom" label="bottom" />
+            <Option value="left" label="left" />
           </Select>
         </Box>
       </Popover>
@@ -175,13 +175,10 @@ There are 3 alignment options to choose from.
           <Heading size={0} mb={3} fontWeight={500}>
             Pick an alignment
           </Heading>
-          <Select
-            value={align}
-            onChange={event => setAlign(event.target.value)}
-          >
-            <option value="start">start</option>
-            <option value="center">center</option>
-            <option value="end">end</option>
+          <Select value={align} onValueChange={setAlign}>
+            <Option value="start" label="start" />
+            <Option value="center" label="center" />
+            <Option value="end" label="end" />
           </Select>
         </Box>
       </Popover>

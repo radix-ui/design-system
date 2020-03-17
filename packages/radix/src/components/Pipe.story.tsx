@@ -8,13 +8,13 @@ import { Text } from './Text';
 storiesOf('Components|Pipe', module).add('default', () => (
   <>
     <Box mt={8}>
-      <Flex alignItems="center" justifyContent="center">
+      <Flex sx={{ alignItems: 'center', justifyContent: 'center' }}>
         <Text fontWeight={500}>Modulz 2.0</Text>
         <Pipe mx={2} />
         <Text>The next step in visual coding.</Text>
       </Flex>
 
-      <Flex my={4} alignItems="center" justifyContent="center">
+      <Flex my={4} sx={{ alignItems: 'center', justifyContent: 'center' }}>
         <Text size={6} fontWeight={500}>
           Modulz 2.0
         </Text>
@@ -22,10 +22,10 @@ storiesOf('Components|Pipe', module).add('default', () => (
         <Text size={6}>The next step in visual coding.</Text>
       </Flex>
 
-      <Flex my={4} justifyContent="center" height="200px">
-        <Box height="200px" bg="blue600" width="50px" />
+      <Flex my={4} sx={{ justifyContent: 'center', height: '200px' }}>
+        <Box sx={{ height: '200px', bg: 'blue600', width: '50px' }} />
         <Pipe variant="fluid" mx={2} />
-        <Box height="200px" bg="blue600" width="50px" />
+        <Box sx={{ height: '200px', bg: 'blue600', width: '50px' }} />
       </Flex>
     </Box>
   </>

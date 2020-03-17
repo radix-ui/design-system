@@ -7,23 +7,29 @@ import { AspectRatio } from './AspectRatio';
 
 storiesOf('Components|AspectRatio', module).add('default', () => (
   <Flex>
-    <Box m={4} width={300}>
-      <AspectRatio bg="blue600" mb={1}>
-        <Flex height="100%" width="100%" justifyContent="center" alignItems="center">
+    <Box m={4} sx={{ width: 300 }}>
+      <AspectRatio mb={1} sx={{ bg: 'blue600' }}>
+        <Flex
+          sx={{ height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center' }}
+        >
           <Heading>1:1 (default)</Heading>
         </Flex>
       </AspectRatio>
     </Box>
-    <Box m={4} width={300}>
-      <AspectRatio bg="blue600" ratio="4:3" mb={1}>
-        <Flex height="100%" width="100%" justifyContent="center" alignItems="center">
+    <Box m={4} sx={{ width: 300 }}>
+      <AspectRatio ratio="4:3" mb={1} sx={{ bg: 'blue600' }}>
+        <Flex
+          sx={{ height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center' }}
+        >
           <Heading>4:3</Heading>
         </Flex>
       </AspectRatio>
     </Box>
-    <Box m={4} width={300}>
-      <AspectRatio bg="blue600" ratio="16:9" mb={1}>
-        <Flex height="100%" width="100%" justifyContent="center" alignItems="center">
+    <Box m={4} sx={{ width: 300 }}>
+      <AspectRatio ratio="16:9" mb={1} sx={{ bg: 'blue600' }}>
+        <Flex
+          sx={{ height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center' }}
+        >
           <Heading>16:9</Heading>
         </Flex>
       </AspectRatio>

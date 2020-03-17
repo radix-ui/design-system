@@ -7,7 +7,7 @@ import { Card } from './Card';
 
 storiesOf('Components|Card', module).add('default', () => (
   <Flex>
-    <Card m={4} maxWidth="300px">
+    <Card m={4} sx={{ maxWidth: '300px' }}>
       <Heading size={1} mb="3" fontWeight={500}>
         Card
       </Heading>
@@ -20,7 +20,7 @@ storiesOf('Components|Card', module).add('default', () => (
       </Text>
     </Card>
 
-    <Card variant="shadow" m={4} maxWidth="300px">
+    <Card variant="shadow" m={4} sx={{ maxWidth: '300px' }}>
       <Heading size={1} mb="3" fontWeight={500}>
         Card
       </Heading>
@@ -33,7 +33,7 @@ storiesOf('Components|Card', module).add('default', () => (
       </Text>
     </Card>
 
-    <Card variant="ghost" m={4} maxWidth="300px">
+    <Card variant="ghost" m={4} sx={{ maxWidth: '300px' }}>
       <Heading size={1} mb="3" fontWeight={500}>
         Card
       </Heading>

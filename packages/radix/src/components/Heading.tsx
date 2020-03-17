@@ -28,6 +28,22 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
         },
       },
       variants: {
+        fontWeight: {
+          400: {
+            text: {
+              normal: {
+                fontWeight: 400,
+              },
+            },
+          },
+          500: {
+            text: {
+              normal: {
+                fontWeight: 500,
+              },
+            },
+          },
+        },
         size: {
           0: {
             text: {

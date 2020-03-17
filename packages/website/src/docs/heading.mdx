@@ -32,17 +32,6 @@ description: Useful for rendering headlines.
   }}
 />
 
-<SystemProps
-  props={[
-    'textColor',
-    'margin',
-    'padding',
-    'textAlign',
-    'fontWeight',
-    'lineHeight',
-  ]}
-/>
-
 ## Examples
 
 ### Size
@@ -72,7 +61,7 @@ There are 2 weight options to choose from.
 When `true` this will truncate your text based on its maximum width.
 
 ```js live
-<Box width={100}>
+<Box sx={{ width: 100 }}>
   <Heading truncate>Heading component</Heading>
 </Box>
 ```

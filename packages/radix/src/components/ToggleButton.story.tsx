@@ -1,105 +1,266 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box } from './Box';
+import { Flex } from './Flex';
 import { Text } from './Text';
-import { ToggleButtonGroup, ToggleButton } from './ToggleButton';
+import { ToggleButton } from './ToggleButton';
 import { Tooltip } from './Tooltip';
 import { TextAlignLeftIcon, TextAlignCenterIcon, TextAlignRightIcon } from '@modulz/radix-icons';
 
-function ToggleButtonGroupStory() {
+function ToggleButtonStory() {
   const [value, setValue] = useState('center');
 
   return (
     <>
-      <Box width="135px" my={6}>
-        <ToggleButtonGroup size={0} value={value} onChange={value => setValue(value)}>
-          <ToggleButton value="left">
-            <TextAlignLeftIcon />
-          </ToggleButton>
-          <ToggleButton value="center">
-            <TextAlignCenterIcon />
-          </ToggleButton>
-          <ToggleButton value="right">
-            <TextAlignRightIcon />
-          </ToggleButton>
-        </ToggleButtonGroup>
-      </Box>
-
-      <Box width="135px" my={6}>
-        <ToggleButtonGroup size={0} value={value} onChange={value => setValue(value)}>
-          <ToggleButton value="left">Left</ToggleButton>
-          <ToggleButton value="center">Center</ToggleButton>
-          <ToggleButton value="right">Right</ToggleButton>
-        </ToggleButtonGroup>
-      </Box>
-
-      <Box width="135px" my={6}>
-        <ToggleButtonGroup
-          size={0}
-          variant="fade"
-          value={value}
-          onChange={value => setValue(value)}
+      <Box my={6} sx={{ width: '135px' }}>
+        <Flex
+          role="group"
+          sx={{
+            '& > *': { position: 'relative' },
+            '& > * + *': { ml: '-1px !important' },
+            '& > *:hover': { zIndex: 1 },
+            '& > *[aria-pressed=true]': { zIndex: 2 },
+            '& > *:focus': { zIndex: 3 },
+          }}
         >
-          <ToggleButton value="left">Left</ToggleButton>
-          <ToggleButton value="center">Center</ToggleButton>
-          <ToggleButton value="right">Right</ToggleButton>
-        </ToggleButtonGroup>
-      </Box>
-
-      <Box width="180px" my={6}>
-        <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
-          <ToggleButton value="left">
+          <ToggleButton
+            size={0}
+            isToggled={value === 'left'}
+            onToggle={isToggled => isToggled && setValue('left')}
+          >
             <TextAlignLeftIcon />
           </ToggleButton>
-          <ToggleButton value="center">
+          <ToggleButton
+            size={0}
+            isToggled={value === 'center'}
+            onToggle={isToggled => isToggled && setValue('center')}
+          >
             <TextAlignCenterIcon />
           </ToggleButton>
-          <ToggleButton value="right">
+          <ToggleButton
+            size={0}
+            isToggled={value === 'right'}
+            onToggle={isToggled => isToggled && setValue('right')}
+          >
             <TextAlignRightIcon />
           </ToggleButton>
-        </ToggleButtonGroup>
+        </Flex>
       </Box>
 
-      <Box width="180px" my={6}>
-        <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
-          <ToggleButton value="left">Left</ToggleButton>
-          <ToggleButton value="center">Center</ToggleButton>
-          <ToggleButton value="right">Right</ToggleButton>
-        </ToggleButtonGroup>
-      </Box>
-
-      <Box width="180px" my={6}>
-        <ToggleButtonGroup variant="fade" value={value} onChange={value => setValue(value)}>
-          <ToggleButton variant="fade" value="left">
+      <Box my={6} sx={{ width: '135px' }}>
+        <Flex
+          role="group"
+          sx={{
+            '& > *': { position: 'relative' },
+            '& > * + *': { ml: '-1px !important' },
+            '& > *:hover': { zIndex: 1 },
+            '& > *[aria-pressed=true]': { zIndex: 2 },
+            '& > *:focus': { zIndex: 3 },
+          }}
+        >
+          <ToggleButton
+            size={0}
+            isToggled={value === 'left'}
+            onToggle={isToggled => isToggled && setValue('left')}
+          >
             Left
           </ToggleButton>
-          <ToggleButton variant="fade" value="center">
+          <ToggleButton
+            size={0}
+            isToggled={value === 'center'}
+            onToggle={isToggled => isToggled && setValue('center')}
+          >
             Center
           </ToggleButton>
-          <ToggleButton variant="fade" value="right">
+          <ToggleButton
+            size={0}
+            isToggled={value === 'right'}
+            onToggle={isToggled => isToggled && setValue('right')}
+          >
             Right
           </ToggleButton>
-        </ToggleButtonGroup>
+        </Flex>
       </Box>
 
-      <Box width="180px" my={6}>
+      <Box my={6} sx={{ width: '135px' }}>
+        <Flex
+          role="group"
+          sx={{
+            '& > *': { position: 'relative' },
+            '& > * + *': { ml: '-1px !important' },
+            '& > *:hover': { zIndex: 1 },
+            '& > *[aria-pressed=true]': { zIndex: 2 },
+            '& > *:focus': { zIndex: 3 },
+          }}
+        >
+          <ToggleButton
+            size={0}
+            variant="fade"
+            isToggled={value === 'left'}
+            onToggle={isToggled => isToggled && setValue('left')}
+          >
+            Left
+          </ToggleButton>
+          <ToggleButton
+            size={0}
+            variant="fade"
+            isToggled={value === 'center'}
+            onToggle={isToggled => isToggled && setValue('center')}
+          >
+            Center
+          </ToggleButton>
+          <ToggleButton
+            size={0}
+            variant="fade"
+            isToggled={value === 'right'}
+            onToggle={isToggled => isToggled && setValue('right')}
+          >
+            Right
+          </ToggleButton>
+        </Flex>
+      </Box>
+
+      <Box my={6} sx={{ width: '180px' }}>
+        <Flex
+          role="group"
+          sx={{
+            '& > *': { position: 'relative' },
+            '& > * + *': { ml: '-1px !important' },
+            '& > *:hover': { zIndex: 1 },
+            '& > *[aria-pressed=true]': { zIndex: 2 },
+            '& > *:focus': { zIndex: 3 },
+          }}
+        >
+          <ToggleButton
+            isToggled={value === 'left'}
+            onToggle={isToggled => isToggled && setValue('left')}
+          >
+            <TextAlignLeftIcon />
+          </ToggleButton>
+          <ToggleButton
+            isToggled={value === 'center'}
+            onToggle={isToggled => isToggled && setValue('center')}
+          >
+            <TextAlignCenterIcon />
+          </ToggleButton>
+          <ToggleButton
+            isToggled={value === 'right'}
+            onToggle={isToggled => isToggled && setValue('right')}
+          >
+            <TextAlignRightIcon />
+          </ToggleButton>
+        </Flex>
+      </Box>
+
+      <Box my={6} sx={{ width: '180px' }}>
+        <Flex
+          role="group"
+          sx={{
+            '& > *': { position: 'relative' },
+            '& > * + *': { ml: '-1px !important' },
+            '& > *:hover': { zIndex: 1 },
+            '& > *[aria-pressed=true]': { zIndex: 2 },
+            '& > *:focus': { zIndex: 3 },
+          }}
+        >
+          <ToggleButton
+            isToggled={value === 'left'}
+            onToggle={isToggled => isToggled && setValue('left')}
+          >
+            Left
+          </ToggleButton>
+          <ToggleButton
+            isToggled={value === 'center'}
+            onToggle={isToggled => isToggled && setValue('center')}
+          >
+            Center
+          </ToggleButton>
+          <ToggleButton
+            isToggled={value === 'right'}
+            onToggle={isToggled => isToggled && setValue('right')}
+          >
+            Right
+          </ToggleButton>
+        </Flex>
+      </Box>
+
+      <Box my={6} sx={{ width: '180px' }}>
+        <Flex
+          role="group"
+          sx={{
+            '& > *': { position: 'relative' },
+            '& > * + *': { ml: '-1px !important' },
+            '& > *:hover': { zIndex: 1 },
+            '& > *[aria-pressed=true]': { zIndex: 2 },
+            '& > *:focus': { zIndex: 3 },
+          }}
+        >
+          <ToggleButton
+            variant="fade"
+            isToggled={value === 'left'}
+            onToggle={isToggled => isToggled && setValue('left')}
+          >
+            Left
+          </ToggleButton>
+          <ToggleButton
+            variant="fade"
+            isToggled={value === 'center'}
+            onToggle={isToggled => isToggled && setValue('center')}
+          >
+            Center
+          </ToggleButton>
+          <ToggleButton
+            variant="fade"
+            isToggled={value === 'right'}
+            onToggle={isToggled => isToggled && setValue('right')}
+          >
+            Right
+          </ToggleButton>
+        </Flex>
+      </Box>
+
+      <Box my={6} sx={{ width: '180px' }}>
         <Text size={1} my={1} as="p">
           With Tooltip
         </Text>
-        <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
+        <Flex
+          role="group"
+          sx={{
+            '& > *': { position: 'relative' },
+            '& > * + *': { ml: '-1px !important' },
+            '& > *:hover': { zIndex: 1 },
+            '& > *[aria-pressed=true]': { zIndex: 2 },
+            '& > *:focus': { zIndex: 3 },
+          }}
+        >
           <Tooltip label="Left" align="center">
-            <ToggleButton value="left">Left</ToggleButton>
+            <ToggleButton
+              isToggled={value === 'left'}
+              onToggle={isToggled => isToggled && setValue('left')}
+            >
+              Left
+            </ToggleButton>
           </Tooltip>
           <Tooltip label="Center" align="center">
-            <ToggleButton value="center">Center</ToggleButton>
+            <ToggleButton
+              isToggled={value === 'center'}
+              onToggle={isToggled => isToggled && setValue('center')}
+            >
+              Center
+            </ToggleButton>
           </Tooltip>
           <Tooltip label="Right" align="center">
-            <ToggleButton value="right">Right</ToggleButton>
+            <ToggleButton
+              isToggled={value === 'right'}
+              onToggle={isToggled => isToggled && setValue('right')}
+            >
+              Right
+            </ToggleButton>
           </Tooltip>
-        </ToggleButtonGroup>
+        </Flex>
       </Box>
     </>
   );
 }
 
-storiesOf('Components|ToggleButton', module).add('default', () => <ToggleButtonGroupStory />);
+storiesOf('Components|ToggleButton', module).add('default', () => <ToggleButtonStory />);

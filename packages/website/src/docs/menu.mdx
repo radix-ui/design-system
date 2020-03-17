@@ -11,7 +11,7 @@ description: Useful for displaying a list of actions. Typically not used directl
   const targetRef = React.useRef();
 
   return (
-    <Box height="243px">
+    <Box sx={{ height: '243px' }}>
       <div ref={targetRef} />
       <Menu isOpen buttonRef={targetRef} unstable__disableLock>
         <MenuItem label="Simple item one" />
@@ -93,9 +93,13 @@ description: Useful for displaying a list of actions. Typically not used directl
     },
   }}
 />
-<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
+
+
+<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} sx={{ lineHeight: 4 }}>
   MenuItem
 </Heading>
+
+
 <PropsTable
   data={{
     label: {
@@ -116,13 +120,21 @@ description: Useful for displaying a list of actions. Typically not used directl
     },
   }}
 />
-<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
+
+
+<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} sx={{ lineHeight: 4 }}>
   MenuItemSeparator
 </Heading>
+
+
 <PropsTable data={{}} />
-<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
+
+
+<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} sx={{ lineHeight: 4 }}>
   MenuItemLabel
 </Heading>
+
+
 <PropsTable
   data={{
     children: {
@@ -131,9 +143,13 @@ description: Useful for displaying a list of actions. Typically not used directl
     },
   }}
 />
-<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
+
+
+<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} sx={{ lineHeight: 4 }}>
   MenuItemCheckbox
 </Heading>
+
+
 <PropsTable
   data={{
     label: {
@@ -162,9 +178,13 @@ description: Useful for displaying a list of actions. Typically not used directl
     },
   }}
 />
-<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
+
+
+<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} sx={{ lineHeight: 4 }}>
   MenuItemRadioGroup
 </Heading>
+
+
 <PropsTable
   data={{
     children: {
@@ -185,9 +205,13 @@ description: Useful for displaying a list of actions. Typically not used directl
     },
   }}
 />
-<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
+
+
+<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} sx={{ lineHeight: 4 }}>
   MenuItemRadio
 </Heading>
+
+
 <PropsTable
   data={{
     label: {

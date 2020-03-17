@@ -5,7 +5,7 @@ import { PillNav, PillButton } from './PillNav';
 
 storiesOf('Components|PillNav', module).add('default', () => (
   <>
-    <Box width="500px" mb="4">
+    <Box mb="4" sx={{ width: '500px' }}>
       <PillNav>
         <PillButton>Settings</PillButton>
         <PillButton>Assets</PillButton>
@@ -14,7 +14,7 @@ storiesOf('Components|PillNav', module).add('default', () => (
       </PillNav>
     </Box>
 
-    <Box width="500px" mb="4">
+    <Box mb="4" sx={{ width: '500px' }}>
       <PillNav>
         <PillButton>Settings</PillButton>
         <PillButton active>Assets</PillButton>
@@ -23,7 +23,7 @@ storiesOf('Components|PillNav', module).add('default', () => (
       </PillNav>
     </Box>
 
-    <Box width="500px" mb="4">
+    <Box mb="4" sx={{ width: '500px' }}>
       <PillNav>
         <PillButton disabled>Settings</PillButton>
         <PillButton>Assets</PillButton>

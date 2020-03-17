@@ -5,8 +5,14 @@ import { ExternalLinkIcon } from '@modulz/radix-icons';
 
 function NavItem({ children, isExternal, active, ...props }) {
   return (
-    <ListItem as={Link} {...props} variant={active ? 'active' : undefined} px={5} minHeight={6}>
-      <Text size={2} textColor={active ? 'white' : undefined} mr={isExternal ? 1 : 0}>
+    <ListItem
+      as={Link}
+      {...props}
+      variant={active ? 'active' : undefined}
+      px={5}
+      sx={{ minHeight: 6 }}
+    >
+      <Text size={2} mr={isExternal ? 1 : 0} sx={{ color: active ? 'white' : undefined }}>
         {children}
       </Text>
       {isExternal && <ExternalLinkIcon />}

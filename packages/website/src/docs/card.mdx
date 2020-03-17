@@ -5,7 +5,7 @@ description: Useful to group information and actions about a single subject.
 ---
 
 ```js live
-<Card maxWidth={275}>
+<Card sx={{ maxWidth: 275 }}>
   <Heading size={1} fontWeight={500}>
     Card heading
   </Heading>
@@ -30,17 +30,6 @@ description: Useful to group information and actions about a single subject.
   }}
 />
 
-<SystemProps
-  props={[
-    'textColor',
-    'backgroundColor',
-    'margin',
-    'padding',
-    'width',
-    'maxWidth',
-  ]}
-/>
-
 ## Examples
 
 ### Variants
@@ -48,7 +37,7 @@ description: Useful to group information and actions about a single subject.
 There are 3 variants to choose from.
 
 ```js live
-<Card maxWidth={275} variant="shadow">
+<Card variant="shadow" sx={{ maxWidth: 275 }}>
   <Heading size={1} fontWeight={500}>
     Shadow card
   </Heading>
@@ -60,7 +49,7 @@ There are 3 variants to choose from.
 ```
 
 ```js live
-<Card maxWidth={275} variant="ghost">
+<Card variant="ghost" sx={{ maxWidth: 275 }}>
   <Heading size={1} fontWeight={500}>
     Ghost card
   </Heading>

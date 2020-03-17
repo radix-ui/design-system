@@ -19,7 +19,13 @@ export function ThemeSection() {
       {Object.entries(theme.fonts).map(([key, value]) => (
         <Box mb={3} key={key}>
           <SectionTitle>{key}</SectionTitle>
-          <Text as="p" size={key === 'mono' ? 7 : 8} mt={2} mb={6} lineHeight={5} fontFamily={key}>
+          <Text
+            as="p"
+            size={key === 'mono' ? 7 : 8}
+            mt={2}
+            mb={6}
+            sx={{ lineHeight: 5, fontFamily: key }}
+          >
             Voix ambiguë d’un cœur qui, au zéphyr, préfère les jattes de kiwis
           </Text>
         </Box>
@@ -28,7 +34,7 @@ export function ThemeSection() {
       <Divider my={5} />
 
       <Heading my={4}>Font sizes</Heading>
-      <Grid alignItems="baseline" gridAutoFlow="column" gridColumnGap={4}>
+      <Grid sx={{ alignItems: 'baseline', gridAutoFlow: 'column', columnGap: 4 }}>
         {Object.entries(theme.fontSizes)
           .reverse()
           .map(([key, value]) => (
@@ -93,10 +99,12 @@ export function ThemeSection() {
 
 const ColorGrid = props => (
   <Grid
-    gridGap={4}
-    gridTemplateColumns={['repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(4, 1fr)', 'repeat(5, 1fr)']}
     mt={2}
     {...props}
+    sx={{
+      gridTemplateColumns: ['repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(4, 1fr)', 'repeat(5, 1fr)'],
+      gap: 4,
+    }}
   />
 );
 
@@ -109,8 +117,8 @@ const ColorCard = ({ color, name, props }) => (
     <Box>
       <Card
         p={0}
-        border={0}
-        style={{
+        sx={{
+          border: 0,
           backgroundImage: checkerboard,
           backgroundSize: '10px 10px',
           backgroundPosition: '0 0, 5px 0, 5px -5px, 0px 5px',
@@ -118,8 +126,8 @@ const ColorCard = ({ color, name, props }) => (
         }}
       >
         <AspectRatio
-          bg={color}
-          css={{
+          sx={{
+            bg: color,
             borderRadius: 'inherit',
             '& > *': {
               borderRadius: 'inherit',
@@ -132,7 +140,7 @@ const ColorCard = ({ color, name, props }) => (
         <RadixHeading as="h4" size={0} fontWeight={500} mt={2} mb={1}>
           <span style={{ textTransform: 'capitalize' }}>{name}</span>
         </RadixHeading>
-        <Text as="p" size={0} textColor="gray700" mb={2}>
+        <Text as="p" size={0} mb={2} sx={{ color: 'gray700' }}>
           <span style={{ textTransform: 'uppercase' }}>
             {color.replace(/\(|\)/g, ' ').replace('.', '0.')}
           </span>
@@ -154,8 +162,10 @@ const SectionTitle = props => (
   <Text
     size={2}
     marginY={0}
-    textColor="gray700"
-    style={{ textTransform: 'capitalize' }}
     {...props}
+    sx={{
+      color: 'gray700',
+      textTransform: 'capitalize',
+    }}
   />
 );
