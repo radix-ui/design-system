@@ -48,8 +48,8 @@ storiesOf('Components|Container', module).add('default', () => (
 
     <Box mb={4}>
       <Container size={3}>
-        <Box backgroundColor="blue600" p={3}>
-          <Text as="p" textAlign="center">
+        <Box p={3} sx={{ backgroundColor: 'blue600' }}>
+          <Text as="p" sx={{ textAlign: 'center' }}>
             Size 3
           </Text>
         </Box>
@@ -58,8 +58,8 @@ storiesOf('Components|Container', module).add('default', () => (
 
     <Box mb={4}>
       <Container size={4}>
-        <Box backgroundColor="blue600" p={3}>
-          <Text as="p" textAlign="center">
+        <Box p={3} sx={{ backgroundColor: 'blue600' }}>
+          <Text as="p" sx={{ textAlign: 'center' }}>
             Size 4
           </Text>
         </Box>
