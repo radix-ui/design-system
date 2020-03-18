@@ -28,6 +28,7 @@ export const ToggleButton = React.forwardRef<HTMLButtonElement, ToggleButtonProp
               border: '1px solid',
               wordSpacing: '-0.025em',
               letterSpacing: '0.01em',
+              zIndex: 0,
               '&:first-child': {
                 borderTopLeftRadius: theme.radii[1],
                 borderBottomLeftRadius: theme.radii[1],
@@ -37,11 +38,16 @@ export const ToggleButton = React.forwardRef<HTMLButtonElement, ToggleButtonProp
                 borderBottomRightRadius: theme.radii[1],
               },
             },
+            hover: {
+              zIndex: 1,
+            },
             focus: {
               borderRadius: theme.radii[1],
+              zIndex: 3,
             },
             toggled: {
               borderRadius: theme.radii[1],
+              zIndex: 2,
             },
           },
         },

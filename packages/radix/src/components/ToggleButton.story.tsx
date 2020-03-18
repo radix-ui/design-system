@@ -13,16 +13,7 @@ function ToggleButtonStory() {
   return (
     <>
       <Box my={6} sx={{ width: '135px' }}>
-        <Flex
-          role="group"
-          sx={{
-            '& > *': { position: 'relative' },
-            '& > * + *': { ml: '-1px !important' },
-            '& > *:hover': { zIndex: 1 },
-            '& > *[aria-pressed=true]': { zIndex: 2 },
-            '& > *:focus': { zIndex: 3 },
-          }}
-        >
+        <Flex role="group" sx={{ '& > * + *': { ml: '-1px !important' } }}>
           <ToggleButton
             size={0}
             isToggled={value === 'left'}
@@ -48,16 +39,7 @@ function ToggleButtonStory() {
       </Box>
 
       <Box my={6} sx={{ width: '135px' }}>
-        <Flex
-          role="group"
-          sx={{
-            '& > *': { position: 'relative' },
-            '& > * + *': { ml: '-1px !important' },
-            '& > *:hover': { zIndex: 1 },
-            '& > *[aria-pressed=true]': { zIndex: 2 },
-            '& > *:focus': { zIndex: 3 },
-          }}
-        >
+        <Flex role="group" sx={{ '& > * + *': { ml: '-1px !important' } }}>
           <ToggleButton
             size={0}
             isToggled={value === 'left'}
@@ -83,16 +65,7 @@ function ToggleButtonStory() {
       </Box>
 
       <Box my={6} sx={{ width: '135px' }}>
-        <Flex
-          role="group"
-          sx={{
-            '& > *': { position: 'relative' },
-            '& > * + *': { ml: '-1px !important' },
-            '& > *:hover': { zIndex: 1 },
-            '& > *[aria-pressed=true]': { zIndex: 2 },
-            '& > *:focus': { zIndex: 3 },
-          }}
-        >
+        <Flex role="group" sx={{ '& > * + *': { ml: '-1px !important' } }}>
           <ToggleButton
             size={0}
             variant="fade"
@@ -121,16 +94,7 @@ function ToggleButtonStory() {
       </Box>
 
       <Box my={6} sx={{ width: '180px' }}>
-        <Flex
-          role="group"
-          sx={{
-            '& > *': { position: 'relative' },
-            '& > * + *': { ml: '-1px !important' },
-            '& > *:hover': { zIndex: 1 },
-            '& > *[aria-pressed=true]': { zIndex: 2 },
-            '& > *:focus': { zIndex: 3 },
-          }}
-        >
+        <Flex role="group" sx={{ '& > * + *': { ml: '-1px !important' } }}>
           <ToggleButton
             isToggled={value === 'left'}
             onToggle={isToggled => isToggled && setValue('left')}
@@ -153,16 +117,7 @@ function ToggleButtonStory() {
       </Box>
 
       <Box my={6} sx={{ width: '180px' }}>
-        <Flex
-          role="group"
-          sx={{
-            '& > *': { position: 'relative' },
-            '& > * + *': { ml: '-1px !important' },
-            '& > *:hover': { zIndex: 1 },
-            '& > *[aria-pressed=true]': { zIndex: 2 },
-            '& > *:focus': { zIndex: 3 },
-          }}
-        >
+        <Flex role="group" sx={{ '& > * + *': { ml: '-1px !important' } }}>
           <ToggleButton
             isToggled={value === 'left'}
             onToggle={isToggled => isToggled && setValue('left')}
@@ -185,16 +140,7 @@ function ToggleButtonStory() {
       </Box>
 
       <Box my={6} sx={{ width: '180px' }}>
-        <Flex
-          role="group"
-          sx={{
-            '& > *': { position: 'relative' },
-            '& > * + *': { ml: '-1px !important' },
-            '& > *:hover': { zIndex: 1 },
-            '& > *[aria-pressed=true]': { zIndex: 2 },
-            '& > *:focus': { zIndex: 3 },
-          }}
-        >
+        <Flex role="group" sx={{ '& > * + *': { ml: '-1px !important' } }}>
           <ToggleButton
             variant="fade"
             isToggled={value === 'left'}
@@ -223,16 +169,7 @@ function ToggleButtonStory() {
         <Text size={1} my={1} as="p">
           With Tooltip
         </Text>
-        <Flex
-          role="group"
-          sx={{
-            '& > *': { position: 'relative' },
-            '& > * + *': { ml: '-1px !important' },
-            '& > *:hover': { zIndex: 1 },
-            '& > *[aria-pressed=true]': { zIndex: 2 },
-            '& > *:focus': { zIndex: 3 },
-          }}
-        >
+        <Flex role="group" sx={{ '& > * + *': { ml: '-1px !important' } }}>
           <Tooltip label="Left" align="center">
             <ToggleButton
               isToggled={value === 'left'}
