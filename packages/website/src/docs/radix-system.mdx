@@ -20,7 +20,7 @@ Radix System is currently under heavy development, but can be installed by runni
 npm install @modulz/radix-system
 ```
 
-<br/>
+<br />
 or
 
 ```js
@@ -45,14 +45,11 @@ Import style functions:
 import styled from 'styled-components';
 import { margin, backgroundColor, compose } from '@modulz/radix-system';
 
-const styleProps = compose(
-  margin,
-  backgroundColor
-);
+const styleProps = compose(margin, backgroundColor);
 const Box = styled('div')(styleProps);
 
 const App = () => (
-  <Box my={4} bg="blue600">
+  <Box my={4} sx={{ bg: 'blue600' }}>
     Hey there 👋
   </Box>
 );
@@ -71,15 +68,12 @@ import {
   compose,
 } from '@modulz/radix-system';
 
-const styleProps = compose(
-  margin,
-  backgroundColor
-);
+const styleProps = compose(margin, backgroundColor);
 type BoxProps = MarginProps & BackgroundColorProps;
 const Box = styled('div') < BoxProps > styleProps;
 
 const App = () => (
-  <Box my={4} bg="blue600">
+  <Box my={4} sx={{ bg: 'blue600' }}>
     Hey there 👋
   </Box>
 );

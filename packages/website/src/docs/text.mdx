@@ -21,10 +21,10 @@ description: A primitive useful for rendering text.
       default: '2',
       description: 'The size to apply',
     },
-    fontWeight: {
-      type: '400 | 500',
-      default: '400',
-      description: 'The font weight to apply',
+    weight: {
+      type: 'normal | medium',
+      default: 'normal',
+      description: 'The weight to apply',
     },
     truncate: {
       type: 'Boolean',
@@ -32,19 +32,6 @@ description: A primitive useful for rendering text.
       description: 'Whether it should truncate or not',
     },
   }}
-/>
-<SystemProps
-  props={[
-    'textColor',
-    'margin',
-    'padding',
-    'fontFamily',
-    'fontSize',
-    'fontStyle',
-    'fontWeight',
-    'textAlign',
-    'lineHeight',
-  ]}
 />
 
 ## Examples
@@ -72,8 +59,8 @@ There are 11 sizes to choose from. Each size handles its own `font-size` and `le
 There are 2 weight options to choose from.
 
 ```js live
-<Text as="p" fontWeight="400">Text component</Text>
-<Text as="p" fontWeight="500">Text component</Text>
+<Text as="p" weight="normal">Text component</Text>
+<Text as="p" weight="medium">Text component</Text>
 ```
 
 ### Text truncation

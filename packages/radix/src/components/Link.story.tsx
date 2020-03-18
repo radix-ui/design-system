@@ -9,12 +9,12 @@ storiesOf('Components|Link', module).add('default', () => (
       <Link href="https://modulz.app">Modulz</Link>
     </Box>
     <Box mb={4}>
-      <Link href="https://modulz.app" textColor="red">
+      <Link href="https://modulz.app" sx={{ color: 'red' }}>
         Modulz
       </Link>
     </Box>
     <Box mb={4}>
-      <Link href="https://modulz.app" fontSize={7}>
+      <Link href="https://modulz.app" sx={{ fontSize: 7 }}>
         Modulz
       </Link>
     </Box>

@@ -7,7 +7,7 @@ import { Heading } from './Heading';
 
 storiesOf('Components|Divider', module).add('default', () => (
   <>
-    <Box my={8} mx={4} textAlign="center">
+    <Box my={8} mx={4} sx={{ textAlign: 'center' }}>
       <Heading mb={5}>Heading</Heading>
       <Text>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione sint numquam neque qui
@@ -19,8 +19,8 @@ storiesOf('Components|Divider', module).add('default', () => (
       <Divider my={6} size={1} mx="auto" />
       <Divider my={6} size={2} mx="auto" />
       <Heading mb={5}>Custom sizes</Heading>
-      <Divider my={6} maxWidth="50%" mx="auto" />
-      <Divider my={6} maxWidth={200} mx="auto" />
+      <Divider my={6} mx="auto" sx={{ maxWidth: '50%' }} />
+      <Divider my={6} mx="auto" sx={{ maxWidth: 200 }} />
     </Box>
   </>
 ));

@@ -5,17 +5,17 @@ description: A primitive useful for grid layouts.
 ---
 
 ```js live
-<Grid gridTemplateColumns="repeat(5, 1fr)" gridGap={6}>
-  <AspectRatio bg="blue600" />
-  <AspectRatio bg="blue600" />
-  <AspectRatio bg="blue600" />
-  <AspectRatio bg="blue600" />
-  <AspectRatio bg="blue600" />
-  <AspectRatio bg="blue600" />
-  <AspectRatio bg="blue600" />
-  <AspectRatio bg="blue600" />
-  <AspectRatio bg="blue600" />
-  <AspectRatio bg="blue600" />
+<Grid sx={{ gridTemplateColumns: 'repeat(5, 1fr)', gap: 6 }}>
+  <AspectRatio sx={{ bg: 'blue600' }} />
+  <AspectRatio sx={{ bg: 'blue600' }} />
+  <AspectRatio sx={{ bg: 'blue600' }} />
+  <AspectRatio sx={{ bg: 'blue600' }} />
+  <AspectRatio sx={{ bg: 'blue600' }} />
+  <AspectRatio sx={{ bg: 'blue600' }} />
+  <AspectRatio sx={{ bg: 'blue600' }} />
+  <AspectRatio sx={{ bg: 'blue600' }} />
+  <AspectRatio sx={{ bg: 'blue600' }} />
+  <AspectRatio sx={{ bg: 'blue600' }} />
 </Grid>
 ```
 
@@ -26,8 +26,4 @@ description: A primitive useful for grid layouts.
       description: 'The content to render',
     },
   }}
-/>
-
-<SystemProps
-  props={['alignContent', 'alignItems', 'gridSet', 'margin', 'padding']}
 />

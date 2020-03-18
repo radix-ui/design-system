@@ -4,7 +4,7 @@ import { Box } from './Box';
 import { Table, Thead, Tbody, Tr, Th, Td } from './Table';
 
 storiesOf('Components|Table', module).add('default', () => (
-  <Box maxWidth="300px">
+  <Box sx={{ maxWidth: '300px' }}>
     <Table>
       <Thead>
         <Tr>

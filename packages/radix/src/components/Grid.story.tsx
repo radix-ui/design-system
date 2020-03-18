@@ -5,50 +5,50 @@ import { Grid } from './Grid';
 
 storiesOf('Components|Grid', module).add('default', () => (
   <>
-    <Box mb={4} maxWidth={450}>
-      <Grid gridTemplateColumns="repeat(2, 1fr)" gridGap={4} mb={2}>
+    <Box mb={4} sx={{ maxWidth: 450 }}>
+      <Grid mb={2} sx={{ gridTemplateColumns: 'repeat(2, 1fr)', gap: 4 }}>
         <div>
-          <Box bg="blue600" p={1} />
+          <Box p={1} sx={{ bg: 'blue600' }} />
         </div>
         <div>
-          <Box bg="blue600" p={1} />
-        </div>
-      </Grid>
-      <Grid gridTemplateColumns="repeat(5, 1fr)" gridGap={4} mb={2}>
-        <div>
-          <Box bg="blue600" p={1} />
-        </div>
-        <div>
-          <Box bg="blue600" p={1} />
-        </div>
-        <div>
-          <Box bg="blue600" p={1} />
-        </div>
-        <div>
-          <Box bg="blue600" p={1} />
-        </div>
-        <div>
-          <Box bg="blue600" p={1} />
+          <Box p={1} sx={{ bg: 'blue600' }} />
         </div>
       </Grid>
-      <Grid gridTemplateColumns="repeat(3, 1fr)" gridGap={4}>
+      <Grid mb={2} sx={{ gridTemplateColumns: 'repeat(5, 1fr)', gap: 4 }}>
         <div>
-          <Box bg="blue600" p={1} />
+          <Box p={1} sx={{ bg: 'blue600' }} />
         </div>
         <div>
-          <Box bg="blue600" p={1} />
+          <Box p={1} sx={{ bg: 'blue600' }} />
         </div>
         <div>
-          <Box bg="blue600" p={1} />
+          <Box p={1} sx={{ bg: 'blue600' }} />
         </div>
         <div>
-          <Box bg="blue600" p={1} />
+          <Box p={1} sx={{ bg: 'blue600' }} />
         </div>
         <div>
-          <Box bg="blue600" p={1} />
+          <Box p={1} sx={{ bg: 'blue600' }} />
+        </div>
+      </Grid>
+      <Grid sx={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: 4 }}>
+        <div>
+          <Box p={1} sx={{ bg: 'blue600' }} />
         </div>
         <div>
-          <Box bg="blue600" p={1} />
+          <Box p={1} sx={{ bg: 'blue600' }} />
+        </div>
+        <div>
+          <Box p={1} sx={{ bg: 'blue600' }} />
+        </div>
+        <div>
+          <Box p={1} sx={{ bg: 'blue600' }} />
+        </div>
+        <div>
+          <Box p={1} sx={{ bg: 'blue600' }} />
+        </div>
+        <div>
+          <Box p={1} sx={{ bg: 'blue600' }} />
         </div>
       </Grid>
     </Box>

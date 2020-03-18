@@ -16,7 +16,7 @@ function DialogStory() {
         </Text>
 
         <Dialog onClose={() => setOpen1(false)} isOpen={open1}>
-          <Box maxWidth="600px" padding="4">
+          <Box padding="4" sx={{ maxWidth: '600px' }}>
             <Text>Hello from Dialog</Text>
             <Button ml="3" onClick={() => setOpen1(false)}>
               Close
@@ -32,17 +32,17 @@ function DialogStory() {
         </Text>
 
         <Dialog onClose={() => setOpen2(false)} isOpen={open2}>
-          <Box maxWidth="600px" padding="4">
+          <Box padding="4" sx={{ maxWidth: '600px' }}>
             <Text>Hello from Dialog</Text>
             <Button ml="3" onClick={() => setOpen2(false)}>
               Close
             </Button>
-            <Box height="100px" bg="gray200" mt="3" />
-            <Box height="100px" bg="gray300" />
-            <Box height="100px" bg="gray400" />
-            <Box height="100px" bg="gray500" />
-            <Box height="100px" bg="gray700" />
-            <Box height="100px" bg="gray800" mb="3" />
+            <Box mt="3" sx={{ height: '100px', bg: 'gray200' }} />
+            <Box sx={{ height: '100px', bg: 'gray300' }} />
+            <Box sx={{ height: '100px', bg: 'gray400' }} />
+            <Box sx={{ height: '100px', bg: 'gray500' }} />
+            <Box sx={{ height: '100px', bg: 'gray700' }} />
+            <Box mb="3" sx={{ height: '100px', bg: 'gray800' }} />
           </Box>
         </Dialog>
 
