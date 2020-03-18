@@ -6,23 +6,25 @@ import { Input } from './Input';
 import { MagnifyingGlassIcon } from '@modulz/radix-icons';
 
 storiesOf('Components|Input', module).add('default', () => (
-  <Box maxWidth="300px">
+  <Box sx={{ maxWidth: '300px' }}>
     <Box mb="4">
       <Input placeholder="Your email" />
     </Box>
 
-    <Box mb="4" position="relative">
+    <Box mb="4" sx={{ position: 'relative' }}>
       <Input placeholder="e.g. joe@example.com" type="email" paddingRight={5} />
 
       <Box
-        position="absolute"
-        height="100%"
-        top={0}
-        right={1}
-        color="gray700"
-        style={{ pointerEvents: 'none' }}
+        sx={{
+          position: 'absolute',
+          height: '100%',
+          top: 0,
+          right: 1,
+          color: 'gray700',
+          pointerEvents: 'none',
+        }}
       >
-        <Flex alignItems="center" height="100%">
+        <Flex sx={{ alignItems: 'center', height: '100%' }}>
           <MagnifyingGlassIcon />
         </Flex>
       </Box>
@@ -32,18 +34,20 @@ storiesOf('Components|Input', module).add('default', () => (
       <Input size={1} placeholder="Your email" />
     </Box>
 
-    <Box mb="4" position="relative">
+    <Box mb="4" sx={{ position: 'relative' }}>
       <Input size={1} placeholder="LG Monitor" type="text" paddingLeft={6} />
 
       <Box
-        position="absolute"
-        height="100%"
-        top={0}
-        left={1}
-        color="gray700"
-        style={{ pointerEvents: 'none' }}
+        sx={{
+          position: 'absolute',
+          height: '100%',
+          top: 0,
+          left: 1,
+          color: 'gray700',
+          pointerEvents: 'none',
+        }}
       >
-        <Flex alignItems="center" height="100%">
+        <Flex sx={{ alignItems: 'center', height: '100%' }}>
           <MagnifyingGlassIcon />
         </Flex>
       </Box>

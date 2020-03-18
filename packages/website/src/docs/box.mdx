@@ -5,7 +5,7 @@ description: A primitive useful for layout.
 ---
 
 ```js live
-<Box p={6} textColor="white" bg="blue600" borderRadius={1}>
+<Box p={6} sx={{ color: 'white', bg: 'blue600', borderRadius: 1 }}>
   Box
 </Box>
 ```
@@ -17,29 +17,4 @@ description: A primitive useful for layout.
       description: 'The content to render',
     },
   }}
-/>
-
-<SystemProps
-  props={[
-    'border',
-    'borderRadius',
-    'boxShadow',
-    'backgroundColor',
-    'display',
-    'opacity',
-    'height',
-    'justifySelf',
-    'margin',
-    'maxWidth',
-    'maxHeight',
-    'minHeight',
-    'minWidth',
-    'overflow',
-    'padding',
-    'positionSet',
-    'textAlign',
-    'textColor',
-    'width',
-    'flexItemSet',
-  ]}
 />

@@ -4,25 +4,11 @@ component: Tooltip
 description: An accessible Tooltip component that shows information related to an element when it is hovered or focused.
 ---
 
-<Box display={{small:'block', large:'none'}}>
-
 ```js live
 <Tooltip label="Hey there, now try focusing" side="bottom" align="center">
   <Button size={1}>Hover me</Button>
 </Tooltip>
 ```
-
-</Box>
-
-<Box display={{small:'none', large:'block'}}>
-
-```js live
-<Tooltip label="Hey there, now try focusing" side="bottom" align="center">
-  <Button size={1}>Hover me</Button>
-</Tooltip>
-```
-
-</Box>
 
 <PropsTable
   data={{

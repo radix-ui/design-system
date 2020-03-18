@@ -38,7 +38,7 @@ description: Useful for displaying a list of contextual actions on right click.
         }
       >
         <RightClickable>
-          <Box width={9} height={9} bg="blue600" borderRadius={1} />
+          <Box sx={{ width: 9, height: 9, bg: 'blue600', borderRadius: 1 }} />
         </RightClickable>
       </RightClickMenu>
     </>
@@ -59,9 +59,13 @@ description: Useful for displaying a list of contextual actions on right click.
     },
   }}
 />
-<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
+
+
+<Heading as="h2" size={4} mb={2} mt={6} sx={{ lineHeight: 4 }}>
   RightClickable
 </Heading>
+
+
 <PropsTable
   data={{
     children: {

@@ -8,7 +8,6 @@ export { Button, ButtonProps } from './components/Button';
 export { Card, CardProps } from './components/Card';
 export { CardLink, CardLinkProps } from './components/CardLink';
 export { Checkbox, CheckboxProps } from './components/Checkbox';
-export { CheckboxButton, CheckboxButtonProps } from './components/CheckboxButton';
 export { Code, CodeProps } from './components/Code';
 export { Container, ContainerProps } from './components/Container';
 export { Dialog, DialogProps } from './components/Dialog';
@@ -44,7 +43,6 @@ export {
   MenuItemSeparator,
   MenuItemSeparatorProps,
 } from './components/Menu';
-export { PillNav, PillNavProps, PillButton, PillButtonProps } from './components/PillNav';
 export { Pipe, PipeProps } from './components/Pipe';
 export { Popover, PopoverProps } from './components/Popover';
 export { Portal, PortalProps } from './components/Portal';
@@ -83,12 +81,7 @@ export {
 } from './components/Table';
 export { Text, TextProps } from './components/Text';
 export { Textarea, TextareaProps } from './components/Textarea';
-export {
-  ToggleButtonGroup,
-  ToggleButtonGroupProps,
-  ToggleButton,
-  ToggleButtonProps,
-} from './components/ToggleButton';
+export { ToggleButton, ToggleButtonProps } from './components/ToggleButton';
 export { Tooltip, TooltipProps } from './components/Tooltip';
 export { VisuallyHidden, VisuallyHiddenProps } from './components/VisuallyHidden';
 

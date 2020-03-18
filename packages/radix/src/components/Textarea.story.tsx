@@ -4,7 +4,7 @@ import { Box } from './Box';
 import { Textarea } from './Textarea';
 
 storiesOf('Components|Textara', module).add('default', () => (
-  <Box maxWidth="300px">
+  <Box sx={{ maxWidth: '300px' }}>
     <Box mb="4">
       <Textarea placeholder="Your email" />
     </Box>
