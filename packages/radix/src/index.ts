@@ -43,7 +43,6 @@ export {
   MenuItemSeparator,
   MenuItemSeparatorProps,
 } from './components/Menu';
-export { PillNav, PillNavProps, PillButton, PillButtonProps } from './components/PillNav';
 export { Pipe, PipeProps } from './components/Pipe';
 export { Popover, PopoverProps } from './components/Popover';
 export { Portal, PortalProps } from './components/Portal';
