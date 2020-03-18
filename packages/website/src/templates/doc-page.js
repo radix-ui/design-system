@@ -25,14 +25,10 @@ export const components = {
   inlineCode: RC.Code,
   a: RC.Link,
   PropsTable: PropsTable,
-  h1: props => <RC.Heading {...props} fontWeight={500} size={3} mt={8} mb={4} />,
-  h2: props => <RC.Heading {...props} as="h2" fontWeight={500} size={2} mt={8} mb={4} />,
-  h3: props => (
-    <RC.Heading {...props} as="h3" fontWeight={500} size={1} mt={7} mb={1} sx={{ lineHeight: 1 }} />
-  ),
-  h4: props => (
-    <RC.Heading {...props} as="h4" fontWeight={500} size={0} mt={6} mb={1} sx={{ lineHeight: 2 }} />
-  ),
+  h1: props => <RC.Heading {...props} size={3} mt={8} mb={4} />,
+  h2: props => <RC.Heading {...props} as="h2" size={2} mt={8} mb={4} />,
+  h3: props => <RC.Heading {...props} as="h3" size={1} mt={7} mb={1} sx={{ lineHeight: 1 }} />,
+  h4: props => <RC.Heading {...props} as="h4" size={0} mt={6} mb={1} sx={{ lineHeight: 2 }} />,
   p: props => <RC.Text {...props} as="p" size={3} sx={{ lineHeight: 2, color: 'gray700' }} />,
   Prop: props => (
     <RC.Box mb={3}>
@@ -65,10 +61,16 @@ function DocPageTemplate({ data, location, ...props }) {
 
       <MDXProvider components={components}>
         <RC.Box>
-          <RC.Heading size={4} fontWeight={500} mb={2} sx={{ lineHeight: 4 }}>
+          <RC.Heading size={4} mb={2} sx={{ lineHeight: 4 }}>
             {data.mdx.frontmatter.title}
           </RC.Heading>
-          <RC.Heading size={1} mb={7} as="h2" sx={{ lineHeight: 3, color: 'gray700' }}>
+          <RC.Heading
+            size={1}
+            weight="normal"
+            mb={7}
+            as="h2"
+            sx={{ lineHeight: 3, color: 'gray700' }}
+          >
             {data.mdx.frontmatter.description}
           </RC.Heading>
           {children}
