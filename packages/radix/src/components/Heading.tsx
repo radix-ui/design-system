@@ -21,9 +21,8 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
         text: {
           normal: {
             fontFamily: theme.fonts.normal,
-            fontWeight: 400,
-            lineHeight: 1.2,
-            color: theme.colors.gray900,
+            fontWeight: 500,
+            color: theme.colors.gray800,
           },
         },
       },
@@ -50,8 +49,8 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
               normal: {
                 fontSize: theme.fontSizes[3],
                 lineHeight: theme.lineHeights[2],
-                letterSpacing: props.weight === 'medium' ? '-0.025em' : '-0.01em',
-                textIndent: '-0.01em',
+                letterSpacing: '-0.005em',
+                textIndent: '-0.0025em',
               },
             },
           },
@@ -60,8 +59,8 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
               normal: {
                 fontSize: theme.fontSizes[5],
                 lineHeight: theme.lineHeights[2],
-                letterSpacing: props.weight === 'medium' ? '-0.035em' : '-0.02em',
-                textIndent: '-0.02em',
+                letterSpacing: '-0.008em',
+                textIndent: '-0.004em',
               },
             },
           },
@@ -70,8 +69,8 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
               normal: {
                 fontSize: theme.fontSizes[7],
                 lineHeight: theme.lineHeights[3],
-                letterSpacing: props.weight === 'medium' ? '-0.04em' : '-0.02em',
-                textIndent: '-0.025em',
+                letterSpacing: '-0.013em',
+                textIndent: '-0.00625em',
               },
             },
           },
@@ -80,8 +79,8 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
               normal: {
                 fontSize: theme.fontSizes[8],
                 lineHeight: theme.lineHeights[4],
-                letterSpacing: props.weight === 'medium' ? '-0.045em' : '-0.025em',
-                textIndent: '-0.03em',
+                letterSpacing: '-0.021em',
+                textIndent: '-0.0105em',
               },
             },
           },
@@ -90,8 +89,8 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
               normal: {
                 fontSize: theme.fontSizes[9],
                 lineHeight: theme.lineHeights[5],
-                letterSpacing: props.weight === 'medium' ? '-0.045em' : '-0.025em',
-                textIndent: '-0.04em',
+                letterSpacing: '-0.034em',
+                textIndent: '-0.017em',
               },
             },
           },
@@ -100,8 +99,8 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
               normal: {
                 fontSize: theme.fontSizes[10],
                 lineHeight: theme.lineHeights[9],
-                letterSpacing: props.weight === 'medium' ? '-0.05em' : '-0.03em',
-                textIndent: '-0.04em',
+                letterSpacing: '-0.055em',
+                textIndent: '-0.0275em',
               },
             },
           },

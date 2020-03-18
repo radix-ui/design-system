@@ -64,7 +64,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               textarea: {
                 normal: {
                   fontSize: theme.fontSizes[1],
-                  letterSpacing: '-0.01em',
+                  letterSpacing: '-0.001em',
                   lineHeight: theme.lineHeights[1],
                   padding: theme.space[1],
                 },
@@ -74,7 +74,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               textarea: {
                 normal: {
                   fontSize: theme.fontSizes[2],
-                  letterSpacing: '-0.01em',
+                  letterSpacing: '-0.002em',
                   lineHeight: theme.lineHeights[1],
                   paddingTop: theme.space[1],
                   paddingBottom: theme.space[1],
