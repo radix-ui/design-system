@@ -20,9 +20,7 @@ storiesOf('Components|Hover', module).add('default', () => (
         {isHovered => {
           return (
             <Card>
-              <Heading size={1} fontWeight={500}>
-                Help us Kickstart Modulz
-              </Heading>
+              <Heading size={1}>Help us Kickstart Modulz</Heading>
               <Text as="p" size={3} mt={3} sx={{ lineHeight: 1.2, color: 'gray700' }}>
                 Who we are, what we're building and how you can support us.
               </Text>

@@ -120,7 +120,7 @@ function App({ element, props }) {
               <Box sx={{ display: [navOpen ? 'block' : 'none', 'block'] }}>
                 <Divider mb={1} />
                 <List>
-                  <Heading size={0} fontWeight={500} my={2} mx={5}>
+                  <Heading size={0} my={2} mx={5}>
                     Overview
                   </Heading>
                   {data.pinned.edges.map(({ node }) => (
@@ -138,7 +138,7 @@ function App({ element, props }) {
                 <Divider mb={1} />
 
                 <List>
-                  <Heading size={0} fontWeight={500} my={2} mx={5}>
+                  <Heading size={0} my={2} mx={5}>
                     Components
                   </Heading>
                   {data.components.edges.map(({ node }) => (
@@ -156,7 +156,7 @@ function App({ element, props }) {
                 <Divider mb={1} />
 
                 {/* <List>
-                  <Heading size={0} fontWeight={500} mx={5} mb={2} mt={2}>
+                  <Heading size={0}  mx={5} mb={2} mt={2}>
                     Recipes
                   </Heading>
                   {data.recipes.edges.map(({ node }) => (
@@ -174,7 +174,7 @@ function App({ element, props }) {
                 <Divider mb={1} /> */}
 
                 <List>
-                  <Heading size={0} fontWeight={500} mx={5} mb={2} mt={2}>
+                  <Heading size={0} mx={5} mb={2} mt={2}>
                     Github links
                   </Heading>
 

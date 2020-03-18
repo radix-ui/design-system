@@ -2,11 +2,11 @@ import React from 'react';
 import { Text as TextPrimitive, TextProps as TextPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
-type FontWeight = 400 | 500;
+type Weight = 'normal' | 'medium';
 type Size = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
 export type TextProps = TextPrimitiveProps & {
-  fontWeight?: FontWeight;
+  weight?: Weight;
   size?: Size;
   truncate?: boolean;
   as?: any;
@@ -28,15 +28,15 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
         },
       },
       variants: {
-        fontWeight: {
-          400: {
+        weight: {
+          normal: {
             text: {
               normal: {
                 fontWeight: 400,
               },
             },
           },
-          500: {
+          medium: {
             text: {
               normal: {
                 fontWeight: 500,
@@ -50,7 +50,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
               normal: {
                 fontSize: theme.fontSizes[0],
                 lineHeight: theme.lineHeights[0],
-                letterSpacing: props.fontWeight === 500 ? '-0.01em' : 0,
+                letterSpacing: props.weight === 'medium' ? '-0.01em' : 0,
               },
             },
           },
@@ -59,7 +59,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
               normal: {
                 fontSize: theme.fontSizes[1],
                 lineHeight: theme.lineHeights[2],
-                letterSpacing: props.fontWeight === 500 ? '-0.02em' : '-0.01em',
+                letterSpacing: props.weight === 'medium' ? '-0.02em' : '-0.01em',
               },
             },
           },
@@ -68,7 +68,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
               normal: {
                 fontSize: theme.fontSizes[2],
                 lineHeight: theme.lineHeights[2],
-                letterSpacing: props.fontWeight === 500 ? '-0.02em' : '-0.01em',
+                letterSpacing: props.weight === 'medium' ? '-0.02em' : '-0.01em',
               },
             },
           },
@@ -77,7 +77,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
               normal: {
                 fontSize: theme.fontSizes[3],
                 lineHeight: theme.lineHeights[2],
-                letterSpacing: props.fontWeight === 500 ? '-0.025em' : '-0.01em',
+                letterSpacing: props.weight === 'medium' ? '-0.025em' : '-0.01em',
               },
             },
           },
@@ -86,7 +86,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
               normal: {
                 fontSize: theme.fontSizes[4],
                 lineHeight: theme.lineHeights[2],
-                letterSpacing: props.fontWeight === 500 ? '-0.03em' : '-0.015em',
+                letterSpacing: props.weight === 'medium' ? '-0.03em' : '-0.015em',
               },
             },
           },
@@ -95,7 +95,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
               normal: {
                 fontSize: theme.fontSizes[5],
                 lineHeight: theme.lineHeights[2],
-                letterSpacing: props.fontWeight === 500 ? '-0.035em' : '-0.02em',
+                letterSpacing: props.weight === 'medium' ? '-0.035em' : '-0.02em',
               },
             },
           },
@@ -104,7 +104,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
               normal: {
                 fontSize: theme.fontSizes[6],
                 lineHeight: theme.lineHeights[3],
-                letterSpacing: props.fontWeight === 500 ? '-0.04em' : '-0.02em',
+                letterSpacing: props.weight === 'medium' ? '-0.04em' : '-0.02em',
               },
             },
           },
@@ -113,7 +113,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
               normal: {
                 fontSize: theme.fontSizes[7],
                 lineHeight: theme.lineHeights[3],
-                letterSpacing: props.fontWeight === 500 ? '-0.04em' : '-0.02em',
+                letterSpacing: props.weight === 'medium' ? '-0.04em' : '-0.02em',
               },
             },
           },
@@ -122,7 +122,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
               normal: {
                 fontSize: theme.fontSizes[8],
                 lineHeight: theme.lineHeights[4],
-                letterSpacing: props.fontWeight === 500 ? '-0.045em' : '-0.025em',
+                letterSpacing: props.weight === 'medium' ? '-0.045em' : '-0.025em',
               },
             },
           },
@@ -131,7 +131,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
               normal: {
                 fontSize: theme.fontSizes[9],
                 lineHeight: theme.lineHeights[5],
-                letterSpacing: props.fontWeight === 500 ? '-0.045em' : '-0.025em',
+                letterSpacing: props.weight === 'medium' ? '-0.045em' : '-0.025em',
               },
             },
           },
@@ -140,7 +140,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
               normal: {
                 fontSize: theme.fontSizes[10],
                 lineHeight: theme.lineHeights[9],
-                letterSpacing: props.fontWeight === 500 ? '-0.05em' : '-0.03em',
+                letterSpacing: props.weight === 'medium' ? '-0.05em' : '-0.03em',
               },
             },
           },
@@ -161,4 +161,4 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
   />
 ));
 
-Text.defaultProps = { truncate: false };
+Text.defaultProps = { truncate: false, weight: 'normal' };

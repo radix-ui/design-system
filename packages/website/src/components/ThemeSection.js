@@ -51,7 +51,7 @@ export function ThemeSection() {
 
       <Heading my={4}>Line heights</Heading>
       {Object.entries(theme.lineHeights).map(([key, value]) => (
-        <Text size={8} mr={4} fontWeight={500} key={key}>
+        <Text size={8} mr={4} weight="medium" key={key}>
           {removeUnit(value)}
         </Text>
       ))}
@@ -60,7 +60,7 @@ export function ThemeSection() {
 
       <Heading my={4}>Space scale</Heading>
       {Object.entries(theme.space).map(([key, value]) => (
-        <Text size={8} mr={4} fontWeight={500} key={key}>
+        <Text size={8} mr={4} weight="medium" key={key}>
           {removeUnit(value)}
         </Text>
       ))}
@@ -69,7 +69,7 @@ export function ThemeSection() {
 
       <Heading my={4}>Size scale</Heading>
       {Object.entries(theme.sizes).map(([key, value]) => (
-        <Text size={8} mr={4} fontWeight={500} key={key}>
+        <Text size={8} mr={4} weight="medium" key={key}>
           {removeUnit(value)}
         </Text>
       ))}
@@ -78,7 +78,7 @@ export function ThemeSection() {
 
       <Heading my={4}>Radii scale</Heading>
       {Object.entries(theme.radii).map(([key, value]) => (
-        <Text size={8} mr={4} fontWeight={500} key={key}>
+        <Text size={8} mr={4} weight="medium" key={key}>
           {typeof value === 'string' ? removeUnit(value) : value}
         </Text>
       ))}
@@ -137,7 +137,7 @@ const ColorCard = ({ color, name, props }) => (
         />
       </Card>
       <Box mt={1}>
-        <RadixHeading as="h4" size={0} fontWeight={500} mt={2} mb={1}>
+        <RadixHeading as="h4" size={0} weight="medium" mt={2} mb={1}>
           <span style={{ textTransform: 'capitalize' }}>{name}</span>
         </RadixHeading>
         <Text as="p" size={0} mb={2} sx={{ color: 'gray700' }}>
@@ -150,12 +150,10 @@ const ColorCard = ({ color, name, props }) => (
   </Box>
 );
 
-const Heading = props => (
-  <RadixHeading as="h2" fontWeight={500} size={2} mt={8} mb={4} {...props} />
-);
+const Heading = props => <RadixHeading as="h2" weight="medium" size={2} mt={8} mb={4} {...props} />;
 
 const Subheading = props => (
-  <RadixHeading as="h3" fontWeight={500} size={1} mt={6} mb={4} {...props} />
+  <RadixHeading as="h3" weight="medium" size={1} mt={6} mb={4} {...props} />
 );
 
 const SectionTitle = props => (

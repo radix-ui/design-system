@@ -9,13 +9,13 @@ storiesOf('Components|Pipe', module).add('default', () => (
   <>
     <Box mt={8}>
       <Flex sx={{ alignItems: 'center', justifyContent: 'center' }}>
-        <Text fontWeight={500}>Modulz 2.0</Text>
+        <Text weight="medium">Modulz 2.0</Text>
         <Pipe mx={2} />
         <Text>The next step in visual coding.</Text>
       </Flex>
 
       <Flex my={4} sx={{ alignItems: 'center', justifyContent: 'center' }}>
-        <Text size={6} fontWeight={500}>
+        <Text size={6} weight="medium">
           Modulz 2.0
         </Text>
         <Pipe variant="large" mx={2} />

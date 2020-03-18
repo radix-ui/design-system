@@ -23,7 +23,7 @@ export function PropsTable({ data }) {
         WebkitOverflowScrolling: 'touch',
       }}
     >
-      <Heading as="h3" fontWeight={500} size={2} mt={8} mb={4}>
+      <Heading as="h3" size={2} mt={8} mb={4}>
         Props
       </Heading>
       {hasProps ? (

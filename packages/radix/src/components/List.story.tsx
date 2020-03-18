@@ -19,9 +19,7 @@ function ListStory() {
   return (
     <Grid sx={{ gridTemplateColumns: ['1fr', 'repeat(2, 1fr)', 'repeat(3, 1fr)'], gap: 4 }}>
       <Box mb="4">
-        <Heading size={0} fontWeight={500}>
-          Default
-        </Heading>
+        <Heading size={0}>Default</Heading>
         <List>
           <ListItem ref={listItemRef} onClick={handleClick}>
             <Text size={2}>Item one</Text>
@@ -38,9 +36,7 @@ function ListStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} fontWeight={500}>
-          List with content on hover
-        </Heading>
+        <Heading size={0}>List with content on hover</Heading>
         <List>
           <Hover>
             {isHovered => (
@@ -86,9 +82,7 @@ function ListStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} fontWeight={500}>
-          List with icon
-        </Heading>
+        <Heading size={0}>List with icon</Heading>
         <List>
           <ListItem>
             <Box mr={3}>
@@ -114,9 +108,7 @@ function ListStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} fontWeight={500}>
-          List with group
-        </Heading>
+        <Heading size={0}>List with group</Heading>
         <List>
           <ListItem>
             <Text size={2}>Item one</Text>
@@ -136,9 +128,7 @@ function ListStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} fontWeight={500}>
-          List with variants
-        </Heading>
+        <Heading size={0}>List with variants</Heading>
         <List>
           <ListItem>
             <Text size={2}>Default</Text>
@@ -160,7 +150,7 @@ function ListStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} fontWeight={500} mb={1}>
+        <Heading size={0} mb={1}>
           List with shadow variant
         </Heading>
         <List variant="shadow">
@@ -186,13 +176,11 @@ function ListStory() {
       </Box>
 
       <Box mb="4">
-        <Heading size={0} fontWeight={500}>
-          Custom
-        </Heading>
+        <Heading size={0}>Custom</Heading>
         <List>
           <ListItem>
             <Box>
-              <Heading size={0} fontWeight={500} mb={1}>
+              <Heading size={0} mb={1}>
                 Heading
               </Heading>
               <Text as="div" size={1} sx={{ color: 'gray700' }}>

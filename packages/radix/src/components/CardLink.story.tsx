@@ -8,7 +8,7 @@ import { CardLink } from './CardLink';
 storiesOf('Components|CardLink', module).add('default', () => (
   <Flex>
     <CardLink href="https://modulz.app" m={4} sx={{ maxWidth: '300px' }}>
-      <Heading size={1} mb="3" fontWeight={500}>
+      <Heading size={1} mb="3">
         Card
       </Heading>
       <Text as="p" mb="3" size={3}>
@@ -21,7 +21,7 @@ storiesOf('Components|CardLink', module).add('default', () => (
     </CardLink>
 
     <CardLink variant="shadow" href="https://modulz.app" m={4} sx={{ maxWidth: '300px' }}>
-      <Heading size={1} mb="3" fontWeight={500}>
+      <Heading size={1} mb="3">
         Card
       </Heading>
       <Text as="p" mb="3" size={3}>
@@ -34,7 +34,7 @@ storiesOf('Components|CardLink', module).add('default', () => (
     </CardLink>
 
     <CardLink variant="ghost" href="https://modulz.app" m={4} sx={{ maxWidth: '300px' }}>
-      <Heading size={1} mb="3" fontWeight={500}>
+      <Heading size={1} mb="3">
         Card
       </Heading>
       <Text as="p" mb="3" size={3}>
