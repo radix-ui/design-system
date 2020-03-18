@@ -28,6 +28,7 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
               lineHeight: theme.lineHeights[2],
               height: theme.sizes[5],
               minWidth: theme.sizes[5],
+              mixBlendMode: 'multiply',
               paddingTop: 0,
               paddingBottom: 0,
               paddingLeft: theme.space[1],
@@ -36,13 +37,13 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
               verticalAlign: 'middle',
               whiteSpace: 'nowrap',
             },
-            active: {
-              backgroundColor: theme.colors.gray300,
-              boxShadow: `0 0 0 1px ${theme.colors.gray300}`,
-            },
             hover: {
               backgroundColor: theme.colors.gray200,
               boxShadow: `0 0 0 1px ${theme.colors.gray200}`,
+            },
+            active: {
+              backgroundColor: theme.colors.gray300,
+              boxShadow: `0 0 0 1px ${theme.colors.gray300}`,
             },
             disabled: {
               color: theme.colors.gray600,
@@ -58,19 +59,20 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
             true: {
               button: {
                 normal: {
-                  backgroundColor: theme.colors.blue200,
-                  color: theme.colors.blue600,
-                  boxShadow: `0 0 0 1px ${theme.colors.blue200}`,
+                  backgroundColor: theme.colors.gray200,
+                  boxShadow: `0 0 0 1px ${theme.colors.gray200}`,
                 },
                 hover: {
-                  backgroundColor: theme.colors.blue200,
-                  boxShadow: `0 0 0 1px ${theme.colors.blue200}`,
+                  backgroundColor: theme.colors.gray200,
+                  boxShadow: `0 0 0 1px ${theme.colors.gray200}`,
                 },
                 active: {
-                  backgroundColor: theme.colors.blue300,
-                  boxShadow: `0 0 0 1px ${theme.colors.blue300}`,
+                  backgroundColor: theme.colors.gray300,
+                  boxShadow: `0 0 0 1px ${theme.colors.gray300}`,
                 },
-                focus: { boxShadow: `0 0 0 2px ${theme.colors.blue500}` },
+                focus: {
+                  boxShadow: `0 0 0 2px ${theme.colors.gray500}`,
+                },
               },
             },
           },
