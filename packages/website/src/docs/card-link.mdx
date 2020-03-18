@@ -5,14 +5,12 @@ description: Useful to group information about a single subject into a link.
 ---
 
 ```js live
-<CardLink maxWidth={275}>
-  <Heading size={1} fontWeight={500}>
-    Card heading
-  </Heading>
+<CardLink sx={{ maxWidth: 275 }}>
+  <Heading size={1}>Card heading</Heading>
   <Text as="p" mt={2} mb={4} size={3}>
     Card copy
   </Text>
-  <Text size={2} textColor="gray700">
+  <Text size={2} sx={{ color: 'gray700' }}>
     Today
   </Text>
 </CardLink>
@@ -32,17 +30,6 @@ description: Useful to group information about a single subject into a link.
   }}
 />
 
-<SystemProps
-  props={[
-    'textColor',
-    'backgroundColor',
-    'margin',
-    'padding',
-    'width',
-    'maxWidth',
-  ]}
-/>
-
 ## Examples
 
 ### Variants
@@ -50,28 +37,24 @@ description: Useful to group information about a single subject into a link.
 There are 3 variants to choose from.
 
 ```js live
-<CardLink maxWidth={275} variant="shadow">
-  <Heading size={1} fontWeight={500}>
-    Card heading
-  </Heading>
+<CardLink variant="shadow" sx={{ maxWidth: 275 }}>
+  <Heading size={1}>Card heading</Heading>
   <Text as="p" mt={2} mb={4} size={3}>
     Card copy
   </Text>
-  <Text size={2} textColor="gray700">
+  <Text size={2} sx={{ color: 'gray700' }}>
     Today
   </Text>
 </CardLink>
 ```
 
 ```js live
-<CardLink maxWidth={275} variant="ghost">
-  <Heading size={1} fontWeight={500}>
-    Card heading
-  </Heading>
+<CardLink variant="ghost" sx={{ maxWidth: 275 }}>
+  <Heading size={1}>Card heading</Heading>
   <Text as="p" mt={2} mb={4} size={3}>
     Card copy
   </Text>
-  <Text size={2} textColor="gray700">
+  <Text size={2} sx={{ color: 'gray700' }}>
     Today
   </Text>
 </CardLink>

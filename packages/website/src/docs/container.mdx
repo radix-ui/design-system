@@ -6,7 +6,7 @@ description: Useful for horizontally containing your content.
 
 ```js live
 <Container>
-  <Box backgroundColor="blue600" height={35} />
+  <Box sx={{ backgroundColor: 'blue600', height: 35 }} />
 </Container>
 ```
 
@@ -17,13 +17,9 @@ description: Useful for horizontally containing your content.
       description: 'The content to render',
     },
     size: {
-      type: '0 | 1 | 2',
+      type: '0 | 1 | 2 | 3 | 4',
       default: '0',
       description: 'The size to apply',
     },
   }}
-/>
-
-<SystemProps
-  props={['alignSelf', 'flex', 'justifySelf', 'maxWidth', 'margin', 'padding']}
 />

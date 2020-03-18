@@ -64,18 +64,21 @@ function App({ element, props }) {
         return (
           <>
             <Box
-              position={['static', 'fixed']}
-              width={['100%', 200, 250]}
-              height={['auto', '100vh']}
-              overflow={['auto', 'scroll']}
               pb={[0, 8]}
-              borderRight={[0, '1px solid']}
-              borderBottom={['1px solid', 0]}
-              borderColor={['gray300', 'gray300']}
-              style={{ WebkitOverflowScrolling: 'touch', overflowX: 'hidden' }}
+              sx={{
+                position: ['static', 'fixed'],
+                width: ['100%', 200, 250],
+                height: ['auto', '100vh'],
+                overflow: ['auto', 'scroll'],
+                borderRight: [0, '1px solid'],
+                borderBottom: ['1px solid', 0],
+                borderColor: ['gray300', 'gray300'],
+                WebkitOverflowScrolling: 'touch',
+                overflowX: 'hidden',
+              }}
             >
               <Box py={2} px={4}>
-                <Flex alignItems="center">
+                <Flex sx={{ alignItems: 'center' }}>
                   <Box>
                     <svg
                       width="35"
@@ -101,7 +104,7 @@ function App({ element, props }) {
                   <Badge ml={3} variant="gray">
                     {pkg.version}
                   </Badge>
-                  <Box ml="auto" display={['block', 'none']}>
+                  <Box ml="auto" sx={{ display: ['block', 'none'] }}>
                     <GhostButton
                       size={1}
                       variant={navOpen ? 'active' : undefined}
@@ -114,10 +117,10 @@ function App({ element, props }) {
                 </Flex>
               </Box>
 
-              <Box display={[navOpen ? 'block' : 'none', 'block']}>
+              <Box sx={{ display: [navOpen ? 'block' : 'none', 'block'] }}>
                 <Divider mb={1} />
                 <List>
-                  <Heading size={0} fontWeight={500} my={2} mx={5}>
+                  <Heading size={0} my={2} mx={5}>
                     Overview
                   </Heading>
                   {data.pinned.edges.map(({ node }) => (
@@ -135,7 +138,7 @@ function App({ element, props }) {
                 <Divider mb={1} />
 
                 <List>
-                  <Heading size={0} fontWeight={500} my={2} mx={5}>
+                  <Heading size={0} my={2} mx={5}>
                     Components
                   </Heading>
                   {data.components.edges.map(({ node }) => (
@@ -153,7 +156,7 @@ function App({ element, props }) {
                 <Divider mb={1} />
 
                 {/* <List>
-                  <Heading size={0} fontWeight={500} mx={5} mb={2} mt={2}>
+                  <Heading size={0}  mx={5} mb={2} mt={2}>
                     Recipes
                   </Heading>
                   {data.recipes.edges.map(({ node }) => (
@@ -171,7 +174,7 @@ function App({ element, props }) {
                 <Divider mb={1} /> */}
 
                 <List>
-                  <Heading size={0} fontWeight={500} mx={5} mb={2} mt={2}>
+                  <Heading size={0} mx={5} mb={2} mt={2}>
                     Github links
                   </Heading>
 
@@ -196,7 +199,7 @@ function App({ element, props }) {
 
                 <Divider mb={1} />
 
-                <Box px={5} mb={2} mt={3} minHeight={6}>
+                <Box px={5} mb={2} mt={3} sx={{ minHeight: 6 }}>
                   <Text size={2}>
                     Powered by{' '}
                     <Link href="https://modulz.app" title="Modulz">
@@ -211,10 +214,12 @@ function App({ element, props }) {
               pt={8}
               pb={9}
               marginLeft={[0, 200, 250]}
-              maxWidth={['100%']}
-              display={[navOpen ? 'none' : 'block', 'block']}
+              sx={{
+                maxWidth: ['100%'],
+                display: [navOpen ? 'none' : 'block', 'block'],
+              }}
             >
-              <Container size={1}>{element}</Container>
+              <Container size={2}>{element}</Container>
             </Box>
           </>
         );

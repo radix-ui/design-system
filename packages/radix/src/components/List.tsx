@@ -2,29 +2,15 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 import css from '@styled-system/css';
 import themeGet from '@styled-system/theme-get';
-import {
-  maxWidth,
-  MaxWidthProps,
-  margin,
-  MarginProps,
-  padding,
-  PaddingProps,
-  width,
-  WidthProps,
-  minHeight,
-  MinHeightProps,
-  variant,
-  compose,
-  Prop,
-} from '@modulz/radix-system';
+import { spaceSet, SpaceSetProps, sx, SxProp, Prop, variant } from '@modulz/radix-system';
+
+type ListSystemProps = SpaceSetProps & SxProp;
+export type ListProps = ListSystemProps & { variant?: Prop<Variants> };
 
 type Variants = 'normal' | 'shadow';
-export type ListProps = MarginProps &
-  PaddingProps &
-  WidthProps &
-  MaxWidthProps & { variant?: Prop<Variants> };
 
-const styleProps = compose(margin, padding, width, maxWidth);
+const systemProps = (props: any) => [spaceSet(props), sx(props)];
+export const boxSystemProps = systemProps;
 
 export const List = styled('nav')<ListProps>(
   css({
@@ -43,15 +29,12 @@ export const List = styled('nav')<ListProps>(
         },
       },
     }),
-  styleProps
+  systemProps
 );
 
-export type ListItemProps = PaddingProps &
-  MinHeightProps & {
-    variant?: 'normal' | 'active' | 'selected';
-  };
-
-const ListItemStyleProps = compose(padding, minHeight);
+export type ListItemProps = ListSystemProps & {
+  variant?: 'normal' | 'active' | 'selected';
+};
 
 export const ListItem = styled('button')<ListItemProps>(
   css({
@@ -130,12 +113,14 @@ export const ListItem = styled('button')<ListItemProps>(
   {
     lineHeight: '1',
   },
-  ListItemStyleProps
+  systemProps
 );
 
 ListItem.defaultProps = { variant: 'normal' };
 
-export const ListGroup = styled('div')(
+type ListGroupProps = ListSystemProps;
+
+export const ListGroup = styled('div')<ListGroupProps>(
   css({
     paddingY: 1,
     paddingX: 0,
@@ -144,5 +129,6 @@ export const ListGroup = styled('div')(
     borderTop: '1px solid',
     borderBottom: '1px solid',
     borderColor: 'gray300',
-  })
+  }),
+  systemProps
 );

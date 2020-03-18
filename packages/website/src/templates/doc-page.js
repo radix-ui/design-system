@@ -7,7 +7,6 @@ import * as RC from '@modulz/radix';
 import * as RI from '@modulz/radix-icons';
 import Layout from '../components/Layout';
 import CodeBlock from '../components/CodeBlock';
-import { SystemPropsTable } from '../components/SystemPropsTable';
 import { PropsTable } from '../components/PropsTable';
 import { ThemeSection } from '../components/ThemeSection';
 
@@ -25,25 +24,24 @@ export const components = {
   td: RC.Td,
   inlineCode: RC.Code,
   a: RC.Link,
-  SystemProps: SystemPropsTable,
   PropsTable: PropsTable,
   h1: props => <RC.Heading {...props} fontWeight={500} size={3} mt={8} mb={4} />,
   h2: props => <RC.Heading {...props} as="h2" fontWeight={500} size={2} mt={8} mb={4} />,
   h3: props => (
-    <RC.Heading {...props} as="h3" fontWeight={500} size={1} mt={7} mb={1} lineHeight={1} />
+    <RC.Heading {...props} as="h3" fontWeight={500} size={1} mt={7} mb={1} sx={{ lineHeight: 1 }} />
   ),
   h4: props => (
-    <RC.Heading {...props} as="h4" fontWeight={500} size={0} mt={6} mb={1} lineHeight={2} />
+    <RC.Heading {...props} as="h4" fontWeight={500} size={0} mt={6} mb={1} sx={{ lineHeight: 2 }} />
   ),
-  p: props => <RC.Text {...props} as="p" size={3} lineHeight={2} textColor="gray700" />,
+  p: props => <RC.Text {...props} as="p" size={3} sx={{ lineHeight: 2, color: 'gray700' }} />,
   Prop: props => (
     <RC.Box mb={3}>
-      <RC.Text as="p" size={2} lineHeight={2} textColor="gray700">
+      <RC.Text as="p" size={2} sx={{ lineHeight: 2, color: 'gray700' }}>
         {props.isOptional && 'optional'}{' '}
         <RC.Code ml={!props.isOptional && -1}>{props.children}</RC.Code>
       </RC.Text>
       {props.default && (
-        <RC.Text as="p" size={2} lineHeight={2} textColor="gray700">
+        <RC.Text as="p" size={2} sx={{ lineHeight: 2, color: 'gray700' }}>
           default <RC.Code variant="fade">{props.default}</RC.Code>
         </RC.Text>
       )}
@@ -67,10 +65,10 @@ function DocPageTemplate({ data, location, ...props }) {
 
       <MDXProvider components={components}>
         <RC.Box>
-          <RC.Heading size={4} fontWeight={500} mb={2} lineHeight={4}>
+          <RC.Heading size={4} fontWeight={500} mb={2} sx={{ lineHeight: 4 }}>
             {data.mdx.frontmatter.title}
           </RC.Heading>
-          <RC.Heading size={1} mb={7} as="h2" lineHeight={3} textColor="gray700">
+          <RC.Heading size={1} mb={7} as="h2" sx={{ lineHeight: 3, color: 'gray700' }}>
             {data.mdx.frontmatter.description}
           </RC.Heading>
           {children}

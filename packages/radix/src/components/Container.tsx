@@ -5,7 +5,7 @@ import {
 } from '@modulz/primitives';
 import { theme } from '../theme';
 
-type Size = 0 | 1 | 2;
+type Size = 0 | 1 | 2 | 3 | 4;
 
 export type ContainerProps = ContainerPrimitiveProps & {
   size?: Size;
@@ -31,21 +31,35 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>((props
           0: {
             container: {
               normal: {
-                maxWidth: 375,
+                maxWidth: 305,
               },
             },
           },
           1: {
             container: {
               normal: {
-                maxWidth: 685,
+                maxWidth: 585,
               },
             },
           },
           2: {
             container: {
               normal: {
-                maxWidth: 985,
+                maxWidth: 865,
+              },
+            },
+          },
+          3: {
+            container: {
+              normal: {
+                maxWidth: 1145,
+              },
+            },
+          },
+          4: {
+            container: {
+              normal: {
+                maxWidth: 'none',
               },
             },
           },

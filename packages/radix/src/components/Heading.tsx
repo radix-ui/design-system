@@ -2,11 +2,11 @@ import React from 'react';
 import { Text as TextPrimitive, TextProps as TextPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
-type FontWeight = 400 | 500;
+type Weight = 'normal' | 'medium';
 type Size = 0 | 1 | 2 | 3 | 4 | 5;
 
 export type HeadingProps = TextPrimitiveProps & {
-  fontWeight?: FontWeight;
+  weight?: Weight;
   size?: Size;
   truncate?: boolean;
   as?: any;
@@ -27,6 +27,22 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
         },
       },
       variants: {
+        weight: {
+          normal: {
+            text: {
+              normal: {
+                fontWeight: 400,
+              },
+            },
+          },
+          medium: {
+            text: {
+              normal: {
+                fontWeight: 500,
+              },
+            },
+          },
+        },
         size: {
           0: {
             text: {
@@ -109,4 +125,5 @@ Heading.defaultProps = {
   as: 'h1',
   truncate: false,
   size: 2,
+  weight: 'medium',
 };

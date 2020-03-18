@@ -37,7 +37,7 @@ function RightClickMenuStory() {
       }
     >
       <RightClickable>
-        <Box width={9} height={9} bg="blue600" borderRadius={1} />
+        <Box sx={{ width: 9, height: 9, bg: 'blue600', borderRadius: 1 }} />
       </RightClickable>
     </RightClickMenu>
   );

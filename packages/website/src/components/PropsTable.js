@@ -18,14 +18,16 @@ export function PropsTable({ data }) {
     <Box
       mt={8}
       mb={7}
-      overflow={['scroll', 'visible']}
-      style={{ WebkitOverflowScrolling: 'touch' }}
+      sx={{
+        overflow: ['scroll', 'visible'],
+        WebkitOverflowScrolling: 'touch',
+      }}
     >
-      <Heading as="h3" fontWeight={500} size={2} mt={8} mb={4}>
+      <Heading as="h3" size={2} mt={8} mb={4}>
         Props
       </Heading>
       {hasProps ? (
-        <Box minWidth={['540px', '0']}>
+        <Box sx={{ minWidth: ['540px', '0'] }}>
           <Table>
             <Thead>
               <Tr>

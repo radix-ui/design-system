@@ -10,30 +10,28 @@ import { Hover } from './Hover';
 storiesOf('Components|Hover', module).add('default', () => (
   <>
     <Box mb="4">
-      <Hover width={280} height={280}>
-        {isHovered => <Box width={280} height={280} bg={isHovered ? 'blue' : 'green'} />}
+      <Hover sx={{ width: 280, height: 280 }}>
+        {isHovered => <Box sx={{ width: 280, height: 280, bg: isHovered ? 'blue' : 'green' }} />}
       </Hover>
     </Box>
 
-    <Box mb="4" maxWidth={280}>
+    <Box mb="4" sx={{ maxWidth: 280 }}>
       <Hover>
         {isHovered => {
           return (
             <Card>
-              <Heading size={1} fontWeight={500}>
-                Help us Kickstart Modulz
-              </Heading>
-              <Text as="p" size={3} lineHeight={1.2} mt={3} color="gray700">
+              <Heading size={1}>Help us Kickstart Modulz</Heading>
+              <Text as="p" size={3} mt={3} sx={{ lineHeight: 1.2, color: 'gray700' }}>
                 Who we are, what we're building and how you can support us.
               </Text>
-              <Flex mt={5} alignItems="center" justifyContent="flex-end">
+              <Flex mt={5} sx={{ alignItems: 'center', justifyContent: 'flex-end' }}>
                 {!isHovered && (
-                  <Text as="p" size={2} lineHeight={0} color="gray700">
+                  <Text as="p" size={2} sx={{ lineHeight: 0, color: 'gray700' }}>
                     Oct '18
                   </Text>
                 )}
                 {isHovered && (
-                  <Text as="p" lineHeight={0}>
+                  <Text as="p" sx={{ lineHeight: 0 }}>
                     <svg
                       width="15"
                       height="15"

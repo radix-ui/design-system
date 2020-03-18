@@ -2,11 +2,11 @@ import React from 'react';
 import { Text as TextPrimitive, TextProps as TextPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
-type FontWeight = 400 | 500;
+type Weight = 'normal' | 'medium';
 type Size = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
 export type TextProps = TextPrimitiveProps & {
-  fontWeight?: FontWeight;
+  weight?: Weight;
   size?: Size;
   truncate?: boolean;
   as?: any;
@@ -28,6 +28,22 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
         },
       },
       variants: {
+        weight: {
+          normal: {
+            text: {
+              normal: {
+                fontWeight: 400,
+              },
+            },
+          },
+          medium: {
+            text: {
+              normal: {
+                fontWeight: 500,
+              },
+            },
+          },
+        },
         size: {
           0: {
             text: {
@@ -148,4 +164,5 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forward
 Text.defaultProps = {
   truncate: false,
   size: 2,
+  weight: 'normal',
 };

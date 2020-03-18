@@ -1,37 +1,24 @@
 ---
-title: Toggle Button Group
-component: ToggleButtonGroup
-description: Useful for allowing users to select one or more options from a set.
+title: Toggle Button
+component: ToggleButton
+description: Useful for allowing users to toggle a single selection.
 ---
 
 ```js live removeFragment
 () => {
-  const [value, setValue] = React.useState('center');
+  const [shouldNotify, setShouldNotify] = React.useState(false);
 
   return (
-    <ToggleButtonGroup value={value} onChange={value => setValue(value)}>
-      <ToggleButton value="start">Start</ToggleButton>
-      <ToggleButton value="center">Center</ToggleButton>
-      <ToggleButton value="end">End</ToggleButton>
-    </ToggleButtonGroup>
+    <ToggleButton
+      isToggled={shouldNotify}
+      onToggle={setShouldNotify}
+      sx={{ width: 100 }}
+    >
+      Notify me
+    </ToggleButton>
   );
 };
 ```
-
-<PropsTable
-  data={{
-    children: {
-      type: 'ReactNode',
-      description: 'The content to render',
-    },
-  }}
-/>
-
-<SystemProps props={['margin']} />
-
-<Heading as="h2" size={4} fontWeight={500} mb={2} mt={6} lineHeight={4}>
-  Toggle Button
-</Heading>
 
 <PropsTable
   data={{
