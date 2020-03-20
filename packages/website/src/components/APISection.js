@@ -40,7 +40,7 @@ export function APISection() {
               <Code>variant</Code>
             </Td>
             <Td>String</Td>
-            <Td>Variants created in Modulz</Td>
+            <Td>Applies a variant, if available</Td>
           </Tr>
         </Tbody>
       </Table>
