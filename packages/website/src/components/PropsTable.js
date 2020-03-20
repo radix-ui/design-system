@@ -12,7 +12,7 @@ import { Box, Table, Thead, Tr, Th, Tbody, Td, Code, Heading, Link, Text } from 
 //   return slugger.slug(string);
 // };
 
-export function PropsTable({ data }) {
+export function PropsTable({ data = {} }) {
   const hasProps = Object.keys(data).length > 0;
 
   return (
