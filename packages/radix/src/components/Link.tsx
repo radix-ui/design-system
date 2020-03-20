@@ -20,6 +20,10 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, forwa
           hover: {
             textDecoration: 'underline',
           },
+          focus: {
+            boxShadow: '0 0 0 2px rgba(0, 0, 0, 0.1)',
+            textDecoration: 'none',
+          },
         },
       },
       variants: {
@@ -32,7 +36,6 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, forwa
               },
               focus: {
                 boxShadow: `0 0 0 2px ${theme.colors.blue500}`,
-                textDecoration: 'none',
               },
             },
           },
@@ -43,7 +46,6 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, forwa
               },
               focus: {
                 boxShadow: `0 0 0 2px ${theme.colors.gray400}`,
-                textDecoration: 'none',
               },
             },
           },
@@ -59,7 +61,6 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, forwa
               },
               focus: {
                 boxShadow: `0 0 0 2px ${theme.colors.gray400}`,
-                textDecoration: 'none',
               },
             },
           },
