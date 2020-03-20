@@ -91,6 +91,18 @@ export function APISection() {
           </Tr>
           <Tr>
             <Td>
+              <Code>marginX</Code>,<Code>mx</Code>
+            </Td>
+            <Td>Margin horizontal</Td>
+          </Tr>
+          <Tr>
+            <Td>
+              <Code>marginY</Code>,<Code>my</Code>
+            </Td>
+            <Td>Margin vertical</Td>
+          </Tr>
+          <Tr>
+            <Td>
               <Code>padding</Code>,<Code>p</Code>
             </Td>
             <Td>Padding</Td>
@@ -118,6 +130,18 @@ export function APISection() {
               <Code>paddingLeft</Code>,<Code>pl</Code>
             </Td>
             <Td>Padding left</Td>
+          </Tr>
+          <Tr>
+            <Td>
+              <Code>paddingX</Code>,<Code>px</Code>
+            </Td>
+            <Td>Padding horizontal</Td>
+          </Tr>
+          <Tr>
+            <Td>
+              <Code>paddingY</Code>,<Code>py</Code>
+            </Td>
+            <Td>Padding vertical</Td>
           </Tr>
         </Tbody>
       </Table>
