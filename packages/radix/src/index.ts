@@ -8,6 +8,7 @@ export { Button, ButtonProps } from './components/Button';
 export { Card, CardProps } from './components/Card';
 export { CardLink, CardLinkProps } from './components/CardLink';
 export { Checkbox, CheckboxProps } from './components/Checkbox';
+export { ChromelessButton, ChromelessButtonProps } from './components/ChromelessButton';
 export { Code, CodeProps } from './components/Code';
 export { Container, ContainerProps } from './components/Container';
 export { Dialog, DialogProps } from './components/Dialog';
