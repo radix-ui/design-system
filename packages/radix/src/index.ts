@@ -23,6 +23,7 @@ export { Grid, GridProps } from './components/Grid';
 export { GhostButton, GhostButtonProps } from './components/GhostButton';
 export { Heading, HeadingProps } from './components/Heading';
 export { Hover, HoverProps } from './components/Hover';
+export { Image, ImageProps } from './components/Image';
 export { Input, InputProps } from './components/Input';
 export { Link, LinkProps } from './components/Link';
 export { List, ListProps, ListItem, ListItemProps, ListGroup } from './components/List';
