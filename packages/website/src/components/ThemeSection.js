@@ -15,7 +15,7 @@ const removeUnit = str => str.replace('px', '');
 export function ThemeSection() {
   return (
     <>
-      <Heading my={4}>Fonts</Heading>
+      <Heading mb={4}>Fonts</Heading>
       {Object.entries(theme.fonts).map(([key, value]) => (
         <Box mb={3} key={key}>
           <SectionTitle>{key}</SectionTitle>

@@ -35,7 +35,7 @@ function App({ element, props }) {
     }
     query {
       pinned: allMdx(
-        sort: { order: ASC, fields: [frontmatter___title] }
+        sort: { order: ASC, fields: [frontmatter___order] }
         filter: { frontmatter: { pinned: { ne: null }, hidden: { eq: null } } }
       ) {
         ...mdxContent
@@ -219,7 +219,7 @@ function App({ element, props }) {
                 display: [navOpen ? 'none' : 'block', 'block'],
               }}
             >
-              <Container size={2}>{element}</Container>
+              <Container size={1}>{element}</Container>
             </Box>
           </>
         );

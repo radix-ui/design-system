@@ -1,6 +1,7 @@
 import React from 'react';
 // import githubSlugger from 'github-slugger';
-import { Box, Table, Thead, Tr, Th, Tbody, Td, Code, Text, Heading } from '@modulz/radix';
+import { Link as GatsbyLink } from 'gatsby';
+import { Box, Table, Thead, Tr, Th, Tbody, Td, Code, Heading, Link, Text } from '@modulz/radix';
 
 // Leaving it here to chill for a while in case we need it
 // const slugger = githubSlugger();
@@ -11,7 +12,7 @@ import { Box, Table, Thead, Tr, Th, Tbody, Td, Code, Text, Heading } from '@modu
 //   return slugger.slug(string);
 // };
 
-export function PropsTable({ data }) {
+export function PropsTable({ data = {} }) {
   const hasProps = Object.keys(data).length > 0;
 
   return (
@@ -26,7 +27,7 @@ export function PropsTable({ data }) {
       <Heading as="h3" size={2} mt={8} mb={4}>
         Props
       </Heading>
-      {hasProps ? (
+      {hasProps && (
         <Box sx={{ minWidth: ['540px', '0'] }}>
           <Table>
             <Thead>
@@ -53,9 +54,14 @@ export function PropsTable({ data }) {
             </Tbody>
           </Table>
         </Box>
-      ) : (
-        <Text as="p">No props</Text>
       )}
+      <Text as="p" size={3} mt={6} mb={4}>
+        This component supports all{' '}
+        <Link as={GatsbyLink} to="/docs/api">
+          common props
+        </Link>
+        .
+      </Text>
     </Box>
   );
 }

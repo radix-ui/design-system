@@ -9,6 +9,7 @@ import Layout from '../components/Layout';
 import CodeBlock from '../components/CodeBlock';
 import { PropsTable } from '../components/PropsTable';
 import { ThemeSection } from '../components/ThemeSection';
+import { APISection } from '../components/APISection';
 
 export const components = {
   ...RC,
@@ -44,6 +45,7 @@ export const components = {
     </RC.Box>
   ),
   ThemeSection,
+  APISection,
 };
 
 function DocPageTemplate({ data, location, ...props }) {
