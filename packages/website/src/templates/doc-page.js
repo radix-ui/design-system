@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { graphql, Link as GatsbyLink } from 'gatsby';
+import { graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import * as RC from '@modulz/radix';
@@ -76,13 +76,6 @@ function DocPageTemplate({ data, location, ...props }) {
             {data.mdx.frontmatter.description}
           </RC.Heading>
           {children}
-          <RC.Text as="p" size={3} mt={6} mb={4}>
-            This component supports all{' '}
-            <RC.Link as={GatsbyLink} to="/docs/api">
-              common props
-            </RC.Link>
-            .
-          </RC.Text>
         </RC.Box>
       </MDXProvider>
     </Layout>
