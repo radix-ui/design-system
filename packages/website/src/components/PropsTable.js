@@ -1,7 +1,6 @@
 import React from 'react';
 // import githubSlugger from 'github-slugger';
-import { Link as GatsbyLink } from 'gatsby';
-import { Box, Table, Thead, Tr, Th, Tbody, Td, Code, Text, Heading, Link } from '@modulz/radix';
+import { Box, Table, Thead, Tr, Th, Tbody, Td, Code, Heading } from '@modulz/radix';
 
 // Leaving it here to chill for a while in case we need it
 // const slugger = githubSlugger();
@@ -55,13 +54,6 @@ export function PropsTable({ data }) {
           </Table>
         </Box>
       )}
-      <Text as="p" size={3} mt={6} mb={4}>
-        This component supports all{' '}
-        <Link as={GatsbyLink} to="/docs/api">
-          common props
-        </Link>
-        .
-      </Text>
     </Box>
   );
 }
