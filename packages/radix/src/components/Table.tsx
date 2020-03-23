@@ -35,6 +35,9 @@ export const Table = React.forwardRef<HTMLTableElement, TableProps>((props, forw
             fontSize: theme.fontSizes[1],
             fontVariantNumeric: 'tabular-nums',
             lineHeight: theme.lineHeights[2],
+            '&:last-of-type': {
+              paddingRight: 0,
+            },
           },
         },
         td: {
@@ -47,6 +50,9 @@ export const Table = React.forwardRef<HTMLTableElement, TableProps>((props, forw
             fontSize: theme.fontSizes[2],
             fontVariantNumeric: 'tabular-nums',
             lineHeight: theme.lineHeights[2],
+            '&:last-of-type': {
+              paddingRight: 0,
+            },
           },
         },
       },
