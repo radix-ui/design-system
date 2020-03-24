@@ -1,6 +1,6 @@
 {
   "name": "@modulz/radix",
-  "version": "0.0.1-beta.28",
+  "version": "0.0.1-beta.29",
   "description": "Radix Design System",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
