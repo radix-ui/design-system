@@ -5,6 +5,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import * as RC from '@modulz/radix';
 import * as RI from '@modulz/radix-icons';
+import { DebugContextProvider } from '@modulz/primitives';
 import Layout from '../components/Layout';
 import CodeBlock from '../components/CodeBlock';
 import { PropsTable } from '../components/PropsTable';
@@ -75,7 +76,11 @@ function DocPageTemplate({ data, location, ...props }) {
           >
             {data.mdx.frontmatter.description}
           </RC.Heading>
-          {children}
+          {data.mdx.frontmatter.disableLock === true ? (
+            <DebugContextProvider disableLock>{children}</DebugContextProvider>
+          ) : (
+            children
+          )}
         </RC.Box>
       </MDXProvider>
     </Layout>
@@ -92,6 +97,7 @@ export const pageQuery = graphql`
         title
         component
         description
+        disableLock
       }
       body
     }
