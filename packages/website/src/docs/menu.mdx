@@ -2,6 +2,7 @@
 title: Menu
 component: Menu
 description: Useful for displaying a list of actions. Typically not used directly but in conjunction with other components like RightClickMenu or DropdownMenu.
+disableLock: true
 ---
 
 ```js live removeFragment
@@ -13,7 +14,7 @@ description: Useful for displaying a list of actions. Typically not used directl
   return (
     <Box sx={{ height: '243px' }}>
       <div ref={targetRef} />
-      <Menu isOpen buttonRef={targetRef} unstable__disableLock>
+      <Menu isOpen buttonRef={targetRef}>
         <MenuItem label="Simple item one" />
         <MenuItem label="Simple item two" />
         <MenuItem label="Simple item three" />
