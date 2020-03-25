@@ -127,6 +127,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 normal: {
                   backgroundColor: 'transparent',
                   color: theme.colors.gray800,
+                  mixBlendMode: 'multiply',
                 },
                 hover: {
                   backgroundColor: theme.colors.gray200,
