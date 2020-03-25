@@ -2,11 +2,11 @@ import React from 'react';
 import { Button as ButtonPrimitive, ButtonProps as ButtonPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
-export type GhostButtonProps = ButtonPrimitiveProps & {
+export type IconButtonProps = ButtonPrimitiveProps & {
   isActive?: boolean;
 };
 
-export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>(
+export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   (props, forwardedRef) => (
     <ButtonPrimitive
       {...props}
@@ -21,21 +21,10 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0,
-              fontFamily: theme.fonts.normal,
-              fontSize: theme.fontSizes[1],
-              fontVariantNumeric: 'tabular-nums',
-              fontWeight: 500,
-              lineHeight: theme.lineHeights[2],
-              height: theme.sizes[5],
-              minWidth: theme.sizes[5],
               mixBlendMode: 'multiply',
-              paddingTop: 0,
-              paddingBottom: 0,
-              paddingLeft: theme.space[1],
-              paddingRight: theme.space[1],
+              padding: theme.space[1],
               userSelect: 'none',
               verticalAlign: 'middle',
-              whiteSpace: 'nowrap',
             },
             hover: {
               backgroundColor: theme.colors.gray200,
