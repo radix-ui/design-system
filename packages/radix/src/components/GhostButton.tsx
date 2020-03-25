@@ -25,10 +25,8 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
               justifyContent: 'center',
               flexShrink: 0,
               fontFamily: theme.fonts.normal,
-              fontSize: theme.fontSizes[1],
               fontVariantNumeric: 'tabular-nums',
               fontWeight: 500,
-              lineHeight: theme.lineHeights[2],
               mixBlendMode: 'multiply',
               paddingLeft: theme.space[1],
               paddingRight: theme.space[1],
@@ -58,6 +56,9 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
             0: {
               button: {
                 normal: {
+                  fontSize: theme.fontSizes[1],
+                  lineHeight: theme.lineHeights[2],
+                  letterSpacing: '-0.005em',
                   height: theme.sizes[5],
                   minWidth: theme.sizes[5],
                 },
@@ -66,10 +67,11 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
             1: {
               button: {
                 normal: {
+                  fontSize: theme.fontSizes[2],
+                  lineHeight: theme.lineHeights[4],
+                  letterSpacing: '-0.008em',
                   height: theme.sizes[6],
                   minWidth: theme.sizes[6],
-                  paddingTop: theme.space[1],
-                  paddingBottom: theme.space[1],
                 },
               },
             },
