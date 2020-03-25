@@ -2,8 +2,11 @@ import React from 'react';
 import { Button as ButtonPrimitive, ButtonProps as ButtonPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
+type Size = 0 | 1;
+
 export type GhostButtonProps = ButtonPrimitiveProps & {
   isActive?: boolean;
+  size?: Size;
 };
 
 export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>(
@@ -25,11 +28,10 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
               fontSize: theme.fontSizes[1],
               fontVariantNumeric: 'tabular-nums',
               fontWeight: 500,
-              lineHeight: theme.lineHeights[0],
-              minHeight: theme.sizes[5],
-              minWidth: theme.sizes[5],
+              lineHeight: theme.lineHeights[2],
               mixBlendMode: 'multiply',
-              padding: theme.space[1],
+              paddingLeft: theme.space[1],
+              paddingRight: theme.space[1],
               userSelect: 'none',
               verticalAlign: 'middle',
               whiteSpace: 'nowrap',
@@ -52,6 +54,27 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
           },
         },
         variants: {
+          size: {
+            0: {
+              button: {
+                normal: {
+                  height: theme.sizes[5],
+                  minWidth: theme.sizes[5],
+                  lineHeight: theme.lineHeights[2],
+                },
+              },
+            },
+            1: {
+              button: {
+                normal: {
+                  height: theme.sizes[6],
+                  minWidth: theme.sizes[6],
+                  paddingTop: theme.space[1],
+                  paddingBottom: theme.space[1],
+                },
+              },
+            },
+          },
           isActive: {
             true: {
               button: {
@@ -78,3 +101,8 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
     />
   )
 );
+
+GhostButton.defaultProps = {
+  isActive: false,
+  size: 0,
+};
