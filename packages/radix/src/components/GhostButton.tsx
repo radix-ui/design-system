@@ -60,7 +60,6 @@ export const GhostButton = React.forwardRef<HTMLButtonElement, GhostButtonProps>
                 normal: {
                   height: theme.sizes[5],
                   minWidth: theme.sizes[5],
-                  lineHeight: theme.lineHeights[2],
                 },
               },
             },
