@@ -70,7 +70,16 @@ const selectStyleConfigOverrides: StyleConfig<SelectParts> = {
           },
         },
       },
-      ghost: {},
+      ghost: {
+        button: {
+          normal: {
+            mixBlendMode: 'multiply',
+          },
+          hover: {
+            backgroundColor: theme.colors.gray200,
+          },
+        },
+      },
     },
     size: {
       0: {
