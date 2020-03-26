@@ -8,7 +8,7 @@ import {
   Badge,
   Divider,
   Container,
-  GhostButton,
+  IconButton,
   Text,
   Link,
 } from '@modulz/radix';
@@ -105,14 +105,14 @@ function App({ element, props }) {
                     {pkg.version}
                   </Badge>
                   <Box ml="auto" sx={{ display: ['block', 'none'] }}>
-                    <GhostButton
+                    <IconButton
                       size={1}
                       variant={navOpen ? 'active' : undefined}
                       onClick={() => setNavOpen(!navOpen)}
                     >
                       {!navOpen && <HamburgerIcon />}
                       {navOpen && <CrossIcon />}
-                    </GhostButton>
+                    </IconButton>
                   </Box>
                 </Flex>
               </Box>

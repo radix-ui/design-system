@@ -4,7 +4,7 @@ import css from '@styled-system/css';
 import { Button as ButtonPrimitive, ButtonProps as ButtonPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
-type Variant = 'gray' | 'blue' | 'green' | 'red';
+type Variant = 'gray' | 'blue' | 'green' | 'red' | 'ghost';
 type Size = 0 | 1;
 
 export type ButtonProps = ButtonPrimitiveProps & {
@@ -34,10 +34,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               position: 'relative',
               userSelect: 'none',
               whiteSpace: 'nowrap',
-            },
-            active: {
-              backgroundColor: theme.colors.gray200,
-              boxShadow: `inset 0 0 0 1px ${theme.colors.gray500}`,
             },
             disabled: {
               backgroundColor: theme.colors.gray100,
@@ -123,6 +119,24 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 },
                 focus: {
                   boxShadow: `inset 0 0 0 1px ${theme.colors.red500}, 0 0 0 1px ${theme.colors.red500}`,
+                },
+              },
+            },
+            ghost: {
+              button: {
+                normal: {
+                  backgroundColor: 'transparent',
+                  color: theme.colors.gray800,
+                  mixBlendMode: 'multiply',
+                },
+                hover: {
+                  backgroundColor: theme.colors.gray200,
+                },
+                active: {
+                  backgroundColor: theme.colors.gray300,
+                },
+                focus: {
+                  boxShadow: `inset 0 0 0 1px ${theme.colors.gray500}, 0 0 0 1px ${theme.colors.gray500}`,
                 },
               },
             },

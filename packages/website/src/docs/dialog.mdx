@@ -97,9 +97,9 @@ It is possible to focus a specific element inside the dialog after it opens. If 
       >
         <Box p={6} position="relative">
           <Box position="absolute" top={1} right={1}>
-            <GhostButton size={1} onClick={() => setIsOpen(false)}>
+            <IconButton size={1} onClick={() => setIsOpen(false)}>
               <CrossIcon />
-            </GhostButton>
+            </IconButton>
           </Box>
           <Heading size={0}>Confirm password</Heading>
           <Input ref={inputRef} type="password" placeholder="******" my={4} />

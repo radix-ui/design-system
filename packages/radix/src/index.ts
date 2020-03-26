@@ -21,7 +21,7 @@ export {
 } from './components/DropdownMenu';
 export { Flex, FlexProps } from './components/Flex';
 export { Grid, GridProps } from './components/Grid';
-export { GhostButton, GhostButtonProps } from './components/GhostButton';
+export { IconButton, IconButtonProps } from './components/IconButton';
 export { Heading, HeadingProps } from './components/Heading';
 export { Hover, HoverProps } from './components/Hover';
 export { Image, ImageProps } from './components/Image';
