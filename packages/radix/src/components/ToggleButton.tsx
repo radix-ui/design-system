@@ -97,11 +97,11 @@ export const ToggleButton = React.forwardRef<HTMLButtonElement, ToggleButtonProp
                   borderColor: 'transparent',
                   backgroundColor: theme.colors.blue100,
                   boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
-                  '&:not(:disabled):focus': {
+                  '&:focus': {
                     borderColor: theme.colors.blue500,
                     boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
                   },
-                  '&:not(:disabled):hover': {
+                  '&:hover': {
                     borderColor: 'transparent',
                   },
                 },
@@ -127,10 +127,10 @@ export const ToggleButton = React.forwardRef<HTMLButtonElement, ToggleButtonProp
                   borderColor: 'transparent',
                   backgroundColor: theme.colors.gray100,
                   boxShadow: `0 0 0 1px ${theme.colors.gray400}`,
-                  '&:not(:disabled):hover': {
+                  '&:hover': {
                     borderColor: 'transparent',
                   },
-                  '&:not(:disabled):focus': {
+                  '&:focus': {
                     borderColor: theme.colors.blue500,
                     boxShadow: `0 0 0 1px ${theme.colors.blue500}`,
                   },
