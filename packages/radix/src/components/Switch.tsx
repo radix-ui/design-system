@@ -17,15 +17,9 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, fo
             borderRadius: 9999,
             backgroundColor: theme.colors.gray300,
             transition: 'background-color 100ms ease-out',
-            'input:active:checked + &': {
-              backgroundColor: theme.colors.blue700,
-            },
           },
           active: {
-            backgroundColor: theme.colors.gray400,
-            '[data-part-id="thumb"]': {
-              backgroundColor: theme.colors.gray200,
-            },
+            filter: 'brightness(95%)',
           },
           checked: {
             backgroundColor: theme.colors.blue600,
