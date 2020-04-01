@@ -8,7 +8,7 @@ export type AvatarProps = AvatarPrimitiveProps & {
   size?: Size;
 };
 
-export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>((props, forwardedRef) => (
+export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, forwardedRef) => (
   <AvatarPrimitive
     {...props}
     ref={forwardedRef}
