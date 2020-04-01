@@ -24,5 +24,25 @@ description: Useful for presenting profile images and initials.
       type: 'string',
       description: 'The URL of the image to use',
     },
+    size: {
+      type: '0 | 1',
+      default: '0',
+      description: 'The size to apply',
+    },
   }}
 />
+
+## Examples
+
+### Size
+
+There are 2 sizes to choose from.
+
+```js live
+<Avatar size={0} alt="Modulz" src="https://avatars0.githubusercontent.com/u/28682402">
+  M
+</Avatar>
+<Avatar size={1} alt="Modulz" src="https://avatars0.githubusercontent.com/u/28682402" ml={4}>
+  M
+</Avatar>
+```

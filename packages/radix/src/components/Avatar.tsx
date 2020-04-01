@@ -2,7 +2,11 @@ import React from 'react';
 import { Avatar as AvatarPrimitive, AvatarProps as AvatarPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
-export type AvatarProps = AvatarPrimitiveProps;
+type Size = 0 | 1;
+
+export type AvatarProps = AvatarPrimitiveProps & {
+  size?: Size;
+};
 
 export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>((props, forwardedRef) => (
   <AvatarPrimitive
@@ -12,19 +16,43 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>((props, forw
       base: {
         avatar: {
           normal: {
-            width: theme.sizes[5],
-            height: theme.sizes[5],
             borderRadius: '100%',
             backgroundColor: theme.colors.gray300,
             color: theme.colors.gray800,
             fontFamily: theme.fonts.normal,
-            fontSize: theme.fontSizes[1],
             fontWeight: 500,
-            lineHeight: theme.lineHeights[2],
             textTransform: 'uppercase',
+          },
+        },
+      },
+      variants: {
+        size: {
+          0: {
+            avatar: {
+              normal: {
+                fontSize: theme.fontSizes[1],
+                lineHeight: theme.lineHeights[2],
+                width: theme.sizes[5],
+                height: theme.sizes[5],
+              },
+            },
+          },
+          1: {
+            avatar: {
+              normal: {
+                fontSize: theme.fontSizes[3],
+                lineHeight: theme.lineHeights[4],
+                width: theme.sizes[6],
+                height: theme.sizes[6],
+              },
+            },
           },
         },
       },
     }}
   />
 ));
+
+Avatar.defaultProps = {
+  size: 0,
+};
