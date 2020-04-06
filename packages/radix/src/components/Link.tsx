@@ -6,7 +6,6 @@ type Variant = 'ghost' | 'fade' | 'highlight' | 'underline';
 export type LinkProps = LinkPrimitiveProps & {
   to?: string;
   children?: React.ReactNode;
-  as?: any;
   variant?: Variant;
 };
 

@@ -13,7 +13,6 @@ export type Variant = 'border' | 'shadow' | 'ghost';
 
 export type CardProps = CardPrimitiveProps & {
   variant?: Variant;
-  as?: any;
 };
 
 export const cardStyleConfig: StyleConfig<CardParts> = {

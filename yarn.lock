@@ -1954,6 +1954,23 @@
     resize-observer-polyfill "^1.5.1"
     tabbable "^4.0.0"
 
+"@modulz/primitives@0.0.1-26":
+  version "0.0.1-26"
+  resolved "https://registry.yarnpkg.com/@modulz/primitives/-/primitives-0.0.1-26.tgz#43d0e01e9ad37bf5d61c9895ce9f0da4ee401552"
+  integrity sha512-tIXacBEidf4HtoqZJMmV2j338fKG76w1CAAwYuJpiY2WSzBIvFwWdy/izGAaWwQUJwkcj8mgWNfxGsaIR0NhLg==
+  dependencies:
+    "@modulz/radix-icons" "2.0.0"
+    "@modulz/radix-system" "0.0.1-alpha.11"
+    aria-hidden "^1.1.1"
+    body-scroll-lock "^2.6.4"
+    focus-options-polyfill "^1.4.0"
+    lodash.merge "^4.6.2"
+    lodash.omit "^4.5.0"
+    lodash.pick "^4.4.0"
+    react-is "^16.12.0"
+    resize-observer-polyfill "^1.5.1"
+    tabbable "^4.0.0"
+
 "@modulz/radix-icons@2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-2.0.0.tgz#b179f0328b10d82573b77f2e22825d8647d7033b"

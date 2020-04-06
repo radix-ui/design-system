@@ -9,7 +9,6 @@ export type HeadingProps = TextPrimitiveProps & {
   weight?: Weight;
   size?: Size;
   truncate?: boolean;
-  as?: any;
 };
 
 export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props, forwardedRef) => (
