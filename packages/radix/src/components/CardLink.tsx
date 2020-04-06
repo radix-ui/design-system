@@ -12,7 +12,6 @@ import { theme } from '../theme';
 export type CardLinkProps = CardLinkPrimitiveProps & {
   to?: string;
   variant?: Variant;
-  as?: any;
 };
 
 const cardLinkStyleConfigOverrides: StyleConfig<CardLinkParts> = {

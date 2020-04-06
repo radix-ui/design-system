@@ -9,7 +9,6 @@ type Size = 0 | 1 | 2 | 3 | 4;
 
 export type ContainerProps = ContainerPrimitiveProps & {
   size?: Size;
-  as?: any;
 };
 
 export const Container = React.forwardRef<HTMLDivElement, ContainerProps>((props, forwadedRef) => (

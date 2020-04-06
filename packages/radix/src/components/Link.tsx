@@ -6,7 +6,6 @@ type Variant = 'ghost' | 'fade' | 'highlight' | 'underline';
 export type LinkProps = LinkPrimitiveProps & {
   to?: string;
   children?: React.ReactNode;
-  as?: any;
   variant?: Variant;
 };
 
@@ -17,6 +16,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, forwa
     styleConfig={{
       base: {
         link: {
+          normal: {},
           hover: {
             textDecoration: 'underline',
           },

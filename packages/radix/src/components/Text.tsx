@@ -9,7 +9,6 @@ export type TextProps = TextPrimitiveProps & {
   weight?: Weight;
   size?: Size;
   truncate?: boolean;
-  as?: any;
 };
 
 export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, forwardedRef) => (
