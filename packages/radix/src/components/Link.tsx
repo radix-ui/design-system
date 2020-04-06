@@ -16,6 +16,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, forwa
     styleConfig={{
       base: {
         link: {
+          normal: {},
           hover: {
             textDecoration: 'underline',
           },
