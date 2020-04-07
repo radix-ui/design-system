@@ -14,7 +14,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.5.5",
     "@mdx-js/react": "^1.5.5",
-    "@modulz/primitives": "0.0.1-27",
+    "@modulz/primitives": "0.0.1-28",
     "@modulz/radix": "^0.0.1-beta.34",
     "@modulz/radix-icons": "2.0.0",
     "@modulz/radix-system": "0.0.1-alpha.11",

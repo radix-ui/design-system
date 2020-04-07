@@ -1937,10 +1937,10 @@
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.10.tgz#f6d69866c0857664e70690d7a0bfedb72143adb5"
   integrity sha512-6cDuZeKSCSJ1KvfEQ25Y8OXUjqDJZ+HgUs6dhASWbAX8fxVraTfPsSeRe2bN+4QJDsgUaXaMWBYfRomCr04GGg==
 
-"@modulz/primitives@0.0.1-27":
-  version "0.0.1-27"
-  resolved "https://registry.yarnpkg.com/@modulz/primitives/-/primitives-0.0.1-27.tgz#86a86c5efc474967a300c23de45c2f3be42d6a57"
-  integrity sha512-ZpwKuY/4AuW4XN+57P68C9v1FzDlYSfMspMfUvqIEfcddhNot7Yza2maMMap+fAh0l+DF6JSQdaZLs+awJbm+A==
+"@modulz/primitives@0.0.1-28":
+  version "0.0.1-28"
+  resolved "https://registry.yarnpkg.com/@modulz/primitives/-/primitives-0.0.1-28.tgz#b0ec4302d131d8a91c89c67063f0b32452bf99d0"
+  integrity sha512-R/SFwOvXpNvUzuq5veIYjKeSv8DlbULaIz0otNYcYsBjFO8bDoTlKjFt4ToRdwad0v0jkzsOb6D8koYcg/YVpA==
   dependencies:
     "@modulz/radix-icons" "2.0.0"
     "@modulz/radix-system" "0.0.1-alpha.11"
