@@ -42,7 +42,7 @@ storiesOf('Components|Link', module).add('default', () => (
         could see his brown belly, slightly domed and divided by arches into stiff sections. The
         bedding was hardly able to cover strong it and seemed ready to slide off any moment. His
         many legs, pitifully thin compared with the size of the rest of him, link waved{' '}
-        <Link href="#" variant="underline">
+        <Link href="#" variant="underline" to="/">
           abouthelplessly
         </Link>{' '}
         as he looked. “What's happened to me?” he thought. It wasn't a dream. His room, a proper

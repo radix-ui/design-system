@@ -4,7 +4,6 @@ import { theme } from '../theme';
 
 type Variant = 'ghost' | 'fade' | 'highlight' | 'underline';
 export type LinkProps = LinkPrimitiveProps & {
-  to?: string;
   children?: React.ReactNode;
   variant?: Variant;
 };
