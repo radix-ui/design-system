@@ -28,7 +28,7 @@
     "react-dom": "^16.12.0"
   },
   "dependencies": {
-    "@modulz/primitives": "0.0.1-26",
+    "@modulz/primitives": "0.0.1-27",
     "@modulz/radix-system": "0.0.1-alpha.11",
     "@styled-system/css": "5.1.4",
     "@styled-system/theme-get": "^5.1.2",
@@ -47,7 +47,7 @@
     "@types/node": "^12.12.17",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
-    "@types/styled-components": "^4.4.1",
+    "@types/styled-components": "^5.0.1",
     "babel-loader": "8.0.6",
     "csstype": "^2.6.7",
     "rollup": "^1.27.12",
