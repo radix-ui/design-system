@@ -1,5 +1,6 @@
 import React from 'react';
 import { addDecorator, configure } from '@storybook/react';
+import { withA11y } from '@storybook/addon-a11y';
 import { RadixProvider } from '../src/RadixProvider';
 import { Box } from '../src';
 
@@ -12,6 +13,7 @@ function ThemeComponent({ children }) {
 }
 
 addDecorator((story, context) => <ThemeComponent>{story()}</ThemeComponent>);
+addDecorator(withA11y);
 
 configure(loadStories, module);
 
