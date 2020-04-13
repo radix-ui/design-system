@@ -26,7 +26,7 @@ export const Subheading = React.forwardRef<HTMLHeadingElement, SubheadingProps>(
               letterSpacing: '0.035em',
               lineHeight: theme.lineHeights[1],
 
-              // Chrome won't use the caps kerning data otherwise
+              // Chrome doesn't use kerning on the faux small caps otherwise
               textTransform: 'uppercase',
             },
           },
