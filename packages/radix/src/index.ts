@@ -64,6 +64,7 @@ export {
   OptionGroupProps,
 } from './components/Select';
 export { Slider, SliderProps } from './components/Slider';
+export { Subheading, SubheadingProps } from './components/Subheading';
 export { Switch, SwitchProps } from './components/Switch';
 export {
   Table,

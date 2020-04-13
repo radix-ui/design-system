@@ -1,0 +1,49 @@
+---
+title: Subheading
+component: Subheading
+description: Useful for rendering section headings.
+---
+
+```js live
+<Subheading>Subheading component</Subheading>
+```
+
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    size: {
+      type: '0 | 1',
+      default: '0',
+      description: 'The size to apply',
+    },
+    truncate: {
+      type: 'Boolean',
+      default: 'false',
+      description: 'Whether it should truncate or not',
+    },
+  }}
+/>
+
+## Examples
+
+### Size
+
+There are 2 sizes to choose from.
+
+```js live
+<Subheading size={0}>Subheading component</Subheading>
+<Subheading size={1} mt={1}>Subheading component</Subheading>
+```
+
+### Text truncation
+
+When `true` this will truncate your text based on its maximum width.
+
+```js live
+<Box sx={{ width: 100 }}>
+  <Subheading truncate>Subheading component</Subheading>
+</Box>
+```
