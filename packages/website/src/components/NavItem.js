@@ -8,6 +8,7 @@ function NavItem({ children, isExternal, active, ...props }) {
     <ListItem
       as={Link}
       {...props}
+      target={isExternal ? '_blank' : undefined}
       variant={active ? 'active' : undefined}
       px={5}
       sx={{ minHeight: 6 }}
