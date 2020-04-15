@@ -22,7 +22,7 @@ export const Subheading = React.forwardRef<HTMLHeadingElement, SubheadingProps>(
               fontVariant: 'all-small-caps',
               fontWeight: 500,
               color: theme.colors.gray800,
-              letterSpacing: '0.035em',
+              letterSpacing: '0.05em',
 
               // Chrome doesn't use kerning on the faux small caps otherwise
               textTransform: 'uppercase',
