@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import {
-  Flex,
-  Box,
-  List,
-  Heading,
   Badge,
-  Divider,
+  Box,
   Container,
+  Divider,
+  Flex,
   IconButton,
-  Text,
   Link,
+  List,
+  Subheading,
+  Text,
 } from '@modulz/radix';
-import { HamburgerIcon, CrossIcon } from '@modulz/radix-icons';
+import { CrossIcon, HamburgerIcon } from '@modulz/radix-icons';
+import { graphql, StaticQuery } from 'gatsby';
 import NavItem from './components/NavItem';
 import pkg from '../package.json';
 
@@ -120,9 +120,9 @@ function App({ element, props }) {
               <Box sx={{ display: [navOpen ? 'block' : 'none', 'block'] }}>
                 <Divider mb={1} />
                 <List>
-                  <Heading size={0} my={2} mx={5}>
+                  <Subheading mx={5} my={2}>
                     Overview
-                  </Heading>
+                  </Subheading>
                   {data.pinned.edges.map(({ node }) => (
                     <NavItem
                       key={node.frontmatter.title}
@@ -138,9 +138,9 @@ function App({ element, props }) {
                 <Divider mb={1} />
 
                 <List>
-                  <Heading size={0} my={2} mx={5}>
+                  <Subheading mx={5} my={2}>
                     Components
-                  </Heading>
+                  </Subheading>
                   {data.components.edges.map(({ node }) => (
                     <NavItem
                       key={node.frontmatter.title}
@@ -156,9 +156,9 @@ function App({ element, props }) {
                 <Divider mb={1} />
 
                 {/* <List>
-                  <Heading size={0}  mx={5} mb={2} mt={2}>
+                  <Subheading mx={5} my={2}>
                     Recipes
-                  </Heading>
+                  </Subheading>
                   {data.recipes.edges.map(({ node }) => (
                     <NavItem
                       key={node.frontmatter.title}
@@ -174,9 +174,9 @@ function App({ element, props }) {
                 <Divider mb={1} /> */}
 
                 <List>
-                  <Heading size={0} mx={5} mb={2} mt={2}>
-                    Github links
-                  </Heading>
+                  <Subheading mx={5} my={2}>
+                    GitHub links
+                  </Subheading>
 
                   <NavItem as="a" href="https://github.com/modulz/radix" isExternal>
                     Radix
