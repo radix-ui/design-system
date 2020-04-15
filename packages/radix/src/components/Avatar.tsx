@@ -17,10 +17,9 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, for
         avatar: {
           normal: {
             borderRadius: '100%',
-            backgroundColor: theme.colors.gray300,
+            backgroundColor: theme.colors.gray200,
             color: theme.colors.gray800,
             fontFamily: theme.fonts.normal,
-            fontWeight: 500,
             textTransform: 'uppercase',
           },
         },
@@ -30,7 +29,7 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, for
           0: {
             avatar: {
               normal: {
-                fontSize: theme.fontSizes[1],
+                fontSize: theme.fontSizes[2],
                 lineHeight: theme.lineHeights[2],
                 width: theme.sizes[5],
                 height: theme.sizes[5],
@@ -40,7 +39,7 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, for
           1: {
             avatar: {
               normal: {
-                fontSize: theme.fontSizes[3],
+                fontSize: theme.fontSizes[4],
                 lineHeight: theme.lineHeights[4],
                 width: theme.sizes[6],
                 height: theme.sizes[6],
