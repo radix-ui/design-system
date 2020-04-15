@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
-    "@modulz/radix-icons": "2.0.0",
+    "@modulz/radix-icons": "2.1.0",
     "@storybook/addon-options": "5.2.8",
     "@storybook/addons": "5.2.8",
     "@storybook/react": "5.2.8",
