@@ -16,6 +16,7 @@ export const Divider = React.forwardRef<HTMLHRElement, DividerProps>((props, for
       base: {
         divider: {
           normal: {
+            height: 1,
             backgroundColor: theme.colors.gray300,
           },
         },

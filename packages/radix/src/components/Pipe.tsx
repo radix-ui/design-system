@@ -13,6 +13,7 @@ export const Pipe = React.forwardRef<HTMLDivElement, PipeProps>((props, forwarde
       base: {
         pipe: {
           normal: {
+            width: 1,
             backgroundColor: theme.colors.gray300,
           },
         },

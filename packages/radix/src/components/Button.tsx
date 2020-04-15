@@ -32,7 +32,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               borderRadius: theme.radii[1],
               cursor: 'default',
               position: 'relative',
-              userSelect: 'none',
               whiteSpace: 'nowrap',
             },
             disabled: {

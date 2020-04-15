@@ -23,7 +23,6 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
               flexShrink: 0,
               mixBlendMode: 'multiply',
               padding: theme.space[1],
-              userSelect: 'none',
               verticalAlign: 'middle',
             },
             hover: {

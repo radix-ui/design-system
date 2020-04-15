@@ -1937,12 +1937,12 @@
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.10.tgz#f6d69866c0857664e70690d7a0bfedb72143adb5"
   integrity sha512-6cDuZeKSCSJ1KvfEQ25Y8OXUjqDJZ+HgUs6dhASWbAX8fxVraTfPsSeRe2bN+4QJDsgUaXaMWBYfRomCr04GGg==
 
-"@modulz/primitives@0.0.1-32":
-  version "0.0.1-32"
-  resolved "https://registry.yarnpkg.com/@modulz/primitives/-/primitives-0.0.1-32.tgz#1fe3a0d74e65cd221fec2e52128b22cb1e3c7d3b"
-  integrity sha512-zr3OaLYIgethZ43427DQJEm9ebfZSruQ8vF5ExXbUHezqGWkV0AHs1/v5Ypc1bzQeqefOivHLw6F+SOEhi2clQ==
+"@modulz/primitives@0.0.1-36":
+  version "0.0.1-36"
+  resolved "https://registry.yarnpkg.com/@modulz/primitives/-/primitives-0.0.1-36.tgz#f5fd813456fedc120b3ab17afb17513d34154673"
+  integrity sha512-SNhVdMPDWfTYT8wNqFwEdYE2gNbTee3k8Wqx+jfhr+32jF26pOutJPR0JAh+hH/a7efq8Bx1b3jQ0PTpY0/chQ==
   dependencies:
-    "@modulz/radix-icons" "2.0.0"
+    "@modulz/radix-icons" "2.1.0"
     "@modulz/radix-system" "0.0.1-alpha.11"
     aria-hidden "^1.1.1"
     body-scroll-lock "^2.6.4"
@@ -1954,11 +1954,6 @@
     react-transition-group "^4.3.0"
     resize-observer-polyfill "^1.5.1"
     tabbable "^4.0.0"
-
-"@modulz/radix-icons@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-2.0.0.tgz#b179f0328b10d82573b77f2e22825d8647d7033b"
-  integrity sha512-kp7hVMPVaQ2+9r2l6Cg28Huj5z3aBKl1jk7lmqtnnPEJH7vr6p6lS3u2RxMhTGQvg+H1mXJGTKhveG++87RYGQ==
 
 "@modulz/radix-icons@2.1.0":
   version "2.1.0"
