@@ -2,9 +2,11 @@ import React from 'react';
 import { Avatar as AvatarPrimitive, AvatarProps as AvatarPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
+type Variant = 'gray' | 'black';
 type Size = 0 | 1;
 
 export type AvatarProps = AvatarPrimitiveProps & {
+  variant?: Variant;
   size?: Size;
 };
 
@@ -17,14 +19,30 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, for
         avatar: {
           normal: {
             borderRadius: '100%',
-            backgroundColor: theme.colors.gray200,
-            color: theme.colors.gray800,
+            color: 'white',
             fontFamily: theme.fonts.normal,
+            fontWeight: 500,
             textTransform: 'uppercase',
           },
         },
       },
       variants: {
+        variant: {
+          gray: {
+            avatar: {
+              normal: {
+                backgroundImage: `linear-gradient(${theme.colors.gray600}, ${theme.colors.gray700})`,
+              },
+            },
+          },
+          black: {
+            avatar: {
+              normal: {
+                backgroundColor: theme.colors.gray800,
+              },
+            },
+          },
+        },
         size: {
           0: {
             avatar: {
@@ -39,7 +57,7 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, for
           1: {
             avatar: {
               normal: {
-                fontSize: theme.fontSizes[4],
+                fontSize: theme.fontSizes[5],
                 lineHeight: theme.lineHeights[4],
                 width: theme.sizes[6],
                 height: theme.sizes[6],
@@ -53,5 +71,6 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, for
 ));
 
 Avatar.defaultProps = {
+  variant: 'gray',
   size: 0,
 };
