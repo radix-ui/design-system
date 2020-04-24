@@ -86,16 +86,16 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
                 // text look not centered vertically within the input.
                 //
                 // This happens because actual input text is rendered by a shadow DOM element, which doesn't use
-                // the input's line height. Instead, it uses the default "line-height: normal", which means 1.2.
+                // the line height of the input. Instead, it uses the default "line-height: normal", which means 1.2.
                 //
                 // So:
                 // * The input height is 35px, the font size is 13px
                 // * The shadow DOM element height is Math.ceil(13px * 1.2) = 16px
                 // * 35px - 16px = 19px for the browser to allocate above and below the shadow DOM element
                 //
-                // Hence the 1px padding to resolve the mismatch between the odd input height (35px) and the even
-                // shadow DOM value element height (16px). This way baseline position stays consistent no matter
-                // how the input is placed.
+                // Hence adding the 1px padding to resolve the mismatch between the odd input height (35px) and
+                // the even shadow DOM value element height (16px). This way baseline position stays consistent
+                // no matter how the input is placed.
                 paddingBottom: '1px',
               },
             },
