@@ -30,7 +30,7 @@ export const Dialog = (props: DialogProps) => (
             width: 'auto',
             maxWidth: 'fit-content',
             minWidth: 200,
-            maxHeight: '90vh',
+            maxHeight: '85vh',
             margin: '5vh auto 10vh',
             overflow: 'auto',
           },
