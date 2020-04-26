@@ -1,8 +1,12 @@
 {
   "private": true,
   "workspaces": {
-    "packages": ["packages/*"],
-    "nohoist": ["**/mdlz-prmtz"]
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/mdlz-prmtz"
+    ]
   },
   "scripts": {
     "init": "yarn radix-system:build && yarn radix:build",
@@ -57,5 +61,11 @@
       "prettier --write",
       "git add"
     ]
-  }
+  },
+  "name": "radix",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/grzim/radix.git",
+  "author": "GrziM <niebadz@gmail.com>",
+  "license": "MIT"
 }

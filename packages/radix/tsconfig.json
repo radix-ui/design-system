@@ -12,8 +12,17 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "strict": true,
-    "target": "es5"
+    "target": "es5",
+    // according to spec strict: true applies true to all of below flags, nevertheless it is not true.
+    // It has a side effect that makes it impossible to use Object.entries with string literal union types
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes ": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "alwaysStrict": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "src/**/*.story.*"]

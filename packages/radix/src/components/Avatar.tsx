@@ -1,76 +1,52 @@
 import React from 'react';
 import { Avatar as AvatarPrimitive, AvatarProps as AvatarPrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
+import {
+  SimplifiedTypeWithDefaultState,
+  stylesFor,
+  withDefaultBase,
+  withDefaultSizes,
+  withSizes,
+} from '../utilities/styles-creator';
+import { CSSObject } from 'styled-components';
 
-type Variant = 'gray' | 'black';
 type Size = 0 | 1;
 
 export type AvatarProps = AvatarPrimitiveProps & {
-  variant?: Variant;
   size?: Size;
+};
+
+const baseStyles: CSSObject = {
+  borderRadius: '100%',
+  backgroundColor: theme.colors.gray200,
+  color: theme.colors.gray800,
+  fontFamily: theme.fonts.normal,
+  textTransform: 'uppercase',
+};
+
+const sizes: SimplifiedTypeWithDefaultState = {
+  0: {
+    fontSize: theme.fontSizes[2],
+    lineHeight: theme.lineHeights[2],
+    width: theme.sizes[5],
+    height: theme.sizes[5],
+  },
+  1: {
+    fontSize: theme.fontSizes[4],
+    lineHeight: theme.lineHeights[4],
+    width: theme.sizes[6],
+    height: theme.sizes[6],
+  },
 };
 
 export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, forwardedRef) => (
   <AvatarPrimitive
     {...props}
     ref={forwardedRef}
-    styleConfig={{
-      base: {
-        avatar: {
-          normal: {
-            borderRadius: '100%',
-            color: 'white',
-            fontFamily: theme.fonts.normal,
-            fontWeight: 500,
-            textTransform: 'uppercase',
-          },
-        },
-      },
-      variants: {
-        variant: {
-          gray: {
-            avatar: {
-              normal: {
-                backgroundImage: `linear-gradient(${theme.colors.gray600}, ${theme.colors.gray700})`,
-              },
-            },
-          },
-          black: {
-            avatar: {
-              normal: {
-                backgroundColor: theme.colors.gray800,
-              },
-            },
-          },
-        },
-        size: {
-          0: {
-            avatar: {
-              normal: {
-                fontSize: theme.fontSizes[2],
-                lineHeight: theme.lineHeights[2],
-                width: theme.sizes[5],
-                height: theme.sizes[5],
-              },
-            },
-          },
-          1: {
-            avatar: {
-              normal: {
-                fontSize: theme.fontSizes[5],
-                lineHeight: theme.lineHeights[4],
-                width: theme.sizes[6],
-                height: theme.sizes[6],
-              },
-            },
-          },
-        },
-      },
-    }}
+    styleConfig={stylesFor('avatar')(withDefaultBase(baseStyles), withDefaultSizes(sizes))}
   />
 ));
 
 Avatar.defaultProps = {
-  variant: 'gray',
   size: 0,
 };

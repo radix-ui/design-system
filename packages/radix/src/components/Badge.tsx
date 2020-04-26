@@ -1,13 +1,58 @@
 import React from 'react';
 import { Badge as BadgePrimitive, BadgeProps as BadgePrimitiveProps } from '@modulz/primitives';
-import { theme } from '../theme';
+import { colors, theme } from '../theme';
+import {
+  SimplifiedTypeWithDefaultState,
+  stylesFor,
+  withDefaultBase,
+  withDefaultVariants,
+} from '../utilities/styles-creator';
+import { CSSObject } from 'styled-components';
 
 type Variant = 'gray' | 'blue' | 'green' | 'red' | 'yellow';
-type Size = 0 | 1;
 
 export type BadgeProps = BadgePrimitiveProps & {
   variant?: Variant;
-  size?: Size;
+};
+
+const baseStyles: CSSObject = {
+  fontFamily: theme.fonts.mono,
+  fontSize: theme.fontSizes[0],
+  lineHeight: theme.lineHeights[0],
+  wordSpacing: '-0.25em',
+  minWidth: theme.sizes[5],
+  paddingTop: 0,
+  paddingBottom: 0,
+  paddingLeft: '1.25ch',
+  paddingRight: '1.25ch',
+  border: 0,
+  borderRadius: 9999,
+};
+
+const variantsCSS: SimplifiedTypeWithDefaultState = {
+  gray: {
+    color: colors.gray800,
+  },
+  blue: {
+    backgroundColor: colors.blue100,
+    color: colors.blue700,
+  },
+  green: {
+    backgroundColor: colors.green100,
+    color: colors.green700,
+  },
+  red: {
+    backgroundColor: colors.red100,
+    color: colors.red700,
+  },
+  yellow: {
+    backgroundColor: colors.yellow100,
+    color: colors.yellow700,
+  },
+};
+
+const sharedStyles = {
+  boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
 };
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, forwardedRef) => {
@@ -15,73 +60,10 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, forwa
     <BadgePrimitive
       {...props}
       ref={forwardedRef}
-      styleConfig={{
-        base: {
-          badge: {
-            normal: {
-              fontFamily: theme.fonts.mono,
-              fontSize: theme.fontSizes[0],
-              lineHeight: theme.lineHeights[0],
-              wordSpacing: '-0.25em',
-              minWidth: theme.sizes[5],
-              paddingTop: 0,
-              paddingBottom: 0,
-              paddingLeft: '1.25ch',
-              paddingRight: '1.25ch',
-              border: 0,
-              borderRadius: 9999,
-            },
-          },
-        },
-        variants: {
-          variant: {
-            gray: {
-              badge: {
-                normal: {
-                  boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
-                  color: theme.colors.gray800,
-                },
-              },
-            },
-            blue: {
-              badge: {
-                normal: {
-                  backgroundColor: theme.colors.blue100,
-                  boxShadow: `inset 0 0 0 1px ${theme.colors.blue300}`,
-                  color: theme.colors.blue700,
-                },
-              },
-            },
-            green: {
-              badge: {
-                normal: {
-                  backgroundColor: theme.colors.green100,
-                  boxShadow: `inset 0 0 0 1px ${theme.colors.green300}`,
-                  color: theme.colors.green700,
-                },
-              },
-            },
-            red: {
-              badge: {
-                normal: {
-                  backgroundColor: theme.colors.red100,
-                  boxShadow: `inset 0 0 0 1px ${theme.colors.red300}`,
-                  color: theme.colors.red700,
-                },
-              },
-            },
-            yellow: {
-              badge: {
-                normal: {
-                  backgroundColor: theme.colors.yellow100,
-                  boxShadow: `inset 0 0 0 1px ${theme.colors.yellow300}`,
-                  color: theme.colors.yellow700,
-                },
-              },
-            },
-          },
-        },
-      }}
+      styleConfig={stylesFor('badge')(
+        withDefaultBase(baseStyles),
+        withDefaultVariants(variantsCSS, sharedStyles)
+      )}
     />
   );
 });

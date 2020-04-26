@@ -85,6 +85,7 @@ export const theme = {
   },
 } as const;
 
+export const colors = theme.colors;
 // Breakpoint aliases
 // By adding the following aliases, repsonsive props
 // can be used like so:
