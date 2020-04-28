@@ -52,8 +52,8 @@
     "csstype": "^2.6.7",
     "rollup": "^1.27.12",
     "rollup-plugin-typescript2": "^0.25.3",
-    "typescript": "3.7.3",
+    "typescript": "3.8.3",
     "yalc": "^1.0.0-pre.32"
   },
-  "gitHead": "e51368d9799b57de62046ffb59a158a72dfa2053"
+  "gitHead": "edc225a03b0238641d0ece55d6e1f10bcd9b7eae"
 }
