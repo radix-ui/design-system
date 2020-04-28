@@ -1,6 +1,6 @@
 {
   "name": "@modulz/radix-system",
-  "version": "0.0.1-alpha.12",
+  "version": "0.0.1-alpha.13",
   "description": "Radix System Library",
   "author": "Pedro Duarte <pedro@modulz.app>",
   "main": "dist/index.js",
