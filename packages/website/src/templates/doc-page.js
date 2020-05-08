@@ -40,7 +40,7 @@ export const components = {
       </RC.Text>
       {props.default && (
         <RC.Text as="p" size={2} sx={{ lineHeight: 2, color: 'gray700' }}>
-          default <RC.Code variant="fade">{props.default}</RC.Code>
+          default <RC.Code>{props.default}</RC.Code>
         </RC.Text>
       )}
     </RC.Box>
