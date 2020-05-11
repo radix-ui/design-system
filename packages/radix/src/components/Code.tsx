@@ -12,7 +12,6 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>((props, forwardedRe
       base: {
         code: {
           normal: {
-            display: 'inline-block',
             fontFamily: theme.fonts.mono,
             fontSize: theme.fontSizes[2],
             lineHeight: theme.lineHeights[1],
