@@ -2,8 +2,7 @@ import React from 'react';
 import { Code as CodePrimitive, CodeProps as CodePrimitiveProps } from '@modulz/primitives';
 import { theme } from '../theme';
 
-type Variant = 'normal' | 'fade';
-export type CodeProps = CodePrimitiveProps & { variant?: Variant };
+export type CodeProps = CodePrimitiveProps;
 
 export const Code = React.forwardRef<HTMLElement, CodeProps>((props, forwardedRef) => (
   <CodePrimitive
@@ -19,31 +18,11 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>((props, forwardedRe
             paddingLeft: theme.space[1],
             paddingRight: theme.space[1],
             borderRadius: theme.radii[1],
-          },
-        },
-      },
-      variants: {
-        variant: {
-          normal: {
-            code: {
-              normal: {
-                backgroundColor: theme.colors.blue200,
-                color: theme.colors.blue700,
-              },
-            },
-          },
-          fade: {
-            code: {
-              normal: {
-                backgroundColor: theme.colors.gray200,
-                color: theme.colors.gray700,
-              },
-            },
+            color: theme.colors.gray800,
+            boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
           },
         },
       },
     }}
   />
 ));
-
-Code.defaultProps = { variant: 'normal' };

@@ -42,12 +42,12 @@ export function PropsTable({ data = {} }) {
                 return (
                   <Tr key={key}>
                     <Td>
-                      <Code variant="fade">{key}</Code>
+                      <Code>{key}</Code>
                     </Td>
                     <Td>
-                      <Code>{value.type}</Code>
+                      <Code sx={{ whiteSpace: 'nowrap' }}>{value.type}</Code>
                     </Td>
-                    <Td>{value.description}</Td>
+                    <Td sx={{ lineHeight: 1 }}>{value.description}</Td>
                   </Tr>
                 );
               })}

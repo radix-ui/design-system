@@ -8,8 +8,11 @@ import { Code } from './Code';
 storiesOf('Components|Code', module).add('default', () => (
   <>
     <Box mb={4}>
+      <Code>console.log('Radix')</Code>
+    </Box>
+    <Box mb={4}>
       <Heading size={2}>
-        Component API patterns with <Code variant="fade">css({})</Code>
+        Component API patterns with <Code>css({})</Code>
       </Heading>
     </Box>
     <Box mb={4}>
