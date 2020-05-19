@@ -45,7 +45,7 @@ export function PropsTable({ data = {} }) {
                       <Code>{key}</Code>
                     </Td>
                     <Td>
-                      <Code sx={{ whiteSpace: 'nowrap' }}>{value.type}</Code>
+                      <Code>{value.type}</Code>
                     </Td>
                     <Td sx={{ lineHeight: 1 }}>{value.description}</Td>
                   </Tr>
