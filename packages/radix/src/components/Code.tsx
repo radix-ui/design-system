@@ -17,7 +17,6 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>((props, forwardedRe
             color: theme.colors.gray800,
             fontFamily: theme.fonts.mono,
             fontSize: '80%',
-            lineHeight: 1,
             marginX: '0.1em',
             paddingX: '0.45em',
             paddingY: '0.1em',
