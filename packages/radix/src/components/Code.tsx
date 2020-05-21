@@ -12,14 +12,15 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>((props, forwardedRe
       base: {
         code: {
           normal: {
-            fontFamily: theme.fonts.mono,
-            fontSize: theme.fontSizes[2],
-            lineHeight: theme.lineHeights[1],
-            paddingLeft: theme.space[1],
-            paddingRight: theme.space[1],
-            borderRadius: theme.radii[1],
-            color: theme.colors.gray800,
+            borderRadius: '0.25em',
             boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
+            color: theme.colors.gray800,
+            fontFamily: theme.fonts.mono,
+            fontSize: '80%',
+            lineHeight: 1,
+            marginX: '0.1em',
+            paddingX: '0.45em',
+            paddingY: '0.1em',
           },
         },
       },
