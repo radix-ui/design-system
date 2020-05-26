@@ -16,7 +16,7 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>((props, forwardedRe
             boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
             color: theme.colors.gray800,
             fontFamily: theme.fonts.mono,
-            fontSize: '85%',
+            fontSize: 'max(12px, 85%)',
             marginLeft: '0.1em',
             marginRight: '0.1em',
             paddingTop: '0.1em',
