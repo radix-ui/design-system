@@ -3,6 +3,7 @@ import { transparentize } from 'polished';
 import css from '@styled-system/css';
 import themeGet from '@styled-system/theme-get';
 import { spaceSet, SpaceSetProps, sx, SxProp, Prop, variant } from '@modulz/radix-system';
+import { theme } from '../theme';
 
 type ListSystemProps = SpaceSetProps & SxProp;
 export type ListProps = ListSystemProps & { variant?: Prop<Variants> };
@@ -44,6 +45,7 @@ export const ListItem = styled('button')<ListItemProps>(
     boxSizing: 'border-box',
     cursor: 'pointer',
     display: 'flex',
+    fontFamily: theme.fonts.normal,
     minHeight: '31px',
     outline: '1px solid transparent',
     outlineOffset: '-1px',
