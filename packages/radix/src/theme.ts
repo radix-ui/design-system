@@ -9,8 +9,8 @@ export const theme = {
   breakpoints: ['600px', '1000px', '1080px', '1760px'] as RadixBreakpoints<any>,
   fonts: {
     normal:
-      'UntitledSans, -apple-system, BlinkMacSystemFont, "Helvetica Neue", helvetica, arial, sans-serif',
-    mono: 'RadixDuo, "Liberation Mono", Menlo, Consolas, monospace',
+      '"Untitled Sans", UntitledSans, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif',
+    mono: '"Söhne Mono", RadixDuo, "Liberation Mono", Menlo, Consolas, monospace',
   },
   fontSizes: [
     '10px',
