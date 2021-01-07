@@ -1,61 +1,65 @@
 {
-  "private": true,
-  "workspaces": {
-    "packages": ["packages/*"],
-    "nohoist": ["**/mdlz-prmtz"]
-  },
+  "name": "@modulz/design-system",
+  "version": "0.0.19",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
   "scripts": {
-    "init": "yarn radix-system:build && yarn radix:build",
-    "start": "npm-run-all --parallel radix-system radix radix:storybook website",
-    "website": "lerna exec --scope website -- yarn start",
-    "website:build": "lerna exec --scope website -- yarn build",
-    "radix": "lerna exec --scope @modulz/radix -- yarn watch",
-    "radix:storybook": "lerna exec --scope @modulz/radix -- yarn storybook",
-    "radix:build": "lerna exec --scope @modulz/radix -- yarn build",
-    "radix-system": "lerna exec --scope @modulz/radix-system -- yarn watch",
-    "radix-system:build": "lerna exec --scope @modulz/radix-system -- yarn build",
-    "build": "yarn radix-system:build && yarn radix:build && yarn website:build",
-    "prettier": "prettier './**/*.{js,jsx,ts,tsx,json,yml,yaml,css,md,mdx}' --write",
-    "lint": "eslint './packages/**/*.{js,jsx,ts,tsx}'",
-    "clean": "npm run clean-logs && npm run clean-modules",
-    "clean-logs": "rimraf ./packages/*/npm-debug* && rimraf ./*-debug*",
-    "clean-modules": "rimraf ./packages/*/node_modules/ && rimraf ./node_modules/",
-    "release": "lerna publish"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "prettier": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "ds:build": "rollup -c",
+    "ds:release": "yarn ds:build && np"
+  },
+  "dependencies": {
+    "@interop-ui/react-accordion": "0.0.1-13",
+    "@interop-ui/react-alert-dialog": "0.0.1-11",
+    "@interop-ui/react-avatar": "0.0.1-12",
+    "@interop-ui/react-checkbox": "0.0.1-14",
+    "@interop-ui/react-dialog": "0.0.1-13",
+    "@interop-ui/react-popover": "0.0.1-13",
+    "@interop-ui/react-progress-bar": "0.0.1-10",
+    "@interop-ui/react-radio-group": "0.0.1-6",
+    "@interop-ui/react-separator": "0.0.1-10",
+    "@interop-ui/react-slider": "0.0.1-12",
+    "@interop-ui/react-switch": "0.0.1-13",
+    "@interop-ui/react-tabs": "0.0.1-12",
+    "@interop-ui/react-toggle-button": "0.0.1-13",
+    "@interop-ui/react-tooltip": "0.0.1-12",
+    "@interop-ui/react-utils": "0.0.1-12",
+    "@modulz/radix-icons": "^3.3.0",
+    "@radix-ui/react-menu": "0.0.1",
+    "@stitches/react": "0.0.3-canary.4"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.11.0",
-    "@typescript-eslint/parser": "^2.11.0",
-    "babel-eslint": "10.0.3",
-    "eslint": "6.7.2",
-    "eslint-config-react-app": "^5.1.0",
-    "eslint-plugin-flowtype": "4.5.2",
-    "eslint-plugin-import": "2.19.1",
-    "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-react": "7.17.0",
-    "eslint-plugin-react-hooks": "2.3.0",
-    "husky": "^3.1.0",
-    "lerna": "^3.19.0",
-    "lint-staged": "^9.5.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^1.19.1",
-    "rimraf": "^3.0.0",
-    "yarnhook": "^0.4.3"
+    "@next/mdx": "^10.0.1",
+    "@types/node": "^14.14.7",
+    "@types/react": "^16.9.56",
+    "husky": ">=4",
+    "lint-staged": ">=10",
+    "next": "10.0.1",
+    "np": "^7.0.0",
+    "prettier": "^2.1.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "rollup": "^2.33.1",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "typescript": "^4.0.5"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && lerna exec --scope @modulz/radix -- yalc check",
-      "post-rewrite": "yarnhook"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{md,json}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js,css,md}": "prettier --write"
   }
 }

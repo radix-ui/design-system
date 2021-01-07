@@ -1,7 +1,0 @@
-{
-  "extends": "react-app",
-  "rules": {
-    "react/forbid-foreign-prop-types": 0,
-    "jsx-a11y/accessible-emoji": 0
-  }
-}

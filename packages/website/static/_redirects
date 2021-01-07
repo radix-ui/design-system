@@ -1,3 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://modulz-radix.netlify.com/* https://radix.modulz.app/:splat 301!
-http://modulz-radix.netlify.com/* https://radix.modulz.app/:splat 301!

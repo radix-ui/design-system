@@ -1,8 +1,5 @@
-build
 node_modules
-package-lock.json
-package.json
-storybook-static
-public
-.cache
-dist
+.next
+out
+.mdx-data
+.parcel-cache
