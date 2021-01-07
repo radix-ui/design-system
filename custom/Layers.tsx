@@ -8,7 +8,8 @@ export function Layers() {
     <Box
       css={{
         position: 'fixed',
-        top: '36px',
+        // top: '36px',
+        top: '0',
         left: '0',
         bottom: '0',
         width: '250px',
@@ -133,7 +134,7 @@ export function Layers() {
           </Box>
           <Text size="1">Text</Text>
         </TreeItem>
-        
+
         <TreeItem>
           <Box css={{ mr: '$2' }}>
             <svg

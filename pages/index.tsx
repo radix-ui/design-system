@@ -41,9 +41,11 @@ import { Subtitle } from '../components/Subtitle';
 import { Heading } from '../components/Heading';
 import { Subheading } from '../components/Subheading';
 import { Paragraph } from '../components/Paragraph';
+
+import { Layers } from '../custom/Layers';
+import { Properties } from '../custom/Properties';
 // import { Color } from '../custom/Color';
 import { Avatars } from '../custom/Avatars';
-import { Kbds } from '../custom/Kbds';
 import { Menus } from '../custom/Menus';
 import { Status } from '../components/Status';
 
@@ -2237,7 +2239,6 @@ function Home() {
           </Container>
         </Section>
         <Menus />
-        <Kbds />
       </Box>
     </Box>
   );
