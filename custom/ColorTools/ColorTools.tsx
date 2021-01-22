@@ -11,234 +11,132 @@ import { EyeClosedIcon, EyeOpenIcon, CodeIcon, BlendingModeIcon } from '@modulz/
 import chroma from 'chroma-js';
 
 // Constants for color generation
-const steps = 7;
 const sat_rate = 100;
 const modifier = 10;
 
+// Generate 7 steps only. Steps 8 and 9 aren't generated.
+const steps = 7;
+
 const gray = {
-  hue_start: 206,
-  hue_end: 206,
-  sat_start: 0.5,
-  sat_end: 5,
-  sat_curve: '0.630, 0.575, 0.495, 0.115',
-  lum_start: 99,
-  lum_end: 82,
-  overrides: {
-    8: 'hsl(206,6%,56%)',
-    9: 'hsl(206,6%,44%)',
-  },
+  start: 'hsl(206, 20%, 98.8%)',
+  end: 'hsl(206, 10%, 80.0%)',
+  curve: '0.630, 0.575, 0.495, 0.115',
+
+  // You can override scale steps from 1 to 9 like this:
+  // overrides: {
+  //   8: 'hsl(0, 100%, 50%)',
+  // },
 };
 
 const red = {
-  hue_start: 351,
-  hue_end: 355,
-  sat_start: 3,
-  sat_end: 49,
-  sat_curve: '0.655, 0.340, 0.800, 0.510',
-  lum_start: 100,
-  lum_end: 95,
-  overrides: {
-    9: 'hsl(356, 80%, 47%)',
-  },
+  start: 'hsl(351, 100%, 98.5%)',
+  end: 'hsl(355, 82%, 71.7%)',
+  curve: '0.655, 0.340, 0.800, 0.510',
+  overrides: {},
 };
 
 const crimson = {
-  hue_start: 332,
-  hue_end: 336,
-  sat_start: 3,
-  sat_end: 51,
-  sat_curve: '0.655, 0.325, 0.815, 0.480',
-  lum_start: 100,
-  lum_end: 94,
-  overrides: {
-    9: 'hsl(336,79%,46%)',
-  },
+  start: 'hsl(332, 100%, 98.5%)',
+  end: 'hsl(336, 80%, 70.0%)',
+  curve: '0.655, 0.325, 0.815, 0.480',
+  overrides: {},
 };
 
 const pink = {
-  hue_start: 322,
-  hue_end: 322,
-  sat_start: 3,
-  sat_end: 55,
-  sat_curve: '0.700, 0.370, 0.820, 0.450',
-  lum_start: 100,
-  lum_end: 95,
-  overrides: {
-    8: 'hsl(322,75%,60%)',
-    9: 'hsl(322,80%,44%)',
-  },
+  start: 'hsl(322, 100%, 98.5%)',
+  end: 'hsl(322, 84%, 68.9%)',
+  curve: '0.700, 0.370, 0.820, 0.450',
+  overrides: {},
 };
 
 const purple = {
-  hue_start: 280,
-  hue_end: 272,
-  sat_start: 2,
-  sat_end: 47,
-  sat_curve: '0.700, 0.415, 0.925, 0.540',
-  lum_start: 100,
-  lum_end: 89,
+  start: 'hsl(280, 100%, 99.0%)',
+  end: 'hsl(272, 66%, 68.1%)',
+  curve: '0.700, 0.415, 0.925, 0.540',
+  overrides: {},
 };
 
 const violet = {
-  hue_start: 252,
-  hue_end: 252,
-  sat_start: 2,
-  sat_end: 48,
-  sat_curve: '0.690, 0.375, 0.745, 0.465',
-  lum_start: 100,
-  lum_end: 95,
-  overrides: {
-    9: 'hsl(250, 55%, 48%)',
-  },
+  start: 'hsl(252, 100%, 99.0%)',
+  end: 'hsl(252, 82%, 72.2%)',
+  curve: '0.690, 0.375, 0.745, 0.465',
+  overrides: {},
 };
 
 const indigo = {
-  hue_start: 226,
-  hue_end: 226,
-  sat_start: 2,
-  sat_end: 49,
-  sat_curve: '0.585, 0.305, 0.770, 0.490',
-  lum_start: 100,
-  lum_end: 93,
+  start: 'hsl(226, 100%, 99.0%)',
+  end: 'hsl(226, 76%, 70.2%)',
+  curve: '0.585, 0.305, 0.770, 0.490',
 };
 
 const blue = {
-  hue_start: 206,
-  hue_end: 206,
-  sat_start: 2.5,
-  sat_end: 62,
-  sat_curve: '0.695, 0.390, 0.695, 0.505',
-  lum_start: 100,
-  lum_end: 99,
-  overrides: {
-    9: 'hsl(211,100%,44%)',
-  },
+  start: 'hsl(206, 100%, 98.8%)',
+  end: 'hsl(206, 97%, 68.3%)',
+  curve: '0.695, 0.390, 0.695, 0.505',
+  overrides: {},
 };
 
 const turquoise = {
-  hue_start: 185,
-  hue_end: 188,
-  sat_start: 3.5,
-  sat_end: 64,
-  sat_curve: '0.765, 0.485, 0.805, 0.740',
-  lum_start: 99.5,
-  lum_end: 87,
-  overrides: {
-    8: 'hsl(190, 88%, 40%)',
-    9: 'hsl(190, 90%, 30%)',
-  },
+  start: 'hsl(185, 78%, 97.8%)',
+  end: 'hsl(188, 68%, 59.2%)',
+  curve: '0.765, 0.485, 0.805, 0.740',
+  overrides: {},
 };
 
 const teal = {
-  hue_start: 165,
-  hue_end: 172,
-  sat_start: 5,
-  sat_end: 70,
-  sat_curve: '0.690, 0.315, 0.860, 0.620',
-  lum_start: 100,
-  lum_end: 77,
-  overrides: {
-    8: 'hsl(173, 82%, 36%)',
-    9: 'hsl(174, 100%, 24.5%)',
-  },
+  start: 'hsl(165, 100%, 97.5%)',
+  end: 'hsl(172, 54%, 50.0%)',
+  curve: '0.690, 0.315, 0.860, 0.620',
+  overrides: {},
 };
 
 const green = {
-  hue_start: 130,
-  hue_end: 144,
-  sat_start: 5,
-  sat_end: 55,
-  sat_curve: '0.645, 0.260, 0.860, 0.630',
-  lum_start: 100,
-  lum_end: 77,
-  overrides: {
-    8: 'hsl(145, 62%, 41%)',
-    9: 'hsl(148, 69%, 30%)',
-  },
+  start: 'hsl(130, 100%, 97.5%)',
+  end: 'hsl(144, 48%, 55.8%)',
+  curve: '0.645, 0.260, 0.860, 0.630',
+  overrides: {},
 };
 
 const lime = {
-  hue_start: 85,
-  hue_end: 76,
-  sat_start: 6,
-  sat_end: 85,
-  sat_curve: '0.425, 0.150, 0.860, 0.605',
-  lum_start: 99.5,
-  lum_end: 85,
-  overrides: {
-    8: 'hsl(77, 85%, 47%)',
-    9: 'hsl(78, 80%, 25%)',
-  },
+  start: 'hsl(85, 86%, 96.5%)',
+  end: 'hsl(76, 74%, 48.9%)',
+  curve: '0.425, 0.150, 0.860, 0.605',
+  overrides: {},
 };
 
 const yellow = {
-  hue_start: 55,
-  hue_end: 52,
-  sat_start: 9,
-  sat_end: 90,
-  sat_curve: '0.830, 0.585, 0.660, 0.820',
-  lum_start: 100,
-  lum_end: 94,
-  overrides: {
-    8: 'hsl(52, 99%, 52%)',
-    9: 'hsl(40, 80%, 32%)',
-  },
+  start: 'hsl(55, 100%, 95.5%)',
+  end: 'hsl(52, 88%, 51.7%)',
+  curve: '0.830, 0.585, 0.660, 0.820',
+  overrides: {},
 };
 
 const orange = {
-  hue_start: 40,
-  hue_end: 36,
-  sat_start: 6,
-  sat_end: 90,
-  sat_curve: '0.555, 0.270, 0.710, 0.510',
-  lum_start: 100,
-  lum_end: 98,
-  overrides: {
-    8: 'hsl(38, 100%, 54%)',
-    9: 'hsl(27, 65%, 36%)',
-  },
+  start: 'hsl(40, 100%, 97.0%)',
+  end: 'hsl(36, 96%, 53.9%)',
+  curve: '0.555, 0.270, 0.710, 0.510',
+  overrides: {},
 };
 
 const brown = {
-  hue_start: 30,
-  hue_end: 28,
-  sat_start: 3,
-  sat_end: 55,
-  sat_curve: '0.700, 0.415, 0.745, 0.465',
-  lum_start: 99.5,
-  lum_end: 85,
-  overrides: {
-    8: 'hsl(28, 48%, 52%)',
-    9: 'hsl(20, 50%, 37%)',
-  },
+  start: 'hsl(30, 75%, 98.0%)',
+  end: 'hsl(28, 61%, 61.6%)',
+  curve: '0.700, 0.415, 0.745, 0.465',
+  overrides: {},
 };
 
 const bronze = {
-  hue_start: 18,
-  hue_end: 16,
-  sat_start: 3,
-  sat_end: 36,
-  sat_curve: '0.590, 0.415, 0.720, 0.475',
-  lum_start: 100,
-  lum_end: 78,
-  overrides: {
-    8: 'hsl(16, 28%, 52%)',
-    9: 'hsl(16, 30%, 43%)',
-  },
+  start: 'hsl(18, 100%, 98.5%)',
+  end: 'hsl(16, 39%, 64.0%)',
+  curve: '0.590, 0.415, 0.720, 0.475',
+  overrides: {},
 };
 
 const gold = {
-  hue_start: 50,
-  hue_end: 36,
-  sat_start: 3,
-  sat_end: 40,
-  sat_curve: '0.700, 0.415, 0.745, 0.465',
-  lum_start: 99.5,
-  lum_end: 75,
-  overrides: {
-    8: 'hsl(36, 30%, 52%)',
-    9: 'hsl(36, 26%, 40%)',
-  },
+  start: 'hsl(50, 75%, 98.0%)',
+  end: 'hsl(36, 37%, 60.0%)',
+  curve: '0.700, 0.415, 0.745, 0.465',
+  overrides: {},
 };
 
 export function ColorTools() {
@@ -300,7 +198,7 @@ type ContrastInfo = {
 function Scale({ name, scale }: ScaleProps) {
   const [isEnabled, setIsEnabled] = React.useState(true);
   const [showCode, setShowCode] = React.useState(false);
-  const [curve, setCurve] = React.useState(scale.sat_curve);
+  const [curve, setCurve] = React.useState(scale.curve);
   const [colors, setColors] = React.useState<ReturnType<typeof generate>>([]);
   const [contrastInfo, setContrastInfo] = React.useState<ContrastInfo>();
 
@@ -329,12 +227,24 @@ function Scale({ name, scale }: ScaleProps) {
     const [x1, y1, x2, y2] = newCurveParams;
     const lumCurveParams = [1 - x2, 1 - y2, 1 - x1, 1 - y1] as BezierParams;
 
+    const startColor = chroma(scale.start);
+    const endColor = chroma(scale.end);
+
+    const hsvScale = {
+      hue_start: startColor.hsv()[0],
+      sat_start: startColor.hsv()[1] * 100,
+      lum_start: startColor.hsv()[2] * 100,
+      hue_end: endColor.hsv()[0],
+      sat_end: endColor.hsv()[1] * 100,
+      lum_end: endColor.hsv()[2] * 100,
+    };
+
     let newColors = generate({
       specs: {
         steps,
         sat_rate,
         modifier,
-        ...scale,
+        ...hsvScale,
         hue_curve: bezier(...newCurveParams),
         sat_curve: bezier(...newCurveParams),
         lum_curve: bezier(...lumCurveParams),
@@ -357,7 +267,7 @@ function Scale({ name, scale }: ScaleProps) {
         hsv: chroma(color).hsv(),
         hsl: chroma(color).hsl(),
         rgb: chroma(color).rgb(),
-        hueRange: [scale.hue_start, scale.hue_end],
+        hueRange: [chroma(scale.start).hsv()[0], chroma(scale.end).hsv()[0]],
         steps,
         label: modifier * index,
         contrastBlack,
@@ -386,7 +296,7 @@ function Scale({ name, scale }: ScaleProps) {
           hsv: chroma(color).hsv(),
           hsl: chroma(color).hsl(),
           rgb: chroma(color).rgb(),
-          hueRange: [scale.hue_start, scale.hue_end],
+          hueRange: [chroma(scale.start).hsv()[0], chroma(scale.end).hsv()[0]],
           steps,
           label: modifier * index,
           contrastBlack,
