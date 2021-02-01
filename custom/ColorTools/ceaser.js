@@ -32,7 +32,7 @@ export function createCeaser(canvas, code, curve, onChange) {
     draw: function () {
       // figure out the edges
       this.getSides();
-      ctx.fillStyle = '#000';
+      ctx.fillStyle = '#888';
       ctx.fillRect(this.left, this.top, this.width, this.height);
     },
   };
@@ -199,7 +199,7 @@ export function createCeaser(canvas, code, curve, onChange) {
 
     // draw bezier curve
     ctx.save();
-    ctx.strokeStyle = 'black';
+    ctx.strokeStyle = '#888';
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(graph.x, graph.y + graph.height);
@@ -209,7 +209,7 @@ export function createCeaser(canvas, code, curve, onChange) {
     ctx.restore();
 
     // draw anchor point lines
-    ctx.strokeStyle = 'black';
+    ctx.strokeStyle = '#888';
     ctx.beginPath();
     ctx.moveTo(graph.x, graph.y + graph.height);
     ctx.lineTo(cp1.x, cp1.y);

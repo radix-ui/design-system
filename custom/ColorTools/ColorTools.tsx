@@ -17,126 +17,159 @@ const modifier = 10;
 // Generate 7 steps only. Steps 8 and 9 aren't generated.
 const steps = 7;
 
-const gray = {
-  start: 'hsl(206, 20%, 98.8%)',
-  end: 'hsl(206, 10%, 80.0%)',
-  curve: '0.630, 0.575, 0.495, 0.115',
+const stepsToHide: number[] = [];
 
-  // You can override scale steps from 1 to 9 like this:
-  // overrides: {
-  //   8: 'hsl(0, 100%, 50%)',
-  // },
+const gray = {
+  start: 'hsl(208, 7%, 10%)',
+  end: 'hsl(206, 5.5%, 28%)',
+  curve: '0.555, 0.540, 0.695, 0.295',
+  overrides: {
+    8: 'hsl(206, 6%, 43.9%)',
+  },
 };
 
 const red = {
-  start: 'hsl(351, 100%, 98.5%)',
-  end: 'hsl(355, 82%, 71.7%)',
+  start: 'hsl(352, 45%, 10.8%)',
+  end: 'hsl(353, 80%, 30%)',
   curve: '0.655, 0.340, 0.800, 0.510',
-  overrides: {},
+  overrides: {
+    9: 'hsl(358, 100%, 68%)',
+  },
 };
 
 const crimson = {
-  start: 'hsl(332, 100%, 98.5%)',
-  end: 'hsl(336, 80%, 70.0%)',
+  start: 'hsl(336, 51%, 10.2%)',
+  end: 'hsl(336, 80%, 36%)',
   curve: '0.655, 0.325, 0.815, 0.480',
-  overrides: {},
+  overrides: {
+    9: 'hsl(339, 90%, 63%)',
+  },
 };
 
 const pink = {
-  start: 'hsl(322, 100%, 98.5%)',
-  end: 'hsl(322, 84%, 68.9%)',
+  start: 'hsl(315, 46%, 10.2%)',
+  end: 'hsl(322, 72%, 43%)',
   curve: '0.700, 0.370, 0.820, 0.450',
-  overrides: {},
+  overrides: {
+    9: 'hsl(325, 80%, 65%)',
+  },
 };
 
 const purple = {
-  start: 'hsl(280, 100%, 99.0%)',
-  end: 'hsl(272, 66%, 68.1%)',
+  start: 'hsl(285, 40%, 10.8%)',
+  end: 'hsl(272, 55%, 42%)',
   curve: '0.700, 0.415, 0.925, 0.540',
-  overrides: {},
+  overrides: {
+    9: 'hsl(275, 70%, 72%)',
+  },
 };
 
 const violet = {
-  start: 'hsl(252, 100%, 99.0%)',
-  end: 'hsl(252, 82%, 72.2%)',
-  curve: '0.690, 0.375, 0.745, 0.465',
-  overrides: {},
+  start: 'hsl(252, 40%, 13%)',
+  end: 'hsl(252, 58%, 50%)',
+  curve: '0.635, 0.430, 0.745, 0.465',
+  overrides: {
+    9: 'hsl(250, 90%, 78%)',
+  },
 };
 
 const indigo = {
-  start: 'hsl(226, 100%, 99.0%)',
-  end: 'hsl(226, 76%, 70.2%)',
+  start: 'hsl(227, 48%, 12.5%)',
+  end: 'hsl(225, 62%, 48%)',
   curve: '0.585, 0.305, 0.770, 0.490',
+  overrides: {
+    9: 'hsl(225, 100%, 75%)',
+  },
 };
 
 const blue = {
-  start: 'hsl(206, 100%, 98.8%)',
-  end: 'hsl(206, 97%, 68.3%)',
+  start: 'hsl(209, 85%, 10%)',
+  end: 'hsl(208, 95%, 40%)',
   curve: '0.695, 0.390, 0.695, 0.505',
-  overrides: {},
+  overrides: {
+    9: 'hsl(206, 98%, 66%)',
+  },
 };
 
 const turquoise = {
-  start: 'hsl(185, 78%, 97.8%)',
-  end: 'hsl(188, 68%, 59.2%)',
+  start: 'hsl(192, 100%, 8%)',
+  end: 'hsl(190, 90%, 30%)',
   curve: '0.765, 0.485, 0.805, 0.740',
-  overrides: {},
+  overrides: {
+    9: 'hsl(188, 94%, 48%)',
+  },
 };
 
 const teal = {
-  start: 'hsl(165, 100%, 97.5%)',
-  end: 'hsl(172, 54%, 50.0%)',
+  start: 'hsl(168, 95%, 7.5%)',
+  end: 'hsl(173, 85%, 28.5%)',
   curve: '0.690, 0.315, 0.860, 0.620',
-  overrides: {},
+  overrides: {
+    9: 'hsl(174, 100%, 40%)',
+  },
 };
 
 const green = {
-  start: 'hsl(130, 100%, 97.5%)',
-  end: 'hsl(144, 48%, 55.8%)',
-  curve: '0.645, 0.260, 0.860, 0.630',
-  overrides: {},
+  start: 'hsl(140, 55%, 8.8%)',
+  end: 'hsl(145, 60%, 38%)',
+  curve: '0.650, 0.265, 0.835, 0.450',
+  overrides: {
+    9: 'hsl(130, 61%, 56%)',
+  },
 };
 
 const lime = {
-  start: 'hsl(85, 86%, 96.5%)',
-  end: 'hsl(76, 74%, 48.9%)',
-  curve: '0.425, 0.150, 0.860, 0.605',
-  overrides: {},
+  start: 'hsl(76, 95%, 6.5%)',
+  end: 'hsl(76, 85%, 40%)',
+  curve: '0.640, 0.165, 0.915, 0.470',
+  overrides: {
+    9: 'hsl(75, 80%, 52%)',
+  },
 };
 
 const yellow = {
-  start: 'hsl(55, 100%, 95.5%)',
-  end: 'hsl(52, 88%, 51.7%)',
-  curve: '0.830, 0.585, 0.660, 0.820',
-  overrides: {},
+  start: 'hsl(40, 90%, 8%)',
+  end: 'hsl(50, 100%, 45%)',
+  curve: '0.920, 0.280, 0.900, 0.680',
+  overrides: {
+    9: 'hsl(50, 100%, 49%)',
+  },
 };
 
 const orange = {
-  start: 'hsl(40, 100%, 97.0%)',
-  end: 'hsl(36, 96%, 53.9%)',
-  curve: '0.555, 0.270, 0.710, 0.510',
-  overrides: {},
+  start: 'hsl(25, 55%, 10%)',
+  end: 'hsl(38, 90%, 48%)',
+  curve: '0.770, 0.205, 0.910, 0.465',
+  overrides: {
+    9: 'hsl(38, 100%, 50%)',
+  },
 };
 
 const brown = {
-  start: 'hsl(30, 75%, 98.0%)',
-  end: 'hsl(28, 61%, 61.6%)',
+  start: 'hsl(15, 40%, 11%)',
+  end: 'hsl(28, 48%, 45%)',
   curve: '0.700, 0.415, 0.745, 0.465',
-  overrides: {},
+  overrides: {
+    9: 'hsl(28, 58%, 60%)',
+  },
 };
 
 const bronze = {
-  start: 'hsl(18, 100%, 98.5%)',
-  end: 'hsl(16, 39%, 64.0%)',
+  start: 'hsl(10, 20%, 11.5%)',
+  end: 'hsl(18, 25%, 45%)',
   curve: '0.590, 0.415, 0.720, 0.475',
-  overrides: {},
+  overrides: {
+    9: 'hsl(18, 45%, 63%)',
+  },
 };
 
 const gold = {
-  start: 'hsl(50, 75%, 98.0%)',
-  end: 'hsl(36, 37%, 60.0%)',
+  start: 'hsl(42, 15%, 10%)',
+  end: 'hsl(36, 28%, 45.0%)',
   curve: '0.700, 0.415, 0.745, 0.465',
-  overrides: {},
+  overrides: {
+    9: 'hsl(35, 48%, 64%)',
+  },
 };
 
 export function ColorTools() {
@@ -193,6 +226,10 @@ type ContrastInfo = {
   hiContrast: number;
   // Contrast of loContrast on 800 background
   loContrast: number;
+  // Contrast of white on 800 background
+  white: number;
+  // Contrast of black on 800 background
+  black: number;
 };
 
 function Scale({ name, scale }: ScaleProps) {
@@ -335,6 +372,8 @@ function Scale({ name, scale }: ScaleProps) {
         '200': chroma.contrast(step200, step900),
         hiContrast: chroma.contrast(step800, hiContrast),
         loContrast: chroma.contrast(step800, loContrast),
+        white: chroma.contrast(step800, '#ffffff'),
+        black: chroma.contrast(step800, '#000000'),
       };
 
       setContrastInfo(contrastInfo);
@@ -345,10 +384,6 @@ function Scale({ name, scale }: ScaleProps) {
     if (isEnabled) {
       colors.forEach((color, index) => {
         document.documentElement.style.setProperty(`--colors-${name}${index + 1}00`, color.hex);
-        //
-        // if (index > 1 && index < 6) {
-        //   document.documentElement.style.setProperty(`--colors-${name}${index + 1}00`, '#fff');
-        // }
       });
 
       if (colors.length) {
@@ -365,6 +400,8 @@ function Scale({ name, scale }: ScaleProps) {
           '200': chroma.contrast(step200, step900),
           hiContrast: chroma.contrast(step800, hiContrast),
           loContrast: chroma.contrast(step800, loContrast),
+          white: chroma.contrast(step800, '#ffffff'),
+          black: chroma.contrast(step800, '#000000'),
         };
 
         setContrastInfo(contrastInfo);
@@ -372,9 +409,21 @@ function Scale({ name, scale }: ScaleProps) {
     }
   }, [isEnabled, name, colors]);
 
+  React.useEffect(() => {
+    [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      .filter((step) => stepsToHide.includes(step))
+      .forEach((step) => {
+        const computedStyles = getComputedStyle(document.documentElement);
+        document.documentElement.style.setProperty(
+          `--colors-${name}${step}00`,
+          computedStyles.getPropertyValue(`--colors-loContrast`)
+        );
+      });
+  }, [colors]);
+
   return (
     <Box css={{ m: '$3' }}>
-      <Flex css={{ my: '$2' }}>
+      <Flex css={{ my: '$2', color: '$hiContrast' }}>
         <Text
           size="2"
           css={{ fontWeight: 500, lineHeight: '15px', textTransform: 'capitalize', mr: 'auto' }}
@@ -442,8 +491,8 @@ function Scale({ name, scale }: ScaleProps) {
                   color:
                     index === 7 && contrastInfo
                       ? name === 'lime' || name === 'yellow' || name === 'orange'
-                        ? '$hiContrast'
-                        : '$loContrast'
+                        ? 'black'
+                        : 'white'
                       : `var(--colors-${name}900)`,
                 }}
               >
@@ -470,25 +519,19 @@ function Scale({ name, scale }: ScaleProps) {
                     name !== 'lime' &&
                     name !== 'yellow' &&
                     name !== 'orange' &&
-                    (contrastInfo['loContrast'] >= 3
-                      ? `AA Large Text Pass ${contrastInfo['loContrast'].toFixed(2)}`
-                      : `AA Large Text Fail ${contrastInfo['loContrast'].toFixed(2)}`)
+                    (contrastInfo['white'] >= 3
+                      ? `AA Large Text Pass ${contrastInfo['white'].toFixed(2)}`
+                      : `AA Large Text Fail ${contrastInfo['white'].toFixed(2)}`)
                 }
                 {
                   // Lime, yellow, orange 800 contrast with black
                   index === 7 &&
                     contrastInfo &&
                     (name === 'lime' || name === 'yellow' || name === 'orange') &&
-                    (contrastInfo['hiContrast'] >= 3
-                      ? `AA Large Text Pass ${contrastInfo['hiContrast'].toFixed(2)}`
-                      : `AA Large Text Fail ${contrastInfo['hiContrast'].toFixed(2)}`)
+                    (contrastInfo['black'] >= 3
+                      ? `AA Large Text Pass ${contrastInfo['black'].toFixed(2)}`
+                      : `AA Large Text Fail ${contrastInfo['black'].toFixed(2)}`)
                 }
-                {/* {index === 7 &&
-                  contrastInfo &&
-                  `AA Pass ${Math.max(
-                    contrastInfo['hiContrast'],
-                    contrastInfo['loContrast']
-                  ).toFixed(2)}`} */}
               </Text>
             )}
           </Box>
