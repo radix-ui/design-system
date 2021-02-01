@@ -1389,12 +1389,17 @@ export function Color() {
             </Text>
           </Flex>
           <Flex css={{ ai: 'center', jc: 'center' }}>
-            <Text size="6" as="p" color="gold" css={{ lineHeight: '30px' }}>
+            <Text size="6" as="p" color="brown" css={{ lineHeight: '30px' }}>
               The quick brown fox jumped over the lazy dog.
             </Text>
           </Flex>
           <Flex css={{ ai: 'center', jc: 'center' }}>
             <Text size="6" as="p" color="bronze" css={{ lineHeight: '30px' }}>
+              The quick brown fox jumped over the lazy dog.
+            </Text>
+          </Flex>
+          <Flex css={{ ai: 'center', jc: 'center' }}>
+            <Text size="6" as="p" color="gold" css={{ lineHeight: '30px' }}>
               The quick brown fox jumped over the lazy dog.
             </Text>
           </Flex>
@@ -1411,6 +1416,9 @@ export function Color() {
       </Container>
 
       <Container size="2">
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Gray</Text>
+        </Box>
         <Flex css={{ position: 'relative' }}>
           <Box
             css={{
@@ -1432,6 +1440,438 @@ export function Color() {
               width: '100%',
               height: 1,
               backgroundColor: '$gray500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Red</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$red100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$red200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$red300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$red400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$red500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Crimson</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$crimson100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$crimson200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$crimson300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$crimson400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$crimson500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Pink</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$pink100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$pink200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$pink300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$pink400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$pink500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Purple</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$purple100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$purple200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$purple300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$purple400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$purple500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Violet</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$violet100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$violet200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$violet300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$violet400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$violet500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Indigo</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$indigo100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$indigo200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$indigo300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$indigo400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$indigo500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Blue</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$blue100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$blue200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$blue300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$blue400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$blue500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Turquoise</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$turquoise100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$turquoise200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$turquoise300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$turquoise400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$turquoise500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Teal</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$teal100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$teal200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$teal300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$teal400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$teal500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Green</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$green100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$green200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$green300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$green400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$green500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Lime</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$lime100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$lime200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$lime300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$lime400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$lime500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Yellow</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$yellow100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$yellow200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$yellow300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$yellow400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$yellow500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Orange</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$orange100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$orange200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$orange300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$orange400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$orange500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Brown</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$brown100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$brown200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$brown300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$brown400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$brown500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Bronze</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$bronze100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$bronze200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$bronze300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$bronze400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$bronze500',
+            }}
+          />
+        </Flex>
+        <Box css={{ my: '$2' }}>
+          <Text size="2">Gold</Text>
+        </Box>
+        <Flex css={{ position: 'relative' }}>
+          <Box
+            css={{
+              fb: '0',
+              fg: '1',
+              height: 160,
+              backgroundColor: '$loContrast',
+            }}
+          />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gold100' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gold200' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gold300' }} />
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gold400' }} />
+          <Box
+            css={{
+              position: 'absolute',
+              top: '50%',
+              left: '0',
+              width: '100%',
+              height: 1,
+              backgroundColor: '$gold500',
             }}
           />
         </Flex>

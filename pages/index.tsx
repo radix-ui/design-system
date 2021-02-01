@@ -286,12 +286,17 @@ function Home() {
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="6" as="p" color="gold" css={{ lineHeight: '30px' }}>
+                <Text size="6" as="p" color="brown" css={{ lineHeight: '30px' }}>
                   The quick brown fox jumped over the lazy dog.
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
                 <Text size="6" as="p" color="bronze" css={{ lineHeight: '30px' }}>
+                  The quick brown fox jumped over the lazy dog.
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="6" as="p" color="gold" css={{ lineHeight: '30px' }}>
                   The quick brown fox jumped over the lazy dog.
                 </Text>
               </Flex>

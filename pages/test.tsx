@@ -27,7 +27,6 @@ import { RadioGroup } from '../components/Radio';
 import { ProgressBar } from '../components/ProgressBar';
 import { AlertDialog } from '../components/AlertDialog';
 import { Tabs } from '../components/Tabs';
-import { Label } from '../components/Label';
 import { Skeleton } from '../components/Skeleton';
 import { Accordion } from '../components/Accordion';
 import { Title } from '../components/Title';
@@ -36,7 +35,6 @@ import { Heading } from '../components/Heading';
 import { Subheading } from '../components/Subheading';
 import { Paragraph } from '../components/Paragraph';
 import { Layers } from '../custom/Layers';
-import { Properties } from '../custom/Properties';
 import { Color } from '../custom/Color';
 import { Avatars } from '../custom/Avatars';
 import { ColorTools } from '../custom/ColorTools/ColorTools';
@@ -44,10 +42,10 @@ import { PlusIcon } from '@modulz/radix-icons';
 
 function Test() {
   return (
-    <Box css={{ height: '100%' }}>
+    <Box css={{ bc: '$loContrast' }}>
       <Color />
 
-      <Box css={{ bc: '$loContrast', height: '100%', px: 250, pt: '36px' }}>
+      <Box css={{ px: 250, pt: '36px' }}>
         <Section size="3">
           <Container size="2">
             <Title css={{ ta: 'center', mb: '$3' }}>Radix UI test suite</Title>
@@ -1529,7 +1527,6 @@ function Test() {
 
         <Layers />
         <ColorTools />
-        {/* <Properties /> */}
       </Box>
     </Box>
   );
