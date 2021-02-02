@@ -21,6 +21,7 @@ export function Color() {
 
       <Container size="3" css={{ py: '$7' }}>
         <Grid
+          id="color-grid"
           css={{
             gridTemplateColumns: 'repeat(10, minmax(0, 1fr))',
             gap: 2,

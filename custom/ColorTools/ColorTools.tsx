@@ -20,155 +20,156 @@ const steps = 7;
 const stepsToHide: number[] = [];
 
 const gray = {
-  start: 'hsl(208, 7%, 10%)',
-  end: 'hsl(206, 5.5%, 28%)',
-  curve: '0.555, 0.540, 0.695, 0.295',
+  start: 'hsl(208, 7%, 9.6%)',
+  end: 'hsl(206, 6%, 31%)',
+  curve: '0.395, 0.220, 0.690, 0.395',
   overrides: {
     8: 'hsl(206, 6%, 43.9%)',
   },
 };
 
 const red = {
-  start: 'hsl(352, 45%, 10.8%)',
-  end: 'hsl(353, 80%, 30%)',
-  curve: '0.655, 0.340, 0.800, 0.510',
+  start: 'hsl(352, 34%, 9.9%)',
+  end: 'hsl(353, 75%, 35%)',
+  curve: '0.580, 0.195, 0.955, 0.545',
   overrides: {
     9: 'hsl(358, 100%, 68%)',
   },
 };
 
 const crimson = {
-  start: 'hsl(336, 51%, 10.2%)',
-  end: 'hsl(336, 80%, 36%)',
-  curve: '0.655, 0.325, 0.815, 0.480',
+  start: 'hsl(336, 35%, 10.0%)',
+  end: 'hsl(334, 80%, 36%)',
+  curve: '0.600, 0.250, 0.855, 0.560',
   overrides: {
-    9: 'hsl(339, 90%, 63%)',
+    9: 'hsl(341, 90%, 63%)',
   },
 };
 
 const pink = {
-  start: 'hsl(315, 46%, 10.2%)',
-  end: 'hsl(322, 72%, 43%)',
-  curve: '0.700, 0.370, 0.820, 0.450',
+  start: 'hsl(316, 33%, 10.0%)',
+  end: 'hsl(320, 72%, 38%)',
+  curve: '0.555, 0.275, 0.815, 0.485',
   overrides: {
-    9: 'hsl(325, 80%, 65%)',
+    9: 'hsl(325, 90%, 67%)',
   },
 };
 
 const purple = {
-  start: 'hsl(285, 40%, 10.8%)',
+  start: 'hsl(285, 30%, 10.4%)',
   end: 'hsl(272, 55%, 42%)',
-  curve: '0.700, 0.415, 0.925, 0.540',
+  curve: '0.700, 0.415, 0.860, 0.655',
   overrides: {
-    9: 'hsl(275, 70%, 72%)',
+    9: 'hsl(275, 90%, 71%)',
   },
 };
 
 const violet = {
-  start: 'hsl(252, 40%, 13%)',
+  start: 'hsl(252, 30%, 11.7%)',
   end: 'hsl(252, 58%, 50%)',
-  curve: '0.635, 0.430, 0.745, 0.465',
+  curve: '0.620, 0.360, 0.795, 0.485',
   overrides: {
-    9: 'hsl(250, 90%, 78%)',
+    9: 'hsl(250, 100%, 76%)',
   },
 };
 
 const indigo = {
-  start: 'hsl(227, 48%, 12.5%)',
-  end: 'hsl(225, 62%, 48%)',
-  curve: '0.585, 0.305, 0.770, 0.490',
+  start: 'hsl(229, 37%, 11.6%)',
+  end: 'hsl(225, 65%, 48%)',
+  curve: '0.585, 0.305, 0.845, 0.475',
   overrides: {
-    9: 'hsl(225, 100%, 75%)',
+    9: 'hsl(225, 100%, 73%)',
   },
 };
 
 const blue = {
-  start: 'hsl(209, 85%, 10%)',
-  end: 'hsl(208, 95%, 40%)',
-  curve: '0.695, 0.390, 0.695, 0.505',
+  start: 'hsl(211, 50%, 10.1%)',
+  end: 'hsl(208, 93%, 40%)',
+  curve: '0.695, 0.390, 0.815, 0.480',
   overrides: {
-    9: 'hsl(206, 98%, 66%)',
+    9: 'hsl(208, 100%, 65%)',
   },
 };
 
 const turquoise = {
-  start: 'hsl(192, 100%, 8%)',
-  end: 'hsl(190, 90%, 30%)',
-  curve: '0.765, 0.485, 0.805, 0.740',
+  start: 'hsl(192, 70%, 7.5%)',
+  end: 'hsl(190, 85%, 32%)',
+  curve: '0.585, 0.385, 0.900, 0.595',
   overrides: {
-    9: 'hsl(188, 94%, 48%)',
+    9: 'hsl(188, 90%, 50%)',
   },
 };
 
 const teal = {
-  start: 'hsl(168, 95%, 7.5%)',
-  end: 'hsl(173, 85%, 28.5%)',
-  curve: '0.690, 0.315, 0.860, 0.620',
+  start: 'hsl(168, 75%, 6.8%)',
+  end: 'hsl(173, 80%, 29%)',
+  curve: '0.690, 0.315, 0.910, 0.590',
   overrides: {
-    9: 'hsl(174, 100%, 40%)',
+    8: 'hsl(173, 79%, 36.5%)',
+    9: 'hsl(174, 90%, 40%)',
   },
 };
 
 const green = {
-  start: 'hsl(140, 55%, 8.8%)',
-  end: 'hsl(145, 60%, 38%)',
-  curve: '0.650, 0.265, 0.835, 0.450',
+  start: 'hsl(140, 43%, 8.5%)',
+  end: 'hsl(145, 60%, 35%)',
+  curve: '0.645, 0.240, 0.910, 0.480',
   overrides: {
-    9: 'hsl(130, 61%, 56%)',
+    9: 'hsl(130, 50%, 55%)',
   },
 };
 
 const lime = {
-  start: 'hsl(76, 95%, 6.5%)',
-  end: 'hsl(76, 85%, 40%)',
-  curve: '0.640, 0.165, 0.915, 0.470',
+  start: 'hsl(80, 46%, 7.9%)',
+  end: 'hsl(76, 85%, 38%)',
+  curve: '0.670, 0.155, 0.965, 0.470',
   overrides: {
-    9: 'hsl(75, 80%, 52%)',
+    9: 'hsl(75, 70%, 50%)',
   },
 };
 
 const yellow = {
-  start: 'hsl(40, 90%, 8%)',
+  start: 'hsl(46, 60%, 8.1%)',
   end: 'hsl(50, 100%, 45%)',
-  curve: '0.920, 0.280, 0.900, 0.680',
+  curve: '1.000, 0.180, 1.000, 0.720',
   overrides: {
-    9: 'hsl(50, 100%, 49%)',
+    9: 'hsl(50, 80%, 52%)',
   },
 };
 
 const orange = {
-  start: 'hsl(25, 55%, 10%)',
+  start: 'hsl(32, 55%, 9.3%)',
   end: 'hsl(38, 90%, 48%)',
-  curve: '0.770, 0.205, 0.910, 0.465',
+  curve: '0.750, 0.145, 1.000, 0.470',
   overrides: {
-    9: 'hsl(38, 100%, 50%)',
+    9: 'hsl(35, 90%, 51%)',
   },
 };
 
 const brown = {
-  start: 'hsl(15, 40%, 11%)',
+  start: 'hsl(20, 40%, 10.3%)',
   end: 'hsl(28, 48%, 45%)',
-  curve: '0.700, 0.415, 0.745, 0.465',
+  curve: '0.675, 0.245, 0.920, 0.505',
   overrides: {
-    9: 'hsl(28, 58%, 60%)',
+    9: 'hsl(28, 60%, 56%)',
   },
 };
 
 const bronze = {
-  start: 'hsl(10, 20%, 11.5%)',
+  start: 'hsl(15, 15%, 11%)',
   end: 'hsl(18, 25%, 45%)',
-  curve: '0.590, 0.415, 0.720, 0.475',
+  curve: '0.575, 0.355, 0.890, 0.485',
   overrides: {
-    9: 'hsl(18, 45%, 63%)',
+    9: 'hsl(18, 37%, 61%)',
   },
 };
 
 const gold = {
-  start: 'hsl(42, 15%, 10%)',
+  start: 'hsl(40, 15%, 9.5%)',
   end: 'hsl(36, 28%, 45.0%)',
-  curve: '0.700, 0.415, 0.745, 0.465',
+  curve: '0.710, 0.335, 0.875, 0.485',
   overrides: {
-    9: 'hsl(35, 48%, 64%)',
+    9: 'hsl(35, 50%, 63%)',
   },
 };
 
@@ -264,6 +265,15 @@ function Scale({ name, scale }: ScaleProps) {
     const [x1, y1, x2, y2] = newCurveParams;
     const lumCurveParams = [1 - x2, 1 - y2, 1 - x1, 1 - y1] as BezierParams;
 
+    // Mix saturation curve with easeOutQuad
+    const satCurveParams = [
+      x1 / 2 + 0.25 / 2,
+      y1 / 2 + 0.46 / 2,
+      x2 / 2 + 0.45 / 2,
+      y2 / 2 + 0.94 / 2,
+    ] as BezierParams;
+    const hueCurveParams = satCurveParams;
+
     const startColor = chroma(scale.start);
     const endColor = chroma(scale.end);
 
@@ -282,8 +292,8 @@ function Scale({ name, scale }: ScaleProps) {
         sat_rate,
         modifier,
         ...hsvScale,
-        hue_curve: bezier(...newCurveParams),
-        sat_curve: bezier(...newCurveParams),
+        hue_curve: bezier(...hueCurveParams),
+        sat_curve: bezier(...satCurveParams),
         lum_curve: bezier(...lumCurveParams),
       },
     });
@@ -410,15 +420,17 @@ function Scale({ name, scale }: ScaleProps) {
   }, [isEnabled, name, colors]);
 
   React.useEffect(() => {
-    [1, 2, 3, 4, 5, 6, 7, 8, 9]
-      .filter((step) => stepsToHide.includes(step))
-      .forEach((step) => {
-        const computedStyles = getComputedStyle(document.documentElement);
-        document.documentElement.style.setProperty(
-          `--colors-${name}${step}00`,
-          computedStyles.getPropertyValue(`--colors-loContrast`)
-        );
-      });
+    [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach((step) => {
+      document
+        .getElementById('color-grid')
+        ?.querySelectorAll(`:scope > div:nth-child(10n+${step + 1})`)
+        .forEach((element) => {
+          if (element instanceof HTMLElement) {
+            // Remove background or clear the background override so hot reload works correctly
+            element.style.backgroundColor = stepsToHide.includes(step) ? 'transparent' : '';
+          }
+        });
+    });
   }, [colors]);
 
   return (
