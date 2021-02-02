@@ -1087,22 +1087,6 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.1.0.tgz#6c9eafc78c1529248f8f4d92b0799a712b6052c6"
   integrity sha512-i9YbZPN3QgfighY/1X1Pu118VUz2Fmmhd6b2n0/O8YVgGGfw0FbUYoA97k7FkpGJ+pLCFEDLUmAPPV4D1kpeFw==
 
-"@interop-ui/popper@0.0.1-12":
-  version "0.0.1-12"
-  resolved "https://registry.yarnpkg.com/@interop-ui/popper/-/popper-0.0.1-12.tgz#3c9e4ab37dca5184026c236e3ab523067c05f6cf"
-  integrity sha512-pnBq94OylvY9AEo1eGlDbi6S3qivsUP1r8FSfGwUn3WIAPtSgV0znjNqwYRaImBtsrVWjMseHritBAHDdpy4Xw==
-  dependencies:
-    "@interop-ui/utils" "0.0.1-4"
-    csstype "^3.0.4"
-
-"@interop-ui/react-arrow@0.0.1-12":
-  version "0.0.1-12"
-  resolved "https://registry.yarnpkg.com/@interop-ui/react-arrow/-/react-arrow-0.0.1-12.tgz#61a4f8419be472b984c8fc38e96aa382906ae923"
-  integrity sha512-2Y0exH8Vjf9UPHdDiv4Lq2CHTRywNDk8VLXkMXahOUuwKbC0VbLwIQCeXs+TwwFybJS1AEugF/VBrawloJrQ6A==
-  dependencies:
-    "@interop-ui/react-utils" "0.0.1-12"
-    "@interop-ui/utils" "0.0.1-4"
-
 "@interop-ui/react-avatar@0.0.1-12":
   version "0.0.1-12"
   resolved "https://registry.yarnpkg.com/@interop-ui/react-avatar/-/react-avatar-0.0.1-12.tgz#57a48d10dceb28c751f1a7daba28493bf528dd00"
@@ -1120,11 +1104,6 @@
     "@interop-ui/react-utils" "0.0.1-12"
     "@interop-ui/utils" "0.0.1-4"
 
-"@interop-ui/react-debug-context@0.0.1-12":
-  version "0.0.1-12"
-  resolved "https://registry.yarnpkg.com/@interop-ui/react-debug-context/-/react-debug-context-0.0.1-12.tgz#f09fcc9e47b6170a93192df2640367a9a30ca020"
-  integrity sha512-vTw9Mtmk0puu32Mjzn8kRjnWkhFvrsErfzkQ/CFHsAYpAHC44/Y5TqYvvCX6KPbcX8/Pkhc42bBWw74qMUuflQ==
-
 "@interop-ui/react-label@0.0.1-10":
   version "0.0.1-10"
   resolved "https://registry.yarnpkg.com/@interop-ui/react-label/-/react-label-0.0.1-10.tgz#d75c6b36a79a4131c6981e3449a685b40dabfcd1"
@@ -1132,26 +1111,6 @@
   dependencies:
     "@interop-ui/react-utils" "0.0.1-12"
     "@interop-ui/utils" "0.0.1-4"
-
-"@interop-ui/react-popper@0.0.1-11":
-  version "0.0.1-11"
-  resolved "https://registry.yarnpkg.com/@interop-ui/react-popper/-/react-popper-0.0.1-11.tgz#07e4771832d653eb24ddaa790371bc6fd230a320"
-  integrity sha512-3xmTCZaeBRa8+duAXJUB3EGUnC/V1O6+X8wg+sOTKbg2eCk04VVTxLzEmEAQEb8mOclwukLUArPiJ8UKkFHHMA==
-  dependencies:
-    "@interop-ui/popper" "0.0.1-12"
-    "@interop-ui/react-arrow" "0.0.1-12"
-    "@interop-ui/react-debug-context" "0.0.1-12"
-    "@interop-ui/react-use-size" "0.0.1-12"
-    "@interop-ui/react-utils" "0.0.1-12"
-    "@interop-ui/utils" "0.0.1-4"
-
-"@interop-ui/react-portal@0.0.1-12":
-  version "0.0.1-12"
-  resolved "https://registry.yarnpkg.com/@interop-ui/react-portal/-/react-portal-0.0.1-12.tgz#46e571d8579d3abced9d1c48457251699d44ffa9"
-  integrity sha512-Ft0xP9FNu2fucRSgfflAilZssFbkSsqMMWwrvHtmHttWkBb2SYFJe018Qc/T7qGYkdJ8J7QpitGewSuNpxAvmg==
-  dependencies:
-    "@interop-ui/react-debug-context" "0.0.1-12"
-    "@interop-ui/react-utils" "0.0.1-12"
 
 "@interop-ui/react-progress-bar@0.0.1-10":
   version "0.0.1-10"
@@ -1203,41 +1162,11 @@
     "@interop-ui/react-utils" "0.0.1-12"
     "@interop-ui/utils" "0.0.1-4"
 
-"@interop-ui/react-tooltip@0.0.1-12":
-  version "0.0.1-12"
-  resolved "https://registry.yarnpkg.com/@interop-ui/react-tooltip/-/react-tooltip-0.0.1-12.tgz#f7c3b667dce9edcc9d713d4f81f4ca8d077d382d"
-  integrity sha512-T2TFoXUGFBaplppaD2y4/zWk5l2xXAHcgYfLsfhr2hxAJ1/XSmYIZRCVHL1vHO2e4AbTiNXzrmAOxG0MamQt/w==
-  dependencies:
-    "@interop-ui/popper" "0.0.1-12"
-    "@interop-ui/react-arrow" "0.0.1-12"
-    "@interop-ui/react-popper" "0.0.1-11"
-    "@interop-ui/react-portal" "0.0.1-12"
-    "@interop-ui/react-utils" "0.0.1-12"
-    "@interop-ui/react-visually-hidden" "0.0.1-12"
-    "@interop-ui/utils" "0.0.1-4"
-
-"@interop-ui/react-use-size@0.0.1-12":
-  version "0.0.1-12"
-  resolved "https://registry.yarnpkg.com/@interop-ui/react-use-size/-/react-use-size-0.0.1-12.tgz#5c8e67673539779c40eb2c5124f4e631f720c150"
-  integrity sha512-a6X3g0b1nbS4u+QgdgNa1lpfX+D1hAnO/1sCgMF4g9mgSJIsjr8xEIt1zpwJH0/pxP1inRB3zYGkDtRFyBRSVA==
-  dependencies:
-    "@interop-ui/react-utils" "0.0.1-12"
-    "@interop-ui/utils" "0.0.1-4"
-    resize-observer-polyfill "^1.5.1"
-
 "@interop-ui/react-utils@0.0.1-12":
   version "0.0.1-12"
   resolved "https://registry.yarnpkg.com/@interop-ui/react-utils/-/react-utils-0.0.1-12.tgz#edd95bb9949cb2fdb4aac07a7fa605ea9f1760f4"
   integrity sha512-Cs536SHmgWC3HZZQee9QE5b0nweb+/ZyZL+1+3nfGSCiu/DyOSyzoYhZtXwjj0BX2kZ4zLwbswv7jwGp8f2caA==
   dependencies:
-    "@interop-ui/utils" "0.0.1-4"
-
-"@interop-ui/react-visually-hidden@0.0.1-12":
-  version "0.0.1-12"
-  resolved "https://registry.yarnpkg.com/@interop-ui/react-visually-hidden/-/react-visually-hidden-0.0.1-12.tgz#f5bdeae790ef522867b6c90424fb887326c23d94"
-  integrity sha512-/F9aKnC+EJlxcp4ReMGD+8Ds/uTXlm4y6ZeDOvNbwZ+Q85jF/agOwd2lPbCRDSe8EHKigKdy+1+PQ7/M3t1u9A==
-  dependencies:
-    "@interop-ui/react-utils" "0.0.1-12"
     "@interop-ui/utils" "0.0.1-4"
 
 "@interop-ui/utils@0.0.1-4":
@@ -1330,7 +1259,7 @@
     "@radix-ui/utils" "0.0.3"
     csstype "^3.0.4"
 
-"@radix-ui/react-accordion@0.0.1-13":
+"@radix-ui/react-accordion@0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-accordion/-/react-accordion-0.0.4.tgz#b5d1822135dd274597706e1c77afedabc48dc76b"
   integrity sha512-Opp86cWnAWd+CPDl6jGHuSUqLLOh77CXltyBHGuzlhijWSiCq2ducnTQ137rgvlKPssxOMVsxdghvaM0byU5BA==
@@ -1573,6 +1502,27 @@
     "@radix-ui/react-utils" "0.0.4"
     "@radix-ui/utils" "0.0.3"
 
+"@radix-ui/react-slot@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-slot/-/react-slot-0.0.1.tgz#8b5bc7b7ee2386279a1f3d3c1b07c0f0ac5aad89"
+  integrity sha512-ReNsYGgsjYZtBLYNv9m5DcJbM3LyF/TYmEABxmhWdXXYF7uAJci0BJDVA5nUg33z4BU9BF0lXX4uE9Yu/rz4Lw==
+  dependencies:
+    "@radix-ui/react-utils" "0.0.4"
+
+"@radix-ui/react-tooltip@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-tooltip/-/react-tooltip-0.0.5.tgz#471c01649829f3260758108029e2d4ab98a75cde"
+  integrity sha512-8ZlzUnxJnCmL4JxCeQNLuYulJTkJcD59L852LDBtXxQmbPkPs+YMzsL+TcxGqjqu2w9IpUfNtumTartmRyeaaA==
+  dependencies:
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-popper" "0.0.5"
+    "@radix-ui/react-portal" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/react-slot" "0.0.1"
+    "@radix-ui/react-utils" "0.0.4"
+    "@radix-ui/react-visually-hidden" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
+
 "@radix-ui/react-utils@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-utils/-/react-utils-0.0.1.tgz#5d9501699377d6cc5a5099088859d4e48fbceb3c"
@@ -1587,6 +1537,15 @@
   integrity sha512-HqC9OJJjoDun7LNqwYzVX9gYaH5yGhdNtaBRPoSt8wywh+Kv0iU6lDP5H7w7j+6TzZCHH8XEzRbmOSowzlpGAA==
   dependencies:
     "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
+
+"@radix-ui/react-visually-hidden@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-visually-hidden/-/react-visually-hidden-0.0.4.tgz#7fae9afb4da398f88a85efd03016b68e345d4991"
+  integrity sha512-H+W9blxnxfeAhFjv1/DNRWJKIGa4cZXpe1lLySDxzvCwooGtWZrmaHAigaKnEmTsl1/Kh856tc7OcAj2IKTdIQ==
+  dependencies:
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
     "@radix-ui/utils" "0.0.3"
 
 "@radix-ui/utils@0.0.1":
@@ -6442,11 +6401,6 @@ repeat-string@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/repeat-string/-/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
   integrity sha1-jcrkcOHIirwtYA//Sndihtp15jc=
-
-resize-observer-polyfill@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
-  integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
 
 resolve-cwd@^3.0.0:
   version "3.0.0"

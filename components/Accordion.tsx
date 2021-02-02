@@ -1,10 +1,9 @@
 import React from 'react';
-import { styled, StitchesProps } from '../stitches.config';
+import { styled } from '../stitches.config';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@modulz/radix-icons';
 
 import * as Polymorphic from '@radix-ui/react-polymorphic';
-import { Properties } from '../dist/custom/Properties';
 
 const StyledAccordion = styled(AccordionPrimitive.Root, {});
 

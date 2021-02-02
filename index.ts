@@ -138,7 +138,6 @@ export { Title } from './components/Title';
 export type { TitleProps } from './components/Title';
 
 export { Tooltip } from './components/Tooltip';
-export type { TooltipProps } from './components/Tooltip';
 
 export { TreeItem } from './components/TreeItem';
 export type { TreeItemProps, TreeItemVariants } from './components/TreeItem';

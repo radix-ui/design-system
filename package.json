@@ -25,7 +25,6 @@
     "@interop-ui/react-switch": "0.0.1-13",
     "@interop-ui/react-tabs": "0.0.1-12",
     "@interop-ui/react-toggle-button": "0.0.1-13",
-    "@interop-ui/react-tooltip": "0.0.1-12",
     "@interop-ui/react-utils": "0.0.1-12",
     "@modulz/radix-icons": "^3.3.0",
     "@radix-ui/react-accordion": "0.0.4",
@@ -35,6 +34,7 @@
     "@radix-ui/react-polymorphic": "0.0.4",
     "@radix-ui/react-popover": "0.0.5",
     "@radix-ui/react-slider": "0.0.4",
+    "@radix-ui/react-tooltip": "0.0.5",
     "@stitches/react": "0.0.3-canary.4"
   },
   "devDependencies": {
