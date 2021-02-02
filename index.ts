@@ -44,7 +44,6 @@ export { ControlGroup } from './components/ControlGroup';
 export type { ControlGroupProps } from './components/ControlGroup';
 
 export { Dialog } from './components/Dialog';
-export type { DialogProps, DialogContentProps, DialogCloseProps } from './components/Dialog';
 
 export { Flex } from './components/Flex';
 export type { FlexProps } from './components/Flex';

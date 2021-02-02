@@ -5,7 +5,7 @@ import { Text } from '../components/Text';
 import { Button } from '../components/Button';
 import { Flex } from '../components/Flex';
 import { IconButton } from '../components/IconButton';
-import { Dialog } from '../components/Dialog';
+import { Dialog, DialogTrigger, DialogContent, DialogClose } from '../components/Dialog';
 import { AlertDialog } from '../components/AlertDialog';
 import { Popover } from '../components/Popover';
 import { Tooltip } from '../components/Tooltip';
@@ -17,6 +17,8 @@ import { Switch } from '../components/Switch';
 import { SimpleToggle } from '../components/SimpleToggle';
 import { Slider } from '../components/Slider';
 import { Cross2Icon } from '@modulz/radix-icons';
+
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 export default function Closed() {
   return (
@@ -76,11 +78,11 @@ export default function Closed() {
       </Text>
 
       <Dialog>
-        <Dialog.Trigger as={Button}>Open Dialog</Dialog.Trigger>
-        <Dialog.Content>
-          <Text css={{ mb: '$4' }}>Hello, from Dialog.</Text>
-          <Dialog.Close as={Button}>Bye.</Dialog.Close>
-        </Dialog.Content>
+        <DialogTrigger as={Button}>Open Dialog</DialogTrigger>
+        <DialogContent hideClose>
+          <Text css={{ mb: '$4' }}>Hello, from Dialog</Text>
+          <DialogClose as={Button}>Bye.</DialogClose>
+        </DialogContent>
       </Dialog>
 
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
