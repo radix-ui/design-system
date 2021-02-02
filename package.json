@@ -17,7 +17,6 @@
     "ds:release": "yarn ds:build && np"
   },
   "dependencies": {
-    "@interop-ui/react-avatar": "0.0.1-12",
     "@interop-ui/react-checkbox": "0.0.1-14",
     "@interop-ui/react-progress-bar": "0.0.1-10",
     "@interop-ui/react-radio-group": "0.0.1-6",
@@ -28,6 +27,7 @@
     "@interop-ui/react-utils": "0.0.1-12",
     "@modulz/radix-icons": "^3.3.0",
     "@radix-ui/react-accordion": "0.0.4",
+    "@radix-ui/react-avatar": "0.0.4",
     "@radix-ui/react-alert-dialog": "0.0.5",
     "@radix-ui/react-dialog": "0.0.5",
     "@radix-ui/react-menu": "0.0.1",

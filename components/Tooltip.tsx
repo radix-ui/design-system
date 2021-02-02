@@ -29,18 +29,14 @@ const Content = styled(TooltipPrimitive.Content, {
 export function Tooltip({
   children,
   content,
-  isOpen,
-  defaultIsOpen,
-  onIsOpenChange,
+  open,
+  defaultOpen,
+  onOpenChange,
   multiline,
   ...props
 }: TooltipProps) {
   return (
-    <TooltipPrimitive.Root
-      isOpen={isOpen}
-      defaultIsOpen={defaultIsOpen}
-      onIsOpenChange={onIsOpenChange}
-    >
+    <TooltipPrimitive.Root open={open} defaultOpen={defaultOpen} onOpenChange={onOpenChange}>
       <TooltipPrimitive.Trigger
         as={React.forwardRef((props, forwardedRef) =>
           React.cloneElement(children, { ...props, ref: forwardedRef })

@@ -45,7 +45,7 @@ export default function Closed() {
           <Avatar
             key={`one${size}`}
             size={size as any}
-            shape="square"
+            shape="circle"
             alt="Colm Tuite"
             src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
             fallback="C"
@@ -71,7 +71,7 @@ export default function Closed() {
         {[1, 2, 3, 4, 5, 6].map((size) => (
           <Avatar
             size={size as any}
-            shape="square"
+            shape="circle"
             fallback="C"
             status="green"
             key={`three${size}`}

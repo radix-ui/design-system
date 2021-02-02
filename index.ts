@@ -1,7 +1,6 @@
 export { Accordion, AccordionButton, AccordionItem, AccordionPanel } from './components/Accordion';
 
 export { Avatar } from './components/Avatar';
-export type { AvatarProps, AvatarVariants } from './components/Avatar';
 
 export { AlertDialog } from './components/AlertDialog';
 

@@ -1087,14 +1087,6 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.1.0.tgz#6c9eafc78c1529248f8f4d92b0799a712b6052c6"
   integrity sha512-i9YbZPN3QgfighY/1X1Pu118VUz2Fmmhd6b2n0/O8YVgGGfw0FbUYoA97k7FkpGJ+pLCFEDLUmAPPV4D1kpeFw==
 
-"@interop-ui/react-avatar@0.0.1-12":
-  version "0.0.1-12"
-  resolved "https://registry.yarnpkg.com/@interop-ui/react-avatar/-/react-avatar-0.0.1-12.tgz#57a48d10dceb28c751f1a7daba28493bf528dd00"
-  integrity sha512-WlhF2UWxI7Z9PloGJz1TiM3kRZEfFHhNWNQs7941xQ8Za7jhygzp8jg4sb7AH3aZln1tqSHo8qf/Nx2slpImVQ==
-  dependencies:
-    "@interop-ui/react-utils" "0.0.1-12"
-    "@interop-ui/utils" "0.0.1-4"
-
 "@interop-ui/react-checkbox@0.0.1-14":
   version "0.0.1-14"
   resolved "https://registry.yarnpkg.com/@interop-ui/react-checkbox/-/react-checkbox-0.0.1-14.tgz#d9559e6ebb917980f1bd0d1fe13ae80cb8c027e0"
@@ -1296,6 +1288,16 @@
   dependencies:
     "@radix-ui/react-polymorphic" "0.0.4"
     "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/utils" "0.0.3"
+
+"@radix-ui/react-avatar@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-avatar/-/react-avatar-0.0.4.tgz#d89311b6ed4fe8b880e4ced0b59e72a89782d172"
+  integrity sha512-2WMBYublbjhcIJG//MSrIQonTbgZnZcMOCvteXYQ+YKFO/04CijxqlUYrFDFPknVlb7Vw2MeOsbzTRF8arkiwg==
+  dependencies:
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/react-utils" "0.0.4"
     "@radix-ui/utils" "0.0.3"
 
 "@radix-ui/react-collapsible@0.0.4":

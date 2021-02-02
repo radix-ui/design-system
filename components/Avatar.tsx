@@ -1,23 +1,24 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
-import {
-  Avatar as AvatarPrimitive,
-  AvatarProps as AvatarPrimitiveProps,
-} from '@interop-ui/react-avatar';
+import { styled, StitchesVariants, StitchesProps } from '../stitches.config';
+import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { Box } from './Box';
 import { Status, StatusVariants } from './Status';
 
+import * as Polymorphic from '@radix-ui/react-polymorphic';
+
+type AvatarCSSProp = Pick<StitchesProps<typeof StyledAvatar>, 'css'>;
+type AvatarVariantProps = StitchesVariants<typeof StyledAvatar>;
 type StatusColors = Pick<StatusVariants, 'color'>;
-export type AvatarProps = AvatarPrimitiveProps &
-  StitchesProps<typeof StyledAvatar> & {
+type AvatarOwnProps = Polymorphic.OwnProps<typeof AvatarPrimitive.Root> &
+  AvatarCSSProp &
+  AvatarVariantProps & {
     alt?: string;
     src?: string;
     fallback?: React.ReactNode;
     status?: StatusColors['color'];
   };
-export type AvatarVariants = StitchesVariants<typeof Avatar>;
 
-export const StyledAvatar = styled(AvatarPrimitive, {
+export const StyledAvatar = styled(AvatarPrimitive.Root, {
   alignItems: 'center',
   justifyContent: 'center',
   verticalAlign: 'middle',
@@ -35,14 +36,14 @@ export const StyledAvatar = styled(AvatarPrimitive, {
   fontWeight: '500',
   color: '$hiContrast',
 
-  ':before': {
+  '&::before': {
     content: '""',
     position: 'absolute',
     top: 0,
     right: 0,
     bottom: 0,
     left: 0,
-    borderRadius: '$round',
+    borderRadius: 'inherit',
     boxShadow: 'inset 0px 0px 1px rgba(0, 0, 0, 0.12)',
   },
 
@@ -145,7 +146,7 @@ export const StyledAvatar = styled(AvatarPrimitive, {
     },
     interactive: {
       true: {
-        '::after': {
+        '&::after': {
           content: '""',
           position: 'absolute',
           top: '0',
@@ -157,8 +158,8 @@ export const StyledAvatar = styled(AvatarPrimitive, {
           pointerEvents: 'none',
           transition: 'opacity 25ms linear',
         },
-        ':hover': {
-          '::after': {
+        '&:hover': {
+          '&::after': {
             opacity: '1',
           },
         },
@@ -216,45 +217,45 @@ export const AvatarGroup = styled('div', {
   },
 });
 
-export function Avatar({
-  alt,
-  src,
-  fallback,
-  size = '2',
-  color = 'gray',
-  shape = 'circle',
-  css,
-  status,
-  ...props
-}: AvatarProps) {
-  return (
-    <Box
-      css={{
-        ...(css as any),
-        position: 'relative',
-        height: 'fit-content',
-        width: 'fit-content',
-      }}
-    >
-      <StyledAvatar {...props} size={size} color={color} shape={shape}>
-        <AvatarImage alt={alt} src={src} />
-        <AvatarFallback size={size}>{fallback}</AvatarFallback>
-      </StyledAvatar>
-      {status && (
-        <Box
-          css={{
-            position: 'absolute',
-            bottom: '0',
-            right: '0',
-            boxShadow: '0 0 0 3px $loContrast',
-            borderRadius: '$round',
-            mr: '-3px',
-            mb: '-3px',
-          }}
-        >
-          <Status size={size > 2 ? '2' : '1'} color={status} />
-        </Box>
-      )}
-    </Box>
-  );
-}
+type AvatarComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof AvatarPrimitive.Root>,
+  AvatarOwnProps
+>;
+
+export const Avatar = React.forwardRef(
+  (
+    { alt, src, fallback, size = '2', color = 'gray', shape = 'circle', css, status, ...props },
+    forwardedRef
+  ) => {
+    return (
+      <Box
+        css={{
+          ...(css as any),
+          position: 'relative',
+          height: 'fit-content',
+          width: 'fit-content',
+        }}
+      >
+        <StyledAvatar {...props} ref={forwardedRef} size={size} color={color} shape={shape}>
+          <AvatarImage alt={alt} src={src} />
+          <AvatarFallback size={size}>{fallback}</AvatarFallback>
+        </StyledAvatar>
+        {status && (
+          <Box
+            css={{
+              position: 'absolute',
+              bottom: '0',
+              right: '0',
+              boxShadow: '0 0 0 3px $loContrast',
+              borderRadius: '$round',
+              mr: '-3px',
+              mb: '-3px',
+            }}
+          >
+            <Status size={size > 2 ? '2' : '1'} color={status} />
+          </Box>
+        )}
+      </Box>
+    );
+  }
+) as AvatarComponent;

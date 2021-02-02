@@ -1,6 +1,3 @@
-import { Popover } from '@interop-ui/react-popover';
-import { Tooltip } from '@interop-ui/react-tooltip';
-
 import { Box } from '../components/Box';
 import { Text } from '../components/Text';
 import { Section } from '../components/Section';
@@ -127,11 +124,6 @@ export function Avatars() {
             />
           </Flex>
 
-          <Subheading>Interactive avatar with tooltip and popover</Subheading>
-          <Flex css={{ gap: '$6' }}>
-            <Popover>Popover content</Popover>
-          </Flex>
-
           <Subheading>Inactive avatar</Subheading>
           <Flex css={{ gap: '$2' }}>
             <Avatar
@@ -191,37 +183,6 @@ export function Avatars() {
           <Subheading>Grouped avatars</Subheading>
           <Flex>
             <AvatarGroup>
-              <AvatarNestedItem>
-                <Tooltip>
-                  {/* <Tooltip.Trigger as={props => <MyAvatar {...props} />} size="2" inactive>
-                    <Avatar.Image
-                      alt="John Smith"
-                      src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
-                    />
-                    <Avatar.Fallback>C</Avatar.Fallback>
-                  </Tooltip.Trigger>
-                  <Tooltip.Position side="top">
-                    <Tooltip.Content
-                      ariaLabel="Close"
-                      as={Box}
-                      css={{
-                        backgroundColor: '$hiContrast',
-                        borderRadius: '$2',
-                        padding: '$1 $2',
-                        maxWidth: 300,
-                      }}>
-                      <Text size="1" css={{ lineHeight: '17px', color: '$loContrast' }}>Close</Text>
-                    </Tooltip.Content>
-                    <Tooltip.Arrow
-                      offset={0}
-                      width={13}
-                      height={7}
-                      style={{ ...tooltipStyles.arrow, fill: 'black' }}
-                    />
-                  </Tooltip.Position> */}
-                </Tooltip>
-              </AvatarNestedItem>
-
               <AvatarNestedItem>
                 <Avatar
                   size="2"
