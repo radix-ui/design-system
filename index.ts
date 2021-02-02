@@ -10,14 +10,6 @@ export { Avatar } from './components/Avatar';
 export type { AvatarProps, AvatarVariants } from './components/Avatar';
 
 export { AlertDialog } from './components/AlertDialog';
-export type {
-  AlertDialogProps,
-  AlertDialogContentProps,
-  AlertDialogTitleProps,
-  AlertDialogDescriptionProps,
-  AlertDialogActionProps,
-  AlertDialogCancelProps,
-} from './components/AlertDialog';
 
 export { Badge } from './components/Badge';
 export type { BadgeProps, BadgeVariants } from './components/Badge';

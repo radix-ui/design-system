@@ -1426,6 +1426,17 @@
     "@radix-ui/utils" "0.0.3"
     csstype "^3.0.4"
 
+"@radix-ui/react-alert-dialog@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-alert-dialog/-/react-alert-dialog-0.0.5.tgz#4dd39378d3b9b2b3644061d5ab53ee329436eddb"
+  integrity sha512-tBDfNMBT2HMLEfmsNeAxihtDjftd2gtGlNgfcnp1z3cIaGlIv/kFaJRoY5E5Z7DaT/jEq4Pf8bR5wq+KAI/gog==
+  dependencies:
+    "@radix-ui/react-dialog" "0.0.5"
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/react-utils" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
+
 "@radix-ui/react-arrow@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-arrow/-/react-arrow-0.0.1.tgz#9689fe27cf88c5831d3280f2bff2cca3d3850f66"

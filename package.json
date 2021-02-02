@@ -32,6 +32,7 @@
     "@interop-ui/react-tooltip": "0.0.1-12",
     "@interop-ui/react-utils": "0.0.1-12",
     "@modulz/radix-icons": "^3.3.0",
+    "@radix-ui/react-alert-dialog": "0.0.5",
     "@radix-ui/react-dialog": "0.0.5",
     "@radix-ui/react-menu": "0.0.1",
     "@radix-ui/react-polymorphic": "0.0.4",

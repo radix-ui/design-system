@@ -25,12 +25,20 @@ import { SimpleToggle } from '../components/SimpleToggle';
 import { ScrollArea } from '../components/Scrollbar';
 import { Tooltip } from '../components/Tooltip';
 import { Slider } from '../components/Slider';
-import { Dialog } from '../components/Dialog';
-import { Popover } from '../components/Popover';
+import { Dialog, DialogTrigger, DialogContent } from '../components/Dialog';
+import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
 import { Checkbox } from '../components/Checkbox';
 import { RadioGroup } from '../components/Radio';
 import { ProgressBar } from '../components/ProgressBar';
-import { AlertDialog } from '../components/AlertDialog';
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+} from '../components/AlertDialog';
 import { Tabs } from '../components/Tabs';
 import { Label } from '../components/Label';
 import { Skeleton } from '../components/Skeleton';
@@ -1392,21 +1400,21 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <AlertDialog>
-              <AlertDialog.Trigger as={Button}>Alert Dialog</AlertDialog.Trigger>
-              <AlertDialog.Content>
-                <AlertDialog.Title as={Subheading}>Are you sure?</AlertDialog.Title>
-                <AlertDialog.Description as={Text} css={{ mt: '$2' }}>
+              <AlertDialogTrigger as={Button}>Alert Dialog</AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogTitle as={Subheading}>Are you sure?</AlertDialogTitle>
+                <AlertDialogDescription as={Text} css={{ mt: '$2' }}>
                   This will do a very dangerous thing. Thar be dragons!
-                </AlertDialog.Description>
+                </AlertDialogDescription>
                 <Flex css={{ jc: 'flex-end', gap: '$3', mt: '$5' }}>
-                  <AlertDialog.Cancel as={Button} variant="ghost">
+                  <AlertDialogCancel as={Button} variant="ghost">
                     Cancel
-                  </AlertDialog.Cancel>
-                  <AlertDialog.Action as={Button} variant="red">
+                  </AlertDialogCancel>
+                  <AlertDialogAction as={Button} variant="red">
                     Delete
-                  </AlertDialog.Action>
+                  </AlertDialogAction>
                 </Flex>
-              </AlertDialog.Content>
+              </AlertDialogContent>
             </AlertDialog>
           </Container>
         </Section>
@@ -1416,8 +1424,8 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Dialog>
-              <Dialog.Trigger as={Button}>Open dialog</Dialog.Trigger>
-              <Dialog.Content>
+              <DialogTrigger as={Button}>Open dialog</DialogTrigger>
+              <DialogContent>
                 <Text size="5" as="h6" css={{ fontWeight: 500, mb: '$3' }}>
                   Dialog Heading
                 </Text>
@@ -1426,13 +1434,13 @@ function Home() {
                   Traditional business literature won’t help you solve it- most of that stuff is
                   focused on life after product/market fit, after the Trough of Sorrow.
                 </Text>
-              </Dialog.Content>
+              </DialogContent>
             </Dialog>
 
             <Dialog>
-              <Dialog.Trigger as={Button}>Dialog</Dialog.Trigger>
+              <DialogTrigger as={Button}>Dialog</DialogTrigger>
 
-              <Dialog.Content>
+              <DialogContent>
                 <Text size="5" as="h6" css={{ fontWeight: 500, mb: '$3' }}>
                   Dialog Heading
                 </Text>
@@ -1443,14 +1451,14 @@ function Home() {
                 </Text>
 
                 <Popover>
-                  <Popover.Trigger as={Button}>Open</Popover.Trigger>
-                  <Popover.Content>
-                    <Popover.Close as={Button} variant="ghost">
+                  <PopoverTrigger as={Button}>Open</PopoverTrigger>
+                  <PopoverContent>
+                    <PopoverClose as={Button} variant="ghost">
                       Close
-                    </Popover.Close>
-                  </Popover.Content>
+                    </PopoverClose>
+                  </PopoverContent>
                 </Popover>
-              </Dialog.Content>
+              </DialogContent>
             </Dialog>
           </Container>
         </Section>
@@ -1484,17 +1492,17 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Popover>
-              <Popover.Trigger as={Button}>Popover</Popover.Trigger>
-              <Popover.Content css={{ padding: '$4' }} hideArrow>
-                <Text>Hello, from Popover.</Text>
-              </Popover.Content>
+              <PopoverTrigger as={Button}>Popover</PopoverTrigger>
+              <PopoverContent css={{ padding: '$4' }} hideArrow>
+                <Text>Hello, from Popover</Text>
+              </PopoverContent>
             </Popover>
 
             <Popover>
-              <Popover.Trigger as={Button}>Popover</Popover.Trigger>
-              <Popover.Content css={{ padding: '$4' }}>
-                <Text>Hello, from Popover.</Text>
-              </Popover.Content>
+              <PopoverTrigger as={Button}>Popover</PopoverTrigger>
+              <PopoverContent css={{ padding: '$4' }}>
+                <Text>Hello, from Popover</Text>
+              </PopoverContent>
             </Popover>
           </Container>
         </Section>

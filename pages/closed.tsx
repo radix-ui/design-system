@@ -6,7 +6,15 @@ import { Button } from '../components/Button';
 import { Flex } from '../components/Flex';
 import { IconButton } from '../components/IconButton';
 import { Dialog, DialogTrigger, DialogContent, DialogClose } from '../components/Dialog';
-import { AlertDialog } from '../components/AlertDialog';
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+} from '../components/AlertDialog';
 import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
 import { Tooltip } from '../components/Tooltip';
 import { ProgressBar } from '../components/ProgressBar';
@@ -88,18 +96,18 @@ export default function Closed() {
       </Text>
 
       <AlertDialog>
-        <AlertDialog.Trigger as={Button}>Open AlertDialog</AlertDialog.Trigger>
-        <AlertDialog.Content>
-          <AlertDialog.Title as={Text} css={{ mb: '$4' }}>
-            Hello, from AlertDialog.
-          </AlertDialog.Title>
+        <AlertDialogTrigger as={Button}>Open AlertDialog</AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogTitle as={Text} css={{ mb: '$4' }}>
+            Hello, from AlertDialog
+          </AlertDialogTitle>
           <Flex css={{ justifyContent: 'space-between' }}>
-            <AlertDialog.Action as={Button}>Ok</AlertDialog.Action>
-            <AlertDialog.Cancel as={Button} variant="red">
+            <AlertDialogAction as={Button}>Ok</AlertDialogAction>
+            <AlertDialogCancel as={Button} variant="red">
               Cancel
-            </AlertDialog.Cancel>
+            </AlertDialogCancel>
           </Flex>
-        </AlertDialog.Content>
+        </AlertDialogContent>
       </AlertDialog>
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         Popover
