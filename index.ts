@@ -100,12 +100,6 @@ export { Panel } from './components/Panel';
 export type { PanelProps, PanelVariants } from './components/Panel';
 
 export { Popover } from './components/Popover';
-export type {
-  PopoverProps,
-  PopoverTriggerProps,
-  PopoverContentProps,
-  PopoverCloseProps,
-} from './components/Popover';
 
 // TODO
 // export { Scrollbar } from './components/Scrollbar';

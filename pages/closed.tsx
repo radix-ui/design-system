@@ -7,7 +7,7 @@ import { Flex } from '../components/Flex';
 import { IconButton } from '../components/IconButton';
 import { Dialog, DialogTrigger, DialogContent, DialogClose } from '../components/Dialog';
 import { AlertDialog } from '../components/AlertDialog';
-import { Popover } from '../components/Popover';
+import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
 import { Tooltip } from '../components/Tooltip';
 import { ProgressBar } from '../components/ProgressBar';
 import { Tabs } from '../components/Tabs';
@@ -17,8 +17,6 @@ import { Switch } from '../components/Switch';
 import { SimpleToggle } from '../components/SimpleToggle';
 import { Slider } from '../components/Slider';
 import { Cross2Icon } from '@modulz/radix-icons';
-
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 export default function Closed() {
   return (
@@ -108,44 +106,44 @@ export default function Closed() {
       </Text>
 
       <Popover>
-        <Popover.Trigger as={Button}>Open Popover</Popover.Trigger>
-        <Popover.Content css={{ padding: '$4' }}>
-          <Text>Hello, from Popover.</Text>
-        </Popover.Content>
+        <PopoverTrigger as={Button}>Open Popover</PopoverTrigger>
+        <PopoverContent css={{ padding: '$4' }}>
+          <Text>Hello, from Popover</Text>
+        </PopoverContent>
       </Popover>
 
       <Popover>
-        <Popover.Trigger as={Button} css={{ ml: '$4' }}>
+        <PopoverTrigger as={Button} css={{ ml: '$4' }}>
           Open Popover (top)
-        </Popover.Trigger>
-        <Popover.Content side="left" css={{ height: '300px', padding: '$4' }}>
-          <Text>Hello, from Popover.</Text>
-        </Popover.Content>
+        </PopoverTrigger>
+        <PopoverContent side="left" css={{ height: '300px', padding: '$4' }}>
+          <Text>Hello, from Popover</Text>
+        </PopoverContent>
       </Popover>
 
       <Popover>
-        <Popover.Trigger as={Button} css={{ ml: '$4' }}>
+        <PopoverTrigger as={Button} css={{ ml: '$4' }}>
           With close button
-        </Popover.Trigger>
-        <Popover.Content side="top" css={{ padding: '$4' }}>
-          <Text>Hello, from Popover.</Text>
-          <Popover.Close
+        </PopoverTrigger>
+        <PopoverContent side="top" css={{ padding: '$4' }}>
+          <Text>Hello, from Popover</Text>
+          <PopoverClose
             as={IconButton}
             variant="ghost"
             css={{ position: 'absolute', top: '$1', right: '$1' }}
           >
             <Cross2Icon />
-          </Popover.Close>
-        </Popover.Content>
+          </PopoverClose>
+        </PopoverContent>
       </Popover>
 
       <Popover>
-        <Popover.Trigger as={Button} css={{ ml: '$4' }}>
+        <PopoverTrigger as={Button} css={{ ml: '$4' }}>
           Without arrow
-        </Popover.Trigger>
-        <Popover.Content side="top" hideArrow>
-          <Text>Hello, from Popover.</Text>
-        </Popover.Content>
+        </PopoverTrigger>
+        <PopoverContent side="top" hideArrow css={{ padding: '$4' }}>
+          <Text>Hello, from Popover</Text>
+        </PopoverContent>
       </Popover>
 
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
