@@ -20,16 +20,24 @@ import { SimpleToggle } from '../components/SimpleToggle';
 import { ScrollArea } from '../components/Scrollbar';
 import { Tooltip } from '../components/Tooltip';
 import { Slider } from '../components/Slider';
-import { Dialog } from '../components/Dialog';
-import { Popover } from '../components/Popover';
+import { Dialog, DialogTrigger, DialogContent } from '../components/Dialog';
+import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
 import { Checkbox } from '../components/Checkbox';
 import { RadioGroup } from '../components/Radio';
 import { ProgressBar } from '../components/ProgressBar';
-import { AlertDialog } from '../components/AlertDialog';
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+} from '../components/AlertDialog';
 import { Tabs } from '../components/Tabs';
 import { Label } from '../components/Label';
 import { Skeleton } from '../components/Skeleton';
-import { Accordion } from '../components/Accordion';
+import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
 import { Title } from '../components/Title';
 import { Subtitle } from '../components/Subtitle';
 import { Heading } from '../components/Heading';
@@ -360,7 +368,7 @@ function Test() {
                     <Text size="2" css={{ color: '$gray900' }}>
                       Forgot password
                     </Text>
-                    <Button size="large" variant="blue">
+                    <Button size="2" variant="blue">
                       Log in
                     </Button>
                   </Flex>
@@ -943,21 +951,21 @@ function Test() {
           <Section size="3">
             <Container size="2">
               <AlertDialog>
-                <AlertDialog.Trigger as={Button}>Alert Dialog</AlertDialog.Trigger>
-                <AlertDialog.Content>
-                  <AlertDialog.Title as={Subheading}>Are you sure?</AlertDialog.Title>
-                  <AlertDialog.Description as={Text} css={{ mt: '$2' }}>
+                <AlertDialogTrigger as={Button}>Alert Dialog</AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogTitle as={Subheading}>Are you sure?</AlertDialogTitle>
+                  <AlertDialogDescription as={Text} css={{ mt: '$2' }}>
                     This will do a very dangerous thing. Thar be dragons!
-                  </AlertDialog.Description>
+                  </AlertDialogDescription>
                   <Flex css={{ jc: 'flex-end', gap: '$3', mt: '$5' }}>
-                    <AlertDialog.Cancel as={Button} variant="ghost">
+                    <AlertDialogCancel as={Button} variant="ghost">
                       Cancel
-                    </AlertDialog.Cancel>
-                    <AlertDialog.Action as={Button} variant="red">
+                    </AlertDialogCancel>
+                    <AlertDialogAction as={Button} variant="red">
                       Delete
-                    </AlertDialog.Action>
+                    </AlertDialogAction>
                   </Flex>
-                </AlertDialog.Content>
+                </AlertDialogContent>
               </AlertDialog>
             </Container>
           </Section>
@@ -969,8 +977,8 @@ function Test() {
           <Section size="3">
             <Container size="2">
               <Dialog>
-                <Dialog.Trigger as={Button}>Open dialog</Dialog.Trigger>
-                <Dialog.Content>
+                <DialogTrigger as={Button}>Open dialog</DialogTrigger>
+                <DialogContent>
                   <Text size="5" as="h6" css={{ fontWeight: 500, mb: '$3' }}>
                     Dialog Heading
                   </Text>
@@ -979,13 +987,13 @@ function Test() {
                     Traditional business literature won’t help you solve it- most of that stuff is
                     focused on life after product/market fit, after the Trough of Sorrow.
                   </Text>
-                </Dialog.Content>
+                </DialogContent>
               </Dialog>
 
               <Dialog>
-                <Dialog.Trigger as={Button}>Dialog</Dialog.Trigger>
+                <DialogTrigger as={Button}>Dialog</DialogTrigger>
 
-                <Dialog.Content>
+                <DialogContent>
                   <Text size="5" as="h6" css={{ fontWeight: 500, mb: '$3' }}>
                     Dialog Heading
                   </Text>
@@ -996,14 +1004,14 @@ function Test() {
                   </Text>
 
                   <Popover>
-                    <Popover.Trigger as={Button}>Open</Popover.Trigger>
-                    <Popover.Content>
-                      <Popover.Close as={Button} variant="ghost">
+                    <PopoverTrigger as={Button}>Open</PopoverTrigger>
+                    <PopoverContent>
+                      <PopoverClose as={Button} variant="ghost">
                         Close
-                      </Popover.Close>
-                    </Popover.Content>
+                      </PopoverClose>
+                    </PopoverContent>
                   </Popover>
-                </Dialog.Content>
+                </DialogContent>
               </Dialog>
             </Container>
           </Section>
@@ -1041,17 +1049,17 @@ function Test() {
           <Section size="3">
             <Container size="2">
               <Popover>
-                <Popover.Trigger as={Button}>Popover</Popover.Trigger>
-                <Popover.Content css={{ padding: '$4' }} hideArrow>
-                  <Text>Hello, from Popover.</Text>
-                </Popover.Content>
+                <PopoverTrigger as={Button}>Popover</PopoverTrigger>
+                <PopoverContent css={{ padding: '$4' }} hideArrow>
+                  <Text>Hello, from Popover</Text>
+                </PopoverContent>
               </Popover>
 
-              <Popover hideArrow="true">
-                <Popover.Trigger as={Button}>Popover</Popover.Trigger>
-                <Popover.Content css={{ padding: '$4' }}>
-                  <Text>Hello, from Popover.</Text>
-                </Popover.Content>
+              <Popover>
+                <PopoverTrigger as={Button}>Popover</PopoverTrigger>
+                <PopoverContent css={{ padding: '$4' }} hideArrow>
+                  <Text>Hello, from Popover</Text>
+                </PopoverContent>
               </Popover>
             </Container>
           </Section>
@@ -1063,13 +1071,13 @@ function Test() {
           <Section size="3">
             <Container size="2">
               <Accordion>
-                <Accordion.Item value="accordion-one">
-                  <Accordion.Button>
+                <AccordionItem value="accordion-one">
+                  <AccordionButton>
                     <Text size="3" css={{ fontWeight: 500 }}>
                       Accordion one
                     </Text>
-                  </Accordion.Button>
-                  <Accordion.Panel>
+                  </AccordionButton>
+                  <AccordionPanel>
                     <Text size="3" css={{ lineHeight: '23px' }}>
                       The other main improvement is with tables, which we'll probably use a lot.
                       With horizontal overflow on small devices and when zoomed in, tables are a
@@ -1077,15 +1085,15 @@ function Test() {
                       to the user when focused, which also allows keyboard users to navigate the
                       overflow more easily.
                     </Text>
-                  </Accordion.Panel>
-                </Accordion.Item>
-                <Accordion.Item value="accordion-two">
-                  <Accordion.Button>
+                  </AccordionPanel>
+                </AccordionItem>
+                <AccordionItem value="accordion-two">
+                  <AccordionButton>
                     <Text size="3" css={{ fontWeight: 500 }}>
                       Accordion two
                     </Text>
-                  </Accordion.Button>
-                  <Accordion.Panel>
+                  </AccordionButton>
+                  <AccordionPanel>
                     <Text size="3" css={{ lineHeight: '23px' }}>
                       The other main improvement is with tables, which we'll probably use a lot.
                       With horizontal overflow on small devices and when zoomed in, tables are a
@@ -1093,15 +1101,15 @@ function Test() {
                       to the user when focused, which also allows keyboard users to navigate the
                       overflow more easily.
                     </Text>
-                  </Accordion.Panel>
-                </Accordion.Item>
-                <Accordion.Item value="accordion-three">
-                  <Accordion.Button>
+                  </AccordionPanel>
+                </AccordionItem>
+                <AccordionItem value="accordion-three">
+                  <AccordionButton>
                     <Text size="3" css={{ fontWeight: 500 }}>
                       Accordion one
                     </Text>
-                  </Accordion.Button>
-                  <Accordion.Panel>
+                  </AccordionButton>
+                  <AccordionPanel>
                     <Text size="3" css={{ lineHeight: '23px' }}>
                       The other main improvement is with tables, which we'll probably use a lot.
                       With horizontal overflow on small devices and when zoomed in, tables are a
@@ -1109,15 +1117,15 @@ function Test() {
                       to the user when focused, which also allows keyboard users to navigate the
                       overflow more easily.
                     </Text>
-                  </Accordion.Panel>
-                </Accordion.Item>
-                <Accordion.Item value="accordion-four">
-                  <Accordion.Button>
+                  </AccordionPanel>
+                </AccordionItem>
+                <AccordionItem value="accordion-four">
+                  <AccordionButton>
                     <Text size="3" css={{ fontWeight: 500 }}>
                       Accordion two
                     </Text>
-                  </Accordion.Button>
-                  <Accordion.Panel>
+                  </AccordionButton>
+                  <AccordionPanel>
                     <Text size="3" css={{ lineHeight: '23px' }}>
                       The other main improvement is with tables, which we'll probably use a lot.
                       With horizontal overflow on small devices and when zoomed in, tables are a
@@ -1125,8 +1133,8 @@ function Test() {
                       to the user when focused, which also allows keyboard users to navigate the
                       overflow more easily.
                     </Text>
-                  </Accordion.Panel>
-                </Accordion.Item>
+                  </AccordionPanel>
+                </AccordionItem>
               </Accordion>
             </Container>
           </Section>
@@ -1404,7 +1412,7 @@ function Test() {
           <Section size="3">
             <Container size="2">
               <Box css={{ width: '100px' }}>
-                <Slider defaultValue={50} />
+                <Slider defaultValue={[50]} />
               </Box>
             </Container>
           </Section>

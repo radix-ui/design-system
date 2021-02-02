@@ -11,7 +11,6 @@ import {
   AlertDialogTrigger,
   AlertDialogContent,
   AlertDialogTitle,
-  AlertDialogDescription,
   AlertDialogAction,
   AlertDialogCancel,
 } from '../components/AlertDialog';
@@ -19,7 +18,7 @@ import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../compon
 import { Tooltip } from '../components/Tooltip';
 import { ProgressBar } from '../components/ProgressBar';
 import { Tabs } from '../components/Tabs';
-import { Accordion } from '../components/Accordion';
+import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
 import { Label } from '../components/Label';
 import { Switch } from '../components/Switch';
 import { SimpleToggle } from '../components/SimpleToggle';
@@ -30,6 +29,7 @@ export default function Closed() {
   return (
     <Box
       css={{
+        bc: '$loContrast',
         height: '100vh',
         py: '130px',
         px: '260px',
@@ -237,30 +237,30 @@ export default function Closed() {
       </Text>
 
       <Accordion>
-        <Accordion.Item value="accordion-one">
-          <Accordion.Button>
+        <AccordionItem value="accordion-one">
+          <AccordionButton>
             <Text size="4">Accordion one</Text>
-          </Accordion.Button>
-          <Accordion.Panel>
+          </AccordionButton>
+          <AccordionPanel>
             <Text size="4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </Text>
-          </Accordion.Panel>
-        </Accordion.Item>
-        <Accordion.Item value="accordion-two">
-          <Accordion.Button>
+          </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem value="accordion-two">
+          <AccordionButton>
             <Text size="4">Accordion two</Text>
-          </Accordion.Button>
-          <Accordion.Panel>
+          </AccordionButton>
+          <AccordionPanel>
             <Text size="4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </Text>
-          </Accordion.Panel>
-        </Accordion.Item>
+          </AccordionPanel>
+        </AccordionItem>
       </Accordion>
 
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>

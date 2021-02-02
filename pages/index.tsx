@@ -43,7 +43,7 @@ import { Tabs } from '../components/Tabs';
 import { Label } from '../components/Label';
 import { Skeleton } from '../components/Skeleton';
 import { RadioCard } from '../components/RadioCard';
-import { Accordion } from '../components/Accordion';
+import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
 import { Title } from '../components/Title';
 import { Subtitle } from '../components/Subtitle';
 import { Heading } from '../components/Heading';
@@ -1512,13 +1512,13 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Accordion>
-              <Accordion.Item value="accordion-one">
-                <Accordion.Button>
+              <AccordionItem value="accordion-one">
+                <AccordionButton>
                   <Text size="3" css={{ fontWeight: 500 }}>
                     Accordion one
                   </Text>
-                </Accordion.Button>
-                <Accordion.Panel>
+                </AccordionButton>
+                <AccordionPanel>
                   <Text size="3" css={{ lineHeight: '23px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
                     horizontal overflow on small devices and when zoomed in, tables are a pain to
@@ -1526,15 +1526,15 @@ function Home() {
                     user when focused, which also allows keyboard users to navigate the overflow
                     more easily.
                   </Text>
-                </Accordion.Panel>
-              </Accordion.Item>
-              <Accordion.Item value="accordion-two">
-                <Accordion.Button>
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem value="accordion-two">
+                <AccordionButton>
                   <Text size="3" css={{ fontWeight: 500 }}>
                     Accordion two
                   </Text>
-                </Accordion.Button>
-                <Accordion.Panel>
+                </AccordionButton>
+                <AccordionPanel>
                   <Text size="3" css={{ lineHeight: '23px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
                     horizontal overflow on small devices and when zoomed in, tables are a pain to
@@ -1542,15 +1542,15 @@ function Home() {
                     user when focused, which also allows keyboard users to navigate the overflow
                     more easily.
                   </Text>
-                </Accordion.Panel>
-              </Accordion.Item>
-              <Accordion.Item value="accordion-three">
-                <Accordion.Button>
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem value="accordion-three">
+                <AccordionButton>
                   <Text size="3" css={{ fontWeight: 500 }}>
                     Accordion one
                   </Text>
-                </Accordion.Button>
-                <Accordion.Panel>
+                </AccordionButton>
+                <AccordionPanel>
                   <Text size="3" css={{ lineHeight: '23px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
                     horizontal overflow on small devices and when zoomed in, tables are a pain to
@@ -1558,15 +1558,15 @@ function Home() {
                     user when focused, which also allows keyboard users to navigate the overflow
                     more easily.
                   </Text>
-                </Accordion.Panel>
-              </Accordion.Item>
-              <Accordion.Item value="accordion-four">
-                <Accordion.Button>
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem value="accordion-four">
+                <AccordionButton>
                   <Text size="3" css={{ fontWeight: 500 }}>
                     Accordion two
                   </Text>
-                </Accordion.Button>
-                <Accordion.Panel>
+                </AccordionButton>
+                <AccordionPanel>
                   <Text size="3" css={{ lineHeight: '23px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
                     horizontal overflow on small devices and when zoomed in, tables are a pain to
@@ -1574,8 +1574,8 @@ function Home() {
                     user when focused, which also allows keyboard users to navigate the overflow
                     more easily.
                   </Text>
-                </Accordion.Panel>
-              </Accordion.Item>
+                </AccordionPanel>
+              </AccordionItem>
             </Accordion>
           </Container>
         </Section>
