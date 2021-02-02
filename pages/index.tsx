@@ -1845,14 +1845,14 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Box css={{ width: '100px' }}>
-              <Slider defaultValue={50} />
+              <Slider defaultValue={[50]} />
             </Box>
             <Flex css={{ gap: '$4' }}>
-              <Slider defaultValue={25} />
-              {/* <Slider defaultValue={[25, 75]} /> */}
+              <Slider defaultValue={[25]} />
+              <Slider defaultValue={[25, 75]} />
             </Flex>
             <Box css={{ mt: '$6' }}>
-              <Slider defaultValue={50} orientation="vertical" />
+              <Slider defaultValue={[50]} orientation="vertical" />
             </Box>
           </Container>
         </Section>

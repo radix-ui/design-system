@@ -111,6 +111,8 @@ export type { SeparatorProps, SeparatorVariants } from './components/Separator';
 export { Skeleton } from './components/Skeleton';
 export type { SkeletonProps, SkeletonVariants } from './components/Skeleton';
 
+export { Slider } from './components/Slider';
+
 export { Status } from './components/Status';
 export type { StatusProps, StatusVariants } from './components/Status';
 

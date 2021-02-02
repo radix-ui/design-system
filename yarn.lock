@@ -1146,13 +1146,6 @@
     "@interop-ui/react-utils" "0.0.1-12"
     "@interop-ui/utils" "0.0.1-4"
 
-"@interop-ui/react-collection@0.0.1-12":
-  version "0.0.1-12"
-  resolved "https://registry.yarnpkg.com/@interop-ui/react-collection/-/react-collection-0.0.1-12.tgz#3e215f7850ab7daf4dce5a1fbe6dd0a5540507ca"
-  integrity sha512-NRlOZbr+homK8gJ5+s5iElwt45TJagiHfEJs1uUb+HexUb90e4VvExm/a1cMwNoOnGn2IhgwEDstH1vDMXxdAw==
-  dependencies:
-    "@interop-ui/react-utils" "0.0.1-12"
-
 "@interop-ui/react-debug-context@0.0.1-12":
   version "0.0.1-12"
   resolved "https://registry.yarnpkg.com/@interop-ui/react-debug-context/-/react-debug-context-0.0.1-12.tgz#f09fcc9e47b6170a93192df2640367a9a30ca020"
@@ -1261,16 +1254,6 @@
   resolved "https://registry.yarnpkg.com/@interop-ui/react-separator/-/react-separator-0.0.1-10.tgz#d38f5827db5b2d7e5cf5ba0f69d849eb9ae760c7"
   integrity sha512-KHNIep3J33StUCvQlTtFyuGIgxcwCbvQwPWvNx3wB2dcezkq2i0u2O/39ESIndpHiSpAKeJMNwNUeTp4xgBDAA==
   dependencies:
-    "@interop-ui/react-utils" "0.0.1-12"
-    "@interop-ui/utils" "0.0.1-4"
-
-"@interop-ui/react-slider@0.0.1-12":
-  version "0.0.1-12"
-  resolved "https://registry.yarnpkg.com/@interop-ui/react-slider/-/react-slider-0.0.1-12.tgz#bc385b4cc0c3b48015c6afb69f415a50c9a08270"
-  integrity sha512-rElUwe4WkMnN7MlfPTETlQ92iCq7Hy3T4Om2KmRFFxeLPH6sCocBfPhYBMw+l7KFAQ2UXXEC8LcGs61+0TiD/w==
-  dependencies:
-    "@interop-ui/react-collection" "0.0.1-12"
-    "@interop-ui/react-use-size" "0.0.1-12"
     "@interop-ui/react-utils" "0.0.1-12"
     "@interop-ui/utils" "0.0.1-4"
 
@@ -1454,6 +1437,13 @@
     "@radix-ui/react-primitive" "0.0.3"
     "@radix-ui/utils" "0.0.3"
 
+"@radix-ui/react-collection@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-collection/-/react-collection-0.0.4.tgz#ca17f83eb7f94aedbf11f65b32ddb6ed125385f7"
+  integrity sha512-wx/zJtw+i3FFfCK5eavn3WD2sGDPj354WZfkQFXRkZWLc3LXoX6FC2BwzNyejWLL1M2Y03sQeVcTGKjPpnUdIQ==
+  dependencies:
+    "@radix-ui/react-utils" "0.0.4"
+
 "@radix-ui/react-dialog@0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-dialog/-/react-dialog-0.0.5.tgz#d2568aeeeca9b51fdb19874754a3aa092d68a50d"
@@ -1628,6 +1618,17 @@
   dependencies:
     "@radix-ui/react-utils" "0.0.1"
     "@radix-ui/utils" "0.0.1"
+
+"@radix-ui/react-slider@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-slider/-/react-slider-0.0.4.tgz#a234e79304f9120207cb53002b043fbfde24448a"
+  integrity sha512-IEwP7CpLq5t090+NoVnzRalqdlj9+nhnZsqoHAbfAGtfRWAFv/kSNNTrh/wHGTTWvwF7liQUCl24HqAhMrGg6w==
+  dependencies:
+    "@radix-ui/react-collection" "0.0.4"
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/react-utils" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
 
 "@radix-ui/react-utils@0.0.1":
   version "0.0.1"

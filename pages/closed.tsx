@@ -286,7 +286,7 @@ export default function Closed() {
       </Text>
 
       <Flex css={{ gap: '$4' }}>
-        <Slider defaultValue={25} />
+        <Slider defaultValue={[25]} />
         <Slider defaultValue={[25, 75]} />
       </Flex>
     </Box>
