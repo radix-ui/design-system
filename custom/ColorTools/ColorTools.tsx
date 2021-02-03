@@ -29,7 +29,7 @@ const gray = {
 };
 
 const red = {
-  start: 'hsl(352, 34%, 9.9%)',
+  start: 'hsl(352, 34%, 10.1%)',
   end: 'hsl(353, 70%, 37%)',
   curve: '0.580, 0.195, 0.955, 0.545',
   overrides: {
@@ -75,9 +75,10 @@ const violet = {
 
 const indigo = {
   start: 'hsl(229, 37%, 11.6%)',
-  end: 'hsl(225, 65%, 48%)',
+  end: 'hsl(225, 62%, 47%)',
   curve: '0.585, 0.305, 0.845, 0.475',
   overrides: {
+    8: 'hsl(226, 69%, 54%)',
     9: 'hsl(228, 100%, 73%)',
   },
 };
@@ -124,7 +125,8 @@ const lime = {
   end: 'hsl(76, 85%, 38%)',
   curve: '0.670, 0.155, 0.965, 0.470',
   overrides: {
-    9: 'hsl(75, 70%, 50%)',
+    8: 'hsl(81, 91%, 40%)',
+    9: 'hsl(81, 70%, 50%)',
   },
 };
 
@@ -133,12 +135,13 @@ const yellow = {
   end: 'hsl(50, 100%, 45%)',
   curve: '1.000, 0.180, 1.000, 0.720',
   overrides: {
-    9: 'hsl(50, 80%, 52%)',
+    8: 'hsl(49, 97%, 48%)',
+    9: 'hsl(49, 80%, 52%)',
   },
 };
 
 const orange = {
-  start: 'hsl(32, 55%, 8.8%)',
+  start: 'hsl(32, 51%, 8.5%)',
   end: 'hsl(38, 90%, 48%)',
   curve: '0.750, 0.145, 1.000, 0.470',
   overrides: {
@@ -156,7 +159,7 @@ const brown = {
 };
 
 const bronze = {
-  start: 'hsl(15, 15%, 9.5%)',
+  start: 'hsl(15, 15%, 10%)',
   end: 'hsl(18, 25%, 45%)',
   curve: '0.580, 0.320, 0.940, 0.495',
   overrides: {
@@ -165,7 +168,7 @@ const bronze = {
 };
 
 const gold = {
-  start: 'hsl(40, 15%, 8.5%)',
+  start: 'hsl(40, 16%, 9.2%)',
   end: 'hsl(36, 28%, 45.0%)',
   curve: '0.730, 0.310, 0.930, 0.520',
   overrides: {

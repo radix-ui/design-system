@@ -238,7 +238,7 @@ export const theme = {
 export const darkTheme = {
   colors: {
     $hiContrast: 'hsl(206,2%,93%)',
-    $loContrast: 'hsl(206,8%,8%)',
+    $loContrast: 'hsl(206, 7.6%, 8.4%)',
 
     $canvas: 'hsl(0,0%,15%)',
     $panel: 'hsl(206,7%,14%)',
