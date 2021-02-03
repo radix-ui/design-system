@@ -5,9 +5,9 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'button';
 
-export type ButtonCSSProp = Pick<StitchesProps<typeof StyledButton>, 'css'>;
-export type ButtonVariants = StitchesVariants<typeof StyledButton>;
-export type ButtonOwnProps = ButtonCSSProp & ButtonVariants;
+type ButtonCSSProp = Pick<StitchesProps<typeof StyledButton>, 'css'>;
+type ButtonVariants = StitchesVariants<typeof StyledButton>;
+type ButtonOwnProps = ButtonCSSProp & ButtonVariants;
 
 const StyledButton = styled(DEFAULT_TAG, {
   // Reset

@@ -11,16 +11,13 @@ export { Box } from './components/Box';
 export { Button } from './components/Button';
 
 export { Card } from './components/Card';
-export type { CardProps, CardVariants } from './components/Card';
 
 export { Checkbox } from './components/Checkbox';
 export type { CheckboxProps, CheckboxVariants } from './components/Checkbox';
 
 export { Code } from './components/Code';
-export type { CodeProps, CodeVariants } from './components/Code';
 
 export { Container } from './components/Container';
-export type { ContainerProps, ContainerVariants } from './components/Container';
 
 export { ControlGroup } from './components/ControlGroup';
 export type { ControlGroupProps } from './components/ControlGroup';
@@ -28,13 +25,10 @@ export type { ControlGroupProps } from './components/ControlGroup';
 export { Dialog } from './components/Dialog';
 
 export { Flex } from './components/Flex';
-export type { FlexProps } from './components/Flex';
 
 export { Grid } from './components/Grid';
-export type { GridProps } from './components/Grid';\
 
 export { Heading } from './components/Heading';
-export type { HeadingProps } from './components/Heading';
 
 export { IconButton } from './components/IconButton';
 export type { IconButtonProps, IconButtonVariants } from './components/IconButton';
@@ -99,7 +93,6 @@ export { Separator } from './components/Separator';
 export type { SeparatorProps, SeparatorVariants } from './components/Separator';
 
 export { Skeleton } from './components/Skeleton';
-export type { SkeletonProps, SkeletonVariants } from './components/Skeleton';
 
 export { Slider } from './components/Slider';
 

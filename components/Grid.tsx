@@ -1,6 +1,4 @@
-import { styled, StitchesProps } from '../stitches.config';
-
-export type GridProps = StitchesProps<typeof Grid>;
+import { styled } from '../stitches.config';
 
 export const Grid = styled('div', {
   // Reset

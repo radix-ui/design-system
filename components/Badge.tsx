@@ -5,11 +5,11 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'span';
 
-export type BadgeCSSProp = Pick<StitchesProps<typeof StyledBadge>, 'css'>;
-export type BadgeVariants = StitchesVariants<typeof StyledBadge>;
-export type BadgeOwnProps = BadgeCSSProp & BadgeVariants;
+type BadgeCSSProp = Pick<StitchesProps<typeof StyledBadge>, 'css'>;
+type BadgeVariants = StitchesVariants<typeof StyledBadge>;
+type BadgeOwnProps = BadgeCSSProp & BadgeVariants;
 
-export const StyledBadge = styled(DEFAULT_TAG, {
+const StyledBadge = styled(DEFAULT_TAG, {
   // Reset
   alignItems: 'center',
   appearance: 'none',
