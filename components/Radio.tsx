@@ -1,19 +1,18 @@
 import React from 'react';
 import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
-import {
-  RadioGroup as RadioGroupPrimitive,
-  RadioGroupProps as RadioGroupPrimitiveProps,
-  RadioGroupItemProps,
-} from '@interop-ui/react-radio-group';
-import { CheckIcon } from '@modulz/radix-icons';
+import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 
-export type RadioGroupProps = RadioGroupPrimitiveProps;
-export type RadioProps = RadioGroupItemProps & StitchesProps<typeof StyledRadio> & RadioVariants;
-export type RadioVariants = StitchesVariants<typeof StyledRadio>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-export function RadioGroup(props: RadioGroupPrimitiveProps) {
-  return <RadioGroupPrimitive {...props} />;
-}
+export const RadioGroup = styled(RadioGroupPrimitive.Root, {
+  display: 'block',
+});
+
+type RadioCSSProp = Pick<StitchesProps<typeof StyledRadio>, 'css'>;
+type RadioVariants = StitchesVariants<typeof StyledRadio>;
+type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
+  RadioCSSProp &
+  RadioVariants;
 
 const StyledIndicator = styled(RadioGroupPrimitive.Indicator, {
   alignItems: 'center',
@@ -22,7 +21,7 @@ const StyledIndicator = styled(RadioGroupPrimitive.Indicator, {
   justifyContent: 'center',
   width: '100%',
   position: 'relative',
-  '&:after': {
+  '&::after': {
     content: '""',
     display: 'block',
     width: '7px',
@@ -33,10 +32,33 @@ const StyledIndicator = styled(RadioGroupPrimitive.Indicator, {
 });
 
 const StyledRadio = styled(RadioGroupPrimitive.Item, {
+  // Reset
+  alignItems: 'center',
+  appearance: 'none',
+  boxSizing: 'border-box',
+  display: 'inline-flex',
+  justifyContent: 'center',
+  lineHeight: '1',
+  margin: '0',
+  outline: 'none',
+  padding: '0',
+  textDecoration: 'none',
+  userSelect: 'none',
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
+  '&::before': {
+    boxSizing: 'border-box',
+  },
+  '&::after': {
+    boxSizing: 'border-box',
+  },
+
   borderRadius: '50%',
   color: '$hiContrast',
   boxShadow: 'inset 0 0 0 1px $gray600',
   overflow: 'hidden',
+  width: '$3',
+  height: '$3',
+
   '&:hover': {
     boxShadow: 'inset 0 0 0 1px $gray700',
   },
@@ -48,16 +70,12 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
 
   variants: {
     size: {
-      '1': {
-        width: '$3',
-        height: '$3',
-      },
       '2': {
         width: '$5',
         height: '$5',
 
         [`& ${StyledIndicator}`]: {
-          '&:after': {
+          '&::after': {
             width: '$3',
             height: '$3',
           },
@@ -67,12 +85,13 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
   },
 });
 
-export function Radio({ size = '1', ...props }: RadioProps) {
-  return (
-    <StyledRadio size={size} {...props}>
-      <StyledIndicator />
-    </StyledRadio>
-  );
-}
+type RadioComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof RadioGroupPrimitive.Item>,
+  RadioOwnProps
+>;
 
-RadioGroup.Radio = Radio;
+export const Radio = React.forwardRef((props, forwardedRef) => (
+  <StyledRadio {...props} ref={forwardedRef}>
+    <StyledIndicator />
+  </StyledRadio>
+)) as RadioComponent;

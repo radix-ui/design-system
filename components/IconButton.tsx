@@ -27,10 +27,10 @@ const StyledIconButton = styled(DEFAULT_TAG, {
   userSelect: 'none',
   WebkitTapHighlightColor: 'transparent',
   color: '$hiContrast',
-  '::before': {
+  '&::before': {
     boxSizing: 'border-box',
   },
-  '::after': {
+  '&::after': {
     boxSizing: 'border-box',
   },
 
@@ -41,17 +41,17 @@ const StyledIconButton = styled(DEFAULT_TAG, {
   height: '$5',
   width: '$5',
   transition: 'all 40ms linear',
-  ':hover': {
+  '&:hover': {
     borderColor: '$gray700',
   },
-  ':active': {
+  '&:active': {
     backgroundColor: '$gray100',
   },
-  ':focus': {
+  '&&:focus': {
     borderColor: '$gray700',
     boxShadow: '0 0 0 1px $gray700',
   },
-  ':disabled': {
+  '&:disabled': {
     pointerEvents: 'none',
     backgroundColor: 'transparent',
     color: '$gray500',
@@ -76,29 +76,29 @@ const StyledIconButton = styled(DEFAULT_TAG, {
       ghost: {
         backgroundColor: 'transparent',
         borderWidth: '0',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$gray200',
         },
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gray300',
         },
       },
       raised: {
         boxShadow:
           '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
-        ':hover': {
+        '&:hover': {
           boxShadow:
             '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
         },
-        ':focus': {
+        '&:focus': {
           borderColor: '$gray700',
           boxShadow:
             '0 0 0 1px $gray700, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gray300',
         },
       },
@@ -107,20 +107,20 @@ const StyledIconButton = styled(DEFAULT_TAG, {
       active: {
         backgroundColor: '$gray300',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
-        ':hover': {
+        '&:hover': {
           boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gray300',
         },
       },
       waiting: {
         backgroundColor: '$gray300',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
-        ':hover': {
+        '&:hover': {
           boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gray300',
         },
       },

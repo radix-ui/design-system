@@ -1,12 +1,8 @@
 import React from 'react';
 import { styled, css, StitchesProps, StitchesVariants } from '../stitches.config';
-import {
-  ProgressBar as ProgressBarPrimitive,
-  ProgressBarProps as ProgressBarPrimitiveProps,
-} from '@interop-ui/react-progress-bar';
+import * as ProgressPrimitive from '@radix-ui/react-progress';
 
-export type ProgressBarProps = ProgressBarPrimitiveProps & StitchesProps<typeof StyledProgressBar>;
-export type ProgressBarVariants = StitchesVariants<typeof StyledProgressBar>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const indeterminateProgress = css.keyframes({
   '0%': {
@@ -23,7 +19,7 @@ const indeterminateProgress = css.keyframes({
   },
 });
 
-const StyledProgressBar = styled(ProgressBarPrimitive, {
+const StyledProgressBar = styled(ProgressPrimitive.Root, {
   boxSizing: 'border-box',
   position: 'relative',
   height: '$1',
@@ -68,7 +64,7 @@ const StyledProgressBar = styled(ProgressBarPrimitive, {
   },
 });
 
-const ProgressBarIndicator = styled(ProgressBarPrimitive.Indicator, {
+const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {
   boxSizing: 'border-box',
   position: 'absolute',
   top: 0,
@@ -80,14 +76,22 @@ const ProgressBarIndicator = styled(ProgressBarPrimitive.Indicator, {
   transition: 'transform 150ms cubic-bezier(0.65, 0, 0.35, 1)',
 });
 
-export function ProgressBar({ value, max = 100, ...props }: ProgressBarProps) {
+type ProgressBarCSSProp = Pick<StitchesProps<typeof StyledProgressBar>, 'css'>;
+type ProgressBarVariants = StitchesVariants<typeof StyledProgressBar>;
+type ProgressBarOwnProps = Polymorphic.OwnProps<typeof ProgressPrimitive.Root> &
+  ProgressBarCSSProp &
+  ProgressBarVariants;
+type ProgressBarComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof ProgressPrimitive.Root>,
+  ProgressBarOwnProps
+>;
+
+export const ProgressBar = React.forwardRef(({ value, max = 100, ...props }, forwardedRef) => {
   const percentage = value != null ? Math.round((value / max) * 100) : null;
 
   return (
-    <div>
-      <StyledProgressBar {...props} value={value} max={max}>
-        <ProgressBarIndicator style={{ transform: `translateX(${percentage}%)` }} />
-      </StyledProgressBar>
-    </div>
+    <StyledProgressBar {...props} ref={forwardedRef} value={value} max={max}>
+      <ProgressBarIndicator style={{ transform: `translateX(${percentage}%)` }} />
+    </StyledProgressBar>
   );
-}
+}) as ProgressBarComponent;

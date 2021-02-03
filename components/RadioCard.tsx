@@ -1,20 +1,18 @@
 import React from 'react';
 import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
-import {
-  RadioGroup as RadioGroupPrimitive,
-  RadioGroupProps as RadioGroupPrimitiveProps,
-  RadioGroupItemProps,
-} from '@interop-ui/react-radio-group';
+import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 
-export type RadioGroupProps = RadioGroupPrimitiveProps;
-export type RadioCardProps = RadioGroupItemProps &
-  StitchesProps<typeof StyledRadio> &
-  RadioCardVariants;
-export type RadioCardVariants = StitchesVariants<typeof StyledRadio>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-export function RadioGroup(props: RadioGroupPrimitiveProps) {
-  return <RadioGroupPrimitive {...props} />;
-}
+export const RadioCardGroup = styled(RadioGroupPrimitive.Root, {
+  display: 'block',
+});
+
+type RadioCSSProp = Pick<StitchesProps<typeof StyledRadio>, 'css'>;
+type RadioVariants = StitchesVariants<typeof StyledRadio>;
+type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
+  RadioCSSProp &
+  RadioVariants;
 
 const StyledRadioButton = styled('div', {
   display: 'flex',
@@ -53,15 +51,16 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
   },
 });
 
-export function RadioCard({ ...props }: RadioCardProps) {
-  return (
-    <StyledRadio {...props}>
-      <StyledRadioButton>
-        <StyledRadioIndicator />
-      </StyledRadioButton>
-      {props.children}
-    </StyledRadio>
-  );
-}
+type RadioComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof RadioGroupPrimitive.Item>,
+  RadioOwnProps
+>;
 
-RadioCard.Radio = RadioCard;
+export const RadioCard = React.forwardRef((props, forwardedRef) => (
+  <StyledRadio {...props} ref={forwardedRef}>
+    <StyledRadioButton>
+      <StyledRadioIndicator />
+    </StyledRadioButton>
+    {props.children}
+  </StyledRadio>
+)) as RadioComponent;

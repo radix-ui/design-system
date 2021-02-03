@@ -1,38 +1,18 @@
 import React from 'react';
-import { styled, StitchesProps } from '../stitches.config';
-import {
-  Tabs as TabsPrimitive,
-  TabsProps as TabsPrimitiveProps,
-  TabsListProps as TabsListPrimitiveProps,
-  TabsTabProps as TabsTabPrimitiveProps,
-  TabsPanelProps as TabsPanelPrimitiveProps,
-} from '@interop-ui/react-tabs';
+import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import * as TabsPrimitive from '@radix-ui/react-tabs';
 import { Separator } from './Separator';
 
-export type TabsProps = TabsPrimitiveProps & StitchesProps<typeof StyledTabs>;
-export type TabsTabProps = TabsTabPrimitiveProps & StitchesProps<typeof StyledTab>;
-export type TabsListProps = TabsListPrimitiveProps & StitchesProps<typeof StyledTabsList>;
-export type TabsPanelProps = TabsPanelPrimitiveProps & StitchesProps<typeof StyledTabsPanel>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-const StyledTabs = styled(TabsPrimitive, {
+export const Tabs = styled(TabsPrimitive.Root, {
   display: 'flex',
   '&[data-orientation="horizontal"]': {
     flexDirection: 'column',
   },
 });
 
-// Not able to use `forwardRef` here because then I can't add
-// static props to it (eg: Tabs.List)
-// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/34757
-// export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>((props, forwardedRef) => (
-//   <StyledTabs ref={forwardedRef} {...props} />
-// ));
-
-export function Tabs(props: TabsProps) {
-  return <StyledTabs {...props} />;
-}
-
-const StyledTab = styled(TabsPrimitive.Tab, {
+export const TabsTab = styled(TabsPrimitive.Tab, {
   flexShrink: 0,
   height: '$5',
   display: 'inline-flex',
@@ -72,9 +52,11 @@ const StyledTab = styled(TabsPrimitive.Tab, {
   },
 });
 
-const Tab = React.forwardRef<HTMLDivElement, TabsTabProps>((props, forwardedRef) => (
-  <StyledTab ref={forwardedRef} {...props} />
-));
+type TabsListCSSProp = Pick<StitchesProps<typeof StyledTabsList>, 'css'>;
+type TabsListVariants = StitchesVariants<typeof StyledTabsList>;
+type TabsListOwnProps = Polymorphic.OwnProps<typeof TabsPrimitive.List> &
+  TabsListCSSProp &
+  TabsListVariants;
 
 const StyledTabsList = styled(TabsPrimitive.List, {
   flexShrink: 0,
@@ -86,28 +68,25 @@ const StyledTabsList = styled(TabsPrimitive.List, {
   '&[data-orientation="vertical"]': {
     flexDirection: 'column',
     boxShadow: 'inset -1px 0 0 $gray500',
-  }
+  },
 });
 
-const TabsList = React.forwardRef<HTMLDivElement, TabsListProps>((props, forwardedRef) => (
+type TabsListComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof TabsPrimitive.List>,
+  TabsListOwnProps
+>;
+
+export const TabsList = React.forwardRef((props, forwardedRef) => (
   <>
-    <StyledTabsList ref={forwardedRef} {...props} />
+    <StyledTabsList {...props} ref={forwardedRef} />
     <Separator />
   </>
-));
+)) as TabsListComponent;
 
-const StyledTabsPanel = styled(TabsPrimitive.Panel, {
+export const TabsPanel = styled(TabsPrimitive.Panel, {
   flexGrow: 1,
   '&:focus': {
     outline: 'none',
     boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
   },
 });
-
-const TabsPanel = React.forwardRef<HTMLDivElement, TabsPanelProps>((props, forwardedRef) => (
-  <StyledTabsPanel ref={forwardedRef} {...props} />
-));
-
-Tabs.Tab = Tab;
-Tabs.List = TabsList;
-Tabs.Panel = TabsPanel;

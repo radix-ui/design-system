@@ -13,7 +13,6 @@ export { Button } from './components/Button';
 export { Card } from './components/Card';
 
 export { Checkbox } from './components/Checkbox';
-export type { CheckboxProps, CheckboxVariants } from './components/Checkbox';
 
 export { Code } from './components/Code';
 
@@ -22,6 +21,19 @@ export { Container } from './components/Container';
 export { ControlGroup } from './components/ControlGroup';
 
 export { Dialog } from './components/Dialog';
+
+export {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuCheckboxItem,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+} from './components/DropdownMenu';
 
 export { Flex } from './components/Flex';
 
@@ -49,16 +61,6 @@ export {
   MenuRadioItem,
   MenuSeparator,
 } from './components/Menu';
-export type {
-  MenuProps,
-  MenuCheckboxItemProps,
-  MenuGroupProps,
-  MenuItemProps,
-  MenuLabelProps,
-  MenuRadioGroupProps,
-  MenuRadioItemProps,
-  MenuSeparatorProps,
-} from './components/Menu';
 
 export { Overlay } from './components/Overlay';
 
@@ -71,11 +73,9 @@ export { Popover } from './components/Popover';
 // TODO
 // export { Scrollbar } from './components/Scrollbar';
 
-export { Radio } from './components/Radio';
-export type { RadioProps, RadioVariants } from './components/Radio';
+export { RadioGroup, Radio } from './components/Radio';
 
-export { RadioCard } from './components/RadioCard';
-export type { RadioCardProps, RadioCardVariants } from './components/RadioCard';
+export { RadioCardGroup, RadioCard } from './components/RadioCard';
 
 export { Section } from './components/Section';
 
@@ -98,10 +98,8 @@ export { Text } from './components/Text';
 export { Textarea } from './components/Textarea';
 
 export { SimpleToggle } from './components/SimpleToggle';
-export type { SimpleToggleProps, SimpleToggleVariants } from './components/SimpleToggle';
 
-export { Tabs } from './components/Tabs';
-export type { TabsProps, TabsListProps, TabsTabProps, TabsPanelProps } from './components/Tabs';
+export { Tabs, TabsList, TabsTab, TabsPanel } from './components/Tabs';
 
 export { TabLink } from './components/TabLink';
 

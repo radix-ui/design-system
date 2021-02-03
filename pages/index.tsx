@@ -28,7 +28,7 @@ import { Slider } from '../components/Slider';
 import { Dialog, DialogTrigger, DialogContent } from '../components/Dialog';
 import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
 import { Checkbox } from '../components/Checkbox';
-import { RadioGroup } from '../components/Radio';
+import { RadioGroup, Radio } from '../components/Radio';
 import { ProgressBar } from '../components/ProgressBar';
 import {
   AlertDialog,
@@ -39,10 +39,10 @@ import {
   AlertDialogAction,
   AlertDialogCancel,
 } from '../components/AlertDialog';
-import { Tabs } from '../components/Tabs';
+import { Tabs, TabsList, TabsTab, TabsPanel } from '../components/Tabs';
 import { Label } from '../components/Label';
 import { Skeleton } from '../components/Skeleton';
-import { RadioCard } from '../components/RadioCard';
+import { RadioCardGroup, RadioCard } from '../components/RadioCard';
 import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
 import { Title } from '../components/Title';
 import { Subtitle } from '../components/Subtitle';
@@ -1588,74 +1588,74 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2" css={{ py: '$7' }}>
-            <Tabs defaultSelectedId="tab-one">
-              <Tabs.List>
-                <Tabs.Tab id="tab-one">General</Tabs.Tab>
-                <Tabs.Tab id="tab-two">Hosting</Tabs.Tab>
-                <Tabs.Tab id="tab-three">Editor</Tabs.Tab>
-                <Tabs.Tab id="tab-four">Billing</Tabs.Tab>
-                <Tabs.Tab id="tab-five">SEO</Tabs.Tab>
-              </Tabs.List>
-              <Tabs.Panel id="tab-one">
+            <Tabs defaultValue="tab-one">
+              <TabsList>
+                <TabsTab value="tab-one">General</TabsTab>
+                <TabsTab value="tab-two">Hosting</TabsTab>
+                <TabsTab value="tab-three">Editor</TabsTab>
+                <TabsTab value="tab-four">Billing</TabsTab>
+                <TabsTab value="tab-five">SEO</TabsTab>
+              </TabsList>
+              <TabsPanel value="tab-one">
                 <Text>Panel 1</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-two">
+              </TabsPanel>
+              <TabsPanel value="tab-two">
                 <Text>Panel 2</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-three">
+              </TabsPanel>
+              <TabsPanel value="tab-three">
                 <Text>Panel 3</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-four">
+              </TabsPanel>
+              <TabsPanel value="tab-four">
                 <Text>Panel 4</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-five">
+              </TabsPanel>
+              <TabsPanel value="tab-five">
                 <Text>Panel 5</Text>
-              </Tabs.Panel>
+              </TabsPanel>
             </Tabs>
 
-            <Tabs defaultSelectedId="tab-one" orientation="vertical" css={{ mt: '$9' }}>
-              <Tabs.List>
-                <Tabs.Tab id="tab-one">General</Tabs.Tab>
-                <Tabs.Tab id="tab-two">Hosting</Tabs.Tab>
-                <Tabs.Tab id="tab-three">Editor</Tabs.Tab>
-                <Tabs.Tab id="tab-four">Billing</Tabs.Tab>
-                <Tabs.Tab id="tab-five">SEO</Tabs.Tab>
-                <Tabs.Tab id="tab-six">Forms</Tabs.Tab>
-                <Tabs.Tab id="tab-seven">Fonts</Tabs.Tab>
-                <Tabs.Tab id="tab-eight">Backups</Tabs.Tab>
-                <Tabs.Tab id="tab-nine">Integrations</Tabs.Tab>
-                <Tabs.Tab id="tab-ten">Custom code</Tabs.Tab>
-              </Tabs.List>
-              <Tabs.Panel id="tab-one">
+            <Tabs defaultValue="tab-one" orientation="vertical" css={{ mt: '$9' }}>
+              <TabsList>
+                <TabsTab value="tab-one">General</TabsTab>
+                <TabsTab value="tab-two">Hosting</TabsTab>
+                <TabsTab value="tab-three">Editor</TabsTab>
+                <TabsTab value="tab-four">Billing</TabsTab>
+                <TabsTab value="tab-five">SEO</TabsTab>
+                <TabsTab value="tab-six">Forms</TabsTab>
+                <TabsTab value="tab-seven">Fonts</TabsTab>
+                <TabsTab value="tab-eight">Backups</TabsTab>
+                <TabsTab value="tab-nine">Integrations</TabsTab>
+                <TabsTab value="tab-ten">Custom code</TabsTab>
+              </TabsList>
+              <TabsPanel value="tab-one">
                 <Text>Panel 1</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-two">
+              </TabsPanel>
+              <TabsPanel value="tab-two">
                 <Text>Panel 2</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-three">
+              </TabsPanel>
+              <TabsPanel value="tab-three">
                 <Text>Panel 3</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-four">
+              </TabsPanel>
+              <TabsPanel value="tab-four">
                 <Text>Panel 4</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-five">
+              </TabsPanel>
+              <TabsPanel value="tab-five">
                 <Text>Panel 5</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-six">
+              </TabsPanel>
+              <TabsPanel value="tab-six">
                 <Text>Panel 6</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-seven">
+              </TabsPanel>
+              <TabsPanel value="tab-seven">
                 <Text>Panel 7</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-eight">
+              </TabsPanel>
+              <TabsPanel value="tab-eight">
                 <Text>Panel 8</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-nine">
+              </TabsPanel>
+              <TabsPanel value="tab-nine">
                 <Text>Panel 9</Text>
-              </Tabs.Panel>
-              <Tabs.Panel id="tab-ten">
+              </TabsPanel>
+              <TabsPanel value="tab-ten">
                 <Text>Panel 10</Text>
-              </Tabs.Panel>
+              </TabsPanel>
             </Tabs>
           </Container>
         </Section>
@@ -2193,8 +2193,8 @@ function Home() {
         <Section size="3">
           <Container size="2" css={{ py: '$7' }}>
             <RadioGroup defaultValue="1">
-              <RadioGroup.Radio value="1" css={{ mr: '$5' }} />
-              <RadioGroup.Radio value="2" size="2" css={{ mr: '$5' }} />
+              <Radio value="1" css={{ mr: '$5' }} />
+              <Radio value="2" size="2" css={{ mr: '$5' }} />
             </RadioGroup>
           </Container>
         </Section>
@@ -2203,8 +2203,8 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2" css={{ py: '$7' }}>
-            <RadioGroup defaultValue="1">
-              <RadioCard.Radio value="1" css={{ mb: '$2' }}>
+            <RadioCardGroup defaultValue="1">
+              <RadioCard value="1" css={{ mb: '$2' }}>
                 <Flex css={{ alignItems: 'center' }}>
                   <Text size="5" css={{ fontWeight: '500', lineHeight: '25px', mr: '$6' }}>
                     2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
@@ -2213,8 +2213,8 @@ function Home() {
                     -$1600
                   </Text>
                 </Flex>
-              </RadioCard.Radio>
-              <RadioCard.Radio value="2" css={{ mb: '$2' }}>
+              </RadioCard>
+              <RadioCard value="2" css={{ mb: '$2' }}>
                 <Flex css={{ alignItems: 'center' }}>
                   <Text size="5" css={{ fontWeight: '500', lineHeight: '25px', mr: '$6' }}>
                     2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
@@ -2223,16 +2223,16 @@ function Home() {
                     -$800
                   </Text>
                 </Flex>
-              </RadioCard.Radio>
-              <RadioCard.Radio value="3" css={{ mb: '$2' }}>
+              </RadioCard>
+              <RadioCard value="3" css={{ mb: '$2' }}>
                 <Flex css={{ alignItems: 'center' }}>
                   <Text size="5" css={{ fontWeight: '500', lineHeight: '25px', mr: '$6' }}>
                     2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
                   </Text>
                   <Text size="4" color="gray"></Text>
                 </Flex>
-              </RadioCard.Radio>
-            </RadioGroup>
+              </RadioCard>
+            </RadioCardGroup>
           </Container>
         </Section>
         <Flex css={{ jc: 'center' }}>

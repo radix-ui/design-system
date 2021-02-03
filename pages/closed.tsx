@@ -5,6 +5,7 @@ import { Text } from '../components/Text';
 import { Button } from '../components/Button';
 import { Badge } from '../components/Badge';
 import { Flex } from '../components/Flex';
+import { Checkbox } from '../components/Checkbox';
 import { IconButton } from '../components/IconButton';
 import { Dialog, DialogTrigger, DialogContent, DialogClose } from '../components/Dialog';
 import {
@@ -18,7 +19,7 @@ import {
 import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
 import { Tooltip } from '../components/Tooltip';
 import { ProgressBar } from '../components/ProgressBar';
-import { Tabs } from '../components/Tabs';
+import { Tabs, TabsList, TabsTab, TabsPanel } from '../components/Tabs';
 import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
 import { Label } from '../components/Label';
 import { Switch } from '../components/Switch';
@@ -26,6 +27,16 @@ import { SimpleToggle } from '../components/SimpleToggle';
 import { Slider } from '../components/Slider';
 import { Subheading } from '../components/Subheading';
 import { Cross2Icon } from '@modulz/radix-icons';
+import { Radio, RadioGroup } from '../components/Radio';
+import { RadioCard, RadioCardGroup } from '../components/RadioCard';
+import { Menus } from '../custom/Menus';
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuGroup,
+} from '../components/DropdownMenu';
 
 export default function Closed() {
   return (
@@ -38,12 +49,65 @@ export default function Closed() {
         overflowY: 'auto',
       }}
     >
+      <DropdownMenu>
+        <DropdownMenuTrigger as={Button}>Open</DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuGroup>
+            <DropdownMenuItem>Item</DropdownMenuItem>
+            <DropdownMenuItem>Item</DropdownMenuItem>
+            <DropdownMenuItem>Item</DropdownMenuItem>
+          </DropdownMenuGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+      <Menus />
       <Subheading>subheading</Subheading>
       <Text size="5" css={{ mt: '$7', mb: '$4' }}>
         Avatar
       </Text>
 
-      <Badge size="2">oioi</Badge>
+      <Badge size="2">sss</Badge>
+      <Checkbox defaultChecked />
+
+      <RadioGroup>
+        <Radio value="a" css={{ mr: '$3' }} />
+        <Radio value="b" css={{ mr: '$3' }} />
+      </RadioGroup>
+
+      <RadioGroup>
+        <Radio value="a" size="2" css={{ mr: '$3' }} />
+        <Radio value="b" size="2" css={{ mr: '$3' }} />
+      </RadioGroup>
+
+      <RadioCardGroup defaultValue="1">
+        <RadioCard value="1" css={{ mb: '$2' }}>
+          <Flex css={{ alignItems: 'center' }}>
+            <Text size="5" css={{ fontWeight: '500', lineHeight: '25px', mr: '$6' }}>
+              2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
+            </Text>
+            <Text size="4" color="gray">
+              -$1600
+            </Text>
+          </Flex>
+        </RadioCard>
+        <RadioCard value="2" css={{ mb: '$2' }}>
+          <Flex css={{ alignItems: 'center' }}>
+            <Text size="5" css={{ fontWeight: '500', lineHeight: '25px', mr: '$6' }}>
+              2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
+            </Text>
+            <Text size="4" color="gray">
+              -$800
+            </Text>
+          </Flex>
+        </RadioCard>
+        <RadioCard value="3" css={{ mb: '$2' }}>
+          <Flex css={{ alignItems: 'center' }}>
+            <Text size="5" css={{ fontWeight: '500', lineHeight: '25px', mr: '$6' }}>
+              2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
+            </Text>
+            <Text size="4" color="gray"></Text>
+          </Flex>
+        </RadioCard>
+      </RadioCardGroup>
 
       <Flex css={{ gap: '$4', mb: '$4' }}>
         {[1, 2, 3, 4, 5, 6].map((size) => (
@@ -211,30 +275,30 @@ export default function Closed() {
         Tabs
       </Text>
 
-      <Tabs defaultSelectedId="tab-one">
-        <Tabs.List>
-          <Tabs.Tab id="tab-one">
+      <Tabs defaultValue="tab-one">
+        <TabsList>
+          <TabsTab value="tab-one">
             <Text size="4">One</Text>
-          </Tabs.Tab>
-          <Tabs.Tab id="tab-two">
+          </TabsTab>
+          <TabsTab value="tab-two">
             <Text size="4">Two</Text>
-          </Tabs.Tab>
-          <Tabs.Tab id="tab-three">
+          </TabsTab>
+          <TabsTab value="tab-three">
             <Text size="4">Three</Text>
-          </Tabs.Tab>
-        </Tabs.List>
-        <Tabs.Panel id="tab-one">
+          </TabsTab>
+        </TabsList>
+        <TabsPanel value="tab-one">
           <Box>
             <Text>Panel 1</Text>
             <Button css={{ mt: '$2' }}>Test focus</Button>
           </Box>
-        </Tabs.Panel>
-        <Tabs.Panel id="tab-two">
+        </TabsPanel>
+        <TabsPanel value="tab-two">
           <Text>Panel 2</Text>
-        </Tabs.Panel>
-        <Tabs.Panel id="tab-three">
+        </TabsPanel>
+        <TabsPanel value="tab-three">
           <Text>Panel 3</Text>
-        </Tabs.Panel>
+        </TabsPanel>
       </Tabs>
 
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
