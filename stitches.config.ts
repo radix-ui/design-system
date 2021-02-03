@@ -240,7 +240,7 @@ export const darkTheme = {
   $loContrast: 'hsl(200, 7%, 8.4%)',
 
   $canvas: 'hsl(0,0%,15%)',
-  $panel: 'hsl(206,7%,14%)',
+  $panel: 'hsl(201, 6%, 11.6%)',
   $shadowLight: 'hsla(206,22%,7%,.35)',
   $shadowDark: 'hsla(206,22%,7%,.2)',
   $transparentExtreme: 'hsla(0,100%,100%,.97)',
