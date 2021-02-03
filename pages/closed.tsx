@@ -3,6 +3,7 @@ import { Box } from '../components/Box';
 import { Avatar } from '../components/Avatar';
 import { Text } from '../components/Text';
 import { Button } from '../components/Button';
+import { Badge } from '../components/Badge';
 import { Flex } from '../components/Flex';
 import { IconButton } from '../components/IconButton';
 import { Dialog, DialogTrigger, DialogContent, DialogClose } from '../components/Dialog';
@@ -42,9 +43,7 @@ export default function Closed() {
         Avatar
       </Text>
 
-      <Button as="a" onClick={(event) => {}}>
-        oioi
-      </Button>
+      <Badge size="2">oioi</Badge>
 
       <Flex css={{ gap: '$4', mb: '$4' }}>
         {[1, 2, 3, 4, 5, 6].map((size) => (

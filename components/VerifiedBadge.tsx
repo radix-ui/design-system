@@ -1,5 +1,5 @@
 import React from 'react';
-import { StitchesProps, styled, css } from '../stitches.config';
+import { styled, StitchesProps } from '../stitches.config';
 import { Flex } from '../components/Flex';
 import { CheckIcon } from '@modulz/radix-icons';
 

@@ -1,9 +1,15 @@
+import React from 'react';
 import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
 
-export type BadgeProps = StitchesProps<typeof Badge>;
-export type BadgeVariants = StitchesVariants<typeof Badge>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-export const Badge = styled('span', {
+const DEFAULT_TAG = 'span';
+
+export type BadgeCSSProp = Pick<StitchesProps<typeof StyledBadge>, 'css'>;
+export type BadgeVariants = StitchesVariants<typeof StyledBadge>;
+export type BadgeOwnProps = BadgeCSSProp & BadgeVariants;
+
+export const StyledBadge = styled(DEFAULT_TAG, {
   // Reset
   alignItems: 'center',
   appearance: 'none',
@@ -19,18 +25,18 @@ export const Badge = styled('span', {
   textDecoration: 'none',
   userSelect: 'none',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
-  ':disabled': {
+  '&:disabled': {
     backgroundColor: '$gray200',
     pointerEvents: 'none',
     color: '$gray700',
   },
-  '::before': {
+  '&::before': {
     boxSizing: 'border-box',
   },
-  '::after': {
+  '&::after': {
     boxSizing: 'border-box',
   },
-  ':focus': {
+  '&:focus': {
     boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
   },
 
@@ -58,339 +64,345 @@ export const Badge = styled('span', {
       red: {
         backgroundColor: '$red200',
         color: '$red900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $red700, 0 0 0 1px $red700',
         },
       },
       crimson: {
         backgroundColor: '$crimson200',
         color: '$crimson900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $crimson700, 0 0 0 1px $crimson700',
         },
       },
       pink: {
         backgroundColor: '$pink200',
         color: '$pink900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $pink700, 0 0 0 1px $pink700',
         },
       },
       purple: {
         backgroundColor: '$purple200',
         color: '$purple900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $purple700, 0 0 0 1px $purple700',
         },
       },
       violet: {
         backgroundColor: '$violet200',
         color: '$violet900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $violet700, 0 0 0 1px $violet700',
         },
       },
       indigo: {
         backgroundColor: '$indigo200',
         color: '$indigo900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $indigo700, 0 0 0 1px $indigo700',
         },
       },
       blue: {
         backgroundColor: '$blue200',
         color: '$blue900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $blue700, 0 0 0 1px $blue700',
         },
       },
       turquoise: {
         backgroundColor: '$turquoise200',
         color: '$turquoise900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $turquoise700, 0 0 0 1px $turquoise700',
         },
       },
       teal: {
         backgroundColor: '$teal200',
         color: '$teal900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $teal700, 0 0 0 1px $teal700',
         },
       },
       green: {
         backgroundColor: '$green200',
         color: '$green900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $green700, 0 0 0 1px $green700',
         },
       },
       lime: {
         backgroundColor: '$lime200',
         color: '$lime900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $lime700, 0 0 0 1px $lime700',
         },
       },
       yellow: {
         backgroundColor: '$yellow200',
         color: '$yellow900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $yellow700, 0 0 0 1px $yellow700',
         },
       },
       orange: {
         backgroundColor: '$orange200',
         color: '$orange900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $orange700, 0 0 0 1px $orange700',
         },
       },
       gold: {
         backgroundColor: '$gold200',
         color: '$gold900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $gold700, 0 0 0 1px $gold700',
         },
       },
       bronze: {
         backgroundColor: '$bronze200',
         color: '$bronze900',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $bronze700, 0 0 0 1px $bronze700',
         },
       },
     },
     interactive: {
       true: {
-        // ':focus': {
+        // '&:focus': {
         //   boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
         // },
-      }
-    }
+      },
+    },
   },
 });
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'red',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$red300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$red400',
     },
-  },
+  }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'crimson',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$crimson300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$crimson400',
     },
-  },
+  }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'pink',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$pink300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$pink400',
     },
-  },
+  }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'purple',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$purple300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$purple400',
     },
-  },
+  }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'violet',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$violet300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$violet400',
     },
-  },
+  }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'indigo',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$indigo300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$indigo400',
     },
-  },
+  }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'blue',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$blue300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$blue400',
     },
-  },
+  }
 );
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'turquoise',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$turquoise300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$turquoise400',
     },
-  },
+  }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'teal',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$teal300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$teal400',
     },
-  },
+  }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'green',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$green300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$green400',
     },
   }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'lime',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$lime300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$lime400',
     },
   }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'yellow',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$yellow300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$yellow400',
     },
   }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'orange',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$orange300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$orange400',
     },
   }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'gold',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$gold300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$gold400',
     },
   }
 );
 
-Badge.compoundVariant(
+StyledBadge.compoundVariant(
   {
     interactive: 'true',
     variant: 'bronze',
   },
   {
-    ':hover': {
+    '&:hover': {
       backgroundColor: '$bronze300',
     },
-    ':active': {
+    '&:active': {
       backgroundColor: '$bronze400',
     },
   }
 );
+
+type BadgeComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, BadgeOwnProps>;
+
+export const Badge = React.forwardRef((props, forwardedRef) => {
+  return <StyledBadge {...props} ref={forwardedRef} />;
+}) as BadgeComponent;

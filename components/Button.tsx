@@ -1,5 +1,5 @@
 import React from 'react';
-import { StitchesProps, StitchesVariants, styled } from '../stitches.config';
+import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
