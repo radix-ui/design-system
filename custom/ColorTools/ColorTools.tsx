@@ -30,7 +30,7 @@ const gray = {
 
 const red = {
   start: 'hsl(352, 34%, 9.9%)',
-  end: 'hsl(353, 75%, 35%)',
+  end: 'hsl(353, 70%, 37%)',
   curve: '0.580, 0.195, 0.955, 0.545',
   overrides: {
     9: 'hsl(358, 100%, 68%)',
