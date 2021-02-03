@@ -1,6 +1,4 @@
-import { styled, StitchesProps } from '../stitches.config';
-
-export type ImageProps = StitchesProps<typeof Image>;
+import { styled } from '../stitches.config';
 
 export const Image = styled('img', {
   // Reset

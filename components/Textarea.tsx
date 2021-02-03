@@ -1,9 +1,15 @@
+import React from 'react';
 import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
 
-export type TextareaProps = StitchesProps<typeof Textarea>;
-export type TextareaVariants = StitchesVariants<typeof Textarea>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-export const Textarea = styled('textarea', {
+const DEFAULT_TAG = 'textarea';
+
+type TextareaCSSProp = Pick<StitchesProps<typeof StyledTextarea>, 'css'>;
+type TextareaVariants = StitchesVariants<typeof StyledTextarea>;
+type TextareaOwnProps = TextareaCSSProp & TextareaVariants;
+
+const StyledTextarea = styled(DEFAULT_TAG, {
   // Reset
   appearance: 'none',
   borderWidth: '0',
@@ -22,26 +28,26 @@ export const Textarea = styled('textarea', {
   minHeight: 80,
   resize: 'vertical',
 
-  ':focus': {
+  '&:focus': {
     boxShadow: 'inset 0px 0px 0px 1px $blue700, 0px 0px 0px 1px $blue700',
     zIndex: '1',
   },
-  '::placeholder': {
+  '&::placeholder': {
     color: '$gray800',
   },
-  ':disabled': {
+  '&:disabled': {
     pointerEvents: 'none',
     backgroundColor: '$gray100',
     color: '$gray700',
     cursor: 'not-allowed',
     resize: 'none',
-    '::placeholder': {
+    '&::placeholder': {
       color: '$gray600',
     },
   },
-  ':read-only': {
+  '&:read-only': {
     backgroundColor: '$gray100',
-    ':focus': {
+    '&:focus': {
       boxShadow: 'inset 0px 0px 0px 1px $gray600',
     },
   },
@@ -67,13 +73,13 @@ export const Textarea = styled('textarea', {
     state: {
       invalid: {
         boxShadow: 'inset 0 0 0 1px $red600',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0px 0px 0px 1px $red700, 0px 0px 0px 1px $red700',
         },
       },
       valid: {
         boxShadow: 'inset 0 0 0 1px $green600',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0px 0px 0px 1px $green700, 0px 0px 0px 1px $green700',
         },
       },
@@ -81,7 +87,7 @@ export const Textarea = styled('textarea', {
     cursor: {
       default: {
         cursor: 'default',
-        ':focus': {
+        '&:focus': {
           cursor: 'text',
         },
       },
@@ -91,3 +97,9 @@ export const Textarea = styled('textarea', {
     },
   },
 });
+
+type TextareaComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TextareaOwnProps>;
+
+export const Textarea = React.forwardRef((props, forwardedRef) => {
+  return <StyledTextarea {...props} ref={forwardedRef} />;
+}) as TextareaComponent;

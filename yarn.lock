@@ -1121,14 +1121,6 @@
     "@interop-ui/react-utils" "0.0.1-12"
     "@interop-ui/utils" "0.0.1-4"
 
-"@interop-ui/react-separator@0.0.1-10":
-  version "0.0.1-10"
-  resolved "https://registry.yarnpkg.com/@interop-ui/react-separator/-/react-separator-0.0.1-10.tgz#d38f5827db5b2d7e5cf5ba0f69d849eb9ae760c7"
-  integrity sha512-KHNIep3J33StUCvQlTtFyuGIgxcwCbvQwPWvNx3wB2dcezkq2i0u2O/39ESIndpHiSpAKeJMNwNUeTp4xgBDAA==
-  dependencies:
-    "@interop-ui/react-utils" "0.0.1-12"
-    "@interop-ui/utils" "0.0.1-4"
-
 "@interop-ui/react-tabs@0.0.1-12":
   version "0.0.1-12"
   resolved "https://registry.yarnpkg.com/@interop-ui/react-tabs/-/react-tabs-0.0.1-12.tgz#fe9f9cd7c7693d878275eb1a03cc86f0d80303e9"
@@ -1287,6 +1279,18 @@
   integrity sha512-2WMBYublbjhcIJG//MSrIQonTbgZnZcMOCvteXYQ+YKFO/04CijxqlUYrFDFPknVlb7Vw2MeOsbzTRF8arkiwg==
   dependencies:
     "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/react-utils" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
+
+"@radix-ui/react-checkbox@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-checkbox/-/react-checkbox-0.0.4.tgz#34a7796c8c5f0c27ec236f280ea1afcb8f526105"
+  integrity sha512-oAhp/b6+sn1YW9MnGuUsj86i9BowkCQkz4y4kOvs0hC++db6VcoEexvIpAcAcTbu8ts3aadkCLZ6W3CzF9ACOA==
+  dependencies:
+    "@radix-ui/react-label" "0.0.4"
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-presence" "0.0.4"
     "@radix-ui/react-primitive" "0.0.3"
     "@radix-ui/react-utils" "0.0.4"
     "@radix-ui/utils" "0.0.3"
@@ -1486,6 +1490,29 @@
     "@radix-ui/react-polymorphic" "0.0.4"
     "@radix-ui/utils" "0.0.3"
 
+"@radix-ui/react-progress@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-progress/-/react-progress-0.0.4.tgz#32cb6dd5ee45abec43f1ab2653953b97715ad7be"
+  integrity sha512-4J5q95m9f7/6mnYGtnRhkwI2rxiN6rck9XfMFu0PCz07Dbo+dw/h9jud78xNkrgq8/S+guyv4/y83J503B2clA==
+  dependencies:
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/react-utils" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
+
+"@radix-ui/react-radio-group@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-radio-group/-/react-radio-group-0.0.4.tgz#8cf04f2f69e58eecd1fa5f61fd1d1efd631e95f0"
+  integrity sha512-SLIMfpC6q8Ams83sssTsPF/McCOh8JW8W+nbgsDKuMT6EZsoW1RlYUh5q3nJK4rgauUJbd89kxXlIFWMMt2i8w==
+  dependencies:
+    "@radix-ui/react-label" "0.0.4"
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-presence" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/react-roving-focus" "0.0.4"
+    "@radix-ui/react-utils" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
+
 "@radix-ui/react-roving-focus@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-roving-focus/-/react-roving-focus-0.0.1.tgz#e24222ac1d9e18c26321215cf4b573f026d04366"
@@ -1493,6 +1520,23 @@
   dependencies:
     "@radix-ui/react-utils" "0.0.1"
     "@radix-ui/utils" "0.0.1"
+
+"@radix-ui/react-roving-focus@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-roving-focus/-/react-roving-focus-0.0.4.tgz#76af2525f7f647292198a6b92d5b26a0c9b08f5e"
+  integrity sha512-MYiSKA9MwmBtYV5Eu/glLx+Efago8KKUCpp9/upxEC6Gvs4mjAni/ykN8FJMx+w6a9T1aTi2Qd5AiXfWD5Qm+A==
+  dependencies:
+    "@radix-ui/react-utils" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
+
+"@radix-ui/react-separator@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-separator/-/react-separator-0.0.4.tgz#e7428f10d335b2c465aa641f216612717a7509bb"
+  integrity sha512-AMk73LkGjleqz5BYZvckp/46xy2TUL4+MXUEkYxTBRAoF7t82gl4OEeKz/ij/pOx2QeHXjW3zpSrPHhvd2DYiw==
+  dependencies:
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/utils" "0.0.3"
 
 "@radix-ui/react-slider@0.0.4":
   version "0.0.4"
@@ -1518,6 +1562,27 @@
   integrity sha512-j2LxaWDaFJXOH+1xo3udEQIVkspMa4hWRfZgfWaSqUzK2i60wXgWCrnL6SK8HE/2O3X77OKYS53Wr2k3VB55jg==
   dependencies:
     "@radix-ui/react-label" "0.0.4"
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/react-utils" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
+
+"@radix-ui/react-tabs@0.0.1-12":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-tabs/-/react-tabs-0.0.4.tgz#f9a0687ea86d67cf42726bfd2df52331a45e9637"
+  integrity sha512-4Z2NJL2X92zZYtGn8Kq692nQUXi9AoVWalFceMntu+bgFtZukapZN8tTzawsOB8cTkKw7/HFUdHVt3x0V11GCQ==
+  dependencies:
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/react-roving-focus" "0.0.4"
+    "@radix-ui/react-utils" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
+
+"@radix-ui/react-toggle-button@0.0.1-13":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-toggle-button/-/react-toggle-button-0.0.4.tgz#027552ba5025dc12583861ef4aedfca914d02438"
+  integrity sha512-WhJPOVqbP++pfxEd1SXWxUlIxd1P9oAaNVRxbP9tfT4/SIMdeXs1Xp867o8LYyV87DUhE6woqRK0MDIwSgG49w==
+  dependencies:
     "@radix-ui/react-polymorphic" "0.0.4"
     "@radix-ui/react-primitive" "0.0.3"
     "@radix-ui/react-utils" "0.0.4"

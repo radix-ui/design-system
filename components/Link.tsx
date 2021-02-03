@@ -1,9 +1,15 @@
+import React from 'react';
 import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
 
-export type LinkProps = StitchesProps<typeof Link>;
-export type LinkVariants = StitchesVariants<typeof Link>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-export const Link = styled('a', {
+const DEFAULT_TAG = 'a';
+
+type LinkCSSProp = Pick<StitchesProps<typeof StyledLink>, 'css'>;
+type LinkVariants = StitchesVariants<typeof StyledLink>;
+type LinkOwnProps = LinkCSSProp & LinkVariants;
+
+const StyledLink = styled(DEFAULT_TAG, {
   flexShrink: 0,
   outline: 'none',
   textDecorationLine: 'none',
@@ -11,10 +17,10 @@ export const Link = styled('a', {
   textDecorationColor: '$gray300',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   lineHeight: 'inherit',
-  ':hover': {
+  '&:hover': {
     textDecorationLine: 'underline',
   },
-  ':focus': {
+  '&:focus': {
     outlineWidth: '2px',
     outlineStyle: 'solid',
     outlineOffset: '2px',
@@ -25,14 +31,14 @@ export const Link = styled('a', {
       blue: {
         color: '$blue900',
         textDecorationColor: '$blue300',
-        ':focus': {
+        '&:focus': {
           outlineColor: '$blue700',
         },
       },
       subtle: {
         color: '$gray900',
         textDecorationColor: '$gray300',
-        ':focus': {
+        '&:focus': {
           outlineColor: '$gray700',
         },
       },
@@ -40,13 +46,19 @@ export const Link = styled('a', {
         color: 'inherit',
         textDecoration: 'underline',
         textDecorationColor: '$gray300',
-        ':hover': {
+        '&:hover': {
           textDecorationColor: '$gray600',
         },
-        ':focus': {
+        '&:focus': {
           outlineColor: '$gray700',
         },
       },
     },
   },
 });
+
+type LinkComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, LinkOwnProps>;
+
+export const Link = React.forwardRef((props, forwardedRef) => {
+  return <StyledLink {...props} ref={forwardedRef} />;
+}) as LinkComponent;

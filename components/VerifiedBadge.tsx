@@ -3,7 +3,7 @@ import { styled, StitchesProps } from '../stitches.config';
 import { Flex } from '../components/Flex';
 import { CheckIcon } from '@modulz/radix-icons';
 
-export type VerifiedBadgeProps = StitchesProps<typeof StyledFlex>;
+type VerifiedBadgeProps = StitchesProps<typeof StyledFlex>;
 
 const StyledFlex = styled(Flex, {
   alignItems: 'center',

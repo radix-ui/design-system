@@ -1,8 +1,4 @@
-import { StitchesProps, styled } from '../stitches.config';
-import { Button } from '../components/Button';
-import { Input } from '../components/Input';
-
-export type ControlGroupProps = StitchesProps<typeof ControlGroup>;
+import { styled } from '../stitches.config';
 
 export const ControlGroup = styled('div', {
   display: 'flex',

@@ -1,9 +1,15 @@
+import React from 'react';
 import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
 
-export type TreeItemProps = StitchesProps<typeof TreeItem>;
-export type TreeItemVariants = StitchesVariants<typeof TreeItem>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-export const TreeItem = styled('div', {
+const DEFAULT_TAG = 'div';
+
+type TreeItemCSSProp = Pick<StitchesProps<typeof StyledTreeItem>, 'css'>;
+type TreeItemVariants = StitchesVariants<typeof StyledTreeItem>;
+type TreeItemOwnProps = TreeItemCSSProp & TreeItemVariants;
+
+const StyledTreeItem = styled(DEFAULT_TAG, {
   // Reset
   alignItems: 'center',
   boxSizing: 'border-box',
@@ -11,13 +17,13 @@ export const TreeItem = styled('div', {
   lineHeight: '1',
   userSelect: 'none',
   WebkitTapHighlightColor: 'transparent',
-  ':disabled': {
+  '&:disabled': {
     pointerEvents: 'none',
   },
-  '::before': {
+  '&::before': {
     boxSizing: 'border-box',
   },
-  '::after': {
+  '&::after': {
     boxSizing: 'border-box',
   },
 
@@ -31,157 +37,163 @@ export const TreeItem = styled('div', {
     variant: {
       gray: {
         backgroundColor: '$gray200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$gray300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gray400',
         },
       },
       red: {
         backgroundColor: '$red200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$red300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$red400',
         },
       },
       crimson: {
         backgroundColor: '$crimson200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$crimson300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$crimson400',
         },
       },
       pink: {
         backgroundColor: '$pink200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$pink300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$pink400',
         },
       },
       purple: {
         backgroundColor: '$purple200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$purple300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$purple400',
         },
       },
       violet: {
         backgroundColor: '$violet200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$violet300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$violet400',
         },
       },
       indigo: {
         backgroundColor: '$indigo200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$indigo300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$indigo400',
         },
       },
       blue: {
         backgroundColor: '$blue200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$blue300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$blue400',
         },
       },
       turquoise: {
         backgroundColor: '$turquoise200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$turquoise300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$turquoise400',
         },
       },
       teal: {
         backgroundColor: '$teal200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$teal300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$teal400',
         },
       },
       green: {
         backgroundColor: '$green200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$green300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$green400',
         },
       },
       lime: {
         backgroundColor: '$lime200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$lime300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$lime400',
         },
       },
       yellow: {
         backgroundColor: '$yellow200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$yellow300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$yellow400',
         },
       },
       orange: {
         backgroundColor: '$orange200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$orange300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$orange400',
         },
       },
       gold: {
         backgroundColor: '$gold200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$gold300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gold400',
         },
       },
       brown: {
         backgroundColor: '$brown200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$brown300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$brown400',
         },
       },
       bronze: {
         backgroundColor: '$bronze200',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$bronze300',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$bronze400',
         },
       },
     },
   },
 });
+
+type TreeItemComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TreeItemOwnProps>;
+
+export const TreeItem = React.forwardRef((props, forwardedRef) => {
+  return <StyledTreeItem {...props} ref={forwardedRef} />;
+}) as TreeItemComponent;

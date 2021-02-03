@@ -1,7 +1,4 @@
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
-
-export type InputProps = StitchesProps<typeof Input>;
-export type InputVariants = StitchesVariants<typeof Input>;
+import { styled } from '../stitches.config';
 
 export const Input = styled('input', {
   // Reset
@@ -15,10 +12,10 @@ export const Input = styled('input', {
   padding: '0',
   width: '100%',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
-  '::before': {
+  '&::before': {
     boxSizing: 'border-box',
   },
-  '::after': {
+  '&::after': {
     boxSizing: 'border-box',
   },
 
@@ -29,25 +26,25 @@ export const Input = styled('input', {
   color: '$hiContrast',
   fontVariantNumeric: 'tabular-nums',
 
-  ':focus': {
+  '&:focus': {
     boxShadow: 'inset 0px 0px 0px 1px $blue700, 0px 0px 0px 1px $blue700',
   },
-  '::placeholder': {
+  '&::placeholder': {
     color: '$gray800',
   },
-  ':disabled': {
+  '&:disabled': {
     pointerEvents: 'none',
     backgroundColor: '$gray100',
     color: '$gray700',
     cursor: 'not-allowed',
-    '::placeholder': {
+    '&::placeholder': {
       color: '$gray600',
     },
   },
-  ':read-only': {
+  '&:read-only': {
     backgroundColor: '$gray100',
     // color: '$gray900',
-    ':focus': {
+    '&:focus': {
       boxShadow: 'inset 0px 0px 0px 1px $gray600',
     },
   },
@@ -73,10 +70,10 @@ export const Input = styled('input', {
     variant: {
       ghost: {
         boxShadow: 'none',
-        ':hover': {
+        '&:hover': {
           boxShadow: 'inset 0 0 0 1px $gray600',
         },
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0px 0px 0px 1px $blue700, 0px 0px 0px 1px $blue700',
         },
       },
@@ -84,13 +81,13 @@ export const Input = styled('input', {
     state: {
       invalid: {
         boxShadow: 'inset 0 0 0 1px $red600',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0px 0px 0px 1px $red700, 0px 0px 0px 1px $red700',
         },
       },
       valid: {
         boxShadow: 'inset 0 0 0 1px $green600',
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0px 0px 0px 1px $green700, 0px 0px 0px 1px $green700',
         },
       },
@@ -98,7 +95,7 @@ export const Input = styled('input', {
     cursor: {
       default: {
         cursor: 'default',
-        ':focus': {
+        '&:focus': {
           cursor: 'text',
         },
       },

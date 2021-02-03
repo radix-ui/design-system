@@ -20,7 +20,6 @@ export { Code } from './components/Code';
 export { Container } from './components/Container';
 
 export { ControlGroup } from './components/ControlGroup';
-export type { ControlGroupProps } from './components/ControlGroup';
 
 export { Dialog } from './components/Dialog';
 
@@ -31,19 +30,14 @@ export { Grid } from './components/Grid';
 export { Heading } from './components/Heading';
 
 export { IconButton } from './components/IconButton';
-export type { IconButtonProps, IconButtonVariants } from './components/IconButton';
 
 export { Image } from './components/Image';
-export type { ImageProps } from './components/Image';
 
 export { Input } from './components/Input';
-export type { InputProps, InputVariants } from './components/Input';
 
 export { Kbd } from './components/Kbd';
-export type { KbdProps } from './components/Kbd';
 
 export { Link } from './components/Link';
-export type { LinkProps, LinkVariants } from './components/Link';
 
 export {
   Menu,
@@ -67,13 +61,10 @@ export type {
 } from './components/Menu';
 
 export { Overlay } from './components/Overlay';
-export type { OverlayProps } from './components/Overlay';
 
 export { Paragraph } from './components/Paragraph';
-export type { ParagraphProps } from './components/Paragraph';
 
 export { Panel } from './components/Panel';
-export type { PanelProps, PanelVariants } from './components/Panel';
 
 export { Popover } from './components/Popover';
 
@@ -87,10 +78,8 @@ export { RadioCard } from './components/RadioCard';
 export type { RadioCardProps, RadioCardVariants } from './components/RadioCard';
 
 export { Section } from './components/Section';
-export type { SectionProps, SectionVariants } from './components/Section';
 
 export { Separator } from './components/Separator';
-export type { SeparatorProps, SeparatorVariants } from './components/Separator';
 
 export { Skeleton } from './components/Skeleton';
 
@@ -107,7 +96,6 @@ export { Switch } from './components/Switch';
 export { Text } from './components/Text';
 
 export { Textarea } from './components/Textarea';
-export type { TextareaProps, TextareaVariants } from './components/Textarea';
 
 export { SimpleToggle } from './components/SimpleToggle';
 export type { SimpleToggleProps, SimpleToggleVariants } from './components/SimpleToggle';
@@ -116,17 +104,14 @@ export { Tabs } from './components/Tabs';
 export type { TabsProps, TabsListProps, TabsTabProps, TabsPanelProps } from './components/Tabs';
 
 export { TabLink } from './components/TabLink';
-export type { TabLinkProps, TabLinkVariants } from './components/TabLink';
 
 export { Title } from './components/Title';
 
 export { Tooltip } from './components/Tooltip';
 
 export { TreeItem } from './components/TreeItem';
-export type { TreeItemProps, TreeItemVariants } from './components/TreeItem';
 
 export { VerifiedBadge } from './components/VerifiedBadge';
-export type { VerifiedBadgeProps } from './components/VerifiedBadge';
 
 // Stitches
 export { css, styled, theme, darkTheme, darkThemeClass } from './stitches.config';

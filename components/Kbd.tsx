@@ -1,6 +1,4 @@
-import { styled, StitchesProps } from '../stitches.config';
-
-export type KbdProps = StitchesProps<typeof Kbd>;
+import { styled } from '../stitches.config';
 
 export const Kbd = styled('kbd', {
   boxSizing: 'border-box',

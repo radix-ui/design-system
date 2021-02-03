@@ -13,10 +13,10 @@ const StyledSection = styled(DEFAULT_TAG, {
   // Reset
   boxSizing: 'border-box',
   flexShrink: 0,
-  '::before': {
+  '&::before': {
     boxSizing: 'border-box',
   },
-  '::after': {
+  '&::after': {
     boxSizing: 'border-box',
   },
 

@@ -5,10 +5,11 @@ import {
   RadioGroupProps as RadioGroupPrimitiveProps,
   RadioGroupItemProps,
 } from '@interop-ui/react-radio-group';
-import { CheckIcon } from '@modulz/radix-icons';
 
 export type RadioGroupProps = RadioGroupPrimitiveProps;
-export type RadioCardProps = RadioGroupItemProps & StitchesProps<typeof StyledRadio> & RadioCardVariants;
+export type RadioCardProps = RadioGroupItemProps &
+  StitchesProps<typeof StyledRadio> &
+  RadioCardVariants;
 export type RadioCardVariants = StitchesVariants<typeof StyledRadio>;
 
 export function RadioGroup(props: RadioGroupPrimitiveProps) {
