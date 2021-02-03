@@ -2,16 +2,18 @@ import React from 'react';
 import { styled, StitchesVariants, StitchesProps } from '../stitches.config';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { Box } from './Box';
-import { Status, StatusVariants } from './Status';
+import { Status } from './Status';
 
-import * as Polymorphic from '@radix-ui/react-polymorphic';
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
+
+type StatusVariants = StitchesVariants<typeof Status>;
+type StatusColors = Pick<StatusVariants, 'color'>;
 
 type AvatarCSSProp = Pick<StitchesProps<typeof StyledAvatar>, 'css'>;
-type AvatarVariantProps = StitchesVariants<typeof StyledAvatar>;
-type StatusColors = Pick<StatusVariants, 'color'>;
+type AvatarVariants = StitchesVariants<typeof StyledAvatar>;
 type AvatarOwnProps = Polymorphic.OwnProps<typeof AvatarPrimitive.Root> &
   AvatarCSSProp &
-  AvatarVariantProps & {
+  AvatarVariants & {
     alt?: string;
     src?: string;
     fallback?: React.ReactNode;

@@ -1,9 +1,15 @@
+import React from 'react';
 import { StitchesProps, StitchesVariants, styled } from '../stitches.config';
 
-export type ButtonProps = StitchesProps<typeof Button>;
-export type ButtonVariants = StitchesVariants<typeof Button>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-export const Button = styled('button', {
+const DEFAULT_TAG = 'button';
+
+export type ButtonCSSProp = Pick<StitchesProps<typeof StyledButton>, 'css'>;
+export type ButtonVariants = StitchesVariants<typeof StyledButton>;
+export type ButtonOwnProps = ButtonCSSProp & ButtonVariants;
+
+const StyledButton = styled(DEFAULT_TAG, {
   // Reset
   alignItems: 'center',
   appearance: 'none',
@@ -17,10 +23,10 @@ export const Button = styled('button', {
   textDecoration: 'none',
   userSelect: 'none',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
-  '::before': {
+  '&::before': {
     boxSizing: 'border-box',
   },
-  '::after': {
+  '&::after': {
     boxSizing: 'border-box',
   },
 
@@ -37,14 +43,14 @@ export const Button = styled('button', {
   fontWeight: 500,
   fontVariantNumeric: 'tabular-nums',
 
-  ':hover': {
+  '&:hover': {
     boxShadow: 'inset 0 0 0 1px $gray700',
   },
-  ':active': {
+  '&:active': {
     backgroundColor: '$gray100',
     boxShadow: 'inset 0 0 0 1px $gray700',
   },
-  ':focus': {
+  '&:focus': {
     boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
   },
   ':disabled': {
@@ -67,14 +73,14 @@ export const Button = styled('button', {
         backgroundColor: '$blue100',
         boxShadow: 'inset 0 0 0 1px $blue600',
         color: '$blue900',
-        ':hover': {
+        '&:hover': {
           boxShadow: 'inset 0 0 0 1px $blue700',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$blue200',
           boxShadow: 'inset 0 0 0 1px $blue700',
         },
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $blue700, 0 0 0 1px $blue700',
         },
       },
@@ -82,28 +88,28 @@ export const Button = styled('button', {
         backgroundColor: '$green100',
         boxShadow: 'inset 0 0 0 1px $green600',
         color: '$green900',
-        ':hover': {
+        '&:hover': {
           boxShadow: 'inset 0 0 0 1px $green700',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$green200',
           boxShadow: 'inset 0 0 0 1px $green700',
         },
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $green700, 0 0 0 1px $green700',
         },
       },
       red: {
         color: '$red900',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$red100',
           boxShadow: 'inset 0 0 0 1px $red700',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$red200',
           boxShadow: 'inset 0 0 0 1px $red700',
         },
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $red700, 0 0 0 1px $red700',
         },
       },
@@ -111,11 +117,11 @@ export const Button = styled('button', {
         backgroundColor: 'transparent',
         boxShadow: 'none',
         fontWeight: 400,
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$gray200',
           boxShadow: 'none',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gray300',
           boxShadow: 'none',
         },
@@ -124,15 +130,15 @@ export const Button = styled('button', {
         backgroundColor: 'hsla(0,100%,100%,.2)',
         boxShadow: 'none',
         color: 'white',
-        ':hover': {
+        '&:hover': {
           backgroundColor: 'hsla(0,100%,100%,.25)',
           boxShadow: 'none',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: 'hsla(0,100%,100%,.3)',
           boxShadow: 'none',
         },
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px hsla(0,100%,100%,.35), 0 0 0 1px hsla(0,100%,100%,.35)',
         },
       },
@@ -140,15 +146,15 @@ export const Button = styled('button', {
         backgroundColor: 'hsla(0,0%,0%,.2)',
         boxShadow: 'none',
         color: 'black',
-        ':hover': {
+        '&:hover': {
           backgroundColor: 'hsla(0,0%,0%,.25)',
           boxShadow: 'none',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: 'hsla(0,0%,0%,.3)',
           boxShadow: 'none',
         },
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px hsla(0,0%,0%,.35), 0 0 0 1px hsla(0,0%,0%,.35)',
         },
       },
@@ -158,14 +164,14 @@ export const Button = styled('button', {
         backgroundColor: '$gray300',
         boxShadow: 'inset 0 0 0 1px $gray700',
         color: '$gray900',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$gray400',
           boxShadow: 'inset 0 0 0 1px $gray700',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gray400',
         },
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
         },
       },
@@ -174,17 +180,23 @@ export const Button = styled('button', {
         boxShadow: 'inset 0 0 0 1px $gray700',
         color: 'transparent',
         pointerEvents: 'none',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$gray400',
           boxShadow: 'inset 0 0 0 1px $gray700',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gray400',
         },
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $gray700',
         },
       },
     },
   },
 });
+
+type ButtonComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, ButtonOwnProps>;
+
+export const Button = React.forwardRef((props, forwardedRef) => {
+  return <StyledButton {...props} ref={forwardedRef} />;
+}) as ButtonComponent;

@@ -5,13 +5,10 @@ export { Avatar } from './components/Avatar';
 export { AlertDialog } from './components/AlertDialog';
 
 export { Badge } from './components/Badge';
-export type { BadgeProps, BadgeVariants } from './components/Badge';
 
 export { Box } from './components/Box';
-export type { BoxProps } from './components/Box';
 
 export { Button } from './components/Button';
-export type { ButtonProps, ButtonVariants } from './components/Button';
 
 export { Card } from './components/Card';
 export type { CardProps, CardVariants } from './components/Card';
@@ -34,7 +31,7 @@ export { Flex } from './components/Flex';
 export type { FlexProps } from './components/Flex';
 
 export { Grid } from './components/Grid';
-export type { GridProps } from './components/Grid';
+export type { GridProps } from './components/Grid';\
 
 export { Heading } from './components/Heading';
 export type { HeadingProps } from './components/Heading';
@@ -107,19 +104,14 @@ export type { SkeletonProps, SkeletonVariants } from './components/Skeleton';
 export { Slider } from './components/Slider';
 
 export { Status } from './components/Status';
-export type { StatusProps, StatusVariants } from './components/Status';
 
 export { Subheading } from './components/Subheading';
-export type { SubheadingProps } from './components/Subheading';
 
 export { Subtitle } from './components/Subtitle';
-export type { SubtitleProps } from './components/Subtitle';
 
 export { Switch } from './components/Switch';
-export type { SwitchProps, SwitchVariants } from './components/Switch';
 
 export { Text } from './components/Text';
-export type { TextProps, TextVariants } from './components/Text';
 
 export { Textarea } from './components/Textarea';
 export type { TextareaProps, TextareaVariants } from './components/Textarea';
@@ -134,7 +126,6 @@ export { TabLink } from './components/TabLink';
 export type { TabLinkProps, TabLinkVariants } from './components/TabLink';
 
 export { Title } from './components/Title';
-export type { TitleProps } from './components/Title';
 
 export { Tooltip } from './components/Tooltip';
 

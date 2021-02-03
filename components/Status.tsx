@@ -1,9 +1,6 @@
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-export type StatusProps = StitchesProps<typeof Status>;
-export type StatusVariants = StitchesVariants<typeof Status>;
-
-export const Status = styled.div({
+export const Status = styled('div', {
   borderRadius: '50%',
 
   variants: {

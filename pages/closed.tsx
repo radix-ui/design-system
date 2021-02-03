@@ -23,6 +23,7 @@ import { Label } from '../components/Label';
 import { Switch } from '../components/Switch';
 import { SimpleToggle } from '../components/SimpleToggle';
 import { Slider } from '../components/Slider';
+import { Subheading } from '../components/Subheading';
 import { Cross2Icon } from '@modulz/radix-icons';
 
 export default function Closed() {
@@ -36,9 +37,14 @@ export default function Closed() {
         overflowY: 'auto',
       }}
     >
+      <Subheading>subheading</Subheading>
       <Text size="5" css={{ mt: '$7', mb: '$4' }}>
         Avatar
       </Text>
+
+      <Button as="a" onClick={(event) => {}}>
+        oioi
+      </Button>
 
       <Flex css={{ gap: '$4', mb: '$4' }}>
         {[1, 2, 3, 4, 5, 6].map((size) => (

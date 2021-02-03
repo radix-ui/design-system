@@ -1129,15 +1129,6 @@
     "@interop-ui/react-utils" "0.0.1-12"
     "@interop-ui/utils" "0.0.1-4"
 
-"@interop-ui/react-switch@0.0.1-13":
-  version "0.0.1-13"
-  resolved "https://registry.yarnpkg.com/@interop-ui/react-switch/-/react-switch-0.0.1-13.tgz#46ccfe090c36d80554b990a1a63e44d8af7defd2"
-  integrity sha512-uywStxr7Ib+nPeOqSFXX9A9KZr0xp8MDhjbBhEt4smcJWfJgZim++1uTbTWQtpGK6B1E410OqS3OjBnkVrHDbQ==
-  dependencies:
-    "@interop-ui/react-label" "0.0.1-10"
-    "@interop-ui/react-utils" "0.0.1-12"
-    "@interop-ui/utils" "0.0.1-4"
-
 "@interop-ui/react-tabs@0.0.1-12":
   version "0.0.1-12"
   resolved "https://registry.yarnpkg.com/@interop-ui/react-tabs/-/react-tabs-0.0.1-12.tgz#fe9f9cd7c7693d878275eb1a03cc86f0d80303e9"
@@ -1375,6 +1366,16 @@
     "@radix-ui/react-utils" "0.0.4"
     "@radix-ui/utils" "0.0.3"
 
+"@radix-ui/react-label@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-label/-/react-label-0.0.4.tgz#70af1710083bd170b1838f70bbe0069d9e7f85ef"
+  integrity sha512-aaLpMdX5Nnlr9duJ5cowbCT/DU2SH4flznhH0awRy31h057ZCvbyRwZ1hFt+WWf4/Zn4cOrIstRe537OykRNmw==
+  dependencies:
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/react-utils" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
+
 "@radix-ui/react-menu@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-menu/-/react-menu-0.0.1.tgz#c382b87aa14b7821bea1be93543f76a3720aefc5"
@@ -1511,6 +1512,17 @@
   dependencies:
     "@radix-ui/react-utils" "0.0.4"
 
+"@radix-ui/react-switch@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-switch/-/react-switch-0.0.4.tgz#514458d6d74ba803e0a598d8da9e6bfb93533f19"
+  integrity sha512-j2LxaWDaFJXOH+1xo3udEQIVkspMa4hWRfZgfWaSqUzK2i60wXgWCrnL6SK8HE/2O3X77OKYS53Wr2k3VB55jg==
+  dependencies:
+    "@radix-ui/react-label" "0.0.4"
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/react-utils" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
+
 "@radix-ui/react-tooltip@0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-tooltip/-/react-tooltip-0.0.5.tgz#471c01649829f3260758108029e2d4ab98a75cde"
@@ -1533,7 +1545,7 @@
     "@radix-ui/react-polymorphic" "0.0.1"
     "@radix-ui/utils" "0.0.1"
 
-"@radix-ui/react-utils@0.0.4":
+"@radix-ui/react-utils@0.0.4", "@radix-ui/react-utils@^0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-utils/-/react-utils-0.0.4.tgz#4834cac08088163e0e738c3017fecab406236185"
   integrity sha512-HqC9OJJjoDun7LNqwYzVX9gYaH5yGhdNtaBRPoSt8wywh+Kv0iU6lDP5H7w7j+6TzZCHH8XEzRbmOSowzlpGAA==
