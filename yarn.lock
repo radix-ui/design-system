@@ -1235,6 +1235,17 @@
   dependencies:
     "@radix-ui/react-utils" "0.0.4"
 
+"@radix-ui/react-context-menu@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-context-menu/-/react-context-menu-0.0.6.tgz#47ffdb2093234c53c83677bb9cdd8c867a88b329"
+  integrity sha512-yStIdqlu6rCkzPdwMWJPonJXyh247zEgjddjLcJqM6gXTrTOOPinNfUl40qkb5T73C9JjqxeU5yRY/CBrrMkTA==
+  dependencies:
+    "@radix-ui/react-menu" "0.0.6"
+    "@radix-ui/react-polymorphic" "0.0.4"
+    "@radix-ui/react-primitive" "0.0.3"
+    "@radix-ui/react-utils" "0.0.4"
+    "@radix-ui/utils" "0.0.3"
+
 "@radix-ui/react-dialog@0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-dialog/-/react-dialog-0.0.5.tgz#d2568aeeeca9b51fdb19874754a3aa092d68a50d"

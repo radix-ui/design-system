@@ -18,6 +18,19 @@ export { Code } from './components/Code';
 
 export { Container } from './components/Container';
 
+export {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuCheckboxItem,
+  ContextMenuGroup,
+  ContextMenuItem,
+  ContextMenuLabel,
+  ContextMenuRadioGroup,
+  ContextMenuRadioItem,
+  ContextMenuSeparator,
+} from './components/ContextMenu';
+
 export { ControlGroup } from './components/ControlGroup';
 
 export { Dialog } from './components/Dialog';

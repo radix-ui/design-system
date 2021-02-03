@@ -38,6 +38,14 @@ import {
   DropdownMenuGroup,
 } from '../components/DropdownMenu';
 
+import {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuGroup,
+} from '../components/ContextMenu';
+
 export default function Closed() {
   return (
     <Box
@@ -59,6 +67,18 @@ export default function Closed() {
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>
+      <ContextMenu>
+        <ContextMenuTrigger>
+          <Box css={{ width: '$9', height: '$9', bc: '$blue600' }}>Right Click</Box>
+        </ContextMenuTrigger>
+        <ContextMenuContent>
+          <ContextMenuGroup>
+            <ContextMenuItem>Item</ContextMenuItem>
+            <ContextMenuItem>Item</ContextMenuItem>
+            <ContextMenuItem>Item</ContextMenuItem>
+          </ContextMenuGroup>
+        </ContextMenuContent>
+      </ContextMenu>
       <Menus />
       <Subheading>subheading</Subheading>
       <Text size="5" css={{ mt: '$7', mb: '$4' }}>
@@ -156,6 +176,9 @@ export default function Closed() {
         <DialogTrigger as={Button}>Open Dialog</DialogTrigger>
         <DialogContent hideClose>
           <Text css={{ mb: '$4' }}>Hello, from Dialog</Text>
+          <Tooltip content="You get the idea." side="left">
+            <Button css={{ ml: '$4' }}>Left</Button>
+          </Tooltip>
           <DialogClose as={Button}>Bye.</DialogClose>
         </DialogContent>
       </Dialog>
