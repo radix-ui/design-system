@@ -92,16 +92,16 @@ const blue = {
 };
 
 const turquoise = {
-  start: 'hsl(192, 70%, 7.5%)',
+  start: 'hsl(192, 70%, 7.4%)',
   end: 'hsl(190, 85%, 32%)',
-  curve: '0.585, 0.385, 0.900, 0.595',
+  curve: '0.540, 0.335, 0.930, 0.675',
   overrides: {
     9: 'hsl(192, 80%, 47%)',
   },
 };
 
 const teal = {
-  start: 'hsl(168, 75%, 6.8%)',
+  start: 'hsl(168, 75%, 6.5%)',
   end: 'hsl(173, 80%, 29%)',
   curve: '0.690, 0.315, 0.910, 0.590',
   overrides: {
@@ -111,7 +111,7 @@ const teal = {
 };
 
 const green = {
-  start: 'hsl(140, 43%, 8.5%)',
+  start: 'hsl(140, 43%, 8.2%)',
   end: 'hsl(145, 60%, 35%)',
   curve: '0.645, 0.240, 0.910, 0.480',
   overrides: {
@@ -120,7 +120,7 @@ const green = {
 };
 
 const lime = {
-  start: 'hsl(80, 46%, 7.9%)',
+  start: 'hsl(80, 46%, 7.5%)',
   end: 'hsl(76, 85%, 38%)',
   curve: '0.670, 0.155, 0.965, 0.470',
   overrides: {
@@ -129,7 +129,7 @@ const lime = {
 };
 
 const yellow = {
-  start: 'hsl(46, 60%, 8.1%)',
+  start: 'hsl(46, 60%, 7.5%)',
   end: 'hsl(50, 100%, 45%)',
   curve: '1.000, 0.180, 1.000, 0.720',
   overrides: {
@@ -138,7 +138,7 @@ const yellow = {
 };
 
 const orange = {
-  start: 'hsl(32, 55%, 9.3%)',
+  start: 'hsl(32, 55%, 8.8%)',
   end: 'hsl(38, 90%, 48%)',
   curve: '0.750, 0.145, 1.000, 0.470',
   overrides: {
@@ -147,7 +147,7 @@ const orange = {
 };
 
 const brown = {
-  start: 'hsl(20, 40%, 10.3%)',
+  start: 'hsl(20, 40%, 9.3%)',
   end: 'hsl(28, 48%, 45%)',
   curve: '0.675, 0.245, 0.920, 0.505',
   overrides: {
@@ -156,18 +156,18 @@ const brown = {
 };
 
 const bronze = {
-  start: 'hsl(15, 15%, 11%)',
+  start: 'hsl(15, 15%, 9.5%)',
   end: 'hsl(18, 25%, 45%)',
-  curve: '0.575, 0.355, 0.890, 0.485',
+  curve: '0.580, 0.320, 0.940, 0.495',
   overrides: {
     9: 'hsl(18, 37%, 61%)',
   },
 };
 
 const gold = {
-  start: 'hsl(40, 15%, 9.5%)',
+  start: 'hsl(40, 15%, 8.5%)',
   end: 'hsl(36, 28%, 45.0%)',
-  curve: '0.710, 0.335, 0.875, 0.485',
+  curve: '0.730, 0.310, 0.930, 0.520',
   overrides: {
     9: 'hsl(35, 50%, 63%)',
   },
@@ -265,12 +265,16 @@ function Scale({ name, scale }: ScaleProps) {
     const [x1, y1, x2, y2] = newCurveParams;
     const lumCurveParams = [1 - x2, 1 - y2, 1 - x1, 1 - y1] as BezierParams;
 
-    // Mix saturation curve with easeOutQuad
+    // A curve that flattens saturation input curve
+    const satFlattener = [0.92, 1.3, 0.72, 0.1];
+    const [sx1, sy1, sx2, sy2] = satFlattener;
+    // A number from 0 to 1 that controls how strongly the saturation curve should be mixed with the flattener
+    const rate = 0.5;
     const satCurveParams = [
-      x1 / 2 + 0.25 / 2,
-      y1 / 2 + 0.46 / 2,
-      x2 / 2 + 0.45 / 2,
-      y2 / 2 + 0.94 / 2,
+      x1 * (1 - rate) + sx1 * rate,
+      y1 * (1 - rate) + sy1 * rate,
+      x2 * (1 - rate) + sx2 * rate,
+      y2 * (1 - rate) + sy2 * rate,
     ] as BezierParams;
     const hueCurveParams = satCurveParams;
 

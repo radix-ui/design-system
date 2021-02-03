@@ -277,6 +277,58 @@ export function Color() {
           <Box css={{ height: 35, backgroundColor: '$gold700' }} />
           <Box css={{ height: 35, backgroundColor: '$gold800' }} />
           <Box css={{ height: 35, backgroundColor: '$gold900' }} />
+
+          <Box>
+            <Text css={{ fontSize: '$2' }}>Red</Text>
+          </Box>
+          <Box css={{ height: 35, backgroundColor: '$red100' }} />
+          <Box css={{ height: 35, backgroundColor: '$red200' }} />
+          <Box css={{ height: 35, backgroundColor: '$red300' }} />
+          <Box css={{ height: 35, backgroundColor: '$red400' }} />
+          <Box css={{ height: 35, backgroundColor: '$red500' }} />
+          <Box css={{ height: 35, backgroundColor: '$red600' }} />
+          <Box css={{ height: 35, backgroundColor: '$red700' }} />
+          <Box css={{ height: 35, backgroundColor: '$red800' }} />
+          <Box css={{ height: 35, backgroundColor: '$red900' }} />
+
+          <Box>
+            <Text css={{ fontSize: '$2' }}>Crimson</Text>
+          </Box>
+          <Box css={{ height: 35, backgroundColor: '$crimson100' }} />
+          <Box css={{ height: 35, backgroundColor: '$crimson200' }} />
+          <Box css={{ height: 35, backgroundColor: '$crimson300' }} />
+          <Box css={{ height: 35, backgroundColor: '$crimson400' }} />
+          <Box css={{ height: 35, backgroundColor: '$crimson500' }} />
+          <Box css={{ height: 35, backgroundColor: '$crimson600' }} />
+          <Box css={{ height: 35, backgroundColor: '$crimson700' }} />
+          <Box css={{ height: 35, backgroundColor: '$crimson800' }} />
+          <Box css={{ height: 35, backgroundColor: '$crimson900' }} />
+
+          <Box>
+            <Text css={{ fontSize: '$2' }}>Pink</Text>
+          </Box>
+          <Box css={{ height: 35, backgroundColor: '$pink100' }} />
+          <Box css={{ height: 35, backgroundColor: '$pink200' }} />
+          <Box css={{ height: 35, backgroundColor: '$pink300' }} />
+          <Box css={{ height: 35, backgroundColor: '$pink400' }} />
+          <Box css={{ height: 35, backgroundColor: '$pink500' }} />
+          <Box css={{ height: 35, backgroundColor: '$pink600' }} />
+          <Box css={{ height: 35, backgroundColor: '$pink700' }} />
+          <Box css={{ height: 35, backgroundColor: '$pink800' }} />
+          <Box css={{ height: 35, backgroundColor: '$pink900' }} />
+
+          <Box>
+            <Text css={{ fontSize: '$2' }}>Purple</Text>
+          </Box>
+          <Box css={{ height: 35, backgroundColor: '$purple100' }} />
+          <Box css={{ height: 35, backgroundColor: '$purple200' }} />
+          <Box css={{ height: 35, backgroundColor: '$purple300' }} />
+          <Box css={{ height: 35, backgroundColor: '$purple400' }} />
+          <Box css={{ height: 35, backgroundColor: '$purple500' }} />
+          <Box css={{ height: 35, backgroundColor: '$purple600' }} />
+          <Box css={{ height: 35, backgroundColor: '$purple700' }} />
+          <Box css={{ height: 35, backgroundColor: '$purple800' }} />
+          <Box css={{ height: 35, backgroundColor: '$purple900' }} />
         </Grid>
       </Container>
 
