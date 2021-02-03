@@ -50,7 +50,7 @@ const StyledContent = styled(DialogPrimitive.Content, {
   },
 });
 
-const StyledCloseButton = styled(DialogPrimitive.Close, {
+const StyledCloseButton = styled(IconButton, {
   position: 'absolute',
   top: '$2',
   right: '$2',
@@ -70,9 +70,11 @@ export const DialogContent = React.forwardRef(({ children, hideClose, ...props }
   <StyledContent as={Panel} {...props} ref={forwardedRef}>
     {children}
     {!hideClose && (
-      <StyledCloseButton as={IconButton} variant="ghost">
+      // <StyledCloseButton as={IconButton} doesnt work :(
+      // Probably a Stitches bug
+      <DialogPrimitive.Close as={StyledCloseButton} variant="ghost">
         <Cross1Icon />
-      </StyledCloseButton>
+      </DialogPrimitive.Close>
     )}
   </StyledContent>
 )) as DialogContentComponent;
