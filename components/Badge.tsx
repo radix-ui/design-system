@@ -46,6 +46,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
   color: '$gray900',
   whiteSpace: 'nowrap',
   fontVariantNumeric: 'tabular-nums',
+  height: '$3',
+  px: '$1',
+  fontSize: '$1',
 
   variants: {
     size: {

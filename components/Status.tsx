@@ -2,6 +2,8 @@ import { styled } from '../stitches.config';
 
 export const Status = styled('div', {
   borderRadius: '50%',
+  width: '5px',
+  height: '5px',
 
   variants: {
     size: {

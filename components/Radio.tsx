@@ -70,6 +70,10 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
 
   variants: {
     size: {
+      '1': {
+        width: '$3',
+        height: '$3',
+      },
       '2': {
         width: '$5',
         height: '$5',

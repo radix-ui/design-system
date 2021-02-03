@@ -49,6 +49,9 @@ export const StyledAvatar = styled(AvatarPrimitive.Root, {
     boxShadow: 'inset 0px 0px 1px rgba(0, 0, 0, 0.12)',
   },
 
+  width: '$6',
+  height: '$6',
+
   variants: {
     size: {
       '1': {

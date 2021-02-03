@@ -60,6 +60,10 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
 
   variants: {
     size: {
+      '1': {
+        width: '$5',
+        height: '$3',
+      },
       '2': {
         width: '$7',
         height: '$5',

@@ -62,6 +62,11 @@ const StyledButton = styled(DEFAULT_TAG, {
 
   variants: {
     size: {
+      '1': {
+        height: '$5',
+        px: '$2',
+        fontSize: '$2',
+      },
       '2': {
         height: '$6',
         px: '$3',
