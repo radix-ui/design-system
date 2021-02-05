@@ -58,7 +58,6 @@ const StyledCloseButton = styled(IconButton, {
 
 type DialogContentOwnProps = Polymorphic.OwnProps<typeof DialogPrimitive.Content> & {
   css?: any;
-  hideClose?: boolean;
 };
 
 type DialogContentComponent = Polymorphic.ForwardRefComponent<
@@ -66,16 +65,12 @@ type DialogContentComponent = Polymorphic.ForwardRefComponent<
   DialogContentOwnProps
 >;
 
-export const DialogContent = React.forwardRef(({ children, hideClose, ...props }, forwardedRef) => (
+export const DialogContent = React.forwardRef(({ children, ...props }, forwardedRef) => (
   <StyledContent as={Panel} {...props} ref={forwardedRef}>
     {children}
-    {!hideClose && (
-      // <StyledCloseButton as={IconButton} doesnt work :(
-      // Probably a Stitches bug
-      <DialogPrimitive.Close as={StyledCloseButton} variant="ghost">
-        <Cross1Icon />
-      </DialogPrimitive.Close>
-    )}
+    <DialogPrimitive.Close as={StyledCloseButton} variant="ghost">
+      <Cross1Icon />
+    </DialogPrimitive.Close>
   </StyledContent>
 )) as DialogContentComponent;
 

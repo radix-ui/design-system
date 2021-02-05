@@ -174,7 +174,7 @@ export default function Closed() {
 
       <Dialog>
         <DialogTrigger as={Button}>Open Dialog</DialogTrigger>
-        <DialogContent hideClose>
+        <DialogContent>
           <Text css={{ mb: '$4' }}>Hello, from Dialog</Text>
           <Tooltip content="You get the idea." side="left">
             <Button css={{ ml: '$4' }}>Left</Button>
