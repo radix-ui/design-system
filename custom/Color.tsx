@@ -57,6 +57,19 @@ export function Color() {
           </Box>
 
           <Box>
+            <Text css={{ fontSize: '$2' }}>White</Text>
+          </Box>
+          <Box css={{ height: 35, backgroundColor: '$white100' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$white200' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$white300' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$white400' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$white500' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$white600' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$white700' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$white800' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$white900' }}></Box>
+
+          <Box>
             <Text css={{ fontSize: '$2' }}>Gray</Text>
           </Box>
           <Box css={{ height: 35, backgroundColor: '$gray100' }}></Box>
@@ -107,6 +120,19 @@ export function Color() {
           <Box css={{ height: 35, backgroundColor: '$grayYellow700' }}></Box>
           <Box css={{ height: 35, backgroundColor: '$grayYellow800' }}></Box>
           <Box css={{ height: 35, backgroundColor: '$grayYellow900' }}></Box>
+
+          <Box>
+            <Text css={{ fontSize: '$2' }}>Black</Text>
+          </Box>
+          <Box css={{ height: 35, backgroundColor: '$black100' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$black200' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$black300' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$black400' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$black500' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$black600' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$black700' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$black800' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$black900' }}></Box>
 
           <Box>
             <Text css={{ fontSize: '$2' }}>Red</Text>
