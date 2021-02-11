@@ -1,8 +1,5 @@
 import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
 
-export type TextProps = StitchesProps<typeof Text>;
-export type TextVariants = StitchesVariants<typeof Text>;
-
 export const Text = styled('span', {
   // Reset
   lineHeight: '1',

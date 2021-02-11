@@ -3,41 +3,138 @@ import { Box } from '../components/Box';
 import { Avatar } from '../components/Avatar';
 import { Text } from '../components/Text';
 import { Button } from '../components/Button';
+import { Badge } from '../components/Badge';
 import { Flex } from '../components/Flex';
+import { Checkbox } from '../components/Checkbox';
 import { IconButton } from '../components/IconButton';
-import { Dialog } from '../components/Dialog';
-import { AlertDialog } from '../components/AlertDialog';
-import { Popover } from '../components/Popover';
+import { Dialog, DialogTrigger, DialogContent, DialogClose } from '../components/Dialog';
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogTitle,
+  AlertDialogAction,
+  AlertDialogCancel,
+} from '../components/AlertDialog';
+import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
 import { Tooltip } from '../components/Tooltip';
 import { ProgressBar } from '../components/ProgressBar';
-import { Tabs } from '../components/Tabs';
-import { Accordion } from '../components/Accordion';
+import { Tabs, TabsList, TabsTab, TabsPanel } from '../components/Tabs';
+import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
 import { Label } from '../components/Label';
 import { Switch } from '../components/Switch';
 import { SimpleToggle } from '../components/SimpleToggle';
 import { Slider } from '../components/Slider';
-import { Cross2Icon } from '@modulz/radix-icons';
+import { Subheading } from '../components/Subheading';
+import { Cross2Icon } from '@radix-ui/react-icons';
+import { Radio, RadioGroup } from '../components/Radio';
+import { RadioCard, RadioCardGroup } from '../components/RadioCard';
+import { Menus } from '../custom/Menus';
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuGroup,
+} from '../components/DropdownMenu';
+
+import {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuGroup,
+} from '../components/ContextMenu';
 
 export default function Closed() {
   return (
     <Box
       css={{
+        bc: '$loContrast',
         height: '100vh',
         py: '130px',
         px: '260px',
         overflowY: 'auto',
       }}
     >
+      <DropdownMenu>
+        <DropdownMenuTrigger as={Button}>Open</DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuGroup>
+            <DropdownMenuItem>Item</DropdownMenuItem>
+            <DropdownMenuItem>Item</DropdownMenuItem>
+            <DropdownMenuItem>Item</DropdownMenuItem>
+          </DropdownMenuGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+      <ContextMenu>
+        <ContextMenuTrigger>
+          <Box css={{ width: '$9', height: '$9', bc: '$blue600' }}>Right Click</Box>
+        </ContextMenuTrigger>
+        <ContextMenuContent>
+          <ContextMenuGroup>
+            <ContextMenuItem>Item</ContextMenuItem>
+            <ContextMenuItem>Item</ContextMenuItem>
+            <ContextMenuItem>Item</ContextMenuItem>
+          </ContextMenuGroup>
+        </ContextMenuContent>
+      </ContextMenu>
+      <Menus />
+      <Subheading>subheading</Subheading>
       <Text size="5" css={{ mt: '$7', mb: '$4' }}>
         Avatar
       </Text>
+
+      <Badge size="2">sss</Badge>
+      <Checkbox defaultChecked />
+
+      <RadioGroup>
+        <Radio value="a" css={{ mr: '$3' }} />
+        <Radio value="b" css={{ mr: '$3' }} />
+      </RadioGroup>
+
+      <RadioGroup>
+        <Radio value="a" size="2" css={{ mr: '$3' }} />
+        <Radio value="b" size="2" css={{ mr: '$3' }} />
+      </RadioGroup>
+
+      <RadioCardGroup defaultValue="1">
+        <RadioCard value="1" css={{ mb: '$2' }}>
+          <Flex css={{ alignItems: 'center' }}>
+            <Text size="5" css={{ fontWeight: '500', lineHeight: '25px', mr: '$6' }}>
+              2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
+            </Text>
+            <Text size="4" color="gray">
+              -$1600
+            </Text>
+          </Flex>
+        </RadioCard>
+        <RadioCard value="2" css={{ mb: '$2' }}>
+          <Flex css={{ alignItems: 'center' }}>
+            <Text size="5" css={{ fontWeight: '500', lineHeight: '25px', mr: '$6' }}>
+              2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
+            </Text>
+            <Text size="4" color="gray">
+              -$800
+            </Text>
+          </Flex>
+        </RadioCard>
+        <RadioCard value="3" css={{ mb: '$2' }}>
+          <Flex css={{ alignItems: 'center' }}>
+            <Text size="5" css={{ fontWeight: '500', lineHeight: '25px', mr: '$6' }}>
+              2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
+            </Text>
+            <Text size="4" color="gray"></Text>
+          </Flex>
+        </RadioCard>
+      </RadioCardGroup>
 
       <Flex css={{ gap: '$4', mb: '$4' }}>
         {[1, 2, 3, 4, 5, 6].map((size) => (
           <Avatar
             key={`one${size}`}
             size={size as any}
-            shape="square"
+            shape="circle"
             alt="Colm Tuite"
             src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
             fallback="C"
@@ -63,7 +160,7 @@ export default function Closed() {
         {[1, 2, 3, 4, 5, 6].map((size) => (
           <Avatar
             size={size as any}
-            shape="square"
+            shape="circle"
             fallback="C"
             status="green"
             key={`three${size}`}
@@ -76,11 +173,14 @@ export default function Closed() {
       </Text>
 
       <Dialog>
-        <Dialog.Trigger as={Button}>Open Dialog</Dialog.Trigger>
-        <Dialog.Content>
-          <Text css={{ mb: '$4' }}>Hello, from Dialog.</Text>
-          <Dialog.Close as={Button}>Bye.</Dialog.Close>
-        </Dialog.Content>
+        <DialogTrigger as={Button}>Open Dialog</DialogTrigger>
+        <DialogContent>
+          <Text css={{ mb: '$4' }}>Hello, from Dialog</Text>
+          <Tooltip content="You get the idea." side="left">
+            <Button css={{ ml: '$4' }}>Left</Button>
+          </Tooltip>
+          <DialogClose as={Button}>Bye.</DialogClose>
+        </DialogContent>
       </Dialog>
 
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
@@ -88,62 +188,62 @@ export default function Closed() {
       </Text>
 
       <AlertDialog>
-        <AlertDialog.Trigger as={Button}>Open AlertDialog</AlertDialog.Trigger>
-        <AlertDialog.Content>
-          <AlertDialog.Title as={Text} css={{ mb: '$4' }}>
-            Hello, from AlertDialog.
-          </AlertDialog.Title>
+        <AlertDialogTrigger as={Button}>Open AlertDialog</AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogTitle as={Text} css={{ mb: '$4' }}>
+            Hello, from AlertDialog
+          </AlertDialogTitle>
           <Flex css={{ justifyContent: 'space-between' }}>
-            <AlertDialog.Action as={Button}>Ok</AlertDialog.Action>
-            <AlertDialog.Cancel as={Button} variant="red">
+            <AlertDialogAction as={Button}>Ok</AlertDialogAction>
+            <AlertDialogCancel as={Button} variant="red">
               Cancel
-            </AlertDialog.Cancel>
+            </AlertDialogCancel>
           </Flex>
-        </AlertDialog.Content>
+        </AlertDialogContent>
       </AlertDialog>
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         Popover
       </Text>
 
       <Popover>
-        <Popover.Trigger as={Button}>Open Popover</Popover.Trigger>
-        <Popover.Content css={{ padding: '$4' }}>
-          <Text>Hello, from Popover.</Text>
-        </Popover.Content>
+        <PopoverTrigger as={Button}>Open Popover</PopoverTrigger>
+        <PopoverContent css={{ padding: '$4' }}>
+          <Text>Hello, from Popover</Text>
+        </PopoverContent>
       </Popover>
 
       <Popover>
-        <Popover.Trigger as={Button} css={{ ml: '$4' }}>
+        <PopoverTrigger as={Button} css={{ ml: '$4' }}>
           Open Popover (top)
-        </Popover.Trigger>
-        <Popover.Content side="left" css={{ height: '300px', padding: '$4' }}>
-          <Text>Hello, from Popover.</Text>
-        </Popover.Content>
+        </PopoverTrigger>
+        <PopoverContent side="left" css={{ height: '300px', padding: '$4' }}>
+          <Text>Hello, from Popover</Text>
+        </PopoverContent>
       </Popover>
 
       <Popover>
-        <Popover.Trigger as={Button} css={{ ml: '$4' }}>
+        <PopoverTrigger as={Button} css={{ ml: '$4' }}>
           With close button
-        </Popover.Trigger>
-        <Popover.Content side="top" css={{ padding: '$4' }}>
-          <Text>Hello, from Popover.</Text>
-          <Popover.Close
+        </PopoverTrigger>
+        <PopoverContent side="top" css={{ padding: '$4' }}>
+          <Text>Hello, from Popover</Text>
+          <PopoverClose
             as={IconButton}
             variant="ghost"
             css={{ position: 'absolute', top: '$1', right: '$1' }}
           >
             <Cross2Icon />
-          </Popover.Close>
-        </Popover.Content>
+          </PopoverClose>
+        </PopoverContent>
       </Popover>
 
       <Popover>
-        <Popover.Trigger as={Button} css={{ ml: '$4' }}>
+        <PopoverTrigger as={Button} css={{ ml: '$4' }}>
           Without arrow
-        </Popover.Trigger>
-        <Popover.Content side="top" hideArrow>
-          <Text>Hello, from Popover.</Text>
-        </Popover.Content>
+        </PopoverTrigger>
+        <PopoverContent side="top" hideArrow css={{ padding: '$4' }}>
+          <Text>Hello, from Popover</Text>
+        </PopoverContent>
       </Popover>
 
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
@@ -198,30 +298,30 @@ export default function Closed() {
         Tabs
       </Text>
 
-      <Tabs defaultSelectedId="tab-one">
-        <Tabs.List>
-          <Tabs.Tab id="tab-one">
+      <Tabs defaultValue="tab-one">
+        <TabsList>
+          <TabsTab value="tab-one">
             <Text size="4">One</Text>
-          </Tabs.Tab>
-          <Tabs.Tab id="tab-two">
+          </TabsTab>
+          <TabsTab value="tab-two">
             <Text size="4">Two</Text>
-          </Tabs.Tab>
-          <Tabs.Tab id="tab-three">
+          </TabsTab>
+          <TabsTab value="tab-three">
             <Text size="4">Three</Text>
-          </Tabs.Tab>
-        </Tabs.List>
-        <Tabs.Panel id="tab-one">
+          </TabsTab>
+        </TabsList>
+        <TabsPanel value="tab-one">
           <Box>
             <Text>Panel 1</Text>
             <Button css={{ mt: '$2' }}>Test focus</Button>
           </Box>
-        </Tabs.Panel>
-        <Tabs.Panel id="tab-two">
+        </TabsPanel>
+        <TabsPanel value="tab-two">
           <Text>Panel 2</Text>
-        </Tabs.Panel>
-        <Tabs.Panel id="tab-three">
+        </TabsPanel>
+        <TabsPanel value="tab-three">
           <Text>Panel 3</Text>
-        </Tabs.Panel>
+        </TabsPanel>
       </Tabs>
 
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
@@ -229,30 +329,30 @@ export default function Closed() {
       </Text>
 
       <Accordion>
-        <Accordion.Item value="accordion-one">
-          <Accordion.Button>
+        <AccordionItem value="accordion-one">
+          <AccordionButton>
             <Text size="4">Accordion one</Text>
-          </Accordion.Button>
-          <Accordion.Panel>
+          </AccordionButton>
+          <AccordionPanel>
             <Text size="4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </Text>
-          </Accordion.Panel>
-        </Accordion.Item>
-        <Accordion.Item value="accordion-two">
-          <Accordion.Button>
+          </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem value="accordion-two">
+          <AccordionButton>
             <Text size="4">Accordion two</Text>
-          </Accordion.Button>
-          <Accordion.Panel>
+          </AccordionButton>
+          <AccordionPanel>
             <Text size="4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </Text>
-          </Accordion.Panel>
-        </Accordion.Item>
+          </AccordionPanel>
+        </AccordionItem>
       </Accordion>
 
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
@@ -278,7 +378,7 @@ export default function Closed() {
       </Text>
 
       <Flex css={{ gap: '$4' }}>
-        <Slider defaultValue={25} />
+        <Slider defaultValue={[25]} />
         <Slider defaultValue={[25, 75]} />
       </Flex>
     </Box>

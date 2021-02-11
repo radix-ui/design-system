@@ -1,6 +1,4 @@
-import { styled, StitchesProps } from '../stitches.config';
-
-export type BoxProps = StitchesProps<typeof Box>;
+import { styled } from '../stitches.config';
 
 export const Box = styled('div', {
   // Reset

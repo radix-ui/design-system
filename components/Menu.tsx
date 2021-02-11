@@ -1,21 +1,13 @@
 import React from 'react';
-import { CheckIcon } from '@modulz/radix-icons';
+import { CheckIcon } from '@radix-ui/react-icons';
 import { styled, StitchesProps } from '../stitches.config';
 import { Box } from './Box';
 import { Panel } from './Panel';
-import {
-  Menu as MenuPrimitive,
-  MenuGroup as MenuGroupPrimitive,
-  MenuLabel as MenuLabelPrimitive,
-  MenuItem as MenuItemPrimitive,
-  MenuCheckboxItem as MenuCheckboxItemPrimitive,
-  MenuRadioGroup as MenuRadioGroupPrimitive,
-  MenuRadioItem as MenuRadioItemPrimitive,
-  MenuItemIndicator as MenuItemIndicatorPrimitive,
-  MenuSeparator as MenuSeparatorPrimitive,
-} from '@radix-ui/react-menu';
+import * as MenuPrimitive from '@radix-ui/react-menu';
 
-const baseItemCss: any = {
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
+
+export const baseItemCss: any = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -30,7 +22,7 @@ const baseItemCss: any = {
   px: '$2',
 };
 
-const interactiveItemCss = {
+export const itemCss: any = {
   ...baseItemCss,
   position: 'relative',
   color: '$hiContrast',
@@ -46,73 +38,106 @@ const interactiveItemCss = {
   },
 };
 
-export type MenuProps = StitchesProps<typeof Menu>;
-export const Menu = (props: React.ComponentProps<typeof MenuPrimitive>) => (
-  <Panel
-    as={MenuPrimitive}
-    {...props}
-    css={{
-      boxSizing: 'border-box',
-      minWidth: 120,
-      py: '$1',
-      ...(props as any).css,
-    }}
-  />
-);
+export const interactiveItemCss: any = {
+  ...itemCss,
+  paddingLeft: '$5',
+};
 
-export type MenuSeparatorProps = StitchesProps<typeof MenuSeparator>;
-export const MenuSeparator = styled(MenuSeparatorPrimitive, {
+export const labelCss: any = {
+  ...baseItemCss,
+  color: '$gray900',
+};
+
+export const menuCss: any = {
+  boxSizing: 'border-box',
+  minWidth: 120,
+  py: '$1',
+};
+
+export const separatorCss: any = {
   height: 1,
   my: '$1',
   backgroundColor: '$gray500',
-});
+};
 
-export type MenuItemProps = StitchesProps<typeof MenuItem>;
-export const MenuItem = styled(MenuItemPrimitive, interactiveItemCss);
+const StyledMenu = styled(MenuPrimitive.Root, menuCss);
 
-const StyledMenuRadioItem = styled(MenuRadioItemPrimitive, {
-  ...interactiveItemCss,
-  paddingLeft: '$5',
-});
-export type MenuRadioItemProps = StitchesProps<typeof StyledMenuRadioItem>;
-export const MenuRadioItem = ({ children, ...props }: MenuRadioItemProps) => (
-  <StyledMenuRadioItem {...props}>
+type MenuCSSProp = Pick<StitchesProps<typeof StyledMenu>, 'css'>;
+type MenuOwnProps = Polymorphic.OwnProps<typeof MenuPrimitive.Root> & MenuCSSProp;
+type MenuComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof MenuPrimitive.Root>,
+  MenuOwnProps
+>;
+
+export const Menu = React.forwardRef((props, forwardedRef) => (
+  <StyledMenu as={Panel} {...props} ref={forwardedRef} />
+)) as MenuComponent;
+
+export const MenuSeparator = styled(MenuPrimitive.Separator, separatorCss);
+
+export const MenuItem = styled(MenuPrimitive.Item, itemCss);
+
+const StyledMenuRadioItem = styled(MenuPrimitive.RadioItem, interactiveItemCss);
+
+type MenuRadioItemCSSProp = Pick<StitchesProps<typeof StyledMenuRadioItem>, 'css'>;
+type MenuRadioItemOwnProps = Polymorphic.OwnProps<typeof MenuPrimitive.RadioItem> &
+  MenuRadioItemCSSProp;
+type MenuRadioItemComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof MenuPrimitive.RadioItem>,
+  MenuRadioItemOwnProps
+>;
+
+export const MenuRadioItem = React.forwardRef(({ children, ...props }, forwardedRef) => (
+  <StyledMenuRadioItem {...props} ref={forwardedRef}>
     <Box as="span" css={{ position: 'absolute', left: '$1' }}>
-      <MenuItemIndicatorPrimitive>
+      <MenuPrimitive.ItemIndicator>
         <CheckIcon />
-      </MenuItemIndicatorPrimitive>
+      </MenuPrimitive.ItemIndicator>
     </Box>
     {children}
   </StyledMenuRadioItem>
-);
+)) as MenuRadioItemComponent;
 
-const StyledMenuCheckboxItem = styled(MenuCheckboxItemPrimitive, {
-  ...interactiveItemCss,
-  paddingLeft: '$5',
-});
-export type MenuCheckboxItemProps = StitchesProps<typeof StyledMenuCheckboxItem>;
-export const MenuCheckboxItem = ({ children, ...props }: MenuCheckboxItemProps) => (
-  <StyledMenuCheckboxItem {...props}>
+const StyledMenuCheckboxItem = styled(MenuPrimitive.CheckboxItem, interactiveItemCss);
+
+type MenuCheckboxItemCSSProp = Pick<StitchesProps<typeof StyledMenuCheckboxItem>, 'css'>;
+type MenuCheckboxItemOwnProps = Polymorphic.OwnProps<typeof MenuPrimitive.CheckboxItem> &
+  MenuCheckboxItemCSSProp;
+type MenuCheckboxItemComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof MenuPrimitive.CheckboxItem>,
+  MenuCheckboxItemOwnProps
+>;
+
+export const MenuCheckboxItem = React.forwardRef(({ children, ...props }, forwardedRef) => (
+  <StyledMenuCheckboxItem {...props} ref={forwardedRef}>
     <Box as="span" css={{ position: 'absolute', left: '$1' }}>
-      <MenuItemIndicatorPrimitive>
+      <MenuPrimitive.ItemIndicator>
         <CheckIcon />
-      </MenuItemIndicatorPrimitive>
+      </MenuPrimitive.ItemIndicator>
     </Box>
     {children}
   </StyledMenuCheckboxItem>
-);
+)) as MenuCheckboxItemComponent;
 
-export type MenuLabelProps = StitchesProps<typeof MenuLabel>;
-export const MenuLabel = styled(MenuLabelPrimitive, {
-  ...baseItemCss,
-  color: '$gray900',
+export const MenuLabel = styled(MenuPrimitive.Label, labelCss);
+
+// Group CSS cant be abstraced because it contains variants
+// and Stitches Alpha types dont work properly
+export const MenuRadioGroup = styled(MenuPrimitive.RadioGroup, {
+  variants: {
+    indented: {
+      true: {
+        '[data-radix-menu-item], [data-radix-menu-label]': {
+          paddingLeft: '$5',
+        },
+      },
+    },
+  },
 });
 
-export type MenuRadioGroupProps = StitchesProps<typeof MenuRadioGroup>;
-export const MenuRadioGroup = styled(MenuRadioGroupPrimitive, {});
-
-export type MenuGroupProps = StitchesProps<typeof MenuGroup>;
-export const MenuGroup = styled(MenuGroupPrimitive, {
+// Group CSS cant be abstraced because it contains variants
+// and Stitches Alpha types dont work properly
+export const MenuGroup = styled(MenuPrimitive.Group, {
   variants: {
     indented: {
       true: {

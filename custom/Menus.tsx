@@ -125,6 +125,7 @@ const CheckboxItemsMenu = () => {
         align="start"
       >
         <MenuGroup indented>
+          <MenuLabel>Cut</MenuLabel>
           <MenuItem>Cut</MenuItem>
           <MenuItem>Copy</MenuItem>
           <MenuItem>Paste</MenuItem>

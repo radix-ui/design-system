@@ -1,7 +1,4 @@
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
-
-export type PanelProps = StitchesProps<typeof Panel>;
-export type PanelVariants = StitchesVariants<typeof Panel>;
+import { styled } from '../stitches.config';
 
 export const Panel = styled('div', {
   backgroundColor: '$panel',

@@ -1,11 +1,10 @@
-import { styled, StitchesProps, utils, theme } from '../stitches.config';
+import { styled, utils, theme } from '../stitches.config';
 import { flexGapSupported } from './flexGapSupported';
 import * as React from 'react';
 
 /** A lot of casting is happening in this fine which should
  * be fixed once the next version of stitches is in with the new types */
 
-export type FlexProps = StitchesProps<typeof _Flex>;
 // Base flex that will be used
 // when gap is supported
 const _Flex = styled('div', {

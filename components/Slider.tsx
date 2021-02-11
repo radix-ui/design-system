@@ -1,12 +1,8 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
-import {
-  Slider as SliderPrimitive,
-  SliderProps as SliderPrimitiveProps,
-} from '@interop-ui/react-slider';
+import { styled } from '../stitches.config';
+import * as SliderPrimitive from '@radix-ui/react-slider';
 
-export type SliderProps = SliderPrimitiveProps & StitchesProps<typeof StyledSlider>;
-export type SliderVariants = StitchesVariants<typeof StyledSlider>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const SliderTrack = styled(SliderPrimitive.Track, {
   position: 'relative',
@@ -66,7 +62,7 @@ const SliderThumb = styled(SliderPrimitive.Thumb, {
   },
 });
 
-export const StyledSlider = styled(SliderPrimitive, {
+export const StyledSlider = styled(SliderPrimitive.Root, {
   position: 'relative',
   display: 'flex',
   alignItems: 'center',
@@ -81,14 +77,6 @@ export const StyledSlider = styled(SliderPrimitive, {
     width: 15,
   },
 
-  variants: {
-    color: {
-      gray: {
-        //
-      },
-    },
-  },
-
   ':hover': {
     [`& ${SliderTrack}`]: {
       backgroundColor: '$gray700',
@@ -99,14 +87,23 @@ export const StyledSlider = styled(SliderPrimitive, {
   },
 });
 
-export function Slider({ color = 'gray', ...props }: SliderProps) {
+type SliderOwnProps = Polymorphic.OwnProps<typeof SliderPrimitive.Root> & {
+  css?: any;
+};
+
+type SliderComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof SliderPrimitive.Root>,
+  SliderOwnProps
+>;
+
+export const Slider = React.forwardRef((props, forwardedRef) => {
   const hasRange = Array.isArray(props.defaultValue || (props as any).value);
   const thumbsArray = hasRange
     ? props.defaultValue || (props as any).value
     : [props.defaultValue || (props as any).value];
 
   return (
-    <StyledSlider color={color} {...props}>
+    <StyledSlider {...props} ref={forwardedRef}>
       <SliderTrack>
         <SliderRange />
       </SliderTrack>
@@ -115,4 +112,4 @@ export function Slider({ color = 'gray', ...props }: SliderProps) {
       ))}
     </StyledSlider>
   );
-}
+}) as SliderComponent;

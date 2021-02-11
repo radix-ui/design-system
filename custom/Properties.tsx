@@ -4,7 +4,8 @@ import {
   MixerVerticalIcon,
   PlusIcon,
   ShadowIcon,
-} from '@modulz/radix-icons';
+  TransparencyGridIcon,
+} from '@radix-ui/react-icons';
 import { Box } from '../components/Box';
 import { Flex } from '../components/Flex';
 import { IconButton } from '../components/IconButton';
@@ -316,40 +317,7 @@ export function Properties() {
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box>
                   <IconButton variant="ghost">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="15"
-                      height="15"
-                      viewBox="0 0 15 15"
-                      fill="none"
-                    >
-                      <rect width="3" height="3" fill="#C4C4C4" />
-                      <rect x="6" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="12" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="3" y="3" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="9" y="3" width="3" height="3" fill="#C4C4C4" />
-                      <rect width="3" height="3" fill="#C4C4C4" />
-                      <rect x="6" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="12" width="3" height="3" fill="#C4C4C4" />
-                      <rect y="12" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="6" y="12" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="12" y="12" width="3" height="3" fill="#C4C4C4" />
-                      <rect y="12" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="6" y="12" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="12" y="12" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="3" y="3" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="9" y="3" width="3" height="3" fill="#C4C4C4" />
-                      <rect y="6" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="6" y="6" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="12" y="6" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="3" y="9" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="9" y="9" width="3" height="3" fill="#C4C4C4" />
-                      <rect y="6" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="6" y="6" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="12" y="6" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="3" y="9" width="3" height="3" fill="#C4C4C4" />
-                      <rect x="9" y="9" width="3" height="3" fill="#C4C4C4" />
-                    </svg>
+                    <TransparencyGridIcon />
                   </IconButton>
                 </Box>
                 <Box css={{ flexGrow: 1 }}>
@@ -437,40 +405,7 @@ export function Properties() {
             <Flex css={{ ai: 'center', px: '$3', py: '$1' }}>
               <Box css={{ mr: '$1', ml: '-$1' }}>
                 <IconButton variant="ghost">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                  >
-                    <rect width="3" height="3" fill="#C4C4C4" />
-                    <rect x="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="3" y="3" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="9" y="3" width="3" height="3" fill="#C4C4C4" />
-                    <rect width="3" height="3" fill="#C4C4C4" />
-                    <rect x="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect y="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="6" y="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="12" y="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect y="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="6" y="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="12" y="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="3" y="3" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="9" y="3" width="3" height="3" fill="#C4C4C4" />
-                    <rect y="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="6" y="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="12" y="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="3" y="9" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="9" y="9" width="3" height="3" fill="#C4C4C4" />
-                    <rect y="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="6" y="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="12" y="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="3" y="9" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="9" y="9" width="3" height="3" fill="#C4C4C4" />
-                  </svg>
+                  <TransparencyGridIcon />
                 </IconButton>
               </Box>
               <Box css={{ mr: '$1', ml: '-$1' }}>
@@ -523,40 +458,7 @@ export function Properties() {
             <Flex css={{ ai: 'center', px: '$3', py: '$1' }}>
               <Box css={{ mr: '$1', ml: '-$1' }}>
                 <IconButton variant="ghost">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                  >
-                    <rect width="3" height="3" fill="#C4C4C4" />
-                    <rect x="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="3" y="3" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="9" y="3" width="3" height="3" fill="#C4C4C4" />
-                    <rect width="3" height="3" fill="#C4C4C4" />
-                    <rect x="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect y="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="6" y="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="12" y="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect y="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="6" y="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="12" y="12" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="3" y="3" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="9" y="3" width="3" height="3" fill="#C4C4C4" />
-                    <rect y="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="6" y="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="12" y="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="3" y="9" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="9" y="9" width="3" height="3" fill="#C4C4C4" />
-                    <rect y="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="6" y="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="12" y="6" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="3" y="9" width="3" height="3" fill="#C4C4C4" />
-                    <rect x="9" y="9" width="3" height="3" fill="#C4C4C4" />
-                  </svg>
+                  <TransparencyGridIcon />
                 </IconButton>
               </Box>
               <Box css={{ mr: '$1', ml: '-$1' }}>

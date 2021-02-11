@@ -1,26 +1,30 @@
 import React from 'react';
-import { Text, TextProps } from './Text';
+import { Text } from './Text';
 
-export type ParagraphProps = Omit<TextProps, 'size'>;
+import * as Polymorphic from '@radix-ui/react-polymorphic';
 
-export function Paragraph(props: ParagraphProps) {
-  return (
-    <Text
-      as="p"
-      {...props}
-      size={{
-        initial: '3',
-        bp2: '4',
-      }}
-      css={{
-        lineHeight: '25px',
-        ...(props.css as any),
+const DEFAULT_TAG = 'p';
 
-        bp2: {
-          lineHeight: '27px',
-          ...(props.css?.bp2 as any),
-        },
-      }}
-    />
-  );
-}
+type ParagraphOwnProps = Omit<React.ComponentProps<typeof Text>, 'size'>;
+type ParagraphComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, ParagraphOwnProps>;
+
+export const Paragraph = React.forwardRef((props, forwardedRef) => (
+  <Text
+    as={DEFAULT_TAG}
+    {...props}
+    ref={forwardedRef}
+    size={{
+      initial: '3',
+      bp2: '4',
+    }}
+    css={{
+      lineHeight: '25px',
+      ...(props.css as any),
+
+      bp2: {
+        lineHeight: '27px',
+        ...(props.css?.bp2 as any),
+      },
+    }}
+  />
+)) as ParagraphComponent;

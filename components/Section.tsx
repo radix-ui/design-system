@@ -1,16 +1,22 @@
+import React from 'react';
 import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
 
-export type SectionProps = StitchesProps<typeof Section>;
-export type SectionVariants = StitchesVariants<typeof Section>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-export const Section = styled('section', {
+const DEFAULT_TAG = 'section';
+
+type SectionCSSProp = Pick<StitchesProps<typeof StyledSection>, 'css'>;
+type SectionVariants = StitchesVariants<typeof StyledSection>;
+type SectionOwnProps = SectionCSSProp & SectionVariants;
+
+const StyledSection = styled(DEFAULT_TAG, {
   // Reset
   boxSizing: 'border-box',
   flexShrink: 0,
-  '::before': {
+  '&::before': {
     boxSizing: 'border-box',
   },
-  '::after': {
+  '&::after': {
     boxSizing: 'border-box',
   },
 
@@ -28,3 +34,9 @@ export const Section = styled('section', {
     },
   },
 });
+
+type SectionComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, SectionOwnProps>;
+
+export const Section = React.forwardRef((props, forwardedRef) => {
+  return <StyledSection {...props} ref={forwardedRef} />;
+}) as SectionComponent;

@@ -1,7 +1,4 @@
-import { StitchesProps, StitchesVariants, styled, css } from '../stitches.config';
-
-export type SkeletonProps = StitchesProps<typeof Skeleton>;
-export type SkeletonVariants = StitchesVariants<typeof Skeleton>;
+import { styled, css } from '../stitches.config';
 
 const pulse = css.keyframes({
   '0%': { opacity: 0 },
@@ -13,7 +10,7 @@ export const Skeleton = styled('div', {
   position: 'relative',
   overflow: 'hidden',
 
-  '::after': {
+  '&::after': {
     animationName: `${pulse}`,
     animationDuration: '500ms',
     animationDirection: 'alternate',

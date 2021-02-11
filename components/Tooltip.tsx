@@ -1,21 +1,15 @@
 import React from 'react';
-import { styled, css } from '../stitches.config';
-import {
-  Tooltip as TooltipPrimitive,
-  TooltipProps as TooltipPrimitiveProps,
-  TooltipPopperProps,
-} from '@interop-ui/react-tooltip';
+import { styled } from '../stitches.config';
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import { Box } from './Box';
 import { Text } from './Text';
 
-export type TooltipProps = TooltipPrimitiveProps &
-  TooltipPopperProps & {
+type TooltipProps = React.ComponentProps<typeof TooltipPrimitive.Root> &
+  React.ComponentProps<typeof TooltipPrimitive.Content> & {
     children: React.ReactElement;
     content: React.ReactNode;
     multiline?: boolean;
   };
-
-const Popper = styled(TooltipPrimitive.Popper, {});
 
 const Content = styled(TooltipPrimitive.Content, {
   backgroundColor: '$transparentExtreme',
@@ -26,7 +20,7 @@ const Content = styled(TooltipPrimitive.Content, {
     multiline: {
       true: {
         maxWidth: 250,
-        pb: 7
+        pb: 7,
       },
     },
   },
@@ -35,33 +29,31 @@ const Content = styled(TooltipPrimitive.Content, {
 export function Tooltip({
   children,
   content,
-  isOpen,
-  defaultIsOpen,
-  onIsOpenChange,
+  open,
+  defaultOpen,
+  onOpenChange,
   multiline,
   ...props
 }: TooltipProps) {
   return (
-    <TooltipPrimitive isOpen={isOpen} defaultIsOpen={defaultIsOpen} onIsOpenChange={onIsOpenChange}>
+    <TooltipPrimitive.Root open={open} defaultOpen={defaultOpen} onOpenChange={onOpenChange}>
       <TooltipPrimitive.Trigger
         as={React.forwardRef((props, forwardedRef) =>
           React.cloneElement(children, { ...props, ref: forwardedRef })
         )}
       />
-      <Popper side="top" align="center" {...props}>
-        <Content multiline={multiline}>
-          <Text
-            size="2"
-            as="p"
-            css={{
-              color: '$loContrast',
-              lineHeight: multiline ? '1.5' : undefined,
-            }}
-          >
-            {content}
-          </Text>
-        </Content>
 
+      <Content side="top" align="center" {...props} multiline={multiline}>
+        <Text
+          size="2"
+          as="p"
+          css={{
+            color: '$loContrast',
+            lineHeight: multiline ? '1.5' : undefined,
+          }}
+        >
+          {content}
+        </Text>
         <Box css={{ color: '$transparentExtreme' }}>
           <TooltipPrimitive.Arrow
             offset={5}
@@ -72,7 +64,7 @@ export function Tooltip({
             }}
           />
         </Box>
-      </Popper>
-    </TooltipPrimitive>
+      </Content>
+    </TooltipPrimitive.Root>
   );
 }

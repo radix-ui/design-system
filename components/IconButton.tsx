@@ -1,9 +1,15 @@
+import React from 'react';
 import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
 
-export type IconButtonProps = StitchesProps<typeof IconButton>;
-export type IconButtonVariants = StitchesVariants<typeof IconButton>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-export const IconButton = styled('button', {
+const DEFAULT_TAG = 'button';
+
+type IconButtonCSSProp = Pick<StitchesProps<typeof StyledIconButton>, 'css'>;
+type IconButtonVariants = StitchesVariants<typeof StyledIconButton>;
+type IconButtonOwnProps = IconButtonCSSProp & IconButtonVariants;
+
+const StyledIconButton = styled(DEFAULT_TAG, {
   // Reset
   alignItems: 'center',
   appearance: 'none',
@@ -21,10 +27,10 @@ export const IconButton = styled('button', {
   userSelect: 'none',
   WebkitTapHighlightColor: 'transparent',
   color: '$hiContrast',
-  '::before': {
+  '&::before': {
     boxSizing: 'border-box',
   },
-  '::after': {
+  '&::after': {
     boxSizing: 'border-box',
   },
 
@@ -35,17 +41,17 @@ export const IconButton = styled('button', {
   height: '$5',
   width: '$5',
   transition: 'all 40ms linear',
-  ':hover': {
+  '&:hover': {
     borderColor: '$gray700',
   },
-  ':active': {
+  '&:active': {
     backgroundColor: '$gray100',
   },
-  ':focus': {
+  '&&:focus': {
     borderColor: '$gray700',
     boxShadow: '0 0 0 1px $gray700',
   },
-  ':disabled': {
+  '&:disabled': {
     pointerEvents: 'none',
     backgroundColor: 'transparent',
     color: '$gray500',
@@ -70,29 +76,29 @@ export const IconButton = styled('button', {
       ghost: {
         backgroundColor: 'transparent',
         borderWidth: '0',
-        ':hover': {
+        '&:hover': {
           backgroundColor: '$gray200',
         },
-        ':focus': {
+        '&:focus': {
           boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gray300',
         },
       },
       raised: {
         boxShadow:
           '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
-        ':hover': {
+        '&:hover': {
           boxShadow:
             '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
         },
-        ':focus': {
+        '&:focus': {
           borderColor: '$gray700',
           boxShadow:
             '0 0 0 1px $gray700, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gray300',
         },
       },
@@ -101,23 +107,29 @@ export const IconButton = styled('button', {
       active: {
         backgroundColor: '$gray300',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
-        ':hover': {
+        '&:hover': {
           boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gray300',
         },
       },
       waiting: {
         backgroundColor: '$gray300',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
-        ':hover': {
+        '&:hover': {
           boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
         },
-        ':active': {
+        '&:active': {
           backgroundColor: '$gray300',
         },
       },
     },
   },
 });
+
+type IconButtonComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, IconButtonOwnProps>;
+
+export const IconButton = React.forwardRef((props, forwardedRef) => {
+  return <StyledIconButton {...props} ref={forwardedRef} />;
+}) as IconButtonComponent;

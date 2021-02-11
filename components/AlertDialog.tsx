@@ -1,51 +1,29 @@
 import React from 'react';
-import { styled, css, StitchesProps } from '../stitches.config';
-import {
-  AlertDialog as AlertDialogPrimitive,
-  AlertDialogProps as AlertDialogPrimitiveProps,
-  AlertDialogContentProps as AlertDialogPrimitiveContentProps,
-} from '@interop-ui/react-alert-dialog';
+import { styled } from '../stitches.config';
+import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import { Overlay } from './Overlay';
 import { Panel } from './Panel';
 
-export type {
-  AlertDialogTitleProps,
-  AlertDialogDescriptionProps,
-  AlertDialogActionProps,
-  AlertDialogCancelProps,
-} from '@interop-ui/react-alert-dialog';
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-export type AlertDialogProps = AlertDialogPrimitiveProps & {
+type AlertDialogProps = React.ComponentProps<typeof AlertDialogPrimitive.Root> & {
   children: React.ReactNode;
 };
-export type AlertDialogContentProps = AlertDialogPrimitiveContentProps &
-  StitchesProps<typeof StyledContent>;
 
-// const fadeIn = css.keyframes({
-//   '0%': { opacity: 0 },
-//   '100%': { opacity: 1 },
-// });
-
-// const moveDown = css.keyframes({
-//   '0%': { transform: 'translate(-50%, calc(-50% + 2px))' },
-//   '100%': { transform: 'translate(-50%, -50%)' },
-// });
-
-const StyledOverlay = styled(Overlay, {
+const StyledOverlay = styled(AlertDialogPrimitive.Overlay, {
   position: 'fixed',
   top: 0,
   right: 0,
   bottom: 0,
   left: 0,
-  // animation: `${fadeIn} 125ms ease-out`,
 });
 
 export function AlertDialog({ children, ...props }: AlertDialogProps) {
   return (
-    <AlertDialogPrimitive {...props}>
-      <AlertDialogPrimitive.Overlay as={StyledOverlay} />
+    <AlertDialogPrimitive.Root {...props}>
+      <StyledOverlay as={Overlay} />
       {children}
-    </AlertDialogPrimitive>
+    </AlertDialogPrimitive.Root>
   );
 }
 
@@ -59,23 +37,28 @@ const StyledContent = styled(AlertDialogPrimitive.Content, {
   maxHeight: '85vh',
   padding: '$4',
   marginTop: '-5vh',
-  // animation: `${fadeIn} 125ms ease-out, ${moveDown} 125ms cubic-bezier(0.22, 1, 0.36, 1)`,
 
   '&:focus': {
     outline: 'none',
   },
 });
 
-function AlertDialogContent({ children, ...props }: AlertDialogContentProps) {
-  return (
-    <StyledContent {...props} as={Panel}>
-      {children}
-    </StyledContent>
-  );
-}
-AlertDialog.Trigger = AlertDialogPrimitive.Trigger;
-AlertDialog.Content = AlertDialogContent;
-AlertDialog.Title = AlertDialogPrimitive.Title;
-AlertDialog.Description = AlertDialogPrimitive.Description;
-AlertDialog.Action = AlertDialogPrimitive.Action;
-AlertDialog.Cancel = AlertDialogPrimitive.Cancel;
+type AlertDialogContentOwnProps = Polymorphic.OwnProps<typeof AlertDialogPrimitive.Content> & {
+  css?: any;
+};
+type AlertDialogContentComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof AlertDialogPrimitive.Content>,
+  AlertDialogContentOwnProps
+>;
+
+export const AlertDialogContent = React.forwardRef(({ children, ...props }, forwardedRef) => (
+  <StyledContent as={Panel} {...props} ref={forwardedRef}>
+    {children}
+  </StyledContent>
+)) as AlertDialogContentComponent;
+
+export const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
+export const AlertDialogTitle = AlertDialogPrimitive.Title;
+export const AlertDialogDescription = AlertDialogPrimitive.Description;
+export const AlertDialogAction = AlertDialogPrimitive.Action;
+export const AlertDialogCancel = AlertDialogPrimitive.Cancel;

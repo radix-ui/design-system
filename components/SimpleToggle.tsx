@@ -1,10 +1,16 @@
+import React from 'react';
 import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
-import { ToggleButton, ToggleButtonProps } from '@interop-ui/react-toggle-button';
+import * as ToggleButtonPrimitive from '@radix-ui/react-toggle-button';
 
-export type SimpleToggleProps = ToggleButtonProps & StitchesProps<typeof SimpleToggle>;
-export type SimpleToggleVariants = StitchesVariants<typeof SimpleToggle>;
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-export const SimpleToggle = styled(ToggleButton, {
+type SimpleToggleCSSProp = Pick<StitchesProps<typeof StyledSimpleToggle>, 'css'>;
+type SimpleToggleVariants = StitchesVariants<typeof StyledSimpleToggle>;
+type SimpleToggleOwnProps = Polymorphic.OwnProps<typeof ToggleButtonPrimitive.Root> &
+  SimpleToggleCSSProp &
+  SimpleToggleVariants;
+
+export const StyledSimpleToggle = styled(ToggleButtonPrimitive.Root, {
   // Reset
   alignItems: 'center',
   appearance: 'none',
@@ -22,10 +28,10 @@ export const SimpleToggle = styled(ToggleButton, {
   userSelect: 'none',
   WebkitTapHighlightColor: 'transparent',
   color: '$hiContrast',
-  '::before': {
+  '&::before': {
     boxSizing: 'border-box',
   },
-  '::after': {
+  '&::after': {
     boxSizing: 'border-box',
   },
 
@@ -33,13 +39,13 @@ export const SimpleToggle = styled(ToggleButton, {
   width: '$5',
   transition: 'all 40ms linear',
   backgroundColor: 'transparent',
-  ':hover': {
+  '&:hover': {
     backgroundColor: '$gray200',
   },
-  ':active': {
+  '&:active': {
     backgroundColor: '$gray300',
   },
-  ':focus': {
+  '&:focus': {
     boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
     zIndex: 1,
   },
@@ -65,3 +71,12 @@ export const SimpleToggle = styled(ToggleButton, {
     },
   },
 });
+
+type SimpleToggleComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof ToggleButtonPrimitive.Root>,
+  SimpleToggleOwnProps
+>;
+
+export const SimpleToggle = React.forwardRef((props, forwardedRef) => (
+  <StyledSimpleToggle {...props} ref={forwardedRef} />
+)) as SimpleToggleComponent;
