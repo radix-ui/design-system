@@ -4,7 +4,7 @@ import {
   MixerVerticalIcon,
   PlusIcon,
   ShadowIcon,
-} from '@modulz/radix-icons';
+} from '@radix-ui/react-icons';
 import { Box } from '../components/Box';
 import { Flex } from '../components/Flex';
 import { IconButton } from '../components/IconButton';

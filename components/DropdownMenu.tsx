@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckIcon } from '@modulz/radix-icons';
+import { CheckIcon } from '@radix-ui/react-icons';
 import { styled, StitchesProps } from '../stitches.config';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { menuCss, separatorCss, itemCss, interactiveItemCss, labelCss } from './Menu';

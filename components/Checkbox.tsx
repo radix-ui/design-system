@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
-import { CheckIcon } from '@modulz/radix-icons';
+import { CheckIcon } from '@radix-ui/react-icons';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled, StitchesProps } from '../stitches.config';
 import { Flex } from '../components/Flex';
-import { CheckIcon } from '@modulz/radix-icons';
+import { CheckIcon } from '@radix-ui/react-icons';
 
 type VerifiedBadgeProps = StitchesProps<typeof StyledFlex>;
 

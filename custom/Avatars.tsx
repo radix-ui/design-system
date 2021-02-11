@@ -6,7 +6,7 @@ import { Flex } from '../components/Flex';
 import { Avatar, AvatarGroup, AvatarNestedItem } from '../components/Avatar';
 import { Status } from '../components/Status';
 import { Subheading } from '../components/Subheading';
-import { Link2Icon } from '@modulz/radix-icons';
+import { Link2Icon } from '@radix-ui/react-icons';
 
 export function Avatars() {
   return (

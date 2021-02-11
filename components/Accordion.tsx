@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from '../stitches.config';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { ChevronDownIcon } from '@modulz/radix-icons';
+import { ChevronDownIcon } from '@radix-ui/react-icons';
 
 import * as Polymorphic from '@radix-ui/react-polymorphic';
 

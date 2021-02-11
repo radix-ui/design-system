@@ -26,7 +26,7 @@ import { Switch } from '../components/Switch';
 import { SimpleToggle } from '../components/SimpleToggle';
 import { Slider } from '../components/Slider';
 import { Subheading } from '../components/Subheading';
-import { Cross2Icon } from '@modulz/radix-icons';
+import { Cross2Icon } from '@radix-ui/react-icons';
 import { Radio, RadioGroup } from '../components/Radio';
 import { RadioCard, RadioCardGroup } from '../components/RadioCard';
 import { Menus } from '../custom/Menus';
