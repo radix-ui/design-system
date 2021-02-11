@@ -11,4 +11,10 @@ export const Select = styled.select({
   pl: '$1',
   borderRadius: '$2',
   color: '$hiContrast',
+  outline: 'none',
+
+  ':focus': {
+    boxShadow: 'inset 0px 0px 0px 1px $blue700, 0px 0px 0px 1px $blue700',
+    zIndex: '1',
+  },
 });

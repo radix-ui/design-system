@@ -10,7 +10,7 @@ type SimpleToggleOwnProps = Polymorphic.OwnProps<typeof ToggleButtonPrimitive.Ro
   SimpleToggleCSSProp &
   SimpleToggleVariants;
 
-export const StyledSimpleToggle = styled(ToggleButtonPrimitive.Root, {
+const StyledSimpleToggle = styled(ToggleButtonPrimitive.Root, {
   // Reset
   alignItems: 'center',
   appearance: 'none',

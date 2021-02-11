@@ -20,7 +20,7 @@ type AvatarOwnProps = Polymorphic.OwnProps<typeof AvatarPrimitive.Root> &
     status?: StatusColors['color'];
   };
 
-export const StyledAvatar = styled(AvatarPrimitive.Root, {
+const StyledAvatar = styled(AvatarPrimitive.Root, {
   alignItems: 'center',
   justifyContent: 'center',
   verticalAlign: 'middle',

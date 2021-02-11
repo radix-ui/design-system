@@ -17,6 +17,7 @@ export const Skeleton = styled('div', {
     animationIterationCount: 'infinite',
     animationTimingFunction: 'ease-in-out',
     backgroundColor: '$gray500',
+    borderRadius: 'inherit',
     bottom: 0,
     content: '""',
     left: 0,

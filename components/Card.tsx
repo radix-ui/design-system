@@ -5,9 +5,9 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'div';
 
-export type CardCSSProp = Pick<StitchesProps<typeof StyledCard>, 'css'>;
-export type CardVariants = StitchesVariants<typeof StyledCard>;
-export type CardOwnProps = CardCSSProp & CardVariants;
+type CardCSSProp = Pick<StitchesProps<typeof StyledCard>, 'css'>;
+type CardVariants = StitchesVariants<typeof StyledCard>;
+type CardOwnProps = CardCSSProp & CardVariants;
 
 const StyledCard = styled(DEFAULT_TAG, {
   backgroundColor: '$panel',
