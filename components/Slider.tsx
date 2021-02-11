@@ -107,7 +107,7 @@ export const Slider = React.forwardRef((props, forwardedRef) => {
       <SliderTrack>
         <SliderRange />
       </SliderTrack>
-      {thumbsArray.map((_, i) => (
+      {thumbsArray.map((_: any, i: number) => (
         <SliderThumb key={i} />
       ))}
     </StyledSlider>
