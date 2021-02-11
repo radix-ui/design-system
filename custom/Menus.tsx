@@ -124,7 +124,7 @@ const CheckboxItemsMenu = () => {
         disableOutsideScroll={false}
         align="start"
       >
-        <MenuGroup>
+        <MenuGroup indented>
           <MenuLabel>Cut</MenuLabel>
           <MenuItem>Cut</MenuItem>
           <MenuItem>Copy</MenuItem>
