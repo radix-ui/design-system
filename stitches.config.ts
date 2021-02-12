@@ -313,23 +313,23 @@ const stitches = createCss({
     fs: (config) => (value: any) => ({ flexShrink: value }),
     fb: (config) => (value: any) => ({ flexBasis: value }),
 
-    bc: (config) => (value: keyof typeof config['colors'] | (string & {})) => ({
+    bc: (config) => (value: keyof typeof config['theme']['colors'] | (string & {})) => ({
       backgroundColor: value,
     }),
 
-    br: (config) => (value: keyof typeof config['radii'] | (string & {})) => ({
+    br: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
       borderRadius: value,
     }),
-    btrr: (config) => (value: keyof typeof config['radii'] | (string & {})) => ({
+    btrr: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
       borderTopRightRadius: value,
     }),
-    bbrr: (config) => (value: keyof typeof config['radii'] | (string & {})) => ({
+    bbrr: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
       borderBottomRightRadius: value,
     }),
-    bblr: (config) => (value: keyof typeof config['radii'] | (string & {})) => ({
+    bblr: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
       borderBottomLeftRadius: value,
     }),
-    btlr: (config) => (value: keyof typeof config['radii'] | (string & {})) => ({
+    btlr: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
       borderTopLeftRadius: value,
     }),
 
