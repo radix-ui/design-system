@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { Text } from './Text';
 
@@ -11,7 +11,7 @@ const StyledLabel = styled(LabelPrimitive.Root, {
   cursor: 'default',
 });
 
-type LabelCSSProp = Pick<StitchesProps<typeof StyledLabel>, 'css'>;
+type LabelCSSProp = { css?: CSS };
 type LabelVariants = StitchesVariants<typeof Text>;
 type LabelOwnProps = Polymorphic.OwnProps<typeof LabelPrimitive.Root> &
   LabelCSSProp &

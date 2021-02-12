@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -8,7 +8,7 @@ export const RadioCardGroup = styled(RadioGroupPrimitive.Root, {
   display: 'block',
 });
 
-type RadioCSSProp = Pick<StitchesProps<typeof StyledRadio>, 'css'>;
+type RadioCSSProp = { css?: CSS };
 type RadioVariants = StitchesVariants<typeof StyledRadio>;
 type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
   RadioCSSProp &
@@ -21,7 +21,7 @@ const StyledRadioButton = styled('div', {
   borderRadius: '$round',
   width: 25,
   height: 25,
-  boxShadow: 'inset 0 0 0 1px $gray600',
+  boxShadow: 'inset 0 0 0 1px $colors$gray600',
   flexShrink: 0,
   mr: '$3',
 });
@@ -36,15 +36,15 @@ const StyledRadioIndicator = styled('div', {
 
 const StyledRadio = styled(RadioGroupPrimitive.Item, {
   borderRadius: '$2',
-  boxShadow: 'inset 0 0 0 1px $gray600',
+  boxShadow: 'inset 0 0 0 1px $colors$gray600',
   p: '$3',
 
-  ':hover': {
-    boxShadow: 'inset 0 0 0 1px $gray700',
+  '&:hover': {
+    boxShadow: 'inset 0 0 0 1px $colors$gray700',
   },
 
   '&[data-state="checked"]': {
-    boxShadow: 'inset 0 0 0 1px $blue700, 0 0 0 1px $blue700 !important',
+    boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700 !important',
     [`& ${StyledRadioIndicator}`]: {
       transform: 'scale(1)',
     },

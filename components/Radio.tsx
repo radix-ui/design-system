@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -8,7 +8,7 @@ export const RadioGroup = styled(RadioGroupPrimitive.Root, {
   display: 'block',
 });
 
-type RadioCSSProp = Pick<StitchesProps<typeof StyledRadio>, 'css'>;
+type RadioCSSProp = { css?: CSS };
 type RadioVariants = StitchesVariants<typeof StyledRadio>;
 type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
   RadioCSSProp &
@@ -54,18 +54,18 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
 
   borderRadius: '50%',
   color: '$hiContrast',
-  boxShadow: 'inset 0 0 0 1px $gray600',
+  boxShadow: 'inset 0 0 0 1px $colors$gray600',
   overflow: 'hidden',
   width: '$3',
   height: '$3',
 
   '&:hover': {
-    boxShadow: 'inset 0 0 0 1px $gray700',
+    boxShadow: 'inset 0 0 0 1px $colors$gray700',
   },
   '&:focus': {
     outline: 'none',
     borderColor: '$red600',
-    boxShadow: 'inset 0 0 0 1px $blue800, 0 0 0 1px $blue800',
+    boxShadow: 'inset 0 0 0 1px $colors$blue800, 0 0 0 1px $colors$blue800',
   },
 
   variants: {

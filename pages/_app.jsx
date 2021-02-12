@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import '../styles.css';
-import { darkThemeClass } from '../stitches.config';
+import { darkTheme } from '../stitches.config';
 import { Button } from '../components/Button';
 
 function App({ Component, pageProps }) {
@@ -16,10 +16,7 @@ function App({ Component, pageProps }) {
     <div>
       <Head>
         <title>Design System</title>
-        <link
-          rel="stylesheet"
-          href="https://develop.modulz.app/fonts/fonts.css"
-        />
+        <link rel="stylesheet" href="https://develop.modulz.app/fonts/fonts.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
@@ -28,9 +25,7 @@ function App({ Component, pageProps }) {
       <Button
         variant="ghost"
         style={{ position: 'fixed', zIndex: 999, left: 15, top: 15 }}
-        onClick={() =>
-          setTheme(theme === 'theme-default' ? darkThemeClass : 'theme-default')
-        }
+        onClick={() => setTheme(theme === 'theme-default' ? darkTheme : 'theme-default')}
       >
         Toggle theme
       </Button>

@@ -1,19 +1,22 @@
 import React from 'react';
 import { CheckIcon } from '@radix-ui/react-icons';
-import { styled, StitchesProps } from '../stitches.config';
+import { styled, CSS } from '../stitches.config';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { menuCss, separatorCss, itemCss, interactiveItemCss, labelCss } from './Menu';
 import { Box } from './Box';
-import { Panel } from './Panel';
+import { panelStyles } from './Panel';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 export const DropdownMenu = DropdownMenuPrimitive.Root;
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 
-const StyledDropdownMenuContent = styled(DropdownMenuPrimitive.Content, menuCss);
+const StyledDropdownMenuContent = styled(DropdownMenuPrimitive.Content, {
+  ...menuCss,
+  ...panelStyles,
+});
 
-type MenuCSSProp = Pick<StitchesProps<typeof StyledDropdownMenuContent>, 'css'>;
+type MenuCSSProp = { css?: CSS };
 type MenuOwnProps = Polymorphic.OwnProps<typeof DropdownMenuPrimitive.Content> & MenuCSSProp;
 type MenuComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof DropdownMenuPrimitive.Content>,
@@ -21,7 +24,7 @@ type MenuComponent = Polymorphic.ForwardRefComponent<
 >;
 
 export const DropdownMenuContent = React.forwardRef((props, forwardedRef) => (
-  <StyledDropdownMenuContent as={Panel} {...props} ref={forwardedRef} />
+  <StyledDropdownMenuContent {...props} ref={forwardedRef} />
 )) as MenuComponent;
 
 export const DropdownMenuSeparator = styled(DropdownMenuPrimitive.Separator, separatorCss);
@@ -30,7 +33,7 @@ export const DropdownMenuItem = styled(DropdownMenuPrimitive.Item, itemCss);
 
 const StyledMenuRadioItem = styled(DropdownMenuPrimitive.RadioItem, interactiveItemCss);
 
-type MenuRadioItemCSSProp = Pick<StitchesProps<typeof StyledMenuRadioItem>, 'css'>;
+type MenuRadioItemCSSProp = { css?: CSS };
 type MenuRadioItemOwnProps = Polymorphic.OwnProps<typeof DropdownMenuPrimitive.RadioItem> &
   MenuRadioItemCSSProp;
 type MenuRadioItemComponent = Polymorphic.ForwardRefComponent<
@@ -51,7 +54,7 @@ export const DropdownMenuRadioItem = React.forwardRef(({ children, ...props }, f
 
 const StyledMenuCheckboxItem = styled(DropdownMenuPrimitive.CheckboxItem, interactiveItemCss);
 
-type MenuCheckboxItemCSSProp = Pick<StitchesProps<typeof StyledMenuCheckboxItem>, 'css'>;
+type MenuCheckboxItemCSSProp = { css?: CSS };
 type MenuCheckboxItemOwnProps = Polymorphic.OwnProps<typeof DropdownMenuPrimitive.CheckboxItem> &
   MenuCheckboxItemCSSProp;
 type MenuCheckboxItemComponent = Polymorphic.ForwardRefComponent<

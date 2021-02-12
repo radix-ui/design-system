@@ -1,11 +1,11 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'button';
 
-type IconButtonCSSProp = Pick<StitchesProps<typeof StyledIconButton>, 'css'>;
+type IconButtonCSSProp = { css?: CSS };
 type IconButtonVariants = StitchesVariants<typeof StyledIconButton>;
 type IconButtonOwnProps = IconButtonCSSProp & IconButtonVariants;
 
@@ -49,7 +49,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
   },
   '&&:focus': {
     borderColor: '$gray700',
-    boxShadow: '0 0 0 1px $gray700',
+    boxShadow: '0 0 0 1px $colors$gray700',
   },
   '&:disabled': {
     pointerEvents: 'none',
@@ -80,7 +80,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
           backgroundColor: '$gray200',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
         },
         '&:active': {
           backgroundColor: '$gray300',
@@ -96,7 +96,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
         '&:focus': {
           borderColor: '$gray700',
           boxShadow:
-            '0 0 0 1px $gray700, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
+            '0 0 0 1px $colors$gray700, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
         },
         '&:active': {
           backgroundColor: '$gray300',

@@ -1,11 +1,11 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'code';
 
-type CodeCSSProp = Pick<StitchesProps<typeof StyledCode>, 'css'>;
+type CodeCSSProp = { css?: CSS };
 type CodeVariants = StitchesVariants<typeof StyledCode>;
 type CodeOwnProps = CodeCSSProp & CodeVariants;
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'button';
 
-type ButtonCSSProp = Pick<StitchesProps<typeof StyledButton>, 'css'>;
+type ButtonCSSProp = { css?: CSS };
 type ButtonVariants = StitchesVariants<typeof StyledButton>;
 type ButtonOwnProps = ButtonCSSProp & ButtonVariants;
 
@@ -33,7 +33,7 @@ const StyledButton = styled(DEFAULT_TAG, {
   // Custom
   backgroundColor: '$loContrast',
   border: 'none',
-  boxShadow: 'inset 0 0 0 1px $gray600',
+  boxShadow: 'inset 0 0 0 1px $colors$gray600',
   borderRadius: '$2',
   color: '$hiContrast',
   height: '$5',
@@ -44,18 +44,18 @@ const StyledButton = styled(DEFAULT_TAG, {
   fontVariantNumeric: 'tabular-nums',
 
   '&:hover': {
-    boxShadow: 'inset 0 0 0 1px $gray700',
+    boxShadow: 'inset 0 0 0 1px $colors$gray700',
   },
   '&:active': {
     backgroundColor: '$gray100',
-    boxShadow: 'inset 0 0 0 1px $gray700',
+    boxShadow: 'inset 0 0 0 1px $colors$gray700',
   },
   '&:focus': {
-    boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
+    boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
   },
-  ':disabled': {
+  '&:disabled': {
     backgroundColor: '$gray100',
-    boxShadow: 'inset 0 0 0 1px $gray600',
+    boxShadow: 'inset 0 0 0 1px $colors$gray600',
     color: '$gray700',
     pointerEvents: 'none',
   },
@@ -76,46 +76,46 @@ const StyledButton = styled(DEFAULT_TAG, {
     variant: {
       blue: {
         backgroundColor: '$blue100',
-        boxShadow: 'inset 0 0 0 1px $blue600',
+        boxShadow: 'inset 0 0 0 1px $colors$blue600',
         color: '$blue900',
         '&:hover': {
-          boxShadow: 'inset 0 0 0 1px $blue700',
+          boxShadow: 'inset 0 0 0 1px $colors$blue700',
         },
         '&:active': {
           backgroundColor: '$blue200',
-          boxShadow: 'inset 0 0 0 1px $blue700',
+          boxShadow: 'inset 0 0 0 1px $colors$blue700',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $blue700, 0 0 0 1px $blue700',
+          boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
         },
       },
       green: {
         backgroundColor: '$green100',
-        boxShadow: 'inset 0 0 0 1px $green600',
+        boxShadow: 'inset 0 0 0 1px $colors$green600',
         color: '$green900',
         '&:hover': {
-          boxShadow: 'inset 0 0 0 1px $green700',
+          boxShadow: 'inset 0 0 0 1px $colors$green700',
         },
         '&:active': {
           backgroundColor: '$green200',
-          boxShadow: 'inset 0 0 0 1px $green700',
+          boxShadow: 'inset 0 0 0 1px $colors$green700',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $green700, 0 0 0 1px $green700',
+          boxShadow: 'inset 0 0 0 1px $colors$green700, 0 0 0 1px $colors$green700',
         },
       },
       red: {
         color: '$red900',
         '&:hover': {
           backgroundColor: '$red100',
-          boxShadow: 'inset 0 0 0 1px $red700',
+          boxShadow: 'inset 0 0 0 1px $colors$red700',
         },
         '&:active': {
           backgroundColor: '$red200',
-          boxShadow: 'inset 0 0 0 1px $red700',
+          boxShadow: 'inset 0 0 0 1px $colors$red700',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $red700, 0 0 0 1px $red700',
+          boxShadow: 'inset 0 0 0 1px $colors$red700, 0 0 0 1px $colors$red700',
         },
       },
       ghost: {
@@ -167,33 +167,33 @@ const StyledButton = styled(DEFAULT_TAG, {
     state: {
       active: {
         backgroundColor: '$gray300',
-        boxShadow: 'inset 0 0 0 1px $gray700',
+        boxShadow: 'inset 0 0 0 1px $colors$gray700',
         color: '$gray900',
         '&:hover': {
           backgroundColor: '$gray400',
-          boxShadow: 'inset 0 0 0 1px $gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$gray700',
         },
         '&:active': {
           backgroundColor: '$gray400',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
         },
       },
       waiting: {
         backgroundColor: '$gray300',
-        boxShadow: 'inset 0 0 0 1px $gray700',
+        boxShadow: 'inset 0 0 0 1px $colors$gray700',
         color: 'transparent',
         pointerEvents: 'none',
         '&:hover': {
           backgroundColor: '$gray400',
-          boxShadow: 'inset 0 0 0 1px $gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$gray700',
         },
         '&:active': {
           backgroundColor: '$gray400',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$gray700',
         },
       },
     },

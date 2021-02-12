@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, StitchesVariants, StitchesProps } from '../stitches.config';
+import { styled, StitchesVariants, CSS } from '../stitches.config';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { Box } from './Box';
 import { Status } from './Status';
@@ -9,7 +9,7 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 type StatusVariants = StitchesVariants<typeof Status>;
 type StatusColors = Pick<StatusVariants, 'color'>;
 
-type AvatarCSSProp = Pick<StitchesProps<typeof StyledAvatar>, 'css'>;
+type AvatarCSSProp = { css?: CSS };
 type AvatarVariants = StitchesVariants<typeof StyledAvatar>;
 type AvatarOwnProps = Polymorphic.OwnProps<typeof AvatarPrimitive.Root> &
   AvatarCSSProp &
@@ -210,7 +210,7 @@ const AvatarFallback = styled(AvatarPrimitive.Fallback, {
 });
 
 export const AvatarNestedItem = styled('div', {
-  boxShadow: '0 0 0 2px $loContrast',
+  boxShadow: '0 0 0 2px $colors$loContrast',
   borderRadius: '50%',
 });
 
@@ -251,7 +251,7 @@ export const Avatar = React.forwardRef(
               position: 'absolute',
               bottom: '0',
               right: '0',
-              boxShadow: '0 0 0 3px $loContrast',
+              boxShadow: '0 0 0 3px $colors$loContrast',
               borderRadius: '$round',
               mr: '-3px',
               mb: '-3px',

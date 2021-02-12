@@ -1,14 +1,8 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, StitchesVariants, CSS } from '../stitches.config';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-type SeparatorCSSProp = Pick<StitchesProps<typeof StyledSeparator>, 'css'>;
-type SeparatorVariants = StitchesVariants<typeof StyledSeparator>;
-type SeparatorOwnProps = Polymorphic.OwnProps<typeof SeparatorPrimitive.Root> &
-  SeparatorCSSProp &
-  SeparatorVariants;
 
 const StyledSeparator = styled(SeparatorPrimitive.Root, {
   border: 'none',
@@ -45,11 +39,17 @@ const StyledSeparator = styled(SeparatorPrimitive.Root, {
   },
 });
 
+type ButtonCSSProp = { css?: CSS };
+type SeparatorVariants = StitchesVariants<typeof StyledSeparator>;
+type SeparatorOwnProps = Polymorphic.OwnProps<typeof SeparatorPrimitive.Root> &
+  ButtonCSSProp &
+  SeparatorVariants;
+
 type SeparatorComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof SeparatorPrimitive.Root>,
   SeparatorOwnProps
 >;
 
-export const Separator = React.forwardRef((props, forwardedRef) => {
-  return <StyledSeparator {...props} ref={forwardedRef} />;
-}) as SeparatorComponent;
+export const Separator = React.forwardRef((props, forwardedRef) => (
+  <StyledSeparator {...props} ref={forwardedRef} />
+)) as SeparatorComponent;

@@ -1,4 +1,4 @@
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 export const Text = styled('span', {
   // Reset

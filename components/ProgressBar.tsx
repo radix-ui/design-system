@@ -1,10 +1,10 @@
 import React from 'react';
-import { styled, css, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, css, keyframes, CSS, StitchesVariants } from '../stitches.config';
 import * as ProgressPrimitive from '@radix-ui/react-progress';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-const indeterminateProgress = css.keyframes({
+const indeterminateProgress = keyframes({
   '0%': {
     transform: 'scaleX(1) translateX(-100%)',
     transformOrigin: 'left',
@@ -76,7 +76,7 @@ const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {
   transition: 'transform 150ms cubic-bezier(0.65, 0, 0.35, 1)',
 });
 
-type ProgressBarCSSProp = Pick<StitchesProps<typeof StyledProgressBar>, 'css'>;
+type ProgressBarCSSProp = { css?: CSS };
 type ProgressBarVariants = StitchesVariants<typeof StyledProgressBar>;
 type ProgressBarOwnProps = Polymorphic.OwnProps<typeof ProgressPrimitive.Root> &
   ProgressBarCSSProp &

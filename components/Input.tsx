@@ -21,7 +21,7 @@ export const Input = styled('input', {
 
   // Custom
   backgroundColor: '$loContrast',
-  boxShadow: 'inset 0 0 0 1px $gray600',
+  boxShadow: 'inset 0 0 0 1px $colors$gray600',
   borderRadius: '$2',
   color: '$hiContrast',
   fontVariantNumeric: 'tabular-nums',
@@ -30,7 +30,7 @@ export const Input = styled('input', {
   px: '$1',
 
   '&:focus': {
-    boxShadow: 'inset 0px 0px 0px 1px $blue700, 0px 0px 0px 1px $blue700',
+    boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
   },
   '&::placeholder': {
     color: '$gray800',
@@ -48,7 +48,7 @@ export const Input = styled('input', {
     backgroundColor: '$gray100',
     // color: '$gray900',
     '&:focus': {
-      boxShadow: 'inset 0px 0px 0px 1px $gray600',
+      boxShadow: 'inset 0px 0px 0px 1px $colors$gray600',
     },
   },
 
@@ -74,24 +74,24 @@ export const Input = styled('input', {
       ghost: {
         boxShadow: 'none',
         '&:hover': {
-          boxShadow: 'inset 0 0 0 1px $gray600',
+          boxShadow: 'inset 0 0 0 1px $colors$gray600',
         },
         '&:focus': {
-          boxShadow: 'inset 0px 0px 0px 1px $blue700, 0px 0px 0px 1px $blue700',
+          boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
         },
       },
     },
     state: {
       invalid: {
-        boxShadow: 'inset 0 0 0 1px $red600',
+        boxShadow: 'inset 0 0 0 1px $colors$red600',
         '&:focus': {
-          boxShadow: 'inset 0px 0px 0px 1px $red700, 0px 0px 0px 1px $red700',
+          boxShadow: 'inset 0px 0px 0px 1px $colors$red700, 0px 0px 0px 1px $colors$red700',
         },
       },
       valid: {
-        boxShadow: 'inset 0 0 0 1px $green600',
+        boxShadow: 'inset 0 0 0 1px $colors$green600',
         '&:focus': {
-          boxShadow: 'inset 0px 0px 0px 1px $green700, 0px 0px 0px 1px $green700',
+          boxShadow: 'inset 0px 0px 0px 1px $colors$green700, 0px 0px 0px 1px $colors$green700',
         },
       },
     },

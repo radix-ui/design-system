@@ -1,11 +1,11 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'a';
 
-type TabLinkCSSProp = Pick<StitchesProps<typeof StyledTabLink>, 'css'>;
+type TabLinkCSSProp = { css?: CSS };
 type TabLinkVariants = StitchesVariants<typeof StyledTabLink>;
 type TabLinkOwnProps = TabLinkCSSProp & TabLinkVariants;
 

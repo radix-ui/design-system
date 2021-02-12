@@ -1,13 +1,13 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'section';
 
-type SectionCSSProp = Pick<StitchesProps<typeof StyledSection>, 'css'>;
+type ButtonCSSProp = { css?: CSS };
 type SectionVariants = StitchesVariants<typeof StyledSection>;
-type SectionOwnProps = SectionCSSProp & SectionVariants;
+type SectionOwnProps = ButtonCSSProp & SectionVariants;
 
 const StyledSection = styled(DEFAULT_TAG, {
   // Reset

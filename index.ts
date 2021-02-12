@@ -89,4 +89,4 @@ export { TreeItem } from './components/TreeItem';
 export { VerifiedBadge } from './components/VerifiedBadge';
 
 // Stitches
-export { css, styled, theme, darkTheme, darkThemeClass } from './stitches.config';
+export { css, styled, theme, darkTheme } from './stitches.config';

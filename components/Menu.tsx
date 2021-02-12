@@ -1,8 +1,8 @@
 import React from 'react';
 import { CheckIcon } from '@radix-ui/react-icons';
-import { styled, StitchesProps } from '../stitches.config';
+import { styled, CSS } from '../stitches.config';
 import { Box } from './Box';
-import { Panel } from './Panel';
+import { panelStyles } from './Panel';
 import * as MenuPrimitive from '@radix-ui/react-menu';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -60,9 +60,9 @@ export const separatorCss: any = {
   backgroundColor: '$gray500',
 };
 
-const StyledMenu = styled(MenuPrimitive.Root, menuCss);
+const StyledMenu = styled(MenuPrimitive.Root, { ...menuCss, ...panelStyles });
 
-type MenuCSSProp = Pick<StitchesProps<typeof StyledMenu>, 'css'>;
+type MenuCSSProp = { css?: CSS };
 type MenuOwnProps = Polymorphic.OwnProps<typeof MenuPrimitive.Root> & MenuCSSProp;
 type MenuComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof MenuPrimitive.Root>,
@@ -70,7 +70,7 @@ type MenuComponent = Polymorphic.ForwardRefComponent<
 >;
 
 export const Menu = React.forwardRef((props, forwardedRef) => (
-  <StyledMenu as={Panel} {...props} ref={forwardedRef} />
+  <StyledMenu {...props} ref={forwardedRef} />
 )) as MenuComponent;
 
 export const MenuSeparator = styled(MenuPrimitive.Separator, separatorCss);
@@ -79,7 +79,7 @@ export const MenuItem = styled(MenuPrimitive.Item, itemCss);
 
 const StyledMenuRadioItem = styled(MenuPrimitive.RadioItem, interactiveItemCss);
 
-type MenuRadioItemCSSProp = Pick<StitchesProps<typeof StyledMenuRadioItem>, 'css'>;
+type MenuRadioItemCSSProp = { css?: CSS };
 type MenuRadioItemOwnProps = Polymorphic.OwnProps<typeof MenuPrimitive.RadioItem> &
   MenuRadioItemCSSProp;
 type MenuRadioItemComponent = Polymorphic.ForwardRefComponent<
@@ -100,7 +100,7 @@ export const MenuRadioItem = React.forwardRef(({ children, ...props }, forwarded
 
 const StyledMenuCheckboxItem = styled(MenuPrimitive.CheckboxItem, interactiveItemCss);
 
-type MenuCheckboxItemCSSProp = Pick<StitchesProps<typeof StyledMenuCheckboxItem>, 'css'>;
+type MenuCheckboxItemCSSProp = { css?: CSS };
 type MenuCheckboxItemOwnProps = Polymorphic.OwnProps<typeof MenuPrimitive.CheckboxItem> &
   MenuCheckboxItemCSSProp;
 type MenuCheckboxItemComponent = Polymorphic.ForwardRefComponent<

@@ -1,6 +1,6 @@
-import { styled, css } from '../stitches.config';
+import { styled, css, keyframes } from '../stitches.config';
 
-const pulse = css.keyframes({
+const pulse = keyframes({
   '0%': { opacity: 0 },
   '100%': { opacity: '100%' },
 });

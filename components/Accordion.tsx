@@ -31,7 +31,7 @@ const StyledButton = styled(AccordionPrimitive.Button, {
 
   '&:focus': {
     outline: 'none',
-    boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
+    boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
   },
 
   svg: {

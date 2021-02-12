@@ -53,34 +53,28 @@ export const Kbd = styled('kbd', {
       },
     },
   },
+
+  compoundVariants: [
+    {
+      size: '1',
+      width: 'shift',
+      css: {
+        width: '3em',
+      },
+    },
+    {
+      size: '1',
+      width: 'command',
+      css: {
+        width: '2.5em',
+      },
+    },
+    {
+      size: '1',
+      width: 'space',
+      css: {
+        width: '5em',
+      },
+    },
+  ],
 });
-
-Kbd.compoundVariant(
-  {
-    size: '1',
-    width: 'shift',
-  },
-  {
-    width: '3em',
-  }
-);
-
-Kbd.compoundVariant(
-  {
-    size: '1',
-    width: 'command',
-  },
-  {
-    width: '2.5em',
-  }
-);
-
-Kbd.compoundVariant(
-  {
-    size: '1',
-    width: 'space',
-  },
-  {
-    width: '5em',
-  }
-);

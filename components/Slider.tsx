@@ -55,7 +55,7 @@ const SliderThumb = styled(SliderPrimitive.Thumb, {
     transition: 'transform 200ms cubic-bezier(0.22, 1, 0.36, 1)',
   },
 
-  ':focus': {
+  '&:focus': {
     '::after': {
       transform: 'scale(2)',
     },
@@ -77,7 +77,7 @@ export const StyledSlider = styled(SliderPrimitive.Root, {
     width: 15,
   },
 
-  ':hover': {
+  '&:hover': {
     [`& ${SliderTrack}`]: {
       backgroundColor: '$gray700',
     },

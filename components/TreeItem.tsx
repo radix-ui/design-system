@@ -1,11 +1,11 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'div';
 
-type TreeItemCSSProp = Pick<StitchesProps<typeof StyledTreeItem>, 'css'>;
+type TreeItemCSSProp = { css?: CSS };
 type TreeItemVariants = StitchesVariants<typeof StyledTreeItem>;
 type TreeItemOwnProps = TreeItemCSSProp & TreeItemVariants;
 
