@@ -64,6 +64,7 @@ const StyledCard = styled(DEFAULT_TAG, {
         },
         '&:active': {
           transform: 'translateY(0)',
+          transition: 'none',
           '&::before': {
             boxShadow:
               '0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)',
