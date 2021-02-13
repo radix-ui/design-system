@@ -58,7 +58,7 @@ const StyledCard = styled(DEFAULT_TAG, {
         '&:hover': {
           backgroundColor: '$panel',
           transform: 'translateY(-2px)',
-          '::before': {
+          '&::before': {
             opacity: '1',
           },
         },
