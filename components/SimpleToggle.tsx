@@ -34,10 +34,8 @@ const StyledSimpleToggle = styled(ToggleButtonPrimitive.Root, {
   '&::after': {
     boxSizing: 'border-box',
   },
-
   height: '$5',
   width: '$5',
-  transition: 'all 40ms linear',
   backgroundColor: 'transparent',
   '&:hover': {
     backgroundColor: '$gray200',
