@@ -33,14 +33,11 @@ const StyledIconButton = styled(DEFAULT_TAG, {
   '&::after': {
     boxSizing: 'border-box',
   },
-
-  // Custom
   backgroundColor: '$loContrast',
   border: '1px solid $gray600',
   borderRadius: '$2',
   height: '$5',
   width: '$5',
-  transition: 'all 40ms linear',
   '&:hover': {
     borderColor: '$gray700',
   },
