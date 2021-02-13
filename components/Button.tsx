@@ -50,7 +50,10 @@ const StyledButton = styled(DEFAULT_TAG, {
     backgroundColor: '$gray100',
     boxShadow: 'inset 0 0 0 1px $colors$gray700',
   },
-  '&:focus': {
+  // '&:focus': {
+  //   boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
+  // },
+  '&:focus-visible': {
     boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
   },
   '&:disabled': {

@@ -131,14 +131,14 @@ function Home() {
               <form>
                 <Input
                   type="email"
-                  size="2"
+                  size="3"
                   placeholder="Email"
                   autoComplete="off"
                   css={{ mb: '$3' }}
                 />
                 <Input
                   type="password"
-                  size="2"
+                  size="3"
                   placeholder="Password"
                   autoComplete="off"
                   css={{ mb: '$3' }}

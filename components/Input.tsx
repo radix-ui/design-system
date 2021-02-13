@@ -1,3 +1,4 @@
+import { inherits } from 'util';
 import { styled } from '../stitches.config';
 
 export const Input = styled('input', {
@@ -29,6 +30,10 @@ export const Input = styled('input', {
   fontSize: '$1',
   px: '$1',
 
+  '&:-webkit-autofill::first-line': {
+    fontFamily: '$untitled',
+  },
+
   '&:focus': {
     boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
   },
@@ -58,16 +63,25 @@ export const Input = styled('input', {
         height: '$5',
         fontSize: '$1',
         px: '$1',
+        '&:-webkit-autofill::first-line': {
+          fontSize: '$1'
+        },
       },
       '2': {
         height: '$5',
         fontSize: '$2',
         px: '$1',
+        '&:-webkit-autofill::first-line': {
+          fontSize: '$2'
+        },
       },
       '3': {
         height: '$6',
         fontSize: '$3',
         px: '$2',
+        '&:-webkit-autofill::first-line': {
+          fontSize: '$3'
+        },
       },
     },
     variant: {
