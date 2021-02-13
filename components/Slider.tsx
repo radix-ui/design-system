@@ -41,7 +41,7 @@ const SliderThumb = styled(SliderPrimitive.Thumb, {
   boxShadow: '0 0 1px rgba(0,0,0,.3), 0 1px 4px rgba(0,0,0,.15)',
   borderRadius: '$round',
 
-  '::after': {
+  '&::after': {
     content: '""',
     position: 'absolute',
     top: 0,
@@ -56,7 +56,7 @@ const SliderThumb = styled(SliderPrimitive.Thumb, {
   },
 
   '&:focus': {
-    '::after': {
+    '&::after': {
       transform: 'scale(2)',
     },
   },
