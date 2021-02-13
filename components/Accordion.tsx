@@ -8,10 +8,10 @@ import * as Polymorphic from '@radix-ui/react-polymorphic';
 const StyledAccordion = styled(AccordionPrimitive.Root, {});
 
 const StyledItem = styled(AccordionPrimitive.Item, {
-  borderTop: '1px solid $gray500',
+  borderTop: '1px solid $colors$gray500',
 
   '&:last-of-type': {
-    borderBottom: '1px solid $gray500',
+    borderBottom: '1px solid $colors$gray500',
   },
 });
 
