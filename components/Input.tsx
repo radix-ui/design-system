@@ -30,12 +30,20 @@ export const Input = styled('input', {
   fontSize: '$1',
   px: '$1',
 
+  '&:-webkit-autofill': {
+    boxShadow: 'inset 0 0 0 1px $colors$blue500, inset 0 0 0 100px $colors$blue200',
+  },
+
   '&:-webkit-autofill::first-line': {
     fontFamily: '$untitled',
+    color: '$hiContrast',
   },
 
   '&:focus': {
     boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
+    '&:-webkit-autofill': {
+      boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700, inset 0 0 0 100px $colors$blue200',
+    },
   },
   '&::placeholder': {
     color: '$gray800',
