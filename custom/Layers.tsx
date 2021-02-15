@@ -9,7 +9,7 @@ export function Layers() {
     <Box
       css={{
         position: 'fixed',
-        top: '36px',
+        top: '0',
         left: '0',
         bottom: '0',
         width: '250px',

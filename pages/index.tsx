@@ -49,7 +49,8 @@ import { Subtitle } from '../components/Subtitle';
 import { Heading } from '../components/Heading';
 import { Subheading } from '../components/Subheading';
 import { Paragraph } from '../components/Paragraph';
-// import { Color } from '../custom/Color';
+import { Layers } from '../custom/Layers';
+import { Properties } from '../custom/Properties';
 import { Avatars } from '../custom/Avatars';
 import { Kbds } from '../custom/Kbds';
 import { Menus } from '../custom/Menus';
@@ -321,12 +322,17 @@ function Home() {
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="6" as="p" color="gold" css={{ lineHeight: '30px' }}>
+                <Text size="6" as="p" color="brown" css={{ lineHeight: '30px' }}>
                   The quick brown fox jumped over the lazy dog.
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
                 <Text size="6" as="p" color="bronze" css={{ lineHeight: '30px' }}>
+                  The quick brown fox jumped over the lazy dog.
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="6" as="p" color="gold" css={{ lineHeight: '30px' }}>
                   The quick brown fox jumped over the lazy dog.
                 </Text>
               </Flex>
