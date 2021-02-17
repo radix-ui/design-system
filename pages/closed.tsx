@@ -84,12 +84,15 @@ export default function Closed() {
       <Text size="5" css={{ mt: '$7', mb: '$4' }}>
         Avatar
       </Text>
+
       <Badge size="2">sss</Badge>
       <Checkbox defaultChecked />
+
       <RadioGroup>
         <Radio value="a" css={{ mr: '$3' }} />
         <Radio value="b" css={{ mr: '$3' }} />
       </RadioGroup>
+
       <RadioGroup>
         <Radio value="a" size="2" css={{ mr: '$3' }} />
         <Radio value="b" size="2" css={{ mr: '$3' }} />
@@ -137,6 +140,7 @@ export default function Closed() {
           </Flex>
         </RadioCard>
       </RadioCardGroup>
+
       <Flex css={{ gap: '$4', mb: '$4' }}>
         {[1, 2, 3, 4, 5, 6].map((size) => (
           <Avatar
@@ -149,6 +153,7 @@ export default function Closed() {
           />
         ))}
       </Flex>
+
       <Flex css={{ gap: '$4', mb: '$4' }}>
         {[1, 2, 3, 4, 5, 6].map((size) => (
           <Avatar
@@ -162,6 +167,7 @@ export default function Closed() {
           />
         ))}
       </Flex>
+
       <Flex css={{ gap: '$4' }}>
         {[1, 2, 3, 4, 5, 6].map((size) => (
           <Avatar
@@ -173,9 +179,11 @@ export default function Closed() {
           />
         ))}
       </Flex>
+
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         Dialog
       </Text>
+
       <Dialog>
         <DialogTrigger as={Button}>Open Dialog</DialogTrigger>
         <DialogContent>
@@ -186,9 +194,11 @@ export default function Closed() {
           <DialogClose as={Button}>Bye.</DialogClose>
         </DialogContent>
       </Dialog>
+
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         AlertDialog
       </Text>
+
       <AlertDialog>
         <AlertDialogTrigger as={Button}>Open AlertDialog</AlertDialogTrigger>
         <AlertDialogContent>
@@ -206,12 +216,14 @@ export default function Closed() {
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         Popover
       </Text>
+
       <Popover>
         <PopoverTrigger as={Button}>Open Popover</PopoverTrigger>
         <PopoverContent css={{ padding: '$4' }}>
           <Text>Hello, from Popover</Text>
         </PopoverContent>
       </Popover>
+
       <Popover>
         <PopoverTrigger as={Button} css={{ ml: '$4' }}>
           Open Popover (top)
@@ -220,6 +232,7 @@ export default function Closed() {
           <Text>Hello, from Popover</Text>
         </PopoverContent>
       </Popover>
+
       <Popover>
         <PopoverTrigger as={Button} css={{ ml: '$4' }}>
           With close button
@@ -235,6 +248,7 @@ export default function Closed() {
           </PopoverClose>
         </PopoverContent>
       </Popover>
+
       <Popover>
         <PopoverTrigger as={Button} css={{ ml: '$4' }}>
           Without arrow
@@ -243,33 +257,42 @@ export default function Closed() {
           <Text>Hello, from Popover</Text>
         </PopoverContent>
       </Popover>
+
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         Tooltip
       </Text>
+
       <Tooltip content="Tooltip shows on top by default.">
         <Button>Top</Button>
       </Tooltip>
+
       <Tooltip content="You get the idea." side="bottom">
         <Button css={{ ml: '$4' }}>Bottom</Button>
       </Tooltip>
+
       <Tooltip content="You get the idea." side="right">
         <Button css={{ ml: '$4' }}>Right</Button>
       </Tooltip>
+
       <Tooltip content="You get the idea." side="left">
         <Button css={{ ml: '$4' }}>Left</Button>
       </Tooltip>
+
       <Tooltip content="This is a really long paragraph of text, to demonstrate how it looks inside a Tooltip. The tooltip has a multiline prop which can be applied to increase the line height and set a max width. Give it a go and see how it works. Cheers.">
         <Button css={{ ml: '$4' }}>Long text</Button>
       </Tooltip>
+
       <Tooltip
         content="This is a really long paragraph of text, to demonstrate how it looks inside a Tooltip. The tooltip has a multiline prop which can be applied to increase the line height and set a max width. Give it a go and see how it works. Cheers."
         multiline
       >
         <Button css={{ ml: '$4' }}>Long text with multiline</Button>
       </Tooltip>
+
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         ProgressBar
       </Text>
+
       <Box css={{ mb: '$4' }}>
         <ProgressBar max={100} value={0} />
       </Box>
@@ -282,9 +305,11 @@ export default function Closed() {
       <Box css={{ mb: '$4' }}>
         <ProgressBar max={100} value={100} />
       </Box>
+
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         Tabs
       </Text>
+
       <Tabs defaultValue="tab-one">
         <TabsList>
           <TabsTab value="tab-one">
@@ -310,9 +335,11 @@ export default function Closed() {
           <Text>Panel 3</Text>
         </TabsPanel>
       </Tabs>
+
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         Accordion
       </Text>
+
       <Accordion>
         <AccordionItem value="accordion-one">
           <AccordionButton>
@@ -339,21 +366,29 @@ export default function Closed() {
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
+
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         Label
       </Text>
+
       <Label size="3">Label</Label>
+
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         Switch
       </Text>
+
       <Switch />
+
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         SimpleToggle
       </Text>
+
       <SimpleToggle />
+
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
         Slider
       </Text>
+
       <Flex css={{ gap: '$4' }}>
         <Slider defaultValue={[25]} />
         <Slider defaultValue={[25, 75]} />
