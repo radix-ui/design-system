@@ -1289,10 +1289,10 @@
     "@radix-ui/react-utils" "0.0.5"
     "@radix-ui/utils" "0.0.3"
 
-"@radix-ui/react-icons@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-icons/-/react-icons-1.0.1.tgz#37de40b8b4f3a8197ac1d29d04870e4a68f5c5b1"
-  integrity sha512-EKEB7aL4FaQyK77ff8hhl+XSIUE8wQ56pHh9XnJpuwXbYSDiYELQtbS+YNFo7KJJUDre6RVFmibc223SoUxozA==
+"@radix-ui/react-icons@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-icons/-/react-icons-1.0.2.tgz#e3590564d408438e1531d6d9038d580dc34bb6f5"
+  integrity sha512-6AAdgmQG6PZX7zL/kD4RGwTxXEiM4W2yiXQNZsaLcjKQYwLyUaMzZGsXFe2I0H6jp1a65uFphxmvDwROficOrg==
 
 "@radix-ui/react-label@0.0.5":
   version "0.0.5"
