@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from '../stitches.config';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
+import { Slot } from '@radix-ui/react-slot';
 import { Box } from './Box';
 import { Text } from './Text';
 
@@ -37,19 +38,15 @@ export function Tooltip({
 }: TooltipProps) {
   return (
     <TooltipPrimitive.Root open={open} defaultOpen={defaultOpen} onOpenChange={onOpenChange}>
-      <TooltipPrimitive.Trigger
-        as={React.forwardRef((props, forwardedRef) =>
-          React.cloneElement(children, { ...props, ref: forwardedRef })
-        )}
-      />
+      <TooltipPrimitive.Trigger as={Slot}>{children}</TooltipPrimitive.Trigger>
 
-      <Content side="top" align="center" {...props} multiline={multiline}>
+      <Content side="top" align="center" sideOffset={5} {...props} multiline={multiline}>
         <Text
           size="2"
           as="p"
           css={{
             color: '$loContrast',
-            lineHeight: multiline ? '1.5' : undefined,
+            lineHeight: multiline ? '20px' : undefined,
           }}
         >
           {content}

@@ -98,6 +98,18 @@ export default function Closed() {
         <Radio value="b" size="2" css={{ mr: '$3' }} />
       </RadioGroup>
 
+      <Box css={{ my: '$2' }}>
+        <Text size="2">Radio group with Tooltip</Text>
+        <RadioGroup>
+          <Tooltip content="Tooltip A">
+            <Radio value="a" css={{ mr: '$3' }} />
+          </Tooltip>
+          <Tooltip content="Tooltip B">
+            <Radio value="b" css={{ mr: '$3' }} />
+          </Tooltip>
+        </RadioGroup>
+      </Box>
+
       <RadioCardGroup defaultValue="1">
         <RadioCard value="1" css={{ mb: '$2' }}>
           <Flex css={{ alignItems: 'center' }}>
