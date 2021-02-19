@@ -1,15 +1,19 @@
 import React from 'react';
-import { Text } from './Text';
+import { StyledText } from './Text';
+import { StitchesVariants, CSS } from '../stitches.config';
 
 import * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'h2';
 
-type SubtitleOwnProps = Omit<React.ComponentProps<typeof Text>, 'size'>;
+type SubtitleCSSProp = { css?: CSS };
+type SubtitleVariants = Omit<StitchesVariants<typeof StyledText>, 'size'>;
+type SubtitleOwnProps = SubtitleCSSProp & SubtitleVariants;
+
 type SubtitleComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, SubtitleOwnProps>;
 
 export const Subtitle = React.forwardRef((props, forwardedRef) => (
-  <Text
+  <StyledText
     as={DEFAULT_TAG}
     {...props}
     ref={forwardedRef}

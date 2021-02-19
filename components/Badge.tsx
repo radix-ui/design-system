@@ -5,10 +5,6 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'span';
 
-type BadgeCSSProp = { css?: CSS };
-type BadgeVariants = StitchesVariants<typeof StyledBadge>;
-type BadgeOwnProps = BadgeCSSProp & BadgeVariants;
-
 const StyledBadge = styled(DEFAULT_TAG, {
   // Reset
   alignItems: 'center',
@@ -362,6 +358,11 @@ const StyledBadge = styled(DEFAULT_TAG, {
     },
   ],
 });
+
+type BadgeCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type BadgeVariants = Omit<StitchesVariants<typeof StyledBadge>, 'size'>;
+type BadgeOwnProps = BadgeCSSProp & BadgeVariants & { size?: any };
 
 type BadgeComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, BadgeOwnProps>;
 

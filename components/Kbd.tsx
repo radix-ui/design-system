@@ -1,6 +1,11 @@
-import { styled } from '../stitches.config';
+import React from 'react';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
-export const Kbd = styled('kbd', {
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
+
+const DEFAULT_TAG = 'span';
+
+const StyledKbd = styled('kbd', {
   boxSizing: 'border-box',
   display: 'inline-flex',
   alignItems: 'center',
@@ -78,3 +83,14 @@ export const Kbd = styled('kbd', {
     },
   ],
 });
+
+type KbdCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type KbdVariants = Omit<StitchesVariants<typeof StyledKbd>, 'size'>;
+type KbdOwnProps = KbdCSSProp & KbdVariants & { size?: any };
+
+type KbdComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, KbdOwnProps>;
+
+export const Kbd = React.forwardRef((props, forwardedRef) => {
+  return <StyledKbd {...props} ref={forwardedRef} />;
+}) as KbdComponent;

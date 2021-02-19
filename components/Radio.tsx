@@ -8,12 +8,6 @@ export const RadioGroup = styled(RadioGroupPrimitive.Root, {
   display: 'block',
 });
 
-type RadioCSSProp = { css?: CSS };
-type RadioVariants = StitchesVariants<typeof StyledRadio>;
-type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
-  RadioCSSProp &
-  RadioVariants;
-
 const StyledIndicator = styled(RadioGroupPrimitive.Indicator, {
   alignItems: 'center',
   display: 'flex',
@@ -88,6 +82,13 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
     },
   },
 });
+
+type RadioCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type RadioVariants = Omit<StitchesVariants<typeof StyledRadio>, 'size'>;
+type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
+  RadioCSSProp &
+  RadioVariants & { size?: any };
 
 type RadioComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof RadioGroupPrimitive.Item>,

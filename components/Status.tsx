@@ -1,6 +1,11 @@
-import { styled } from '../stitches.config';
+import React from 'react';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
-export const Status = styled('div', {
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
+
+const DEFAULT_TAG = 'div';
+
+const StyledStatus = styled(DEFAULT_TAG, {
   borderRadius: '50%',
   width: '5px',
   height: '5px',
@@ -35,3 +40,14 @@ export const Status = styled('div', {
     },
   },
 });
+
+type StatusCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type StatusVariants = Omit<StitchesVariants<typeof StyledStatus>, 'size'>;
+type StatusOwnProps = StatusCSSProp & StatusVariants & { size?: any };
+
+type StatusComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, StatusOwnProps>;
+
+export const Status = React.forwardRef((props, forwardedRef) => {
+  return <StyledStatus {...props} ref={forwardedRef} />;
+}) as StatusComponent;

@@ -5,10 +5,6 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'button';
 
-type ButtonCSSProp = { css?: CSS };
-type ButtonVariants = StitchesVariants<typeof StyledButton>;
-type ButtonOwnProps = ButtonCSSProp & ButtonVariants;
-
 const StyledButton = styled(DEFAULT_TAG, {
   // Reset
   alignItems: 'center',
@@ -199,6 +195,11 @@ const StyledButton = styled(DEFAULT_TAG, {
     },
   },
 });
+
+type ButtonCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type ButtonVariants = Omit<StitchesVariants<typeof StyledButton>, 'size'>;
+type ButtonOwnProps = ButtonCSSProp & ButtonVariants & { size?: any };
 
 type ButtonComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, ButtonOwnProps>;
 

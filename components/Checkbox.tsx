@@ -66,10 +66,11 @@ const StyledIndicator = styled(CheckboxPrimitive.Indicator, {
 });
 
 type CheckboxCSSProp = { css?: CSS };
-type CheckboxVariants = StitchesVariants<typeof StyledCheckbox>;
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type CheckboxVariants = Omit<StitchesVariants<typeof StyledCheckbox>, 'size'>;
 type CheckboxOwnProps = Polymorphic.OwnProps<typeof CheckboxPrimitive.Root> &
   CheckboxCSSProp &
-  CheckboxVariants;
+  CheckboxVariants & { size?: any };
 
 type CheckboxComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof CheckboxPrimitive.Root>,

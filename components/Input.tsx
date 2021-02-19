@@ -1,7 +1,11 @@
-import { inherits } from 'util';
-import { styled } from '../stitches.config';
+import React from 'react';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
-export const Input = styled('input', {
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
+
+const DEFAULT_TAG = 'input';
+
+const StyledInput = styled(DEFAULT_TAG, {
   // Reset
   appearance: 'none',
   borderWidth: '0',
@@ -42,7 +46,8 @@ export const Input = styled('input', {
   '&:focus': {
     boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
     '&:-webkit-autofill': {
-      boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700, inset 0 0 0 100px $colors$blue200',
+      boxShadow:
+        'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700, inset 0 0 0 100px $colors$blue200',
     },
   },
   '&::placeholder': {
@@ -72,7 +77,7 @@ export const Input = styled('input', {
         fontSize: '$1',
         px: '$1',
         '&:-webkit-autofill::first-line': {
-          fontSize: '$1'
+          fontSize: '$1',
         },
       },
       '2': {
@@ -80,7 +85,7 @@ export const Input = styled('input', {
         fontSize: '$2',
         px: '$1',
         '&:-webkit-autofill::first-line': {
-          fontSize: '$2'
+          fontSize: '$2',
         },
       },
       '3': {
@@ -88,7 +93,7 @@ export const Input = styled('input', {
         fontSize: '$3',
         px: '$2',
         '&:-webkit-autofill::first-line': {
-          fontSize: '$3'
+          fontSize: '$3',
         },
       },
     },
@@ -130,3 +135,14 @@ export const Input = styled('input', {
     },
   },
 });
+
+type InputCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type InputVariants = Omit<StitchesVariants<typeof StyledInput>, 'size'>;
+type InputOwnProps = InputCSSProp & InputVariants & { size?: any };
+
+type InputComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, InputOwnProps>;
+
+export const Input = React.forwardRef((props, forwardedRef) => {
+  return <StyledInput {...props} ref={forwardedRef} />;
+}) as InputComponent;

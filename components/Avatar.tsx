@@ -195,24 +195,25 @@ const StyledAvatarFallback = styled(AvatarPrimitive.Fallback, {
   },
 });
 
-export const StyledAvatarNestedItem = styled('div', {
+export const AvatarNestedItem = styled('div', {
   boxShadow: '0 0 0 2px $colors$loContrast',
   borderRadius: '50%',
 });
 
-export const StyledAvatarGroup = styled('div', {
+export const AvatarGroup = styled('div', {
   display: 'flex',
   flexDirection: 'row-reverse',
-  [`${StyledAvatarNestedItem}:nth-child(n+2)`]: {
+  [`${AvatarNestedItem}:nth-child(n+2)`]: {
     marginRight: '-$1',
   },
 });
 
-type StatusVariants = StitchesVariants<typeof Status>;
+type StatusVariants = React.ComponentProps<typeof Status>;
 type StatusColors = Pick<StatusVariants, 'color'>;
 
 type AvatarCSSProp = { css?: CSS };
-type AvatarVariants = StitchesVariants<typeof StyledAvatar>;
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type AvatarVariants = Omit<StitchesVariants<typeof StyledAvatar>, 'size'>;
 type AvatarOwnProps = Polymorphic.OwnProps<typeof AvatarPrimitive.Root> &
   AvatarCSSProp &
   AvatarVariants & {

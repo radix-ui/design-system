@@ -1,15 +1,19 @@
 import React from 'react';
-import { Text } from './Text';
+import { StyledText } from './Text';
+import { StitchesVariants, CSS } from '../stitches.config';
 
 import * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'p';
 
-type ParagraphOwnProps = Omit<React.ComponentProps<typeof Text>, 'size'>;
+type ParagraphCSSProp = { css?: CSS };
+type ParagraphVariants = Omit<StitchesVariants<typeof StyledText>, 'size'>;
+type ParagraphOwnProps = ParagraphCSSProp & ParagraphVariants;
+
 type ParagraphComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, ParagraphOwnProps>;
 
 export const Paragraph = React.forwardRef((props, forwardedRef) => (
-  <Text
+  <StyledText
     as={DEFAULT_TAG}
     {...props}
     ref={forwardedRef}

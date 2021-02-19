@@ -40,10 +40,11 @@ const StyledSeparator = styled(SeparatorPrimitive.Root, {
 });
 
 type ButtonCSSProp = { css?: CSS };
-type SeparatorVariants = StitchesVariants<typeof StyledSeparator>;
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type SeparatorVariants = Omit<StitchesVariants<typeof StyledSeparator>, 'size'>;
 type SeparatorOwnProps = Polymorphic.OwnProps<typeof SeparatorPrimitive.Root> &
   ButtonCSSProp &
-  SeparatorVariants;
+  SeparatorVariants & { size?: any };
 
 type SeparatorComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof SeparatorPrimitive.Root>,

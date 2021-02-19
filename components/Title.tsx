@@ -1,15 +1,19 @@
 import React from 'react';
-import { Text } from './Text';
+import { StyledText } from './Text';
+import { StitchesVariants, CSS } from '../stitches.config';
 
 import * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'h1';
 
-type TitleOwnProps = Omit<React.ComponentProps<typeof Text>, 'size'>;
+type TitleCSSProp = { css?: CSS };
+type TitleVariants = Omit<StitchesVariants<typeof StyledText>, 'size'>;
+type TitleOwnProps = TitleCSSProp & TitleVariants;
+
 type TitleComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TitleOwnProps>;
 
 export const Title = React.forwardRef((props, forwardedRef) => (
-  <Text
+  <StyledText
     as={DEFAULT_TAG}
     {...props}
     ref={forwardedRef}

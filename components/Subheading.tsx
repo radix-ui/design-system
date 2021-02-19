@@ -1,15 +1,19 @@
 import React from 'react';
-import { Text } from './Text';
+import { StyledText } from './Text';
+import { StitchesVariants, CSS } from '../stitches.config';
 
 import * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'h4';
 
-type SubheadingOwnProps = Omit<React.ComponentProps<typeof Text>, 'size'>;
+type SubheadingCSSProp = { css?: CSS };
+type SubheadingVariants = Omit<StitchesVariants<typeof StyledText>, 'size'>;
+type SubheadingOwnProps = SubheadingCSSProp & SubheadingVariants;
+
 type SubheadingComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, SubheadingOwnProps>;
 
 export const Subheading = React.forwardRef((props, forwardedRef) => (
-  <Text
+  <StyledText
     as={DEFAULT_TAG}
     {...props}
     ref={forwardedRef}

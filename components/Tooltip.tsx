@@ -45,11 +45,11 @@ export function Tooltip({
 
       <Content side="top" align="center" {...props} multiline={multiline}>
         <Text
-          size="2"
+          // size="2"
           as="p"
           css={{
             color: '$loContrast',
-            lineHeight: multiline ? '1.5' : undefined,
+            lineHeight: multiline ? '1.5' : (undefined as any), // TODO: fix when this is merged https://github.com/modulz/stitches/issues/422
           }}
         >
           {content}

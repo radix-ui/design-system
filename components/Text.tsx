@@ -1,6 +1,11 @@
+import React from 'react';
 import { styled, CSS, StitchesVariants } from '../stitches.config';
 
-export const Text = styled('span', {
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
+
+const DEFAULT_TAG = 'span';
+
+export const StyledText = styled(DEFAULT_TAG, {
   // Reset
   lineHeight: '1',
   margin: '0',
@@ -104,3 +109,14 @@ export const Text = styled('span', {
     },
   },
 });
+
+type TextCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type TextVariants = Omit<StitchesVariants<typeof StyledText>, 'size'>;
+type TextOwnProps = TextCSSProp & TextVariants & { size?: any };
+
+type TextComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TextOwnProps>;
+
+export const Text = React.forwardRef((props, forwardedRef) => {
+  return <StyledText {...props} ref={forwardedRef} />;
+}) as TextComponent;
