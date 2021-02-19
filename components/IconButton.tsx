@@ -44,7 +44,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
   '&:active': {
     backgroundColor: '$gray100',
   },
-  '&&:focus': {
+  '&:focus': {
     borderColor: '$gray700',
     boxShadow: '0 0 0 1px $colors$gray700',
   },
