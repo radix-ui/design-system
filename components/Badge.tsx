@@ -177,7 +177,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
 
   compoundVariants: [
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'red',
       css: {
         '&:hover': {
@@ -189,7 +189,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'crimson',
       css: {
         '&:hover': {
@@ -201,7 +201,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'pink',
       css: {
         '&:hover': {
@@ -213,7 +213,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'purple',
       css: {
         '&:hover': {
@@ -225,7 +225,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'violet',
       css: {
         '&:hover': {
@@ -237,7 +237,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'indigo',
       css: {
         '&:hover': {
@@ -249,7 +249,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'blue',
       css: {
         '&:hover': {
@@ -261,7 +261,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'turquoise',
       css: {
         '&:hover': {
@@ -273,7 +273,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'teal',
       css: {
         '&:hover': {
@@ -285,7 +285,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'green',
       css: {
         '&:hover': {
@@ -297,7 +297,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'lime',
       css: {
         '&:hover': {
@@ -309,7 +309,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'yellow',
       css: {
         '&:hover': {
@@ -321,7 +321,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'orange',
       css: {
         '&:hover': {
@@ -333,7 +333,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'gold',
       css: {
         '&:hover': {
@@ -345,7 +345,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     {
-      interactive: 'true',
+      interactive: true,
       variant: 'bronze',
       css: {
         '&:hover': {
