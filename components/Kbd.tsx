@@ -18,12 +18,11 @@ const StyledKbd = styled('kbd', {
   whiteSpace: 'nowrap',
   boxShadow: `
     inset 0 0.5px rgba(255, 255, 255, 0.1),
-    inset 0 1px 5px $gray100,
-    0px 0px 0px 0.5px $gray700,
-    0px 2px 1px -1px $gray700,
-    0 1px $gray700`,
+    inset 0 1px 5px $colors$gray100,
+    0px 0px 0px 0.5px $colors$gray700,
+    0px 2px 1px -1px $colors$gray700,
+    0 1px $colors$gray700`,
   textShadow: '0 0 1px rgba(255, 255, 255, 0.5)',
-
   fontFamily: 'inherit',
   fontWeight: 400,
   lineHeight: '1.5',
