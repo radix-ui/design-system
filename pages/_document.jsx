@@ -12,7 +12,7 @@ export default class Document extends NextDocument {
         styles: (
           <>
             {initialProps.styles}
-            <style id="stitches">{getCssString()}</style>
+            <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssString() }} />
           </>
         ),
       };
