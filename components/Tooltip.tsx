@@ -45,7 +45,7 @@ export function Tooltip({
 
       <Content side="top" align="center" {...props} multiline={multiline}>
         <Text
-          // size="2"
+          size="2"
           as="p"
           css={{
             color: '$loContrast',
