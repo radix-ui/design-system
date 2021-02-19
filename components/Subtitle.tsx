@@ -13,10 +13,12 @@ export const Subtitle = React.forwardRef((props, forwardedRef) => (
     as={DEFAULT_TAG}
     {...props}
     ref={forwardedRef}
-    size={{
-      initial: '5',
-      bp2: '6',
-    }}
+    size={
+      {
+        initial: '5',
+        bp2: '6',
+      } as any // TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421
+    }
     css={{
       color: '$gray900',
       lineHeight: '27px',

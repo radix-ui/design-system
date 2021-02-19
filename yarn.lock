@@ -1541,17 +1541,17 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.0.0.tgz#2ff674e9611b45b528896d820d3d7a812de2f0e4"
   integrity sha512-FyD2meJpDPjyNQejSjvnhpgI/azsQkA4lGbuu5BQZfjvJ9cbRZXzeWL2HceCekW4lixO9JPesIIQkSoLjeJHNQ==
 
-"@stitches/core@^0.1.0-canary.3":
-  version "0.1.0-canary.3"
-  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.0-canary.3.tgz#6431bebfe3c00772fabc6286b3de0f6f37245084"
-  integrity sha512-axvTk7nwIvv9bZvsJ8j/DoUz2pUV/idE7FlERHWApr1llAP6NgRXH45Ez02CKCfL8eNyQQKBortmESufq7sUKA==
+"@stitches/core@^0.1.0-canary.8":
+  version "0.1.0-canary.8"
+  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.0-canary.8.tgz#f24a36263fdfa660940dbcf894ee3af242ea855c"
+  integrity sha512-QckYQXdoQgAp5j4OMpXiIt8bxgSeO6MaMhqt17RUjqtZqYusGXUDmCTX1WCqRR59RUeHE/S32lyBY1xo7eWcuA==
 
-"@stitches/react@0.1.0-canary.3":
-  version "0.1.0-canary.3"
-  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.1.0-canary.3.tgz#1172606bc5a7c72b238253651633f484dd96f9aa"
-  integrity sha512-uIhBPR3tgttNXBjhN45Ybcfr3Rd9P/tshXfGe7AW0xMySvdYMrNYLIMQDAWvSG2z7cS0UlLF0ekPzVZonTQMHA==
+"@stitches/react@0.1.0-canary.8":
+  version "0.1.0-canary.8"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.1.0-canary.8.tgz#aece7869c267f2b1144083521aa30d1ca2959fcd"
+  integrity sha512-R0tNLXTjsZUqPecNxDFN3UDq/wcKTSNjtlLggsYSl2lKuXqjRfK/bBB7irgLjtbAxKB0Io/5P9TEzlQ3JyNzBQ==
   dependencies:
-    "@stitches/core" "^0.1.0-canary.3"
+    "@stitches/core" "^0.1.0-canary.8"
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"

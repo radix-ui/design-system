@@ -37,7 +37,7 @@
     "@radix-ui/react-toggle-button": "0.0.5",
     "@radix-ui/react-tooltip": "0.0.6",
     "@radix-ui/react-utils": "0.0.5",
-    "@stitches/react": "0.1.0-canary.3"
+    "@stitches/react": "0.1.0-canary.8"
   },
   "devDependencies": {
     "@next/mdx": "^10.0.1",

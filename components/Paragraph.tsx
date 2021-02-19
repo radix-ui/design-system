@@ -13,10 +13,12 @@ export const Paragraph = React.forwardRef((props, forwardedRef) => (
     as={DEFAULT_TAG}
     {...props}
     ref={forwardedRef}
-    size={{
-      initial: '3',
-      bp2: '4',
-    }}
+    size={
+      {
+        initial: '3',
+        bp2: '4',
+      } as any // TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421
+    }
     css={{
       lineHeight: '25px',
       ...(props.css as any),

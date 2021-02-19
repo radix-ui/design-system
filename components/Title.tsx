@@ -13,10 +13,12 @@ export const Title = React.forwardRef((props, forwardedRef) => (
     as={DEFAULT_TAG}
     {...props}
     ref={forwardedRef}
-    size={{
-      initial: '8',
-      bp2: '9',
-    }}
+    size={
+      {
+        initial: '8',
+        bp2: '9',
+      } as any // TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421
+    }
     css={{
       fontWeight: 500,
       fontVariantNumeric: 'proportional-nums',
