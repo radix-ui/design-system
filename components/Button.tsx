@@ -207,6 +207,4 @@ export const Button = React.forwardRef((props, forwardedRef) => {
   return <StyledButton {...props} ref={forwardedRef} />;
 }) as ButtonComponent;
 
-console.log({ ...StyledButton });
-
 Button.toString = () => `.${StyledButton.className}`;
