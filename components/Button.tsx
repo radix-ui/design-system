@@ -5,7 +5,7 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'button';
 
-const StyledButton = styled(DEFAULT_TAG, {
+export const StyledButton = styled(DEFAULT_TAG, {
   // Reset
   alignItems: 'center',
   appearance: 'none',
