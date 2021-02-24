@@ -5,7 +5,7 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'button';
 
-export const StyledButton = styled(DEFAULT_TAG, {
+const StyledButton = styled(DEFAULT_TAG, {
   // Reset
   alignItems: 'center',
   appearance: 'none',
@@ -206,3 +206,7 @@ type ButtonComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, Butto
 export const Button = React.forwardRef((props, forwardedRef) => {
   return <StyledButton {...props} ref={forwardedRef} />;
 }) as ButtonComponent;
+
+console.log({ ...StyledButton });
+
+Button.toString = () => `.${StyledButton.className}`;

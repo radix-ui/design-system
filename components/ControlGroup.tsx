@@ -1,5 +1,5 @@
 import { styled } from '../stitches.config';
-import { StyledButton } from '../components/Button';
+import { Button } from '../components/Button';
 import { Input } from '../components/Input';
 
 export const ControlGroup = styled('div', {
@@ -9,7 +9,7 @@ export const ControlGroup = styled('div', {
   position: 'relative',
   zIndex: 0,
 
-  [`${StyledButton}`]: {
+  [`${Button}`]: {
     borderRadius: 0,
     boxShadow:
       'inset 0 1px $colors$gray600, inset -1px 0 $colors$gray600, inset 0 -1px $colors$gray600',

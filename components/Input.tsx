@@ -146,3 +146,5 @@ type InputComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, InputO
 export const Input = React.forwardRef((props, forwardedRef) => {
   return <StyledInput {...props} ref={forwardedRef} />;
 }) as InputComponent;
+
+Input.toString = () => `.${StyledInput.className}`;
