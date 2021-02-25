@@ -167,11 +167,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     interactive: {
-      true: {
-        // '&:focus': {
-        //   boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
-        // },
-      },
+      true: {},
     },
   },
 
