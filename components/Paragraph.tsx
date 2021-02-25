@@ -27,10 +27,12 @@ export const Paragraph = React.forwardRef((props, forwardedRef) => (
       lineHeight: '25px',
       ...(props.css as any),
 
-      bp2: {
-        lineHeight: '27px',
-        ...(props.css?.bp2 as any),
-      },
+      when: {
+        bp2: {
+          lineHeight: '27px',
+          ...(props.css?.bp2 as any),
+        },
+      }
     }}
   />
 )) as ParagraphComponent;

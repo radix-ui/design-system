@@ -29,10 +29,12 @@ export const Subheading = React.forwardRef((props, forwardedRef) => (
       lineHeight: '20px',
       ...(props.css as any),
 
-      bp2: {
-        lineHeight: '23px',
-        ...(props.css?.bp2 as any),
-      },
+      when: {
+        bp2: {
+          lineHeight: '23px',
+          ...(props.css?.bp2 as any),
+        },
+      }
     }}
   />
 )) as SubheadingComponent;
