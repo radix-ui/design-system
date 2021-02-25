@@ -18,7 +18,7 @@ const StyledCode = styled(DEFAULT_TAG, {
   padding: '0 3px 2px 3px',
 
   variants: {
-    color: {
+    variant: {
       gray: {
         backgroundColor: '$gray200',
         color: '$gray900',
