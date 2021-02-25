@@ -21,7 +21,7 @@ const StyledStatus = styled(DEFAULT_TAG, {
         height: 9,
       },
     },
-    color: {
+    variant: {
       gray: {
         backgroundColor: '$gray900',
       },
