@@ -13,6 +13,9 @@ export const ControlGroup = styled('div', {
     borderRadius: 0,
     boxShadow:
       'inset 0 1px $colors$gray600, inset -1px 0 $colors$gray600, inset 0 -1px $colors$gray600',
+    '&:focus': {
+      zIndex: 1,
+    },
     '&:first-child': {
       borderTopLeftRadius: '$2',
       borderBottomLeftRadius: '$2',
