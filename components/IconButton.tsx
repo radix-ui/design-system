@@ -56,15 +56,19 @@ const StyledIconButton = styled(DEFAULT_TAG, {
 
   variants: {
     size: {
-      large: {
+      '1': {
+        height: '$5',
+        width: '$5',
+      },
+      '2': {
         height: '$6',
         width: '$6',
       },
-      xl: {
+      '3': {
         height: '$7',
         width: '$7',
       },
-      xxl: {
+      '4': {
         height: '$8',
         width: '$8',
       },

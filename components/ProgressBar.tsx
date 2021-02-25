@@ -52,7 +52,7 @@ const StyledProgressBar = styled(ProgressPrimitive.Root, {
   },
 
   variants: {
-    color: {
+    variant: {
       blue: {
         backgroundColor: '$blue800',
       },
