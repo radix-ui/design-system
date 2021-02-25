@@ -54,7 +54,7 @@ export const StyledText = styled(DEFAULT_TAG, {
         textIndent: '-.025em',
       },
     },
-    color: {
+    variant: {
       red: {
         color: '$red900',
       },
