@@ -16,6 +16,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
   fontFamily: 'inherit',
   justifyContent: 'center',
   lineHeight: '1',
+  verticalAlign: 'middle',
   outline: 'none',
   padding: '0',
   textDecoration: 'none',
@@ -28,12 +29,11 @@ const StyledBadge = styled(DEFAULT_TAG, {
   },
   '&::before': {
     boxSizing: 'border-box',
+    content: '""',
   },
   '&::after': {
     boxSizing: 'border-box',
-  },
-  '&:focus': {
-    boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
+    content: '""',
   },
 
   // Custom
@@ -42,9 +42,6 @@ const StyledBadge = styled(DEFAULT_TAG, {
   color: '$gray900',
   whiteSpace: 'nowrap',
   fontVariantNumeric: 'tabular-nums',
-  height: '$3',
-  px: '$1',
-  fontSize: '$1',
 
   variants: {
     size: {
@@ -60,6 +57,13 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
     variant: {
+      gray: {
+        backgroundColor: '$gray200',
+        color: '$gray900',
+        '&:focus': {
+          boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
+        },
+      },
       red: {
         backgroundColor: '$red200',
         color: '$red900',
@@ -353,6 +357,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       },
     },
   ],
+  defaultVariants: {
+    size: '1',
+    variant: 'gray',
+  }
 });
 
 type BadgeCSSProp = { css?: CSS };

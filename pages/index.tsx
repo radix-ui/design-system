@@ -431,6 +431,8 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Subheading css={{ mb: '$6' }}>Badge</Subheading>
+            <Badge css={{ mb: '$6' }}>Coming soon</Badge>
+            <Subheading css={{ mb: '$6' }}>Badge</Subheading>
             <Flex
               css={{
                 ai: 'center',
