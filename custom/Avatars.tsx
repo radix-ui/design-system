@@ -12,6 +12,15 @@ export function Avatars() {
   return (
     <Section size="3">
       <Container size="2">
+        <Subheading css={{ mb: '$6' }}>Avatar</Subheading>
+        <Avatar alt="John Smith" src="" fallback="J" css={{ mb: '$6' }} />
+
+        {/* <Avatar
+          alt="John Smith"
+          src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+          fallback="J"
+        /> */}
+
         <Subheading>Avatar sizes</Subheading>
         <Flex css={{ fd: 'column', gap: '$6' }}>
           <Flex css={{ ai: 'center', gap: '$6' }}>

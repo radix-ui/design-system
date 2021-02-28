@@ -35,9 +35,6 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
     boxShadow: 'inset 0px 0px 1px rgba(0, 0, 0, 0.12)',
   },
 
-  width: '$6',
-  height: '$6',
-
   variants: {
     size: {
       '1': {
@@ -157,6 +154,11 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
       },
     },
   },
+  defaultVariants: {
+    size: '2',
+    color: 'gray',
+    shape: 'circle',
+  }
 });
 
 const StyledAvatarImage = styled(AvatarPrimitive.Image, {
@@ -193,6 +195,9 @@ const StyledAvatarFallback = styled(AvatarPrimitive.Fallback, {
       },
     },
   },
+  defaultVariants: {
+    size: '2',
+  }
 });
 
 export const AvatarNestedItem = styled('div', {
@@ -231,7 +236,7 @@ type AvatarComponent = Polymorphic.ForwardRefComponent<
 
 export const Avatar = React.forwardRef(
   (
-    { alt, src, fallback, size = '2', color = 'gray', shape = 'circle', css, status, ...props },
+    { alt, src, fallback, size, color, shape, css, status, ...props },
     forwardedRef
   ) => {
     return (
