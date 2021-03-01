@@ -27,11 +27,8 @@ const StyledButton = styled(DEFAULT_TAG, {
   },
 
   // Custom
-  backgroundColor: '$loContrast',
   border: 'none',
-  boxShadow: 'inset 0 0 0 1px $colors$gray600',
   borderRadius: '$2',
-  color: '$hiContrast',
   height: '$5',
   px: '$2',
   fontFamily: '$untitled',
@@ -39,16 +36,6 @@ const StyledButton = styled(DEFAULT_TAG, {
   fontWeight: 500,
   fontVariantNumeric: 'tabular-nums',
 
-  '&:hover': {
-    boxShadow: 'inset 0 0 0 1px $colors$gray700',
-  },
-  '&:active': {
-    backgroundColor: '$gray100',
-    boxShadow: 'inset 0 0 0 1px $colors$gray700',
-  },
-  '&:focus': {
-    boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
-  },
   '&:disabled': {
     backgroundColor: '$gray100',
     boxShadow: 'inset 0 0 0 1px $colors$gray600',
@@ -70,6 +57,21 @@ const StyledButton = styled(DEFAULT_TAG, {
       },
     },
     variant: {
+      gray: {
+        backgroundColor: '$loContrast',
+        boxShadow: 'inset 0 0 0 1px $colors$gray600',
+        color: '$hiContrast',
+        '&:hover': {
+          boxShadow: 'inset 0 0 0 1px $colors$gray700',
+        },
+        '&:active': {
+          backgroundColor: '$gray100',
+          boxShadow: 'inset 0 0 0 1px $colors$gray700',
+        },
+        '&:focus': {
+          boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
+        },
+      },
       blue: {
         backgroundColor: '$blue100',
         boxShadow: 'inset 0 0 0 1px $colors$blue600',
@@ -101,9 +103,10 @@ const StyledButton = styled(DEFAULT_TAG, {
         },
       },
       red: {
+        backgroundColor: '$loContrast',
+        boxShadow: 'inset 0 0 0 1px $colors$gray600',
         color: '$red900',
         '&:hover': {
-          backgroundColor: '$red100',
           boxShadow: 'inset 0 0 0 1px $colors$red700',
         },
         '&:active': {
@@ -116,28 +119,22 @@ const StyledButton = styled(DEFAULT_TAG, {
       },
       ghost: {
         backgroundColor: 'transparent',
-        boxShadow: 'none',
         fontWeight: 400,
         '&:hover': {
           backgroundColor: '$gray200',
-          boxShadow: 'none',
         },
         '&:active': {
           backgroundColor: '$gray300',
-          boxShadow: 'none',
         },
       },
       transparentWhite: {
         backgroundColor: 'hsla(0,100%,100%,.2)',
-        boxShadow: 'none',
         color: 'white',
         '&:hover': {
           backgroundColor: 'hsla(0,100%,100%,.25)',
-          boxShadow: 'none',
         },
         '&:active': {
           backgroundColor: 'hsla(0,100%,100%,.3)',
-          boxShadow: 'none',
         },
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px hsla(0,100%,100%,.35), 0 0 0 1px hsla(0,100%,100%,.35)',
@@ -145,15 +142,12 @@ const StyledButton = styled(DEFAULT_TAG, {
       },
       transparentBlack: {
         backgroundColor: 'hsla(0,0%,0%,.2)',
-        boxShadow: 'none',
         color: 'black',
         '&:hover': {
           backgroundColor: 'hsla(0,0%,0%,.25)',
-          boxShadow: 'none',
         },
         '&:active': {
           backgroundColor: 'hsla(0,0%,0%,.3)',
-          boxShadow: 'none',
         },
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px hsla(0,0%,0%,.35), 0 0 0 1px hsla(0,0%,0%,.35)',
@@ -194,6 +188,10 @@ const StyledButton = styled(DEFAULT_TAG, {
       },
     },
   },
+  defaultVariants: {
+    size: '1',
+    variant: 'gray',
+  }
 });
 
 type ButtonCSSProp = { css?: CSS };

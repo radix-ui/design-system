@@ -562,11 +562,11 @@ function Home() {
               <Status size="2"></Status>
             </Flex>
             <Flex css={{ gap: '$6', mt: '$6' }}>
-              <Status variant="gray"></Status>
-              <Status variant="blue"></Status>
-              <Status variant="green"></Status>
-              <Status variant="yellow"></Status>
-              <Status variant="red"></Status>
+              <Status variant="gray" />
+              <Status variant="blue" />
+              <Status variant="green" />
+              <Status variant="yellow" />
+              <Status variant="red" />
             </Flex>
           </Container>
         </Section>
