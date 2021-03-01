@@ -25,7 +25,6 @@ const StyledProgressBar = styled(ProgressPrimitive.Root, {
   height: '$1',
   overflow: 'hidden',
   borderRadius: '$pill',
-  background: '$gray700',
 
   '&[data-state="indeterminate"]': {
     backgroundColor: '$gray300',
@@ -53,6 +52,9 @@ const StyledProgressBar = styled(ProgressPrimitive.Root, {
 
   variants: {
     variant: {
+      gray: {
+        background: '$gray700',
+      },
       blue: {
         backgroundColor: '$blue800',
       },
@@ -62,6 +64,9 @@ const StyledProgressBar = styled(ProgressPrimitive.Root, {
       },
     },
   },
+  defaultVariants: {
+    variant: 'gray'
+  }
 });
 
 const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {

@@ -1187,6 +1187,10 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Box css={{ mb: '$6' }}>
+              <Heading>Default</Heading>
+              <ProgressBar value={50} />
+            </Box>
+            <Box css={{ mb: '$6' }}>
               <Text size="2">Indeterminate</Text>
               <ProgressBar css={{ my: '$2' }} />
             </Box>
@@ -1198,10 +1202,10 @@ function Home() {
               </Text>
             </Box>
             <Box css={{ mb: '$6' }}>
-              <ProgressBar max={100} color="gradient" value={100} />
+              <ProgressBar max={100} variant="gradient" value={100} />
             </Box>
-            <Box css={{ mb: '$6' }}>
-              <ProgressBar color="blue" max={100} value={50} />
+            <Box>
+              <ProgressBar variant="blue" max={100} value={50} />
             </Box>
           </Container>
         </Section>
