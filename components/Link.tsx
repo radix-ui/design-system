@@ -55,6 +55,9 @@ const StyledLink = styled(DEFAULT_TAG, {
       },
     },
   },
+  defaultVariants: {
+    variant: 'contrast'
+  }
 });
 
 type LinkComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, LinkOwnProps>;
