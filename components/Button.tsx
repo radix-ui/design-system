@@ -136,6 +136,7 @@ const StyledButton = styled(DEFAULT_TAG, {
       ghost: {
         backgroundColor: 'transparent',
         fontWeight: 400,
+        color: '$hiContrast',
         '&:hover': {
           backgroundColor: '$gray200',
         },
