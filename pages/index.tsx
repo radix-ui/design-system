@@ -549,6 +549,28 @@ function Home() {
             </Flex>
           </Container>
         </Section>
+        
+        <Flex css={{ jc: 'center' }}>
+          <Separator size="2" />
+        </Flex>
+        <Section size="3">
+          <Container size="2">
+            <Subheading css={{ mb: '$6' }}>Status</Subheading>
+            <Status></Status>
+            <Flex css={{ gap: '$6', mt: '$6' }}>
+              <Status size="1"></Status>
+              <Status size="2"></Status>
+            </Flex>
+            <Flex css={{ gap: '$6', mt: '$6' }}>
+              <Status variant="gray"></Status>
+              <Status variant="blue"></Status>
+              <Status variant="green"></Status>
+              <Status variant="yellow"></Status>
+              <Status variant="red"></Status>
+            </Flex>
+          </Container>
+        </Section>
+
         <Flex css={{ jc: 'center' }}>
           <Separator size="2" />
         </Flex>

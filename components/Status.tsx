@@ -7,14 +7,12 @@ const DEFAULT_TAG = 'div';
 
 const StyledStatus = styled(DEFAULT_TAG, {
   borderRadius: '50%',
-  width: '5px',
-  height: '5px',
 
   variants: {
     size: {
       '1': {
-        width: '5px',
-        height: '5px',
+        width: 5,
+        height: 5,
       },
       '2': {
         width: 9,
@@ -23,7 +21,7 @@ const StyledStatus = styled(DEFAULT_TAG, {
     },
     variant: {
       gray: {
-        backgroundColor: '$gray900',
+        backgroundColor: '$gray600',
       },
       blue: {
         backgroundColor: '$blue800',
@@ -39,6 +37,10 @@ const StyledStatus = styled(DEFAULT_TAG, {
       },
     },
   },
+  defaultVariants: {
+    size: '2',
+    variant: 'gray',
+  }
 });
 
 type StatusCSSProp = { css?: CSS };
