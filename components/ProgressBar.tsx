@@ -45,11 +45,6 @@ const StyledProgressBar = styled(ProgressPrimitive.Root, {
     },
   },
 
-  '&[data-state="complete"]': {
-    backgroundColor: '$green800',
-    backgroundImage: 'none',
-  },
-
   variants: {
     variant: {
       gray: {
