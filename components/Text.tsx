@@ -13,9 +13,6 @@ export const StyledText = styled(DEFAULT_TAG, {
   fontVariantNumeric: 'tabular-nums',
   display: 'block',
 
-  // Custom
-  color: '$hiContrast',
-
   variants: {
     size: {
       '1': {
@@ -108,6 +105,10 @@ export const StyledText = styled(DEFAULT_TAG, {
       },
     },
   },
+  defaultVariants: {
+    size: '3',
+    variant: 'contrast'
+  }
 });
 
 type TextCSSProp = { css?: CSS };
