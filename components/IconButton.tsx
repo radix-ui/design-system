@@ -84,6 +84,9 @@ const StyledIconButton = styled(DEFAULT_TAG, {
         '&:active': {
           backgroundColor: '$gray300',
         },
+        '&[data-state="open"]': {
+          backgroundColor: '$gray300',
+        }
       },
       raised: {
         boxShadow:
