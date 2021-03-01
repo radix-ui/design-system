@@ -180,9 +180,9 @@ const stitches = createCss({
       loContrast: 'white',
       canvas: 'hsl(0 0% 93%)',
       panel: 'white',
+      transparentPanel: 'hsl(0 0% 0% / 97%)',
       shadowLight: 'hsl(206 22% 7% / 35%)',
       shadowDark: 'hsl(206 22% 7% / 20%)',
-      transparentExtreme: 'hsl(0 0% 0% / 97%)',
     },
     fonts: {
       untitled: 'Untitled Sans, -apple-system, system-ui, sans-serif',
@@ -523,8 +523,8 @@ export const darkTheme = theme('dark-theme', {
     loContrast: 'hsl(200 7% 8.4%)',
     canvas: 'hsl(0 0% 15%)',
     panel: '$gray200',
+    transparentPanel: 'hsl(0 100% 100% / 97%)',
     shadowLight: 'hsl(206 22% 7% / 35%)',
     shadowDark: 'hsl(206 22% 7% / 20%)',
-    transparentExtreme: 'hsl(0 100% 100% / 97%)',
   },
 });
