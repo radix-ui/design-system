@@ -42,8 +42,6 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
     boxSizing: 'border-box',
   },
 
-  width: '$5',
-  height: '$3',
   backgroundColor: '$gray400',
   borderRadius: '$pill',
   position: 'relative',
@@ -78,6 +76,9 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
       },
     },
   },
+  defaultVariants: {
+    size: '1'
+  }
 });
 
 type ButtonCSSProp = { css?: CSS };
