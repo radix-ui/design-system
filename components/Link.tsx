@@ -1,5 +1,6 @@
 import React from 'react';
 import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { Text } from '../components/Text';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -25,6 +26,9 @@ const StyledLink = styled(DEFAULT_TAG, {
     outlineStyle: 'solid',
     outlineOffset: '2px',
     textDecorationLine: 'none',
+  },
+  [`${Text}`]: {
+    color: 'inherit'
   },
   variants: {
     variant: {

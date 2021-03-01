@@ -120,3 +120,5 @@ type TextComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TextOwn
 export const Text = React.forwardRef((props, forwardedRef) => {
   return <StyledText {...props} ref={forwardedRef} />;
 }) as TextComponent;
+
+Text.toString = () => `.${StyledText.className}`;
