@@ -28,12 +28,6 @@ const StyledKbd = styled('kbd', {
   lineHeight: '1.5',
   mx: '2px',
 
-  // Size 2
-  px: '0.5em',
-  height: '$5',
-  minWidth: '2em',
-  fontSize: '$2',
-
   variants: {
     size: {
       '1': {
@@ -42,6 +36,12 @@ const StyledKbd = styled('kbd', {
         minWidth: '1.6em',
         fontSize: '10px',
       },
+      '2': {
+        px: '0.5em',
+        height: '$5',
+        minWidth: '2em',
+        fontSize: '$2',
+      }
     },
     width: {
       shift: {
@@ -81,6 +81,10 @@ const StyledKbd = styled('kbd', {
       },
     },
   ],
+
+  defaultVariants: {
+    size: '2',
+  }
 });
 
 type KbdCSSProp = { css?: CSS };
