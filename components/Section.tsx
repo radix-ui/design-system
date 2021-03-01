@@ -11,9 +11,11 @@ const StyledSection = styled(DEFAULT_TAG, {
   flexShrink: 0,
   '&::before': {
     boxSizing: 'border-box',
+    content: '""',
   },
   '&::after': {
     boxSizing: 'border-box',
+    content: '""',
   },
 
   variants: {
@@ -29,6 +31,9 @@ const StyledSection = styled(DEFAULT_TAG, {
       },
     },
   },
+  defaultVariants: {
+    size: '3'
+  }
 });
 
 type ButtonCSSProp = { css?: CSS };
