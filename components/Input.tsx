@@ -30,9 +30,6 @@ const StyledInput = styled(DEFAULT_TAG, {
   borderRadius: '$2',
   color: '$hiContrast',
   fontVariantNumeric: 'tabular-nums',
-  height: '$5',
-  fontSize: '$1',
-  px: '$1',
 
   '&:-webkit-autofill': {
     boxShadow: 'inset 0 0 0 1px $colors$blue500, inset 0 0 0 100px $colors$blue200',
@@ -134,6 +131,9 @@ const StyledInput = styled(DEFAULT_TAG, {
       },
     },
   },
+  defaultVariants: {
+    size: '1',
+  }
 });
 
 type InputCSSProp = { css?: CSS };
