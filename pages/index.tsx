@@ -1210,19 +1210,62 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Popover>
-              <PopoverTrigger as={Button}>Popover</PopoverTrigger>
-              <PopoverContent css={{ padding: '$4' }} hideArrow>
-                <Text>Hello, from Popover</Text>
-              </PopoverContent>
-            </Popover>
-
-            <Popover>
-              <PopoverTrigger as={Button}>Popover</PopoverTrigger>
-              <PopoverContent css={{ padding: '$4' }}>
-                <Text>Hello, from Popover</Text>
-              </PopoverContent>
-            </Popover>
+            <Flex css={{ gap: "$6" }}>
+              <Popover>
+                <PopoverTrigger as={Button}>Popover</PopoverTrigger>
+                <PopoverContent css={{ padding: '$3' }}>
+                  <Text size="2" css={{ lineHeight: '18px' }}>
+                    The other main improvement is with tables, which we'll probably use a lot. With
+                    horizontal overflow on small devices and when zoomed in.
+                  </Text>
+                </PopoverContent>
+              </Popover>
+              <Popover>
+                <PopoverTrigger as={Button}>With arrow</PopoverTrigger>
+                <PopoverContent css={{ padding: '$3' }}>
+                  <Text size="2" css={{ lineHeight: '18px' }}>
+                    The other main improvement is with tables, which we'll probably use a lot. With
+                    horizontal overflow on small devices and when zoomed in.
+                  </Text>
+                </PopoverContent>
+              </Popover>
+              <Popover>
+                <PopoverTrigger as={Button} variant="blue">Blue</PopoverTrigger>
+                <PopoverContent css={{ padding: '$3' }}>
+                  <Text size="2" css={{ lineHeight: '18px' }}>
+                    The other main improvement is with tables, which we'll probably use a lot. With
+                    horizontal overflow on small devices and when zoomed in.
+                  </Text>
+                </PopoverContent>
+              </Popover>
+              <Popover>
+                <PopoverTrigger as={Button} variant="green">Green</PopoverTrigger>
+                <PopoverContent css={{ padding: '$3' }}>
+                  <Text size="2" css={{ lineHeight: '18px' }}>
+                    The other main improvement is with tables, which we'll probably use a lot. With
+                    horizontal overflow on small devices and when zoomed in.
+                  </Text>
+                </PopoverContent>
+              </Popover>
+              <Popover>
+                <PopoverTrigger as={Button} variant="red">Red</PopoverTrigger>
+                <PopoverContent css={{ padding: '$3' }}>
+                  <Text size="2" css={{ lineHeight: '18px' }}>
+                    The other main improvement is with tables, which we'll probably use a lot. With
+                    horizontal overflow on small devices and when zoomed in.
+                  </Text>
+                </PopoverContent>
+              </Popover>
+              <Popover>
+                <PopoverTrigger as={Button} variant="ghost">Ghost</PopoverTrigger>
+                <PopoverContent css={{ padding: '$3' }}>
+                  <Text size="2" css={{ lineHeight: '18px' }}>
+                    The other main improvement is with tables, which we'll probably use a lot. With
+                    horizontal overflow on small devices and when zoomed in.
+                  </Text>
+                </PopoverContent>
+              </Popover>
+            </Flex>
           </Container>
         </Section>
         <Flex css={{ jc: 'center' }}>
