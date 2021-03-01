@@ -4,15 +4,6 @@ export type { StitchesVariants } from '@stitches/react';
 const stitches = createCss({
   theme: {
     colors: {
-      hiContrast: 'hsl(200 12% 5%)',
-      loContrast: 'white',
-
-      canvas: 'hsl(0 0% 93%)',
-      panel: 'white',
-      shadowLight: 'hsl(206 22% 7% 35%)',
-      shadowDark: 'hsl(206 22% 7% 20%)',
-      transparentExtreme: 'hsl(0 0% 0% 97%)',
-
       gray100: 'hsl(206 20% 98.8%)',
       gray200: 'hsl(206 14% 96.0%)',
       gray300: 'hsl(206 13% 93.7%)',
@@ -182,6 +173,16 @@ const stitches = createCss({
       gold700: 'hsl(36 37% 60.0%)',
       gold800: 'hsl(36 30% 52.0%)',
       gold900: 'hsl(36 26% 40.0%)',
+
+      // Semantic colors
+
+      hiContrast: 'hsl(200 12% 5%)',
+      loContrast: 'white',
+      canvas: 'hsl(0 0% 93%)',
+      panel: 'white',
+      shadowLight: 'hsl(206 22% 7% 35%)',
+      shadowDark: 'hsl(206 22% 7% 20%)',
+      transparentExtreme: 'hsl(0 0% 0% 97%)',
     },
     fonts: {
       untitled: 'Untitled Sans, -apple-system, system-ui, sans-serif',
@@ -362,15 +363,6 @@ export const utils = config.utils;
 
 export const darkTheme = theme('dark-theme', {
   colors: {
-    hiContrast: 'hsl(240 3% 93%)',
-    loContrast: 'hsl(200 7% 8.4%)',
-
-    canvas: 'hsl(0 0% 15%)',
-    panel: 'hsl(201 6% 11.6%)',
-    shadowLight: 'hsl(206 22% 7% / 35%)',
-    shadowDark: 'hsl(206 22% 7% 20%)',
-    transparentExtreme: 'hsl(0 100% 100% 97%)',
-
     gray100: 'hsl(200 6% 9.6%)',
     gray200: 'hsl(201 6% 11.6%)',
     gray300: 'hsl(201 6% 13.9%)',
@@ -524,5 +516,15 @@ export const darkTheme = theme('dark-theme', {
     gold600: 'hsl(39 22% 29.3%)',
     gold700: 'hsl(36 28% 45.1%)',
     gold900: 'hsl(35 50% 62.9%)',
+
+    // Semantic colors
+
+    hiContrast: 'hsl(240 3% 93%)',
+    loContrast: 'hsl(200 7% 8.4%)',
+    canvas: 'hsl(0 0% 15%)',
+    panel: '$gray200',
+    shadowLight: 'hsl(206 22% 7% / 35%)',
+    shadowDark: 'hsl(206 22% 7% 20%)',
+    transparentExtreme: 'hsl(0 100% 100% 97%)',
   },
 });
