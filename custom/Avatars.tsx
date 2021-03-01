@@ -76,23 +76,23 @@ export function Avatars() {
           <Subheading>Avatar colors</Subheading>
           <Flex css={{ ai: 'center', gap: '$3' }}>
             <Avatar alt="John Smith" fallback="F" />
-            <Avatar alt="John Smith" fallback="F" color="red" />
-            <Avatar alt="John Smith" fallback="F" color="crimson" />
-            <Avatar alt="John Smith" fallback="F" color="pink" />
-            <Avatar alt="John Smith" fallback="F" color="purple" />
-            <Avatar alt="John Smith" fallback="F" color="violet" />
-            <Avatar alt="John Smith" fallback="F" color="indigo" />
-            <Avatar alt="John Smith" fallback="F" color="blue" />
-            <Avatar alt="John Smith" fallback="F" color="turquoise" />
-            <Avatar alt="John Smith" fallback="F" color="teal" />
-            <Avatar alt="John Smith" fallback="F" color="green" />
-            <Avatar alt="John Smith" fallback="F" color="lime" />
-            <Avatar alt="John Smith" fallback="F" color="yellow" />
-            <Avatar alt="John Smith" fallback="F" color="orange" />
-            <Avatar alt="John Smith" fallback="F" color="gold" />
-            <Avatar alt="John Smith" fallback="F" color="brown" />
-            <Avatar alt="John Smith" fallback="F" color="bronze" />
-            <Avatar alt="John Smith" fallback="F" color="hiContrast" />
+            <Avatar alt="John Smith" fallback="F" variant="red" />
+            <Avatar alt="John Smith" fallback="F" variant="crimson" />
+            <Avatar alt="John Smith" fallback="F" variant="pink" />
+            <Avatar alt="John Smith" fallback="F" variant="purple" />
+            <Avatar alt="John Smith" fallback="F" variant="violet" />
+            <Avatar alt="John Smith" fallback="F" variant="indigo" />
+            <Avatar alt="John Smith" fallback="F" variant="blue" />
+            <Avatar alt="John Smith" fallback="F" variant="turquoise" />
+            <Avatar alt="John Smith" fallback="F" variant="teal" />
+            <Avatar alt="John Smith" fallback="F" variant="green" />
+            <Avatar alt="John Smith" fallback="F" variant="lime" />
+            <Avatar alt="John Smith" fallback="F" variant="yellow" />
+            <Avatar alt="John Smith" fallback="F" variant="orange" />
+            <Avatar alt="John Smith" fallback="F" variant="gold" />
+            <Avatar alt="John Smith" fallback="F" variant="brown" />
+            <Avatar alt="John Smith" fallback="F" variant="bronze" />
+            <Avatar alt="John Smith" fallback="F" variant="hiContrast" />
           </Flex>
 
           <Subheading>Interactive avatar</Subheading>
@@ -133,7 +133,7 @@ export function Avatars() {
                 as={Avatar}
                 interactive
                 fallback="J"
-                color="violet"
+                variant="violet"
               >
               </PopoverTrigger>
               <PopoverContent css={{ padding: '$3' }}>
@@ -198,22 +198,22 @@ export function Avatars() {
           </Flex>
           <Flex css={{ ai: 'center', gap: '$2' }}>
             <Avatar alt="John Smith" fallback="F" inactive />
-            <Avatar alt="John Smith" fallback="F" color="red" />
-            <Avatar alt="John Smith" fallback="F" color="crimson" />
-            <Avatar alt="John Smith" fallback="F" color="pink" />
-            <Avatar alt="John Smith" fallback="F" inactive color="purple" />
-            <Avatar alt="John Smith" fallback="F" color="violet" />
-            <Avatar alt="John Smith" fallback="F" color="indigo" />
-            <Avatar alt="John Smith" fallback="F" color="blue" />
-            <Avatar alt="John Smith" fallback="F" inactive color="turquoise" />
-            <Avatar alt="John Smith" fallback="F" inactive color="teal" />
-            <Avatar alt="John Smith" fallback="F" inactive color="green" />
-            <Avatar alt="John Smith" fallback="F" color="lime" />
-            <Avatar alt="John Smith" fallback="F" inactive color="yellow" />
-            <Avatar alt="John Smith" fallback="F" inactive color="orange" />
-            <Avatar alt="John Smith" fallback="F" color="gold" />
-            <Avatar alt="John Smith" fallback="F" color="brown" />
-            <Avatar alt="John Smith" fallback="F" inactive color="bronze" />
+            <Avatar alt="John Smith" fallback="F" variant="red" />
+            <Avatar alt="John Smith" fallback="F" variant="crimson" />
+            <Avatar alt="John Smith" fallback="F" variant="pink" />
+            <Avatar alt="John Smith" fallback="F" inactive variant="purple" />
+            <Avatar alt="John Smith" fallback="F" variant="violet" />
+            <Avatar alt="John Smith" fallback="F" variant="indigo" />
+            <Avatar alt="John Smith" fallback="F" variant="blue" />
+            <Avatar alt="John Smith" fallback="F" inactive variant="turquoise" />
+            <Avatar alt="John Smith" fallback="F" inactive variant="teal" />
+            <Avatar alt="John Smith" fallback="F" inactive variant="green" />
+            <Avatar alt="John Smith" fallback="F" variant="lime" />
+            <Avatar alt="John Smith" fallback="F" inactive variant="yellow" />
+            <Avatar alt="John Smith" fallback="F" inactive variant="orange" />
+            <Avatar alt="John Smith" fallback="F" variant="gold" />
+            <Avatar alt="John Smith" fallback="F" variant="brown" />
+            <Avatar alt="John Smith" fallback="F" inactive variant="bronze" />
           </Flex>
 
           <Subheading>Grouped avatars</Subheading>
@@ -254,16 +254,16 @@ export function Avatars() {
             </AvatarGroup>
             <AvatarGroup>
               <AvatarNestedItem>
-                <Avatar size="2" alt="John Smith" src="" fallback="J" color="blue" />
+                <Avatar size="2" alt="John Smith" src="" fallback="J" variant="blue" />
               </AvatarNestedItem>
               <AvatarNestedItem>
-                <Avatar size="2" alt="John Smith" src="" fallback="J" color="violet" />
+                <Avatar size="2" alt="John Smith" src="" fallback="J" variant="violet" />
               </AvatarNestedItem>
               <AvatarNestedItem>
-                <Avatar size="2" alt="John Smith" src="" fallback="J" color="green" />
+                <Avatar size="2" alt="John Smith" src="" fallback="J" variant="green" />
               </AvatarNestedItem>
               <AvatarNestedItem>
-                <Avatar size="2" alt="John Smith" src="" fallback="J" color="yellow" />
+                <Avatar size="2" alt="John Smith" src="" fallback="J" variant="yellow" />
               </AvatarNestedItem>
             </AvatarGroup>
           </Flex>
@@ -329,7 +329,7 @@ export function Avatars() {
                   mb: '-3px',
                 }}
               >
-                <Status size="2" color="gray"></Status>
+                <Status size="2" variant="gray"></Status>
               </Box>
             </Box>
 
@@ -356,7 +356,7 @@ export function Avatars() {
                   mb: '-3px',
                 }}
               >
-                <Status size="2" color="blue"></Status>
+                <Status size="2" variant="blue"></Status>
               </Box>
             </Box>
             <Box
@@ -382,7 +382,7 @@ export function Avatars() {
                   mb: '-3px',
                 }}
               >
-                <Status size="2" color="green"></Status>
+                <Status size="2" variant="green"></Status>
               </Box>
             </Box>
             <Box
@@ -408,7 +408,7 @@ export function Avatars() {
                   mb: '-3px',
                 }}
               >
-                <Status size="2" color="yellow"></Status>
+                <Status size="2" variant="yellow"></Status>
               </Box>
             </Box>
             <Box
@@ -434,7 +434,7 @@ export function Avatars() {
                   mb: '-3px',
                 }}
               >
-                <Status size="2" color="red"></Status>
+                <Status size="2" variant="red"></Status>
               </Box>
             </Box>
           </Flex>
@@ -463,7 +463,7 @@ export function Avatars() {
                   mb: '-3px',
                 }}
               >
-                <Status size="1" color="gray"></Status>
+                <Status size="1" variant="gray"></Status>
               </Box>
             </Box>
             <Box
@@ -489,7 +489,7 @@ export function Avatars() {
                   mb: '-3px',
                 }}
               >
-                <Status size="1" color="blue"></Status>
+                <Status size="1" variant="blue"></Status>
               </Box>
             </Box>
             <Box
@@ -515,7 +515,7 @@ export function Avatars() {
                   mb: '-3px',
                 }}
               >
-                <Status size="1" color="green"></Status>
+                <Status size="1" variant="green"></Status>
               </Box>
             </Box>
             <Box
@@ -541,7 +541,7 @@ export function Avatars() {
                   mb: '-3px',
                 }}
               >
-                <Status size="1" color="yellow"></Status>
+                <Status size="1" variant="yellow"></Status>
               </Box>
             </Box>
             <Box
@@ -567,7 +567,7 @@ export function Avatars() {
                   mb: '-3px',
                 }}
               >
-                <Status size="1" color="red"></Status>
+                <Status size="1" variant="red"></Status>
               </Box>
             </Box>
           </Flex>

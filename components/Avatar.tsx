@@ -62,7 +62,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
         height: '$9',
       },
     },
-    color: {
+    variant: {
       hiContrast: {
         backgroundColor: '$hiContrast',
         color: '$loContrast',
@@ -162,7 +162,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   },
   defaultVariants: {
     size: '2',
-    color: 'gray',
+    variant: 'gray',
     shape: 'circle',
   }
 });
@@ -242,7 +242,7 @@ type AvatarComponent = Polymorphic.ForwardRefComponent<
 
 export const Avatar = React.forwardRef(
   (
-    { alt, src, fallback, size, color, shape, css, status, ...props },
+    { alt, src, fallback, size, variant, shape, css, status, ...props },
     forwardedRef
   ) => {
     return (
@@ -254,7 +254,7 @@ export const Avatar = React.forwardRef(
           width: 'fit-content',
         }}
       >
-        <StyledAvatar {...props} ref={forwardedRef} size={size} color={color} shape={shape}>
+        <StyledAvatar {...props} ref={forwardedRef} size={size} variant={variant} shape={shape}>
           <StyledAvatarImage alt={alt} src={src} />
           <StyledAvatarFallback size={size}>{fallback}</StyledAvatarFallback>
         </StyledAvatar>
