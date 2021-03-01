@@ -242,7 +242,7 @@ const stitches = createCss({
     bp3: '@media (min-width: 1200px)',
     bp4: '@media (min-width: 1800px)',
     motion: '@media (prefers-reduced-motion)',
-    hover: '@media (hover: hover)',
+    hover: '@media (any-hover: hover)',
     dark: '@media (prefers-color-scheme: dark)',
     light: '@media (prefers-color-scheme: light)',
   },
