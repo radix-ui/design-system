@@ -151,6 +151,12 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
             opacity: '1',
           },
         },
+        '&[data-state="open"]': {
+          '&::after': {
+            backgroundColor: 'rgba(0,0,0,.08)',
+            opacity: '1',
+          },
+        }
       },
     },
   },

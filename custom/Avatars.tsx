@@ -7,6 +7,7 @@ import { Avatar, AvatarGroup, AvatarNestedItem } from '../components/Avatar';
 import { Status } from '../components/Status';
 import { Subheading } from '../components/Subheading';
 import { Link2Icon } from '@radix-ui/react-icons';
+import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
 
 export function Avatars() {
   return (
@@ -96,41 +97,67 @@ export function Avatars() {
 
           <Subheading>Interactive avatar</Subheading>
           <Flex css={{ gap: '$6' }}>
-            <Avatar
-              size="3"
-              interactive
-              alt="John Smith"
-              src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
-              fallback="J"
-              // as="button"
-            />
+            <Popover>
+              <PopoverTrigger
+                as={Avatar}
+                interactive
+                fallback="J"
+              >
+              </PopoverTrigger>
+              <PopoverContent css={{ padding: '$3' }}>
+                <Text size="2" css={{ lineHeight: '18px' }}>
+                  The other main improvement is with tables, which we'll probably use a lot. With
+                  horizontal overflow on small devices and when zoomed in.
+                </Text>
+              </PopoverContent>
+            </Popover>
+            
+            <Popover>
+              <PopoverTrigger
+                as={Avatar}
+                interactive
+                src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
+                fallback="J"
+              >
+              </PopoverTrigger>
+              <PopoverContent css={{ padding: '$3' }}>
+                <Text size="2" css={{ lineHeight: '18px' }}>
+                  The other main improvement is with tables, which we'll probably use a lot. With
+                  horizontal overflow on small devices and when zoomed in.
+                </Text>
+              </PopoverContent>
+            </Popover>
 
-            <Avatar
-              size="3"
-              interactive
-              alt="John Smith"
-              src=""
-              fallback="J"
-              // as="button"
-            />
+            <Popover>
+              <PopoverTrigger
+                as={Avatar}
+                interactive
+                fallback="J"
+                color="violet"
+              >
+              </PopoverTrigger>
+              <PopoverContent css={{ padding: '$3' }}>
+                <Text size="2" css={{ lineHeight: '18px' }}>
+                  The other main improvement is with tables, which we'll probably use a lot. With
+                  horizontal overflow on small devices and when zoomed in.
+                </Text>
+              </PopoverContent>
+            </Popover>
 
-            <Avatar
-              size="3"
-              interactive
-              alt="John Smith"
-              src=""
-              fallback="J"
-              color="violet"
-              // as="button"
-            />
-
-            <Avatar
-              size="3"
-              interactive
-              alt="John Smith"
-              // as="button"
-              fallback={<Link2Icon />}
-            />
+            <Popover>
+              <PopoverTrigger
+                as={Avatar}
+                interactive
+                fallback={<Link2Icon />}
+              >
+              </PopoverTrigger>
+              <PopoverContent css={{ padding: '$3' }}>
+                <Text size="2" css={{ lineHeight: '18px' }}>
+                  The other main improvement is with tables, which we'll probably use a lot. With
+                  horizontal overflow on small devices and when zoomed in.
+                </Text>
+              </PopoverContent>
+            </Popover>
           </Flex>
 
           <Subheading>Inactive avatar</Subheading>
