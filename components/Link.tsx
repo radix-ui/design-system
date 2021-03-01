@@ -47,7 +47,7 @@ const StyledLink = styled(DEFAULT_TAG, {
         },
       },
       contrast: {
-        color: 'inherit',
+        color: '$hiContrast',
         textDecoration: 'underline',
         textDecorationColor: '$gray300',
         '&:hover': {
