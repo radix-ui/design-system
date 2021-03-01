@@ -31,6 +31,9 @@ const StyledContainer = styled(DEFAULT_TAG, {
       },
     },
   },
+  defaultVariants: {
+    size: '4'
+  }
 });
 
 type ContainerCSSProp = { css?: CSS };
