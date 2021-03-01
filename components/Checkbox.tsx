@@ -29,9 +29,6 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   color: '$hiContrast',
   boxShadow: 'inset 0 0 0 1px $colors$gray600',
   overflow: 'hidden',
-  width: '$3',
-  height: '$3',
-  borderRadius: '$1',
   '&:hover': {
     boxShadow: 'inset 0 0 0 1px $colors$gray700',
   },
@@ -55,6 +52,9 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
       },
     },
   },
+  defaultVariants: {
+    size: '1'
+  }
 });
 
 const StyledIndicator = styled(CheckboxPrimitive.Indicator, {
