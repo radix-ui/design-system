@@ -220,7 +220,7 @@ export const AvatarGroup = styled('div', {
 });
 
 type StatusVariants = React.ComponentProps<typeof Status>;
-type StatusColors = Pick<StatusVariants, 'color'>;
+type StatusColors = Pick<StatusVariants, 'variant'>;
 
 type AvatarCSSProp = { css?: CSS };
 // TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
@@ -231,7 +231,7 @@ type AvatarOwnProps = Polymorphic.OwnProps<typeof AvatarPrimitive.Root> &
     alt?: string;
     src?: string;
     fallback?: React.ReactNode;
-    status?: StatusColors['color'];
+    status?: StatusColors['variant'];
     size?: any; // TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421
   };
 
@@ -271,7 +271,7 @@ export const Avatar = React.forwardRef(
             }}
           >
             {/* TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421 */}
-            <Status size={size > 2 ? ('2' as any) : ('1' as any)} color={status} />
+            <Status size={size > 2 ? ('2' as any) : ('1' as any)} variant={status} />
           </Box>
         )}
       </Box>
