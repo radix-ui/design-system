@@ -36,8 +36,6 @@ const StyledIconButton = styled(DEFAULT_TAG, {
   backgroundColor: '$loContrast',
   border: '1px solid $gray600',
   borderRadius: '$2',
-  height: '$5',
-  width: '$5',
   '&:hover': {
     borderColor: '$gray700',
   },
@@ -127,6 +125,10 @@ const StyledIconButton = styled(DEFAULT_TAG, {
       },
     },
   },
+  defaultVariants: {
+    size: '1',
+    variant: 'ghost',
+  }
 });
 
 type IconButtonComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, IconButtonOwnProps>;

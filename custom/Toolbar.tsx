@@ -25,7 +25,7 @@ export function Toolbar() {
       <Flex css={{ alignItems: 'center', justifyContent: 'space-between' }}>
         <Flex css={{ alignItems: 'center' }}>
           <Box css={{ mr: '$1' }}>
-            <IconButton variant="ghost">
+            <IconButton>
               <HamburgerMenuIcon />
             </IconButton>
           </Box>
@@ -40,7 +40,7 @@ export function Toolbar() {
         <Flex css={{ ai: 'center' }}>
           <Box>
             <Tooltip content="Insert (Cmd+P)" side="bottom" align="center">
-              <IconButton variant="ghost">
+              <IconButton>
                 <svg
                   width="15"
                   height="15"
@@ -69,7 +69,7 @@ export function Toolbar() {
           <Separator orientation="vertical" size="1" css={{ mx: '$3' }} />
           <Box css={{ mr: '$3' }}>
             <Tooltip content="Frame (F)" side="bottom" align="center">
-              <IconButton variant="ghost">
+              <IconButton>
                 <svg
                   width="15"
                   height="15"
@@ -88,7 +88,7 @@ export function Toolbar() {
           </Box>
           <Box>
             <Tooltip content="Box (B)" side="bottom" align="center">
-              <IconButton variant="ghost">
+              <IconButton>
                 <svg
                   width="15"
                   height="15"
@@ -109,7 +109,7 @@ export function Toolbar() {
           <Separator orientation="vertical" size="1" css={{ mx: '$3' }} />
           <Box css={{ mr: '$3' }}>
             <Tooltip content="Frame (F)" side="bottom" align="center">
-              <IconButton variant="ghost">
+              <IconButton>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="15"
@@ -153,7 +153,7 @@ export function Toolbar() {
               align="center"
               multiline
             >
-              <IconButton variant="ghost">
+              <IconButton>
                 <svg
                   width="15"
                   height="15"
@@ -179,7 +179,7 @@ export function Toolbar() {
           </Box>
           <Box>
             <Tooltip content="Text (T)" side="bottom" align="center">
-              <IconButton variant="ghost">
+              <IconButton>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="15"
@@ -200,7 +200,7 @@ export function Toolbar() {
           <Separator orientation="vertical" size="1" css={{ mx: '$3' }} />
           <Box css={{ mr: '$3' }}>
             <Tooltip content="Frame (F)" side="bottom" align="center">
-              <IconButton variant="ghost">
+              <IconButton>
                 <svg
                   width="15"
                   height="15"
@@ -225,7 +225,7 @@ export function Toolbar() {
           <Button variant="blue" css={{ ml: '$3' }}>
             Share
           </Button>
-          <IconButton variant="ghost" css={{ ml: '$2' }}>
+          <IconButton css={{ ml: '$2' }}>
             <PlayIcon />
           </IconButton>
           <Box css={{ width: '50px', flexShrink: 0, textAlign: 'center' }}>

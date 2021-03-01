@@ -828,11 +828,11 @@ function Home() {
                   </Flex>
                 </Flex>
                 <Flex css={{ ai: 'center', cursor: 'default', p: '$1', pointerEvents: 'auto' }}>
-                  <IconButton variant="ghost" css={{ width: 15, height: 15, borderRadius: '$1' }}>
+                  <IconButton css={{ width: 15, height: 15, borderRadius: '$1' }}>
                     <Cross1Icon />
                   </IconButton>
                   <Separator size="1" orientation="vertical" css={{ mx: '$1' }} />
-                  <IconButton variant="ghost" css={{ width: 15, height: 15, borderRadius: '$1' }}>
+                  <IconButton css={{ width: 15, height: 15, borderRadius: '$1' }}>
                     <ArrowRightIcon />
                   </IconButton>
                 </Flex>
@@ -1258,6 +1258,17 @@ function Home() {
               </Popover>
               <Popover>
                 <PopoverTrigger as={Button} variant="ghost">Ghost</PopoverTrigger>
+                <PopoverContent css={{ padding: '$3' }}>
+                  <Text size="2" css={{ lineHeight: '18px' }}>
+                    The other main improvement is with tables, which we'll probably use a lot. With
+                    horizontal overflow on small devices and when zoomed in.
+                  </Text>
+                </PopoverContent>
+              </Popover>
+              <Popover>
+                <PopoverTrigger as={IconButton}>
+                  <VideoIcon />
+                </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
