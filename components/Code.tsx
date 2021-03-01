@@ -10,8 +10,6 @@ type CodeVariants = StitchesVariants<typeof StyledCode>;
 type CodeOwnProps = CodeCSSProp & CodeVariants;
 
 const StyledCode = styled(DEFAULT_TAG, {
-  backgroundColor: '$violet200',
-  color: '$violet900',
   fontFamily: '$mono',
   fontSize: 'max(12px, 85%)',
   whiteSpace: 'nowrap',
@@ -29,6 +27,9 @@ const StyledCode = styled(DEFAULT_TAG, {
       },
     },
   },
+  defaultVariants: {
+    variant: 'violet'
+  }
 });
 
 type CodeComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, CodeOwnProps>;
