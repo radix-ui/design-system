@@ -2,6 +2,7 @@ import React from 'react';
 import { CheckIcon } from '@radix-ui/react-icons';
 import { styled, CSS } from '../stitches.config';
 import { Box } from './Box';
+import { Flex } from './Flex';
 import { panelStyles } from './Panel';
 import * as MenuPrimitive from '@radix-ui/react-menu';
 
@@ -91,7 +92,9 @@ export const MenuRadioItem = React.forwardRef(({ children, ...props }, forwarded
   <StyledMenuRadioItem {...props} ref={forwardedRef}>
     <Box as="span" css={{ position: 'absolute', left: '$1' }}>
       <MenuPrimitive.ItemIndicator>
-        <CheckIcon />
+        <Flex css={{ width: '$3', height: '$3', alignItems: 'center', justifyContent: 'center' }}>
+          <Box css={{ width: '$1', height: '$1', backgroundColor: 'currentColor', borderRadius: '$round' }}></Box>
+        </Flex>
       </MenuPrimitive.ItemIndicator>
     </Box>
     {children}
