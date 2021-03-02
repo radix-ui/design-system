@@ -76,7 +76,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         '&[data-state="open"]': {
           backgroundColor: '$gray300',
           boxShadow: 'inset 0 0 0 1px $colors$gray700',
-        }
+        },
       },
       blue: {
         backgroundColor: '$blue100',
@@ -97,7 +97,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         '&[data-state="open"]': {
           backgroundColor: '$blue300',
           boxShadow: 'inset 0 0 0 1px $colors$blue700',
-        }
+        },
       },
       green: {
         backgroundColor: '$green100',
@@ -118,7 +118,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         '&[data-state="open"]': {
           backgroundColor: '$green300',
           boxShadow: 'inset 0 0 0 1px $colors$green700',
-        }
+        },
       },
       red: {
         backgroundColor: '$loContrast',
@@ -139,7 +139,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         '&[data-state="open"]': {
           backgroundColor: '$red300',
           boxShadow: 'inset 0 0 0 1px $colors$red700',
-        }
+        },
       },
       ghost: {
         backgroundColor: 'transparent',
@@ -158,7 +158,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         },
         '&[data-state="open"]': {
           backgroundColor: '$gray300',
-        }
+        },
       },
       transparentWhite: {
         backgroundColor: 'hsla(0,100%,100%,.2)',
@@ -232,7 +232,7 @@ const StyledButton = styled(DEFAULT_TAG, {
   defaultVariants: {
     size: '1',
     variant: 'gray',
-  }
+  },
 });
 
 type ButtonCSSProp = { css?: CSS };
