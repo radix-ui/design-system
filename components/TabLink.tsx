@@ -23,13 +23,12 @@ const StyledTabLink = styled(DEFAULT_TAG, {
   justifyContent: 'center',
   color: '$gray900',
   textDecoration: 'none',
-
-  '&:hover': {
-    color: '$hiContrast',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      color: '$hiContrast',
+    },
   },
-
   '&:focus': {
-    // color: '$hiContrast',
     boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
   },
 
