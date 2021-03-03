@@ -1840,7 +1840,7 @@ function Home() {
             </Heading>
             <DropdownMenu>
               <DropdownMenuTrigger as={Button}>Dropdown</DropdownMenuTrigger>
-              <DropdownMenuContent align="start">
+              <DropdownMenuContent align="end">
                 <DropdownMenuGroup>
                   <DropdownMenuItem>Item</DropdownMenuItem>
                   <DropdownMenuItem>Item</DropdownMenuItem>
