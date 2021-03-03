@@ -61,7 +61,6 @@ const StyledInput = styled(DEFAULT_TAG, {
   },
   '&:read-only': {
     backgroundColor: '$gray100',
-    // color: '$gray900',
     '&:focus': {
       boxShadow: 'inset 0px 0px 0px 1px $colors$gray600',
     },
@@ -97,8 +96,10 @@ const StyledInput = styled(DEFAULT_TAG, {
     variant: {
       ghost: {
         boxShadow: 'none',
-        '&:hover': {
-          boxShadow: 'inset 0 0 0 1px $colors$gray600',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px $colors$gray600',
+          },
         },
         '&:focus': {
           boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
