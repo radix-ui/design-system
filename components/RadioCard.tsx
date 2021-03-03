@@ -38,11 +38,11 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
   borderRadius: '$2',
   boxShadow: 'inset 0 0 0 1px $colors$gray600',
   p: '$3',
-
-  '&:hover': {
-    boxShadow: 'inset 0 0 0 1px $colors$gray700',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      boxShadow: 'inset 0 0 0 1px $colors$gray700',
+    },
   },
-
   '&[data-state="checked"]': {
     boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700 !important',
     [`& ${StyledRadioIndicator}`]: {
