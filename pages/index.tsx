@@ -164,7 +164,7 @@ function Home() {
           <Container size="2">
             <Title css={{ ta: 'center', mb: '$3' }}>Radix UI test suite</Title>
             <Subtitle css={{ ta: 'center' }}>
-              An environment for testing tokens, theming, and components on Radix UI design system.
+              An environment for testing Radix DS.
             </Subtitle>
           </Container>
         </Section>
