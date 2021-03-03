@@ -17,7 +17,6 @@ export function Popover({ children, ...props }: PopoverProps) {
 const StyledContent = styled(PopoverPrimitive.Content, {
   ...panelStyles,
   minWidth: 200,
-  maxWidth: 'fit-content',
   minHeight: '$6',
   '&:focus': {
     outline: 'none',
