@@ -126,7 +126,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         color: '$red900',
         "@media (any-hover: hover)": {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$red700',
+            boxShadow: 'inset 0 0 0 1px $colors$gray700',
           },
         },
         '&:active': {
