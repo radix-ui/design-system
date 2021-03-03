@@ -71,7 +71,12 @@ import {
   ContextMenuTrigger,
   ContextMenuContent,
   ContextMenuItem,
+  ContextMenuCheckboxItem,
+  ContextMenuRadioItem,
   ContextMenuGroup,
+  ContextMenuRadioGroup,
+  ContextMenuLabel,
+  ContextMenuSeparator,
 } from '../components/ContextMenu';
 import {
   ActivityLogIcon,
@@ -1601,6 +1606,10 @@ function Home() {
                   <ContextMenuItem>Item</ContextMenuItem>
                   <ContextMenuItem>Item</ContextMenuItem>
                   <ContextMenuItem>Item</ContextMenuItem>
+                  <ContextMenuSeparator />
+                  <ContextMenuCheckboxItem>Item</ContextMenuCheckboxItem>
+                  <ContextMenuCheckboxItem>Item</ContextMenuCheckboxItem>
+                  <ContextMenuCheckboxItem>Item</ContextMenuCheckboxItem>
                 </ContextMenuGroup>
               </ContextMenuContent>
             </ContextMenu>
