@@ -5,6 +5,7 @@ import { Container } from '../components/Container';
 import { Flex } from '../components/Flex';
 import { Avatar, AvatarGroup, AvatarNestedItem } from '../components/Avatar';
 import { Status } from '../components/Status';
+import { Heading } from '../components/Heading';
 import { Subheading } from '../components/Subheading';
 import { Link2Icon } from '@radix-ui/react-icons';
 import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
@@ -13,7 +14,8 @@ export function Avatars() {
   return (
     <Section size="3">
       <Container size="2">
-        <Subheading css={{ mb: '$6' }}>Avatar</Subheading>
+        <Heading id="avatar" css={{ mb: '$6', scrollMarginTop: '$7' }}>Avatar</Heading>
+        <Subheading css={{ mb: '$6' }}>Default</Subheading>
         <Avatar alt="John Smith" src="" fallback="J" css={{ mb: '$6' }} />
 
         {/* <Avatar
