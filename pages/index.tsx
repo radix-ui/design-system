@@ -111,51 +111,244 @@ import { Toolbar } from '../custom/Toolbar';
 function Home() {
   return (
     <Box>
-
-      <Box css={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        bottom: 0,
-        overflowY: 'auto',
-        width: 250,
-        px: '$6',
-        py: '$6',
-      }}>
+      <Box
+        css={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          bottom: 0,
+          overflowY: 'auto',
+          width: 250,
+          px: '$6',
+          py: '$6',
+        }}
+      >
         <Subheading>Quick nav</Subheading>
         <Box as="ul" css={{ listStyle: 'none', p: 0 }}>
-          <Box css={{ my: '$1' }}><Link href="#accordion" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Accordion</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#alertdialog" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Alert Dialog</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#avatar" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Avatar</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#badge" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Badge</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#button" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Button</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#card" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Card</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#checkbox" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Checkbox</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#container" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Container</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#contextmenu" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Context Menu</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#controlgroup" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Control Group</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#code" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Code</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#dialog" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Dialog</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#dropdownmenu" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Dropdown Menu</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#input" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Input</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#kbd" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Kbd</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#link" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Link</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#popover" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Popover</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#progressbar" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Progress Bar</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#radio" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Radio</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#radiocard" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Radio Card</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#section" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Section</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#slider" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Slider</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#status" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Status</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#switch" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Switch</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#tablink" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>TabLink</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#tabs" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Tabs</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#text" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Text</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#textarea" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Textarea</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#typography" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Typography</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#simpletoggle" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Simple Toggle</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#skeleton" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Skeleton</Text></Link></Box>
-          <Box css={{ my: '$1' }}><Link href="#verifiedbadge" variant="subtle" css={{ display: 'inline-flex' }}><Text size="2" css={{ lineHeight: '20px' }}>Verified Badge</Text></Link></Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#accordion" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Accordion
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#alertdialog" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Alert Dialog
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#avatar" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Avatar
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#badge" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Badge
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#button" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Button
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#card" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Card
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#checkbox" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Checkbox
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#container" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Container
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#contextmenu" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Context Menu
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#controlgroup" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Control Group
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#code" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Code
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#dialog" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Dialog
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#dropdownmenu" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Dropdown Menu
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#input" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Input
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#kbd" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Kbd
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#link" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Link
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#popover" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Popover
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#progressbar" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Progress Bar
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#radio" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Radio
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#radiocard" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Radio Card
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#section" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Section
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#slider" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Slider
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#status" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Status
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#switch" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Switch
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#tablink" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                TabLink
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#tabs" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Tabs
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#text" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Text
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#textarea" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Textarea
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#typography" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Typography
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#simpletoggle" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Simple Toggle
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#skeleton" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Skeleton
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#verifiedbadge" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Verified Badge
+              </Text>
+            </Link>
+          </Box>
         </Box>
       </Box>
 
@@ -163,9 +356,7 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Title css={{ ta: 'center', mb: '$3' }}>Radix UI test suite</Title>
-            <Subtitle css={{ ta: 'center' }}>
-              An environment for testing Radix DS.
-            </Subtitle>
+            <Subtitle css={{ ta: 'center' }}>An environment for testing Radix DS.</Subtitle>
           </Container>
         </Section>
         <Flex css={{ jc: 'center' }}>
@@ -173,7 +364,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="section" css={{ mb: '$6', scrollMarginTop: '$7' }}>Section</Heading>
+            <Heading id="section" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Section
+            </Heading>
           </Container>
           <Section size="1" css={{ bc: '$gray200' }}>
             <Text as="p" size="4" css={{ ta: 'center' }}>
@@ -196,7 +389,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="container" css={{ mb: '$6', scrollMarginTop: '$7' }}>Container</Heading>
+            <Heading id="container" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Container
+            </Heading>
           </Container>
           <Container size="1">
             <Box
@@ -282,7 +477,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="text" css={{ mb: '$6', scrollMarginTop: '$7' }}>Text</Heading>
+            <Heading id="text" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Text
+            </Heading>
             <Flex css={{ fd: 'column', gap: '$4' }}>
               <Flex css={{ ai: 'center' }}>
                 <Text size="9" as="h1" css={{ fontWeight: 500, lineHeight: '55px' }}>
@@ -414,7 +611,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="typography" css={{ mb: '$2', scrollMarginTop: '$7' }}>Typography</Heading>
+            <Heading id="typography" css={{ mb: '$2', scrollMarginTop: '$7' }}>
+              Typography
+            </Heading>
             <Paragraph css={{ mb: '$7' }}>
               A set of pre-formatted components for setting text.
             </Paragraph>
@@ -442,7 +641,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="skeleton" css={{ mb: '$6', scrollMarginTop: '$7' }}>Skeleton</Heading>
+            <Heading id="skeleton" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Skeleton
+            </Heading>
             <Subheading css={{ mb: '$6' }}>Avatar variants</Subheading>
             <Flex
               css={{
@@ -498,7 +699,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-          <Heading id="badge" css={{ mb: '$6', scrollMarginTop: '$7' }}>Badge</Heading>
+            <Heading id="badge" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Badge
+            </Heading>
             <Subheading css={{ mb: '$6' }}>Default Badge</Subheading>
             <Badge css={{ mb: '$6' }}>Coming soon</Badge>
             <Subheading css={{ mb: '$6' }}>Sizes</Subheading>
@@ -620,13 +823,15 @@ function Home() {
             </Flex>
           </Container>
         </Section>
-        
+
         <Flex css={{ jc: 'center' }}>
           <Separator size="2" />
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="status" css={{ mb: '$6', scrollMarginTop: '$7' }}>Status</Heading>
+            <Heading id="status" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Status
+            </Heading>
             <Subheading css={{ mb: '$6' }}>Default Status</Subheading>
             <Status></Status>
             <Subheading css={{ mt: '$7', mb: '$7' }}>Sizes</Subheading>
@@ -650,7 +855,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-          <Heading id="button" css={{ mb: '$6', scrollMarginTop: '$7' }}>Button</Heading>
+            <Heading id="button" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Button
+            </Heading>
             <Flex css={{ gap: '$6' }}>
               <Button>Button</Button>
               <Button size="2">Button</Button>
@@ -755,7 +962,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="input" css={{ mb: '$6', scrollMarginTop: '$7' }}>Input</Heading>
+            <Heading id="input" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Input
+            </Heading>
             <Flex css={{ ai: 'flex-start', gap: '$6' }}>
               <Input size="1" placeholder="Size 1" />
               <Input size="2" placeholder="Size 2" />
@@ -787,7 +996,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="controlgroup" css={{ mb: '$6', scrollMarginTop: '$7' }}>ControlGroup</Heading>
+            <Heading id="controlgroup" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              ControlGroup
+            </Heading>
             <ControlGroup>
               <Button>Button</Button>
               <Button>Button</Button>
@@ -817,13 +1028,15 @@ function Home() {
             </ControlGroup>
           </Container>
         </Section>
-       
+
         <Flex css={{ jc: 'center' }}>
           <Separator size="2" />
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="textarea" css={{ mb: '$6', scrollMarginTop: '$7' }}>Textarea</Heading>
+            <Heading id="textarea" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Textarea
+            </Heading>
             <Flex css={{ ai: 'flex-start', gap: '$6' }}>
               <Textarea size="1" placeholder="Size 1"></Textarea>
               <Textarea size="2" placeholder="Size 1"></Textarea>
@@ -845,7 +1058,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="kbd" css={{ mb: '$6', scrollMarginTop: '$7' }}>Kbd</Heading>
+            <Heading id="kbd" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Kbd
+            </Heading>
             <Subheading css={{ mb: '$6' }}>Kbd test</Subheading>
             <Flex css={{ ai: 'center', jc: 'space-between', mb: '$7' }}>
               <Text>Resize selected object</Text>
@@ -865,7 +1080,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="verifiedbadge" css={{ mb: '$6', scrollMarginTop: '$7' }}>VerifiedBadge</Heading>
+            <Heading id="verifiedbadge" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              VerifiedBadge
+            </Heading>
             <Flex css={{ ai: 'baseline' }}>
               <Text size="3" css={{ fontWeight: '500' }}>
                 Colm Tuite
@@ -882,7 +1099,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="link" css={{ mb: '$6', scrollMarginTop: '$7' }}>Link</Heading>
+            <Heading id="link" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Link
+            </Heading>
             <Subheading css={{ mb: '$6' }}>Link variants</Subheading>
             <Flex css={{ gap: '$6', mb: '$6' }}>
               <Link variant="blue" href="#">
@@ -912,7 +1131,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="code" css={{ mb: '$6', scrollMarginTop: '$7' }}>Code</Heading>
+            <Heading id="code" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Code
+            </Heading>
             <Paragraph>
               There are 5 variants to choose from. Use <Code>console.log('Radix').console</Code> is
               for positive states. Traditional business literature won’t help you solve it- most of
@@ -928,7 +1149,9 @@ function Home() {
         <Section size="3">
           <Container size="3">
             <Container size="2">
-              <Heading id="card" css={{ mb: '$6', scrollMarginTop: '$7' }}>Card</Heading>
+              <Heading id="card" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+                Card
+              </Heading>
             </Container>
             <Flex css={{ gap: '$3' }}>
               <Box css={{ width: 250 }}>
@@ -1056,7 +1279,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="alertdialog" css={{ mb: '$6', scrollMarginTop: '$7' }}>Alert Dialog</Heading>
+            <Heading id="alertdialog" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Alert Dialog
+            </Heading>
             <AlertDialog>
               <AlertDialogTrigger as={Button}>Alert Dialog</AlertDialogTrigger>
               <AlertDialogContent>
@@ -1081,7 +1306,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="dialog" css={{ mb: '$6', scrollMarginTop: '$7' }}>Dialog</Heading>
+            <Heading id="dialog" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Dialog
+            </Heading>
             <Dialog>
               <DialogTrigger as={Button}>Open dialog</DialogTrigger>
               <DialogContent>
@@ -1126,7 +1353,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="progressbar" css={{ mb: '$6', scrollMarginTop: '$7' }}>ProgressBar</Heading>
+            <Heading id="progressbar" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              ProgressBar
+            </Heading>
             <Subheading css={{ mb: '$6' }}>Default</Subheading>
             <Box css={{ mb: '$6' }}>
               <ProgressBar value={50} />
@@ -1159,8 +1388,10 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="popover" css={{ mb: '$6', scrollMarginTop: '$7' }}>Popover</Heading>
-            <Flex css={{ gap: "$6", fw: 'wrap' }}>
+            <Heading id="popover" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Popover
+            </Heading>
+            <Flex css={{ gap: '$6', fw: 'wrap' }}>
               <Popover>
                 <PopoverTrigger as={Button}>Popover</PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
@@ -1180,7 +1411,9 @@ function Home() {
                 </PopoverContent>
               </Popover>
               <Popover>
-                <PopoverTrigger as={Button} variant="blue">Blue</PopoverTrigger>
+                <PopoverTrigger as={Button} variant="blue">
+                  Blue
+                </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
@@ -1189,7 +1422,9 @@ function Home() {
                 </PopoverContent>
               </Popover>
               <Popover>
-                <PopoverTrigger as={Button} variant="green">Green</PopoverTrigger>
+                <PopoverTrigger as={Button} variant="green">
+                  Green
+                </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
@@ -1198,7 +1433,9 @@ function Home() {
                 </PopoverContent>
               </Popover>
               <Popover>
-                <PopoverTrigger as={Button} variant="red">Red</PopoverTrigger>
+                <PopoverTrigger as={Button} variant="red">
+                  Red
+                </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
@@ -1207,7 +1444,9 @@ function Home() {
                 </PopoverContent>
               </Popover>
               <Popover>
-                <PopoverTrigger as={Button} variant="ghost">Ghost</PopoverTrigger>
+                <PopoverTrigger as={Button} variant="ghost">
+                  Ghost
+                </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
@@ -1248,7 +1487,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="accordion" css={{ mb: '$6', scrollMarginTop: '$7' }}>Accordion</Heading>
+            <Heading id="accordion" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Accordion
+            </Heading>
             <Accordion>
               <AccordionItem value="accordion-one">
                 <AccordionButton>
@@ -1326,7 +1567,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2" css={{ py: '$7' }}>
-            <Heading id="tabs" css={{ mb: '$6', scrollMarginTop: '$7' }}>Tabs</Heading>
+            <Heading id="tabs" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Tabs
+            </Heading>
             <Subheading css={{ mb: '$6' }}>Default</Subheading>
             <Tabs defaultValue="tab-one">
               <TabsList>
@@ -1352,7 +1595,7 @@ function Home() {
                 <Text>Panel 5</Text>
               </TabsPanel>
             </Tabs>
-            
+
             <Subheading css={{ mb: '$6', mt: '$7' }}>Vertical orientation</Subheading>
             <Tabs defaultValue="tab-one" orientation="vertical">
               <TabsList>
@@ -1406,7 +1649,9 @@ function Home() {
         <Section size="3">
           <Container size="3">
             <Container size="2">
-              <Heading id="tablink" css={{ mb: '$6', scrollMarginTop: '$7' }}>TabLink</Heading>
+              <Heading id="tablink" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+                TabLink
+              </Heading>
             </Container>
             <Flex css={{ borderBottom: '1px solid $gray500' }}>
               <TabLink href="#" active>
@@ -1471,13 +1716,15 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="slider" css={{ mb: '$6', scrollMarginTop: '$7' }}>Slider</Heading>
+            <Heading id="slider" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Slider
+            </Heading>
             <Subheading css={{ mb: '$6' }}>Default</Subheading>
-            <Box css={{ width: '150px', mb:'$7' }}>
+            <Box css={{ width: '150px', mb: '$7' }}>
               <Slider defaultValue={[50]} />
             </Box>
             <Subheading css={{ mb: '$6' }}>Range</Subheading>
-            <Flex css={{ gap: '$4', width: '150px', mb:'$7' }}>
+            <Flex css={{ gap: '$4', width: '150px', mb: '$7' }}>
               <Slider defaultValue={[25, 75]} />
             </Flex>
             <Subheading css={{ mb: '$6' }}>Vertical orientaiton</Subheading>
@@ -1492,7 +1739,9 @@ function Home() {
 
         <Section size="3">
           <Container size="2">
-            <Heading id="simpletoggle" css={{ mb: '$6', scrollMarginTop: '$7' }}>SimpleToggle</Heading>
+            <Heading id="simpletoggle" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              SimpleToggle
+            </Heading>
             <SimpleToggle shape="circle">
               <ShadowNoneIcon />
             </SimpleToggle>
@@ -1504,7 +1753,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="checkbox" css={{ mb: '$6', scrollMarginTop: '$7' }}>Checkbox</Heading>
+            <Heading id="checkbox" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Checkbox
+            </Heading>
             <Subheading css={{ mb: '$6' }}>Sizes</Subheading>
             <Checkbox css={{ mr: '$5' }} />
             <Checkbox size="2" css={{ mr: '$5' }} />
@@ -1515,7 +1766,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="radio" css={{ mb: '$6', scrollMarginTop: '$7' }}>Radio</Heading>
+            <Heading id="radio" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Radio
+            </Heading>
             <Subheading css={{ mb: '$6' }}>Sizes</Subheading>
             <RadioGroup defaultValue="1">
               <Radio value="1" css={{ mr: '$5' }} />
@@ -1528,7 +1781,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="radiocard" css={{ mb: '$6', scrollMarginTop: '$7' }}>RadioCard</Heading>
+            <Heading id="radiocard" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              RadioCard
+            </Heading>
             <RadioCardGroup defaultValue="1">
               <RadioCard value="1" css={{ mb: '$2' }}>
                 <Flex css={{ alignItems: 'center' }}>
@@ -1566,7 +1821,9 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="switch" css={{ mb: '$6', scrollMarginTop: '$7' }}>Switch</Heading>
+            <Heading id="switch" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Switch
+            </Heading>
             <Subheading css={{ mb: '$6' }}>Sizes</Subheading>
             <Switch />
             <Switch size="2" css={{ ml: '$6' }} />
@@ -1578,24 +1835,26 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="dropdownmenu" css={{ mb: '$6', scrollMarginTop: '$7' }}>DropdownMenu</Heading>
+            <Heading id="dropdownmenu" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              DropdownMenu
+            </Heading>
             <DropdownMenu>
               <DropdownMenuTrigger as={Button}>Dropdown</DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
+              <DropdownMenuContent align="start">
                 <DropdownMenuGroup>
                   <DropdownMenuItem>Item</DropdownMenuItem>
                   <DropdownMenuItem>Item</DropdownMenuItem>
                   <DropdownMenuItem>Item</DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuCheckboxItem>Item</DropdownMenuCheckboxItem>
-                  <DropdownMenuCheckboxItem>Item</DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem checked>Item</DropdownMenuCheckboxItem>
                   <DropdownMenuCheckboxItem>Item</DropdownMenuCheckboxItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuLabel />
-                  <DropdownMenuRadioGroup>
-                    <DropdownMenuRadioItem>Item</DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem>Item</DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem>Item</DropdownMenuRadioItem>
+                  <DropdownMenuLabel>Choose one</DropdownMenuLabel>
+                  <DropdownMenuRadioGroup value="one">
+                    <DropdownMenuRadioItem value="one">Item</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="two">Item</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="three">Item</DropdownMenuRadioItem>
                   </DropdownMenuRadioGroup>
                 </DropdownMenuGroup>
               </DropdownMenuContent>
@@ -1608,10 +1867,21 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="contextmenu" css={{ mb: '$6', scrollMarginTop: '$7' }}>ContextMenu</Heading>
-              <ContextMenu>
+            <Heading id="contextmenu" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              ContextMenu
+            </Heading>
+            <ContextMenu>
               <ContextMenuTrigger>
-                <Flex css={{ ai: 'center', jc: 'center', height: '$9', bc: '$gray100', border: '2px dashed $colors$gray500', br: '$2' }}>
+                <Flex
+                  css={{
+                    ai: 'center',
+                    jc: 'center',
+                    height: '$9',
+                    bc: '$gray100',
+                    border: '2px dashed $colors$gray500',
+                    br: '$2',
+                  }}
+                >
                   <Text variant="gray">Right-click me</Text>
                 </Flex>
               </ContextMenuTrigger>
@@ -1622,8 +1892,15 @@ function Home() {
                   <ContextMenuItem>Item</ContextMenuItem>
                   <ContextMenuSeparator />
                   <ContextMenuCheckboxItem>Item</ContextMenuCheckboxItem>
+                  <ContextMenuCheckboxItem checked>Item</ContextMenuCheckboxItem>
                   <ContextMenuCheckboxItem>Item</ContextMenuCheckboxItem>
-                  <ContextMenuCheckboxItem>Item</ContextMenuCheckboxItem>
+                  <ContextMenuSeparator />
+                  <ContextMenuLabel>Choose one</ContextMenuLabel>
+                  <ContextMenuRadioGroup value="one">
+                    <ContextMenuRadioItem value="one">Item</ContextMenuRadioItem>
+                    <ContextMenuRadioItem value="two">Item</ContextMenuRadioItem>
+                    <ContextMenuRadioItem value="three">Item</ContextMenuRadioItem>
+                  </ContextMenuRadioGroup>
                 </ContextMenuGroup>
               </ContextMenuContent>
             </ContextMenu>

@@ -4,6 +4,7 @@ import { styled, CSS } from '../stitches.config';
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu';
 import { menuCss, separatorCss, itemCss, interactiveItemCss, labelCss } from './Menu';
 import { Box } from './Box';
+import { Flex } from './Flex';
 import { panelStyles } from './Panel';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -45,7 +46,16 @@ export const ContextMenuRadioItem = React.forwardRef(({ children, ...props }, fo
   <StyledMenuRadioItem {...props} ref={forwardedRef}>
     <Box as="span" css={{ position: 'absolute', left: '$1' }}>
       <ContextMenuPrimitive.ItemIndicator>
-        <CheckIcon />
+        <Flex css={{ width: '$3', height: '$3', alignItems: 'center', justifyContent: 'center' }}>
+          <Box
+            css={{
+              width: '$1',
+              height: '$1',
+              backgroundColor: 'currentColor',
+              borderRadius: '$round',
+            }}
+          />
+        </Flex>
       </ContextMenuPrimitive.ItemIndicator>
     </Box>
     {children}
