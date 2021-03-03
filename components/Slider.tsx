@@ -77,12 +77,14 @@ export const StyledSlider = styled(SliderPrimitive.Root, {
     width: 15,
   },
 
-  '&:hover': {
-    [`& ${SliderTrack}`]: {
-      backgroundColor: '$gray700',
-    },
-    [`& ${SliderThumb}`]: {
-      opacity: '1',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      [`& ${SliderTrack}`]: {
+        backgroundColor: '$gray700',
+      },
+      [`& ${SliderThumb}`]: {
+        opacity: '1',
+      },
     },
   },
 });
