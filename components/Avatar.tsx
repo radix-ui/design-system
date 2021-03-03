@@ -146,9 +146,11 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
           pointerEvents: 'none',
           transition: 'opacity 25ms linear',
         },
-        '&:hover': {
-          '&::after': {
-            opacity: '1',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            '&::after': {
+              opacity: '1',
+            },
           },
         },
         '&[data-state="open"]': {
