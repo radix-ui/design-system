@@ -28,9 +28,10 @@ export const TabsTab = styled(TabsPrimitive.Tab, {
   borderTopLeftRadius: '$2',
   borderTopRightRadius: '$2',
   zIndex: '10',
-
-  '&:hover': {
-    color: '$hiContrast',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      color: '$hiContrast',
+    },
   },
 
   '&[data-state="active"]': {
