@@ -29,8 +29,10 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   color: '$hiContrast',
   boxShadow: 'inset 0 0 0 1px $colors$gray600',
   overflow: 'hidden',
-  '&:hover': {
-    boxShadow: 'inset 0 0 0 1px $colors$gray700',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      boxShadow: 'inset 0 0 0 1px $colors$gray700',
+    },
   },
   '&:focus': {
     outline: 'none',

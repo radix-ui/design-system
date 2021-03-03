@@ -36,8 +36,10 @@ const StyledIconButton = styled(DEFAULT_TAG, {
   backgroundColor: '$loContrast',
   border: '1px solid $gray600',
   borderRadius: '$2',
-  '&:hover': {
-    borderColor: '$gray700',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      borderColor: '$gray700',
+    },
   },
   '&:active': {
     backgroundColor: '$gray100',
@@ -75,8 +77,10 @@ const StyledIconButton = styled(DEFAULT_TAG, {
       ghost: {
         backgroundColor: 'transparent',
         borderWidth: '0',
-        '&:hover': {
-          backgroundColor: '$gray200',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$gray200',
+          },
         },
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
@@ -91,9 +95,11 @@ const StyledIconButton = styled(DEFAULT_TAG, {
       raised: {
         boxShadow:
           '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
-        '&:hover': {
-          boxShadow:
-            '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            boxShadow:
+              '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
+          },
         },
         '&:focus': {
           borderColor: '$gray700',
@@ -109,8 +115,10 @@ const StyledIconButton = styled(DEFAULT_TAG, {
       active: {
         backgroundColor: '$gray300',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
-        '&:hover': {
-          boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
+          },
         },
         '&:active': {
           backgroundColor: '$gray300',
@@ -119,8 +127,10 @@ const StyledIconButton = styled(DEFAULT_TAG, {
       waiting: {
         backgroundColor: '$gray300',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
-        '&:hover': {
-          boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
+          },
         },
         '&:active': {
           backgroundColor: '$gray300',
