@@ -180,8 +180,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'red',
       css: {
-        '&:hover': {
-          backgroundColor: '$red300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$red300',
+          },
         },
         '&:active': {
           backgroundColor: '$red400',
@@ -192,8 +194,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'crimson',
       css: {
-        '&:hover': {
-          backgroundColor: '$crimson300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$crimson300',
+          },
         },
         '&:active': {
           backgroundColor: '$crimson400',
@@ -204,8 +208,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'pink',
       css: {
-        '&:hover': {
-          backgroundColor: '$pink300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$pink300',
+          },
         },
         '&:active': {
           backgroundColor: '$pink400',
@@ -216,8 +222,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'purple',
       css: {
-        '&:hover': {
-          backgroundColor: '$purple300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$purple300',
+          },
         },
         '&:active': {
           backgroundColor: '$purple400',
@@ -228,8 +236,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'violet',
       css: {
-        '&:hover': {
-          backgroundColor: '$violet300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$violet300',
+          },
         },
         '&:active': {
           backgroundColor: '$violet400',
@@ -240,8 +250,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'indigo',
       css: {
-        '&:hover': {
-          backgroundColor: '$indigo300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$indigo300',
+          },
         },
         '&:active': {
           backgroundColor: '$indigo400',
@@ -252,8 +264,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'blue',
       css: {
-        '&:hover': {
-          backgroundColor: '$blue300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$blue300',
+          },
         },
         '&:active': {
           backgroundColor: '$blue400',
@@ -264,8 +278,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'turquoise',
       css: {
-        '&:hover': {
-          backgroundColor: '$turquoise300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$turquoise300',
+          },
         },
         '&:active': {
           backgroundColor: '$turquoise400',
@@ -276,8 +292,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'teal',
       css: {
-        '&:hover': {
-          backgroundColor: '$teal300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$teal300',
+          },
         },
         '&:active': {
           backgroundColor: '$teal400',
@@ -288,8 +306,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'green',
       css: {
-        '&:hover': {
-          backgroundColor: '$green300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$green300',
+          },
         },
         '&:active': {
           backgroundColor: '$green400',
@@ -300,8 +320,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'lime',
       css: {
-        '&:hover': {
-          backgroundColor: '$lime300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$lime300',
+          },
         },
         '&:active': {
           backgroundColor: '$lime400',
@@ -312,8 +334,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'yellow',
       css: {
-        '&:hover': {
-          backgroundColor: '$yellow300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$yellow300',
+          },
         },
         '&:active': {
           backgroundColor: '$yellow400',
@@ -324,8 +348,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'orange',
       css: {
-        '&:hover': {
-          backgroundColor: '$orange300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$orange300',
+          },
         },
         '&:active': {
           backgroundColor: '$orange400',
@@ -336,8 +362,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'gold',
       css: {
-        '&:hover': {
-          backgroundColor: '$gold300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$gold300',
+          },
         },
         '&:active': {
           backgroundColor: '$gold400',
@@ -348,8 +376,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'bronze',
       css: {
-        '&:hover': {
-          backgroundColor: '$bronze300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$bronze300',
+          },
         },
         '&:active': {
           backgroundColor: '$bronze400',
