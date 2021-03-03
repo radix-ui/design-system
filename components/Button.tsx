@@ -73,7 +73,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
         },
-        '&[data-state="open"]': {
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$gray300',
           boxShadow: 'inset 0 0 0 1px $colors$gray700',
         },
@@ -94,7 +94,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
         },
-        '&[data-state="open"]': {
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$blue300',
           boxShadow: 'inset 0 0 0 1px $colors$blue700',
         },
@@ -115,7 +115,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px $colors$green700, 0 0 0 1px $colors$green700',
         },
-        '&[data-state="open"]': {
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$green300',
           boxShadow: 'inset 0 0 0 1px $colors$green700',
         },
@@ -136,7 +136,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px $colors$red700, 0 0 0 1px $colors$red700',
         },
-        '&[data-state="open"]': {
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$red300',
           boxShadow: 'inset 0 0 0 1px $colors$red700',
         },
@@ -156,7 +156,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
         },
-        '&[data-state="open"]': {
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$gray300',
         },
       },

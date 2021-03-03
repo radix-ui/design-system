@@ -88,7 +88,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
         '&:active': {
           backgroundColor: '$gray300',
         },
-        '&[data-state="open"]': {
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$gray300',
         }
       },
