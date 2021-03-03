@@ -1160,7 +1160,7 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Heading id="popover" css={{ mb: '$6', scrollMarginTop: '$7' }}>Popover</Heading>
-            <Flex css={{ gap: "$6" }}>
+            <Flex css={{ gap: "$6", fw: 'wrap' }}>
               <Popover>
                 <PopoverTrigger as={Button}>Popover</PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
@@ -1218,6 +1218,20 @@ function Home() {
               <Popover>
                 <PopoverTrigger as={IconButton}>
                   <VideoIcon />
+                </PopoverTrigger>
+                <PopoverContent css={{ padding: '$3' }}>
+                  <Text size="2" css={{ lineHeight: '18px' }}>
+                    The other main improvement is with tables, which we'll probably use a lot. With
+                    horizontal overflow on small devices and when zoomed in.
+                  </Text>
+                </PopoverContent>
+              </Popover>
+              <Popover>
+                <PopoverTrigger as={Badge} size="2" variant="violet" interactive>
+                  Badge
+                  <Box css={{ ml: '$1' }}>
+                    <CaretDownIcon />
+                  </Box>
                 </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>

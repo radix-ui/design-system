@@ -188,6 +188,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
         '&:active': {
           backgroundColor: '$red400',
         },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$red400',
+        },
       },
     },
     {
@@ -200,6 +203,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
           },
         },
         '&:active': {
+          backgroundColor: '$crimson400',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$crimson400',
         },
       },
@@ -216,6 +222,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
         '&:active': {
           backgroundColor: '$pink400',
         },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$pink400',
+        },
       },
     },
     {
@@ -228,6 +237,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
           },
         },
         '&:active': {
+          backgroundColor: '$purple400',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$purple400',
         },
       },
@@ -244,6 +256,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
         '&:active': {
           backgroundColor: '$violet400',
         },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$violet400',
+        },
       },
     },
     {
@@ -256,6 +271,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
           },
         },
         '&:active': {
+          backgroundColor: '$indigo400',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$indigo400',
         },
       },
@@ -272,6 +290,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
         '&:active': {
           backgroundColor: '$blue400',
         },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$blue400',
+        },
       },
     },
     {
@@ -284,6 +305,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
           },
         },
         '&:active': {
+          backgroundColor: '$turquoise400',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$turquoise400',
         },
       },
@@ -300,6 +324,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
         '&:active': {
           backgroundColor: '$teal400',
         },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$teal400',
+        },
       },
     },
     {
@@ -312,6 +339,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
           },
         },
         '&:active': {
+          backgroundColor: '$green400',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$green400',
         },
       },
@@ -328,6 +358,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
         '&:active': {
           backgroundColor: '$lime400',
         },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$lime400',
+        },
       },
     },
     {
@@ -340,6 +373,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
           },
         },
         '&:active': {
+          backgroundColor: '$yellow400',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$yellow400',
         },
       },
@@ -356,6 +392,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
         '&:active': {
           backgroundColor: '$orange400',
         },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$orange400',
+        },
       },
     },
     {
@@ -370,6 +409,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
         '&:active': {
           backgroundColor: '$gold400',
         },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$gold400',
+        },
       },
     },
     {
@@ -382,6 +424,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
           },
         },
         '&:active': {
+          backgroundColor: '$bronze400',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$bronze400',
         },
       },
