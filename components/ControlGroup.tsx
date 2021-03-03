@@ -13,6 +13,10 @@ export const ControlGroup = styled('div', {
     borderRadius: 0,
     boxShadow:
       'inset 0 1px $colors$gray600, inset -1px 0 $colors$gray600, inset 0 -1px $colors$gray600',
+    '&:hover': {
+      boxShadow:
+        '-1px 0 $colors$gray700, inset 0 1px $colors$gray700, inset -1px 0 $colors$gray700, inset 0 -1px $colors$gray700',
+    },
     '&:focus': {
       zIndex: 1,
       boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
@@ -36,10 +40,6 @@ export const ControlGroup = styled('div', {
       '&:focus': {
         boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
       },
-    },
-    '&:hover': {
-      boxShadow:
-        '-1px 0 $colors$gray700, inset 0 1px $colors$gray700, inset -1px 0 $colors$gray700, inset 0 -1px $colors$gray700',
     },
   },
   [`${Input}`]: {
