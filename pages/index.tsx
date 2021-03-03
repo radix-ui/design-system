@@ -59,7 +59,12 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioItem,
   DropdownMenuGroup,
+  DropdownMenuRadioGroup,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
 } from '../components/DropdownMenu';
 import {
   ContextMenu,
@@ -1557,11 +1562,22 @@ function Home() {
             <Heading id="dropdownmenu" css={{ mb: '$6', scrollMarginTop: '$7' }}>DropdownMenu</Heading>
             <DropdownMenu>
               <DropdownMenuTrigger as={Button}>Dropdown</DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent align="end">
                 <DropdownMenuGroup>
                   <DropdownMenuItem>Item</DropdownMenuItem>
                   <DropdownMenuItem>Item</DropdownMenuItem>
                   <DropdownMenuItem>Item</DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuCheckboxItem>Item</DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem>Item</DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem>Item</DropdownMenuCheckboxItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuLabel />
+                  <DropdownMenuRadioGroup>
+                    <DropdownMenuRadioItem>Item</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem>Item</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem>Item</DropdownMenuRadioItem>
+                  </DropdownMenuRadioGroup>
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>

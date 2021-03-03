@@ -75,7 +75,7 @@ export const DropdownMenuCheckboxItem = React.forwardRef(({ children, ...props }
 
 export const DropdownMenuLabel = styled(DropdownMenuPrimitive.Label, labelCss);
 
-// Group CSS cant be abstraced because it contains variants
+// Group CSS cant be abstracted because it contains variants
 // and Stitches Alpha types dont work properly
 export const DropdownMenuRadioGroup = styled(DropdownMenuPrimitive.RadioGroup, {
   variants: {
@@ -89,7 +89,7 @@ export const DropdownMenuRadioGroup = styled(DropdownMenuPrimitive.RadioGroup, {
   },
 });
 
-// Group CSS cant be abstraced because it contains variants
+// Group CSS cant be abstracted because it contains variants
 // and Stitches Alpha types dont work properly
 export const DropdownMenuGroup = styled(DropdownMenuPrimitive.Group, {
   variants: {
