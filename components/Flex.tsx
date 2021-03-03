@@ -124,8 +124,6 @@ export const Flex = (React.forwardRef<HTMLDivElement, Props>(
               alignItems,
               alignContent,
               flexDirection,
-              // && for Injection oooordeeerrr
-              // since atomic stitches has issues with guaranteeing the order of injection
               '& > *': {
                 margin: 'calc(var(--row-gap) / 2) calc(var(--column-gap) / 2)',
               },
