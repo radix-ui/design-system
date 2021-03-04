@@ -23,9 +23,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
   userSelect: 'none',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   '&:disabled': {
-    backgroundColor: '$gray200',
+    backgroundColor: '$slate200',
     pointerEvents: 'none',
-    color: '$gray700',
+    color: '$slate700',
   },
   '&::before': {
     boxSizing: 'border-box',
@@ -37,9 +37,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
   },
 
   // Custom
-  backgroundColor: '$gray200',
+  backgroundColor: '$slate200',
   borderRadius: '$pill',
-  color: '$gray900',
+  color: '$slate900',
   whiteSpace: 'nowrap',
   fontVariantNumeric: 'tabular-nums',
 
@@ -58,10 +58,10 @@ const StyledBadge = styled(DEFAULT_TAG, {
     },
     variant: {
       gray: {
-        backgroundColor: '$gray200',
-        color: '$gray900',
+        backgroundColor: '$slate200',
+        color: '$slate900',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
         },
       },
       red: {

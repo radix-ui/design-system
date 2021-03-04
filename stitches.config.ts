@@ -4,15 +4,15 @@ export type { StitchesVariants } from '@stitches/react';
 const stitches = createCss({
   theme: {
     colors: {
-      gray100: 'hsl(206 20% 98.8%)',
-      gray200: 'hsl(206 14% 96.0%)',
-      gray300: 'hsl(206 13% 93.7%)',
-      gray400: 'hsl(206 12% 92.0%)',
-      gray500: 'hsl(206 12% 89.5%)',
-      gray600: 'hsl(206 11% 85.2%)',
-      gray700: 'hsl(206 10% 80.0%)',
-      gray800: 'hsl(206 6% 56.1%)',
-      gray900: 'hsl(206 6% 43.9%)',
+      slate100: 'hsl(206 20% 98.8%)',
+      slate200: 'hsl(206 14% 96.0%)',
+      slate300: 'hsl(206 13% 93.7%)',
+      slate400: 'hsl(206 12% 92.0%)',
+      slate500: 'hsl(206 12% 89.5%)',
+      slate600: 'hsl(206 11% 85.2%)',
+      slate700: 'hsl(206 10% 80.0%)',
+      slate800: 'hsl(206 6% 56.1%)',
+      slate900: 'hsl(206 6% 43.9%)',
 
       red100: 'hsl(351 100% 98.5%)',
       red200: 'hsl(351 89% 96.0%)',
@@ -363,15 +363,15 @@ export const utils = config.utils;
 
 export const darkTheme = theme('dark-theme', {
   colors: {
-    gray100: 'hsl(200 6% 9.6%)',
-    gray200: 'hsl(201 6% 11.6%)',
-    gray300: 'hsl(201 6% 13.9%)',
-    gray400: 'hsl(202 6% 16.6%)',
-    gray500: 'hsl(202 6% 20.1%)',
-    gray600: 'hsl(203 6% 24.8%)',
-    gray700: 'hsl(204 6% 31.0%)',
-    gray800: 'hsl(206 6% 43.9%)',
-    gray900: 'hsl(205 5% 52.9%)',
+    slate100: 'hsl(200 6% 9.6%)',
+    slate200: 'hsl(201 6% 11.6%)',
+    slate300: 'hsl(201 6% 13.9%)',
+    slate400: 'hsl(202 6% 16.6%)',
+    slate500: 'hsl(202 6% 20.1%)',
+    slate600: 'hsl(203 6% 24.8%)',
+    slate700: 'hsl(204 6% 31.0%)',
+    slate800: 'hsl(206 6% 43.9%)',
+    slate900: 'hsl(205 5% 52.9%)',
 
     red100: 'hsl(353 35% 10.2%)',
     red200: 'hsl(353 39% 12.1%)',
@@ -522,7 +522,7 @@ export const darkTheme = theme('dark-theme', {
     hiContrast: 'hsl(240 3% 93%)',
     loContrast: 'hsl(200 7% 8.4%)',
     canvas: 'hsl(0 0% 15%)',
-    panel: '$gray200',
+    panel: '$slate200',
     transparentPanel: 'hsl(0 100% 100% / 97%)',
     shadowLight: 'hsl(206 22% 7% / 35%)',
     shadowDark: 'hsl(206 22% 7% / 20%)',

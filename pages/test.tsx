@@ -95,17 +95,17 @@ function Test() {
           </Flex>
 
           <Section size="3">
-            <Section size="1" css={{ bc: '$gray200' }}>
+            <Section size="1" css={{ bc: '$slate200' }}>
               <Text as="p" size="4" css={{ ta: 'center' }}>
                 Section 1
               </Text>
             </Section>
-            <Section size="2" css={{ bc: '$gray200', my: '$1' }}>
+            <Section size="2" css={{ bc: '$slate200', my: '$1' }}>
               <Text as="p" size="4" css={{ ta: 'center' }}>
                 Section 2
               </Text>
             </Section>
-            <Section size="3" css={{ bc: '$gray200' }}>
+            <Section size="3" css={{ bc: '$slate200' }}>
               <Text as="p" size="4" css={{ ta: 'center' }}>
                 Section 3
               </Text>
@@ -121,7 +121,7 @@ function Test() {
               <Box
                 css={{
                   p: '$5',
-                  border: '1px solid $gray500',
+                  border: '1px solid $slate500',
                   borderRadius: '$3',
                 }}
               >
@@ -141,7 +141,7 @@ function Test() {
                     css={{ mb: '$3' }}
                   />
                   <Flex css={{ ai: 'center', jc: 'space-between' }}>
-                    <Text size="2" css={{ color: '$gray900' }}>
+                    <Text size="2" css={{ color: '$slate900' }}>
                       Forgot password
                     </Text>
                     <Button size="2" variant="blue">
@@ -191,7 +191,7 @@ function Test() {
               </Grid>
             </Container>
             <Container size="4">
-              <Text as="p" size="3" css={{ ta: 'center', bc: '$gray200', py: '$2' }}>
+              <Text as="p" size="3" css={{ ta: 'center', bc: '$slate200', py: '$2' }}>
                 No max width
               </Text>
             </Container>
@@ -219,7 +219,7 @@ function Test() {
             <Container size="2">
               <Flex css={{ fd: 'column', gap: '$4' }}>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     900
                   </Text>
                   <Text size="9" as="h1" css={{ fontWeight: 500, lineHeight: '55px' }}>
@@ -227,7 +227,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     800
                   </Text>
                   <Text size="8" as="h2" css={{ fontWeight: 500, lineHeight: '37px' }}>
@@ -235,7 +235,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     700
                   </Text>
                   <Text size="7" as="h3" css={{ fontWeight: 500, lineHeight: '30px' }}>
@@ -243,7 +243,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     600
                   </Text>
                   <Text size="6" as="p" css={{ lineHeight: '30px' }}>
@@ -251,7 +251,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     500
                   </Text>
                   <Text size="5" as="p" css={{ lineHeight: '29px' }}>
@@ -259,7 +259,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     400
                   </Text>
                   <Text size="4" as="p" css={{ lineHeight: '29px' }}>
@@ -267,7 +267,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     300
                   </Text>
                   <Text size="3" as="p" css={{ lineHeight: '25px' }}>
@@ -275,7 +275,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     200
                   </Text>
                   <Text size="2" as="p" css={{ lineHeight: '20px' }}>
@@ -283,7 +283,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     100
                   </Text>
                   <Text size="1" as="p" css={{ lineHeight: '20px' }}>
@@ -314,7 +314,7 @@ function Test() {
             <Container size="2">
               <Flex css={{ fd: 'column', gap: '$4', position: 'relative' }}>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     900
                   </Text>
                   <Text size="9" as="h1" css={{ fontWeight: 500, lineHeight: '55px' }}>
@@ -322,7 +322,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     800
                   </Text>
                   <Text size="8" as="h2" css={{ fontWeight: 500, lineHeight: '37px' }}>
@@ -330,7 +330,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     700
                   </Text>
                   <Text size="7" as="h3" css={{ fontWeight: 500, lineHeight: '30px' }}>
@@ -338,7 +338,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     600
                   </Text>
                   <Text size="6" as="p" css={{ lineHeight: '30px' }}>
@@ -346,7 +346,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     500
                   </Text>
                   <Text size="5" as="p" css={{ lineHeight: '29px' }}>
@@ -354,7 +354,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     400
                   </Text>
                   <Text size="4" as="p" css={{ lineHeight: '29px' }}>
@@ -362,7 +362,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     300
                   </Text>
                   <Text size="3" as="p" css={{ lineHeight: '25px' }}>
@@ -370,7 +370,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     200
                   </Text>
                   <Text size="2" as="p" css={{ lineHeight: '20px' }}>
@@ -378,7 +378,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$gray900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
                     100
                   </Text>
                   <Text size="1" as="p" css={{ lineHeight: '20px' }}>
@@ -593,7 +593,7 @@ function Test() {
                   Colm Tuite
                 </Text>
                 <VerifiedBadge css={{ as: 'center', mx: '$1' }} />
-                <Text size="3" css={{ color: '$gray900' }}>
+                <Text size="3" css={{ color: '$slate900' }}>
                   @colmtuite
                 </Text>
               </Flex>
@@ -607,16 +607,16 @@ function Test() {
           <Section size="3">
             <Container size="2">
               <Flex css={{ gap: '$6' }}>
-                <Text size="3" css={{ color: '$gray900' }}>
+                <Text size="3" css={{ color: '$slate900' }}>
                   Documentation
                 </Text>
                 <Text size="5" css={{ color: '$blue600' }}>
                   Documentation
                 </Text>
-                <Text size="3" css={{ color: '$gray900' }}>
+                <Text size="3" css={{ color: '$slate900' }}>
                   About
                 </Text>
-                <Text size="3" css={{ color: '$gray900' }}>
+                <Text size="3" css={{ color: '$slate900' }}>
                   Blog
                 </Text>
               </Flex>
@@ -760,7 +760,7 @@ function Test() {
               <Box css={{ mb: '$6' }}>
                 <Text size="2">Download 50% complete</Text>
                 <ProgressBar max={100} value={80} css={{ my: '$2' }} />
-                <Text size="1" css={{ color: '$gray900' }}>
+                <Text size="1" css={{ color: '$slate900' }}>
                   46 hours remaining
                 </Text>
               </Box>
@@ -960,7 +960,7 @@ function Test() {
 
           <Section size="3">
             <Container size="3" css={{ py: '$7' }}>
-              <Flex css={{ borderBottom: '1px solid $gray500' }}>
+              <Flex css={{ borderBottom: '1px solid $slate500' }}>
                 <TabLink href="#" active>
                   <Box css={{ mr: '$1' }}>
                     <CodeIcon />

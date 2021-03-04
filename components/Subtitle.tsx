@@ -24,7 +24,7 @@ export const Subtitle = React.forwardRef((props, forwardedRef) => (
       } as any // TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421
     }
     css={{
-      color: '$gray900',
+      color: '$slate900',
       lineHeight: '27px',
       ...(props.css as any),
 

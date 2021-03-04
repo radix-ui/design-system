@@ -21,7 +21,7 @@ const StyledStatus = styled(DEFAULT_TAG, {
     },
     variant: {
       gray: {
-        backgroundColor: '$gray600',
+        backgroundColor: '$slate600',
       },
       blue: {
         backgroundColor: '$blue800',

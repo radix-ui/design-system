@@ -18,8 +18,8 @@ const StyledCode = styled(DEFAULT_TAG, {
   variants: {
     variant: {
       gray: {
-        backgroundColor: '$gray200',
-        color: '$gray900',
+        backgroundColor: '$slate200',
+        color: '$slate900',
       },
       violet: {
         backgroundColor: '$violet200',

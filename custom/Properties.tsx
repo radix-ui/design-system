@@ -238,7 +238,7 @@ export function Properties() {
             </Flex>
           </Box>
 
-          <Box css={{ borderTop: '1px solid $gray500', py: '$1' }}>
+          <Box css={{ borderTop: '1px solid $slate500', py: '$1' }}>
             <Flex
               css={{
                 px: '$3',
@@ -382,7 +382,7 @@ export function Properties() {
             </Flex>
           </Box>
 
-          <Box css={{ borderTop: '1px solid $gray500', py: '$1' }}>
+          <Box css={{ borderTop: '1px solid $slate500', py: '$1' }}>
             <Flex
               css={{
                 px: '$3',
@@ -514,7 +514,7 @@ export function Properties() {
                 <Text
                   size="1"
                   css={{
-                    color: '$gray900',
+                    color: '$slate900',
                     display: 'block',
                     textAlign: 'center',
                   }}
@@ -529,7 +529,7 @@ export function Properties() {
                 <Text
                   size="1"
                   css={{
-                    color: '$gray900',
+                    color: '$slate900',
                     display: 'block',
                     textAlign: 'center',
                   }}
@@ -544,7 +544,7 @@ export function Properties() {
                 <Text
                   size="1"
                   css={{
-                    color: '$gray900',
+                    color: '$slate900',
                     display: 'block',
                     textAlign: 'center',
                   }}
@@ -559,7 +559,7 @@ export function Properties() {
                 <Text
                   size="1"
                   css={{
-                    color: '$gray900',
+                    color: '$slate900',
                     display: 'block',
                     textAlign: 'center',
                   }}
@@ -572,7 +572,7 @@ export function Properties() {
             </Flex>
           </Box>
 
-          <Box css={{ borderTop: '1px solid $gray500', py: '$1' }}>
+          <Box css={{ borderTop: '1px solid $slate500', py: '$1' }}>
             <Flex
               css={{
                 px: '$3',
@@ -680,7 +680,7 @@ export function Properties() {
             </Flex>
           </Box>
 
-          <Box css={{ borderTop: '1px solid $gray500', py: '$1' }}>
+          <Box css={{ borderTop: '1px solid $slate500', py: '$1' }}>
             <Flex
               css={{
                 px: '$3',
@@ -1132,7 +1132,7 @@ export function Properties() {
             </Flex>
           </Box>
 
-          <Box css={{ borderTop: '1px solid $gray500', py: '$1' }}>
+          <Box css={{ borderTop: '1px solid $slate500', py: '$1' }}>
             <Flex
               css={{
                 px: '$3',

@@ -20,7 +20,7 @@ const StyledTextarea = styled(DEFAULT_TAG, {
   width: '100%',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   backgroundColor: '$loContrast',
-  boxShadow: 'inset 0 0 0 1px $colors$gray600',
+  boxShadow: 'inset 0 0 0 1px $colors$slate600',
   borderRadius: '$2',
   color: '$hiContrast',
   fontVariantNumeric: 'tabular-nums',
@@ -33,22 +33,22 @@ const StyledTextarea = styled(DEFAULT_TAG, {
     zIndex: '1',
   },
   '&::placeholder': {
-    color: '$gray800',
+    color: '$slate800',
   },
   '&:disabled': {
     pointerEvents: 'none',
-    backgroundColor: '$gray100',
-    color: '$gray700',
+    backgroundColor: '$slate100',
+    color: '$slate700',
     cursor: 'not-allowed',
     resize: 'none',
     '&::placeholder': {
-      color: '$gray600',
+      color: '$slate600',
     },
   },
   '&:read-only': {
-    backgroundColor: '$gray100',
+    backgroundColor: '$slate100',
     '&:focus': {
-      boxShadow: 'inset 0px 0px 0px 1px $colors$gray600',
+      boxShadow: 'inset 0px 0px 0px 1px $colors$slate600',
     },
   },
 

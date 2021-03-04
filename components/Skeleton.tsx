@@ -6,7 +6,7 @@ const pulse = keyframes({
 });
 
 export const Skeleton = styled('div', {
-  backgroundColor: '$gray300',
+  backgroundColor: '$slate300',
   position: 'relative',
   overflow: 'hidden',
 
@@ -16,7 +16,7 @@ export const Skeleton = styled('div', {
     animationDirection: 'alternate',
     animationIterationCount: 'infinite',
     animationTimingFunction: 'ease-in-out',
-    backgroundColor: '$gray500',
+    backgroundColor: '$slate500',
     borderRadius: 'inherit',
     bottom: 0,
     content: '""',

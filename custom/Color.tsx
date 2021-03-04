@@ -29,45 +29,45 @@ export function Color() {
         >
           <Box></Box>
           <Box css={{ ta: 'center', pb: '$2' }}>
-            <Text css={{ fontSize: '$2', color: '$gray900' }}>100</Text>
+            <Text css={{ fontSize: '$2', color: '$slate900' }}>100</Text>
           </Box>
           <Box css={{ ta: 'center', pb: '$2' }}>
-            <Text css={{ fontSize: '$2', color: '$gray900' }}>200</Text>
+            <Text css={{ fontSize: '$2', color: '$slate900' }}>200</Text>
           </Box>
           <Box css={{ ta: 'center', pb: '$2' }}>
-            <Text css={{ fontSize: '$2', color: '$gray900' }}>300</Text>
+            <Text css={{ fontSize: '$2', color: '$slate900' }}>300</Text>
           </Box>
           <Box css={{ ta: 'center', pb: '$2' }}>
-            <Text css={{ fontSize: '$2', color: '$gray900' }}>400</Text>
+            <Text css={{ fontSize: '$2', color: '$slate900' }}>400</Text>
           </Box>
           <Box css={{ ta: 'center', pb: '$2' }}>
-            <Text css={{ fontSize: '$2', color: '$gray900' }}>500</Text>
+            <Text css={{ fontSize: '$2', color: '$slate900' }}>500</Text>
           </Box>
           <Box css={{ ta: 'center', pb: '$2' }}>
-            <Text css={{ fontSize: '$2', color: '$gray900' }}>600</Text>
+            <Text css={{ fontSize: '$2', color: '$slate900' }}>600</Text>
           </Box>
           <Box css={{ ta: 'center', pb: '$2' }}>
-            <Text css={{ fontSize: '$2', color: '$gray900' }}>700</Text>
+            <Text css={{ fontSize: '$2', color: '$slate900' }}>700</Text>
           </Box>
           <Box css={{ ta: 'center', pb: '$2' }}>
-            <Text css={{ fontSize: '$2', color: '$gray900' }}>800</Text>
+            <Text css={{ fontSize: '$2', color: '$slate900' }}>800</Text>
           </Box>
           <Box css={{ ta: 'center', pb: '$2' }}>
-            <Text css={{ fontSize: '$2', color: '$gray900' }}>900</Text>
+            <Text css={{ fontSize: '$2', color: '$slate900' }}>900</Text>
           </Box>
 
           <Box>
-            <Text css={{ fontSize: '$2' }}>Gray</Text>
+            <Text css={{ fontSize: '$2' }}>Slate</Text>
           </Box>
-          <Box css={{ height: 35, backgroundColor: '$gray100' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$gray200' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$gray300' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$gray400' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$gray500' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$gray600' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$gray700' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$gray800' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$gray900' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$slate100' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$slate200' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$slate300' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$slate400' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$slate500' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$slate600' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$slate700' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$slate800' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$slate900' }}></Box>
 
           <Box>
             <Text css={{ fontSize: '$2' }}>Red</Text>
@@ -333,7 +333,7 @@ export function Color() {
           }}
         >
           <Flex css={{ ai: 'center', jc: 'center', height: 100 }}>
-            <Text size="3" css={{ color: '$gray900' }}>
+            <Text size="3" css={{ color: '$slate900' }}>
               Warm
             </Text>
           </Flex>
@@ -402,7 +402,7 @@ export function Color() {
             }}
           ></Flex>
           <Flex css={{ ai: 'center', jc: 'center', height: 100 }}>
-            <Text size="3" css={{ color: '$gray900' }}>
+            <Text size="3" css={{ color: '$slate900' }}>
               Cool
             </Text>
           </Flex>
@@ -489,7 +489,7 @@ export function Color() {
           }}
         >
           <Flex css={{ ai: 'center', jc: 'center', height: 100 }}>
-            <Text size="3" css={{ color: '$gray900' }}>
+            <Text size="3" css={{ color: '$slate900' }}>
               Warm
             </Text>
           </Flex>
@@ -558,7 +558,7 @@ export function Color() {
             }}
           ></Flex>
           <Flex css={{ ai: 'center', jc: 'center', height: 100 }}>
-            <Text size="3" css={{ color: '$gray900' }}>
+            <Text size="3" css={{ color: '$slate900' }}>
               Cool
             </Text>
           </Flex>
@@ -1298,10 +1298,10 @@ export function Color() {
               backgroundColor: '$loContrast',
             }}
           ></Box>
-          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray100' }}></Box>
-          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray200' }}></Box>
-          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray300' }}></Box>
-          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray400' }}></Box>
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$slate100' }}></Box>
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$slate200' }}></Box>
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$slate300' }}></Box>
+          <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$slate400' }}></Box>
           <Box
             css={{
               position: 'absolute',
@@ -1309,7 +1309,7 @@ export function Color() {
               left: '0',
               width: '100%',
               height: 1,
-              backgroundColor: '$gray500',
+              backgroundColor: '$slate500',
             }}
           ></Box>
         </Flex>

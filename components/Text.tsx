@@ -98,7 +98,7 @@ export const StyledText = styled(DEFAULT_TAG, {
         color: '$bronze900',
       },
       gray: {
-        color: '$gray900',
+        color: '$slate900',
       },
       contrast: {
         color: '$hiContrast',

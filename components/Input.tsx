@@ -26,7 +26,7 @@ const StyledInput = styled(DEFAULT_TAG, {
 
   // Custom
   backgroundColor: '$loContrast',
-  boxShadow: 'inset 0 0 0 1px $colors$gray600',
+  boxShadow: 'inset 0 0 0 1px $colors$slate600',
   borderRadius: '$2',
   color: '$hiContrast',
   fontVariantNumeric: 'tabular-nums',
@@ -48,21 +48,21 @@ const StyledInput = styled(DEFAULT_TAG, {
     },
   },
   '&::placeholder': {
-    color: '$gray800',
+    color: '$slate800',
   },
   '&:disabled': {
     pointerEvents: 'none',
-    backgroundColor: '$gray100',
-    color: '$gray700',
+    backgroundColor: '$slate100',
+    color: '$slate700',
     cursor: 'not-allowed',
     '&::placeholder': {
-      color: '$gray600',
+      color: '$slate600',
     },
   },
   '&:read-only': {
-    backgroundColor: '$gray100',
+    backgroundColor: '$slate100',
     '&:focus': {
-      boxShadow: 'inset 0px 0px 0px 1px $colors$gray600',
+      boxShadow: 'inset 0px 0px 0px 1px $colors$slate600',
     },
   },
 
@@ -98,7 +98,7 @@ const StyledInput = styled(DEFAULT_TAG, {
         boxShadow: 'none',
         "@media (any-hover: hover)": {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$gray600',
+            boxShadow: 'inset 0 0 0 1px $colors$slate600',
           },
         },
         '&:focus': {

@@ -35,7 +35,7 @@ export const itemCss: any = {
   },
 
   '&[data-disabled]': {
-    color: '$gray800',
+    color: '$slate800',
   },
 };
 
@@ -46,7 +46,7 @@ export const interactiveItemCss: any = {
 
 export const labelCss: any = {
   ...baseItemCss,
-  color: '$gray900',
+  color: '$slate900',
 };
 
 export const menuCss: any = {
@@ -58,7 +58,7 @@ export const menuCss: any = {
 export const separatorCss: any = {
   height: 1,
   my: '$1',
-  backgroundColor: '$gray500',
+  backgroundColor: '$slate500',
 };
 
 const StyledMenu = styled(MenuPrimitive.Root, { ...menuCss, ...panelStyles });

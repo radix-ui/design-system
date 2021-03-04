@@ -37,9 +37,9 @@ const StyledButton = styled(DEFAULT_TAG, {
   fontVariantNumeric: 'tabular-nums',
 
   '&:disabled': {
-    backgroundColor: '$gray100',
-    boxShadow: 'inset 0 0 0 1px $colors$gray600',
-    color: '$gray700',
+    backgroundColor: '$slate100',
+    boxShadow: 'inset 0 0 0 1px $colors$slate600',
+    color: '$slate700',
     pointerEvents: 'none',
   },
 
@@ -59,23 +59,23 @@ const StyledButton = styled(DEFAULT_TAG, {
     variant: {
       gray: {
         backgroundColor: '$loContrast',
-        boxShadow: 'inset 0 0 0 1px $colors$gray600',
+        boxShadow: 'inset 0 0 0 1px $colors$slate600',
         color: '$hiContrast',
         "@media (any-hover: hover)": {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$gray700',
+            boxShadow: 'inset 0 0 0 1px $colors$slate700',
           }
         },
         '&:active': {
-          backgroundColor: '$gray100',
-          boxShadow: 'inset 0 0 0 1px $colors$gray700',
+          backgroundColor: '$slate100',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$gray300',
-          boxShadow: 'inset 0 0 0 1px $colors$gray700',
+          backgroundColor: '$slate300',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700',
         },
       },
       blue: {
@@ -122,11 +122,11 @@ const StyledButton = styled(DEFAULT_TAG, {
       },
       red: {
         backgroundColor: '$loContrast',
-        boxShadow: 'inset 0 0 0 1px $colors$gray600',
+        boxShadow: 'inset 0 0 0 1px $colors$slate600',
         color: '$red900',
         "@media (any-hover: hover)": {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$gray700',
+            boxShadow: 'inset 0 0 0 1px $colors$slate700',
           },
         },
         '&:active': {
@@ -147,17 +147,17 @@ const StyledButton = styled(DEFAULT_TAG, {
         color: '$hiContrast',
         "@media (any-hover: hover)": {
           '&:hover': {
-            backgroundColor: '$gray200',
+            backgroundColor: '$slate200',
           },
         },
         '&:active': {
-          backgroundColor: '$gray300',
+          backgroundColor: '$slate300',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$gray300',
+          backgroundColor: '$slate300',
         },
       },
       transparentWhite: {
@@ -193,38 +193,38 @@ const StyledButton = styled(DEFAULT_TAG, {
     },
     state: {
       active: {
-        backgroundColor: '$gray300',
-        boxShadow: 'inset 0 0 0 1px $colors$gray700',
-        color: '$gray900',
+        backgroundColor: '$slate300',
+        boxShadow: 'inset 0 0 0 1px $colors$slate700',
+        color: '$slate900',
         "@media (any-hover: hover)": {
           '&:hover': {
-            backgroundColor: '$gray400',
-            boxShadow: 'inset 0 0 0 1px $colors$gray700',
+            backgroundColor: '$slate400',
+            boxShadow: 'inset 0 0 0 1px $colors$slate700',
           }
         },
         '&:active': {
-          backgroundColor: '$gray400',
+          backgroundColor: '$slate400',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
         },
       },
       waiting: {
-        backgroundColor: '$gray300',
-        boxShadow: 'inset 0 0 0 1px $colors$gray700',
+        backgroundColor: '$slate300',
+        boxShadow: 'inset 0 0 0 1px $colors$slate700',
         color: 'transparent',
         pointerEvents: 'none',
         "@media (any-hover: hover)": {
           '&:hover': {
-            backgroundColor: '$gray400',
-            boxShadow: 'inset 0 0 0 1px $colors$gray700',
+            backgroundColor: '$slate400',
+            boxShadow: 'inset 0 0 0 1px $colors$slate700',
           }
         },
         '&:active': {
-          backgroundColor: '$gray400',
+          backgroundColor: '$slate400',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700',
         },
       },
     },

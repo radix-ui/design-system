@@ -8,10 +8,10 @@ import * as Polymorphic from '@radix-ui/react-polymorphic';
 const StyledAccordion = styled(AccordionPrimitive.Root, {});
 
 const StyledItem = styled(AccordionPrimitive.Item, {
-  borderTop: '1px solid $colors$gray500',
+  borderTop: '1px solid $colors$slate500',
 
   '&:last-of-type': {
-    borderBottom: '1px solid $colors$gray500',
+    borderBottom: '1px solid $colors$slate500',
   },
 });
 
@@ -27,13 +27,13 @@ const StyledButton = styled(AccordionPrimitive.Button, {
 
   "@media (any-hover: hover)": {
     '&:hover': {
-      backgroundColor: '$gray100',
+      backgroundColor: '$slate100',
     },
   },
 
   '&:focus': {
     outline: 'none',
-    boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
+    boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
   },
 
   svg: {

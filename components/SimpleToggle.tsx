@@ -39,26 +39,26 @@ const StyledSimpleToggle = styled(ToggleButtonPrimitive.Root, {
   backgroundColor: 'transparent',
   "@media (any-hover: hover)": {
     '&:hover': {
-      backgroundColor: '$gray200',
+      backgroundColor: '$slate200',
     },
   },
   '&:active': {
-    backgroundColor: '$gray300',
+    backgroundColor: '$slate300',
   },
   '&:focus': {
-    boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
+    boxShadow: 'inset 0 0 0 1px $slate700, 0 0 0 1px $slate700',
     zIndex: 1,
   },
 
   '&[data-state="on"]': {
-    backgroundColor: '$gray400',
+    backgroundColor: '$slate400',
     "@media (any-hover: hover)": {
       '&:hover': {
-        backgroundColor: '$gray400',
+        backgroundColor: '$slate400',
       },
     },
     '&:active': {
-      backgroundColor: '$gray600',
+      backgroundColor: '$slate600',
     },
   },
 

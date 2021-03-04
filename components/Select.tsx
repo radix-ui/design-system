@@ -7,7 +7,7 @@ export const Select = styled('select', {
   fontFamily: 'inherit',
   height: '$5',
   fontSize: '$1',
-  boxShadow: 'inset 0 0 0 1px $colors$gray600',
+  boxShadow: 'inset 0 0 0 1px $colors$slate600',
   pl: '$1',
   borderRadius: '$2',
   color: '$hiContrast',

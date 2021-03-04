@@ -34,24 +34,24 @@ const StyledIconButton = styled(DEFAULT_TAG, {
     boxSizing: 'border-box',
   },
   backgroundColor: '$loContrast',
-  border: '1px solid $gray600',
+  border: '1px solid $slate600',
   borderRadius: '$2',
   "@media (any-hover: hover)": {
     '&:hover': {
-      borderColor: '$gray700',
+      borderColor: '$slate700',
     },
   },
   '&:active': {
-    backgroundColor: '$gray100',
+    backgroundColor: '$slate100',
   },
   '&:focus': {
-    borderColor: '$gray700',
-    boxShadow: '0 0 0 1px $colors$gray700',
+    borderColor: '$slate700',
+    boxShadow: '0 0 0 1px $colors$slate700',
   },
   '&:disabled': {
     pointerEvents: 'none',
     backgroundColor: 'transparent',
-    color: '$gray500',
+    color: '$slate500',
   },
 
   variants: {
@@ -79,17 +79,17 @@ const StyledIconButton = styled(DEFAULT_TAG, {
         borderWidth: '0',
         "@media (any-hover: hover)": {
           '&:hover': {
-            backgroundColor: '$gray200',
+            backgroundColor: '$slate200',
           },
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$gray700, 0 0 0 1px $colors$gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
         },
         '&:active': {
-          backgroundColor: '$gray300',
+          backgroundColor: '$slate300',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$gray300',
+          backgroundColor: '$slate300',
         }
       },
       raised: {
@@ -102,18 +102,18 @@ const StyledIconButton = styled(DEFAULT_TAG, {
           },
         },
         '&:focus': {
-          borderColor: '$gray700',
+          borderColor: '$slate700',
           boxShadow:
-            '0 0 0 1px $colors$gray700, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
+            '0 0 0 1px $colors$slate700, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
         },
         '&:active': {
-          backgroundColor: '$gray300',
+          backgroundColor: '$slate300',
         },
       },
     },
     state: {
       active: {
-        backgroundColor: '$gray300',
+        backgroundColor: '$slate300',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
         "@media (any-hover: hover)": {
           '&:hover': {
@@ -121,11 +121,11 @@ const StyledIconButton = styled(DEFAULT_TAG, {
           },
         },
         '&:active': {
-          backgroundColor: '$gray300',
+          backgroundColor: '$slate300',
         },
       },
       waiting: {
-        backgroundColor: '$gray300',
+        backgroundColor: '$slate300',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
         "@media (any-hover: hover)": {
           '&:hover': {
@@ -133,7 +133,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
           },
         },
         '&:active': {
-          backgroundColor: '$gray300',
+          backgroundColor: '$slate300',
         },
       },
     },
