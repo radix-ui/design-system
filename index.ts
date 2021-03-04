@@ -9,6 +9,7 @@ export {
   AlertDialogTrigger,
 } from './components/AlertDialog';
 export { Avatar, AvatarGroup, AvatarNestedItem } from './components/Avatar';
+export { AspectRatio } from '@radix-ui/react-aspect-ratio';
 export { Badge } from './components/Badge';
 export { Box } from './components/Box';
 export { Button } from './components/Button';
@@ -75,6 +76,7 @@ export { Separator } from './components/Separator';
 export { SimpleToggle } from './components/SimpleToggle';
 export { Skeleton } from './components/Skeleton';
 export { Slider } from './components/Slider';
+export { Slot } from '@radix-ui/react-slot';
 export { Status } from './components/Status';
 export { Subheading } from './components/Subheading';
 export { Subtitle } from './components/Subtitle';

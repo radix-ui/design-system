@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '../stitches.config';
+import { styled, CSS } from '../stitches.config';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 
@@ -25,7 +25,7 @@ const StyledButton = styled(AccordionPrimitive.Button, {
   color: '$hiContrast',
   width: '100%',
 
-  "@media (any-hover: hover)": {
+  '@media (any-hover: hover)': {
     '&:hover': {
       backgroundColor: '$slate100',
     },
@@ -46,6 +46,18 @@ const StyledButton = styled(AccordionPrimitive.Button, {
     },
   },
 });
+
+type AccordionCSSProp = { css?: CSS };
+type AccordionOwnProps = Polymorphic.OwnProps<typeof AccordionPrimitive.Root> & AccordionCSSProp;
+
+type AccordionComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof AccordionPrimitive.Root>,
+  AccordionOwnProps
+>;
+
+export const Accordion = React.forwardRef(({ type = 'single', ...props }, forwardedRef) => (
+  <StyledAccordion {...props} type={type} ref={forwardedRef} />
+)) as AccordionComponent;
 
 type AccordionButtonOwnProps = Polymorphic.OwnProps<typeof AccordionPrimitive.Button> & {
   css?: any;
@@ -69,6 +81,5 @@ const StyledPanel = styled(AccordionPrimitive.Panel, {
   p: '$2',
 });
 
-export const Accordion = StyledAccordion;
 export const AccordionItem = StyledItem;
 export const AccordionPanel = StyledPanel;
