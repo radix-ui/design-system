@@ -720,7 +720,7 @@ function Home() {
             <Flex css={{ gap: '$5', fw: 'wrap', mb: '$6' }}>
               <Badge size="2" variant="red">
                 <Box css={{ mr: 5 }}>
-                  <Status size="1" color="red" />
+                  <Status size="1" variant="red" />
                 </Box>
                 Live
               </Badge>
