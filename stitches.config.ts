@@ -13,6 +13,7 @@ const stitches = createCss({
       gray700: 'hsl(0 0% 80.0%)',
       gray800: 'hsl(0 0% 56.1%)',
       gray900: 'hsl(0 0% 43.9%)',
+      gray1000: 'hsl(0 0% 7%)',
 
       quartz100: 'hsl(252 17% 98.8%)',
       quartz200: 'hsl(252 11% 96.0%)',
@@ -23,6 +24,7 @@ const stitches = createCss({
       quartz700: 'hsl(252 8% 80.0%)',
       quartz800: 'hsl(252 4% 56.1%)',
       quartz900: 'hsl(252 4% 43.9%)',
+      quartz1000: 'hsl(252 10% 7%)',
 
       slate100: 'hsl(206 20% 98.8%)',
       slate200: 'hsl(206 14% 96.0%)',
@@ -33,6 +35,7 @@ const stitches = createCss({
       slate700: 'hsl(206 10% 80.0%)',
       slate800: 'hsl(206 6% 56.1%)',
       slate900: 'hsl(206 6% 43.9%)',
+      slate1000: 'hsl(206 12% 7%)',
 
       red100: 'hsl(351 100% 98.5%)',
       red200: 'hsl(351 89% 96.0%)',
@@ -43,6 +46,7 @@ const stitches = createCss({
       red700: 'hsl(355 82% 71.7%)',
       red800: 'hsl(356 91% 59.0%)',
       red900: 'hsl(356 80% 47.1%)',
+      red1000: 'hsl(356 80% 27.1%)',
 
       crimson100: 'hsl(332 100% 98.5%)',
       crimson200: 'hsl(332 87% 96.0%)',
@@ -53,6 +57,7 @@ const stitches = createCss({
       crimson700: 'hsl(336 80% 70.0%)',
       crimson800: 'hsl(336 88% 56.3%)',
       crimson900: 'hsl(336 79% 46.1%)',
+      crimson1000: 'hsl(336 79% 26.1%)',
 
       pink100: 'hsl(322 100% 98.5%)',
       pink200: 'hsl(322 90% 95.8%)',
@@ -63,6 +68,7 @@ const stitches = createCss({
       pink700: 'hsl(322 84% 68.9%)',
       pink800: 'hsl(322 75% 60.0%)',
       pink900: 'hsl(322 80% 43.9%)',
+      pink1000: 'hsl(322 80% 23.9%)',
 
       purple100: 'hsl(280 100% 99.0%)',
       purple200: 'hsl(279 75% 95.7%)',
@@ -73,6 +79,7 @@ const stitches = createCss({
       purple700: 'hsl(272 66% 68.1%)',
       purple800: 'hsl(272 53% 50.0%)',
       purple900: 'hsl(272 62% 44.1%)',
+      purple1000: 'hsl(272 62% 24.1%)',
 
       violet100: 'hsl(252 100% 99.0%)',
       violet200: 'hsl(252 87% 96.4%)',
@@ -83,6 +90,7 @@ const stitches = createCss({
       violet700: 'hsl(252 82% 72.2%)',
       violet800: 'hsl(252 62% 54.9%)',
       violet900: 'hsl(250 55% 48.0%)',
+      violet1000: 'hsl(250 55% 28.0%)',
 
       indigo100: 'hsl(226 100% 99.0%)',
       indigo200: 'hsl(226 83% 96.3%)',
@@ -93,6 +101,7 @@ const stitches = createCss({
       indigo700: 'hsl(226 76% 70.2%)',
       indigo800: 'hsl(226 69% 54.1%)',
       indigo900: 'hsl(226 70% 44.1%)',
+      indigo1000: 'hsl(226 70% 24.1%)',
 
       blue100: 'hsl(206 100% 98.8%)',
       blue200: 'hsl(206 98% 95.8%)',
@@ -103,6 +112,7 @@ const stitches = createCss({
       blue700: 'hsl(206 97% 68.3%)',
       blue800: 'hsl(206 100% 50.0%)',
       blue900: 'hsl(211 100% 43.9%)',
+      blue1000: 'hsl(211 73% 12%)',
 
       cyan100: 'hsl(185 78% 97.8%)',
       cyan200: 'hsl(185 73% 93.2%)',
@@ -113,6 +123,7 @@ const stitches = createCss({
       cyan700: 'hsl(188 68% 59.2%)',
       cyan800: 'hsl(190 88% 40.0%)',
       cyan900: 'hsl(190 90% 30.0%)',
+      cyan1000: 'hsl(190 63% 8.0%)',
 
       teal100: 'hsl(165 100% 97.5%)',
       teal200: 'hsl(166 73% 93.1%)',
@@ -123,6 +134,7 @@ const stitches = createCss({
       teal700: 'hsl(172 54% 50.0%)',
       teal800: 'hsl(173 79% 36.7%)',
       teal900: 'hsl(174 100% 24.5%)',
+      teal1000: 'hsl(174 70% 7%)',
 
       green100: 'hsl(130 100% 97.5%)',
       green200: 'hsl(131 72% 94.0%)',
@@ -133,6 +145,7 @@ const stitches = createCss({
       green700: 'hsl(144 48% 55.8%)',
       green800: 'hsl(145 62% 41.0%)',
       green900: 'hsl(148 69% 30.0%)',
+      green1000: 'hsl(148 69% 10.0%)',
 
       lime100: 'hsl(85 86% 96.5%)',
       lime200: 'hsl(84 79% 92.6%)',
@@ -143,6 +156,7 @@ const stitches = createCss({
       lime700: 'hsl(76 74% 48.9%)',
       lime800: 'hsl(81 91% 40.0%)',
       lime900: 'hsl(78 80% 25.1%)',
+      lime1000: 'hsl(78 80% 5.1%)',
 
       yellow100: 'hsl(55 100% 95.5%)',
       yellow200: 'hsl(55 93% 89.9%)',
@@ -153,6 +167,7 @@ const stitches = createCss({
       yellow700: 'hsl(52 88% 51.7%)',
       yellow800: 'hsl(49 97% 48.0%)',
       yellow900: 'hsl(40 80% 32.0%)',
+      yellow1000: 'hsl(40 80% 12.0%)',
 
       orange100: 'hsl(40 100% 97.0%)',
       orange200: 'hsl(40 97% 93.2%)',
@@ -163,6 +178,7 @@ const stitches = createCss({
       orange700: 'hsl(36 96% 53.9%)',
       orange800: 'hsl(38 100% 53.9%)',
       orange900: 'hsl(27 65% 35.9%)',
+      orange1000: 'hsl(27 65% 15.9%)',
 
       brown100: 'hsl(30 75% 98.0%)',
       brown200: 'hsl(30 67% 94.0%)',
@@ -173,6 +189,7 @@ const stitches = createCss({
       brown700: 'hsl(28 61% 61.6%)',
       brown800: 'hsl(28 48% 52.0%)',
       brown900: 'hsl(20 50% 37.1%)',
+      brown1000: 'hsl(20 50% 17.1%)',
 
       bronze100: 'hsl(18 100% 98.5%)',
       bronze200: 'hsl(18 57% 94.1%)',
@@ -183,6 +200,7 @@ const stitches = createCss({
       bronze700: 'hsl(16 39% 64.0%)',
       bronze800: 'hsl(17 28% 52.0%)',
       bronze900: 'hsl(15 30% 43.1%)',
+      bronze1000: 'hsl(15 30% 23.1%)',
 
       gold100: 'hsl(50 75% 98.0%)',
       gold200: 'hsl(49 52% 93.8%)',
@@ -193,6 +211,7 @@ const stitches = createCss({
       gold700: 'hsl(36 37% 60.0%)',
       gold800: 'hsl(36 30% 52.0%)',
       gold900: 'hsl(36 26% 40.0%)',
+      gold1000: 'hsl(36 26% 20.0%)',
 
       // Semantic colors
 
@@ -392,6 +411,7 @@ export const darkTheme = theme('dark-theme', {
     gray700: 'hsl(0 0% 31.0%)',
     gray800: 'hsl(0 0% 43.9%)',
     gray900: 'hsl(0 0% 52.9%)',
+    gray1000: 'hsl(0 0% 93%)',
 
     quartz100: 'hsl(252 2% 10%)',
     quartz200: 'hsl(252 2% 11%)',
@@ -402,6 +422,7 @@ export const darkTheme = theme('dark-theme', {
     quartz700: 'hsl(252 5% 31%)',
     quartz800: 'hsl(252 4% 44%)',
     quartz900: 'hsl(252 4% 53%)',
+    quartz1000: 'hsl(252 2% 93%)',
 
     slate100: 'hsl(200 6% 9.6%)',
     slate200: 'hsl(201 6% 11.6%)',
@@ -412,6 +433,7 @@ export const darkTheme = theme('dark-theme', {
     slate700: 'hsl(204 6% 31.0%)',
     slate800: 'hsl(206 6% 43.9%)',
     slate900: 'hsl(205 5% 52.9%)',
+    slate1000: 'hsl(210 3% 93%)',
 
     red100: 'hsl(353 35% 10.2%)',
     red200: 'hsl(353 39% 12.1%)',
@@ -421,6 +443,7 @@ export const darkTheme = theme('dark-theme', {
     red600: 'hsl(353 54% 26.7%)',
     red700: 'hsl(353 70% 36.9%)',
     red900: 'hsl(358 100% 68.0%)',
+    red1000: 'hsl(358 100% 88.0%)',
 
     crimson100: 'hsl(335 33% 10.0%)',
     crimson200: 'hsl(335 39% 12.4%)',
@@ -430,6 +453,7 @@ export const darkTheme = theme('dark-theme', {
     crimson600: 'hsl(334 60% 28.8%)',
     crimson700: 'hsl(334 80% 35.9%)',
     crimson900: 'hsl(341 90% 63.1%)',
+    crimson1000: 'hsl(341 90% 83.1%)',
 
     pink100: 'hsl(318 33% 10.0%)',
     pink200: 'hsl(318 39% 12.8%)',
@@ -439,6 +463,7 @@ export const darkTheme = theme('dark-theme', {
     pink600: 'hsl(319 56% 30.3%)',
     pink700: 'hsl(320 72% 38.0%)',
     pink900: 'hsl(325 90% 67.1%)',
+    pink1000: 'hsl(325 90% 87.1%)',
 
     purple100: 'hsl(284 28% 10.4%)',
     purple200: 'hsl(282 32% 14.1%)',
@@ -448,6 +473,7 @@ export const darkTheme = theme('dark-theme', {
     purple600: 'hsl(276 45% 33.5%)',
     purple700: 'hsl(272 55% 42.0%)',
     purple900: 'hsl(275 91% 71.0%)',
+    purple1000: 'hsl(275 91% 91.0%)',
 
     violet100: 'hsl(250 30% 11.8%)',
     violet200: 'hsl(250 34% 16.0%)',
@@ -457,6 +483,7 @@ export const darkTheme = theme('dark-theme', {
     violet600: 'hsl(251 46% 39.0%)',
     violet700: 'hsl(252 58% 50.0%)',
     violet900: 'hsl(250 100% 76.1%)',
+    violet1000: 'hsl(250 100% 96.1%)',
 
     indigo100: 'hsl(229 37% 11.8%)',
     indigo200: 'hsl(228 40% 15.2%)',
@@ -466,6 +493,7 @@ export const darkTheme = theme('dark-theme', {
     indigo600: 'hsl(227 51% 35.3%)',
     indigo700: 'hsl(225 62% 47.1%)',
     indigo900: 'hsl(228 100% 72.9%)',
+    indigo1000: 'hsl(228 100% 92.9%)',
 
     blue100: 'hsl(212 50% 10.2%)',
     blue200: 'hsl(212 56% 13.6%)',
@@ -475,6 +503,7 @@ export const darkTheme = theme('dark-theme', {
     blue600: 'hsl(210 75% 31.0%)',
     blue700: 'hsl(208 93% 40.0%)',
     blue900: 'hsl(210 100% 66.1%)',
+    blue1000: 'hsl(210 100% 86.1%)',
 
     cyan100: 'hsl(192 68% 7.5%)',
     cyan200: 'hsl(191 71% 10.2%)',
@@ -484,6 +513,7 @@ export const darkTheme = theme('dark-theme', {
     cyan600: 'hsl(190 79% 24.6%)',
     cyan700: 'hsl(190 85% 32.0%)',
     cyan900: 'hsl(192 80% 47.1%)',
+    cyan1000: 'hsl(192 80% 67.1%)',
 
     teal100: 'hsl(168 76% 6.5%)',
     teal200: 'hsl(169 76% 8.3%)',
@@ -493,6 +523,7 @@ export const darkTheme = theme('dark-theme', {
     teal600: 'hsl(171 78% 20.0%)',
     teal700: 'hsl(173 80% 29.0%)',
     teal900: 'hsl(174 90% 40.0%)',
+    teal1000: 'hsl(174 90% 60.0%)',
 
     green100: 'hsl(140 43% 8.2%)',
     green200: 'hsl(141 45% 10.1%)',
@@ -502,6 +533,7 @@ export const darkTheme = theme('dark-theme', {
     green600: 'hsl(143 53% 23.6%)',
     green700: 'hsl(145 60% 35.1%)',
     green900: 'hsl(130 50% 55.1%)',
+    green1000: 'hsl(130 50% 75.1%)',
 
     lime100: 'hsl(80 47% 7.5%)',
     lime200: 'hsl(79 52% 9.0%)',
@@ -511,6 +543,7 @@ export const darkTheme = theme('dark-theme', {
     lime600: 'hsl(78 66% 23.5%)',
     lime700: 'hsl(76 85% 38.0%)',
     lime900: 'hsl(81 70% 50.0%)',
+    lime1000: 'hsl(81 70% 70.0%)',
 
     yellow100: 'hsl(44 59% 7.6%)',
     yellow200: 'hsl(45 63% 9.1%)',
@@ -520,6 +553,7 @@ export const darkTheme = theme('dark-theme', {
     yellow600: 'hsl(48 80% 24.3%)',
     yellow700: 'hsl(50 100% 45.1%)',
     yellow900: 'hsl(49 80% 52.2%)',
+    yellow1000: 'hsl(49 80% 72.2%)',
 
     orange100: 'hsl(30 50% 8.6%)',
     orange200: 'hsl(31 54% 10.3%)',
@@ -529,6 +563,7 @@ export const darkTheme = theme('dark-theme', {
     orange600: 'hsl(34 70% 26.9%)',
     orange700: 'hsl(38 90% 48.0%)',
     orange900: 'hsl(35 90% 51.2%)',
+    orange1000: 'hsl(35 90% 71.2%)',
 
     brown100: 'hsl(22 40% 9.2%)',
     brown200: 'hsl(23 42% 11.6%)',
@@ -538,6 +573,7 @@ export const darkTheme = theme('dark-theme', {
     brown600: 'hsl(26 45% 29.0%)',
     brown700: 'hsl(28 48% 45.1%)',
     brown900: 'hsl(28 60% 55.9%)',
+    brown1000: 'hsl(28 60% 75.9%)',
 
     bronze100: 'hsl(17 14% 10.0%)',
     bronze200: 'hsl(17 15% 13.4%)',
@@ -547,6 +583,7 @@ export const darkTheme = theme('dark-theme', {
     bronze600: 'hsl(18 20% 30.8%)',
     bronze700: 'hsl(18 25% 44.9%)',
     bronze900: 'hsl(18 37% 61.0%)',
+    bronze1000: 'hsl(18 37% 81.0%)',
 
     gold100: 'hsl(43 15% 9.2%)',
     gold200: 'hsl(42 17% 12.0%)',
@@ -556,6 +593,7 @@ export const darkTheme = theme('dark-theme', {
     gold600: 'hsl(39 22% 29.3%)',
     gold700: 'hsl(36 28% 45.1%)',
     gold900: 'hsl(35 50% 62.9%)',
+    gold1000: 'hsl(35 50% 82.9%)',
 
     // Semantic colors
 

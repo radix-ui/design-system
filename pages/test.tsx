@@ -1,43 +1,11 @@
 import React from 'react';
-import { Button } from '../components/Button';
-import { IconButton } from '../components/IconButton';
 import { Container } from '../components/Container';
 import { Box } from '../components/Box';
 import { Flex } from '../components/Flex';
-import { Grid } from '../components/Grid';
-import { Badge } from '../components/Badge';
 import { Text } from '../components/Text';
-import { Link } from '../components/Link';
-import { Kbd } from '../components/Kbd';
 import { Separator } from '../components/Separator';
-import { VerifiedBadge } from '../components/VerifiedBadge';
-import { Code } from '../components/Code';
-import { Input } from '../components/Input';
 import { Section } from '../components/Section';
-import { Avatar } from '../components/Avatar';
-import { TabLink } from '../components/TabLink';
-import { SimpleToggle } from '../components/SimpleToggle';
 import { ScrollArea } from '../components/Scrollbar';
-import { Tooltip } from '../components/Tooltip';
-import { Slider } from '../components/Slider';
-import { Dialog, DialogTrigger, DialogContent } from '../components/Dialog';
-import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
-import { Checkbox } from '../components/Checkbox';
-import { RadioGroup, Radio } from '../components/Radio';
-import { ProgressBar } from '../components/ProgressBar';
-import {
-  AlertDialog,
-  AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogTitle,
-  AlertDialogDescription,
-  AlertDialogAction,
-  AlertDialogCancel,
-} from '../components/AlertDialog';
-import { Tabs, TabsList, TabsTab, TabsPanel } from '../components/Tabs';
-import { Skeleton } from '../components/Skeleton';
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
-import { Title } from '../components/Title';
 import { Subtitle } from '../components/Subtitle';
 import { Heading } from '../components/Heading';
 import { Subheading } from '../components/Subheading';
@@ -46,33 +14,7 @@ import { Paragraph } from '../components/Paragraph';
 import { Layers } from '../custom/Layers';
 import { Properties } from '../custom/Properties';
 import { Color } from '../custom/Color';
-import { Avatars } from '../custom/Avatars';
 import { Toolbar } from '../custom/Toolbar';
-import {
-  ActivityLogIcon,
-  BarChartIcon,
-  CodeIcon,
-  CommitIcon,
-  ExclamationTriangleIcon,
-  FontItalicIcon,
-  FontStyleIcon,
-  GearIcon,
-  HamburgerMenuIcon,
-  HeadingIcon,
-  LetterCaseCapitalizeIcon,
-  LetterCaseLowercaseIcon,
-  LetterCaseUppercaseIcon,
-  LockClosedIcon,
-  PlayIcon,
-  ReaderIcon,
-  ShadowNoneIcon,
-  TextAlignCenterIcon,
-  TextAlignJustifyIcon,
-  TextAlignLeftIcon,
-  TextAlignRightIcon,
-  TriangleUpIcon,
-  VideoIcon,
-} from '@radix-ui/react-icons';
 
 function Test() {
   return (
@@ -82,17 +24,13 @@ function Test() {
         <ScrollArea>
           <Section size="3">
             <Container size="2">
-              <Text
-                size="6"
-                as="h4"
+              <Heading
                 css={{
-                  fontWeight: 500,
-                  lineHeight: '27px',
                   mb: '$1',
                 }}
               >
                 Tracking test
-              </Text>
+              </Heading>
               <Paragraph css={{ mb: '$7' }}>Tracking should be tight and sexi.</Paragraph>
             </Container>
             <Container size="2">
@@ -173,18 +111,13 @@ function Test() {
             </Container>
 
             <Container size="2">
-              <Text
-                size="6"
-                as="h4"
+              <Heading
                 css={{
-                  fontWeight: 500,
-                  lineHeight: '27px',
-                  mt: '$8',
                   mb: '$1',
                 }}
               >
                 Corrective indent test
-              </Text>
+              </Heading>
               <Paragraph css={{ mb: '$7' }}>
                 Text should be aligned with the yellow box along the left edge. There's some optical
                 shit going on here too, so this is not gospel.
@@ -275,6 +208,60 @@ function Test() {
                     zIndex: '-1',
                   }}
                 ></Box>
+              </Flex>
+            </Container>
+          </Section>
+
+          <Flex css={{ jc: 'center' }}>
+            <Separator size="2" />
+          </Flex>
+
+          <Section size="3">
+            <Container size="2">
+              <Heading css={{ mb: '$7' }}>Text colors</Heading>
+            </Container>
+            <Container size="2">
+              <Flex css={{ fd: 'column', gap: '$4' }}>
+                <Heading css={{ color: '$gray1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$quartz1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$slate1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$red1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$crimson1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$pink1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$purple1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$violet1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$indigo1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$blue1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$cyan1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$teal1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$green1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$lime1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$yellow1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$orange1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$gold1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$brown1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$bronze1000' }}>This heading look balanced and slightly saturated</Heading>
+              </Flex>
+              <Flex css={{ fd: 'column', gap: '$4', mt: '$7' }}>
+                <Heading css={{ color: '$gray900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$quartz900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$slate900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$red900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$crimson900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$pink900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$purple900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$violet900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$indigo900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$blue900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$cyan900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$teal900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$green900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$lime900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$yellow900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$orange900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$gold900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$brown900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$bronze900' }}>This heading look balanced</Heading>
               </Flex>
             </Container>
           </Section>
