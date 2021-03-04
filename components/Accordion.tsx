@@ -47,18 +47,6 @@ const StyledButton = styled(AccordionPrimitive.Button, {
   },
 });
 
-type AccordionCSSProp = { css?: CSS };
-type AccordionOwnProps = Polymorphic.OwnProps<typeof AccordionPrimitive.Root> & AccordionCSSProp;
-
-type AccordionComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof AccordionPrimitive.Root>,
-  AccordionOwnProps
->;
-
-export const Accordion = React.forwardRef(({ type = 'single', ...props }, forwardedRef) => (
-  <StyledAccordion {...props} type={type} ref={forwardedRef} />
-)) as AccordionComponent;
-
 type AccordionButtonOwnProps = Polymorphic.OwnProps<typeof AccordionPrimitive.Button> & {
   css?: any;
 };
@@ -81,5 +69,6 @@ const StyledPanel = styled(AccordionPrimitive.Panel, {
   p: '$2',
 });
 
+export const Accordion = StyledAccordion;
 export const AccordionItem = StyledItem;
 export const AccordionPanel = StyledPanel;

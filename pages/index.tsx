@@ -1490,7 +1490,7 @@ function Home() {
             <Heading id="accordion" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Accordion
             </Heading>
-            <Accordion>
+            <Accordion type="single">
               <AccordionItem value="accordion-one">
                 <AccordionButton>
                   <Text size="3" css={{ fontWeight: 500 }}>
