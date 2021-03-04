@@ -2,7 +2,7 @@ import React from 'react';
 import { CheckIcon } from '@radix-ui/react-icons';
 import { styled, CSS } from '../stitches.config';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
-import { menuCss, separatorCss, itemCss, interactiveItemCss, labelCss } from './Menu';
+import { menuCss, separatorCss, itemCss, labelCss } from './Menu';
 import { Box } from './Box';
 import { Flex } from './Flex';
 import { panelStyles } from './Panel';
@@ -10,7 +10,15 @@ import { panelStyles } from './Panel';
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 export const DropdownMenu = DropdownMenuPrimitive.Root;
-export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
+
+type DropdownMenuTriggerComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof DropdownMenuPrimitive.Trigger>,
+  Polymorphic.OwnProps<typeof DropdownMenuPrimitive.Trigger>
+>;
+
+export const DropdownMenuTrigger = React.forwardRef((props, forwardedRef) => (
+  <DropdownMenuPrimitive.Trigger data-radix-dropdown-menu-trigger {...props} ref={forwardedRef} />
+)) as DropdownMenuTriggerComponent;
 
 const StyledDropdownMenuContent = styled(DropdownMenuPrimitive.Content, {
   ...menuCss,
@@ -32,7 +40,7 @@ export const DropdownMenuSeparator = styled(DropdownMenuPrimitive.Separator, sep
 
 export const DropdownMenuItem = styled(DropdownMenuPrimitive.Item, itemCss);
 
-const StyledMenuRadioItem = styled(DropdownMenuPrimitive.RadioItem, interactiveItemCss);
+const StyledMenuRadioItem = styled(DropdownMenuPrimitive.RadioItem, itemCss);
 
 type MenuRadioItemCSSProp = { css?: CSS };
 type MenuRadioItemOwnProps = Polymorphic.OwnProps<typeof DropdownMenuPrimitive.RadioItem> &
@@ -62,7 +70,7 @@ export const DropdownMenuRadioItem = React.forwardRef(({ children, ...props }, f
   </StyledMenuRadioItem>
 )) as MenuRadioItemComponent;
 
-const StyledMenuCheckboxItem = styled(DropdownMenuPrimitive.CheckboxItem, interactiveItemCss);
+const StyledMenuCheckboxItem = styled(DropdownMenuPrimitive.CheckboxItem, itemCss);
 
 type MenuCheckboxItemCSSProp = { css?: CSS };
 type MenuCheckboxItemOwnProps = Polymorphic.OwnProps<typeof DropdownMenuPrimitive.CheckboxItem> &
@@ -84,31 +92,5 @@ export const DropdownMenuCheckboxItem = React.forwardRef(({ children, ...props }
 )) as MenuCheckboxItemComponent;
 
 export const DropdownMenuLabel = styled(DropdownMenuPrimitive.Label, labelCss);
-
-// Group CSS cant be abstracted because it contains variants
-// and Stitches Alpha types dont work properly
-export const DropdownMenuRadioGroup = styled(DropdownMenuPrimitive.RadioGroup, {
-  variants: {
-    indented: {
-      true: {
-        '[data-radix-menu-item], [data-radix-menu-label]': {
-          paddingLeft: '$5',
-        },
-      },
-    },
-  },
-});
-
-// Group CSS cant be abstracted because it contains variants
-// and Stitches Alpha types dont work properly
-export const DropdownMenuGroup = styled(DropdownMenuPrimitive.Group, {
-  variants: {
-    indented: {
-      true: {
-        '[data-radix-menu-item], [data-radix-menu-label]': {
-          paddingLeft: '$5',
-        },
-      },
-    },
-  },
-});
+export const DropdownMenuRadioGroup = styled(DropdownMenuPrimitive.RadioGroup, {});
+export const DropdownMenuGroup = styled(DropdownMenuPrimitive.Group, {});

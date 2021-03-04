@@ -340,7 +340,7 @@ export default function Closed() {
         Accordion
       </Text>
 
-      <Accordion>
+      <Accordion type="single">
         <AccordionItem value="accordion-one">
           <AccordionButton>
             <Text size="4">Accordion one</Text>

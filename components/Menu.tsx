@@ -20,7 +20,7 @@ export const baseItemCss: any = {
   userSelect: 'none',
   whiteSpace: 'nowrap',
   height: '$5',
-  px: '$2',
+  px: '$5',
 };
 
 export const itemCss: any = {
@@ -37,11 +37,6 @@ export const itemCss: any = {
   '&[data-disabled]': {
     color: '$slate800',
   },
-};
-
-export const interactiveItemCss: any = {
-  ...itemCss,
-  paddingLeft: '$5',
 };
 
 export const labelCss: any = {
@@ -78,7 +73,7 @@ export const MenuSeparator = styled(MenuPrimitive.Separator, separatorCss);
 
 export const MenuItem = styled(MenuPrimitive.Item, itemCss);
 
-const StyledMenuRadioItem = styled(MenuPrimitive.RadioItem, interactiveItemCss);
+const StyledMenuRadioItem = styled(MenuPrimitive.RadioItem, itemCss);
 
 type MenuRadioItemCSSProp = { css?: CSS };
 type MenuRadioItemOwnProps = Polymorphic.OwnProps<typeof MenuPrimitive.RadioItem> &
@@ -93,7 +88,14 @@ export const MenuRadioItem = React.forwardRef(({ children, ...props }, forwarded
     <Box as="span" css={{ position: 'absolute', left: '$1' }}>
       <MenuPrimitive.ItemIndicator>
         <Flex css={{ width: '$3', height: '$3', alignItems: 'center', justifyContent: 'center' }}>
-          <Box css={{ width: '$1', height: '$1', backgroundColor: 'currentColor', borderRadius: '$round' }}></Box>
+          <Box
+            css={{
+              width: '$1',
+              height: '$1',
+              backgroundColor: 'currentColor',
+              borderRadius: '$round',
+            }}
+          ></Box>
         </Flex>
       </MenuPrimitive.ItemIndicator>
     </Box>
@@ -101,7 +103,7 @@ export const MenuRadioItem = React.forwardRef(({ children, ...props }, forwarded
   </StyledMenuRadioItem>
 )) as MenuRadioItemComponent;
 
-const StyledMenuCheckboxItem = styled(MenuPrimitive.CheckboxItem, interactiveItemCss);
+const StyledMenuCheckboxItem = styled(MenuPrimitive.CheckboxItem, itemCss);
 
 type MenuCheckboxItemCSSProp = { css?: CSS };
 type MenuCheckboxItemOwnProps = Polymorphic.OwnProps<typeof MenuPrimitive.CheckboxItem> &
@@ -123,31 +125,5 @@ export const MenuCheckboxItem = React.forwardRef(({ children, ...props }, forwar
 )) as MenuCheckboxItemComponent;
 
 export const MenuLabel = styled(MenuPrimitive.Label, labelCss);
-
-// Group CSS cant be abstraced because it contains variants
-// and Stitches Alpha types dont work properly
-export const MenuRadioGroup = styled(MenuPrimitive.RadioGroup, {
-  variants: {
-    indented: {
-      true: {
-        '[data-radix-menu-item], [data-radix-menu-label]': {
-          paddingLeft: '$5',
-        },
-      },
-    },
-  },
-});
-
-// Group CSS cant be abstraced because it contains variants
-// and Stitches Alpha types dont work properly
-export const MenuGroup = styled(MenuPrimitive.Group, {
-  variants: {
-    indented: {
-      true: {
-        '[data-radix-menu-item], [data-radix-menu-label]': {
-          paddingLeft: '$5',
-        },
-      },
-    },
-  },
-});
+export const MenuRadioGroup = styled(MenuPrimitive.RadioGroup, {});
+export const MenuGroup = styled(MenuPrimitive.Group, {});
