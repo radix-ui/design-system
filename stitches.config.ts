@@ -393,6 +393,16 @@ export const darkTheme = theme('dark-theme', {
     gray800: 'hsl(0, 0%, 43.9%)',
     gray900: 'hsl(0, 0%, 52.9%)',
 
+    quartz100: 'hsl(252, 2%, 10%)',
+    quartz200: 'hsl(252, 2%, 11%)',
+    quartz300: 'hsl(252, 3%, 14%)',
+    quartz400: 'hsl(252, 3%, 16%)',
+    quartz500: 'hsl(252, 3%, 20%)',
+    quartz600: 'hsl(252, 5%, 24%)',
+    quartz700: 'hsl(252, 5%, 31%)',
+    quartz800: 'hsl(252, 4%, 44%)',
+    quartz900: 'hsl(252, 4%, 53%)',
+
     slate100: 'hsl(200 6% 9.6%)',
     slate200: 'hsl(201 6% 11.6%)',
     slate300: 'hsl(201 6% 13.9%)',
