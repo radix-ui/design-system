@@ -1,7 +1,7 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 import * as LabelPrimitive from '@radix-ui/react-label';
-import { Text } from './Text';
+import { StyledText } from './Text';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -11,11 +11,12 @@ const StyledLabel = styled(LabelPrimitive.Root, {
   cursor: 'default',
 });
 
-type LabelCSSProp = Pick<StitchesProps<typeof StyledLabel>, 'css'>;
-type LabelVariants = StitchesVariants<typeof Text>;
+type LabelCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type LabelVariants = Omit<StitchesVariants<typeof StyledText>, 'size'>;
 type LabelOwnProps = Polymorphic.OwnProps<typeof LabelPrimitive.Root> &
   LabelCSSProp &
-  LabelVariants;
+  LabelVariants & { size?: any };
 
 type LabelComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof LabelPrimitive.Root>,
@@ -23,5 +24,5 @@ type LabelComponent = Polymorphic.ForwardRefComponent<
 >;
 
 export const Label = React.forwardRef((props, forwardedRef) => {
-  return <Text as={StyledLabel} {...props} ref={forwardedRef} />;
+  return <StyledText as={StyledLabel} {...props} ref={forwardedRef} />;
 }) as LabelComponent;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -7,12 +7,6 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 export const RadioGroup = styled(RadioGroupPrimitive.Root, {
   display: 'block',
 });
-
-type RadioCSSProp = Pick<StitchesProps<typeof StyledRadio>, 'css'>;
-type RadioVariants = StitchesVariants<typeof StyledRadio>;
-type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
-  RadioCSSProp &
-  RadioVariants;
 
 const StyledIndicator = styled(RadioGroupPrimitive.Indicator, {
   alignItems: 'center',
@@ -54,18 +48,17 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
 
   borderRadius: '50%',
   color: '$hiContrast',
-  boxShadow: 'inset 0 0 0 1px $gray600',
+  boxShadow: 'inset 0 0 0 1px $colors$slate600',
   overflow: 'hidden',
-  width: '$3',
-  height: '$3',
-
-  '&:hover': {
-    boxShadow: 'inset 0 0 0 1px $gray700',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      boxShadow: 'inset 0 0 0 1px $colors$slate700',
+    },
   },
   '&:focus': {
     outline: 'none',
     borderColor: '$red600',
-    boxShadow: 'inset 0 0 0 1px $blue800, 0 0 0 1px $blue800',
+    boxShadow: 'inset 0 0 0 1px $colors$blue800, 0 0 0 1px $colors$blue800',
   },
 
   variants: {
@@ -87,7 +80,17 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
       },
     },
   },
+  defaultVariants: {
+    size: '1'
+  }
 });
+
+type RadioCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type RadioVariants = Omit<StitchesVariants<typeof StyledRadio>, 'size'>;
+type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
+  RadioCSSProp &
+  RadioVariants & { size?: any };
 
 type RadioComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof RadioGroupPrimitive.Item>,

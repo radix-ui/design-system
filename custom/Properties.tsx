@@ -44,7 +44,7 @@ export function Properties() {
                 </Text>
               </Box>
               <Box css={{ mr: '-$1' }}>
-                <IconButton variant="ghost">
+                <IconButton>
                   <PlusIcon />
                 </IconButton>
               </Box>
@@ -58,7 +58,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -73,7 +73,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -88,7 +88,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -103,7 +103,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -118,7 +118,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -133,7 +133,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -148,7 +148,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -163,7 +163,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -178,7 +178,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -193,7 +193,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -208,7 +208,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -230,7 +230,7 @@ export function Properties() {
                   </Select>
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -238,7 +238,7 @@ export function Properties() {
             </Flex>
           </Box>
 
-          <Box css={{ borderTop: '1px solid $gray500', py: '$1' }}>
+          <Box css={{ borderTop: '1px solid $slate500', py: '$1' }}>
             <Flex
               css={{
                 px: '$3',
@@ -253,7 +253,7 @@ export function Properties() {
                 </Text>
               </Box>
               <Box css={{ mr: '-$1' }}>
-                <IconButton variant="ghost">
+                <IconButton>
                   <PlusIcon />
                 </IconButton>
               </Box>
@@ -268,7 +268,7 @@ export function Properties() {
                   </Select>
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -283,7 +283,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="16" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -304,7 +304,7 @@ export function Properties() {
                   </Select>
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -316,7 +316,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <TransparencyGridIcon />
                   </IconButton>
                 </Box>
@@ -324,7 +324,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="b5b5b5" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -339,7 +339,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="1" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -354,7 +354,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -374,7 +374,7 @@ export function Properties() {
                   </Select>
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -382,7 +382,7 @@ export function Properties() {
             </Flex>
           </Box>
 
-          <Box css={{ borderTop: '1px solid $gray500', py: '$1' }}>
+          <Box css={{ borderTop: '1px solid $slate500', py: '$1' }}>
             <Flex
               css={{
                 px: '$3',
@@ -397,19 +397,19 @@ export function Properties() {
                 </Text>
               </Box>
               <Box css={{ mr: '-$1' }}>
-                <IconButton variant="ghost">
+                <IconButton>
                   <PlusIcon />
                 </IconButton>
               </Box>
             </Flex>
             <Flex css={{ ai: 'center', px: '$3', py: '$1' }}>
               <Box css={{ mr: '$1', ml: '-$1' }}>
-                <IconButton variant="ghost">
+                <IconButton>
                   <TransparencyGridIcon />
                 </IconButton>
               </Box>
               <Box css={{ mr: '$1', ml: '-$1' }}>
-                <IconButton variant="ghost">
+                <IconButton>
                   <ShadowIcon />
                 </IconButton>
               </Box>
@@ -450,19 +450,19 @@ export function Properties() {
                 />
               </Box>
               <Box css={{ ml: '$1', mr: '-$1' }}>
-                <IconButton variant="ghost">
+                <IconButton>
                   <MinusIcon />
                 </IconButton>
               </Box>
             </Flex>
             <Flex css={{ ai: 'center', px: '$3', py: '$1' }}>
               <Box css={{ mr: '$1', ml: '-$1' }}>
-                <IconButton variant="ghost">
+                <IconButton>
                   <TransparencyGridIcon />
                 </IconButton>
               </Box>
               <Box css={{ mr: '$1', ml: '-$1' }}>
-                <IconButton variant="ghost">
+                <IconButton>
                   <ShadowIcon />
                 </IconButton>
               </Box>
@@ -503,7 +503,7 @@ export function Properties() {
                 />
               </Box>
               <Box css={{ ml: '$1', mr: '-$1' }}>
-                <IconButton variant="ghost">
+                <IconButton>
                   <MinusIcon />
                 </IconButton>
               </Box>
@@ -514,7 +514,7 @@ export function Properties() {
                 <Text
                   size="1"
                   css={{
-                    color: '$gray900',
+                    color: '$slate900',
                     display: 'block',
                     textAlign: 'center',
                   }}
@@ -529,7 +529,7 @@ export function Properties() {
                 <Text
                   size="1"
                   css={{
-                    color: '$gray900',
+                    color: '$slate900',
                     display: 'block',
                     textAlign: 'center',
                   }}
@@ -544,7 +544,7 @@ export function Properties() {
                 <Text
                   size="1"
                   css={{
-                    color: '$gray900',
+                    color: '$slate900',
                     display: 'block',
                     textAlign: 'center',
                   }}
@@ -559,7 +559,7 @@ export function Properties() {
                 <Text
                   size="1"
                   css={{
-                    color: '$gray900',
+                    color: '$slate900',
                     display: 'block',
                     textAlign: 'center',
                   }}
@@ -572,7 +572,7 @@ export function Properties() {
             </Flex>
           </Box>
 
-          <Box css={{ borderTop: '1px solid $gray500', py: '$1' }}>
+          <Box css={{ borderTop: '1px solid $slate500', py: '$1' }}>
             <Flex
               css={{
                 px: '$3',
@@ -587,7 +587,7 @@ export function Properties() {
                 </Text>
               </Box>
               <Box css={{ mr: '-$1' }}>
-                <IconButton variant="ghost">
+                <IconButton>
                   <PlusIcon />
                 </IconButton>
               </Box>
@@ -595,7 +595,7 @@ export function Properties() {
             <Flex css={{ ai: 'center', px: '$3', py: '$1' }}>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ mr: '$1', ml: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <BlendingModeIcon />
                   </IconButton>
                 </Box>
@@ -629,7 +629,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -638,7 +638,7 @@ export function Properties() {
             <Flex css={{ ai: 'center', px: '$3', py: '$1' }}>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ mr: '$1', ml: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <BlendingModeIcon />
                   </IconButton>
                 </Box>
@@ -672,7 +672,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -680,7 +680,7 @@ export function Properties() {
             </Flex>
           </Box>
 
-          <Box css={{ borderTop: '1px solid $gray500', py: '$1' }}>
+          <Box css={{ borderTop: '1px solid $slate500', py: '$1' }}>
             <Flex
               css={{
                 px: '$3',
@@ -695,7 +695,7 @@ export function Properties() {
                 </Text>
               </Box>
               <Box css={{ mr: '-$1' }}>
-                <IconButton variant="ghost">
+                <IconButton>
                   <PlusIcon />
                 </IconButton>
               </Box>
@@ -724,7 +724,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -754,7 +754,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -784,7 +784,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -814,7 +814,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -844,7 +844,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -874,7 +874,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -904,7 +904,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -934,7 +934,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -964,7 +964,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -994,7 +994,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -1024,7 +1024,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -1054,7 +1054,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -1084,7 +1084,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -1109,7 +1109,7 @@ export function Properties() {
                   </Select>
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -1124,7 +1124,7 @@ export function Properties() {
                   <Input size="1" cursor="default" defaultValue="0°" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -1132,7 +1132,7 @@ export function Properties() {
             </Flex>
           </Box>
 
-          <Box css={{ borderTop: '1px solid $gray500', py: '$1' }}>
+          <Box css={{ borderTop: '1px solid $slate500', py: '$1' }}>
             <Flex
               css={{
                 px: '$3',
@@ -1147,7 +1147,7 @@ export function Properties() {
                 </Text>
               </Box>
               <Box css={{ mr: '-$1' }}>
-                <IconButton variant="ghost">
+                <IconButton>
                   <PlusIcon />
                 </IconButton>
               </Box>
@@ -1155,7 +1155,7 @@ export function Properties() {
             <Flex css={{ ai: 'center', px: '$3', py: '$1' }}>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ mr: '$1', ml: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MixerVerticalIcon />
                   </IconButton>
                 </Box>
@@ -1183,7 +1183,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>
@@ -1192,7 +1192,7 @@ export function Properties() {
             <Flex css={{ ai: 'center', px: '$3', py: '$1' }}>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ mr: '$1', ml: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MixerVerticalIcon />
                   </IconButton>
                 </Box>
@@ -1220,7 +1220,7 @@ export function Properties() {
                   />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
-                  <IconButton variant="ghost">
+                  <IconButton>
                     <MinusIcon />
                   </IconButton>
                 </Box>

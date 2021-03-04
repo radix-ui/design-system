@@ -1,11 +1,11 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'div';
 
-type TreeItemCSSProp = Pick<StitchesProps<typeof StyledTreeItem>, 'css'>;
+type TreeItemCSSProp = { css?: CSS };
 type TreeItemVariants = StitchesVariants<typeof StyledTreeItem>;
 type TreeItemOwnProps = TreeItemCSSProp & TreeItemVariants;
 
@@ -36,12 +36,12 @@ const StyledTreeItem = styled(DEFAULT_TAG, {
   variants: {
     variant: {
       gray: {
-        backgroundColor: '$gray200',
+        backgroundColor: '$slate200',
         '&:hover': {
-          backgroundColor: '$gray300',
+          backgroundColor: '$slate300',
         },
         '&:active': {
-          backgroundColor: '$gray400',
+          backgroundColor: '$slate400',
         },
       },
       red: {
@@ -107,13 +107,13 @@ const StyledTreeItem = styled(DEFAULT_TAG, {
           backgroundColor: '$blue400',
         },
       },
-      turquoise: {
-        backgroundColor: '$turquoise200',
+      cyan: {
+        backgroundColor: '$cyan200',
         '&:hover': {
-          backgroundColor: '$turquoise300',
+          backgroundColor: '$cyan300',
         },
         '&:active': {
-          backgroundColor: '$turquoise400',
+          backgroundColor: '$cyan400',
         },
       },
       teal: {

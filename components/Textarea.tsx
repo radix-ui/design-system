@@ -1,11 +1,11 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'textarea';
 
-type TextareaCSSProp = Pick<StitchesProps<typeof StyledTextarea>, 'css'>;
+type TextareaCSSProp = { css?: CSS };
 type TextareaVariants = StitchesVariants<typeof StyledTextarea>;
 type TextareaOwnProps = TextareaCSSProp & TextareaVariants;
 
@@ -20,7 +20,7 @@ const StyledTextarea = styled(DEFAULT_TAG, {
   width: '100%',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   backgroundColor: '$loContrast',
-  boxShadow: 'inset 0 0 0 1px $gray600',
+  boxShadow: 'inset 0 0 0 1px $colors$slate600',
   borderRadius: '$2',
   color: '$hiContrast',
   fontVariantNumeric: 'tabular-nums',
@@ -29,32 +29,28 @@ const StyledTextarea = styled(DEFAULT_TAG, {
   resize: 'vertical',
 
   '&:focus': {
-    boxShadow: 'inset 0px 0px 0px 1px $blue700, 0px 0px 0px 1px $blue700',
+    boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
     zIndex: '1',
   },
   '&::placeholder': {
-    color: '$gray800',
+    color: '$slate800',
   },
   '&:disabled': {
     pointerEvents: 'none',
-    backgroundColor: '$gray100',
-    color: '$gray700',
+    backgroundColor: '$slate100',
+    color: '$slate700',
     cursor: 'not-allowed',
     resize: 'none',
     '&::placeholder': {
-      color: '$gray600',
+      color: '$slate600',
     },
   },
   '&:read-only': {
-    backgroundColor: '$gray100',
+    backgroundColor: '$slate100',
     '&:focus': {
-      boxShadow: 'inset 0px 0px 0px 1px $gray600',
+      boxShadow: 'inset 0px 0px 0px 1px $colors$slate600',
     },
   },
-
-  fontSize: '$1',
-  lineHeight: '16px',
-  px: '$1',
 
   variants: {
     size: {
@@ -76,15 +72,15 @@ const StyledTextarea = styled(DEFAULT_TAG, {
     },
     state: {
       invalid: {
-        boxShadow: 'inset 0 0 0 1px $red600',
+        boxShadow: 'inset 0 0 0 1px $colors$red600',
         '&:focus': {
-          boxShadow: 'inset 0px 0px 0px 1px $red700, 0px 0px 0px 1px $red700',
+          boxShadow: 'inset 0px 0px 0px 1px $colors$red700, 0px 0px 0px 1px $colors$red700',
         },
       },
       valid: {
-        boxShadow: 'inset 0 0 0 1px $green600',
+        boxShadow: 'inset 0 0 0 1px $colors$green600',
         '&:focus': {
-          boxShadow: 'inset 0px 0px 0px 1px $green700, 0px 0px 0px 1px $green700',
+          boxShadow: 'inset 0px 0px 0px 1px $colors$green700, 0px 0px 0px 1px $colors$green700',
         },
       },
     },
@@ -100,6 +96,9 @@ const StyledTextarea = styled(DEFAULT_TAG, {
       },
     },
   },
+  defaultVariants: {
+    size: '1',
+  }
 });
 
 type TextareaComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TextareaOwnProps>;

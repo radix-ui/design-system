@@ -1,10 +1,10 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 import * as ToggleButtonPrimitive from '@radix-ui/react-toggle-button';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-type SimpleToggleCSSProp = Pick<StitchesProps<typeof StyledSimpleToggle>, 'css'>;
+type SimpleToggleCSSProp = { css?: CSS };
 type SimpleToggleVariants = StitchesVariants<typeof StyledSimpleToggle>;
 type SimpleToggleOwnProps = Polymorphic.OwnProps<typeof ToggleButtonPrimitive.Root> &
   SimpleToggleCSSProp &
@@ -34,29 +34,31 @@ const StyledSimpleToggle = styled(ToggleButtonPrimitive.Root, {
   '&::after': {
     boxSizing: 'border-box',
   },
-
   height: '$5',
   width: '$5',
-  transition: 'all 40ms linear',
   backgroundColor: 'transparent',
-  '&:hover': {
-    backgroundColor: '$gray200',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      backgroundColor: '$slate200',
+    },
   },
   '&:active': {
-    backgroundColor: '$gray300',
+    backgroundColor: '$slate300',
   },
   '&:focus': {
-    boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
+    boxShadow: 'inset 0 0 0 1px $slate700, 0 0 0 1px $slate700',
     zIndex: 1,
   },
 
   '&[data-state="on"]': {
-    backgroundColor: '$gray400',
-    '&:hover': {
-      backgroundColor: '$gray400',
+    backgroundColor: '$slate400',
+    "@media (any-hover: hover)": {
+      '&:hover': {
+        backgroundColor: '$slate400',
+      },
     },
     '&:active': {
-      backgroundColor: '$gray600',
+      backgroundColor: '$slate600',
     },
   },
 

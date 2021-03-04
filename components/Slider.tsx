@@ -7,7 +7,7 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 const SliderTrack = styled(SliderPrimitive.Track, {
   position: 'relative',
   flexGrow: 1,
-  backgroundColor: '$gray600',
+  backgroundColor: '$slate600',
   borderRadius: '$pill',
   '&[data-orientation="horizontal"]': {
     height: 2,
@@ -41,7 +41,7 @@ const SliderThumb = styled(SliderPrimitive.Thumb, {
   boxShadow: '0 0 1px rgba(0,0,0,.3), 0 1px 4px rgba(0,0,0,.15)',
   borderRadius: '$round',
 
-  '::after': {
+  '&::after': {
     content: '""',
     position: 'absolute',
     top: 0,
@@ -55,8 +55,8 @@ const SliderThumb = styled(SliderPrimitive.Thumb, {
     transition: 'transform 200ms cubic-bezier(0.22, 1, 0.36, 1)',
   },
 
-  ':focus': {
-    '::after': {
+  '&:focus': {
+    '&::after': {
       transform: 'scale(2)',
     },
   },
@@ -77,12 +77,14 @@ export const StyledSlider = styled(SliderPrimitive.Root, {
     width: 15,
   },
 
-  ':hover': {
-    [`& ${SliderTrack}`]: {
-      backgroundColor: '$gray700',
-    },
-    [`& ${SliderThumb}`]: {
-      opacity: '1',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      [`& ${SliderTrack}`]: {
+        backgroundColor: '$slate700',
+      },
+      [`& ${SliderThumb}`]: {
+        opacity: '1',
+      },
     },
   },
 });

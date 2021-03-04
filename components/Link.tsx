@@ -1,11 +1,12 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { Text } from '../components/Text';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'a';
 
-type LinkCSSProp = Pick<StitchesProps<typeof StyledLink>, 'css'>;
+type LinkCSSProp = { css?: CSS };
 type LinkVariants = StitchesVariants<typeof StyledLink>;
 type LinkOwnProps = LinkCSSProp & LinkVariants;
 
@@ -14,17 +15,22 @@ const StyledLink = styled(DEFAULT_TAG, {
   outline: 'none',
   textDecorationLine: 'none',
   textUnderlineOffset: '3px',
-  textDecorationColor: '$gray300',
+  textDecorationColor: '$slate300',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   lineHeight: 'inherit',
-  '&:hover': {
-    textDecorationLine: 'underline',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      textDecorationLine: 'underline',
+    },
   },
   '&:focus': {
     outlineWidth: '2px',
     outlineStyle: 'solid',
     outlineOffset: '2px',
     textDecorationLine: 'none',
+  },
+  [`${Text}`]: {
+    color: 'inherit'
   },
   variants: {
     variant: {
@@ -36,25 +42,30 @@ const StyledLink = styled(DEFAULT_TAG, {
         },
       },
       subtle: {
-        color: '$gray900',
-        textDecorationColor: '$gray300',
+        color: '$slate900',
+        textDecorationColor: '$slate300',
         '&:focus': {
-          outlineColor: '$gray700',
+          outlineColor: '$slate700',
         },
       },
       contrast: {
-        color: 'inherit',
+        color: '$hiContrast',
         textDecoration: 'underline',
-        textDecorationColor: '$gray300',
-        '&:hover': {
-          textDecorationColor: '$gray600',
+        textDecorationColor: '$slate300',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            textDecorationColor: '$slate600',
+          },
         },
         '&:focus': {
-          outlineColor: '$gray700',
+          outlineColor: '$slate700',
         },
       },
     },
   },
+  defaultVariants: {
+    variant: 'contrast'
+  }
 });
 
 type LinkComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, LinkOwnProps>;

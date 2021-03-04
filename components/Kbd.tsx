@@ -1,6 +1,11 @@
-import { styled } from '../stitches.config';
+import React from 'react';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
-export const Kbd = styled('kbd', {
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
+
+const DEFAULT_TAG = 'span';
+
+const StyledKbd = styled('kbd', {
   boxSizing: 'border-box',
   display: 'inline-flex',
   alignItems: 'center',
@@ -13,22 +18,15 @@ export const Kbd = styled('kbd', {
   whiteSpace: 'nowrap',
   boxShadow: `
     inset 0 0.5px rgba(255, 255, 255, 0.1),
-    inset 0 1px 5px $gray100,
-    0px 0px 0px 0.5px $gray700,
-    0px 2px 1px -1px $gray700,
-    0 1px $gray700`,
+    inset 0 1px 5px $colors$slate100,
+    0px 0px 0px 0.5px $colors$slate700,
+    0px 2px 1px -1px $colors$slate700,
+    0 1px $colors$slate700`,
   textShadow: '0 0 1px rgba(255, 255, 255, 0.5)',
-
   fontFamily: 'inherit',
   fontWeight: 400,
   lineHeight: '1.5',
   mx: '2px',
-
-  // Size 2
-  px: '0.5em',
-  height: '$5',
-  minWidth: '2em',
-  fontSize: '$2',
 
   variants: {
     size: {
@@ -38,6 +36,12 @@ export const Kbd = styled('kbd', {
         minWidth: '1.6em',
         fontSize: '10px',
       },
+      '2': {
+        px: '0.5em',
+        height: '$5',
+        minWidth: '2em',
+        fontSize: '$2',
+      }
     },
     width: {
       shift: {
@@ -53,34 +57,43 @@ export const Kbd = styled('kbd', {
       },
     },
   },
+
+  compoundVariants: [
+    {
+      size: '1',
+      width: 'shift',
+      css: {
+        width: '3em',
+      },
+    },
+    {
+      size: '1',
+      width: 'command',
+      css: {
+        width: '2.5em',
+      },
+    },
+    {
+      size: '1',
+      width: 'space',
+      css: {
+        width: '5em',
+      },
+    },
+  ],
+
+  defaultVariants: {
+    size: '2',
+  }
 });
 
-Kbd.compoundVariant(
-  {
-    size: '1',
-    width: 'shift',
-  },
-  {
-    width: '3em',
-  }
-);
+type KbdCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type KbdVariants = Omit<StitchesVariants<typeof StyledKbd>, 'size'>;
+type KbdOwnProps = KbdCSSProp & KbdVariants & { size?: any };
 
-Kbd.compoundVariant(
-  {
-    size: '1',
-    width: 'command',
-  },
-  {
-    width: '2.5em',
-  }
-);
+type KbdComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, KbdOwnProps>;
 
-Kbd.compoundVariant(
-  {
-    size: '1',
-    width: 'space',
-  },
-  {
-    width: '5em',
-  }
-);
+export const Kbd = React.forwardRef((props, forwardedRef) => {
+  return <StyledKbd {...props} ref={forwardedRef} />;
+}) as KbdComponent;

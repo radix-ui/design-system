@@ -1,24 +1,10 @@
 import React from 'react';
-import { styled, StitchesVariants, StitchesProps } from '../stitches.config';
+import { styled, StitchesVariants, CSS } from '../stitches.config';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { Box } from './Box';
 import { Status } from './Status';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-type StatusVariants = StitchesVariants<typeof Status>;
-type StatusColors = Pick<StatusVariants, 'color'>;
-
-type AvatarCSSProp = Pick<StitchesProps<typeof StyledAvatar>, 'css'>;
-type AvatarVariants = StitchesVariants<typeof StyledAvatar>;
-type AvatarOwnProps = Polymorphic.OwnProps<typeof AvatarPrimitive.Root> &
-  AvatarCSSProp &
-  AvatarVariants & {
-    alt?: string;
-    src?: string;
-    fallback?: React.ReactNode;
-    status?: StatusColors['color'];
-  };
 
 const StyledAvatar = styled(AvatarPrimitive.Root, {
   alignItems: 'center',
@@ -49,9 +35,6 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
     boxShadow: 'inset 0px 0px 1px rgba(0, 0, 0, 0.12)',
   },
 
-  width: '$6',
-  height: '$6',
-
   variants: {
     size: {
       '1': {
@@ -79,13 +62,13 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
         height: '$9',
       },
     },
-    color: {
+    variant: {
       hiContrast: {
         backgroundColor: '$hiContrast',
         color: '$loContrast',
       },
       gray: {
-        backgroundColor: '$gray400',
+        backgroundColor: '$slate400',
       },
       red: {
         backgroundColor: '$red400',
@@ -108,8 +91,8 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
       blue: {
         backgroundColor: '$blue400',
       },
-      turquoise: {
-        backgroundColor: '$turquoise400',
+      cyan: {
+        backgroundColor: '$cyan400',
       },
       teal: {
         backgroundColor: '$teal400',
@@ -163,17 +146,30 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
           pointerEvents: 'none',
           transition: 'opacity 25ms linear',
         },
-        '&:hover': {
-          '&::after': {
-            opacity: '1',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            '&::after': {
+              opacity: '1',
+            },
           },
         },
+        '&[data-state="open"]': {
+          '&::after': {
+            backgroundColor: 'rgba(0,0,0,.08)',
+            opacity: '1',
+          },
+        }
       },
     },
   },
+  defaultVariants: {
+    size: '2',
+    variant: 'gray',
+    shape: 'circle',
+  }
 });
 
-const AvatarImage = styled(AvatarPrimitive.Image, {
+const StyledAvatarImage = styled(AvatarPrimitive.Image, {
   display: 'flex',
   objectFit: 'cover',
   boxSizing: 'border-box',
@@ -181,7 +177,7 @@ const AvatarImage = styled(AvatarPrimitive.Image, {
   width: '100%',
 });
 
-const AvatarFallback = styled(AvatarPrimitive.Fallback, {
+const StyledAvatarFallback = styled(AvatarPrimitive.Fallback, {
   textTransform: 'uppercase',
 
   variants: {
@@ -207,10 +203,13 @@ const AvatarFallback = styled(AvatarPrimitive.Fallback, {
       },
     },
   },
+  defaultVariants: {
+    size: '2',
+  }
 });
 
 export const AvatarNestedItem = styled('div', {
-  boxShadow: '0 0 0 2px $loContrast',
+  boxShadow: '0 0 0 2px $colors$loContrast',
   borderRadius: '50%',
 });
 
@@ -222,6 +221,22 @@ export const AvatarGroup = styled('div', {
   },
 });
 
+type StatusVariants = React.ComponentProps<typeof Status>;
+type StatusColors = Pick<StatusVariants, 'variant'>;
+
+type AvatarCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type AvatarVariants = Omit<StitchesVariants<typeof StyledAvatar>, 'size'>;
+type AvatarOwnProps = Polymorphic.OwnProps<typeof AvatarPrimitive.Root> &
+  AvatarCSSProp &
+  AvatarVariants & {
+    alt?: string;
+    src?: string;
+    fallback?: React.ReactNode;
+    status?: StatusColors['variant'];
+    size?: any; // TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421
+  };
+
 type AvatarComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof AvatarPrimitive.Root>,
   AvatarOwnProps
@@ -229,7 +244,7 @@ type AvatarComponent = Polymorphic.ForwardRefComponent<
 
 export const Avatar = React.forwardRef(
   (
-    { alt, src, fallback, size = '2', color = 'gray', shape = 'circle', css, status, ...props },
+    { alt, src, fallback, size, variant, shape, css, status, ...props },
     forwardedRef
   ) => {
     return (
@@ -241,9 +256,9 @@ export const Avatar = React.forwardRef(
           width: 'fit-content',
         }}
       >
-        <StyledAvatar {...props} ref={forwardedRef} size={size} color={color} shape={shape}>
-          <AvatarImage alt={alt} src={src} />
-          <AvatarFallback size={size}>{fallback}</AvatarFallback>
+        <StyledAvatar {...props} ref={forwardedRef} size={size} variant={variant} shape={shape}>
+          <StyledAvatarImage alt={alt} src={src} />
+          <StyledAvatarFallback size={size}>{fallback}</StyledAvatarFallback>
         </StyledAvatar>
         {status && (
           <Box
@@ -251,13 +266,14 @@ export const Avatar = React.forwardRef(
               position: 'absolute',
               bottom: '0',
               right: '0',
-              boxShadow: '0 0 0 3px $loContrast',
+              boxShadow: '0 0 0 3px $colors$loContrast',
               borderRadius: '$round',
               mr: '-3px',
               mb: '-3px',
             }}
           >
-            <Status size={size > 2 ? '2' : '1'} color={status} />
+            {/* TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421 */}
+            <Status size={size > 2 ? ('2' as any) : ('1' as any)} variant={status} />
           </Box>
         )}
       </Box>

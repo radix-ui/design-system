@@ -1,4 +1,6 @@
 import { styled } from '../stitches.config';
+import { Button } from '../components/Button';
+import { Input } from '../components/Input';
 
 export const ControlGroup = styled('div', {
   display: 'flex',
@@ -7,45 +9,63 @@ export const ControlGroup = styled('div', {
   position: 'relative',
   zIndex: 0,
 
-  '& button': {
+  [`${Button}`]: {
     borderRadius: 0,
-    boxShadow: 'inset 0 1px $gray600, inset -1px 0 $gray600, inset 0 -1px $gray600',
-    ':hover': {
+    boxShadow:
+      'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',
+    '&:hover': {
       boxShadow:
-        '-1px 0 $gray700, inset 0 1px $gray700, inset -1px 0 $gray700, inset 0 -1px $gray700',
+        '-1px 0 $colors$slate700, inset 0 1px $colors$slate700, inset -1px 0 $colors$slate700, inset 0 -1px $colors$slate700',
     },
-    ':focus': {
+    '&:focus': {
       zIndex: 1,
+      boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
     },
-    ':first-child': {
+    '&:first-child': {
       borderTopLeftRadius: '$2',
       borderBottomLeftRadius: '$2',
-      boxShadow: 'inset 0 0 0 1px $gray600',
-      ':hover': {
-        boxShadow: 'inset 0 0 0 1px $gray700',
+      boxShadow: 'inset 0 0 0 1px $colors$slate600',
+      '&:hover': {
+        boxShadow: 'inset 0 0 0 1px $colors$slate700',
+      },
+      '&:focus': {
+        boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
       },
     },
-    ':last-child': {
+    '&:last-child': {
       borderTopRightRadius: '$2',
       borderBottomRightRadius: '$2',
-      boxShadow: 'inset 0 1px $gray600, inset -1px 0 $gray600, inset 0 -1px $gray600',
+      boxShadow:
+        'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',
+      '&:focus': {
+        boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
+      },
     },
   },
-  '& input': {
+  [`${Input}`]: {
     borderRadius: 0,
-    boxShadow: 'inset 0 1px $gray600, inset -1px 0 $gray600, inset 0 -1px $gray600',
-    ':focus': {
+    boxShadow:
+      'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',
+    '&:focus': {
       zIndex: 1,
+      boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
     },
-    ':first-child': {
+    '&:first-child': {
       borderTopLeftRadius: '$2',
       borderBottomLeftRadius: '$2',
-      boxShadow: 'inset 0 0 0 1px $gray600',
+      boxShadow: 'inset 0 0 0 1px $colors$slate600',
+      '&:focus': {
+        boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
+      },
     },
-    ':last-child': {
+    '&:last-child': {
       borderTopRightRadius: '$2',
       borderBottomRightRadius: '$2',
-      boxShadow: 'inset 0 1px $gray600, inset -1px 0 $gray600, inset 0 -1px $gray600',
+      boxShadow:
+        'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',
+      '&:focus': {
+        boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
+      },
     },
   },
 });

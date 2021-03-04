@@ -1,11 +1,11 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'div';
 
-type CardCSSProp = Pick<StitchesProps<typeof StyledCard>, 'css'>;
+type CardCSSProp = { css?: CSS };
 type CardVariants = StitchesVariants<typeof StyledCard>;
 type CardOwnProps = CardCSSProp & CardVariants;
 
@@ -34,14 +34,16 @@ const StyledCard = styled(DEFAULT_TAG, {
   variants: {
     variant: {
       interactive: {
-        '&:hover': {
-          '&::before': {
-            boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.2)',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            '&::before': {
+              boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.2)',
+            },
           },
         },
         '&:focus': {
           '&::before': {
-            boxShadow: 'inset 0 0 0 1px $blue700, 0 0 0 1px $blue700',
+            boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
           },
         },
       },
@@ -55,15 +57,18 @@ const StyledCard = styled(DEFAULT_TAG, {
           opacity: '0',
           transition: 'all 200ms cubic-bezier(0.22, 1, 0.36, 1)',
         },
-        '&:hover': {
-          backgroundColor: '$panel',
-          transform: 'translateY(-2px)',
-          '::before': {
-            opacity: '1',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$panel',
+            transform: 'translateY(-2px)',
+            '&::before': {
+              opacity: '1',
+            },
           },
         },
         '&:active': {
           transform: 'translateY(0)',
+          transition: 'none',
           '&::before': {
             boxShadow:
               '0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)',
@@ -71,7 +76,7 @@ const StyledCard = styled(DEFAULT_TAG, {
           },
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $blue700, 0 0 0 1px $blue700',
+          boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
         },
       },
     },

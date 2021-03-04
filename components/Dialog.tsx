@@ -2,8 +2,8 @@ import React from 'react';
 import { styled } from '../stitches.config';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Cross1Icon } from '@radix-ui/react-icons';
-import { Overlay } from './Overlay';
-import { Panel } from './Panel';
+import { overlayStyles } from './Overlay';
+import { panelStyles } from './Panel';
 import { IconButton } from './IconButton';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -13,6 +13,7 @@ type DialogProps = React.ComponentProps<typeof DialogPrimitive.Root> & {
 };
 
 const StyledOverlay = styled(DialogPrimitive.Overlay, {
+  ...overlayStyles,
   position: 'fixed',
   top: 0,
   right: 0,
@@ -23,19 +24,19 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, {
 export function Dialog({ children, ...props }: DialogProps) {
   return (
     <DialogPrimitive.Root {...props}>
-      <StyledOverlay as={Overlay} />
+      <StyledOverlay />
       {children}
     </DialogPrimitive.Root>
   );
 }
 
 const StyledContent = styled(DialogPrimitive.Content, {
+  ...panelStyles,
   position: 'fixed',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   minWidth: 200,
-  maxWidth: 'fit-content',
   maxHeight: '85vh',
   padding: '$4',
   marginTop: '-5vh',
@@ -66,7 +67,7 @@ type DialogContentComponent = Polymorphic.ForwardRefComponent<
 >;
 
 export const DialogContent = React.forwardRef(({ children, ...props }, forwardedRef) => (
-  <StyledContent as={Panel} {...props} ref={forwardedRef}>
+  <StyledContent {...props} ref={forwardedRef}>
     {children}
     <DialogPrimitive.Close as={StyledCloseButton} variant="ghost">
       <Cross1Icon />

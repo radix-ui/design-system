@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, StitchesVariants, StitchesProps } from '../stitches.config';
+import { styled, StitchesVariants, CSS } from '../stitches.config';
 import * as SwitchPrimitive from '@radix-ui/react-switch';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -42,13 +42,11 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
     boxSizing: 'border-box',
   },
 
-  width: '$5',
-  height: '$3',
-  backgroundColor: '$gray400',
+  backgroundColor: '$slate400',
   borderRadius: '$pill',
   position: 'relative',
   '&:focus': {
-    boxShadow: '0 0 0 2px $gray700',
+    boxShadow: '0 0 0 2px $slate700',
   },
 
   '&[data-state="checked"]': {
@@ -78,12 +76,15 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
       },
     },
   },
+  defaultVariants: {
+    size: '1'
+  }
 });
 
-type SwitchCSSProp = Pick<StitchesProps<typeof StyledSwitch>, 'css'>;
+type ButtonCSSProp = { css?: CSS };
 type SwitchVariants = StitchesVariants<typeof StyledSwitch>;
 type SwitchOwnProps = Polymorphic.OwnProps<typeof SwitchPrimitive.Root> &
-  SwitchCSSProp &
+  ButtonCSSProp &
   SwitchVariants;
 type SwitchComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof SwitchPrimitive.Root>,

@@ -1,10 +1,10 @@
 import React from 'react';
-import { styled, css, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, css, keyframes, CSS, StitchesVariants } from '../stitches.config';
 import * as ProgressPrimitive from '@radix-ui/react-progress';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
-const indeterminateProgress = css.keyframes({
+const indeterminateProgress = keyframes({
   '0%': {
     transform: 'scaleX(1) translateX(-100%)',
     transformOrigin: 'left',
@@ -25,16 +25,15 @@ const StyledProgressBar = styled(ProgressPrimitive.Root, {
   height: '$1',
   overflow: 'hidden',
   borderRadius: '$pill',
-  background: '$gray700',
 
   '&[data-state="indeterminate"]': {
-    backgroundColor: '$gray300',
+    backgroundColor: '$slate300',
     '::after': {
       animationName: indeterminateProgress,
       animationDuration: '1500ms',
       animationIterationCount: 'infinite',
       animationTimingFunction: 'cubic-bezier(0.65, 0, 0.35, 1)',
-      backgroundColor: '$gray600',
+      backgroundColor: '$slate600',
       boxSizing: 'border-box',
       borderRadius: '$pill',
       content: '""',
@@ -46,13 +45,11 @@ const StyledProgressBar = styled(ProgressPrimitive.Root, {
     },
   },
 
-  '&[data-state="complete"]': {
-    backgroundColor: '$green800',
-    backgroundImage: 'none',
-  },
-
   variants: {
-    color: {
+    variant: {
+      gray: {
+        background: '$slate700',
+      },
       blue: {
         backgroundColor: '$blue800',
       },
@@ -62,6 +59,9 @@ const StyledProgressBar = styled(ProgressPrimitive.Root, {
       },
     },
   },
+  defaultVariants: {
+    variant: 'gray'
+  }
 });
 
 const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {
@@ -72,11 +72,11 @@ const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {
   bottom: 0,
   left: 0,
   width: '100%',
-  backgroundColor: '$gray300',
+  backgroundColor: '$slate300',
   transition: 'transform 150ms cubic-bezier(0.65, 0, 0.35, 1)',
 });
 
-type ProgressBarCSSProp = Pick<StitchesProps<typeof StyledProgressBar>, 'css'>;
+type ProgressBarCSSProp = { css?: CSS };
 type ProgressBarVariants = StitchesVariants<typeof StyledProgressBar>;
 type ProgressBarOwnProps = Polymorphic.OwnProps<typeof ProgressPrimitive.Root> &
   ProgressBarCSSProp &

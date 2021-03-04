@@ -1,11 +1,11 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'button';
 
-type IconButtonCSSProp = Pick<StitchesProps<typeof StyledIconButton>, 'css'>;
+type IconButtonCSSProp = { css?: CSS };
 type IconButtonVariants = StitchesVariants<typeof StyledIconButton>;
 type IconButtonOwnProps = IconButtonCSSProp & IconButtonVariants;
 
@@ -33,41 +33,42 @@ const StyledIconButton = styled(DEFAULT_TAG, {
   '&::after': {
     boxSizing: 'border-box',
   },
-
-  // Custom
   backgroundColor: '$loContrast',
-  border: '1px solid $gray600',
+  border: '1px solid $slate600',
   borderRadius: '$2',
-  height: '$5',
-  width: '$5',
-  transition: 'all 40ms linear',
-  '&:hover': {
-    borderColor: '$gray700',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      borderColor: '$slate700',
+    },
   },
   '&:active': {
-    backgroundColor: '$gray100',
+    backgroundColor: '$slate100',
   },
-  '&&:focus': {
-    borderColor: '$gray700',
-    boxShadow: '0 0 0 1px $gray700',
+  '&:focus': {
+    borderColor: '$slate700',
+    boxShadow: '0 0 0 1px $colors$slate700',
   },
   '&:disabled': {
     pointerEvents: 'none',
     backgroundColor: 'transparent',
-    color: '$gray500',
+    color: '$slate500',
   },
 
   variants: {
     size: {
-      large: {
+      '1': {
+        height: '$5',
+        width: '$5',
+      },
+      '2': {
         height: '$6',
         width: '$6',
       },
-      xl: {
+      '3': {
         height: '$7',
         width: '$7',
       },
-      xxl: {
+      '4': {
         height: '$8',
         width: '$8',
       },
@@ -76,56 +77,71 @@ const StyledIconButton = styled(DEFAULT_TAG, {
       ghost: {
         backgroundColor: 'transparent',
         borderWidth: '0',
-        '&:hover': {
-          backgroundColor: '$gray200',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$slate200',
+          },
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
         },
         '&:active': {
-          backgroundColor: '$gray300',
+          backgroundColor: '$slate300',
         },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$slate300',
+        }
       },
       raised: {
         boxShadow:
           '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
-        '&:hover': {
-          boxShadow:
-            '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            boxShadow:
+              '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
+          },
         },
         '&:focus': {
-          borderColor: '$gray700',
+          borderColor: '$slate700',
           boxShadow:
-            '0 0 0 1px $gray700, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
+            '0 0 0 1px $colors$slate700, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
         },
         '&:active': {
-          backgroundColor: '$gray300',
+          backgroundColor: '$slate300',
         },
       },
     },
     state: {
       active: {
-        backgroundColor: '$gray300',
+        backgroundColor: '$slate300',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
-        '&:hover': {
-          boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
+          },
         },
         '&:active': {
-          backgroundColor: '$gray300',
+          backgroundColor: '$slate300',
         },
       },
       waiting: {
-        backgroundColor: '$gray300',
+        backgroundColor: '$slate300',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
-        '&:hover': {
-          boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
+          },
         },
         '&:active': {
-          backgroundColor: '$gray300',
+          backgroundColor: '$slate300',
         },
       },
     },
   },
+  defaultVariants: {
+    size: '1',
+    variant: 'ghost',
+  }
 });
 
 type IconButtonComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, IconButtonOwnProps>;

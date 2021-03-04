@@ -32,7 +32,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$gray400' }}>
+        <TreeItem css={{ backgroundColor: '$slate400' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -329,25 +329,25 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$turquoise400' }}>
+        <TreeItem css={{ backgroundColor: '$cyan400' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
           <Text size="1">Radio</Text>
         </TreeItem>
-        <TreeItem variant="turquoise" css={{ pl: 45 }}>
+        <TreeItem variant="cyan" css={{ pl: 45 }}>
           <Box css={{ mr: '$2' }}>
             <SliderIcon />
           </Box>
           <Text size="1">Slider</Text>
         </TreeItem>
-        <TreeItem variant="turquoise" css={{ pl: 45 }}>
+        <TreeItem variant="cyan" css={{ pl: 45 }}>
           <Box css={{ mr: '$2' }}>
             <SwitchIcon />
           </Box>
           <Text size="1">Switch</Text>
         </TreeItem>
-        <TreeItem variant="turquoise" css={{ pl: 45 }}>
+        <TreeItem variant="cyan" css={{ pl: 45 }}>
           <Box css={{ mr: '$2' }}>
             <TextIcon />
           </Box>

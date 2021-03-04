@@ -1,11 +1,11 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'a';
 
-type TabLinkCSSProp = Pick<StitchesProps<typeof StyledTabLink>, 'css'>;
+type TabLinkCSSProp = { css?: CSS };
 type TabLinkVariants = StitchesVariants<typeof StyledTabLink>;
 type TabLinkOwnProps = TabLinkCSSProp & TabLinkVariants;
 
@@ -21,16 +21,15 @@ const StyledTabLink = styled(DEFAULT_TAG, {
   outline: 'none',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '$gray900',
+  color: '$slate900',
   textDecoration: 'none',
-
-  '&:hover': {
-    color: '$hiContrast',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      color: '$hiContrast',
+    },
   },
-
   '&:focus': {
-    // color: '$hiContrast',
-    boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
+    boxShadow: 'inset 0 0 0 1px $slate700, 0 0 0 1px $slate700',
   },
 
   variants: {

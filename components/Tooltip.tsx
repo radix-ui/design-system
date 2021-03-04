@@ -13,7 +13,7 @@ type TooltipProps = React.ComponentProps<typeof TooltipPrimitive.Root> &
   };
 
 const Content = styled(TooltipPrimitive.Content, {
-  backgroundColor: '$transparentExtreme',
+  backgroundColor: '$transparentPanel',
   borderRadius: '$1',
   padding: '$1 $2',
 

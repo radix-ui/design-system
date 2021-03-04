@@ -1,20 +1,14 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, StitchesVariants, CSS } from '../stitches.config';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-type SeparatorCSSProp = Pick<StitchesProps<typeof StyledSeparator>, 'css'>;
-type SeparatorVariants = StitchesVariants<typeof StyledSeparator>;
-type SeparatorOwnProps = Polymorphic.OwnProps<typeof SeparatorPrimitive.Root> &
-  SeparatorCSSProp &
-  SeparatorVariants;
 
 const StyledSeparator = styled(SeparatorPrimitive.Root, {
   border: 'none',
   margin: 0,
   flexShrink: 0,
-  backgroundColor: '$gray500',
+  backgroundColor: '$slate500',
   cursor: 'default',
 
   variants: {
@@ -43,13 +37,23 @@ const StyledSeparator = styled(SeparatorPrimitive.Root, {
       },
     },
   },
+  defaultVariants: {
+    size: '1'
+  }
 });
+
+type ButtonCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type SeparatorVariants = Omit<StitchesVariants<typeof StyledSeparator>, 'size'>;
+type SeparatorOwnProps = Polymorphic.OwnProps<typeof SeparatorPrimitive.Root> &
+  ButtonCSSProp &
+  SeparatorVariants & { size?: any };
 
 type SeparatorComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof SeparatorPrimitive.Root>,
   SeparatorOwnProps
 >;
 
-export const Separator = React.forwardRef((props, forwardedRef) => {
-  return <StyledSeparator {...props} ref={forwardedRef} />;
-}) as SeparatorComponent;
+export const Separator = React.forwardRef((props, forwardedRef) => (
+  <StyledSeparator {...props} ref={forwardedRef} />
+)) as SeparatorComponent;

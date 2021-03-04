@@ -1,13 +1,9 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'div';
-
-type ContainerCSSProp = Pick<StitchesProps<typeof StyledContainer>, 'css'>;
-type ContainerVariants = StitchesVariants<typeof StyledContainer>;
-type ContainerOwnProps = ContainerCSSProp & ContainerVariants;
 
 const StyledContainer = styled(DEFAULT_TAG, {
   // Reset
@@ -35,7 +31,15 @@ const StyledContainer = styled(DEFAULT_TAG, {
       },
     },
   },
+  defaultVariants: {
+    size: '4'
+  }
 });
+
+type ContainerCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type ContainerVariants = Omit<StitchesVariants<typeof StyledContainer>, 'size'>;
+type ContainerOwnProps = ContainerCSSProp & ContainerVariants & { size?: any };
 
 type ContainerComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, ContainerOwnProps>;
 

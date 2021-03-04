@@ -1,15 +1,17 @@
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import React from 'react';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
-export const Text = styled('span', {
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
+
+const DEFAULT_TAG = 'span';
+
+export const StyledText = styled(DEFAULT_TAG, {
   // Reset
   lineHeight: '1',
   margin: '0',
   fontWeight: 400,
   fontVariantNumeric: 'tabular-nums',
   display: 'block',
-
-  // Custom
-  color: '$hiContrast',
 
   variants: {
     size: {
@@ -49,7 +51,7 @@ export const Text = styled('span', {
         textIndent: '-.025em',
       },
     },
-    color: {
+    variant: {
       red: {
         color: '$red900',
       },
@@ -71,8 +73,8 @@ export const Text = styled('span', {
       blue: {
         color: '$blue900',
       },
-      turquoise: {
-        color: '$turquoise900',
+      cyan: {
+        color: '$cyan900',
       },
       teal: {
         color: '$teal900',
@@ -96,11 +98,28 @@ export const Text = styled('span', {
         color: '$bronze900',
       },
       gray: {
-        color: '$gray900',
+        color: '$slate900',
       },
       contrast: {
         color: '$hiContrast',
       },
     },
   },
+  defaultVariants: {
+    size: '3',
+    variant: 'contrast'
+  }
 });
+
+type TextCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type TextVariants = Omit<StitchesVariants<typeof StyledText>, 'size'>;
+type TextOwnProps = TextCSSProp & TextVariants & { size?: any };
+
+type TextComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TextOwnProps>;
+
+export const Text = React.forwardRef((props, forwardedRef) => {
+  return <StyledText {...props} ref={forwardedRef} />;
+}) as TextComponent;
+
+Text.toString = () => `.${StyledText.className}`;

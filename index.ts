@@ -9,6 +9,7 @@ export {
   AlertDialogTrigger,
 } from './components/AlertDialog';
 export { Avatar, AvatarGroup, AvatarNestedItem } from './components/Avatar';
+export { AspectRatio } from '@radix-ui/react-aspect-ratio';
 export { Badge } from './components/Badge';
 export { Box } from './components/Box';
 export { Button } from './components/Button';
@@ -29,6 +30,7 @@ export {
   ContextMenuSeparator,
 } from './components/ContextMenu';
 export { ControlGroup } from './components/ControlGroup';
+export { DesignSystemProvider } from './components/DesignSystemProvider';
 export { Dialog, DialogClose, DialogContent, DialogTrigger } from './components/Dialog';
 export {
   DropdownMenu,
@@ -75,6 +77,7 @@ export { Separator } from './components/Separator';
 export { SimpleToggle } from './components/SimpleToggle';
 export { Skeleton } from './components/Skeleton';
 export { Slider } from './components/Slider';
+export { Slot } from '@radix-ui/react-slot';
 export { Status } from './components/Status';
 export { Subheading } from './components/Subheading';
 export { Subtitle } from './components/Subtitle';
@@ -89,4 +92,4 @@ export { TreeItem } from './components/TreeItem';
 export { VerifiedBadge } from './components/VerifiedBadge';
 
 // Stitches
-export { css, styled, theme, darkTheme, darkThemeClass } from './stitches.config';
+export { css, styled, theme, darkTheme } from './stitches.config';

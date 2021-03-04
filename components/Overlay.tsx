@@ -1,5 +1,7 @@
-import { styled } from '../stitches.config';
+import { styled, CSS } from '../stitches.config';
 
-export const Overlay = styled('div', {
+export const overlayStyles: CSS = {
   backgroundColor: 'rgba(0, 0, 0, .15)',
-});
+};
+
+export const Overlay = styled('div', overlayStyles);

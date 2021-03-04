@@ -1,13 +1,9 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'button';
-
-type ButtonCSSProp = Pick<StitchesProps<typeof StyledButton>, 'css'>;
-type ButtonVariants = StitchesVariants<typeof StyledButton>;
-type ButtonOwnProps = ButtonCSSProp & ButtonVariants;
 
 const StyledButton = styled(DEFAULT_TAG, {
   // Reset
@@ -31,11 +27,8 @@ const StyledButton = styled(DEFAULT_TAG, {
   },
 
   // Custom
-  backgroundColor: '$loContrast',
   border: 'none',
-  boxShadow: 'inset 0 0 0 1px $gray600',
   borderRadius: '$2',
-  color: '$hiContrast',
   height: '$5',
   px: '$2',
   fontFamily: '$untitled',
@@ -43,20 +36,10 @@ const StyledButton = styled(DEFAULT_TAG, {
   fontWeight: 500,
   fontVariantNumeric: 'tabular-nums',
 
-  '&:hover': {
-    boxShadow: 'inset 0 0 0 1px $gray700',
-  },
-  '&:active': {
-    backgroundColor: '$gray100',
-    boxShadow: 'inset 0 0 0 1px $gray700',
-  },
-  '&:focus': {
-    boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
-  },
-  ':disabled': {
-    backgroundColor: '$gray100',
-    boxShadow: 'inset 0 0 0 1px $gray600',
-    color: '$gray700',
+  '&:disabled': {
+    backgroundColor: '$slate100',
+    boxShadow: 'inset 0 0 0 1px $colors$slate600',
+    color: '$slate700',
     pointerEvents: 'none',
   },
 
@@ -74,74 +57,119 @@ const StyledButton = styled(DEFAULT_TAG, {
       },
     },
     variant: {
+      gray: {
+        backgroundColor: '$loContrast',
+        boxShadow: 'inset 0 0 0 1px $colors$slate600',
+        color: '$hiContrast',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px $colors$slate700',
+          }
+        },
+        '&:active': {
+          backgroundColor: '$slate100',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700',
+        },
+        '&:focus': {
+          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$slate300',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700',
+        },
+      },
       blue: {
         backgroundColor: '$blue100',
-        boxShadow: 'inset 0 0 0 1px $blue600',
+        boxShadow: 'inset 0 0 0 1px $colors$blue600',
         color: '$blue900',
-        '&:hover': {
-          boxShadow: 'inset 0 0 0 1px $blue700',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px $colors$blue700',
+          },
         },
         '&:active': {
           backgroundColor: '$blue200',
-          boxShadow: 'inset 0 0 0 1px $blue700',
+          boxShadow: 'inset 0 0 0 1px $colors$blue700',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $blue700, 0 0 0 1px $blue700',
+          boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$blue300',
+          boxShadow: 'inset 0 0 0 1px $colors$blue700',
         },
       },
       green: {
         backgroundColor: '$green100',
-        boxShadow: 'inset 0 0 0 1px $green600',
+        boxShadow: 'inset 0 0 0 1px $colors$green600',
         color: '$green900',
-        '&:hover': {
-          boxShadow: 'inset 0 0 0 1px $green700',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px $colors$green700',
+          },
         },
         '&:active': {
           backgroundColor: '$green200',
-          boxShadow: 'inset 0 0 0 1px $green700',
+          boxShadow: 'inset 0 0 0 1px $colors$green700',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $green700, 0 0 0 1px $green700',
+          boxShadow: 'inset 0 0 0 1px $colors$green700, 0 0 0 1px $colors$green700',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$green300',
+          boxShadow: 'inset 0 0 0 1px $colors$green700',
         },
       },
       red: {
+        backgroundColor: '$loContrast',
+        boxShadow: 'inset 0 0 0 1px $colors$slate600',
         color: '$red900',
-        '&:hover': {
-          backgroundColor: '$red100',
-          boxShadow: 'inset 0 0 0 1px $red700',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            boxShadow: 'inset 0 0 0 1px $colors$slate700',
+          },
         },
         '&:active': {
           backgroundColor: '$red200',
-          boxShadow: 'inset 0 0 0 1px $red700',
+          boxShadow: 'inset 0 0 0 1px $colors$red700',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $red700, 0 0 0 1px $red700',
+          boxShadow: 'inset 0 0 0 1px $colors$red700, 0 0 0 1px $colors$red700',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$red300',
+          boxShadow: 'inset 0 0 0 1px $colors$red700',
         },
       },
       ghost: {
         backgroundColor: 'transparent',
-        boxShadow: 'none',
         fontWeight: 400,
-        '&:hover': {
-          backgroundColor: '$gray200',
-          boxShadow: 'none',
+        color: '$hiContrast',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$slate200',
+          },
         },
         '&:active': {
-          backgroundColor: '$gray300',
-          boxShadow: 'none',
+          backgroundColor: '$slate300',
+        },
+        '&:focus': {
+          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$slate300',
         },
       },
       transparentWhite: {
         backgroundColor: 'hsla(0,100%,100%,.2)',
-        boxShadow: 'none',
         color: 'white',
-        '&:hover': {
-          backgroundColor: 'hsla(0,100%,100%,.25)',
-          boxShadow: 'none',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: 'hsla(0,100%,100%,.25)',
+          },
         },
         '&:active': {
           backgroundColor: 'hsla(0,100%,100%,.3)',
-          boxShadow: 'none',
         },
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px hsla(0,100%,100%,.35), 0 0 0 1px hsla(0,100%,100%,.35)',
@@ -149,15 +177,14 @@ const StyledButton = styled(DEFAULT_TAG, {
       },
       transparentBlack: {
         backgroundColor: 'hsla(0,0%,0%,.2)',
-        boxShadow: 'none',
         color: 'black',
-        '&:hover': {
-          backgroundColor: 'hsla(0,0%,0%,.25)',
-          boxShadow: 'none',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: 'hsla(0,0%,0%,.25)',
+          },
         },
         '&:active': {
           backgroundColor: 'hsla(0,0%,0%,.3)',
-          boxShadow: 'none',
         },
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px hsla(0,0%,0%,.35), 0 0 0 1px hsla(0,0%,0%,.35)',
@@ -166,42 +193,57 @@ const StyledButton = styled(DEFAULT_TAG, {
     },
     state: {
       active: {
-        backgroundColor: '$gray300',
-        boxShadow: 'inset 0 0 0 1px $gray700',
-        color: '$gray900',
-        '&:hover': {
-          backgroundColor: '$gray400',
-          boxShadow: 'inset 0 0 0 1px $gray700',
+        backgroundColor: '$slate300',
+        boxShadow: 'inset 0 0 0 1px $colors$slate700',
+        color: '$slate900',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$slate400',
+            boxShadow: 'inset 0 0 0 1px $colors$slate700',
+          }
         },
         '&:active': {
-          backgroundColor: '$gray400',
+          backgroundColor: '$slate400',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
         },
       },
       waiting: {
-        backgroundColor: '$gray300',
-        boxShadow: 'inset 0 0 0 1px $gray700',
+        backgroundColor: '$slate300',
+        boxShadow: 'inset 0 0 0 1px $colors$slate700',
         color: 'transparent',
         pointerEvents: 'none',
-        '&:hover': {
-          backgroundColor: '$gray400',
-          boxShadow: 'inset 0 0 0 1px $gray700',
+        "@media (any-hover: hover)": {
+          '&:hover': {
+            backgroundColor: '$slate400',
+            boxShadow: 'inset 0 0 0 1px $colors$slate700',
+          }
         },
         '&:active': {
-          backgroundColor: '$gray400',
+          backgroundColor: '$slate400',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $gray700',
+          boxShadow: 'inset 0 0 0 1px $colors$slate700',
         },
       },
     },
   },
+  defaultVariants: {
+    size: '1',
+    variant: 'gray',
+  },
 });
+
+type ButtonCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type ButtonVariants = Omit<StitchesVariants<typeof StyledButton>, 'size'>;
+type ButtonOwnProps = ButtonCSSProp & ButtonVariants & { size?: any };
 
 type ButtonComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, ButtonOwnProps>;
 
 export const Button = React.forwardRef((props, forwardedRef) => {
   return <StyledButton {...props} ref={forwardedRef} />;
 }) as ButtonComponent;
+
+Button.toString = () => `.${StyledButton.className}`;

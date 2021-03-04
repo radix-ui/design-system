@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '../stitches.config';
+import { styled, CSS } from '../stitches.config';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 
@@ -8,10 +8,10 @@ import * as Polymorphic from '@radix-ui/react-polymorphic';
 const StyledAccordion = styled(AccordionPrimitive.Root, {});
 
 const StyledItem = styled(AccordionPrimitive.Item, {
-  borderTop: '1px solid $gray500',
+  borderTop: '1px solid $colors$slate500',
 
   '&:last-of-type': {
-    borderBottom: '1px solid $gray500',
+    borderBottom: '1px solid $colors$slate500',
   },
 });
 
@@ -25,13 +25,15 @@ const StyledButton = styled(AccordionPrimitive.Button, {
   color: '$hiContrast',
   width: '100%',
 
-  '&:hover': {
-    backgroundColor: '$gray100',
+  '@media (any-hover: hover)': {
+    '&:hover': {
+      backgroundColor: '$slate100',
+    },
   },
 
   '&:focus': {
     outline: 'none',
-    boxShadow: 'inset 0 0 0 1px $gray700, 0 0 0 1px $gray700',
+    boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
   },
 
   svg: {

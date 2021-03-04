@@ -1,13 +1,9 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'section';
-
-type SectionCSSProp = Pick<StitchesProps<typeof StyledSection>, 'css'>;
-type SectionVariants = StitchesVariants<typeof StyledSection>;
-type SectionOwnProps = SectionCSSProp & SectionVariants;
 
 const StyledSection = styled(DEFAULT_TAG, {
   // Reset
@@ -15,9 +11,11 @@ const StyledSection = styled(DEFAULT_TAG, {
   flexShrink: 0,
   '&::before': {
     boxSizing: 'border-box',
+    content: '""',
   },
   '&::after': {
     boxSizing: 'border-box',
+    content: '""',
   },
 
   variants: {
@@ -33,7 +31,15 @@ const StyledSection = styled(DEFAULT_TAG, {
       },
     },
   },
+  defaultVariants: {
+    size: '3'
+  }
 });
+
+type ButtonCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type SectionVariants = Omit<StitchesVariants<typeof StyledSection>, 'size'>;
+type SectionOwnProps = ButtonCSSProp & SectionVariants & { size?: any };
 
 type SectionComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, SectionOwnProps>;
 

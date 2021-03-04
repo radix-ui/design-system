@@ -1,15 +1,9 @@
 import React from 'react';
-import { styled, StitchesProps, StitchesVariants } from '../stitches.config';
+import { styled, CSS, StitchesVariants } from '../stitches.config';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-type CheckboxCSSProp = Pick<StitchesProps<typeof StyledCheckbox>, 'css'>;
-type CheckboxVariants = StitchesVariants<typeof StyledCheckbox>;
-type CheckboxOwnProps = Polymorphic.OwnProps<typeof CheckboxPrimitive.Root> &
-  CheckboxCSSProp &
-  CheckboxVariants;
 
 const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   // Reset
@@ -33,18 +27,17 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   },
 
   color: '$hiContrast',
-  boxShadow: 'inset 0 0 0 1px $gray600',
+  boxShadow: 'inset 0 0 0 1px $colors$slate600',
   overflow: 'hidden',
-  width: '$3',
-  height: '$3',
-  borderRadius: '$1',
-  '&:hover': {
-    boxShadow: 'inset 0 0 0 1px $gray700',
+  "@media (any-hover: hover)": {
+    '&:hover': {
+      boxShadow: 'inset 0 0 0 1px $colors$slate700',
+    },
   },
   '&:focus': {
     outline: 'none',
     borderColor: '$red600',
-    boxShadow: 'inset 0 0 0 1px $blue800, 0 0 0 1px $blue800',
+    boxShadow: 'inset 0 0 0 1px $colors$blue800, 0 0 0 1px $colors$blue800',
   },
 
   variants: {
@@ -61,6 +54,9 @@ const StyledCheckbox = styled(CheckboxPrimitive.Root, {
       },
     },
   },
+  defaultVariants: {
+    size: '1'
+  }
 });
 
 const StyledIndicator = styled(CheckboxPrimitive.Indicator, {
@@ -70,6 +66,13 @@ const StyledIndicator = styled(CheckboxPrimitive.Indicator, {
   justifyContent: 'center',
   width: '100%',
 });
+
+type CheckboxCSSProp = { css?: CSS };
+// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
+type CheckboxVariants = Omit<StitchesVariants<typeof StyledCheckbox>, 'size'>;
+type CheckboxOwnProps = Polymorphic.OwnProps<typeof CheckboxPrimitive.Root> &
+  CheckboxCSSProp &
+  CheckboxVariants & { size?: any };
 
 type CheckboxComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof CheckboxPrimitive.Root>,

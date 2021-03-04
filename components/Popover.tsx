@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '../stitches.config';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { Box } from './Box';
-import { Panel } from './Panel';
+import { panelStyles } from './Panel';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -15,8 +15,8 @@ export function Popover({ children, ...props }: PopoverProps) {
 }
 
 const StyledContent = styled(PopoverPrimitive.Content, {
+  ...panelStyles,
   minWidth: 200,
-  maxWidth: 'fit-content',
   minHeight: '$6',
   '&:focus': {
     outline: 'none',
@@ -34,7 +34,7 @@ type PopoverContentComponent = Polymorphic.ForwardRefComponent<
 >;
 
 export const PopoverContent = React.forwardRef(({ children, hideArrow, ...props }, fowardedRef) => (
-  <StyledContent as={Panel} sideOffset={0} {...props} ref={fowardedRef}>
+  <StyledContent sideOffset={0} {...props} ref={fowardedRef}>
     {children}
     {!hideArrow && (
       <Box css={{ color: '$panel' }}>
@@ -44,5 +44,13 @@ export const PopoverContent = React.forwardRef(({ children, hideArrow, ...props 
   </StyledContent>
 )) as PopoverContentComponent;
 
-export const PopoverTrigger = PopoverPrimitive.Trigger;
+type PopoverTriggerComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof PopoverPrimitive.Trigger>,
+  Polymorphic.OwnProps<typeof PopoverPrimitive.Trigger>
+>;
+
+export const PopoverTrigger = React.forwardRef((props, forwardedRef) => (
+  <PopoverPrimitive.Trigger data-radix-popover-trigger {...props} ref={forwardedRef} />
+)) as PopoverTriggerComponent;
+
 export const PopoverClose = PopoverPrimitive.Close;
