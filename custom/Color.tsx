@@ -57,6 +57,19 @@ export function Color() {
           </Box>
 
           <Box>
+            <Text css={{ fontSize: '$2' }}>Gray</Text>
+          </Box>
+          <Box css={{ height: 35, backgroundColor: '$gray100' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$gray200' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$gray300' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$gray400' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$gray500' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$gray600' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$gray700' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$gray800' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$gray900' }}></Box>
+
+          <Box>
             <Text css={{ fontSize: '$2' }}>Slate</Text>
           </Box>
           <Box css={{ height: 35, backgroundColor: '$slate100' }}></Box>

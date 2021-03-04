@@ -4,6 +4,16 @@ export type { StitchesVariants } from '@stitches/react';
 const stitches = createCss({
   theme: {
     colors: {
+      gray100: 'hsl(0, 0%, 98.8%)',
+      gray200: 'hsl(0, 0%, 96.0%)',
+      gray300: 'hsl(0, 0%, 93.7%)',
+      gray400: 'hsl(0, 0%, 92.0%)',
+      gray500: 'hsl(0, 0%, 89.5%)',
+      gray600: 'hsl(0, 0%, 85.2%)',
+      gray700: 'hsl(0, 0%, 80.0%)',
+      gray800: 'hsl(0, 0%, 56.1%)',
+      gray900: 'hsl(0, 0%, 43.9%)',
+
       slate100: 'hsl(206 20% 98.8%)',
       slate200: 'hsl(206 14% 96.0%)',
       slate300: 'hsl(206 13% 93.7%)',
@@ -363,6 +373,16 @@ export const utils = config.utils;
 
 export const darkTheme = theme('dark-theme', {
   colors: {
+    gray100: 'hsl(0, 0%, 9.6%)',
+    gray200: 'hsl(0, 0%, 11.6%)',
+    gray300: 'hsl(0, 0%, 13.9%)',
+    gray400: 'hsl(0, 0%, 16.6%)',
+    gray500: 'hsl(0, 0%, 20.1%)',
+    gray600: 'hsl(0, 0%, 24.8%)',
+    gray700: 'hsl(0, 0%, 31.0%)',
+    gray800: 'hsl(0, 0%, 43.9%)',
+    gray900: 'hsl(0, 0%, 52.9%)',
+
     slate100: 'hsl(200 6% 9.6%)',
     slate200: 'hsl(201 6% 11.6%)',
     slate300: 'hsl(201 6% 13.9%)',
