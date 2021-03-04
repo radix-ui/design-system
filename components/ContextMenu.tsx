@@ -2,7 +2,7 @@ import React from 'react';
 import { CheckIcon } from '@radix-ui/react-icons';
 import { styled, CSS } from '../stitches.config';
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu';
-import { menuCss, separatorCss, itemCss, interactiveItemCss, labelCss } from './Menu';
+import { menuCss, separatorCss, itemCss, labelCss } from './Menu';
 import { Box } from './Box';
 import { Flex } from './Flex';
 import { panelStyles } from './Panel';
@@ -32,7 +32,7 @@ export const ContextMenuSeparator = styled(ContextMenuPrimitive.Separator, separ
 
 export const ContextMenuItem = styled(ContextMenuPrimitive.Item, itemCss);
 
-const StyledMenuRadioItem = styled(ContextMenuPrimitive.RadioItem, interactiveItemCss);
+const StyledMenuRadioItem = styled(ContextMenuPrimitive.RadioItem, itemCss);
 
 type MenuRadioItemCSSProp = { css?: CSS };
 type MenuRadioItemOwnProps = Polymorphic.OwnProps<typeof ContextMenuPrimitive.RadioItem> &
@@ -62,7 +62,7 @@ export const ContextMenuRadioItem = React.forwardRef(({ children, ...props }, fo
   </StyledMenuRadioItem>
 )) as MenuRadioItemComponent;
 
-const StyledMenuCheckboxItem = styled(ContextMenuPrimitive.CheckboxItem, interactiveItemCss);
+const StyledMenuCheckboxItem = styled(ContextMenuPrimitive.CheckboxItem, itemCss);
 
 type MenuCheckboxItemCSSProp = { css?: CSS };
 type MenuCheckboxItemOwnProps = Polymorphic.OwnProps<typeof ContextMenuPrimitive.CheckboxItem> &
@@ -84,31 +84,5 @@ export const ContextMenuCheckboxItem = React.forwardRef(({ children, ...props },
 )) as MenuCheckboxItemComponent;
 
 export const ContextMenuLabel = styled(ContextMenuPrimitive.Label, labelCss);
-
-// Group CSS cant be abstraced because it contains variants
-// and Stitches Alpha types dont work properly
-export const ContextMenuRadioGroup = styled(ContextMenuPrimitive.RadioGroup, {
-  variants: {
-    indented: {
-      true: {
-        '[data-radix-menu-item], [data-radix-menu-label]': {
-          paddingLeft: '$5',
-        },
-      },
-    },
-  },
-});
-
-// Group CSS cant be abstraced because it contains variants
-// and Stitches Alpha types dont work properly
-export const ContextMenuGroup = styled(ContextMenuPrimitive.Group, {
-  variants: {
-    indented: {
-      true: {
-        '[data-radix-menu-item], [data-radix-menu-label]': {
-          paddingLeft: '$5',
-        },
-      },
-    },
-  },
-});
+export const ContextMenuRadioGroup = styled(ContextMenuPrimitive.RadioGroup, {});
+export const ContextMenuGroup = styled(ContextMenuPrimitive.Group, {});
