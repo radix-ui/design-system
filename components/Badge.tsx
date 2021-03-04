@@ -113,11 +113,11 @@ const StyledBadge = styled(DEFAULT_TAG, {
           boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
         },
       },
-      turquoise: {
-        backgroundColor: '$turquoise200',
-        color: '$turquoise900',
+      cyan: {
+        backgroundColor: '$cyan200',
+        color: '$cyan900',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$turquoise700, 0 0 0 1px $colors$turquoise700',
+          boxShadow: 'inset 0 0 0 1px $colors$cyan700, 0 0 0 1px $colors$cyan700',
         },
       },
       teal: {
@@ -297,18 +297,18 @@ const StyledBadge = styled(DEFAULT_TAG, {
     },
     {
       interactive: true,
-      variant: 'turquoise',
+      variant: 'cyan',
       css: {
         "@media (any-hover: hover)": {
           '&:hover': {
-            backgroundColor: '$turquoise300',
+            backgroundColor: '$cyan300',
           },
         },
         '&:active': {
-          backgroundColor: '$turquoise400',
+          backgroundColor: '$cyan400',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$turquoise400',
+          backgroundColor: '$cyan400',
         },
       },
     },

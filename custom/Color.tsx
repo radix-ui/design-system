@@ -161,17 +161,17 @@ export function Color() {
           <Box css={{ height: 35, backgroundColor: '$blue900' }}></Box>
 
           <Box>
-            <Text css={{ fontSize: '$2' }}>Turquoise</Text>
+            <Text css={{ fontSize: '$2' }}>Cyan</Text>
           </Box>
-          <Box css={{ height: 35, backgroundColor: '$turquoise100' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$turquoise200' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$turquoise300' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$turquoise400' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$turquoise500' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$turquoise600' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$turquoise700' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$turquoise800' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$turquoise900' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$cyan100' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$cyan200' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$cyan300' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$cyan400' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$cyan500' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$cyan600' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$cyan700' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$cyan800' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$cyan900' }}></Box>
 
           <Box>
             <Text css={{ fontSize: '$2' }}>Teal</Text>
@@ -443,7 +443,7 @@ export function Color() {
               ai: 'center',
               jc: 'center',
               height: 100,
-              backgroundColor: '$turquoise800',
+              backgroundColor: '$cyan800',
             }}
           ></Flex>
           <Flex
@@ -599,7 +599,7 @@ export function Color() {
               ai: 'center',
               jc: 'center',
               height: 100,
-              backgroundColor: '$turquoise200',
+              backgroundColor: '$cyan200',
             }}
           ></Flex>
           <Flex
@@ -942,8 +942,8 @@ export function Color() {
           </Flex>
 
           <Flex css={{ ai: 'center', jc: 'center', height: 100 }}>
-            <Text size="3" css={{ color: '$turquoise900' }}>
-              Turquoise
+            <Text size="3" css={{ color: '$cyan900' }}>
+              cyan
             </Text>
           </Flex>
           <Flex
@@ -951,11 +951,11 @@ export function Color() {
               ai: 'center',
               jc: 'center',
               height: 100,
-              backgroundColor: '$turquoise100',
+              backgroundColor: '$cyan100',
             }}
           >
-            <Text size="3" css={{ color: '$turquoise900' }}>
-              Turquoise
+            <Text size="3" css={{ color: '$cyan900' }}>
+              cyan
             </Text>
           </Flex>
           <Flex
@@ -963,11 +963,11 @@ export function Color() {
               ai: 'center',
               jc: 'center',
               height: 100,
-              backgroundColor: '$turquoise200',
+              backgroundColor: '$cyan200',
             }}
           >
-            <Text size="3" css={{ color: '$turquoise900' }}>
-              Turquoise
+            <Text size="3" css={{ color: '$cyan900' }}>
+              cyan
             </Text>
           </Flex>
           <Flex
@@ -975,11 +975,11 @@ export function Color() {
               ai: 'center',
               jc: 'center',
               height: 100,
-              backgroundColor: '$turquoise800',
+              backgroundColor: '$cyan800',
             }}
           >
             <Text size="3" css={{ color: 'white' }}>
-              Turquoise
+              cyan
             </Text>
           </Flex>
 
@@ -1418,11 +1418,11 @@ export function Color() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$turquoise100',
-              border: '1px solid $turquoise500',
+              backgroundColor: '$cyan100',
+              border: '1px solid $cyan500',
             }}
           >
-            <Text size="3" as="p" css={{ color: '$turquoise900', lineHeight: '23px' }}>
+            <Text size="3" as="p" css={{ color: '$cyan900', lineHeight: '23px' }}>
               Warning: obsessing over color is a terrible idea. Chill down ffs.
             </Text>
           </Box>

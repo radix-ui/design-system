@@ -73,8 +73,8 @@ export const StyledText = styled(DEFAULT_TAG, {
       blue: {
         color: '$blue900',
       },
-      turquoise: {
-        color: '$turquoise900',
+      cyan: {
+        color: '$cyan900',
       },
       teal: {
         color: '$teal900',

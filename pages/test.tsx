@@ -520,7 +520,7 @@ function Test() {
                 <Badge size="2" variant="blue">
                   Pending
                 </Badge>
-                <Badge size="2" variant="turquoise">
+                <Badge size="2" variant="cyan">
                   Failed
                 </Badge>
                 <Badge size="2" variant="teal">

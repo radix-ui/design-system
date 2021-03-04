@@ -107,13 +107,13 @@ const StyledTreeItem = styled(DEFAULT_TAG, {
           backgroundColor: '$blue400',
         },
       },
-      turquoise: {
-        backgroundColor: '$turquoise200',
+      cyan: {
+        backgroundColor: '$cyan200',
         '&:hover': {
-          backgroundColor: '$turquoise300',
+          backgroundColor: '$cyan300',
         },
         '&:active': {
-          backgroundColor: '$turquoise400',
+          backgroundColor: '$cyan400',
         },
       },
       teal: {

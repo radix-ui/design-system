@@ -564,7 +564,7 @@ function Home() {
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="6" as="p" variant="turquoise" css={{ lineHeight: '30px' }}>
+                <Text size="6" as="p" variant="cyan" css={{ lineHeight: '30px' }}>
                   The quick brown fox jumped over the lazy dog.
                 </Text>
               </Flex>
@@ -742,7 +742,7 @@ function Home() {
               <Badge size="2" variant="blue">
                 Pending
               </Badge>
-              <Badge size="2" variant="turquoise">
+              <Badge size="2" variant="cyan">
                 Failed
               </Badge>
               <Badge size="2" variant="teal">
@@ -793,7 +793,7 @@ function Home() {
               <Badge as="button" size="2" variant="blue" interactive>
                 Pending
               </Badge>
-              <Badge as="button" size="2" variant="turquoise" interactive>
+              <Badge as="button" size="2" variant="cyan" interactive>
                 Failed
               </Badge>
               <Badge as="button" size="2" variant="teal" interactive>

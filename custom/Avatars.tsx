@@ -85,7 +85,7 @@ export function Avatars() {
             <Avatar alt="John Smith" fallback="F" variant="violet" />
             <Avatar alt="John Smith" fallback="F" variant="indigo" />
             <Avatar alt="John Smith" fallback="F" variant="blue" />
-            <Avatar alt="John Smith" fallback="F" variant="turquoise" />
+            <Avatar alt="John Smith" fallback="F" variant="cyan" />
             <Avatar alt="John Smith" fallback="F" variant="teal" />
             <Avatar alt="John Smith" fallback="F" variant="green" />
             <Avatar alt="John Smith" fallback="F" variant="lime" />
@@ -207,7 +207,7 @@ export function Avatars() {
             <Avatar alt="John Smith" fallback="F" variant="violet" />
             <Avatar alt="John Smith" fallback="F" variant="indigo" />
             <Avatar alt="John Smith" fallback="F" variant="blue" />
-            <Avatar alt="John Smith" fallback="F" inactive variant="turquoise" />
+            <Avatar alt="John Smith" fallback="F" inactive variant="cyan" />
             <Avatar alt="John Smith" fallback="F" inactive variant="teal" />
             <Avatar alt="John Smith" fallback="F" inactive variant="green" />
             <Avatar alt="John Smith" fallback="F" variant="lime" />
