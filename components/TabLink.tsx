@@ -29,7 +29,7 @@ const StyledTabLink = styled(DEFAULT_TAG, {
     },
   },
   '&:focus': {
-    boxShadow: 'inset 0 0 0 1px $slate700, 0 0 0 1px $slate700',
+    boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
   },
 
   variants: {

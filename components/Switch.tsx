@@ -46,13 +46,13 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
   borderRadius: '$pill',
   position: 'relative',
   '&:focus': {
-    boxShadow: '0 0 0 2px $slate700',
+    boxShadow: '0 0 0 2px $colors$slate700',
   },
 
   '&[data-state="checked"]': {
     backgroundColor: '$blue800',
     '&:focus': {
-      boxShadow: '0 0 0 2px $blue700',
+      boxShadow: '0 0 0 2px $colors$blue700',
     },
   },
 
