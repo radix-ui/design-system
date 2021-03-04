@@ -44,5 +44,13 @@ export const PopoverContent = React.forwardRef(({ children, hideArrow, ...props 
   </StyledContent>
 )) as PopoverContentComponent;
 
-export const PopoverTrigger = PopoverPrimitive.Trigger;
+type PopoverTriggerComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof PopoverPrimitive.Trigger>,
+  Polymorphic.OwnProps<typeof PopoverPrimitive.Trigger>
+>;
+
+export const PopoverTrigger = React.forwardRef((props, forwardedRef) => (
+  <PopoverPrimitive.Trigger data-radix-popover-trigger {...props} ref={forwardedRef} />
+)) as PopoverTriggerComponent;
+
 export const PopoverClose = PopoverPrimitive.Close;

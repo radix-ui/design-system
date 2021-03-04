@@ -10,7 +10,15 @@ import { panelStyles } from './Panel';
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 export const DropdownMenu = DropdownMenuPrimitive.Root;
-export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
+
+type DropdownMenuTriggerComponent = Polymorphic.ForwardRefComponent<
+  Polymorphic.IntrinsicElement<typeof DropdownMenuPrimitive.Trigger>,
+  Polymorphic.OwnProps<typeof DropdownMenuPrimitive.Trigger>
+>;
+
+export const DropdownMenuTrigger = React.forwardRef((props, forwardedRef) => (
+  <DropdownMenuPrimitive.Trigger data-radix-dropdown-menu-trigger {...props} ref={forwardedRef} />
+)) as DropdownMenuTriggerComponent;
 
 const StyledDropdownMenuContent = styled(DropdownMenuPrimitive.Content, {
   ...menuCss,
