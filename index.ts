@@ -30,6 +30,7 @@ export {
   ContextMenuSeparator,
 } from './components/ContextMenu';
 export { ControlGroup } from './components/ControlGroup';
+export { DesignSystemProvider } from './components/DesignSystemProvider';
 export { Dialog, DialogClose, DialogContent, DialogTrigger } from './components/Dialog';
 export {
   DropdownMenu,
