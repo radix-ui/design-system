@@ -14,6 +14,16 @@ const stitches = createCss({
       gray800: 'hsl(0, 0%, 56.1%)',
       gray900: 'hsl(0, 0%, 43.9%)',
 
+      quartz100: 'hsl(252, 17%, 98.8%)',
+      quartz200: 'hsl(252, 11%, 96.0%)',
+      quartz300: 'hsl(252, 9%, 93.7%)',
+      quartz400: 'hsl(252, 9%, 92.0%)',
+      quartz500: 'hsl(252, 8%, 89.5%)',
+      quartz600: 'hsl(252, 8%, 85.2%)',
+      quartz700: 'hsl(252, 8%, 80.0%)',
+      quartz800: 'hsl(252, 4%, 56.1%)',
+      quartz900: 'hsl(252, 4%, 43.9%)',
+
       slate100: 'hsl(206 20% 98.8%)',
       slate200: 'hsl(206 14% 96.0%)',
       slate300: 'hsl(206 13% 93.7%)',

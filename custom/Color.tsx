@@ -70,6 +70,19 @@ export function Color() {
           <Box css={{ height: 35, backgroundColor: '$gray900' }}></Box>
 
           <Box>
+            <Text css={{ fontSize: '$2' }}>Quartz</Text>
+          </Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz100' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz200' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz300' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz400' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz500' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz600' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz700' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz800' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz900' }}></Box>
+
+          <Box>
             <Text css={{ fontSize: '$2' }}>Slate</Text>
           </Box>
           <Box css={{ height: 35, backgroundColor: '$slate100' }}></Box>
