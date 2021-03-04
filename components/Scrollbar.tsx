@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from '../components/Flex';
 import { Box } from '../components/Box';
-import { useLayoutEffect } from '@radix-ui/react-utils';
+import { useLayoutEffect } from '@radix-ui/react-use-layout-effect';
 
 type Point = {
   x: number;
