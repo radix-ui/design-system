@@ -10,6 +10,9 @@ import { Subtitle } from '../components/Subtitle';
 import { Heading } from '../components/Heading';
 import { Subheading } from '../components/Subheading';
 import { Paragraph } from '../components/Paragraph';
+import { Input } from '../components/Input';
+import { Button } from '../components/Button';
+import { Badge } from '../components/Badge';
 
 import { Layers } from '../custom/Layers';
 import { Properties } from '../custom/Properties';
@@ -22,16 +25,40 @@ function Test() {
       <Toolbar />
       <Box css={{ bc: '$loContrast', height: '100%', px: 250, pt: '36px' }}>
         <ScrollArea>
+        <Section size="3">
+            <Container size="2">
+              <Heading
+                css={{
+                  mb: '$2',
+                }}
+              >
+                In search of perfect baseline alignment
+              </Heading>
+              <Paragraph css={{ mb: '$7' }}>This search is hopeless and I am insane.</Paragraph>
+            </Container>
+            <Container size="2">
+              <Flex css={{ gap: '$2' }}>
+                <Input defaultValue="Input 017489 jpy" css={{ width: 150 }} />
+                <Button css={{ fontSize: 12 }}>Button 017489 jpy</Button>
+                <Badge>Badge 017489 jpy</Badge>
+              </Flex>
+            </Container>
+          </Section>
+
+          <Flex css={{ jc: 'center' }}>
+            <Separator size="2" />
+          </Flex>
+
           <Section size="3">
             <Container size="2">
               <Heading
                 css={{
-                  mb: '$1',
+                  mb: '$2',
                 }}
               >
                 Tracking test
               </Heading>
-              <Paragraph css={{ mb: '$7' }}>Tracking should be tight and sexi.</Paragraph>
+              <Paragraph css={{ mb: '$7' }}>Tracking should be tight and sexi.<sup>1</sup></Paragraph>
             </Container>
             <Container size="2">
               <Flex css={{ fd: 'column', gap: '$4' }}>
@@ -108,12 +135,11 @@ function Test() {
                   </Text>
                 </Flex>
               </Flex>
-            </Container>
 
-            <Container size="2">
               <Heading
                 css={{
-                  mb: '$1',
+                  mb: '$2',
+                  mt: '$9'
                 }}
               >
                 Corrective indent test
@@ -208,6 +234,72 @@ function Test() {
                     zIndex: '-1',
                   }}
                 ></Box>
+              </Flex>
+            </Container>
+          </Section>
+
+          <Flex css={{ jc: 'center' }}>
+            <Separator size="2" />
+          </Flex>
+
+          <Section size="3">
+            <Container size="2">
+              <Heading
+                css={{
+                  mb: '$2',
+                }}
+              >
+                Baseline alignment test
+              </Heading>
+              <Paragraph css={{ mb: '$7' }}>Shit should be centered af.</Paragraph>
+            </Container>
+            <Container size="2">
+              <Flex css={{ fd: 'column', gap: '$4' }}>
+                <Flex css={{ ai: 'center', height: '75px', bc: '$pink400' }}>
+                  <Text size="9" as="p" css={{ fontWeight: 500 }}>
+                    The quick brown fox
+                  </Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '65px', bc: '$pink400' }}>
+                  <Text size="8" as="p" css={{ fontWeight: 500 }}>
+                    The quick brown fox
+                  </Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '45px', bc: '$pink400' }}>
+                  <Text size="7" as="p" css={{ fontWeight: 500 }}>
+                    The quick brown fox
+                  </Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '45px', bc: '$pink400' }}>
+                  <Text size="6" as="p" css={{ fontWeight: 500 }}>
+                    The quick brown fox
+                  </Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '35px', bc: '$pink400' }}>
+                  <Text size="5" as="p" css={{ fontWeight: 500 }}>
+                    The quick brown fox
+                  </Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '35px', bc: '$pink400' }}>
+                  <Text size="4" as="p">
+                    The quick brown fox
+                  </Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '35px', bc: '$pink400' }}>
+                  <Text size="3" as="p">
+                    The quick brown fox
+                  </Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '35px', bc: '$pink400' }}>
+                  <Text size="2" as="p">
+                    The quick brown fox
+                  </Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '25px', bc: '$pink400' }}>
+                  <Text size="1" as="p">
+                    The quick brown fox
+                  </Text>
+                </Flex>
               </Flex>
             </Container>
           </Section>
