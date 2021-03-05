@@ -11,7 +11,6 @@ const StyledInput = styled(DEFAULT_TAG, {
   borderWidth: '0',
   boxSizing: 'border-box',
   fontFamily: 'inherit',
-  lineHeight: '1',
   margin: '0',
   outline: 'none',
   padding: '0',
@@ -72,6 +71,7 @@ const StyledInput = styled(DEFAULT_TAG, {
         height: '$5',
         fontSize: '$1',
         px: '$1',
+        lineHeight: '25px',
         '&:-webkit-autofill::first-line': {
           fontSize: '$1',
         },
@@ -80,6 +80,7 @@ const StyledInput = styled(DEFAULT_TAG, {
         height: '$5',
         fontSize: '$2',
         px: '$1',
+        lineHeight: '25px',
         '&:-webkit-autofill::first-line': {
           fontSize: '$2',
         },
@@ -88,6 +89,7 @@ const StyledInput = styled(DEFAULT_TAG, {
         height: '$6',
         fontSize: '$3',
         px: '$2',
+        lineHeight: '35px',
         '&:-webkit-autofill::first-line': {
           fontSize: '$3',
         },
