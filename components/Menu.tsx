@@ -13,7 +13,7 @@ export const baseItemCss: any = {
   alignItems: 'center',
   justifyContent: 'space-between',
   fontFamily: '$untitled',
-  fontSize: '$1',
+  fontSize: '$2',
   fontVariantNumeric: 'tabular-nums',
   lineHeight: '1',
   cursor: 'default',

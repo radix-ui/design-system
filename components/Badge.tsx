@@ -48,7 +48,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       '1': {
         height: '$3',
         px: '$1',
-        fontSize: '$1',
+        fontSize: '$2',
       },
       '2': {
         height: '$5',

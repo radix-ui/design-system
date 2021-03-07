@@ -6,7 +6,7 @@ export const Select = styled('select', {
   border: 'none',
   fontFamily: 'inherit',
   height: '$5',
-  fontSize: '$1',
+  fontSize: '$2',
   boxShadow: 'inset 0 0 0 1px $colors$slate600',
   pl: '$1',
   borderRadius: '$2',
