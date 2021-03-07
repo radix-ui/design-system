@@ -12,6 +12,7 @@ export const Select = styled('select', {
   borderRadius: '$2',
   color: '$hiContrast',
   outline: 'none',
+  lineHeight: '1',
 
   '&:focus': {
     boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',

@@ -19,6 +19,11 @@ import { Properties } from '../custom/Properties';
 import { Color } from '../custom/Color';
 import { Toolbar } from '../custom/Toolbar';
 
+import {
+  Cross1Icon,
+  PlusIcon,
+} from '@radix-ui/react-icons';
+
 function Test() {
   return (
     <Box css={{ height: '100%' }}>
@@ -39,7 +44,11 @@ function Test() {
             <Container size="2">
               <Flex css={{ gap: '$2' }}>
                 <Input defaultValue="Input 017489 jpy" css={{ width: 150 }} />
-                <Button css={{ fontSize: 12 }}>Button 017489 jpy</Button>
+                <Button css={{ fontSize: 12 }}>
+                  <Box css={{ mr: '$1' }}>
+                    <PlusIcon />
+                  </Box>
+                  Button 017489 jpy</Button>
                 <Badge>Badge 017489 jpy</Badge>
               </Flex>
             </Container>
