@@ -34,13 +34,15 @@ const StyledKbd = styled('kbd', {
         px: '0.3em',
         height: '$3',
         minWidth: '1.6em',
-        fontSize: '10px',
+        fontSize: '$1',
+        lineHeight: '15px',
       },
       '2': {
         px: '0.5em',
         height: '$5',
         minWidth: '2em',
         fontSize: '$2',
+        lineHeight: '25px',
       }
     },
     width: {

@@ -52,6 +52,14 @@ function Test() {
                 <Badge>Badge 017489 jpy</Badge>
               </Flex>
             </Container>
+            <Container size="2">
+              <Box css={{ maxWidth: 525, mt: 100 }}>
+              <Text size="5" variant="pink" css={{ mb: '$4', lineHeight: '25px', fontWeight: 500 }}>Why Modulz</Text>
+              <Text size="8" css={{ mb: '$4', lineHeight: '37px', fontWeight: 500 }}>Design in the target medium. Prototype with real components.</Text>
+                <Text size="4" css={{ mb: '$3', lineHeight: '25px', pr: '$9' }}>Almost all design tools are optimised for illustration. Drawing tools are great for exploration but when it comes to designing websites, apps, and user interfaces, we need something more powerful.</Text>
+                <Text size="3" variant="gray" css={{ lineHeight: '23px' }}>It is exceptionally hard to have a great design tool that outputs useful code. Many have tried but in the end the trade offs were too great. That was until Modulz made it their mission.</Text>
+              </Box>
+            </Container>
           </Section>
 
           <Flex css={{ jc: 'center' }}>
