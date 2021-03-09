@@ -57,14 +57,14 @@ const StyledButton = styled(DEFAULT_TAG, {
       },
     },
     variant: {
-      gray: {
+      slate: {
         backgroundColor: '$loContrast',
         boxShadow: 'inset 0 0 0 1px $colors$slate600',
         color: '$hiContrast',
-        "@media (any-hover: hover)": {
+        '@media (any-hover: hover)': {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px $colors$slate700',
-          }
+          },
         },
         '&:active': {
           backgroundColor: '$slate100',
@@ -82,7 +82,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         backgroundColor: '$blue100',
         boxShadow: 'inset 0 0 0 1px $colors$blue600',
         color: '$blue900',
-        "@media (any-hover: hover)": {
+        '@media (any-hover: hover)': {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px $colors$blue700',
           },
@@ -103,7 +103,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         backgroundColor: '$green100',
         boxShadow: 'inset 0 0 0 1px $colors$green600',
         color: '$green900',
-        "@media (any-hover: hover)": {
+        '@media (any-hover: hover)': {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px $colors$green700',
           },
@@ -124,7 +124,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         backgroundColor: '$loContrast',
         boxShadow: 'inset 0 0 0 1px $colors$slate600',
         color: '$red900',
-        "@media (any-hover: hover)": {
+        '@media (any-hover: hover)': {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px $colors$slate700',
           },
@@ -145,7 +145,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         backgroundColor: 'transparent',
         fontWeight: 400,
         color: '$hiContrast',
-        "@media (any-hover: hover)": {
+        '@media (any-hover: hover)': {
           '&:hover': {
             backgroundColor: '$slate200',
           },
@@ -163,7 +163,7 @@ const StyledButton = styled(DEFAULT_TAG, {
       transparentWhite: {
         backgroundColor: 'hsla(0,100%,100%,.2)',
         color: 'white',
-        "@media (any-hover: hover)": {
+        '@media (any-hover: hover)': {
           '&:hover': {
             backgroundColor: 'hsla(0,100%,100%,.25)',
           },
@@ -178,7 +178,7 @@ const StyledButton = styled(DEFAULT_TAG, {
       transparentBlack: {
         backgroundColor: 'hsla(0,0%,0%,.2)',
         color: 'black',
-        "@media (any-hover: hover)": {
+        '@media (any-hover: hover)': {
           '&:hover': {
             backgroundColor: 'hsla(0,0%,0%,.25)',
           },
@@ -196,11 +196,11 @@ const StyledButton = styled(DEFAULT_TAG, {
         backgroundColor: '$slate300',
         boxShadow: 'inset 0 0 0 1px $colors$slate700',
         color: '$slate900',
-        "@media (any-hover: hover)": {
+        '@media (any-hover: hover)': {
           '&:hover': {
             backgroundColor: '$slate400',
             boxShadow: 'inset 0 0 0 1px $colors$slate700',
-          }
+          },
         },
         '&:active': {
           backgroundColor: '$slate400',
@@ -214,11 +214,11 @@ const StyledButton = styled(DEFAULT_TAG, {
         boxShadow: 'inset 0 0 0 1px $colors$slate700',
         color: 'transparent',
         pointerEvents: 'none',
-        "@media (any-hover: hover)": {
+        '@media (any-hover: hover)': {
           '&:hover': {
             backgroundColor: '$slate400',
             boxShadow: 'inset 0 0 0 1px $colors$slate700',
-          }
+          },
         },
         '&:active': {
           backgroundColor: '$slate400',
@@ -231,7 +231,7 @@ const StyledButton = styled(DEFAULT_TAG, {
   },
   defaultVariants: {
     size: '1',
-    variant: 'gray',
+    variant: 'slate',
   },
 });
 

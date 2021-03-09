@@ -14,7 +14,9 @@ export function Avatars() {
   return (
     <Section size="3">
       <Container size="2">
-        <Heading id="avatar" css={{ mb: '$6', scrollMarginTop: '$7' }}>Avatar</Heading>
+        <Heading id="avatar" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+          Avatar
+        </Heading>
         <Subheading css={{ mb: '$6' }}>Default</Subheading>
         <Avatar alt="John Smith" src="" fallback="J" css={{ mb: '$6' }} />
 
@@ -100,12 +102,7 @@ export function Avatars() {
           <Subheading>Interactive avatar</Subheading>
           <Flex css={{ gap: '$6' }}>
             <Popover>
-              <PopoverTrigger
-                as={Avatar}
-                interactive
-                fallback="J"
-              >
-              </PopoverTrigger>
+              <PopoverTrigger as={Avatar} interactive fallback="J"></PopoverTrigger>
               <PopoverContent css={{ padding: '$3' }}>
                 <Text size="2" css={{ lineHeight: '18px' }}>
                   The other main improvement is with tables, which we'll probably use a lot. With
@@ -113,15 +110,14 @@ export function Avatars() {
                 </Text>
               </PopoverContent>
             </Popover>
-            
+
             <Popover>
               <PopoverTrigger
                 as={Avatar}
                 interactive
                 src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
                 fallback="J"
-              >
-              </PopoverTrigger>
+              ></PopoverTrigger>
               <PopoverContent css={{ padding: '$3' }}>
                 <Text size="2" css={{ lineHeight: '18px' }}>
                   The other main improvement is with tables, which we'll probably use a lot. With
@@ -136,8 +132,7 @@ export function Avatars() {
                 interactive
                 fallback="J"
                 variant="violet"
-              >
-              </PopoverTrigger>
+              ></PopoverTrigger>
               <PopoverContent css={{ padding: '$3' }}>
                 <Text size="2" css={{ lineHeight: '18px' }}>
                   The other main improvement is with tables, which we'll probably use a lot. With
@@ -147,12 +142,7 @@ export function Avatars() {
             </Popover>
 
             <Popover>
-              <PopoverTrigger
-                as={Avatar}
-                interactive
-                fallback={<Link2Icon />}
-              >
-              </PopoverTrigger>
+              <PopoverTrigger as={Avatar} interactive fallback={<Link2Icon />}></PopoverTrigger>
               <PopoverContent css={{ padding: '$3' }}>
                 <Text size="2" css={{ lineHeight: '18px' }}>
                   The other main improvement is with tables, which we'll probably use a lot. With
@@ -331,7 +321,7 @@ export function Avatars() {
                   mb: '-3px',
                 }}
               >
-                <Status size="2" variant="gray"></Status>
+                <Status size="2" variant="slate"></Status>
               </Box>
             </Box>
 
@@ -465,7 +455,7 @@ export function Avatars() {
                   mb: '-3px',
                 }}
               >
-                <Status size="1" variant="gray"></Status>
+                <Status size="1" variant="slate"></Status>
               </Box>
             </Box>
             <Box

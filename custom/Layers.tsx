@@ -38,19 +38,19 @@ export function Layers() {
           </Box>
           <Text size="1">Radio</Text>
         </TreeItem>
-        <TreeItem variant="gray" css={{ pl: 45 }}>
+        <TreeItem variant="slate" css={{ pl: 45 }}>
           <Box css={{ mr: '$2' }}>
             <SliderIcon />
           </Box>
           <Text size="1">Slider</Text>
         </TreeItem>
-        <TreeItem variant="gray" css={{ pl: 45 }}>
+        <TreeItem variant="slate" css={{ pl: 45 }}>
           <Box css={{ mr: '$2' }}>
             <SwitchIcon />
           </Box>
           <Text size="1">Switch</Text>
         </TreeItem>
-        <TreeItem variant="gray" css={{ pl: 45 }}>
+        <TreeItem variant="slate" css={{ pl: 45 }}>
           <Box css={{ mr: '$2' }}>
             <TextIcon />
           </Box>

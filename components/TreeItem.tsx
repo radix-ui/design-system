@@ -35,7 +35,7 @@ const StyledTreeItem = styled(DEFAULT_TAG, {
 
   variants: {
     variant: {
-      gray: {
+      slate: {
         backgroundColor: '$slate200',
         '&:hover': {
           backgroundColor: '$slate300',

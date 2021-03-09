@@ -47,7 +47,7 @@ const StyledProgressBar = styled(ProgressPrimitive.Root, {
 
   variants: {
     variant: {
-      gray: {
+      slate: {
         background: '$slate700',
       },
       blue: {
@@ -60,8 +60,8 @@ const StyledProgressBar = styled(ProgressPrimitive.Root, {
     },
   },
   defaultVariants: {
-    variant: 'gray'
-  }
+    variant: 'slate',
+  },
 });
 
 const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {

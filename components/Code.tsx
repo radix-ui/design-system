@@ -17,7 +17,7 @@ const StyledCode = styled(DEFAULT_TAG, {
 
   variants: {
     variant: {
-      gray: {
+      slate: {
         backgroundColor: '$slate200',
         color: '$slate900',
       },
@@ -28,8 +28,8 @@ const StyledCode = styled(DEFAULT_TAG, {
     },
   },
   defaultVariants: {
-    variant: 'violet'
-  }
+    variant: 'violet',
+  },
 });
 
 type CodeComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, CodeOwnProps>;

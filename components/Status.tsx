@@ -20,7 +20,7 @@ const StyledStatus = styled(DEFAULT_TAG, {
       },
     },
     variant: {
-      gray: {
+      slate: {
         backgroundColor: '$slate600',
       },
       blue: {
@@ -39,8 +39,8 @@ const StyledStatus = styled(DEFAULT_TAG, {
   },
   defaultVariants: {
     size: '2',
-    variant: 'gray',
-  }
+    variant: 'slate',
+  },
 });
 
 type StatusCSSProp = { css?: CSS };

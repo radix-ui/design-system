@@ -116,7 +116,7 @@ export default function Closed() {
             <Text size="5" css={{ fontWeight: '500', lineHeight: '25px', mr: '$6' }}>
               2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
             </Text>
-            <Text size="4" color="gray">
+            <Text size="4" variant="slate">
               -$1600
             </Text>
           </Flex>
@@ -126,7 +126,7 @@ export default function Closed() {
             <Text size="5" css={{ fontWeight: '500', lineHeight: '25px', mr: '$6' }}>
               2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
             </Text>
-            <Text size="4" color="gray">
+            <Text size="4" variant="slate">
               -$800
             </Text>
           </Flex>
@@ -136,7 +136,7 @@ export default function Closed() {
             <Text size="5" css={{ fontWeight: '500', lineHeight: '25px', mr: '$6' }}>
               2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
             </Text>
-            <Text size="4" color="gray"></Text>
+            <Text size="4" variant="slate"></Text>
           </Flex>
         </RadioCard>
       </RadioCardGroup>

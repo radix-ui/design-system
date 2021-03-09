@@ -97,7 +97,7 @@ export const StyledText = styled(DEFAULT_TAG, {
       bronze: {
         color: '$bronze900',
       },
-      gray: {
+      slate: {
         color: '$slate900',
       },
       contrast: {
@@ -107,8 +107,8 @@ export const StyledText = styled(DEFAULT_TAG, {
   },
   defaultVariants: {
     size: '3',
-    variant: 'contrast'
-  }
+    variant: 'contrast',
+  },
 });
 
 type TextCSSProp = { css?: CSS };
