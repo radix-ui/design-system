@@ -1,6 +1,9 @@
-import { styled, config } from '../stitches.config';
+import { styled, config, CSS } from '../stitches.config';
 import { flexGapSupported } from './flexGapSupported';
 import * as React from 'react';
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
+
+type FlexComponent = Polymorphic.ForwardRefComponent<'div', { css?: CSS }>;
 
 // Base flex that will be used
 // when gap is supported
@@ -151,4 +154,4 @@ export const Flex = (React.forwardRef<HTMLDivElement, Props>(
     // Gap is supported or no gap is used
     return <_Flex {...props} children={children} css={css} style={style} ref={ref} />;
   }
-) as any) as typeof _Flex;
+) as any) as FlexComponent;
