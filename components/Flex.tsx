@@ -1,9 +1,6 @@
-import { styled, utils, theme } from '../stitches.config';
+import { styled, config } from '../stitches.config';
 import { flexGapSupported } from './flexGapSupported';
 import * as React from 'react';
-
-/** A lot of casting is happening in this fine which should
- * be fixed once the next version of stitches is in with the new types */
 
 // Base flex that will be used
 // when gap is supported
@@ -12,13 +9,22 @@ const _Flex = styled('div', {
   display: 'flex',
 });
 
-// https://pbs.twimg.com/media/EcrZhh8XYAEU_-M?format=jpg&name=small
-// but for real. this will be fixed in the new stitches
+/**
+ * Resolve a token in inside a given scale or returns undefined if it does not exist.
+ * NOTE: Might produce wrong results if the implementation in stitches changes
+ */
+const resolveTokenInTheme = (scale: keyof typeof config.theme, token: any) =>
+  token[0] === '$' ? config.theme[scale][token.substr(1)] : undefined;
+
+/**
+ * Resolve the the utils in a stitches css object so that things like jc turn into justifyContent
+ * NOTE: Might produce wrong results if the implementation in stitches changes
+ */
 const resolveUtils = (css: any, resolved: any = {}): any => {
   for (const key in css) {
     const value = css[key];
-    if (key in utils) {
-      Object.assign(resolved, (utils as any)[key](value, { tokens: theme, utils }));
+    if (key in config.utils) {
+      Object.assign(resolved, (config.utils as any)[key](config)(value));
     } else if (typeof value === 'object' && value) {
       resolved[key] = resolved[key] || {};
       Object.assign(resolved[key], resolveUtils(value));
@@ -39,6 +45,7 @@ export const Flex = (React.forwardRef<HTMLDivElement, Props>(
     // real css properties so that the polyfill is able to detect
     // and redirect them to the correct area
     const rCss = resolveUtils(css || {});
+
     const [gap, columnGap, rowGap]: any[] = [
       style?.gap || rCss.gap,
       style?.columnGap || rCss.columnGap,
@@ -105,11 +112,11 @@ export const Flex = (React.forwardRef<HTMLDivElement, Props>(
                 alignItems: inlineAlignItems,
                 alignContent: alignContent,
                 //* stitches has a bug when trying to set custom properties as it mistakes them for vendor prefixed properties
-                '--gap': gap ? (theme as any).space[gap] || gap : '0px',
+                '--gap': gap ? resolveTokenInTheme('space', gap) || gap : '0px',
                 // prettier-ignore
-                '--column-gap': columnGap ? (theme as any).space[columnGap] || columnGap : 'var(--gap)',
+                '--column-gap': columnGap ? resolveTokenInTheme( 'space', columnGap) || columnGap : 'var(--gap)',
                 // prettier-ignore
-                '--row-gap': rowGap ? (theme as any).space[rowGap] || rowGap : 'var(--gap)',
+                '--row-gap': rowGap ? resolveTokenInTheme('space', rowGap) || rowGap : 'var(--gap)',
               }).reduce<Record<string, string>>((acc, curr) => {
                 if (curr[1] !== undefined) {
                   acc[curr[0]] = curr[1];
@@ -124,7 +131,9 @@ export const Flex = (React.forwardRef<HTMLDivElement, Props>(
               alignItems,
               alignContent,
               flexDirection,
-              '& > *': {
+              // make sure we're producing a selector more specific than children's own class
+              // so that the margin below wins over the child's margin
+              '&& > *': {
                 margin: 'calc(var(--row-gap) / 2) calc(var(--column-gap) / 2)',
               },
               // negative margin on the container to accommodate for margin added on the sides by the children
