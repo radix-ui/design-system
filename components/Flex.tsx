@@ -1,6 +1,7 @@
 import { styled, config } from '../stitches.config';
 import { flexGapSupported } from './flexGapSupported';
 import * as React from 'react';
+import { TTheme } from '@stitches/core';
 
 // Base flex that will be used
 // when gap is supported
@@ -9,12 +10,16 @@ const _Flex = styled('div', {
   display: 'flex',
 });
 
+type Theme = typeof config.theme;
+
 /**
  * Resolve a token in inside a given scale or returns undefined if it does not exist.
  * NOTE: Might produce wrong results if the implementation in stitches changes
  */
-const resolveTokenInTheme = (scale: keyof typeof config.theme, token: any) =>
-  token[0] === '$' ? config.theme[scale][token.substr(1)] : undefined;
+const resolveTokenInTheme = <T extends keyof Theme>(scale: T, token: keyof Theme[T]) =>
+  (token as string)[0] === '$'
+    ? (config.theme[scale] as Record<any, any>)[(token as string).substr(1)]
+    : undefined;
 
 /**
  * Resolve the the utils in a stitches css object so that things like jc turn into justifyContent
