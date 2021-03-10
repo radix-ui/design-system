@@ -1,7 +1,6 @@
 import { styled, config } from '../stitches.config';
 import { flexGapSupported } from './flexGapSupported';
 import * as React from 'react';
-import { TTheme } from '@stitches/core';
 
 // Base flex that will be used
 // when gap is supported
