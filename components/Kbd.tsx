@@ -12,6 +12,7 @@ const StyledKbd = styled('kbd', {
   justifyContent: 'center',
   backgroundColor: '$loContrast',
   borderRadius: '$1',
+  flexShrink: 0,
   color: '$hiContrast',
   userSelect: 'none',
   cursor: 'default',

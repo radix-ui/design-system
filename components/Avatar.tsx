@@ -14,6 +14,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   userSelect: 'none',
   boxSizing: 'border-box',
   display: 'flex',
+  flexShrink: 0,
   position: 'relative',
   border: 'none',
   fontFamily: 'inherit',

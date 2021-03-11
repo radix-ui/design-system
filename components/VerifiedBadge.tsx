@@ -10,6 +10,7 @@ const StyledFlex = styled(Flex, {
   backgroundColor: '$blue800',
   borderRadius: '$round',
   color: 'white',
+  flexShrink: 0,
   justifyContent: 'center',
   width: '$3',
   height: '$3',
