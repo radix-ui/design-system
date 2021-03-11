@@ -11,7 +11,7 @@ const SelectWrapper = styled('div', {
   fontFamily: '$untitled',
   fontSize: '$1',
   fontVariantNumeric: 'tabular-nums',
-  fontWeight: 500,
+  fontWeight: 400,
   height: '$5',
 
   '&:focus-within': {
