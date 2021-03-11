@@ -8,7 +8,10 @@ const SelectWrapper = styled('div', {
   borderRadius: '$2',
   boxShadow: 'inset 0 0 0 1px $colors$slate600',
   color: '$hiContrast',
+  fontFamily: '$untitled',
   fontSize: '$1',
+  fontVariantNumeric: 'tabular-nums',
+  fontWeight: 500,
   height: '$5',
 
   '&:focus-within': {
@@ -23,8 +26,7 @@ const StyledSelect = styled('select', {
   border: 'none',
   borderRadius: 'inherit',
   color: 'inherit',
-  fontFamily: 'inherit',
-  fontSize: 'inherit',
+  font: 'inherit',
   outline: 'none',
   width: '100%',
   height: '100%',
