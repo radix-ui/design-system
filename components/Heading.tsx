@@ -32,9 +32,9 @@ export const Heading = React.forwardRef((props, forwardedRef) => (
       when: {
         bp2: {
           lineHeight: '30px',
-          ...(props.css?.bp2 as any),
+          ...(props.css?.when?.bp2 as any),
         },
-      }
+      },
     }}
   />
 )) as HeadingComponent;
