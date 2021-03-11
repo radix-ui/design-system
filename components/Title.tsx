@@ -30,11 +30,12 @@ export const Title = React.forwardRef((props, forwardedRef) => (
       ...(props.css as any),
 
       when: {
+        ...(props.css?.when as any),
         bp2: {
           lineHeight: '55px',
-          ...(props.css?.bp2 as any),
+          ...(props.css?.when?.bp2 as any),
         },
-      }
+      },
     }}
   />
 )) as TitleComponent;

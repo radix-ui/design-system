@@ -1,5 +1,6 @@
 import createCss, { StitchesCss } from '@stitches/react';
 export type { StitchesVariants } from '@stitches/react';
+import prefixes from '@stitches/react/utils/prefixes';
 
 const stitches = createCss({
   theme: {
@@ -297,6 +298,7 @@ const stitches = createCss({
     light: '@media (prefers-color-scheme: light)',
   },
   utils: {
+    ...prefixes,
     p: (config) => (value: any) => ({
       paddingTop: value,
       paddingBottom: value,
