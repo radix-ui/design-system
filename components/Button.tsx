@@ -11,6 +11,7 @@ const StyledButton = styled(DEFAULT_TAG, {
   appearance: 'none',
   boxSizing: 'border-box',
   display: 'inline-flex',
+  flexShrink: 0,
   justifyContent: 'center',
   lineHeight: '1',
   margin: '0',
