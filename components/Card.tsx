@@ -10,16 +10,27 @@ type CardVariants = StitchesVariants<typeof StyledCard>;
 type CardOwnProps = CardCSSProp & CardVariants;
 
 const StyledCard = styled(DEFAULT_TAG, {
+  appearance: 'none',
+  border: 'none',
+  boxSizing: 'border-box',
+  font: 'inherit',
+  lineheight: '1',
+  outline: 'none',
+  padding: 0,
+  textAlign: 'inherit',
+  verticalAlign: 'middle',
+  WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+
   backgroundColor: '$panel',
   display: 'block',
   textDecoration: 'none',
   color: 'inherit',
   flexShrink: 0,
   borderRadius: '$3',
-  outline: 'none',
   position: 'relative',
 
   '&::before': {
+    boxSizing: 'border-box',
     content: '""',
     position: 'absolute',
     top: 0,
@@ -74,6 +85,18 @@ const StyledCard = styled(DEFAULT_TAG, {
               '0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)',
             opacity: '1',
           },
+        },
+        '&:focus': {
+          boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
+        },
+      },
+      active: {
+        transform: 'translateY(0)',
+        transition: 'none',
+        '&::before': {
+          boxShadow:
+            '0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)',
+          opacity: '1',
         },
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',

@@ -14,9 +14,12 @@ import { Kbd } from '../components/Kbd';
 import { Separator } from '../components/Separator';
 import { VerifiedBadge } from '../components/VerifiedBadge';
 import { Card } from '../components/Card';
+import { Select } from '../components/Select';
 import { Textarea } from '../components/Textarea';
 import { Image } from '../components/Image';
 import { Code } from '../components/Code';
+import { Sup } from '../components/Sup';
+import { Sub } from '../components/Sub';
 import { Input } from '../components/Input';
 import { Section } from '../components/Section';
 import { Avatar } from '../components/Avatar';
@@ -46,6 +49,7 @@ import { RadioCardGroup, RadioCard } from '../components/RadioCard';
 import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
 import { Title } from '../components/Title';
 import { Subtitle } from '../components/Subtitle';
+import { LargeHeading } from '../components/LargeHeading';
 import { Heading } from '../components/Heading';
 import { Subheading } from '../components/Subheading';
 import { Paragraph } from '../components/Paragraph';
@@ -624,7 +628,8 @@ function Home() {
                 This is a subtitle, used to support a title or heading. It defaults to h2 but can be
                 rendered as any h level.
               </Subtitle>
-              <Heading>This is a large heading</Heading>
+              <LargeHeading>This is a large heading</LargeHeading>
+              <Heading>This is a heading</Heading>
               <Subheading>This is a small heading</Subheading>
               <Paragraph>
                 This is a really long paragraph of text, to demonstrate prose text, like for
@@ -632,6 +637,11 @@ function Home() {
                 is because the most common use case for this container size is longform text. So
                 we're previewing some longform text here so we can make sure the container width
                 provides an optimal line length for this font size.
+              </Paragraph>
+              <Paragraph>
+                This is a really long paragraph of text, to demonstrate prose text, like for
+                example, the kind you might read in a blog post.<Sup>1</Sup> This is a really long paragraph of text, to demonstrate prose text, like for
+                example, the kind you might read in a blog post.<Sub>1</Sub>
               </Paragraph>
             </Flex>
           </Container>
@@ -1011,16 +1021,26 @@ function Home() {
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
               <Button>Button</Button>
-              <Input size="2" placeholder="Hello world" />
+              <Input placeholder="Hello world" />
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
-              <Input size="2" placeholder="Hello world" />
+              <Input placeholder="Hello world" />
               <Button>Button</Button>
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
-              <Input size="2" placeholder="Hello world" />
-              <Input size="2" placeholder="Hello world" />
-              <Input size="2" placeholder="Hello world" />
+              <Input size="1" placeholder="Hello world" />
+              <Select>
+                <option>Button</option>
+                <option>Button</option>
+                <option>Button</option>
+                <option>Button</option>
+                <option>Button</option>
+              </Select>
+            </ControlGroup>
+            <ControlGroup css={{ mt: '$6' }}>
+              <Input placeholder="Hello world" />
+              <Input placeholder="Hello world" />
+              <Input placeholder="Hello world" />
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
               <Input size="3" placeholder="Hello world" />
@@ -1269,6 +1289,16 @@ function Home() {
                       </Text>
                     </Box>
                   </Flex>
+                </Card>
+              </Box>
+              <Box css={{ width: 250 }}>
+                <Card as="button" href="#" variant="active" css={{ p: '$3' }}>
+                <Text size="3" css={{ lineHeight: '23px', fontWeight: 500 }}>
+                Default Variants
+                  </Text>
+                  <Text size="3" css={{ color: '$slate900', lineHeight: '23px' }}>
+                    Modulz is a visual code.
+                  </Text>
                 </Card>
               </Box>
             </Flex>

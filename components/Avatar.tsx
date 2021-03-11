@@ -14,6 +14,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   userSelect: 'none',
   boxSizing: 'border-box',
   display: 'flex',
+  flexShrink: 0,
   position: 'relative',
   border: 'none',
   fontFamily: 'inherit',
@@ -141,7 +142,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
           right: '0',
           bottom: '0',
           left: '0',
-          backgroundColor: 'rgba(0,0,0,.04)',
+          backgroundColor: 'rgba(0,0,0,.08)',
           opacity: '0',
           pointerEvents: 'none',
           transition: 'opacity 25ms linear',
@@ -155,7 +156,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
         },
         '&[data-state="open"]': {
           '&::after': {
-            backgroundColor: 'rgba(0,0,0,.08)',
+            backgroundColor: 'rgba(0,0,0,.12)',
             opacity: '1',
           },
         }

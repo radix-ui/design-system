@@ -17,7 +17,7 @@ export const TabsTab = styled(TabsPrimitive.Tab, {
   height: '$5',
   display: 'inline-flex',
   lineHeight: 1,
-  fontSize: '$2',
+  fontSize: '$1',
   px: '$2',
   userSelect: 'none',
   outline: 'none',

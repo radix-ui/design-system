@@ -7,6 +7,7 @@ const DEFAULT_TAG = 'div';
 
 const StyledStatus = styled(DEFAULT_TAG, {
   borderRadius: '50%',
+  flexShrink: 0,
 
   variants: {
     size: {
