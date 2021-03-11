@@ -13,9 +13,8 @@ export const StyledSub = styled(DEFAULT_TAG, {
 });
 
 type SubCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type SubVariants = Omit<StitchesVariants<typeof StyledSub>, 'size'>;
-type SubOwnProps = SubCSSProp & SubVariants & { size?: any };
+type SubVariants = StitchesVariants<typeof StyledSub>;
+type SubOwnProps = SubCSSProp & SubVariants;
 
 type SubComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, SubOwnProps>;
 

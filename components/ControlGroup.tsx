@@ -69,4 +69,29 @@ export const ControlGroup = styled('div', {
       },
     },
   },
+  [`${Select}`]: {
+    borderRadius: 0,
+    boxShadow:
+      'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',
+    '&:focus-within': {
+      boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
+    },
+    '&:first-child': {
+      borderTopLeftRadius: '$2',
+      borderBottomLeftRadius: '$2',
+      boxShadow: 'inset 0 0 0 1px $colors$slate600',
+      '&:focus-within': {
+        boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
+      },
+    },
+    '&:last-child': {
+      borderTopRightRadius: '$2',
+      borderBottomRightRadius: '$2',
+      boxShadow:
+        'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',
+      '&:focus-within': {
+        boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
+      },
+    },
+  },
 });

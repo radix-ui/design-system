@@ -13,9 +13,8 @@ export const StyledSup = styled(DEFAULT_TAG, {
 });
 
 type SupCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type SupVariants = Omit<StitchesVariants<typeof StyledSup>, 'size'>;
-type SupOwnProps = SupCSSProp & SupVariants & { size?: any };
+type SupVariants = StitchesVariants<typeof StyledSup>;
+type SupOwnProps = SupCSSProp & SupVariants;
 
 type SupComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, SupOwnProps>;
 

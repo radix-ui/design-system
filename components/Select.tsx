@@ -59,3 +59,5 @@ export const Select = React.forwardRef(function Select({ css, ...props }, forwar
     </SelectWrapper>
   );
 }) as SelectComponent;
+
+Select.toString = () => `.${SelectWrapper.className}`;
