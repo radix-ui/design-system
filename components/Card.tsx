@@ -10,16 +10,27 @@ type CardVariants = StitchesVariants<typeof StyledCard>;
 type CardOwnProps = CardCSSProp & CardVariants;
 
 const StyledCard = styled(DEFAULT_TAG, {
+  appearance: 'none',
+  border: 'none',
+  boxSizing: 'border-box',
+  font: 'inherit',
+  lineheight: '1',
+  outline: 'none',
+  padding: 0,
+  textAlign: 'inherit',
+  verticalAlign: 'middle',
+  WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+
   backgroundColor: '$panel',
   display: 'block',
   textDecoration: 'none',
   color: 'inherit',
   flexShrink: 0,
   borderRadius: '$3',
-  outline: 'none',
   position: 'relative',
 
   '&::before': {
+    boxSizing: 'border-box',
     content: '""',
     position: 'absolute',
     top: 0,
