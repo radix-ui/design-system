@@ -13,6 +13,7 @@ const SelectWrapper = styled('div', {
   fontVariantNumeric: 'tabular-nums',
   fontWeight: 400,
   height: '$5',
+  flexShrink: 0,
 
   '&:focus-within': {
     zIndex: 1,
@@ -32,11 +33,13 @@ const StyledSelect = styled('select', {
   height: '100%',
   pl: '$1',
   pr: '$3',
+  lineHeight: '25px',
 });
 
 const StyledCaretSortIcon = styled(CaretSortIcon, {
   position: 'absolute',
   pointerEvents: 'none',
+  display: 'inline',
 
   // Use margins instead of top/left to avoid setting "position: relative" on parent,
   // which would make stacking context tricky with Select used in a control group.

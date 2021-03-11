@@ -14,6 +14,7 @@ import { Kbd } from '../components/Kbd';
 import { Separator } from '../components/Separator';
 import { VerifiedBadge } from '../components/VerifiedBadge';
 import { Card } from '../components/Card';
+import { Select } from '../components/Select';
 import { Textarea } from '../components/Textarea';
 import { Image } from '../components/Image';
 import { Code } from '../components/Code';
@@ -1018,16 +1019,26 @@ function Home() {
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
               <Button>Button</Button>
-              <Input size="2" placeholder="Hello world" />
+              <Input placeholder="Hello world" />
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
-              <Input size="2" placeholder="Hello world" />
+              <Input placeholder="Hello world" />
               <Button>Button</Button>
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
-              <Input size="2" placeholder="Hello world" />
-              <Input size="2" placeholder="Hello world" />
-              <Input size="2" placeholder="Hello world" />
+              <Input size="1" placeholder="Hello world" />
+              <Select>
+                <option>Button</option>
+                <option>Button</option>
+                <option>Button</option>
+                <option>Button</option>
+                <option>Button</option>
+              </Select>
+            </ControlGroup>
+            <ControlGroup css={{ mt: '$6' }}>
+              <Input placeholder="Hello world" />
+              <Input placeholder="Hello world" />
+              <Input placeholder="Hello world" />
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
               <Input size="3" placeholder="Hello world" />
