@@ -17,6 +17,8 @@ import { Card } from '../components/Card';
 import { Textarea } from '../components/Textarea';
 import { Image } from '../components/Image';
 import { Code } from '../components/Code';
+import { Sup } from '../components/Sup';
+import { Sub } from '../components/Sub';
 import { Input } from '../components/Input';
 import { Section } from '../components/Section';
 import { Avatar } from '../components/Avatar';
@@ -632,6 +634,11 @@ function Home() {
                 is because the most common use case for this container size is longform text. So
                 we're previewing some longform text here so we can make sure the container width
                 provides an optimal line length for this font size.
+              </Paragraph>
+              <Paragraph>
+                This is a really long paragraph of text, to demonstrate prose text, like for
+                example, the kind you might read in a blog post.<Sup>1</Sup> This is a really long paragraph of text, to demonstrate prose text, like for
+                example, the kind you might read in a blog post.<Sub>1</Sub>
               </Paragraph>
             </Flex>
           </Container>

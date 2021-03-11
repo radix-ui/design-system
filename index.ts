@@ -79,6 +79,8 @@ export { Skeleton } from './components/Skeleton';
 export { Slider } from './components/Slider';
 export { Slot } from '@radix-ui/react-slot';
 export { Status } from './components/Status';
+export { Sup } from './components/Sup';
+export { Sub } from './components/Sub';
 export { Subheading } from './components/Subheading';
 export { Subtitle } from './components/Subtitle';
 export { Switch } from './components/Switch';
