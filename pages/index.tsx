@@ -628,8 +628,8 @@ function Home() {
                 This is a subtitle, used to support a title or heading. It defaults to h2 but can be
                 rendered as any h level.
               </Subtitle>
-              <LargeHeading>This is a large large heading</LargeHeading>
-              <Heading>This is a large heading</Heading>
+              <LargeHeading>This is a large heading</LargeHeading>
+              <Heading>This is a heading</Heading>
               <Subheading>This is a small heading</Subheading>
               <Paragraph>
                 This is a really long paragraph of text, to demonstrate prose text, like for
