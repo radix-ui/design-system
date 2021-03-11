@@ -69,11 +69,11 @@ const StyledInput = styled(DEFAULT_TAG, {
     size: {
       '1': {
         height: '$5',
-        fontSize: '$2',
+        fontSize: '$1',
         px: '$1',
         lineHeight: '25px',
         '&:-webkit-autofill::first-line': {
-          fontSize: '$2',
+          fontSize: '$1',
         },
       },
       '2': {

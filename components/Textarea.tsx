@@ -55,7 +55,7 @@ const StyledTextarea = styled(DEFAULT_TAG, {
   variants: {
     size: {
       '1': {
-        fontSize: '$2',
+        fontSize: '$1',
         lineHeight: '16px',
         px: '$1',
       },

@@ -30,7 +30,7 @@ const StyledTreeItem = styled(DEFAULT_TAG, {
   // Custom
   height: '29px',
   px: '$2',
-  fontSize: '$2',
+  fontSize: '$1',
   color: '$hiContrast',
 
   variants: {

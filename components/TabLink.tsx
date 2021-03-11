@@ -15,7 +15,7 @@ const StyledTabLink = styled(DEFAULT_TAG, {
   height: '$6',
   display: 'inline-flex',
   lineHeight: 1,
-  fontSize: '$2',
+  fontSize: '$1',
   px: '$3',
   userSelect: 'none',
   outline: 'none',

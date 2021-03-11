@@ -91,6 +91,7 @@ const StyledCard = styled(DEFAULT_TAG, {
         },
       },
       active: {
+        backgroundColor: '$gray100',
         transform: 'translateY(0)',
         transition: 'none',
         '&::before': {

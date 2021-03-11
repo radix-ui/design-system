@@ -42,7 +42,7 @@ export function Tooltip({
 
       <Content side="top" align="center" sideOffset={5} {...props} multiline={multiline}>
         <Text
-          size="2"
+          size="1"
           as="p"
           css={{
             color: '$loContrast',
