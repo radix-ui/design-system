@@ -1271,6 +1271,16 @@ function Home() {
                   </Flex>
                 </Card>
               </Box>
+              <Box css={{ width: 250 }}>
+                <Card as="button" href="#" variant="active" css={{ p: '$3' }}>
+                <Text size="3" css={{ lineHeight: '23px', fontWeight: 500 }}>
+                Default Variants
+                  </Text>
+                  <Text size="3" css={{ color: '$slate900', lineHeight: '23px' }}>
+                    Modulz is a visual code.
+                  </Text>
+                </Card>
+              </Box>
             </Flex>
           </Container>
         </Section>

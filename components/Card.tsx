@@ -79,6 +79,18 @@ const StyledCard = styled(DEFAULT_TAG, {
           boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
         },
       },
+      active: {
+        transform: 'translateY(0)',
+        transition: 'none',
+        '&::before': {
+          boxShadow:
+            '0px 5px 16px -5px rgba(22, 23, 24, 0.35), 0px 5px 10px -7px rgba(22, 23, 24, 0.2)',
+          opacity: '1',
+        },
+        '&:focus': {
+          boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
+        },
+      },
     },
   },
 });
