@@ -1,6 +1,5 @@
 import createCss, { StitchesCss } from '@stitches/react';
 export type { StitchesVariants } from '@stitches/react';
-import prefixes from '@stitches/react/utils/prefixes';
 
 const stitches = createCss({
   theme: {
@@ -298,7 +297,6 @@ const stitches = createCss({
     light: '@media (prefers-color-scheme: light)',
   },
   utils: {
-    ...prefixes,
     p: (config) => (value: any) => ({
       paddingTop: value,
       paddingBottom: value,
@@ -394,7 +392,7 @@ const stitches = createCss({
     oy: (config) => (value: any) => ({ overflowY: value }),
 
     pe: (config) => (value: any) => ({ pointerEvents: value }),
-    us: (config) => (value: any) => ({ userSelect: value }),
+    us: (config) => (value: any) => ({ WebkitUserSelect: value, userSelect: value }),
 
     // size: config => (value: keyof typeof theme['sizes'] | (string & {})) => ({
     //   width: value,
@@ -403,6 +401,19 @@ const stitches = createCss({
 
     linearGradient: (config) => (value: any) => ({
       backgroundImage: `linear-gradient({value})`,
+    }),
+
+    appearance: (config) => (value) => ({
+      WebkitAppearance: value,
+      appearance: value,
+    }),
+    userSelect: (config) => (value) => ({
+      WebkitUserSelect: value,
+      userSelect: value,
+    }),
+    backgroundClip: (config) => (value) => ({
+      WebkitBackgroundClip: value,
+      backgroundClip: value,
     }),
   },
 });
