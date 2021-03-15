@@ -394,13 +394,13 @@ const stitches = createCss({
     pe: (config) => (value: any) => ({ pointerEvents: value }),
     us: (config) => (value: any) => ({ WebkitUserSelect: value, userSelect: value }),
 
-    // size: config => (value: keyof typeof theme['sizes'] | (string & {})) => ({
-    //   width: value,
-    //   height: value,
-    // }),
+    size: config => (value: keyof typeof config['theme']['sizes'] | (string & {})) => ({
+      width: value,
+      height: value,
+    }),
 
     linearGradient: (config) => (value: any) => ({
-      backgroundImage: `linear-gradient({value})`,
+      backgroundImage: `linear-gradient(${value})`,
     }),
 
     appearance: (config) => (value) => ({
