@@ -29,11 +29,9 @@ export const Heading = React.forwardRef((props, forwardedRef) => (
       lineHeight: '25px',
       ...(props.css as any),
 
-      when: {
-        bp2: {
-          lineHeight: '30px',
-          ...(props.css?.when?.bp2 as any),
-        },
+      '@bp2': {
+        lineHeight: '30px',
+        ...(props.css?.when?.bp2 as any),
       },
     }}
   />

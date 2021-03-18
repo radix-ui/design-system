@@ -29,12 +29,9 @@ export const Title = React.forwardRef((props, forwardedRef) => (
       lineHeight: '35px',
       ...(props.css as any),
 
-      when: {
-        ...(props.css?.when as any),
-        bp2: {
-          lineHeight: '55px',
-          ...(props.css?.when?.bp2 as any),
-        },
+      '@bp2': {
+        lineHeight: '55px',
+        ...(props.css?.['@bp2'] as any),
       },
     }}
   />

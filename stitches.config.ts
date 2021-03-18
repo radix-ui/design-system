@@ -286,15 +286,15 @@ const stitches = createCss({
       max: '999',
     },
   },
-  conditions: {
-    bp1: '@media (min-width: 520px)',
-    bp2: '@media (min-width: 900px)',
-    bp3: '@media (min-width: 1200px)',
-    bp4: '@media (min-width: 1800px)',
-    motion: '@media (prefers-reduced-motion)',
-    hover: '@media (any-hover: hover)',
-    dark: '@media (prefers-color-scheme: dark)',
-    light: '@media (prefers-color-scheme: light)',
+  media: {
+    bp1: '(min-width: 520px)',
+    bp2: '(min-width: 900px)',
+    bp3: '(min-width: 1200px)',
+    bp4: '(min-width: 1800px)',
+    motion: '(prefers-reduced-motion)',
+    hover: '(any-hover: hover)',
+    dark: '(prefers-color-scheme: dark)',
+    light: '(prefers-color-scheme: light)',
   },
   utils: {
     p: (config) => (value: any) => ({

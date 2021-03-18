@@ -359,7 +359,9 @@ function Home() {
       <Box css={{ bc: '$loContrast', height: '100%' }}>
         <Section size="3">
           <Container size="2">
-            <Title css={{ ta: 'center', mb: '$3' }}>Radix UI test suite</Title>
+            <Title css={{ ta: 'center', mb: '$3', '@bp2': { color: 'red' } }}>
+              Radix UI test suite
+            </Title>
             <Subtitle css={{ ta: 'center' }}>An environment for testing Radix DS.</Subtitle>
           </Container>
         </Section>
@@ -640,8 +642,9 @@ function Home() {
               </Paragraph>
               <Paragraph>
                 This is a really long paragraph of text, to demonstrate prose text, like for
-                example, the kind you might read in a blog post.<Sup>1</Sup> This is a really long paragraph of text, to demonstrate prose text, like for
-                example, the kind you might read in a blog post.<Sub>1</Sub>
+                example, the kind you might read in a blog post.<Sup>1</Sup> This is a really long
+                paragraph of text, to demonstrate prose text, like for example, the kind you might
+                read in a blog post.<Sub>1</Sub>
               </Paragraph>
             </Flex>
           </Container>
@@ -1293,8 +1296,8 @@ function Home() {
               </Box>
               <Box css={{ width: 250 }}>
                 <Card as="button" href="#" variant="active" css={{ p: '$3' }}>
-                <Text size="3" css={{ lineHeight: '23px', fontWeight: 500 }}>
-                Default Variants
+                  <Text size="3" css={{ lineHeight: '23px', fontWeight: 500 }}>
+                    Default Variants
                   </Text>
                   <Text size="3" css={{ color: '$slate900', lineHeight: '23px' }}>
                     Modulz is a visual code.
