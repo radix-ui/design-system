@@ -19,8 +19,8 @@ export const Subtitle = React.forwardRef((props, forwardedRef) => (
     ref={forwardedRef}
     size={
       {
-        initial: '5',
-        bp2: '6',
+        '@initial': '5',
+        '@bp2': '6',
       } as any // TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421
     }
     css={{
@@ -28,12 +28,9 @@ export const Subtitle = React.forwardRef((props, forwardedRef) => (
       lineHeight: '27px',
       ...(props.css as any),
 
-      when: {
-        ...(props.css?.when as any),
-        bp2: {
-          lineHeight: '30px',
-          ...(props.css?.when?.bp2 as any),
-        },
+      '@bp2': {
+        lineHeight: '30px',
+        ...(props.css?.['@bp2'] as any),
       },
     }}
   />
