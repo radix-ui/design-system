@@ -147,7 +147,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
           pointerEvents: 'none',
           transition: 'opacity 25ms linear',
         },
-        "@media (any-hover: hover)": {
+        '@media (any-hover: hover)': {
           '&:hover': {
             '&::after': {
               opacity: '1',
@@ -159,7 +159,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
             backgroundColor: 'rgba(0,0,0,.12)',
             opacity: '1',
           },
-        }
+        },
       },
     },
   },
@@ -167,7 +167,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
     size: '2',
     variant: 'gray',
     shape: 'circle',
-  }
+  },
 });
 
 const StyledAvatarImage = styled(AvatarPrimitive.Image, {
@@ -206,7 +206,7 @@ const StyledAvatarFallback = styled(AvatarPrimitive.Fallback, {
   },
   defaultVariants: {
     size: '2',
-  }
+  },
 });
 
 export const AvatarNestedItem = styled('div', {
@@ -217,7 +217,7 @@ export const AvatarNestedItem = styled('div', {
 export const AvatarGroup = styled('div', {
   display: 'flex',
   flexDirection: 'row-reverse',
-  [`${AvatarNestedItem}:nth-child(n+2)`]: {
+  [`& ${AvatarNestedItem}:nth-child(n+2)`]: {
     marginRight: '-$1',
   },
 });
@@ -244,10 +244,7 @@ type AvatarComponent = Polymorphic.ForwardRefComponent<
 >;
 
 export const Avatar = React.forwardRef(
-  (
-    { alt, src, fallback, size, variant, shape, css, status, ...props },
-    forwardedRef
-  ) => {
+  ({ alt, src, fallback, size, variant, shape, css, status, ...props }, forwardedRef) => {
     return (
       <Box
         css={{
