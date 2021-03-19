@@ -359,9 +359,7 @@ function Home() {
       <Box css={{ bc: '$loContrast', height: '100%' }}>
         <Section size="3">
           <Container size="2">
-            <Title css={{ ta: 'center', mb: '$3', '@bp2': { color: 'red' } }}>
-              Radix UI test suite
-            </Title>
+            <Title css={{ ta: 'center', mb: '$3' }}>Radix UI test suite</Title>
             <Subtitle css={{ ta: 'center' }}>An environment for testing Radix DS.</Subtitle>
           </Container>
         </Section>

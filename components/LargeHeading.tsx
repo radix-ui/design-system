@@ -20,12 +20,10 @@ export const LargeHeading = React.forwardRef((props, forwardedRef) => (
     as={DEFAULT_TAG}
     {...props}
     ref={forwardedRef}
-    size={
-      {
-        '@initial': '7',
-        '@bp2': '8',
-      } as any // TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421
-    }
+    size={{
+      '@initial': '7',
+      '@bp2': '8',
+    }}
     css={{
       fontWeight: 500,
       fontVariantNumeric: 'proportional-nums',

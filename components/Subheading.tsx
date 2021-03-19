@@ -17,12 +17,10 @@ export const Subheading = React.forwardRef((props, forwardedRef) => (
     as={DEFAULT_TAG}
     {...props}
     ref={forwardedRef}
-    size={
-      {
-        '@initial': '4',
-        '@bp2': '5',
-      } as any // TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421
-    }
+    size={{
+      '@initial': '4',
+      '@bp2': '5',
+    }}
     css={{
       fontWeight: 500,
       fontVariantNumeric: 'proportional-nums',
