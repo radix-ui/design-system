@@ -315,10 +315,10 @@ const stitches = createCss({
     pl: (config) => (value: any) => ({
       paddingLeft: value,
     }),
-    px: (config) => (value: any) => ({
-      paddingLeft: value,
-      paddingRight: value,
-    }),
+	px: (config) => (value: any) => ({
+		paddingLeft: value,
+		paddingRight: value,
+	}),
     py: (config) => (value: any) => ({
       paddingTop: value,
       paddingBottom: value,
