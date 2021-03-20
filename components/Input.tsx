@@ -98,7 +98,7 @@ const StyledInput = styled(DEFAULT_TAG, {
     variant: {
       ghost: {
         boxShadow: 'none',
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px $colors$slate600',
           },
@@ -136,7 +136,7 @@ const StyledInput = styled(DEFAULT_TAG, {
   },
   defaultVariants: {
     size: '1',
-  }
+  },
 });
 
 type InputCSSProp = { css?: CSS };

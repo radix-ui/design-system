@@ -75,6 +75,6 @@ export const Skeleton = styled('div', {
     },
   },
   defaultVariants: {
-    variant: 'text'
-  }
+    variant: 'text',
+  },
 });

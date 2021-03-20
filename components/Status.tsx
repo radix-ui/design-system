@@ -41,7 +41,7 @@ const StyledStatus = styled(DEFAULT_TAG, {
   defaultVariants: {
     size: '2',
     variant: 'gray',
-  }
+  },
 });
 
 type StatusCSSProp = { css?: CSS };

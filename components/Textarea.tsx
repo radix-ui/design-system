@@ -98,7 +98,7 @@ const StyledTextarea = styled(DEFAULT_TAG, {
   },
   defaultVariants: {
     size: '1',
-  }
+  },
 });
 
 type TextareaComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TextareaOwnProps>;

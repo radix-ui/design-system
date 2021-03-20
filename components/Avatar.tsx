@@ -147,7 +147,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
           pointerEvents: 'none',
           transition: 'opacity 25ms linear',
         },
-        '@media (any-hover: hover)': {
+        '@hover': {
           '&:hover': {
             '&::after': {
               opacity: '1',

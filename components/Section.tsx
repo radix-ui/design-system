@@ -32,8 +32,8 @@ const StyledSection = styled(DEFAULT_TAG, {
     },
   },
   defaultVariants: {
-    size: '3'
-  }
+    size: '3',
+  },
 });
 
 type ButtonCSSProp = { css?: CSS };

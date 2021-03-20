@@ -77,8 +77,8 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
     },
   },
   defaultVariants: {
-    size: '1'
-  }
+    size: '1',
+  },
 });
 
 type ButtonCSSProp = { css?: CSS };

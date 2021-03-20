@@ -38,7 +38,7 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
   borderRadius: '$2',
   boxShadow: 'inset 0 0 0 1px $colors$slate600',
   p: '$3',
-  "@media (any-hover: hover)": {
+  '@hover': {
     '&:hover': {
       boxShadow: 'inset 0 0 0 1px $colors$slate700',
     },

@@ -18,7 +18,7 @@ const StyledLink = styled(DEFAULT_TAG, {
   textDecorationColor: '$slate300',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   lineHeight: 'inherit',
-  '@media (any-hover: hover)': {
+  '@hover': {
     '&:hover': {
       textDecorationLine: 'underline',
     },
@@ -52,7 +52,7 @@ const StyledLink = styled(DEFAULT_TAG, {
         color: '$hiContrast',
         textDecoration: 'underline',
         textDecorationColor: '$slate300',
-        '@media (any-hover: hover)': {
+        '@hover': {
           '&:hover': {
             textDecorationColor: '$slate600',
           },

@@ -180,7 +180,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'red',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$red300',
           },
@@ -197,7 +197,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'crimson',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$crimson300',
           },
@@ -214,7 +214,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'pink',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$pink300',
           },
@@ -231,7 +231,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'purple',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$purple300',
           },
@@ -248,7 +248,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'violet',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$violet300',
           },
@@ -265,7 +265,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'indigo',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$indigo300',
           },
@@ -282,7 +282,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'blue',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$blue300',
           },
@@ -299,7 +299,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'cyan',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$cyan300',
           },
@@ -316,7 +316,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'teal',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$teal300',
           },
@@ -333,7 +333,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'green',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$green300',
           },
@@ -350,7 +350,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'lime',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$lime300',
           },
@@ -367,7 +367,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'yellow',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$yellow300',
           },
@@ -384,7 +384,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'orange',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$orange300',
           },
@@ -401,7 +401,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'gold',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$gold300',
           },
@@ -418,7 +418,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
       interactive: true,
       variant: 'bronze',
       css: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$bronze300',
           },
@@ -435,7 +435,7 @@ const StyledBadge = styled(DEFAULT_TAG, {
   defaultVariants: {
     size: '1',
     variant: 'gray',
-  }
+  },
 });
 
 type BadgeCSSProp = { css?: CSS };
