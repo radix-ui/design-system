@@ -364,23 +364,23 @@ const stitches = createCss({
     fs: (config) => (value: any) => ({ flexShrink: value }),
     fb: (config) => (value: any) => ({ flexBasis: value }),
 
-    bc: (config) => (value: keyof typeof config['theme']['colors'] | (string & {})) => ({
+    bc: (config) => (value: any) => ({
       backgroundColor: value,
     }),
 
-    br: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
+    br: (config) => (value: any) => ({
       borderRadius: value,
     }),
-    btrr: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
+    btrr: (config) => (value: any) => ({
       borderTopRightRadius: value,
     }),
-    bbrr: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
+    bbrr: (config) => (value: any) => ({
       borderBottomRightRadius: value,
     }),
-    bblr: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
+    bblr: (config) => (value: any) => ({
       borderBottomLeftRadius: value,
     }),
-    btlr: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
+    btlr: (config) => (value: any) => ({
       borderTopLeftRadius: value,
     }),
 
@@ -394,7 +394,7 @@ const stitches = createCss({
     pe: (config) => (value: any) => ({ pointerEvents: value }),
     us: (config) => (value: any) => ({ WebkitUserSelect: value, userSelect: value }),
 
-    size: (config) => (value: keyof typeof config['theme']['sizes'] | (string & {})) => ({
+    size: (config) => (value: any) => ({
       width: value,
       height: value,
     }),
