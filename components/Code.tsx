@@ -28,8 +28,8 @@ const StyledCode = styled(DEFAULT_TAG, {
     },
   },
   defaultVariants: {
-    variant: 'violet'
-  }
+    variant: 'violet',
+  },
 });
 
 type CodeComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, CodeOwnProps>;

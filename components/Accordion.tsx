@@ -25,7 +25,7 @@ const StyledButton = styled(AccordionPrimitive.Button, {
   color: '$hiContrast',
   width: '100%',
 
-  '@media (any-hover: hover)': {
+  '@hover': {
     '&:hover': {
       backgroundColor: '$slate100',
     },

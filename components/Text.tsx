@@ -107,8 +107,8 @@ export const StyledText = styled(DEFAULT_TAG, {
   },
   defaultVariants: {
     size: '3',
-    variant: 'contrast'
-  }
+    variant: 'contrast',
+  },
 });
 
 type TextCSSProp = { css?: CSS };

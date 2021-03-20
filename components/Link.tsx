@@ -18,7 +18,7 @@ const StyledLink = styled(DEFAULT_TAG, {
   textDecorationColor: '$slate300',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   lineHeight: 'inherit',
-  "@media (any-hover: hover)": {
+  '@hover': {
     '&:hover': {
       textDecorationLine: 'underline',
     },
@@ -29,8 +29,8 @@ const StyledLink = styled(DEFAULT_TAG, {
     outlineOffset: '2px',
     textDecorationLine: 'none',
   },
-  [`${Text}`]: {
-    color: 'inherit'
+  [`& ${Text}`]: {
+    color: 'inherit',
   },
   variants: {
     variant: {
@@ -52,7 +52,7 @@ const StyledLink = styled(DEFAULT_TAG, {
         color: '$hiContrast',
         textDecoration: 'underline',
         textDecorationColor: '$slate300',
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             textDecorationColor: '$slate600',
           },
@@ -64,8 +64,8 @@ const StyledLink = styled(DEFAULT_TAG, {
     },
   },
   defaultVariants: {
-    variant: 'contrast'
-  }
+    variant: 'contrast',
+  },
 });
 
 type LinkComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, LinkOwnProps>;

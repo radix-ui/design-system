@@ -37,7 +37,7 @@ const StyledSimpleToggle = styled(ToggleButtonPrimitive.Root, {
   height: '$5',
   width: '$5',
   backgroundColor: 'transparent',
-  "@media (any-hover: hover)": {
+  '@hover': {
     '&:hover': {
       backgroundColor: '$slate200',
     },
@@ -52,7 +52,7 @@ const StyledSimpleToggle = styled(ToggleButtonPrimitive.Root, {
 
   '&[data-state="on"]': {
     backgroundColor: '$slate400',
-    "@media (any-hover: hover)": {
+    '@hover': {
       '&:hover': {
         backgroundColor: '$slate400',
       },

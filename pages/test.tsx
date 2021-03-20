@@ -19,10 +19,7 @@ import { Properties } from '../custom/Properties';
 import { Color } from '../custom/Color';
 import { Toolbar } from '../custom/Toolbar';
 
-import {
-  Cross1Icon,
-  PlusIcon,
-} from '@radix-ui/react-icons';
+import { Cross1Icon, PlusIcon } from '@radix-ui/react-icons';
 
 function Test() {
   return (
@@ -30,7 +27,7 @@ function Test() {
       <Toolbar />
       <Box css={{ bc: '$loContrast', height: '100%', px: 250, pt: '36px' }}>
         <ScrollArea>
-        <Section size="3">
+          <Section size="3">
             <Container size="2">
               <Heading
                 css={{
@@ -48,16 +45,33 @@ function Test() {
                   <Box css={{ mr: '$1' }}>
                     <PlusIcon />
                   </Box>
-                  Button 017489 jpy</Button>
+                  Button 017489 jpy
+                </Button>
                 <Badge>Badge 017489 jpy</Badge>
               </Flex>
             </Container>
             <Container size="2">
               <Box css={{ maxWidth: 525, mt: 100 }}>
-              <Text size="5" variant="pink" css={{ mb: '$4', lineHeight: '25px', fontWeight: 500 }}>Why Modulz</Text>
-              <Text size="8" css={{ mb: '$4', lineHeight: '37px', fontWeight: 500 }}>Design in the target medium. Prototype with real components.</Text>
-                <Text size="4" css={{ mb: '$3', lineHeight: '25px', pr: '$9' }}>Almost all design tools are optimised for illustration. Drawing tools are great for exploration but when it comes to designing websites, apps, and user interfaces, we need something more powerful.</Text>
-                <Text size="3" variant="gray" css={{ lineHeight: '23px' }}>It is exceptionally hard to have a great design tool that outputs useful code. Many have tried but in the end the trade offs were too great. That was until Modulz made it their mission.</Text>
+                <Text
+                  size="5"
+                  variant="pink"
+                  css={{ mb: '$4', lineHeight: '25px', fontWeight: 500 }}
+                >
+                  Why Modulz
+                </Text>
+                <Text size="8" css={{ mb: '$4', lineHeight: '37px', fontWeight: 500 }}>
+                  Design in the target medium. Prototype with real components.
+                </Text>
+                <Text size="4" css={{ mb: '$3', lineHeight: '25px', pr: '$9' }}>
+                  Almost all design tools are optimised for illustration. Drawing tools are great
+                  for exploration but when it comes to designing websites, apps, and user
+                  interfaces, we need something more powerful.
+                </Text>
+                <Text size="3" variant="gray" css={{ lineHeight: '23px' }}>
+                  It is exceptionally hard to have a great design tool that outputs useful code.
+                  Many have tried but in the end the trade offs were too great. That was until
+                  Modulz made it their mission.
+                </Text>
               </Box>
             </Container>
           </Section>
@@ -75,7 +89,9 @@ function Test() {
               >
                 Tracking test
               </Heading>
-              <Paragraph css={{ mb: '$7' }}>Tracking should be tight and sexi.<sup>1</sup></Paragraph>
+              <Paragraph css={{ mb: '$7' }}>
+                Tracking should be tight and sexi.<sup>1</sup>
+              </Paragraph>
             </Container>
             <Container size="2">
               <Flex css={{ fd: 'column', gap: '$4' }}>
@@ -156,7 +172,7 @@ function Test() {
               <Heading
                 css={{
                   mb: '$2',
-                  mt: '$9'
+                  mt: '$9',
                 }}
               >
                 Corrective indent test
@@ -331,25 +347,63 @@ function Test() {
             </Container>
             <Container size="2">
               <Flex css={{ fd: 'column', gap: '$4' }}>
-                <Heading css={{ color: '$gray1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$quartz1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$slate1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$red1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$crimson1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$pink1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$purple1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$violet1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$indigo1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$blue1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$cyan1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$teal1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$green1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$lime1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$yellow1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$orange1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$gold1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$brown1000' }}>This heading look balanced and slightly saturated</Heading>
-                <Heading css={{ color: '$bronze1000' }}>This heading look balanced and slightly saturated</Heading>
+                <Heading css={{ color: '$gray1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$quartz1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$slate1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$red1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$crimson1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$pink1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$purple1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$violet1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$indigo1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$blue1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$cyan1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$teal1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$green1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$lime1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$yellow1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$orange1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$gold1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$brown1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
+                <Heading css={{ color: '$bronze1000' }}>
+                  This heading look balanced and slightly saturated
+                </Heading>
               </Flex>
               <Flex css={{ fd: 'column', gap: '$4', mt: '$7' }}>
                 <Heading css={{ color: '$gray900' }}>This heading look balanced</Heading>

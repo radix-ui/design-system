@@ -1,4 +1,4 @@
-import createCss, { StitchesCss } from '@stitches/react';
+import { createCss, StitchesCss } from '@stitches/react';
 export type { StitchesVariants } from '@stitches/react';
 
 const stitches = createCss({
@@ -286,15 +286,15 @@ const stitches = createCss({
       max: '999',
     },
   },
-  conditions: {
-    bp1: '@media (min-width: 520px)',
-    bp2: '@media (min-width: 900px)',
-    bp3: '@media (min-width: 1200px)',
-    bp4: '@media (min-width: 1800px)',
-    motion: '@media (prefers-reduced-motion)',
-    hover: '@media (any-hover: hover)',
-    dark: '@media (prefers-color-scheme: dark)',
-    light: '@media (prefers-color-scheme: light)',
+  media: {
+    bp1: '(min-width: 520px)',
+    bp2: '(min-width: 900px)',
+    bp3: '(min-width: 1200px)',
+    bp4: '(min-width: 1800px)',
+    motion: '(prefers-reduced-motion)',
+    hover: '(any-hover: hover)',
+    dark: '(prefers-color-scheme: dark)',
+    light: '(prefers-color-scheme: light)',
   },
   utils: {
     p: (config) => (value: any) => ({
@@ -364,23 +364,23 @@ const stitches = createCss({
     fs: (config) => (value: any) => ({ flexShrink: value }),
     fb: (config) => (value: any) => ({ flexBasis: value }),
 
-    bc: (config) => (value: keyof typeof config['theme']['colors'] | (string & {})) => ({
+    bc: (config) => (value: any) => ({
       backgroundColor: value,
     }),
 
-    br: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
+    br: (config) => (value: any) => ({
       borderRadius: value,
     }),
-    btrr: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
+    btrr: (config) => (value: any) => ({
       borderTopRightRadius: value,
     }),
-    bbrr: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
+    bbrr: (config) => (value: any) => ({
       borderBottomRightRadius: value,
     }),
-    bblr: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
+    bblr: (config) => (value: any) => ({
       borderBottomLeftRadius: value,
     }),
-    btlr: (config) => (value: keyof typeof config['theme']['radii'] | (string & {})) => ({
+    btlr: (config) => (value: any) => ({
       borderTopLeftRadius: value,
     }),
 
@@ -394,7 +394,7 @@ const stitches = createCss({
     pe: (config) => (value: any) => ({ pointerEvents: value }),
     us: (config) => (value: any) => ({ WebkitUserSelect: value, userSelect: value }),
 
-    size: config => (value: keyof typeof config['theme']['sizes'] | (string & {})) => ({
+    size: (config) => (value: any) => ({
       width: value,
       height: value,
     }),

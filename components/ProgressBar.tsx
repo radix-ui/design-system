@@ -28,7 +28,7 @@ const StyledProgressBar = styled(ProgressPrimitive.Root, {
 
   '&[data-state="indeterminate"]': {
     backgroundColor: '$slate300',
-    '::after': {
+    '&::after': {
       animationName: indeterminateProgress,
       animationDuration: '1500ms',
       animationIterationCount: 'infinite',
@@ -60,8 +60,8 @@ const StyledProgressBar = styled(ProgressPrimitive.Root, {
     },
   },
   defaultVariants: {
-    variant: 'gray'
-  }
+    variant: 'gray',
+  },
 });
 
 const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {

@@ -17,24 +17,19 @@ export const Title = React.forwardRef((props, forwardedRef) => (
     as={DEFAULT_TAG}
     {...props}
     ref={forwardedRef}
-    size={
-      {
-        initial: '8',
-        bp2: '9',
-      } as any // TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421
-    }
+    size={{
+      '@initial': '8',
+      '@bp2': '9',
+    }}
     css={{
       fontWeight: 500,
       fontVariantNumeric: 'proportional-nums',
       lineHeight: '35px',
       ...(props.css as any),
 
-      when: {
-        ...(props.css?.when as any),
-        bp2: {
-          lineHeight: '55px',
-          ...(props.css?.when?.bp2 as any),
-        },
+      '@bp2': {
+        lineHeight: '55px',
+        ...(props.css?.['@bp2'] as any),
       },
     }}
   />

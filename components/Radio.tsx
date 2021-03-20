@@ -50,7 +50,7 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
   color: '$hiContrast',
   boxShadow: 'inset 0 0 0 1px $colors$slate600',
   overflow: 'hidden',
-  "@media (any-hover: hover)": {
+  '@hover': {
     '&:hover': {
       boxShadow: 'inset 0 0 0 1px $colors$slate700',
     },
@@ -81,8 +81,8 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
     },
   },
   defaultVariants: {
-    size: '1'
-  }
+    size: '1',
+  },
 });
 
 type RadioCSSProp = { css?: CSS };

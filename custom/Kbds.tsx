@@ -55,7 +55,7 @@ export function Kbds() {
             <Kbd width="shift">⇧</Kbd>
             <Kbd>Tab</Kbd>
           </Flex>
-          <Flex css={{ }}>
+          <Flex css={{}}>
             <Kbd width="space">Space</Kbd>
           </Flex>
         </Box>
@@ -91,7 +91,7 @@ export function Kbds() {
             </Kbd>
             <Kbd size="1">Tab</Kbd>
           </Flex>
-          <Flex css={{ }}>
+          <Flex css={{}}>
             <Kbd size="1" width="space">
               Space
             </Kbd>

@@ -45,7 +45,7 @@ const StyledCard = styled(DEFAULT_TAG, {
   variants: {
     variant: {
       interactive: {
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             '&::before': {
               boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.2)',
@@ -68,7 +68,7 @@ const StyledCard = styled(DEFAULT_TAG, {
           opacity: '0',
           transition: 'all 200ms cubic-bezier(0.22, 1, 0.36, 1)',
         },
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$panel',
             transform: 'translateY(-2px)',

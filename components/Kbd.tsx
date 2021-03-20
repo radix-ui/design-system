@@ -44,7 +44,7 @@ const StyledKbd = styled('kbd', {
         minWidth: '2em',
         fontSize: '$2',
         lineHeight: '25px',
-      }
+      },
     },
     width: {
       shift: {
@@ -87,7 +87,7 @@ const StyledKbd = styled('kbd', {
 
   defaultVariants: {
     size: '2',
-  }
+  },
 });
 
 type KbdCSSProp = { css?: CSS };

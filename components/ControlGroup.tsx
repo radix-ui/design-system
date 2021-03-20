@@ -10,7 +10,7 @@ export const ControlGroup = styled('div', {
   position: 'relative',
   zIndex: 0,
 
-  [`${Button}`]: {
+  [`& ${Button}`]: {
     borderRadius: 0,
     boxShadow:
       'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',
@@ -43,7 +43,7 @@ export const ControlGroup = styled('div', {
       },
     },
   },
-  [`${Input}`]: {
+  [`& ${Input}`]: {
     borderRadius: 0,
     boxShadow:
       'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',
@@ -69,7 +69,7 @@ export const ControlGroup = styled('div', {
       },
     },
   },
-  [`${Select}`]: {
+  [`& ${Select}`]: {
     borderRadius: 0,
     boxShadow:
       'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',

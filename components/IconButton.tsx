@@ -36,7 +36,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
   backgroundColor: '$loContrast',
   border: '1px solid $slate600',
   borderRadius: '$2',
-  "@media (any-hover: hover)": {
+  '@hover': {
     '&:hover': {
       borderColor: '$slate700',
     },
@@ -77,7 +77,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
       ghost: {
         backgroundColor: 'transparent',
         borderWidth: '0',
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             backgroundColor: '$slate200',
           },
@@ -90,12 +90,12 @@ const StyledIconButton = styled(DEFAULT_TAG, {
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$slate300',
-        }
+        },
       },
       raised: {
         boxShadow:
           '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             boxShadow:
               '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
@@ -115,7 +115,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
       active: {
         backgroundColor: '$slate300',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
           },
@@ -127,7 +127,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
       waiting: {
         backgroundColor: '$slate300',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
-        "@media (any-hover: hover)": {
+        '@hover': {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
           },
@@ -141,7 +141,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
   defaultVariants: {
     size: '1',
     variant: 'ghost',
-  }
+  },
 });
 
 type IconButtonComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, IconButtonOwnProps>;

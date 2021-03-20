@@ -38,8 +38,8 @@ const StyledSeparator = styled(SeparatorPrimitive.Root, {
     },
   },
   defaultVariants: {
-    size: '1'
-  }
+    size: '1',
+  },
 });
 
 type ButtonCSSProp = { css?: CSS };

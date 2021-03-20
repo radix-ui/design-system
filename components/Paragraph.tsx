@@ -17,22 +17,17 @@ export const Paragraph = React.forwardRef((props, forwardedRef) => (
     as={DEFAULT_TAG}
     {...props}
     ref={forwardedRef}
-    size={
-      {
-        initial: '3',
-        bp2: '4',
-      } as any // TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421
-    }
+    size={{
+      '@initial': '3',
+      '@bp2': '4',
+    }}
     css={{
       lineHeight: '25px',
       ...(props.css as any),
 
-      when: {
-        ...(props.css?.when as any),
-        bp2: {
-          lineHeight: '27px',
-          ...(props.css?.when?.bp2 as any),
-        },
+      '@bp2': {
+        lineHeight: '27px',
+        ...(props.css?.['@bp2'] as any),
       },
     }}
   />
