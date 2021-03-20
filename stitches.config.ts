@@ -1,4 +1,4 @@
-import createCss, { StitchesCss } from '@stitches/react';
+import { createCss, StitchesCss } from '@stitches/react';
 export type { StitchesVariants } from '@stitches/react';
 
 const stitches = createCss({
@@ -315,10 +315,10 @@ const stitches = createCss({
     pl: (config) => (value: any) => ({
       paddingLeft: value,
     }),
-	px: (config) => (value: any) => ({
-		paddingLeft: value,
-		paddingRight: value,
-	}),
+    px: (config) => (value: any) => ({
+      paddingLeft: value,
+      paddingRight: value,
+    }),
     py: (config) => (value: any) => ({
       paddingTop: value,
       paddingBottom: value,
@@ -394,7 +394,7 @@ const stitches = createCss({
     pe: (config) => (value: any) => ({ pointerEvents: value }),
     us: (config) => (value: any) => ({ WebkitUserSelect: value, userSelect: value }),
 
-    size: config => (value: keyof typeof config['theme']['sizes'] | (string & {})) => ({
+    size: (config) => (value: keyof typeof config['theme']['sizes'] | (string & {})) => ({
       width: value,
       height: value,
     }),
