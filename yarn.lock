@@ -1700,17 +1700,17 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.0.0.tgz#2ff674e9611b45b528896d820d3d7a812de2f0e4"
   integrity sha512-FyD2meJpDPjyNQejSjvnhpgI/azsQkA4lGbuu5BQZfjvJ9cbRZXzeWL2HceCekW4lixO9JPesIIQkSoLjeJHNQ==
 
-"@stitches/core@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.1.tgz#cfc7bedf4a13d8113cf0577e2bbbe589defd16f2"
-  integrity sha512-LYUnEHd4bjFVAzNOrpys9GXbbNqkqUr6jrBCia7t5ap2k3zpTX671gwYpss4myLLZgSQc1ebawrnWaRh6qMhyQ==
+"@stitches/core@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.2.tgz#c4b7880384e0efb717956de3dc61c70a38a43da1"
+  integrity sha512-DbWq3gyqWXcpeVN21k7E2gTeIN0vbRfRoBSgDNmuYUVXTeSa58EfwQkaIpwiodORnkN2qMjdrT7FbsTrBIyS3g==
 
-"@stitches/react@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.1.1.tgz#f9ad1819edb44df8fc3a884c3834aca843abc330"
-  integrity sha512-kr7Zol6Ch4oSPu1QHQYr26HdRaDBJ/QLUu2ofjRvPW7GiYA8nfRwr5Bmntlxd7E3uJihfoNa6ilIISA/ZGMrNw==
+"@stitches/react@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.1.2.tgz#8ad16870cb4a818b2463b24762fa2dc105f76a05"
+  integrity sha512-z25luydD4epNsy0jJpngx4/wCsi1clx3kUVYM7w4VaEr4meUpmHJyFrNNZMPWXPiWrRfPw7mpCmJCo9nCxt+Wg==
   dependencies:
-    "@stitches/core" "^0.1.1"
+    "@stitches/core" "^0.1.2"
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
