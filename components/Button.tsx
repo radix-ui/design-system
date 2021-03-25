@@ -145,6 +145,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         },
       },
       ghost: {
+        mixBlendMode: 'multiply',
         backgroundColor: 'transparent',
         fontWeight: 400,
         color: '$hiContrast',

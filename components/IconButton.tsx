@@ -75,6 +75,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
     },
     variant: {
       ghost: {
+        mixBlendMode: 'multiply',
         backgroundColor: 'transparent',
         borderWidth: '0',
         '@hover': {
