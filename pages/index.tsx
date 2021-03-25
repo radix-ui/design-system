@@ -114,15 +114,15 @@ import { Toolbar } from '../custom/Toolbar';
 
 function Home() {
   return (
-    <Box>
+    <Flex>
       <Box
         css={{
-          position: 'fixed',
+          flexShrink: 0,
+          position: 'sticky',
           top: 0,
-          left: 0,
-          bottom: 0,
           overflowY: 'auto',
           width: 250,
+          height: '100vh',
           px: '$6',
           py: '$6',
         }}
@@ -356,7 +356,7 @@ function Home() {
         </Box>
       </Box>
 
-      <Box css={{ bc: '$loContrast', height: '100%' }}>
+      <Box css={{ flexGrow: 1, bc: '$loContrast', height: '100%' }}>
         <Section size="3">
           <Container size="2">
             <Title css={{ ta: 'center', mb: '$3' }}>Radix UI test suite</Title>
@@ -1938,7 +1938,7 @@ function Home() {
           </Container>
         </Section>
       </Box>
-    </Box>
+    </Flex>
   );
 }
 
