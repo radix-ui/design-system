@@ -37,6 +37,7 @@ const StyledSimpleToggle = styled(ToggleButtonPrimitive.Root, {
   height: '$5',
   width: '$5',
   backgroundColor: 'transparent',
+  mixBlendMode: 'multiply',
   '@hover': {
     '&:hover': {
       backgroundColor: '$slate200',
