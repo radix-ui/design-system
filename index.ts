@@ -68,6 +68,7 @@ export { Panel } from './components/Panel';
 export { Popover, PopoverClose, PopoverContent, PopoverTrigger } from './components/Popover';
 // TODO
 // export { Scrollbar } from './components/Scrollbar';
+export { Portal } from '@radix-ui/react-portal';
 export { ProgressBar } from './components/ProgressBar';
 export { Radio, RadioGroup } from './components/Radio';
 export { RadioCard, RadioCardGroup } from './components/RadioCard';
