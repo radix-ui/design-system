@@ -872,6 +872,7 @@ function Home() {
             <Flex css={{ gap: '$6' }}>
               <Button>Button</Button>
               <Button size="2">Button</Button>
+              <Button size="3">Button</Button>
             </Flex>
             <Flex css={{ mt: '$6', gap: '$6' }}>
               <Button>Button</Button>
