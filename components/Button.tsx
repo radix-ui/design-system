@@ -7,19 +7,9 @@ const DEFAULT_TAG = 'button';
 
 const StyledButton = styled(DEFAULT_TAG, {
   // Reset
+  all: 'unset',
   alignItems: 'center',
-  appearance: 'none',
   boxSizing: 'border-box',
-  display: 'inline-flex',
-  flexShrink: 0,
-  justifyContent: 'center',
-  lineHeight: '1',
-  margin: '0',
-  outline: 'none',
-  padding: '0',
-  textDecoration: 'none',
-  userSelect: 'none',
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   '&::before': {
     boxSizing: 'border-box',
   },
@@ -27,8 +17,14 @@ const StyledButton = styled(DEFAULT_TAG, {
     boxSizing: 'border-box',
   },
 
+  // Custom reset?
+  display: 'inline-flex',
+  flexShrink: 0,
+  justifyContent: 'center',
+  lineHeight: '1',
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
+
   // Custom
-  border: 'none',
   borderRadius: '$2',
   height: '$5',
   px: '$2',
