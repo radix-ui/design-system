@@ -531,6 +531,93 @@ function Home() {
                 </Text>
               </Flex>
             </Flex>
+            <Flex css={{ fd: 'column', gap: '$4' }}>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="red" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="crimson" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="pink" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="purple" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="violet" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="indigo" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="blue" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="cyan" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="teal" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="green" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="lime" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="yellow" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="orange" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="gold" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="bronze" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="gray" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+              <Flex css={{ ai: 'center' }}>
+                <Text size="9" as="h2" variant="contrast" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                  The quick brown fox jumped over the lazy dog
+                </Text>
+              </Flex>
+            </Flex>
             <Flex css={{ fd: 'column', gap: '$4', mt: '$6' }}>
               <Flex css={{ ai: 'center' }}>
                 <Text size="6" as="h1" variant="red" css={{ lineHeight: '30px' }}>
