@@ -31,23 +31,41 @@ function Test() {
             <Container size="2">
               <Heading
                 css={{
-                  mb: '$2',
+                  mb: '$6',
                 }}
               >
                 In search of perfect baseline alignment
               </Heading>
-              <Paragraph css={{ mb: '$7' }}>This search is hopeless and I am insane.</Paragraph>
             </Container>
             <Container size="2">
-              <Flex css={{ gap: '$2' }}>
-                <Input defaultValue="Input 017489 jpy" css={{ width: 150 }} />
-                <Button css={{ fontSize: 12 }}>
-                  <Box css={{ mr: '$1' }}>
-                    <PlusIcon />
-                  </Box>
-                  Button 017489 jpy
-                </Button>
-                <Badge>Badge 017489 jpy</Badge>
+              <Flex css={{ fd: 'column', gap: '$2' }}>
+                <Flex css={{ ai: 'center', height: '$8', bc: '$crimson300' }}>
+                  <Text size="9">This search is hopeless</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$7', bc: '$crimson300' }}>
+                  <Text size="8">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                  <Text size="7">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                  <Text size="6">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                  <Text size="5">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                  <Text size="4">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                  <Text size="3">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$5', bc: '$crimson300' }}>
+                  <Text size="2">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$5', bc: '$crimson300' }}>
+                  <Text size="1">This search is hopeless and I am insane.</Text>
+                </Flex>
               </Flex>
             </Container>
             <Container size="2">
