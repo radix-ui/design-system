@@ -54,12 +54,6 @@ const StyledButton = styled(DEFAULT_TAG, {
         fontSize: '$3',
         lineHeight: '$sizes$6',
       },
-      '3': {
-        height: '$7',
-        px: '$4',
-        fontSize: '$5',
-        lineHeight: '$sizes$7',
-      },
     },
     variant: {
       gray: {
