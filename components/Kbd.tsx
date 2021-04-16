@@ -36,14 +36,14 @@ const StyledKbd = styled('kbd', {
         height: '$3',
         minWidth: '1.6em',
         fontSize: '$1',
-        lineHeight: '15px',
+        lineHeight: '$spaces$3',
       },
       '2': {
         px: '0.5em',
         height: '$5',
         minWidth: '2em',
         fontSize: '$2',
-        lineHeight: '25px',
+        lineHeight: '$spaces$5',
       },
     },
     width: {
