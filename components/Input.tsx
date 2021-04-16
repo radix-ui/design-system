@@ -71,6 +71,7 @@ const StyledInput = styled(DEFAULT_TAG, {
         height: '$5',
         fontSize: '$1',
         px: '$1',
+        lineHeight: '$sizes$5',
         '&:-webkit-autofill::first-line': {
           fontSize: '$1',
         },
@@ -79,7 +80,7 @@ const StyledInput = styled(DEFAULT_TAG, {
         height: '$5',
         fontSize: '$2',
         px: '$1',
-
+        lineHeight: '$sizes$5',
         // Fix potential baseline misalignment when placed on subpixels
         // (via "vh" margin, in a grid, etc). Affects this size variant only
         paddingBottom: 1,
@@ -91,6 +92,7 @@ const StyledInput = styled(DEFAULT_TAG, {
         height: '$6',
         fontSize: '$3',
         px: '$2',
+        lineHeight: '$sizes$6',
         '&:-webkit-autofill::first-line': {
           fontSize: '$3',
         },
