@@ -296,8 +296,8 @@ const stitches = createCss({
     fontSizes: {
       1: '11px',
       2: '12px',
-      3: '16px',
-      4: '18px',
+      3: '15px',
+      4: '17px',
       5: '20px',
       6: '22px',
       7: '28px',
