@@ -231,11 +231,11 @@ const StyledButton = styled(DEFAULT_TAG, {
           boxShadow: 'inset 0 0 0 1px $colors$slate700',
         },
       },
-      ghost: {
-        true: {
-          backgroundColor: 'transparent',
-          boxShadow: 'none',
-        }
+    },
+    ghost: {
+      true: {
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
       }
     },
   },
