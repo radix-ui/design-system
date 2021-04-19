@@ -60,10 +60,10 @@ function Ecommerce() {
           </Flex>
           <Flex as="nav" css={{ ai: 'center', gap: '$3', fs: 0, minWidth: 300 }}>
             <Input size="3" placeholder="Search" />
-            <IconButton>
+            <IconButton size="2">
               <PlusIcon />
             </IconButton>
-            <IconButton>
+            <IconButton size="2">
               <PlusIcon />
             </IconButton>
           </Flex>
@@ -94,36 +94,36 @@ function Ecommerce() {
                 <Text css={{ fontWeight: 500 }}>€384.99</Text>
               </Box>
               <Grid css={{ gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr', gap: '$2' }}>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
               </Grid>
-              <Flex css={{ jc: 'space-between', mb: '$3' }}>
+              <Flex css={{ ai: 'baseline', jc: 'space-between', mb: '$3', mt: '$5' }}>
                 <Text css={{ fontWeight: 500 }}>Select Size</Text>
-                <Text variant="gray" css={{ fontWeight: 500 }}>Size Assistant</Text>
+                <Text size="2" variant="gray">Size Assistant</Text>
               </Flex>
               <Grid css={{ gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr', gap: '$2' }}>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
-                <Flex css={{ bc: '$gray200', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
+                <Flex css={{ boxShadow: 'inset 0 0 0 1px $colors$slate600', p: '$2', ai: 'center', jc: 'center', fontSize: '$3' }}>XL</Flex>
               </Grid>
               <Flex css={{ gap: '$5', my: '$5' }}>
                 <Button variant="green" size="2" css={{ fg: 1 }}>Add to Bag</Button>
@@ -138,22 +138,22 @@ function Ecommerce() {
               </Box>
 
               <Accordion type="single">
-        <AccordionItem value="accordion-one">
-          <AccordionButton>
-            <Subheading>Size &amp; Fit</Subheading>
-          </AccordionButton>
-          <AccordionPanel>
-            <Text css={{ lineHeight: '23px' }}>The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer fabric for added warmth without extra weight. A slightly taller collar in the hood helps keep you dry in cold, wet weather.</Text>
-          </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem value="accordion-two">
-          <AccordionButton>
-            <Subheading>Free Delivery &amp; Returns</Subheading>
-          </AccordionButton>
-          <AccordionPanel>
-            <Text css={{ lineHeight: '23px' }}>The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer fabric for added warmth without extra weight. A slightly taller collar in the hood helps keep you dry in cold, wet weather.</Text>
-          </AccordionPanel>
-        </AccordionItem>
+                <AccordionItem value="accordion-one">
+                  <AccordionButton>
+                    <Text size="4" css={{ fontWeight: 500 }}>Size &amp; Fit</Text>
+                  </AccordionButton>
+                  <AccordionPanel>
+                    <Text css={{ lineHeight: '23px' }}>The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer fabric for added warmth without extra weight. A slightly taller collar in the hood helps keep you dry in cold, wet weather.</Text>
+                  </AccordionPanel>
+                </AccordionItem>
+                <AccordionItem value="accordion-two">
+                  <AccordionButton>
+                  <Text size="4" css={{ fontWeight: 500 }}>Free Delivery &amp; Returns</Text>
+                  </AccordionButton>
+                  <AccordionPanel>
+                    <Text css={{ lineHeight: '23px' }}>The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer fabric for added warmth without extra weight. A slightly taller collar in the hood helps keep you dry in cold, wet weather.</Text>
+                  </AccordionPanel>
+                </AccordionItem>
       </Accordion>
             </Box>
           </Grid>
