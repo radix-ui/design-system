@@ -666,12 +666,12 @@ export const darkTheme = theme('dark-theme', {
 
 export const flatTheme = theme('flat-theme', {
   colors: {
-    buttonBackgroundPlain: '$slate200',
+    buttonBackgroundPlain: '$slate300',
     buttonBackgroundAccent: '$blue800',
     buttonBackgroundPositive: '$green800',
     buttonBackgroundWarning: '$red800',
 
-    buttonBackgroundPlainHover: '$slate300',
+    buttonBackgroundPlainHover: '$slate400',
     buttonBackgroundAccentHover: '$blue900',
     buttonBackgroundPositiveHover: '$green900',
     buttonBackgroundWarningHover: '$red900',
@@ -728,15 +728,15 @@ export const softTheme = theme('soft-theme', {
 
 export const modulzTheme = theme('modulz-theme', {
   colors: {
-    buttonBackgroundPlain: '$slate100',
+    buttonBackgroundPlain: '$loContrast',
     buttonBackgroundAccent: '$blue100',
     buttonBackgroundPositive: '$green100',
-    buttonBackgroundWarning: '$slate100',
+    buttonBackgroundWarning: '$loContrast',
 
-    buttonBackgroundPlainHover: '$slate100',
+    buttonBackgroundPlainHover: '$loContrast',
     buttonBackgroundAccentHover: '$blue100',
     buttonBackgroundPositiveHover: '$green100',
-    buttonBackgroundWarningHover: '$slate100',
+    buttonBackgroundWarningHover: '$loContrast',
 
     buttonColorPlain: '$hiContrast',
     buttonColorAccent: '$blue900',

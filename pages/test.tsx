@@ -50,6 +50,12 @@ function Test() {
                   <Button size="2" variant="green">Button</Button>
                   <Button size="2" variant="red">Button</Button>
                 </Flex>
+                {/* <Flex css={{ gap: '$4' }}>
+                  <Button size="2" ghost>Button</Button>
+                  <Button size="2" variant="blue" ghost>Button</Button>
+                  <Button size="2" variant="green" ghost>Button</Button>
+                  <Button size="2" variant="red" ghost>Button</Button>
+                </Flex> */}
               </Flex>
             </Container>
           </Section>

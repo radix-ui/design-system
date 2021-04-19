@@ -58,12 +58,12 @@ const StyledButton = styled(DEFAULT_TAG, {
     variant: {
       gray: {
         backgroundColor: '$buttonBackgroundPlain',
-        boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorPlain, $shadows$buttonShadow $colors$slate800',
+        boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorPlain, $shadows$buttonShadow $colors$slate700',
         color: '$buttonColorPlain',
         '@hover': {
           '&:hover': {
             backgroundColor: '$buttonBackgroundPlainHover',
-            boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorPlainHover, $shadows$buttonShadowHover $colors$slate800',
+            boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorPlainHover, $shadows$buttonShadowHover $colors$slate700',
           },
         },
         '&:active': {
@@ -80,12 +80,12 @@ const StyledButton = styled(DEFAULT_TAG, {
       },
       blue: {
         backgroundColor: '$buttonBackgroundAccent',
-        boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorAccent, $shadows$buttonShadow $colors$blue800',
+        boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorAccent, $shadows$buttonShadow $colors$blue700',
         color: '$buttonColorAccent',
         '@hover': {
           '&:hover': {
             backgroundColor: '$buttonBackgroundAccentHover',
-            boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorAccentHover, $shadows$buttonShadowHover $colors$blue800',
+            boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorAccentHover, $shadows$buttonShadowHover $colors$blue700',
           },
         },
         '&:active': {
@@ -102,12 +102,12 @@ const StyledButton = styled(DEFAULT_TAG, {
       },
       green: {
         backgroundColor: '$buttonBackgroundPositive',
-        boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorPositive, $shadows$buttonShadow $colors$green800',
+        boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorPositive, $shadows$buttonShadow $colors$green700',
         color: '$buttonColorPositive',
         '@hover': {
           '&:hover': {
             backgroundColor: '$buttonBackgroundPositiveHover',
-            boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorPositiveHover, $shadows$buttonShadowHover $colors$green800',
+            boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorPositiveHover, $shadows$buttonShadowHover $colors$green700',
           },
         },
         '&:active': {
@@ -124,12 +124,12 @@ const StyledButton = styled(DEFAULT_TAG, {
       },
       red: {
         backgroundColor: '$buttonBackgroundWarning',
-        boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorWarning, $shadows$buttonShadow $colors$red800',
+        boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorWarning, $shadows$buttonShadow $colors$red700',
         color: '$buttonColorWarning',
         '@hover': {
           '&:hover': {
             backgroundColor: '$buttonBackgroundWarningHover',
-            boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorWarningHover, $shadows$buttonShadowHover $colors$red800',
+            boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorWarningHover, $shadows$buttonShadowHover $colors$red700',
           },
         },
         '&:active': {
@@ -145,24 +145,24 @@ const StyledButton = styled(DEFAULT_TAG, {
         },
       },
       ghost: {
-        mixBlendMode: 'multiply',
-        backgroundColor: 'transparent',
-        fontWeight: 400,
-        color: '$hiContrast',
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$slate200',
-          },
-        },
-        '&:active': {
-          backgroundColor: '$slate300',
-        },
-        '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
-        },
-        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$slate300',
-        },
+        // mixBlendMode: 'multiply',
+        // backgroundColor: 'transparent',
+        // fontWeight: 400,
+        // color: '$hiContrast',
+        // '@hover': {
+        //   '&:hover': {
+        //     backgroundColor: '$slate200',
+        //   },
+        // },
+        // '&:active': {
+        //   backgroundColor: '$slate300',
+        // },
+        // '&:focus': {
+        //   boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
+        // },
+        // '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+        //   backgroundColor: '$slate300',
+        // },
       },
       transparentWhite: {
         backgroundColor: 'hsla(0,100%,100%,.2)',
@@ -231,8 +231,105 @@ const StyledButton = styled(DEFAULT_TAG, {
           boxShadow: 'inset 0 0 0 1px $colors$slate700',
         },
       },
+      ghost: {
+        true: {
+          backgroundColor: 'transparent',
+          boxShadow: 'none',
+        }
+      }
     },
   },
+  compoundVariants: [
+    {
+      variant: 'gray',
+      ghost: 'true',
+      css: {
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
+        color: '$hiContrast',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$loContrast',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$slate300',
+        },
+        '&:focus': {
+          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$slate300',
+        },
+      },
+    },
+    {
+      variant: 'blue',
+      ghost: 'true',
+      css: {
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$loContrast',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$blue300',
+        },
+        '&:focus': {
+          boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$blue300',
+        },
+      },
+    },
+    {
+      variant: 'green',
+      ghost: 'true',
+      css: {
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$loContrast',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$green300',
+        },
+        '&:focus': {
+          boxShadow: 'inset 0 0 0 1px $colors$green700, 0 0 0 1px $colors$green700',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$green300',
+        },
+      },
+    },
+    {
+      variant: 'red',
+      ghost: 'true',
+      css: {
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
+        '@hover': {
+          '&:hover': {
+            backgroundColor: '$loContrast',
+          },
+        },
+        '&:active': {
+          backgroundColor: '$red300',
+        },
+        '&:focus': {
+          boxShadow: 'inset 0 0 0 1px $colors$red700, 0 0 0 1px $colors$red700',
+        },
+        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
+          backgroundColor: '$red300',
+        },
+      },
+    },
+  ],
   defaultVariants: {
     size: '1',
     variant: 'gray',
