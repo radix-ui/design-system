@@ -99,12 +99,14 @@ const StyledInput = styled(DEFAULT_TAG, {
     variant: {
       ghost: {
         boxShadow: 'none',
+        backgroundColor: 'transparent',
         '@hover': {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px $colors$slate600',
           },
         },
         '&:focus': {
+          backgroundColor: '$loContrast',
           boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
         },
       },
