@@ -218,7 +218,7 @@ function Ecommerce() {
             <Separator size="2" />
           </Flex>
 
-          <Section size="1" css={{ bc: '$gray200', py: '$5' }}>
+          <Section size="2" css={{ bc: '$gray200' }}>
             <Container size="2">
               <Subheading
                 css={{
@@ -272,7 +272,7 @@ function Ecommerce() {
             <Separator size="2" />
           </Flex>
 
-          <Section size="2" css={{ py: '$5' }}>
+          <Section size="2">
             <Container size="2">
               <Subheading
                 css={{
