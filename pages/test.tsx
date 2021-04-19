@@ -20,13 +20,44 @@ import { Color } from '../custom/Color';
 import { Toolbar } from '../custom/Toolbar';
 
 import { Cross1Icon, PlusIcon } from '@radix-ui/react-icons';
+import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stitches.config';
 
 function Test() {
   return (
-    <Box css={{ height: '100%' }}>
+    <Box css={{ height: '100%' }} className={coolTheme}>
       <Toolbar />
       <Box css={{ bc: '$loContrast', height: '100%', px: 250, pt: '36px' }}>
         <ScrollArea>
+          <Section size="3">
+            <Container size="2">
+              <Heading
+                css={{
+                  mb: '$6',
+                }}
+              >
+                Theming
+              </Heading>
+            </Container>
+            <Container size="2">
+              <Flex css={{ fd: 'column', gap: '$6' }}>
+                <Flex css={{ gap: '$4' }}>
+                  <Button>Button</Button>
+                  <Button size="2">Button</Button>
+                </Flex>
+                <Flex css={{ gap: '$4' }}>
+                  <Button size="2">Button</Button>
+                  <Button size="2" variant="blue">Button</Button>
+                  <Button size="2" variant="green">Button</Button>
+                  <Button size="2" variant="red">Button</Button>
+                </Flex>
+              </Flex>
+            </Container>
+          </Section>
+
+          <Flex css={{ jc: 'center' }}>
+            <Separator size="2" />
+          </Flex>
+
           <Section size="3">
             <Container size="2">
               <Heading

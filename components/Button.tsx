@@ -25,7 +25,7 @@ const StyledButton = styled(DEFAULT_TAG, {
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
   // Custom
-  borderRadius: '$2',
+  borderRadius: '$buttonRadius',
   height: '$5',
   px: '$2',
   fontFamily: '$untitled',
@@ -57,12 +57,13 @@ const StyledButton = styled(DEFAULT_TAG, {
     },
     variant: {
       gray: {
-        backgroundColor: '$loContrast',
-        boxShadow: 'inset 0 0 0 1px $colors$slate600',
-        color: '$hiContrast',
+        backgroundColor: '$buttonBackgroundPlain',
+        boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorPlain, $shadows$buttonShadow $colors$slate800',
+        color: '$buttonColorPlain',
         '@hover': {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$slate700',
+            backgroundColor: '$buttonBackgroundPlainHover',
+            boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorPlainHover, $shadows$buttonShadowHover $colors$slate800',
           },
         },
         '&:active': {
@@ -78,12 +79,13 @@ const StyledButton = styled(DEFAULT_TAG, {
         },
       },
       blue: {
-        backgroundColor: '$blue100',
-        boxShadow: 'inset 0 0 0 1px $colors$blue600',
-        color: '$blue900',
+        backgroundColor: '$buttonBackgroundAccent',
+        boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorAccent, $shadows$buttonShadow $colors$blue800',
+        color: '$buttonColorAccent',
         '@hover': {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$blue700',
+            backgroundColor: '$buttonBackgroundAccentHover',
+            boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorAccentHover, $shadows$buttonShadowHover $colors$blue800',
           },
         },
         '&:active': {
@@ -99,12 +101,13 @@ const StyledButton = styled(DEFAULT_TAG, {
         },
       },
       green: {
-        backgroundColor: '$green100',
-        boxShadow: 'inset 0 0 0 1px $colors$green600',
-        color: '$green900',
+        backgroundColor: '$buttonBackgroundPositive',
+        boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorPositive, $shadows$buttonShadow $colors$green800',
+        color: '$buttonColorPositive',
         '@hover': {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$green700',
+            backgroundColor: '$buttonBackgroundPositiveHover',
+            boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorPositiveHover, $shadows$buttonShadowHover $colors$green800',
           },
         },
         '&:active': {
@@ -120,12 +123,13 @@ const StyledButton = styled(DEFAULT_TAG, {
         },
       },
       red: {
-        backgroundColor: '$loContrast',
-        boxShadow: 'inset 0 0 0 1px $colors$slate600',
-        color: '$red900',
+        backgroundColor: '$buttonBackgroundWarning',
+        boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorWarning, $shadows$buttonShadow $colors$red800',
+        color: '$buttonColorWarning',
         '@hover': {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$slate700',
+            backgroundColor: '$buttonBackgroundWarningHover',
+            boxShadow: 'inset 0 0 0 1px $colors$buttonBorderColorWarningHover, $shadows$buttonShadowHover $colors$red800',
           },
         },
         '&:active': {

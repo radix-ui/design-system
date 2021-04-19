@@ -111,10 +111,11 @@ import {
   VideoIcon,
 } from '@radix-ui/react-icons';
 import { Toolbar } from '../custom/Toolbar';
+import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stitches.config';
 
 function Home() {
   return (
-    <Box>
+    <Box className={coolTheme}>
       <Box
         css={{
           position: 'fixed',
