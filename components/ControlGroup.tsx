@@ -1,6 +1,6 @@
 import { styled } from '../stitches.config';
 import { Button } from '../components/Button';
-import { Input } from '../components/Input';
+import { TextField } from './TextField';
 import { Select } from '../components/Select';
 
 export const ControlGroup = styled('div', {
@@ -43,7 +43,7 @@ export const ControlGroup = styled('div', {
       },
     },
   },
-  [`& ${Input}`]: {
+  [`& ${TextField}`]: {
     borderRadius: 0,
     boxShadow:
       'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',

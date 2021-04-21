@@ -20,7 +20,7 @@ import { Image } from '../components/Image';
 import { Code } from '../components/Code';
 import { Sup } from '../components/Sup';
 import { Sub } from '../components/Sub';
-import { Input } from '../components/Input';
+import { TextField } from '../components/TextField';
 import { Section } from '../components/Section';
 import { Avatar } from '../components/Avatar';
 import { TabLink } from '../components/TabLink';
@@ -223,13 +223,6 @@ function Home() {
             </Link>
           </Box>
           <Box css={{ my: '$1' }}>
-            <Link href="#input" variant="subtle" css={{ display: 'inline-flex' }}>
-              <Text size="2" css={{ lineHeight: '20px' }}>
-                Input
-              </Text>
-            </Link>
-          </Box>
-          <Box css={{ my: '$1' }}>
             <Link href="#kbd" variant="subtle" css={{ display: 'inline-flex' }}>
               <Text size="2" css={{ lineHeight: '20px' }}>
                 Kbd
@@ -328,6 +321,13 @@ function Home() {
             </Link>
           </Box>
           <Box css={{ my: '$1' }}>
+            <Link href="#TextField" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                TextField
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
             <Link href="#typography" variant="subtle" css={{ display: 'inline-flex' }}>
               <Text size="2" css={{ lineHeight: '20px' }}>
                 Typography
@@ -408,14 +408,14 @@ function Home() {
               }}
             >
               <form>
-                <Input
+                <TextField
                   type="email"
                   size="3"
                   placeholder="Email"
                   autoComplete="off"
                   css={{ mb: '$3' }}
                 />
-                <Input
+                <TextField
                   type="password"
                   size="3"
                   placeholder="Password"
@@ -1062,32 +1062,32 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="input" css={{ mb: '$6', scrollMarginTop: '$7' }}>
-              Input
+            <Heading id="TextField" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              TextField
             </Heading>
             <Flex css={{ ai: 'flex-start', gap: '$6' }}>
-              <Input size="1" placeholder="Size 1" />
-              <Input size="2" placeholder="Size 2" />
-              <Input size="3" placeholder="Size 3" />
+              <TextField size="1" placeholder="Size 1" />
+              <TextField size="2" placeholder="Size 2" />
+              <TextField size="3" placeholder="Size 3" />
             </Flex>
             <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
-              <Input size="1" placeholder="Ghost" variant="ghost" />
-              <Input size="2" placeholder="Ghost" variant="ghost" />
-              <Input size="3" placeholder="Ghost" variant="ghost" />
+              <TextField size="1" placeholder="Ghost" variant="ghost" />
+              <TextField size="2" placeholder="Ghost" variant="ghost" />
+              <TextField size="3" placeholder="Ghost" variant="ghost" />
             </Flex>
             <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
-              <Input size="2" placeholder="Invalid" state="invalid" />
-              <Input size="2" placeholder="Valid" state="valid" />
+              <TextField size="2" placeholder="Invalid" state="invalid" />
+              <TextField size="2" placeholder="Valid" state="valid" />
             </Flex>
             <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
-              <Input size="2" placeholder="Cursor default" cursor="default" />
-              <Input size="2" placeholder="Cursor text" cursor="text" />
+              <TextField size="2" placeholder="Cursor default" cursor="default" />
+              <TextField size="2" placeholder="Cursor text" cursor="text" />
             </Flex>
             <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
-              <Input size="2" placeholder="Read only placeholder" readOnly />
-              <Input size="2" placeholder="Read only value" defaultValue="100" readOnly />
-              <Input size="2" placeholder="Disabled placeholder" disabled />
-              <Input size="2" placeholder="Disabled value" defaultValue="100" disabled />
+              <TextField size="2" placeholder="Read only placeholder" readOnly />
+              <TextField size="2" placeholder="Read only value" defaultValue="100" readOnly />
+              <TextField size="2" placeholder="Disabled placeholder" disabled />
+              <TextField size="2" placeholder="Disabled value" defaultValue="100" disabled />
             </Flex>
           </Container>
         </Section>
@@ -1111,14 +1111,14 @@ function Home() {
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
               <Button>Button</Button>
-              <Input placeholder="Hello world" />
+              <TextField placeholder="Hello world" />
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
-              <Input placeholder="Hello world" />
+              <TextField placeholder="Hello world" />
               <Button>Button</Button>
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
-              <Input size="1" placeholder="Hello world" />
+              <TextField size="1" placeholder="Hello world" />
               <Select>
                 <option>Button</option>
                 <option>Button</option>
@@ -1128,12 +1128,12 @@ function Home() {
               </Select>
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
-              <Input placeholder="Hello world" />
-              <Input placeholder="Hello world" />
-              <Input placeholder="Hello world" />
+              <TextField placeholder="Hello world" />
+              <TextField placeholder="Hello world" />
+              <TextField placeholder="Hello world" />
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
-              <Input size="3" placeholder="Hello world" />
+              <TextField size="3" placeholder="Hello world" />
               <Button size="2">Button</Button>
             </ControlGroup>
           </Container>

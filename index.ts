@@ -49,7 +49,7 @@ export { Grid } from './components/Grid';
 export { Heading } from './components/Heading';
 export { IconButton } from './components/IconButton';
 export { Image } from './components/Image';
-export { Input } from './components/Input';
+export { TextField } from './components/TextField';
 export { Kbd } from './components/Kbd';
 export { Link } from './components/Link';
 export {
