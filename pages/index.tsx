@@ -29,6 +29,7 @@ import { ScrollArea } from '../components/Scrollbar';
 import { Tooltip } from '../components/Tooltip';
 import { Slider } from '../components/Slider';
 import { Dialog, DialogTrigger, DialogContent } from '../components/Dialog';
+import { Sheet, SheetTrigger, SheetContent } from '../components/Sheet';
 import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
 import { Checkbox } from '../components/Checkbox';
 import { RadioGroup, Radio } from '../components/Radio';
@@ -115,7 +116,7 @@ import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stit
 
 function Home() {
   return (
-    <Box className={coolTheme}>
+    <Box className={modulzTheme}>
       <Box
         css={{
           position: 'fixed',
@@ -1465,6 +1466,232 @@ function Home() {
                 </Popover>
               </DialogContent>
             </Dialog>
+          </Container>
+        </Section>
+        <Flex css={{ jc: 'center' }}>
+          <Separator size="2" />
+        </Flex>
+        <Section size="3">
+          <Container size="2">
+            <Heading id="dialog" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Sheet
+            </Heading>
+            <Sheet>
+              <SheetTrigger as={Button}>Open Sheet</SheetTrigger>
+              <SheetContent>
+                <Flex css={{ height: '100%', fd: 'column' }}>
+                  <Box css={{ p: '$4' }}>
+                    <Text size="4" as="h6" css={{ fontWeight: 500 }}>
+                      Sheet Heading
+                    </Text>
+                  </Box>
+                  <Box css={{ fg: 1, minWidth: 0 }}>
+                    <ScrollArea>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                      <Flex css={{ ai: 'center', px: '$4', height: '$6' }}>
+                        <Text size="2">
+                          American Football
+                        </Text>
+                      </Flex>
+                    </ScrollArea>
+                  </Box>
+                </Flex>
+              </SheetContent>
+            </Sheet>
           </Container>
         </Section>
         <Flex css={{ jc: 'center' }}>
