@@ -49,32 +49,29 @@ export function Sheet({ children, ...props }: SheetProps) {
 }
 
 const slideIn = keyframes({
-  'from': { transform: 'translateX(100%)' },
-  'to': { transform: 'translateX(0)' },
+  'from': { transform: '$$transformValue' },
+  'to': { transform: 'translate3d(0,0,0)' },
 });
 
 const slideOut = keyframes({
-  'from': { transform: 'translateX(0)' },
-  'to': { transform: 'translateX(100%)' },
+  'from': { transform: 'translate3d(0,0,0)' },
+  'to': { transform: '$$transformValue' },
 });
 
 const StyledContent = styled(DialogPrimitive.Content, {
   backgroundColor: '$panel',
   position: 'fixed',
   top: 0,
-  right: 0,
   bottom: 0,
-  // transform: 'translate(-50%, -50%)',
   width: 250,
 
   // Among other things, prevents text alignment inconsistencies when dialog can't be centered in the viewport evenly.
   // Affects animated and non-animated dialogs alike.
   willChange: 'transform',
-  transformOrigin: 'right',
 
-  '&:focus': {
-    outline: 'none',
-  },
+  // '&:focus': {
+  //   outline: 'none',
+  // },
 
   '&[data-state="open"]': {
     animation: `${slideIn} 150ms cubic-bezier(0.22, 1, 0.36, 1)`,
@@ -83,6 +80,36 @@ const StyledContent = styled(DialogPrimitive.Content, {
   '&[data-state="closed"]': {
     animation: `${slideOut} 150ms cubic-bezier(0.22, 1, 0.36, 1)`,
   },
+
+  variants: {
+    side: {
+      top: {
+        $$transformValue: 'translate3d(0,-100%,0)',
+        width: '100%',
+        height: 300,
+        bottom: 'auto',
+      },
+      right: {
+        $$transformValue: 'translate3d(100%,0,0)',
+        right: 0,
+      },
+      bottom: {
+        $$transformValue: 'translate3d(0,100%,0)',
+        width: '100%',
+        height: 300,
+        bottom: 0,
+        top: 'auto',
+      },
+      left: {
+        $$transformValue: 'translate3d(-100%,0,0)',
+        left: 0,
+      },
+    }
+  },
+
+  defaultVariants: {
+    side: 'right',
+  }
 });
 
 const StyledCloseButton = styled(IconButton, {
