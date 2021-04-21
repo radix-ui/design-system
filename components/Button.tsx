@@ -10,6 +10,7 @@ const StyledButton = styled(DEFAULT_TAG, {
   all: 'unset',
   alignItems: 'center',
   boxSizing: 'border-box',
+  userSelect: 'none',
   '&::before': {
     boxSizing: 'border-box',
   },
