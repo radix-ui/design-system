@@ -12,6 +12,7 @@ import { Text } from '../components/Text';
 import { Link } from '../components/Link';
 import { Kbd } from '../components/Kbd';
 import { Separator } from '../components/Separator';
+import { Table, Caption, Thead, Tbody, Tfoot, Tr, Th, Td } from '../components/Table';
 import { VerifiedBadge } from '../components/VerifiedBadge';
 import { Card } from '../components/Card';
 import { Select } from '../components/Select';
@@ -1924,6 +1925,45 @@ function Home() {
               <Radio value="1" css={{ mr: '$5' }} />
               <Radio value="2" size="2" css={{ mr: '$5' }} />
             </RadioGroup>
+          </Container>
+        </Section>
+        <Flex css={{ jc: 'center' }}>
+          <Separator size="2" />
+        </Flex>
+        <Section size="3">
+          <Container size="2">
+            <Heading id="radio" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Table
+            </Heading>
+            <Table>
+              <Caption>gfeuwgi hewuofiow iof jiowf jiow jfoi j</Caption>
+              <Thead>
+                <Tr>
+                  <Th>ffew fw</Th>
+                  <Th>ffew fw</Th>
+                  <Th>ffew fw</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>ffew fw</Td>
+                  <Td>ffew fw</Td>
+                  <Td>ffew fw</Td>
+                </Tr>
+                <Tr>
+                  <Td>ffew fw</Td>
+                  <Td>ffew fw</Td>
+                  <Td>ffew fw</Td>
+                </Tr>
+              </Tbody>
+              <Tfoot>
+                <Tr>
+                  <Th>ffew fw</Th>
+                  <Th>ffew fw</Th>
+                  <Th>ffew fw</Th>
+                </Tr>
+              </Tfoot>
+            </Table>
           </Container>
         </Section>
         <Flex css={{ jc: 'center' }}>
