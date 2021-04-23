@@ -6,18 +6,21 @@ import { Input } from './Input';
 const DEFAULT_TAG = 'div';
 
 const IconSlot = styled('div', {
-  zIndex: 1,
+  boxSizing: 'border-box',
   position: 'absolute',
-  lineHeight: 0,
   width: '$3',
   height: '$3',
   left: '$$iconLeft',
   top: '50%',
+  zIndex: 1,
   transform: 'translateY(-50%)',
   color: '$gray800',
+  lineHeight: 0,
 });
 
 const Wrapper = styled(DEFAULT_TAG, {
+  boxSizing: 'border-box',
+
   // Make sure ControlGroup and its children don't affect normal stacking order
   position: 'relative',
   zIndex: 0,
