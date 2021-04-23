@@ -14,7 +14,7 @@ const IconSlot = styled('div', {
   top: '50%',
   zIndex: 1,
   transform: 'translateY(-50%)',
-  color: '$gray800',
+  color: '$slate800',
   lineHeight: 0,
 });
 
