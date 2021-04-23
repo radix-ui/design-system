@@ -82,7 +82,7 @@ export const IconInput = React.forwardRef(
           variant={variant}
           disabled={disabled}
           {...inputProps}
-        ></Input>
+        />
       </Wrapper>
     );
   }
