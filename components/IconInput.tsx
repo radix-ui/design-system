@@ -14,11 +14,12 @@ const IconSlot = styled('div', {
   top: '50%',
   zIndex: 1,
   transform: 'translateY(-50%)',
-  color: '$slate800',
+  color: '$$iconColor',
   lineHeight: 0,
 });
 
 const Wrapper = styled(DEFAULT_TAG, {
+  $$iconColor: '$colors$slate800',
   boxSizing: 'border-box',
 
   // Make sure ControlGroup and its children don't affect normal stacking order
@@ -53,9 +54,7 @@ const Wrapper = styled(DEFAULT_TAG, {
     },
     disabled: {
       true: {
-        [`& ${IconSlot}`]: {
-          color: '$slate700',
-        },
+        $$iconColor: '$colors$slate700',
       },
     },
   },
