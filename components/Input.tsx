@@ -16,12 +16,6 @@ const StyledInput = styled(DEFAULT_TAG, {
   padding: '0',
   width: '100%',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
-  '&::before': {
-    boxSizing: 'border-box',
-  },
-  '&::after': {
-    boxSizing: 'border-box',
-  },
 
   // Custom
   backgroundColor: '$loContrast',

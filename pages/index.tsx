@@ -21,6 +21,7 @@ import { Code } from '../components/Code';
 import { Sup } from '../components/Sup';
 import { Sub } from '../components/Sub';
 import { Input } from '../components/Input';
+import { IconInput } from '../components/IconInput';
 import { Section } from '../components/Section';
 import { Avatar } from '../components/Avatar';
 import { TabLink } from '../components/TabLink';
@@ -91,6 +92,7 @@ import {
   CommitIcon,
   Cross1Icon,
   ExclamationTriangleIcon,
+  FaceIcon,
   FontItalicIcon,
   FontStyleIcon,
   GearIcon,
@@ -224,6 +226,13 @@ function Home() {
             <Link href="#input" variant="subtle" css={{ display: 'inline-flex' }}>
               <Text size="2" css={{ lineHeight: '20px' }}>
                 Input
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#iconinput" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Icon Input
               </Text>
             </Link>
           </Box>
@@ -1007,6 +1016,62 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
+            <Heading id="input" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Icon Input
+            </Heading>
+            <Flex css={{ ai: 'flex-start', gap: '$6' }}>
+              <IconInput icon={<FaceIcon />} size="1" placeholder="Size 1" />
+              <IconInput icon={<FaceIcon />} size="2" placeholder="Size 2" />
+              <IconInput icon={<FaceIcon />} size="3" placeholder="Size 3" />
+            </Flex>
+            <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
+              <IconInput icon={<FaceIcon />} size="1" placeholder="Ghost" variant="ghost" />
+              <IconInput icon={<FaceIcon />} size="2" placeholder="Ghost" variant="ghost" />
+              <IconInput icon={<FaceIcon />} size="3" placeholder="Ghost" variant="ghost" />
+            </Flex>
+            <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
+              <IconInput icon={<FaceIcon />} size="2" placeholder="Invalid" state="invalid" />
+              <IconInput icon={<FaceIcon />} size="2" placeholder="Valid" state="valid" />
+            </Flex>
+            <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
+              <IconInput
+                icon={<FaceIcon />}
+                size="2"
+                placeholder="Cursor default"
+                cursor="default"
+              />
+              <IconInput icon={<FaceIcon />} size="2" placeholder="Cursor text" cursor="text" />
+            </Flex>
+            <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
+              <IconInput
+                icon={<FaceIcon />}
+                size="2"
+                placeholder="Read only placeholder"
+                readOnly
+              />
+              <IconInput
+                icon={<FaceIcon />}
+                size="2"
+                placeholder="Read only value"
+                defaultValue="100"
+                readOnly
+              />
+              <IconInput icon={<FaceIcon />} size="2" placeholder="Disabled placeholder" disabled />
+              <IconInput
+                icon={<FaceIcon />}
+                size="2"
+                placeholder="Disabled value"
+                defaultValue="100"
+                disabled
+              />
+            </Flex>
+          </Container>
+        </Section>
+        <Flex css={{ jc: 'center' }}>
+          <Separator size="2" />
+        </Flex>
+        <Section size="3">
+          <Container size="2">
             <Heading id="controlgroup" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               ControlGroup
             </Heading>
@@ -1293,7 +1358,7 @@ function Home() {
                 </Card>
               </Box>
               <Box css={{ width: 250 }}>
-                <Card as="button" href="#" variant="active" css={{ p: '$3' }}>
+                <Card as="button" variant="active" css={{ p: '$3' }}>
                   <Text size="3" css={{ lineHeight: '23px', fontWeight: 500 }}>
                     Default Variants
                   </Text>
