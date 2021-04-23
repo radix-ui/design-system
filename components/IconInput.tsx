@@ -11,7 +11,7 @@ const IconSlot = styled('div', {
   lineHeight: 0,
   width: '$3',
   height: '$3',
-  left: '$1',
+  left: '$$iconLeft',
   top: '50%',
   transform: 'translateY(-50%)',
   color: '$gray800',
@@ -24,8 +24,9 @@ const Wrapper = styled(DEFAULT_TAG, {
 
   [`& ${Input}`]: {
     zIndex: 1,
-    paddingLeft: 'calc($1 + $5)',
+    paddingLeft: 'calc($$iconLeft + $5)',
   },
+
   variants: {
     variant: {
       ghost: {
@@ -36,6 +37,17 @@ const Wrapper = styled(DEFAULT_TAG, {
         },
       },
     },
+    size: {
+      '1': {
+        $$iconLeft: '$space$1',
+      },
+      '2': {
+        $$iconLeft: '$space$1',
+      },
+      '3': {
+        $$iconLeft: '$space$2',
+      },
+    },
     disabled: {
       true: {
         [`& ${IconSlot}`]: {
@@ -43,6 +55,9 @@ const Wrapper = styled(DEFAULT_TAG, {
         },
       },
     },
+  },
+  defaultVariants: {
+    size: '1',
   },
 });
 
@@ -55,11 +70,17 @@ type IconInputProps = React.ComponentProps<typeof Input> & {
 type IconInputComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, IconInputProps>;
 
 export const IconInput = React.forwardRef(
-  ({ icon, iconCss, disabled, variant, wrapperCss, ...inputProps }, forwardedRef) => {
+  ({ size, icon, iconCss, disabled, variant, wrapperCss, ...inputProps }, forwardedRef) => {
     return (
-      <Wrapper css={wrapperCss} disabled={disabled} variant={variant}>
+      <Wrapper size={size} variant={variant} disabled={disabled} css={wrapperCss}>
         <IconSlot css={iconCss}>{icon}</IconSlot>
-        <Input disabled={disabled} ref={forwardedRef} variant={variant} {...inputProps}></Input>
+        <Input
+          ref={forwardedRef}
+          size={size}
+          variant={variant}
+          disabled={disabled}
+          {...inputProps}
+        ></Input>
       </Wrapper>
     );
   }

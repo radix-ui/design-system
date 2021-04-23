@@ -1016,7 +1016,7 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="input" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+            <Heading id="iconinput" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Icon Input
             </Heading>
             <Flex css={{ ai: 'flex-start', gap: '$6' }}>
