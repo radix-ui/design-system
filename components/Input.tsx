@@ -109,6 +109,12 @@ const StyledInput = styled(DEFAULT_TAG, {
           backgroundColor: '$loContrast',
           boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
         },
+        '&:disabled': {
+          backgroundColor: 'transparent',
+        },
+        '&:read-only': {
+          backgroundColor: 'transparent',
+        },
       },
     },
     state: {
