@@ -5,17 +5,9 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'table';
 
-export const StyledTable = styled(DEFAULT_TAG, {
-  width: '100%',
-  tableLayout: 'fixed',
-});
-
 export const Caption = styled('caption', {
-  textAlign: 'left',
-});
-
-export const Thead = styled('thead', {
-
+  textAlign: 'start',
+  marginBottom: '$5',
 });
 
 export const Tbody = styled('tbody', {
@@ -33,11 +25,61 @@ export const Tr = styled('tr', {
 export const Th = styled('th', {
   fontWeight: 'unset',
   textAlign: 'start',
-  padding: 0,
+  fontSize: '$2',
+  py: '$2',
+  borderBottom: '1px solid $gray300',
 });
 
 export const Td = styled('td', {
-  padding: 0,
+  py: '$2',
+  borderBottom: '1px solid $gray300',
+  fontSize: '$2',
+  variants: {
+    align: {
+      start: {
+        textAlign: 'start',
+      },
+      center: {
+        textAlign: 'center',
+      },
+      end: {
+        textAlign: 'end',
+      }
+    }
+  },
+  defaultVariants: {
+    align: 'start',
+  }
+});
+
+export const Thead = styled('thead', {
+  [`& ${Th}`]: {
+    fontSize: '$1',
+    color: '$gray900',
+  },
+  [`& ${Td}`]: {
+    fontSize: '$1',
+    color: '$gray900',
+  },
+});
+
+export const StyledTable = styled(DEFAULT_TAG, {
+  width: '100%',
+  tableLayout: 'fixed',
+  borderSpacing: 0,
+  variants: {
+    striped: {
+      true: {
+        [`& ${Tbody}`]: {
+          [`& ${Tr}`]: {
+            '&:nth-child(odd)': {
+              bc: '$gray100',
+            },
+          },
+        }, 
+      }
+    }
+  }
 });
 
 type TableCSSProp = { css?: CSS };
