@@ -215,7 +215,7 @@ const stitches = createCss({
       orange400: 'hsl(39 96% 83.0%)',
       orange500: 'hsl(38 96% 75.5%)',
       orange600: 'hsl(37 96% 65.5%)',
-      orange700: 'hsl(36 96% 53.9%)',
+      orange700: 'hsl(37 100% 60.0%)',
       orange800: 'hsl(38 100% 53.9%)',
       orange900: 'hsl(27 65% 35.9%)',
       orange1000: 'hsl(30 86% 14.0%)',
