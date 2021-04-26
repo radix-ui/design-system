@@ -29,7 +29,7 @@ const stitches = createCss({
       quartz1000: 'hsl(260 25% 11.0%)',
 
       slate000: 'white',
-      slate100: 'hsl(206 20% 98.8%)',
+      slate100: 'hsl(206 16% 98.8%)',
       slate200: 'hsl(206 14% 96.0%)',
       slate300: 'hsl(206 13% 93.7%)',
       slate400: 'hsl(206 12% 92.0%)',
