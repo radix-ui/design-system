@@ -150,19 +150,19 @@ export function Color() {
           <Box css={{ height: 35, backgroundColor: '$gray1000' }}></Box>
 
           <Box>
-            <Text css={{ fontSize: '$2' }}>Quartz</Text>
+            <Text css={{ fontSize: '$2' }}>Sand</Text>
           </Box>
-          <Box css={{ height: 35, backgroundColor: '$quartz000' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$quartz100' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$quartz200' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$quartz300' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$quartz400' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$quartz500' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$quartz600' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$quartz700' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$quartz800' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$quartz900' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$quartz1000' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$sand000' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$sand100' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$sand200' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$sand300' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$sand400' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$sand500' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$sand600' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$sand700' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$sand800' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$sand900' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$sand1000' }}></Box>
 
           <Box>
             <Text css={{ fontSize: '$2' }}>Slate</Text>
@@ -180,19 +180,19 @@ export function Color() {
           <Box css={{ height: 35, backgroundColor: '$slate1000' }}></Box>
 
           <Box>
-            <Text css={{ fontSize: '$2' }}>Sand</Text>
+            <Text css={{ fontSize: '$2' }}>Quartz</Text>
           </Box>
-          <Box css={{ height: 35, backgroundColor: '$sand000' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$sand100' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$sand200' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$sand300' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$sand400' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$sand500' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$sand600' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$sand700' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$sand800' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$sand900' }}></Box>
-          <Box css={{ height: 35, backgroundColor: '$sand1000' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz000' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz100' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz200' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz300' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz400' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz500' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz600' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz700' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz800' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz900' }}></Box>
+          <Box css={{ height: 35, backgroundColor: '$quartz1000' }}></Box>
 
           <Box>
             <Text css={{ fontSize: '$2' }}>Red</Text>
