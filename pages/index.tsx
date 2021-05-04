@@ -504,6 +504,30 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
+            <Heading id="flex" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Grid
+            </Heading>
+            <Grid
+              columns="4"
+              align="center"
+              gapX="3"
+              gapY="6"
+            >
+              <Box css={{ height: '$9', bc: '$blue800' }}></Box>
+              <Box css={{ height: '$7', bc: '$blue800' }}></Box>
+              <Box css={{ height: '$7', bc: '$blue800' }}></Box>
+              <Box css={{ height: '$7', bc: '$blue800' }}></Box>
+              <Box css={{ height: '$7', bc: '$blue800' }}></Box>
+              <Box css={{ height: '$7', bc: '$blue800' }}></Box>
+              <Box css={{ height: '$7', bc: '$blue800' }}></Box>
+            </Grid>
+          </Container>
+        </Section>
+        <Flex css={{ jc: 'center' }}>
+          <Separator size="2" />
+        </Flex>
+        <Section size="3">
+          <Container size="2">
             <Heading id="text" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Text
             </Heading>
