@@ -485,6 +485,25 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
+            <Heading id="flex" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Flex
+            </Heading>
+            <Flex
+              direction="column"
+              align="center"
+              gap="6"
+            >
+              <Box css={{ width: '$8', height: '$8', bc: '$blue800' }}></Box>
+              <Box css={{ width: '$5', height: '$5', bc: '$blue800' }}></Box>
+              <Box css={{ width: '$7', height: '$7', bc: '$blue800' }}></Box>
+            </Flex>
+          </Container>
+        </Section>
+        <Flex css={{ jc: 'center' }}>
+          <Separator size="2" />
+        </Flex>
+        <Section size="3">
+          <Container size="2">
             <Heading id="text" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Text
             </Heading>
