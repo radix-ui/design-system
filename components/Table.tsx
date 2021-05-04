@@ -28,6 +28,31 @@ export const Th = styled('th', {
   fontSize: '$2',
   py: '$2',
   borderBottom: '1px solid $gray300',
+  variants: {
+    align: {
+      start: {
+        textAlign: 'start',
+      },
+      center: {
+        textAlign: 'center',
+      },
+      end: {
+        textAlign: 'end',
+      }
+    },
+    border: {
+      solid:{
+        borderBottom: '1px solid $gray300',
+      },
+      dashed: {
+        borderBottom: '1px dashed $gray700',
+      }
+    },
+  },
+  defaultVariants: {
+    align: 'start',
+    border: 'solid',
+  }
 });
 
 export const Td = styled('td', {
@@ -45,10 +70,19 @@ export const Td = styled('td', {
       end: {
         textAlign: 'end',
       }
-    }
+    },
+    border: {
+      solid:{
+        borderBottom: '1px solid $gray300',
+      },
+      dashed: {
+        borderBottom: '1px dashed $gray700',
+      }
+    },
   },
   defaultVariants: {
     align: 'start',
+    border: 'solid',
   }
 });
 
