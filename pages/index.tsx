@@ -10,6 +10,7 @@ import { Switch } from '../components/Switch';
 import { ControlGroup } from '../components/ControlGroup';
 import { Text } from '../components/Text';
 import { Link } from '../components/Link';
+import { AppBar } from '../components/AppBar';
 import { Kbd } from '../components/Kbd';
 import { Separator } from '../components/Separator';
 import { Table, Caption, Thead, Tbody, Tfoot, Tr, Th, Td } from '../components/Table';
@@ -119,6 +120,9 @@ import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stit
 function Home() {
   return (
     <Box className={modulzTheme}>
+      <AppBar size="2" color="accent" sticky>
+        <Button>Button</Button>
+      </AppBar>
       <Box
         css={{
           position: 'fixed',
