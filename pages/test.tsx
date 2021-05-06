@@ -27,10 +27,10 @@ function Test() {
       <Toolbar />
       <Box
         css={{
-          bc: '$loContrast',
           height: '100%',
           px: 250,
           pt: '36px',
+          'body.theme-default &': { bc: 'white' },
           'body.dark-theme &': { bc: 'black' },
         }}
       >
