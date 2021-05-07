@@ -229,12 +229,12 @@ function Test() {
           <Palette color="cyan" />
           <Palette color="teal" />
           <Palette color="green" />
-          <Palette color="lime" />
-          <Palette color="yellow" />
-          <Palette color="orange" />
           <Palette color="brown" />
           <Palette color="bronze" />
           <Palette color="gold" />
+          <Palette color="lime" />
+          <Palette color="yellow" />
+          <Palette color="orange" />
           </Box>
         </Grid>
       </Container>

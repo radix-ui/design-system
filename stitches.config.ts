@@ -247,7 +247,7 @@ const stitches = createCss({
       teal500: 'hsl(168 60% 75.1%)',
       teal600: 'hsl(170 57% 65.2%)',
       teal700: 'hsl(172 54% 50.0%)',
-      teal800: 'hsl(173 79% 36.7%)',
+      teal800: 'hsl(173 81% 36.0%)',
       teal900: 'hsl(174 100% 24.5%)',
       teal1000: 'hsl(170 50% 14.0%)',
 
@@ -259,7 +259,7 @@ const stitches = createCss({
       green500: 'hsl(142 55% 78.0%)',
       green600: 'hsl(145 52% 69.0%)',
       green700: 'hsl(151 48% 55.8%)',
-      green800: 'hsl(151 62% 41.0%)',
+      green800: 'hsl(151 55% 41.0%)',
       green900: 'hsl(153 69% 30.0%)',
       green1000: 'hsl(155 40% 14.0%)',
 
