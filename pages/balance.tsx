@@ -702,7 +702,9 @@ function Test() {
           </Box>
         </Grid>
       </Container>
-
+      
+      <Layers />
+      <Properties />
       </Box>
     </Box>
   );
