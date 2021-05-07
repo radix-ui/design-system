@@ -307,7 +307,7 @@ const stitches = createCss({
       brown500: 'hsl(29 64% 80.5%)',
       brown600: 'hsl(29 62% 72.6%)',
       brown700: 'hsl(28 61% 61.6%)',
-      brown800: 'hsl(28 48% 52.0%)',
+      brown800: 'hsl(28 34% 51.0%)',
       brown900: 'hsl(20 50% 37.1%)',
       brown1000: 'hsl(20 40% 20.0%)',
 
@@ -319,7 +319,7 @@ const stitches = createCss({
       bronze500: 'hsl(17 44% 80.0%)',
       bronze600: 'hsl(17 42% 73.0%)',
       bronze700: 'hsl(16 39% 64.0%)',
-      bronze800: 'hsl(17 28% 52.0%)',
+      bronze800: 'hsl(17 20% 54.0%)',
       bronze900: 'hsl(15 30% 43.1%)',
       bronze1000: 'hsl(12 22% 23.0%)',
 
@@ -331,7 +331,7 @@ const stitches = createCss({
       gold500: 'hsl(44 43% 79.6%)',
       gold600: 'hsl(41 41% 71.4%)',
       gold700: 'hsl(36 37% 60.0%)',
-      gold800: 'hsl(36 30% 52.0%)',
+      gold800: 'hsl(36 21% 50.0%)',
       gold900: 'hsl(36 26% 40.0%)',
       gold1000: 'hsl(36 20% 21.0%)',
 
