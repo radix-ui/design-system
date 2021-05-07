@@ -111,10 +111,12 @@ import {
   VideoIcon,
 } from '@radix-ui/react-icons';
 import { Toolbar } from '../custom/Toolbar';
+import { DarkThemeButton } from '../custom/DarkThemeButton';
 
 function Home() {
   return (
     <Box>
+      <DarkThemeButton />
       <Box
         css={{
           position: 'fixed',
