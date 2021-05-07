@@ -271,7 +271,7 @@ const stitches = createCss({
       lime500: 'hsl(81 73% 72.6%)',
       lime600: 'hsl(79 72% 62.8%)',
       lime700: 'hsl(76 74% 48.9%)',
-      lime800: 'hsl(81 91% 40.0%)',
+      lime800: 'hsl(81 75% 45.0%)',
       lime900: 'hsl(78 80% 25.1%)',
       lime1000: 'hsl(78 70% 12.0%)',
 
@@ -283,7 +283,7 @@ const stitches = createCss({
       yellow500: 'hsl(53 88% 67.5%)',
       yellow600: 'hsl(52 88% 57.1%)',
       yellow700: 'hsl(52 88% 51.7%)',
-      yellow800: 'hsl(49 97% 48.0%)',
+      yellow800: 'hsl(47 95% 48.0%)',
       yellow900: 'hsl(40 80% 32.0%)',
       yellow1000: 'hsl(48 55% 13.0%)',
 
@@ -295,7 +295,7 @@ const stitches = createCss({
       orange500: 'hsl(38 96% 75.5%)',
       orange600: 'hsl(37 96% 65.5%)',
       orange700: 'hsl(37 100% 60.0%)',
-      orange800: 'hsl(38 100% 53.9%)',
+      orange800: 'hsl(38 100% 54%)',
       orange900: 'hsl(27 65% 35.9%)',
       orange1000: 'hsl(30 86% 14.0%)',
 

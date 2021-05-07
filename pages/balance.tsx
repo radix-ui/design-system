@@ -233,8 +233,8 @@ function Test() {
           <Palette color="bronze" />
           <Palette color="gold" />
           <Palette color="lime" />
-          <Palette color="yellow" />
           <Palette color="orange" />
+          <Palette color="yellow" />
           </Box>
         </Grid>
       </Container>
