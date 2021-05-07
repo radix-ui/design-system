@@ -128,7 +128,7 @@ const stitches = createCss({
       red500: 'hsl(353 84% 86.4%)',
       red600: 'hsl(354 83% 80.7%)',
       red700: 'hsl(355 82% 71.7%)',
-      red800: 'hsl(356 91% 59.0%)',
+      red800: 'hsl(356 84% 59.0%)',
       red900: 'hsl(356 80% 47.1%)',
       red1000: 'hsl(351 80% 14.0%)',
 
@@ -140,7 +140,7 @@ const stitches = createCss({
       crimson500: 'hsl(334 82% 86.3%)',
       crimson600: 'hsl(335 81% 80.3%)',
       crimson700: 'hsl(336 80% 70.0%)',
-      crimson800: 'hsl(336 88% 56.3%)',
+      crimson800: 'hsl(336 84% 58%)',
       crimson900: 'hsl(336 79% 46.1%)',
       crimson1000: 'hsl(340 79% 14.0%)',
 
@@ -152,7 +152,7 @@ const stitches = createCss({
       pink500: 'hsl(322 85% 86.2%)',
       pink600: 'hsl(322 85% 80.3%)',
       pink700: 'hsl(322 84% 68.9%)',
-      pink800: 'hsl(322 75% 60.0%)',
+      pink800: 'hsl(322 71% 55.0%)',
       pink900: 'hsl(322 80% 43.9%)',
       pink1000: 'hsl(320 70% 16.0%)',
 
@@ -164,7 +164,7 @@ const stitches = createCss({
       plum500: 'hsl(295 70% 85.6%)',
       plum600: 'hsl(294 67% 80.2%)',
       plum700: 'hsl(292 66% 68.5%)',
-      plum800: 'hsl(292 55% 55.0%)',
+      plum800: 'hsl(292 50% 51.0%)',
       plum900: 'hsl(292 62% 44.0%)',
       plum1000: 'hsl(291 66% 16.0%)',
 
@@ -176,7 +176,7 @@ const stitches = createCss({
       purple500: 'hsl(277 68% 85.2%)',
       purple600: 'hsl(275 67% 80.2%)',
       purple700: 'hsl(272 66% 68.1%)',
-      purple800: 'hsl(272 53% 50.0%)',
+      purple800: 'hsl(272 51% 54.0%)',
       purple900: 'hsl(272 62% 44.1%)',
       purple1000: 'hsl(272 66% 16.0%)',
 
@@ -188,7 +188,7 @@ const stitches = createCss({
       violet500: 'hsl(252 83% 86.8%)',
       violet600: 'hsl(252 83% 80.8%)',
       violet700: 'hsl(252 82% 72.2%)',
-      violet800: 'hsl(252 62% 54.9%)',
+      violet800: 'hsl(252 57% 58.0%)',
       violet900: 'hsl(250 55% 48.0%)',
       violet1000: 'hsl(254 65% 17.0%)',
 
@@ -200,7 +200,7 @@ const stitches = createCss({
       indigo500: 'hsl(226 78% 85.4%)',
       indigo600: 'hsl(226 77% 79.1%)',
       indigo700: 'hsl(226 76% 70.2%)',
-      indigo800: 'hsl(226 69% 54.1%)',
+      indigo800: 'hsl(226 71% 56.0%)',
       indigo900: 'hsl(226 70% 44.1%)',
       indigo1000: 'hsl(226 75% 20.0%)',
 
