@@ -488,7 +488,7 @@ function Test() {
         </Grid>
       </Container>
 
-      <Container size="3" css={{ mt: '$7' }}>
+      <Container size="3" css={{ py: '$7' }}>
         <Grid
           css={{
             gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
@@ -500,7 +500,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$red100',
+              backgroundColor: '$red200',
               border: '1px solid $red500',
             }}
           >
@@ -512,7 +512,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$crimson100',
+              backgroundColor: '$crimson200',
               border: '1px solid $red500',
             }}
           >
@@ -524,7 +524,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$pink100',
+              backgroundColor: '$pink200',
               border: '1px solid $pink500',
             }}
           >
@@ -536,7 +536,19 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$purple100',
+              backgroundColor: '$plum200',
+              border: '1px solid $plum500',
+            }}
+          >
+            <Text size="3" as="p" css={{ color: '$plum900', lineHeight: '23px' }}>
+              Warning: obsessing over color is a terrible idea. Chill down ffs.
+            </Text>
+          </Box>
+          <Box
+            css={{
+              p: '$3',
+              borderRadius: '$3',
+              backgroundColor: '$purple200',
               border: '1px solid $purple500',
             }}
           >
@@ -548,7 +560,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$violet100',
+              backgroundColor: '$violet200',
               border: '1px solid $violet500',
             }}
           >
@@ -560,7 +572,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$indigo100',
+              backgroundColor: '$indigo200',
               border: '1px solid $indigo500',
             }}
           >
@@ -572,7 +584,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$blue100',
+              backgroundColor: '$blue200',
               border: '1px solid $blue500',
             }}
           >
@@ -584,7 +596,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$cyan100',
+              backgroundColor: '$cyan200',
               border: '1px solid $cyan500',
             }}
           >
@@ -596,7 +608,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$teal100',
+              backgroundColor: '$teal200',
               border: '1px solid $teal500',
             }}
           >
@@ -608,7 +620,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$green100',
+              backgroundColor: '$green200',
               border: '1px solid $green500',
             }}
           >
@@ -620,7 +632,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$lime100',
+              backgroundColor: '$lime200',
               border: '1px solid $lime500',
             }}
           >
@@ -632,7 +644,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$yellow100',
+              backgroundColor: '$yellow200',
               border: '1px solid $yellow500',
             }}
           >
@@ -644,7 +656,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$orange100',
+              backgroundColor: '$orange200',
               border: '1px solid $orange500',
             }}
           >
@@ -656,7 +668,19 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$bronze100',
+              backgroundColor: '$brown200',
+              border: '1px solid $brown500',
+            }}
+          >
+            <Text size="3" as="p" css={{ color: '$brown900', lineHeight: '23px' }}>
+              Warning: obsessing over color is a terrible idea. Chill down ffs.
+            </Text>
+          </Box>
+          <Box
+            css={{
+              p: '$3',
+              borderRadius: '$3',
+              backgroundColor: '$bronze200',
               border: '1px solid $bronze500',
             }}
           >
@@ -668,7 +692,7 @@ function Test() {
             css={{
               p: '$3',
               borderRadius: '$3',
-              backgroundColor: '$gold100',
+              backgroundColor: '$gold200',
               border: '1px solid $gold500',
             }}
           >
