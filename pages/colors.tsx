@@ -1,43 +1,29 @@
 import React from 'react';
 import { Box } from '../components/Box';
+import { Container } from '../components/Container';
 import { Grid } from '../components/Grid';
 import { Heading } from '../components/Heading';
-import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Separator } from '../components/Separator';
 import { Text } from '../components/Text';
-import { darkTheme as darkThemeClass } from '../stitches.config';
+import { colors, ColorTools } from '../custom/ColorTools';
+import { darkTheme as darkThemeClassName } from '../stitches.config';
 
-const colors = [
-  'gray',
-  'quartz',
-  'slate',
-  'sand',
-  'red',
-  'crimson',
-  'pink',
-  'purple',
-  'violet',
-  'indigo',
-  'blue',
-  'teal',
-  'green',
-  'lime',
-  'yellow',
-  'orange',
-  'brown',
-  'bronze',
-  'gold',
-];
+const sidebarWidth = 240;
 
 export default function Colors() {
-  const [palette, setPalette] = useLocalStorage('palette', true);
-  const [alerts, setAlerts] = useLocalStorage('alerts', true);
-  const [textBlocks, setTextBlocks] = useLocalStorage('textBlocks', true);
+  const [palette, setPalette] = useLocalStorage('colors-palette', true);
+  const [alerts, setAlerts] = useLocalStorage('colors-alerts', true);
+  const [textBlocks, setTextBlocks] = useLocalStorage('colors-textBlocks', true);
 
-  const [darkTheme, setDarkTheme] = useLocalStorage('darkTheme', false);
-  const [grayscale, setGrayscale] = useLocalStorage('grayscale', false);
-  const [gap, setGap] = useLocalStorage('gap', true);
+  const [darkTheme, setDarkTheme] = useLocalStorage('colors-darkTheme', false);
+  const [grayscale, setGrayscale] = useLocalStorage('colors-grayscale', false);
+  const [gap, setGap] = useLocalStorage('colors-gap', true);
+
+  // No SSR please
+  if (typeof window === 'undefined') {
+    return null;
+  }
 
   React.useLayoutEffect(() => {
     document.body.style.filter = grayscale ? 'saturate(0)' : '';
@@ -49,49 +35,72 @@ export default function Colors() {
 
   React.useLayoutEffect(() => {
     document.body.classList.toggle('theme-default', !darkTheme);
-    document.body.classList.toggle(darkThemeClass, darkTheme);
+    document.body.classList.toggle(darkThemeClassName, darkTheme);
     document.body.style.backgroundColor = darkTheme ? 'black' : '';
   }, [darkTheme]);
 
-  // No SSR please
-  if (typeof window === 'undefined') {
-    return null;
-  }
-
   return (
-    <Section size="3" css={{ py: '$7' }}>
-      <Container size="3" css={{ mb: '$5' }}>
-        <Box>
-          <Checkbox defaultChecked={palette} onChange={(e) => setPalette(e.target.checked)}>
-            Palette
-          </Checkbox>
-          <Checkbox defaultChecked={alerts} onChange={(e) => setAlerts(e.target.checked)}>
-            Alerts
-          </Checkbox>
-          <Checkbox defaultChecked={textBlocks} onChange={(e) => setTextBlocks(e.target.checked)}>
-            Text Blocks
-          </Checkbox>
-          <Separator css={{ my: '$3' }} />
-          <Checkbox defaultChecked={grayscale} onChange={(e) => setGrayscale(e.target.checked)}>
-            Grayscale
-          </Checkbox>
-          <Checkbox defaultChecked={gap} onChange={(e) => setGap(e.target.checked)}>
-            Gaps
-          </Checkbox>
-          <Checkbox defaultChecked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)}>
-            Dark theme
-          </Checkbox>
-        </Box>
-      </Container>
+    <>
+      <Section size="3" css={{ py: '$7', ml: sidebarWidth, overflowY: 'scroll', height: '100vh' }}>
+        <Container size="3" css={{ mb: '$5' }}>
+          <Box>
+            <Checkbox defaultChecked={palette} onChange={(e) => setPalette(e.target.checked)}>
+              Palette
+            </Checkbox>
+            <Checkbox defaultChecked={alerts} onChange={(e) => setAlerts(e.target.checked)}>
+              Alerts
+            </Checkbox>
+            <Checkbox defaultChecked={textBlocks} onChange={(e) => setTextBlocks(e.target.checked)}>
+              Text Blocks
+            </Checkbox>
+            <Separator css={{ my: '$3' }} />
+            <Checkbox defaultChecked={grayscale} onChange={(e) => setGrayscale(e.target.checked)}>
+              Grayscale
+            </Checkbox>
+            <Checkbox defaultChecked={gap} onChange={(e) => setGap(e.target.checked)}>
+              Gaps
+            </Checkbox>
+            <Checkbox defaultChecked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)}>
+              Dark theme
+            </Checkbox>
+          </Box>
+        </Container>
 
-      {palette && <Palette />}
-      {alerts && <Alerts />}
-      {textBlocks && <TextBlocks />}
-    </Section>
+        {palette && <Palette />}
+        {alerts && <Alerts />}
+        {textBlocks && <TextBlocks />}
+      </Section>
+      <Sidebar />
+    </>
+  );
+}
+
+function Sidebar() {
+  return (
+    <Box
+      css={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        bc: 'white',
+        overflowY: 'scroll',
+        boxShadow: '1px 0 $colors$gray500',
+        width: 240,
+        [`body.${darkThemeClassName} &`]: {
+          bc: 'black',
+        } as any,
+      }}
+    >
+      <ColorTools />
+    </Box>
   );
 }
 
 function Alerts() {
+  const getHiContrast = (color: string) =>
+    color === 'yellow' || color === 'lime' || color === 'orange' ? 'black' : 'white';
+
   return (
     <Container size="3" css={{ mb: '$9' }}>
       <Grid
@@ -102,23 +111,25 @@ function Alerts() {
         }}
       >
         {colors.map((color) => (
-          <Box key={color} css={{ p: '$5', borderRadius: '$3', bc: `$${color}800` }}>
-            <Text size="2" as="p" css={{ color: 'white' }}>
-              Warning: obsessing over color is a terrible idea.
+          <Box key={color} css={{ p: '$4', borderRadius: '$3', bc: `$${color}800` }}>
+            <Text size="2" as="p" css={{ color: getHiContrast(color) }}>
+              Warning: obsessing over {color} is a terrible idea.
             </Text>
           </Box>
         ))}
+
         {colors.map((color) => (
           <Box
+            key={color}
             css={{
-              p: '$5',
+              p: '$4',
               borderRadius: '$3',
               bc: `$${color}100`,
               border: `1px solid $${color}500`,
             }}
           >
             <Text size="2" as="p" css={{ color: `$${color}900` }}>
-              Warning: obsessing over color is a terrible idea.
+              Warning: obsessing over {color} is a terrible idea.
             </Text>
           </Box>
         ))}
@@ -221,7 +232,7 @@ function Palette() {
         </Grid>
 
         {colors.map((color) => (
-          <Grid css={gridStyle}>
+          <Grid key={color} css={gridStyle}>
             <Box css={{ alignSelf: 'center' }}>
               <Text size="2" css={{ textTransform: 'capitalize' }}>
                 {color}
@@ -251,8 +262,13 @@ function Checkbox({
 }: React.ComponentProps<'input'> & { children?: React.ReactNode }) {
   return (
     <Box>
-      <Text size="2" as="label" css={{ display: 'inline-block' }}>
-        <input type="checkbox" {...props} /> {children}
+      <Text size="2" as="label" css={{ display: 'inline-block', lineHeight: '20px' }}>
+        <input
+          type="checkbox"
+          style={{ verticalAlign: 'middle', margin: 0, marginRight: 5, marginTop: -2 }}
+          {...props}
+        />{' '}
+        {children}
       </Text>
     </Box>
   );
