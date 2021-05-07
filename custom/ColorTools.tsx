@@ -61,11 +61,13 @@ type EditableScaleProps = {
     start: string;
     end: string;
     defaultCurve: Curve;
+    overrides?: Record<string, string>;
   };
   darkThemeConfig: {
     start: string;
     end: string;
     defaultCurve: Curve;
+    overrides?: Record<string, string>;
   };
 };
 
@@ -82,7 +84,10 @@ export function ColorTools() {
         lightThemeConfig={{
           start: 'hsl(0 0% 97.3%)',
           end: 'hsl(0 0% 80.0%)',
-          defaultCurve: [0.65, 0.375, 0.445, 0.09],
+          defaultCurve: [0.57, 0.32, 0.66, 0.37],
+          overrides: {
+            gray900: 'hsl(0, 0%, 43.5%)',
+          },
         }}
         darkThemeConfig={{
           start: 'hsl(0 0% 9.6%)',
@@ -133,8 +138,12 @@ export function ColorTools() {
         name="olive"
         lightThemeConfig={{
           start: 'hsl(110 17% 97.6%)',
-          end: 'hsl(110 7% 79.0%)',
+          end: 'hsl(110 7% 79%)',
           defaultCurve: [0.63, 0.475, 0.495, 0.115],
+          overrides: {
+            olive800: 'hsl(110, 3.5%, 55.5%)',
+            olive900: 'hsl(110, 3%, 43.2%)',
+          },
         }}
         darkThemeConfig={{
           start: 'hsl(0 0% 9.6%)',
@@ -389,8 +398,8 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   const [darkThemeCurve, setDarkThemeCurve] = React.useState(darkThemeConfig.defaultCurve);
 
   // Colors that we generated
-  const [lightColors, setLightColors] = React.useState<ColorWithMeta[]>([]);
-  const [darkColors, setDarkColors] = React.useState<ColorWithMeta[]>([]);
+  const [lightColors, setLightColors] = React.useState<Color[]>([]);
+  const [darkColors, setDarkColors] = React.useState<Color[]>([]);
 
   // Contrast ratios for a couple of colors
   const [contrasts, setContrasts] = React.useState<number[]>([]);
@@ -407,7 +416,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
   // Refs to current values
   const curveRef = React.useRef<Curve>([0, 0, 0, 0]);
-  const generatedColorsRef = React.useRef<ColorWithMeta[]>([]);
+  const generatedColorsRef = React.useRef<Color[]>([]);
   React.useEffect(() => {
     curveRef.current = isDarkTheme ? darkThemeCurve : lightThemeCurve;
     generatedColorsRef.current = isDarkTheme ? darkColors : lightColors;
@@ -432,8 +441,16 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         lumCurve,
       });
 
+      // Set overrides
+      if (config.overrides) {
+        for (const name in config.overrides) {
+          newColors.push({ name, value: config.overrides[name] });
+        }
+      }
+
+      // Set CSS variables
       newColors.forEach((color) => {
-        document.body.style.setProperty(`--colors-${color.name}`, color.hslValue);
+        document.body.style.setProperty(`--colors-${color.name}`, color.value);
       });
 
       setActive(true);
@@ -457,7 +474,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   React.useEffect(() => {
     if (active) {
       generatedColorsRef.current.forEach((color) => {
-        document.body.style.setProperty(`--colors-${color.name}`, color.hslValue);
+        document.body.style.setProperty(`--colors-${color.name}`, color.value);
       });
     } else {
       generatedColorsRef.current.forEach((color) => {
@@ -665,6 +682,9 @@ type EditorProps = {
 
 function Editor({ curve, onCurveChange }: EditorProps) {
   const [inputValue, setInputValue] = React.useState(curve.join(', '));
+  const inputValueCurve = inputValue.split(', ').map(parseFloat);
+  const inputValueIsValid =
+    inputValueCurve.length === 4 && inputValueCurve.every((number) => !isNaN(number));
 
   return (
     <Box>
@@ -711,10 +731,11 @@ function Editor({ curve, onCurveChange }: EditorProps) {
       <Box css={{ px: '$2', mb: '$3' }}>
         <Input
           variant="ghost"
+          state={inputValueIsValid ? undefined : 'invalid'}
           value={inputValue}
           onChange={(event) => {
             setInputValue(event.target.value);
-            const newCurve = inputValue.split(', ').map(parseFloat);
+            const newCurve = event.target.value.split(', ').map(parseFloat);
             if (newCurve.length === 4 && newCurve.every((number) => !isNaN(number))) {
               onCurveChange?.(newCurve as Curve);
             }
@@ -765,12 +786,9 @@ type ScaleSpec = {
   lumCurve: Curve;
 };
 
-type ColorWithMeta = {
-  color: chroma.Color;
+type Color = {
   name: string;
-  index: number;
-  hslValue: string;
-  hexValue: string;
+  value: string;
 };
 
 function generateColors({
@@ -781,7 +799,7 @@ function generateColors({
   hueCurve,
   satCurve,
   lumCurve,
-}: ScaleSpec): ColorWithMeta[] {
+}: ScaleSpec): Color[] {
   function generateNumberOfSteps(curve: Curve) {
     const array: number[] = [];
     for (const key in Array.from(Array(steps).keys())) {
@@ -838,7 +856,7 @@ function generateColors({
   satArray = satArrayAdjusted;
   hueArray = hueArrayAdjusted;
 
-  const colorMap: ColorWithMeta[] = [];
+  const colorMap: Color[] = [];
 
   for (const key in lumArray) {
     const index = parseInt(key);
@@ -856,12 +874,9 @@ function generateColors({
     const color = chroma(chroma.hsv(params.hue, params.saturation, params.luminosity));
     const [h, s, l] = color.hsl().map((value) => (isNaN(value) ? 0 : value));
 
-    const colorObj: ColorWithMeta = {
-      color: color,
-      index: index + indexOffset,
+    const colorObj: Color = {
       name: `${name}${index + indexOffset}00`,
-      hslValue: `hsl(${Math.round(h)} ${(s * 100).toFixed(1)}% ${(l * 100).toFixed(1)}%)`,
-      hexValue: color.hex(),
+      value: `hsl(${Math.round(h)} ${(s * 100).toFixed(1)}% ${(l * 100).toFixed(1)}%)`,
     };
 
     colorMap.push(colorObj);
