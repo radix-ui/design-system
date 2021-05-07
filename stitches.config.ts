@@ -104,7 +104,7 @@ const stitches = createCss({
       sage500: 'hsl(155 12% 89.5%)',
       sage600: 'hsl(155 11% 85.2%)',
       sage700: 'hsl(155 10% 80.0%)',
-      sage800: 'hsl(155 6% 56.1%)',
+      sage800: 'hsl(155 5% 55.0%)',
       sage900: 'hsl(155 6% 43.9%)',
       sage1000: 'hsl(155 24% 8.0%)',
 
@@ -116,7 +116,7 @@ const stitches = createCss({
       olive500: 'hsl(110 10% 90.3%)',
       olive600: 'hsl(110 9% 85.8%)',
       olive700: 'hsl(110 7% 81.0%)',
-      olive800: 'hsl(110 4% 57.0%)',
+      olive800: 'hsl(110 4% 55.0%)',
       olive900: 'hsl(110 4% 45.0%)',
       olive1000: 'hsl(110 25% 11.0%)',
 
