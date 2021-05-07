@@ -482,11 +482,6 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
     [isDarkTheme, darkThemeConfig, lightThemeConfig]
   );
 
-  // Set initial values and catch dark theme changes
-  React.useEffect(() => {
-    onCurveChange(curveRef.current);
-  }, [onCurveChange]);
-
   // Set new CSS variables when active or theme is changed
   React.useEffect(() => {
     // Deactivate and/or clear potentially stale stuff
@@ -501,6 +496,11 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       });
     }
   }, [active, isDarkTheme]);
+
+  // Set initial values and catch dark theme changes
+  React.useEffect(() => {
+    onCurveChange(curveRef.current);
+  }, [onCurveChange]);
 
   // Keep contrast ratios up to date
   const computedStyles = getComputedStyle(document.body);
