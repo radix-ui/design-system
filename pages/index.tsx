@@ -1010,13 +1010,19 @@ function Home() {
             <Flex css={{ gap: '$6' }}>
               <Button>Button</Button>
               <Button size="2">Button</Button>
+              <Button size="3">Button</Button>
             </Flex>
             <Flex css={{ mt: '$6', gap: '$6' }}>
               <Button>Button</Button>
               <Button variant="blue">Important</Button>
               <Button variant="green">Secure</Button>
               <Button variant="red">Warning</Button>
-              <Button variant="ghost">Ghost</Button>
+            </Flex>
+            <Flex css={{ mt: '$6', gap: '$6' }}>
+              <Button ghost>Button</Button>
+              <Button ghost variant="blue">Important</Button>
+              <Button ghost variant="green">Secure</Button>
+              <Button ghost variant="red">Warning</Button>
             </Flex>
             <Box
               css={{

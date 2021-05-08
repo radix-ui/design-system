@@ -151,26 +151,6 @@ const StyledButton = styled(DEFAULT_TAG, {
           boxShadow: 'inset 0 0 0 1px $colors$red700',
         },
       },
-      ghost: {
-        // mixBlendMode: 'multiply',
-        // backgroundColor: 'transparent',
-        // fontWeight: 400,
-        // color: '$hiContrast',
-        // '@hover': {
-        //   '&:hover': {
-        //     backgroundColor: '$slate200',
-        //   },
-        // },
-        // '&:active': {
-        //   backgroundColor: '$slate300',
-        // },
-        // '&:focus': {
-        //   boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
-        // },
-        // '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-        //   backgroundColor: '$slate300',
-        // },
-      },
       transparentWhite: {
         backgroundColor: 'hsla(0,100%,100%,.2)',
         color: 'white',
@@ -252,11 +232,11 @@ const StyledButton = styled(DEFAULT_TAG, {
       ghost: 'true',
       css: {
         backgroundColor: 'transparent',
-        boxShadow: 'none',
         color: '$hiContrast',
         '@hover': {
           '&:hover': {
-            backgroundColor: '$loContrast',
+            backgroundColor: '$slate200',
+            boxShadow: 'none',
           },
         },
         '&:active': {
@@ -275,10 +255,10 @@ const StyledButton = styled(DEFAULT_TAG, {
       ghost: 'true',
       css: {
         backgroundColor: 'transparent',
-        boxShadow: 'none',
         '@hover': {
           '&:hover': {
-            backgroundColor: '$loContrast',
+            backgroundColor: '$blue200',
+            boxShadow: 'none',
           },
         },
         '&:active': {
@@ -297,10 +277,10 @@ const StyledButton = styled(DEFAULT_TAG, {
       ghost: 'true',
       css: {
         backgroundColor: 'transparent',
-        boxShadow: 'none',
         '@hover': {
           '&:hover': {
-            backgroundColor: '$loContrast',
+            backgroundColor: '$green200',
+            boxShadow: 'none',
           },
         },
         '&:active': {
@@ -319,10 +299,10 @@ const StyledButton = styled(DEFAULT_TAG, {
       ghost: 'true',
       css: {
         backgroundColor: 'transparent',
-        boxShadow: 'none',
         '@hover': {
           '&:hover': {
-            backgroundColor: '$loContrast',
+            backgroundColor: '$red200',
+            boxShadow: 'none',
           },
         },
         '&:active': {
