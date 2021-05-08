@@ -122,13 +122,25 @@ import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stit
 function Home() {
   return (
     <Box className={modulzTheme}>
-      <AppBar size="2" color="plain" border sticky glass>
+      <Alert variant="blue" rounded>
+        <RocketIcon />
+        <Text size="2" css={{ fontWeight: 500 }}>Modulz raises a $15M Series A.</Text>
+        <Separator orientation="vertical" />
+        <Link variant="blue" href="#">
+          <Text size="2">Read the story</Text>
+          <ArrowRightIcon />
+        </Link>
+        <IconButton variant="blue">
+          <Cross1Icon />
+        </IconButton>
+      </Alert>
+      <AppBar size="2" color="loContrast" border sticky glass>
         <Button>Button</Button>
       </AppBar>
       <Box
         css={{
           position: 'fixed',
-          top: 0,
+          top: '$7',
           left: 0,
           bottom: 0,
           overflowY: 'auto',
@@ -1004,31 +1016,7 @@ function Home() {
         <Flex css={{ jc: 'center' }}>
           <Separator size="2" />
         </Flex>
-        <Section size="3">
-          <Container size="2">
-            <Heading id="alert" css={{ mb: '$6', scrollMarginTop: '$7' }}>
-              Alert
-            </Heading>
-            <Flex css={{ gap: '$6' }}>
-              <Alert>
-                <Flex css={{ gap: '$3', ai: 'center' }}>
-                <RocketIcon />
-                <Text css={{ fontWeight: 500 }}>Modulz raises a $15M Series A</Text>
-                <Text>Modulz raises a $15M Series A</Text>
-                <Separator orientation="vertical" />
-                <Link href="#">
-                  <Text>Read the story</Text>
-                  <ArrowRightIcon />
-                </Link>
-                </Flex>
-              </Alert>
-            </Flex>
-          </Container>
-        </Section>
 
-        <Flex css={{ jc: 'center' }}>
-          <Separator size="2" />
-        </Flex>
         <Section size="3">
           <Container size="2">
             <Heading id="button" css={{ mb: '$6', scrollMarginTop: '$7' }}>

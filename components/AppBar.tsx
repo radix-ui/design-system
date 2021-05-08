@@ -18,8 +18,10 @@ export const AppBar = styled('div', {
     },
     sticky: {
       true: {
-        position: 'fixed',
+        position: 'sticky',
         width: '100%',
+        top: 0,
+        left: 0,
       }
     },
     glass: {

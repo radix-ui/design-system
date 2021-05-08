@@ -15,13 +15,22 @@ const StyledAlert = styled(DEFAULT_TAG, {
     boxSizing: 'border-box',
   },
 
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '$3',
+
   variants: {
     size: {
       '1': {
-        p: '$2',
+        py: '$1',
+        px: '$4',
       },
     },
     variant: {
+      loContrast: {
+        backgroundColor: '$loContrast',
+      },
       gray: {
         backgroundColor: '$slate200',
       },
@@ -37,35 +46,37 @@ const StyledAlert = styled(DEFAULT_TAG, {
 
       },
     },
-    ghost: {
+    rounded: {
       true: {
-        backgroundColor: 'transparent',
-        boxShadow: 'none',
+        borderRadius: '$pill',
+      }
+    },
+    border: {
+      true: {
+        borderRadius: '$pill',
       }
     },
   },
   compoundVariants: [
     {
+      border: 'true',
       variant: 'gray',
-      ghost: 'true',
       css: {
-        backgroundColor: 'transparent',
-        color: '$hiContrast',
-        '@hover': {
-          '&:hover': {
-            backgroundColor: '$slate200',
-            boxShadow: 'none',
-          },
-        },
-        '&:active': {
-          backgroundColor: '$slate300',
-        },
-        '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
-        },
-        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$slate300',
-        },
+        borderColor: '$slate500',
+      },
+    },
+    {
+      border: 'true',
+      variant: 'blue',
+      css: {
+        borderColor: '$blue900',
+      },
+    },
+    {
+      border: 'true',
+      variant: 'loContrast',
+      css: {
+        borderColor: '$slate500',
       },
     },
   ],
