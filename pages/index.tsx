@@ -1033,15 +1033,15 @@ function Home() {
               </Alert>
               <Alert variant="blue">
                 <Text size="3" variant="blue" css={{ fontWeight: 500 }}>Alert heading</Text>
-                <Text size="2" variant="gray">A modal dialog that interrupts the user with important content and expects a response.</Text>
+                <Text size="2" variant="blue">A modal dialog that interrupts the user with important content and expects a response.</Text>
               </Alert>
               <Alert variant="green">
                 <Text size="3" variant="green" css={{ fontWeight: 500 }}>Alert heading</Text>
-                <Text size="2" variant="gray">A modal dialog that interrupts the user with important content and expects a response.</Text>
+                <Text size="2" variant="green">A modal dialog that interrupts the user with important content and expects a response.</Text>
               </Alert>
               <Alert variant="red">
                 <Text size="3" variant="red" css={{ fontWeight: 500 }}>Alert heading</Text>
-                <Text size="2" variant="gray">A modal dialog that interrupts the user with important content and expects a response.</Text>
+                <Text size="2" variant="red">A modal dialog that interrupts the user with important content and expects a response.</Text>
               </Alert>
             </Flex>
           </Container>
