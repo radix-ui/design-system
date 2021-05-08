@@ -5,7 +5,7 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'div';
 
-const StyledAlert = styled(DEFAULT_TAG, {
+const StyledBanner = styled(DEFAULT_TAG, {
   // Reset
   boxSizing: 'border-box',
   '&::before': {
@@ -15,36 +15,35 @@ const StyledAlert = styled(DEFAULT_TAG, {
     boxSizing: 'border-box',
   },
 
-  border: '1px solid',
-  borderRadius: '$2',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '$3',
 
   variants: {
     size: {
       '1': {
-        p: '$3',
+        py: '$1',
+        px: '$4',
       },
     },
     variant: {
       loContrast: {
         backgroundColor: '$loContrast',
-        borderColor: '$slate500',
       },
       gray: {
-        backgroundColor: '$slate100',
-        borderColor: '$slate500',
+        backgroundColor: '$slate200',
       },
       blue: {
-        backgroundColor: '$blue100',
-        borderColor: '$blue500',
+        backgroundColor: '$blue200',
       },
       green: {
-        backgroundColor: '$green100',
-        borderColor: '$green500',
+        backgroundColor: '$green200',
 
       },
       red: {
-        backgroundColor: '$red100',
-        borderColor: '$red500',
+        backgroundColor: '$red200',
+
       },
     },
     rounded: {
@@ -87,15 +86,15 @@ const StyledAlert = styled(DEFAULT_TAG, {
   },
 });
 
-type AlertCSSProp = { css?: CSS };
+type BannerCSSProp = { css?: CSS };
 // TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type AlertVariants = Omit<StitchesVariants<typeof StyledAlert>, 'size'>;
-type AlertOwnProps = AlertCSSProp & AlertVariants & { size?: any };
+type BannerVariants = Omit<StitchesVariants<typeof StyledBanner>, 'size'>;
+type BannerOwnProps = BannerCSSProp & BannerVariants & { size?: any };
 
-type AlertComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, AlertOwnProps>;
+type BannerComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, BannerOwnProps>;
 
-export const Alert = React.forwardRef((props, forwardedRef) => {
-  return <StyledAlert {...props} ref={forwardedRef} />;
-}) as AlertComponent;
+export const Banner = React.forwardRef((props, forwardedRef) => {
+  return <StyledBanner {...props} ref={forwardedRef} />;
+}) as BannerComponent;
 
-Alert.toString = () => `.${StyledAlert.className}`;
+Banner.toString = () => `.${StyledBanner.className}`;

@@ -11,6 +11,7 @@ import { ControlGroup } from '../components/ControlGroup';
 import { Text } from '../components/Text';
 import { Link } from '../components/Link';
 import { AppBar } from '../components/AppBar';
+import { Banner } from '../components/Banner';
 import { Alert } from '../components/Alert';
 import { Kbd } from '../components/Kbd';
 import { Separator } from '../components/Separator';
@@ -122,7 +123,7 @@ import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stit
 function Home() {
   return (
     <Box className={modulzTheme}>
-      <Alert variant="blue" rounded>
+      <Banner variant="blue" rounded>
         <RocketIcon />
         <Text size="2" css={{ fontWeight: 500 }}>Modulz raises a $15M Series A.</Text>
         <Separator orientation="vertical" />
@@ -133,7 +134,7 @@ function Home() {
         <IconButton variant="blue">
           <Cross1Icon />
         </IconButton>
-      </Alert>
+      </Banner>
       <AppBar size="2" color="loContrast" border sticky glass>
         <Button>Button</Button>
       </AppBar>
@@ -1009,6 +1010,39 @@ function Home() {
               <Status variant="green" />
               <Status variant="yellow" />
               <Status variant="red" />
+            </Flex>
+          </Container>
+        </Section>
+
+        <Flex css={{ jc: 'center' }}>
+          <Separator size="2" />
+        </Flex>
+        <Section size="3">
+          <Container size="2">
+            <Heading id="status" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Alert
+            </Heading>
+            <Flex css={{ gap: '$2', mt: '$6' }}>
+              <Alert variant="loContrast">
+                <Text size="3" css={{ fontWeight: 500 }}>Alert heading</Text>
+                <Text size="2" variant="gray">A modal dialog that interrupts the user with important content and expects a response.</Text>
+              </Alert>
+              <Alert variant="gray">
+                <Text size="3" css={{ fontWeight: 500 }}>Alert heading</Text>
+                <Text size="2" variant="gray">A modal dialog that interrupts the user with important content and expects a response.</Text>
+              </Alert>
+              <Alert variant="blue">
+                <Text size="3" variant="blue" css={{ fontWeight: 500 }}>Alert heading</Text>
+                <Text size="2" variant="gray">A modal dialog that interrupts the user with important content and expects a response.</Text>
+              </Alert>
+              <Alert variant="green">
+                <Text size="3" variant="green" css={{ fontWeight: 500 }}>Alert heading</Text>
+                <Text size="2" variant="gray">A modal dialog that interrupts the user with important content and expects a response.</Text>
+              </Alert>
+              <Alert variant="red">
+                <Text size="3" variant="red" css={{ fontWeight: 500 }}>Alert heading</Text>
+                <Text size="2" variant="gray">A modal dialog that interrupts the user with important content and expects a response.</Text>
+              </Alert>
             </Flex>
           </Container>
         </Section>
