@@ -120,7 +120,7 @@ import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stit
 function Home() {
   return (
     <Box className={modulzTheme}>
-      <AppBar size="2" color="accent" sticky>
+      <AppBar size="2" color="plain" border sticky glass>
         <Button>Button</Button>
       </AppBar>
       <Box
