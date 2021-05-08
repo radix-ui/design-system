@@ -1014,7 +1014,7 @@ function Home() {
                 <Flex css={{ gap: '$3', ai: 'center' }}>
                 <RocketIcon />
                 <Text css={{ fontWeight: 500 }}>Modulz raises a $15M Series A</Text>
-                <Text>Alert</Text>
+                <Text>Modulz raises a $15M Series A</Text>
                 <Separator orientation="vertical" />
                 <Link href="#">
                   <Text>Read the story</Text>

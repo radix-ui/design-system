@@ -23,7 +23,7 @@ const StyledAlert = styled(DEFAULT_TAG, {
     },
     variant: {
       gray: {
-        backgroundColor: '$gray200',
+        backgroundColor: '$slate200',
       },
       blue: {
         backgroundColor: '$blue200',
