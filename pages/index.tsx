@@ -11,6 +11,7 @@ import { ControlGroup } from '../components/ControlGroup';
 import { Text } from '../components/Text';
 import { Link } from '../components/Link';
 import { AppBar } from '../components/AppBar';
+import { Alert } from '../components/Alert';
 import { Kbd } from '../components/Kbd';
 import { Separator } from '../components/Separator';
 import { Table, Caption, Thead, Tbody, Tfoot, Tr, Th, Td } from '../components/Table';
@@ -113,6 +114,7 @@ import {
   TextAlignRightIcon,
   TriangleUpIcon,
   VideoIcon,
+  RocketIcon
 } from '@radix-ui/react-icons';
 import { Toolbar } from '../custom/Toolbar';
 import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stitches.config';
@@ -995,6 +997,31 @@ function Home() {
               <Status variant="green" />
               <Status variant="yellow" />
               <Status variant="red" />
+            </Flex>
+          </Container>
+        </Section>
+
+        <Flex css={{ jc: 'center' }}>
+          <Separator size="2" />
+        </Flex>
+        <Section size="3">
+          <Container size="2">
+            <Heading id="alert" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+              Alert
+            </Heading>
+            <Flex css={{ gap: '$6' }}>
+              <Alert>
+                <Flex css={{ gap: '$3', ai: 'center' }}>
+                <RocketIcon />
+                <Text css={{ fontWeight: 500 }}>Modulz raises a $15M Series A</Text>
+                <Text>Alert</Text>
+                <Separator orientation="vertical" />
+                <Link href="#">
+                  <Text>Read the story</Text>
+                  <ArrowRightIcon />
+                </Link>
+                </Flex>
+              </Alert>
             </Flex>
           </Container>
         </Section>
