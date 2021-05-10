@@ -700,7 +700,7 @@ type EditorProps = {
 };
 
 function Editor({ curve, onCurveChange }: EditorProps) {
-  const [inputValue, setInputValue] = React.useState(curve.join(', '));
+  const [inputValue, setInputValue] = React.useState(curve.map((n) => n.toFixed(2)).join(', '));
   const inputValueCurve = inputValue.split(', ').map(parseFloat);
   const inputValueIsValid =
     inputValueCurve.length === 4 && inputValueCurve.every((number) => !isNaN(number));
