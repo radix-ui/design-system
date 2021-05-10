@@ -1,5 +1,5 @@
 import React from 'react';
-import chroma, { scale } from 'chroma-js';
+import chroma from 'chroma-js';
 import bezier from 'bezier-easing';
 import { Box } from '../components/Box';
 import { Flex } from '../components/Flex';
@@ -16,39 +16,10 @@ import {
   ResetIcon,
 } from '@radix-ui/react-icons';
 import { darkTheme as darkThemeClassName, theme as lightThemeClassName } from '../stitches.config';
+import { colors } from '../pages/colors';
 
 // We are editing steps 100 through 700 via the tools
 const steps = 7;
-
-export const colors = [
-  'gray',
-  'quartz',
-  'slate',
-  'sand',
-  'olive',
-  'sage',
-
-  'red',
-  'crimson',
-  'pink',
-  'plum',
-  'purple',
-  'violet',
-  'indigo',
-
-  'blue',
-  'cyan',
-  'teal',
-  'green',
-
-  'lime',
-  'yellow',
-  'orange',
-
-  'brown',
-  'bronze',
-  'gold',
-] as const;
 
 type Curve = [number, number, number, number];
 
@@ -141,19 +112,20 @@ export function ColorTools() {
           }}
         />
         <EditableScale
-          name="sand"
+          name="sage"
           lightThemeConfig={{
-            start: 'hsl(50 9% 97.5%)',
-            end: 'hsl(50 6% 79.0%)',
+            start: 'hsl(155 17% 97.6%)',
+            end: 'hsl(155 10% 78.5%)',
             defaultCurve: [0.52, 0.44, 0.595, 0.385],
             overrides: {
-              sand900: 'hsl(50 2% 43.1%)',
-              sand1000: 'hsl(50 6% 9.3%)',
+              sage800: 'hsl(155, 3.5%, 55.5%)',
+              sage900: 'hsl(155, 3%, 43.0%)',
+              sage1000: 'hsl(155 24% 9.0%)',
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(61 2% 9.6%)',
-            end: 'hsl(46 4% 30.0%)',
+            start: 'hsl(0 0% 9.6%)',
+            end: 'hsl(155 4% 30.0%)',
             defaultCurve: [0.395, 0.22, 0.69, 0.395],
           }}
         />
@@ -176,21 +148,34 @@ export function ColorTools() {
           }}
         />
         <EditableScale
-          name="sage"
+          name="sand"
           lightThemeConfig={{
-            start: 'hsl(155 17% 97.6%)',
-            end: 'hsl(155 10% 78.5%)',
+            start: 'hsl(50 9% 97.5%)',
+            end: 'hsl(50 6% 79.0%)',
             defaultCurve: [0.52, 0.44, 0.595, 0.385],
             overrides: {
-              sage800: 'hsl(155, 3.5%, 55.5%)',
-              sage900: 'hsl(155, 3%, 43.0%)',
-              sage1000: 'hsl(155 24% 9.0%)',
+              sand900: 'hsl(50 2% 43.1%)',
+              sand1000: 'hsl(50 6% 10%)',
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(0 0% 9.6%)',
-            end: 'hsl(155 4% 30.0%)',
+            start: 'hsl(61 2% 9.6%)',
+            end: 'hsl(46 4% 30.0%)',
             defaultCurve: [0.395, 0.22, 0.69, 0.395],
+          }}
+        />
+        <EditableScale
+          name="tomato"
+          lightThemeConfig={{
+            start: 'hsl(10 90% 98.3%)',
+            end: 'hsl(10 73% 68%)',
+            defaultCurve: [0.545, 0.28, 0.8, 0.445],
+            overrides: {},
+          }}
+          darkThemeConfig={{
+            start: 'hsl(353 35% 10.2%)',
+            end: 'hsl(353 70% 36.9%)',
+            defaultCurve: [0.58, 0.195, 0.955, 0.545],
           }}
         />
         <EditableScale
@@ -202,7 +187,8 @@ export function ColorTools() {
             overrides: {
               red000: 'hsl(351 100% 99.4%)',
               red100: 'hsl(351 100% 98.6%)',
-              red900: 'hsl(356 70% 48.7%)',
+              red800: 'hsl(356 80% 59.0%)',
+              red900: 'hsl(356 65% 48.7%)',
               red1000: 'hsl(351 70% 14.6%)',
             },
           }}
@@ -220,7 +206,7 @@ export function ColorTools() {
             defaultCurve: [0.655, 0.345, 0.815, 0.48],
             overrides: {
               crimson000: 'hsl(332 100% 99.4%)',
-              crimson800: 'hsl(336 82% 57.5%)',
+              crimson800: 'hsl(336 80% 57.5%)',
               crimson900: 'hsl(336 70% 47%)',
             },
           }}
@@ -341,16 +327,34 @@ export function ColorTools() {
           }}
         />
         <EditableScale
+          name="sky"
+          lightThemeConfig={{
+            start: 'hsl(194 100% 97.8%)',
+            end: 'hsl(198 85% 58.0%)',
+            defaultCurve: [0.59, 0.21, 0.79, 0.645],
+            overrides: {
+              sky800: 'hsl(199 95% 45.0%)',
+              sky900: 'hsl(202 100% 36.3%)',
+              sky1000: 'hsl(200 100% 14.0%)',
+            },
+          }}
+          darkThemeConfig={{
+            start: 'hsl(212 50% 10.2%)',
+            end: 'hsl(208 93% 40.0%)',
+            defaultCurve: [0.695, 0.39, 0.815, 0.48],
+          }}
+        />
+        <EditableScale
           name="cyan"
           lightThemeConfig={{
             start: 'hsl(185 78% 97.0%)',
             end: 'hsl(188 63% 52.0%)',
-            defaultCurve: [0.735, 0.32, 0.775, 0.725],
+            defaultCurve: [0.735, 0.285, 0.775, 0.725],
             overrides: {
               cyan000: 'hsl(185 60% 98.7%)',
               cyan800: 'hsl(190 85% 40.6%)',
               cyan900: 'hsl(192 100% 29.7%)',
-              cyan1000: 'hsl(192 88% 11.5%)',
+              cyan1000: 'hsl(192 88% 12.5%)',
             },
           }}
           darkThemeConfig={{
@@ -439,15 +443,15 @@ export function ColorTools() {
         <EditableScale
           name="orange"
           lightThemeConfig={{
-            start: 'hsl(40 100% 96.5%)',
-            end: 'hsl(40 100% 62.0%)',
-            defaultCurve: [0.555, 0.325, 0.69, 0.57],
+            start: 'hsl(28 100% 96.5%)',
+            end: 'hsl(28 95% 67.0%)',
+            defaultCurve: [0.555, 0.325, 0.795, 0.54],
             overrides: {
-              orange000: 'hsl(35 70% 99.0%)',
-              orange100: 'hsl(40 100% 97.5%)',
-              orange800: 'hsl(38 100% 54%)',
-              orange900: 'hsl(27 60% 39.0%)',
-              orange1000: 'hsl(30 86% 15.0%)',
+              orange000: 'hsl(28 70% 99.0%)',
+              orange100: 'hsl(28 100% 97.5%)',
+              orange800: 'hsl(28 95% 60%)',
+              orange900: 'hsl(28 93% 35%)',
+              orange1000: 'hsl(23 86% 15.0%)',
             },
           }}
           darkThemeConfig={{
@@ -537,7 +541,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   const [failsContrast, setFailsContrast] = React.useState(false);
 
   // Whether the panel UI is collapsed
-  const [collapsed, setCollapsed] = React.useState(false);
+  const [collapsed, setCollapsed] = React.useState(true);
 
   // Whether color modifications are active
   const [active, setActive] = React.useState(true);
@@ -689,7 +693,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               marginTop: -2,
               marginLeft: -3,
               marginRight: 1,
-              transform: collapsed ? 'none' : 'rotate(-90deg)',
+              transform: collapsed ? 'rotate(-90deg)' : 'none',
             }}
           />
           <Box css={{ bc: `$${name}800`, width: 13, height: 13, mr: '$1' }} />
@@ -726,6 +730,10 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               return;
             }
 
+            if (collapsed) {
+              setCollapsed(false);
+            }
+
             setShowCode(!showCode);
           }}
           css={{ p: '$1', flex: 'none' }}
@@ -752,7 +760,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         </Box>
       </Flex>
 
-      {collapsed && (
+      {!collapsed && (
         <Box>
           {showCode ? (
             <Grid css={{ mx: '$2', gridAutoRows: '25px' }}>

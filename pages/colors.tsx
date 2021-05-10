@@ -8,10 +8,42 @@ import { Section } from '../components/Section';
 import { Separator } from '../components/Separator';
 import { Text } from '../components/Text';
 import { TreeItem } from '../components/TreeItem';
-import { colors, ColorTools } from '../custom/ColorTools';
+import { ColorTools } from '../custom/ColorTools';
 import { darkTheme as darkThemeClassName } from '../stitches.config';
 
 const sidebarWidth = 240;
+
+export const colors = [
+  'gray',
+  'quartz',
+  'slate',
+  'sage',
+  'olive',
+  'sand',
+
+  'tomato',
+  'red',
+  'crimson',
+  'pink',
+  'plum',
+  'purple',
+  'violet',
+  'indigo',
+
+  'blue',
+  'sky',
+  'cyan',
+  'teal',
+  'green',
+
+  'lime',
+  'yellow',
+  'orange',
+
+  'brown',
+  'bronze',
+  'gold',
+] as const;
 
 export default function Colors() {
   const [palette, setPalette] = useLocalStorage('colors-palette', true);
@@ -259,7 +291,7 @@ function TextBlocks() {
                 >
                   {color}
                 </Heading>
-                <Text size="3" css={{ lineHeight: '25px', color: color100 }}>
+                <Text size="3" css={{ lineHeight: '25px', color: getHiContrast(color) }}>
                   {text}
                 </Text>
               </Container>
