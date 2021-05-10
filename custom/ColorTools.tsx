@@ -13,6 +13,7 @@ import {
   EyeClosedIcon,
   CodeIcon,
   BlendingModeIcon,
+  ResetIcon,
 } from '@radix-ui/react-icons';
 import { darkTheme as darkThemeClassName, theme as lightThemeClassName } from '../stitches.config';
 
@@ -58,15 +59,23 @@ type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<inf
 type EditableScaleProps = {
   name: ElementType<typeof colors>;
   lightThemeConfig: {
+    /** Step 100 */
     start: string;
+    /** Step 700 */
     end: string;
+    /** Initial Bezier curve */
     defaultCurve: Curve;
+    /** Colors to override, e.g. "red000", "red500", "red900", etc */
     overrides?: Record<string, string>;
   };
   darkThemeConfig: {
+    /** Step 100 */
     start: string;
+    /** Step 700 */
     end: string;
+    /** Initial Bezier curve */
     defaultCurve: Curve;
+    /** Colors to override, e.g. "red000", "red500", "red900", etc */
     overrides?: Record<string, string>;
   };
 };
@@ -177,8 +186,14 @@ export function ColorTools() {
           name="red"
           lightThemeConfig={{
             start: 'hsl(351 100% 98.5%)',
-            end: 'hsl(355 82% 71.7%)',
-            defaultCurve: [0.655, 0.34, 0.8, 0.51],
+            end: 'hsl(355 82% 73%)',
+            defaultCurve: [0.6, 0.34, 0.77, 0.455],
+            overrides: {
+              red000: 'hsl(351 100% 99.4%)',
+              red100: 'hsl(351 100% 98.6%)',
+              red800: 'hsl(356 83% 61.0%)',
+              red900: 'hsl(356 75% 47.9%)',
+            },
           }}
           darkThemeConfig={{
             start: 'hsl(353 35% 10.2%)',
@@ -429,12 +444,17 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   const [showCode, setShowCode] = React.useState(false);
 
   // Refs to current values
-  const curveRef = React.useRef<Curve>([0, 0, 0, 0]);
+  const curveRef = React.useRef<Curve>(isDarkTheme ? darkThemeCurve : lightThemeCurve);
   const generatedColorsRef = React.useRef<Color[]>([]);
   React.useEffect(() => {
     curveRef.current = isDarkTheme ? darkThemeCurve : lightThemeCurve;
     generatedColorsRef.current = isDarkTheme ? darkColors : lightColors;
   });
+
+  // Whether to show the curve reset button
+  const showResetButton =
+    curveRef.current.join() !==
+    (isDarkTheme ? darkThemeConfig : lightThemeConfig).defaultCurve.join();
 
   // Create a callback for when the curve changes
   const onCurveChange = React.useCallback(
@@ -570,6 +590,25 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
           />
           {name} {failsContrast && '⛔️'}
         </Text>
+
+        {showResetButton && (
+          <Box
+            data-reset-button
+            onClick={(event) => {
+              if (event.altKey) {
+                document
+                  .querySelectorAll(`[data-reset-button]`)
+                  .forEach((element) => (element as HTMLElement).click());
+                return;
+              }
+
+              onCurveChange((isDarkTheme ? darkThemeConfig : lightThemeConfig).defaultCurve);
+            }}
+            css={{ p: '$1', flex: 'none' }}
+          >
+            <ResetIcon />
+          </Box>
+        )}
 
         <Box
           data-show-code-toggle

@@ -1,3 +1,4 @@
+import { RadiobuttonIcon, SliderIcon, SwitchIcon, TextIcon } from '@radix-ui/react-icons';
 import React from 'react';
 import { Box } from '../components/Box';
 import { Container } from '../components/Container';
@@ -6,6 +7,7 @@ import { Heading } from '../components/Heading';
 import { Section } from '../components/Section';
 import { Separator } from '../components/Separator';
 import { Text } from '../components/Text';
+import { TreeItem } from '../components/TreeItem';
 import { colors, ColorTools } from '../custom/ColorTools';
 import { darkTheme as darkThemeClassName } from '../stitches.config';
 
@@ -13,6 +15,7 @@ const sidebarWidth = 240;
 
 export default function Colors() {
   const [palette, setPalette] = useLocalStorage('colors-palette', true);
+  const [layers, setLayers] = useLocalStorage('colors-layers', true);
   const [alerts, setAlerts] = useLocalStorage('colors-alerts', true);
   const [textBlocks, setTextBlocks] = useLocalStorage('colors-textBlocks', true);
 
@@ -47,6 +50,9 @@ export default function Colors() {
             <Checkbox defaultChecked={palette} onChange={(e) => setPalette(e.target.checked)}>
               Palette
             </Checkbox>
+            <Checkbox defaultChecked={layers} onChange={(e) => setLayers(e.target.checked)}>
+              Layers
+            </Checkbox>
             <Checkbox defaultChecked={alerts} onChange={(e) => setAlerts(e.target.checked)}>
               Alerts
             </Checkbox>
@@ -67,6 +73,7 @@ export default function Colors() {
         </Container>
 
         {palette && <Palette />}
+        {layers && <Layers />}
         {alerts && <Alerts />}
         {textBlocks && <TextBlocks />}
       </Section>
@@ -97,10 +104,65 @@ function Sidebar() {
   );
 }
 
-function Alerts() {
-  const getHiContrast = (color: string) =>
-    color === 'yellow' || color === 'lime' || color === 'orange' ? 'black' : 'white';
+function Layers() {
+  return (
+    <Container size="4" css={{ p: '$9' }}>
+      <Grid css={{ gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '$5' }}>
+        {colors.map((color) => (
+          <Box key={color}>
+            <TreeItem css={{ bc: `$${color}400` }}>
+              <Box css={{ mr: '$2' }}>
+                <RadiobuttonIcon />
+              </Box>
+              <Text size="1">Radio</Text>
+            </TreeItem>
+            <TreeItem
+              css={{
+                pl: 45,
+                bc: `$${color}200`,
+                '&:hover': { bc: `$${color}300` },
+                '&:active': { bc: `$${color}400` },
+              }}
+            >
+              <Box css={{ mr: '$2' }}>
+                <SliderIcon />
+              </Box>
+              <Text size="1">Slider</Text>
+            </TreeItem>
+            <TreeItem
+              css={{
+                pl: 45,
+                bc: `$${color}200`,
+                '&:hover': { bc: `$${color}300` },
+                '&:active': { bc: `$${color}400` },
+              }}
+            >
+              <Box css={{ mr: '$2' }}>
+                <SwitchIcon />
+              </Box>
+              <Text size="1">Switch</Text>
+            </TreeItem>
+            <TreeItem
+              css={{
+                pl: 45,
+                bc: `$${color}200`,
+                '&:hover': { bc: `$${color}300` },
+                '&:active': { bc: `$${color}400` },
+              }}
+            >
+              <Box css={{ mr: '$2' }}>
+                <TextIcon />
+              </Box>
+              <Text size="1">Text</Text>
+            </TreeItem>
+          </Box>
+        ))}
+      </Grid>
+    </Container>
+  );
+}
 
+function Alerts() {
   return (
     <Container size="3" css={{ mb: '$9' }}>
       <Grid
@@ -155,11 +217,12 @@ function TextBlocks() {
         const color000 = `$${color}000`;
         const color100 = `$${color}100`;
         const color200 = `$${color}200`;
+        const color800 = `$${color}800`;
         const color1000 = `$${color}1000`;
 
         return (
           <Box key={color} css={{ 'html.gap &': { display: 'grid', gap: '$5' } }}>
-            <Box css={{ backgroundColor: color000, p: 200 }}>
+            <Box css={{ bc: color000, p: 200 }}>
               <Container size="3">
                 <Heading css={{ mb: '$2', color: color1000, textTransform: 'capitalize' }}>
                   {color}
@@ -169,7 +232,7 @@ function TextBlocks() {
                 </Text>
               </Container>
             </Box>
-            <Box css={{ backgroundColor: color100, p: 200 }}>
+            <Box css={{ bc: color100, p: 200 }}>
               <Container size="3">
                 <Heading css={{ mb: '$2', color: color1000, textTransform: 'capitalize' }}>
                   {color}
@@ -179,7 +242,7 @@ function TextBlocks() {
                 </Text>
               </Container>
             </Box>
-            <Box css={{ backgroundColor: color200, p: 200 }}>
+            <Box css={{ bc: color200, p: 200 }}>
               <Container size="3">
                 <Heading css={{ mb: '$2', color: color1000, textTransform: 'capitalize' }}>
                   {color}
@@ -189,7 +252,19 @@ function TextBlocks() {
                 </Text>
               </Container>
             </Box>
-            <Box css={{ backgroundColor: color1000, p: 200 }}>
+            <Box css={{ bc: color800, p: 200 }}>
+              <Container size="3">
+                <Heading
+                  css={{ mb: '$2', color: getHiContrast(color), textTransform: 'capitalize' }}
+                >
+                  {color}
+                </Heading>
+                <Text size="3" css={{ lineHeight: '25px', color: color100 }}>
+                  {text}
+                </Text>
+              </Container>
+            </Box>
+            <Box css={{ bc: color1000, p: 200 }}>
               <Container size="3">
                 <Heading css={{ mb: '$2', color: color100, textTransform: 'capitalize' }}>
                   {color}
@@ -256,6 +331,10 @@ function Palette() {
   );
 }
 
+function getHiContrast(color: string) {
+  return color === 'yellow' || color === 'lime' || color === 'orange' ? 'black' : 'white';
+}
+
 function Checkbox({
   children,
   ...props
@@ -279,6 +358,10 @@ function useLocalStorage(key: string, initialValue: any) {
   // State to store our value
   // Pass initial state function to useState so logic is only executed once
   const [storedValue, setStoredValue] = React.useState(() => {
+    if (typeof window === 'undefined') {
+      return initialValue;
+    }
+
     try {
       // Get from local storage by key
       const item = window.localStorage.getItem(key);
