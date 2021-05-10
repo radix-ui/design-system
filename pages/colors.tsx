@@ -1,6 +1,7 @@
 import { RadiobuttonIcon, SliderIcon, SwitchIcon, TextIcon } from '@radix-ui/react-icons';
 import React from 'react';
 import { Box } from '../components/Box';
+import { Button } from '../components/Button';
 import { Container } from '../components/Container';
 import { Grid } from '../components/Grid';
 import { Heading } from '../components/Heading';
@@ -49,6 +50,7 @@ export default function Colors() {
   const [palette, setPalette] = useLocalStorage('colors-palette', true);
   const [layers, setLayers] = useLocalStorage('colors-layers', true);
   const [alerts, setAlerts] = useLocalStorage('colors-alerts', true);
+  const [buttons, setButtons] = useLocalStorage('colors-buttons', true);
   const [textBlocks, setTextBlocks] = useLocalStorage('colors-textBlocks', true);
 
   const [darkTheme, setDarkTheme] = useLocalStorage('colors-darkTheme', false);
@@ -85,6 +87,9 @@ export default function Colors() {
             <Checkbox defaultChecked={layers} onChange={(e) => setLayers(e.target.checked)}>
               Layers
             </Checkbox>
+            <Checkbox defaultChecked={buttons} onChange={(e) => setButtons(e.target.checked)}>
+              Buttons
+            </Checkbox>
             <Checkbox defaultChecked={alerts} onChange={(e) => setAlerts(e.target.checked)}>
               Alerts
             </Checkbox>
@@ -106,6 +111,7 @@ export default function Colors() {
 
         {palette && <Palette />}
         {layers && <Layers />}
+        {buttons && <Buttons />}
         {alerts && <Alerts />}
         {textBlocks && <TextBlocks />}
       </Section>
@@ -187,6 +193,71 @@ function Layers() {
               </Box>
               <Text size="1">Text</Text>
             </TreeItem>
+          </Box>
+        ))}
+      </Grid>
+    </Container>
+  );
+}
+
+function Buttons() {
+  return (
+    <Container size="3" css={{ my: '$9' }}>
+      <Grid css={{ gridTemplateColumns: 'repeat(5, 1fr)', gap: '$5' }}>
+        {colors.map((color) => (
+          <Box key={color} css={{ '&[class] * + *': { ml: '$2' } }}>
+            <Button
+              css={{
+                height: 30,
+                fontWeight: 500,
+                textTransform: 'capitalize',
+                backgroundColor: `$${color}100`,
+                boxShadow: `inset 0 0 0 1px $colors$${color}600`,
+                color: `$${color}900`,
+                '@hover': {
+                  '&:hover': {
+                    boxShadow: `inset 0 0 0 1px $colors$${color}700`,
+                  },
+                },
+                '&:active': {
+                  backgroundColor: `$${color}200`,
+                  boxShadow: `inset 0 0 0 1px $colors$${color}700`,
+                },
+                '&:focus': {
+                  boxShadow: `inset 0 0 0 1px $colors$${color}700, 0 0 0 1px $colors$${color}700`,
+                },
+              }}
+            >
+              {color}
+            </Button>
+            <Button
+              css={{
+                height: 30,
+                fontWeight: 400,
+                borderRadius: '$1',
+                textTransform: 'capitalize',
+                backgroundColor: `$${color}800`,
+                color: getHiContrast(color),
+                boxShadow: `0 2px 5px -2px $colors$${color}800 `,
+                willChange: 'transform',
+                '@hover': {
+                  '&:hover': {
+                    backgroundColor: `$${color}800`,
+                    boxShadow: `0 2px 5px -2px $colors$${color}800 `,
+                  },
+                },
+                '&:active': {
+                  backgroundColor: `$${color}700`,
+                  boxShadow: `0 1px 3px -1px $colors$${color}800 `,
+                  transform: 'scale(0.99)',
+                },
+                '&:focus': {
+                  boxShadow: `0 0 0 2px $colors$${color}600`,
+                },
+              }}
+            >
+              {color}
+            </Button>
           </Box>
         ))}
       </Grid>
@@ -363,10 +434,6 @@ function Palette() {
   );
 }
 
-function getHiContrast(color: string) {
-  return color === 'yellow' || color === 'lime' || color === 'orange' ? 'black' : 'white';
-}
-
 function Checkbox({
   children,
   ...props
@@ -383,6 +450,10 @@ function Checkbox({
       </Text>
     </Box>
   );
+}
+
+function getHiContrast(color: string) {
+  return color === 'yellow' || color === 'lime' || color === 'orange' ? 'black' : 'white';
 }
 
 // https://usehooks.com/useLocalStorage/

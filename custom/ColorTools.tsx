@@ -348,11 +348,11 @@ export function ColorTools() {
           name="cyan"
           lightThemeConfig={{
             start: 'hsl(185 78% 97.0%)',
-            end: 'hsl(188 63% 52.0%)',
+            end: 'hsl(188 68% 50.0%)',
             defaultCurve: [0.735, 0.285, 0.775, 0.725],
             overrides: {
               cyan000: 'hsl(185 60% 98.7%)',
-              cyan800: 'hsl(190 85% 40.6%)',
+              cyan800: 'hsl(190 95% 39.0%)',
               cyan900: 'hsl(192 100% 29.7%)',
               cyan1000: 'hsl(192 88% 12.5%)',
             },
