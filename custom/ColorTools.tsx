@@ -425,10 +425,10 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(58 90% 92.0%)',
             end: 'hsl(51 85% 59%)',
-            defaultCurve: [0.455, 0.43, 0.67, 0.655],
+            defaultCurve: [0.52, 0.185, 0.555, 0.9],
             overrides: {
               yellow000: 'hsl(58 70% 98.5%)',
-              yellow100: 'hsl(55 95% 96.0%)',
+              yellow100: 'hsl(55 90% 96.0%)',
               yellow800: 'hsl(49 95% 48.5%)',
               yellow900: 'hsl(40 100% 30.0%)',
               yellow1000: 'hsl(48 55% 13.0%)',

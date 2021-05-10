@@ -205,7 +205,7 @@ function Buttons() {
     <Container size="3" css={{ my: '$9' }}>
       <Grid css={{ gridTemplateColumns: 'repeat(5, 1fr)', gap: '$5' }}>
         {colors.map((color) => (
-          <Box key={color} css={{ '&[class] * + *': { ml: '$2' } }}>
+          <Box key={color} css={{ '&[class] * + *': { ml: '$2', verticalAlign: 'top' } }}>
             <Button
               css={{
                 height: 30,
@@ -234,7 +234,6 @@ function Buttons() {
               css={{
                 height: 30,
                 fontWeight: 400,
-                borderRadius: '$1',
                 textTransform: 'capitalize',
                 backgroundColor: `$${color}800`,
                 color: getHiContrast(color),
