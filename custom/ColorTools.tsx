@@ -94,7 +94,7 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(0 0% 97.3%)',
             end: 'hsl(0 0% 80.0%)',
-            defaultCurve: [0.57, 0.32, 0.66, 0.37],
+            defaultCurve: [0.57, 0.47, 0.815, 0.59],
             overrides: {
               gray900: 'hsl(0, 0%, 43.5%)',
             },
@@ -739,10 +739,22 @@ type EditorProps = {
 };
 
 function Editor({ curve, onCurveChange }: EditorProps) {
-  const [inputValue, setInputValue] = React.useState(curve.map((n) => n.toFixed(2)).join(', '));
+  const curveToString = (c: Curve) => c.map((n) => n.toFixed(3)).join(', ');
+  const inputRef = React.useRef<HTMLInputElement>(null);
+  const [inputValue, setInputValue] = React.useState(curveToString(curve));
   const inputValueCurve = inputValue.split(', ').map(parseFloat);
   const inputValueIsValid =
     inputValueCurve.length === 4 && inputValueCurve.every((number) => !isNaN(number));
+
+  // Update input when value changes externally
+  React.useEffect(() => {
+    // Update input when curve editor updates
+    const [x1, y1, x2, y2] = curve;
+    const [X1, Y1, X2, Y2] = inputRef.current!.value.split(', ').map(parseFloat);
+    if (x1 !== X1 || y1 !== Y1 || x2 !== X2 || y2 !== Y2) {
+      setInputValue(curveToString(curve));
+    }
+  }, [curve]);
 
   return (
     <Box>
@@ -774,14 +786,6 @@ function Editor({ curve, onCurveChange }: EditorProps) {
           innerAreaColor="transparent"
           value={curve}
           onChange={(newCurve) => {
-            // Update input when curve editor updates
-            const [x1, y1, x2, y2] = curve;
-            const [X1, Y1, X2, Y2] = inputValue.split(', ').map(parseFloat);
-            if (x1 !== X1 || y1 !== Y1 || x2 !== X2 || y2 !== Y2) {
-              setInputValue(curve.map((number) => number.toFixed(3)).join(', '));
-            }
-
-            // Call the callback
             onCurveChange?.(newCurve);
           }}
         />
@@ -789,6 +793,7 @@ function Editor({ curve, onCurveChange }: EditorProps) {
       <Box css={{ px: '$2', mb: '$3' }}>
         <Input
           variant="ghost"
+          ref={inputRef}
           state={inputValueIsValid ? undefined : 'invalid'}
           value={inputValue}
           onChange={(event) => {
