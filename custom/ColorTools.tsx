@@ -414,7 +414,7 @@ export function ColorTools() {
             defaultCurve: [0.595, 0.295, 0.785, 0.69],
             overrides: {
               lime000: 'hsl(85 50% 98.7%)',
-              lime800: 'hsl(81 68% 46.0%)',
+              lime800: 'hsl(77 68% 59.0%)',
               lime900: 'hsl(75 65% 27.5%)',
               lime1000: 'hsl(78 70% 11.5%)',
             },
