@@ -568,7 +568,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       const config = isDarkTheme ? darkThemeConfig : lightThemeConfig;
       const [x1, y1, x2, y2] = newCurve;
       const hueCurve = newCurve;
-      const satCurve = newCurve;
+      const chromaCurve = newCurve;
       const lumCurve: Curve = [1 - x2, 1 - y2, 1 - x1, 1 - y1];
 
       const newColors = generateColors({
@@ -577,7 +577,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         end: config.end,
         steps,
         hueCurve,
-        satCurve,
+        chromaCurve,
         lumCurve,
       });
 
@@ -967,7 +967,7 @@ type ScaleSpec = {
   end: string;
   steps: number;
   hueCurve: Curve;
-  satCurve: Curve;
+  chromaCurve: Curve;
   lumCurve: Curve;
 };
 
@@ -982,7 +982,7 @@ function generateColors({
   end,
   steps,
   hueCurve,
-  satCurve,
+  chromaCurve,
   lumCurve,
 }: ScaleSpec): Color[] {
   function generateNumberOfSteps(curve: Curve) {
@@ -1004,18 +1004,18 @@ function generateColors({
   const startColor = chroma(start);
   const endColor = chroma(end);
 
-  const hueStart = startColor.hsv()[0];
-  const satStart = startColor.hsv()[1] * 100;
-  const lumStart = startColor.hsv()[2] * 100;
-  const hueEnd = endColor.hsv()[0];
-  const satEnd = endColor.hsv()[1] * 100;
-  const lumEnd = endColor.hsv()[2] * 100;
+  const hueStart = startColor.hcl()[0];
+  const chrStart = startColor.hcl()[1] * 100;
+  const lumStart = startColor.hcl()[2] * 100;
+  const hueEnd = endColor.hcl()[0];
+  const chrEnd = endColor.hcl()[1] * 100;
+  const lumEnd = endColor.hcl()[2] * 100;
 
   let lumArray = generateNumberOfSteps(lumCurve);
-  let satArray = generateNumberOfSteps(satCurve);
+  let chrArray = generateNumberOfSteps(chromaCurve);
   let hueArray = generateNumberOfSteps(hueCurve);
   const lumArrayAdjusted: number[] = [];
-  const satArrayAdjusted: number[] = [];
+  const chrArrayAdjusted: number[] = [];
   const hueArrayAdjusted: number[] = [];
 
   for (const index in lumArray) {
@@ -1023,10 +1023,10 @@ function generateColors({
     lumArrayAdjusted.push(distribute(step, [0, 1], [lumEnd * 0.01, lumStart * 0.01]));
   }
 
-  for (const index in satArray) {
-    const step = satArray[index];
-    const satStep = distribute(step, [0, 1], [satStart * 0.01, satEnd * 0.01]);
-    satArrayAdjusted.push(satStep);
+  for (const index in chrArray) {
+    const step = chrArray[index];
+    const chrStep = distribute(step, [0, 1], [chrStart * 0.01, chrEnd * 0.01]);
+    chrArrayAdjusted.push(chrStep);
   }
 
   for (const index in hueArray) {
@@ -1034,11 +1034,11 @@ function generateColors({
     hueArrayAdjusted.push(distribute(step, [0, 1], [hueStart, hueEnd]));
   }
 
-  satArrayAdjusted.reverse();
+  chrArrayAdjusted.reverse();
   hueArrayAdjusted.reverse();
 
   lumArray = lumArrayAdjusted;
-  satArray = satArrayAdjusted;
+  chrArray = chrArrayAdjusted;
   hueArray = hueArrayAdjusted;
 
   const colorMap: Color[] = [];
@@ -1048,15 +1048,11 @@ function generateColors({
 
     const params = {
       hue: hueArray[index],
-      saturation: satArray[index],
+      chroma: chrArray[index],
       luminosity: lumArray[index],
     };
 
-    if (params.saturation > 1) {
-      params.saturation = 1;
-    }
-
-    const color = chroma(chroma.hsv(params.hue, params.saturation, params.luminosity));
+    const color = chroma(chroma.lch(params.luminosity, params.chroma, params.hue));
     const [h, s, l] = color.hsl().map((value) => (isNaN(value) ? 0 : value));
 
     const colorObj: Color = {
