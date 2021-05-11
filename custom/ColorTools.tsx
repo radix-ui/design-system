@@ -64,8 +64,8 @@ export function ColorTools() {
           name="gray"
           lightThemeConfig={{
             start: 'hsl(0 0% 97.3%)',
-            end: 'hsl(0 0% 80.0%)',
-            defaultCurve: [0.57, 0.47, 0.815, 0.59],
+            end: 'hsl(0 0% 65.0%)',
+            defaultCurve: [0.625, 0.225, 0.74, 0.515],
             overrides: {
               gray000: 'hsl(0 0% 99.0%)',
               gray900: 'hsl(0, 0%, 43.5%)',
@@ -80,9 +80,9 @@ export function ColorTools() {
         <EditableScale
           name="quartz"
           lightThemeConfig={{
-            start: 'hsl(300 17% 97.6%)',
-            end: 'hsl(252 7% 81.0%)',
-            defaultCurve: [0.44, 0.36, 0.66, 0.455],
+            start: 'hsl(300 10% 97.6%)',
+            end: 'hsl(252 4% 65.8%)',
+            defaultCurve: [0.615, 0.21, 0.745, 0.515],
             overrides: {
               quartz800: 'hsl(252 4% 57.3%)',
               quartz900: 'hsl(252 4% 45%)',
@@ -98,8 +98,8 @@ export function ColorTools() {
           name="slate"
           lightThemeConfig={{
             start: 'hsl(206 17% 97.6%)',
-            end: 'hsl(206 10% 80.0%)',
-            defaultCurve: [0.515, 0.46, 0.615, 0.375],
+            end: 'hsl(206 10% 65.0%)',
+            defaultCurve: [0.605, 0.23, 0.745, 0.515],
             overrides: {
               slate900: 'hsl(206 6% 43.5%)',
               slate1000: 'hsl(206 24% 9%)',
@@ -115,8 +115,8 @@ export function ColorTools() {
           name="sage"
           lightThemeConfig={{
             start: 'hsl(155 17% 97.6%)',
-            end: 'hsl(155 10% 78.5%)',
-            defaultCurve: [0.52, 0.44, 0.595, 0.385],
+            end: 'hsl(155 6% 63.8%)',
+            defaultCurve: [0.605, 0.23, 0.735, 0.515],
             overrides: {
               sage800: 'hsl(155, 3.5%, 55.5%)',
               sage900: 'hsl(155, 3%, 43.0%)',
@@ -133,8 +133,8 @@ export function ColorTools() {
           name="olive"
           lightThemeConfig={{
             start: 'hsl(110 17% 97.6%)',
-            end: 'hsl(110 7% 79%)',
-            defaultCurve: [0.52, 0.44, 0.595, 0.385],
+            end: 'hsl(110 5% 64%)',
+            defaultCurve: [0.595, 0.22, 0.725, 0.525],
             overrides: {
               olive800: 'hsl(110, 3.5%, 55.5%)',
               olive900: 'hsl(110, 3%, 43.0%)',
@@ -151,8 +151,8 @@ export function ColorTools() {
           name="sand"
           lightThemeConfig={{
             start: 'hsl(50 9% 97.5%)',
-            end: 'hsl(50 6% 79.0%)',
-            defaultCurve: [0.52, 0.44, 0.595, 0.385],
+            end: 'hsl(50 6% 63.8%)',
+            defaultCurve: [0.595, 0.22, 0.725, 0.525],
             overrides: {
               sand900: 'hsl(50 2% 43.1%)',
               sand1000: 'hsl(50 6% 10%)',
@@ -168,9 +168,13 @@ export function ColorTools() {
           name="tomato"
           lightThemeConfig={{
             start: 'hsl(10 90% 98.3%)',
-            end: 'hsl(10 73% 68%)',
-            defaultCurve: [0.545, 0.28, 0.8, 0.445],
-            overrides: {},
+            end: 'hsl(10 70% 71.5%)',
+            defaultCurve: [0.555, 0.215, 0.84, 0.675],
+            overrides: {
+              tomato800: 'hsl(10 82% 54.0%)',
+              tomato900: 'hsl(10 82% 44%)',
+              tomato1000: 'hsl(10 50% 13.5%)',
+            },
           }}
           darkThemeConfig={{
             start: 'hsl(353 35% 10.2%)',
@@ -182,14 +186,14 @@ export function ColorTools() {
           name="red"
           lightThemeConfig={{
             start: 'hsl(351 100% 98.5%)',
-            end: 'hsl(355 73% 71%)',
-            defaultCurve: [0.61, 0.325, 0.8, 0.415],
+            end: 'hsl(355 70% 74.5%)',
+            defaultCurve: [0.62, 0.32, 0.735, 0.49],
             overrides: {
               red000: 'hsl(351 100% 99.4%)',
               red100: 'hsl(351 100% 98.6%)',
-              red800: 'hsl(356 80% 59.0%)',
-              red900: 'hsl(356 65% 48.7%)',
-              red1000: 'hsl(351 70% 14.6%)',
+              red800: 'hsl(356 75% 59.0%)',
+              red900: 'hsl(356 65% 48.5%)',
+              red1000: 'hsl(351 50% 14.6%)',
             },
           }}
           darkThemeConfig={{
@@ -202,12 +206,13 @@ export function ColorTools() {
           name="crimson"
           lightThemeConfig={{
             start: 'hsl(332 100% 98.5%)',
-            end: 'hsl(336 73% 70.3%)',
-            defaultCurve: [0.655, 0.345, 0.815, 0.48],
+            end: 'hsl(336 62% 72.8%)',
+            defaultCurve: [0.62, 0.32, 0.735, 0.49],
             overrides: {
               crimson000: 'hsl(332 100% 99.4%)',
-              crimson800: 'hsl(336 80% 57.5%)',
-              crimson900: 'hsl(336 70% 47%)',
+              crimson800: 'hsl(336 80% 57.8%)',
+              crimson900: 'hsl(336 70% 46%)',
+              crimson1000: 'hsl(340 65% 14.5%)',
             },
           }}
           darkThemeConfig={{
@@ -220,12 +225,12 @@ export function ColorTools() {
           name="pink"
           lightThemeConfig={{
             start: 'hsl(322 100% 98.5%)',
-            end: 'hsl(322 72% 69.2%)',
-            defaultCurve: [0.65, 0.36, 0.835, 0.45],
+            end: 'hsl(322 60% 72.2%)',
+            defaultCurve: [0.62, 0.32, 0.735, 0.49],
             overrides: {
               pink000: 'hsl(322 100% 99.4%)',
               pink800: 'hsl(322 65% 54.5%)',
-              pink900: 'hsl(322 70% 45%)',
+              pink900: 'hsl(322 65% 44%)',
               pink1000: 'hsl(320 70% 13.5%)',
             },
           }}
@@ -239,8 +244,8 @@ export function ColorTools() {
           name="plum"
           lightThemeConfig={{
             start: 'hsl(297 100% 98.6%)',
-            end: 'hsl(292 60% 67.5%)',
-            defaultCurve: [0.63, 0.37, 0.835, 0.45],
+            end: 'hsl(292 48% 70.9%)',
+            defaultCurve: [0.62, 0.32, 0.755, 0.485],
             overrides: {
               plum000: 'hsl(292 90% 99.4%)',
               plum800: 'hsl(292 45% 51.0%)',
@@ -258,11 +263,11 @@ export function ColorTools() {
           name="purple"
           lightThemeConfig={{
             start: 'hsl(280 100% 99.0%)',
-            end: 'hsl(272 65% 69.5%)',
-            defaultCurve: [0.68, 0.37, 0.9, 0.57],
+            end: 'hsl(272 60% 73.5%)',
+            defaultCurve: [0.62, 0.32, 0.755, 0.485],
             overrides: {
               purple000: 'hsl(280 65% 99.4%)',
-              purple900: 'hsl(272 55% 43.8%)',
+              purple900: 'hsl(272 50% 45.8%)',
             },
           }}
           darkThemeConfig={{
@@ -275,12 +280,12 @@ export function ColorTools() {
           name="violet"
           lightThemeConfig={{
             start: 'hsl(252 100% 99.0%)',
-            end: 'hsl(252 75% 72.4%)',
-            defaultCurve: [0.67, 0.33, 0.915, 0.605],
+            end: 'hsl(252 68% 76.2%)',
+            defaultCurve: [0.62, 0.32, 0.775, 0.49],
             overrides: {
               violet000: 'hsl(255 65% 99.4%)',
               violet800: 'hsl(252 56% 57.5%)',
-              violet900: 'hsl(250 55% 48.0%)',
+              violet900: 'hsl(250 43% 48.0%)',
               violet1000: 'hsl(254 60% 18.5%)',
             },
           }}
@@ -293,14 +298,14 @@ export function ColorTools() {
         <EditableScale
           name="indigo"
           lightThemeConfig={{
-            start: 'hsl(226 100% 99.0%)',
-            end: 'hsl(226 74% 69.5%)',
-            defaultCurve: [0.535, 0.25, 0.835, 0.495],
+            start: 'hsl(226 100% 98.7%)',
+            end: 'hsl(226 76% 74.5%)',
+            defaultCurve: [0.485, 0.205, 0.77, 0.46],
             overrides: {
               indigo000: 'hsl(225 60% 99.4%)',
               indigo800: 'hsl(226 70% 55.5%)',
-              indigo900: 'hsl(226 65% 43.10%)',
-              indigo1000: 'hsl(226 75% 18.0%)',
+              indigo900: 'hsl(226 55% 45%)',
+              indigo1000: 'hsl(226 62% 17.0%)',
             },
           }}
           darkThemeConfig={{
@@ -312,9 +317,9 @@ export function ColorTools() {
         <EditableScale
           name="blue"
           lightThemeConfig={{
-            start: 'hsl(206 100% 98.3%)',
-            end: 'hsl(206 97% 65.0%)',
-            defaultCurve: [0.66, 0.29, 0.76, 0.615],
+            start: 'hsl(206 100% 98%)',
+            end: 'hsl(206 82% 65.4%)',
+            defaultCurve: [0.47, 0.165, 0.805, 0.56],
             overrides: {
               blue900: 'hsl(211 100% 43.2%)',
               blue1000: 'hsl(211 100% 15%)',
@@ -330,12 +335,12 @@ export function ColorTools() {
           name="sky"
           lightThemeConfig={{
             start: 'hsl(194 100% 97.8%)',
-            end: 'hsl(198 85% 58.0%)',
-            defaultCurve: [0.59, 0.21, 0.79, 0.645],
+            end: 'hsl(200 85% 59.5%)',
+            defaultCurve: [0.47, 0.165, 0.805, 0.56],
             overrides: {
-              sky800: 'hsl(199 95% 45.0%)',
-              sky900: 'hsl(202 100% 36.3%)',
-              sky1000: 'hsl(200 100% 14.0%)',
+              sky800: 'hsl(200 100% 46.0%)',
+              sky900: 'hsl(205 100% 37.5%)',
+              sky1000: 'hsl(205 100% 14.0%)',
             },
           }}
           darkThemeConfig={{
@@ -347,13 +352,13 @@ export function ColorTools() {
         <EditableScale
           name="cyan"
           lightThemeConfig={{
-            start: 'hsl(185 78% 97.0%)',
-            end: 'hsl(188 68% 50.0%)',
-            defaultCurve: [0.735, 0.285, 0.775, 0.725],
+            start: 'hsl(185 70% 97.0%)',
+            end: 'hsl(189 60% 52.5%)',
+            defaultCurve: [0.635, 0.24, 0.825, 0.69],
             overrides: {
               cyan000: 'hsl(185 60% 98.7%)',
               cyan800: 'hsl(190 95% 39.0%)',
-              cyan900: 'hsl(192 100% 29.7%)',
+              cyan900: 'hsl(192 85% 31.0%)',
               cyan1000: 'hsl(192 88% 12.5%)',
             },
           }}
@@ -366,9 +371,9 @@ export function ColorTools() {
         <EditableScale
           name="teal"
           lightThemeConfig={{
-            start: 'hsl(165 80% 97.0%)',
-            end: 'hsl(172 52% 50.0%)',
-            defaultCurve: [0.705, 0.33, 0.77, 0.73],
+            start: 'hsl(165 70% 96.7%)',
+            end: 'hsl(172 42% 52.5%)',
+            defaultCurve: [0.635, 0.24, 0.84, 0.69],
             overrides: {
               teal000: 'hsl(165 60% 98.8%)',
               teal800: 'hsl(173 80% 36.0%)',
@@ -385,9 +390,9 @@ export function ColorTools() {
         <EditableScale
           name="green"
           lightThemeConfig={{
-            start: 'hsl(136 100% 97.0%)',
-            end: 'hsl(151 46% 54.0%)',
-            defaultCurve: [0.65, 0.365, 0.755, 0.625],
+            start: 'hsl(136 66% 97%)',
+            end: 'hsl(151 40% 54.0%)',
+            defaultCurve: [0.625, 0.225, 0.85, 0.66],
             overrides: {
               green000: 'hsl(136 50% 98.9%)',
               green800: 'hsl(151 55% 41.5%)',
@@ -404,9 +409,9 @@ export function ColorTools() {
         <EditableScale
           name="lime"
           lightThemeConfig={{
-            start: 'hsl(85 80% 96.5%)',
-            end: 'hsl(76 60% 50.0%)',
-            defaultCurve: [0.56, 0.335, 0.72, 0.75],
+            start: 'hsl(85 70% 96.5%)',
+            end: 'hsl(76 50% 51.0%)',
+            defaultCurve: [0.595, 0.295, 0.785, 0.69],
             overrides: {
               lime000: 'hsl(85 50% 98.7%)',
               lime800: 'hsl(81 68% 46.0%)',
@@ -423,15 +428,15 @@ export function ColorTools() {
         <EditableScale
           name="yellow"
           lightThemeConfig={{
-            start: 'hsl(58 90% 92.0%)',
-            end: 'hsl(51 85% 59%)',
-            defaultCurve: [0.52, 0.185, 0.555, 0.9],
+            start: 'hsl(60 65% 95.8%)',
+            end: 'hsl(55 85% 55%)',
+            defaultCurve: [0.585, 0.705, 0.89, 0.92],
             overrides: {
-              yellow000: 'hsl(58 70% 98.5%)',
-              yellow100: 'hsl(55 90% 96.0%)',
-              yellow800: 'hsl(49 95% 48.5%)',
-              yellow900: 'hsl(40 100% 30.0%)',
-              yellow1000: 'hsl(48 55% 13.0%)',
+              yellow000: 'hsl(60 54% 98.5%)',
+              // yellow100: 'hsl(55 60% 96.0%)',
+              yellow800: 'hsl(57 85% 60.5%)',
+              yellow900: 'hsl(40 100% 29.5%)',
+              yellow1000: 'hsl(40 55% 13.5%)',
             },
           }}
           darkThemeConfig={{
@@ -443,15 +448,15 @@ export function ColorTools() {
         <EditableScale
           name="orange"
           lightThemeConfig={{
-            start: 'hsl(28 100% 96.5%)',
-            end: 'hsl(28 95% 67.0%)',
-            defaultCurve: [0.555, 0.325, 0.795, 0.54],
+            start: 'hsl(28 90% 97.8%)',
+            end: 'hsl(28 95% 71.0%)',
+            defaultCurve: [0.63, 0.515, 0.91, 0.895],
             overrides: {
               orange000: 'hsl(28 70% 99.0%)',
-              orange100: 'hsl(28 100% 97.5%)',
-              orange800: 'hsl(28 95% 60%)',
-              orange900: 'hsl(28 93% 35%)',
-              orange1000: 'hsl(23 86% 15.0%)',
+              // orange100: 'hsl(28 100% 97.5%)',
+              orange800: 'hsl(28 100% 65%)',
+              orange900: 'hsl(28 90% 36%)',
+              orange1000: 'hsl(23 60% 17.0%)',
             },
           }}
           darkThemeConfig={{
@@ -463,9 +468,9 @@ export function ColorTools() {
         <EditableScale
           name="brown"
           lightThemeConfig={{
-            start: 'hsl(30 75% 98.0%)',
+            start: 'hsl(30 55% 98.0%)',
             end: 'hsl(28 50% 61.6%)',
-            defaultCurve: [0.53, 0.325, 0.745, 0.465],
+            defaultCurve: [0.58, 0.275, 0.77, 0.46],
             overrides: {
               brown000: 'hsl(30 40% 99.1%)',
               brown900: 'hsl(25 30% 41.0%)',
@@ -481,9 +486,9 @@ export function ColorTools() {
         <EditableScale
           name="bronze"
           lightThemeConfig={{
-            start: 'hsl(18 100% 98.5%)',
+            start: 'hsl(18 70% 98.5%)',
             end: 'hsl(16 25% 65.0%)',
-            defaultCurve: [0.59, 0.415, 0.72, 0.475],
+            defaultCurve: [0.58, 0.275, 0.785, 0.445],
             overrides: {
               bronze000: 'hsl(15 30% 99.1%)',
               bronze900: 'hsl(15 20% 43.1%)',
@@ -499,9 +504,9 @@ export function ColorTools() {
         <EditableScale
           name="gold"
           lightThemeConfig={{
-            start: 'hsl(50 60% 96.5%)',
+            start: 'hsl(50 50% 97%)',
             end: 'hsl(36 27% 60%)',
-            defaultCurve: [0.53, 0.385, 0.71, 0.47],
+            defaultCurve: [0.58, 0.275, 0.785, 0.445],
             overrides: {
               gold000: 'hsl(50 20% 99.1%)',
               gold800: 'hsl(36 20% 49.5%)',

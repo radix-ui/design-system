@@ -241,7 +241,7 @@ function Buttons() {
                 willChange: 'transform',
                 '@hover': {
                   '&:hover': {
-                    backgroundColor: `$${color}800`,
+                    backgroundColor: `$${color}900`,
                     boxShadow: `0 2px 5px -2px $colors$${color}800 `,
                   },
                 },
@@ -278,6 +278,30 @@ function Alerts() {
         {colors.map((color) => (
           <Box key={color} css={{ p: '$4', borderRadius: '$3', bc: `$${color}800` }}>
             <Text size="2" as="p" css={{ color: getHiContrast(color) }}>
+              Warning: obsessing over {color} is a terrible idea.
+            </Text>
+          </Box>
+        ))}
+      </Grid>
+
+      <Grid
+        css={{
+          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+          gap: '$3',
+          mb: '$9',
+          ai: 'center',
+        }}
+      >
+        {colors.map((color) => (
+          <Box
+            key={color}
+            css={{
+              p: '$4',
+              bc: `$${color}100`,
+              borderLeft: `3px solid $${color}700`,
+            }}
+          >
+            <Text size="2" as="p" css={{ color: `$${color}900` }}>
               Warning: obsessing over {color} is a terrible idea.
             </Text>
           </Box>
