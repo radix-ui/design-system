@@ -11,6 +11,7 @@ import { ControlGroup } from '../components/ControlGroup';
 import { Text } from '../components/Text';
 import { Link } from '../components/Link';
 import { AppBar } from '../components/AppBar';
+import { NewHeading } from '../components/NewHeading';
 import { Banner } from '../components/Banner';
 import { Alert } from '../components/Alert';
 import { Kbd } from '../components/Kbd';
@@ -596,6 +597,14 @@ function Home() {
                   The quick brown fox jumped over the lazy dog.
                 </Text>
               </Flex>
+            </Flex>
+            <Flex css={{ fd: 'column', gap: '$4' }}>
+              <NewHeading size="1" as="h1">
+                The quick brown fox
+              </NewHeading>
+              <NewHeading size="2" as="h1">
+                The quick brown fox
+              </NewHeading>
             </Flex>
             <Flex css={{ fd: 'column', gap: '$4' }}>
               <Flex css={{ ai: 'center' }}>
