@@ -1,9 +1,13 @@
 import React from 'react';
 import { StyledText } from './Text';
 import { StitchesVariants, CSS } from '../stitches.config';
+
 import * as Polymorphic from '@radix-ui/react-polymorphic';
+
 const DEFAULT_TAG = 'h1';
+
 type TextSizeVariants = Pick<StitchesVariants<typeof StyledText>, 'size'>;
+
 type NewHeadingCSSProp = { css?: CSS };
 type NewHeadingSizeVariants = '1' | '2' | '3' | '4';
 type NewHeadingVariants = { size?: NewHeadingSizeVariants } & Omit<
@@ -12,6 +16,7 @@ type NewHeadingVariants = { size?: NewHeadingSizeVariants } & Omit<
 >;
 type NewHeadingOwnProps = NewHeadingCSSProp & NewHeadingVariants;
 type NewHeadingComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, NewHeadingOwnProps>;
+
 export const NewHeading = React.forwardRef((props, forwardedRef) => {
   // '2' here is the default Newheading size variant
   const { size = '2', ...textProps } = props;

@@ -116,7 +116,7 @@ import {
   TextAlignRightIcon,
   TriangleUpIcon,
   VideoIcon,
-  RocketIcon
+  RocketIcon,
 } from '@radix-ui/react-icons';
 import { Toolbar } from '../custom/Toolbar';
 import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stitches.config';
@@ -126,7 +126,9 @@ function Home() {
     <Box className={modulzTheme}>
       <Banner variant="blue" rounded>
         <RocketIcon />
-        <Text size="2" css={{ fontWeight: 500 }}>Modulz raises a $15M Series A.</Text>
+        <Text size="2" css={{ fontWeight: 500 }}>
+          Modulz raises a $15M Series A.
+        </Text>
         <Separator orientation="vertical" />
         <Link variant="blue" href="#">
           <Text size="2">Read the story</Text>
@@ -508,11 +510,7 @@ function Home() {
             <Heading id="flex" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Flex
             </Heading>
-            <Flex
-              direction="column"
-              align="center"
-              gap="6"
-            >
+            <Flex direction="column" align="center" gap="6">
               <Box css={{ width: '$8', height: '$8', bc: '$blue800' }}></Box>
               <Box css={{ width: '$5', height: '$5', bc: '$blue800' }}></Box>
               <Box css={{ width: '$7', height: '$7', bc: '$blue800' }}></Box>
@@ -527,12 +525,7 @@ function Home() {
             <Heading id="flex" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Grid
             </Heading>
-            <Grid
-              columns="4"
-              align="center"
-              gapX="3"
-              gapY="6"
-            >
+            <Grid columns="4" align="center" gapX="3" gapY="6">
               <Box css={{ height: '$9', bc: '$blue800' }}></Box>
               <Box css={{ height: '$7', bc: '$blue800' }}></Box>
               <Box css={{ height: '$7', bc: '$blue800' }}></Box>
@@ -608,87 +601,189 @@ function Home() {
             </Flex>
             <Flex css={{ fd: 'column', gap: '$4' }}>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="red" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="red"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="crimson" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="crimson"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="pink" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="pink"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="purple" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="purple"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="violet" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="violet"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="indigo" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="indigo"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="blue" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="blue"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="cyan" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="cyan"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="teal" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="teal"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="green" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="green"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="lime" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="lime"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="yellow" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="yellow"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="orange" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="orange"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="gold" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="gold"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="bronze" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="bronze"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="gray" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="gray"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
               <Flex css={{ ai: 'center' }}>
-                <Text size="9" as="h2" variant="contrast" gradient css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text', }}>
+                <Text
+                  size="9"
+                  as="h2"
+                  variant="contrast"
+                  gradient
+                  css={{ fontWeight: 500, lineHeight: '68px', WebkitBackgroundClip: 'text' }}
+                >
                   The quick brown fox jumped over the lazy dog
                 </Text>
               </Flex>
@@ -1033,24 +1128,49 @@ function Home() {
             </Heading>
             <Flex css={{ gap: '$2', mt: '$6' }}>
               <Alert variant="loContrast">
-                <Text size="3" css={{ fontWeight: 500 }}>Alert heading</Text>
-                <Text size="2" variant="gray">A modal dialog that interrupts the user with important content and expects a response.</Text>
+                <Text size="3" css={{ fontWeight: 500 }}>
+                  Alert heading
+                </Text>
+                <Text size="2" variant="gray">
+                  A modal dialog that interrupts the user with important content and expects a
+                  response.
+                </Text>
               </Alert>
               <Alert variant="gray">
-                <Text size="3" css={{ fontWeight: 500 }}>Alert heading</Text>
-                <Text size="2" variant="gray">A modal dialog that interrupts the user with important content and expects a response.</Text>
+                <Text size="3" css={{ fontWeight: 500 }}>
+                  Alert heading
+                </Text>
+                <Text size="2" variant="gray">
+                  A modal dialog that interrupts the user with important content and expects a
+                  response.
+                </Text>
               </Alert>
               <Alert variant="blue">
-                <Text size="3" variant="blue" css={{ fontWeight: 500 }}>Alert heading</Text>
-                <Text size="2" variant="blue">A modal dialog that interrupts the user with important content and expects a response.</Text>
+                <Text size="3" variant="blue" css={{ fontWeight: 500 }}>
+                  Alert heading
+                </Text>
+                <Text size="2" variant="blue">
+                  A modal dialog that interrupts the user with important content and expects a
+                  response.
+                </Text>
               </Alert>
               <Alert variant="green">
-                <Text size="3" variant="green" css={{ fontWeight: 500 }}>Alert heading</Text>
-                <Text size="2" variant="green">A modal dialog that interrupts the user with important content and expects a response.</Text>
+                <Text size="3" variant="green" css={{ fontWeight: 500 }}>
+                  Alert heading
+                </Text>
+                <Text size="2" variant="green">
+                  A modal dialog that interrupts the user with important content and expects a
+                  response.
+                </Text>
               </Alert>
               <Alert variant="red">
-                <Text size="3" variant="red" css={{ fontWeight: 500 }}>Alert heading</Text>
-                <Text size="2" variant="red">A modal dialog that interrupts the user with important content and expects a response.</Text>
+                <Text size="3" variant="red" css={{ fontWeight: 500 }}>
+                  Alert heading
+                </Text>
+                <Text size="2" variant="red">
+                  A modal dialog that interrupts the user with important content and expects a
+                  response.
+                </Text>
               </Alert>
             </Flex>
           </Container>
@@ -1078,9 +1198,15 @@ function Home() {
             </Flex>
             <Flex css={{ mt: '$6', gap: '$6' }}>
               <Button ghost>Button</Button>
-              <Button ghost variant="blue">Important</Button>
-              <Button ghost variant="green">Secure</Button>
-              <Button ghost variant="red">Warning</Button>
+              <Button ghost variant="blue">
+                Important
+              </Button>
+              <Button ghost variant="green">
+                Secure
+              </Button>
+              <Button ghost variant="red">
+                Warning
+              </Button>
             </Flex>
             <Box
               css={{
@@ -2060,7 +2186,9 @@ function Home() {
                   <Td align="center">GA</Td>
                   <Td align="center">GD</Td>
                   <Td align="center">Pts</Td>
-                  <Td css={{ width: 100 }} align="center">Last 5</Td>
+                  <Td css={{ width: 100 }} align="center">
+                    Last 5
+                  </Td>
                 </Tr>
               </Thead>
               <Tbody>
@@ -2076,11 +2204,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2096,11 +2234,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2116,11 +2264,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2136,11 +2294,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2156,11 +2324,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2178,11 +2356,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2202,7 +2390,9 @@ function Home() {
                   <Td align="center">GA</Td>
                   <Td align="center">GD</Td>
                   <Td align="center">Pts</Td>
-                  <Td css={{ width: 100 }} align="center">Last 5</Td>
+                  <Td css={{ width: 100 }} align="center">
+                    Last 5
+                  </Td>
                 </Tr>
               </Thead>
               <Tbody>
@@ -2223,11 +2413,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2248,11 +2448,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2263,21 +2473,47 @@ function Home() {
                       Leicester City
                     </Flex>
                   </Td>
-                  <Td align="center" border="dashed">32</Td>
-                  <Td align="center" border="dashed">32</Td>
-                  <Td align="center" border="dashed">32</Td>
-                  <Td align="center" border="dashed">32</Td>
-                  <Td align="center" border="dashed">32</Td>
-                  <Td align="center" border="dashed">32</Td>
-                  <Td align="center" border="dashed">32</Td>
-                  <Td align="center" border="dashed">32</Td>
+                  <Td align="center" border="dashed">
+                    32
+                  </Td>
+                  <Td align="center" border="dashed">
+                    32
+                  </Td>
+                  <Td align="center" border="dashed">
+                    32
+                  </Td>
+                  <Td align="center" border="dashed">
+                    32
+                  </Td>
+                  <Td align="center" border="dashed">
+                    32
+                  </Td>
+                  <Td align="center" border="dashed">
+                    32
+                  </Td>
+                  <Td align="center" border="dashed">
+                    32
+                  </Td>
+                  <Td align="center" border="dashed">
+                    32
+                  </Td>
                   <Td align="center" border="dashed">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2298,11 +2534,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2323,11 +2569,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2350,11 +2606,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2374,7 +2640,9 @@ function Home() {
                   <Td align="center">GA</Td>
                   <Td align="center">GD</Td>
                   <Td align="center">Pts</Td>
-                  <Td css={{ width: 100 }} align="center">Last 5</Td>
+                  <Td css={{ width: 100 }} align="center">
+                    Last 5
+                  </Td>
                 </Tr>
               </Thead>
               <Tbody>
@@ -2390,11 +2658,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2410,11 +2688,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2430,11 +2718,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2450,11 +2748,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2470,11 +2778,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
@@ -2492,11 +2810,21 @@ function Home() {
                   <Td align="center">32</Td>
                   <Td align="center">
                     <Flex css={{ gap: '$1', jc: 'flex-end' }}>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
-                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}><CheckIcon /></Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
+                      <Box css={{ width: 15, height: 15, bc: '$green800', borderRadius: '$round' }}>
+                        <CheckIcon />
+                      </Box>
                     </Flex>
                   </Td>
                 </Tr>
