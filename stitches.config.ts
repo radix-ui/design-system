@@ -361,7 +361,8 @@ const stitches = createCss({
 
       // Semantic colors
       hiContrast: '$slate1000',
-      loContrast: '$slate000',
+      // loContrast: '$slate000',
+      loContrast: 'white',
       canvas: 'hsl(0 0% 93%)',
       panel: 'white',
       transparentPanel: 'hsl(0 0% 0% / 97%)',
