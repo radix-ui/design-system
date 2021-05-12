@@ -326,6 +326,13 @@ function Home() {
             </Link>
           </Box>
           <Box css={{ my: '$1' }}>
+            <Link href="#table" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Table
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
             <Link href="#tablink" variant="subtle" css={{ display: 'inline-flex' }}>
               <Text size="2" css={{ lineHeight: '20px' }}>
                 TabLink
@@ -2174,7 +2181,7 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="radio" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+            <Heading id="table" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Table
             </Heading>
             <Table>
