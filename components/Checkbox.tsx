@@ -6,25 +6,25 @@ import { CheckIcon } from '@radix-ui/react-icons';
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const StyledCheckbox = styled(CheckboxPrimitive.Root, {
-  // Reset
-  alignItems: 'center',
-  appearance: 'none',
+  all: 'unset',
   boxSizing: 'border-box',
-  display: 'inline-flex',
-  justifyContent: 'center',
-  lineHeight: '1',
-  margin: '0',
-  outline: 'none',
-  padding: '0',
-  textDecoration: 'none',
   userSelect: 'none',
-  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   '&::before': {
     boxSizing: 'border-box',
   },
   '&::after': {
     boxSizing: 'border-box',
   },
+
+  alignItems: 'center',
+  appearance: 'none',
+  display: 'inline-flex',
+  justifyContent: 'center',
+  lineHeight: '1',
+  margin: '0',
+  outline: 'none',
+  padding: '0',
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
   color: '$hiContrast',
   boxShadow: 'inset 0 0 0 1px $colors$slate600',

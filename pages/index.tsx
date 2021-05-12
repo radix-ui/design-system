@@ -2134,8 +2134,10 @@ function Home() {
               Checkbox
             </Heading>
             <Heading css={{ mb: '$6' }}>Sizes</Heading>
-            <Checkbox css={{ mr: '$5' }} />
-            <Checkbox size="2" css={{ mr: '$5' }} />
+            <Flex>
+              <Checkbox css={{ mr: '$5' }} />
+              <Checkbox size="2" css={{ mr: '$5' }} />
+            </Flex>
           </Container>
         </Section>
         <Flex css={{ jc: 'center' }}>
