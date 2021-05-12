@@ -114,11 +114,11 @@ import {
   RocketIcon,
 } from '@radix-ui/react-icons';
 import { Toolbar } from '../custom/Toolbar';
-import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stitches.config';
+import { darkTheme } from '../stitches.config';
 
 function Home() {
   return (
-    <Box className={modulzTheme}>
+    <Box>
       <Banner id="banner" variant="blue" rounded>
         <RocketIcon />
         <Text size="2" css={{ fontWeight: 500 }}>
