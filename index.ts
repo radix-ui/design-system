@@ -12,6 +12,7 @@ export {
 export { Avatar, AvatarGroup, AvatarNestedItem } from './components/Avatar';
 export { AspectRatio } from '@radix-ui/react-aspect-ratio';
 export { Badge } from './components/Badge';
+export { Banner } from './components/Banner';
 export { Box } from './components/Box';
 export { Button } from './components/Button';
 export { Card } from './components/Card';
