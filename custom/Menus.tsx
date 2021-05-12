@@ -3,6 +3,7 @@ import { Box } from '../components/Box';
 import { Section } from '../components/Section';
 import { Container } from '../components/Container';
 import { Flex } from '../components/Flex';
+import { Heading } from '../components/Heading';
 
 import {
   Menu,
