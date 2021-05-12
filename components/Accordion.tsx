@@ -15,9 +15,21 @@ const StyledItem = styled(AccordionPrimitive.Item, {
   },
 });
 
-const StyledHeader = styled(AccordionPrimitive.Header, {});
+const StyledHeader = styled(AccordionPrimitive.Header, {
+  all: 'unset',
+});
 
 const StyledButton = styled(AccordionPrimitive.Button, {
+  all: 'unset',
+  boxSizing: 'border-box',
+  userSelect: 'none',
+  '&::before': {
+    boxSizing: 'border-box',
+  },
+  '&::after': {
+    boxSizing: 'border-box',
+  },
+
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
