@@ -26,7 +26,6 @@ const StyledButton = styled(DEFAULT_TAG, {
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
   // Custom
-  borderRadius: '$1',
   height: '$5',
   px: '$2',
   fontFamily: '$untitled',
@@ -44,18 +43,21 @@ const StyledButton = styled(DEFAULT_TAG, {
   variants: {
     size: {
       '1': {
+        borderRadius: '$1',
         height: '$5',
         px: '$2',
         fontSize: '$2',
         lineHeight: '$sizes$5',
       },
       '2': {
+        borderRadius: '$2',
         height: '$6',
         px: '$3',
         fontSize: '$3',
         lineHeight: '$sizes$6',
       },
       '3': {
+        borderRadius: '$2',
         height: '$7',
         px: '$4',
         fontSize: '$4',
