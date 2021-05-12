@@ -158,6 +158,13 @@ function Home() {
             </Link>
           </Box>
           <Box css={{ my: '$1' }}>
+            <Link href="#alert" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Alert
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
             <Link href="#alertdialog" variant="subtle" css={{ display: 'inline-flex' }}>
               <Text size="2" css={{ lineHeight: '20px' }}>
                 Alert Dialog
@@ -1111,7 +1118,7 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="status" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+            <Heading id="alert" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Alert
             </Heading>
             <Flex css={{ gap: '$2', mt: '$6' }}>
