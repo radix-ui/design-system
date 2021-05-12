@@ -124,7 +124,7 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(0 0% 9.6%)',
+            start: 'hsl(155 8% 9.6%)',
             end: 'hsl(155 4% 30.0%)',
             defaultCurve: [0.395, 0.22, 0.69, 0.395],
           }}
@@ -133,7 +133,6 @@ export function ColorTools() {
           name="olive"
           lightThemeConfig={{
             start: 'hsl(110 17% 97.6%)',
-
             end: 'hsl(110 5% 71.8%)',
             defaultCurve: [0.57, 0.29, 0.815, 0.59],
             overrides: {
@@ -143,7 +142,7 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(0 0% 9.6%)',
+            start: 'hsl(110 12% 9.6%)',
             end: 'hsl(110 4% 30.0%)',
             defaultCurve: [0.395, 0.22, 0.69, 0.395],
           }}
@@ -178,9 +177,12 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(353 35% 10.2%)',
-            end: 'hsl(353 70% 36.9%)',
+            start: 'hsl(10 35% 10.2%)',
+            end: 'hsl(10 70% 36.9%)',
             defaultCurve: [0.58, 0.195, 0.955, 0.545],
+            overrides: {
+              tomato800: 'hsl(10 78% 54.0%)',
+            },
           }}
         />
         <EditableScale
@@ -201,6 +203,9 @@ export function ColorTools() {
             start: 'hsl(353 35% 10.2%)',
             end: 'hsl(353 70% 36.9%)',
             defaultCurve: [0.58, 0.195, 0.955, 0.545],
+            overrides: {
+              red800: 'hsl(358 75% 59.0%)',
+            },
           }}
         />
         <EditableScale
@@ -220,6 +225,9 @@ export function ColorTools() {
             start: 'hsl(335 33% 10.0%)',
             end: 'hsl(334 80% 35.9%)',
             defaultCurve: [0.6, 0.25, 0.855, 0.56],
+            overrides: {
+              crimson800: 'hsl(336 80% 57.8%)',
+            },
           }}
         />
         <EditableScale
@@ -239,6 +247,9 @@ export function ColorTools() {
             start: 'hsl(318 33% 10.0%)',
             end: 'hsl(320 72% 38.0%)',
             defaultCurve: [0.555, 0.275, 0.815, 0.485],
+            overrides: {
+              pink800: 'hsl(322 65% 54.5%)',
+            },
           }}
         />
         <EditableScale
@@ -258,6 +269,9 @@ export function ColorTools() {
             start: 'hsl(301 30% 10.0%)',
             end: 'hsl(296 60% 38.0%)',
             defaultCurve: [0.7, 0.415, 0.86, 0.655],
+            overrides: {
+              plum800: 'hsl(292 45% 51.0%)',
+            },
           }}
         />
         <EditableScale
@@ -294,6 +308,9 @@ export function ColorTools() {
             start: 'hsl(250 30% 11.8%)',
             end: 'hsl(252 58% 50.0%)',
             defaultCurve: [0.62, 0.36, 0.795, 0.485],
+            overrides: {
+              violet800: 'hsl(252 56% 57.5%)',
+            },
           }}
         />
         <EditableScale
@@ -313,6 +330,9 @@ export function ColorTools() {
             start: 'hsl(229 37% 11.8%)',
             end: 'hsl(225 62% 47.1%)',
             defaultCurve: [0.585, 0.305, 0.845, 0.475],
+            overrides: {
+              indigo800: 'hsl(226 70% 55.5%)',
+            },
           }}
         />
         <EditableScale
@@ -345,9 +365,12 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(212 50% 10.2%)',
-            end: 'hsl(208 93% 40.0%)',
+            start: 'hsl(195 80% 7.8%)',
+            end: 'hsl(198 93% 38.0%)',
             defaultCurve: [0.695, 0.39, 0.815, 0.48],
+            overrides: {
+              sky800: 'hsl(198 100% 44.0%)',
+            },
           }}
         />
         <EditableScale
@@ -367,6 +390,9 @@ export function ColorTools() {
             start: 'hsl(192 68% 7.5%)',
             end: 'hsl(190 85% 32.0%)',
             defaultCurve: [0.54, 0.335, 0.93, 0.675],
+            overrides: {
+              cyan800: 'hsl(190 95% 39.0%)',
+            },
           }}
         />
         <EditableScale
@@ -386,6 +412,9 @@ export function ColorTools() {
             start: 'hsl(168 76% 6.5%)',
             end: 'hsl(173 80% 29.0%)',
             defaultCurve: [0.69, 0.315, 0.91, 0.59],
+            overrides: {
+              teal800: 'hsl(173 80% 36.0%)',
+            },
           }}
         />
         <EditableScale
@@ -405,6 +434,9 @@ export function ColorTools() {
             start: 'hsl(146 43% 8.2%)',
             end: 'hsl(151 60% 35.1%)',
             defaultCurve: [0.645, 0.24, 0.91, 0.48],
+            overrides: {
+              green800: 'hsl(151 55% 41.5%)',
+            },
           }}
         />
         <EditableScale
@@ -424,6 +456,9 @@ export function ColorTools() {
             start: 'hsl(80 47% 7.5%)',
             end: 'hsl(76 85% 38.0%)',
             defaultCurve: [0.67, 0.155, 0.965, 0.47],
+            overrides: {
+              lime800: 'hsl(81 67% 50%)',
+            },
           }}
         />
         <EditableScale
@@ -443,6 +478,9 @@ export function ColorTools() {
             start: 'hsl(44 59% 7.6%)',
             end: 'hsl(50 100% 45.1%)',
             defaultCurve: [1.0, 0.18, 1.0, 0.72],
+            overrides: {
+              yellow800: 'hsl(53 92% 50%)',
+            },
           }}
         />
         <EditableScale
@@ -459,9 +497,12 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(30 50% 8.6%)',
-            end: 'hsl(38 90% 48.0%)',
+            start: 'hsl(39 50% 8.6%)',
+            end: 'hsl(39 90% 48.0%)',
             defaultCurve: [0.75, 0.145, 1.0, 0.47],
+            overrides: {
+              amber800: 'hsl(39 100% 57%)',
+            },
           }}
         />
         <EditableScale
@@ -478,9 +519,12 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(30 50% 8.6%)',
-            end: 'hsl(38 90% 48.0%)',
+            start: 'hsl(24 60% 9.6%)',
+            end: 'hsl(24 90% 53.0%)',
             defaultCurve: [0.75, 0.145, 1.0, 0.47],
+            overrides: {
+              orange800: 'hsl(24 94% 50%)',
+            },
           }}
         />
         <EditableScale
@@ -536,6 +580,9 @@ export function ColorTools() {
             start: 'hsl(43 15% 9.2%)',
             end: 'hsl(36 28% 45.1%)',
             defaultCurve: [0.73, 0.31, 0.93, 0.52],
+            overrides: {
+              gold800: 'hsl(36 20% 49.5%)',
+            },
           }}
         />
       </Box>
