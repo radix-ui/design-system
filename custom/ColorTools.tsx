@@ -975,6 +975,22 @@ function distribute(value: number, rangeA: number[], rangeB: number[]) {
   return result;
 }
 
+function distributeHue(value: number, rangeA: number[], rangeB: number[]) {
+  let [toLow, toHigh] = Array.from(rangeB);
+
+  const hueDistanceA = toLow - toHigh;
+  const hueDistanceB = 360 - Math.max(toLow, toHigh) + Math.min(toLow, toHigh);
+  const shouldRotateDirection = Math.abs(hueDistanceA) > Math.abs(hueDistanceB);
+
+  if (shouldRotateDirection) {
+    toLow = toLow > toHigh ? toLow : toHigh + hueDistanceB;
+    toHigh = toLow > toHigh ? toLow + hueDistanceB : toHigh;
+    console.log(rangeB, [toLow, toHigh]);
+  }
+
+  return distribute(value, rangeA, [toLow, toHigh]);
+}
+
 type ScaleSpec = {
   name: string;
   start: string;
@@ -1010,6 +1026,7 @@ function generateColors({
     array.reverse();
     return array;
   }
+
   const indexOffset = 1;
 
   start = prepareColorStringForChroma(start);
@@ -1045,7 +1062,7 @@ function generateColors({
 
   for (const index in hueArray) {
     const step = hueArray[index];
-    hueArrayAdjusted.push(distribute(step, [0, 1], [hueStart, hueEnd]));
+    hueArrayAdjusted.push(distributeHue(step, [0, 1], [hueStart, hueEnd]));
   }
 
   chrArrayAdjusted.reverse();
