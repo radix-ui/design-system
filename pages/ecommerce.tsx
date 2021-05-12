@@ -15,7 +15,7 @@ import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../co
 import { ScrollArea } from '../components/Scrollbar';
 import { Heading } from '../components/Heading';
 import { Paragraph } from '../components/Paragraph';
-import { Input } from '../components/Input';
+import { TextField } from '../components/TextField';
 import { Button } from '../components/Button';
 import { IconButton } from '../components/IconButton';
 import { Badge } from '../components/Badge';
@@ -58,7 +58,7 @@ function Ecommerce() {
             <Link><Text size="4">Collections</Text></Link>
           </Flex>
           <Flex as="nav" css={{ ai: 'center', gap: '$3', fs: 0, minWidth: 300 }}>
-            <Input size="3" placeholder="Search" />
+            <TextField size="3" placeholder="Search" />
             <IconButton size="2">
               <BackpackIcon />
             </IconButton>
