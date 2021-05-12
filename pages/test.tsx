@@ -8,7 +8,6 @@ import { Section } from '../components/Section';
 import { ScrollArea } from '../components/Scrollbar';
 import { Heading } from '../components/Heading';
 import { Paragraph } from '../components/Paragraph';
-import { Input } from '../components/Input';
 import { Button } from '../components/Button';
 import { Badge } from '../components/Badge';
 
