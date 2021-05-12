@@ -11,7 +11,6 @@ import { ControlGroup } from '../components/ControlGroup';
 import { Text } from '../components/Text';
 import { Link } from '../components/Link';
 import { AppBar } from '../components/AppBar';
-import { NewHeading } from '../components/NewHeading';
 import { Banner } from '../components/Banner';
 import { Alert } from '../components/Alert';
 import { Kbd } from '../components/Kbd';
@@ -52,12 +51,8 @@ import { Tabs, TabsList, TabsTab, TabsPanel } from '../components/Tabs';
 import { Label } from '../components/Label';
 import { Skeleton } from '../components/Skeleton';
 import { RadioCardGroup, RadioCard } from '../components/RadioCard';
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
-import { Title } from '../components/Title';
-import { Subtitle } from '../components/Subtitle';
-import { LargeHeading } from '../components/LargeHeading';
+import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion'
 import { Heading } from '../components/Heading';
-import { Subheading } from '../components/Subheading';
 import { Paragraph } from '../components/Paragraph';
 // import { Color } from '../custom/Color';
 import { Avatars } from '../custom/Avatars';
@@ -153,7 +148,7 @@ function Home() {
           py: '$6',
         }}
       >
-        <Subheading>Quick nav</Subheading>
+        <Heading>Quick nav</Heading>
         <Box as="ul" css={{ listStyle: 'none', p: 0 }}>
           <Box css={{ my: '$1' }}>
             <Link href="#accordion" variant="subtle" css={{ display: 'inline-flex' }}>
@@ -385,8 +380,8 @@ function Home() {
       <Box css={{ bc: '$loContrast', height: '100%' }}>
         <Section size="3">
           <Container size="2">
-            <Title css={{ ta: 'center', mb: '$3' }}>Radix UI test suite</Title>
-            <Subtitle css={{ ta: 'center' }}>An environment for testing Radix DS.</Subtitle>
+            <Heading size="4" css={{ ta: 'center', mb: '$3' }}>Radix UI test suite</Heading>
+            <Heading css={{ ta: 'center' }}>An environment for testing Radix DS.</Heading>
           </Container>
         </Section>
         <Flex css={{ jc: 'center' }}>
@@ -590,20 +585,6 @@ function Home() {
                   The quick brown fox jumped over the lazy dog.
                 </Text>
               </Flex>
-            </Flex>
-            <Flex css={{ fd: 'column', gap: '$4' }}>
-              <NewHeading size="1" as="h1">
-                The quick brown fox
-              </NewHeading>
-              <NewHeading size="2" as="h1">
-                The quick brown fox
-              </NewHeading>
-              <NewHeading size="3" as="h1">
-                The quick brown fox
-              </NewHeading>
-              <NewHeading size="4" as="h1">
-                The quick brown fox
-              </NewHeading>
             </Flex>
             <Flex css={{ fd: 'column', gap: '$4' }}>
               <Flex css={{ ai: 'center' }}>
@@ -878,34 +859,35 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="typography" css={{ mb: '$2', scrollMarginTop: '$7' }}>
+            <Heading id="typography" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Typography
             </Heading>
-            <Paragraph css={{ mb: '$7' }}>
-              A set of pre-formatted components for setting text.
-            </Paragraph>
-
-            <Flex css={{ fd: 'column', gap: '$6' }}>
-              <Title>This is a title</Title>
-              <Subtitle>
-                This is a subtitle, used to support a title or heading. It defaults to h2 but can be
-                rendered as any h level.
-              </Subtitle>
-              <LargeHeading>This is a large heading</LargeHeading>
-              <Heading>This is a heading</Heading>
-              <Subheading>This is a small heading</Subheading>
-              <Paragraph>
-                This is a really long paragraph of text, to demonstrate prose text, like for
+            <Flex css={{ fd: 'column', gap: '$4' }}>
+              <Heading size="4" as="h1">
+                This is a heading size 4
+              </Heading>
+              <Heading size="3" as="h1">
+                This is a heading size 3
+              </Heading>
+              <Heading size="2" as="h1">
+                This is a heading size 2
+              </Heading>
+              <Heading size="1" as="h1">
+                This is a heading size 1
+              </Heading>
+              <Paragraph size="2">
+                This is a Paragraph size 3. Design in the target medium. Prototype with real components. Handoff production code.
+              </Paragraph>
+              <Paragraph size="1">
+                This is a Paragraph size 2. A really long paragraph of text, to demonstrate prose text, like for
                 example, the kind you might read in a blog post. The reason we're using prose here
                 is because the most common use case for this container size is longform text. So
                 we're previewing some longform text here so we can make sure the container width
                 provides an optimal line length for this font size.
               </Paragraph>
               <Paragraph>
-                This is a really long paragraph of text, to demonstrate prose text, like for
-                example, the kind you might read in a blog post.<Sup>1</Sup> This is a really long
-                paragraph of text, to demonstrate prose text, like for example, the kind you might
-                read in a blog post.<Sub>1</Sub>
+                This is a Sup and Sub demo. The kind you might read in a blog post.<Sup>1</Sup> This is a really long
+                paragraph of text, to demonstrate prose text.<Sub>1</Sub>
               </Paragraph>
             </Flex>
           </Container>
@@ -918,7 +900,7 @@ function Home() {
             <Heading id="skeleton" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Skeleton
             </Heading>
-            <Subheading css={{ mb: '$6' }}>Avatar variants</Subheading>
+            <Heading css={{ mb: '$6' }}>Avatar variants</Heading>
             <Flex
               css={{
                 ai: 'center',
@@ -934,7 +916,7 @@ function Home() {
               <Skeleton variant="avatar5" />
               <Skeleton variant="avatar6" />
             </Flex>
-            <Subheading css={{ mb: '$6' }}>Text variants</Subheading>
+            <Heading css={{ mb: '$6' }}>Text variants</Heading>
             <Flex
               css={{
                 fd: 'column',
@@ -957,7 +939,7 @@ function Home() {
               <Skeleton variant="text" />
               <Skeleton variant="text" css={{ width: '50%' }} />
             </Flex>
-            <Subheading css={{ mb: '$6' }}>Control variants</Subheading>
+            <Heading css={{ mb: '$6' }}>Control variants</Heading>
             <Flex
               css={{
                 fd: 'column',
@@ -976,9 +958,9 @@ function Home() {
             <Heading id="badge" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Badge
             </Heading>
-            <Subheading css={{ mb: '$6' }}>Default Badge</Subheading>
+            <Heading css={{ mb: '$6' }}>Default Badge</Heading>
             <Badge css={{ mb: '$6' }}>Coming soon</Badge>
-            <Subheading css={{ mb: '$6' }}>Sizes</Subheading>
+            <Heading css={{ mb: '$6' }}>Sizes</Heading>
             <Flex
               css={{
                 ai: 'center',
@@ -990,7 +972,7 @@ function Home() {
               <Badge size="1">Coming soon</Badge>
               <Badge size="2">Coming soon</Badge>
             </Flex>
-            <Subheading css={{ mb: '$6' }}>Variants</Subheading>
+            <Heading css={{ mb: '$6' }}>Variants</Heading>
             <Flex css={{ gap: '$5', fw: 'wrap', mb: '$6' }}>
               <Badge size="2" variant="red">
                 <Box css={{ mr: 5 }}>
@@ -1041,7 +1023,7 @@ function Home() {
                 Runner-up
               </Badge>
             </Flex>
-            <Subheading css={{ mb: '$6' }}>Interactive variant</Subheading>
+            <Heading css={{ mb: '$6' }}>Interactive variant</Heading>
             <Flex css={{ gap: '$5', fw: 'wrap', mt: '$6' }}>
               <Badge as="a" href="#" size="2" variant="red" interactive>
                 New
@@ -1106,14 +1088,14 @@ function Home() {
             <Heading id="status" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Status
             </Heading>
-            <Subheading css={{ mb: '$6' }}>Default Status</Subheading>
+            <Heading css={{ mb: '$6' }}>Default Status</Heading>
             <Status></Status>
-            <Subheading css={{ mt: '$7', mb: '$7' }}>Sizes</Subheading>
+            <Heading css={{ mt: '$7', mb: '$7' }}>Sizes</Heading>
             <Flex css={{ gap: '$6', mt: '$6' }}>
               <Status size="1"></Status>
               <Status size="2"></Status>
             </Flex>
-            <Subheading css={{ mt: '$7', mb: '$7' }}>Variants</Subheading>
+            <Heading css={{ mt: '$7', mb: '$7' }}>Variants</Heading>
             <Flex css={{ gap: '$6', mt: '$6' }}>
               <Status variant="gray" />
               <Status variant="blue" />
@@ -1416,7 +1398,7 @@ function Home() {
             <Heading id="kbd" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Kbd
             </Heading>
-            <Subheading css={{ mb: '$6' }}>Kbd test</Subheading>
+            <Heading css={{ mb: '$6' }}>Kbd test</Heading>
             <Flex css={{ ai: 'center', jc: 'space-between', mb: '$7' }}>
               <Text>Resize selected object</Text>
               <Flex css={{ ai: 'center', gap: '$1' }}>
@@ -1457,7 +1439,7 @@ function Home() {
             <Heading id="link" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Link
             </Heading>
-            <Subheading css={{ mb: '$6' }}>Link variants</Subheading>
+            <Heading css={{ mb: '$6' }}>Link variants</Heading>
             <Flex css={{ gap: '$6', mb: '$6' }}>
               <Link variant="blue" href="#">
                 <Text size="4">Link with jy descenders</Text>
@@ -1469,7 +1451,7 @@ function Home() {
                 <Text size="4">Link with jy descenders</Text>
               </Link>
             </Flex>
-            <Subheading css={{ mb: '$6' }}>Inline link test</Subheading>
+            <Heading css={{ mb: '$6' }}>Inline link test</Heading>
             <Paragraph>
               There are 5 variants to choose from. Use is for positive states.{' '}
               <Link variant="contrast" href="#">
@@ -1511,9 +1493,9 @@ function Home() {
             <Flex css={{ gap: '$3' }}>
               <Box css={{ width: 250 }}>
                 <Card css={{ p: '$3' }}>
-                  <Subheading css={{ mb: '$2' }}>
+                  <Heading css={{ mb: '$2' }}>
                     Modulz raises $4.2M to close the gap between design and code
-                  </Subheading>
+                  </Heading>
                   <Text size="3" css={{ color: '$slate900', lineHeight: '23px' }}>
                     Modulz is a visual code editor that empowers teams to design, develop, document
                     and deploy a design system, without writing code.
@@ -1522,9 +1504,9 @@ function Home() {
               </Box>
               <Box css={{ width: 250 }}>
                 <Card as="a" href="#" css={{ p: '$3' }} variant="interactive">
-                  <Subheading css={{ mb: '$2' }}>
+                  <Heading css={{ mb: '$2' }}>
                     Modulz raises $4.2M to close the gap between design and code
-                  </Subheading>
+                  </Heading>
                   <Text size="3" css={{ color: '$slate900', lineHeight: '23px' }}>
                     Modulz is a visual code editor that empowers teams to design, develop, document
                     and deploy a design system, without writing code.
@@ -1559,9 +1541,9 @@ function Home() {
                     css={{ btlr: '$3', btrr: '$3' }}
                   />
                   <Box css={{ p: '$3' }}>
-                    <Subheading css={{ mb: '$2' }}>
+                    <Heading css={{ mb: '$2' }}>
                       Modulz raises $4.2M to close the gap between design and code
-                    </Subheading>
+                    </Heading>
                     <Text size="3" css={{ color: '$slate900', lineHeight: '23px' }}>
                       Modulz is a visual code editor that empowers teams to design, develop,
                       document and deploy a design system, without writing code.
@@ -1596,9 +1578,9 @@ function Home() {
                     src="https://images.unsplash.com/photo-1453235421161-e41b42ebba05?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2550&q=80"
                     css={{ br: '$1', mb: '$3' }}
                   />
-                  <Subheading css={{ mb: '$2' }}>
+                  <Heading css={{ mb: '$2' }}>
                     Modulz raises $4.2M to close the gap between design and code
-                  </Subheading>
+                  </Heading>
                   <Text size="3" css={{ color: '$slate900', lineHeight: '23px' }}>
                     Modulz is a visual code editor that empowers teams to design, develop, document
                     and deploy a design system, without writing code.
@@ -1650,7 +1632,7 @@ function Home() {
             <AlertDialog>
               <AlertDialogTrigger as={Button}>Alert Dialog</AlertDialogTrigger>
               <AlertDialogContent>
-                <AlertDialogTitle as={Subheading}>Are you sure?</AlertDialogTitle>
+                <AlertDialogTitle as={Heading}>Are you sure?</AlertDialogTitle>
                 <AlertDialogDescription as={Text} css={{ mt: '$2' }}>
                   This will do a very dangerous thing. Thar be dragons!
                 </AlertDialogDescription>
@@ -1751,16 +1733,16 @@ function Home() {
             <Heading id="progressbar" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               ProgressBar
             </Heading>
-            <Subheading css={{ mb: '$6' }}>Default</Subheading>
+            <Heading css={{ mb: '$6' }}>Default</Heading>
             <Box css={{ mb: '$6' }}>
               <ProgressBar value={50} />
             </Box>
-            <Subheading css={{ mb: '$6' }}>Indeterminate state</Subheading>
+            <Heading css={{ mb: '$6' }}>Indeterminate state</Heading>
             <Box css={{ mb: '$6' }}>
               <Text size="2">Indeterminate</Text>
               <ProgressBar css={{ my: '$2' }} />
             </Box>
-            <Subheading css={{ mb: '$6' }}>UI test</Subheading>
+            <Heading css={{ mb: '$6' }}>UI test</Heading>
             <Box css={{ mb: '$6' }}>
               <Text size="2">Download 50% complete</Text>
               <ProgressBar max={100} value={80} css={{ my: '$2' }} />
@@ -1768,11 +1750,11 @@ function Home() {
                 46 hours remaining
               </Text>
             </Box>
-            <Subheading css={{ mb: '$6' }}>Gradient variant</Subheading>
+            <Heading css={{ mb: '$6' }}>Gradient variant</Heading>
             <Box css={{ mb: '$6' }}>
               <ProgressBar max={100} variant="gradient" value={100} />
             </Box>
-            <Subheading css={{ mb: '$6' }}>Blue variant</Subheading>
+            <Heading css={{ mb: '$6' }}>Blue variant</Heading>
             <Box>
               <ProgressBar variant="blue" max={100} value={50} />
             </Box>
@@ -1965,7 +1947,7 @@ function Home() {
             <Heading id="tabs" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Tabs
             </Heading>
-            <Subheading css={{ mb: '$6' }}>Default</Subheading>
+            <Heading css={{ mb: '$6' }}>Default</Heading>
             <Tabs defaultValue="tab-one">
               <TabsList>
                 <TabsTab value="tab-one">General</TabsTab>
@@ -1991,7 +1973,7 @@ function Home() {
               </TabsPanel>
             </Tabs>
 
-            <Subheading css={{ mb: '$6', mt: '$7' }}>Vertical orientation</Subheading>
+            <Heading css={{ mb: '$6', mt: '$7' }}>Vertical orientation</Heading>
             <Tabs defaultValue="tab-one" orientation="vertical">
               <TabsList>
                 <TabsTab value="tab-one">General</TabsTab>
@@ -2114,15 +2096,15 @@ function Home() {
             <Heading id="slider" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Slider
             </Heading>
-            <Subheading css={{ mb: '$6' }}>Default</Subheading>
+            <Heading css={{ mb: '$6' }}>Default</Heading>
             <Box css={{ width: '150px', mb: '$7' }}>
               <Slider defaultValue={[50]} />
             </Box>
-            <Subheading css={{ mb: '$6' }}>Range</Subheading>
+            <Heading css={{ mb: '$6' }}>Range</Heading>
             <Flex css={{ gap: '$4', width: '150px', mb: '$7' }}>
               <Slider defaultValue={[25, 75]} />
             </Flex>
-            <Subheading css={{ mb: '$6' }}>Vertical orientaiton</Subheading>
+            <Heading css={{ mb: '$6' }}>Vertical orientaiton</Heading>
             <Box css={{ mt: '$6' }}>
               <Slider defaultValue={[50]} orientation="vertical" css={{ height: 75 }} />
             </Box>
@@ -2151,7 +2133,7 @@ function Home() {
             <Heading id="checkbox" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Checkbox
             </Heading>
-            <Subheading css={{ mb: '$6' }}>Sizes</Subheading>
+            <Heading css={{ mb: '$6' }}>Sizes</Heading>
             <Checkbox css={{ mr: '$5' }} />
             <Checkbox size="2" css={{ mr: '$5' }} />
           </Container>
@@ -2164,7 +2146,7 @@ function Home() {
             <Heading id="radio" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Radio
             </Heading>
-            <Subheading css={{ mb: '$6' }}>Sizes</Subheading>
+            <Heading css={{ mb: '$6' }}>Sizes</Heading>
             <RadioGroup defaultValue="1">
               <Radio value="1" css={{ mr: '$5' }} />
               <Radio value="2" size="2" css={{ mr: '$5' }} />
@@ -2886,7 +2868,7 @@ function Home() {
             <Heading id="switch" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Switch
             </Heading>
-            <Subheading css={{ mb: '$6' }}>Sizes</Subheading>
+            <Heading css={{ mb: '$6' }}>Sizes</Heading>
             <Switch />
             <Switch size="2" css={{ ml: '$6' }} />
           </Container>

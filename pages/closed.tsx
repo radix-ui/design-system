@@ -25,7 +25,6 @@ import { Label } from '../components/Label';
 import { Switch } from '../components/Switch';
 import { SimpleToggle } from '../components/SimpleToggle';
 import { Slider } from '../components/Slider';
-import { Subheading } from '../components/Subheading';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import { Radio, RadioGroup } from '../components/Radio';
 import { RadioCard, RadioCardGroup } from '../components/RadioCard';
@@ -80,7 +79,7 @@ export default function Closed() {
         </ContextMenuContent>
       </ContextMenu>
       <Menus />
-      <Subheading>subheading</Subheading>
+      <Heading>Heading</Heading>
       <Text size="5" css={{ mt: '$7', mb: '$4' }}>
         Avatar
       </Text>

@@ -13,9 +13,7 @@ import { Link } from '../components/Link';
 import { Section } from '../components/Section';
 import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
 import { ScrollArea } from '../components/Scrollbar';
-import { Subtitle } from '../components/Subtitle';
 import { Heading } from '../components/Heading';
-import { Subheading } from '../components/Subheading';
 import { Paragraph } from '../components/Paragraph';
 import { Input } from '../components/Input';
 import { Button } from '../components/Button';
@@ -181,25 +179,25 @@ function Ecommerce() {
           <Grid css={{ gridTemplateColumns: '2fr 1fr', gap: '$7' }}>
             <Grid css={{ gridTemplateColumns: '1fr 1fr', gap: '$7' }}>
               <Box>
-                <Subheading
+                <Heading
                   css={{
                     mb: '$3',
                   }}
                 >
                   Brand
-                </Subheading>
+                </Heading>
                 <Box>
                   <Text css={{ lineHeight: '23px' }}>A BATHING APE launched its brand new diffusion line, AAPE By A Bathing Ape (Aape for short), in 2012 with the aim to create a collection of simple, light clothes for everyday wear. Reviving the label’s classic logo, it stamps a younger version of the original ape design across jersey T-shirts and sweatpants with comfortable cuts.</Text>
                 </Box>
               </Box>
               <Box>
-                <Subheading
+                <Heading
                   css={{
                     mb: '$3',
                   }}
                 >
                   Details
-                </Subheading>
+                </Heading>
                 <Box>
                   <Text css={{ lineHeight: '23px' }}>Windbreaker jacket by AAPE By A Bathing Ape.</Text>
                   <Box as="ul">
@@ -218,33 +216,33 @@ function Ecommerce() {
               </Box>
             </Grid>
             <Box>
-              <Subheading
+              <Heading
                 css={{
                   mb: '$3',
                 }}
               >
                 Size &amp; Fit
-              </Subheading>
+              </Heading>
               <Box>
                 <Text css={{ lineHeight: '23px' }}>The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer fabric for added warmth without extra weight.</Text>
               </Box>
-              <Subheading
+              <Heading
                 css={{
                   mb: '$3',
                 }}
               >
                 Look After Me
-              </Subheading>
+              </Heading>
               <Box>
                 <Text css={{ lineHeight: '23px' }}>The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer fabric for added warmth without extra weight.</Text>
               </Box>
-              <Subheading
+              <Heading
                 css={{
                   mb: '$3',
                 }}
               >
                 About me
-              </Subheading>
+              </Heading>
               <Box>
                 <Text css={{ lineHeight: '23px' }}>The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer fabric for added warmth without extra weight.</Text>
               </Box>
@@ -259,13 +257,13 @@ function Ecommerce() {
 
           <Section size="2">
             <Container size="2">
-              <Subheading
+              <Heading
                 css={{
                   mb: '$6',
                 }}
               >
                 Buy the look
-              </Subheading>
+              </Heading>
               <Flex css={{ fd: 'row', gap: '$3' }}>
                 <Box css={{ width: 'calc(100% / 3)' }}>
                   <Card as="a" variant="interactive" href="#">
@@ -304,13 +302,13 @@ function Ecommerce() {
 
           <Section size="2" css={{ bc: '$gray200' }}>
             <Container size="3">
-              <Subheading
+              <Heading
                 css={{
                   mb: '$5',
                 }}
               >
                 Buy the look
-              </Subheading>
+              </Heading>
               <Flex css={{ fd: 'row', gap: '$3' }}>
                 <Box css={{ width: 'calc(100% / 4)' }}>
                   <Card as="a" variant="interactive" href="#">
@@ -358,13 +356,13 @@ function Ecommerce() {
 
           <Section size="2">
             <Container size="3">
-              <Subheading
+              <Heading
                 css={{
                   mb: '$5',
                 }}
               >
                 Recently Viewed
-              </Subheading>
+              </Heading>
               <Flex css={{ fd: 'row', gap: '$3' }}>
                 <Box css={{ width: 'calc(100% / 6)' }}>
                   <Card as="a" variant="interactive" href="#">

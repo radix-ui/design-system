@@ -8,8 +8,6 @@ import { Code } from '../components/Code';
 import { Flex } from '../components/Flex';
 import { Paragraph } from '../components/Paragraph';
 
-import { Title } from '../components/Title';
-
 export function Color() {
   return (
     <Section size="3">
@@ -1576,7 +1574,7 @@ export function Color() {
       </Container>
 
       <Box css={{ backgroundColor: '$red800', height: '100vh', p: '$9', mt: '$9' }}>
-        <Title css={{ color: 'white' }}>This should look good and pass contrast ratio.</Title>
+        <Heading size="4" css={{ color: 'white' }}>This should look good and pass contrast ratio.</Heading>
       </Box>
     </Section>
   );
