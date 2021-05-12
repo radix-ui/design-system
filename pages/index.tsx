@@ -305,6 +305,13 @@ function Home() {
             </Link>
           </Box>
           <Box css={{ my: '$1' }}>
+            <Link href="#sheet" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Sheet
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
             <Link href="#slider" variant="subtle" css={{ display: 'inline-flex' }}>
               <Text size="2" css={{ lineHeight: '20px' }}>
                 Slider
@@ -1721,7 +1728,7 @@ function Home() {
         </Flex>
         <Section size="3">
           <Container size="2">
-            <Heading id="dialog" css={{ mb: '$6', scrollMarginTop: '$7' }}>
+            <Heading id="sheet" css={{ mb: '$6', scrollMarginTop: '$7' }}>
               Sheet
             </Heading>
             <Sheet>
