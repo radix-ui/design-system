@@ -47,40 +47,7 @@ const StyledAlert = styled(DEFAULT_TAG, {
         borderColor: '$red500',
       },
     },
-    rounded: {
-      true: {
-        borderRadius: '$pill',
-      }
-    },
-    border: {
-      true: {
-        borderRadius: '$pill',
-      }
-    },
   },
-  compoundVariants: [
-    {
-      border: 'true',
-      variant: 'gray',
-      css: {
-        borderColor: '$slate500',
-      },
-    },
-    {
-      border: 'true',
-      variant: 'blue',
-      css: {
-        borderColor: '$blue900',
-      },
-    },
-    {
-      border: 'true',
-      variant: 'loContrast',
-      css: {
-        borderColor: '$slate500',
-      },
-    },
-  ],
   defaultVariants: {
     size: '1',
     variant: 'gray',
