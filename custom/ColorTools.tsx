@@ -64,8 +64,8 @@ export function ColorTools() {
           name="gray"
           lightThemeConfig={{
             start: 'hsl(0 0% 97.3%)',
-            end: 'hsl(0 0% 65.0%)',
-            defaultCurve: [0.625, 0.225, 0.74, 0.515],
+            end: 'hsl(0 0% 72.5%)',
+            defaultCurve: [0.57, 0.29, 0.815, 0.59],
             overrides: {
               gray000: 'hsl(0 0% 99.0%)',
               gray900: 'hsl(0, 0%, 43.5%)',
@@ -81,8 +81,8 @@ export function ColorTools() {
           name="quartz"
           lightThemeConfig={{
             start: 'hsl(300 10% 97.6%)',
-            end: 'hsl(252 4% 65.8%)',
-            defaultCurve: [0.615, 0.21, 0.745, 0.515],
+            end: 'hsl(252 4% 73.4%)',
+            defaultCurve: [0.57, 0.28, 0.815, 0.59],
             overrides: {
               quartz800: 'hsl(252 4% 57.3%)',
               quartz900: 'hsl(252 4% 45%)',
@@ -98,8 +98,8 @@ export function ColorTools() {
           name="slate"
           lightThemeConfig={{
             start: 'hsl(206 17% 97.6%)',
-            end: 'hsl(206 10% 65.0%)',
-            defaultCurve: [0.605, 0.23, 0.745, 0.515],
+            end: 'hsl(206 10% 72.5%)',
+            defaultCurve: [0.57, 0.29, 0.815, 0.59],
             overrides: {
               slate900: 'hsl(206 6% 43.5%)',
               slate1000: 'hsl(206 24% 9%)',
@@ -115,8 +115,8 @@ export function ColorTools() {
           name="sage"
           lightThemeConfig={{
             start: 'hsl(155 17% 97.6%)',
-            end: 'hsl(155 6% 63.8%)',
-            defaultCurve: [0.605, 0.23, 0.735, 0.515],
+            end: 'hsl(155 6% 71.5%)',
+            defaultCurve: [0.57, 0.3, 0.815, 0.59],
             overrides: {
               sage800: 'hsl(155, 3.5%, 55.5%)',
               sage900: 'hsl(155, 3%, 43.0%)',
@@ -133,8 +133,9 @@ export function ColorTools() {
           name="olive"
           lightThemeConfig={{
             start: 'hsl(110 17% 97.6%)',
-            end: 'hsl(110 5% 64%)',
-            defaultCurve: [0.595, 0.22, 0.725, 0.525],
+
+            end: 'hsl(110 5% 71.8%)',
+            defaultCurve: [0.57, 0.29, 0.815, 0.59],
             overrides: {
               olive800: 'hsl(110, 3.5%, 55.5%)',
               olive900: 'hsl(110, 3%, 43.0%)',
@@ -151,8 +152,8 @@ export function ColorTools() {
           name="sand"
           lightThemeConfig={{
             start: 'hsl(50 9% 97.5%)',
-            end: 'hsl(50 6% 63.8%)',
-            defaultCurve: [0.595, 0.22, 0.725, 0.525],
+            end: 'hsl(50 6% 71.4%)',
+            defaultCurve: [0.57, 0.29, 0.815, 0.59],
             overrides: {
               sand900: 'hsl(50 2% 43.1%)',
               sand1000: 'hsl(50 6% 10%)',
