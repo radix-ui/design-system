@@ -17,6 +17,16 @@ type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
   RadioVariants;
 
 const StyledRadio = styled(RadioGroupPrimitive.Item, {
+  all: 'unset',
+  boxSizing: 'border-box',
+  userSelect: 'none',
+  textAlign: 'center',
+  '&::before': {
+    boxSizing: 'border-box',
+  },
+  '&::after': {
+    boxSizing: 'border-box',
+  },
   borderRadius: '$2',
   boxShadow: 'inset 0 0 0 1px $colors$slate600',
   px: '$1',
