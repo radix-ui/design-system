@@ -1,4 +1,5 @@
 export { Accordion, AccordionButton, AccordionItem, AccordionPanel } from './components/Accordion';
+export { Alert } from './components/Alert';
 export {
   AlertDialog,
   AlertDialogAction,
