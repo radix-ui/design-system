@@ -598,6 +598,12 @@ function Home() {
               <NewHeading size="2" as="h1">
                 The quick brown fox
               </NewHeading>
+              <NewHeading size="3" as="h1">
+                The quick brown fox
+              </NewHeading>
+              <NewHeading size="4" as="h1">
+                The quick brown fox
+              </NewHeading>
             </Flex>
             <Flex css={{ fd: 'column', gap: '$4' }}>
               <Flex css={{ ai: 'center' }}>

@@ -25,14 +25,14 @@ export const NewHeading = React.forwardRef((props, forwardedRef) => {
     1: { '@initial': '1', '@bp2': '2' },
     2: { '@initial': '2', '@bp2': '3' },
     3: { '@initial': '3', '@bp2': '4' },
-    4: { '@initial': '4', '@bp2': '5' },
+    4: { '@initial': '8', '@bp2': '9' },
   };
   // This is the mapping of NewHeading Variants to Text css
   const textCss: Record<NewHeadingSizeVariants, CSS> = {
     1: { lineHeight: '25px' },
     2: { lineHeight: '35px' },
     3: { lineHeight: '45px' },
-    4: { lineHeight: '55px' },
+    4: { lineHeight: '35px', '@bp2': { lineHeight: '55px' } },
   };
   return (
     <StyledText
