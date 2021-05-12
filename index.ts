@@ -85,8 +85,18 @@ export { Status } from './components/Status';
 export { Sup } from './components/Sup';
 export { Sub } from './components/Sub';
 export { Switch } from './components/Switch';
-export { Tabs, TabsList, TabsPanel, TabsTab } from './components/Tabs';
+export {
+  Caption,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  Thead,
+  Table
+} from './components/Table';
 export { TabLink } from './components/TabLink';
+export { Tabs, TabsList, TabsPanel, TabsTab } from './components/Tabs';
 export { Text } from './components/Text';
 export { Textarea } from './components/Textarea';
 export { Tooltip } from './components/Tooltip';
