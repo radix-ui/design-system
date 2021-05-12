@@ -25,37 +25,60 @@ import { Properties } from '../custom/Properties';
 import { Color } from '../custom/Color';
 import { Toolbar } from '../custom/Toolbar';
 
-import { Cross1Icon, PlusIcon, BackpackIcon, ArchiveIcon, StarFilledIcon, StarIcon } from '@radix-ui/react-icons';
-import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stitches.config';
-import { callbackify } from 'node:util';
+import {
+  Cross1Icon,
+  PlusIcon,
+  BackpackIcon,
+  ArchiveIcon,
+  StarFilledIcon,
+  StarIcon,
+} from '@radix-ui/react-icons';
 
 function Ecommerce() {
   return (
-    <Box className={flatTheme}>
+    <Box>
       <Box as="header">
         <Box css={{ bc: '$gray200', py: '$2', px: '$4' }}>
           <Flex css={{ ai: 'center', jc: 'space-between' }}>
-            <Box>
-              Logo
-            </Box>
+            <Box>Logo</Box>
             <Flex as="nav" css={{ gap: '$5' }}>
-              <Link href="#"><Text size="2">Help</Text></Link>
-              <Link href="#"><Text size="2">Join us</Text></Link>
-              <Link href="#"><Text size="2">Log in</Text></Link>
+              <Link href="#">
+                <Text size="2">Help</Text>
+              </Link>
+              <Link href="#">
+                <Text size="2">Join us</Text>
+              </Link>
+              <Link href="#">
+                <Text size="2">Log in</Text>
+              </Link>
             </Flex>
           </Flex>
         </Box>
         <Flex css={{ ai: 'center', jc: 'space-between', py: '$3', px: '$4' }}>
           <Box css={{ fs: 0, minWidth: 300 }}>
-            <Text size="5" css={{ fontWeight: 500 }}>Radix</Text>
+            <Text size="5" css={{ fontWeight: 500 }}>
+              Radix
+            </Text>
           </Box>
-          <Flex as="nav" css={{ gap: '$6', jc: 'center', fg: 1, }}>
-            <Link><Text size="4">New Releases</Text></Link>
-            <Link><Text size="4">Men</Text></Link>
-            <Link><Text size="4">Women</Text></Link>
-            <Link><Text size="4">Kids</Text></Link>
-            <Link><Text size="4">Sale</Text></Link>
-            <Link><Text size="4">Collections</Text></Link>
+          <Flex as="nav" css={{ gap: '$6', jc: 'center', fg: 1 }}>
+            <Link>
+              <Text size="4">New Releases</Text>
+            </Link>
+            <Link>
+              <Text size="4">Men</Text>
+            </Link>
+            <Link>
+              <Text size="4">Women</Text>
+            </Link>
+            <Link>
+              <Text size="4">Kids</Text>
+            </Link>
+            <Link>
+              <Text size="4">Sale</Text>
+            </Link>
+            <Link>
+              <Text size="4">Collections</Text>
+            </Link>
           </Flex>
           <Flex as="nav" css={{ ai: 'center', gap: '$3', fs: 0, minWidth: 300 }}>
             <TextField size="3" placeholder="Search" />
@@ -82,13 +105,28 @@ function Ecommerce() {
           <Grid css={{ gridTemplateColumns: '2fr 1fr', gap: '$7' }}>
             <Flex css={{ '@bp2': { gap: '$7' } }}>
               <Flex css={{ fd: 'column', gap: '$3', width: 45, fs: 0 }}>
-                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" css={{ width: '100%' }} />
-                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" css={{ width: '100%' }} />
-                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" css={{ width: '100%' }} />
-                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" css={{ width: '100%' }} />
+                <Image
+                  src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain"
+                  css={{ width: '100%' }}
+                />
+                <Image
+                  src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain"
+                  css={{ width: '100%' }}
+                />
+                <Image
+                  src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain"
+                  css={{ width: '100%' }}
+                />
+                <Image
+                  src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain"
+                  css={{ width: '100%' }}
+                />
               </Flex>
-              <Box css={{ fg: 1, }}>
-                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" css={{ width: '100%' }} />
+              <Box css={{ fg: 1 }}>
+                <Image
+                  src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain"
+                  css={{ width: '100%' }}
+                />
               </Box>
             </Flex>
             <Box css={{ fg: 1 }}>
@@ -129,7 +167,9 @@ function Ecommerce() {
               </Grid> */}
               <Flex css={{ ai: 'baseline', jc: 'space-between', mb: '$3', mt: '$5' }}>
                 <Text css={{ fontWeight: 500 }}>Select Size</Text>
-                <Text size="2" variant="gray">Size Assistant</Text>
+                <Text size="2" variant="gray">
+                  Size Assistant
+                </Text>
               </Flex>
               <RadioGridGroup defaultValue="1">
                 <RadioGrid value="3">XS</RadioGrid>
@@ -139,13 +179,19 @@ function Ecommerce() {
                 <RadioGrid value="7">XL</RadioGrid>
               </RadioGridGroup>
               <Flex css={{ gap: '$3', my: '$5' }}>
-                <Button variant="green" size="3" css={{ fg: 1 }}>Add to Bag</Button>
+                <Button variant="green" size="3" css={{ fg: 1 }}>
+                  Add to Bag
+                </Button>
                 <IconButton size="3">
                   <ArchiveIcon />
                 </IconButton>
               </Flex>
-              <Text variant="gray" css={{ mb: '$5' }}>This product has shipping restrictions</Text>
-              <Link href="#"><Text css={{ mb: '$5' }}>View product details</Text></Link>
+              <Text variant="gray" css={{ mb: '$5' }}>
+                This product has shipping restrictions
+              </Text>
+              <Link href="#">
+                <Text css={{ mb: '$5' }}>View product details</Text>
+              </Link>
 
               {/* <Accordion type="single">
                 <AccordionItem value="accordion-one">
@@ -187,7 +233,13 @@ function Ecommerce() {
                   Brand
                 </Heading>
                 <Box>
-                  <Text css={{ lineHeight: '23px' }}>A BATHING APE launched its brand new diffusion line, AAPE By A Bathing Ape (Aape for short), in 2012 with the aim to create a collection of simple, light clothes for everyday wear. Reviving the label’s classic logo, it stamps a younger version of the original ape design across jersey T-shirts and sweatpants with comfortable cuts.</Text>
+                  <Text css={{ lineHeight: '23px' }}>
+                    A BATHING APE launched its brand new diffusion line, AAPE By A Bathing Ape (Aape
+                    for short), in 2012 with the aim to create a collection of simple, light clothes
+                    for everyday wear. Reviving the label’s classic logo, it stamps a younger
+                    version of the original ape design across jersey T-shirts and sweatpants with
+                    comfortable cuts.
+                  </Text>
                 </Box>
               </Box>
               <Box>
@@ -199,18 +251,40 @@ function Ecommerce() {
                   Details
                 </Heading>
                 <Box>
-                  <Text css={{ lineHeight: '23px' }}>Windbreaker jacket by AAPE By A Bathing Ape.</Text>
+                  <Text css={{ lineHeight: '23px' }}>
+                    Windbreaker jacket by AAPE By A Bathing Ape.
+                  </Text>
                   <Box as="ul">
-                    <li><Text css={{ lineHeight: '23px' }}>Layered looks</Text></li>
-                    <li><Text css={{ lineHeight: '23px' }}>Camouflage design</Text></li>
-                    <li><Text css={{ lineHeight: '23px' }}>Adjustable toggle hood</Text></li>
-                    <li><Text css={{ lineHeight: '23px' }}>High neck</Text></li>
-                    <li><Text css={{ lineHeight: '23px' }}>Zip fastening</Text></li>
-                    <li><Text css={{ lineHeight: '23px' }}>Branded print and patch details</Text></li>
-                    <li><Text css={{ lineHeight: '23px' }}>Side pockets</Text></li>
-                    <li><Text css={{ lineHeight: '23px' }}>Elasticated trims</Text></li>
-                    <li><Text css={{ lineHeight: '23px' }}>Regular fit</Text></li>
-                    <li><Text css={{ lineHeight: '23px' }}>True to size</Text></li>
+                    <li>
+                      <Text css={{ lineHeight: '23px' }}>Layered looks</Text>
+                    </li>
+                    <li>
+                      <Text css={{ lineHeight: '23px' }}>Camouflage design</Text>
+                    </li>
+                    <li>
+                      <Text css={{ lineHeight: '23px' }}>Adjustable toggle hood</Text>
+                    </li>
+                    <li>
+                      <Text css={{ lineHeight: '23px' }}>High neck</Text>
+                    </li>
+                    <li>
+                      <Text css={{ lineHeight: '23px' }}>Zip fastening</Text>
+                    </li>
+                    <li>
+                      <Text css={{ lineHeight: '23px' }}>Branded print and patch details</Text>
+                    </li>
+                    <li>
+                      <Text css={{ lineHeight: '23px' }}>Side pockets</Text>
+                    </li>
+                    <li>
+                      <Text css={{ lineHeight: '23px' }}>Elasticated trims</Text>
+                    </li>
+                    <li>
+                      <Text css={{ lineHeight: '23px' }}>Regular fit</Text>
+                    </li>
+                    <li>
+                      <Text css={{ lineHeight: '23px' }}>True to size</Text>
+                    </li>
                   </Box>
                 </Box>
               </Box>
@@ -224,7 +298,10 @@ function Ecommerce() {
                 Size &amp; Fit
               </Heading>
               <Box>
-                <Text css={{ lineHeight: '23px' }}>The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer fabric for added warmth without extra weight.</Text>
+                <Text css={{ lineHeight: '23px' }}>
+                  The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer
+                  fabric for added warmth without extra weight.
+                </Text>
               </Box>
               <Heading
                 css={{
@@ -234,7 +311,10 @@ function Ecommerce() {
                 Look After Me
               </Heading>
               <Box>
-                <Text css={{ lineHeight: '23px' }}>The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer fabric for added warmth without extra weight.</Text>
+                <Text css={{ lineHeight: '23px' }}>
+                  The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer
+                  fabric for added warmth without extra weight.
+                </Text>
               </Box>
               <Heading
                 css={{
@@ -244,7 +324,10 @@ function Ecommerce() {
                 About me
               </Heading>
               <Box>
-                <Text css={{ lineHeight: '23px' }}>The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer fabric for added warmth without extra weight.</Text>
+                <Text css={{ lineHeight: '23px' }}>
+                  The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer
+                  fabric for added warmth without extra weight.
+                </Text>
               </Box>
             </Box>
           </Grid>
@@ -255,149 +338,148 @@ function Ecommerce() {
         <Separator size="2" />
       </Flex>
 
-          <Section size="2">
-            <Container size="2">
-              <Heading
-                css={{
-                  mb: '$6',
-                }}
-              >
-                Buy the look
-              </Heading>
-              <Flex css={{ fd: 'row', gap: '$3' }}>
-                <Box css={{ width: 'calc(100% / 3)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                    <Box css={{ p: '$3' }}>
-                      <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
-                      <Text css={{ fontWeight: 500 }}>€384.99</Text>
-                    </Box>
-                  </Card>
+      <Section size="2">
+        <Container size="2">
+          <Heading
+            css={{
+              mb: '$6',
+            }}
+          >
+            Buy the look
+          </Heading>
+          <Flex css={{ fd: 'row', gap: '$3' }}>
+            <Box css={{ width: 'calc(100% / 3)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+                <Box css={{ p: '$3' }}>
+                  <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
+                  <Text css={{ fontWeight: 500 }}>€384.99</Text>
                 </Box>
-                <Box css={{ width: 'calc(100% / 3)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                    <Box css={{ p: '$3' }}>
-                      <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
-                      <Text css={{ fontWeight: 500 }}>€384.99</Text>
-                    </Box>
-                  </Card>
+              </Card>
+            </Box>
+            <Box css={{ width: 'calc(100% / 3)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+                <Box css={{ p: '$3' }}>
+                  <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
+                  <Text css={{ fontWeight: 500 }}>€384.99</Text>
                 </Box>
-                <Box css={{ width: 'calc(100% / 3)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                    <Box css={{ p: '$3' }}>
-                      <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
-                      <Text css={{ fontWeight: 500 }}>€384.99</Text>
-                    </Box>
-                  </Card>
+              </Card>
+            </Box>
+            <Box css={{ width: 'calc(100% / 3)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+                <Box css={{ p: '$3' }}>
+                  <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
+                  <Text css={{ fontWeight: 500 }}>€384.99</Text>
                 </Box>
-              </Flex>
-            </Container>
-          </Section>
-
-          <Flex css={{ jc: 'center' }}>
-            <Separator size="2" />
+              </Card>
+            </Box>
           </Flex>
+        </Container>
+      </Section>
 
-          <Section size="2" css={{ bc: '$gray200' }}>
-            <Container size="3">
-              <Heading
-                css={{
-                  mb: '$5',
-                }}
-              >
-                Buy the look
-              </Heading>
-              <Flex css={{ fd: 'row', gap: '$3' }}>
-                <Box css={{ width: 'calc(100% / 4)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                    <Box css={{ p: '$3' }}>
-                      <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
-                      <Text css={{ fontWeight: 500 }}>€384.99</Text>
-                    </Box>
-                  </Card>
-                </Box>
-                <Box css={{ width: 'calc(100% / 4)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                    <Box css={{ p: '$3' }}>
-                      <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
-                      <Text css={{ fontWeight: 500 }}>€384.99</Text>
-                    </Box>
-                  </Card>
-                </Box>
-                <Box css={{ width: 'calc(100% / 4)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                    <Box css={{ p: '$3' }}>
-                      <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
-                      <Text css={{ fontWeight: 500 }}>€384.99</Text>
-                    </Box>
-                  </Card>
-                </Box>
-                <Box css={{ width: 'calc(100% / 4)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                    <Box css={{ p: '$3' }}>
-                      <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
-                      <Text css={{ fontWeight: 500 }}>€384.99</Text>
-                    </Box>
-                  </Card>
-                </Box>
-              </Flex>
-            </Container>
-          </Section>
+      <Flex css={{ jc: 'center' }}>
+        <Separator size="2" />
+      </Flex>
 
-          <Flex css={{ jc: 'center' }}>
-            <Separator size="2" />
+      <Section size="2" css={{ bc: '$gray200' }}>
+        <Container size="3">
+          <Heading
+            css={{
+              mb: '$5',
+            }}
+          >
+            Buy the look
+          </Heading>
+          <Flex css={{ fd: 'row', gap: '$3' }}>
+            <Box css={{ width: 'calc(100% / 4)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+                <Box css={{ p: '$3' }}>
+                  <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
+                  <Text css={{ fontWeight: 500 }}>€384.99</Text>
+                </Box>
+              </Card>
+            </Box>
+            <Box css={{ width: 'calc(100% / 4)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+                <Box css={{ p: '$3' }}>
+                  <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
+                  <Text css={{ fontWeight: 500 }}>€384.99</Text>
+                </Box>
+              </Card>
+            </Box>
+            <Box css={{ width: 'calc(100% / 4)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+                <Box css={{ p: '$3' }}>
+                  <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
+                  <Text css={{ fontWeight: 500 }}>€384.99</Text>
+                </Box>
+              </Card>
+            </Box>
+            <Box css={{ width: 'calc(100% / 4)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+                <Box css={{ p: '$3' }}>
+                  <Text>AAPE By A Bathing Ape camo detail windbreaker in green</Text>
+                  <Text css={{ fontWeight: 500 }}>€384.99</Text>
+                </Box>
+              </Card>
+            </Box>
           </Flex>
+        </Container>
+      </Section>
 
-          <Section size="2">
-            <Container size="3">
-              <Heading
-                css={{
-                  mb: '$5',
-                }}
-              >
-                Recently Viewed
-              </Heading>
-              <Flex css={{ fd: 'row', gap: '$3' }}>
-                <Box css={{ width: 'calc(100% / 6)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                  </Card>
-                </Box>
-                <Box css={{ width: 'calc(100% / 6)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                  </Card>
-                </Box>
-                <Box css={{ width: 'calc(100% / 6)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                  </Card>
-                </Box>
-                <Box css={{ width: 'calc(100% / 6)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                  </Card>
-                </Box>
-                <Box css={{ width: 'calc(100% / 6)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                  </Card>
-                </Box>
-                <Box css={{ width: 'calc(100% / 6)' }}>
-                  <Card as="a" variant="interactive" href="#">
-                    <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
-                  </Card>
-                </Box>
-              </Flex>
-            </Container>
-          </Section>
+      <Flex css={{ jc: 'center' }}>
+        <Separator size="2" />
+      </Flex>
 
+      <Section size="2">
+        <Container size="3">
+          <Heading
+            css={{
+              mb: '$5',
+            }}
+          >
+            Recently Viewed
+          </Heading>
+          <Flex css={{ fd: 'row', gap: '$3' }}>
+            <Box css={{ width: 'calc(100% / 6)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+              </Card>
+            </Box>
+            <Box css={{ width: 'calc(100% / 6)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+              </Card>
+            </Box>
+            <Box css={{ width: 'calc(100% / 6)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+              </Card>
+            </Box>
+            <Box css={{ width: 'calc(100% / 6)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+              </Card>
+            </Box>
+            <Box css={{ width: 'calc(100% / 6)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+              </Card>
+            </Box>
+            <Box css={{ width: 'calc(100% / 6)' }}>
+              <Card as="a" variant="interactive" href="#">
+                <Image src="https://images.asos-media.com/products/aape-by-a-bathing-ape-camo-detail-windbreaker-in-green/23274265-1-green?$XXL$&wid=513&fit=constrain" />
+              </Card>
+            </Box>
+          </Flex>
+        </Container>
+      </Section>
     </Box>
   );
 }

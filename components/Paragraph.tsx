@@ -9,7 +9,7 @@ const DEFAULT_TAG = 'p';
 type TextSizeVariants = Pick<StitchesVariants<typeof StyledText>, 'size'>;
 
 type ParagraphCSSProp = { css?: CSS };
-type ParagraphSizeVariants = '1' | '2' | '3' | '4';
+type ParagraphSizeVariants = '1' | '2';
 type ParagraphVariants = { size?: ParagraphSizeVariants } & Omit<
   StitchesVariants<typeof StyledText>,
   'size'

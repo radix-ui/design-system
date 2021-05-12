@@ -28,6 +28,7 @@ import { Slider } from '../components/Slider';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import { Radio, RadioGroup } from '../components/Radio';
 import { RadioCard, RadioCardGroup } from '../components/RadioCard';
+import { Heading } from '../components/Heading';
 import { Menus } from '../custom/Menus';
 import {
   DropdownMenu,
