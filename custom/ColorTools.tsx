@@ -793,10 +793,27 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
           data-show-code-toggle
           data-show-code={showCode}
           onClick={(event) => {
+            // Toggle all on Alt key
             if (event.altKey) {
               document
                 .querySelectorAll(`[data-show-code-toggle][data-show-code="${showCode}"]`)
                 .forEach((element) => (element as HTMLElement).click());
+              return;
+            }
+
+            // Toggle all and copy color codes for all scales on the Command key
+            if (event.metaKey) {
+              let clipboard = '';
+
+              document.querySelectorAll(`[data-color-code]`).forEach((element) => {
+                const codeToCopy = (element as HTMLElement).textContent;
+                clipboard = clipboard + codeToCopy;
+              });
+
+              // Insert newlines before 000's
+              clipboard = clipboard.replaceAll(/(,)(?=\D+?000:)/g, ',\n \n');
+
+              navigator.clipboard.writeText(clipboard);
               return;
             }
 
@@ -832,25 +849,35 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
       {!collapsed && (
         <Box>
-          {showCode ? (
-            <Grid css={{ mx: '$2', gridAutoRows: '25px' }}>
-              {Array.from(Array(11)).map((_, index) => (
-                <Text
-                  css={{
-                    fontSize: '10px',
-                    fontFamily: '$mono',
-                    width: '100%',
-                    display: 'block',
-                    whiteSpace: 'nowrap',
-                    lineHeight: '25px',
-                  }}
-                >
-                  ${name}
-                  {index}00: '{computedStyles.getPropertyValue(`--colors-${name}${index}00`)}',
-                </Text>
-              ))}
-            </Grid>
-          ) : (
+          <Grid
+            data-color-code
+            css={{
+              mx: '$2',
+              gridAutoRows: '25px',
+              opacity: showCode ? 1 : 0,
+              position: showCode ? 'static' : 'absolute',
+              pointerEvents: showCode ? 'auto' : 'none',
+            }}
+          >
+            {Array.from(Array(11)).map((_, index) => (
+              <Text
+                key={index}
+                css={{
+                  fontSize: '10px',
+                  fontFamily: '$mono',
+                  width: '100%',
+                  display: 'block',
+                  whiteSpace: 'nowrap',
+                  lineHeight: '25px',
+                }}
+              >
+                {name}
+                {index}00: '{computedStyles.getPropertyValue(`--colors-${name}${index}00`)}',
+              </Text>
+            ))}
+          </Grid>
+
+          {!showCode && (
             <Grid css={{ mx: '$2', gridAutoRows: '25px' }}>
               <RatioBox css={{ bc: `$${name}000`, color: `$${name}900` }} ratio={contrasts[0]} />
               <RatioBox css={{ bc: `$${name}100`, color: `$${name}900` }} ratio={contrasts[1]} />
@@ -1032,7 +1059,6 @@ function distributeHue(value: number, rangeA: number[], rangeB: number[]) {
   if (shouldRotateDirection) {
     toLow = toLow > toHigh ? toLow : toHigh + hueDistanceB;
     toHigh = toLow > toHigh ? toLow + hueDistanceB : toHigh;
-    console.log(rangeB, [toLow, toHigh]);
   }
 
   return distribute(value, rangeA, [toLow, toHigh]);
@@ -1092,9 +1118,9 @@ function generateColors({
   let lumArray = generateNumberOfSteps(lumCurve);
   let chrArray = generateNumberOfSteps(chromaCurve);
   let hueArray = generateNumberOfSteps(hueCurve);
-  const lumArrayAdjusted: number[] = [];
-  const chrArrayAdjusted: number[] = [];
-  const hueArrayAdjusted: number[] = [];
+  let lumArrayAdjusted: number[] = [];
+  let chrArrayAdjusted: number[] = [];
+  let hueArrayAdjusted: number[] = [];
 
   for (const index in lumArray) {
     const step = lumArray[index];
@@ -1131,7 +1157,10 @@ function generateColors({
     };
 
     const color = chroma(chroma.lch(params.luminosity, params.chroma, params.hue));
-    const [h, s, l] = color.hsl().map((value) => (isNaN(value) ? 0 : value));
+    const hsl = color.hsl().map((value) => (isNaN(value) ? 0 : value));
+    // Normalise hue if saturation is a ridiculously small number like 9.609723609371595e-7
+    hsl[0] = hsl[1] < 0.001 ? 0 : hsl[0];
+    const [h, s, l] = hsl;
 
     const colorObj: Color = {
       name: `${name}${index + indexOffset}00`,
