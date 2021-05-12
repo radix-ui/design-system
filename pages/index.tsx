@@ -129,7 +129,7 @@ function Home() {
           <Text size="2">Read the story</Text>
           <ArrowRightIcon />
         </Link>
-        <IconButton variant="blue">
+        <IconButton variant="ghost">
           <Cross1Icon />
         </IconButton>
       </Banner>
@@ -395,7 +395,7 @@ function Home() {
         <Section size="3">
           <Container size="2">
             <Heading size="4" css={{ ta: 'center', mb: '$3' }}>Radix UI test suite</Heading>
-            <Heading css={{ ta: 'center' }}>An environment for testing Radix DS.</Heading>
+            <Paragraph size="2" css={{ ta: 'center' }}>An environment for testing Radix DS.</Paragraph>
           </Container>
         </Section>
         <Flex css={{ jc: 'center' }}>
