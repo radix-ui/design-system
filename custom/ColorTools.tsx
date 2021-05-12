@@ -16,7 +16,7 @@ import {
   ResetIcon,
 } from '@radix-ui/react-icons';
 import { darkTheme as darkThemeClassName, theme as lightThemeClassName } from '../stitches.config';
-import { colors } from '../pages/colors';
+import { colors, getHiContrast } from '../pages/colors';
 
 // We are editing steps 100 through 700 via the tools
 const steps = 7;
@@ -168,10 +168,10 @@ export function ColorTools() {
           name="tomato"
           lightThemeConfig={{
             start: 'hsl(10 90% 98.3%)',
-            end: 'hsl(10 70% 71.5%)',
-            defaultCurve: [0.555, 0.215, 0.84, 0.675],
+            end: 'hsl(10 72% 71%)',
+            defaultCurve: [0.54, 0.265, 0.77, 0.53],
             overrides: {
-              tomato800: 'hsl(10 82% 54.0%)',
+              tomato800: 'hsl(10 78% 54.0%)',
               tomato900: 'hsl(10 82% 44%)',
               tomato1000: 'hsl(10 50% 13.5%)',
             },
@@ -185,15 +185,15 @@ export function ColorTools() {
         <EditableScale
           name="red"
           lightThemeConfig={{
-            start: 'hsl(351 100% 98.5%)',
-            end: 'hsl(355 70% 74.5%)',
+            start: 'hsl(359 100% 98.5%)',
+            end: 'hsl(359 70% 74.5%)',
             defaultCurve: [0.62, 0.32, 0.735, 0.49],
             overrides: {
-              red000: 'hsl(351 100% 99.4%)',
-              red100: 'hsl(351 100% 98.6%)',
-              red800: 'hsl(356 75% 59.0%)',
-              red900: 'hsl(356 65% 48.5%)',
-              red1000: 'hsl(351 50% 14.6%)',
+              red000: 'hsl(359 100% 99.4%)',
+              red100: 'hsl(359 100% 98.6%)',
+              red800: 'hsl(358 75% 59.0%)',
+              red900: 'hsl(358 65% 48.5%)',
+              red1000: 'hsl(354 50% 14.6%)',
             },
           }}
           darkThemeConfig={{
@@ -410,12 +410,12 @@ export function ColorTools() {
           name="lime"
           lightThemeConfig={{
             start: 'hsl(85 70% 96.5%)',
-            end: 'hsl(76 50% 51.0%)',
-            defaultCurve: [0.595, 0.295, 0.785, 0.69],
+            end: 'hsl(76 62% 57%)',
+            defaultCurve: [0.625, 0.5, 0.795, 0.83],
             overrides: {
               lime000: 'hsl(85 50% 98.7%)',
-              lime800: 'hsl(77 68% 59.0%)',
-              lime900: 'hsl(75 65% 27.5%)',
+              lime800: 'hsl(81 67% 50%)',
+              lime900: 'hsl(75 80% 26%)',
               lime1000: 'hsl(78 70% 11.5%)',
             },
           }}
@@ -428,14 +428,13 @@ export function ColorTools() {
         <EditableScale
           name="yellow"
           lightThemeConfig={{
-            start: 'hsl(60 65% 95.8%)',
-            end: 'hsl(55 85% 55%)',
+            start: 'hsl(53 100% 95%)',
+            end: 'hsl(53 85% 55%)',
             defaultCurve: [0.585, 0.705, 0.89, 0.92],
             overrides: {
               yellow000: 'hsl(60 54% 98.5%)',
-              // yellow100: 'hsl(55 60% 96.0%)',
-              yellow800: 'hsl(57 85% 60.5%)',
-              yellow900: 'hsl(40 100% 29.5%)',
+              yellow800: 'hsl(53 92% 50%)',
+              yellow900: 'hsl(45 100% 27.5%)',
               yellow1000: 'hsl(40 55% 13.5%)',
             },
           }}
@@ -446,17 +445,35 @@ export function ColorTools() {
           }}
         />
         <EditableScale
+          name="amber"
+          lightThemeConfig={{
+            start: 'hsl(39 100% 96.5%)',
+            end: 'hsl(39 100% 64.0%)',
+            defaultCurve: [0.625, 0.5, 0.795, 0.83],
+            overrides: {
+              amber000: 'hsl(39 70% 99.0%)',
+              amber800: 'hsl(39 100% 57%)',
+              amber900: 'hsl(30 100% 34.0%)',
+              amber1000: 'hsl(20 80% 17.0%)',
+            },
+          }}
+          darkThemeConfig={{
+            start: 'hsl(30 50% 8.6%)',
+            end: 'hsl(38 90% 48.0%)',
+            defaultCurve: [0.75, 0.145, 1.0, 0.47],
+          }}
+        />
+        <EditableScale
           name="orange"
           lightThemeConfig={{
-            start: 'hsl(28 90% 97.8%)',
-            end: 'hsl(28 95% 71.0%)',
-            defaultCurve: [0.63, 0.515, 0.91, 0.895],
+            start: 'hsl(24 90% 97.8%)',
+            end: 'hsl(24 95% 64.5%)',
+            defaultCurve: [0.625, 0.29, 0.795, 0.59],
             overrides: {
-              orange000: 'hsl(28 70% 99.0%)',
-              // orange100: 'hsl(28 100% 97.5%)',
-              orange800: 'hsl(28 100% 65%)',
-              orange900: 'hsl(28 90% 36%)',
-              orange1000: 'hsl(23 60% 17.0%)',
+              orange000: 'hsl(24 70% 99.0%)',
+              orange800: 'hsl(24 94% 50%)',
+              orange900: 'hsl(24 100% 37%)',
+              orange1000: 'hsl(15 60% 17.0%)',
             },
           }}
           darkThemeConfig={{
@@ -468,9 +485,9 @@ export function ColorTools() {
         <EditableScale
           name="brown"
           lightThemeConfig={{
-            start: 'hsl(30 55% 98.0%)',
-            end: 'hsl(28 50% 61.6%)',
-            defaultCurve: [0.58, 0.275, 0.77, 0.46],
+            start: 'hsl(30 55% 97.8%)',
+            end: 'hsl(28 50% 63.1%)',
+            defaultCurve: [0.58, 0.275, 0.71, 0.485],
             overrides: {
               brown000: 'hsl(30 40% 99.1%)',
               brown900: 'hsl(25 30% 41.0%)',
@@ -486,9 +503,9 @@ export function ColorTools() {
         <EditableScale
           name="bronze"
           lightThemeConfig={{
-            start: 'hsl(18 70% 98.5%)',
-            end: 'hsl(16 25% 65.0%)',
-            defaultCurve: [0.58, 0.275, 0.785, 0.445],
+            start: 'hsl(18 70% 98.0%)',
+            end: 'hsl(16 25% 66.5%)',
+            defaultCurve: [0.58, 0.275, 0.725, 0.48],
             overrides: {
               bronze000: 'hsl(15 30% 99.1%)',
               bronze900: 'hsl(15 20% 43.1%)',
@@ -504,9 +521,9 @@ export function ColorTools() {
         <EditableScale
           name="gold"
           lightThemeConfig={{
-            start: 'hsl(50 50% 97%)',
-            end: 'hsl(36 27% 60%)',
-            defaultCurve: [0.58, 0.275, 0.785, 0.445],
+            start: 'hsl(50 50% 96.6%)',
+            end: 'hsl(36 27% 61.8%)',
+            defaultCurve: [0.535, 0.24, 0.745, 0.485],
             overrides: {
               gold000: 'hsl(50 20% 99.1%)',
               gold800: 'hsl(36 20% 49.5%)',
@@ -646,7 +663,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
     const step200 = getValue('200');
     const step800 = getValue('800');
     const step900 = getValue('900');
-    const bgContrastColor = getStep800Contrast(name);
+    const bgContrastColor = getHiContrast(name);
 
     const newContrasts = [
       chroma.contrast(step000, step900),
@@ -796,7 +813,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               <RatioBox css={{ bc: `$${name}600` }} />
               <RatioBox css={{ bc: `$${name}700` }} />
               <RatioBox
-                css={{ bc: `$${name}800`, color: getStep800Contrast(name) }}
+                css={{ bc: `$${name}800`, color: getHiContrast(name) }}
                 ratio={contrasts[3]}
                 type="AA Large Text"
               />
@@ -813,15 +830,6 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       )}
     </Box>
   );
-}
-
-// Step 800 for lime, yellow, and orange are supposed to be used with black text color rather than with white
-function getStep800Contrast(scaleName: ElementType<typeof colors>) {
-  if (scaleName === 'lime' || scaleName === 'yellow' || scaleName === 'orange') {
-    return 'hsl(0, 0%, 0%)';
-  }
-
-  return 'hsl(0, 0%, 100%)';
 }
 
 type RatioBoxProps = {

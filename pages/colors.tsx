@@ -39,6 +39,7 @@ export const colors = [
 
   'lime',
   'yellow',
+  'amber',
   'orange',
 
   'brown',
@@ -236,18 +237,18 @@ function Buttons() {
                 textTransform: 'capitalize',
                 backgroundColor: `$${color}800`,
                 color: getHiContrast(color),
-                boxShadow: `0 2px 5px -2px $colors$${color}800 `,
-                willChange: 'transform',
+                boxShadow: 'none',
                 '@hover': {
                   '&:hover': {
+                    color: 'white',
+                    boxShadow: 'none',
                     backgroundColor: `$${color}900`,
-                    boxShadow: `0 2px 5px -2px $colors$${color}800 `,
                   },
                 },
                 '&:active': {
+                  boxShadow: 'none',
+                  color: getHiContrast(color),
                   backgroundColor: `$${color}700`,
-                  boxShadow: `0 1px 3px -1px $colors$${color}800 `,
-                  transform: 'scale(0.99)',
                 },
                 '&:focus': {
                   boxShadow: `0 0 0 2px $colors$${color}600`,
@@ -297,6 +298,30 @@ function Alerts() {
             css={{
               p: '$4',
               bc: `$${color}100`,
+              borderLeft: `2px solid $${color}500`,
+            }}
+          >
+            <Text size="2" as="p" css={{ color: `$${color}900` }}>
+              Warning: obsessing over {color} is a terrible idea.
+            </Text>
+          </Box>
+        ))}
+      </Grid>
+
+      <Grid
+        css={{
+          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+          gap: '$3',
+          mb: '$9',
+          ai: 'center',
+        }}
+      >
+        {colors.map((color) => (
+          <Box
+            key={color}
+            css={{
+              p: '$4',
+              bc: `$${color}100`,
               borderLeft: `3px solid $${color}700`,
             }}
           >
@@ -321,33 +346,7 @@ function Alerts() {
             css={{
               p: '$4',
               borderRadius: '$3',
-              bc: `$${color}400`,
-              border: `1px solid $${color}600`,
-            }}
-          >
-            <Text size="2" as="p" css={{ color: `$${color}1000` }}>
-              Warning: obsessing over {color} is a terrible idea.
-            </Text>
-          </Box>
-        ))}
-      </Grid>
-
-      <Grid
-        css={{
-          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-          gap: '$3',
-          mb: '$9',
-          ai: 'center',
-        }}
-      >
-        {colors.map((color) => (
-          <Box
-            key={color}
-            css={{
-              p: '$4',
-              borderRadius: '$3',
-              bc: `$${color}300`,
-              border: `1px solid $${color}500`,
+              bc: `$${color}200`,
             }}
           >
             <Text size="2" as="p" css={{ color: `$${color}1000` }}>
@@ -534,8 +533,12 @@ function Checkbox({
   );
 }
 
-function getHiContrast(color: string) {
-  return color === 'yellow' || color === 'lime' || color === 'orange' ? 'black' : 'white';
+export function getHiContrast(color: string) {
+  if (['lime', 'yellow', 'amber'].includes(color)) {
+    return 'hsl(0, 0%, 0%)';
+  }
+
+  return 'hsl(0, 0%, 100%)';
 }
 
 // https://usehooks.com/useLocalStorage/

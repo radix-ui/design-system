@@ -323,6 +323,18 @@ const stitches = createCss({
       orange900: 'hsl(27 65% 35.9%)',
       orange1000: 'hsl(30 86% 14.0%)',
 
+      amber000: 'white',
+      amber100: 'hsl(40 100% 97.0%)',
+      amber200: 'hsl(40 97% 93.2%)',
+      amber300: 'hsl(39 97% 88.7%)',
+      amber400: 'hsl(39 96% 83.0%)',
+      amber500: 'hsl(38 96% 75.5%)',
+      amber600: 'hsl(37 96% 65.5%)',
+      amber700: 'hsl(37 100% 60.0%)',
+      amber800: 'hsl(38 100% 54%)',
+      amber900: 'hsl(27 65% 35.9%)',
+      amber1000: 'hsl(30 86% 14.0%)',
+
       brown000: 'white',
       brown100: 'hsl(30 75% 98.0%)',
       brown200: 'hsl(30 67% 94.0%)',
