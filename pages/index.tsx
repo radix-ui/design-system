@@ -119,7 +119,7 @@ import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stit
 function Home() {
   return (
     <Box className={modulzTheme}>
-      <Banner variant="blue" rounded>
+      <Banner id="banner" variant="blue" rounded>
         <RocketIcon />
         <Text size="2" css={{ fontWeight: 500 }}>
           Modulz raises a $15M Series A.
@@ -182,6 +182,13 @@ function Home() {
             <Link href="#badge" variant="subtle" css={{ display: 'inline-flex' }}>
               <Text size="2" css={{ lineHeight: '20px' }}>
                 Badge
+              </Text>
+            </Link>
+          </Box>
+          <Box css={{ my: '$1' }}>
+            <Link href="#banner" variant="subtle" css={{ display: 'inline-flex' }}>
+              <Text size="2" css={{ lineHeight: '20px' }}>
+                Banner
               </Text>
             </Link>
           </Box>
