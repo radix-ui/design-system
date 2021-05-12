@@ -5,7 +5,7 @@ import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 export const RadioGroup = styled(RadioGroupPrimitive.Root, {
-  display: 'block',
+  display: 'flex',
 });
 
 const StyledIndicator = styled(RadioGroupPrimitive.Indicator, {
@@ -26,10 +26,17 @@ const StyledIndicator = styled(RadioGroupPrimitive.Indicator, {
 });
 
 const StyledRadio = styled(RadioGroupPrimitive.Item, {
-  // Reset
+  all: 'unset',
+  boxSizing: 'border-box',
+  userSelect: 'none',
+  '&::before': {
+    boxSizing: 'border-box',
+  },
+  '&::after': {
+    boxSizing: 'border-box',
+  },
   alignItems: 'center',
   appearance: 'none',
-  boxSizing: 'border-box',
   display: 'inline-flex',
   justifyContent: 'center',
   lineHeight: '1',
@@ -37,14 +44,7 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
   outline: 'none',
   padding: '0',
   textDecoration: 'none',
-  userSelect: 'none',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
-  '&::before': {
-    boxSizing: 'border-box',
-  },
-  '&::after': {
-    boxSizing: 'border-box',
-  },
 
   borderRadius: '50%',
   color: '$hiContrast',
