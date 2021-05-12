@@ -18,11 +18,11 @@ import { Color } from '../custom/Color';
 import { Toolbar } from '../custom/Toolbar';
 
 import { Cross1Icon, PlusIcon } from '@radix-ui/react-icons';
-import { darkTheme, flatTheme, softTheme, modulzTheme, coolTheme } from '../stitches.config';
+import { darkTheme, flatTheme, softTheme, modulzTheme } from '../stitches.config';
 
 function Test() {
   return (
-    <Box css={{ height: '100%' }} className={coolTheme}>
+    <Box css={{ height: '100%' }}>
       <Toolbar />
       <Box css={{ bc: '$loContrast', height: '100%', px: 250, pt: '36px' }}>
         <ScrollArea>
@@ -44,9 +44,15 @@ function Test() {
                 </Flex>
                 <Flex css={{ gap: '$4' }}>
                   <Button size="2">Button</Button>
-                  <Button size="2" variant="blue">Button</Button>
-                  <Button size="2" variant="green">Button</Button>
-                  <Button size="2" variant="red">Button</Button>
+                  <Button size="2" variant="blue">
+                    Button
+                  </Button>
+                  <Button size="2" variant="green">
+                    Button
+                  </Button>
+                  <Button size="2" variant="red">
+                    Button
+                  </Button>
                 </Flex>
                 {/* <Flex css={{ gap: '$4' }}>
                   <Button size="2" ghost>Button</Button>
