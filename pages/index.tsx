@@ -1821,7 +1821,7 @@ function Home() {
                 </PopoverContent>
               </Popover>
               <Popover>
-                <PopoverTrigger as={Button} variant="ghost">
+                <PopoverTrigger as={Button} ghost>
                   Ghost
                 </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>

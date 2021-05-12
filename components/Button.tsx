@@ -247,6 +247,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$slate300',
+          boxShadow: 'none',
         },
       },
     },
@@ -269,6 +270,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$blue300',
+          boxShadow: 'none',
         },
       },
     },
@@ -291,6 +293,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$green300',
+          boxShadow: 'none',
         },
       },
     },
@@ -313,6 +316,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
           backgroundColor: '$red300',
+          boxShadow: 'none',
         },
       },
     },
