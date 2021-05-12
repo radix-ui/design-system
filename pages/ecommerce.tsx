@@ -36,7 +36,7 @@ import {
 
 function Ecommerce() {
   return (
-    <Box className={flatTheme}>
+    <Box>
       <Box as="header">
         <Box css={{ bc: '$gray200', py: '$2', px: '$4' }}>
           <Flex css={{ ai: 'center', jc: 'space-between' }}>
