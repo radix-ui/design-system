@@ -175,6 +175,7 @@ const StyledAvatarImage = styled(AvatarPrimitive.Image, {
   objectFit: 'cover',
   boxSizing: 'border-box',
   height: '100%',
+  verticalAlign: 'middle',
   width: '100%',
 });
 
