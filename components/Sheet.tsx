@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, keyframes } from '../stitches.config';
+import { styled, keyframes, StitchesVariants } from '../stitches.config';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Cross1Icon } from '@radix-ui/react-icons';
 import { overlayStyles } from './Overlay';
@@ -13,13 +13,13 @@ type SheetProps = React.ComponentProps<typeof DialogPrimitive.Root> & {
 };
 
 const fadeIn = keyframes({
-  'from': { opacity: '0' },
-  'to': { opacity: '1' },
+  from: { opacity: '0' },
+  to: { opacity: '1' },
 });
 
 const fadeOut = keyframes({
-  'from': { opacity: '1' },
-  'to': { opacity: '0' },
+  from: { opacity: '1' },
+  to: { opacity: '0' },
 });
 
 const StyledOverlay = styled(DialogPrimitive.Overlay, {
@@ -49,13 +49,13 @@ export function Sheet({ children, ...props }: SheetProps) {
 }
 
 const slideIn = keyframes({
-  'from': { transform: '$$transformValue' },
-  'to': { transform: 'translate3d(0,0,0)' },
+  from: { transform: '$$transformValue' },
+  to: { transform: 'translate3d(0,0,0)' },
 });
 
 const slideOut = keyframes({
-  'from': { transform: 'translate3d(0,0,0)' },
-  'to': { transform: '$$transformValue' },
+  from: { transform: 'translate3d(0,0,0)' },
+  to: { transform: '$$transformValue' },
 });
 
 const StyledContent = styled(DialogPrimitive.Content, {
@@ -105,12 +105,12 @@ const StyledContent = styled(DialogPrimitive.Content, {
         $$transformValue: 'translate3d(-100%,0,0)',
         left: 0,
       },
-    }
+    },
   },
 
   defaultVariants: {
     side: 'right',
-  }
+  },
 });
 
 const StyledCloseButton = styled(IconButton, {
@@ -119,9 +119,11 @@ const StyledCloseButton = styled(IconButton, {
   right: '$2',
 });
 
+type SheetContentVariants = StitchesVariants<typeof StyledContent>;
+
 type SheetContentOwnProps = Polymorphic.OwnProps<typeof DialogPrimitive.Content> & {
   css?: any;
-};
+} & SheetContentVariants;
 
 type DialogContentComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof DialogPrimitive.Content>,
