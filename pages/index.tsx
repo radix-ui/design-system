@@ -1655,7 +1655,7 @@ function Home() {
                 </Card>
               </Box>
               <Box css={{ width: 250 }}>
-                <Card as="button" href="#" variant="active" css={{ p: '$3' }}>
+                <Card as="button" variant="active" css={{ p: '$3' }}>
                   <Text size="3" css={{ lineHeight: '23px', fontWeight: 500 }}>
                     Default Variants
                   </Text>
@@ -1683,7 +1683,7 @@ function Home() {
                   This will do a very dangerous thing. Thar be dragons!
                 </AlertDialogDescription>
                 <Flex css={{ jc: 'flex-end', gap: '$3', mt: '$5' }}>
-                  <AlertDialogCancel as={Button} variant="ghost">
+                  <AlertDialogCancel as={Button} ghost>
                     Cancel
                   </AlertDialogCancel>
                   <AlertDialogAction as={Button} variant="red">
@@ -1732,7 +1732,7 @@ function Home() {
                 <Popover>
                   <PopoverTrigger as={Button}>Open</PopoverTrigger>
                   <PopoverContent>
-                    <PopoverClose as={Button} variant="ghost">
+                    <PopoverClose as={Button} ghost>
                       Close
                     </PopoverClose>
                   </PopoverContent>
