@@ -98,7 +98,7 @@ export {
 export { TabLink } from './components/TabLink';
 export { Tabs, TabsList, TabsPanel, TabsTab } from './components/Tabs';
 export { Text } from './components/Text';
-export { Textarea } from './components/Textarea';
+export { TextArea } from './components/TextArea';
 export { Tooltip } from './components/Tooltip';
 export { TreeItem } from './components/TreeItem';
 export { VerifiedBadge } from './components/VerifiedBadge';

@@ -19,7 +19,7 @@ import { Table, Caption, Thead, Tbody, Tfoot, Tr, Th, Td } from '../components/T
 import { VerifiedBadge } from '../components/VerifiedBadge';
 import { Card } from '../components/Card';
 import { Select } from '../components/Select';
-import { Textarea } from '../components/Textarea';
+import { TextArea } from '../components/TextArea';
 import { Image } from '../components/Image';
 import { Code } from '../components/Code';
 import { Sup } from '../components/Sup';
@@ -1422,18 +1422,18 @@ function Home() {
               Textarea
             </Heading>
             <Flex css={{ ai: 'flex-start', gap: '$6' }}>
-              <Textarea size="1" placeholder="Size 1"></Textarea>
-              <Textarea size="2" placeholder="Size 1"></Textarea>
-              <Textarea size="3" placeholder="Size 1"></Textarea>
+              <TextArea size="1" placeholder="Size 1"></TextArea>
+              <TextArea size="2" placeholder="Size 1"></TextArea>
+              <TextArea size="3" placeholder="Size 1"></TextArea>
             </Flex>
             <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
-              <Textarea size="2" placeholder="Size 1" disabled></Textarea>
-              <Textarea
+              <TextArea size="2" placeholder="Size 1" disabled></TextArea>
+              <TextArea
                 size="2"
                 placeholder="Size 1"
                 readOnly
                 defaultValue="eihuweofjew"
-              ></Textarea>
+              ></TextArea>
             </Flex>
           </Container>
         </Section>
