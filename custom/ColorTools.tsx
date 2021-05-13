@@ -356,7 +356,7 @@ export function ColorTools() {
           name="sky"
           lightThemeConfig={{
             start: 'hsl(191 100% 97.3%)',
-            end: 'hsl(193 90% 70%)',
+            end: 'hsl(193 80% 70%)',
             defaultCurve: [0.52, 0.36, 0.7, 0.795],
             overrides: {
               sky800: 'hsl(193 98% 70%)',
