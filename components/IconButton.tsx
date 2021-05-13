@@ -35,7 +35,6 @@ const StyledIconButton = styled(DEFAULT_TAG, {
   },
   backgroundColor: '$loContrast',
   border: '1px solid $slate600',
-  borderRadius: '$2',
   '@hover': {
     '&:hover': {
       borderColor: '$slate700',
@@ -57,18 +56,22 @@ const StyledIconButton = styled(DEFAULT_TAG, {
   variants: {
     size: {
       '1': {
+        borderRadius: '$1',
         height: '$5',
         width: '$5',
       },
       '2': {
+        borderRadius: '$2',
         height: '$6',
         width: '$6',
       },
       '3': {
+        borderRadius: '$2',
         height: '$7',
         width: '$7',
       },
       '4': {
+        borderRadius: '$3',
         height: '$8',
         width: '$8',
       },

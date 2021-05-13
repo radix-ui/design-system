@@ -11,7 +11,6 @@ const StyledKbd = styled('kbd', {
   alignItems: 'center',
   justifyContent: 'center',
   backgroundColor: '$loContrast',
-  borderRadius: '$1',
   flexShrink: 0,
   color: '$hiContrast',
   userSelect: 'none',
@@ -32,6 +31,7 @@ const StyledKbd = styled('kbd', {
   variants: {
     size: {
       '1': {
+        borderRadius: '$1',
         px: '0.3em',
         height: '$3',
         minWidth: '1.6em',
@@ -39,6 +39,7 @@ const StyledKbd = styled('kbd', {
         lineHeight: '$spaces$3',
       },
       '2': {
+        borderRadius: '$2',
         px: '0.5em',
         height: '$5',
         minWidth: '2em',

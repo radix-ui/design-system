@@ -27,7 +27,6 @@ const StyledTextField = styled(DEFAULT_TAG, {
   // Custom
   backgroundColor: '$loContrast',
   boxShadow: 'inset 0 0 0 1px $colors$slate600',
-  borderRadius: '$2',
   color: '$hiContrast',
   fontVariantNumeric: 'tabular-nums',
 
@@ -69,6 +68,7 @@ const StyledTextField = styled(DEFAULT_TAG, {
   variants: {
     size: {
       '1': {
+        borderRadius: '$1',
         height: '$5',
         fontSize: '$1',
         px: '$1',
@@ -77,6 +77,7 @@ const StyledTextField = styled(DEFAULT_TAG, {
         },
       },
       '2': {
+        borderRadius: '$1',
         height: '$5',
         fontSize: '$2',
         px: '$1',
@@ -88,6 +89,7 @@ const StyledTextField = styled(DEFAULT_TAG, {
         },
       },
       '3': {
+        borderRadius: '$2',
         height: '$6',
         fontSize: '$3',
         px: '$2',
