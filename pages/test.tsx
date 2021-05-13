@@ -16,14 +16,15 @@ import { Badge } from '../components/Badge';
 
 import { Layers } from '../custom/Layers';
 import { Properties } from '../custom/Properties';
-import { Color } from '../custom/Color';
 import { Toolbar } from '../custom/Toolbar';
+import { DarkThemeButton } from '../custom/DarkThemeButton';
 
 import { Cross1Icon, PlusIcon } from '@radix-ui/react-icons';
 
 function Test() {
   return (
     <Box css={{ height: '100%' }}>
+      <DarkThemeButton />
       <Toolbar />
       <Box css={{ bc: '$loContrast', height: '100%', px: 250, pt: '36px' }}>
         <ScrollArea>
@@ -432,8 +433,6 @@ function Test() {
           <Flex css={{ jc: 'center' }}>
             <Separator size="2" />
           </Flex>
-
-          <Color />
         </ScrollArea>
 
         <Layers />
