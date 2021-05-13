@@ -119,6 +119,8 @@ import { DarkThemeButton } from '../custom/DarkThemeButton';
 function Home() {
   return (
     <Box>
+      <DarkThemeButton />
+
       <Banner id="banner" variant="blue" rounded>
         <RocketIcon />
         <Text size="2" css={{ fontWeight: 500 }}>
@@ -136,7 +138,6 @@ function Home() {
       <AppBar size="2" color="loContrast" border sticky glass>
         <Button>Button</Button>
       </AppBar>
-      <DarkThemeButton />
       <Box
         css={{
           position: 'fixed',
