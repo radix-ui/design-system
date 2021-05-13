@@ -2,9 +2,12 @@ import { RadiobuttonIcon, SliderIcon, SwitchIcon, TextIcon } from '@radix-ui/rea
 import React from 'react';
 import { Box } from '../components/Box';
 import { Button } from '../components/Button';
+import { Code } from '../components/Code';
 import { Container } from '../components/Container';
+import { Flex } from '../components/Flex';
 import { Grid } from '../components/Grid';
 import { Heading } from '../components/Heading';
+import { Paragraph } from '../components/Paragraph';
 import { Section } from '../components/Section';
 import { Separator } from '../components/Separator';
 import { Text } from '../components/Text';
@@ -52,6 +55,7 @@ export default function Colors() {
   const [layers, setLayers] = useLocalStorage('colors-layers', true);
   const [alerts, setAlerts] = useLocalStorage('colors-alerts', true);
   const [buttons, setButtons] = useLocalStorage('colors-buttons', true);
+  const [lines, setLines] = useLocalStorage('colors-lines', true);
   const [textBlocks, setTextBlocks] = useLocalStorage('colors-textBlocks', true);
 
   const [darkTheme, setDarkTheme] = useLocalStorage('colors-darkTheme', false);
@@ -91,6 +95,9 @@ export default function Colors() {
             <Checkbox defaultChecked={buttons} onChange={(e) => setButtons(e.target.checked)}>
               Buttons
             </Checkbox>
+            <Checkbox defaultChecked={buttons} onChange={(e) => setLines(e.target.checked)}>
+              Lines
+            </Checkbox>
             <Checkbox defaultChecked={alerts} onChange={(e) => setAlerts(e.target.checked)}>
               Alerts
             </Checkbox>
@@ -113,6 +120,7 @@ export default function Colors() {
         {palette && <Palette />}
         {layers && <Layers />}
         {buttons && <Buttons />}
+        {lines && <Lines />}
         {alerts && <Alerts />}
         {textBlocks && <TextBlocks />}
       </Section>
@@ -260,6 +268,44 @@ function Buttons() {
           </Box>
         ))}
       </Grid>
+    </Container>
+  );
+}
+
+function Lines() {
+  return (
+    <Container size="2" css={{ my: '$9' }}>
+      <Text size="6" as="h4" css={{ fontWeight: 500, lineHeight: '27px', mt: '$8', mb: '$1' }}>
+        Lines
+      </Text>
+      <Paragraph css={{ mb: '$7' }}>
+        The <Code>500</Code> line should be very subtle, but visible on all backgrounds.
+      </Paragraph>
+
+      <Flex css={{ position: 'relative' }}>
+        <Box
+          css={{
+            fb: '0',
+            fg: '1',
+            height: 160,
+            backgroundColor: '$loContrast',
+          }}
+        ></Box>
+        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray100' }}></Box>
+        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray200' }}></Box>
+        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray300' }}></Box>
+        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray400' }}></Box>
+        <Box
+          css={{
+            position: 'absolute',
+            top: '50%',
+            left: '0',
+            width: '100%',
+            height: 1,
+            backgroundColor: '$gray500',
+          }}
+        ></Box>
+      </Flex>
     </Container>
   );
 }
