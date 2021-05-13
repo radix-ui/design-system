@@ -51,7 +51,7 @@ import { Tabs, TabsList, TabsTab, TabsPanel } from '../components/Tabs';
 import { Label } from '../components/Label';
 import { Skeleton } from '../components/Skeleton';
 import { RadioCardGroup, RadioCard } from '../components/RadioCard';
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion'
+import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
 import { Heading } from '../components/Heading';
 import { Paragraph } from '../components/Paragraph';
 // import { Color } from '../custom/Color';
@@ -114,7 +114,7 @@ import {
   RocketIcon,
 } from '@radix-ui/react-icons';
 import { Toolbar } from '../custom/Toolbar';
-import { darkTheme } from '../stitches.config';
+import { DarkThemeButton } from '../custom/DarkThemeButton';
 
 function Home() {
   return (
@@ -136,6 +136,7 @@ function Home() {
       <AppBar size="2" color="loContrast" border sticky glass>
         <Button>Button</Button>
       </AppBar>
+      <DarkThemeButton />
       <Box
         css={{
           position: 'fixed',
@@ -408,8 +409,12 @@ function Home() {
       <Box css={{ bc: '$loContrast', height: '100%' }}>
         <Section size="3">
           <Container size="2">
-            <Heading size="4" css={{ ta: 'center', mb: '$3' }}>Radix UI test suite</Heading>
-            <Paragraph size="2" css={{ ta: 'center' }}>An environment for testing Radix DS.</Paragraph>
+            <Heading size="4" css={{ ta: 'center', mb: '$3' }}>
+              Radix UI test suite
+            </Heading>
+            <Paragraph size="2" css={{ ta: 'center' }}>
+              An environment for testing Radix DS.
+            </Paragraph>
           </Container>
         </Section>
         <Flex css={{ jc: 'center' }}>
@@ -904,18 +909,19 @@ function Home() {
                 This is a heading size 1
               </Heading>
               <Paragraph size="2">
-                This is a Paragraph size 3. Design in the target medium. Prototype with real components. Handoff production code.
+                This is a Paragraph size 3. Design in the target medium. Prototype with real
+                components. Handoff production code.
               </Paragraph>
               <Paragraph size="1">
-                This is a Paragraph size 2. A really long paragraph of text, to demonstrate prose text, like for
-                example, the kind you might read in a blog post. The reason we're using prose here
-                is because the most common use case for this container size is longform text. So
-                we're previewing some longform text here so we can make sure the container width
-                provides an optimal line length for this font size.
+                This is a Paragraph size 2. A really long paragraph of text, to demonstrate prose
+                text, like for example, the kind you might read in a blog post. The reason we're
+                using prose here is because the most common use case for this container size is
+                longform text. So we're previewing some longform text here so we can make sure the
+                container width provides an optimal line length for this font size.
               </Paragraph>
               <Paragraph>
-                This is a Sup and Sub demo. The kind you might read in a blog post.<Sup>1</Sup> This is a really long
-                paragraph of text, to demonstrate prose text.<Sub>1</Sub>
+                This is a Sup and Sub demo. The kind you might read in a blog post.<Sup>1</Sup> This
+                is a really long paragraph of text, to demonstrate prose text.<Sub>1</Sub>
               </Paragraph>
             </Flex>
           </Container>
@@ -1148,8 +1154,8 @@ function Home() {
                   Alert heading
                 </Text>
                 <Text size="2" variant="gray" css={{ lineHeight: '17px' }}>
-                  A modal dialog that interrupts the user with <Link href="#">important content</Link> and expects a
-                  response.
+                  A modal dialog that interrupts the user with{' '}
+                  <Link href="#">important content</Link> and expects a response.
                 </Text>
               </Alert>
               <Alert variant="gray">
@@ -1157,35 +1163,47 @@ function Home() {
                   Alert heading
                 </Text>
                 <Text size="2" variant="gray" css={{ lineHeight: '17px' }}>
-                  A modal dialog that interrupts the user with <Link href="#">important content</Link> and expects a
-                  response.
+                  A modal dialog that interrupts the user with{' '}
+                  <Link href="#">important content</Link> and expects a response.
                 </Text>
               </Alert>
               <Alert variant="blue">
-                <Text size="3" variant="blue" css={{ fontWeight: 500, lineHeight: '20px', mb: '$1' }}>
+                <Text
+                  size="3"
+                  variant="blue"
+                  css={{ fontWeight: 500, lineHeight: '20px', mb: '$1' }}
+                >
                   Alert heading
                 </Text>
                 <Text size="2" variant="blue" css={{ lineHeight: '17px' }}>
-                  A modal dialog that interrupts the user with <Link href="#">important content</Link> and expects a
-                  response.
+                  A modal dialog that interrupts the user with{' '}
+                  <Link href="#">important content</Link> and expects a response.
                 </Text>
               </Alert>
               <Alert variant="green">
-                <Text size="3" variant="green" css={{ fontWeight: 500, lineHeight: '20px', mb: '$1' }}>
+                <Text
+                  size="3"
+                  variant="green"
+                  css={{ fontWeight: 500, lineHeight: '20px', mb: '$1' }}
+                >
                   Alert heading
                 </Text>
                 <Text size="2" variant="green" css={{ lineHeight: '17px' }}>
-                  A modal dialog that interrupts the user with <Link href="#">important content</Link> and expects a
-                  response.
+                  A modal dialog that interrupts the user with{' '}
+                  <Link href="#">important content</Link> and expects a response.
                 </Text>
               </Alert>
               <Alert variant="red">
-                <Text size="3" variant="red" css={{ fontWeight: 500, lineHeight: '20px', mb: '$1' }}>
+                <Text
+                  size="3"
+                  variant="red"
+                  css={{ fontWeight: 500, lineHeight: '20px', mb: '$1' }}
+                >
                   Alert heading
                 </Text>
                 <Text size="2" variant="red" css={{ lineHeight: '17px' }}>
-                  A modal dialog that interrupts the user with <Link href="#">important content</Link> and expects a
-                  response.
+                  A modal dialog that interrupts the user with{' '}
+                  <Link href="#">important content</Link> and expects a response.
                 </Text>
               </Alert>
             </Flex>

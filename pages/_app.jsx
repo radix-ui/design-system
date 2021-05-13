@@ -1,18 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import '../styles.css';
-import { darkTheme } from '../stitches.config';
-import { Button } from '../components/Button';
 import { DesignSystemProvider } from '../components/DesignSystemProvider';
 
 function App({ Component, pageProps }) {
-  const [theme, setTheme] = React.useState('theme-default');
-
-  React.useEffect(() => {
-    document.body.className = '';
-    document.body.classList.add(theme);
-  }, [theme]);
-
   return (
     <DesignSystemProvider>
       <div>
@@ -23,14 +14,6 @@ function App({ Component, pageProps }) {
         </Head>
 
         <Component {...pageProps} />
-
-        <Button
-          ghost
-          style={{ position: 'fixed', zIndex: 999, right: 15, top: 15 }}
-          onClick={() => setTheme(theme === 'theme-default' ? darkTheme : 'theme-default')}
-        >
-          Toggle theme
-        </Button>
       </div>
     </DesignSystemProvider>
   );
