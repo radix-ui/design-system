@@ -359,6 +359,7 @@ export function ColorTools() {
             end: 'hsl(193 80% 70%)',
             defaultCurve: [0.52, 0.36, 0.7, 0.795],
             overrides: {
+              sky000: 'hsl(193 100% 98.8%)',
               sky800: 'hsl(193 98% 70%)',
               sky900: 'hsl(195 100% 31.5%)',
               sky1000: 'hsl(195 100% 13.0%)',
@@ -369,6 +370,7 @@ export function ColorTools() {
             end: 'hsl(193 93% 55.0%)',
             defaultCurve: [0.8, 0.19, 0.965, 0.47],
             overrides: {
+              sky000: 'hsl(193 100% 98.8%)',
               sky800: 'hsl(193 98% 70%)',
             },
           }}
@@ -470,7 +472,7 @@ export function ColorTools() {
             overrides: {
               yellow000: 'hsl(60 54% 98.5%)',
               yellow800: 'hsl(53 92% 50%)',
-              yellow900: 'hsl(45 100% 27.5%)',
+              yellow900: 'hsl(42 100% 29%)',
               yellow1000: 'hsl(40 55% 13.5%)',
             },
           }}
