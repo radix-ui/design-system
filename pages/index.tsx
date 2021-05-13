@@ -910,11 +910,11 @@ function Home() {
                 This is a heading size 1
               </Heading>
               <Paragraph size="2">
-                This is a Paragraph size 3. Design in the target medium. Prototype with real
+                This is a Paragraph size 2. Design in the target medium. Prototype with real
                 components. Handoff production code.
               </Paragraph>
               <Paragraph size="1">
-                This is a Paragraph size 2. A really long paragraph of text, to demonstrate prose
+                This is a Paragraph size 1. A really long paragraph of text, to demonstrate prose
                 text, like for example, the kind you might read in a blog post. The reason we're
                 using prose here is because the most common use case for this container size is
                 longform text. So we're previewing some longform text here so we can make sure the
