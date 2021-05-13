@@ -24,7 +24,7 @@ const StyledSection = styled(DEFAULT_TAG, {
         py: '$3',
       },
       '2': {
-        py: '$7',
+        py: '$5',
       },
       '3': {
         py: '$9',

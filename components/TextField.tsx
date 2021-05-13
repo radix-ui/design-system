@@ -5,7 +5,7 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'input';
 
-const StyledInput = styled(DEFAULT_TAG, {
+const StyledTextField = styled(DEFAULT_TAG, {
   // Reset
   appearance: 'none',
   borderWidth: '0',
@@ -16,6 +16,7 @@ const StyledInput = styled(DEFAULT_TAG, {
   padding: '0',
   width: '100%',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
+  lineHeight: '1',
   '&::before': {
     boxSizing: 'border-box',
   },
@@ -26,7 +27,6 @@ const StyledInput = styled(DEFAULT_TAG, {
   // Custom
   backgroundColor: '$loContrast',
   boxShadow: 'inset 0 0 0 1px $colors$slate600',
-  borderRadius: '$2',
   color: '$hiContrast',
   fontVariantNumeric: 'tabular-nums',
 
@@ -68,6 +68,7 @@ const StyledInput = styled(DEFAULT_TAG, {
   variants: {
     size: {
       '1': {
+        borderRadius: '$1',
         height: '$5',
         fontSize: '$1',
         px: '$1',
@@ -76,10 +77,10 @@ const StyledInput = styled(DEFAULT_TAG, {
         },
       },
       '2': {
+        borderRadius: '$1',
         height: '$5',
         fontSize: '$2',
         px: '$1',
-
         // Fix potential baseline misalignment when placed on subpixels
         // (via "vh" margin, in a grid, etc). Affects this size variant only
         paddingBottom: 1,
@@ -88,6 +89,7 @@ const StyledInput = styled(DEFAULT_TAG, {
         },
       },
       '3': {
+        borderRadius: '$2',
         height: '$6',
         fontSize: '$3',
         px: '$2',
@@ -148,15 +150,15 @@ const StyledInput = styled(DEFAULT_TAG, {
   },
 });
 
-type InputCSSProp = { css?: CSS };
+type TextFieldCSSProp = { css?: CSS };
 // TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type InputVariants = Omit<StitchesVariants<typeof StyledInput>, 'size'>;
-type InputOwnProps = InputCSSProp & InputVariants & { size?: any };
+type TextFieldVariants = Omit<StitchesVariants<typeof StyledTextField>, 'size'>;
+type TextFieldOwnProps = TextFieldCSSProp & TextFieldVariants & { size?: any };
 
-type InputComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, InputOwnProps>;
+type TextFieldComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TextFieldOwnProps>;
 
-export const Input = React.forwardRef((props, forwardedRef) => {
-  return <StyledInput {...props} ref={forwardedRef} />;
-}) as InputComponent;
+export const TextField = React.forwardRef((props, forwardedRef) => {
+  return <StyledTextField {...props} ref={forwardedRef} />;
+}) as TextFieldComponent;
 
-Input.toString = () => `.${StyledInput.className}`;
+TextField.toString = () => `.${StyledTextField.className}`;

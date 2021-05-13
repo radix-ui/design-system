@@ -6,7 +6,6 @@ import { Flex } from '../components/Flex';
 import { Avatar, AvatarGroup, AvatarNestedItem } from '../components/Avatar';
 import { Status } from '../components/Status';
 import { Heading } from '../components/Heading';
-import { Subheading } from '../components/Subheading';
 import { Link2Icon } from '@radix-ui/react-icons';
 import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
 
@@ -17,7 +16,7 @@ export function Avatars() {
         <Heading id="avatar" css={{ mb: '$6', scrollMarginTop: '$7' }}>
           Avatar
         </Heading>
-        <Subheading css={{ mb: '$6' }}>Default</Subheading>
+        <Heading css={{ mb: '$6' }}>Default</Heading>
         <Avatar alt="John Smith" src="" fallback="J" css={{ mb: '$6' }} />
 
         {/* <Avatar
@@ -26,7 +25,7 @@ export function Avatars() {
           fallback="J"
         /> */}
 
-        <Subheading>Avatar sizes</Subheading>
+        <Heading>Avatar sizes</Heading>
         <Flex css={{ fd: 'column', gap: '$6' }}>
           <Flex css={{ ai: 'center', gap: '$6' }}>
             <Avatar size="1" alt="John Smith" src="" fallback="J" />
@@ -67,7 +66,7 @@ export function Avatars() {
             />
           </Flex>
 
-          <Subheading>Avatar fallback</Subheading>
+          <Heading>Avatar fallback</Heading>
           <Flex css={{ ai: 'center', gap: '$6' }}>
             <Avatar size="1" alt="John Smith" fallback="F" />
             <Avatar size="2" alt="John Smith" fallback="F" />
@@ -77,7 +76,7 @@ export function Avatars() {
             <Avatar size="6" alt="John Smith" fallback="F" />
           </Flex>
 
-          <Subheading>Avatar colors</Subheading>
+          <Heading>Avatar colors</Heading>
           <Flex css={{ ai: 'center', gap: '$3' }}>
             <Avatar alt="John Smith" fallback="F" />
             <Avatar alt="John Smith" fallback="F" variant="red" />
@@ -99,7 +98,7 @@ export function Avatars() {
             <Avatar alt="John Smith" fallback="F" variant="hiContrast" />
           </Flex>
 
-          <Subheading>Interactive avatar</Subheading>
+          <Heading>Interactive avatar</Heading>
           <Flex css={{ gap: '$6' }}>
             <Popover>
               <PopoverTrigger as={Avatar} interactive fallback="J"></PopoverTrigger>
@@ -152,7 +151,7 @@ export function Avatars() {
             </Popover>
           </Flex>
 
-          <Subheading>Inactive avatar</Subheading>
+          <Heading>Inactive avatar</Heading>
           <Flex css={{ gap: '$2' }}>
             <Avatar
               size="2"
@@ -208,7 +207,7 @@ export function Avatars() {
             <Avatar alt="John Smith" fallback="F" inactive variant="bronze" />
           </Flex>
 
-          <Subheading>Grouped avatars</Subheading>
+          <Heading>Grouped avatars</Heading>
           <Flex>
             <AvatarGroup>
               <AvatarNestedItem>
@@ -260,7 +259,7 @@ export function Avatars() {
             </AvatarGroup>
           </Flex>
 
-          <Subheading>Nested avatars</Subheading>
+          <Heading>Nested avatars</Heading>
           <Flex>
             <Box
               css={{
@@ -295,7 +294,7 @@ export function Avatars() {
             </Box>
           </Flex>
 
-          <Subheading>Avatar with status</Subheading>
+          <Heading>Avatar with status</Heading>
           <Flex css={{ gap: '$6' }}>
             <Box
               css={{
@@ -564,7 +563,7 @@ export function Avatars() {
             </Box>
           </Flex>
 
-          <Subheading>Avatar with icon</Subheading>
+          <Heading>Avatar with icon</Heading>
           <Flex>
             <Avatar
               size="4"
@@ -619,7 +618,7 @@ export function Avatars() {
             />
           </Flex>
 
-          <Subheading>Story avatars</Subheading>
+          <Heading>Story avatars</Heading>
           <Flex css={{ gap: '$3' }}>
             <button style={{ border: 'none', backgroundColor: 'transparent' }}>
               <Avatar

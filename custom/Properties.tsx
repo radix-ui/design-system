@@ -9,7 +9,7 @@ import {
 import { Box } from '../components/Box';
 import { Flex } from '../components/Flex';
 import { IconButton } from '../components/IconButton';
-import { Input } from '../components/Input';
+import { TextField } from '../components/TextField';
 import { Select } from '../components/Select';
 import { Text } from '../components/Text';
 import { ScrollArea } from '../components/Scrollbar';
@@ -55,7 +55,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0" />
+                  <TextField size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -70,7 +70,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0" />
+                  <TextField size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -85,7 +85,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0" />
+                  <TextField size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -100,7 +100,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0" />
+                  <TextField size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -115,7 +115,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0" />
+                  <TextField size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -130,7 +130,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0" />
+                  <TextField size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -145,7 +145,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0" />
+                  <TextField size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -160,7 +160,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0" />
+                  <TextField size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -175,7 +175,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0" />
+                  <TextField size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -190,7 +190,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0" />
+                  <TextField size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -205,7 +205,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0" />
+                  <TextField size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -280,7 +280,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="16" />
+                  <TextField size="1" cursor="default" defaultValue="16" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -321,7 +321,7 @@ export function Properties() {
                   </IconButton>
                 </Box>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="b5b5b5" />
+                  <TextField size="1" cursor="default" defaultValue="b5b5b5" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -336,7 +336,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="1" />
+                  <TextField size="1" cursor="default" defaultValue="1" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -351,7 +351,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0" />
+                  <TextField size="1" cursor="default" defaultValue="0" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -414,7 +414,7 @@ export function Properties() {
                 </IconButton>
               </Box>
               <Box css={{ flexBasis: '0', flexGrow: 1 }}>
-                <Input
+                <TextField
                   size="1"
                   cursor="default"
                   defaultValue="0"
@@ -426,7 +426,7 @@ export function Properties() {
                 />
               </Box>
               <Box css={{ flexBasis: '0', flexGrow: 1 }}>
-                <Input
+                <TextField
                   size="1"
                   cursor="default"
                   defaultValue="0"
@@ -434,7 +434,7 @@ export function Properties() {
                 />
               </Box>
               <Box css={{ flexBasis: '0', flexGrow: 1 }}>
-                <Input
+                <TextField
                   size="1"
                   cursor="default"
                   defaultValue="0"
@@ -442,7 +442,7 @@ export function Properties() {
                 />
               </Box>
               <Box css={{ flexBasis: '0', flexGrow: 1 }}>
-                <Input
+                <TextField
                   size="1"
                   cursor="default"
                   defaultValue="0"
@@ -467,7 +467,7 @@ export function Properties() {
                 </IconButton>
               </Box>
               <Box css={{ flexBasis: '0', flexGrow: 1 }}>
-                <Input
+                <TextField
                   size="1"
                   cursor="default"
                   defaultValue="0"
@@ -479,7 +479,7 @@ export function Properties() {
                 />
               </Box>
               <Box css={{ flexBasis: '0', flexGrow: 1 }}>
-                <Input
+                <TextField
                   size="1"
                   cursor="default"
                   defaultValue="0"
@@ -487,7 +487,7 @@ export function Properties() {
                 />
               </Box>
               <Box css={{ flexBasis: '0', flexGrow: 1 }}>
-                <Input
+                <TextField
                   size="1"
                   cursor="default"
                   defaultValue="0"
@@ -495,7 +495,7 @@ export function Properties() {
                 />
               </Box>
               <Box css={{ flexBasis: '0', flexGrow: 1 }}>
-                <Input
+                <TextField
                   size="1"
                   cursor="default"
                   defaultValue="0"
@@ -621,7 +621,7 @@ export function Properties() {
               </Flex>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="5"
@@ -664,7 +664,7 @@ export function Properties() {
               </Flex>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="100%"
@@ -716,7 +716,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="0°"
@@ -746,7 +746,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="0°"
@@ -776,7 +776,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="0°"
@@ -806,7 +806,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="0°"
@@ -836,7 +836,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="100%"
@@ -866,7 +866,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="100%"
@@ -896,7 +896,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="100%"
@@ -926,7 +926,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="100%"
@@ -956,7 +956,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="0°"
@@ -986,7 +986,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="0°"
@@ -1016,7 +1016,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="0"
@@ -1046,7 +1046,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="0"
@@ -1076,7 +1076,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="0"
@@ -1121,7 +1121,7 @@ export function Properties() {
               </Box>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input size="1" cursor="default" defaultValue="0°" />
+                  <TextField size="1" cursor="default" defaultValue="0°" />
                 </Box>
                 <Box css={{ ml: '$1', mr: '-$1' }}>
                   <IconButton>
@@ -1175,7 +1175,7 @@ export function Properties() {
               </Flex>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="100ms"
@@ -1212,7 +1212,7 @@ export function Properties() {
               </Flex>
               <Flex css={{ flexBasis: '0', flexGrow: 1 }}>
                 <Box css={{ flexGrow: 1 }}>
-                  <Input
+                  <TextField
                     size="1"
                     cursor="default"
                     defaultValue="100ms"

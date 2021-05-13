@@ -1,6 +1,6 @@
 import { styled } from '../stitches.config';
 import { Button } from '../components/Button';
-import { Input } from '../components/Input';
+import { TextField } from './TextField';
 import { Select } from '../components/Select';
 
 export const ControlGroup = styled('div', {
@@ -23,8 +23,8 @@ export const ControlGroup = styled('div', {
       boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
     },
     '&:first-child': {
-      borderTopLeftRadius: '$2',
-      borderBottomLeftRadius: '$2',
+      borderTopLeftRadius: '$1',
+      borderBottomLeftRadius: '$1',
       boxShadow: 'inset 0 0 0 1px $colors$slate600',
       '&:hover': {
         boxShadow: 'inset 0 0 0 1px $colors$slate700',
@@ -34,8 +34,8 @@ export const ControlGroup = styled('div', {
       },
     },
     '&:last-child': {
-      borderTopRightRadius: '$2',
-      borderBottomRightRadius: '$2',
+      borderTopRightRadius: '$1',
+      borderBottomRightRadius: '$1',
       boxShadow:
         'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',
       '&:focus': {
@@ -43,7 +43,7 @@ export const ControlGroup = styled('div', {
       },
     },
   },
-  [`& ${Input}`]: {
+  [`& ${TextField}`]: {
     borderRadius: 0,
     boxShadow:
       'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',
@@ -52,16 +52,16 @@ export const ControlGroup = styled('div', {
       boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
     },
     '&:first-child': {
-      borderTopLeftRadius: '$2',
-      borderBottomLeftRadius: '$2',
+      borderTopLeftRadius: '$1',
+      borderBottomLeftRadius: '$1',
       boxShadow: 'inset 0 0 0 1px $colors$slate600',
       '&:focus': {
         boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
       },
     },
     '&:last-child': {
-      borderTopRightRadius: '$2',
-      borderBottomRightRadius: '$2',
+      borderTopRightRadius: '$1',
+      borderBottomRightRadius: '$1',
       boxShadow:
         'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',
       '&:focus': {
@@ -77,16 +77,16 @@ export const ControlGroup = styled('div', {
       boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
     },
     '&:first-child': {
-      borderTopLeftRadius: '$2',
-      borderBottomLeftRadius: '$2',
+      borderTopLeftRadius: '$1',
+      borderBottomLeftRadius: '$1',
       boxShadow: 'inset 0 0 0 1px $colors$slate600',
       '&:focus-within': {
         boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
       },
     },
     '&:last-child': {
-      borderTopRightRadius: '$2',
-      borderBottomRightRadius: '$2',
+      borderTopRightRadius: '$1',
+      borderBottomRightRadius: '$1',
       boxShadow:
         'inset 0 1px $colors$slate600, inset -1px 0 $colors$slate600, inset 0 -1px $colors$slate600',
       '&:focus-within': {

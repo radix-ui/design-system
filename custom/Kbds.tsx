@@ -2,14 +2,14 @@ import { Box } from '../components/Box';
 import { Container } from '../components/Container';
 import { Flex } from '../components/Flex';
 import { Grid } from '../components/Grid';
+import { Heading } from '../components/Heading';
 import { Kbd } from '../components/Kbd';
 import { Section } from '../components/Section';
-import { Subheading } from '../components/Subheading';
 
 export function Kbds() {
   return (
     <Container size="2">
-      <Subheading>Kbd variants</Subheading>
+      <Heading>Kbd variants</Heading>
 
       <Grid css={{ gridTemplateColumns: 'repeat(3, 1fr)', my: '$5' }}>
         <Box>

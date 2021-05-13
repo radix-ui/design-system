@@ -6,11 +6,8 @@ import { Text } from '../components/Text';
 import { Separator } from '../components/Separator';
 import { Section } from '../components/Section';
 import { ScrollArea } from '../components/Scrollbar';
-import { Subtitle } from '../components/Subtitle';
 import { Heading } from '../components/Heading';
-import { Subheading } from '../components/Subheading';
 import { Paragraph } from '../components/Paragraph';
-import { Input } from '../components/Input';
 import { Button } from '../components/Button';
 import { Badge } from '../components/Badge';
 
@@ -20,6 +17,7 @@ import { Toolbar } from '../custom/Toolbar';
 import { DarkThemeButton } from '../custom/DarkThemeButton';
 
 import { Cross1Icon, PlusIcon } from '@radix-ui/react-icons';
+import { darkTheme } from '../stitches.config';
 
 function Test() {
   return (
@@ -32,23 +30,83 @@ function Test() {
             <Container size="2">
               <Heading
                 css={{
-                  mb: '$2',
+                  mb: '$6',
+                }}
+              >
+                Theming
+              </Heading>
+            </Container>
+            <Container size="2">
+              <Flex css={{ fd: 'column', gap: '$6' }}>
+                <Flex css={{ gap: '$4' }}>
+                  <Button>Button</Button>
+                  <Button size="2">Button</Button>
+                </Flex>
+                <Flex css={{ gap: '$4' }}>
+                  <Button size="2">Button</Button>
+                  <Button size="2" variant="blue">
+                    Button
+                  </Button>
+                  <Button size="2" variant="green">
+                    Button
+                  </Button>
+                  <Button size="2" variant="red">
+                    Button
+                  </Button>
+                </Flex>
+                {/* <Flex css={{ gap: '$4' }}>
+                  <Button size="2" ghost>Button</Button>
+                  <Button size="2" variant="blue" ghost>Button</Button>
+                  <Button size="2" variant="green" ghost>Button</Button>
+                  <Button size="2" variant="red" ghost>Button</Button>
+                </Flex> */}
+              </Flex>
+            </Container>
+          </Section>
+
+          <Flex css={{ jc: 'center' }}>
+            <Separator size="2" />
+          </Flex>
+
+          <Section size="3">
+            <Container size="2">
+              <Heading
+                css={{
+                  mb: '$6',
                 }}
               >
                 In search of perfect baseline alignment
               </Heading>
-              <Paragraph css={{ mb: '$7' }}>This search is hopeless and I am insane.</Paragraph>
             </Container>
             <Container size="2">
-              <Flex css={{ gap: '$2' }}>
-                <Input defaultValue="Input 017489 jpy" css={{ width: 150 }} />
-                <Button css={{ fontSize: 12 }}>
-                  <Box css={{ mr: '$1' }}>
-                    <PlusIcon />
-                  </Box>
-                  Button 017489 jpy
-                </Button>
-                <Badge>Badge 017489 jpy</Badge>
+              <Flex css={{ fd: 'column', gap: '$2' }}>
+                <Flex css={{ ai: 'center', height: '$8', bc: '$crimson300' }}>
+                  <Text size="9">This search is hopeless</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$7', bc: '$crimson300' }}>
+                  <Text size="8">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                  <Text size="7">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                  <Text size="6">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                  <Text size="5">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                  <Text size="4">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                  <Text size="3">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$5', bc: '$crimson300' }}>
+                  <Text size="2">This search is hopeless and I am insane.</Text>
+                </Flex>
+                <Flex css={{ ai: 'center', height: '$5', bc: '$crimson300' }}>
+                  <Text size="1">This search is hopeless and I am insane.</Text>
+                </Flex>
               </Flex>
             </Container>
             <Container size="2">

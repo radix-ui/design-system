@@ -11,6 +11,8 @@ type LinkVariants = StitchesVariants<typeof StyledLink>;
 type LinkOwnProps = LinkCSSProp & LinkVariants;
 
 const StyledLink = styled(DEFAULT_TAG, {
+  alignItems: 'center',
+  gap: '$1',
   flexShrink: 0,
   outline: 'none',
   textDecorationLine: 'none',

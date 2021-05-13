@@ -14,7 +14,7 @@ const StyledCard = styled(DEFAULT_TAG, {
   border: 'none',
   boxSizing: 'border-box',
   font: 'inherit',
-  lineheight: '1',
+  lineHeight: '1',
   outline: 'none',
   padding: 0,
   textAlign: 'inherit',

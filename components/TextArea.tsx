@@ -5,11 +5,11 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'textarea';
 
-type TextareaCSSProp = { css?: CSS };
-type TextareaVariants = StitchesVariants<typeof StyledTextarea>;
-type TextareaOwnProps = TextareaCSSProp & TextareaVariants;
+type TextAreaCSSProp = { css?: CSS };
+type TextAreaVariants = StitchesVariants<typeof StyledTextArea>;
+type TextAreaOwnProps = TextAreaCSSProp & TextAreaVariants;
 
-const StyledTextarea = styled(DEFAULT_TAG, {
+const StyledTextArea = styled(DEFAULT_TAG, {
   // Reset
   appearance: 'none',
   borderWidth: '0',
@@ -21,7 +21,6 @@ const StyledTextarea = styled(DEFAULT_TAG, {
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   backgroundColor: '$loContrast',
   boxShadow: 'inset 0 0 0 1px $colors$slate600',
-  borderRadius: '$2',
   color: '$hiContrast',
   fontVariantNumeric: 'tabular-nums',
   position: 'relative',
@@ -55,16 +54,19 @@ const StyledTextarea = styled(DEFAULT_TAG, {
   variants: {
     size: {
       '1': {
+        borderRadius: '$1',
         fontSize: '$1',
         lineHeight: '16px',
         px: '$1',
       },
       '2': {
+        borderRadius: '$1',
         fontSize: '$2',
         lineHeight: '20px',
         px: '$1',
       },
       '3': {
+        borderRadius: '$2',
         fontSize: '$3',
         lineHeight: '23px',
         px: '$2',
@@ -101,8 +103,8 @@ const StyledTextarea = styled(DEFAULT_TAG, {
   },
 });
 
-type TextareaComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TextareaOwnProps>;
+type TextAreaComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TextAreaOwnProps>;
 
-export const Textarea = React.forwardRef((props, forwardedRef) => {
-  return <StyledTextarea {...props} ref={forwardedRef} />;
-}) as TextareaComponent;
+export const TextArea = React.forwardRef((props, forwardedRef) => {
+  return <StyledTextArea {...props} ref={forwardedRef} />;
+}) as TextAreaComponent;

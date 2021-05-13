@@ -4,7 +4,7 @@ import bezier from 'bezier-easing';
 import { Box } from '../components/Box';
 import { Flex } from '../components/Flex';
 import { Grid } from '../components/Grid';
-import { Input } from '../components/Input';
+import { TextField } from '../components/TextField';
 import { Text } from '../components/Text';
 import { BezierCurveEditor } from 'react-bezier-curve-editor';
 import {
@@ -994,7 +994,7 @@ function Editor({ curve, onCurveChange }: EditorProps) {
         />
       </Box>
       <Box css={{ px: '$2', mb: '$3' }}>
-        <Input
+        <TextField
           variant="ghost"
           ref={inputRef}
           state={inputValueIsValid ? undefined : 'invalid'}

@@ -1,4 +1,5 @@
 export { Accordion, AccordionButton, AccordionItem, AccordionPanel } from './components/Accordion';
+export { Alert } from './components/Alert';
 export {
   AlertDialog,
   AlertDialogAction,
@@ -11,6 +12,7 @@ export {
 export { Avatar, AvatarGroup, AvatarNestedItem } from './components/Avatar';
 export { AspectRatio } from '@radix-ui/react-aspect-ratio';
 export { Badge } from './components/Badge';
+export { Banner } from './components/Banner';
 export { Box } from './components/Box';
 export { Button } from './components/Button';
 export { Card } from './components/Card';
@@ -49,7 +51,7 @@ export { Grid } from './components/Grid';
 export { Heading } from './components/Heading';
 export { IconButton } from './components/IconButton';
 export { Image } from './components/Image';
-export { Input } from './components/Input';
+export { TextField } from './components/TextField';
 export { Kbd } from './components/Kbd';
 export { Link } from './components/Link';
 export {
@@ -82,14 +84,21 @@ export { Slot } from '@radix-ui/react-slot';
 export { Status } from './components/Status';
 export { Sup } from './components/Sup';
 export { Sub } from './components/Sub';
-export { Subheading } from './components/Subheading';
-export { Subtitle } from './components/Subtitle';
 export { Switch } from './components/Switch';
-export { Tabs, TabsList, TabsPanel, TabsTab } from './components/Tabs';
+export {
+  Caption,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  Thead,
+  Table
+} from './components/Table';
 export { TabLink } from './components/TabLink';
+export { Tabs, TabsList, TabsPanel, TabsTab } from './components/Tabs';
 export { Text } from './components/Text';
-export { Textarea } from './components/Textarea';
-export { Title } from './components/Title';
+export { TextArea } from './components/TextArea';
 export { Tooltip } from './components/Tooltip';
 export { TreeItem } from './components/TreeItem';
 export { VerifiedBadge } from './components/VerifiedBadge';

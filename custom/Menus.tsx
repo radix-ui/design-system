@@ -3,7 +3,7 @@ import { Box } from '../components/Box';
 import { Section } from '../components/Section';
 import { Container } from '../components/Container';
 import { Flex } from '../components/Flex';
-import { Subheading } from '../components/Subheading';
+import { Heading } from '../components/Heading';
 
 import {
   Menu,
@@ -20,7 +20,7 @@ export function Menus() {
   return (
     <Section size="3">
       <Container size="2">
-        <Subheading>Menus</Subheading>
+        <Heading>Menus</Heading>
         <Flex>
           <BasicMenu />
           <LabelledMenu />
