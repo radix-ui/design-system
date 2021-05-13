@@ -580,7 +580,7 @@ function Checkbox({
 }
 
 export function getHiContrast(color: string) {
-  if (['lime', 'yellow', 'amber'].includes(color)) {
+  if (['lime', 'yellow', 'amber', 'sky'].includes(color)) {
     return 'hsl(0, 0%, 0%)';
   }
 

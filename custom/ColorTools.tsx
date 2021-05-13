@@ -355,21 +355,21 @@ export function ColorTools() {
         <EditableScale
           name="sky"
           lightThemeConfig={{
-            start: 'hsl(194 100% 97.8%)',
-            end: 'hsl(195 80% 54.5%)',
-            defaultCurve: [0.46, 0.205, 0.805, 0.56],
+            start: 'hsl(191 100% 97.3%)',
+            end: 'hsl(193 90% 70%)',
+            defaultCurve: [0.51, 0.41, 0.7, 0.795],
             overrides: {
-              sky800: 'hsl(198 100% 44.0%)',
-              sky900: 'hsl(204 100% 37.5%)',
-              sky1000: 'hsl(205 100% 14.0%)',
+              sky800: 'hsl(193 98% 70%)',
+              sky900: 'hsl(195 100% 31.5%)',
+              sky1000: 'hsl(195 100% 13.0%)',
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(195 80% 7.8%)',
-            end: 'hsl(198 93% 38.0%)',
-            defaultCurve: [0.695, 0.39, 0.815, 0.48],
+            start: 'hsl(193 80% 7.8%)',
+            end: 'hsl(193 93% 55.0%)',
+            defaultCurve: [0.8, 0.19, 0.965, 0.47],
             overrides: {
-              sky800: 'hsl(198 100% 44.0%)',
+              sky800: 'hsl(193 98% 70%)',
             },
           }}
         />
