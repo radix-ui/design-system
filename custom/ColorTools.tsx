@@ -172,7 +172,7 @@ export function ColorTools() {
             defaultCurve: [0.54, 0.265, 0.77, 0.53],
             overrides: {
               tomato800: 'hsl(10 78% 54.0%)',
-              tomato900: 'hsl(10 82% 44%)',
+              tomato900: 'hsl(10 82% 43.5%)',
               tomato1000: 'hsl(10 50% 13.5%)',
             },
           }}
@@ -195,7 +195,7 @@ export function ColorTools() {
               red000: 'hsl(359 100% 99.4%)',
               red100: 'hsl(359 100% 98.6%)',
               red800: 'hsl(358 75% 59.0%)',
-              red900: 'hsl(358 65% 48.5%)',
+              red900: 'hsl(358 65% 48.7%)',
               red1000: 'hsl(354 50% 14.6%)',
             },
           }}
@@ -217,7 +217,7 @@ export function ColorTools() {
             overrides: {
               crimson000: 'hsl(332 100% 99.4%)',
               crimson800: 'hsl(336 80% 57.8%)',
-              crimson900: 'hsl(336 70% 46%)',
+              crimson900: 'hsl(336 75% 47.2%)',
               crimson1000: 'hsl(340 65% 14.5%)',
             },
           }}
@@ -239,7 +239,7 @@ export function ColorTools() {
             overrides: {
               pink000: 'hsl(322 100% 99.4%)',
               pink800: 'hsl(322 65% 54.5%)',
-              pink900: 'hsl(322 65% 44%)',
+              pink900: 'hsl(322 75% 46%)',
               pink1000: 'hsl(320 70% 13.5%)',
             },
           }}
