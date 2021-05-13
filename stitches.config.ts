@@ -397,9 +397,10 @@ const stitches = createCss({
     //   9: '60px',
     // },
     radii: {
-      1: '3px',
-      2: '5px',
+      1: '4px',
+      2: '6px',
       3: '7px',
+      4: '12px',
       round: '50%',
       pill: '9999px',
     },
