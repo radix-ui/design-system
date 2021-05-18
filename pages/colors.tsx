@@ -288,7 +288,7 @@ function Lines() {
             fb: '0',
             fg: '1',
             height: 160,
-            backgroundColor: '$loContrast',
+            backgroundColor: '$gray000',
           }}
         ></Box>
         <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray100' }}></Box>
