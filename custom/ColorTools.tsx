@@ -398,10 +398,10 @@ export function ColorTools() {
         <EditableScale
           name="blue"
           lightThemeConfig={{
-            start: 'hsl(206 100% 98%)',
-            end: 'hsl(206 82% 65.4%)',
-            saturationBoost: 1.2,
-            defaultCurve: [0.48, 0.135, 0.8, 0.555],
+            start: 'hsl(207 100% 98%)',
+            end: 'hsl(205.6 82% 65.4%)',
+            saturationBoost: 1.9,
+            defaultCurve: [0.48, 0.095, 0.795, 0.575],
             overrides: {
               blue900: 'hsl(211 100% 43.2%)',
               blue1000: 'hsl(211 100% 15%)',
