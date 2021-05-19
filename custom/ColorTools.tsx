@@ -510,6 +510,30 @@ export function ColorTools() {
           }}
         />
         <EditableScale
+          name="grass"
+          lightThemeConfig={{
+            start: 'hsl(120 60% 97%)',
+            end: 'hsl(131 38% 56.2%)',
+            saturationBoost: 1.6,
+            defaultCurve: [0.505, 0.13, 0.775, 0.51],
+            overrides: {
+              grass000: 'hsl(116 50% 98.9%)',
+              grass800: 'hsl(131 41% 46.5%)',
+              grass900: 'hsl(133 50% 32.5%)',
+              grass1000: 'hsl(130 30% 14.9%)',
+            },
+          }}
+          darkThemeConfig={{
+            start: 'hsl(134 33% 8.5%)',
+            end: 'hsl(131 40% 30.8%)',
+            defaultCurve: [0.38, 0.25, 0.74, 0.4],
+            overrides: {
+              grass800: 'hsl(131 41% 46.5%)',
+              grass900: 'hsl(131 43% 57.2%)',
+            },
+          }}
+        />
+        <EditableScale
           name="lime"
           lightThemeConfig={{
             start: 'hsl(85 70% 96.5%)',
