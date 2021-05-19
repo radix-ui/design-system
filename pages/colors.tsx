@@ -16,6 +16,7 @@ import { ColorTools } from '../custom/ColorTools';
 import { darkTheme as darkThemeClassName } from '../stitches.config';
 
 const sidebarWidth = 240;
+const loContrasts = ['lime', 'yellow', 'amber', 'sky', 'mint'];
 
 export const colors = [
   'gray',
@@ -25,6 +26,7 @@ export const colors = [
   'olive',
   'sand',
 
+  'orange',
   'tomato',
   'red',
   'crimson',
@@ -35,20 +37,20 @@ export const colors = [
   'indigo',
 
   'blue',
-  'sky',
   'cyan',
   'teal',
   'green',
   'grass',
 
-  'lime',
-  'yellow',
-  'amber',
-  'orange',
-
   'brown',
   'bronze',
   'gold',
+
+  'sky',
+  'mint',
+  'lime',
+  'yellow',
+  'amber',
 ] as const;
 
 export default function Colors() {
@@ -587,7 +589,7 @@ function Checkbox({
 }
 
 export function getHiContrast(color: string) {
-  if (['lime', 'yellow', 'amber', 'sky'].includes(color)) {
+  if (loContrasts.includes(color)) {
     return 'hsl(0, 0%, 0%)';
   }
 
