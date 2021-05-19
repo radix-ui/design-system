@@ -403,6 +403,7 @@ export function ColorTools() {
             saturationBoost: 1.9,
             defaultCurve: [0.48, 0.095, 0.795, 0.575],
             overrides: {
+              blue400: 'hsl(209 95% 90.1%)',
               blue900: 'hsl(211 100% 43.2%)',
               blue1000: 'hsl(211 100% 15%)',
             },
