@@ -60,6 +60,7 @@ export default function Colors() {
 
   const [darkTheme, setDarkTheme] = useLocalStorage('colors-darkTheme', false);
   const [grayscale, setGrayscale] = useLocalStorage('colors-grayscale', false);
+  const [blur, setBlur] = useLocalStorage('colors-blur', false);
   const [gap, setGap] = useLocalStorage('colors-gap', true);
 
   // No SSR please
@@ -111,18 +112,23 @@ export default function Colors() {
             <Checkbox defaultChecked={gap} onChange={(e) => setGap(e.target.checked)}>
               Gaps
             </Checkbox>
+            <Checkbox defaultChecked={blur} onChange={(e) => setBlur(e.target.checked)}>
+              Blur
+            </Checkbox>
             <Checkbox defaultChecked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)}>
               Dark theme
             </Checkbox>
           </Box>
         </Container>
 
-        {palette && <Palette />}
-        {layers && <Layers />}
-        {buttons && <Buttons />}
-        {lines && <Lines />}
-        {alerts && <Alerts />}
-        {textBlocks && <TextBlocks />}
+        <div style={{ filter: blur ? 'blur(20px)' : undefined }}>
+          {palette && <Palette />}
+          {layers && <Layers />}
+          {buttons && <Buttons />}
+          {lines && <Lines />}
+          {alerts && <Alerts />}
+          {textBlocks && <TextBlocks />}
+        </div>
       </Section>
       <Sidebar />
     </>
