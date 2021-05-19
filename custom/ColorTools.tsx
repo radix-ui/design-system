@@ -461,6 +461,7 @@ export function ColorTools() {
               mint000: 'hsl(173 50% 6.6%)',
               mint800: 'hsl(163 75% 65.5%)',
               mint900: 'hsl(163 70% 48%)',
+              mint1000: 'hsl(163 80% 94.8%)',
             },
           }}
         />
