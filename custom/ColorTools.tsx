@@ -21,6 +21,9 @@ import { colors, getHiContrast } from '../pages/colors';
 // We are editing steps 100 through 700 via the tools
 const steps = 7;
 
+// How much to boost the saturation towards the left end of the bezier curve
+const defaultSaturationBoost = 1;
+
 type Curve = [number, number, number, number];
 
 type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<infer ElementType>
@@ -38,6 +41,8 @@ type EditableScaleProps = {
     defaultCurve: Curve;
     /** Colors to override, e.g. "red000", "red500", "red900", etc */
     overrides?: Record<string, string>;
+    /** How much to boost the saturation towards the left end of the bezier curve */
+    saturationBoost?: number;
   };
   darkThemeConfig: {
     /** Step 100 */
@@ -48,6 +53,8 @@ type EditableScaleProps = {
     defaultCurve: Curve;
     /** Colors to override, e.g. "red000", "red500", "red900", etc */
     overrides?: Record<string, string>;
+    /** How much to boost the saturation towards the left end of the bezier curve */
+    saturationBoost?: number;
   };
 };
 
@@ -203,7 +210,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(10 90% 98.3%)',
             end: 'hsl(10 72% 71%)',
-            defaultCurve: [0.54, 0.265, 0.77, 0.53],
+            saturationBoost: 1.2,
+            defaultCurve: [0.55, 0.225, 0.74, 0.525],
             overrides: {
               tomato800: 'hsl(10 78% 54.0%)',
               tomato900: 'hsl(10 82% 43.5%)',
@@ -225,7 +233,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(359 100% 98.5%)',
             end: 'hsl(359 70% 74.5%)',
-            defaultCurve: [0.62, 0.32, 0.735, 0.49],
+            saturationBoost: 1.2,
+            defaultCurve: [0.61, 0.265, 0.72, 0.52],
             overrides: {
               red000: 'hsl(359 100% 99.4%)',
               red100: 'hsl(359 100% 98.6%)',
@@ -249,7 +258,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(332 100% 98.5%)',
             end: 'hsl(336 62% 72.8%)',
-            defaultCurve: [0.62, 0.32, 0.735, 0.49],
+            saturationBoost: 1.2,
+            defaultCurve: [0.6, 0.26, 0.71, 0.5],
             overrides: {
               crimson000: 'hsl(332 100% 99.4%)',
               crimson800: 'hsl(336 80% 57.8%)',
@@ -272,7 +282,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(322 100% 98.5%)',
             end: 'hsl(322 60% 72.2%)',
-            defaultCurve: [0.62, 0.32, 0.735, 0.49],
+            saturationBoost: 1.2,
+            defaultCurve: [0.61, 0.27, 0.715, 0.5],
             overrides: {
               pink000: 'hsl(322 100% 99.4%)',
               pink800: 'hsl(322 65% 54.5%)',
@@ -295,7 +306,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(297 100% 98.6%)',
             end: 'hsl(292 48% 70.9%)',
-            defaultCurve: [0.62, 0.32, 0.755, 0.485],
+            saturationBoost: 1.2,
+            defaultCurve: [0.64, 0.29, 0.715, 0.495],
             overrides: {
               plum000: 'hsl(292 90% 99.4%)',
               plum800: 'hsl(292 45% 51.0%)',
@@ -318,7 +330,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(280 100% 99.0%)',
             end: 'hsl(272 60% 73.5%)',
-            defaultCurve: [0.62, 0.32, 0.755, 0.485],
+            saturationBoost: 1.2,
+            defaultCurve: [0.635, 0.3, 0.755, 0.485],
             overrides: {
               purple000: 'hsl(280 65% 99.4%)',
               purple900: 'hsl(272 50% 45.8%)',
@@ -339,7 +352,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(252 100% 99.0%)',
             end: 'hsl(252 68% 76.2%)',
-            defaultCurve: [0.62, 0.32, 0.775, 0.49],
+            saturationBoost: 1.2,
+            defaultCurve: [0.69, 0.31, 0.76, 0.525],
             overrides: {
               violet000: 'hsl(255 65% 99.4%)',
               violet800: 'hsl(252 56% 57.5%)',
@@ -362,7 +376,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(226 100% 98.7%)',
             end: 'hsl(226 76% 74.5%)',
-            defaultCurve: [0.485, 0.205, 0.77, 0.46],
+            saturationBoost: 1.2,
+            defaultCurve: [0.575, 0.18, 0.815, 0.61],
             overrides: {
               indigo000: 'hsl(225 60% 99.4%)',
               indigo800: 'hsl(226 70% 55.5%)',
@@ -385,7 +400,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(206 100% 98%)',
             end: 'hsl(206 82% 65.4%)',
-            defaultCurve: [0.47, 0.165, 0.805, 0.56],
+            saturationBoost: 1.2,
+            defaultCurve: [0.48, 0.135, 0.8, 0.555],
             overrides: {
               blue900: 'hsl(211 100% 43.2%)',
               blue1000: 'hsl(211 100% 15%)',
@@ -405,7 +421,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(191 100% 97.3%)',
             end: 'hsl(193 80% 70%)',
-            defaultCurve: [0.52, 0.36, 0.7, 0.795],
+            saturationBoost: 1.4,
+            defaultCurve: [0.55, 0.23, 0.815, 0.55],
             overrides: {
               sky000: 'hsl(193 100% 98.8%)',
               sky800: 'hsl(193 98% 70%)',
@@ -428,7 +445,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(185 70% 97.0%)',
             end: 'hsl(189 60% 52.5%)',
-            defaultCurve: [0.635, 0.24, 0.825, 0.69],
+            saturationBoost: 2,
+            defaultCurve: [0.505, 0.13, 0.78, 0.565],
             overrides: {
               cyan000: 'hsl(185 60% 98.7%)',
               cyan800: 'hsl(190 95% 39.0%)',
@@ -451,7 +469,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(165 70% 96.7%)',
             end: 'hsl(172 42% 52.5%)',
-            defaultCurve: [0.635, 0.24, 0.84, 0.69],
+            saturationBoost: 2,
+            defaultCurve: [0.505, 0.13, 0.795, 0.55],
             overrides: {
               teal000: 'hsl(165 60% 98.8%)',
               teal800: 'hsl(173 80% 36.0%)',
@@ -473,7 +492,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(136 66% 97%)',
             end: 'hsl(151 40% 54.0%)',
-            defaultCurve: [0.625, 0.225, 0.85, 0.66],
+            saturationBoost: 1.6,
+            defaultCurve: [0.505, 0.13, 0.775, 0.51],
             overrides: {
               green000: 'hsl(136 50% 98.9%)',
               green800: 'hsl(151 55% 41.5%)',
@@ -495,7 +515,8 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(85 70% 96.5%)',
             end: 'hsl(76 62% 57%)',
-            defaultCurve: [0.625, 0.5, 0.795, 0.83],
+            saturationBoost: 2,
+            defaultCurve: [0.525, 0.18, 0.735, 0.555],
             overrides: {
               lime000: 'hsl(85 50% 98.7%)',
               lime800: 'hsl(81 67% 50%)',
@@ -516,9 +537,10 @@ export function ColorTools() {
         <EditableScale
           name="yellow"
           lightThemeConfig={{
-            start: 'hsl(53 100% 95%)',
+            start: 'hsl(53 95% 95.5%)',
             end: 'hsl(53 85% 55%)',
-            defaultCurve: [0.585, 0.705, 0.89, 0.92],
+            saturationBoost: 3,
+            defaultCurve: [0.48, 0.125, 0.705, 0.515],
             overrides: {
               yellow000: 'hsl(60 54% 98.5%)',
               yellow800: 'hsl(53 92% 50%)',
@@ -542,7 +564,7 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(39 100% 96.5%)',
             end: 'hsl(39 100% 64.0%)',
-            defaultCurve: [0.625, 0.5, 0.795, 0.83],
+            defaultCurve: [0.635, 0.38, 0.775, 0.64],
             overrides: {
               amber000: 'hsl(39 70% 99.0%)',
               amber800: 'hsl(39 100% 57%)',
@@ -565,7 +587,7 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(24 90% 97.8%)',
             end: 'hsl(24 95% 64.5%)',
-            defaultCurve: [0.625, 0.29, 0.795, 0.59],
+            defaultCurve: [0.605, 0.235, 0.79, 0.56],
             overrides: {
               orange000: 'hsl(24 70% 99.0%)',
               orange800: 'hsl(24 94% 50%)',
@@ -701,9 +723,16 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   const onCurveChange = React.useCallback(
     (newCurve: Curve) => {
       const config = isDarkTheme ? darkThemeConfig : lightThemeConfig;
+
+      // Saturation speed adjustment for the left end of the bezier curve
+      const boost1 = config.saturationBoost ?? defaultSaturationBoost;
+      // Smaller speed adjustment for the right end of the bezier curve to reduce the left end pull
+      const boost2 = boost1 / 10 + 0.9;
+
       const [x1, y1, x2, y2] = newCurve;
       const hueCurve = newCurve;
-      const chromaCurve = newCurve;
+      // Boost saturation speed on the left end of the curve, reduce slightly on the right end of the curve
+      const chromaCurve: Curve = [x1, y1 * boost1, Math.min(1, x2 * boost2), y2];
       const lumCurve: Curve = [1 - x2, 1 - y2, 1 - x1, 1 - y1];
 
       const newColors = generateColors({
