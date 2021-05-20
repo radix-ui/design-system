@@ -16,6 +16,7 @@ import { ColorTools } from '../custom/ColorTools';
 import { darkTheme as darkThemeClassName } from '../stitches.config';
 
 const sidebarWidth = 240;
+const loContrasts = ['lime', 'yellow', 'amber', 'sky', 'mint'];
 
 export const colors = [
   'gray',
@@ -35,19 +36,21 @@ export const colors = [
   'indigo',
 
   'blue',
-  'sky',
   'cyan',
   'teal',
   'green',
-
-  'lime',
-  'yellow',
-  'amber',
-  'orange',
+  'grass',
 
   'brown',
   'bronze',
   'gold',
+
+  'sky',
+  'mint',
+  'lime',
+  'yellow',
+  'amber',
+  'orange',
 ] as const;
 
 export default function Colors() {
@@ -60,6 +63,7 @@ export default function Colors() {
 
   const [darkTheme, setDarkTheme] = useLocalStorage('colors-darkTheme', false);
   const [grayscale, setGrayscale] = useLocalStorage('colors-grayscale', false);
+  const [blur, setBlur] = useLocalStorage('colors-blur', false);
   const [gap, setGap] = useLocalStorage('colors-gap', true);
 
   // No SSR please
@@ -78,7 +82,7 @@ export default function Colors() {
   React.useLayoutEffect(() => {
     document.body.classList.toggle('theme-default', !darkTheme);
     document.body.classList.toggle(darkThemeClassName, darkTheme);
-    document.body.style.backgroundColor = darkTheme ? 'black' : '';
+    document.documentElement.style.backgroundColor = darkTheme ? 'black' : '';
   }, [darkTheme]);
 
   return (
@@ -111,18 +115,23 @@ export default function Colors() {
             <Checkbox defaultChecked={gap} onChange={(e) => setGap(e.target.checked)}>
               Gaps
             </Checkbox>
+            <Checkbox defaultChecked={blur} onChange={(e) => setBlur(e.target.checked)}>
+              Blur
+            </Checkbox>
             <Checkbox defaultChecked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)}>
               Dark theme
             </Checkbox>
           </Box>
         </Container>
 
-        {palette && <Palette />}
-        {layers && <Layers />}
-        {buttons && <Buttons />}
-        {lines && <Lines />}
-        {alerts && <Alerts />}
-        {textBlocks && <TextBlocks />}
+        <div style={{ filter: blur ? 'blur(20px)' : undefined }}>
+          {palette && <Palette />}
+          {layers && <Layers />}
+          {buttons && <Buttons />}
+          {lines && <Lines />}
+          {alerts && <Alerts />}
+          {textBlocks && <TextBlocks />}
+        </div>
       </Section>
       <Sidebar />
     </>
@@ -288,7 +297,7 @@ function Lines() {
             fb: '0',
             fg: '1',
             height: 160,
-            backgroundColor: '$loContrast',
+            backgroundColor: '$gray000',
           }}
         ></Box>
         <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray100' }}></Box>
@@ -543,17 +552,94 @@ function Palette() {
                 {color}
               </Text>
             </Box>
-            <Box css={{ bc: `$${color}000` }} />
-            <Box css={{ bc: `$${color}100` }} />
-            <Box css={{ bc: `$${color}200` }} />
-            <Box css={{ bc: `$${color}300` }} />
-            <Box css={{ bc: `$${color}400` }} />
-            <Box css={{ bc: `$${color}500` }} />
-            <Box css={{ bc: `$${color}600` }} />
-            <Box css={{ bc: `$${color}700` }} />
-            <Box css={{ bc: `$${color}800` }} />
-            <Box css={{ bc: `$${color}900` }} />
-            <Box css={{ bc: `$${color}1000` }} />
+            <Box
+              css={{ bc: `$${color}000` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}000)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}100` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}100)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}200` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}200)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}300` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}300)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}400` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}400)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}500` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}500)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}600` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}600)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}700` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}700)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}800` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}800)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}900` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}900)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}1000` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}1000)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
           </Grid>
         ))}
       </Box>
@@ -580,7 +666,7 @@ function Checkbox({
 }
 
 export function getHiContrast(color: string) {
-  if (['lime', 'yellow', 'amber', 'sky'].includes(color)) {
+  if (loContrasts.includes(color)) {
     return 'hsl(0, 0%, 0%)';
   }
 

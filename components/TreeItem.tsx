@@ -152,6 +152,15 @@ const StyledTreeItem = styled(DEFAULT_TAG, {
           backgroundColor: '$yellow400',
         },
       },
+      amber: {
+        backgroundColor: '$amber200',
+        '&:hover': {
+          backgroundColor: '$amber300',
+        },
+        '&:active': {
+          backgroundColor: '$amber400',
+        },
+      },
       orange: {
         backgroundColor: '$orange200',
         '&:hover': {

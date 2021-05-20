@@ -512,6 +512,43 @@ export function Layers() {
           </Box>
           <Text size="1">TreeItem</Text>
         </TreeItem>
+        <TreeItem css={{ backgroundColor: '$amber400' }}>
+          <Box css={{ mr: '$2' }}>
+            <RadiobuttonIcon />
+          </Box>
+          <Text size="1">Radio</Text>
+        </TreeItem>
+        <TreeItem variant="amber" css={{ pl: 45 }}>
+          <Box css={{ mr: '$2' }}>
+            <SliderIcon />
+          </Box>
+          <Text size="1">Slider</Text>
+        </TreeItem>
+        <TreeItem variant="amber" css={{ pl: 45 }}>
+          <Box css={{ mr: '$2' }}>
+            <SwitchIcon />
+          </Box>
+          <Text size="1">Switch</Text>
+        </TreeItem>
+        <TreeItem variant="amber" css={{ pl: 45 }}>
+          <Box css={{ mr: '$2' }}>
+            <TextIcon />
+          </Box>
+          <Text size="1">Text</Text>
+        </TreeItem>
+        <TreeItem>
+          <Box css={{ mr: '$2' }}>
+            <BoxIcon />
+          </Box>
+          <Text size="1">TreeItem</Text>
+        </TreeItem>
+        <TreeItem>
+          <Box css={{ mr: '$2' }}>
+            <BoxIcon />
+          </Box>
+          <Text size="1">TreeItem</Text>
+        </TreeItem>
+
         <TreeItem css={{ backgroundColor: '$orange400' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
