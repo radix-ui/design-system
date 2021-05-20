@@ -46,7 +46,7 @@ const StyledButton = styled(DEFAULT_TAG, {
         borderRadius: '$1',
         height: '$5',
         px: '$2',
-        fontSize: '$2',
+        fontSize: '$1',
         lineHeight: '$sizes$5',
       },
       '2': {

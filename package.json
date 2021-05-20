@@ -17,7 +17,7 @@
     "ds:release": "yarn ds:build && np"
   },
   "dependencies": {
-    "@radix-ui/colors": "^0.1.1",
+    "@radix-ui/colors": "^0.1.2",
     "@radix-ui/react-accordion": "0.0.7",
     "@radix-ui/react-alert-dialog": "0.0.8",
     "@radix-ui/react-aspect-ratio": "^0.0.6",
