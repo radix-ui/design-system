@@ -604,26 +604,26 @@ export function ColorTools() {
         <EditableScale
           name="mint"
           lightThemeConfig={{
-            start: 'hsl(161 88% 96.8%)',
-            end: 'hsl(163 60% 65%)',
+            start: 'hsl(166 88% 96.6%)',
+            end: 'hsl(168 55% 65%)',
             saturationBoost: 1.4,
-            defaultCurve: [0.515, 0.285, 0.835, 0.53],
+            defaultCurve: [0.515, 0.275, 0.72, 0.46],
             overrides: {
-              mint000: 'hsl(163 80% 98.8%)',
-              mint800: 'hsl(163 75% 65.5%)',
-              mint900: 'hsl(168 72% 29%)',
-              mint1000: 'hsl(168 70% 12.0%)',
+              mint000: 'hsl(165 80% 98.8%)',
+              mint800: 'hsl(167 65% 66%)',
+              mint900: 'hsl(172 72% 28.5%)',
+              mint1000: 'hsl(172 70% 12.0%)',
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(173 75% 6.9%)',
-            end: 'hsl(168 100% 21.2%)',
+            start: 'hsl(176 75% 6.9%)',
+            end: 'hsl(170 100% 21.2%)',
             defaultCurve: [0.5, 0.28, 0.825, 0.58],
             overrides: {
               mint000: 'hsl(173 50% 6.6%)',
-              mint800: 'hsl(163 75% 65.5%)',
-              mint900: 'hsl(163 70% 48%)',
-              mint1000: 'hsl(163 80% 94.8%)',
+              mint800: 'hsl(167 65% 66%)',
+              mint900: 'hsl(167 70% 48%)',
+              mint1000: 'hsl(165 80% 94.8%)',
             },
           }}
         />
