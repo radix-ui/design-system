@@ -1151,7 +1151,7 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@radix-ui/colors@^0.1.2":
+"@radix-ui/colors@^0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@radix-ui/colors/-/colors-0.1.3.tgz#26a2c96e8955157ab99eaa67f12fd83bfc8e8567"
   integrity sha512-bescVryFMt0GtSAtHGtoWycjmhpJuO3L4RuTOjBMUJj0jzSTI1mHEyq2IDiQ5Z3Q+EWNfTSpcKyPS6zFVMCfFQ==
