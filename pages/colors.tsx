@@ -26,7 +26,6 @@ export const colors = [
   'olive',
   'sand',
 
-  'orange',
   'tomato',
   'red',
   'crimson',
@@ -51,6 +50,7 @@ export const colors = [
   'lime',
   'yellow',
   'amber',
+  'orange',
 ] as const;
 
 export default function Colors() {
@@ -82,7 +82,7 @@ export default function Colors() {
   React.useLayoutEffect(() => {
     document.body.classList.toggle('theme-default', !darkTheme);
     document.body.classList.toggle(darkThemeClassName, darkTheme);
-    document.body.style.backgroundColor = darkTheme ? 'black' : '';
+    document.documentElement.style.backgroundColor = darkTheme ? 'black' : '';
   }, [darkTheme]);
 
   return (
@@ -552,17 +552,94 @@ function Palette() {
                 {color}
               </Text>
             </Box>
-            <Box css={{ bc: `$${color}000` }} />
-            <Box css={{ bc: `$${color}100` }} />
-            <Box css={{ bc: `$${color}200` }} />
-            <Box css={{ bc: `$${color}300` }} />
-            <Box css={{ bc: `$${color}400` }} />
-            <Box css={{ bc: `$${color}500` }} />
-            <Box css={{ bc: `$${color}600` }} />
-            <Box css={{ bc: `$${color}700` }} />
-            <Box css={{ bc: `$${color}800` }} />
-            <Box css={{ bc: `$${color}900` }} />
-            <Box css={{ bc: `$${color}1000` }} />
+            <Box
+              css={{ bc: `$${color}000` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}000)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}100` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}100)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}200` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}200)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}300` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}300)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}400` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}400)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}500` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}500)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}600` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}600)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}700` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}700)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}800` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}800)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}900` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}900)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}1000` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}1000)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
           </Grid>
         ))}
       </Box>
