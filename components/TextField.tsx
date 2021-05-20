@@ -77,18 +77,6 @@ const StyledTextField = styled(DEFAULT_TAG, {
         },
       },
       '2': {
-        borderRadius: '$1',
-        height: '$5',
-        fontSize: '$2',
-        px: '$1',
-        // Fix potential baseline misalignment when placed on subpixels
-        // (via "vh" margin, in a grid, etc). Affects this size variant only
-        paddingBottom: 1,
-        '&:-webkit-autofill::first-line': {
-          fontSize: '$2',
-        },
-      },
-      '3': {
         borderRadius: '$2',
         height: '$6',
         fontSize: '$3',

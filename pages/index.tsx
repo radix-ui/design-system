@@ -1342,26 +1342,24 @@ function Home() {
             <Flex css={{ ai: 'flex-start', gap: '$6' }}>
               <TextField size="1" placeholder="Size 1" />
               <TextField size="2" placeholder="Size 2" />
-              <TextField size="3" placeholder="Size 3" />
             </Flex>
             <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
               <TextField size="1" placeholder="Ghost" variant="ghost" />
               <TextField size="2" placeholder="Ghost" variant="ghost" />
-              <TextField size="3" placeholder="Ghost" variant="ghost" />
             </Flex>
             <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
-              <TextField size="2" placeholder="Invalid" state="invalid" />
-              <TextField size="2" placeholder="Valid" state="valid" />
+              <TextField placeholder="Invalid" state="invalid" />
+              <TextField placeholder="Valid" state="valid" />
             </Flex>
             <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
-              <TextField size="2" placeholder="Cursor default" cursor="default" />
-              <TextField size="2" placeholder="Cursor text" cursor="text" />
+              <TextField placeholder="Cursor default" cursor="default" />
+              <TextField placeholder="Cursor text" cursor="text" />
             </Flex>
             <Flex css={{ ai: 'flex-start', gap: '$6', mt: '$6' }}>
-              <TextField size="2" placeholder="Read only placeholder" readOnly />
-              <TextField size="2" placeholder="Read only value" defaultValue="100" readOnly />
-              <TextField size="2" placeholder="Disabled placeholder" disabled />
-              <TextField size="2" placeholder="Disabled value" defaultValue="100" disabled />
+              <TextField placeholder="Read only placeholder" readOnly />
+              <TextField placeholder="Read only value" defaultValue="100" readOnly />
+              <TextField placeholder="Disabled placeholder" disabled />
+              <TextField placeholder="Disabled value" defaultValue="100" disabled />
             </Flex>
           </Container>
         </Section>
