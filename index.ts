@@ -77,6 +77,7 @@ export { RadioCard, RadioCardGroup } from './components/RadioCard';
 export { Section } from './components/Section';
 export { Select } from './components/Select';
 export { Separator } from './components/Separator';
+export { Sheet, SheetClose, SheetContent, SheetTrigger } from './components/Sheet';
 export { SimpleToggle } from './components/SimpleToggle';
 export { Skeleton } from './components/Skeleton';
 export { Slider } from './components/Slider';
