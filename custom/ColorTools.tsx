@@ -813,18 +813,22 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       // Add 850 as a mix of 800 and 900, unless they have been added manually before
       if (!newColors.find((color) => color.name === `${name}850`)) {
         const computedStyles = getComputedStyle(document.body);
+        const isLoContrast = loContrasts.includes(name);
+        const baseStep = '800';
+        const mixStep = isDarkTheme && isLoContrast ? '1000' : '900';
 
-        const step800 =
-          newColors.find((color) => color.name === `${name}800`)?.value ??
-          computedStyles.getPropertyValue(`--colors-${name}800`);
-        const step900 =
-          newColors.find((color) => color.name === `${name}900`)?.value ??
-          computedStyles.getPropertyValue(`--colors-${name}900`);
+        const baseColor =
+          newColors.find((color) => color.name === `${name}${baseStep}`)?.value ??
+          computedStyles.getPropertyValue(`--colors-${name}${baseStep}`);
+
+        const mixColor =
+          newColors.find((color) => color.name === `${name}${mixStep}`)?.value ??
+          computedStyles.getPropertyValue(`--colors-${name}${mixStep}`);
 
         const step850 = chroma.interpolate(
-          prepareColorStringForChroma(step800),
-          prepareColorStringForChroma(step900),
-          loContrasts.includes(name) ? 0.1 : 0.65,
+          prepareColorStringForChroma(baseColor),
+          prepareColorStringForChroma(mixColor),
+          loContrasts.includes(name) ? (isDarkTheme ? 0.3 : 0.1) : 0.3,
           'hcl'
         );
 

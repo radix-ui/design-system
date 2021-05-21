@@ -251,7 +251,7 @@ function Buttons() {
             </Button>
             <Button
               css={{
-                fontWeight: 400,
+                // fontWeight: 400,
                 textTransform: 'capitalize',
                 backgroundColor: `$${color}800`,
                 color: getHiContrast(color),
