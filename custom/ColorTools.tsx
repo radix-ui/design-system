@@ -824,7 +824,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         const step850 = chroma.interpolate(
           prepareColorStringForChroma(step800),
           prepareColorStringForChroma(step900),
-          loContrasts.includes(name) ? 0.1 : 0.6,
+          loContrasts.includes(name) ? 0.1 : 0.65,
           'hcl'
         );
 
