@@ -18,7 +18,7 @@ import {
 import { darkTheme as darkThemeClassName, theme as lightThemeClassName } from '../stitches.config';
 import { colors, getHiContrast, loContrasts } from '../pages/colors';
 
-const steps = ['000', '100', '200', '300', '400', '500', '600', '700', '800', '850', '900', '1000'];
+const steps = ['000', '100', '200', '300', '400', '500', '600', '700', '750', '800', '900', '1000'];
 
 // We are editing steps 100 through 700 via the tools
 const stepsToGenerate = 7;
@@ -810,25 +810,27 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         }
       }
 
-      // Add 850 as a mix of 800 and 900, unless they have been added manually before
-      if (!newColors.find((color) => color.name === `${name}850`)) {
+      // Add 750 as a mix of 700 and 800, unless they have been added manually before
+      if (!newColors.find((color) => color.name === `${name}750`)) {
         const computedStyles = getComputedStyle(document.body);
 
-        const step800 =
+        const baseStep =
           newColors.find((color) => color.name === `${name}800`)?.value ??
           computedStyles.getPropertyValue(`--colors-${name}800`);
-        const step900 =
-          newColors.find((color) => color.name === `${name}900`)?.value ??
-          computedStyles.getPropertyValue(`--colors-${name}900`);
+        const mixStep = loContrasts.includes(name)
+          ? newColors.find((color) => color.name === `${name}500`)?.value ??
+            computedStyles.getPropertyValue(`--colors-${name}500`)
+          : newColors.find((color) => color.name === `${name}700`)?.value ??
+            computedStyles.getPropertyValue(`--colors-${name}700`);
 
-        const step850 = chroma.interpolate(
-          prepareColorStringForChroma(step800),
-          prepareColorStringForChroma(step900),
-          loContrasts.includes(name) ? 0.1 : 0.65,
+        const step750 = chroma.interpolate(
+          prepareColorStringForChroma(baseStep),
+          prepareColorStringForChroma(mixStep),
+          isDarkTheme ? (loContrasts.includes(name) ? 0.25 : 0.6) : 0.5,
           'hcl'
         );
 
-        newColors.push({ name: `${name}850`, value: getCssHsl(step850) });
+        newColors.push({ name: `${name}750`, value: getCssHsl(step750) });
       }
 
       // Set CSS variables
@@ -1057,12 +1059,12 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               <RatioBox css={{ bc: `$${name}500` }} />
               <RatioBox css={{ bc: `$${name}600` }} />
               <RatioBox css={{ bc: `$${name}700` }} />
+              <RatioBox css={{ bc: `$${name}750` }} />
               <RatioBox
                 css={{ bc: `$${name}800`, color: getHiContrast(name) }}
                 ratio={contrasts[3]}
                 type="AA Large Text"
               />
-              <RatioBox css={{ bc: `$${name}850` }} />
               <RatioBox css={{ bc: `$${name}900` }} />
               <RatioBox css={{ bc: `$${name}1000` }} />
             </Grid>
