@@ -260,7 +260,7 @@ function Buttons() {
                   '&:hover': {
                     color: getHiContrast(color),
                     boxShadow: 'none',
-                    backgroundColor: `var(--colors-${color}750)`,
+                    backgroundColor: `var(--colors-${color}850)`,
                   },
                 },
                 '&:active': {
@@ -619,17 +619,17 @@ function Palette() {
               }}
             />
             <Box
-              css={{ bc: `$${color}750` }}
+              css={{ bc: `$${color}800` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}750)`;
+                const thisColor = `var(--colors-${color}800)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}
             />
             <Box
-              css={{ bc: `$${color}800` }}
+              css={{ bc: `$${color}850` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}800)`;
+                const thisColor = `var(--colors-${color}850)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}
