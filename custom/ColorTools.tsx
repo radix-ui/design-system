@@ -77,7 +77,7 @@ export function ColorTools() {
             defaultCurve: [0.65, 0.47, 0.905, 0.47],
             overrides: {
               gray000: 'hsl(0 0% 99.0%)',
-              gray900: 'hsl(0, 0%, 43.5%)',
+              gray900: 'hsl(0 0% 43.5%)',
             },
           }}
           darkThemeConfig={{
@@ -143,8 +143,8 @@ export function ColorTools() {
             end: 'hsl(155 6% 77.3%)',
             defaultCurve: [0.65, 0.47, 0.89, 0.475],
             overrides: {
-              sage800: 'hsl(155, 3.5%, 55.5%)',
-              sage900: 'hsl(155, 3%, 43.0%)',
+              sage800: 'hsl(155 3.5% 55.5%)',
+              sage900: 'hsl(155 3% 43.0%)',
               sage1000: 'hsl(155 24% 9.0%)',
             },
           }}
@@ -168,8 +168,8 @@ export function ColorTools() {
             end: 'hsl(110 5% 77.3%)',
             defaultCurve: [0.65, 0.47, 0.905, 0.47],
             overrides: {
-              olive800: 'hsl(110, 3.5%, 55.5%)',
-              olive900: 'hsl(110, 3%, 43.0%)',
+              olive800: 'hsl(110 3.5% 55.5%)',
+              olive900: 'hsl(110 3% 43.0%)',
               olive1000: 'hsl(110 25% 9.5%)',
             },
           }}
@@ -828,7 +828,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
           'hcl'
         );
 
-        newColors.push({ name: `${name}850`, value: step850.css('hsl') });
+        newColors.push({ name: `${name}850`, value: getCssHsl(step850) });
       }
 
       // Set CSS variables
@@ -1235,6 +1235,14 @@ function distributeHue(value: number, rangeA: number[], rangeB: number[]) {
   return distribute(value, rangeA, [toLow, toHigh]);
 }
 
+function getCssHsl(color: chroma.Color) {
+  const hsl = color.hsl().map((value) => (isNaN(value) ? 0 : value));
+  // Normalise hue if saturation is a ridiculously small number like 9.609723609371595e-7
+  hsl[0] = hsl[1] < 0.001 ? 0 : hsl[0];
+  const [h, s, l] = hsl;
+  return `hsl(${Math.round(h)} ${(s * 100).toFixed(1)}% ${(l * 100).toFixed(1)}%)`;
+}
+
 type ScaleSpec = {
   name: string;
   start: string;
@@ -1328,14 +1336,10 @@ function generateColors({
     };
 
     const color = chroma(chroma.lch(params.luminosity, params.chroma, params.hue));
-    const hsl = color.hsl().map((value) => (isNaN(value) ? 0 : value));
-    // Normalise hue if saturation is a ridiculously small number like 9.609723609371595e-7
-    hsl[0] = hsl[1] < 0.001 ? 0 : hsl[0];
-    const [h, s, l] = hsl;
-
+    const hsl = getCssHsl(color);
     const colorObj: Color = {
       name: `${name}${index + indexOffset}00`,
-      value: `hsl(${Math.round(h)} ${(s * 100).toFixed(1)}% ${(l * 100).toFixed(1)}%)`,
+      value: hsl,
     };
 
     colorMap.push(colorObj);
