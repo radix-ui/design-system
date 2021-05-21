@@ -249,13 +249,22 @@ function Buttons() {
             >
               {color}
             </Button>
+          </Box>
+        ))}
+      </Grid>
+
+      <Grid css={{ gridTemplateColumns: 'repeat(8, 1fr)', gap: '$5', mt: '$9' }}>
+        {colors.map((color) => (
+          <Box key={color} css={{ '&[class] * + *': { ml: '$2', verticalAlign: 'top' } }}>
             <Button
+              size="2"
               css={{
                 // fontWeight: 400,
                 textTransform: 'capitalize',
                 backgroundColor: `$${color}800`,
                 color: getHiContrast(color),
                 boxShadow: 'none',
+                borderRadius: '$pill',
                 '@hover': {
                   '&:hover': {
                     color: getHiContrast(color),
