@@ -16,7 +16,8 @@ import { ColorTools } from '../custom/ColorTools';
 import { darkTheme as darkThemeClassName } from '../stitches.config';
 
 const sidebarWidth = 240;
-const loContrasts = ['lime', 'yellow', 'amber', 'sky', 'mint'];
+
+export const loContrasts = ['lime', 'yellow', 'amber', 'sky', 'mint'];
 
 export const colors = [
   'gray',
@@ -257,15 +258,15 @@ function Buttons() {
                 boxShadow: 'none',
                 '@hover': {
                   '&:hover': {
-                    color: 'white',
+                    color: getHiContrast(color),
                     boxShadow: 'none',
-                    backgroundColor: `$${color}900`,
+                    backgroundColor: `var(--colors-${color}850)`,
                   },
                 },
                 '&:active': {
                   boxShadow: 'none',
-                  color: getHiContrast(color),
-                  backgroundColor: `$${color}700`,
+                  color: 'white',
+                  backgroundColor: `$${color}900`,
                 },
                 '&:focus': {
                   boxShadow: `0 0 0 2px $colors$${color}600`,
@@ -523,7 +524,7 @@ function TextBlocks() {
 function Palette() {
   const gridStyle = {
     gridAutoRows: '35px',
-    gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
+    gridTemplateColumns: 'repeat(13, minmax(0, 1fr))',
     'html.gap &': { gap: 2 },
   };
 
@@ -532,17 +533,18 @@ function Palette() {
       <Box css={{ mb: '$9', 'html.gap &': { display: 'grid', gap: 2 } }}>
         <Grid css={gridStyle}>
           <Box></Box>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>000</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>100</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>200</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>300</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>400</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>500</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>600</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>700</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>800</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>900</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>1000</Text>
+          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>1</Text>
+          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>2</Text>
+          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>3</Text>
+          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>4</Text>
+          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>5</Text>
+          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>6</Text>
+          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>7</Text>
+          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>8</Text>
+          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>9</Text>
+          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>10</Text>
+          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>11</Text>
+          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>12</Text>
         </Grid>
 
         {colors.map((color) => (
@@ -620,6 +622,14 @@ function Palette() {
               css={{ bc: `$${color}800` }}
               onClick={() => {
                 const thisColor = `var(--colors-${color}800)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}850` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}850)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}

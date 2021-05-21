@@ -16,10 +16,12 @@ import {
   ResetIcon,
 } from '@radix-ui/react-icons';
 import { darkTheme as darkThemeClassName, theme as lightThemeClassName } from '../stitches.config';
-import { colors, getHiContrast } from '../pages/colors';
+import { colors, getHiContrast, loContrasts } from '../pages/colors';
+
+const steps = ['000', '100', '200', '300', '400', '500', '600', '700', '800', '850', '900', '1000'];
 
 // We are editing steps 100 through 700 via the tools
-const steps = 7;
+const stepsToGenerate = 7;
 
 // How much to boost the saturation towards the left end of the bezier curve
 const defaultSaturationBoost = 1;
@@ -119,6 +121,7 @@ export function ColorTools() {
             end: 'hsl(206 10% 78%)',
             defaultCurve: [0.65, 0.47, 0.905, 0.47],
             overrides: {
+              slate800: 'hsl(206 6% 56.1%)',
               slate900: 'hsl(206 6% 43.5%)',
               slate1000: 'hsl(206 24% 9%)',
             },
@@ -791,7 +794,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         name,
         start: config.start,
         end: config.end,
-        steps,
+        steps: stepsToGenerate,
         hueCurve,
         chromaCurve,
         lumCurve,
@@ -805,6 +808,27 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
             newColors.push({ name: key, value: config.overrides[key] });
           }
         }
+      }
+
+      // Add 850 as a mix of 800 and 900, unless they have been added manually before
+      if (!newColors.find((color) => color.name === `${name}850`)) {
+        const computedStyles = getComputedStyle(document.body);
+
+        const step800 =
+          newColors.find((color) => color.name === `${name}800`)?.value ??
+          computedStyles.getPropertyValue(`--colors-${name}800`);
+        const step900 =
+          newColors.find((color) => color.name === `${name}900`)?.value ??
+          computedStyles.getPropertyValue(`--colors-${name}900`);
+
+        const step850 = chroma.interpolate(
+          prepareColorStringForChroma(step800),
+          prepareColorStringForChroma(step900),
+          loContrasts.includes(name) ? 0.1 : 0.6,
+          'hcl'
+        );
+
+        newColors.push({ name: `${name}850`, value: step850.css('hsl') });
       }
 
       // Set CSS variables
@@ -1005,9 +1029,9 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               pointerEvents: showCode ? 'auto' : 'none',
             }}
           >
-            {Array.from(Array(11)).map((_, index) => (
+            {steps.map((step) => (
               <Text
-                key={index}
+                key={step}
                 css={{
                   fontSize: '10px',
                   fontFamily: '$mono',
@@ -1018,7 +1042,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                 }}
               >
                 {name}
-                {index}00: '{computedStyles.getPropertyValue(`--colors-${name}${index}00`)}',
+                {step}: '{computedStyles.getPropertyValue(`--colors-${name}${step}`)}',
               </Text>
             ))}
           </Grid>
@@ -1038,6 +1062,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                 ratio={contrasts[3]}
                 type="AA Large Text"
               />
+              <RatioBox css={{ bc: `$${name}850` }} />
               <RatioBox css={{ bc: `$${name}900` }} />
               <RatioBox css={{ bc: `$${name}1000` }} />
             </Grid>
