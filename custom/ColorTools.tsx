@@ -1091,7 +1091,8 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                 }}
               >
                 {name}
-                {step}: '{computedStyles.getPropertyValue(`--colors-${name}${step}`)}',
+                {step}: '
+                {formatStringAsHsl(computedStyles.getPropertyValue(`--colors-${name}${step}`))}',
               </Text>
             ))}
           </Grid>
@@ -1282,6 +1283,10 @@ function distributeHue(value: number, rangeA: number[], rangeB: number[]) {
   }
 
   return distribute(value, rangeA, [toLow, toHigh]);
+}
+
+function formatStringAsHsl(color: string) {
+  return getCssHsl(chroma(prepareColorStringForChroma(color)));
 }
 
 function getCssHsl(color: chroma.Color) {
