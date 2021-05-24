@@ -81,7 +81,7 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(0 0% 97.3%)',
             end: 'hsl(0 0% 78%)',
-            defaultCurve: [0.65, 0.47, 0.905, 0.47],
+            defaultCurve: [0.655, 0.455, 0.905, 0.47],
             overrides: {
               gray000: 'hsl(0 0% 99.0%)',
               gray900: 'hsl(0 0% 43.5%)',
@@ -105,7 +105,7 @@ export function ColorTools() {
             defaultCurve: [0.655, 0.455, 0.905, 0.47],
             overrides: {
               quartz800: 'hsl(252 4% 57.3%)',
-              quartz900: 'hsl(252 4% 45%)',
+              quartz900: 'hsl(252 4% 44.8%)',
             },
           }}
           darkThemeConfig={{
