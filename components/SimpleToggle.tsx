@@ -40,26 +40,26 @@ const StyledSimpleToggle = styled(ToggleButtonPrimitive.Root, {
   mixBlendMode: 'multiply',
   '@hover': {
     '&:hover': {
-      backgroundColor: '$slate200',
+      backgroundColor: '$slate3',
     },
   },
   '&:active': {
-    backgroundColor: '$slate300',
+    backgroundColor: '$slate4',
   },
   '&:focus': {
-    boxShadow: 'inset 0 0 0 1px $slate700, 0 0 0 1px $slate700',
+    boxShadow: 'inset 0 0 0 1px $slate8, 0 0 0 1px $slate8',
     zIndex: 1,
   },
 
   '&[data-state="on"]': {
-    backgroundColor: '$slate400',
+    backgroundColor: '$slate5',
     '@hover': {
       '&:hover': {
-        backgroundColor: '$slate400',
+        backgroundColor: '$slate5',
       },
     },
     '&:active': {
-      backgroundColor: '$slate600',
+      backgroundColor: '$slate7',
     },
   },
 

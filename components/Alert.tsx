@@ -27,24 +27,23 @@ const StyledAlert = styled(DEFAULT_TAG, {
     variant: {
       loContrast: {
         backgroundColor: '$loContrast',
-        borderColor: '$slate500',
+        borderColor: '$slate6',
       },
       gray: {
-        backgroundColor: '$slate100',
-        borderColor: '$slate500',
+        backgroundColor: '$slate2',
+        borderColor: '$slate6',
       },
       blue: {
-        backgroundColor: '$blue100',
-        borderColor: '$blue500',
+        backgroundColor: '$blue2',
+        borderColor: '$blue6',
       },
       green: {
-        backgroundColor: '$green100',
-        borderColor: '$green500',
-
+        backgroundColor: '$green2',
+        borderColor: '$green6',
       },
       red: {
-        backgroundColor: '$red100',
-        borderColor: '$red500',
+        backgroundColor: '$red2',
+        borderColor: '$red6',
       },
     },
   },

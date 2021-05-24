@@ -92,8 +92,8 @@ const stitches = createCss({
       ...gold,
 
       // Semantic colors
-      hiContrast: '$slate1000',
-      // loContrast: '$slate000',
+      hiContrast: '$slate12',
+      // loContrast: '$slate1',
       loContrast: 'white',
       canvas: 'hsl(0 0% 93%)',
       panel: 'white',
@@ -357,10 +357,10 @@ export const darkTheme = theme('dark-theme', {
     ...goldDark,
 
     // Semantic colors
-    hiContrast: '$slate1000',
-    loContrast: '$slate000',
+    hiContrast: '$slate12',
+    loContrast: '$slate1',
     canvas: 'hsl(0 0% 15%)',
-    panel: '$slate200',
+    panel: '$slate3',
     transparentPanel: 'hsl(0 100% 100% / 97%)',
     shadowLight: 'hsl(206 22% 7% / 35%)',
     shadowDark: 'hsl(206 22% 7% / 20%)',

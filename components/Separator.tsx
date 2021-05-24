@@ -8,7 +8,7 @@ const StyledSeparator = styled(SeparatorPrimitive.Root, {
   border: 'none',
   margin: 0,
   flexShrink: 0,
-  backgroundColor: '$slate500',
+  backgroundColor: '$slate6',
   cursor: 'default',
 
   variants: {

@@ -53,52 +53,52 @@ export const StyledText = styled(DEFAULT_TAG, {
     },
     variant: {
       red: {
-        color: '$red900',
+        color: '$red11',
       },
       crimson: {
-        color: '$crimson900',
+        color: '$crimson11',
       },
       pink: {
-        color: '$pink900',
+        color: '$pink11',
       },
       purple: {
-        color: '$purple900',
+        color: '$purple11',
       },
       violet: {
-        color: '$violet900',
+        color: '$violet11',
       },
       indigo: {
-        color: '$indigo900',
+        color: '$indigo11',
       },
       blue: {
-        color: '$blue900',
+        color: '$blue11',
       },
       cyan: {
-        color: '$cyan900',
+        color: '$cyan11',
       },
       teal: {
-        color: '$teal900',
+        color: '$teal11',
       },
       green: {
-        color: '$green900',
+        color: '$green11',
       },
       lime: {
-        color: '$lime900',
+        color: '$lime11',
       },
       yellow: {
-        color: '$yellow900',
+        color: '$yellow11',
       },
       orange: {
-        color: '$orange900',
+        color: '$orange11',
       },
       gold: {
-        color: '$gold900',
+        color: '$gold11',
       },
       bronze: {
-        color: '$bronze900',
+        color: '$bronze11',
       },
       gray: {
-        color: '$slate900',
+        color: '$slate11',
       },
       contrast: {
         color: '$hiContrast',
@@ -108,127 +108,127 @@ export const StyledText = styled(DEFAULT_TAG, {
       true: {
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
-      }
-    }
+      },
+    },
   },
   compoundVariants: [
     {
       variant: 'red',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $red900, $crimson900)',
+        background: 'linear-gradient(to right, $red11, $crimson11)',
       },
     },
     {
       variant: 'crimson',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $crimson900, $pink900)',
+        background: 'linear-gradient(to right, $crimson11, $pink11)',
       },
     },
     {
       variant: 'pink',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $pink900, $purple900)',
+        background: 'linear-gradient(to right, $pink11, $purple11)',
       },
     },
     {
       variant: 'purple',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $purple900, $violet900)',
+        background: 'linear-gradient(to right, $purple11, $violet11)',
       },
     },
     {
       variant: 'violet',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $violet900, $indigo900)',
+        background: 'linear-gradient(to right, $violet11, $indigo11)',
       },
     },
     {
       variant: 'indigo',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $indigo900, $blue900)',
+        background: 'linear-gradient(to right, $indigo11, $blue11)',
       },
     },
     {
       variant: 'blue',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $blue900, $cyan900)',
+        background: 'linear-gradient(to right, $blue11, $cyan11)',
       },
     },
     {
       variant: 'cyan',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $cyan900, $teal900)',
+        background: 'linear-gradient(to right, $cyan11, $teal11)',
       },
     },
     {
       variant: 'teal',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $teal900, $green900)',
+        background: 'linear-gradient(to right, $teal11, $green11)',
       },
     },
     {
       variant: 'green',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $green900, $lime900)',
+        background: 'linear-gradient(to right, $green11, $lime11)',
       },
     },
     {
       variant: 'lime',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $lime900, $yellow900)',
+        background: 'linear-gradient(to right, $lime11, $yellow11)',
       },
     },
     {
       variant: 'yellow',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $yellow900, $orange900)',
+        background: 'linear-gradient(to right, $yellow11, $orange11)',
       },
     },
     {
       variant: 'orange',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $orange900, $red900)',
+        background: 'linear-gradient(to right, $orange11, $red11)',
       },
     },
     {
       variant: 'gold',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $gold900, $gold800)',
+        background: 'linear-gradient(to right, $gold11, $gold9)',
       },
     },
     {
       variant: 'bronze',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $bronze900, $bronze800)',
+        background: 'linear-gradient(to right, $bronze11, $bronze9)',
       },
     },
     {
       variant: 'gray',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $gray900, $gray1000)',
+        background: 'linear-gradient(to right, $gray11, $gray12)',
       },
     },
     {
       variant: 'contrast',
       gradient: 'true',
       css: {
-        background: 'linear-gradient(to right, $hiContrast, $gray1000)',
+        background: 'linear-gradient(to right, $hiContrast, $gray12)',
       },
     },
   ],

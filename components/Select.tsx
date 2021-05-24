@@ -6,7 +6,7 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 const SelectWrapper = styled('div', {
   backgroundColor: '$loContrast',
   borderRadius: '$2',
-  boxShadow: 'inset 0 0 0 1px $colors$slate600',
+  boxShadow: 'inset 0 0 0 1px $colors$slate7',
   color: '$hiContrast',
   fontFamily: '$untitled',
   fontSize: '$1',
@@ -17,7 +17,7 @@ const SelectWrapper = styled('div', {
 
   '&:focus-within': {
     zIndex: 1,
-    boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
+    boxShadow: 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8',
   },
 });
 

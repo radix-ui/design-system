@@ -7,7 +7,7 @@ type VerifiedBadgeProps = React.ComponentProps<typeof StyledFlex>;
 
 const StyledFlex = styled(Flex, {
   alignItems: 'center',
-  backgroundColor: '$blue800',
+  backgroundColor: '$blue9',
   borderRadius: '$round',
   color: 'white',
   flexShrink: 0,

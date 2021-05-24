@@ -32,7 +32,7 @@ export function Toolbar() {
           <Button ghost css={{ fontWeight: '400' }}>
             Drafts
           </Button>
-          <Text css={{ color: '$slate500' }}>/</Text>
+          <Text css={{ color: '$slate6' }}>/</Text>
           <Button ghost css={{ fontWeight: '400' }}>
             Untitled
           </Button>
@@ -229,7 +229,7 @@ export function Toolbar() {
             <PlayIcon />
           </IconButton>
           <Box css={{ width: '50px', flexShrink: 0, textAlign: 'center' }}>
-            <Text size="1" css={{ color: '$slate900', userSelect: 'none' }}>
+            <Text size="1" css={{ color: '$slate11', userSelect: 'none' }}>
               100%
             </Text>
           </Box>

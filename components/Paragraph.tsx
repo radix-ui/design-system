@@ -28,7 +28,7 @@ export const Paragraph = React.forwardRef((props, forwardedRef) => {
   // This is the mapping of Paragraph Variants to Text css
   const textCss: Record<ParagraphSizeVariants, CSS> = {
     1: { lineHeight: '25px', '@bp2': { lineHeight: '27px' } },
-    2: { color: '$slate900', lineHeight: '27px', '@bp2': { lineHeight: '30px' } },
+    2: { color: '$slate11', lineHeight: '27px', '@bp2': { lineHeight: '30px' } },
   };
   return (
     <StyledText

@@ -69,55 +69,55 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
         color: '$loContrast',
       },
       gray: {
-        backgroundColor: '$slate400',
+        backgroundColor: '$slate5',
       },
       red: {
-        backgroundColor: '$red400',
+        backgroundColor: '$red5',
       },
       crimson: {
-        backgroundColor: '$crimson400',
+        backgroundColor: '$crimson5',
       },
       pink: {
-        backgroundColor: '$pink400',
+        backgroundColor: '$pink5',
       },
       purple: {
-        backgroundColor: '$purple400',
+        backgroundColor: '$purple5',
       },
       violet: {
-        backgroundColor: '$violet400',
+        backgroundColor: '$violet5',
       },
       indigo: {
-        backgroundColor: '$indigo400',
+        backgroundColor: '$indigo5',
       },
       blue: {
-        backgroundColor: '$blue400',
+        backgroundColor: '$blue5',
       },
       cyan: {
-        backgroundColor: '$cyan400',
+        backgroundColor: '$cyan5',
       },
       teal: {
-        backgroundColor: '$teal400',
+        backgroundColor: '$teal5',
       },
       green: {
-        backgroundColor: '$green400',
+        backgroundColor: '$green5',
       },
       lime: {
-        backgroundColor: '$lime400',
+        backgroundColor: '$lime5',
       },
       yellow: {
-        backgroundColor: '$yellow400',
+        backgroundColor: '$yellow5',
       },
       orange: {
-        backgroundColor: '$orange400',
+        backgroundColor: '$orange5',
       },
       gold: {
-        backgroundColor: '$gold400',
+        backgroundColor: '$gold5',
       },
       brown: {
-        backgroundColor: '$brown400',
+        backgroundColor: '$brown5',
       },
       bronze: {
-        backgroundColor: '$bronze400',
+        backgroundColor: '$bronze5',
       },
     },
     shape: {

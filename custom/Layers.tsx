@@ -32,7 +32,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$slate400' }}>
+        <TreeItem css={{ backgroundColor: '$slate5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -70,7 +70,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$red400' }}>
+        <TreeItem css={{ backgroundColor: '$red5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -107,7 +107,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$crimson400' }}>
+        <TreeItem css={{ backgroundColor: '$crimson5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -144,7 +144,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$pink400' }}>
+        <TreeItem css={{ backgroundColor: '$pink5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -181,7 +181,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$purple400' }}>
+        <TreeItem css={{ backgroundColor: '$purple5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -218,7 +218,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$violet400' }}>
+        <TreeItem css={{ backgroundColor: '$violet5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -255,7 +255,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$indigo400' }}>
+        <TreeItem css={{ backgroundColor: '$indigo5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -292,7 +292,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$blue400' }}>
+        <TreeItem css={{ backgroundColor: '$blue5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -329,7 +329,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$cyan400' }}>
+        <TreeItem css={{ backgroundColor: '$cyan5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -366,7 +366,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$teal400' }}>
+        <TreeItem css={{ backgroundColor: '$teal5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -403,7 +403,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$green400' }}>
+        <TreeItem css={{ backgroundColor: '$green5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -440,7 +440,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$lime400' }}>
+        <TreeItem css={{ backgroundColor: '$lime5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -476,7 +476,7 @@ export function Layers() {
           </Box>
           <Text size="1">TreeItem</Text>
         </TreeItem>
-        <TreeItem css={{ backgroundColor: '$yellow400' }}>
+        <TreeItem css={{ backgroundColor: '$yellow5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -512,7 +512,7 @@ export function Layers() {
           </Box>
           <Text size="1">TreeItem</Text>
         </TreeItem>
-        <TreeItem css={{ backgroundColor: '$amber400' }}>
+        <TreeItem css={{ backgroundColor: '$amber5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -549,7 +549,7 @@ export function Layers() {
           <Text size="1">TreeItem</Text>
         </TreeItem>
 
-        <TreeItem css={{ backgroundColor: '$orange400' }}>
+        <TreeItem css={{ backgroundColor: '$orange5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -585,7 +585,7 @@ export function Layers() {
           </Box>
           <Text size="1">TreeItem</Text>
         </TreeItem>
-        <TreeItem css={{ backgroundColor: '$gold400' }}>
+        <TreeItem css={{ backgroundColor: '$gold5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -621,7 +621,7 @@ export function Layers() {
           </Box>
           <Text size="1">TreeItem</Text>
         </TreeItem>
-        <TreeItem css={{ backgroundColor: '$brown400' }}>
+        <TreeItem css={{ backgroundColor: '$brown5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>
@@ -657,7 +657,7 @@ export function Layers() {
           </Box>
           <Text size="1">TreeItem</Text>
         </TreeItem>
-        <TreeItem css={{ backgroundColor: '$bronze400' }}>
+        <TreeItem css={{ backgroundColor: '$bronze5' }}>
           <Box css={{ mr: '$2' }}>
             <RadiobuttonIcon />
           </Box>

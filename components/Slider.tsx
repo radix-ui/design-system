@@ -7,7 +7,7 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 const SliderTrack = styled(SliderPrimitive.Track, {
   position: 'relative',
   flexGrow: 1,
-  backgroundColor: '$slate600',
+  backgroundColor: '$slate7',
   borderRadius: '$pill',
   '&[data-orientation="horizontal"]': {
     height: 2,
@@ -20,7 +20,7 @@ const SliderTrack = styled(SliderPrimitive.Track, {
 
 const SliderRange = styled(SliderPrimitive.Range, {
   position: 'absolute',
-  background: '$blue800',
+  background: '$blue9',
   borderRadius: 'inherit',
   '&[data-orientation="horizontal"]': {
     height: '100%',
@@ -80,7 +80,7 @@ export const StyledSlider = styled(SliderPrimitive.Root, {
   '@hover': {
     '&:hover': {
       [`& ${SliderTrack}`]: {
-        backgroundColor: '$slate700',
+        backgroundColor: '$slate8',
       },
       [`& ${SliderThumb}`]: {
         opacity: '1',

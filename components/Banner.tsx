@@ -32,29 +32,27 @@ const StyledBanner = styled(DEFAULT_TAG, {
         backgroundColor: '$loContrast',
       },
       gray: {
-        backgroundColor: '$slate200',
+        backgroundColor: '$slate3',
       },
       blue: {
-        backgroundColor: '$blue200',
+        backgroundColor: '$blue3',
       },
       green: {
-        backgroundColor: '$green200',
-
+        backgroundColor: '$green3',
       },
       red: {
-        backgroundColor: '$red200',
-
+        backgroundColor: '$red3',
       },
     },
     rounded: {
       true: {
         borderRadius: '$pill',
-      }
+      },
     },
     border: {
       true: {
         borderRadius: '$pill',
-      }
+      },
     },
   },
   compoundVariants: [
@@ -62,21 +60,21 @@ const StyledBanner = styled(DEFAULT_TAG, {
       border: 'true',
       variant: 'gray',
       css: {
-        borderColor: '$slate500',
+        borderColor: '$slate6',
       },
     },
     {
       border: 'true',
       variant: 'blue',
       css: {
-        borderColor: '$blue900',
+        borderColor: '$blue11',
       },
     },
     {
       border: 'true',
       variant: 'loContrast',
       css: {
-        borderColor: '$slate500',
+        borderColor: '$slate6',
       },
     },
   ],

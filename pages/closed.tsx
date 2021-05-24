@@ -69,7 +69,7 @@ export default function Closed() {
       </DropdownMenu>
       <ContextMenu>
         <ContextMenuTrigger>
-          <Box css={{ width: '$9', height: '$9', bc: '$blue600' }}>Right Click</Box>
+          <Box css={{ width: '$9', height: '$9', bc: '$blue7' }}>Right Click</Box>
         </ContextMenuTrigger>
         <ContextMenuContent>
           <ContextMenuGroup>
@@ -117,7 +117,7 @@ export default function Closed() {
               2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
             </Text>
             <Text size="4" color="gray">
-              -$1600
+              -$17
             </Text>
           </Flex>
         </RadioCard>
