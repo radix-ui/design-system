@@ -117,7 +117,7 @@ export default function Closed() {
               2.5GHz 14-core Intel Xeon W processor, Turbo Boost up to 4.3GHz
             </Text>
             <Text size="4" color="gray">
-              -$17
+              -$1600
             </Text>
           </Flex>
         </RadioCard>
