@@ -1,7 +1,7 @@
 import { createCss, StitchesCss } from '@stitches/react';
 import {
   gray,
-  quartz,
+  mauve,
   slate,
   sage,
   olive,
@@ -29,7 +29,7 @@ import {
   bronze,
   gold,
   grayDark,
-  quartzDark,
+  mauveDark,
   slateDark,
   sageDark,
   oliveDark,
@@ -56,14 +56,14 @@ import {
   brownDark,
   bronzeDark,
   goldDark,
-} from "@radix-ui/colors";
+} from '@radix-ui/colors';
 export type { StitchesVariants } from '@stitches/react';
 
 const stitches = createCss({
   theme: {
     colors: {
       ...gray,
-      ...quartz,
+      ...mauve,
       ...slate,
       ...sage,
       ...olive,
@@ -328,7 +328,7 @@ export const utils = config.utils;
 export const darkTheme = theme('dark-theme', {
   colors: {
     ...grayDark,
-    ...quartzDark,
+    ...mauveDark,
     ...slateDark,
     ...sageDark,
     ...oliveDark,

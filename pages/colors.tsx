@@ -21,7 +21,7 @@ export const loContrasts = ['lime', 'yellow', 'amber', 'sky', 'mint'];
 
 export const colors = [
   'gray',
-  'quartz',
+  'mauve',
   'slate',
   'sage',
   'olive',

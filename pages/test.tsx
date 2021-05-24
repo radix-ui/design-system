@@ -409,7 +409,7 @@ function Test() {
                 <Heading css={{ color: '$gray1000' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$quartz1000' }}>
+                <Heading css={{ color: '$mauve1000' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
                 <Heading css={{ color: '$slate1000' }}>
@@ -466,7 +466,7 @@ function Test() {
               </Flex>
               <Flex css={{ fd: 'column', gap: '$4', mt: '$7' }}>
                 <Heading css={{ color: '$gray900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$quartz900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$mauve900' }}>This heading look balanced</Heading>
                 <Heading css={{ color: '$slate900' }}>This heading look balanced</Heading>
                 <Heading css={{ color: '$red900' }}>This heading look balanced</Heading>
                 <Heading css={{ color: '$crimson900' }}>This heading look balanced</Heading>

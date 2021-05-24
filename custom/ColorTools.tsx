@@ -98,14 +98,14 @@ export function ColorTools() {
           }}
         />
         <EditableScale
-          name="quartz"
+          name="mauve"
           lightThemeConfig={{
             start: 'hsl(300 10% 97.6%)',
             end: 'hsl(252 4% 78.9%)',
             defaultCurve: [0.655, 0.455, 0.905, 0.47],
             overrides: {
-              quartz800: 'hsl(252 4% 57.3%)',
-              quartz900: 'hsl(252 4% 44.8%)',
+              mauve800: 'hsl(252 4% 57.3%)',
+              mauve900: 'hsl(252 4% 44.8%)',
             },
           }}
           darkThemeConfig={{
@@ -113,11 +113,11 @@ export function ColorTools() {
             end: 'hsl(250 5% 32.5%)',
             defaultCurve: [0.395, 0.22, 0.69, 0.395],
             overrides: {
-              quartz000: 'hsl(246 6% 9%)',
-              quartz800: 'hsl(252 4% 45.2%)',
-              // quartz900: 'hsl(253 4% 54.2%)',
-              quartz900: 'hsl(253 4% 63.7%)',
-              quartz1000: 'hsl(256 6% 93.2%)',
+              mauve000: 'hsl(246 6% 9%)',
+              mauve800: 'hsl(252 4% 45.2%)',
+              // mauve900: 'hsl(253 4% 54.2%)',
+              mauve900: 'hsl(253 4% 63.7%)',
+              mauve1000: 'hsl(256 6% 93.2%)',
             },
           }}
         />
