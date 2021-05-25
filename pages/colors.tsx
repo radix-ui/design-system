@@ -898,16 +898,18 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
             {showAlphaScales && (
               <>
                 <Box />
-                <Box
-                  css={{ bc: `$${color}A1` }}
-                  onClick={() => {
-                    const thisColor = `var(--colors-${color}A1)`;
-                    const newColor =
-                      document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                    document.body.style.backgroundColor = newColor;
-                  }}
-                />
-                <Box css={darkThemeColor(`$${color}A1`)}>
+                <Box css={darkThemeColor(`$${color}1`)}>
+                  <Box
+                    css={{ bc: `$${color}A1`, width: '100%', height: '100%' }}
+                    onClick={() => {
+                      const thisColor = `var(--colors-${color}A1)`;
+                      const newColor =
+                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                      document.body.style.backgroundColor = newColor;
+                    }}
+                  />
+                </Box>
+                <Box css={darkThemeColor(`$${color}1`)}>
                   <Box
                     css={{ bc: `$${color}A2`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -918,7 +920,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`$${color}A1`)}>
+                <Box css={darkThemeColor(`$${color}1`)}>
                   <Box
                     css={{ bc: `$${color}A3`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -929,7 +931,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`$${color}A1`)}>
+                <Box css={darkThemeColor(`$${color}1`)}>
                   <Box
                     css={{ bc: `$${color}A4`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -940,7 +942,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`$${color}A1`)}>
+                <Box css={darkThemeColor(`$${color}1`)}>
                   <Box
                     css={{ bc: `$${color}A5`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -951,7 +953,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`$${color}A1`)}>
+                <Box css={darkThemeColor(`$${color}1`)}>
                   <Box
                     css={{ bc: `$${color}A6`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -962,7 +964,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`$${color}A1`)}>
+                <Box css={darkThemeColor(`$${color}1`)}>
                   <Box
                     css={{ bc: `$${color}A7`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -973,7 +975,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`$${color}A1`)}>
+                <Box css={darkThemeColor(`$${color}1`)}>
                   <Box
                     css={{ bc: `$${color}A8`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -984,7 +986,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`$${color}A1`)}>
+                <Box css={darkThemeColor(`$${color}1`)}>
                   <Box
                     css={{ bc: `$${color}A9`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -995,7 +997,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`$${color}A1`)}>
+                <Box css={darkThemeColor(`$${color}1`)}>
                   <Box
                     css={{ bc: `$${color}A10`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1006,7 +1008,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`$${color}A1`)}>
+                <Box css={darkThemeColor(`$${color}1`)}>
                   <Box
                     css={{ bc: `$${color}A11`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1017,7 +1019,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`$${color}A1`)}>
+                <Box css={darkThemeColor(`$${color}1`)}>
                   <Box
                     css={{ bc: `$${color}A12`, width: '100%', height: '100%' }}
                     onClick={() => {
