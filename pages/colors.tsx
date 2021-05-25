@@ -57,11 +57,14 @@ export const colors = [
 export default function Colors() {
   const [palette, setPalette] = useLocalStorage('colors-palette', true);
   const [layers, setLayers] = useLocalStorage('colors-layers', true);
+  const [layersAlpha, setLayersAlpha] = useLocalStorage('colors-layers-alpha', true);
   const [alerts, setAlerts] = useLocalStorage('colors-alerts', true);
+  const [alertsAlpha, setAlertsAlpha] = useLocalStorage('colors-alerts-alpha', true);
   const [buttons, setButtons] = useLocalStorage('colors-buttons', true);
   const [lines, setLines] = useLocalStorage('colors-lines', true);
+  const [linesAlpha, setLinesAlpha] = useLocalStorage('colors-lines-alpha', true);
   const [textBlocks, setTextBlocks] = useLocalStorage('colors-textBlocks', true);
-  const [alphaValues, setAlphaValues] = useLocalStorage('colors-alphaValues', true);
+  const [alphaScales, setAlphaScales] = useLocalStorage('colors-alphaScales', true);
 
   const [darkTheme, setDarkTheme] = useLocalStorage('colors-darkTheme', false);
   const [grayscale, setGrayscale] = useLocalStorage('colors-grayscale', false);
@@ -98,14 +101,29 @@ export default function Colors() {
             <Checkbox defaultChecked={layers} onChange={(e) => setLayers(e.target.checked)}>
               Layers
             </Checkbox>
+            <Checkbox
+              defaultChecked={layersAlpha}
+              onChange={(e) => setLayersAlpha(e.target.checked)}
+            >
+              Layers (Alpha)
+            </Checkbox>
             <Checkbox defaultChecked={buttons} onChange={(e) => setButtons(e.target.checked)}>
               Buttons
             </Checkbox>
-            <Checkbox defaultChecked={buttons} onChange={(e) => setLines(e.target.checked)}>
+            <Checkbox defaultChecked={lines} onChange={(e) => setLines(e.target.checked)}>
               Lines
+            </Checkbox>
+            <Checkbox defaultChecked={linesAlpha} onChange={(e) => setLinesAlpha(e.target.checked)}>
+              Lines (Alpha)
             </Checkbox>
             <Checkbox defaultChecked={alerts} onChange={(e) => setAlerts(e.target.checked)}>
               Alerts
+            </Checkbox>
+            <Checkbox
+              defaultChecked={alertsAlpha}
+              onChange={(e) => setAlertsAlpha(e.target.checked)}
+            >
+              Alerts (Alpha)
             </Checkbox>
             <Checkbox defaultChecked={textBlocks} onChange={(e) => setTextBlocks(e.target.checked)}>
               Text Blocks
@@ -125,21 +143,24 @@ export default function Colors() {
             </Checkbox>
             <Separator css={{ my: '$3' }} />
             <Checkbox
-              data-alpha-values
-              defaultChecked={false}
-              onChange={(e) => setAlphaValues(e.target.checked)}
+              data-alpha-scales
+              defaultChecked={alphaScales}
+              onChange={(e) => setAlphaScales(e.target.checked)}
             >
-              Alpha scales (code only)
+              Show alpha scales
             </Checkbox>
           </Box>
         </Container>
 
         <div style={{ filter: blur ? 'blur(20px)' : undefined }}>
-          {palette && <Palette />}
+          {palette && <Palette showAlphaScales={alphaScales} />}
           {layers && <Layers />}
+          {layersAlpha && <LayersAlpha />}
           {buttons && <Buttons />}
           {lines && <Lines />}
+          {linesAlpha && <LinesAlpha />}
           {alerts && <Alerts />}
+          {alertsAlpha && <AlertsAlpha />}
           {textBlocks && <TextBlocks />}
         </div>
       </Section>
@@ -160,9 +181,7 @@ function Sidebar() {
         overflowY: 'scroll',
         boxShadow: '1px 0 $colors$gray6',
         width: 240,
-        [`body.${darkThemeClassName} &`]: {
-          bc: 'black',
-        } as any,
+        ...darkThemeColor('black'),
       }}
     >
       <ColorTools />
@@ -214,6 +233,64 @@ function Layers() {
                 bc: `$${color}3`,
                 '&:hover': { bc: `$${color}4` },
                 '&:active': { bc: `$${color}5` },
+              }}
+            >
+              <Box css={{ mr: '$2' }}>
+                <TextIcon />
+              </Box>
+              <Text size="1">Text</Text>
+            </TreeItem>
+          </Box>
+        ))}
+      </Grid>
+    </Container>
+  );
+}
+
+function LayersAlpha() {
+  return (
+    <Container size="4" css={{ p: '$9' }}>
+      <Grid css={{ gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '$5' }}>
+        {colors.map((color) => (
+          <Box key={color}>
+            <TreeItem css={{ bc: `$${color}A5` }}>
+              <Box css={{ mr: '$2' }}>
+                <RadiobuttonIcon />
+              </Box>
+              <Text size="1">Radio</Text>
+            </TreeItem>
+            <TreeItem
+              css={{
+                pl: 45,
+                bc: `$${color}A3`,
+                '&:hover': { bc: `$${color}A4` },
+                '&:active': { bc: `$${color}A5` },
+              }}
+            >
+              <Box css={{ mr: '$2' }}>
+                <SliderIcon />
+              </Box>
+              <Text size="1">Slider</Text>
+            </TreeItem>
+            <TreeItem
+              css={{
+                pl: 45,
+                bc: `$${color}A3`,
+                '&:hover': { bc: `$${color}A4` },
+                '&:active': { bc: `$${color}A5` },
+              }}
+            >
+              <Box css={{ mr: '$2' }}>
+                <SwitchIcon />
+              </Box>
+              <Text size="1">Switch</Text>
+            </TreeItem>
+            <TreeItem
+              css={{
+                pl: 45,
+                bc: `$${color}A3`,
+                '&:hover': { bc: `$${color}A4` },
+                '&:active': { bc: `$${color}A5` },
               }}
             >
               <Box css={{ mr: '$2' }}>
@@ -307,7 +384,7 @@ function Lines() {
         Lines
       </Text>
       <Paragraph css={{ mb: '$7' }}>
-        The <Code>500</Code> line should be very subtle, but visible on all backgrounds.
+        The <Code>6</Code> line should be very subtle, but visible on all backgrounds.
       </Paragraph>
 
       <Flex css={{ position: 'relative' }}>
@@ -338,9 +415,51 @@ function Lines() {
   );
 }
 
+function LinesAlpha() {
+  return (
+    <Container size="2" css={{ my: '$9' }}>
+      <Text size="6" as="h4" css={{ fontWeight: 500, lineHeight: '27px', mt: '$8', mb: '$1' }}>
+        Lines (Alpha)
+      </Text>
+      <Paragraph css={{ mb: '$7' }}>
+        The <Code>6</Code> line should be very subtle, but visible on all backgrounds.
+      </Paragraph>
+
+      <Flex css={{ position: 'relative' }}>
+        <Box
+          css={{
+            fb: '0',
+            fg: '1',
+            height: 160,
+            backgroundColor: '$grayA1',
+          }}
+        ></Box>
+        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$grayA2' }}></Box>
+        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$grayA3' }}></Box>
+        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$grayA4' }}></Box>
+        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$grayA5' }}></Box>
+        <Box
+          css={{
+            position: 'absolute',
+            top: '50%',
+            left: '0',
+            width: '100%',
+            height: 1,
+            backgroundColor: '$grayA6',
+          }}
+        ></Box>
+      </Flex>
+    </Container>
+  );
+}
+
 function Alerts() {
   return (
     <Container size="3" css={{ mb: '$9' }}>
+      <Text size="6" as="h4" css={{ fontWeight: 500, lineHeight: '27px', mt: '$8', mb: '$5' }}>
+        Alerts
+      </Text>
+
       <Grid
         css={{
           gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
@@ -458,6 +577,113 @@ function Alerts() {
   );
 }
 
+function AlertsAlpha() {
+  return (
+    <Container size="3" css={{ mb: '$9' }}>
+      <Text size="6" as="h4" css={{ fontWeight: 500, lineHeight: '27px', mt: '$8', mb: '$5' }}>
+        Alerts (Alpha)
+      </Text>
+
+      <Grid
+        css={{
+          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+          gap: '$3',
+          mb: '$9',
+          ai: 'center',
+        }}
+      >
+        {colors.map((color) => (
+          <Box
+            key={color}
+            css={{
+              p: '$4',
+              bc: `$${color}A2`,
+              borderLeft: `2px solid $${color}A6`,
+            }}
+          >
+            <Text size="2" as="p" css={{ color: `$${color}A11` }}>
+              Warning: obsessing over {color} is a terrible idea.
+            </Text>
+          </Box>
+        ))}
+      </Grid>
+
+      <Grid
+        css={{
+          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+          gap: '$3',
+          mb: '$9',
+          ai: 'center',
+        }}
+      >
+        {colors.map((color) => (
+          <Box
+            key={color}
+            css={{
+              p: '$4',
+              bc: `$${color}A2`,
+              borderLeft: `3px solid $${color}A8`,
+            }}
+          >
+            <Text size="2" as="p" css={{ color: `$${color}A11` }}>
+              Warning: obsessing over {color} is a terrible idea.
+            </Text>
+          </Box>
+        ))}
+      </Grid>
+
+      <Grid
+        css={{
+          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+          gap: '$3',
+          mb: '$9',
+          ai: 'center',
+        }}
+      >
+        {colors.map((color) => (
+          <Box
+            key={color}
+            css={{
+              p: '$4',
+              borderRadius: '$3',
+              bc: `$${color}A3`,
+            }}
+          >
+            <Text size="2" as="p" css={{ color: `$${color}A12` }}>
+              Warning: obsessing over {color} is a terrible idea.
+            </Text>
+          </Box>
+        ))}
+      </Grid>
+
+      <Grid
+        css={{
+          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+          gap: '$3',
+          mb: '$9',
+          ai: 'center',
+        }}
+      >
+        {colors.map((color) => (
+          <Box
+            key={color}
+            css={{
+              p: '$4',
+              borderRadius: '$3',
+              bc: `$${color}A2`,
+              border: `1px solid $${color}A6`,
+            }}
+          >
+            <Text size="2" as="p" css={{ color: `$${color}A11` }}>
+              Warning: obsessing over {color} is a terrible idea.
+            </Text>
+          </Box>
+        ))}
+      </Grid>
+    </Container>
+  );
+}
+
 function TextBlocks() {
   const text = `The pigeon guillemot (Cepphus columba) is a species of bird in the auk family, Alcidae.
   One of three species in the genus Cepphus, it is most closely related to the spectacled
@@ -539,7 +765,7 @@ function TextBlocks() {
   );
 }
 
-function Palette() {
+function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
   const gridStyle = {
     gridAutoRows: '35px',
     gridTemplateColumns: 'repeat(13, minmax(0, 1fr))',
@@ -566,7 +792,7 @@ function Palette() {
         </Grid>
 
         {colors.map((color) => (
-          <Grid key={color} css={gridStyle}>
+          <Grid css={gridStyle} key={color}>
             <Box css={{ alignSelf: 'center' }}>
               <Text size="2" css={{ textTransform: 'capitalize' }}>
                 {color}
@@ -668,6 +894,142 @@ function Palette() {
                 document.body.style.backgroundColor = newColor;
               }}
             />
+
+            {showAlphaScales && (
+              <>
+                <Box />
+                <Box
+                  css={{ bc: `$${color}A1` }}
+                  onClick={() => {
+                    const thisColor = `var(--colors-${color}A1)`;
+                    const newColor =
+                      document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                    document.body.style.backgroundColor = newColor;
+                  }}
+                />
+                <Box css={darkThemeColor(`$${color}A1`)}>
+                  <Box
+                    css={{ bc: `$${color}A2`, width: '100%', height: '100%' }}
+                    onClick={() => {
+                      const thisColor = `var(--colors-${color}A2)`;
+                      const newColor =
+                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                      document.body.style.backgroundColor = newColor;
+                    }}
+                  />
+                </Box>
+                <Box css={darkThemeColor(`$${color}A1`)}>
+                  <Box
+                    css={{ bc: `$${color}A3`, width: '100%', height: '100%' }}
+                    onClick={() => {
+                      const thisColor = `var(--colors-${color}A3)`;
+                      const newColor =
+                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                      document.body.style.backgroundColor = newColor;
+                    }}
+                  />
+                </Box>
+                <Box css={darkThemeColor(`$${color}A1`)}>
+                  <Box
+                    css={{ bc: `$${color}A4`, width: '100%', height: '100%' }}
+                    onClick={() => {
+                      const thisColor = `var(--colors-${color}A4)`;
+                      const newColor =
+                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                      document.body.style.backgroundColor = newColor;
+                    }}
+                  />
+                </Box>
+                <Box css={darkThemeColor(`$${color}A1`)}>
+                  <Box
+                    css={{ bc: `$${color}A5`, width: '100%', height: '100%' }}
+                    onClick={() => {
+                      const thisColor = `var(--colors-${color}A5)`;
+                      const newColor =
+                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                      document.body.style.backgroundColor = newColor;
+                    }}
+                  />
+                </Box>
+                <Box css={darkThemeColor(`$${color}A1`)}>
+                  <Box
+                    css={{ bc: `$${color}A6`, width: '100%', height: '100%' }}
+                    onClick={() => {
+                      const thisColor = `var(--colors-${color}A6)`;
+                      const newColor =
+                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                      document.body.style.backgroundColor = newColor;
+                    }}
+                  />
+                </Box>
+                <Box css={darkThemeColor(`$${color}A1`)}>
+                  <Box
+                    css={{ bc: `$${color}A7`, width: '100%', height: '100%' }}
+                    onClick={() => {
+                      const thisColor = `var(--colors-${color}A7)`;
+                      const newColor =
+                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                      document.body.style.backgroundColor = newColor;
+                    }}
+                  />
+                </Box>
+                <Box css={darkThemeColor(`$${color}A1`)}>
+                  <Box
+                    css={{ bc: `$${color}A8`, width: '100%', height: '100%' }}
+                    onClick={() => {
+                      const thisColor = `var(--colors-${color}A8)`;
+                      const newColor =
+                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                      document.body.style.backgroundColor = newColor;
+                    }}
+                  />
+                </Box>
+                <Box css={darkThemeColor(`$${color}A1`)}>
+                  <Box
+                    css={{ bc: `$${color}A9`, width: '100%', height: '100%' }}
+                    onClick={() => {
+                      const thisColor = `var(--colors-${color}A9)`;
+                      const newColor =
+                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                      document.body.style.backgroundColor = newColor;
+                    }}
+                  />
+                </Box>
+                <Box css={darkThemeColor(`$${color}A1`)}>
+                  <Box
+                    css={{ bc: `$${color}A10`, width: '100%', height: '100%' }}
+                    onClick={() => {
+                      const thisColor = `var(--colors-${color}A10)`;
+                      const newColor =
+                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                      document.body.style.backgroundColor = newColor;
+                    }}
+                  />
+                </Box>
+                <Box css={darkThemeColor(`$${color}A1`)}>
+                  <Box
+                    css={{ bc: `$${color}A11`, width: '100%', height: '100%' }}
+                    onClick={() => {
+                      const thisColor = `var(--colors-${color}A11)`;
+                      const newColor =
+                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                      document.body.style.backgroundColor = newColor;
+                    }}
+                  />
+                </Box>
+                <Box css={darkThemeColor(`$${color}A1`)}>
+                  <Box
+                    css={{ bc: `$${color}A12`, width: '100%', height: '100%' }}
+                    onClick={() => {
+                      const thisColor = `var(--colors-${color}A12)`;
+                      const newColor =
+                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                      document.body.style.backgroundColor = newColor;
+                    }}
+                  />
+                </Box>
+              </>
+            )}
           </Grid>
         ))}
       </Box>
@@ -737,4 +1099,12 @@ function useLocalStorage(key: string, initialValue: any) {
     }
   };
   return [storedValue, setValue];
+}
+
+function darkThemeColor(color: string): any {
+  return {
+    [`body.${darkThemeClassName} &`]: {
+      bc: color,
+    },
+  };
 }

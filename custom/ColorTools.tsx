@@ -809,7 +809,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   const [showCode, setShowCode] = React.useState(false);
 
   const showAlphaValues =
-    (document.querySelector('[data-alpha-values]') as HTMLInputElement | null)?.checked ?? false;
+    (document.querySelector('[data-alpha-scales]') as HTMLInputElement | null)?.checked ?? false;
 
   // Refs to current values
   const curveRef = React.useRef<Curve>(isDarkTheme ? darkThemeCurve : lightThemeCurve);
@@ -884,6 +884,23 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
         newColors.push({ name: `${name}10`, value: getCssHsl(step10) });
       }
+
+      // Set alpha scales
+      Array.from(Array(12)).forEach((_, index) => {
+        const targetColor =
+          newColors.find((color) => color.name === `${name}${index + 1}`)?.value ??
+          computedStyles.getPropertyValue(`--colors-${name}${index + 1}`);
+
+        const backdropColor = isDarkTheme
+          ? index === 0
+            ? '#000000'
+            : newColors.find((color) => color.name === `${name}1`)?.value ??
+              computedStyles.getPropertyValue(`--colors-${name}1`)
+          : '#ffffff';
+
+        const alphaValue = getAlphaColor(targetColor, backdropColor);
+        newColors.push({ name: `${name}A${index + 1}`, value: alphaValue });
+      });
 
       // Set CSS variables
       newColors.forEach((color) => {
@@ -1114,15 +1131,11 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               pointerEvents: showCode ? 'auto' : 'none',
             }}
           >
-            {steps.map((step, index) => {
-              const solidColorValue = computedStyles.getPropertyValue(`--colors-${name}${step}`);
-              const backdropColor = isDarkTheme
-                ? index === 0
-                  ? '#000000'
-                  : computedStyles.getPropertyValue(`--colors-${name}1`)
-                : '#ffffff';
-              const alphaColorValue = getAlphaColor(solidColorValue, backdropColor);
-              const valueToShow = showAlphaValues ? alphaColorValue : solidColorValue;
+            {steps.map((step) => {
+              const variableName = showAlphaValues
+                ? `--colors-${name}A${step}`
+                : `--colors-${name}${step}`;
+              const valueToShow = computedStyles.getPropertyValue(variableName);
               const nameToShow = showAlphaValues ? `${name}A` : name;
 
               return (
@@ -1336,6 +1349,10 @@ function formatHsl(color: string) {
   if (/^hsl/.test(color)) {
     // Add trailing zeros to percentage values
     color = color.replace(/(\s|,)(\d+)(%)/g, '$1$2.0$3');
+    // Add trailing zeros to alpha values
+    color = color.replace(/(\.)(\d\d)(\))/g, '$1$20$3');
+    // Add trailing zeros to alpha values
+    color = color.replace(/(\.)(\d)(\))/g, '$1$20$3');
     // But clean up the trailing zero on 0.0% and 100.0%
     color = color.replace(/(\s|,)(10)?(0)(.0%)/g, '$1$2$3%');
   }
@@ -1350,42 +1367,10 @@ function getCssHsl(color: chroma.Color, alpha?: number) {
   let [h, s, l]: (number | string)[] = hsl;
 
   h = Math.round(h);
-  s = (s * 100).toFixed(s === 0 || s === 1 ? 0 : 1);
-  l = (l * 100).toFixed(l === 0 || l === 1 ? 0 : 1);
+  s = (s * 100).toFixed(s === 0 || s === 1 ? 0 : 2);
+  l = (l * 100).toFixed(l === 0 || l === 1 ? 0 : 2);
 
-  // if (preferredHue !== undefined) {
-  //   let adjustedHue = h;
-  //   let targetHex = chroma(`hsl(${h}, ${s}%, ${l}%)`).hex();
-  //   let loop = h !== preferredHue;
-
-  //   // Explot HSL being imprecise to get closer to the preferred hue
-  //   while (loop) {
-  //     const hueDistanceA = preferredHue - h;
-  //     const hueDistanceB = 360 - Math.max(preferredHue, h) + Math.min(preferredHue, h);
-  //     const direction = Math.abs(hueDistanceA) > Math.abs(hueDistanceB) ? -1 : 1;
-  //     const step = h > preferredHue ? -1 * direction : direction;
-  //     let candidateHue = adjustedHue + step;
-  //     // candidateHue = candidateHue > 0 ? candidateHue % 360 : candidateHue + 360;
-  //     candidateHue = candidateHue % 360;
-  //     const candidateHex = chroma(`hsl(${candidateHue}, ${s}%, ${l}%)`).hex();
-
-  //     if (targetHex === candidateHex) {
-  //       adjustedHue = candidateHue;
-  //     } else {
-  //       loop = false;
-  //     }
-
-  //     if (preferredHue === adjustedHue) {
-  //       loop = false;
-  //     }
-  //   }
-
-  //   h = adjustedHue;
-  // }
-
-  return alpha === undefined
-    ? `hsl(${h} ${s}% ${l}%)`
-    : `hsl(${h} ${s}% ${l}% / ${alpha.toFixed(3)})`;
+  return alpha === undefined ? `hsl(${h} ${s}% ${l}%)` : `hsl(${h} ${s}% ${l}% / ${alpha})`;
 }
 
 type ScaleSpec = {
@@ -1493,8 +1478,8 @@ function generateColors({
   return colorMap;
 }
 
-// target = backdrop * (1 - alpha) + result * alpha
-// alpha = (target - backdrop) / (result - backdrop)
+// target = backdrop * (1 - alpha) + foreground * alpha
+// alpha = (target - backdrop) / (foreground - backdrop)
 
 function getAlphaColor(targetColor: string, backdropColor: string) {
   targetColor = prepareColorStringForChroma(targetColor);
@@ -1502,8 +1487,8 @@ function getAlphaColor(targetColor: string, backdropColor: string) {
 
   const [targetR, targetG, targetB] = chroma(targetColor).rgb();
   const [backdropR, backdropG, backdropB] = chroma(backdropColor).rgb();
-  const ceil = (n: number) => Math.ceil(n * 1000) / 1000;
-  const normaliseRGB = (n: number) => Math.min(255, Math.max(0, Math.round(n)));
+  const ceil = (n: number) => Math.ceil(n * 100) / 100;
+  const normaliseRGB = (n: number) => Math.min(255, Math.max(0, Math.ceil(n)));
 
   let R = 0;
   let G = 0;
@@ -1517,7 +1502,7 @@ function getAlphaColor(targetColor: string, backdropColor: string) {
   // Is the backdrop color lighter, RGB-wise, than target color?
   // Decide whether we want to add as little color or as much color as possible,
   // darkening or lightening the backdrop respectively.
-  const desiredRGB = targetR + targetG + targetB < backdropB + backdropG + backdropB ? 0 : 255;
+  const desiredRGB = targetR + targetG + targetB < backdropR + backdropG + backdropB ? 0 : 255;
 
   // Light theme example:
   // Consider a 200 120 150 target color with 255 255 255 backdrop
@@ -1531,8 +1516,9 @@ function getAlphaColor(targetColor: string, backdropColor: string) {
   const alphaB = ceil((targetB - backdropB) / (desiredRGB - backdropB));
   A = Math.max(alphaR, alphaG, alphaB);
 
-  // Limit alpha to 0.98
-  safeA = Math.min(0.98, A);
+  // Clamp alpha between 0.02 and 0.98
+  safeA = Math.max(0.02, Math.min(0.98, A));
+
   R = ((backdropR * (1 - safeA) - targetR) / safeA) * -1;
   G = ((backdropG * (1 - safeA) - targetG) / safeA) * -1;
   B = ((backdropB * (1 - safeA) - targetB) / safeA) * -1;
@@ -1541,23 +1527,5 @@ function getAlphaColor(targetColor: string, backdropColor: string) {
   safeG = normaliseRGB(G);
   safeB = normaliseRGB(B);
 
-  // const preferredHue = /^hsl/.test(targetColor) ? +targetColor.match(/(\d|\.)+/)![0] : undefined;
   return getCssHsl(chroma.rgb(R, G, B), safeA);
-  // return `rgb(${safeR} ${safeG} ${safeB} / ${safeA})`;
 }
-
-// // Chroma butchers HSL accuracy
-// function accurateChromaHsl(color: string) {
-//   if (/^hsl/.test(color)) {
-//     const match = color.match(/(\d|\.)+/g);
-//     const h = match?.[0] ?? null;
-//     const s = match?.[1] ?? null;
-//     const l = match?.[2] ?? null;
-
-//     if (h !== null && s !== null && l !== null) {
-//       return chroma.hsl(+h, +s / 100, +l / 100);
-//     }
-//   }
-
-//   return chroma(color);
-// }
