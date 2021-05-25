@@ -22,29 +22,29 @@ export const AppBar = styled('div', {
         width: '100%',
         top: 0,
         left: 0,
-      }
+      },
     },
     glass: {
       true: {
         backdropFilter: 'blur(12px) saturate(160%)',
-      }
+      },
     },
     border: {
       true: {
         borderBottom: '1px solid',
-      }
+      },
     },
     color: {
       loContrast: {
         backgroundColor: '$loContrast',
       },
       plain: {
-        backgroundColor: '$gray100',
+        backgroundColor: '$gray2',
       },
       accent: {
-        backgroundColor: '$blue800',
-      }
-    }
+        backgroundColor: '$blue9',
+      },
+    },
   },
   compoundVariants: [
     {
@@ -72,26 +72,26 @@ export const AppBar = styled('div', {
       border: 'true',
       color: 'plain',
       css: {
-        borderColor: '$slate500',
+        borderColor: '$slate6',
       },
     },
     {
       border: 'true',
       color: 'accent',
       css: {
-        borderColor: '$blue900',
+        borderColor: '$blue11',
       },
     },
     {
       border: 'true',
       color: 'loContrast',
       css: {
-        borderColor: '$slate500',
+        borderColor: '$slate6',
       },
     },
   ],
   defaultVariants: {
     size: '1',
     color: 'loContrast',
-  }
+  },
 });

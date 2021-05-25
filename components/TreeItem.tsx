@@ -36,165 +36,165 @@ const StyledTreeItem = styled(DEFAULT_TAG, {
   variants: {
     variant: {
       gray: {
-        backgroundColor: '$slate200',
+        backgroundColor: '$slate3',
         '&:hover': {
-          backgroundColor: '$slate300',
+          backgroundColor: '$slate4',
         },
         '&:active': {
-          backgroundColor: '$slate400',
+          backgroundColor: '$slate5',
         },
       },
       red: {
-        backgroundColor: '$red200',
+        backgroundColor: '$red3',
         '&:hover': {
-          backgroundColor: '$red300',
+          backgroundColor: '$red4',
         },
         '&:active': {
-          backgroundColor: '$red400',
+          backgroundColor: '$red5',
         },
       },
       crimson: {
-        backgroundColor: '$crimson200',
+        backgroundColor: '$crimson3',
         '&:hover': {
-          backgroundColor: '$crimson300',
+          backgroundColor: '$crimson4',
         },
         '&:active': {
-          backgroundColor: '$crimson400',
+          backgroundColor: '$crimson5',
         },
       },
       pink: {
-        backgroundColor: '$pink200',
+        backgroundColor: '$pink3',
         '&:hover': {
-          backgroundColor: '$pink300',
+          backgroundColor: '$pink4',
         },
         '&:active': {
-          backgroundColor: '$pink400',
+          backgroundColor: '$pink5',
         },
       },
       purple: {
-        backgroundColor: '$purple200',
+        backgroundColor: '$purple3',
         '&:hover': {
-          backgroundColor: '$purple300',
+          backgroundColor: '$purple4',
         },
         '&:active': {
-          backgroundColor: '$purple400',
+          backgroundColor: '$purple5',
         },
       },
       violet: {
-        backgroundColor: '$violet200',
+        backgroundColor: '$violet3',
         '&:hover': {
-          backgroundColor: '$violet300',
+          backgroundColor: '$violet4',
         },
         '&:active': {
-          backgroundColor: '$violet400',
+          backgroundColor: '$violet5',
         },
       },
       indigo: {
-        backgroundColor: '$indigo200',
+        backgroundColor: '$indigo3',
         '&:hover': {
-          backgroundColor: '$indigo300',
+          backgroundColor: '$indigo4',
         },
         '&:active': {
-          backgroundColor: '$indigo400',
+          backgroundColor: '$indigo5',
         },
       },
       blue: {
-        backgroundColor: '$blue200',
+        backgroundColor: '$blue3',
         '&:hover': {
-          backgroundColor: '$blue300',
+          backgroundColor: '$blue4',
         },
         '&:active': {
-          backgroundColor: '$blue400',
+          backgroundColor: '$blue5',
         },
       },
       cyan: {
-        backgroundColor: '$cyan200',
+        backgroundColor: '$cyan3',
         '&:hover': {
-          backgroundColor: '$cyan300',
+          backgroundColor: '$cyan4',
         },
         '&:active': {
-          backgroundColor: '$cyan400',
+          backgroundColor: '$cyan5',
         },
       },
       teal: {
-        backgroundColor: '$teal200',
+        backgroundColor: '$teal3',
         '&:hover': {
-          backgroundColor: '$teal300',
+          backgroundColor: '$teal4',
         },
         '&:active': {
-          backgroundColor: '$teal400',
+          backgroundColor: '$teal5',
         },
       },
       green: {
-        backgroundColor: '$green200',
+        backgroundColor: '$green3',
         '&:hover': {
-          backgroundColor: '$green300',
+          backgroundColor: '$green4',
         },
         '&:active': {
-          backgroundColor: '$green400',
+          backgroundColor: '$green5',
         },
       },
       lime: {
-        backgroundColor: '$lime200',
+        backgroundColor: '$lime3',
         '&:hover': {
-          backgroundColor: '$lime300',
+          backgroundColor: '$lime4',
         },
         '&:active': {
-          backgroundColor: '$lime400',
+          backgroundColor: '$lime5',
         },
       },
       yellow: {
-        backgroundColor: '$yellow200',
+        backgroundColor: '$yellow3',
         '&:hover': {
-          backgroundColor: '$yellow300',
+          backgroundColor: '$yellow4',
         },
         '&:active': {
-          backgroundColor: '$yellow400',
+          backgroundColor: '$yellow5',
         },
       },
       amber: {
-        backgroundColor: '$amber200',
+        backgroundColor: '$amber3',
         '&:hover': {
-          backgroundColor: '$amber300',
+          backgroundColor: '$amber4',
         },
         '&:active': {
-          backgroundColor: '$amber400',
+          backgroundColor: '$amber5',
         },
       },
       orange: {
-        backgroundColor: '$orange200',
+        backgroundColor: '$orange3',
         '&:hover': {
-          backgroundColor: '$orange300',
+          backgroundColor: '$orange4',
         },
         '&:active': {
-          backgroundColor: '$orange400',
+          backgroundColor: '$orange5',
         },
       },
       gold: {
-        backgroundColor: '$gold200',
+        backgroundColor: '$gold3',
         '&:hover': {
-          backgroundColor: '$gold300',
+          backgroundColor: '$gold4',
         },
         '&:active': {
-          backgroundColor: '$gold400',
+          backgroundColor: '$gold5',
         },
       },
       brown: {
-        backgroundColor: '$brown200',
+        backgroundColor: '$brown3',
         '&:hover': {
-          backgroundColor: '$brown300',
+          backgroundColor: '$brown4',
         },
         '&:active': {
-          backgroundColor: '$brown400',
+          backgroundColor: '$brown5',
         },
       },
       bronze: {
-        backgroundColor: '$bronze200',
+        backgroundColor: '$bronze3',
         '&:hover': {
-          backgroundColor: '$bronze300',
+          backgroundColor: '$bronze4',
         },
         '&:active': {
-          backgroundColor: '$bronze400',
+          backgroundColor: '$bronze5',
         },
       },
     },

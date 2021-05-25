@@ -23,9 +23,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
   userSelect: 'none',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   '&:disabled': {
-    backgroundColor: '$slate200',
+    backgroundColor: '$slate3',
     pointerEvents: 'none',
-    color: '$slate700',
+    color: '$slate8',
   },
   '&::before': {
     boxSizing: 'border-box',
@@ -37,9 +37,9 @@ const StyledBadge = styled(DEFAULT_TAG, {
   },
 
   // Custom
-  backgroundColor: '$slate200',
+  backgroundColor: '$slate3',
   borderRadius: '$pill',
-  color: '$slate900',
+  color: '$slate11',
   whiteSpace: 'nowrap',
   fontVariantNumeric: 'tabular-nums',
 
@@ -58,115 +58,115 @@ const StyledBadge = styled(DEFAULT_TAG, {
     },
     variant: {
       gray: {
-        backgroundColor: '$slate200',
-        color: '$slate900',
+        backgroundColor: '$slate3',
+        color: '$slate11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
+          boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
         },
       },
       red: {
-        backgroundColor: '$red200',
-        color: '$red900',
+        backgroundColor: '$red3',
+        color: '$red11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$red700, 0 0 0 1px $colors$red700',
+          boxShadow: 'inset 0 0 0 1px $colors$red8, 0 0 0 1px $colors$red8',
         },
       },
       crimson: {
-        backgroundColor: '$crimson200',
-        color: '$crimson900',
+        backgroundColor: '$crimson3',
+        color: '$crimson11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$crimson700, 0 0 0 1px $colors$crimson700',
+          boxShadow: 'inset 0 0 0 1px $colors$crimson8, 0 0 0 1px $colors$crimson8',
         },
       },
       pink: {
-        backgroundColor: '$pink200',
-        color: '$pink900',
+        backgroundColor: '$pink3',
+        color: '$pink11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$pink700, 0 0 0 1px $colors$pink700',
+          boxShadow: 'inset 0 0 0 1px $colors$pink8, 0 0 0 1px $colors$pink8',
         },
       },
       purple: {
-        backgroundColor: '$purple200',
-        color: '$purple900',
+        backgroundColor: '$purple3',
+        color: '$purple11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$purple700, 0 0 0 1px $colors$purple700',
+          boxShadow: 'inset 0 0 0 1px $colors$purple8, 0 0 0 1px $colors$purple8',
         },
       },
       violet: {
-        backgroundColor: '$violet200',
-        color: '$violet900',
+        backgroundColor: '$violet3',
+        color: '$violet11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$violet700, 0 0 0 1px $colors$violet700',
+          boxShadow: 'inset 0 0 0 1px $colors$violet8, 0 0 0 1px $colors$violet8',
         },
       },
       indigo: {
-        backgroundColor: '$indigo200',
-        color: '$indigo900',
+        backgroundColor: '$indigo3',
+        color: '$indigo11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$indigo700, 0 0 0 1px $colors$indigo700',
+          boxShadow: 'inset 0 0 0 1px $colors$indigo8, 0 0 0 1px $colors$indigo8',
         },
       },
       blue: {
-        backgroundColor: '$blue200',
-        color: '$blue900',
+        backgroundColor: '$blue3',
+        color: '$blue11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
+          boxShadow: 'inset 0 0 0 1px $colors$blue8, 0 0 0 1px $colors$blue8',
         },
       },
       cyan: {
-        backgroundColor: '$cyan200',
-        color: '$cyan900',
+        backgroundColor: '$cyan3',
+        color: '$cyan11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$cyan700, 0 0 0 1px $colors$cyan700',
+          boxShadow: 'inset 0 0 0 1px $colors$cyan8, 0 0 0 1px $colors$cyan8',
         },
       },
       teal: {
-        backgroundColor: '$teal200',
-        color: '$teal900',
+        backgroundColor: '$teal3',
+        color: '$teal11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$teal700, 0 0 0 1px $colors$teal700',
+          boxShadow: 'inset 0 0 0 1px $colors$teal8, 0 0 0 1px $colors$teal8',
         },
       },
       green: {
-        backgroundColor: '$green200',
-        color: '$green900',
+        backgroundColor: '$green3',
+        color: '$green11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$green700, 0 0 0 1px $colors$green700',
+          boxShadow: 'inset 0 0 0 1px $colors$green8, 0 0 0 1px $colors$green8',
         },
       },
       lime: {
-        backgroundColor: '$lime200',
-        color: '$lime900',
+        backgroundColor: '$lime3',
+        color: '$lime11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$lime700, 0 0 0 1px $colors$lime700',
+          boxShadow: 'inset 0 0 0 1px $colors$lime8, 0 0 0 1px $colors$lime8',
         },
       },
       yellow: {
-        backgroundColor: '$yellow200',
-        color: '$yellow900',
+        backgroundColor: '$yellow3',
+        color: '$yellow11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$yellow700, 0 0 0 1px $colors$yellow700',
+          boxShadow: 'inset 0 0 0 1px $colors$yellow8, 0 0 0 1px $colors$yellow8',
         },
       },
       orange: {
-        backgroundColor: '$orange200',
-        color: '$orange900',
+        backgroundColor: '$orange3',
+        color: '$orange11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$orange700, 0 0 0 1px $colors$orange700',
+          boxShadow: 'inset 0 0 0 1px $colors$orange8, 0 0 0 1px $colors$orange8',
         },
       },
       gold: {
-        backgroundColor: '$gold200',
-        color: '$gold900',
+        backgroundColor: '$gold3',
+        color: '$gold11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$gold700, 0 0 0 1px $colors$gold700',
+          boxShadow: 'inset 0 0 0 1px $colors$gold8, 0 0 0 1px $colors$gold8',
         },
       },
       bronze: {
-        backgroundColor: '$bronze200',
-        color: '$bronze900',
+        backgroundColor: '$bronze3',
+        color: '$bronze11',
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$bronze700, 0 0 0 1px $colors$bronze700',
+          boxShadow: 'inset 0 0 0 1px $colors$bronze8, 0 0 0 1px $colors$bronze8',
         },
       },
     },
@@ -182,14 +182,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$red300',
+            backgroundColor: '$red4',
           },
         },
         '&:active': {
-          backgroundColor: '$red400',
+          backgroundColor: '$red5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$red400',
+          backgroundColor: '$red5',
         },
       },
     },
@@ -199,14 +199,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$crimson300',
+            backgroundColor: '$crimson4',
           },
         },
         '&:active': {
-          backgroundColor: '$crimson400',
+          backgroundColor: '$crimson5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$crimson400',
+          backgroundColor: '$crimson5',
         },
       },
     },
@@ -216,14 +216,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$pink300',
+            backgroundColor: '$pink4',
           },
         },
         '&:active': {
-          backgroundColor: '$pink400',
+          backgroundColor: '$pink5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$pink400',
+          backgroundColor: '$pink5',
         },
       },
     },
@@ -233,14 +233,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$purple300',
+            backgroundColor: '$purple4',
           },
         },
         '&:active': {
-          backgroundColor: '$purple400',
+          backgroundColor: '$purple5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$purple400',
+          backgroundColor: '$purple5',
         },
       },
     },
@@ -250,14 +250,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$violet300',
+            backgroundColor: '$violet4',
           },
         },
         '&:active': {
-          backgroundColor: '$violet400',
+          backgroundColor: '$violet5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$violet400',
+          backgroundColor: '$violet5',
         },
       },
     },
@@ -267,14 +267,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$indigo300',
+            backgroundColor: '$indigo4',
           },
         },
         '&:active': {
-          backgroundColor: '$indigo400',
+          backgroundColor: '$indigo5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$indigo400',
+          backgroundColor: '$indigo5',
         },
       },
     },
@@ -284,14 +284,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$blue300',
+            backgroundColor: '$blue4',
           },
         },
         '&:active': {
-          backgroundColor: '$blue400',
+          backgroundColor: '$blue5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$blue400',
+          backgroundColor: '$blue5',
         },
       },
     },
@@ -301,14 +301,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$cyan300',
+            backgroundColor: '$cyan4',
           },
         },
         '&:active': {
-          backgroundColor: '$cyan400',
+          backgroundColor: '$cyan5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$cyan400',
+          backgroundColor: '$cyan5',
         },
       },
     },
@@ -318,14 +318,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$teal300',
+            backgroundColor: '$teal4',
           },
         },
         '&:active': {
-          backgroundColor: '$teal400',
+          backgroundColor: '$teal5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$teal400',
+          backgroundColor: '$teal5',
         },
       },
     },
@@ -335,14 +335,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$green300',
+            backgroundColor: '$green4',
           },
         },
         '&:active': {
-          backgroundColor: '$green400',
+          backgroundColor: '$green5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$green400',
+          backgroundColor: '$green5',
         },
       },
     },
@@ -352,14 +352,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$lime300',
+            backgroundColor: '$lime4',
           },
         },
         '&:active': {
-          backgroundColor: '$lime400',
+          backgroundColor: '$lime5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$lime400',
+          backgroundColor: '$lime5',
         },
       },
     },
@@ -369,14 +369,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$yellow300',
+            backgroundColor: '$yellow4',
           },
         },
         '&:active': {
-          backgroundColor: '$yellow400',
+          backgroundColor: '$yellow5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$yellow400',
+          backgroundColor: '$yellow5',
         },
       },
     },
@@ -386,14 +386,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$orange300',
+            backgroundColor: '$orange4',
           },
         },
         '&:active': {
-          backgroundColor: '$orange400',
+          backgroundColor: '$orange5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$orange400',
+          backgroundColor: '$orange5',
         },
       },
     },
@@ -403,14 +403,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$gold300',
+            backgroundColor: '$gold4',
           },
         },
         '&:active': {
-          backgroundColor: '$gold400',
+          backgroundColor: '$gold5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$gold400',
+          backgroundColor: '$gold5',
         },
       },
     },
@@ -420,14 +420,14 @@ const StyledBadge = styled(DEFAULT_TAG, {
       css: {
         '@hover': {
           '&:hover': {
-            backgroundColor: '$bronze300',
+            backgroundColor: '$bronze4',
           },
         },
         '&:active': {
-          backgroundColor: '$bronze400',
+          backgroundColor: '$bronze5',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$bronze400',
+          backgroundColor: '$bronze5',
         },
       },
     },

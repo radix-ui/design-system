@@ -80,31 +80,31 @@ function Test() {
             </Container>
             <Container size="2">
               <Flex css={{ fd: 'column', gap: '$2' }}>
-                <Flex css={{ ai: 'center', height: '$8', bc: '$crimson300' }}>
+                <Flex css={{ ai: 'center', height: '$8', bc: '$crimson4' }}>
                   <Text size="9">This search is hopeless</Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '$7', bc: '$crimson300' }}>
+                <Flex css={{ ai: 'center', height: '$7', bc: '$crimson4' }}>
                   <Text size="8">This search is hopeless and I am insane.</Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson4' }}>
                   <Text size="7">This search is hopeless and I am insane.</Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson4' }}>
                   <Text size="6">This search is hopeless and I am insane.</Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson4' }}>
                   <Text size="5">This search is hopeless and I am insane.</Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson4' }}>
                   <Text size="4">This search is hopeless and I am insane.</Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson300' }}>
+                <Flex css={{ ai: 'center', height: '$6', bc: '$crimson4' }}>
                   <Text size="3">This search is hopeless and I am insane.</Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '$5', bc: '$crimson300' }}>
+                <Flex css={{ ai: 'center', height: '$5', bc: '$crimson4' }}>
                   <Text size="2">This search is hopeless and I am insane.</Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '$5', bc: '$crimson300' }}>
+                <Flex css={{ ai: 'center', height: '$5', bc: '$crimson4' }}>
                   <Text size="1">This search is hopeless and I am insane.</Text>
                 </Flex>
               </Flex>
@@ -155,7 +155,7 @@ function Test() {
             <Container size="2">
               <Flex css={{ fd: 'column', gap: '$4' }}>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     900
                   </Text>
                   <Text size="9" as="h1" css={{ fontWeight: 500, lineHeight: '55px' }}>
@@ -163,7 +163,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     800
                   </Text>
                   <Text size="8" as="h2" css={{ fontWeight: 500, lineHeight: '37px' }}>
@@ -171,7 +171,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     700
                   </Text>
                   <Text size="7" as="h3" css={{ fontWeight: 500, lineHeight: '30px' }}>
@@ -179,7 +179,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     600
                   </Text>
                   <Text size="6" as="p" css={{ lineHeight: '30px' }}>
@@ -187,7 +187,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     500
                   </Text>
                   <Text size="5" as="p" css={{ lineHeight: '29px' }}>
@@ -195,7 +195,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     400
                   </Text>
                   <Text size="4" as="p" css={{ lineHeight: '29px' }}>
@@ -203,7 +203,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     300
                   </Text>
                   <Text size="3" as="p" css={{ lineHeight: '25px' }}>
@@ -211,7 +211,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     200
                   </Text>
                   <Text size="2" as="p" css={{ lineHeight: '20px' }}>
@@ -219,7 +219,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     100
                   </Text>
                   <Text size="1" as="p" css={{ lineHeight: '20px' }}>
@@ -244,7 +244,7 @@ function Test() {
             <Container size="2">
               <Flex css={{ fd: 'column', gap: '$4', position: 'relative' }}>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     900
                   </Text>
                   <Text size="9" as="h1" css={{ fontWeight: 500, lineHeight: '55px' }}>
@@ -252,7 +252,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     800
                   </Text>
                   <Text size="8" as="h2" css={{ fontWeight: 500, lineHeight: '37px' }}>
@@ -260,7 +260,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     700
                   </Text>
                   <Text size="7" as="h3" css={{ fontWeight: 500, lineHeight: '30px' }}>
@@ -268,7 +268,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     600
                   </Text>
                   <Text size="6" as="p" css={{ lineHeight: '30px' }}>
@@ -276,7 +276,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     500
                   </Text>
                   <Text size="5" as="p" css={{ lineHeight: '29px' }}>
@@ -284,7 +284,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     400
                   </Text>
                   <Text size="4" as="p" css={{ lineHeight: '29px' }}>
@@ -292,7 +292,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     300
                   </Text>
                   <Text size="3" as="p" css={{ lineHeight: '25px' }}>
@@ -300,7 +300,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     200
                   </Text>
                   <Text size="2" as="p" css={{ lineHeight: '20px' }}>
@@ -308,7 +308,7 @@ function Test() {
                   </Text>
                 </Flex>
                 <Flex css={{ ai: 'center' }}>
-                  <Text size="2" css={{ color: '$slate900', width: '65px' }}>
+                  <Text size="2" css={{ color: '$slate11', width: '65px' }}>
                     100
                   </Text>
                   <Text size="1" as="p" css={{ lineHeight: '20px' }}>
@@ -322,7 +322,7 @@ function Test() {
                     left: '65px',
                     right: '0',
                     bottom: '0',
-                    background: '$yellow500',
+                    background: '$yellow6',
                     zIndex: '-1',
                   }}
                 ></Box>
@@ -347,47 +347,47 @@ function Test() {
             </Container>
             <Container size="2">
               <Flex css={{ fd: 'column', gap: '$4' }}>
-                <Flex css={{ ai: 'center', height: '75px', bc: '$pink400' }}>
+                <Flex css={{ ai: 'center', height: '75px', bc: '$pink5' }}>
                   <Text size="9" as="p" css={{ fontWeight: 500 }}>
                     The quick brown fox
                   </Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '65px', bc: '$pink400' }}>
+                <Flex css={{ ai: 'center', height: '65px', bc: '$pink5' }}>
                   <Text size="8" as="p" css={{ fontWeight: 500 }}>
                     The quick brown fox
                   </Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '45px', bc: '$pink400' }}>
+                <Flex css={{ ai: 'center', height: '45px', bc: '$pink5' }}>
                   <Text size="7" as="p" css={{ fontWeight: 500 }}>
                     The quick brown fox
                   </Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '45px', bc: '$pink400' }}>
+                <Flex css={{ ai: 'center', height: '45px', bc: '$pink5' }}>
                   <Text size="6" as="p" css={{ fontWeight: 500 }}>
                     The quick brown fox
                   </Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '35px', bc: '$pink400' }}>
+                <Flex css={{ ai: 'center', height: '35px', bc: '$pink5' }}>
                   <Text size="5" as="p" css={{ fontWeight: 500 }}>
                     The quick brown fox
                   </Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '35px', bc: '$pink400' }}>
+                <Flex css={{ ai: 'center', height: '35px', bc: '$pink5' }}>
                   <Text size="4" as="p">
                     The quick brown fox
                   </Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '35px', bc: '$pink400' }}>
+                <Flex css={{ ai: 'center', height: '35px', bc: '$pink5' }}>
                   <Text size="3" as="p">
                     The quick brown fox
                   </Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '35px', bc: '$pink400' }}>
+                <Flex css={{ ai: 'center', height: '35px', bc: '$pink5' }}>
                   <Text size="2" as="p">
                     The quick brown fox
                   </Text>
                 </Flex>
-                <Flex css={{ ai: 'center', height: '25px', bc: '$pink400' }}>
+                <Flex css={{ ai: 'center', height: '25px', bc: '$pink5' }}>
                   <Text size="1" as="p">
                     The quick brown fox
                   </Text>
@@ -406,84 +406,84 @@ function Test() {
             </Container>
             <Container size="2">
               <Flex css={{ fd: 'column', gap: '$4' }}>
-                <Heading css={{ color: '$gray1000' }}>
+                <Heading css={{ color: '$gray12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$quartz1000' }}>
+                <Heading css={{ color: '$mauve12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$slate1000' }}>
+                <Heading css={{ color: '$slate12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$red1000' }}>
+                <Heading css={{ color: '$red12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$crimson1000' }}>
+                <Heading css={{ color: '$crimson12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$pink1000' }}>
+                <Heading css={{ color: '$pink12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$purple1000' }}>
+                <Heading css={{ color: '$purple12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$violet1000' }}>
+                <Heading css={{ color: '$violet12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$indigo1000' }}>
+                <Heading css={{ color: '$indigo12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$blue1000' }}>
+                <Heading css={{ color: '$blue12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$cyan1000' }}>
+                <Heading css={{ color: '$cyan12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$teal1000' }}>
+                <Heading css={{ color: '$teal12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$green1000' }}>
+                <Heading css={{ color: '$green12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$lime1000' }}>
+                <Heading css={{ color: '$lime12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$yellow1000' }}>
+                <Heading css={{ color: '$yellow12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$orange1000' }}>
+                <Heading css={{ color: '$orange12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$gold1000' }}>
+                <Heading css={{ color: '$gold12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$brown1000' }}>
+                <Heading css={{ color: '$brown12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
-                <Heading css={{ color: '$bronze1000' }}>
+                <Heading css={{ color: '$bronze12' }}>
                   This heading look balanced and slightly saturated
                 </Heading>
               </Flex>
               <Flex css={{ fd: 'column', gap: '$4', mt: '$7' }}>
-                <Heading css={{ color: '$gray900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$quartz900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$slate900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$red900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$crimson900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$pink900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$purple900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$violet900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$indigo900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$blue900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$cyan900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$teal900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$green900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$lime900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$yellow900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$orange900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$gold900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$brown900' }}>This heading look balanced</Heading>
-                <Heading css={{ color: '$bronze900' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$gray11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$mauve11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$slate11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$red11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$crimson11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$pink11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$purple11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$violet11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$indigo11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$blue11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$cyan11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$teal11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$green11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$lime11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$yellow11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$orange11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$gold11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$brown11' }}>This heading look balanced</Heading>
+                <Heading css={{ color: '$bronze11' }}>This heading look balanced</Heading>
               </Flex>
             </Container>
           </Section>

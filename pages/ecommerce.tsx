@@ -38,7 +38,7 @@ function Ecommerce() {
   return (
     <Box>
       <Box as="header">
-        <Box css={{ bc: '$gray200', py: '$2', px: '$4' }}>
+        <Box css={{ bc: '$gray3', py: '$2', px: '$4' }}>
           <Flex css={{ ai: 'center', jc: 'space-between' }}>
             <Box>Logo</Box>
             <Flex as="nav" css={{ gap: '$5' }}>
@@ -383,7 +383,7 @@ function Ecommerce() {
         <Separator size="2" />
       </Flex>
 
-      <Section size="2" css={{ bc: '$gray200' }}>
+      <Section size="2" css={{ bc: '$gray3' }}>
         <Container size="3">
           <Heading
             css={{

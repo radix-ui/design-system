@@ -17,7 +17,7 @@ const StyledLink = styled(DEFAULT_TAG, {
   outline: 'none',
   textDecorationLine: 'none',
   textUnderlineOffset: '3px',
-  textDecorationColor: '$slate300',
+  textDecorationColor: '$slate4',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   lineHeight: 'inherit',
   '@hover': {
@@ -37,30 +37,30 @@ const StyledLink = styled(DEFAULT_TAG, {
   variants: {
     variant: {
       blue: {
-        color: '$blue900',
-        textDecorationColor: '$blue300',
+        color: '$blue11',
+        textDecorationColor: '$blue4',
         '&:focus': {
-          outlineColor: '$blue700',
+          outlineColor: '$blue8',
         },
       },
       subtle: {
-        color: '$slate900',
-        textDecorationColor: '$slate300',
+        color: '$slate11',
+        textDecorationColor: '$slate4',
         '&:focus': {
-          outlineColor: '$slate700',
+          outlineColor: '$slate8',
         },
       },
       contrast: {
         color: '$hiContrast',
         textDecoration: 'underline',
-        textDecorationColor: '$slate300',
+        textDecorationColor: '$slate4',
         '@hover': {
           '&:hover': {
-            textDecorationColor: '$slate600',
+            textDecorationColor: '$slate7',
           },
         },
         '&:focus': {
-          outlineColor: '$slate700',
+          outlineColor: '$slate8',
         },
       },
     },

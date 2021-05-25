@@ -23,7 +23,7 @@ export const TabsTab = styled(TabsPrimitive.Tab, {
   outline: 'none',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '$slate900',
+  color: '$slate11',
   border: '1px solid transparent',
   borderTopLeftRadius: '$2',
   borderTopRightRadius: '$2',
@@ -36,7 +36,7 @@ export const TabsTab = styled(TabsPrimitive.Tab, {
 
   '&[data-state="active"]': {
     color: '$hiContrast',
-    borderColor: '$slate500',
+    borderColor: '$slate6',
     borderBottomColor: 'white',
   },
 
@@ -47,7 +47,7 @@ export const TabsTab = styled(TabsPrimitive.Tab, {
     borderBottomColor: 'transparent',
 
     '&[data-state="active"]': {
-      borderBottomColor: '$slate500',
+      borderBottomColor: '$slate6',
       borderRightColor: 'white',
     },
   },
@@ -64,11 +64,11 @@ const StyledTabsList = styled(TabsPrimitive.List, {
   display: 'flex',
   '&:focus': {
     outline: 'none',
-    boxShadow: 'inset 0 0 0 1px $slate700, 0 0 0 1px $slate700',
+    boxShadow: 'inset 0 0 0 1px $slate8, 0 0 0 1px $slate8',
   },
   '&[data-orientation="vertical"]': {
     flexDirection: 'column',
-    boxShadow: 'inset -1px 0 0 $slate500',
+    boxShadow: 'inset -1px 0 0 $slate6',
   },
 });
 
@@ -88,6 +88,6 @@ export const TabsPanel = styled(TabsPrimitive.Panel, {
   flexGrow: 1,
   '&:focus': {
     outline: 'none',
-    boxShadow: 'inset 0 0 0 1px $slate700, 0 0 0 1px $slate700',
+    boxShadow: 'inset 0 0 0 1px $slate8, 0 0 0 1px $slate8',
   },
 });

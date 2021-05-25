@@ -22,19 +22,19 @@ const StyledStatus = styled(DEFAULT_TAG, {
     },
     variant: {
       gray: {
-        backgroundColor: '$slate600',
+        backgroundColor: '$slate7',
       },
       blue: {
-        backgroundColor: '$blue800',
+        backgroundColor: '$blue9',
       },
       green: {
-        backgroundColor: '$green800',
+        backgroundColor: '$green9',
       },
       yellow: {
-        backgroundColor: '$yellow800',
+        backgroundColor: '$yellow9',
       },
       red: {
-        backgroundColor: '$red800',
+        backgroundColor: '$red9',
       },
     },
   },

@@ -26,12 +26,12 @@ const StyledTextField = styled(DEFAULT_TAG, {
 
   // Custom
   backgroundColor: '$loContrast',
-  boxShadow: 'inset 0 0 0 1px $colors$slate600',
+  boxShadow: 'inset 0 0 0 1px $colors$slate7',
   color: '$hiContrast',
   fontVariantNumeric: 'tabular-nums',
 
   '&:-webkit-autofill': {
-    boxShadow: 'inset 0 0 0 1px $colors$blue500, inset 0 0 0 100px $colors$blue200',
+    boxShadow: 'inset 0 0 0 1px $colors$blue6, inset 0 0 0 100px $colors$blue3',
   },
 
   '&:-webkit-autofill::first-line': {
@@ -40,28 +40,28 @@ const StyledTextField = styled(DEFAULT_TAG, {
   },
 
   '&:focus': {
-    boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
+    boxShadow: 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8',
     '&:-webkit-autofill': {
       boxShadow:
-        'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700, inset 0 0 0 100px $colors$blue200',
+        'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8, inset 0 0 0 100px $colors$blue3',
     },
   },
   '&::placeholder': {
-    color: '$slate800',
+    color: '$slate9',
   },
   '&:disabled': {
     pointerEvents: 'none',
-    backgroundColor: '$slate100',
-    color: '$slate700',
+    backgroundColor: '$slate2',
+    color: '$slate8',
     cursor: 'not-allowed',
     '&::placeholder': {
-      color: '$slate600',
+      color: '$slate7',
     },
   },
   '&:read-only': {
-    backgroundColor: '$slate100',
+    backgroundColor: '$slate2',
     '&:focus': {
-      boxShadow: 'inset 0px 0px 0px 1px $colors$slate600',
+      boxShadow: 'inset 0px 0px 0px 1px $colors$slate7',
     },
   },
 
@@ -92,12 +92,12 @@ const StyledTextField = styled(DEFAULT_TAG, {
         backgroundColor: 'transparent',
         '@hover': {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$slate600',
+            boxShadow: 'inset 0 0 0 1px $colors$slate7',
           },
         },
         '&:focus': {
           backgroundColor: '$loContrast',
-          boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
+          boxShadow: 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8',
         },
         '&:disabled': {
           backgroundColor: 'transparent',
@@ -109,15 +109,15 @@ const StyledTextField = styled(DEFAULT_TAG, {
     },
     state: {
       invalid: {
-        boxShadow: 'inset 0 0 0 1px $colors$red600',
+        boxShadow: 'inset 0 0 0 1px $colors$red7',
         '&:focus': {
-          boxShadow: 'inset 0px 0px 0px 1px $colors$red700, 0px 0px 0px 1px $colors$red700',
+          boxShadow: 'inset 0px 0px 0px 1px $colors$red8, 0px 0px 0px 1px $colors$red8',
         },
       },
       valid: {
-        boxShadow: 'inset 0 0 0 1px $colors$green600',
+        boxShadow: 'inset 0 0 0 1px $colors$green7',
         '&:focus': {
-          boxShadow: 'inset 0px 0px 0px 1px $colors$green700, 0px 0px 0px 1px $colors$green700',
+          boxShadow: 'inset 0px 0px 0px 1px $colors$green8, 0px 0px 0px 1px $colors$green8',
         },
       },
     },

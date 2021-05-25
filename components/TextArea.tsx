@@ -20,7 +20,7 @@ const StyledTextArea = styled(DEFAULT_TAG, {
   width: '100%',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   backgroundColor: '$loContrast',
-  boxShadow: 'inset 0 0 0 1px $colors$slate600',
+  boxShadow: 'inset 0 0 0 1px $colors$slate7',
   color: '$hiContrast',
   fontVariantNumeric: 'tabular-nums',
   position: 'relative',
@@ -28,26 +28,26 @@ const StyledTextArea = styled(DEFAULT_TAG, {
   resize: 'vertical',
 
   '&:focus': {
-    boxShadow: 'inset 0px 0px 0px 1px $colors$blue700, 0px 0px 0px 1px $colors$blue700',
+    boxShadow: 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8',
     zIndex: '1',
   },
   '&::placeholder': {
-    color: '$slate800',
+    color: '$slate9',
   },
   '&:disabled': {
     pointerEvents: 'none',
-    backgroundColor: '$slate100',
-    color: '$slate700',
+    backgroundColor: '$slate2',
+    color: '$slate8',
     cursor: 'not-allowed',
     resize: 'none',
     '&::placeholder': {
-      color: '$slate600',
+      color: '$slate7',
     },
   },
   '&:read-only': {
-    backgroundColor: '$slate100',
+    backgroundColor: '$slate2',
     '&:focus': {
-      boxShadow: 'inset 0px 0px 0px 1px $colors$slate600',
+      boxShadow: 'inset 0px 0px 0px 1px $colors$slate7',
     },
   },
 
@@ -74,15 +74,15 @@ const StyledTextArea = styled(DEFAULT_TAG, {
     },
     state: {
       invalid: {
-        boxShadow: 'inset 0 0 0 1px $colors$red600',
+        boxShadow: 'inset 0 0 0 1px $colors$red7',
         '&:focus': {
-          boxShadow: 'inset 0px 0px 0px 1px $colors$red700, 0px 0px 0px 1px $colors$red700',
+          boxShadow: 'inset 0px 0px 0px 1px $colors$red8, 0px 0px 0px 1px $colors$red8',
         },
       },
       valid: {
-        boxShadow: 'inset 0 0 0 1px $colors$green600',
+        boxShadow: 'inset 0 0 0 1px $colors$green7',
         '&:focus': {
-          boxShadow: 'inset 0px 0px 0px 1px $colors$green700, 0px 0px 0px 1px $colors$green700',
+          boxShadow: 'inset 0px 0px 0px 1px $colors$green8, 0px 0px 0px 1px $colors$green8',
         },
       },
     },

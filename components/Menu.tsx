@@ -30,18 +30,18 @@ export const itemCss: any = {
 
   '&:focus': {
     outline: 'none',
-    backgroundColor: '$blue800',
+    backgroundColor: '$blue9',
     color: 'white',
   },
 
   '&[data-disabled]': {
-    color: '$slate800',
+    color: '$slate9',
   },
 };
 
 export const labelCss: any = {
   ...baseItemCss,
-  color: '$slate900',
+  color: '$slate11',
 };
 
 export const menuCss: any = {
@@ -53,7 +53,7 @@ export const menuCss: any = {
 export const separatorCss: any = {
   height: 1,
   my: '$1',
-  backgroundColor: '$slate500',
+  backgroundColor: '$slate6',
 };
 
 const StyledMenu = styled(MenuPrimitive.Root, { ...menuCss, ...panelStyles });

@@ -54,7 +54,7 @@ const StyledCard = styled(DEFAULT_TAG, {
         },
         '&:focus': {
           '&::before': {
-            boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
+            boxShadow: 'inset 0 0 0 1px $colors$blue8, 0 0 0 1px $colors$blue8',
           },
         },
       },
@@ -87,7 +87,7 @@ const StyledCard = styled(DEFAULT_TAG, {
           },
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
+          boxShadow: 'inset 0 0 0 1px $colors$blue8, 0 0 0 1px $colors$blue8',
         },
       },
       active: {
@@ -99,7 +99,7 @@ const StyledCard = styled(DEFAULT_TAG, {
           opacity: '1',
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$blue700, 0 0 0 1px $colors$blue700',
+          boxShadow: 'inset 0 0 0 1px $colors$blue8, 0 0 0 1px $colors$blue8',
         },
       },
     },

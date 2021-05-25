@@ -12,17 +12,24 @@ import {
   EyeOpenIcon,
   EyeClosedIcon,
   CodeIcon,
-  BlendingModeIcon,
   ResetIcon,
+  CheckIcon,
+  TextAlignJustifyIcon,
+  TransparencyGridIcon,
 } from '@radix-ui/react-icons';
 import { darkTheme as darkThemeClassName, theme as lightThemeClassName } from '../stitches.config';
-import { colors, getHiContrast } from '../pages/colors';
+import { colors, getHiContrast, loContrasts } from '../pages/colors';
 
-// We are editing steps 100 through 700 via the tools
-const steps = 7;
+const steps = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+
+// We are editing steps 2 through 8 via the tools
+const stepsToGenerate = 7;
 
 // How much to boost the saturation towards the left end of the bezier curve
 const defaultSaturationBoost = 1;
+
+// How much to mix step 9 and 11
+const defaultMixAmount = 0.3;
 
 type Curve = [number, number, number, number];
 
@@ -33,28 +40,32 @@ type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<inf
 type EditableScaleProps = {
   name: ElementType<typeof colors>;
   lightThemeConfig: {
-    /** Step 100 */
+    /** Step 2 */
     start: string;
-    /** Step 700 */
+    /** Step 8 */
     end: string;
     /** Initial Bezier curve */
     defaultCurve: Curve;
-    /** Colors to override, e.g. "red000", "red500", "red900", etc */
+    /** Colors to override, e.g. "red1", "red6", "red11", etc */
     overrides?: Record<string, string>;
     /** How much to boost the saturation towards the left end of the bezier curve */
     saturationBoost?: number;
+    // How much to mix step 9 and 11
+    mixAmount?: number;
   };
   darkThemeConfig: {
-    /** Step 100 */
+    /** Step 2 */
     start: string;
-    /** Step 700 */
+    /** Step 8 */
     end: string;
     /** Initial Bezier curve */
     defaultCurve: Curve;
-    /** Colors to override, e.g. "red000", "red500", "red900", etc */
+    /** Colors to override, e.g. "red1", "red6", "red11", etc */
     overrides?: Record<string, string>;
     /** How much to boost the saturation towards the left end of the bezier curve */
     saturationBoost?: number;
+    // How much to mix step 9 and 11
+    mixAmount?: number;
   };
 };
 
@@ -72,10 +83,10 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(0 0% 97.3%)',
             end: 'hsl(0 0% 78%)',
-            defaultCurve: [0.65, 0.47, 0.905, 0.47],
+            defaultCurve: [0.655, 0.455, 0.905, 0.47],
             overrides: {
-              gray000: 'hsl(0 0% 99.0%)',
-              gray900: 'hsl(0, 0%, 43.5%)',
+              gray1: 'hsl(0 0% 99.0%)',
+              gray11: 'hsl(0 0% 43.5%)',
             },
           }}
           darkThemeConfig={{
@@ -83,20 +94,20 @@ export function ColorTools() {
             end: 'hsl(0 0% 31.2%)',
             defaultCurve: [0.395, 0.22, 0.69, 0.395],
             overrides: {
-              gray000: 'hsl(0 0% 8.5%)',
-              gray900: 'hsl(0 0% 62.8%)',
+              gray1: 'hsl(0 0% 8.5%)',
+              gray11: 'hsl(0 0% 62.8%)',
             },
           }}
         />
         <EditableScale
-          name="quartz"
+          name="mauve"
           lightThemeConfig={{
             start: 'hsl(300 10% 97.6%)',
             end: 'hsl(252 4% 78.9%)',
             defaultCurve: [0.655, 0.455, 0.905, 0.47],
             overrides: {
-              quartz800: 'hsl(252 4% 57.3%)',
-              quartz900: 'hsl(252 4% 45%)',
+              mauve9: 'hsl(252 4% 57.3%)',
+              mauve11: 'hsl(252 4% 44.8%)',
             },
           }}
           darkThemeConfig={{
@@ -104,11 +115,11 @@ export function ColorTools() {
             end: 'hsl(250 5% 32.5%)',
             defaultCurve: [0.395, 0.22, 0.69, 0.395],
             overrides: {
-              quartz000: 'hsl(246 6% 9%)',
-              quartz800: 'hsl(252 4% 45.2%)',
-              // quartz900: 'hsl(253 4% 54.2%)',
-              quartz900: 'hsl(253 4% 63.7%)',
-              quartz1000: 'hsl(256 6% 93.2%)',
+              mauve1: 'hsl(246 6% 9%)',
+              mauve9: 'hsl(252 4% 45.2%)',
+              // mauve11: 'hsl(253 4% 54.2%)',
+              mauve11: 'hsl(253 4% 63.7%)',
+              mauve12: 'hsl(256 6% 93.2%)',
             },
           }}
         />
@@ -119,8 +130,9 @@ export function ColorTools() {
             end: 'hsl(206 10% 78%)',
             defaultCurve: [0.65, 0.47, 0.905, 0.47],
             overrides: {
-              slate900: 'hsl(206 6% 43.5%)',
-              slate1000: 'hsl(206 24% 9%)',
+              slate9: 'hsl(206 6% 56.1%)',
+              slate11: 'hsl(206 6% 43.5%)',
+              slate12: 'hsl(206 24% 9%)',
             },
           }}
           darkThemeConfig={{
@@ -128,8 +140,8 @@ export function ColorTools() {
             end: 'hsl(204 6% 31.5%)',
             defaultCurve: [0.395, 0.22, 0.685, 0.37],
             overrides: {
-              slate000: 'hsl(200 7% 8.8%)',
-              slate900: 'hsl(206 6% 63.0%)',
+              slate1: 'hsl(200 7% 8.8%)',
+              slate11: 'hsl(206 6% 63.0%)',
             },
           }}
         />
@@ -140,9 +152,9 @@ export function ColorTools() {
             end: 'hsl(155 6% 77.3%)',
             defaultCurve: [0.65, 0.47, 0.89, 0.475],
             overrides: {
-              sage800: 'hsl(155, 3.5%, 55.5%)',
-              sage900: 'hsl(155, 3%, 43.0%)',
-              sage1000: 'hsl(155 24% 9.0%)',
+              sage9: 'hsl(155 3.5% 55.5%)',
+              sage11: 'hsl(155 3% 43.0%)',
+              sage12: 'hsl(155 24% 9.0%)',
             },
           }}
           darkThemeConfig={{
@@ -150,11 +162,11 @@ export function ColorTools() {
             end: 'hsl(155 5% 30.5%)',
             defaultCurve: [0.395, 0.22, 0.69, 0.395],
             overrides: {
-              sage000: 'hsl(155 7% 8.4%)',
-              sage800: 'hsl(155 6% 42.5%)',
-              // sage900: 'hsl(155 5% 51.9%)',
-              sage900: 'hsl(155 5% 61.8%)',
-              sage1000: 'hsl(155 6% 93%)',
+              sage1: 'hsl(155 7% 8.4%)',
+              sage9: 'hsl(155 6% 42.5%)',
+              // sage11: 'hsl(155 5% 51.9%)',
+              sage11: 'hsl(155 5% 61.8%)',
+              sage12: 'hsl(155 6% 93%)',
             },
           }}
         />
@@ -165,9 +177,9 @@ export function ColorTools() {
             end: 'hsl(110 5% 77.3%)',
             defaultCurve: [0.65, 0.47, 0.905, 0.47],
             overrides: {
-              olive800: 'hsl(110, 3.5%, 55.5%)',
-              olive900: 'hsl(110, 3%, 43.0%)',
-              olive1000: 'hsl(110 25% 9.5%)',
+              olive9: 'hsl(110 3.5% 55.5%)',
+              olive11: 'hsl(110 3% 43.0%)',
+              olive12: 'hsl(110 25% 9.5%)',
             },
           }}
           darkThemeConfig={{
@@ -175,11 +187,11 @@ export function ColorTools() {
             end: 'hsl(110 4% 30.5%)',
             defaultCurve: [0.395, 0.22, 0.69, 0.395],
             overrides: {
-              olive000: 'hsl(110 5% 8.6%)',
-              olive800: 'hsl(110 6% 42.5%)',
-              // olive900: 'hsl(110 5% 51.9%)',
-              olive900: 'hsl(110 5% 61.8%)',
-              olive1000: 'hsl(110 6% 93%)',
+              olive1: 'hsl(110 5% 8.6%)',
+              olive9: 'hsl(110 6% 42.5%)',
+              // olive11: 'hsl(110 5% 51.9%)',
+              olive11: 'hsl(110 5% 61.8%)',
+              olive12: 'hsl(110 6% 93%)',
             },
           }}
         />
@@ -190,8 +202,8 @@ export function ColorTools() {
             end: 'hsl(50 6% 77%)',
             defaultCurve: [0.65, 0.45, 0.905, 0.47],
             overrides: {
-              sand900: 'hsl(50 2% 43.1%)',
-              sand1000: 'hsl(50 6% 10%)',
+              sand11: 'hsl(50 2% 43.1%)',
+              sand12: 'hsl(50 6% 10%)',
             },
           }}
           darkThemeConfig={{
@@ -199,9 +211,9 @@ export function ColorTools() {
             end: 'hsl(46 4% 30.6%)',
             defaultCurve: [0.41, 0.225, 0.7, 0.43],
             overrides: {
-              sand800: 'hsl(50 4% 42.7%)',
-              sand900: 'hsl(50 4% 61.8%)',
-              sand1000: 'hsl(56 4% 92.8%)',
+              sand9: 'hsl(50 4% 42.7%)',
+              sand11: 'hsl(50 4% 61.8%)',
+              sand12: 'hsl(56 4% 92.8%)',
             },
           }}
         />
@@ -211,20 +223,22 @@ export function ColorTools() {
             start: 'hsl(10 90% 98.3%)',
             end: 'hsl(10 72% 71%)',
             saturationBoost: 1.2,
+            mixAmount: 0.38,
             defaultCurve: [0.55, 0.225, 0.74, 0.525],
             overrides: {
-              tomato800: 'hsl(10 78% 54.0%)',
-              tomato900: 'hsl(10 82% 43.5%)',
-              tomato1000: 'hsl(10 50% 13.5%)',
+              tomato9: 'hsl(10 78% 54.0%)',
+              tomato11: 'hsl(10 82% 43.5%)',
+              tomato12: 'hsl(10 50% 13.5%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(10 45% 10.8%)',
             end: 'hsl(10 80% 35.8%)',
+            mixAmount: 0.55,
             defaultCurve: [0.615, 0.335, 0.735, 0.535],
             overrides: {
-              tomato800: 'hsl(10 78% 54%)',
-              tomato900: 'hsl(10 85% 62.8%)',
+              tomato9: 'hsl(10 78% 54%)',
+              tomato11: 'hsl(10 85% 62.8%)',
             },
           }}
         />
@@ -234,22 +248,24 @@ export function ColorTools() {
             start: 'hsl(359 100% 98.5%)',
             end: 'hsl(359 70% 74.5%)',
             saturationBoost: 1.2,
+            mixAmount: 0.38,
             defaultCurve: [0.61, 0.265, 0.72, 0.52],
             overrides: {
-              red000: 'hsl(359 100% 99.4%)',
-              red100: 'hsl(359 100% 98.6%)',
-              red800: 'hsl(358 75% 59.0%)',
-              red900: 'hsl(358 65% 48.7%)',
-              red1000: 'hsl(354 50% 14.6%)',
+              red1: 'hsl(359 100% 99.4%)',
+              red2: 'hsl(359 100% 98.6%)',
+              red9: 'hsl(358 75% 59.0%)',
+              red11: 'hsl(358 65% 48.7%)',
+              red12: 'hsl(354 50% 14.6%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(353 35% 11.3%)',
             end: 'hsl(358 65% 40.5%)',
+            mixAmount: 0.48,
             defaultCurve: [0.46, 0.225, 0.785, 0.525],
             overrides: {
-              red000: 'hsl(353 23% 9.8%)',
-              red900: 'hsl(358 100% 69.5%)',
+              red1: 'hsl(353 23% 9.8%)',
+              red11: 'hsl(358 100% 69.5%)',
             },
           }}
         />
@@ -259,21 +275,23 @@ export function ColorTools() {
             start: 'hsl(332 100% 98.5%)',
             end: 'hsl(336 62% 72.8%)',
             saturationBoost: 1.2,
+            mixAmount: 0.42,
             defaultCurve: [0.6, 0.26, 0.71, 0.5],
             overrides: {
-              crimson000: 'hsl(332 100% 99.4%)',
-              crimson800: 'hsl(336 80% 57.8%)',
-              crimson900: 'hsl(336 75% 47.2%)',
-              crimson1000: 'hsl(340 65% 14.5%)',
+              crimson1: 'hsl(332 100% 99.4%)',
+              crimson9: 'hsl(336 80% 57.8%)',
+              crimson11: 'hsl(336 75% 47.2%)',
+              crimson12: 'hsl(340 65% 14.5%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(335 33% 11%)',
             end: 'hsl(336 75% 39%)',
+            mixAmount: 0.48,
             defaultCurve: [0.57, 0.28, 0.86, 0.585],
             overrides: {
-              crimson000: 'hsl(335 20% 9.6%)',
-              crimson900: 'hsl(341 90% 67.3%)',
+              crimson1: 'hsl(335 20% 9.6%)',
+              crimson11: 'hsl(341 90% 67.3%)',
             },
           }}
         />
@@ -283,21 +301,23 @@ export function ColorTools() {
             start: 'hsl(322 100% 98.5%)',
             end: 'hsl(322 60% 72.2%)',
             saturationBoost: 1.2,
+            mixAmount: 0.5,
             defaultCurve: [0.61, 0.27, 0.715, 0.5],
             overrides: {
-              pink000: 'hsl(322 100% 99.4%)',
-              pink800: 'hsl(322 65% 54.5%)',
-              pink900: 'hsl(322 75% 46%)',
-              pink1000: 'hsl(320 70% 13.5%)',
+              pink1: 'hsl(322 100% 99.4%)',
+              pink9: 'hsl(322 65% 54.5%)',
+              pink11: 'hsl(322 75% 46%)',
+              pink12: 'hsl(320 70% 13.5%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(318 33% 11%)',
             end: 'hsl(322 75% 37.5%)',
+            mixAmount: 0.4,
             defaultCurve: [0.53, 0.245, 0.825, 0.565],
             overrides: {
-              pink000: 'hsl(318 25% 9.6%)',
-              pink900: 'hsl(325 90% 66.4%)',
+              pink1: 'hsl(318 25% 9.6%)',
+              pink11: 'hsl(325 90% 66.4%)',
             },
           }}
         />
@@ -307,21 +327,23 @@ export function ColorTools() {
             start: 'hsl(297 100% 98.6%)',
             end: 'hsl(292 48% 70.9%)',
             saturationBoost: 1.2,
+            mixAmount: 0.5,
             defaultCurve: [0.64, 0.29, 0.715, 0.495],
             overrides: {
-              plum000: 'hsl(292 90% 99.4%)',
-              plum800: 'hsl(292 45% 51.0%)',
-              plum900: 'hsl(292 60% 42.5%)',
-              plum1000: 'hsl(291 66% 14.0%)',
+              plum1: 'hsl(292 90% 99.4%)',
+              plum9: 'hsl(292 45% 51.0%)',
+              plum11: 'hsl(292 60% 42.5%)',
+              plum12: 'hsl(291 66% 14.0%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(301 30% 10.8%)',
             end: 'hsl(292 45% 40.0%)',
+            mixAmount: 0.4,
             defaultCurve: [0.51, 0.255, 0.73, 0.46],
             overrides: {
-              plum000: 'hsl(301 20% 9.4%)',
-              plum900: 'hsl(300 60% 62.0%)',
+              plum1: 'hsl(301 20% 9.4%)',
+              plum11: 'hsl(300 60% 62.0%)',
             },
           }}
         />
@@ -331,10 +353,11 @@ export function ColorTools() {
             start: 'hsl(280 100% 99.0%)',
             end: 'hsl(272 60% 73.5%)',
             saturationBoost: 1.2,
+            mixAmount: 0.45,
             defaultCurve: [0.635, 0.3, 0.755, 0.485],
             overrides: {
-              purple000: 'hsl(280 65% 99.4%)',
-              purple900: 'hsl(272 50% 45.8%)',
+              purple1: 'hsl(280 65% 99.4%)',
+              purple11: 'hsl(272 50% 45.8%)',
             },
           }}
           darkThemeConfig={{
@@ -342,8 +365,8 @@ export function ColorTools() {
             end: 'hsl(272 52% 46%)',
             defaultCurve: [0.555, 0.285, 0.73, 0.495],
             overrides: {
-              purple000: 'hsl(284 20% 9.6%)',
-              purple900: 'hsl(275 80% 71%)',
+              purple1: 'hsl(284 20% 9.6%)',
+              purple11: 'hsl(275 80% 71%)',
             },
           }}
         />
@@ -353,12 +376,13 @@ export function ColorTools() {
             start: 'hsl(252 100% 99.0%)',
             end: 'hsl(252 68% 76.2%)',
             saturationBoost: 1.2,
+            mixAmount: 0.42,
             defaultCurve: [0.69, 0.31, 0.76, 0.525],
             overrides: {
-              violet000: 'hsl(255 65% 99.4%)',
-              violet800: 'hsl(252 56% 57.5%)',
-              violet900: 'hsl(250 43% 48.0%)',
-              violet1000: 'hsl(254 60% 18.5%)',
+              violet1: 'hsl(255 65% 99.4%)',
+              violet9: 'hsl(252 56% 57.5%)',
+              violet11: 'hsl(250 43% 48.0%)',
+              violet12: 'hsl(254 60% 18.5%)',
             },
           }}
           darkThemeConfig={{
@@ -366,8 +390,8 @@ export function ColorTools() {
             end: 'hsl(250 52% 51.2%)',
             defaultCurve: [0.48, 0.235, 0.73, 0.465],
             overrides: {
-              violet000: 'hsl(250 20% 10.2%)',
-              violet900: 'hsl(250 95% 76.8%)',
+              violet1: 'hsl(250 20% 10.2%)',
+              violet11: 'hsl(250 95% 76.8%)',
             },
           }}
         />
@@ -377,21 +401,23 @@ export function ColorTools() {
             start: 'hsl(226 100% 98.7%)',
             end: 'hsl(226 76% 74.5%)',
             saturationBoost: 1.2,
+            mixAmount: 0.4,
             defaultCurve: [0.575, 0.18, 0.815, 0.61],
             overrides: {
-              indigo000: 'hsl(225 60% 99.4%)',
-              indigo800: 'hsl(226 70% 55.5%)',
-              indigo900: 'hsl(226 55% 45%)',
-              indigo1000: 'hsl(226 62% 17.0%)',
+              indigo1: 'hsl(225 60% 99.4%)',
+              indigo9: 'hsl(226 70% 55.5%)',
+              indigo11: 'hsl(226 55% 45%)',
+              indigo12: 'hsl(226 62% 17.0%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(229 37% 12.3%)',
             end: 'hsl(226 58% 44.3%)',
+            mixAmount: 0.28,
             defaultCurve: [0.555, 0.28, 0.785, 0.58],
             overrides: {
-              indigo000: 'hsl(229 24% 10%)',
-              indigo900: 'hsl(228 100% 75.9%)',
+              indigo1: 'hsl(229 24% 10%)',
+              indigo11: 'hsl(228 100% 75.9%)',
             },
           }}
         />
@@ -401,19 +427,21 @@ export function ColorTools() {
             start: 'hsl(207 100% 98%)',
             end: 'hsl(205.6 82% 65.4%)',
             saturationBoost: 1.9,
+            mixAmount: 0.4,
             defaultCurve: [0.48, 0.095, 0.795, 0.575],
             overrides: {
-              blue400: 'hsl(209 95% 90.1%)',
-              blue900: 'hsl(211 100% 43.2%)',
-              blue1000: 'hsl(211 100% 15%)',
+              blue5: 'hsl(209 95% 90.1%)',
+              blue11: 'hsl(211 100% 43.2%)',
+              blue12: 'hsl(211 100% 15%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(216 50% 11.2%)',
             end: 'hsl(211 90% 34%)',
+            mixAmount: 0.5,
             defaultCurve: [0.485, 0.22, 0.735, 0.51],
             overrides: {
-              blue000: 'hsl(212 35% 9.2%)',
+              blue1: 'hsl(212 35% 9.2%)',
             },
           }}
         />
@@ -425,19 +453,20 @@ export function ColorTools() {
             saturationBoost: 2,
             defaultCurve: [0.505, 0.13, 0.78, 0.565],
             overrides: {
-              cyan000: 'hsl(185 60% 98.7%)',
-              cyan800: 'hsl(190 95% 39.0%)',
-              cyan900: 'hsl(192 85% 31.0%)',
-              cyan1000: 'hsl(192 88% 12.5%)',
+              cyan1: 'hsl(185 60% 98.7%)',
+              cyan9: 'hsl(190 95% 39.0%)',
+              cyan11: 'hsl(192 85% 31.0%)',
+              cyan12: 'hsl(192 88% 12.5%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(192 72% 7.9%)',
             end: 'hsl(192 100% 24.5%)',
+            mixAmount: 0.45,
             defaultCurve: [0.465, 0.295, 0.795, 0.575],
             overrides: {
-              cyan000: 'hsl(192 60% 7.2%)',
-              cyan900: 'hsl(186 100% 42.2%)',
+              cyan1: 'hsl(192 60% 7.2%)',
+              cyan11: 'hsl(186 100% 42.2%)',
             },
           }}
         />
@@ -449,18 +478,19 @@ export function ColorTools() {
             saturationBoost: 2,
             defaultCurve: [0.505, 0.13, 0.795, 0.55],
             overrides: {
-              teal000: 'hsl(165 60% 98.8%)',
-              teal800: 'hsl(173 80% 36.0%)',
-              teal900: 'hsl(174 90% 25.2%)',
-              teal1000: 'hsl(170 50% 12.5%)',
+              teal1: 'hsl(165 60% 98.8%)',
+              teal9: 'hsl(173 80% 36.0%)',
+              teal11: 'hsl(174 90% 25.2%)',
+              teal12: 'hsl(170 50% 12.5%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(168 76% 6.8%)',
             end: 'hsl(173 80% 23.8%)',
+            mixAmount: 0.45,
             defaultCurve: [0.48, 0.27, 0.77, 0.47],
             overrides: {
-              teal900: 'hsl(174 90% 40.7%)',
+              teal11: 'hsl(174 90% 40.7%)',
             },
           }}
         />
@@ -472,18 +502,19 @@ export function ColorTools() {
             saturationBoost: 1.6,
             defaultCurve: [0.505, 0.13, 0.775, 0.51],
             overrides: {
-              green000: 'hsl(136 50% 98.9%)',
-              green800: 'hsl(151 55% 41.5%)',
-              green900: 'hsl(153 67% 28.5%)',
-              green1000: 'hsl(155 40% 14.0%)',
+              green1: 'hsl(136 50% 98.9%)',
+              green9: 'hsl(151 55% 41.5%)',
+              green11: 'hsl(153 67% 28.5%)',
+              green12: 'hsl(155 40% 14.0%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(154 43% 8.0%)',
             end: 'hsl(151 52% 28.5%)',
+            mixAmount: 0.42,
             defaultCurve: [0.38, 0.25, 0.74, 0.4],
             overrides: {
-              green900: 'hsl(151 50% 53.2%)',
+              green11: 'hsl(151 50% 53.2%)',
             },
           }}
         />
@@ -495,19 +526,20 @@ export function ColorTools() {
             saturationBoost: 1.6,
             defaultCurve: [0.505, 0.13, 0.775, 0.51],
             overrides: {
-              grass000: 'hsl(116 50% 98.9%)',
-              grass800: 'hsl(131 41% 46.5%)',
-              grass900: 'hsl(133 50% 32.5%)',
-              grass1000: 'hsl(130 30% 14.9%)',
+              grass1: 'hsl(116 50% 98.9%)',
+              grass9: 'hsl(131 41% 46.5%)',
+              grass11: 'hsl(133 50% 32.5%)',
+              grass12: 'hsl(130 30% 14.9%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(134 33% 8.5%)',
             end: 'hsl(131 40% 30.8%)',
+            mixAmount: 0.52,
             defaultCurve: [0.38, 0.25, 0.74, 0.4],
             overrides: {
-              grass800: 'hsl(131 41% 46.5%)',
-              grass900: 'hsl(131 43% 57.2%)',
+              grass9: 'hsl(131 41% 46.5%)',
+              grass11: 'hsl(131 43% 57.2%)',
             },
           }}
         />
@@ -516,20 +548,22 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(30 55% 97.8%)',
             end: 'hsl(28 50% 63.1%)',
+            mixAmount: 0.35,
             defaultCurve: [0.58, 0.275, 0.71, 0.485],
             overrides: {
-              brown000: 'hsl(30 40% 99.1%)',
-              brown900: 'hsl(25 30% 41.0%)',
-              brown1000: 'hsl(20 30% 19.0%)',
+              brown1: 'hsl(30 40% 99.1%)',
+              brown11: 'hsl(25 30% 41.0%)',
+              brown12: 'hsl(20 30% 19.0%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(22 30% 10%)',
             end: 'hsl(28 30% 35.8%)',
+            mixAmount: 0.35,
             defaultCurve: [0.48, 0.165, 0.84, 0.58],
             overrides: {
-              brown000: 'hsl(22 15% 8.7%)',
-              brown900: 'hsl(28 60% 64.5%)',
+              brown1: 'hsl(22 15% 8.7%)',
+              brown11: 'hsl(28 60% 64.5%)',
             },
           }}
         />
@@ -538,20 +572,22 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(18 70% 98.0%)',
             end: 'hsl(16 25% 66.5%)',
+            mixAmount: 0.35,
             defaultCurve: [0.58, 0.275, 0.725, 0.48],
             overrides: {
-              bronze000: 'hsl(15 30% 99.1%)',
-              bronze900: 'hsl(15 20% 43.1%)',
-              bronze1000: 'hsl(12 22% 21.5%)',
+              bronze1: 'hsl(15 30% 99.1%)',
+              bronze11: 'hsl(15 20% 43.1%)',
+              bronze12: 'hsl(12 22% 21.5%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(17 14% 10.0%)',
             end: 'hsl(18 20% 38.0%)',
+            mixAmount: 0.35,
             defaultCurve: [0.48, 0.19, 0.84, 0.57],
             overrides: {
-              bronze000: 'hsl(17 10% 8.8%)',
-              bronze900: 'hsl(18 35% 68.5%)',
+              bronze1: 'hsl(17 10% 8.8%)',
+              bronze11: 'hsl(18 35% 68.5%)',
             },
           }}
         />
@@ -560,21 +596,23 @@ export function ColorTools() {
           lightThemeConfig={{
             start: 'hsl(50 50% 96.6%)',
             end: 'hsl(36 27% 61.8%)',
+            mixAmount: 0.35,
             defaultCurve: [0.535, 0.24, 0.745, 0.485],
             overrides: {
-              gold000: 'hsl(50 20% 99.1%)',
-              gold800: 'hsl(36 20% 49.5%)',
-              gold900: 'hsl(36 20% 39.0%)',
-              gold1000: 'hsl(36 16% 20.0%)',
+              gold1: 'hsl(50 20% 99.1%)',
+              gold9: 'hsl(36 20% 49.5%)',
+              gold11: 'hsl(36 20% 39.0%)',
+              gold12: 'hsl(36 16% 20.0%)',
             },
           }}
           darkThemeConfig={{
             start: 'hsl(43 15% 9.2%)',
             end: 'hsl(36 20% 35.1%)',
+            mixAmount: 0.35,
             defaultCurve: [0.48, 0.175, 0.84, 0.57],
             overrides: {
-              gold000: 'hsl(44 9% 8.3%)',
-              gold900: 'hsl(35 30% 64.0%)',
+              gold1: 'hsl(44 9% 8.3%)',
+              gold11: 'hsl(35 30% 64.0%)',
             },
           }}
         />
@@ -584,12 +622,13 @@ export function ColorTools() {
             start: 'hsl(191 100% 97.3%)',
             end: 'hsl(193 80% 70%)',
             saturationBoost: 1.4,
+            mixAmount: 0.1,
             defaultCurve: [0.55, 0.23, 0.815, 0.55],
             overrides: {
-              sky000: 'hsl(193 100% 98.8%)',
-              sky800: 'hsl(193 98% 70%)',
-              sky900: 'hsl(195 100% 31.5%)',
-              sky1000: 'hsl(195 100% 13.0%)',
+              sky1: 'hsl(193 100% 98.8%)',
+              sky9: 'hsl(193 98% 70%)',
+              sky11: 'hsl(195 100% 31.5%)',
+              sky12: 'hsl(195 100% 13.0%)',
             },
           }}
           darkThemeConfig={{
@@ -597,7 +636,8 @@ export function ColorTools() {
             end: 'hsl(198 100% 26%)',
             defaultCurve: [0.51, 0.265, 0.745, 0.615],
             overrides: {
-              sky900: 'hsl(192 85% 55.8%)',
+              sky10: 'hsl(192 100% 77%)',
+              sky11: 'hsl(192 85% 55.8%)',
             },
           }}
         />
@@ -607,12 +647,13 @@ export function ColorTools() {
             start: 'hsl(166 88% 96.6%)',
             end: 'hsl(168 55% 65%)',
             saturationBoost: 1.4,
+            mixAmount: 0.08,
             defaultCurve: [0.515, 0.275, 0.72, 0.46],
             overrides: {
-              mint000: 'hsl(165 80% 98.8%)',
-              mint800: 'hsl(167 65% 66%)',
-              mint900: 'hsl(172 72% 28.5%)',
-              mint1000: 'hsl(172 70% 12.0%)',
+              mint1: 'hsl(165 80% 98.8%)',
+              mint9: 'hsl(167 65% 66%)',
+              mint11: 'hsl(172 72% 28.5%)',
+              mint12: 'hsl(172 70% 12.0%)',
             },
           }}
           darkThemeConfig={{
@@ -620,10 +661,11 @@ export function ColorTools() {
             end: 'hsl(170 100% 21.2%)',
             defaultCurve: [0.5, 0.28, 0.825, 0.58],
             overrides: {
-              mint000: 'hsl(173 50% 6.6%)',
-              mint800: 'hsl(167 65% 66%)',
-              mint900: 'hsl(167 70% 48%)',
-              mint1000: 'hsl(165 80% 94.8%)',
+              mint1: 'hsl(173 50% 6.6%)',
+              mint9: 'hsl(167 65% 66%)',
+              mint10: 'hsl(163 80% 77%)',
+              mint11: 'hsl(167 70% 48%)',
+              mint12: 'hsl(165 80% 94.8%)',
             },
           }}
         />
@@ -633,12 +675,13 @@ export function ColorTools() {
             start: 'hsl(85 70% 96.5%)',
             end: 'hsl(76 62% 57%)',
             saturationBoost: 2,
+            mixAmount: 0.12,
             defaultCurve: [0.525, 0.18, 0.735, 0.555],
             overrides: {
-              lime000: 'hsl(85 50% 98.7%)',
-              lime800: 'hsl(81 67% 50%)',
-              lime900: 'hsl(75 80% 26%)',
-              lime1000: 'hsl(78 70% 11.5%)',
+              lime1: 'hsl(85 50% 98.7%)',
+              lime9: 'hsl(81 67% 50%)',
+              lime11: 'hsl(75 80% 26%)',
+              lime12: 'hsl(78 70% 11.5%)',
             },
           }}
           darkThemeConfig={{
@@ -646,8 +689,9 @@ export function ColorTools() {
             end: 'hsl(75 65% 24.5%)',
             defaultCurve: [0.34, 0.195, 0.72, 0.425],
             overrides: {
-              lime000: 'hsl(75 55% 6.0%)',
-              lime900: 'hsl(81 70% 43.8%)',
+              lime1: 'hsl(75 55% 6.0%)',
+              lime10: 'hsl(75 85% 60%)',
+              lime11: 'hsl(81 70% 43.8%)',
             },
           }}
         />
@@ -659,10 +703,11 @@ export function ColorTools() {
             saturationBoost: 3,
             defaultCurve: [0.48, 0.125, 0.705, 0.515],
             overrides: {
-              yellow000: 'hsl(60 54% 98.5%)',
-              yellow800: 'hsl(53 92% 50%)',
-              yellow900: 'hsl(42 100% 29%)',
-              yellow1000: 'hsl(40 55% 13.5%)',
+              yellow1: 'hsl(60 54% 98.5%)',
+              yellow9: 'hsl(53 92% 50%)',
+              yellow10: 'hsl(50 100% 48.5%)',
+              yellow11: 'hsl(42 100% 29%)',
+              yellow12: 'hsl(40 55% 13.5%)',
             },
           }}
           darkThemeConfig={{
@@ -671,9 +716,10 @@ export function ColorTools() {
             saturationBoost: 3,
             defaultCurve: [0.35, 0.15, 0.77, 0.42],
             overrides: {
-              yellow000: 'hsl(45 100% 5.5%)',
-              yellow900: 'hsl(48 100% 47%)',
-              yellow1000: 'hsl(53 100% 91%)',
+              yellow1: 'hsl(45 100% 5.5%)',
+              yellow10: 'hsl(54 100% 68%)',
+              yellow11: 'hsl(48 100% 47%)',
+              yellow12: 'hsl(53 100% 91%)',
             },
           }}
         />
@@ -684,10 +730,11 @@ export function ColorTools() {
             end: 'hsl(39 100% 64.0%)',
             defaultCurve: [0.635, 0.38, 0.775, 0.64],
             overrides: {
-              amber000: 'hsl(39 70% 99.0%)',
-              amber800: 'hsl(39 100% 57%)',
-              amber900: 'hsl(30 100% 34.0%)',
-              amber1000: 'hsl(20 80% 17.0%)',
+              amber1: 'hsl(39 70% 99.0%)',
+              amber9: 'hsl(39 100% 57%)',
+              amber10: 'hsl(35 100% 55.5%)',
+              amber11: 'hsl(30 100% 34.0%)',
+              amber12: 'hsl(20 80% 17.0%)',
             },
           }}
           darkThemeConfig={{
@@ -696,8 +743,9 @@ export function ColorTools() {
             saturationBoost: 2.5,
             defaultCurve: [0.42, 0.13, 0.705, 0.385],
             overrides: {
-              amber000: 'hsl(36 100% 6.1%)',
-              amber900: 'hsl(39 90% 49.8%)',
+              amber1: 'hsl(36 100% 6.1%)',
+              amber10: 'hsl(43 100% 64%)',
+              amber11: 'hsl(39 90% 49.8%)',
             },
           }}
         />
@@ -708,10 +756,11 @@ export function ColorTools() {
             end: 'hsl(24 95% 64.5%)',
             defaultCurve: [0.605, 0.235, 0.79, 0.56],
             overrides: {
-              orange000: 'hsl(24 70% 99.0%)',
-              orange800: 'hsl(24 94% 50%)',
-              orange900: 'hsl(24 100% 37%)',
-              orange1000: 'hsl(15 60% 17.0%)',
+              orange1: 'hsl(24 70% 99.0%)',
+              orange9: 'hsl(24 94% 50%)',
+              orange10: 'hsl(24 100% 46.5%)',
+              orange11: 'hsl(24 100% 37%)',
+              orange12: 'hsl(15 60% 17.0%)',
             },
           }}
           darkThemeConfig={{
@@ -719,8 +768,9 @@ export function ColorTools() {
             end: 'hsl(25 100% 28%)',
             defaultCurve: [0.525, 0.24, 0.76, 0.5],
             overrides: {
-              orange000: 'hsl(30 70% 7.2%)',
-              orange900: 'hsl(24 100% 62.2%)',
+              orange1: 'hsl(30 70% 7.2%)',
+              orange10: 'hsl(24 100% 58.5%)',
+              orange11: 'hsl(24 100% 62.2%)',
             },
           }}
         />
@@ -758,6 +808,9 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   // Whether to show the CSS color codes
   const [showCode, setShowCode] = React.useState(false);
 
+  const showAlphaValues =
+    (document.querySelector('[data-alpha-values]') as HTMLInputElement | null)?.checked ?? false;
+
   // Refs to current values
   const curveRef = React.useRef<Curve>(isDarkTheme ? darkThemeCurve : lightThemeCurve);
   const generatedColorsRef = React.useRef<Color[]>([]);
@@ -791,7 +844,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         name,
         start: config.start,
         end: config.end,
-        steps,
+        steps: stepsToGenerate,
         hueCurve,
         chromaCurve,
         lumCurve,
@@ -805,6 +858,31 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
             newColors.push({ name: key, value: config.overrides[key] });
           }
         }
+      }
+
+      // Add 10 as a mix of 9 and 11, unless they have been added manually before
+      if (!newColors.find((color) => color.name === `${name}10`)) {
+        const computedStyles = getComputedStyle(document.body);
+        const isLoContrast = loContrasts.includes(name);
+        const baseStep = '9';
+        const mixStep = isDarkTheme && isLoContrast ? '12' : '11';
+
+        const baseColor =
+          newColors.find((color) => color.name === `${name}${baseStep}`)?.value ??
+          computedStyles.getPropertyValue(`--colors-${name}${baseStep}`);
+
+        const mixColor =
+          newColors.find((color) => color.name === `${name}${mixStep}`)?.value ??
+          computedStyles.getPropertyValue(`--colors-${name}${mixStep}`);
+
+        const step10 = chroma.interpolate(
+          prepareColorStringForChroma(baseColor),
+          prepareColorStringForChroma(mixColor),
+          config.mixAmount ?? defaultMixAmount,
+          'hcl'
+        );
+
+        newColors.push({ name: `${name}10`, value: getCssHsl(step10) });
       }
 
       // Set CSS variables
@@ -827,8 +905,8 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   // Set new CSS variables when active or theme is changed
   React.useEffect(() => {
     // Deactivate and/or clear potentially stale stuff
-    Array.from(Array(11)).forEach((_, index) => {
-      document.body.style.removeProperty(`--colors-${name}${index}00`);
+    Array.from(Array(12)).forEach((_, index) => {
+      document.body.style.removeProperty(`--colors-${name}${index + 1}`);
     });
 
     // Set relevant values if active
@@ -852,18 +930,18 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       return prepareColorStringForChroma(cssVariableValue);
     };
 
-    const step000 = getValue('000');
-    const step100 = getValue('100');
-    const step200 = getValue('200');
-    const step800 = getValue('800');
-    const step900 = getValue('900');
+    const step1 = getValue('1');
+    const step2 = getValue('2');
+    const step3 = getValue('3');
+    const step9 = getValue('9');
+    const step11 = getValue('11');
     const bgContrastColor = getHiContrast(name);
 
     const newContrasts = [
-      chroma.contrast(step000, step900),
-      chroma.contrast(step100, step900),
-      chroma.contrast(step200, step900),
-      chroma.contrast(step800, bgContrastColor),
+      chroma.contrast(step1, step11),
+      chroma.contrast(step2, step11),
+      chroma.contrast(step3, step11),
+      chroma.contrast(step9, bgContrastColor),
     ];
 
     setContrasts(newContrasts);
@@ -871,7 +949,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   }, [active, isDarkTheme, darkColors, lightColors]);
 
   return (
-    <Box css={{ mb: '-$2', color: '$hiContrast' }}>
+    <Box data-editable-scale css={{ mb: '-$2', color: '$hiContrast' }}>
       <Flex css={{ ai: 'center', mr: '$1' }}>
         <Text
           data-panel-toggle
@@ -881,7 +959,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
             display: 'flex',
             ai: 'center',
             flex: '1 1 auto',
-            fontWeight: '500',
+            fontWeight: 500,
             textTransform: 'capitalize',
             px: '$2',
             pb: '$2',
@@ -912,7 +990,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               transform: collapsed ? 'rotate(-90deg)' : 'none',
             }}
           />
-          <Box css={{ bc: `$${name}800`, width: 13, height: 13, mr: '$1' }} />
+          <Box css={{ bc: `$${name}9`, width: 13, height: 13, mr: '$1' }} />
           {name} {failsContrast && '⛔️'}
         </Text>
 
@@ -936,13 +1014,13 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         )}
 
         <Box
-          data-show-code-toggle
+          data-code-button
           data-show-code={showCode}
           onClick={(event) => {
             // Toggle all on Alt key
             if (event.altKey) {
               document
-                .querySelectorAll(`[data-show-code-toggle][data-show-code="${showCode}"]`)
+                .querySelectorAll(`[data-code-button][data-show-code="${showCode}"]`)
                 .forEach((element) => (element as HTMLElement).click());
               return;
             }
@@ -952,12 +1030,28 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               let clipboard = '';
 
               document.querySelectorAll(`[data-color-code]`).forEach((element) => {
-                const codeToCopy = (element as HTMLElement).textContent;
+                const codeToCopy = Array.from((element as HTMLElement).childNodes)
+                  .map((child) => child.textContent)
+                  .join('\n');
+
                 clipboard = clipboard + codeToCopy;
+
+                // Show check icon for a moment after copying
+                const parent = element.closest('[data-editable-scale]');
+
+                parent!
+                  .querySelector('[data-code-button]')!
+                  .setAttribute('data-show-check-icon', 'true');
+
+                setTimeout(() => {
+                  parent!
+                    .querySelector('[data-code-button]')!
+                    .removeAttribute('data-show-check-icon');
+                }, 1000);
               });
 
-              // Insert newlines before 000's
-              clipboard = clipboard.replaceAll(/(,)(?=\D+?000:)/g, ',\n \n');
+              // Insert newlines before 1's
+              clipboard = clipboard.replaceAll(/(,)(?=\D+?1:)/g, ',\n \n');
 
               navigator.clipboard.writeText(clipboard);
               return;
@@ -969,9 +1063,24 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
             setShowCode(!showCode);
           }}
-          css={{ p: '$1', flex: 'none' }}
+          css={{
+            p: '$1',
+            flex: 'none',
+            '& [data-check-icon]': {
+              display: 'none',
+            },
+            '&[data-show-check-icon]': {
+              '& [data-main-icon]': {
+                display: 'none',
+              },
+              '& [data-check-icon]': {
+                display: 'block',
+              },
+            },
+          }}
         >
-          {showCode ? <CodeIcon /> : <BlendingModeIcon />}
+          {showCode ? <CodeIcon data-main-icon /> : <TextAlignJustifyIcon data-main-icon />}
+          <CheckIcon data-check-icon />
         </Box>
 
         <Box
@@ -1005,41 +1114,54 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               pointerEvents: showCode ? 'auto' : 'none',
             }}
           >
-            {Array.from(Array(11)).map((_, index) => (
-              <Text
-                key={index}
-                css={{
-                  fontSize: '10px',
-                  fontFamily: '$mono',
-                  width: '100%',
-                  display: 'block',
-                  whiteSpace: 'nowrap',
-                  lineHeight: '25px',
-                }}
-              >
-                {name}
-                {index}00: '{computedStyles.getPropertyValue(`--colors-${name}${index}00`)}',
-              </Text>
-            ))}
+            {steps.map((step, index) => {
+              const solidColorValue = computedStyles.getPropertyValue(`--colors-${name}${step}`);
+              const backdropColor = isDarkTheme
+                ? index === 0
+                  ? '#000000'
+                  : computedStyles.getPropertyValue(`--colors-${name}1`)
+                : '#ffffff';
+              const alphaColorValue = getAlphaColor(solidColorValue, backdropColor);
+              const valueToShow = showAlphaValues ? alphaColorValue : solidColorValue;
+              const nameToShow = showAlphaValues ? `${name}A` : name;
+
+              return (
+                <Text
+                  key={step}
+                  css={{
+                    fontSize: '10px',
+                    fontFamily: '$mono',
+                    width: '100%',
+                    display: 'block',
+                    whiteSpace: 'nowrap',
+                    lineHeight: '25px',
+                  }}
+                >
+                  {nameToShow}
+                  {step}: '{formatHsl(valueToShow)}',
+                </Text>
+              );
+            })}
           </Grid>
 
           {!showCode && (
             <Grid css={{ mx: '$2', gridAutoRows: '25px' }}>
-              <RatioBox css={{ bc: `$${name}000`, color: `$${name}900` }} ratio={contrasts[0]} />
-              <RatioBox css={{ bc: `$${name}100`, color: `$${name}900` }} ratio={contrasts[1]} />
-              <RatioBox css={{ bc: `$${name}200`, color: `$${name}900` }} ratio={contrasts[2]} />
-              <RatioBox css={{ bc: `$${name}300` }} />
-              <RatioBox css={{ bc: `$${name}400` }} />
-              <RatioBox css={{ bc: `$${name}500` }} />
-              <RatioBox css={{ bc: `$${name}600` }} />
-              <RatioBox css={{ bc: `$${name}700` }} />
+              <RatioBox css={{ bc: `$${name}1`, color: `$${name}11` }} ratio={contrasts[0]} />
+              <RatioBox css={{ bc: `$${name}2`, color: `$${name}11` }} ratio={contrasts[1]} />
+              <RatioBox css={{ bc: `$${name}3`, color: `$${name}11` }} ratio={contrasts[2]} />
+              <RatioBox css={{ bc: `$${name}4` }} />
+              <RatioBox css={{ bc: `$${name}5` }} />
+              <RatioBox css={{ bc: `$${name}6` }} />
+              <RatioBox css={{ bc: `$${name}7` }} />
+              <RatioBox css={{ bc: `$${name}8` }} />
               <RatioBox
-                css={{ bc: `$${name}800`, color: getHiContrast(name) }}
+                css={{ bc: `$${name}9`, color: getHiContrast(name) }}
                 ratio={contrasts[3]}
                 type="AA Large Text"
               />
-              <RatioBox css={{ bc: `$${name}900` }} />
-              <RatioBox css={{ bc: `$${name}1000` }} />
+              <RatioBox css={{ bc: `$${name}10` }} />
+              <RatioBox css={{ bc: `$${name}11` }} />
+              <RatioBox css={{ bc: `$${name}12` }} />
             </Grid>
           )}
 
@@ -1107,7 +1229,7 @@ function Editor({ curve, onCurveChange }: EditorProps) {
     <Box>
       <Box
         css={{
-          bc: '$gray200',
+          bc: '$gray3',
           m: '$2',
           borderRadius: '$3',
           'svg + span': { display: 'none' },
@@ -1116,7 +1238,7 @@ function Editor({ curve, onCurveChange }: EditorProps) {
           'button[class]': {
             width: 10,
             height: 10,
-            bc: '$gray700',
+            bc: '$gray8',
             boxShadow: 'none',
             cursor: 'default',
           },
@@ -1125,8 +1247,8 @@ function Editor({ curve, onCurveChange }: EditorProps) {
         <BezierCurveEditor
           strokeWidth={1}
           outerAreaSize={70}
-          curveLineColor="var(--colors-gray900)"
-          handleLineColor="var(--colors-gray700)"
+          curveLineColor="var(--colors-gray11)"
+          handleLineColor="var(--colors-gray8)"
           fixedHandleColor="transparent"
           rowColor="transparent"
           outerAreaColor="transparent"
@@ -1210,6 +1332,62 @@ function distributeHue(value: number, rangeA: number[], rangeB: number[]) {
   return distribute(value, rangeA, [toLow, toHigh]);
 }
 
+function formatHsl(color: string) {
+  if (/^hsl/.test(color)) {
+    // Add trailing zeros to percentage values
+    color = color.replace(/(\s|,)(\d+)(%)/g, '$1$2.0$3');
+    // But clean up the trailing zero on 0.0% and 100.0%
+    color = color.replace(/(\s|,)(10)?(0)(.0%)/g, '$1$2$3%');
+  }
+
+  return color;
+}
+
+function getCssHsl(color: chroma.Color, alpha?: number) {
+  const hsl = color.hsl().map((value) => (isNaN(value) ? 0 : value));
+  // Set hue to 0° if saturation is a ridiculously small number like 9.609723609371595e-7
+  hsl[0] = hsl[1] < 0.001 ? 0 : hsl[0];
+  let [h, s, l]: (number | string)[] = hsl;
+
+  h = Math.round(h);
+  s = (s * 100).toFixed(s === 0 || s === 1 ? 0 : 1);
+  l = (l * 100).toFixed(l === 0 || l === 1 ? 0 : 1);
+
+  // if (preferredHue !== undefined) {
+  //   let adjustedHue = h;
+  //   let targetHex = chroma(`hsl(${h}, ${s}%, ${l}%)`).hex();
+  //   let loop = h !== preferredHue;
+
+  //   // Explot HSL being imprecise to get closer to the preferred hue
+  //   while (loop) {
+  //     const hueDistanceA = preferredHue - h;
+  //     const hueDistanceB = 360 - Math.max(preferredHue, h) + Math.min(preferredHue, h);
+  //     const direction = Math.abs(hueDistanceA) > Math.abs(hueDistanceB) ? -1 : 1;
+  //     const step = h > preferredHue ? -1 * direction : direction;
+  //     let candidateHue = adjustedHue + step;
+  //     // candidateHue = candidateHue > 0 ? candidateHue % 360 : candidateHue + 360;
+  //     candidateHue = candidateHue % 360;
+  //     const candidateHex = chroma(`hsl(${candidateHue}, ${s}%, ${l}%)`).hex();
+
+  //     if (targetHex === candidateHex) {
+  //       adjustedHue = candidateHue;
+  //     } else {
+  //       loop = false;
+  //     }
+
+  //     if (preferredHue === adjustedHue) {
+  //       loop = false;
+  //     }
+  //   }
+
+  //   h = adjustedHue;
+  // }
+
+  return alpha === undefined
+    ? `hsl(${h} ${s}% ${l}%)`
+    : `hsl(${h} ${s}% ${l}% / ${alpha.toFixed(3)})`;
+}
+
 type ScaleSpec = {
   name: string;
   start: string;
@@ -1246,7 +1424,7 @@ function generateColors({
     return array;
   }
 
-  const indexOffset = 1;
+  const indexOffset = 2;
 
   start = prepareColorStringForChroma(start);
   end = prepareColorStringForChroma(end);
@@ -1303,14 +1481,10 @@ function generateColors({
     };
 
     const color = chroma(chroma.lch(params.luminosity, params.chroma, params.hue));
-    const hsl = color.hsl().map((value) => (isNaN(value) ? 0 : value));
-    // Normalise hue if saturation is a ridiculously small number like 9.609723609371595e-7
-    hsl[0] = hsl[1] < 0.001 ? 0 : hsl[0];
-    const [h, s, l] = hsl;
-
+    const hsl = getCssHsl(color);
     const colorObj: Color = {
-      name: `${name}${index + indexOffset}00`,
-      value: `hsl(${Math.round(h)} ${(s * 100).toFixed(1)}% ${(l * 100).toFixed(1)}%)`,
+      name: `${name}${index + indexOffset}`,
+      value: hsl,
     };
 
     colorMap.push(colorObj);
@@ -1318,3 +1492,72 @@ function generateColors({
 
   return colorMap;
 }
+
+// target = backdrop * (1 - alpha) + result * alpha
+// alpha = (target - backdrop) / (result - backdrop)
+
+function getAlphaColor(targetColor: string, backdropColor: string) {
+  targetColor = prepareColorStringForChroma(targetColor);
+  backdropColor = prepareColorStringForChroma(backdropColor);
+
+  const [targetR, targetG, targetB] = chroma(targetColor).rgb();
+  const [backdropR, backdropG, backdropB] = chroma(backdropColor).rgb();
+  const ceil = (n: number) => Math.ceil(n * 1000) / 1000;
+  const normaliseRGB = (n: number) => Math.min(255, Math.max(0, Math.round(n)));
+
+  let R = 0;
+  let G = 0;
+  let B = 0;
+  let A = 0;
+  let safeR = 0;
+  let safeG = 0;
+  let safeB = 0;
+  let safeA = 0;
+
+  // Is the backdrop color lighter, RGB-wise, than target color?
+  // Decide whether we want to add as little color or as much color as possible,
+  // darkening or lightening the backdrop respectively.
+  const desiredRGB = targetR + targetG + targetB < backdropB + backdropG + backdropB ? 0 : 255;
+
+  // Light theme example:
+  // Consider a 200 120 150 target color with 255 255 255 backdrop
+  // What is the alpha value that will nudge backdrop's 255 green to 120?
+  //
+  // Dark theme example:
+  // Consider a 200 120 150 target color with 12 24 28 backdrop
+  // What is the alpha value that will nudge backdrop's 12 red to 200?
+  const alphaR = ceil((targetR - backdropR) / (desiredRGB - backdropR));
+  const alphaG = ceil((targetG - backdropG) / (desiredRGB - backdropG));
+  const alphaB = ceil((targetB - backdropB) / (desiredRGB - backdropB));
+  A = Math.max(alphaR, alphaG, alphaB);
+
+  // Limit alpha to 0.98
+  safeA = Math.min(0.98, A);
+  R = ((backdropR * (1 - safeA) - targetR) / safeA) * -1;
+  G = ((backdropG * (1 - safeA) - targetG) / safeA) * -1;
+  B = ((backdropB * (1 - safeA) - targetB) / safeA) * -1;
+
+  safeR = normaliseRGB(R);
+  safeG = normaliseRGB(G);
+  safeB = normaliseRGB(B);
+
+  // const preferredHue = /^hsl/.test(targetColor) ? +targetColor.match(/(\d|\.)+/)![0] : undefined;
+  return getCssHsl(chroma.rgb(R, G, B), safeA);
+  // return `rgb(${safeR} ${safeG} ${safeB} / ${safeA})`;
+}
+
+// // Chroma butchers HSL accuracy
+// function accurateChromaHsl(color: string) {
+//   if (/^hsl/.test(color)) {
+//     const match = color.match(/(\d|\.)+/g);
+//     const h = match?.[0] ?? null;
+//     const s = match?.[1] ?? null;
+//     const l = match?.[2] ?? null;
+
+//     if (h !== null && s !== null && l !== null) {
+//       return chroma.hsl(+h, +s / 100, +l / 100);
+//     }
+//   }
+
+//   return chroma(color);
+// }

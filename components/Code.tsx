@@ -18,12 +18,12 @@ const StyledCode = styled(DEFAULT_TAG, {
   variants: {
     variant: {
       gray: {
-        backgroundColor: '$slate200',
-        color: '$slate900',
+        backgroundColor: '$slate3',
+        color: '$slate11',
       },
       violet: {
-        backgroundColor: '$violet200',
-        color: '$violet900',
+        backgroundColor: '$violet3',
+        color: '$violet11',
       },
     },
   },

@@ -34,23 +34,23 @@ const StyledIconButton = styled(DEFAULT_TAG, {
     boxSizing: 'border-box',
   },
   backgroundColor: '$loContrast',
-  border: '1px solid $slate600',
+  border: '1px solid $slate7',
   '@hover': {
     '&:hover': {
-      borderColor: '$slate700',
+      borderColor: '$slate8',
     },
   },
   '&:active': {
-    backgroundColor: '$slate100',
+    backgroundColor: '$slate2',
   },
   '&:focus': {
-    borderColor: '$slate700',
-    boxShadow: '0 0 0 1px $colors$slate700',
+    borderColor: '$slate8',
+    boxShadow: '0 0 0 1px $colors$slate8',
   },
   '&:disabled': {
     pointerEvents: 'none',
     backgroundColor: 'transparent',
-    color: '$slate500',
+    color: '$slate6',
   },
 
   variants: {
@@ -83,17 +83,17 @@ const StyledIconButton = styled(DEFAULT_TAG, {
         borderWidth: '0',
         '@hover': {
           '&:hover': {
-            backgroundColor: '$slate200',
+            backgroundColor: '$slate3',
           },
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
+          boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
         },
         '&:active': {
-          backgroundColor: '$slate300',
+          backgroundColor: '$slate4',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$slate300',
+          backgroundColor: '$slate4',
         },
       },
       raised: {
@@ -106,18 +106,18 @@ const StyledIconButton = styled(DEFAULT_TAG, {
           },
         },
         '&:focus': {
-          borderColor: '$slate700',
+          borderColor: '$slate8',
           boxShadow:
-            '0 0 0 1px $colors$slate700, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
+            '0 0 0 1px $colors$slate8, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)',
         },
         '&:active': {
-          backgroundColor: '$slate300',
+          backgroundColor: '$slate4',
         },
       },
     },
     state: {
       active: {
-        backgroundColor: '$slate300',
+        backgroundColor: '$slate4',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
         '@hover': {
           '&:hover': {
@@ -125,11 +125,11 @@ const StyledIconButton = styled(DEFAULT_TAG, {
           },
         },
         '&:active': {
-          backgroundColor: '$slate300',
+          backgroundColor: '$slate4',
         },
       },
       waiting: {
-        backgroundColor: '$slate300',
+        backgroundColor: '$slate4',
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
         '@hover': {
           '&:hover': {
@@ -137,7 +137,7 @@ const StyledIconButton = styled(DEFAULT_TAG, {
           },
         },
         '&:active': {
-          backgroundColor: '$slate300',
+          backgroundColor: '$slate4',
         },
       },
     },

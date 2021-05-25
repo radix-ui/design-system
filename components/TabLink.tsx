@@ -21,7 +21,7 @@ const StyledTabLink = styled(DEFAULT_TAG, {
   outline: 'none',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '$slate900',
+  color: '$slate11',
   textDecoration: 'none',
   '@hover': {
     '&:hover': {
@@ -29,7 +29,7 @@ const StyledTabLink = styled(DEFAULT_TAG, {
     },
   },
   '&:focus': {
-    boxShadow: 'inset 0 0 0 1px $colors$slate700, 0 0 0 1px $colors$slate700',
+    boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
   },
 
   variants: {
@@ -44,7 +44,7 @@ const StyledTabLink = styled(DEFAULT_TAG, {
           bottom: 0,
           width: '100%',
           height: 2,
-          backgroundColor: '$blue800',
+          backgroundColor: '$blue9',
         },
       },
     },

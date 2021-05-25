@@ -16,11 +16,12 @@ import { ColorTools } from '../custom/ColorTools';
 import { darkTheme as darkThemeClassName } from '../stitches.config';
 
 const sidebarWidth = 240;
-const loContrasts = ['lime', 'yellow', 'amber', 'sky', 'mint'];
+
+export const loContrasts = ['lime', 'yellow', 'amber', 'sky', 'mint'];
 
 export const colors = [
   'gray',
-  'quartz',
+  'mauve',
   'slate',
   'sage',
   'olive',
@@ -60,6 +61,7 @@ export default function Colors() {
   const [buttons, setButtons] = useLocalStorage('colors-buttons', true);
   const [lines, setLines] = useLocalStorage('colors-lines', true);
   const [textBlocks, setTextBlocks] = useLocalStorage('colors-textBlocks', true);
+  const [alphaValues, setAlphaValues] = useLocalStorage('colors-alphaValues', true);
 
   const [darkTheme, setDarkTheme] = useLocalStorage('colors-darkTheme', false);
   const [grayscale, setGrayscale] = useLocalStorage('colors-grayscale', false);
@@ -121,6 +123,14 @@ export default function Colors() {
             <Checkbox defaultChecked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)}>
               Dark theme
             </Checkbox>
+            <Separator css={{ my: '$3' }} />
+            <Checkbox
+              data-alpha-values
+              defaultChecked={false}
+              onChange={(e) => setAlphaValues(e.target.checked)}
+            >
+              Alpha scales (code only)
+            </Checkbox>
           </Box>
         </Container>
 
@@ -148,7 +158,7 @@ function Sidebar() {
         bottom: 0,
         bc: 'white',
         overflowY: 'scroll',
-        boxShadow: '1px 0 $colors$gray500',
+        boxShadow: '1px 0 $colors$gray6',
         width: 240,
         [`body.${darkThemeClassName} &`]: {
           bc: 'black',
@@ -166,7 +176,7 @@ function Layers() {
       <Grid css={{ gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '$5' }}>
         {colors.map((color) => (
           <Box key={color}>
-            <TreeItem css={{ bc: `$${color}400` }}>
+            <TreeItem css={{ bc: `$${color}5` }}>
               <Box css={{ mr: '$2' }}>
                 <RadiobuttonIcon />
               </Box>
@@ -175,9 +185,9 @@ function Layers() {
             <TreeItem
               css={{
                 pl: 45,
-                bc: `$${color}200`,
-                '&:hover': { bc: `$${color}300` },
-                '&:active': { bc: `$${color}400` },
+                bc: `$${color}3`,
+                '&:hover': { bc: `$${color}4` },
+                '&:active': { bc: `$${color}5` },
               }}
             >
               <Box css={{ mr: '$2' }}>
@@ -188,9 +198,9 @@ function Layers() {
             <TreeItem
               css={{
                 pl: 45,
-                bc: `$${color}200`,
-                '&:hover': { bc: `$${color}300` },
-                '&:active': { bc: `$${color}400` },
+                bc: `$${color}3`,
+                '&:hover': { bc: `$${color}4` },
+                '&:active': { bc: `$${color}5` },
               }}
             >
               <Box css={{ mr: '$2' }}>
@@ -201,9 +211,9 @@ function Layers() {
             <TreeItem
               css={{
                 pl: 45,
-                bc: `$${color}200`,
-                '&:hover': { bc: `$${color}300` },
-                '&:active': { bc: `$${color}400` },
+                bc: `$${color}3`,
+                '&:hover': { bc: `$${color}4` },
+                '&:active': { bc: `$${color}5` },
               }}
             >
               <Box css={{ mr: '$2' }}>
@@ -229,46 +239,55 @@ function Buttons() {
               css={{
                 fontWeight: 500,
                 textTransform: 'capitalize',
-                backgroundColor: `$${color}100`,
-                boxShadow: `inset 0 0 0 1px $colors$${color}600`,
-                color: `$${color}900`,
+                backgroundColor: `$${color}2`,
+                boxShadow: `inset 0 0 0 1px $colors$${color}7`,
+                color: `$${color}11`,
                 '@hover': {
                   '&:hover': {
-                    boxShadow: `inset 0 0 0 1px $colors$${color}700`,
+                    boxShadow: `inset 0 0 0 1px $colors$${color}8`,
                   },
                 },
                 '&:active': {
-                  backgroundColor: `$${color}200`,
-                  boxShadow: `inset 0 0 0 1px $colors$${color}700`,
+                  backgroundColor: `$${color}3`,
+                  boxShadow: `inset 0 0 0 1px $colors$${color}8`,
                 },
                 '&:focus': {
-                  boxShadow: `inset 0 0 0 1px $colors$${color}700, 0 0 0 1px $colors$${color}700`,
+                  boxShadow: `inset 0 0 0 1px $colors$${color}8, 0 0 0 1px $colors$${color}8`,
                 },
               }}
             >
               {color}
             </Button>
+          </Box>
+        ))}
+      </Grid>
+
+      <Grid css={{ gridTemplateColumns: 'repeat(8, 1fr)', gap: '$5', mt: '$9' }}>
+        {colors.map((color) => (
+          <Box key={color} css={{ '&[class] * + *': { ml: '$2', verticalAlign: 'top' } }}>
             <Button
+              size="2"
               css={{
-                fontWeight: 400,
+                // fontWeight: 5,
                 textTransform: 'capitalize',
-                backgroundColor: `$${color}800`,
+                backgroundColor: `$${color}9`,
                 color: getHiContrast(color),
                 boxShadow: 'none',
+                borderRadius: '$pill',
                 '@hover': {
                   '&:hover': {
-                    color: 'white',
+                    color: getHiContrast(color),
                     boxShadow: 'none',
-                    backgroundColor: `$${color}900`,
+                    backgroundColor: `var(--colors-${color}10)`,
                   },
                 },
                 '&:active': {
                   boxShadow: 'none',
-                  color: getHiContrast(color),
-                  backgroundColor: `$${color}700`,
+                  color: 'white',
+                  backgroundColor: `$${color}11`,
                 },
                 '&:focus': {
-                  boxShadow: `0 0 0 2px $colors$${color}600`,
+                  boxShadow: `0 0 0 2px $colors$${color}7`,
                 },
               }}
             >
@@ -297,13 +316,13 @@ function Lines() {
             fb: '0',
             fg: '1',
             height: 160,
-            backgroundColor: '$gray000',
+            backgroundColor: '$gray1',
           }}
         ></Box>
-        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray100' }}></Box>
-        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray200' }}></Box>
-        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray300' }}></Box>
-        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray400' }}></Box>
+        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray2' }}></Box>
+        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray3' }}></Box>
+        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray4' }}></Box>
+        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray5' }}></Box>
         <Box
           css={{
             position: 'absolute',
@@ -311,7 +330,7 @@ function Lines() {
             left: '0',
             width: '100%',
             height: 1,
-            backgroundColor: '$gray500',
+            backgroundColor: '$gray6',
           }}
         ></Box>
       </Flex>
@@ -331,7 +350,7 @@ function Alerts() {
         }}
       >
         {colors.map((color) => (
-          <Box key={color} css={{ p: '$4', borderRadius: '$3', bc: `$${color}800` }}>
+          <Box key={color} css={{ p: '$4', borderRadius: '$3', bc: `$${color}9` }}>
             <Text size="2" as="p" css={{ color: getHiContrast(color) }}>
               Warning: obsessing over {color} is a terrible idea.
             </Text>
@@ -352,11 +371,11 @@ function Alerts() {
             key={color}
             css={{
               p: '$4',
-              bc: `$${color}100`,
-              borderLeft: `2px solid $${color}500`,
+              bc: `$${color}2`,
+              borderLeft: `2px solid $${color}6`,
             }}
           >
-            <Text size="2" as="p" css={{ color: `$${color}900` }}>
+            <Text size="2" as="p" css={{ color: `$${color}11` }}>
               Warning: obsessing over {color} is a terrible idea.
             </Text>
           </Box>
@@ -376,35 +395,11 @@ function Alerts() {
             key={color}
             css={{
               p: '$4',
-              bc: `$${color}100`,
-              borderLeft: `3px solid $${color}700`,
+              bc: `$${color}2`,
+              borderLeft: `3px solid $${color}8`,
             }}
           >
-            <Text size="2" as="p" css={{ color: `$${color}900` }}>
-              Warning: obsessing over {color} is a terrible idea.
-            </Text>
-          </Box>
-        ))}
-      </Grid>
-
-      <Grid
-        css={{
-          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-          gap: '$3',
-          mb: '$9',
-          ai: 'center',
-        }}
-      >
-        {colors.map((color) => (
-          <Box
-            key={color}
-            css={{
-              p: '$4',
-              borderRadius: '$3',
-              bc: `$${color}200`,
-            }}
-          >
-            <Text size="2" as="p" css={{ color: `$${color}1000` }}>
+            <Text size="2" as="p" css={{ color: `$${color}11` }}>
               Warning: obsessing over {color} is a terrible idea.
             </Text>
           </Box>
@@ -425,11 +420,35 @@ function Alerts() {
             css={{
               p: '$4',
               borderRadius: '$3',
-              bc: `$${color}100`,
-              border: `1px solid $${color}500`,
+              bc: `$${color}3`,
             }}
           >
-            <Text size="2" as="p" css={{ color: `$${color}900` }}>
+            <Text size="2" as="p" css={{ color: `$${color}12` }}>
+              Warning: obsessing over {color} is a terrible idea.
+            </Text>
+          </Box>
+        ))}
+      </Grid>
+
+      <Grid
+        css={{
+          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+          gap: '$3',
+          mb: '$9',
+          ai: 'center',
+        }}
+      >
+        {colors.map((color) => (
+          <Box
+            key={color}
+            css={{
+              p: '$4',
+              borderRadius: '$3',
+              bc: `$${color}2`,
+              border: `1px solid $${color}6`,
+            }}
+          >
+            <Text size="2" as="p" css={{ color: `$${color}11` }}>
               Warning: obsessing over {color} is a terrible idea.
             </Text>
           </Box>
@@ -453,45 +472,45 @@ function TextBlocks() {
   return (
     <Box css={{ mb: '$9' }}>
       {colors.map((color) => {
-        const color000 = `$${color}000`;
-        const color100 = `$${color}100`;
-        const color200 = `$${color}200`;
-        const color800 = `$${color}800`;
-        const color1000 = `$${color}1000`;
+        const color1 = `$${color}1`;
+        const color2 = `$${color}2`;
+        const color3 = `$${color}3`;
+        const color9 = `$${color}9`;
+        const color12 = `$${color}12`;
 
         return (
           <Box key={color} css={{ 'html.gap &': { display: 'grid', gap: '$5' } }}>
-            <Box css={{ bc: color000, p: 200 }}>
+            <Box css={{ bc: color1, p: 200 }}>
               <Container size="3">
-                <Heading css={{ mb: '$2', color: color1000, textTransform: 'capitalize' }}>
+                <Heading css={{ mb: '$2', color: color12, textTransform: 'capitalize' }}>
                   {color}
                 </Heading>
-                <Text size="3" css={{ lineHeight: '25px', color: color1000 }}>
+                <Text size="3" css={{ lineHeight: '25px', color: color12 }}>
                   {text}
                 </Text>
               </Container>
             </Box>
-            <Box css={{ bc: color100, p: 200 }}>
+            <Box css={{ bc: color2, p: 200 }}>
               <Container size="3">
-                <Heading css={{ mb: '$2', color: color1000, textTransform: 'capitalize' }}>
+                <Heading css={{ mb: '$2', color: color12, textTransform: 'capitalize' }}>
                   {color}
                 </Heading>
-                <Text size="3" css={{ lineHeight: '25px', color: color1000 }}>
+                <Text size="3" css={{ lineHeight: '25px', color: color12 }}>
                   {text}
                 </Text>
               </Container>
             </Box>
-            <Box css={{ bc: color200, p: 200 }}>
+            <Box css={{ bc: color3, p: 200 }}>
               <Container size="3">
-                <Heading css={{ mb: '$2', color: color1000, textTransform: 'capitalize' }}>
+                <Heading css={{ mb: '$2', color: color12, textTransform: 'capitalize' }}>
                   {color}
                 </Heading>
-                <Text size="3" css={{ lineHeight: '25px', color: color1000 }}>
+                <Text size="3" css={{ lineHeight: '25px', color: color12 }}>
                   {text}
                 </Text>
               </Container>
             </Box>
-            <Box css={{ bc: color800, p: 200 }}>
+            <Box css={{ bc: color9, p: 200 }}>
               <Container size="3">
                 <Heading
                   css={{ mb: '$2', color: getHiContrast(color), textTransform: 'capitalize' }}
@@ -503,12 +522,12 @@ function TextBlocks() {
                 </Text>
               </Container>
             </Box>
-            <Box css={{ bc: color1000, p: 200 }}>
+            <Box css={{ bc: color12, p: 200 }}>
               <Container size="3">
-                <Heading css={{ mb: '$2', color: color100, textTransform: 'capitalize' }}>
+                <Heading css={{ mb: '$2', color: color2, textTransform: 'capitalize' }}>
                   {color}
                 </Heading>
-                <Text size="3" css={{ lineHeight: '25px', color: color100 }}>
+                <Text size="3" css={{ lineHeight: '25px', color: color2 }}>
                   {text}
                 </Text>
               </Container>
@@ -523,7 +542,7 @@ function TextBlocks() {
 function Palette() {
   const gridStyle = {
     gridAutoRows: '35px',
-    gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
+    gridTemplateColumns: 'repeat(13, minmax(0, 1fr))',
     'html.gap &': { gap: 2 },
   };
 
@@ -532,17 +551,18 @@ function Palette() {
       <Box css={{ mb: '$9', 'html.gap &': { display: 'grid', gap: 2 } }}>
         <Grid css={gridStyle}>
           <Box></Box>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>000</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>100</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>200</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>300</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>400</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>500</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>600</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>700</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>800</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>900</Text>
-          <Text css={{ color: '$gray800', fontSize: '$2', ta: 'center' }}>1000</Text>
+          <Text css={{ color: '$gray9', fontSize: '$2', ta: 'center' }}>1</Text>
+          <Text css={{ color: '$gray9', fontSize: '$2', ta: 'center' }}>2</Text>
+          <Text css={{ color: '$gray9', fontSize: '$2', ta: 'center' }}>3</Text>
+          <Text css={{ color: '$gray9', fontSize: '$2', ta: 'center' }}>4</Text>
+          <Text css={{ color: '$gray9', fontSize: '$2', ta: 'center' }}>5</Text>
+          <Text css={{ color: '$gray9', fontSize: '$2', ta: 'center' }}>6</Text>
+          <Text css={{ color: '$gray9', fontSize: '$2', ta: 'center' }}>7</Text>
+          <Text css={{ color: '$gray9', fontSize: '$2', ta: 'center' }}>8</Text>
+          <Text css={{ color: '$gray9', fontSize: '$2', ta: 'center' }}>9</Text>
+          <Text css={{ color: '$gray9', fontSize: '$2', ta: 'center' }}>10</Text>
+          <Text css={{ color: '$gray9', fontSize: '$2', ta: 'center' }}>11</Text>
+          <Text css={{ color: '$gray9', fontSize: '$2', ta: 'center' }}>12</Text>
         </Grid>
 
         {colors.map((color) => (
@@ -553,89 +573,97 @@ function Palette() {
               </Text>
             </Box>
             <Box
-              css={{ bc: `$${color}000` }}
+              css={{ bc: `$${color}1` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}000)`;
+                const thisColor = `var(--colors-${color}1)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}
             />
             <Box
-              css={{ bc: `$${color}100` }}
+              css={{ bc: `$${color}2` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}100)`;
+                const thisColor = `var(--colors-${color}2)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}
             />
             <Box
-              css={{ bc: `$${color}200` }}
+              css={{ bc: `$${color}3` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}200)`;
+                const thisColor = `var(--colors-${color}3)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}
             />
             <Box
-              css={{ bc: `$${color}300` }}
+              css={{ bc: `$${color}4` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}300)`;
+                const thisColor = `var(--colors-${color}4)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}
             />
             <Box
-              css={{ bc: `$${color}400` }}
+              css={{ bc: `$${color}5` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}400)`;
+                const thisColor = `var(--colors-${color}5)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}
             />
             <Box
-              css={{ bc: `$${color}500` }}
+              css={{ bc: `$${color}6` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}500)`;
+                const thisColor = `var(--colors-${color}6)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}
             />
             <Box
-              css={{ bc: `$${color}600` }}
+              css={{ bc: `$${color}7` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}600)`;
+                const thisColor = `var(--colors-${color}7)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}
             />
             <Box
-              css={{ bc: `$${color}700` }}
+              css={{ bc: `$${color}8` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}700)`;
+                const thisColor = `var(--colors-${color}8)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}
             />
             <Box
-              css={{ bc: `$${color}800` }}
+              css={{ bc: `$${color}9` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}800)`;
+                const thisColor = `var(--colors-${color}9)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}
             />
             <Box
-              css={{ bc: `$${color}900` }}
+              css={{ bc: `$${color}10` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}900)`;
+                const thisColor = `var(--colors-${color}10)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}
             />
             <Box
-              css={{ bc: `$${color}1000` }}
+              css={{ bc: `$${color}11` }}
               onClick={() => {
-                const thisColor = `var(--colors-${color}1000)`;
+                const thisColor = `var(--colors-${color}11)`;
+                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                document.body.style.backgroundColor = newColor;
+              }}
+            />
+            <Box
+              css={{ bc: `$${color}12` }}
+              onClick={() => {
+                const thisColor = `var(--colors-${color}12)`;
                 const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
                 document.body.style.backgroundColor = newColor;
               }}

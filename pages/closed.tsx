@@ -69,7 +69,7 @@ export default function Closed() {
       </DropdownMenu>
       <ContextMenu>
         <ContextMenuTrigger>
-          <Box css={{ width: '$9', height: '$9', bc: '$blue600' }}>Right Click</Box>
+          <Box css={{ width: '$9', height: '$9', bc: '$blue7' }}>Right Click</Box>
         </ContextMenuTrigger>
         <ContextMenuContent>
           <ContextMenuGroup>
