@@ -11,6 +11,7 @@ import { Paragraph } from '../components/Paragraph';
 import { Section } from '../components/Section';
 import { Separator } from '../components/Separator';
 import { Text } from '../components/Text';
+import { TextField } from '../components/TextField';
 import { TreeItem } from '../components/TreeItem';
 import { ColorTools } from '../custom/ColorTools';
 import { darkTheme as darkThemeClassName } from '../stitches.config';
@@ -57,14 +58,15 @@ export const colors = [
 export default function Colors() {
   const [palette, setPalette] = useLocalStorage('colors-palette', true);
   const [layers, setLayers] = useLocalStorage('colors-layers', true);
-  const [layersAlpha, setLayersAlpha] = useLocalStorage('colors-layers-alpha', true);
+  const [layersAlpha, setLayersAlpha] = useLocalStorage('colors-layers-alpha', false);
   const [alerts, setAlerts] = useLocalStorage('colors-alerts', true);
-  const [alertsAlpha, setAlertsAlpha] = useLocalStorage('colors-alerts-alpha', true);
+  const [alertsAlpha, setAlertsAlpha] = useLocalStorage('colors-alerts-alpha', false);
   const [buttons, setButtons] = useLocalStorage('colors-buttons', true);
+  const [buttonsAlpha, setButtonsAlpha] = useLocalStorage('colors-buttons-alpha', false);
   const [lines, setLines] = useLocalStorage('colors-lines', true);
-  const [linesAlpha, setLinesAlpha] = useLocalStorage('colors-lines-alpha', true);
+  const [linesAlpha, setLinesAlpha] = useLocalStorage('colors-lines-alpha', false);
   const [textBlocks, setTextBlocks] = useLocalStorage('colors-textBlocks', true);
-  const [alphaScales, setAlphaScales] = useLocalStorage('colors-alphaScales', true);
+  const [alphaScales, setAlphaScales] = useLocalStorage('colors-alphaScales', false);
 
   const [darkTheme, setDarkTheme] = useLocalStorage('colors-darkTheme', false);
   const [grayscale, setGrayscale] = useLocalStorage('colors-grayscale', false);
@@ -109,6 +111,12 @@ export default function Colors() {
             </Checkbox>
             <Checkbox defaultChecked={buttons} onChange={(e) => setButtons(e.target.checked)}>
               Buttons
+            </Checkbox>
+            <Checkbox
+              defaultChecked={buttonsAlpha}
+              onChange={(e) => setButtonsAlpha(e.target.checked)}
+            >
+              Buttons (Alpha)
             </Checkbox>
             <Checkbox defaultChecked={lines} onChange={(e) => setLines(e.target.checked)}>
               Lines
@@ -157,6 +165,7 @@ export default function Colors() {
           {layers && <Layers />}
           {layersAlpha && <LayersAlpha />}
           {buttons && <Buttons />}
+          {buttonsAlpha && <ButtonsAlpha />}
           {lines && <Lines />}
           {linesAlpha && <LinesAlpha />}
           {alerts && <Alerts />}
@@ -308,6 +317,10 @@ function LayersAlpha() {
 function Buttons() {
   return (
     <Container size="3" css={{ my: '$9' }}>
+      <Text size="6" as="h4" css={{ fontWeight: 500, lineHeight: '27px', mt: '$8', mb: '$5' }}>
+        Buttons & TextFields
+      </Text>
+
       <Grid css={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: '$5' }}>
         {colors.map((color) => (
           <Box key={color} css={{ '&[class] * + *': { ml: '$2', verticalAlign: 'top' } }}>
@@ -337,6 +350,189 @@ function Buttons() {
             </Button>
           </Box>
         ))}
+      </Grid>
+
+      <Grid css={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: '$5', mt: '$7' }}>
+        <TextField
+          size="2"
+          placeholder="Gray"
+          css={{
+            ...darkThemeColor('$gray1'),
+            boxShadow: 'inset 0 0 0 1px $colors$gray7',
+            color: '$gray12',
+            fontVariantNumeric: 'tabular-nums',
+
+            '&:-webkit-autofill': {
+              boxShadow: 'inset 0 0 0 1px $colors$gray6, inset 0 0 0 100px $colors$gray3',
+            },
+
+            '&:-webkit-autofill::first-line': {
+              fontFamily: '$untitled',
+              color: '$hiContrast',
+            },
+
+            '&:focus': {
+              boxShadow: 'inset 0px 0px 0px 1px $colors$gray8, 0px 0px 0px 1px $colors$gray8',
+              '&:-webkit-autofill': {
+                boxShadow:
+                  'inset 0px 0px 0px 1px $colors$gray8, 0px 0px 0px 1px $colors$gray8, inset 0 0 0 100px $colors$gray3',
+              },
+            },
+            '&::placeholder': {
+              color: '$gray9',
+            },
+          }}
+        />
+        <TextField
+          size="2"
+          placeholder="Mauve & Plum"
+          css={{
+            ...darkThemeColor('$mauve1'),
+            boxShadow: 'inset 0 0 0 1px $colors$mauve7',
+            color: '$mauve12',
+            fontVariantNumeric: 'tabular-nums',
+
+            '&:-webkit-autofill': {
+              boxShadow: 'inset 0 0 0 1px $colors$plum6, inset 0 0 0 100px $colors$plum3',
+            },
+
+            '&:-webkit-autofill::first-line': {
+              fontFamily: '$untitled',
+              color: '$hiContrast',
+            },
+
+            '&:focus': {
+              boxShadow: 'inset 0px 0px 0px 1px $colors$plum8, 0px 0px 0px 1px $colors$plum8',
+              '&:-webkit-autofill': {
+                boxShadow:
+                  'inset 0px 0px 0px 1px $colors$plum8, 0px 0px 0px 1px $colors$plum8, inset 0 0 0 100px $colors$plum3',
+              },
+            },
+            '&::placeholder': {
+              color: '$mauve9',
+            },
+          }}
+        />
+        <TextField
+          size="2"
+          placeholder="Slate & Blue"
+          css={{
+            ...darkThemeColor('$slate1'),
+            boxShadow: 'inset 0 0 0 1px $colors$slate7',
+            color: '$slate12',
+            fontVariantNumeric: 'tabular-nums',
+
+            '&:-webkit-autofill': {
+              boxShadow: 'inset 0 0 0 1px $colors$blue6, inset 0 0 0 100px $colors$blue3',
+            },
+
+            '&:-webkit-autofill::first-line': {
+              fontFamily: '$untitled',
+              color: '$hiContrast',
+            },
+
+            '&:focus': {
+              boxShadow: 'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8',
+              '&:-webkit-autofill': {
+                boxShadow:
+                  'inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8, inset 0 0 0 100px $colors$blue3',
+              },
+            },
+            '&::placeholder': {
+              color: '$slate9',
+            },
+          }}
+        />
+        <TextField
+          size="2"
+          placeholder="Sage & Teal"
+          css={{
+            ...darkThemeColor('$sage1'),
+            boxShadow: 'inset 0 0 0 1px $colors$sage7',
+            color: '$sage12',
+            fontVariantNumeric: 'tabular-nums',
+
+            '&:-webkit-autofill': {
+              boxShadow: 'inset 0 0 0 1px $colors$teal6, inset 0 0 0 100px $colors$teal3',
+            },
+
+            '&:-webkit-autofill::first-line': {
+              fontFamily: '$untitled',
+              color: '$hiContrast',
+            },
+
+            '&:focus': {
+              boxShadow: 'inset 0px 0px 0px 1px $colors$teal8, 0px 0px 0px 1px $colors$teal8',
+              '&:-webkit-autofill': {
+                boxShadow:
+                  'inset 0px 0px 0px 1px $colors$teal8, 0px 0px 0px 1px $colors$teal8, inset 0 0 0 100px $colors$teal3',
+              },
+            },
+            '&::placeholder': {
+              color: '$sage9',
+            },
+          }}
+        />
+        <TextField
+          size="2"
+          placeholder="Olive & Lime"
+          css={{
+            ...darkThemeColor('$olive1'),
+            boxShadow: 'inset 0 0 0 1px $colors$olive7',
+            color: '$olive12',
+            fontVariantNumeric: 'tabular-nums',
+
+            '&:-webkit-autofill': {
+              boxShadow: 'inset 0 0 0 1px $colors$lime6, inset 0 0 0 100px $colors$lime3',
+            },
+
+            '&:-webkit-autofill::first-line': {
+              fontFamily: '$untitled',
+              color: '$hiContrast',
+            },
+
+            '&:focus': {
+              boxShadow: 'inset 0px 0px 0px 1px $colors$lime8, 0px 0px 0px 1px $colors$lime8',
+              '&:-webkit-autofill': {
+                boxShadow:
+                  'inset 0px 0px 0px 1px $colors$lime8, 0px 0px 0px 1px $colors$lime8, inset 0 0 0 100px $colors$lime3',
+              },
+            },
+            '&::placeholder': {
+              color: '$olive9',
+            },
+          }}
+        />
+        <TextField
+          size="2"
+          placeholder="Sand & Amber"
+          css={{
+            ...darkThemeColor('$sand1'),
+            boxShadow: 'inset 0 0 0 1px $colors$sand7',
+            color: '$sand12',
+            fontVariantNumeric: 'tabular-nums',
+
+            '&:-webkit-autofill': {
+              boxShadow: 'inset 0 0 0 1px $colors$amber6, inset 0 0 0 100px $colors$amber3',
+            },
+
+            '&:-webkit-autofill::first-line': {
+              fontFamily: '$untitled',
+              color: '$hiContrast',
+            },
+
+            '&:focus': {
+              boxShadow: 'inset 0px 0px 0px 1px $colors$amber8, 0px 0px 0px 1px $colors$amber8',
+              '&:-webkit-autofill': {
+                boxShadow:
+                  'inset 0px 0px 0px 1px $colors$amber8, 0px 0px 0px 1px $colors$amber8, inset 0 0 0 100px $colors$amber3',
+              },
+            },
+            '&::placeholder': {
+              color: '$sand9',
+            },
+          }}
+        />
       </Grid>
 
       <Grid css={{ gridTemplateColumns: 'repeat(8, 1fr)', gap: '$5', mt: '$9' }}>
@@ -372,6 +568,249 @@ function Buttons() {
             </Button>
           </Box>
         ))}
+      </Grid>
+    </Container>
+  );
+}
+
+function ButtonsAlpha() {
+  return (
+    <Container size="3" css={{ my: '$9' }}>
+      <Text size="6" as="h4" css={{ fontWeight: 500, lineHeight: '27px', mt: '$8', mb: '$5' }}>
+        Buttons & TextFields (Alpha)
+      </Text>
+      <Grid css={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: '$5' }}>
+        {colors.map((color) => (
+          <Box key={color} css={{ '&[class] * + *': { ml: '$2', verticalAlign: 'top' } }}>
+            <Button
+              css={{
+                backgroundColor: '$colors$grayA1',
+                boxShadow: 'inset 0 0 0 1px $colors$grayA7',
+                color: '$hiContrast',
+                '@hover': {
+                  '&:hover': {
+                    boxShadow: 'inset 0 0 0 1px $colors$grayA8',
+                  },
+                },
+                '&:active': {
+                  backgroundColor: '$grayA2',
+                  boxShadow: 'inset 0 0 0 1px $colors$grayA8',
+                },
+                '&:focus': {
+                  boxShadow: 'inset 0 0 0 1px $colors$grayA8, 0 0 0 1px $colors$grayA8',
+                },
+              }}
+            >
+              Neutral
+            </Button>
+            <Button
+              css={{
+                fontWeight: 500,
+                textTransform: 'capitalize',
+                backgroundColor: `$${color}A2`,
+                boxShadow: `inset 0 0 0 1px $colors$${color}A7`,
+                color: `$${color}A11`,
+                '@hover': {
+                  '&:hover': {
+                    boxShadow: `inset 0 0 0 1px $colors$${color}A8`,
+                  },
+                },
+                '&:active': {
+                  backgroundColor: `$${color}A3`,
+                  boxShadow: `inset 0 0 0 1px $colors$${color}A8`,
+                },
+                '&:focus': {
+                  boxShadow: `inset 0 0 0 1px $colors$${color}A8, 0 0 0 1px $colors$${color}A8`,
+                },
+              }}
+            >
+              {color}
+            </Button>
+          </Box>
+        ))}
+      </Grid>
+
+      <Grid css={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: '$5', mt: '$7' }}>
+        <TextField
+          size="2"
+          placeholder="Gray"
+          css={{
+            bc: 'transparent',
+            boxShadow: 'inset 0 0 0 1px $colors$grayA7',
+            color: '$grayA12',
+            fontVariantNumeric: 'tabular-nums',
+
+            '&:-webkit-autofill': {
+              boxShadow: 'inset 0 0 0 1px $colors$grayA6, inset 0 0 0 100px $colors$grayA3',
+            },
+
+            '&:-webkit-autofill::first-line': {
+              fontFamily: '$untitled',
+              color: '$hiContrast',
+            },
+
+            '&:focus': {
+              boxShadow: 'inset 0px 0px 0px 1px $colors$grayA8, 0px 0px 0px 1px $colors$grayA8',
+              '&:-webkit-autofill': {
+                boxShadow:
+                  'inset 0px 0px 0px 1px $colors$grayA8, 0px 0px 0px 1px $colors$grayA8, inset 0 0 0 100px $colors$grayA3',
+              },
+            },
+            '&::placeholder': {
+              color: '$grayA9',
+            },
+          }}
+        />
+        <TextField
+          size="2"
+          placeholder="Mauve & Plum"
+          css={{
+            bc: 'transparent',
+            boxShadow: 'inset 0 0 0 1px $colors$mauveA7',
+            color: '$mauveA12',
+            fontVariantNumeric: 'tabular-nums',
+
+            '&:-webkit-autofill': {
+              boxShadow: 'inset 0 0 0 1px $colors$plumA6, inset 0 0 0 100px $colors$plumA3',
+            },
+
+            '&:-webkit-autofill::first-line': {
+              fontFamily: '$untitled',
+              color: '$hiContrast',
+            },
+
+            '&:focus': {
+              boxShadow: 'inset 0px 0px 0px 1px $colors$plumA8, 0px 0px 0px 1px $colors$plumA8',
+              '&:-webkit-autofill': {
+                boxShadow:
+                  'inset 0px 0px 0px 1px $colors$plumA8, 0px 0px 0px 1px $colors$plumA8, inset 0 0 0 100px $colors$plumA3',
+              },
+            },
+            '&::placeholder': {
+              color: '$mauveA9',
+            },
+          }}
+        />
+        <TextField
+          size="2"
+          placeholder="Slate & Blue"
+          css={{
+            bc: 'transparent',
+            boxShadow: 'inset 0 0 0 1px $colors$slateA7',
+            color: '$slateA12',
+            fontVariantNumeric: 'tabular-nums',
+
+            '&:-webkit-autofill': {
+              boxShadow: 'inset 0 0 0 1px $colors$blueA6, inset 0 0 0 100px $colors$blueA3',
+            },
+
+            '&:-webkit-autofill::first-line': {
+              fontFamily: '$untitled',
+              color: '$hiContrast',
+            },
+
+            '&:focus': {
+              boxShadow: 'inset 0px 0px 0px 1px $colors$blueA8, 0px 0px 0px 1px $colors$blueA8',
+              '&:-webkit-autofill': {
+                boxShadow:
+                  'inset 0px 0px 0px 1px $colors$blueA8, 0px 0px 0px 1px $colors$blueA8, inset 0 0 0 100px $colors$blueA3',
+              },
+            },
+            '&::placeholder': {
+              color: '$slateA9',
+            },
+          }}
+        />
+        <TextField
+          size="2"
+          placeholder="Sage & Teal"
+          css={{
+            bc: 'transparent',
+            boxShadow: 'inset 0 0 0 1px $colors$sageA7',
+            color: '$sageA12',
+            fontVariantNumeric: 'tabular-nums',
+
+            '&:-webkit-autofill': {
+              boxShadow: 'inset 0 0 0 1px $colors$tealA6, inset 0 0 0 100px $colors$tealA3',
+            },
+
+            '&:-webkit-autofill::first-line': {
+              fontFamily: '$untitled',
+              color: '$hiContrast',
+            },
+
+            '&:focus': {
+              boxShadow: 'inset 0px 0px 0px 1px $colors$tealA8, 0px 0px 0px 1px $colors$tealA8',
+              '&:-webkit-autofill': {
+                boxShadow:
+                  'inset 0px 0px 0px 1px $colors$tealA8, 0px 0px 0px 1px $colors$tealA8, inset 0 0 0 100px $colors$tealA3',
+              },
+            },
+            '&::placeholder': {
+              color: '$sageA9',
+            },
+          }}
+        />
+        <TextField
+          size="2"
+          placeholder="Olive & Lime"
+          css={{
+            bc: 'transparent',
+            boxShadow: 'inset 0 0 0 1px $colors$oliveA7',
+            color: '$oliveA12',
+            fontVariantNumeric: 'tabular-nums',
+
+            '&:-webkit-autofill': {
+              boxShadow: 'inset 0 0 0 1px $colors$limeA6, inset 0 0 0 100px $colors$limeA3',
+            },
+
+            '&:-webkit-autofill::first-line': {
+              fontFamily: '$untitled',
+              color: '$hiContrast',
+            },
+
+            '&:focus': {
+              boxShadow: 'inset 0px 0px 0px 1px $colors$limeA8, 0px 0px 0px 1px $colors$limeA8',
+              '&:-webkit-autofill': {
+                boxShadow:
+                  'inset 0px 0px 0px 1px $colors$limeA8, 0px 0px 0px 1px $colors$limeA8, inset 0 0 0 100px $colors$limeA3',
+              },
+            },
+            '&::placeholder': {
+              color: '$oliveA9',
+            },
+          }}
+        />
+        <TextField
+          size="2"
+          placeholder="Sand & Amber"
+          css={{
+            bc: 'transparent',
+            boxShadow: 'inset 0 0 0 1px $colors$sandA7',
+            color: '$sandA12',
+            fontVariantNumeric: 'tabular-nums',
+
+            '&:-webkit-autofill': {
+              boxShadow: 'inset 0 0 0 1px $colors$amberA6, inset 0 0 0 100px $colors$amberA3',
+            },
+
+            '&:-webkit-autofill::first-line': {
+              fontFamily: '$untitled',
+              color: '$hiContrast',
+            },
+
+            '&:focus': {
+              boxShadow: 'inset 0px 0px 0px 1px $colors$amberA8, 0px 0px 0px 1px $colors$amberA8',
+              '&:-webkit-autofill': {
+                boxShadow:
+                  'inset 0px 0px 0px 1px $colors$amberA8, 0px 0px 0px 1px $colors$amberA8, inset 0 0 0 100px $colors$amberA3',
+              },
+            },
+            '&::placeholder': {
+              color: '$sandA9',
+            },
+          }}
+        />
       </Grid>
     </Container>
   );
