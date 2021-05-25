@@ -892,10 +892,8 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
           computedStyles.getPropertyValue(`--colors-${name}${index + 1}`);
 
         const backdropColor = isDarkTheme
-          ? index === 0
-            ? '#000000'
-            : newColors.find((color) => color.name === `${name}1`)?.value ??
-              computedStyles.getPropertyValue(`--colors-${name}1`)
+          ? newColors.find((color) => color.name === `${name}1`)?.value ??
+            computedStyles.getPropertyValue(`--colors-${name}1`)
           : '#ffffff';
 
         const alphaValue =
