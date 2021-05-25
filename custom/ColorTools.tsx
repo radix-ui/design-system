@@ -12,8 +12,10 @@ import {
   EyeOpenIcon,
   EyeClosedIcon,
   CodeIcon,
-  BlendingModeIcon,
   ResetIcon,
+  CheckIcon,
+  TextAlignJustifyIcon,
+  TransparencyGridIcon,
 } from '@radix-ui/react-icons';
 import { darkTheme as darkThemeClassName, theme as lightThemeClassName } from '../stitches.config';
 import { colors, getHiContrast, loContrasts } from '../pages/colors';
@@ -806,6 +808,9 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   // Whether to show the CSS color codes
   const [showCode, setShowCode] = React.useState(false);
 
+  const showAlphaValues =
+    (document.querySelector('[data-alpha-values]') as HTMLInputElement | null)?.checked ?? false;
+
   // Refs to current values
   const curveRef = React.useRef<Curve>(isDarkTheme ? darkThemeCurve : lightThemeCurve);
   const generatedColorsRef = React.useRef<Color[]>([]);
@@ -944,7 +949,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   }, [active, isDarkTheme, darkColors, lightColors]);
 
   return (
-    <Box css={{ mb: '-$2', color: '$hiContrast' }}>
+    <Box data-editable-scale css={{ mb: '-$2', color: '$hiContrast' }}>
       <Flex css={{ ai: 'center', mr: '$1' }}>
         <Text
           data-panel-toggle
@@ -954,7 +959,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
             display: 'flex',
             ai: 'center',
             flex: '1 1 auto',
-            fontWeight: '6',
+            fontWeight: 500,
             textTransform: 'capitalize',
             px: '$2',
             pb: '$2',
@@ -1009,13 +1014,13 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         )}
 
         <Box
-          data-show-code-toggle
+          data-code-button
           data-show-code={showCode}
           onClick={(event) => {
             // Toggle all on Alt key
             if (event.altKey) {
               document
-                .querySelectorAll(`[data-show-code-toggle][data-show-code="${showCode}"]`)
+                .querySelectorAll(`[data-code-button][data-show-code="${showCode}"]`)
                 .forEach((element) => (element as HTMLElement).click());
               return;
             }
@@ -1025,8 +1030,24 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               let clipboard = '';
 
               document.querySelectorAll(`[data-color-code]`).forEach((element) => {
-                const codeToCopy = (element as HTMLElement).textContent;
+                const codeToCopy = Array.from((element as HTMLElement).childNodes)
+                  .map((child) => child.textContent)
+                  .join('\n');
+
                 clipboard = clipboard + codeToCopy;
+
+                // Show check icon for a moment after copying
+                const parent = element.closest('[data-editable-scale]');
+
+                parent!
+                  .querySelector('[data-code-button]')!
+                  .setAttribute('data-show-check-icon', 'true');
+
+                setTimeout(() => {
+                  parent!
+                    .querySelector('[data-code-button]')!
+                    .removeAttribute('data-show-check-icon');
+                }, 1000);
               });
 
               // Insert newlines before 1's
@@ -1042,9 +1063,24 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
             setShowCode(!showCode);
           }}
-          css={{ p: '$1', flex: 'none' }}
+          css={{
+            p: '$1',
+            flex: 'none',
+            '& [data-check-icon]': {
+              display: 'none',
+            },
+            '&[data-show-check-icon]': {
+              '& [data-main-icon]': {
+                display: 'none',
+              },
+              '& [data-check-icon]': {
+                display: 'block',
+              },
+            },
+          }}
         >
-          {showCode ? <CodeIcon /> : <BlendingModeIcon />}
+          {showCode ? <CodeIcon data-main-icon /> : <TextAlignJustifyIcon data-main-icon />}
+          <CheckIcon data-check-icon />
         </Box>
 
         <Box
@@ -1078,23 +1114,33 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               pointerEvents: showCode ? 'auto' : 'none',
             }}
           >
-            {steps.map((step) => (
-              <Text
-                key={step}
-                css={{
-                  fontSize: '10px',
-                  fontFamily: '$mono',
-                  width: '100%',
-                  display: 'block',
-                  whiteSpace: 'nowrap',
-                  lineHeight: '25px',
-                }}
-              >
-                {name}
-                {step}: '
-                {formatStringAsHsl(computedStyles.getPropertyValue(`--colors-${name}${step}`))}',
-              </Text>
-            ))}
+            {steps.map((step, index) => {
+              const solidColorValue = computedStyles.getPropertyValue(`--colors-${name}${step}`);
+              const backdropColor = isDarkTheme
+                ? index === 0
+                  ? '#000000'
+                  : computedStyles.getPropertyValue(`--colors-${name}1`)
+                : '#ffffff';
+              const alphaColorValue = getAlphaColor(solidColorValue, backdropColor);
+              const valueToShow = showAlphaValues ? alphaColorValue : solidColorValue;
+
+              return (
+                <Text
+                  key={step}
+                  css={{
+                    fontSize: '10px',
+                    fontFamily: '$mono',
+                    width: '100%',
+                    display: 'block',
+                    whiteSpace: 'nowrap',
+                    lineHeight: '25px',
+                  }}
+                >
+                  {name}
+                  {step}: '{formatHsl(valueToShow)}',
+                </Text>
+              );
+            })}
           </Grid>
 
           {!showCode && (
@@ -1285,16 +1331,58 @@ function distributeHue(value: number, rangeA: number[], rangeB: number[]) {
   return distribute(value, rangeA, [toLow, toHigh]);
 }
 
-function formatStringAsHsl(color: string) {
-  return getCssHsl(chroma(prepareColorStringForChroma(color)));
+function formatHsl(color: string) {
+  if (/^hsl/.test(color)) {
+    // Add trailing zeros to percentage values, excluding 0% and 100%
+    color = color.replace(/(\s|,)(?!0%)(?!100%)(\d+)(%)/g, '$1$2.0$3');
+  }
+
+  return color;
 }
 
-function getCssHsl(color: chroma.Color) {
+function getCssHsl(color: chroma.Color, alpha?: number) {
   const hsl = color.hsl().map((value) => (isNaN(value) ? 0 : value));
-  // Normalise hue if saturation is a ridiculously small number like 9.609723609371595e-7
+  // Set hue to 0° if saturation is a ridiculously small number like 9.609723609371595e-7
   hsl[0] = hsl[1] < 0.001 ? 0 : hsl[0];
-  const [h, s, l] = hsl;
-  return `hsl(${Math.round(h)} ${(s * 100).toFixed(1)}% ${(l * 100).toFixed(1)}%)`;
+  let [h, s, l]: (number | string)[] = hsl;
+
+  h = Math.round(h);
+  s = (s * 100).toFixed(s === 0 || s === 1 ? 0 : 1);
+  l = (l * 100).toFixed(l === 0 || l === 1 ? 0 : 1);
+
+  // if (preferredHue !== undefined) {
+  //   let adjustedHue = h;
+  //   let targetHex = chroma(`hsl(${h}, ${s}%, ${l}%)`).hex();
+  //   let loop = h !== preferredHue;
+
+  //   // Explot HSL being imprecise to get closer to the preferred hue
+  //   while (loop) {
+  //     const hueDistanceA = preferredHue - h;
+  //     const hueDistanceB = 360 - Math.max(preferredHue, h) + Math.min(preferredHue, h);
+  //     const direction = Math.abs(hueDistanceA) > Math.abs(hueDistanceB) ? -1 : 1;
+  //     const step = h > preferredHue ? -1 * direction : direction;
+  //     let candidateHue = adjustedHue + step;
+  //     // candidateHue = candidateHue > 0 ? candidateHue % 360 : candidateHue + 360;
+  //     candidateHue = candidateHue % 360;
+  //     const candidateHex = chroma(`hsl(${candidateHue}, ${s}%, ${l}%)`).hex();
+
+  //     if (targetHex === candidateHex) {
+  //       adjustedHue = candidateHue;
+  //     } else {
+  //       loop = false;
+  //     }
+
+  //     if (preferredHue === adjustedHue) {
+  //       loop = false;
+  //     }
+  //   }
+
+  //   h = adjustedHue;
+  // }
+
+  return alpha === undefined
+    ? `hsl(${h} ${s}% ${l}%)`
+    : `hsl(${h} ${s}% ${l}% / ${alpha.toFixed(3)})`;
 }
 
 type ScaleSpec = {
@@ -1401,3 +1489,72 @@ function generateColors({
 
   return colorMap;
 }
+
+// target = backdrop * (1 - alpha) + result * alpha
+// alpha = (target - backdrop) / (result - backdrop)
+
+function getAlphaColor(targetColor: string, backdropColor: string) {
+  targetColor = prepareColorStringForChroma(targetColor);
+  backdropColor = prepareColorStringForChroma(backdropColor);
+
+  const [targetR, targetG, targetB] = chroma(targetColor).rgb();
+  const [backdropR, backdropG, backdropB] = chroma(backdropColor).rgb();
+  const ceil = (n: number) => Math.ceil(n * 1000) / 1000;
+  const normaliseRGB = (n: number) => Math.min(255, Math.max(0, Math.round(n)));
+
+  let R = 0;
+  let G = 0;
+  let B = 0;
+  let A = 0;
+  let safeR = 0;
+  let safeG = 0;
+  let safeB = 0;
+  let safeA = 0;
+
+  // Is the backdrop color lighter, RGB-wise, than target color?
+  // Decide whether we want to add as little color or as much color as possible,
+  // darkening or lightening the backdrop respectively.
+  const desiredRGB = targetR + targetG + targetB < backdropB + backdropG + backdropB ? 0 : 255;
+
+  // Light theme example:
+  // Consider a 200 120 150 target color with 255 255 255 backdrop
+  // What is the alpha value that will nudge backdrop's 255 green to 120?
+  //
+  // Dark theme example:
+  // Consider a 200 120 150 target color with 12 24 28 backdrop
+  // What is the alpha value that will nudge backdrop's 12 red to 200?
+  const alphaR = ceil((targetR - backdropR) / (desiredRGB - backdropR));
+  const alphaG = ceil((targetG - backdropG) / (desiredRGB - backdropG));
+  const alphaB = ceil((targetB - backdropB) / (desiredRGB - backdropB));
+  A = Math.max(alphaR, alphaG, alphaB);
+
+  // Limit alpha to 0.98
+  safeA = Math.min(0.98, A);
+  R = ((backdropR * (1 - safeA) - targetR) / safeA) * -1;
+  G = ((backdropG * (1 - safeA) - targetG) / safeA) * -1;
+  B = ((backdropB * (1 - safeA) - targetB) / safeA) * -1;
+
+  safeR = normaliseRGB(R);
+  safeG = normaliseRGB(G);
+  safeB = normaliseRGB(B);
+
+  // const preferredHue = /^hsl/.test(targetColor) ? +targetColor.match(/(\d|\.)+/)![0] : undefined;
+  return getCssHsl(chroma.rgb(R, G, B), safeA);
+  // return `rgb(${safeR} ${safeG} ${safeB} / ${safeA})`;
+}
+
+// // Chroma butchers HSL accuracy
+// function accurateChromaHsl(color: string) {
+//   if (/^hsl/.test(color)) {
+//     const match = color.match(/(\d|\.)+/g);
+//     const h = match?.[0] ?? null;
+//     const s = match?.[1] ?? null;
+//     const l = match?.[2] ?? null;
+
+//     if (h !== null && s !== null && l !== null) {
+//       return chroma.hsl(+h, +s / 100, +l / 100);
+//     }
+//   }
+
+//   return chroma(color);
+// }

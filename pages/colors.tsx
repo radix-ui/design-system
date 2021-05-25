@@ -61,6 +61,7 @@ export default function Colors() {
   const [buttons, setButtons] = useLocalStorage('colors-buttons', true);
   const [lines, setLines] = useLocalStorage('colors-lines', true);
   const [textBlocks, setTextBlocks] = useLocalStorage('colors-textBlocks', true);
+  const [alphaValues, setAlphaValues] = useLocalStorage('colors-alphaValues', true);
 
   const [darkTheme, setDarkTheme] = useLocalStorage('colors-darkTheme', false);
   const [grayscale, setGrayscale] = useLocalStorage('colors-grayscale', false);
@@ -121,6 +122,14 @@ export default function Colors() {
             </Checkbox>
             <Checkbox defaultChecked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)}>
               Dark theme
+            </Checkbox>
+            <Separator css={{ my: '$3' }} />
+            <Checkbox
+              data-alpha-values
+              defaultChecked={false}
+              onChange={(e) => setAlphaValues(e.target.checked)}
+            >
+              Alpha scales (code only)
             </Checkbox>
           </Box>
         </Container>
