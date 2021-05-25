@@ -1123,6 +1123,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                 : '#ffffff';
               const alphaColorValue = getAlphaColor(solidColorValue, backdropColor);
               const valueToShow = showAlphaValues ? alphaColorValue : solidColorValue;
+              const nameToShow = showAlphaValues ? `${name}A` : name;
 
               return (
                 <Text
@@ -1136,7 +1137,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                     lineHeight: '25px',
                   }}
                 >
-                  {name}
+                  {nameToShow}
                   {step}: '{formatHsl(valueToShow)}',
                 </Text>
               );
@@ -1333,8 +1334,10 @@ function distributeHue(value: number, rangeA: number[], rangeB: number[]) {
 
 function formatHsl(color: string) {
   if (/^hsl/.test(color)) {
-    // Add trailing zeros to percentage values, excluding 0% and 100%
-    color = color.replace(/(\s|,)(?!0%)(?!100%)(\d+)(%)/g, '$1$2.0$3');
+    // Add trailing zeros to percentage values
+    color = color.replace(/(\s|,)(\d+)(%)/g, '$1$2.0$3');
+    // But clean up the trailing zero on 0.0% and 100.0%
+    color = color.replace(/(\s|,)(10)?(0)(.0%)/g, '$1$2$3%');
   }
 
   return color;
