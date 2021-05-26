@@ -1,4 +1,14 @@
-import { RadiobuttonIcon, SliderIcon, SwitchIcon, TextIcon } from '@radix-ui/react-icons';
+import {
+  RadiobuttonIcon,
+  SliderIcon,
+  SwitchIcon,
+  TextIcon,
+  PlusIcon,
+  CursorArrowIcon,
+  FontFamilyIcon,
+  FontSizeIcon,
+  LineHeightIcon,
+} from '@radix-ui/react-icons';
 import React from 'react';
 import { Box } from '../components/Box';
 import { Button } from '../components/Button';
@@ -7,6 +17,7 @@ import { Container } from '../components/Container';
 import { Flex } from '../components/Flex';
 import { Grid } from '../components/Grid';
 import { Heading } from '../components/Heading';
+import { IconButton } from '../components/IconButton';
 import { Paragraph } from '../components/Paragraph';
 import { Section } from '../components/Section';
 import { Separator } from '../components/Separator';
@@ -363,6 +374,57 @@ function Buttons() {
             >
               {color} A
             </Button>
+          </Box>
+        ))}
+      </Grid>
+
+      <Grid css={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: '$2', mt: '$7' }}>
+        {colors.map((color) => (
+          <Box
+            key={color}
+            css={{
+              ...darkThemeColor(`$${color}1`),
+              p: '$2',
+              borderRadius: '$2',
+              boxShadow: `inset 0 0 0 1px $colors$${color}6`,
+              '&[class] * + *': { ml: '$1', verticalAlign: 'top' },
+              '@hover': {
+                'button:hover': {
+                  backgroundColor: `$${color}A3`,
+                },
+              },
+              'button:focus': {
+                boxShadow: `inset 0 0 0 1px $colors$${color}A8, 0 0 0 1px $colors$${color}A8`,
+              },
+              'button:active': {
+                backgroundColor: `$${color}A4`,
+              },
+            }}
+          >
+            <IconButton>
+              <PlusIcon />
+            </IconButton>
+            <IconButton>
+              <CursorArrowIcon />
+            </IconButton>
+            <IconButton>
+              <TextIcon />
+            </IconButton>
+            <IconButton>
+              <FontFamilyIcon />
+            </IconButton>
+            <IconButton>
+              <FontSizeIcon />
+            </IconButton>
+            <IconButton>
+              <LineHeightIcon />
+            </IconButton>
+            <Text
+              size="2"
+              css={{ display: 'inline', lineHeight: '25px', textTransform: 'capitalize' }}
+            >
+              {color}
+            </Text>
           </Box>
         ))}
       </Grid>
