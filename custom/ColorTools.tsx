@@ -620,10 +620,10 @@ export function ColorTools() {
           name="sky"
           lightThemeConfig={{
             start: 'hsl(191 100% 97.3%)',
-            end: 'hsl(193 80% 70%)',
-            saturationBoost: 1.4,
+            end: 'hsl(193 78% 54%)',
+            saturationBoost: 2,
             mixAmount: 0.1,
-            defaultCurve: [0.55, 0.23, 0.815, 0.55],
+            defaultCurve: [0.55, 0.17, 0.64, 0.44],
             overrides: {
               sky1: 'hsl(193 100% 98.8%)',
               sky9: 'hsl(193 98% 70%)',
@@ -645,10 +645,10 @@ export function ColorTools() {
           name="mint"
           lightThemeConfig={{
             start: 'hsl(166 88% 96.6%)',
-            end: 'hsl(168 55% 65%)',
-            saturationBoost: 1.4,
+            end: 'hsl(168 53% 51%)',
+            saturationBoost: 1.8,
             mixAmount: 0.08,
-            defaultCurve: [0.515, 0.275, 0.72, 0.46],
+            defaultCurve: [0.52, 0.21, 0.585, 0.3],
             overrides: {
               mint1: 'hsl(165 80% 98.8%)',
               mint9: 'hsl(167 65% 66%)',
@@ -673,10 +673,10 @@ export function ColorTools() {
           name="lime"
           lightThemeConfig={{
             start: 'hsl(85 70% 96.5%)',
-            end: 'hsl(76 62% 57%)',
-            saturationBoost: 2,
+            end: 'hsl(76 62% 45%)',
+            saturationBoost: 3,
             mixAmount: 0.12,
-            defaultCurve: [0.525, 0.18, 0.735, 0.555],
+            defaultCurve: [1.0, 0.3, 0.73, 0.765],
             overrides: {
               lime1: 'hsl(85 50% 98.7%)',
               lime9: 'hsl(81 67% 50%)',
@@ -698,10 +698,10 @@ export function ColorTools() {
         <EditableScale
           name="yellow"
           lightThemeConfig={{
-            start: 'hsl(53 95% 95.5%)',
-            end: 'hsl(53 85% 55%)',
-            saturationBoost: 3,
-            defaultCurve: [0.48, 0.125, 0.705, 0.515],
+            start: 'hsl(53 100% 95.5%)',
+            end: 'hsl(48 100% 46%)',
+            saturationBoost: 8,
+            defaultCurve: [0.72, 0.11, 0.675, 0.53],
             overrides: {
               yellow1: 'hsl(60 54% 98.5%)',
               yellow9: 'hsl(53 92% 50%)',
@@ -727,8 +727,9 @@ export function ColorTools() {
           name="amber"
           lightThemeConfig={{
             start: 'hsl(39 100% 96.5%)',
-            end: 'hsl(39 100% 64.0%)',
-            defaultCurve: [0.635, 0.38, 0.775, 0.64],
+            end: 'hsl(35 85% 55.0%)',
+            saturationBoost: 3,
+            defaultCurve: [0.805, 0.265, 0.725, 0.63],
             overrides: {
               amber1: 'hsl(39 70% 99.0%)',
               amber9: 'hsl(39 100% 57%)',
