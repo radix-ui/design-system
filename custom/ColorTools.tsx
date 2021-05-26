@@ -1352,7 +1352,8 @@ function formatHsl(color: string) {
     // Add trailing zeros to percentage values
     color = color.replace(/(\s|,)(\d+)(%)/g, '$1$2.0$3');
     // Add trailing zeros to alpha values
-    color = color.replace(/(\.)(\d)(\))/g, '$1$20$3');
+    color = color.replace(/(\.)(\d\d)(\))/g, '$1$20$3');
+    color = color.replace(/(\.)(\d)(\))/g, '$1$200$3');
     // But clean up the trailing zero on 0.0% and 100.0%
     color = color.replace(/(\s|,)(10)?(0)(.0%)/g, '$1$2$3%');
   }
@@ -1486,7 +1487,7 @@ function getAlphaColor(targetColor: string, backdropColor: string) {
 
   const [targetR, targetG, targetB] = chroma(targetColor).rgb();
   const [backdropR, backdropG, backdropB] = chroma(backdropColor).rgb();
-  const ceil = (n: number) => Math.ceil(n * 100) / 100;
+  const ceil = (n: number) => Math.ceil(n * 1000) / 1000;
 
   // Is the backdrop color lighter, RGB-wise, than target color?
   // Decide whether we want to add as little color or as much color as possible,
@@ -1507,7 +1508,7 @@ function getAlphaColor(targetColor: string, backdropColor: string) {
 
   // If this is gray, we go slightly simpler route using pure white/black only and normal rounding rather than ceil
   if ([alphaR, alphaG].every((n) => n === alphaB)) {
-    return getCssHsl(chroma.rgb(desiredRGB, desiredRGB, desiredRGB), +alphaR.toFixed(2));
+    return getCssHsl(chroma.rgb(desiredRGB, desiredRGB, desiredRGB), +alphaR.toFixed(3));
   }
 
   const A = ceil(Math.max(alphaR, alphaG, alphaB));
