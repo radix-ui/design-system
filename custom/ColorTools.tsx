@@ -926,6 +926,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
     // Deactivate and/or clear potentially stale stuff
     Array.from(Array(12)).forEach((_, index) => {
       document.body.style.removeProperty(`--colors-${name}${index + 1}`);
+      document.body.style.removeProperty(`--colors-${name}A${index + 1}`);
     });
 
     // Set relevant values if active
