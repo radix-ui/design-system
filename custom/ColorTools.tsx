@@ -1500,11 +1500,17 @@ function getAlphaColor(targetColor: string, backdropColor: string) {
   // Dark theme example:
   // Consider a 200 120 150 target color with 12 24 28 backdrop
   // What is the alpha value that will nudge backdrop's 12 red to 200?
-  const alphaR = ceil((targetR - backdropR) / (desiredRGB - backdropR));
-  const alphaG = ceil((targetG - backdropG) / (desiredRGB - backdropG));
-  const alphaB = ceil((targetB - backdropB) / (desiredRGB - backdropB));
+  const alphaR = (targetR - backdropR) / (desiredRGB - backdropR);
+  const alphaG = (targetG - backdropG) / (desiredRGB - backdropG);
+  const alphaB = (targetB - backdropB) / (desiredRGB - backdropB);
   // const A = Math.min(0.02, Math.max(alphaR, alphaG, alphaB));
-  const A = Math.max(alphaR, alphaG, alphaB);
+
+  // If this is gray, we go slightly simpler route using pure white/black only and normal rounding rather than ceil
+  if ([alphaR, alphaG].every((n) => n === alphaB)) {
+    return getCssHsl(chroma.rgb(desiredRGB, desiredRGB, desiredRGB), +alphaR.toFixed(2));
+  }
+
+  const A = ceil(Math.max(alphaR, alphaG, alphaB));
 
   // Clamp alpha between 0.02 and `maxAlpha`
   const safeA = Math.min(0.98, A);
