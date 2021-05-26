@@ -701,7 +701,7 @@ export function ColorTools() {
             start: 'hsl(53 100% 95.5%)',
             end: 'hsl(48 100% 46%)',
             saturationBoost: 8,
-            defaultCurve: [0.72, 0.11, 0.675, 0.53],
+            defaultCurve: [0.695, 0.09, 0.71, 0.49],
             overrides: {
               yellow1: 'hsl(60 54% 98.5%)',
               yellow9: 'hsl(53 92% 50%)',
