@@ -15,7 +15,6 @@ import {
   ResetIcon,
   CheckIcon,
   TextAlignJustifyIcon,
-  TransparencyGridIcon,
 } from '@radix-ui/react-icons';
 import { darkTheme as darkThemeClassName, theme as lightThemeClassName } from '../stitches.config';
 import { colors, getHiContrast, loContrasts } from '../pages/colors';
@@ -970,7 +969,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   }, [active, isDarkTheme, darkColors, lightColors]);
 
   return (
-    <Box data-editable-scale css={{ mb: '-$2', color: '$hiContrast' }}>
+    <Box data-editable-scale={name} css={{ mb: '-$2', color: '$hiContrast' }}>
       <Flex css={{ ai: 'center', mr: '$1' }}>
         <Text
           data-panel-toggle
@@ -1051,16 +1050,18 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               let clipboard = '';
 
               document.querySelectorAll(`[data-color-code]`).forEach((element) => {
-                const codeToCopy = Array.from((element as HTMLElement).childNodes)
-                  .map((child) => child.textContent)
-                  .join('\n');
+                const parent = element.closest('[data-editable-scale]')!;
+                const scaleName =
+                  parent.getAttribute('data-editable-scale')! + (showAlphaValues ? 'A' : '');
+                const colorCodes = Array.from((element as HTMLElement).childNodes)
+                  .map((child) => '  ' + child.textContent + '\n')
+                  .join('');
+                const codeToCopy = `export const ${scaleName} = {\n` + colorCodes + `};\n\n`;
 
                 clipboard = clipboard + codeToCopy;
 
                 // Show check icon for a moment after copying
-                const parent = element.closest('[data-editable-scale]');
-
-                parent!
+                parent
                   .querySelector('[data-code-button]')!
                   .setAttribute('data-show-check-icon', 'true');
 
@@ -1071,8 +1072,8 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                 }, 1000);
               });
 
-              // Insert newlines before 1's
-              clipboard = clipboard.replaceAll(/(,)(?=\D+?1:)/g, ',\n \n');
+              // Remove redundant newline
+              clipboard = clipboard.replace(/\n\n$/m, '\n');
 
               navigator.clipboard.writeText(clipboard);
               return;
