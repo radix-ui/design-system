@@ -92,7 +92,7 @@ const StyledTextField = styled(DEFAULT_TAG, {
         backgroundColor: 'transparent',
         '@hover': {
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px $colors$slate7',
+            boxShadow: 'inset 0 0 0 1px $colors$slateA7',
           },
         },
         '&:focus': {

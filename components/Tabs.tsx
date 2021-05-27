@@ -37,7 +37,7 @@ export const TabsTab = styled(TabsPrimitive.Tab, {
   '&[data-state="active"]': {
     color: '$hiContrast',
     borderColor: '$slate6',
-    borderBottomColor: 'white',
+    borderBottomColor: 'transparent',
   },
 
   '&[data-orientation="vertical"]': {
@@ -48,7 +48,7 @@ export const TabsTab = styled(TabsPrimitive.Tab, {
 
     '&[data-state="active"]': {
       borderBottomColor: '$slate6',
-      borderRightColor: 'white',
+      borderRightColor: 'transparent',
     },
   },
 });

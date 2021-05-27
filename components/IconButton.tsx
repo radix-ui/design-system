@@ -78,22 +78,21 @@ const StyledIconButton = styled(DEFAULT_TAG, {
     },
     variant: {
       ghost: {
-        mixBlendMode: 'multiply',
         backgroundColor: 'transparent',
         borderWidth: '0',
         '@hover': {
           '&:hover': {
-            backgroundColor: '$slate3',
+            backgroundColor: '$slateA3',
           },
         },
         '&:focus': {
-          boxShadow: 'inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8',
+          boxShadow: 'inset 0 0 0 1px $colors$slateA8, 0 0 0 1px $colors$slateA8',
         },
         '&:active': {
-          backgroundColor: '$slate4',
+          backgroundColor: '$slateA4',
         },
         '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]': {
-          backgroundColor: '$slate4',
+          backgroundColor: '$slateA4',
         },
       },
       raised: {
