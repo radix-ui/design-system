@@ -57,6 +57,25 @@ export default function Closed() {
         overflowY: 'auto',
       }}
     >
+      <Heading
+        size="4"
+        css={{
+          '@bp1': {
+            pr: 100,
+          },
+          '@bp2': {
+            ta: 'center',
+            px: 180,
+          },
+          '@bp3': {
+            px: 200,
+          },
+        }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum hic nulla quas fugit
+        perferendis impedit, in eum possimus accusamus itaque exercitationem atque porro veritatis
+        pariatur, ullam odit, dicta deserunt ipsa.
+      </Heading>
       <DropdownMenu>
         <DropdownMenuTrigger as={Button}>Open</DropdownMenuTrigger>
         <DropdownMenuContent>
