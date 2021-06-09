@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyledText } from './Text';
 import { StitchesVariants, CSS } from '../stitches.config';
+import merge from 'lodash.merge';
 
 import * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -29,34 +30,27 @@ export const Heading = React.forwardRef((props, forwardedRef) => {
   };
 
   // This is the mapping of Heading Variants to Text css
-  const textCss = (size: HeadingSizeVariants, css = {}) => {
-    const mapping = {
-      1: {
-        fontWeight: 500,
-        lineHeight: '20px',
-        ...css,
-        '@bp2': { ...css['@bp2'], lineHeight: '23px' },
-      },
-      2: {
-        fontWeight: 500,
-        lineHeight: '25px',
-        ...css,
-        '@bp2': { ...css['@bp2'], lineHeight: '30px' },
-      },
-      3: {
-        fontWeight: 500,
-        lineHeight: '33px',
-        ...css,
-        '@bp2': { ...css['@bp2'], lineHeight: '41px' },
-      },
-      4: {
-        fontWeight: 500,
-        lineHeight: '35px',
-        ...css,
-        '@bp2': { ...css['@bp2'], lineHeight: '55px' },
-      },
-    };
-    return mapping[size];
+  const textCss: Record<HeadingSizeVariants, CSS> = {
+    1: {
+      fontWeight: 500,
+      lineHeight: '20px',
+      '@bp2': { lineHeight: '23px' },
+    },
+    2: {
+      fontWeight: 500,
+      lineHeight: '25px',
+      '@bp2': { lineHeight: '30px' },
+    },
+    3: {
+      fontWeight: 500,
+      lineHeight: '33px',
+      '@bp2': { lineHeight: '41px' },
+    },
+    4: {
+      fontWeight: 500,
+      lineHeight: '35px',
+      '@bp2': { lineHeight: '55px' },
+    },
   };
 
   return (
@@ -67,7 +61,7 @@ export const Heading = React.forwardRef((props, forwardedRef) => {
       size={textSize[size]}
       css={{
         fontVariantNumeric: 'proportional-nums',
-        ...textCss(size, props.css),
+        ...merge(textCss[size], props.css),
       }}
     />
   );
