@@ -45,7 +45,7 @@ export const Heading = React.forwardRef((props, forwardedRef) => {
       size={textSize[size]}
       css={{
         fontVariantNumeric: 'proportional-nums',
-        ...merge(textCss[size], props.css),
+        ...(merge(textCss[size], props.css) as any),
       }}
     />
   );
