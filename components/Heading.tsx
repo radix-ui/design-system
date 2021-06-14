@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyledText } from './Text';
 import { StitchesVariants, CSS } from '../stitches.config';
+import merge from 'lodash.merge';
 
 import * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -27,6 +28,7 @@ export const Heading = React.forwardRef((props, forwardedRef) => {
     3: { '@initial': '7', '@bp2': '8' },
     4: { '@initial': '8', '@bp2': '9' },
   };
+
   // This is the mapping of Heading Variants to Text css
   const textCss: Record<HeadingSizeVariants, CSS> = {
     1: { fontWeight: 500, lineHeight: '20px', '@bp2': { lineHeight: '23px' } },
@@ -34,6 +36,7 @@ export const Heading = React.forwardRef((props, forwardedRef) => {
     3: { fontWeight: 500, lineHeight: '33px', '@bp2': { lineHeight: '41px' } },
     4: { fontWeight: 500, lineHeight: '35px', '@bp2': { lineHeight: '55px' } },
   };
+
   return (
     <StyledText
       as={DEFAULT_TAG}
@@ -42,8 +45,7 @@ export const Heading = React.forwardRef((props, forwardedRef) => {
       size={textSize[size]}
       css={{
         fontVariantNumeric: 'proportional-nums',
-        ...textCss[size],
-        ...(props.css as any),
+        ...(merge(textCss[size], props.css) as any),
       }}
     />
   );
