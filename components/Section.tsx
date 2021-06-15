@@ -36,10 +36,10 @@ const StyledSection = styled(DEFAULT_TAG, {
   },
 });
 
-type ButtonCSSProp = { css?: CSS };
+type SectionCSSProp = { css?: CSS };
 // TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
 type SectionVariants = Omit<StitchesVariants<typeof StyledSection>, 'size'>;
-type SectionOwnProps = ButtonCSSProp & SectionVariants & { size?: any };
+type SectionOwnProps = SectionCSSProp & SectionVariants & { size?: any };
 
 type SectionComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, SectionOwnProps>;
 
