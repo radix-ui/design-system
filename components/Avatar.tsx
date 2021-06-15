@@ -71,6 +71,9 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
       gray: {
         backgroundColor: '$slate5',
       },
+      tomato: {
+        backgroundColor: '$tomato5',
+      },
       red: {
         backgroundColor: '$red5',
       },
@@ -79,6 +82,9 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
       },
       pink: {
         backgroundColor: '$pink5',
+      },
+      plum: {
+        backgroundColor: '$plum5',
       },
       purple: {
         backgroundColor: '$purple5',
@@ -101,23 +107,35 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
       green: {
         backgroundColor: '$green5',
       },
-      lime: {
-        backgroundColor: '$lime5',
-      },
-      yellow: {
-        backgroundColor: '$yellow5',
-      },
-      orange: {
-        backgroundColor: '$orange5',
-      },
-      gold: {
-        backgroundColor: '$gold5',
+      grass: {
+        backgroundColor: '$grass5',
       },
       brown: {
         backgroundColor: '$brown5',
       },
       bronze: {
         backgroundColor: '$bronze5',
+      },
+      gold: {
+        backgroundColor: '$gold5',
+      },
+      sky: {
+        backgroundColor: '$sky5',
+      },
+      mint: {
+        backgroundColor: '$mint5',
+      },
+      lime: {
+        backgroundColor: '$lime5',
+      },
+      yellow: {
+        backgroundColor: '$yellow5',
+      },
+      amber: {
+        backgroundColor: '$amber5',
+      },
+      orange: {
+        backgroundColor: '$orange5',
       },
     },
     shape: {
