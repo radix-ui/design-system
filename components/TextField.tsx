@@ -16,7 +16,6 @@ const StyledTextField = styled(DEFAULT_TAG, {
   padding: '0',
   width: '100%',
   WebkitTapHighlightColor: 'rgba(0,0,0,0)',
-  lineHeight: '1',
   '&::before': {
     boxSizing: 'border-box',
   },
@@ -72,6 +71,7 @@ const StyledTextField = styled(DEFAULT_TAG, {
         height: '$5',
         fontSize: '$1',
         px: '$1',
+        lineHeight: '$sizes$5',
         '&:-webkit-autofill::first-line': {
           fontSize: '$1',
         },
@@ -81,6 +81,7 @@ const StyledTextField = styled(DEFAULT_TAG, {
         height: '$6',
         fontSize: '$3',
         px: '$2',
+        lineHeight: '$sizes$6',
         '&:-webkit-autofill::first-line': {
           fontSize: '$3',
         },
