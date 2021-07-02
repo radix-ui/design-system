@@ -7,13 +7,13 @@ export const Grid = styled('div', {
   variants: {
     align: {
       start: {
-        alignItems: 'flex-start',
+        alignItems: 'start',
       },
       center: {
         alignItems: 'center',
       },
       end: {
-        alignItems: 'flex-end',
+        alignItems: 'end',
       },
       stretch: {
         alignItems: 'stretch',
@@ -22,18 +22,49 @@ export const Grid = styled('div', {
         alignItems: 'baseline',
       },
     },
+    justify: {
+      start: {
+        justifyContent: 'start',
+      },
+      center: {
+        justifyContent: 'center',
+      },
+      end: {
+        justifyContent: 'end',
+      },
+      between: {
+        justifyContent: 'space-between',
+      },
+    },
+    flow: {
+      row: {
+        gridAutoFlow: 'row',
+      },
+      column: {
+        gridAutoFlow: 'column',
+      },
+      dense: {
+        gridAutoFlow: 'dense',
+      },
+      rowDense: {
+        gridAutoFlow: 'row dense',
+      },
+      columnDense: {
+        gridAutoFlow: 'column dense',
+      },
+    },
     columns: {
       1: {
-        gridTemplateColumns: 'repeat(1, 1fr)'
+        gridTemplateColumns: 'repeat(1, 1fr)',
       },
       2: {
-        gridTemplateColumns: 'repeat(2, 1fr)'
+        gridTemplateColumns: 'repeat(2, 1fr)',
       },
       3: {
-        gridTemplateColumns: 'repeat(3, 1fr)'
+        gridTemplateColumns: 'repeat(3, 1fr)',
       },
       4: {
-        gridTemplateColumns: 'repeat(4, 1fr)'
+        gridTemplateColumns: 'repeat(4, 1fr)',
       },
     },
     gap: {
@@ -123,5 +154,5 @@ export const Grid = styled('div', {
         rowGap: '$9',
       },
     },
-  }
+  },
 });
