@@ -86,16 +86,7 @@ export { Status } from './components/Status';
 export { Sup } from './components/Sup';
 export { Sub } from './components/Sub';
 export { Switch } from './components/Switch';
-export {
-  Caption,
-  Tbody,
-  Tfoot,
-  Tr,
-  Th,
-  Td,
-  Thead,
-  Table
-} from './components/Table';
+export { Caption, Tbody, Tfoot, Tr, Th, Td, Thead, Table } from './components/Table';
 export { TabLink } from './components/TabLink';
 export { Tabs, TabsList, TabsPanel, TabsTab } from './components/Tabs';
 export { Text } from './components/Text';
@@ -105,4 +96,14 @@ export { TreeItem } from './components/TreeItem';
 export { VerifiedBadge } from './components/VerifiedBadge';
 
 // Stitches
-export { styled, css, theme, darkTheme, getCssString, global, keyframes } from './stitches.config';
+export {
+  styled,
+  css,
+  theme,
+  createTheme,
+  darkTheme,
+  getCssText,
+  globalCss,
+  keyframes,
+  config,
+} from './stitches.config';

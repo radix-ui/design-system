@@ -1,12 +1,12 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'button';
 
 type IconButtonCSSProp = { css?: CSS };
-type IconButtonVariants = StitchesVariants<typeof StyledIconButton>;
+type IconButtonVariants = VariantProps<typeof StyledIconButton>;
 type IconButtonOwnProps = IconButtonCSSProp & IconButtonVariants;
 
 const StyledIconButton = styled(DEFAULT_TAG, {

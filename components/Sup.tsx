@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -13,7 +13,7 @@ export const StyledSup = styled(DEFAULT_TAG, {
 });
 
 type SupCSSProp = { css?: CSS };
-type SupVariants = StitchesVariants<typeof StyledSup>;
+type SupVariants = VariantProps<typeof StyledSup>;
 type SupOwnProps = SupCSSProp & SupVariants;
 
 type SupComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, SupOwnProps>;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import { Separator } from './Separator';
 
@@ -54,7 +54,7 @@ export const TabsTab = styled(TabsPrimitive.Tab, {
 });
 
 type TabsListCSSProp = { css?: CSS };
-type TabsListVariants = StitchesVariants<typeof StyledTabsList>;
+type TabsListVariants = VariantProps<typeof StyledTabsList>;
 type TabsListOwnProps = Polymorphic.OwnProps<typeof TabsPrimitive.List> &
   TabsListCSSProp &
   TabsListVariants;

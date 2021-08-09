@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '../stitches.config';
+import { styled, CSS } from '../stitches.config';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { Box } from './Box';
 import { panelStyles } from './Panel';
@@ -25,7 +25,7 @@ const StyledContent = styled(PopoverPrimitive.Content, {
 });
 
 type PopoverContentOwnProps = Polymorphic.OwnProps<typeof PopoverPrimitive.Content> & {
-  css?: any;
+  css?: CSS;
   hideArrow?: boolean;
 };
 

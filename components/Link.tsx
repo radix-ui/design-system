@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 import { Text } from '../components/Text';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -7,7 +7,7 @@ import type * as Polymorphic from '@radix-ui/react-polymorphic';
 const DEFAULT_TAG = 'a';
 
 type LinkCSSProp = { css?: CSS };
-type LinkVariants = StitchesVariants<typeof StyledLink>;
+type LinkVariants = VariantProps<typeof StyledLink>;
 type LinkOwnProps = LinkCSSProp & LinkVariants;
 
 const StyledLink = styled(DEFAULT_TAG, {

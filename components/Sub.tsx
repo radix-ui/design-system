@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -13,7 +13,7 @@ export const StyledSub = styled(DEFAULT_TAG, {
 });
 
 type SubCSSProp = { css?: CSS };
-type SubVariants = StitchesVariants<typeof StyledSub>;
+type SubVariants = VariantProps<typeof StyledSub>;
 type SubOwnProps = SubCSSProp & SubVariants;
 
 type SubComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, SubOwnProps>;

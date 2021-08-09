@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { StyledText } from './Text';
 
@@ -12,11 +12,10 @@ const StyledLabel = styled(LabelPrimitive.Root, {
 });
 
 type LabelCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type LabelVariants = Omit<StitchesVariants<typeof StyledText>, 'size'>;
+type LabelVariants = VariantProps<typeof StyledText>;
 type LabelOwnProps = Polymorphic.OwnProps<typeof LabelPrimitive.Root> &
   LabelCSSProp &
-  LabelVariants & { size?: any };
+  LabelVariants;
 
 type LabelComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof LabelPrimitive.Root>,

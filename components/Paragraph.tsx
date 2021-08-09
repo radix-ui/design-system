@@ -1,18 +1,18 @@
 import React from 'react';
 import { StyledText } from './Text';
-import { StitchesVariants, CSS } from '../stitches.config';
+import { VariantProps, CSS } from '../stitches.config';
 import merge from 'lodash.merge';
 
 import * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'p';
 
-type TextSizeVariants = Pick<StitchesVariants<typeof StyledText>, 'size'>;
+type TextSizeVariants = Pick<VariantProps<typeof StyledText>, 'size'>;
 
 type ParagraphCSSProp = { css?: CSS };
 type ParagraphSizeVariants = '1' | '2';
 type ParagraphVariants = { size?: ParagraphSizeVariants } & Omit<
-  StitchesVariants<typeof StyledText>,
+  VariantProps<typeof StyledText>,
   'size'
 >;
 type ParagraphOwnProps = ParagraphCSSProp & ParagraphVariants;
@@ -40,7 +40,7 @@ export const Paragraph = React.forwardRef((props, forwardedRef) => {
       ref={forwardedRef}
       size={textSize[size]}
       css={{
-        ...(merge(textCss[size], props.css) as any),
+        ...merge(textCss[size], props.css),
       }}
     />
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, StitchesVariants, CSS } from '../stitches.config';
+import { styled, VariantProps, CSS } from '../stitches.config';
 import * as SwitchPrimitive from '@radix-ui/react-switch';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -81,7 +81,7 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
 });
 
 type ButtonCSSProp = { css?: CSS };
-type SwitchVariants = StitchesVariants<typeof StyledSwitch>;
+type SwitchVariants = VariantProps<typeof StyledSwitch>;
 type SwitchOwnProps = Polymorphic.OwnProps<typeof SwitchPrimitive.Root> &
   ButtonCSSProp &
   SwitchVariants;

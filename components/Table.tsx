@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -113,9 +113,8 @@ export const StyledTable = styled(DEFAULT_TAG, {
 });
 
 type TableCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type TableVariants = Omit<StitchesVariants<typeof StyledTable>, 'size'>;
-type TableOwnProps = TableCSSProp & TableVariants & { size?: any };
+type TableVariants = VariantProps<typeof StyledTable>;
+type TableOwnProps = TableCSSProp & TableVariants;
 
 type TableComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TableOwnProps>;
 

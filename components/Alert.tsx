@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -54,9 +54,8 @@ const StyledAlert = styled(DEFAULT_TAG, {
 });
 
 type AlertCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type AlertVariants = Omit<StitchesVariants<typeof StyledAlert>, 'size'>;
-type AlertOwnProps = AlertCSSProp & AlertVariants & { size?: any };
+type AlertVariants = VariantProps<typeof StyledAlert>;
+type AlertOwnProps = AlertCSSProp & AlertVariants;
 
 type AlertComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, AlertOwnProps>;
 

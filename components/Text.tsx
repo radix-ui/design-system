@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -239,9 +239,8 @@ export const StyledText = styled(DEFAULT_TAG, {
 });
 
 type TextCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type TextVariants = Omit<StitchesVariants<typeof StyledText>, 'size'>;
-type TextOwnProps = TextCSSProp & TextVariants & { size?: any };
+type TextVariants = VariantProps<typeof StyledText>;
+type TextOwnProps = TextCSSProp & TextVariants;
 
 type TextComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TextOwnProps>;
 

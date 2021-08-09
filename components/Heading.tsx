@@ -1,18 +1,18 @@
 import React from 'react';
 import { StyledText } from './Text';
-import { StitchesVariants, CSS } from '../stitches.config';
+import { VariantProps, CSS } from '../stitches.config';
 import merge from 'lodash.merge';
 
 import * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'h1';
 
-type TextSizeVariants = Pick<StitchesVariants<typeof StyledText>, 'size'>;
+type TextSizeVariants = Pick<VariantProps<typeof StyledText>, 'size'>;
 
 type HeadingCSSProp = { css?: CSS };
 type HeadingSizeVariants = '1' | '2' | '3' | '4';
 type HeadingVariants = { size?: HeadingSizeVariants } & Omit<
-  StitchesVariants<typeof StyledText>,
+  VariantProps<typeof StyledText>,
   'size'
 >;
 type HeadingOwnProps = HeadingCSSProp & HeadingVariants;
@@ -45,7 +45,7 @@ export const Heading = React.forwardRef((props, forwardedRef) => {
       size={textSize[size]}
       css={{
         fontVariantNumeric: 'proportional-nums',
-        ...(merge(textCss[size], props.css) as any),
+        ...merge(textCss[size], props.css),
       }}
     />
   );

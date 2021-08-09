@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -9,7 +9,7 @@ export const RadioCardGroup = styled(RadioGroupPrimitive.Root, {
 });
 
 type RadioCSSProp = { css?: CSS };
-type RadioVariants = StitchesVariants<typeof StyledRadio>;
+type RadioVariants = VariantProps<typeof StyledRadio>;
 type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
   RadioCSSProp &
   RadioVariants;

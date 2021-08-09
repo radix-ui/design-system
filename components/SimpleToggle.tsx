@@ -1,11 +1,11 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 import * as ToggleButtonPrimitive from '@radix-ui/react-toggle-button';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 type SimpleToggleCSSProp = { css?: CSS };
-type SimpleToggleVariants = StitchesVariants<typeof StyledSimpleToggle>;
+type SimpleToggleVariants = VariantProps<typeof StyledSimpleToggle>;
 type SimpleToggleOwnProps = Polymorphic.OwnProps<typeof ToggleButtonPrimitive.Root> &
   SimpleToggleCSSProp &
   SimpleToggleVariants;

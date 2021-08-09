@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, StitchesVariants, CSS } from '../stitches.config';
+import { styled, VariantProps, CSS } from '../stitches.config';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { Box } from './Box';
 import { Status } from './Status';
@@ -245,8 +245,7 @@ type StatusVariants = React.ComponentProps<typeof Status>;
 type StatusColors = Pick<StatusVariants, 'variant'>;
 
 type AvatarCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type AvatarVariants = Omit<StitchesVariants<typeof StyledAvatar>, 'size'>;
+type AvatarVariants = VariantProps<typeof StyledAvatar>;
 type AvatarOwnProps = Polymorphic.OwnProps<typeof AvatarPrimitive.Root> &
   AvatarCSSProp &
   AvatarVariants & {
@@ -254,7 +253,6 @@ type AvatarOwnProps = Polymorphic.OwnProps<typeof AvatarPrimitive.Root> &
     src?: string;
     fallback?: React.ReactNode;
     status?: StatusColors['variant'];
-    size?: any; // TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421
   };
 
 type AvatarComponent = Polymorphic.ForwardRefComponent<
@@ -267,7 +265,7 @@ export const Avatar = React.forwardRef(
     return (
       <Box
         css={{
-          ...(css as any),
+          ...css,
           position: 'relative',
           height: 'fit-content',
           width: 'fit-content',
@@ -289,8 +287,7 @@ export const Avatar = React.forwardRef(
               mb: '-3px',
             }}
           >
-            {/* TODO: Fix when this is merged https://github.com/modulz/stitches/issues/421 */}
-            <Status size={size > 2 ? ('2' as any) : ('1' as any)} variant={status} />
+            <Status size={size && size > 2 ? '2' : '1'} variant={status} />
           </Box>
         )}
       </Box>

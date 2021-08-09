@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '../stitches.config';
+import { styled, CSS } from '../stitches.config';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Cross1Icon } from '@radix-ui/react-icons';
 import { overlayStyles } from './Overlay';
@@ -58,7 +58,7 @@ const StyledCloseButton = styled(IconButton, {
 });
 
 type DialogContentOwnProps = Polymorphic.OwnProps<typeof DialogPrimitive.Content> & {
-  css?: any;
+  css?: CSS;
 };
 
 type DialogContentComponent = Polymorphic.ForwardRefComponent<

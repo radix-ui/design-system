@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -86,11 +86,10 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
 });
 
 type RadioCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type RadioVariants = Omit<StitchesVariants<typeof StyledRadio>, 'size'>;
+type RadioVariants = VariantProps<typeof StyledRadio>;
 type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
   RadioCSSProp &
-  RadioVariants & { size?: any };
+  RadioVariants;
 
 type RadioComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof RadioGroupPrimitive.Item>,

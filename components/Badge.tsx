@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -439,9 +439,8 @@ const StyledBadge = styled(DEFAULT_TAG, {
 });
 
 type BadgeCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type BadgeVariants = Omit<StitchesVariants<typeof StyledBadge>, 'size'>;
-type BadgeOwnProps = BadgeCSSProp & BadgeVariants & { size?: any };
+type BadgeVariants = VariantProps<typeof StyledBadge>;
+type BadgeOwnProps = BadgeCSSProp & BadgeVariants;
 
 type BadgeComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, BadgeOwnProps>;
 

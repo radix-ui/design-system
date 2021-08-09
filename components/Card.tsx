@@ -1,13 +1,9 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const DEFAULT_TAG = 'div';
-
-type CardCSSProp = { css?: CSS };
-type CardVariants = StitchesVariants<typeof StyledCard>;
-type CardOwnProps = CardCSSProp & CardVariants;
 
 const StyledCard = styled(DEFAULT_TAG, {
   appearance: 'none',
@@ -105,6 +101,10 @@ const StyledCard = styled(DEFAULT_TAG, {
     },
   },
 });
+
+type CardCSSProp = { css?: CSS };
+type CardVariants = VariantProps<typeof StyledCard>;
+type CardOwnProps = CardCSSProp & CardVariants;
 
 type CardComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, CardOwnProps>;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '../stitches.config';
+import { styled, CSS } from '../stitches.config';
 import * as SliderPrimitive from '@radix-ui/react-slider';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -90,7 +90,7 @@ export const StyledSlider = styled(SliderPrimitive.Root, {
 });
 
 type SliderOwnProps = Polymorphic.OwnProps<typeof SliderPrimitive.Root> & {
-  css?: any;
+  css?: CSS;
 };
 
 type SliderComponent = Polymorphic.ForwardRefComponent<

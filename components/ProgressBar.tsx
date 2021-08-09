@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, css, keyframes, CSS, StitchesVariants } from '../stitches.config';
+import { styled, keyframes, CSS, VariantProps } from '../stitches.config';
 import * as ProgressPrimitive from '@radix-ui/react-progress';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -77,7 +77,7 @@ const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {
 });
 
 type ProgressBarCSSProp = { css?: CSS };
-type ProgressBarVariants = StitchesVariants<typeof StyledProgressBar>;
+type ProgressBarVariants = VariantProps<typeof StyledProgressBar>;
 type ProgressBarOwnProps = Polymorphic.OwnProps<typeof ProgressPrimitive.Root> &
   ProgressBarCSSProp &
   ProgressBarVariants;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
 
@@ -68,11 +68,10 @@ const StyledIndicator = styled(CheckboxPrimitive.Indicator, {
 });
 
 type CheckboxCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type CheckboxVariants = Omit<StitchesVariants<typeof StyledCheckbox>, 'size'>;
+type CheckboxVariants = VariantProps<typeof StyledCheckbox>;
 type CheckboxOwnProps = Polymorphic.OwnProps<typeof CheckboxPrimitive.Root> &
   CheckboxCSSProp &
-  CheckboxVariants & { size?: any };
+  CheckboxVariants;
 
 type CheckboxComponent = Polymorphic.ForwardRefComponent<
   Polymorphic.IntrinsicElement<typeof CheckboxPrimitive.Root>,

@@ -1,9 +1,8 @@
 import React from 'react';
-import { styled, keyframes, StitchesVariants } from '../stitches.config';
+import { styled, keyframes, VariantProps } from '../stitches.config';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Cross1Icon } from '@radix-ui/react-icons';
 import { overlayStyles } from './Overlay';
-import { panelStyles } from './Panel';
 import { IconButton } from './IconButton';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
@@ -119,10 +118,10 @@ const StyledCloseButton = styled(IconButton, {
   right: '$2',
 });
 
-type SheetContentVariants = StitchesVariants<typeof StyledContent>;
+type SheetContentVariants = VariantProps<typeof StyledContent>;
 
 type SheetContentOwnProps = Polymorphic.OwnProps<typeof DialogPrimitive.Content> & {
-  css?: any;
+  css?: CSS;
 } & SheetContentVariants;
 
 type DialogContentComponent = Polymorphic.ForwardRefComponent<

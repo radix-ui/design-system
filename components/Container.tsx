@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -37,9 +37,8 @@ const StyledContainer = styled(DEFAULT_TAG, {
 });
 
 type ContainerCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type ContainerVariants = Omit<StitchesVariants<typeof StyledContainer>, 'size'>;
-type ContainerOwnProps = ContainerCSSProp & ContainerVariants & { size?: any };
+type ContainerVariants = VariantProps<typeof StyledContainer>;
+type ContainerOwnProps = ContainerCSSProp & ContainerVariants;
 
 type ContainerComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, ContainerOwnProps>;
 

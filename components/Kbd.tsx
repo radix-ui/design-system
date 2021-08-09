@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -92,9 +92,8 @@ const StyledKbd = styled('kbd', {
 });
 
 type KbdCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type KbdVariants = Omit<StitchesVariants<typeof StyledKbd>, 'size'>;
-type KbdOwnProps = KbdCSSProp & KbdVariants & { size?: any };
+type KbdVariants = VariantProps<typeof StyledKbd>;
+type KbdOwnProps = KbdCSSProp & KbdVariants;
 
 type KbdComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, KbdOwnProps>;
 

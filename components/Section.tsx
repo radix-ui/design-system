@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 
 import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
@@ -37,9 +37,8 @@ const StyledSection = styled(DEFAULT_TAG, {
 });
 
 type SectionCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type SectionVariants = Omit<StitchesVariants<typeof StyledSection>, 'size'>;
-type SectionOwnProps = SectionCSSProp & SectionVariants & { size?: any };
+type SectionVariants = VariantProps<typeof StyledSection>;
+type SectionOwnProps = SectionCSSProp & SectionVariants;
 
 type SectionComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, SectionOwnProps>;
 

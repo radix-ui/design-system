@@ -60,7 +60,7 @@ const StyledButton = styled(AccordionPrimitive.Button, {
 });
 
 type AccordionButtonOwnProps = Polymorphic.OwnProps<typeof AccordionPrimitive.Button> & {
-  css?: any;
+  css?: CSS;
 };
 
 type AccordionButtonComponent = Polymorphic.ForwardRefComponent<
