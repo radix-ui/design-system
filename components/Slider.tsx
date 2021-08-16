@@ -2,8 +2,6 @@ import React from 'react';
 import { styled, CSS } from '../stitches.config';
 import * as SliderPrimitive from '@radix-ui/react-slider';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
 const SliderTrack = styled(SliderPrimitive.Track, {
   position: 'relative',
   flexGrow: 1,
@@ -89,29 +87,25 @@ export const StyledSlider = styled(SliderPrimitive.Root, {
   },
 });
 
-type SliderOwnProps = Polymorphic.OwnProps<typeof SliderPrimitive.Root> & {
-  css?: CSS;
-};
+type SliderPrimitiveProps = Omit<React.ComponentProps<typeof SliderPrimitive.Root>, 'as'>;
+type SliderProps = SliderPrimitiveProps & { css?: CSS };
 
-type SliderComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof SliderPrimitive.Root>,
-  SliderOwnProps
->;
+export const Slider = React.forwardRef<React.ElementRef<typeof StyledSlider>, SliderProps>(
+  (props, forwardedRef) => {
+    const hasRange = Array.isArray(props.defaultValue || (props as any).value);
+    const thumbsArray = hasRange
+      ? props.defaultValue || (props as any).value
+      : [props.defaultValue || (props as any).value];
 
-export const Slider = React.forwardRef((props, forwardedRef) => {
-  const hasRange = Array.isArray(props.defaultValue || (props as any).value);
-  const thumbsArray = hasRange
-    ? props.defaultValue || (props as any).value
-    : [props.defaultValue || (props as any).value];
-
-  return (
-    <StyledSlider {...props} ref={forwardedRef}>
-      <SliderTrack>
-        <SliderRange />
-      </SliderTrack>
-      {thumbsArray.map((_: any, i: number) => (
-        <SliderThumb key={i} />
-      ))}
-    </StyledSlider>
-  );
-}) as SliderComponent;
+    return (
+      <StyledSlider {...props} ref={forwardedRef}>
+        <SliderTrack>
+          <SliderRange />
+        </SliderTrack>
+        {thumbsArray.map((_: any, i: number) => (
+          <SliderThumb key={i} />
+        ))}
+      </StyledSlider>
+    );
+  }
+);

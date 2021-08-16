@@ -1,11 +1,6 @@
-import React from 'react';
-import { styled, CSS, VariantProps } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'input';
-
-const StyledTextField = styled(DEFAULT_TAG, {
+export const TextField = styled('input', {
   // Reset
   appearance: 'none',
   borderWidth: '0',
@@ -138,15 +133,3 @@ const StyledTextField = styled(DEFAULT_TAG, {
     size: '1',
   },
 });
-
-type TextFieldCSSProp = { css?: CSS };
-type TextFieldVariants = VariantProps<typeof StyledTextField>;
-type TextFieldOwnProps = TextFieldCSSProp & TextFieldVariants;
-
-type TextFieldComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TextFieldOwnProps>;
-
-export const TextField = React.forwardRef((props, forwardedRef) => {
-  return <StyledTextField {...props} ref={forwardedRef} />;
-}) as TextFieldComponent;
-
-TextField.toString = () => `.${StyledTextField.className}`;

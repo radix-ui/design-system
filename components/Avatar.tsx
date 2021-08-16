@@ -4,8 +4,6 @@ import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { Box } from './Box';
 import { Status } from './Status';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
 const StyledAvatar = styled(AvatarPrimitive.Root, {
   alignItems: 'center',
   justifyContent: 'center',
@@ -22,7 +20,7 @@ const StyledAvatar = styled(AvatarPrimitive.Root, {
   margin: '0',
   outline: 'none',
   padding: '0',
-  fontWeight: '500',
+  fontWeight: '500' as any,
   color: '$hiContrast',
 
   '&::before': {
@@ -244,23 +242,18 @@ export const AvatarGroup = styled('div', {
 type StatusVariants = React.ComponentProps<typeof Status>;
 type StatusColors = Pick<StatusVariants, 'variant'>;
 
-type AvatarCSSProp = { css?: CSS };
 type AvatarVariants = VariantProps<typeof StyledAvatar>;
-type AvatarOwnProps = Polymorphic.OwnProps<typeof AvatarPrimitive.Root> &
-  AvatarCSSProp &
+type AvatarPrimitiveProps = Omit<React.ComponentProps<typeof AvatarPrimitive.Root>, 'as'>;
+type AvatarOwnProps = AvatarPrimitiveProps &
   AvatarVariants & {
+    css?: CSS;
     alt?: string;
     src?: string;
     fallback?: React.ReactNode;
     status?: StatusColors['variant'];
   };
 
-type AvatarComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof AvatarPrimitive.Root>,
-  AvatarOwnProps
->;
-
-export const Avatar = React.forwardRef(
+export const Avatar = React.forwardRef<React.ElementRef<typeof StyledAvatar>, AvatarOwnProps>(
   ({ alt, src, fallback, size, variant, shape, css, status, ...props }, forwardedRef) => {
     return (
       <Box
@@ -293,4 +286,4 @@ export const Avatar = React.forwardRef(
       </Box>
     );
   }
-) as AvatarComponent;
+);

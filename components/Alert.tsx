@@ -1,11 +1,6 @@
-import React from 'react';
-import { styled, CSS, VariantProps } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'div';
-
-const StyledAlert = styled(DEFAULT_TAG, {
+export const Alert = styled('div', {
   // Reset
   boxSizing: 'border-box',
   '&::before': {
@@ -52,15 +47,3 @@ const StyledAlert = styled(DEFAULT_TAG, {
     variant: 'gray',
   },
 });
-
-type AlertCSSProp = { css?: CSS };
-type AlertVariants = VariantProps<typeof StyledAlert>;
-type AlertOwnProps = AlertCSSProp & AlertVariants;
-
-type AlertComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, AlertOwnProps>;
-
-export const Alert = React.forwardRef((props, forwardedRef) => {
-  return <StyledAlert {...props} ref={forwardedRef} />;
-}) as AlertComponent;
-
-Alert.toString = () => `.${StyledAlert.className}`;

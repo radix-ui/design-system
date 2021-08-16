@@ -2,8 +2,6 @@ import React from 'react';
 import { styled, VariantProps, CSS } from '../stitches.config';
 import * as SwitchPrimitive from '@radix-ui/react-switch';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
 const StyledThumb = styled(SwitchPrimitive.Thumb, {
   position: 'absolute',
   left: 0,
@@ -80,18 +78,14 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
   },
 });
 
-type ButtonCSSProp = { css?: CSS };
 type SwitchVariants = VariantProps<typeof StyledSwitch>;
-type SwitchOwnProps = Polymorphic.OwnProps<typeof SwitchPrimitive.Root> &
-  ButtonCSSProp &
-  SwitchVariants;
-type SwitchComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof SwitchPrimitive.Root>,
-  SwitchOwnProps
->;
+type SwitchPrimitiveProps = Omit<React.ComponentProps<typeof SwitchPrimitive.Root>, 'as'>;
+type SwitchProps = SwitchPrimitiveProps & SwitchVariants & { css?: CSS };
 
-export const Switch = React.forwardRef((props, forwardedRef) => (
-  <StyledSwitch {...props} ref={forwardedRef}>
-    <StyledThumb />
-  </StyledSwitch>
-)) as SwitchComponent;
+export const Switch = React.forwardRef<React.ElementRef<typeof StyledSwitch>, SwitchProps>(
+  (props, forwardedRef) => (
+    <StyledSwitch {...props} ref={forwardedRef}>
+      <StyledThumb />
+    </StyledSwitch>
+  )
+);

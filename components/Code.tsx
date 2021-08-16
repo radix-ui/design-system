@@ -1,15 +1,6 @@
-import React from 'react';
-import { styled, CSS, VariantProps } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'code';
-
-type CodeCSSProp = { css?: CSS };
-type CodeVariants = VariantProps<typeof StyledCode>;
-type CodeOwnProps = CodeCSSProp & CodeVariants;
-
-const StyledCode = styled(DEFAULT_TAG, {
+export const Code = styled('code', {
   fontFamily: '$mono',
   fontSize: 'max(12px, 85%)',
   whiteSpace: 'nowrap',
@@ -31,9 +22,3 @@ const StyledCode = styled(DEFAULT_TAG, {
     variant: 'violet',
   },
 });
-
-type CodeComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, CodeOwnProps>;
-
-export const Code = React.forwardRef((props, forwardedRef) => {
-  return <StyledCode {...props} ref={forwardedRef} />;
-}) as CodeComponent;

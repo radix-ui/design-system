@@ -1,15 +1,9 @@
 import React from 'react';
-import { styled, keyframes, VariantProps } from '../stitches.config';
+import { styled, keyframes, VariantProps, CSS } from '../stitches.config';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Cross1Icon } from '@radix-ui/react-icons';
 import { overlayStyles } from './Overlay';
 import { IconButton } from './IconButton';
-
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-type SheetProps = React.ComponentProps<typeof DialogPrimitive.Root> & {
-  children: React.ReactNode;
-};
 
 const fadeIn = keyframes({
   from: { opacity: '0' },
@@ -21,8 +15,7 @@ const fadeOut = keyframes({
   to: { opacity: '0' },
 });
 
-const StyledOverlay = styled(DialogPrimitive.Overlay, {
-  ...overlayStyles,
+const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   position: 'fixed',
   top: 0,
   right: 0,
@@ -37,6 +30,8 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, {
     animation: `${fadeOut} 150ms cubic-bezier(0.22, 1, 0.36, 1)`,
   },
 });
+
+type SheetProps = React.ComponentProps<typeof DialogPrimitive.Root>;
 
 export function Sheet({ children, ...props }: SheetProps) {
   return (
@@ -119,24 +114,20 @@ const StyledCloseButton = styled(IconButton, {
 });
 
 type SheetContentVariants = VariantProps<typeof StyledContent>;
+type DialogContentPrimitiveProps = Omit<React.ComponentProps<typeof DialogPrimitive.Content>, 'as'>;
+type SheetContentProps = DialogContentPrimitiveProps & SheetContentVariants & { css?: CSS };
 
-type SheetContentOwnProps = Polymorphic.OwnProps<typeof DialogPrimitive.Content> & {
-  css?: CSS;
-} & SheetContentVariants;
-
-type DialogContentComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof DialogPrimitive.Content>,
-  SheetContentOwnProps
->;
-
-export const SheetContent = React.forwardRef(({ children, ...props }, forwardedRef) => (
+export const SheetContent = React.forwardRef<
+  React.ElementRef<typeof StyledContent>,
+  SheetContentProps
+>(({ children, ...props }, forwardedRef) => (
   <StyledContent {...props} ref={forwardedRef}>
     {children}
     <DialogPrimitive.Close as={StyledCloseButton} variant="ghost">
       <Cross1Icon />
     </DialogPrimitive.Close>
   </StyledContent>
-)) as DialogContentComponent;
+));
 
 export const SheetTrigger = DialogPrimitive.Trigger;
 export const SheetClose = DialogPrimitive.Close;

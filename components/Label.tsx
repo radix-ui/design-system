@@ -1,27 +1,9 @@
-import React from 'react';
-import { styled, CSS, VariantProps } from '../stitches.config';
+import { styled } from '../stitches.config';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { StyledText } from './Text';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const StyledLabel = styled(LabelPrimitive.Root, {
+export const Label = styled(LabelPrimitive.Root, StyledText, {
   display: 'inline-block',
   verticalAlign: 'middle',
   cursor: 'default',
 });
-
-type LabelCSSProp = { css?: CSS };
-type LabelVariants = VariantProps<typeof StyledText>;
-type LabelOwnProps = Polymorphic.OwnProps<typeof LabelPrimitive.Root> &
-  LabelCSSProp &
-  LabelVariants;
-
-type LabelComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof LabelPrimitive.Root>,
-  LabelOwnProps
->;
-
-export const Label = React.forwardRef((props, forwardedRef) => {
-  return <StyledText as={StyledLabel} {...props} ref={forwardedRef} />;
-}) as LabelComponent;

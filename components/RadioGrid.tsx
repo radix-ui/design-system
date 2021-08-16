@@ -1,8 +1,5 @@
-import React from 'react';
-import { styled, CSS, VariantProps } from '../stitches.config';
+import { styled } from '../stitches.config';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
-
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 export const RadioGridGroup = styled(RadioGroupPrimitive.Root, {
   display: 'grid',
@@ -10,13 +7,7 @@ export const RadioGridGroup = styled(RadioGroupPrimitive.Root, {
   gridTemplateColumns: 'repeat(5, 1fr)',
 });
 
-type RadioCSSProp = { css?: CSS };
-type RadioVariants = VariantProps<typeof StyledRadio>;
-type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
-  RadioCSSProp &
-  RadioVariants;
-
-const StyledRadio = styled(RadioGroupPrimitive.Item, {
+export const RadioGrid = styled(RadioGroupPrimitive.Item, {
   all: 'unset',
   boxSizing: 'border-box',
   userSelect: 'none',
@@ -43,14 +34,3 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
     backgroundColor: '$slate4',
   },
 });
-
-type RadioComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof RadioGroupPrimitive.Item>,
-  RadioOwnProps
->;
-
-export const RadioGrid = React.forwardRef((props, forwardedRef) => (
-  <StyledRadio {...props} ref={forwardedRef}>
-    {props.children}
-  </StyledRadio>
-)) as RadioComponent;

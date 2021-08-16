@@ -1,11 +1,6 @@
-import React from 'react';
-import { styled, CSS, VariantProps } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'div';
-
-const StyledBanner = styled(DEFAULT_TAG, {
+export const Banner = styled('div', {
   // Reset
   boxSizing: 'border-box',
   '&::before': {
@@ -83,15 +78,3 @@ const StyledBanner = styled(DEFAULT_TAG, {
     variant: 'gray',
   },
 });
-
-type BannerCSSProp = { css?: CSS };
-type BannerVariants = VariantProps<typeof StyledBanner>;
-type BannerOwnProps = BannerCSSProp & BannerVariants;
-
-type BannerComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, BannerOwnProps>;
-
-export const Banner = React.forwardRef((props, forwardedRef) => {
-  return <StyledBanner {...props} ref={forwardedRef} />;
-}) as BannerComponent;
-
-Banner.toString = () => `.${StyledBanner.className}`;

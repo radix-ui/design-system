@@ -1,11 +1,6 @@
-import React from 'react';
-import { styled, CSS, VariantProps } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'span';
-
-const StyledKbd = styled('kbd', {
+export const Kbd = styled('kbd', {
   boxSizing: 'border-box',
   display: 'inline-flex',
   alignItems: 'center',
@@ -90,13 +85,3 @@ const StyledKbd = styled('kbd', {
     size: '2',
   },
 });
-
-type KbdCSSProp = { css?: CSS };
-type KbdVariants = VariantProps<typeof StyledKbd>;
-type KbdOwnProps = KbdCSSProp & KbdVariants;
-
-type KbdComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, KbdOwnProps>;
-
-export const Kbd = React.forwardRef((props, forwardedRef) => {
-  return <StyledKbd {...props} ref={forwardedRef} />;
-}) as KbdComponent;

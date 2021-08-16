@@ -1,11 +1,6 @@
-import React from 'react';
-import { styled, CSS, VariantProps } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'a';
-
-const StyledTabLink = styled(DEFAULT_TAG, {
+export const TabLink = styled('a', {
   position: 'relative',
   flexShrink: 0,
   height: '$6',
@@ -46,13 +41,3 @@ const StyledTabLink = styled(DEFAULT_TAG, {
     },
   },
 });
-
-type TabLinkCSSProp = { css?: CSS };
-type TabLinkVariants = VariantProps<typeof StyledTabLink>;
-type TabLinkOwnProps = TabLinkCSSProp & TabLinkVariants;
-
-type TabLinkComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TabLinkOwnProps>;
-
-export const TabLink = React.forwardRef((props, forwardedRef) => {
-  return <StyledTabLink {...props} ref={forwardedRef} />;
-}) as TabLinkComponent;

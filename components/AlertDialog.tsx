@@ -1,17 +1,14 @@
 import React from 'react';
-import { styled, CSS } from '../stitches.config';
+import { styled } from '../stitches.config';
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import { overlayStyles } from './Overlay';
 import { panelStyles } from './Panel';
-
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 type AlertDialogProps = React.ComponentProps<typeof AlertDialogPrimitive.Root> & {
   children: React.ReactNode;
 };
 
-const StyledOverlay = styled(AlertDialogPrimitive.Overlay, {
-  ...overlayStyles,
+const StyledOverlay = styled(AlertDialogPrimitive.Overlay, overlayStyles, {
   position: 'fixed',
   top: 0,
   right: 0,
@@ -28,8 +25,7 @@ export function AlertDialog({ children, ...props }: AlertDialogProps) {
   );
 }
 
-const StyledContent = styled(AlertDialogPrimitive.Content, {
-  ...panelStyles,
+export const AlertDialogContent = styled(AlertDialogPrimitive.Content, panelStyles, {
   position: 'fixed',
   top: '50%',
   left: '50%',
@@ -43,20 +39,6 @@ const StyledContent = styled(AlertDialogPrimitive.Content, {
     outline: 'none',
   },
 });
-
-type AlertDialogContentOwnProps = Polymorphic.OwnProps<typeof AlertDialogPrimitive.Content> & {
-  css?: CSS;
-};
-type AlertDialogContentComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof AlertDialogPrimitive.Content>,
-  AlertDialogContentOwnProps
->;
-
-export const AlertDialogContent = React.forwardRef(({ children, ...props }, forwardedRef) => (
-  <StyledContent {...props} ref={forwardedRef}>
-    {children}
-  </StyledContent>
-)) as AlertDialogContentComponent;
 
 export const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
 export const AlertDialogTitle = AlertDialogPrimitive.Title;

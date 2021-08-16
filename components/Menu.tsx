@@ -1,14 +1,12 @@
 import React from 'react';
+import * as MenuPrimitive from '@radix-ui/react-menu';
 import { CheckIcon } from '@radix-ui/react-icons';
-import { styled, CSS } from '../stitches.config';
+import { styled, css, CSS } from '../stitches.config';
 import { Box } from './Box';
 import { Flex } from './Flex';
 import { panelStyles } from './Panel';
-import * as MenuPrimitive from '@radix-ui/react-menu';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-export const baseItemCss: any = {
+export const baseItemCss = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -21,10 +19,9 @@ export const baseItemCss: any = {
   whiteSpace: 'nowrap',
   height: '$5',
   px: '$5',
-};
+});
 
-export const itemCss: any = {
-  ...baseItemCss,
+export const itemCss = css(baseItemCss, {
   position: 'relative',
   color: '$hiContrast',
 
@@ -37,37 +34,25 @@ export const itemCss: any = {
   '&[data-disabled]': {
     color: '$slate9',
   },
-};
+});
 
-export const labelCss: any = {
-  ...baseItemCss,
+export const labelCss = css(baseItemCss, {
   color: '$slate11',
-};
+});
 
-export const menuCss: any = {
+export const menuCss = css({
   boxSizing: 'border-box',
   minWidth: 120,
   py: '$1',
-};
+});
 
-export const separatorCss: any = {
+export const separatorCss = css({
   height: 1,
   my: '$1',
   backgroundColor: '$slate6',
-};
+});
 
-const StyledMenu = styled(MenuPrimitive.Root, { ...menuCss, ...panelStyles });
-
-type MenuCSSProp = { css?: CSS };
-type MenuOwnProps = Polymorphic.OwnProps<typeof MenuPrimitive.Root> & MenuCSSProp;
-type MenuComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof MenuPrimitive.Root>,
-  MenuOwnProps
->;
-
-export const Menu = React.forwardRef((props, forwardedRef) => (
-  <StyledMenu {...props} ref={forwardedRef} />
-)) as MenuComponent;
+export const Menu = styled(MenuPrimitive.Root, menuCss, panelStyles);
 
 export const MenuSeparator = styled(MenuPrimitive.Separator, separatorCss);
 
@@ -75,15 +60,13 @@ export const MenuItem = styled(MenuPrimitive.Item, itemCss);
 
 const StyledMenuRadioItem = styled(MenuPrimitive.RadioItem, itemCss);
 
-type MenuRadioItemCSSProp = { css?: CSS };
-type MenuRadioItemOwnProps = Polymorphic.OwnProps<typeof MenuPrimitive.RadioItem> &
-  MenuRadioItemCSSProp;
-type MenuRadioItemComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof MenuPrimitive.RadioItem>,
-  MenuRadioItemOwnProps
->;
+type MenuRadioItemPrimitiveProps = Omit<React.ComponentProps<typeof MenuPrimitive.RadioItem>, 'as'>;
+type MenuRadioItemProps = MenuRadioItemPrimitiveProps & { css?: CSS };
 
-export const MenuRadioItem = React.forwardRef(({ children, ...props }, forwardedRef) => (
+export const MenuRadioItem = React.forwardRef<
+  React.ElementRef<typeof StyledMenuRadioItem>,
+  MenuRadioItemProps
+>(({ children, ...props }, forwardedRef) => (
   <StyledMenuRadioItem {...props} ref={forwardedRef}>
     <Box as="span" css={{ position: 'absolute', left: '$1' }}>
       <MenuPrimitive.ItemIndicator>
@@ -101,19 +84,20 @@ export const MenuRadioItem = React.forwardRef(({ children, ...props }, forwarded
     </Box>
     {children}
   </StyledMenuRadioItem>
-)) as MenuRadioItemComponent;
+));
 
 const StyledMenuCheckboxItem = styled(MenuPrimitive.CheckboxItem, itemCss);
 
-type MenuCheckboxItemCSSProp = { css?: CSS };
-type MenuCheckboxItemOwnProps = Polymorphic.OwnProps<typeof MenuPrimitive.CheckboxItem> &
-  MenuCheckboxItemCSSProp;
-type MenuCheckboxItemComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof MenuPrimitive.CheckboxItem>,
-  MenuCheckboxItemOwnProps
+type MenuCheckboxItemPrimitiveProps = Omit<
+  React.ComponentProps<typeof MenuPrimitive.CheckboxItem>,
+  'as'
 >;
+type MenuCheckboxItemProps = MenuCheckboxItemPrimitiveProps & { css?: CSS };
 
-export const MenuCheckboxItem = React.forwardRef(({ children, ...props }, forwardedRef) => (
+export const MenuCheckboxItem = React.forwardRef<
+  React.ElementRef<typeof StyledMenuCheckboxItem>,
+  MenuCheckboxItemProps
+>(({ children, ...props }, forwardedRef) => (
   <StyledMenuCheckboxItem {...props} ref={forwardedRef}>
     <Box as="span" css={{ position: 'absolute', left: '$1' }}>
       <MenuPrimitive.ItemIndicator>
@@ -122,7 +106,7 @@ export const MenuCheckboxItem = React.forwardRef(({ children, ...props }, forwar
     </Box>
     {children}
   </StyledMenuCheckboxItem>
-)) as MenuCheckboxItemComponent;
+));
 
 export const MenuLabel = styled(MenuPrimitive.Label, labelCss);
 export const MenuRadioGroup = styled(MenuPrimitive.RadioGroup, {});

@@ -1,7 +1,6 @@
 import React from 'react';
 import { styled, CSS } from '../stitches.config';
 import { CaretSortIcon } from '@radix-ui/react-icons';
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const SelectWrapper = styled('div', {
   backgroundColor: '$loContrast',
@@ -47,17 +46,15 @@ const StyledCaretSortIcon = styled(CaretSortIcon, {
   marginLeft: -16,
 });
 
-type SelectCSSProp = { css?: CSS };
-type SelectOwnProps = SelectCSSProp;
-type SelectComponent = Polymorphic.ForwardRefComponent<'select', SelectOwnProps>;
+type SelectProps = React.ComponentProps<typeof StyledSelect> & { css?: CSS };
 
-export const Select = React.forwardRef(function Select({ css, ...props }, forwardedRef) {
-  return (
+export const Select = React.forwardRef<React.ElementRef<typeof StyledSelect>, SelectProps>(
+  ({ css, ...props }, forwardedRef) => (
     <SelectWrapper css={css}>
       <StyledSelect ref={forwardedRef} {...props} />
       <StyledCaretSortIcon />
     </SelectWrapper>
-  );
-}) as SelectComponent;
+  )
+);
 
 Select.toString = () => `.${SelectWrapper.className}`;

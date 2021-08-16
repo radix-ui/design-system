@@ -1,11 +1,6 @@
-import React from 'react';
-import { styled, CSS, VariantProps } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'button';
-
-const StyledButton = styled(DEFAULT_TAG, {
+export const Button = styled('button', {
   // Reset
   all: 'unset',
   alignItems: 'center',
@@ -324,15 +319,3 @@ const StyledButton = styled(DEFAULT_TAG, {
     variant: 'gray',
   },
 });
-
-type ButtonCSSProp = { css?: CSS };
-type ButtonVariants = VariantProps<typeof StyledButton>;
-type ButtonOwnProps = ButtonCSSProp & ButtonVariants;
-
-type ButtonComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, ButtonOwnProps>;
-
-export const Button = React.forwardRef((props, forwardedRef) => {
-  return <StyledButton {...props} ref={forwardedRef} />;
-}) as ButtonComponent;
-
-Button.toString = () => `.${StyledButton.className}`;

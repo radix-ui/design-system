@@ -3,8 +3,6 @@ import { styled, CSS } from '../stitches.config';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 
-import * as Polymorphic from '@radix-ui/react-polymorphic';
-
 const StyledAccordion = styled(AccordionPrimitive.Root, {});
 
 const StyledItem = styled(AccordionPrimitive.Item, {
@@ -59,23 +57,20 @@ const StyledButton = styled(AccordionPrimitive.Button, {
   },
 });
 
-type AccordionButtonOwnProps = Polymorphic.OwnProps<typeof AccordionPrimitive.Button> & {
-  css?: CSS;
-};
+type AccordionPrimitiveProps = Omit<React.ComponentProps<typeof AccordionPrimitive.Button>, 'as'>;
+type AccordionButtonProps = AccordionPrimitiveProps & { css?: CSS };
 
-type AccordionButtonComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof AccordionPrimitive.Button>,
-  AccordionButtonOwnProps
->;
-
-export const AccordionButton = React.forwardRef(({ children, ...props }, forwardedRef) => (
+export const AccordionButton = React.forwardRef<
+  React.ElementRef<typeof StyledButton>,
+  AccordionButtonProps
+>(({ children, ...props }, forwardedRef) => (
   <StyledHeader>
     <StyledButton {...props} ref={forwardedRef}>
       {children}
       <ChevronDownIcon />
     </StyledButton>
   </StyledHeader>
-)) as AccordionButtonComponent;
+));
 
 const StyledPanel = styled(AccordionPrimitive.Panel, {
   p: '$2',
