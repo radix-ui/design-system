@@ -690,10 +690,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.0.0.tgz#2ff674e9611b45b528896d820d3d7a812de2f0e4"
   integrity sha512-FyD2meJpDPjyNQejSjvnhpgI/azsQkA4lGbuu5BQZfjvJ9cbRZXzeWL2HceCekW4lixO9JPesIIQkSoLjeJHNQ==
 
-"@stitches/react@1.0.0-canary.15":
-  version "1.0.0-canary.15"
-  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.0.0-canary.15.tgz#c09e6168ecf75678d8812c56a6ead636f54f226a"
-  integrity sha512-cNFBWq7Y+qCORs06v1vULcGJgs+7zNWyH95mUVndzePe6tskPwZMpAQbUH/xyRAdxfP80gGhPVhkfZTM0f15eg==
+"@stitches/react@1.0.0-canary.16":
+  version "1.0.0-canary.16"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.0.0-canary.16.tgz#0efeec904ab98884e662e589f94bdbd6548e1c5e"
+  integrity sha512-lMbfsIIeRdGde1uk/DfmauhiRUdML6ksxAkn6D6ZmnZVH06gd7PJDAzXwTayHjedl+cpfqiMed8eOudKv1QPkw==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
