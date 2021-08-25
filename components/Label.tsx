@@ -1,8 +1,8 @@
 import { styled } from '../stitches.config';
 import * as LabelPrimitive from '@radix-ui/react-label';
-import { StyledText } from './Text';
+import { Text } from './Text';
 
-export const Label = styled(LabelPrimitive.Root, StyledText, {
+export const Label = styled(LabelPrimitive.Root, Text, {
   display: 'inline-block',
   verticalAlign: 'middle',
   cursor: 'default',
