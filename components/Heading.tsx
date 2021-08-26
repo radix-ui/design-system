@@ -8,7 +8,8 @@ const DEFAULT_TAG = 'h1';
 type TextSizeVariants = Pick<VariantProps<typeof Text>, 'size'>;
 type HeadingSizeVariants = '1' | '2' | '3' | '4';
 type HeadingVariants = { size?: HeadingSizeVariants } & Omit<VariantProps<typeof Text>, 'size'>;
-type HeadingProps = React.ComponentProps<typeof DEFAULT_TAG> & HeadingVariants & { css?: CSS };
+type HeadingProps = React.ComponentProps<typeof DEFAULT_TAG> &
+  HeadingVariants & { css?: CSS; as?: any };
 
 export const Heading = React.forwardRef<React.ElementRef<typeof DEFAULT_TAG>, HeadingProps>(
   (props, forwardedRef) => {
