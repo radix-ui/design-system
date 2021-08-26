@@ -16,6 +16,10 @@
     "ds:build": "rollup -c",
     "ds:release": "yarn ds:build && np"
   },
+  "peerDependencies": {
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
   "dependencies": {
     "@radix-ui/colors": "0.1.7",
     "@radix-ui/react-accordion": "0.0.7",
