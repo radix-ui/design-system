@@ -1,11 +1,6 @@
-import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'span';
-
-const StyledBadge = styled(DEFAULT_TAG, {
+export const Badge = styled('span', {
   // Reset
   alignItems: 'center',
   appearance: 'none',
@@ -437,14 +432,3 @@ const StyledBadge = styled(DEFAULT_TAG, {
     variant: 'gray',
   },
 });
-
-type BadgeCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type BadgeVariants = Omit<StitchesVariants<typeof StyledBadge>, 'size'>;
-type BadgeOwnProps = BadgeCSSProp & BadgeVariants & { size?: any };
-
-type BadgeComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, BadgeOwnProps>;
-
-export const Badge = React.forwardRef((props, forwardedRef) => {
-  return <StyledBadge {...props} ref={forwardedRef} />;
-}) as BadgeComponent;

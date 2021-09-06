@@ -1,9 +1,7 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS } from '../stitches.config';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import { Separator } from './Separator';
-
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 export const Tabs = styled(TabsPrimitive.Root, {
   display: 'flex',
@@ -28,6 +26,7 @@ export const TabsTab = styled(TabsPrimitive.Tab, {
   borderTopLeftRadius: '$2',
   borderTopRightRadius: '$2',
   zIndex: '10',
+
   '@hover': {
     '&:hover': {
       color: '$hiContrast',
@@ -53,12 +52,6 @@ export const TabsTab = styled(TabsPrimitive.Tab, {
   },
 });
 
-type TabsListCSSProp = { css?: CSS };
-type TabsListVariants = StitchesVariants<typeof StyledTabsList>;
-type TabsListOwnProps = Polymorphic.OwnProps<typeof TabsPrimitive.List> &
-  TabsListCSSProp &
-  TabsListVariants;
-
 const StyledTabsList = styled(TabsPrimitive.List, {
   flexShrink: 0,
   display: 'flex',
@@ -72,17 +65,17 @@ const StyledTabsList = styled(TabsPrimitive.List, {
   },
 });
 
-type TabsListComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof TabsPrimitive.List>,
-  TabsListOwnProps
->;
+type TabsListPrimitiveProps = Omit<React.ComponentProps<typeof TabsPrimitive.List>, 'as'>;
+type TabsListProps = TabsListPrimitiveProps & { css?: CSS };
 
-export const TabsList = React.forwardRef((props, forwardedRef) => (
-  <>
-    <StyledTabsList {...props} ref={forwardedRef} />
-    <Separator />
-  </>
-)) as TabsListComponent;
+export const TabsList = React.forwardRef<React.ElementRef<typeof StyledTabsList>, TabsListProps>(
+  (props, forwardedRef) => (
+    <>
+      <StyledTabsList {...props} ref={forwardedRef} />
+      <Separator />
+    </>
+  )
+);
 
 export const TabsPanel = styled(TabsPrimitive.Panel, {
   flexGrow: 1,

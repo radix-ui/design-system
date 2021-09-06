@@ -1,15 +1,6 @@
-import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'div';
-
-type TreeItemCSSProp = { css?: CSS };
-type TreeItemVariants = StitchesVariants<typeof StyledTreeItem>;
-type TreeItemOwnProps = TreeItemCSSProp & TreeItemVariants;
-
-const StyledTreeItem = styled(DEFAULT_TAG, {
+export const TreeItem = styled('div', {
   // Reset
   alignItems: 'center',
   boxSizing: 'border-box',
@@ -200,9 +191,3 @@ const StyledTreeItem = styled(DEFAULT_TAG, {
     },
   },
 });
-
-type TreeItemComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TreeItemOwnProps>;
-
-export const TreeItem = React.forwardRef((props, forwardedRef) => {
-  return <StyledTreeItem {...props} ref={forwardedRef} />;
-}) as TreeItemComponent;

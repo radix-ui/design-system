@@ -1,11 +1,6 @@
-import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'div';
-
-const StyledBanner = styled(DEFAULT_TAG, {
+export const Banner = styled('div', {
   // Reset
   boxSizing: 'border-box',
   '&::before': {
@@ -83,16 +78,3 @@ const StyledBanner = styled(DEFAULT_TAG, {
     variant: 'gray',
   },
 });
-
-type BannerCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type BannerVariants = Omit<StitchesVariants<typeof StyledBanner>, 'size'>;
-type BannerOwnProps = BannerCSSProp & BannerVariants & { size?: any };
-
-type BannerComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, BannerOwnProps>;
-
-export const Banner = React.forwardRef((props, forwardedRef) => {
-  return <StyledBanner {...props} ref={forwardedRef} />;
-}) as BannerComponent;
-
-Banner.toString = () => `.${StyledBanner.className}`;

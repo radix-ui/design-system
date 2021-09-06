@@ -1,9 +1,7 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
-
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const StyledCheckbox = styled(CheckboxPrimitive.Root, {
   all: 'unset',
@@ -67,22 +65,16 @@ const StyledIndicator = styled(CheckboxPrimitive.Indicator, {
   width: '100%',
 });
 
-type CheckboxCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type CheckboxVariants = Omit<StitchesVariants<typeof StyledCheckbox>, 'size'>;
-type CheckboxOwnProps = Polymorphic.OwnProps<typeof CheckboxPrimitive.Root> &
-  CheckboxCSSProp &
-  CheckboxVariants & { size?: any };
+type CheckboxPrimitiveProps = Omit<React.ComponentProps<typeof CheckboxPrimitive.Root>, 'as'>;
+type CheckboxVariants = VariantProps<typeof StyledCheckbox>;
+type CheckboxProps = CheckboxPrimitiveProps & CheckboxVariants & { css?: CSS };
 
-type CheckboxComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof CheckboxPrimitive.Root>,
-  CheckboxOwnProps
->;
-
-export const Checkbox = React.forwardRef((props, forwardedRef) => (
-  <StyledCheckbox {...props} ref={forwardedRef}>
-    <StyledIndicator>
-      <CheckIcon />
-    </StyledIndicator>
-  </StyledCheckbox>
-)) as CheckboxComponent;
+export const Checkbox = React.forwardRef<React.ElementRef<typeof StyledCheckbox>, CheckboxProps>(
+  (props, forwardedRef) => (
+    <StyledCheckbox {...props} ref={forwardedRef}>
+      <StyledIndicator>
+        <CheckIcon />
+      </StyledIndicator>
+    </StyledCheckbox>
+  )
+);

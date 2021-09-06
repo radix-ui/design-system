@@ -7,43 +7,28 @@ import { Box } from './Box';
 import { Flex } from './Flex';
 import { panelStyles } from './Panel';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
 export const ContextMenu = ContextMenuPrimitive.Root;
 export const ContextMenuTrigger = ContextMenuPrimitive.Trigger;
 
-const StyledContextMenuContent = styled(ContextMenuPrimitive.Content, {
-  ...menuCss,
-  ...panelStyles,
-});
-
-type MenuCSSProp = { css?: CSS };
-type MenuOwnProps = Polymorphic.OwnProps<typeof ContextMenuPrimitive.Content> & MenuCSSProp;
-type MenuComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof ContextMenuPrimitive.Content>,
-  MenuOwnProps
->;
-
-export const ContextMenuContent = React.forwardRef((props, forwardedRef) => (
-  <StyledContextMenuContent {...props} ref={forwardedRef} />
-)) as MenuComponent;
+export const ContextMenuContent = styled(ContextMenuPrimitive.Content, menuCss, panelStyles);
 
 export const ContextMenuSeparator = styled(ContextMenuPrimitive.Separator, separatorCss);
 
 export const ContextMenuItem = styled(ContextMenuPrimitive.Item, itemCss);
 
-const StyledMenuRadioItem = styled(ContextMenuPrimitive.RadioItem, itemCss);
+const StyledContextMenuRadioItem = styled(ContextMenuPrimitive.RadioItem, itemCss);
 
-type MenuRadioItemCSSProp = { css?: CSS };
-type MenuRadioItemOwnProps = Polymorphic.OwnProps<typeof ContextMenuPrimitive.RadioItem> &
-  MenuRadioItemCSSProp;
-type MenuRadioItemComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof ContextMenuPrimitive.RadioItem>,
-  MenuRadioItemOwnProps
+type ContextMenuRadioItemPrimitiveProps = Omit<
+  React.ComponentProps<typeof ContextMenuPrimitive.RadioItem>,
+  'as'
 >;
+type ContextMenuRadioItemProps = ContextMenuRadioItemPrimitiveProps & { css?: CSS };
 
-export const ContextMenuRadioItem = React.forwardRef(({ children, ...props }, forwardedRef) => (
-  <StyledMenuRadioItem {...props} ref={forwardedRef}>
+export const ContextMenuRadioItem = React.forwardRef<
+  React.ElementRef<typeof StyledContextMenuRadioItem>,
+  ContextMenuRadioItemProps
+>(({ children, ...props }, forwardedRef) => (
+  <StyledContextMenuRadioItem {...props} ref={forwardedRef}>
     <Box as="span" css={{ position: 'absolute', left: '$1' }}>
       <ContextMenuPrimitive.ItemIndicator>
         <Flex css={{ width: '$3', height: '$3', alignItems: 'center', justifyContent: 'center' }}>
@@ -59,29 +44,30 @@ export const ContextMenuRadioItem = React.forwardRef(({ children, ...props }, fo
       </ContextMenuPrimitive.ItemIndicator>
     </Box>
     {children}
-  </StyledMenuRadioItem>
-)) as MenuRadioItemComponent;
+  </StyledContextMenuRadioItem>
+));
 
-const StyledMenuCheckboxItem = styled(ContextMenuPrimitive.CheckboxItem, itemCss);
+const StyledContextMenuCheckboxItem = styled(ContextMenuPrimitive.CheckboxItem, itemCss);
 
-type MenuCheckboxItemCSSProp = { css?: CSS };
-type MenuCheckboxItemOwnProps = Polymorphic.OwnProps<typeof ContextMenuPrimitive.CheckboxItem> &
-  MenuCheckboxItemCSSProp;
-type MenuCheckboxItemComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof ContextMenuPrimitive.CheckboxItem>,
-  MenuCheckboxItemOwnProps
+type ContextMenuCheckboxItemPrimitiveProps = Omit<
+  React.ComponentProps<typeof ContextMenuPrimitive.CheckboxItem>,
+  'as'
 >;
+type ContextMenuCheckboxItemProps = ContextMenuCheckboxItemPrimitiveProps & { css?: CSS };
 
-export const ContextMenuCheckboxItem = React.forwardRef(({ children, ...props }, forwardedRef) => (
-  <StyledMenuCheckboxItem {...props} ref={forwardedRef}>
+export const ContextMenuCheckboxItem = React.forwardRef<
+  React.ElementRef<typeof StyledContextMenuCheckboxItem>,
+  ContextMenuCheckboxItemProps
+>(({ children, ...props }, forwardedRef) => (
+  <StyledContextMenuCheckboxItem {...props} ref={forwardedRef}>
     <Box as="span" css={{ position: 'absolute', left: '$1' }}>
       <ContextMenuPrimitive.ItemIndicator>
         <CheckIcon />
       </ContextMenuPrimitive.ItemIndicator>
     </Box>
     {children}
-  </StyledMenuCheckboxItem>
-)) as MenuCheckboxItemComponent;
+  </StyledContextMenuCheckboxItem>
+));
 
 export const ContextMenuLabel = styled(ContextMenuPrimitive.Label, labelCss);
 export const ContextMenuRadioGroup = styled(ContextMenuPrimitive.RadioGroup, {});

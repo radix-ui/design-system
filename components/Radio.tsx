@@ -1,8 +1,6 @@
 import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled, CSS, VariantProps } from '../stitches.config';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
-
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 export const RadioGroup = styled(RadioGroupPrimitive.Root, {
   display: 'flex',
@@ -85,20 +83,17 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
   },
 });
 
-type RadioCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type RadioVariants = Omit<StitchesVariants<typeof StyledRadio>, 'size'>;
-type RadioOwnProps = Polymorphic.OwnProps<typeof RadioGroupPrimitive.Item> &
-  RadioCSSProp &
-  RadioVariants & { size?: any };
-
-type RadioComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof RadioGroupPrimitive.Item>,
-  RadioOwnProps
+type RadioVariants = VariantProps<typeof StyledRadio>;
+type RadioGroupItemPrimitiveProps = Omit<
+  React.ComponentProps<typeof RadioGroupPrimitive.Item>,
+  'as'
 >;
+type RadioProps = RadioGroupItemPrimitiveProps & RadioVariants & { css?: CSS };
 
-export const Radio = React.forwardRef((props, forwardedRef) => (
-  <StyledRadio {...props} ref={forwardedRef}>
-    <StyledIndicator />
-  </StyledRadio>
-)) as RadioComponent;
+export const Radio = React.forwardRef<React.ElementRef<typeof StyledRadio>, RadioProps>(
+  (props, forwardedRef) => (
+    <StyledRadio {...props} ref={forwardedRef}>
+      <StyledIndicator />
+    </StyledRadio>
+  )
+);

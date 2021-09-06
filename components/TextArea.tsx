@@ -1,15 +1,6 @@
-import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'textarea';
-
-type TextAreaCSSProp = { css?: CSS };
-type TextAreaVariants = StitchesVariants<typeof StyledTextArea>;
-type TextAreaOwnProps = TextAreaCSSProp & TextAreaVariants;
-
-const StyledTextArea = styled(DEFAULT_TAG, {
+export const TextArea = styled('textarea', {
   // Reset
   appearance: 'none',
   borderWidth: '0',
@@ -102,9 +93,3 @@ const StyledTextArea = styled(DEFAULT_TAG, {
     size: '1',
   },
 });
-
-type TextAreaComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TextAreaOwnProps>;
-
-export const TextArea = React.forwardRef((props, forwardedRef) => {
-  return <StyledTextArea {...props} ref={forwardedRef} />;
-}) as TextAreaComponent;

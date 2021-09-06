@@ -1,8 +1,6 @@
 import React from 'react';
-import { styled, css, keyframes, CSS, StitchesVariants } from '../stitches.config';
+import { styled, keyframes, CSS, VariantProps } from '../stitches.config';
 import * as ProgressPrimitive from '@radix-ui/react-progress';
-
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
 
 const indeterminateProgress = keyframes({
   '0%': {
@@ -76,17 +74,14 @@ const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {
   transition: 'transform 150ms cubic-bezier(0.65, 0, 0.35, 1)',
 });
 
-type ProgressBarCSSProp = { css?: CSS };
-type ProgressBarVariants = StitchesVariants<typeof StyledProgressBar>;
-type ProgressBarOwnProps = Polymorphic.OwnProps<typeof ProgressPrimitive.Root> &
-  ProgressBarCSSProp &
-  ProgressBarVariants;
-type ProgressBarComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof ProgressPrimitive.Root>,
-  ProgressBarOwnProps
->;
+type ProgressBarVariants = VariantProps<typeof StyledProgressBar>;
+type ProgressBarPrimitiveProps = Omit<React.ComponentProps<typeof ProgressPrimitive.Root>, 'as'>;
+type ProgressBarProps = ProgressBarPrimitiveProps & ProgressBarVariants & { css?: CSS };
 
-export const ProgressBar = React.forwardRef(({ value, max = 100, ...props }, forwardedRef) => {
+export const ProgressBar = React.forwardRef<
+  React.ElementRef<typeof StyledProgressBar>,
+  ProgressBarProps
+>(({ value, max = 100, ...props }, forwardedRef) => {
   const percentage = value != null ? Math.round((value / max) * 100) : null;
 
   return (
@@ -94,4 +89,4 @@ export const ProgressBar = React.forwardRef(({ value, max = 100, ...props }, for
       <ProgressBarIndicator style={{ transform: `translateX(${percentage}%)` }} />
     </StyledProgressBar>
   );
-}) as ProgressBarComponent;
+});

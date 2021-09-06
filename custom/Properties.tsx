@@ -39,7 +39,7 @@ export function Properties() {
               }}
             >
               <Box>
-                <Text size="1" css={{ fontWeight: '500' }}>
+                <Text size="1" css={{ fontWeight: 500 }}>
                   Layout
                 </Text>
               </Box>
@@ -248,7 +248,7 @@ export function Properties() {
               }}
             >
               <Box>
-                <Text size="1" css={{ fontWeight: '500' }}>
+                <Text size="1" css={{ fontWeight: 500 }}>
                   Text
                 </Text>
               </Box>
@@ -392,7 +392,7 @@ export function Properties() {
               }}
             >
               <Box>
-                <Text size="1" css={{ fontWeight: '500' }}>
+                <Text size="1" css={{ fontWeight: 500 }}>
                   Shadow
                 </Text>
               </Box>
@@ -582,7 +582,7 @@ export function Properties() {
               }}
             >
               <Box>
-                <Text size="1" css={{ fontWeight: '500' }}>
+                <Text size="1" css={{ fontWeight: 500 }}>
                   Filter
                 </Text>
               </Box>
@@ -690,7 +690,7 @@ export function Properties() {
               }}
             >
               <Box>
-                <Text size="1" css={{ fontWeight: '500' }}>
+                <Text size="1" css={{ fontWeight: 500 }}>
                   Transform
                 </Text>
               </Box>
@@ -1142,7 +1142,7 @@ export function Properties() {
               }}
             >
               <Box>
-                <Text size="1" css={{ fontWeight: '500' }}>
+                <Text size="1" css={{ fontWeight: 500 }}>
                   Transition
                 </Text>
               </Box>

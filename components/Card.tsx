@@ -1,15 +1,6 @@
-import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'div';
-
-type CardCSSProp = { css?: CSS };
-type CardVariants = StitchesVariants<typeof StyledCard>;
-type CardOwnProps = CardCSSProp & CardVariants;
-
-const StyledCard = styled(DEFAULT_TAG, {
+export const Card = styled('div', {
   appearance: 'none',
   border: 'none',
   boxSizing: 'border-box',
@@ -105,9 +96,3 @@ const StyledCard = styled(DEFAULT_TAG, {
     },
   },
 });
-
-type CardComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, CardOwnProps>;
-
-export const Card = React.forwardRef((props, forwardedRef) => {
-  return <StyledCard {...props} ref={forwardedRef} />;
-}) as CardComponent;

@@ -844,15 +844,15 @@ function Lines() {
         <Box
           css={{
             fb: '0',
-            fg: '1',
+            fg: 1,
             height: 160,
             backgroundColor: '$gray1',
           }}
         ></Box>
-        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray2' }}></Box>
-        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray3' }}></Box>
-        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray4' }}></Box>
-        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$gray5' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$gray2' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$gray3' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$gray4' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$gray5' }}></Box>
         <Box
           css={{
             position: 'absolute',
@@ -882,15 +882,15 @@ function LinesAlpha() {
         <Box
           css={{
             fb: '0',
-            fg: '1',
+            fg: 1,
             height: 160,
             backgroundColor: '$grayA1',
           }}
         ></Box>
-        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$grayA2' }}></Box>
-        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$grayA3' }}></Box>
-        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$grayA4' }}></Box>
-        <Box css={{ fb: '0', fg: '1', height: 160, backgroundColor: '$grayA5' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$grayA2' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$grayA3' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$grayA4' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$grayA5' }}></Box>
         <Box
           css={{
             position: 'absolute',

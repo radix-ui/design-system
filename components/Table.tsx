@@ -1,9 +1,4 @@
-import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
-
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'table';
+import { styled } from '../stitches.config';
 
 export const Caption = styled('caption', {
   textAlign: 'start',
@@ -93,7 +88,7 @@ export const Thead = styled('thead', {
   },
 });
 
-export const StyledTable = styled(DEFAULT_TAG, {
+export const Table = styled('table', {
   width: '100%',
   tableLayout: 'fixed',
   borderSpacing: 0,
@@ -111,16 +106,3 @@ export const StyledTable = styled(DEFAULT_TAG, {
     },
   },
 });
-
-type TableCSSProp = { css?: CSS };
-// TODO: Remove omit fix when this is merged https://github.com/modulz/stitches/issues/421
-type TableVariants = Omit<StitchesVariants<typeof StyledTable>, 'size'>;
-type TableOwnProps = TableCSSProp & TableVariants & { size?: any };
-
-type TableComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, TableOwnProps>;
-
-export const Table = React.forwardRef((props, forwardedRef) => {
-  return <StyledTable {...props} ref={forwardedRef} />;
-}) as TableComponent;
-
-Table.toString = () => `.${StyledTable.className}`;

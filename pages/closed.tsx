@@ -164,7 +164,7 @@ export default function Closed() {
         {[1, 2, 3, 4, 5, 6].map((size) => (
           <Avatar
             key={`one${size}`}
-            size={size as any}
+            size={size}
             shape="circle"
             alt="Colm Tuite"
             src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
@@ -177,7 +177,7 @@ export default function Closed() {
         {[1, 2, 3, 4, 5, 6].map((size) => (
           <Avatar
             key={`two${size}`}
-            size={size as any}
+            size={size}
             shape="square"
             alt="Colm Tuite"
             src="https://pbs.twimg.com/profile_images/864164353771229187/Catw6Nmh_400x400.jpg"
@@ -189,13 +189,7 @@ export default function Closed() {
 
       <Flex css={{ gap: '$4' }}>
         {[1, 2, 3, 4, 5, 6].map((size) => (
-          <Avatar
-            size={size as any}
-            shape="circle"
-            fallback="C"
-            status="green"
-            key={`three${size}`}
-          />
+          <Avatar size={size} shape="circle" fallback="C" status="green" key={`three${size}`} />
         ))}
       </Flex>
 

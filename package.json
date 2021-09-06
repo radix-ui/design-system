@@ -1,6 +1,6 @@
 {
   "name": "@modulz/design-system",
-  "version": "0.3.3",
+  "version": "0.4.0-7",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
@@ -15,6 +15,10 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "ds:build": "rollup -c",
     "ds:release": "yarn ds:build && np"
+  },
+  "peerDependencies": {
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   },
   "dependencies": {
     "@radix-ui/colors": "0.1.7",
@@ -42,7 +46,7 @@
     "@radix-ui/react-toggle-button": "0.0.6",
     "@radix-ui/react-tooltip": "0.0.9",
     "@radix-ui/react-use-layout-effect": "^0.0.1",
-    "@stitches/react": "0.2.2",
+    "@stitches/react": "1.0.0-canary.19",
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
@@ -64,7 +68,7 @@
     "react-dom": "17.0.1",
     "rollup": "^2.33.1",
     "rollup-plugin-typescript2": "^0.29.0",
-    "typescript": "^4.3.2"
+    "typescript": "^4.3.5"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

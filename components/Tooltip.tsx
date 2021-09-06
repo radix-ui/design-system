@@ -46,7 +46,7 @@ export function Tooltip({
           as="p"
           css={{
             color: '$loContrast',
-            lineHeight: multiline ? '20px' : undefined,
+            lineHeight: multiline ? '20px' : (undefined as any),
           }}
         >
           {content}

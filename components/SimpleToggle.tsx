@@ -1,16 +1,7 @@
-import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled } from '../stitches.config';
 import * as ToggleButtonPrimitive from '@radix-ui/react-toggle-button';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-type SimpleToggleCSSProp = { css?: CSS };
-type SimpleToggleVariants = StitchesVariants<typeof StyledSimpleToggle>;
-type SimpleToggleOwnProps = Polymorphic.OwnProps<typeof ToggleButtonPrimitive.Root> &
-  SimpleToggleCSSProp &
-  SimpleToggleVariants;
-
-const StyledSimpleToggle = styled(ToggleButtonPrimitive.Root, {
+export const SimpleToggle = styled(ToggleButtonPrimitive.Root, {
   // Reset
   alignItems: 'center',
   appearance: 'none',
@@ -73,12 +64,3 @@ const StyledSimpleToggle = styled(ToggleButtonPrimitive.Root, {
     },
   },
 });
-
-type SimpleToggleComponent = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof ToggleButtonPrimitive.Root>,
-  SimpleToggleOwnProps
->;
-
-export const SimpleToggle = React.forwardRef((props, forwardedRef) => (
-  <StyledSimpleToggle {...props} ref={forwardedRef} />
-)) as SimpleToggleComponent;

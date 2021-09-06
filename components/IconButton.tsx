@@ -1,15 +1,6 @@
-import React from 'react';
-import { styled, CSS, StitchesVariants } from '../stitches.config';
+import { styled } from '../stitches.config';
 
-import type * as Polymorphic from '@radix-ui/react-polymorphic';
-
-const DEFAULT_TAG = 'button';
-
-type IconButtonCSSProp = { css?: CSS };
-type IconButtonVariants = StitchesVariants<typeof StyledIconButton>;
-type IconButtonOwnProps = IconButtonCSSProp & IconButtonVariants;
-
-const StyledIconButton = styled(DEFAULT_TAG, {
+export const IconButton = styled('button', {
   // Reset
   alignItems: 'center',
   appearance: 'none',
@@ -146,9 +137,3 @@ const StyledIconButton = styled(DEFAULT_TAG, {
     variant: 'ghost',
   },
 });
-
-type IconButtonComponent = Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, IconButtonOwnProps>;
-
-export const IconButton = React.forwardRef((props, forwardedRef) => {
-  return <StyledIconButton {...props} ref={forwardedRef} />;
-}) as IconButtonComponent;
