@@ -3,7 +3,17 @@ import { styled, CSS } from '../stitches.config';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 
+type AccordionProps = React.ComponentProps<typeof AccordionPrimitive.Root>;
+
 const StyledAccordion = styled(AccordionPrimitive.Root, {});
+
+export function Accordion({ children, ...props }: AccordionProps) {
+  return (
+    <StyledAccordion {...props} {...(props.type === 'single' ? { collapsible: true } : {})}>
+      {children}
+    </StyledAccordion>
+  );
+}
 
 const StyledItem = styled(AccordionPrimitive.Item, {
   borderTop: '1px solid $colors$slate6',
@@ -76,6 +86,5 @@ const StyledContent = styled(AccordionPrimitive.Content, {
   p: '$2',
 });
 
-export const Accordion = StyledAccordion;
 export const AccordionItem = StyledItem;
 export const AccordionContent = StyledContent;
