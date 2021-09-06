@@ -19,8 +19,13 @@ import {
 import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from '../components/Popover';
 import { Tooltip } from '../components/Tooltip';
 import { ProgressBar } from '../components/ProgressBar';
-import { Tabs, TabsList, TabsTab, TabsPanel } from '../components/Tabs';
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/Tabs';
+import {
+  Accordion,
+  AccordionTrigger,
+  AccordionItem,
+  AccordionContent,
+} from '../components/Accordion';
 import { Label } from '../components/Label';
 import { Switch } from '../components/Switch';
 import { SimpleToggle } from '../components/SimpleToggle';
@@ -35,7 +40,6 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuGroup,
 } from '../components/DropdownMenu';
 
 import {
@@ -43,7 +47,6 @@ import {
   ContextMenuTrigger,
   ContextMenuContent,
   ContextMenuItem,
-  ContextMenuGroup,
 } from '../components/ContextMenu';
 
 export default function Closed() {
@@ -77,13 +80,13 @@ export default function Closed() {
         pariatur, ullam odit, dicta deserunt ipsa.
       </Heading>
       <DropdownMenu>
-        <DropdownMenuTrigger as={Button}>Open</DropdownMenuTrigger>
+        <DropdownMenuTrigger asChild>
+          <Button>Open</Button>
+        </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuGroup>
-            <DropdownMenuItem>Item</DropdownMenuItem>
-            <DropdownMenuItem>Item</DropdownMenuItem>
-            <DropdownMenuItem>Item</DropdownMenuItem>
-          </DropdownMenuGroup>
+          <DropdownMenuItem>Item</DropdownMenuItem>
+          <DropdownMenuItem>Item</DropdownMenuItem>
+          <DropdownMenuItem>Item</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
       <ContextMenu>
@@ -91,14 +94,12 @@ export default function Closed() {
           <Box css={{ width: '$9', height: '$9', bc: '$blue7' }}>Right Click</Box>
         </ContextMenuTrigger>
         <ContextMenuContent>
-          <ContextMenuGroup>
-            <ContextMenuItem>Item</ContextMenuItem>
-            <ContextMenuItem>Item</ContextMenuItem>
-            <ContextMenuItem>Item</ContextMenuItem>
-          </ContextMenuGroup>
+          <ContextMenuItem>Item</ContextMenuItem>
+          <ContextMenuItem>Item</ContextMenuItem>
+          <ContextMenuItem>Item</ContextMenuItem>
         </ContextMenuContent>
       </ContextMenu>
-      <Menus />
+
       <Heading>Heading</Heading>
       <Text size="5" css={{ mt: '$7', mb: '$4' }}>
         Avatar
@@ -198,13 +199,17 @@ export default function Closed() {
       </Text>
 
       <Dialog>
-        <DialogTrigger as={Button}>Open Dialog</DialogTrigger>
+        <DialogTrigger asChild>
+          <Button>Open Dialog</Button>
+        </DialogTrigger>
         <DialogContent>
           <Text css={{ mb: '$4' }}>Hello, from Dialog</Text>
           <Tooltip content="You get the idea." side="left">
             <Button css={{ ml: '$4' }}>Left</Button>
           </Tooltip>
-          <DialogClose as={Button}>Bye.</DialogClose>
+          <DialogClose asChild>
+            <Button>Bye.</Button>
+          </DialogClose>
         </DialogContent>
       </Dialog>
 
@@ -213,15 +218,19 @@ export default function Closed() {
       </Text>
 
       <AlertDialog>
-        <AlertDialogTrigger as={Button}>Open AlertDialog</AlertDialogTrigger>
+        <AlertDialogTrigger asChild>
+          <Button>Open AlertDialog</Button>
+        </AlertDialogTrigger>
         <AlertDialogContent>
-          <AlertDialogTitle as={Text} css={{ mb: '$4' }}>
-            Hello, from AlertDialog
+          <AlertDialogTitle asChild>
+            <Text css={{ mb: '$4' }}>Hello, from AlertDialog</Text>
           </AlertDialogTitle>
           <Flex css={{ justifyContent: 'space-between' }}>
-            <AlertDialogAction as={Button}>Ok</AlertDialogAction>
-            <AlertDialogCancel as={Button} variant="red">
-              Cancel
+            <AlertDialogAction asChild>
+              <Button>Ok</Button>
+            </AlertDialogAction>
+            <AlertDialogCancel asChild>
+              <Button variant="red">Cancel</Button>
             </AlertDialogCancel>
           </Flex>
         </AlertDialogContent>
@@ -231,15 +240,17 @@ export default function Closed() {
       </Text>
 
       <Popover>
-        <PopoverTrigger as={Button}>Open Popover</PopoverTrigger>
+        <PopoverTrigger asChild>
+          <Button>Open Popover</Button>
+        </PopoverTrigger>
         <PopoverContent css={{ padding: '$4' }}>
           <Text>Hello, from Popover</Text>
         </PopoverContent>
       </Popover>
 
       <Popover>
-        <PopoverTrigger as={Button} css={{ ml: '$4' }}>
-          Open Popover (top)
+        <PopoverTrigger asChild>
+          <Button css={{ ml: '$4' }}>Open Popover (top)</Button>
         </PopoverTrigger>
         <PopoverContent side="left" css={{ height: '300px', padding: '$4' }}>
           <Text>Hello, from Popover</Text>
@@ -247,24 +258,22 @@ export default function Closed() {
       </Popover>
 
       <Popover>
-        <PopoverTrigger as={Button} css={{ ml: '$4' }}>
-          With close button
+        <PopoverTrigger asChild>
+          <Button css={{ ml: '$4' }}>With close button</Button>
         </PopoverTrigger>
         <PopoverContent side="top" css={{ padding: '$4' }}>
           <Text>Hello, from Popover</Text>
-          <PopoverClose
-            as={IconButton}
-            variant="ghost"
-            css={{ position: 'absolute', top: '$1', right: '$1' }}
-          >
-            <Cross2Icon />
+          <PopoverClose asChild>
+            <IconButton variant="ghost" css={{ position: 'absolute', top: '$1', right: '$1' }}>
+              <Cross2Icon />
+            </IconButton>
           </PopoverClose>
         </PopoverContent>
       </Popover>
 
       <Popover>
-        <PopoverTrigger as={Button} css={{ ml: '$4' }}>
-          Without arrow
+        <PopoverTrigger asChild>
+          <Button css={{ ml: '$4' }}>Without arrow</Button>
         </PopoverTrigger>
         <PopoverContent side="top" hideArrow css={{ padding: '$4' }}>
           <Text>Hello, from Popover</Text>
@@ -325,28 +334,28 @@ export default function Closed() {
 
       <Tabs defaultValue="tab-one">
         <TabsList>
-          <TabsTab value="tab-one">
+          <TabsTrigger value="tab-one">
             <Text size="4">One</Text>
-          </TabsTab>
-          <TabsTab value="tab-two">
+          </TabsTrigger>
+          <TabsTrigger value="tab-two">
             <Text size="4">Two</Text>
-          </TabsTab>
-          <TabsTab value="tab-three">
+          </TabsTrigger>
+          <TabsTrigger value="tab-three">
             <Text size="4">Three</Text>
-          </TabsTab>
+          </TabsTrigger>
         </TabsList>
-        <TabsPanel value="tab-one">
+        <TabsContent value="tab-one">
           <Box>
             <Text>Panel 1</Text>
             <Button css={{ mt: '$2' }}>Test focus</Button>
           </Box>
-        </TabsPanel>
-        <TabsPanel value="tab-two">
+        </TabsContent>
+        <TabsContent value="tab-two">
           <Text>Panel 2</Text>
-        </TabsPanel>
-        <TabsPanel value="tab-three">
+        </TabsContent>
+        <TabsContent value="tab-three">
           <Text>Panel 3</Text>
-        </TabsPanel>
+        </TabsContent>
       </Tabs>
 
       <Text size="5" css={{ mt: '$9', mb: '$4' }}>
@@ -355,28 +364,28 @@ export default function Closed() {
 
       <Accordion type="single">
         <AccordionItem value="accordion-one">
-          <AccordionButton>
+          <AccordionTrigger>
             <Text size="4">Accordion one</Text>
-          </AccordionButton>
-          <AccordionPanel>
+          </AccordionTrigger>
+          <AccordionContent>
             <Text size="4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </Text>
-          </AccordionPanel>
+          </AccordionContent>
         </AccordionItem>
         <AccordionItem value="accordion-two">
-          <AccordionButton>
+          <AccordionTrigger>
             <Text size="4">Accordion two</Text>
-          </AccordionButton>
-          <AccordionPanel>
+          </AccordionTrigger>
+          <AccordionContent>
             <Text size="4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </Text>
-          </AccordionPanel>
+          </AccordionContent>
         </AccordionItem>
       </Accordion>
 

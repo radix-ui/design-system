@@ -107,14 +107,14 @@ const StyledContent = styled(DialogPrimitive.Content, {
   },
 });
 
-const StyledCloseButton = styled(IconButton, {
+const StyledCloseButton = styled(DialogPrimitive.Close, {
   position: 'absolute',
   top: '$2',
   right: '$2',
 });
 
 type SheetContentVariants = VariantProps<typeof StyledContent>;
-type DialogContentPrimitiveProps = Omit<React.ComponentProps<typeof DialogPrimitive.Content>, 'as'>;
+type DialogContentPrimitiveProps = React.ComponentProps<typeof DialogPrimitive.Content>;
 type SheetContentProps = DialogContentPrimitiveProps & SheetContentVariants & { css?: CSS };
 
 export const SheetContent = React.forwardRef<
@@ -123,11 +123,15 @@ export const SheetContent = React.forwardRef<
 >(({ children, ...props }, forwardedRef) => (
   <StyledContent {...props} ref={forwardedRef}>
     {children}
-    <DialogPrimitive.Close as={StyledCloseButton} variant="ghost">
-      <Cross1Icon />
-    </DialogPrimitive.Close>
+    <StyledCloseButton asChild>
+      <IconButton variant="ghost">
+        <Cross1Icon />
+      </IconButton>
+    </StyledCloseButton>
   </StyledContent>
 ));
 
 export const SheetTrigger = DialogPrimitive.Trigger;
 export const SheetClose = DialogPrimitive.Close;
+export const SheetTitle = DialogPrimitive.Title;
+export const SheetDescription = DialogPrimitive.Description;

@@ -11,7 +11,12 @@ import { Card } from '../components/Card';
 import { Image } from '../components/Image';
 import { Link } from '../components/Link';
 import { Section } from '../components/Section';
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
+import {
+  Accordion,
+  AccordionTrigger,
+  AccordionItem,
+  AccordionContent,
+} from '../components/Accordion';
 import { ScrollArea } from '../components/Scrollbar';
 import { Heading } from '../components/Heading';
 import { Paragraph } from '../components/Paragraph';
@@ -195,20 +200,20 @@ function Ecommerce() {
 
               {/* <Accordion type="single">
                 <AccordionItem value="accordion-one">
-                  <AccordionButton>
+                  <AccordionTrigger>
                     <Text size="4" css={{ fontWeight: 500 }}>Size &amp; Fit</Text>
-                  </AccordionButton>
-                  <AccordionPanel>
+                  </AccordionTrigger>
+                  <AccordionContent>
                     <Text css={{ lineHeight: '23px' }}>The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer fabric for added warmth without extra weight. A slightly taller collar in the hood helps keep you dry in cold, wet weather.</Text>
-                  </AccordionPanel>
+                  </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="accordion-two">
-                  <AccordionButton>
+                  <AccordionTrigger>
                   <Text size="4" css={{ fontWeight: 500 }}>Free Delivery &amp; Returns</Text>
-                  </AccordionButton>
-                  <AccordionPanel>
+                  </AccordionTrigger>
+                  <AccordionContent>
                     <Text css={{ lineHeight: '23px' }}>The Nike Sportswear Tech Fleece Full-Zip Hoodie is made from a double-sided spacer fabric for added warmth without extra weight. A slightly taller collar in the hood helps keep you dry in cold, wet weather.</Text>
-                  </AccordionPanel>
+                  </AccordionContent>
                 </AccordionItem>
               </Accordion> */}
             </Box>

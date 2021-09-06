@@ -47,11 +47,16 @@ import {
   AlertDialogAction,
   AlertDialogCancel,
 } from '../components/AlertDialog';
-import { Tabs, TabsList, TabsTab, TabsPanel } from '../components/Tabs';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/Tabs';
 import { Label } from '../components/Label';
 import { Skeleton } from '../components/Skeleton';
 import { RadioCardGroup, RadioCard } from '../components/RadioCard';
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '../components/Accordion';
+import {
+  Accordion,
+  AccordionTrigger,
+  AccordionItem,
+  AccordionContent,
+} from '../components/Accordion';
 import { Heading } from '../components/Heading';
 import { Paragraph } from '../components/Paragraph';
 // import { Color } from '../custom/Color';
@@ -151,7 +156,7 @@ function Home() {
         }}
       >
         <Heading>Quick nav</Heading>
-        <Box as="ul" css={{ listStyle: 'none', p: 0 }}>
+        <Box as="ul" css={{ p: 0 }}>
           <Box css={{ my: '$1' }}>
             <Link href="#accordion" variant="subtle" css={{ display: 'inline-flex' }}>
               <Text size="2" css={{ lineHeight: '20px' }}>
@@ -463,14 +468,14 @@ function Home() {
               <form>
                 <TextField
                   type="email"
-                  size="3"
+                  size="2"
                   placeholder="Email"
                   autoComplete="off"
                   css={{ mb: '$3' }}
                 />
                 <TextField
                   type="password"
-                  size="3"
+                  size="2"
                   placeholder="Password"
                   autoComplete="off"
                   css={{ mb: '$3' }}
@@ -1405,7 +1410,7 @@ function Home() {
               <TextField placeholder="Hello world" />
             </ControlGroup>
             <ControlGroup css={{ mt: '$6' }}>
-              <TextField size="3" placeholder="Hello world" />
+              <TextField size="2" placeholder="Hello world" />
               <Button size="2">Button</Button>
             </ControlGroup>
           </Container>
@@ -1675,18 +1680,24 @@ function Home() {
               Alert Dialog
             </Heading>
             <AlertDialog>
-              <AlertDialogTrigger as={Button}>Alert Dialog</AlertDialogTrigger>
+              <AlertDialogTrigger asChild>
+                <Button>Alert Dialog</Button>
+              </AlertDialogTrigger>
               <AlertDialogContent>
-                <AlertDialogTitle as={Heading}>Are you sure?</AlertDialogTitle>
-                <AlertDialogDescription as={Text} css={{ mt: '$2' }}>
-                  This will do a very dangerous thing. Thar be dragons!
+                <AlertDialogTitle asChild>
+                  <Heading>Are you sure?</Heading>
+                </AlertDialogTitle>
+                <AlertDialogDescription asChild>
+                  <Text css={{ mt: '$2' }}>
+                    This will do a very dangerous thing. Thar be dragons!
+                  </Text>
                 </AlertDialogDescription>
                 <Flex css={{ jc: 'flex-end', gap: '$3', mt: '$5' }}>
-                  <AlertDialogCancel as={Button} ghost>
-                    Cancel
+                  <AlertDialogCancel asChild>
+                    <Button ghost>Cancel</Button>
                   </AlertDialogCancel>
-                  <AlertDialogAction as={Button} variant="red">
-                    Delete
+                  <AlertDialogAction asChild>
+                    <Button variant="red">Delete</Button>
                   </AlertDialogAction>
                 </Flex>
               </AlertDialogContent>
@@ -1702,7 +1713,9 @@ function Home() {
               Dialog
             </Heading>
             <Dialog>
-              <DialogTrigger as={Button}>Open dialog</DialogTrigger>
+              <DialogTrigger asChild>
+                <Button>Open dialog</Button>
+              </DialogTrigger>
               <DialogContent>
                 <Text size="5" as="h6" css={{ fontWeight: 500, mb: '$3' }}>
                   Dialog Heading
@@ -1716,7 +1729,9 @@ function Home() {
             </Dialog>
 
             <Dialog>
-              <DialogTrigger as={Button}>Dialog</DialogTrigger>
+              <DialogTrigger asChild>
+                <Button>Dialog</Button>
+              </DialogTrigger>
 
               <DialogContent>
                 <Text size="5" as="h6" css={{ fontWeight: 500, mb: '$3' }}>
@@ -1729,10 +1744,12 @@ function Home() {
                 </Text>
 
                 <Popover>
-                  <PopoverTrigger as={Button}>Open</PopoverTrigger>
+                  <PopoverTrigger asChild>
+                    <Button>Open</Button>
+                  </PopoverTrigger>
                   <PopoverContent>
-                    <PopoverClose as={Button} ghost>
-                      Close
+                    <PopoverClose asChild>
+                      <Button ghost>Close</Button>
                     </PopoverClose>
                   </PopoverContent>
                 </Popover>
@@ -1749,23 +1766,33 @@ function Home() {
               Sheet
             </Heading>
             <Sheet>
-              <SheetTrigger as={Button}>Open Sheet</SheetTrigger>
+              <SheetTrigger asChild>
+                <Button>Open Sheet</Button>
+              </SheetTrigger>
               <SheetContent></SheetContent>
             </Sheet>
             <Sheet>
-              <SheetTrigger as={Button}>Top</SheetTrigger>
+              <SheetTrigger asChild>
+                <Button>Top</Button>
+              </SheetTrigger>
               <SheetContent side="top"></SheetContent>
             </Sheet>
             <Sheet>
-              <SheetTrigger as={Button}>Right</SheetTrigger>
+              <SheetTrigger asChild>
+                <Button>Right</Button>
+              </SheetTrigger>
               <SheetContent side="right"></SheetContent>
             </Sheet>
             <Sheet>
-              <SheetTrigger as={Button}>Bottom</SheetTrigger>
+              <SheetTrigger asChild>
+                <Button>Bottom</Button>
+              </SheetTrigger>
               <SheetContent side="bottom"></SheetContent>
             </Sheet>
             <Sheet>
-              <SheetTrigger as={Button}>Left</SheetTrigger>
+              <SheetTrigger asChild>
+                <Button>Left</Button>
+              </SheetTrigger>
               <SheetContent side="left"></SheetContent>
             </Sheet>
           </Container>
@@ -1815,7 +1842,9 @@ function Home() {
             </Heading>
             <Flex css={{ gap: '$6', fw: 'wrap' }}>
               <Popover>
-                <PopoverTrigger as={Button}>Popover</PopoverTrigger>
+                <PopoverTrigger asChild>
+                  <Button>Popover</Button>
+                </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
@@ -1824,7 +1853,9 @@ function Home() {
                 </PopoverContent>
               </Popover>
               <Popover>
-                <PopoverTrigger as={Button}>Hide arrow</PopoverTrigger>
+                <PopoverTrigger asChild>
+                  <Button>Hide arrow</Button>
+                </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }} hideArrow>
                   <Text size="2" css={{ lineHeight: '18px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
@@ -1833,8 +1864,8 @@ function Home() {
                 </PopoverContent>
               </Popover>
               <Popover>
-                <PopoverTrigger as={Button} variant="blue">
-                  Blue
+                <PopoverTrigger asChild>
+                  <Button variant="blue">Blue</Button>
                 </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>
@@ -1844,8 +1875,8 @@ function Home() {
                 </PopoverContent>
               </Popover>
               <Popover>
-                <PopoverTrigger as={Button} variant="green">
-                  Green
+                <PopoverTrigger asChild>
+                  <Button variant="green">Green</Button>
                 </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>
@@ -1855,8 +1886,8 @@ function Home() {
                 </PopoverContent>
               </Popover>
               <Popover>
-                <PopoverTrigger as={Button} variant="red">
-                  Red
+                <PopoverTrigger asChild>
+                  <Button variant="red">Red</Button>
                 </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>
@@ -1866,8 +1897,8 @@ function Home() {
                 </PopoverContent>
               </Popover>
               <Popover>
-                <PopoverTrigger as={Button} ghost>
-                  Ghost
+                <PopoverTrigger asChild>
+                  <Button ghost>Ghost</Button>
                 </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>
@@ -1877,8 +1908,10 @@ function Home() {
                 </PopoverContent>
               </Popover>
               <Popover>
-                <PopoverTrigger as={IconButton}>
-                  <VideoIcon />
+                <PopoverTrigger asChild>
+                  <IconButton>
+                    <VideoIcon />
+                  </IconButton>
                 </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>
@@ -1888,11 +1921,13 @@ function Home() {
                 </PopoverContent>
               </Popover>
               <Popover>
-                <PopoverTrigger as={Badge} size="2" variant="violet" interactive>
-                  Badge
-                  <Box css={{ ml: '$1' }}>
-                    <CaretDownIcon />
-                  </Box>
+                <PopoverTrigger asChild>
+                  <Badge size="2" variant="violet" interactive>
+                    Badge
+                    <Box css={{ ml: '$1' }}>
+                      <CaretDownIcon />
+                    </Box>
+                  </Badge>
                 </PopoverTrigger>
                 <PopoverContent css={{ padding: '$3' }}>
                   <Text size="2" css={{ lineHeight: '18px' }}>
@@ -1914,12 +1949,12 @@ function Home() {
             </Heading>
             <Accordion type="single">
               <AccordionItem value="accordion-one">
-                <AccordionButton>
+                <AccordionTrigger>
                   <Text size="3" css={{ fontWeight: 500 }}>
                     Accordion one
                   </Text>
-                </AccordionButton>
-                <AccordionPanel>
+                </AccordionTrigger>
+                <AccordionContent>
                   <Text size="3" css={{ lineHeight: '23px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
                     horizontal overflow on small devices and when zoomed in, tables are a pain to
@@ -1927,15 +1962,15 @@ function Home() {
                     user when focused, which also allows keyboard users to navigate the overflow
                     more easily.
                   </Text>
-                </AccordionPanel>
+                </AccordionContent>
               </AccordionItem>
               <AccordionItem value="accordion-two">
-                <AccordionButton>
+                <AccordionTrigger>
                   <Text size="3" css={{ fontWeight: 500 }}>
                     Accordion two
                   </Text>
-                </AccordionButton>
-                <AccordionPanel>
+                </AccordionTrigger>
+                <AccordionContent>
                   <Text size="3" css={{ lineHeight: '23px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
                     horizontal overflow on small devices and when zoomed in, tables are a pain to
@@ -1943,15 +1978,15 @@ function Home() {
                     user when focused, which also allows keyboard users to navigate the overflow
                     more easily.
                   </Text>
-                </AccordionPanel>
+                </AccordionContent>
               </AccordionItem>
               <AccordionItem value="accordion-three">
-                <AccordionButton>
+                <AccordionTrigger>
                   <Text size="3" css={{ fontWeight: 500 }}>
                     Accordion one
                   </Text>
-                </AccordionButton>
-                <AccordionPanel>
+                </AccordionTrigger>
+                <AccordionContent>
                   <Text size="3" css={{ lineHeight: '23px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
                     horizontal overflow on small devices and when zoomed in, tables are a pain to
@@ -1959,15 +1994,15 @@ function Home() {
                     user when focused, which also allows keyboard users to navigate the overflow
                     more easily.
                   </Text>
-                </AccordionPanel>
+                </AccordionContent>
               </AccordionItem>
               <AccordionItem value="accordion-four">
-                <AccordionButton>
+                <AccordionTrigger>
                   <Text size="3" css={{ fontWeight: 500 }}>
                     Accordion two
                   </Text>
-                </AccordionButton>
-                <AccordionPanel>
+                </AccordionTrigger>
+                <AccordionContent>
                   <Text size="3" css={{ lineHeight: '23px' }}>
                     The other main improvement is with tables, which we'll probably use a lot. With
                     horizontal overflow on small devices and when zoomed in, tables are a pain to
@@ -1975,7 +2010,7 @@ function Home() {
                     user when focused, which also allows keyboard users to navigate the overflow
                     more easily.
                   </Text>
-                </AccordionPanel>
+                </AccordionContent>
               </AccordionItem>
             </Accordion>
           </Container>
@@ -1995,73 +2030,73 @@ function Home() {
             <Heading css={{ mb: '$6' }}>Default</Heading>
             <Tabs defaultValue="tab-one">
               <TabsList>
-                <TabsTab value="tab-one">General</TabsTab>
-                <TabsTab value="tab-two">Hosting</TabsTab>
-                <TabsTab value="tab-three">Editor</TabsTab>
-                <TabsTab value="tab-four">Billing</TabsTab>
-                <TabsTab value="tab-five">SEO</TabsTab>
+                <TabsTrigger value="tab-one">General</TabsTrigger>
+                <TabsTrigger value="tab-two">Hosting</TabsTrigger>
+                <TabsTrigger value="tab-three">Editor</TabsTrigger>
+                <TabsTrigger value="tab-four">Billing</TabsTrigger>
+                <TabsTrigger value="tab-five">SEO</TabsTrigger>
               </TabsList>
-              <TabsPanel value="tab-one">
-                <Text>Panel 1</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-two">
-                <Text>Panel 2</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-three">
-                <Text>Panel 3</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-four">
-                <Text>Panel 4</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-five">
-                <Text>Panel 5</Text>
-              </TabsPanel>
+              <TabsContent value="tab-one">
+                <Text>Tabs Content 1</Text>
+              </TabsContent>
+              <TabsContent value="tab-two">
+                <Text>Tabs Content 2</Text>
+              </TabsContent>
+              <TabsContent value="tab-three">
+                <Text>Tabs Content 3</Text>
+              </TabsContent>
+              <TabsContent value="tab-four">
+                <Text>Tabs Content 4</Text>
+              </TabsContent>
+              <TabsContent value="tab-five">
+                <Text>Tabs Content 5</Text>
+              </TabsContent>
             </Tabs>
 
             <Heading css={{ mb: '$6', mt: '$7' }}>Vertical orientation</Heading>
             <Tabs defaultValue="tab-one" orientation="vertical">
               <TabsList>
-                <TabsTab value="tab-one">General</TabsTab>
-                <TabsTab value="tab-two">Hosting</TabsTab>
-                <TabsTab value="tab-three">Editor</TabsTab>
-                <TabsTab value="tab-four">Billing</TabsTab>
-                <TabsTab value="tab-five">SEO</TabsTab>
-                <TabsTab value="tab-six">Forms</TabsTab>
-                <TabsTab value="tab-seven">Fonts</TabsTab>
-                <TabsTab value="tab-eight">Backups</TabsTab>
-                <TabsTab value="tab-nine">Integrations</TabsTab>
-                <TabsTab value="tab-ten">Custom code</TabsTab>
+                <TabsTrigger value="tab-one">General</TabsTrigger>
+                <TabsTrigger value="tab-two">Hosting</TabsTrigger>
+                <TabsTrigger value="tab-three">Editor</TabsTrigger>
+                <TabsTrigger value="tab-four">Billing</TabsTrigger>
+                <TabsTrigger value="tab-five">SEO</TabsTrigger>
+                <TabsTrigger value="tab-six">Forms</TabsTrigger>
+                <TabsTrigger value="tab-seven">Fonts</TabsTrigger>
+                <TabsTrigger value="tab-eight">Backups</TabsTrigger>
+                <TabsTrigger value="tab-nine">Integrations</TabsTrigger>
+                <TabsTrigger value="tab-ten">Custom code</TabsTrigger>
               </TabsList>
-              <TabsPanel value="tab-one">
+              <TabsContent value="tab-one">
                 <Text>Panel 1</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-two">
+              </TabsContent>
+              <TabsContent value="tab-two">
                 <Text>Panel 2</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-three">
+              </TabsContent>
+              <TabsContent value="tab-three">
                 <Text>Panel 3</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-four">
+              </TabsContent>
+              <TabsContent value="tab-four">
                 <Text>Panel 4</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-five">
+              </TabsContent>
+              <TabsContent value="tab-five">
                 <Text>Panel 5</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-six">
+              </TabsContent>
+              <TabsContent value="tab-six">
                 <Text>Panel 6</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-seven">
+              </TabsContent>
+              <TabsContent value="tab-seven">
                 <Text>Panel 7</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-eight">
+              </TabsContent>
+              <TabsContent value="tab-eight">
                 <Text>Panel 8</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-nine">
+              </TabsContent>
+              <TabsContent value="tab-nine">
                 <Text>Panel 9</Text>
-              </TabsPanel>
-              <TabsPanel value="tab-ten">
+              </TabsContent>
+              <TabsContent value="tab-ten">
                 <Text>Panel 10</Text>
-              </TabsPanel>
+              </TabsContent>
             </Tabs>
           </Container>
         </Section>
@@ -2930,7 +2965,9 @@ function Home() {
               DropdownMenu
             </Heading>
             <DropdownMenu>
-              <DropdownMenuTrigger as={Button}>Dropdown</DropdownMenuTrigger>
+              <DropdownMenuTrigger asChild>
+                <Button>Dropdown</Button>
+              </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuGroup>
                   <DropdownMenuItem>Item</DropdownMenuItem>

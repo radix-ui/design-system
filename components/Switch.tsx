@@ -79,7 +79,7 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
 });
 
 type SwitchVariants = VariantProps<typeof StyledSwitch>;
-type SwitchPrimitiveProps = Omit<React.ComponentProps<typeof SwitchPrimitive.Root>, 'as'>;
+type SwitchPrimitiveProps = React.ComponentProps<typeof SwitchPrimitive.Root>;
 type SwitchProps = SwitchPrimitiveProps & SwitchVariants & { css?: CSS };
 
 export const Switch = React.forwardRef<React.ElementRef<typeof StyledSwitch>, SwitchProps>(

@@ -7,6 +7,7 @@ import { Heading } from '../components/Heading';
 
 import {
   Menu,
+  MenuContent,
   MenuCheckboxItem,
   MenuGroup,
   MenuItem,
@@ -37,27 +38,17 @@ const BasicMenu = () => {
   return (
     <>
       <Box ref={ref} css={{ width: 150, mt: 50, mb: 400 }} />
-      <Menu
-        open
-        onOpenChange={() => {}}
-        anchorRef={ref}
-        portalled={true}
-        trapFocus={false}
-        onOpenAutoFocus={(event) => event.preventDefault()}
-        onCloseAutoFocus={(event) => event.preventDefault()}
-        avoidCollisions={false}
-        disableOutsidePointerEvents={false}
-        disableOutsideScroll={false}
-        align="start"
-      >
-        <MenuItem onSelect={() => console.log('undo')}>Undo</MenuItem>
-        <MenuItem onSelect={() => console.log('redo')}>Redo</MenuItem>
-        <MenuSeparator />
-        <MenuItem disabled onSelect={() => console.log('cut')}>
-          Cut
-        </MenuItem>
-        <MenuItem onSelect={() => console.log('copy')}>Copy</MenuItem>
-        <MenuItem onSelect={() => console.log('paste')}>Paste</MenuItem>
+      <Menu open onOpenChange={() => {}}>
+        <MenuContent>
+          <MenuItem onSelect={() => console.log('undo')}>Undo</MenuItem>
+          <MenuItem onSelect={() => console.log('redo')}>Redo</MenuItem>
+          <MenuSeparator />
+          <MenuItem disabled onSelect={() => console.log('cut')}>
+            Cut
+          </MenuItem>
+          <MenuItem onSelect={() => console.log('copy')}>Copy</MenuItem>
+          <MenuItem onSelect={() => console.log('paste')}>Paste</MenuItem>
+        </MenuContent>
       </Menu>
     </>
   );
@@ -68,32 +59,22 @@ const LabelledMenu = () => {
   return (
     <>
       <Box ref={ref} css={{ width: 150, mt: 50, mb: 400 }} />
-      <Menu
-        open
-        onOpenChange={() => {}}
-        anchorRef={ref}
-        portalled={true}
-        trapFocus={false}
-        onOpenAutoFocus={(event) => event.preventDefault()}
-        onCloseAutoFocus={(event) => event.preventDefault()}
-        avoidCollisions={false}
-        disableOutsidePointerEvents={false}
-        disableOutsideScroll={false}
-        align="start"
-      >
-        <MenuGroup>
-          <MenuLabel>Arrange</MenuLabel>
-          <MenuItem onSelect={() => console.log('Bring Forward')}>Bring Forward</MenuItem>
-          <MenuItem onSelect={() => console.log('Bring to Front')}>Bring to Front</MenuItem>
-          <MenuItem onSelect={() => console.log('Send Backward')}>Send Backward</MenuItem>
-          <MenuItem onSelect={() => console.log('Send to Back')}>Send to Back</MenuItem>
-        </MenuGroup>
-        <MenuSeparator />
-        <MenuGroup>
-          <MenuLabel>Distribute</MenuLabel>
-          <MenuItem onSelect={() => console.log('Horizontally')}>Horizontally</MenuItem>
-          <MenuItem onSelect={() => console.log('Vertically')}>Vertically</MenuItem>
-        </MenuGroup>
+      <Menu open onOpenChange={() => {}}>
+        <MenuContent>
+          <MenuGroup>
+            <MenuLabel>Arrange</MenuLabel>
+            <MenuItem onSelect={() => console.log('Bring Forward')}>Bring Forward</MenuItem>
+            <MenuItem onSelect={() => console.log('Bring to Front')}>Bring to Front</MenuItem>
+            <MenuItem onSelect={() => console.log('Send Backward')}>Send Backward</MenuItem>
+            <MenuItem onSelect={() => console.log('Send to Back')}>Send to Back</MenuItem>
+          </MenuGroup>
+          <MenuSeparator />
+          <MenuGroup>
+            <MenuLabel>Distribute</MenuLabel>
+            <MenuItem onSelect={() => console.log('Horizontally')}>Horizontally</MenuItem>
+            <MenuItem onSelect={() => console.log('Vertically')}>Vertically</MenuItem>
+          </MenuGroup>
+        </MenuContent>
       </Menu>
     </>
   );
@@ -110,37 +91,27 @@ const CheckboxItemsMenu = () => {
 
   return (
     <>
-      <Box ref={ref} css={{ width: 150, mt: 50, mb: 400 }} />
-      <Menu
-        open
-        onOpenChange={() => {}}
-        anchorRef={ref}
-        portalled={true}
-        trapFocus={false}
-        onOpenAutoFocus={(event) => event.preventDefault()}
-        onCloseAutoFocus={(event) => event.preventDefault()}
-        avoidCollisions={false}
-        disableOutsidePointerEvents={false}
-        disableOutsideScroll={false}
-        align="start"
-      >
-        <MenuGroup>
-          <MenuLabel>Cut</MenuLabel>
-          <MenuItem>Cut</MenuItem>
-          <MenuItem>Copy</MenuItem>
-          <MenuItem>Paste</MenuItem>
-        </MenuGroup>
-        <MenuSeparator />
-        {checkboxItems.map(({ label, state: [checked, setChecked], disabled }) => (
-          <MenuCheckboxItem
-            key={label}
-            checked={checked}
-            onCheckedChange={setChecked}
-            disabled={disabled}
-          >
-            {label}
-          </MenuCheckboxItem>
-        ))}
+      <Box css={{ width: 150, mt: 50, mb: 400 }} />
+      <Menu open onOpenChange={() => {}}>
+        <MenuContent>
+          <MenuGroup>
+            <MenuLabel>Cut</MenuLabel>
+            <MenuItem>Cut</MenuItem>
+            <MenuItem>Copy</MenuItem>
+            <MenuItem>Paste</MenuItem>
+          </MenuGroup>
+          <MenuSeparator />
+          {checkboxItems.map(({ label, state: [checked, setChecked], disabled }) => (
+            <MenuCheckboxItem
+              key={label}
+              checked={checked}
+              onCheckedChange={setChecked}
+              disabled={disabled}
+            >
+              {label}
+            </MenuCheckboxItem>
+          ))}
+        </MenuContent>
       </Menu>
     </>
   );
@@ -156,34 +127,28 @@ const RadioItemsMenu = () => {
   return (
     <>
       <Box ref={ref} css={{ width: 150, mt: 50, mb: 400 }} />
-      <Menu
-        open
-        onOpenChange={() => {}}
-        anchorRef={ref}
-        portalled={true}
-        trapFocus={false}
-        onOpenAutoFocus={(event) => event.preventDefault()}
-        onCloseAutoFocus={(event) => event.preventDefault()}
-        avoidCollisions={false}
-        disableOutsidePointerEvents={false}
-        disableOutsideScroll={false}
-        align="start"
-      >
-        <MenuRadioGroup value={caps} onValueChange={setCaps}>
-          {capsStyles.map((style) => (
-            <MenuRadioItem key={style} value={style}>
-              {style}
-            </MenuRadioItem>
-          ))}
-        </MenuRadioGroup>
-        <MenuSeparator />
-        <MenuRadioGroup value={numeric} onValueChange={setNumeric}>
-          {numericStyles.map((style) => (
-            <MenuRadioItem key={style} value={style}>
-              {style}
-            </MenuRadioItem>
-          ))}
-        </MenuRadioGroup>
+      <Menu open modal>
+        <MenuContent
+          onCloseAutoFocus={(event) => event.preventDefault()}
+          avoidCollisions={false}
+          align="start"
+        >
+          <MenuRadioGroup value={caps} onValueChange={setCaps}>
+            {capsStyles.map((style) => (
+              <MenuRadioItem key={style} value={style}>
+                {style}
+              </MenuRadioItem>
+            ))}
+          </MenuRadioGroup>
+          <MenuSeparator />
+          <MenuRadioGroup value={numeric} onValueChange={setNumeric}>
+            {numericStyles.map((style) => (
+              <MenuRadioItem key={style} value={style}>
+                {style}
+              </MenuRadioItem>
+            ))}
+          </MenuRadioGroup>
+        </MenuContent>
       </Menu>
     </>
   );

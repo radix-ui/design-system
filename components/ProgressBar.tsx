@@ -75,7 +75,7 @@ const ProgressBarIndicator = styled(ProgressPrimitive.Indicator, {
 });
 
 type ProgressBarVariants = VariantProps<typeof StyledProgressBar>;
-type ProgressBarPrimitiveProps = Omit<React.ComponentProps<typeof ProgressPrimitive.Root>, 'as'>;
+type ProgressBarPrimitiveProps = React.ComponentProps<typeof ProgressPrimitive.Root>;
 type ProgressBarProps = ProgressBarPrimitiveProps & ProgressBarVariants & { css?: CSS };
 
 export const ProgressBar = React.forwardRef<

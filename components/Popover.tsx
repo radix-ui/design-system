@@ -21,10 +21,8 @@ const StyledContent = styled(PopoverPrimitive.Content, panelStyles, {
   },
 });
 
-type PopoverContentPrimitiveProps = Omit<
-  React.ComponentProps<typeof PopoverPrimitive.Content>,
-  'as'
->;
+type PopoverContentPrimitiveProps = React.ComponentProps<typeof PopoverPrimitive.Content>;
+
 type PopoverContentProps = PopoverContentPrimitiveProps & {
   css?: CSS;
   hideArrow?: boolean;

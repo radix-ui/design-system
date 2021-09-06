@@ -87,7 +87,7 @@ export const StyledSlider = styled(SliderPrimitive.Root, {
   },
 });
 
-type SliderPrimitiveProps = Omit<React.ComponentProps<typeof SliderPrimitive.Root>, 'as'>;
+type SliderPrimitiveProps = React.ComponentProps<typeof SliderPrimitive.Root>;
 type SliderProps = SliderPrimitiveProps & { css?: CSS };
 
 export const Slider = React.forwardRef<React.ElementRef<typeof StyledSlider>, SliderProps>(

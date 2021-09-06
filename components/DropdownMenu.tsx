@@ -46,9 +46,8 @@ export const DropdownMenuRadioItem = React.forwardRef<
 
 const StyledDropdownMenuCheckboxItem = styled(DropdownMenuPrimitive.CheckboxItem, itemCss);
 
-type DialogMenuCheckboxItemPrimitiveProps = Omit<
-  React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem>,
-  'as'
+type DialogMenuCheckboxItemPrimitiveProps = React.ComponentProps<
+  typeof DropdownMenuPrimitive.CheckboxItem
 >;
 type DialogMenuCheckboxItemProps = DialogMenuCheckboxItemPrimitiveProps & { css?: CSS };
 

@@ -1,4 +1,9 @@
-export { Accordion, AccordionButton, AccordionItem, AccordionPanel } from './components/Accordion';
+export {
+  Accordion,
+  AccordionTrigger,
+  AccordionItem,
+  AccordionContent,
+} from './components/Accordion';
 export { Alert } from './components/Alert';
 export {
   AlertDialog,
@@ -33,7 +38,14 @@ export {
 } from './components/ContextMenu';
 export { ControlGroup } from './components/ControlGroup';
 export { DesignSystemProvider } from './components/DesignSystemProvider';
-export { Dialog, DialogClose, DialogContent, DialogTrigger } from './components/Dialog';
+export {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from './components/Dialog';
 export {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -77,18 +89,24 @@ export { RadioCard, RadioCardGroup } from './components/RadioCard';
 export { Section } from './components/Section';
 export { Select } from './components/Select';
 export { Separator } from './components/Separator';
-export { Sheet, SheetClose, SheetContent, SheetTrigger } from './components/Sheet';
+export {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from './components/Sheet';
 export { SimpleToggle } from './components/SimpleToggle';
 export { Skeleton } from './components/Skeleton';
 export { Slider } from './components/Slider';
-export { Slot } from '@radix-ui/react-slot';
 export { Status } from './components/Status';
 export { Sup } from './components/Sup';
 export { Sub } from './components/Sub';
 export { Switch } from './components/Switch';
 export { Caption, Tbody, Tfoot, Tr, Th, Td, Thead, Table } from './components/Table';
 export { TabLink } from './components/TabLink';
-export { Tabs, TabsList, TabsPanel, TabsTab } from './components/Tabs';
+export { Tabs, TabsList, TabsContent, TabsTrigger } from './components/Tabs';
 export { Text } from './components/Text';
 export { TextArea } from './components/TextArea';
 export { Tooltip } from './components/Tooltip';

@@ -49,9 +49,8 @@ export const ContextMenuRadioItem = React.forwardRef<
 
 const StyledContextMenuCheckboxItem = styled(ContextMenuPrimitive.CheckboxItem, itemCss);
 
-type ContextMenuCheckboxItemPrimitiveProps = Omit<
-  React.ComponentProps<typeof ContextMenuPrimitive.CheckboxItem>,
-  'as'
+type ContextMenuCheckboxItemPrimitiveProps = React.ComponentProps<
+  typeof ContextMenuPrimitive.CheckboxItem
 >;
 type ContextMenuCheckboxItemProps = ContextMenuCheckboxItemPrimitiveProps & { css?: CSS };
 
