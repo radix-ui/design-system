@@ -15,9 +15,8 @@ export const DropdownMenuItem = styled(DropdownMenuPrimitive.Item, itemCss);
 
 const StyledDropdownMenuRadioItem = styled(DropdownMenuPrimitive.RadioItem, itemCss);
 
-type DialogMenuRadioItemPrimitiveProps = Omit<
-  React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem>,
-  'as'
+type DialogMenuRadioItemPrimitiveProps = React.ComponentProps<
+  typeof DropdownMenuPrimitive.RadioItem
 >;
 type DialogMenuRadioItemProps = DialogMenuRadioItemPrimitiveProps & { css?: CSS };
 

@@ -18,9 +18,8 @@ export const ContextMenuItem = styled(ContextMenuPrimitive.Item, itemCss);
 
 const StyledContextMenuRadioItem = styled(ContextMenuPrimitive.RadioItem, itemCss);
 
-type ContextMenuRadioItemPrimitiveProps = Omit<
-  React.ComponentProps<typeof ContextMenuPrimitive.RadioItem>,
-  'as'
+type ContextMenuRadioItemPrimitiveProps = React.ComponentProps<
+  typeof ContextMenuPrimitive.RadioItem
 >;
 type ContextMenuRadioItemProps = ContextMenuRadioItemPrimitiveProps & { css?: CSS };
 

@@ -61,7 +61,7 @@ export const MenuItem = styled(MenuPrimitive.Item, itemCss);
 
 const StyledMenuRadioItem = styled(MenuPrimitive.RadioItem, itemCss);
 
-type MenuRadioItemPrimitiveProps = Omit<React.ComponentProps<typeof MenuPrimitive.RadioItem>, 'as'>;
+type MenuRadioItemPrimitiveProps = React.ComponentProps<typeof MenuPrimitive.RadioItem>;
 type MenuRadioItemProps = MenuRadioItemPrimitiveProps & { css?: CSS };
 
 export const MenuRadioItem = React.forwardRef<

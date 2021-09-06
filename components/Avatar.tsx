@@ -243,7 +243,7 @@ type StatusVariants = React.ComponentProps<typeof Status>;
 type StatusColors = Pick<StatusVariants, 'variant'>;
 
 type AvatarVariants = VariantProps<typeof StyledAvatar>;
-type AvatarPrimitiveProps = Omit<React.ComponentProps<typeof AvatarPrimitive.Root>, 'as'>;
+type AvatarPrimitiveProps = React.ComponentProps<typeof AvatarPrimitive.Root>;
 type AvatarOwnProps = AvatarPrimitiveProps &
   AvatarVariants & {
     css?: CSS;
