@@ -3,17 +3,30 @@ import { styled, CSS } from '../stitches.config';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 
-type AccordionProps = React.ComponentProps<typeof AccordionPrimitive.Root>;
-
 const StyledAccordion = styled(AccordionPrimitive.Root, {});
 
-export function Accordion({ children, ...props }: AccordionProps) {
-  return (
-    <StyledAccordion {...props} {...(props.type === 'single' ? { collapsible: true } : {})}>
+type AccordionPrimitiveProps = React.ComponentProps<typeof AccordionPrimitive.Root>;
+type AccordionProps = AccordionPrimitiveProps & { css?: CSS };
+
+export const Accordion = React.forwardRef<React.ElementRef<typeof StyledAccordion>, AccordionProps>(
+  ({ children, ...props }, forwardedRef) => (
+    <StyledAccordion
+      ref={forwardedRef}
+      {...props}
+      {...(props.type === 'single' ? { collapsible: true } : {})}
+    >
       {children}
     </StyledAccordion>
-  );
-}
+  )
+);
+
+// export function Accordion({ children, ...props }: AccordionProps) {
+//   return (
+//     <StyledAccordion {...props} {...(props.type === 'single' ? { collapsible: true } : {})}>
+//       {children}
+//     </StyledAccordion>
+//   );
+// }
 
 const StyledItem = styled(AccordionPrimitive.Item, {
   borderTop: '1px solid $colors$slate6',
@@ -67,8 +80,8 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
   },
 });
 
-type AccordionPrimitiveProps = React.ComponentProps<typeof AccordionPrimitive.Trigger>;
-type AccordionTriggerProps = AccordionPrimitiveProps & { css?: CSS };
+type AccordionTriggerPrimitiveProps = React.ComponentProps<typeof AccordionPrimitive.Trigger>;
+type AccordionTriggerProps = AccordionTriggerPrimitiveProps & { css?: CSS };
 
 export const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof StyledTrigger>,
