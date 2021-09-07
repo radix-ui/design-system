@@ -20,14 +20,6 @@ export const Accordion = React.forwardRef<React.ElementRef<typeof StyledAccordio
   )
 );
 
-// export function Accordion({ children, ...props }: AccordionProps) {
-//   return (
-//     <StyledAccordion {...props} {...(props.type === 'single' ? { collapsible: true } : {})}>
-//       {children}
-//     </StyledAccordion>
-//   );
-// }
-
 const StyledItem = styled(AccordionPrimitive.Item, {
   borderTop: '1px solid $colors$slate6',
 
