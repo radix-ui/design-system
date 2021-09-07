@@ -5,6 +5,21 @@ import { ChevronDownIcon } from '@radix-ui/react-icons';
 
 const StyledAccordion = styled(AccordionPrimitive.Root, {});
 
+type AccordionPrimitiveProps = React.ComponentProps<typeof AccordionPrimitive.Root>;
+type AccordionProps = AccordionPrimitiveProps & { css?: CSS };
+
+export const Accordion = React.forwardRef<React.ElementRef<typeof StyledAccordion>, AccordionProps>(
+  ({ children, ...props }, forwardedRef) => (
+    <StyledAccordion
+      ref={forwardedRef}
+      {...props}
+      {...(props.type === 'single' ? { collapsible: true } : {})}
+    >
+      {children}
+    </StyledAccordion>
+  )
+);
+
 const StyledItem = styled(AccordionPrimitive.Item, {
   borderTop: '1px solid $colors$slate6',
 
@@ -17,7 +32,7 @@ const StyledHeader = styled(AccordionPrimitive.Header, {
   all: 'unset',
 });
 
-const StyledButton = styled(AccordionPrimitive.Button, {
+const StyledTrigger = styled(AccordionPrimitive.Trigger, {
   all: 'unset',
   boxSizing: 'border-box',
   userSelect: 'none',
@@ -57,25 +72,24 @@ const StyledButton = styled(AccordionPrimitive.Button, {
   },
 });
 
-type AccordionPrimitiveProps = Omit<React.ComponentProps<typeof AccordionPrimitive.Button>, 'as'>;
-type AccordionButtonProps = AccordionPrimitiveProps & { css?: CSS };
+type AccordionTriggerPrimitiveProps = React.ComponentProps<typeof AccordionPrimitive.Trigger>;
+type AccordionTriggerProps = AccordionTriggerPrimitiveProps & { css?: CSS };
 
-export const AccordionButton = React.forwardRef<
-  React.ElementRef<typeof StyledButton>,
-  AccordionButtonProps
+export const AccordionTrigger = React.forwardRef<
+  React.ElementRef<typeof StyledTrigger>,
+  AccordionTriggerProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledHeader>
-    <StyledButton {...props} ref={forwardedRef}>
+    <StyledTrigger {...props} ref={forwardedRef}>
       {children}
       <ChevronDownIcon />
-    </StyledButton>
+    </StyledTrigger>
   </StyledHeader>
 ));
 
-const StyledPanel = styled(AccordionPrimitive.Panel, {
+const StyledContent = styled(AccordionPrimitive.Content, {
   p: '$2',
 });
 
-export const Accordion = StyledAccordion;
 export const AccordionItem = StyledItem;
-export const AccordionPanel = StyledPanel;
+export const AccordionContent = StyledContent;

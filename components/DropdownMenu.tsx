@@ -15,9 +15,8 @@ export const DropdownMenuItem = styled(DropdownMenuPrimitive.Item, itemCss);
 
 const StyledDropdownMenuRadioItem = styled(DropdownMenuPrimitive.RadioItem, itemCss);
 
-type DialogMenuRadioItemPrimitiveProps = Omit<
-  React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem>,
-  'as'
+type DialogMenuRadioItemPrimitiveProps = React.ComponentProps<
+  typeof DropdownMenuPrimitive.RadioItem
 >;
 type DialogMenuRadioItemProps = DialogMenuRadioItemPrimitiveProps & { css?: CSS };
 
@@ -46,9 +45,8 @@ export const DropdownMenuRadioItem = React.forwardRef<
 
 const StyledDropdownMenuCheckboxItem = styled(DropdownMenuPrimitive.CheckboxItem, itemCss);
 
-type DialogMenuCheckboxItemPrimitiveProps = Omit<
-  React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem>,
-  'as'
+type DialogMenuCheckboxItemPrimitiveProps = React.ComponentProps<
+  typeof DropdownMenuPrimitive.CheckboxItem
 >;
 type DialogMenuCheckboxItemProps = DialogMenuCheckboxItemPrimitiveProps & { css?: CSS };
 

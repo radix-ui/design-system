@@ -52,7 +52,8 @@ export const separatorCss = css({
   backgroundColor: '$slate6',
 });
 
-export const Menu = styled(MenuPrimitive.Root, menuCss, panelStyles);
+export const Menu = styled(MenuPrimitive.Root, menuCss);
+export const MenuContent = styled(MenuPrimitive.Content, panelStyles);
 
 export const MenuSeparator = styled(MenuPrimitive.Separator, separatorCss);
 
@@ -60,7 +61,7 @@ export const MenuItem = styled(MenuPrimitive.Item, itemCss);
 
 const StyledMenuRadioItem = styled(MenuPrimitive.RadioItem, itemCss);
 
-type MenuRadioItemPrimitiveProps = Omit<React.ComponentProps<typeof MenuPrimitive.RadioItem>, 'as'>;
+type MenuRadioItemPrimitiveProps = React.ComponentProps<typeof MenuPrimitive.RadioItem>;
 type MenuRadioItemProps = MenuRadioItemPrimitiveProps & { css?: CSS };
 
 export const MenuRadioItem = React.forwardRef<
@@ -88,10 +89,7 @@ export const MenuRadioItem = React.forwardRef<
 
 const StyledMenuCheckboxItem = styled(MenuPrimitive.CheckboxItem, itemCss);
 
-type MenuCheckboxItemPrimitiveProps = Omit<
-  React.ComponentProps<typeof MenuPrimitive.CheckboxItem>,
-  'as'
->;
+type MenuCheckboxItemPrimitiveProps = React.ComponentProps<typeof MenuPrimitive.CheckboxItem>;
 type MenuCheckboxItemProps = MenuCheckboxItemPrimitiveProps & { css?: CSS };
 
 export const MenuCheckboxItem = React.forwardRef<

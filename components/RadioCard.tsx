@@ -54,10 +54,7 @@ const StyledRadio = styled(RadioGroupPrimitive.Item, {
   },
 });
 
-type RadioGroupItemPrimitiveProps = Omit<
-  React.ComponentProps<typeof RadioGroupPrimitive.Item>,
-  'as'
->;
+type RadioGroupItemPrimitiveProps = React.ComponentProps<typeof RadioGroupPrimitive.Item>;
 type RadioCardProps = RadioGroupItemPrimitiveProps & { css?: CSS };
 
 export const RadioCard = React.forwardRef<React.ElementRef<typeof StyledRadio>, RadioCardProps>(

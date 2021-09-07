@@ -27,8 +27,7 @@ export function Dialog({ children, ...props }: DialogProps) {
   );
 }
 
-const StyledContent = styled(DialogPrimitive.Content, {
-  ...panelStyles,
+const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
   position: 'fixed',
   top: '50%',
   left: '50%',
@@ -48,13 +47,13 @@ const StyledContent = styled(DialogPrimitive.Content, {
   },
 });
 
-const StyledCloseButton = styled(IconButton, {
+const StyledCloseButton = styled(DialogPrimitive.Close, {
   position: 'absolute',
   top: '$2',
   right: '$2',
 });
 
-type DialogContentPrimitiveProps = Omit<React.ComponentProps<typeof DialogPrimitive.Content>, 'as'>;
+type DialogContentPrimitiveProps = React.ComponentProps<typeof DialogPrimitive.Content>;
 type DialogContentProps = DialogContentPrimitiveProps & { css?: CSS };
 
 export const DialogContent = React.forwardRef<
@@ -63,11 +62,15 @@ export const DialogContent = React.forwardRef<
 >(({ children, ...props }, forwardedRef) => (
   <StyledContent {...props} ref={forwardedRef}>
     {children}
-    <DialogPrimitive.Close as={StyledCloseButton} variant="ghost">
-      <Cross1Icon />
-    </DialogPrimitive.Close>
+    <StyledCloseButton asChild>
+      <IconButton variant="ghost">
+        <Cross1Icon />
+      </IconButton>
+    </StyledCloseButton>
   </StyledContent>
 ));
 
 export const DialogTrigger = DialogPrimitive.Trigger;
 export const DialogClose = DialogPrimitive.Close;
+export const DialogTitle = DialogPrimitive.Title;
+export const DialogDescription = DialogPrimitive.Description;

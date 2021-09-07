@@ -65,7 +65,7 @@ const StyledIndicator = styled(CheckboxPrimitive.Indicator, {
   width: '100%',
 });
 
-type CheckboxPrimitiveProps = Omit<React.ComponentProps<typeof CheckboxPrimitive.Root>, 'as'>;
+type CheckboxPrimitiveProps = React.ComponentProps<typeof CheckboxPrimitive.Root>;
 type CheckboxVariants = VariantProps<typeof StyledCheckbox>;
 type CheckboxProps = CheckboxPrimitiveProps & CheckboxVariants & { css?: CSS };
 

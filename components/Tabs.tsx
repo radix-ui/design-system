@@ -10,7 +10,7 @@ export const Tabs = styled(TabsPrimitive.Root, {
   },
 });
 
-export const TabsTab = styled(TabsPrimitive.Tab, {
+export const TabsTrigger = styled(TabsPrimitive.Trigger, {
   flexShrink: 0,
   height: '$5',
   display: 'inline-flex',
@@ -65,7 +65,7 @@ const StyledTabsList = styled(TabsPrimitive.List, {
   },
 });
 
-type TabsListPrimitiveProps = Omit<React.ComponentProps<typeof TabsPrimitive.List>, 'as'>;
+type TabsListPrimitiveProps = React.ComponentProps<typeof TabsPrimitive.List>;
 type TabsListProps = TabsListPrimitiveProps & { css?: CSS };
 
 export const TabsList = React.forwardRef<React.ElementRef<typeof StyledTabsList>, TabsListProps>(
@@ -77,7 +77,7 @@ export const TabsList = React.forwardRef<React.ElementRef<typeof StyledTabsList>
   )
 );
 
-export const TabsPanel = styled(TabsPrimitive.Panel, {
+export const TabsContent = styled(TabsPrimitive.Content, {
   flexGrow: 1,
   '&:focus': {
     outline: 'none',

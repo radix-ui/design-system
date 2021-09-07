@@ -1,7 +1,7 @@
 import { styled } from '../stitches.config';
-import * as ToggleButtonPrimitive from '@radix-ui/react-toggle-button';
+import * as TogglePrimitive from '@radix-ui/react-toggle';
 
-export const SimpleToggle = styled(ToggleButtonPrimitive.Root, {
+export const SimpleToggle = styled(TogglePrimitive.Root, {
   // Reset
   alignItems: 'center',
   appearance: 'none',
