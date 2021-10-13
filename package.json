@@ -43,7 +43,7 @@
     "@radix-ui/react-tabs": "next",
     "@radix-ui/react-toggle": "next",
     "@radix-ui/react-tooltip": "next",
-    "@radix-ui/react-use-layout-effect": "next",
+    "@radix-ui/react-use-layout-effect": "0.1.0",
     "@stitches/react": "1.2.5",
     "lodash.merge": "^4.6.2"
   },

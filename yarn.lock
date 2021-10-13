@@ -653,13 +653,6 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
-"@radix-ui/react-use-layout-effect@next":
-  version "0.1.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-use-layout-effect/-/react-use-layout-effect-0.1.0-rc.2.tgz#f54829dbefef6fcbdf520e9b6a736d403b70fff0"
-  integrity sha512-H8m9jksRiKAQ78LD7lJEJYUuxSEcuHxNm70AWiewfQtWxG2BrWWsCPC8+v2q5lrRDZj4wqW111bn5FdX/bEYUA==
-  dependencies:
-    "@babel/runtime" "^7.13.10"
-
 "@radix-ui/react-use-previous@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-use-previous/-/react-use-previous-0.1.0.tgz#fed880d41187d0fdd1e19c4588402765f342777e"
