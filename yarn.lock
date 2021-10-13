@@ -360,14 +360,7 @@
   resolved "https://registry.yarnpkg.com/@radix-ui/react-icons/-/react-icons-1.0.3.tgz#4ef61f1234f44991f7a19e108f77ca37032b4be2"
   integrity sha512-YbPAUZwTsvF/2H7IU35txaLUB+JNSV8GIhnswlqiFODP/P32t5op5keYUvQWsSj9TA0VLF367J24buUjIprn0w==
 
-"@radix-ui/react-id@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-id/-/react-id-0.1.0.tgz#d01067520fb8f4b09da3f914bfe6cb0f88c26721"
-  integrity sha512-SubMSz7rAtl6w8qZ9YBRbDe9GjW36JugBsc6aYqng8tFydvNtkuBMj86zN/x5QiomMo+r8ylBVvuWzRkS0WbBA==
-  dependencies:
-    "@babel/runtime" "^7.13.10"
-
-"@radix-ui/react-id@0.1.1-rc.1":
+"@radix-ui/react-id@0.1.1-rc.1", "@radix-ui/react-id@next":
   version "0.1.1-rc.1"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-id/-/react-id-0.1.1-rc.1.tgz#dcd7500f2a287fd0cf216f2aaab4dcecb4f39865"
   integrity sha512-zRouW+heiG0dwxBBPv2vIAWcZ9iO40MZfEA/ox06s9qSY2UB2S0RQbzUOCxFZUr6OOae+AVuJ/zle7l5xSm40g==
