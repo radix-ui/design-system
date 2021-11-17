@@ -127,6 +127,7 @@ export const {
   globalCss,
   keyframes,
   config,
+  reset,
 } = createStitches({
   theme: {
     colors: {
