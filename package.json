@@ -44,7 +44,7 @@
     "@radix-ui/react-toggle": "0.1.1",
     "@radix-ui/react-tooltip": "0.1.1",
     "@radix-ui/react-use-layout-effect": "0.1.0",
-    "@stitches/react": "1.2.6-0",
+    "@stitches/react": "1.2.6-1",
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
