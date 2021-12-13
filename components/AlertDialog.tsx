@@ -50,6 +50,8 @@ export const AlertDialogContent = React.forwardRef<
 >(({ children, ...props }, forwardedRef) => (
   <AlertDialogPrimitive.Portal>
     <StyledOverlay />
-    <StyledContent {...props}>{children}</StyledContent>
+    <StyledContent {...props} ref={forwardedRef}>
+      {children}
+    </StyledContent>
   </AlertDialogPrimitive.Portal>
 ));
