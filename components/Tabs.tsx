@@ -11,6 +11,7 @@ export const Tabs = styled(TabsPrimitive.Root, {
 });
 
 export const TabsTrigger = styled(TabsPrimitive.Trigger, {
+  all: 'unset',
   flexShrink: 0,
   height: '$5',
   display: 'inline-flex',
