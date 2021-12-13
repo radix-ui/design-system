@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '../stitches.config';
+import { styled, CSS } from '../stitches.config';
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import { overlayStyles } from './Overlay';
 import { panelStyles } from './Panel';
@@ -17,15 +17,10 @@ const StyledOverlay = styled(AlertDialogPrimitive.Overlay, overlayStyles, {
 });
 
 export function AlertDialog({ children, ...props }: AlertDialogProps) {
-  return (
-    <AlertDialogPrimitive.Root {...props}>
-      <StyledOverlay />
-      {children}
-    </AlertDialogPrimitive.Root>
-  );
+  return <AlertDialogPrimitive.Root {...props}>{children}</AlertDialogPrimitive.Root>;
 }
 
-export const AlertDialogContent = styled(AlertDialogPrimitive.Content, panelStyles, {
+export const StyledContent = styled(AlertDialogPrimitive.Content, panelStyles, {
   position: 'fixed',
   top: '50%',
   left: '50%',
@@ -40,8 +35,21 @@ export const AlertDialogContent = styled(AlertDialogPrimitive.Content, panelStyl
   },
 });
 
+type AlertDialogContentPrimitiveProps = React.ComponentProps<typeof StyledContent>;
+type AlertDialogContentProps = AlertDialogContentPrimitiveProps & { css?: CSS };
+
 export const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
 export const AlertDialogTitle = AlertDialogPrimitive.Title;
 export const AlertDialogDescription = AlertDialogPrimitive.Description;
 export const AlertDialogAction = AlertDialogPrimitive.Action;
 export const AlertDialogCancel = AlertDialogPrimitive.Cancel;
+
+export const AlertDialogContent = React.forwardRef<
+  React.ElementRef<typeof StyledContent>,
+  AlertDialogContentProps
+>(({ children, ...props }, forwardedRef) => (
+  <AlertDialogPrimitive.Portal>
+    <StyledOverlay />
+    <StyledContent {...props}>{children}</StyledContent>
+  </AlertDialogPrimitive.Portal>
+));

@@ -19,12 +19,7 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
 });
 
 export function Dialog({ children, ...props }: DialogProps) {
-  return (
-    <DialogPrimitive.Root {...props}>
-      <StyledOverlay />
-      {children}
-    </DialogPrimitive.Root>
-  );
+  return <DialogPrimitive.Root {...props}>{children}</DialogPrimitive.Root>;
 }
 
 const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
@@ -60,14 +55,17 @@ export const DialogContent = React.forwardRef<
   React.ElementRef<typeof StyledContent>,
   DialogContentProps
 >(({ children, ...props }, forwardedRef) => (
-  <StyledContent {...props} ref={forwardedRef}>
-    {children}
-    <StyledCloseButton asChild>
-      <IconButton variant="ghost">
-        <Cross1Icon />
-      </IconButton>
-    </StyledCloseButton>
-  </StyledContent>
+  <DialogPrimitive.Portal>
+    <StyledOverlay />
+    <StyledContent {...props} ref={forwardedRef}>
+      {children}
+      <StyledCloseButton asChild>
+        <IconButton variant="ghost">
+          <Cross1Icon />
+        </IconButton>
+      </StyledCloseButton>
+    </StyledContent>
+  </DialogPrimitive.Portal>
 ));
 
 export const DialogTrigger = DialogPrimitive.Trigger;
