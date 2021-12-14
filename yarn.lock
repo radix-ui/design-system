@@ -184,16 +184,16 @@
     "@radix-ui/react-primitive" "0.1.2"
     "@radix-ui/react-use-controllable-state" "0.1.0"
 
-"@radix-ui/react-alert-dialog@0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-alert-dialog/-/react-alert-dialog-0.1.3.tgz#4b7600e2b51871c233a4056267d2ce5a12d750e4"
-  integrity sha512-DtTlerCid6f7Svu8+6s9MaPs6a1n8ikT/3WNPfXpeP95oeGwXSZZTc9Pwir65/BrmTXngrpFzc7qjNBILknlnQ==
+"@radix-ui/react-alert-dialog@0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-alert-dialog/-/react-alert-dialog-0.1.4.tgz#a16a387a2ae9eda2c5a1392e36a36af3125f3328"
+  integrity sha512-PaEK93zqBTtW5rdTDeOzKNQRdoY+WHJSe6oPvYIXp6wzL9Ar3BeGml8XbKv1XT8azpWpardbaRGbAMl6uy1Clg==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@radix-ui/primitive" "0.1.0"
     "@radix-ui/react-compose-refs" "0.1.0"
     "@radix-ui/react-context" "0.1.1"
-    "@radix-ui/react-dialog" "0.1.3"
+    "@radix-ui/react-dialog" "0.1.4"
     "@radix-ui/react-primitive" "0.1.2"
     "@radix-ui/react-slot" "0.1.2"
 
@@ -292,10 +292,10 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
-"@radix-ui/react-dialog@0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-dialog/-/react-dialog-0.1.3.tgz#458bb5e8bcc03ed8b07164ca841eb70f51186c80"
-  integrity sha512-AA98apb6T83MtusK5e1XKTGEjXm85HdZS+pAIcaSJhhdyDIfTxUWeDWlRfkvQ7EGlBSqu6gXU6Kkrv+Q5qVb3A==
+"@radix-ui/react-dialog@0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-dialog/-/react-dialog-0.1.4.tgz#c2ac74abfe8404dbf7582a439c4e8c39ff569f3a"
+  integrity sha512-EENTf+WVtRv4zhYf6Lddd0he/HBUMp19T4J1YyYdN1uw/yOlRVx73etxa1GvQYsiVx1aE5DJ8C3lNLSWlZ0fag==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@radix-ui/primitive" "0.1.0"
@@ -581,10 +581,10 @@
     "@radix-ui/react-primitive" "0.1.2"
     "@radix-ui/react-use-controllable-state" "0.1.0"
 
-"@radix-ui/react-tooltip@0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-tooltip/-/react-tooltip-0.1.4.tgz#d3638363d71b6b52a7a2aacc70f8c5b3c83f3e36"
-  integrity sha512-VRRrd30Rons/1RSF8BuHTJnw31IZrQwmO0NcctAKUlxc8ImN/4aZn0GJNjP8Ox790ulSnrQejPGr/il4OKDvRg==
+"@radix-ui/react-tooltip@0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-tooltip/-/react-tooltip-0.1.5.tgz#e635ce2cb01f7a31871cf34b66cdcb784838e2b1"
+  integrity sha512-261jYYmWyRmoKjZ73gEKiVtO0FfkAakHzlq3oIE/aI0eKJ1odjBx+Wueonpd4ANyBIIA5Z5PMclt3z5iU66g3Q==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@radix-ui/primitive" "0.1.0"
