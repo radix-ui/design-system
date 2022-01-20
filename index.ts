@@ -65,6 +65,7 @@ export { IconButton } from './components/IconButton';
 export { Image } from './components/Image';
 export { TextField } from './components/TextField';
 export { Kbd } from './components/Kbd';
+export { Label } from './components/Label';
 export { Link } from './components/Link';
 export {
   Menu,
