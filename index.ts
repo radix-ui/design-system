@@ -5,6 +5,7 @@ export {
   AccordionContent,
 } from './components/Accordion';
 export { Alert } from './components/Alert';
+export { AppBar } from './components/AppBar';
 export {
   AlertDialog,
   AlertDialogAction,
