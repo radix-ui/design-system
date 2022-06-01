@@ -77,7 +77,7 @@ export const ScrollArea = (props: ScrollAreaProps) => {
         // Grab the starting mouse pos:
         lastDragPos.current = { x: e.clientX, y: e.clientY };
         // Add the dragging class to keep the thumb visible
-        wrapperEl.classList.add('modulz-is-dragging');
+        wrapperEl.classList.add('workos-is-dragging');
         // Add event listeners for drag and end:
         window.addEventListener('mousemove', onDragMove);
         window.addEventListener('mouseup', onDragEnd);
@@ -108,7 +108,7 @@ export const ScrollArea = (props: ScrollAreaProps) => {
     function onDragEnd(e: MouseEvent) {
       if (contentEl && thumbEl && wrapperEl) {
         // Add the dragging class to keep the thumb visible
-        wrapperEl.classList.remove('modulz-is-dragging');
+        wrapperEl.classList.remove('workos-is-dragging');
         // Get rid of our drag move and end event listeners:
         window.removeEventListener('mousemove', onDragMove);
         window.removeEventListener('mouseup', onDragEnd);
@@ -148,7 +148,7 @@ export const ScrollArea = (props: ScrollAreaProps) => {
             opacity: 1,
           },
         },
-        '&.modulz-is-dragging': {
+        '&.workos-is-dragging': {
           // Need to keep pointer events when scrolling so thumb isn't hidden immediately after scroll
           pointerEvents: 'auto',
           // But still remove pointer events from content
