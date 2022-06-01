@@ -1,3 +1,3 @@
-This is the design system for [Modulz](https://modulz.app).
+Design system maintained and used by [WorkOS](https://workos.com)
 
-Built with [Stitches](https://github.com/modulz/stitches) and [Radix UI Primitives](https://radix-ui.com/primitives/docs/overview/introduction).
+Built with [Stitches](https://github.com/stitchesjs/stitches) and [Radix UI Primitives](https://radix-ui.com/primitives/docs/overview/introduction).
