@@ -126,20 +126,6 @@ function Home() {
     <Box>
       <DarkThemeButton />
 
-      <Banner id="banner" variant="blue" rounded>
-        <RocketIcon />
-        <Text size="2" css={{ fontWeight: 500 }}>
-          Modulz raises a $15M Series A.
-        </Text>
-        <Separator orientation="vertical" />
-        <Link variant="blue" href="#">
-          <Text size="2">Read the story</Text>
-          <ArrowRightIcon />
-        </Link>
-        <IconButton variant="ghost">
-          <Cross1Icon />
-        </IconButton>
-      </Banner>
       <AppBar size="2" color="loContrast" border sticky glass>
         <Button>Button</Button>
       </AppBar>

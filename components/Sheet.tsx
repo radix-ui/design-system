@@ -5,6 +5,9 @@ import { Cross1Icon } from '@radix-ui/react-icons';
 import { overlayStyles } from './Overlay';
 import { IconButton } from './IconButton';
 
+const Sheet = DialogPrimitive.Root;
+const SheetTrigger = DialogPrimitive.Trigger;
+
 const fadeIn = keyframes({
   from: { opacity: '0' },
   to: { opacity: '1' },
@@ -30,17 +33,6 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
     animation: `${fadeOut} 150ms cubic-bezier(0.22, 1, 0.36, 1)`,
   },
 });
-
-type SheetProps = React.ComponentProps<typeof DialogPrimitive.Root>;
-
-export function Sheet({ children, ...props }: SheetProps) {
-  return (
-    <DialogPrimitive.Root {...props}>
-      <StyledOverlay />
-      {children}
-    </DialogPrimitive.Root>
-  );
-}
 
 const slideIn = keyframes({
   from: { transform: '$$transformValue' },
@@ -117,21 +109,24 @@ type SheetContentVariants = VariantProps<typeof StyledContent>;
 type DialogContentPrimitiveProps = React.ComponentProps<typeof DialogPrimitive.Content>;
 type SheetContentProps = DialogContentPrimitiveProps & SheetContentVariants & { css?: CSS };
 
-export const SheetContent = React.forwardRef<
-  React.ElementRef<typeof StyledContent>,
-  SheetContentProps
->(({ children, ...props }, forwardedRef) => (
-  <StyledContent {...props} ref={forwardedRef}>
-    {children}
-    <StyledCloseButton asChild>
-      <IconButton variant="ghost">
-        <Cross1Icon />
-      </IconButton>
-    </StyledCloseButton>
-  </StyledContent>
-));
+const SheetContent = React.forwardRef<React.ElementRef<typeof StyledContent>, SheetContentProps>(
+  ({ children, ...props }, forwardedRef) => (
+    <DialogPrimitive.Portal>
+      <StyledOverlay />
+      <StyledContent {...props} ref={forwardedRef}>
+        {children}
+        <StyledCloseButton asChild>
+          <IconButton variant="ghost">
+            <Cross1Icon />
+          </IconButton>
+        </StyledCloseButton>
+      </StyledContent>
+    </DialogPrimitive.Portal>
+  )
+);
 
-export const SheetTrigger = DialogPrimitive.Trigger;
-export const SheetClose = DialogPrimitive.Close;
-export const SheetTitle = DialogPrimitive.Title;
-export const SheetDescription = DialogPrimitive.Description;
+const SheetClose = DialogPrimitive.Close;
+const SheetTitle = DialogPrimitive.Title;
+const SheetDescription = DialogPrimitive.Description;
+
+export { Sheet, SheetTrigger, SheetContent, SheetClose, SheetTitle, SheetDescription };

@@ -1,12 +1,11 @@
 import React from 'react';
-import { styled } from '../stitches.config';
+import { styled, CSS } from '../stitches.config';
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import { overlayStyles } from './Overlay';
 import { panelStyles } from './Panel';
 
-type AlertDialogProps = React.ComponentProps<typeof AlertDialogPrimitive.Root> & {
-  children: React.ReactNode;
-};
+const AlertDialog = AlertDialogPrimitive.Root;
+const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
 
 const StyledOverlay = styled(AlertDialogPrimitive.Overlay, overlayStyles, {
   position: 'fixed',
@@ -16,16 +15,7 @@ const StyledOverlay = styled(AlertDialogPrimitive.Overlay, overlayStyles, {
   left: 0,
 });
 
-export function AlertDialog({ children, ...props }: AlertDialogProps) {
-  return (
-    <AlertDialogPrimitive.Root {...props}>
-      <StyledOverlay />
-      {children}
-    </AlertDialogPrimitive.Root>
-  );
-}
-
-export const AlertDialogContent = styled(AlertDialogPrimitive.Content, panelStyles, {
+export const StyledContent = styled(AlertDialogPrimitive.Content, panelStyles, {
   position: 'fixed',
   top: '50%',
   left: '50%',
@@ -40,8 +30,32 @@ export const AlertDialogContent = styled(AlertDialogPrimitive.Content, panelStyl
   },
 });
 
-export const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
-export const AlertDialogTitle = AlertDialogPrimitive.Title;
-export const AlertDialogDescription = AlertDialogPrimitive.Description;
-export const AlertDialogAction = AlertDialogPrimitive.Action;
-export const AlertDialogCancel = AlertDialogPrimitive.Cancel;
+type AlertDialogContentPrimitiveProps = React.ComponentProps<typeof AlertDialogPrimitive.Content>;
+type AlertDialogContentProps = AlertDialogContentPrimitiveProps & { css?: CSS };
+
+const AlertDialogContent = React.forwardRef<
+  React.ElementRef<typeof StyledContent>,
+  AlertDialogContentProps
+>(({ children, ...props }, forwardedRef) => (
+  <AlertDialogPrimitive.Portal>
+    <StyledOverlay />
+    <StyledContent {...props} ref={forwardedRef}>
+      {children}
+    </StyledContent>
+  </AlertDialogPrimitive.Portal>
+));
+
+const AlertDialogTitle = AlertDialogPrimitive.Title;
+const AlertDialogDescription = AlertDialogPrimitive.Description;
+const AlertDialogAction = AlertDialogPrimitive.Action;
+const AlertDialogCancel = AlertDialogPrimitive.Cancel;
+
+export {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+};
