@@ -1,4 +1,9 @@
 import React from 'react';
-import { IdProvider } from '@radix-ui/react-id';
+import { TooltipProvider } from '@radix-ui/react-tooltip';
 
-export const DesignSystemProvider: React.FC = ({ children }) => <IdProvider>{children}</IdProvider>;
+type TooltipProviderProps = React.ComponentProps<typeof TooltipProvider>;
+interface DesignSystemProviderProps extends TooltipProviderProps {}
+
+export const DesignSystemProvider: React.FC<DesignSystemProviderProps> = (props) => {
+  return <TooltipProvider {...props} />;
+};

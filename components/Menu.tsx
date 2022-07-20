@@ -25,7 +25,7 @@ export const itemCss = css(baseItemCss, {
   position: 'relative',
   color: '$hiContrast',
 
-  '&:focus': {
+  '&[data-highlighted]': {
     outline: 'none',
     backgroundColor: '$blue9',
     color: 'white',

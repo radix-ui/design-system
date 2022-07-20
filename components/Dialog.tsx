@@ -6,9 +6,8 @@ import { overlayStyles } from './Overlay';
 import { panelStyles } from './Panel';
 import { IconButton } from './IconButton';
 
-type DialogProps = React.ComponentProps<typeof DialogPrimitive.Root> & {
-  children: React.ReactNode;
-};
+const Dialog = DialogPrimitive.Root;
+const DialogTrigger = DialogPrimitive.Trigger;
 
 const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   position: 'fixed',
@@ -17,15 +16,6 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, overlayStyles, {
   bottom: 0,
   left: 0,
 });
-
-export function Dialog({ children, ...props }: DialogProps) {
-  return (
-    <DialogPrimitive.Root {...props}>
-      <StyledOverlay />
-      {children}
-    </DialogPrimitive.Root>
-  );
-}
 
 const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
   position: 'fixed',
@@ -56,21 +46,24 @@ const StyledCloseButton = styled(DialogPrimitive.Close, {
 type DialogContentPrimitiveProps = React.ComponentProps<typeof DialogPrimitive.Content>;
 type DialogContentProps = DialogContentPrimitiveProps & { css?: CSS };
 
-export const DialogContent = React.forwardRef<
-  React.ElementRef<typeof StyledContent>,
-  DialogContentProps
->(({ children, ...props }, forwardedRef) => (
-  <StyledContent {...props} ref={forwardedRef}>
-    {children}
-    <StyledCloseButton asChild>
-      <IconButton variant="ghost">
-        <Cross1Icon />
-      </IconButton>
-    </StyledCloseButton>
-  </StyledContent>
-));
+const DialogContent = React.forwardRef<React.ElementRef<typeof StyledContent>, DialogContentProps>(
+  ({ children, ...props }, forwardedRef) => (
+    <DialogPrimitive.Portal>
+      <StyledOverlay />
+      <StyledContent {...props} ref={forwardedRef}>
+        {children}
+        <StyledCloseButton asChild>
+          <IconButton variant="ghost">
+            <Cross1Icon />
+          </IconButton>
+        </StyledCloseButton>
+      </StyledContent>
+    </DialogPrimitive.Portal>
+  )
+);
 
-export const DialogTrigger = DialogPrimitive.Trigger;
-export const DialogClose = DialogPrimitive.Close;
-export const DialogTitle = DialogPrimitive.Title;
-export const DialogDescription = DialogPrimitive.Description;
+const DialogClose = DialogPrimitive.Close;
+const DialogTitle = DialogPrimitive.Title;
+const DialogDescription = DialogPrimitive.Description;
+
+export { Dialog, DialogTrigger, DialogContent, DialogClose, DialogTitle, DialogDescription };
