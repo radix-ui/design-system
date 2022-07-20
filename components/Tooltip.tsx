@@ -55,14 +55,7 @@ export function Tooltip({
             {content}
           </Text>
           <Box css={{ color: '$transparentExtreme' }}>
-            <TooltipPrimitive.Arrow
-              offset={5}
-              width={11}
-              height={5}
-              style={{
-                fill: 'currentColor',
-              }}
-            />
+            <TooltipPrimitive.Arrow width={11} height={5} style={{ fill: 'currentColor' }} />
           </Box>
         </StyledContent>
       </TooltipPrimitive.Portal>
