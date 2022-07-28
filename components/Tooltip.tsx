@@ -6,7 +6,7 @@ import { Text } from './Text';
 
 type ToopltipProviderProps = React.ComponentProps<typeof TooltipPrimitive.Provider>;
 type TooltipRootProps = React.ComponentProps<typeof TooltipPrimitive.Root>;
-type TooltipProps = TooltipPrimitiveProps &
+type TooltipProps = ToopltipProviderProps & TooltipRootProps &
   React.ComponentProps<typeof TooltipPrimitive.Content> & {
     children: React.ReactElement;
     content: React.ReactNode;
@@ -27,8 +27,6 @@ const StyledContent = styled(TooltipPrimitive.Content, {
     },
   },
 });
-
-export const Provider = TooltipPrimitive.Provider;
 
 export function Tooltip({
   children,
