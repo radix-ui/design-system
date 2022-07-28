@@ -4,7 +4,8 @@ import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import { Box } from './Box';
 import { Text } from './Text';
 
-type TooltipPrimitiveProps = React.ComponentProps<typeof TooltipPrimitive.Root>;
+type ToopltipProviderProps = React.ComponentProps<typeof TooltipPrimitive.Provider>;
+type TooltipRootProps = React.ComponentProps<typeof TooltipPrimitive.Root>;
 type TooltipProps = TooltipPrimitiveProps &
   React.ComponentProps<typeof TooltipPrimitive.Content> & {
     children: React.ReactElement;
@@ -27,6 +28,8 @@ const StyledContent = styled(TooltipPrimitive.Content, {
   },
 });
 
+export const Provider = TooltipPrimitive.Provider;
+
 export function Tooltip({
   children,
   content,
@@ -34,31 +37,35 @@ export function Tooltip({
   defaultOpen,
   onOpenChange,
   delayDuration,
+  skipDelayDuration,
   disableHoverableContent,
   multiline,
   ...props
 }: TooltipProps) {
+  const providerProps = { skipDelayDuration };
   const rootProps = { open, defaultOpen, onOpenChange, delayDuration, disableHoverableContent };
   return (
-    <TooltipPrimitive.Root {...rootProps}>
-      <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
-      <TooltipPrimitive.Portal>
-        <StyledContent side="top" align="center" sideOffset={5} {...props} multiline={multiline}>
-          <Text
-            size="1"
-            as="p"
-            css={{
-              color: '$loContrast',
-              lineHeight: multiline ? '20px' : (undefined as any),
-            }}
-          >
-            {content}
-          </Text>
-          <Box css={{ color: '$transparentExtreme' }}>
-            <TooltipPrimitive.Arrow width={11} height={5} style={{ fill: 'currentColor' }} />
-          </Box>
-        </StyledContent>
-      </TooltipPrimitive.Portal>
-    </TooltipPrimitive.Root>
+    <TooltipPrimitive.Provider {...providerProps}>
+      <TooltipPrimitive.Root {...rootProps}>
+        <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
+        <TooltipPrimitive.Portal>
+          <StyledContent side="top" align="center" sideOffset={5} {...props} multiline={multiline}>
+            <Text
+              size="1"
+              as="p"
+              css={{
+                color: '$loContrast',
+                lineHeight: multiline ? '20px' : (undefined as any),
+              }}
+            >
+              {content}
+            </Text>
+            <Box css={{ color: '$transparentExtreme' }}>
+              <TooltipPrimitive.Arrow width={11} height={5} style={{ fill: 'currentColor' }} />
+            </Box>
+          </StyledContent>
+        </TooltipPrimitive.Portal>
+      </TooltipPrimitive.Root>
+    </TooltipPrimitive.Provider
   );
 }
