@@ -131,6 +131,18 @@ export const {
 } = createStitches({
   theme: {
     colors: {
+      wdsGray1: 'hsl(264, 12%, 99%)',
+      wdsGray2: 'hsl(264, 7%, 97.5%)',
+      wdsGray3: 'hsl(254, 3%, 95%)',
+      wdsGray4: 'hsl(255, 3%, 93%)',
+      wdsGray5: 'hsl(256, 3%, 91%)',
+      wdsGray6: 'hsl(254, 4%, 91%)',
+      wdsGray7: 'hsl(251, 4%, 83%)',
+      wdsGray8: 'hsl(250, 4%, 75%)',
+      wdsGray9: 'hsl(232, 4%, 57%)',
+      wdsGray10: 'hsl(233, 3.5%, 53.5%)',
+      wdsGray11: 'hsl(232, 4%, 44%)',
+      wdsGray12: 'hsl(240, 12%, 9%)',
       ...gray,
       ...mauve,
       ...slate,
@@ -418,6 +430,18 @@ export type CSS = Stitches.CSS<typeof config>;
 
 export const darkTheme = createTheme('dark-theme', {
   colors: {
+    wdsGray1: 'hsl(232, 5%, 9.5%)',
+    wdsGray2: 'hsl(232, 5%, 11%)',
+    wdsGray3: 'hsl(235, 4%, 17%)',
+    wdsGray4: 'hsl(235, 4%, 19%)',
+    wdsGray5: 'hsl(235, 4%, 21%)',
+    wdsGray6: 'hsl(240, 4%, 21.5%)',
+    wdsGray7: 'hsl(240, 4%, 26%)',
+    wdsGray8: 'hsl(240, 4%, 32%)',
+    wdsGray9: 'hsl(238, 4%, 45%)',
+    wdsGray10: 'hsl(239, 3%, 51%)',
+    wdsGray11: 'hsl(240, 3%, 64%)',
+    wdsGray12: 'hsl(240, 4%, 94%)',
     ...grayDark,
     ...mauveDark,
     ...slateDark,

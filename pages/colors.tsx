@@ -32,6 +32,8 @@ const sidebarWidth = 240;
 export const loContrasts = ['lime', 'yellow', 'amber', 'sky', 'mint'];
 
 export const colors = [
+  'wdsGray',
+
   'gray',
   'mauve',
   'slate',
@@ -111,7 +113,7 @@ export default function Colors() {
               Palette
             </Checkbox>
             <Checkbox defaultChecked={layers} onChange={(e) => setLayers(e.target.checked)}>
-              Layers
+              Layerss
             </Checkbox>
             <Checkbox
               defaultChecked={layersAlpha}

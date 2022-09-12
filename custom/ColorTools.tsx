@@ -78,6 +78,27 @@ export function ColorTools() {
     <Flex css={{ minHeight: '100%', fd: 'column', jc: 'space-between' }}>
       <Box css={{ flex: 'none', mb: '$3' }}>
         <EditableScale
+          name="wdsGray"
+          lightThemeConfig={{
+            start: 'hsl(240 20% 98%)',
+            end: 'hsl(230 10% 75%)',
+            defaultCurve: [0.655, 0.455, 0.905, 0.47],
+            overrides: {
+              wdsGray1: 'hsl(240 22% 99%)',
+              wdsGray9: 'hsl(230 10% 57%)',
+              wdsGray10: 'hsl(225 10% 53%)',
+              wdsGray11: 'hsl(220 10% 44%)',
+              wdsGray12: 'hsl(210 19% 20%)',
+            },
+          }}
+          darkThemeConfig={{
+            start: 'hsl(246 6% 11.5%)',
+            end: 'hsl(250 5% 32.5%)',
+            defaultCurve: [0.38, 0.355, 0.785, 0.395],
+            overrides: {},
+          }}
+        />
+        <EditableScale
           name="gray"
           lightThemeConfig={{
             start: 'hsl(0 0% 97.3%)',
