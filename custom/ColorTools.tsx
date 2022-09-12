@@ -93,12 +93,12 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             start: 'hsl(240 7% 11.5%)',
-            end: 'hsl(225 11% 32.5%)',
+            end: 'hsl(225 7% 32.5%)',
             defaultCurve: [0.23, 0.62, 0.65, 0.335],
             overrides: {
               workOsGray1: 'hsl(240, 5%, 9.8%)',
-              workOsGray9: 'hsl(220 10% 45%)',
-              workOsGray11: 'hsl(220, 10%, 64%)',
+              workOsGray9: 'hsl(220 6% 44%)',
+              workOsGray11: 'hsl(220, 6%, 64%)',
               workOsGray12: 'hsl(220, 10%, 90%)',
             },
           }}
@@ -289,18 +289,18 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: '#000',
-            end: '#000',
+            start: 'hsl(50, 100%, 7%)',
+            end: 'hsl(52, 100%, 22%)',
             defaultCurve: [0.23, 0.62, 0.65, 0.335],
             overrides: {
-              workOsYellow1: 'hsl(45, 100%, 6%)',
-              workOsYellow2: 'hsl(46, 100%, 7%)',
-              workOsYellow3: 'hsl(45, 100%, 12%)',
-              workOsYellow4: 'hsl(45, 100%, 13.5%)',
-              workOsYellow5: 'hsl(47, 100%, 15%)',
-              workOsYellow6: 'hsl(49, 100%, 15%)',
-              workOsYellow7: 'hsl(49, 90%, 19%)',
-              workOsYellow8: 'hsl(50, 100%, 22%)',
+              workOsYellow1: 'hsl(52, 100%, 5.5%)',
+              // workOsYellow2: 'hsl(46, 100%, 7%)',
+              // workOsYellow3: 'hsl(45, 100%, 12%)',
+              // workOsYellow4: 'hsl(45, 100%, 13.5%)',
+              // workOsYellow5: 'hsl(47, 100%, 15%)',
+              // workOsYellow6: 'hsl(49, 100%, 15%)',
+              // workOsYellow7: 'hsl(49, 90%, 19%)',
+              // workOsYellow8: 'hsl(50, 100%, 22%)',
               workOsYellow9: 'hsl(53, 92%, 50%)',
               workOsYellow10: 'hsl(54, 100%, 60%)',
               workOsYellow11: 'hsl(48, 100%, 45%)',
