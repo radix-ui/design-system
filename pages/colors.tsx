@@ -33,6 +33,11 @@ export const loContrasts = ['lime', 'yellow', 'amber', 'sky', 'mint'];
 
 export const colors = [
   'workOsGray',
+  'workOsRed',
+  'workOsPurple',
+  'workOsBlue',
+  'workOsGreen',
+  'workOsYellow',
 
   'gray',
   'mauve',

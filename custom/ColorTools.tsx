@@ -85,10 +85,10 @@ export function ColorTools() {
             defaultCurve: [0.655, 0.455, 0.905, 0.47],
             overrides: {
               workOsGray1: 'hsl(240 22% 99%)',
-              workOsGray9: 'hsl(230 10% 57%)',
+              workOsGray9: 'hsl(230 6% 57%)',
               // workOsGray10: 'hsl(225 10% 53%)',
-              workOsGray11: 'hsl(220 10% 44%)',
-              workOsGray12: 'hsl(210 19% 20%)',
+              workOsGray11: 'hsl(220 6% 44%)',
+              workOsGray12: 'hsl(210 16% 20%)',
             },
           }}
           darkThemeConfig={{
@@ -97,22 +97,214 @@ export function ColorTools() {
             defaultCurve: [0.23, 0.62, 0.65, 0.335],
             overrides: {
               workOsGray1: 'hsl(240, 5%, 9.8%)',
-
-              // workOsGray2: 'hsl(232, 5%, 11%)',
-              // workOsGray3: 'hsl(235, 4%, 17%)',
-              // workOsGray4: 'hsl(235, 4%, 19%)',
-              // workOsGray5: 'hsl(235, 4%, 21%)',
-              // workOsGray6: 'hsl(240, 4%, 21.5%)',
-              // workOsGray7: 'hsl(240, 4%, 26%)',
-              // workOsGray8: 'hsl(240, 4%, 32%)',
-
               workOsGray9: 'hsl(220 10% 45%)',
               workOsGray11: 'hsl(220, 10%, 64%)',
               workOsGray12: 'hsl(220, 10%, 90%)',
-              // workOsGray9: 'hsl(238, 4%, 45%)',
-              // workOsGray10: 'hsl(239, 3%, 51%)',
-              // workOsGray11: 'hsl(240, 3%, 64%)',
-              // workOsGray12: 'hsl(240, 4%, 94%)',
+            },
+          }}
+        />
+        <EditableScale
+          name="workOsRed"
+          lightThemeConfig={{
+            start: '#000',
+            end: '#000',
+            defaultCurve: [0.985, 0.41, 0.54, 0.175],
+            overrides: {
+              workOsRed1: 'hsl(348, 100%, 99%)',
+              workOsRed2: 'hsl(348, 100%, 98.5%)',
+              workOsRed3: 'hsl(349, 100%, 97%)',
+              workOsRed4: 'hsl(349, 98%, 95.5%)',
+              workOsRed5: 'hsl(349, 96%, 94%)',
+              workOsRed6: 'hsl(349, 82%, 92%)',
+              workOsRed7: 'hsl(348, 78%, 83%)',
+              workOsRed8: 'hsl(348, 75%, 75.5%)',
+              workOsRed9: 'hsl(347, 75%, 58.5%)',
+              workOsRed10: 'hsl(347, 70%, 54.5%)',
+              workOsRed11: 'hsl(347, 65%, 49.5%)',
+              workOsRed12: 'hsl(354, 70%, 20%)',
+            },
+          }}
+          darkThemeConfig={{
+            start: '#000',
+            end: '#000',
+            defaultCurve: [0.23, 0.62, 0.65, 0.335],
+            overrides: {
+              workOsRed1: 'hsl(343, 23%, 10%)',
+              workOsRed2: 'hsl(347, 34%, 12%)',
+              workOsRed3: 'hsl(346, 43%, 20%)',
+              workOsRed4: 'hsl(346, 47%, 22.5%)',
+              workOsRed5: 'hsl(346, 51%, 26%)',
+              workOsRed6: 'hsl(346, 55%, 27.5%)',
+              workOsRed7: 'hsl(347, 60%, 35%)',
+              workOsRed8: 'hsl(348, 65%, 41%)',
+              workOsRed9: 'hsl(348, 75%, 59%)',
+              workOsRed10: 'hsl(348, 85%, 64%)',
+              workOsRed11: 'hsl(348, 100%, 72%)',
+              workOsRed12: 'hsl(341, 89%, 95.3%)',
+            },
+          }}
+        />
+        <EditableScale
+          name="workOsPurple"
+          lightThemeConfig={{
+            start: '#000',
+            end: '#000',
+            defaultCurve: [0.985, 0.41, 0.54, 0.175],
+            overrides: {
+              workOsPurple1: 'hsl(243, 65%, 99.5%)',
+              workOsPurple2: 'hsl(240, 100%, 99%)',
+              workOsPurple3: 'hsl(240, 99%, 97.5%)',
+              workOsPurple4: 'hsl(240, 98%, 96%)',
+              workOsPurple5: 'hsl(240, 96%, 95%)',
+              workOsPurple6: 'hsl(240, 78%, 93%)',
+              workOsPurple7: 'hsl(240, 72%, 85%)',
+              workOsPurple8: 'hsl(240, 74%, 79%)',
+              workOsPurple9: 'hsl(240, 78%, 66%)',
+              workOsPurple10: 'hsl(239, 72%, 62%)',
+              workOsPurple11: 'hsl(238, 63%, 58%)',
+              workOsPurple12: 'hsl(242, 50%, 21%)',
+            },
+          }}
+          darkThemeConfig={{
+            start: '#000',
+            end: '#000',
+            defaultCurve: [0.23, 0.62, 0.65, 0.335],
+            overrides: {
+              workOsPurple1: 'hsl(240, 20%, 10%)',
+              workOsPurple2: 'hsl(240, 30%, 13%)',
+              workOsPurple3: 'hsl(242, 37%, 23%)',
+              workOsPurple4: 'hsl(242, 39%, 26%)',
+              workOsPurple5: 'hsl(242, 42%, 30%)',
+              workOsPurple6: 'hsl(240, 45%, 33%)',
+              workOsPurple7: 'hsl(240, 45%, 41%)',
+              workOsPurple8: 'hsl(240, 52%, 51%)',
+              workOsPurple9: 'hsl(240, 56%, 62%)',
+              workOsPurple10: 'hsl(241, 63%, 66%)',
+              workOsPurple11: 'hsl(242, 95%, 77%)',
+              workOsPurple12: 'hsl(242, 87%, 96%)',
+            },
+          }}
+        />
+        <EditableScale
+          name="workOsBlue"
+          lightThemeConfig={{
+            start: '#000',
+            end: '#000',
+            defaultCurve: [0.985, 0.41, 0.54, 0.175],
+            overrides: {
+              workOsBlue1: 'hsl(198, 100%, 98.5%)',
+              workOsBlue2: 'hsl(198, 100%, 97.5%)',
+              workOsBlue3: 'hsl(198, 100%, 94.5%)',
+              workOsBlue4: 'hsl(201, 100%, 92.5%)',
+              workOsBlue5: 'hsl(202, 100%, 91%)',
+              workOsBlue6: 'hsl(209, 82%, 89%)',
+              workOsBlue7: 'hsl(208, 77%, 77%)',
+              workOsBlue8: 'hsl(206, 82%, 65%)',
+              workOsBlue9: 'hsl(206, 100%, 50%)',
+              workOsBlue10: 'hsl(208, 100%, 47%)',
+              workOsBlue11: 'hsl(211, 100%, 43%)',
+              workOsBlue12: 'hsl(211, 100%, 15%)',
+            },
+          }}
+          darkThemeConfig={{
+            start: '#000',
+            end: '#000',
+            defaultCurve: [0.23, 0.62, 0.65, 0.335],
+            overrides: {
+              workOsBlue1: 'hsl(208, 35%, 9%)',
+              workOsBlue2: 'hsl(208, 50%, 10%)',
+              workOsBlue3: 'hsl(210, 59%, 17%)',
+              workOsBlue4: 'hsl(210, 66%, 19%)',
+              workOsBlue5: 'hsl(211, 71%, 22%)',
+              workOsBlue6: 'hsl(212, 77%, 24%)',
+              workOsBlue7: 'hsl(212, 85%, 28%)',
+              workOsBlue8: 'hsl(212, 90%, 34%)',
+              workOsBlue9: 'hsl(206, 100%, 46%)',
+              workOsBlue10: 'hsl(207, 100%, 52%)',
+              workOsBlue11: 'hsl(208, 100%, 66%)',
+              workOsBlue12: 'hsl(208, 98%, 93.5%)',
+            },
+          }}
+        />
+        <EditableScale
+          name="workOsGreen"
+          lightThemeConfig={{
+            start: '#000',
+            end: '#000',
+            defaultCurve: [0.985, 0.41, 0.54, 0.175],
+            overrides: {
+              workOsGreen1: 'hsl(151, 60%, 98%)',
+              workOsGreen2: 'hsl(153, 72%, 96.5%)',
+              workOsGreen3: 'hsl(154, 75%, 92.5%)',
+              workOsGreen4: 'hsl(155, 74%, 90%)',
+              workOsGreen5: 'hsl(156, 65%, 86%)',
+              workOsGreen6: 'hsl(158, 55%, 83.5%)',
+              workOsGreen7: 'hsl(164, 45%, 68.5%)',
+              workOsGreen8: 'hsl(166, 45%, 53.5%)',
+              workOsGreen9: 'hsl(166, 60%, 41%)',
+              workOsGreen10: 'hsl(167, 62%, 37.5%)',
+              workOsGreen11: 'hsl(168, 67%, 28%)',
+              workOsGreen12: 'hsl(170, 44%, 10%)',
+            },
+          }}
+          darkThemeConfig={{
+            start: '#000',
+            end: '#000',
+            defaultCurve: [0.23, 0.62, 0.65, 0.335],
+            overrides: {
+              workOsGreen1: 'hsl(152, 53%, 6.5%)',
+              workOsGreen2: 'hsl(153, 82%, 7%)',
+              workOsGreen3: 'hsl(154, 80%, 11.5%)',
+              workOsGreen4: 'hsl(155, 80%, 13%)',
+              workOsGreen5: 'hsl(156, 80%, 14%)',
+              workOsGreen6: 'hsl(158, 80%, 15%)',
+              workOsGreen7: 'hsl(164, 81%, 18%)',
+              workOsGreen8: 'hsl(164, 84%, 22%)',
+              workOsGreen9: 'hsl(164, 84%, 34%)',
+              workOsGreen10: 'hsl(166, 86%, 36%)',
+              workOsGreen11: 'hsl(168, 94%, 41%)',
+              workOsGreen12: 'hsl(170, 77%, 88.2%)',
+            },
+          }}
+        />
+        <EditableScale
+          name="workOsYellow"
+          lightThemeConfig={{
+            start: '#000',
+            end: '#000',
+            defaultCurve: [0.985, 0.41, 0.54, 0.175],
+            overrides: {
+              workOsYellow1: 'hsl(54, 90%, 97.5%)',
+              workOsYellow2: 'hsl(52, 100%, 95.5%)',
+              workOsYellow3: 'hsl(52, 100%, 89%)',
+              workOsYellow4: 'hsl(52, 100%, 84%)',
+              workOsYellow5: 'hsl(54, 92%, 78%)',
+              workOsYellow6: 'hsl(50, 85%, 77%)',
+              workOsYellow7: 'hsl(44, 80%, 68%)',
+              workOsYellow8: 'hsl(46, 80%, 53%)',
+              workOsYellow9: 'hsl(53, 92%, 50%)',
+              workOsYellow10: 'hsl(50, 100%, 48.5%)',
+              workOsYellow11: 'hsl(42, 100%, 29%)',
+              workOsYellow12: 'hsl(48, 50%, 15%)',
+            },
+          }}
+          darkThemeConfig={{
+            start: '#000',
+            end: '#000',
+            defaultCurve: [0.23, 0.62, 0.65, 0.335],
+            overrides: {
+              workOsYellow1: 'hsl(45, 100%, 6%)',
+              workOsYellow2: 'hsl(46, 100%, 7%)',
+              workOsYellow3: 'hsl(45, 100%, 12%)',
+              workOsYellow4: 'hsl(45, 100%, 13.5%)',
+              workOsYellow5: 'hsl(47, 100%, 15%)',
+              workOsYellow6: 'hsl(49, 100%, 15%)',
+              workOsYellow7: 'hsl(49, 90%, 19%)',
+              workOsYellow8: 'hsl(50, 100%, 22%)',
+              workOsYellow9: 'hsl(53, 92%, 50%)',
+              workOsYellow10: 'hsl(54, 100%, 60%)',
+              workOsYellow11: 'hsl(48, 100%, 45%)',
+              workOsYellow12: 'hsl(53, 100%, 91%)',
             },
           }}
         />
@@ -895,7 +1087,12 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         for (const key in config.overrides) {
           // Make sure that color name matches the desired override
           if (key.includes(name)) {
-            newColors.push({ name: key, value: config.overrides[key] });
+            const thisColor = newColors.find(({ name }) => name === key);
+            if (thisColor) {
+              thisColor.value = config.overrides[key];
+            } else {
+              newColors.push({ name: key, value: config.overrides[key] });
+            }
           }
         }
       }
