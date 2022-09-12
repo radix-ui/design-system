@@ -78,24 +78,42 @@ export function ColorTools() {
     <Flex css={{ minHeight: '100%', fd: 'column', jc: 'space-between' }}>
       <Box css={{ flex: 'none', mb: '$3' }}>
         <EditableScale
-          name="wdsGray"
+          name="workOsGray"
           lightThemeConfig={{
             start: 'hsl(240 20% 98%)',
             end: 'hsl(230 10% 75%)',
             defaultCurve: [0.655, 0.455, 0.905, 0.47],
             overrides: {
-              wdsGray1: 'hsl(240 22% 99%)',
-              wdsGray9: 'hsl(230 10% 57%)',
-              wdsGray10: 'hsl(225 10% 53%)',
-              wdsGray11: 'hsl(220 10% 44%)',
-              wdsGray12: 'hsl(210 19% 20%)',
+              workOsGray1: 'hsl(240 22% 99%)',
+              workOsGray9: 'hsl(230 10% 57%)',
+              // workOsGray10: 'hsl(225 10% 53%)',
+              workOsGray11: 'hsl(220 10% 44%)',
+              workOsGray12: 'hsl(210 19% 20%)',
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(246 6% 11.5%)',
-            end: 'hsl(250 5% 32.5%)',
-            defaultCurve: [0.38, 0.355, 0.785, 0.395],
-            overrides: {},
+            start: 'hsl(240 7% 11.5%)',
+            end: 'hsl(225 11% 32.5%)',
+            defaultCurve: [0.23, 0.62, 0.65, 0.335],
+            overrides: {
+              workOsGray1: 'hsl(240, 5%, 9.8%)',
+
+              // workOsGray2: 'hsl(232, 5%, 11%)',
+              // workOsGray3: 'hsl(235, 4%, 17%)',
+              // workOsGray4: 'hsl(235, 4%, 19%)',
+              // workOsGray5: 'hsl(235, 4%, 21%)',
+              // workOsGray6: 'hsl(240, 4%, 21.5%)',
+              // workOsGray7: 'hsl(240, 4%, 26%)',
+              // workOsGray8: 'hsl(240, 4%, 32%)',
+
+              workOsGray9: 'hsl(220 10% 45%)',
+              workOsGray11: 'hsl(220, 10%, 64%)',
+              workOsGray12: 'hsl(220, 10%, 90%)',
+              // workOsGray9: 'hsl(238, 4%, 45%)',
+              // workOsGray10: 'hsl(239, 3%, 51%)',
+              // workOsGray11: 'hsl(240, 3%, 64%)',
+              // workOsGray12: 'hsl(240, 4%, 94%)',
+            },
           }}
         />
         <EditableScale
@@ -913,15 +931,9 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
           newColors.find((color) => color.name === `${name}${index + 1}`)?.value ??
           computedStyles.getPropertyValue(`--colors-${name}${index + 1}`);
 
-        const backdropColor = isDarkTheme
-          ? newColors.find((color) => color.name === `${name}1`)?.value ??
-            computedStyles.getPropertyValue(`--colors-${name}1`)
-          : '#ffffff';
+        const backdropColor = isDarkTheme ? '#121214' : '#ffffff';
 
-        const alphaValue =
-          isDarkTheme && index === 0
-            ? 'hsl(0 0% 0% / 0)'
-            : getAlphaColor(targetColor, backdropColor);
+        const alphaValue = getAlphaColor(targetColor, backdropColor);
         newColors.push({ name: `${name}A${index + 1}`, value: alphaValue });
       });
 

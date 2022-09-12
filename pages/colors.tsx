@@ -32,7 +32,7 @@ const sidebarWidth = 240;
 export const loContrasts = ['lime', 'yellow', 'amber', 'sky', 'mint'];
 
 export const colors = [
-  'wdsGray',
+  'workOsGray',
 
   'gray',
   'mauve',
