@@ -179,13 +179,6 @@ function Home() {
             </Link>
           </Box>
           <Box css={{ my: '$1' }}>
-            <Link href="#banner" variant="subtle" css={{ display: 'inline-flex' }}>
-              <Text size="2" css={{ lineHeight: '20px' }}>
-                Banner
-              </Text>
-            </Link>
-          </Box>
-          <Box css={{ my: '$1' }}>
             <Link href="#button" variant="subtle" css={{ display: 'inline-flex' }}>
               <Text size="2" css={{ lineHeight: '20px' }}>
                 Button
