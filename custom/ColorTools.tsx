@@ -80,12 +80,14 @@ export function ColorTools() {
         <EditableScale
           name="gray"
           lightThemeConfig={{
-            start: 'hsl(0 0% 97.3%)',
-            end: 'hsl(0 0% 78%)',
-            defaultCurve: [0.655, 0.455, 0.905, 0.47],
+            start: 'hsl(0 0% 97.5%)',
+            end: 'hsl(0 0% 73.2%)',
+            defaultCurve: [0.625, 0.455, 0.875, 0.405],
             overrides: {
               gray1: 'hsl(0 0% 99.0%)',
-              gray11: 'hsl(0 0% 43.5%)',
+              gray9: 'hsl(0 0% 55.2%)',
+              gray11: 'hsl(0 0% 39.3%)',
+              gray12: 'hsl(0 0% 19%)',
             },
           }}
           darkThemeConfig={{
@@ -101,12 +103,14 @@ export function ColorTools() {
         <EditableScale
           name="mauve"
           lightThemeConfig={{
-            start: 'hsl(300 10% 97.6%)',
-            end: 'hsl(252 4% 78.9%)',
-            defaultCurve: [0.655, 0.455, 0.905, 0.47],
+            start: 'hsl(280, 23%, 98%)',
+            end: 'hsl(250 11% 75.5%)',
+            defaultCurve: [0.64, 0.47, 0.905, 0.47],
             overrides: {
-              mauve9: 'hsl(252 4% 57.3%)',
-              mauve11: 'hsl(252 4% 44.8%)',
+              mauve1: 'hsl(300, 26%, 99%)',
+              mauve9: 'hsl(252 6% 57.3%)',
+              mauve11: 'hsl(252 5% 40.7%)',
+              mauve12: 'hsl(260 14% 21.5%)',
             },
           }}
           darkThemeConfig={{
@@ -129,9 +133,17 @@ export function ColorTools() {
             end: 'hsl(206 10% 78%)',
             defaultCurve: [0.65, 0.47, 0.905, 0.47],
             overrides: {
-              slate9: 'hsl(206 6% 56.1%)',
-              slate11: 'hsl(206 6% 43.5%)',
-              slate12: 'hsl(206 24% 9%)',
+              slate1: 'hsl(240, 22%, 99%)',
+              slate2: 'hsl(240, 20%, 98%)',
+              slate3: 'hsl(239, 13.4%, 95.4%)',
+              slate4: 'hsl(238, 11.8%, 92.9%)',
+              slate5: 'hsl(237, 11.1%, 90.5%)',
+              slate6: 'hsl(236, 10.6%, 87.9%)',
+              slate7: 'hsl(234, 10.4%, 84.4%)',
+              slate8: 'hsl(231, 10.2%, 75.1%)',
+              slate9: 'hsl(230, 6%, 57%)',
+              slate11: 'hsl(220, 6%, 40%)',
+              slate12: 'hsl(210, 16%, 20%)',
             },
           }}
           darkThemeConfig={{
@@ -148,12 +160,12 @@ export function ColorTools() {
           name="sage"
           lightThemeConfig={{
             start: 'hsl(155 17% 97.6%)',
-            end: 'hsl(155 6% 77.3%)',
+            end: 'hsl(155 6% 72.5%)',
             defaultCurve: [0.65, 0.47, 0.89, 0.475],
             overrides: {
-              sage9: 'hsl(155 3.5% 55.5%)',
-              sage11: 'hsl(155 3% 43.0%)',
-              sage12: 'hsl(155 24% 9.0%)',
+              sage9: 'hsl(155 3.5% 54.2%)',
+              sage11: 'hsl(155 3% 38.5%)',
+              sage12: 'hsl(155 12% 18.2%)',
             },
           }}
           darkThemeConfig={{
@@ -173,12 +185,12 @@ export function ColorTools() {
           name="olive"
           lightThemeConfig={{
             start: 'hsl(110 17% 97.6%)',
-            end: 'hsl(110 5% 77.3%)',
-            defaultCurve: [0.65, 0.47, 0.905, 0.47],
+            end: 'hsl(110 5% 72.5%)',
+            defaultCurve: [0.64, 0.45, 0.885, 0.465],
             overrides: {
-              olive9: 'hsl(110 3.5% 55.5%)',
-              olive11: 'hsl(110 3% 43.0%)',
-              olive12: 'hsl(110 25% 9.5%)',
+              olive9: 'hsl(110 3% 54.5%)',
+              olive11: 'hsl(110 3% 38.5%)',
+              olive12: 'hsl(110 8% 18.5%)',
             },
           }}
           darkThemeConfig={{
@@ -198,11 +210,12 @@ export function ColorTools() {
           name="sand"
           lightThemeConfig={{
             start: 'hsl(50 9% 97.5%)',
-            end: 'hsl(50 6% 77%)',
-            defaultCurve: [0.65, 0.45, 0.905, 0.47],
+            end: 'hsl(50 6% 72.2%)',
+            defaultCurve: [0.65, 0.45, 0.875, 0.48],
             overrides: {
-              sand11: 'hsl(50 2% 43.1%)',
-              sand12: 'hsl(50 6% 10%)',
+              sand9: 'hsl(60 3% 53.9%)',
+              sand11: 'hsl(50 2.5% 38.5%)',
+              sand12: 'hsl(50 8% 18.1%)',
             },
           }}
           darkThemeConfig={{
