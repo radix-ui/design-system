@@ -888,13 +888,10 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
       // Set alpha scales
       Array.from(Array(12)).forEach((_, index) => {
-        const targetColor =
-          newColors.find((color) => color.name === `${name}${index + 1}`)?.value ??
-          computedStyles.getPropertyValue(`--colors-${name}${index + 1}`);
+        const targetColor = computedStyles.getPropertyValue(`--colors-${name}${index + 1}`);
 
         const backdropColor = isDarkTheme
-          ? newColors.find((color) => color.name === `${name}1`)?.value ??
-            computedStyles.getPropertyValue(`--colors-${name}1`)
+          ? computedStyles.getPropertyValue(`--colors-${name}1`)
           : '#ffffff';
 
         const alphaValue =
@@ -1516,8 +1513,7 @@ function getAlphaColor(targetColor: string, backdropColor: string) {
 
   const A = ceil(Math.max(alphaR, alphaG, alphaB));
 
-  // Clamp alpha between 0.02 and `maxAlpha`
-  const safeA = Math.min(0.98, A);
+  const safeA = Math.min(1, A);
 
   const R = ((backdropR * (1 - safeA) - targetR) / safeA) * -1;
   const G = ((backdropG * (1 - safeA) - targetG) / safeA) * -1;
