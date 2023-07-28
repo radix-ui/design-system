@@ -251,7 +251,8 @@ export function ColorTools() {
             overrides: {
               tomato9: 'hsl(10 78% 54.0%)',
               tomato11: 'hsl(10 82% 43.5%)',
-              tomato12: 'hsl(10 50% 13.5%)',
+              // tomato12: 'hsl(10 50% 13.5%)',
+              tomato12: 'hsl(8, 60%, 22%)',
             },
           }}
           darkThemeConfig={{
@@ -274,11 +275,20 @@ export function ColorTools() {
             mixAmount: 0.38,
             defaultCurve: [0.61, 0.265, 0.72, 0.52],
             overrides: {
-              red1: 'hsl(359 100% 99.4%)',
-              red2: 'hsl(359 100% 98.6%)',
-              red9: 'hsl(358 75% 59.0%)',
-              red11: 'hsl(358 65% 48.7%)',
-              red12: 'hsl(354 50% 14.6%)',
+              // WorkOS red
+              // red1: 'hsl(348, 100%, 99%)',
+              // red2: 'hsl(348, 100%, 98.5%)',
+              // red3: 'hsl(349, 100%, 97%)',
+              // red4: 'hsl(349, 98%, 95.5%)',
+              // red5: 'hsl(349, 96%, 94%)',
+              // red6: 'hsl(349, 82%, 92%)',
+              // red7: 'hsl(348, 78%, 83%)',
+              // red8: 'hsl(348, 75%, 75.5%)',
+              // red9: 'hsl(347, 75%, 58.5%)',
+              // red10: 'hsl(347, 70%, 54.5%)',
+              // red11: 'hsl(347, 65%, 49.5%)',
+              // red12: 'hsl(344, 63%, 24%)',
+              red12: 'hsl(350, 63%, 24%)',
             },
           }}
           darkThemeConfig={{
@@ -304,7 +314,8 @@ export function ColorTools() {
               crimson1: 'hsl(332 100% 99.4%)',
               crimson9: 'hsl(336 80% 57.8%)',
               crimson11: 'hsl(336 75% 47.2%)',
-              crimson12: 'hsl(340 65% 14.5%)',
+              // crimson12: 'hsl(340 65% 14.5%)',
+              crimson12: 'hsl(332, 63%, 23.5%)',
             },
           }}
           darkThemeConfig={{
@@ -330,7 +341,8 @@ export function ColorTools() {
               pink1: 'hsl(322 100% 99.4%)',
               pink9: 'hsl(322 65% 54.5%)',
               pink11: 'hsl(322 75% 46%)',
-              pink12: 'hsl(320 70% 13.5%)',
+              // pink12: 'hsl(320 70% 13.5%)',
+              pink12: 'hsl(320, 70%, 23.2%)',
             },
           }}
           darkThemeConfig={{
@@ -356,7 +368,8 @@ export function ColorTools() {
               plum1: 'hsl(292 90% 99.4%)',
               plum9: 'hsl(292 45% 51.0%)',
               plum11: 'hsl(292 60% 42.5%)',
-              plum12: 'hsl(291 66% 14.0%)',
+              // plum12: 'hsl(291 66% 14.0%)',
+              plum12: 'hsl(291, 57%, 23.2%)',
             },
           }}
           darkThemeConfig={{
@@ -381,6 +394,7 @@ export function ColorTools() {
             overrides: {
               purple1: 'hsl(280 65% 99.4%)',
               purple11: 'hsl(272 50% 45.8%)',
+              purple12: 'hsl(270 50% 25%)',
             },
           }}
           darkThemeConfig={{
@@ -402,10 +416,20 @@ export function ColorTools() {
             mixAmount: 0.42,
             defaultCurve: [0.69, 0.31, 0.76, 0.525],
             overrides: {
-              violet1: 'hsl(255 65% 99.4%)',
-              violet9: 'hsl(252 56% 57.5%)',
-              violet11: 'hsl(250 43% 48.0%)',
-              violet12: 'hsl(254 60% 18.5%)',
+              // WorkOS brand
+              // violet1: 'hsl(243, 65%, 99.5%)',
+              // violet2: 'hsl(240, 100%, 99%)',
+              // violet3: 'hsl(240, 99%, 97.5%)',
+              // violet4: 'hsl(240, 98%, 96%)',
+              // violet5: 'hsl(240, 96%, 95%)',
+              // violet6: 'hsl(240, 78%, 93%)',
+              // violet7: 'hsl(240, 72%, 85%)',
+              // violet8: 'hsl(240, 74%, 79%)',
+              // violet9: 'hsl(240, 78%, 66%)',
+              // violet10: 'hsl(239, 72%, 62%)',
+              // violet11: 'hsl(238, 63%, 58%)',
+              // violet12: hsl(244, 43%, 28%);
+              violet12: 'hsl(250, 43%, 26%)',
             },
           }}
           darkThemeConfig={{
@@ -413,8 +437,19 @@ export function ColorTools() {
             end: 'hsl(250 52% 51.2%)',
             defaultCurve: [0.385, 0.425, 0.65, 0.25],
             overrides: {
-              violet1: 'hsl(250 20% 10.2%)',
-              violet11: 'hsl(250 95% 76.8%)',
+              // WorkOS brand
+              // violet1: 'hsl(240, 20%, 10%)',
+              // violet2: 'hsl(240, 30%, 13%)',
+              // violet3: 'hsl(242, 37%, 23%)',
+              // violet4: 'hsl(242, 39%, 26%)',
+              // violet5: 'hsl(242, 42%, 30%)',
+              // violet6: 'hsl(240, 45%, 33%)',
+              // violet7: 'hsl(240, 45%, 41%)',
+              // violet8: 'hsl(240, 52%, 51%)',
+              // violet9: 'hsl(240, 56%, 62%)',
+              // violet10: 'hsl(241, 63%, 66%)',
+              // violet11: 'hsl(242, 95%, 77%)',
+              // violet12: 'hsl(240, 93%, 93%)',
             },
           }}
         />
@@ -430,7 +465,7 @@ export function ColorTools() {
               indigo1: 'hsl(225 60% 99.4%)',
               indigo9: 'hsl(226 70% 55.5%)',
               indigo11: 'hsl(226 55% 45%)',
-              indigo12: 'hsl(226 62% 17.0%)',
+              indigo12: 'hsl(226 50% 24%)',
             },
           }}
           darkThemeConfig={{
@@ -455,7 +490,8 @@ export function ColorTools() {
             overrides: {
               blue5: 'hsl(209 95% 90.1%)',
               blue11: 'hsl(211 100% 43.2%)',
-              blue12: 'hsl(211 100% 15%)',
+              // blue12: 'hsl(211 100% 15%)',
+              blue12: 'hsl(216 71% 23%)',
             },
           }}
           darkThemeConfig={{
@@ -479,7 +515,7 @@ export function ColorTools() {
               cyan1: 'hsl(185 60% 98.7%)',
               cyan9: 'hsl(190 95% 39.0%)',
               cyan11: 'hsl(192 85% 31.0%)',
-              cyan12: 'hsl(192 88% 12.5%)',
+              cyan12: 'hsl(192 70% 16.5%)',
             },
           }}
           darkThemeConfig={{
@@ -504,7 +540,7 @@ export function ColorTools() {
               teal1: 'hsl(165 60% 98.8%)',
               teal9: 'hsl(173 80% 36.0%)',
               teal11: 'hsl(174 90% 25.2%)',
-              teal12: 'hsl(170 50% 12.5%)',
+              teal12: 'hsl(174 65% 14.5%)',
             },
           }}
           darkThemeConfig={{
@@ -528,7 +564,7 @@ export function ColorTools() {
               green1: 'hsl(136 50% 98.9%)',
               green9: 'hsl(151 55% 41.5%)',
               green11: 'hsl(153 67% 28.5%)',
-              green12: 'hsl(155 40% 14.0%)',
+              green12: 'hsl(155 40% 16.5%)',
             },
           }}
           darkThemeConfig={{
@@ -552,7 +588,7 @@ export function ColorTools() {
               grass1: 'hsl(116 50% 98.9%)',
               grass9: 'hsl(131 41% 46.5%)',
               grass11: 'hsl(133 50% 32.5%)',
-              grass12: 'hsl(130 30% 14.9%)',
+              grass12: 'hsl(131 30% 18%)',
             },
           }}
           darkThemeConfig={{
@@ -576,7 +612,7 @@ export function ColorTools() {
             overrides: {
               brown1: 'hsl(30 40% 99.1%)',
               brown11: 'hsl(25 30% 41.0%)',
-              brown12: 'hsl(20 30% 19.0%)',
+              brown12: 'hsl(20 15% 21.0%)',
             },
           }}
           darkThemeConfig={{
@@ -651,7 +687,7 @@ export function ColorTools() {
               sky1: 'hsl(193 100% 98.8%)',
               sky9: 'hsl(193 98% 70%)',
               sky11: 'hsl(195 100% 31.5%)',
-              sky12: 'hsl(195 100% 13.0%)',
+              sky12: 'hsl(195 60% 19.5%)',
             },
           }}
           darkThemeConfig={{
@@ -677,7 +713,7 @@ export function ColorTools() {
               mint1: 'hsl(165 80% 98.8%)',
               mint9: 'hsl(167 65% 66%)',
               mint11: 'hsl(172 72% 28.5%)',
-              mint12: 'hsl(172 70% 12.0%)',
+              mint12: 'hsl(172 65% 16.5%)',
             },
           }}
           darkThemeConfig={{
@@ -705,7 +741,7 @@ export function ColorTools() {
               lime1: 'hsl(85 50% 98.7%)',
               lime9: 'hsl(81 67% 50%)',
               lime11: 'hsl(75 80% 26%)',
-              lime12: 'hsl(78 70% 11.5%)',
+              lime12: 'hsl(78 40% 18.5%)',
             },
           }}
           darkThemeConfig={{
@@ -731,7 +767,7 @@ export function ColorTools() {
               yellow9: 'hsl(53 92% 50%)',
               yellow10: 'hsl(50 100% 48.5%)',
               yellow11: 'hsl(42 100% 29%)',
-              yellow12: 'hsl(40 55% 13.5%)',
+              yellow12: 'hsl(42 75% 17%)',
             },
           }}
           darkThemeConfig={{
@@ -759,7 +795,7 @@ export function ColorTools() {
               amber9: 'hsl(39 100% 57%)',
               amber10: 'hsl(35 100% 55.5%)',
               amber11: 'hsl(30 100% 34.0%)',
-              amber12: 'hsl(20 80% 17.0%)',
+              amber12: 'hsl(25 60% 21.0%)',
             },
           }}
           darkThemeConfig={{
@@ -785,7 +821,7 @@ export function ColorTools() {
               orange9: 'hsl(24 94% 50%)',
               orange10: 'hsl(24 100% 46.5%)',
               orange11: 'hsl(24 100% 37%)',
-              orange12: 'hsl(15 60% 17.0%)',
+              orange12: 'hsl(16 50% 23.0%)',
             },
           }}
           darkThemeConfig={{
