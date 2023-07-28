@@ -91,12 +91,14 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(0 0% 11%)',
+            start: 'hsl(0 0% 10.5%)',
             end: 'hsl(0 0% 31.2%)',
-            defaultCurve: [0.38, 0.355, 0.785, 0.395],
+            defaultCurve: [0.235, 0.605, 0.695, 0.385],
             overrides: {
-              gray1: 'hsl(0 0% 8.5%)',
-              gray11: 'hsl(0 0% 62.8%)',
+              gray1: 'hsl(0 0% 9.5%)',
+              gray9: 'hsl(0 0% 43%)',
+              gray11: 'hsl(0 0% 69.5%)',
+              gray12: 'hsl(0, 0%, 89.8%)',
             },
           }}
         />
@@ -114,15 +116,14 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(246 6% 11.5%)',
-            end: 'hsl(250 5% 32.5%)',
-            defaultCurve: [0.38, 0.355, 0.785, 0.395],
+            start: 'hsl(300 7% 11%)',
+            end: 'hsl(260 7% 33.2%)',
+            defaultCurve: [0.235, 0.605, 0.72, 0.38],
             overrides: {
-              mauve1: 'hsl(246 6% 9%)',
-              mauve9: 'hsl(252 4% 45.2%)',
-              // mauve11: 'hsl(253 4% 54.2%)',
-              mauve11: 'hsl(253 4% 63.7%)',
-              mauve12: 'hsl(256 6% 93.2%)',
+              mauve1: 'hsl(300, 5%, 9.5%)',
+              mauve9: 'hsl(250, 5%, 45%)',
+              mauve11: 'hsl(250, 6%, 70.5%)',
+              mauve12: 'hsl(240, 11%, 90.7%)',
             },
           }}
         />
@@ -151,8 +152,17 @@ export function ColorTools() {
             end: 'hsl(204 6% 31.5%)',
             defaultCurve: [0.38, 0.355, 0.79, 0.385],
             overrides: {
-              slate1: 'hsl(200 7% 8.8%)',
-              slate11: 'hsl(206 6% 63.0%)',
+              slate1: 'hsl(240, 5%, 9.8%)',
+              slate2: 'hsl(240, 6.9%, 11.4%)',
+              slate3: 'hsl(235, 6.8%, 17.1%)',
+              slate4: 'hsl(233, 6.8%, 19.9%)',
+              slate5: 'hsl(231, 6.8%, 21.7%)',
+              slate6: 'hsl(230, 6.9%, 23.8%)',
+              slate7: 'hsl(228, 7%, 27%)',
+              slate8: 'hsl(225, 7.2%, 32.5%)',
+              slate9: 'hsl(220, 6%, 44%)',
+              slate11: 'hsl(220, 7%, 70%)',
+              slate12: 'hsl(220, 10%, 90%)',
             },
           }}
         />
@@ -169,15 +179,15 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(155 9% 10.6%)',
+            start: 'hsl(155 9% 10.2%)',
             end: 'hsl(155 5% 30.5%)',
-            defaultCurve: [0.38, 0.355, 0.79, 0.385],
+            defaultCurve: [0.235, 0.605, 0.72, 0.38],
             overrides: {
-              sage1: 'hsl(155 7% 8.4%)',
-              sage9: 'hsl(155 6% 42.5%)',
+              sage1: 'hsl(155 7% 9.2%)',
+              sage9: 'hsl(155 6% 41.5%)',
               // sage11: 'hsl(155 5% 51.9%)',
-              sage11: 'hsl(155 5% 61.8%)',
-              sage12: 'hsl(155 6% 93%)',
+              sage11: 'hsl(155 5% 68.3%)',
+              sage12: 'hsl(155 12% 89%)',
             },
           }}
         />
@@ -194,15 +204,15 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(110 6% 10.6%)',
+            start: 'hsl(110 6% 10.4%)',
             end: 'hsl(110 4% 30.5%)',
-            defaultCurve: [0.38, 0.355, 0.79, 0.385],
+            defaultCurve: [0.235, 0.605, 0.705, 0.375],
             overrides: {
-              olive1: 'hsl(110 5% 8.6%)',
-              olive9: 'hsl(110 6% 42.5%)',
+              olive1: 'hsl(110 5% 9.2%)',
+              olive9: 'hsl(110 6% 41.5%)',
               // olive11: 'hsl(110 5% 51.9%)',
-              olive11: 'hsl(110 5% 61.8%)',
-              olive12: 'hsl(110 6% 93%)',
+              olive11: 'hsl(110 5% 68.8%)',
+              olive12: 'hsl(110 6% 89.5%)',
             },
           }}
         />
@@ -219,13 +229,14 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(61 2% 10.6%)',
+            start: 'hsl(61 2% 10.3%)',
             end: 'hsl(46 4% 30.6%)',
-            defaultCurve: [0.38, 0.355, 0.79, 0.385],
+            defaultCurve: [0.235, 0.605, 0.705, 0.375],
             overrides: {
-              sand9: 'hsl(50 4% 42.7%)',
-              sand11: 'hsl(50 4% 61.8%)',
-              sand12: 'hsl(56 4% 92.8%)',
+              sand1: 'hsl(60 6% 9%)',
+              sand9: 'hsl(50 4% 41.8%)',
+              sand11: 'hsl(50 5% 68.3%)',
+              sand12: 'hsl(56 12% 88.5%)',
             },
           }}
         />
