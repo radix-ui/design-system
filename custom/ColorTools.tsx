@@ -1436,6 +1436,11 @@ function formatHsl(color: string) {
     color = color.replace(/(\.)(\d)(\))/g, '$1$200$3');
     // But clean up the trailing zero on 0.0% and 100.0%
     color = color.replace(/(\s|,)(10)?(0)(.0%)/g, '$1$2$3%');
+
+    // Convert to the traditional hsl / hsla format
+    color = prepareColorStringForChroma(color)
+      .replace(/(hsl)(.+\/)/g, '$1a$2')
+      .replace(' /,', '');
   }
 
   return color;
