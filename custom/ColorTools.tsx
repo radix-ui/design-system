@@ -263,6 +263,7 @@ export function ColorTools() {
             overrides: {
               tomato9: 'hsl(10 78% 54%)',
               tomato11: 'hsl(10 85% 62.8%)',
+              tomato12: 'hsl(10, 85%, 89%)',
             },
           }}
         />
@@ -299,6 +300,7 @@ export function ColorTools() {
             overrides: {
               red1: 'hsl(353 23% 9.8%)',
               red11: 'hsl(358 100% 69.5%)',
+              red12: 'hsl(350, 100%, 91%)',
             },
           }}
         />
@@ -326,6 +328,7 @@ export function ColorTools() {
             overrides: {
               crimson1: 'hsl(335 20% 9.6%)',
               crimson11: 'hsl(341 90% 67.3%)',
+              crimson12: 'hsl(330, 90%, 91%)',
             },
           }}
         />
@@ -353,6 +356,7 @@ export function ColorTools() {
             overrides: {
               pink1: 'hsl(318 25% 9.6%)',
               pink11: 'hsl(325 90% 66.4%)',
+              pink12: 'hsl(325, 90%, 90.5%)',
             },
           }}
         />
@@ -380,6 +384,7 @@ export function ColorTools() {
             overrides: {
               plum1: 'hsl(301 20% 9.4%)',
               plum11: 'hsl(300 60% 62.0%)',
+              plum12: 'hsl(300, 60%, 89.5%)',
             },
           }}
         />
@@ -404,6 +409,7 @@ export function ColorTools() {
             overrides: {
               purple1: 'hsl(284 20% 9.6%)',
               purple11: 'hsl(275 80% 71%)',
+              purple12: 'hsl(275, 75%, 91.5%)',
             },
           }}
         />
@@ -450,6 +456,7 @@ export function ColorTools() {
               // violet10: 'hsl(241, 63%, 66%)',
               // violet11: 'hsl(242, 95%, 77%)',
               // violet12: 'hsl(240, 93%, 93%)',
+              violet12: 'hsl(250, 93%, 93%)',
             },
           }}
         />
@@ -476,6 +483,7 @@ export function ColorTools() {
             overrides: {
               indigo1: 'hsl(229 24% 10%)',
               indigo11: 'hsl(228 100% 75.9%)',
+              indigo12: 'hsl(235, 93%, 93%)',
             },
           }}
         />
@@ -501,6 +509,7 @@ export function ColorTools() {
             defaultCurve: [0.4, 0.425, 0.63, 0.285],
             overrides: {
               blue1: 'hsl(212 35% 9.2%)',
+              blue12: 'hsl(210, 100%, 90%)',
             },
           }}
         />
@@ -526,6 +535,7 @@ export function ColorTools() {
             overrides: {
               cyan1: 'hsl(192 60% 7.2%)',
               cyan11: 'hsl(186 100% 42.2%)',
+              cyan12: 'hsl(190, 80%, 84%)',
             },
           }}
         />
@@ -550,6 +560,7 @@ export function ColorTools() {
             defaultCurve: [0.45, 0.4, 0.66, 0.28],
             overrides: {
               teal11: 'hsl(174 90% 40.7%)',
+              teal12: 'hsl(163, 70%, 81%)',
             },
           }}
         />
@@ -574,6 +585,7 @@ export function ColorTools() {
             defaultCurve: [0.45, 0.4, 0.66, 0.28],
             overrides: {
               green11: 'hsl(151 50% 53.2%)',
+              green12: 'hsl(144, 70%, 82%)',
             },
           }}
         />
@@ -599,6 +611,7 @@ export function ColorTools() {
             overrides: {
               grass9: 'hsl(131 41% 46.5%)',
               grass11: 'hsl(131 43% 57.2%)',
+              grass12: 'hsl(120, 60%, 85%)',
             },
           }}
         />
@@ -623,6 +636,7 @@ export function ColorTools() {
             overrides: {
               brown1: 'hsl(22 15% 8.7%)',
               brown11: 'hsl(28 60% 64.5%)',
+              brown12: 'hsl(35 60% 87%)',
             },
           }}
         />
@@ -647,6 +661,7 @@ export function ColorTools() {
             overrides: {
               bronze1: 'hsl(17 10% 8.8%)',
               bronze11: 'hsl(18 35% 68.5%)',
+              bronze12: 'hsl(22 35% 89%)',
             },
           }}
         />
@@ -672,6 +687,7 @@ export function ColorTools() {
             overrides: {
               gold1: 'hsl(44 9% 8.3%)',
               gold11: 'hsl(35 30% 64.0%)',
+              gold12: 'hsl(35 25% 88%)',
             },
           }}
         />
@@ -698,6 +714,7 @@ export function ColorTools() {
               sky1: 'hsl(205 45% 8.6%)',
               sky10: 'hsl(192 100% 77%)',
               sky11: 'hsl(192 85% 55.8%)',
+              sky12: 'hsl(192 100% 88%)',
             },
           }}
         />
@@ -725,7 +742,7 @@ export function ColorTools() {
               mint9: 'hsl(167 65% 66%)',
               mint10: 'hsl(163 80% 77%)',
               mint11: 'hsl(167 70% 48%)',
-              mint12: 'hsl(165 80% 94.8%)',
+              mint12: 'hsl(155 70% 86.5%)',
             },
           }}
         />
@@ -752,6 +769,7 @@ export function ColorTools() {
               lime1: 'hsl(75 55% 6.0%)',
               lime10: 'hsl(75 85% 60%)',
               lime11: 'hsl(81 70% 43.8%)',
+              lime12: 'hsl(100 80% 86%)',
             },
           }}
         />
@@ -779,7 +797,7 @@ export function ColorTools() {
               yellow1: 'hsl(45 100% 5.5%)',
               yellow10: 'hsl(54 100% 68%)',
               yellow11: 'hsl(48 100% 47%)',
-              yellow12: 'hsl(53 100% 91%)',
+              yellow12: 'hsl(53 100% 84%)',
             },
           }}
         />
@@ -807,6 +825,7 @@ export function ColorTools() {
               amber1: 'hsl(36 100% 6.1%)',
               amber10: 'hsl(43 100% 64%)',
               amber11: 'hsl(39 90% 49.8%)',
+              amber12: 'hsl(41 100% 85%)',
             },
           }}
         />
@@ -832,6 +851,7 @@ export function ColorTools() {
               orange1: 'hsl(30 70% 7.2%)',
               orange10: 'hsl(24 100% 58.5%)',
               orange11: 'hsl(24 100% 62.2%)',
+              orange12: 'hsl(24 100% 88%)',
             },
           }}
         />
