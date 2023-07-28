@@ -252,7 +252,7 @@ export function ColorTools() {
               tomato9: 'hsl(10 78% 54.0%)',
               tomato11: 'hsl(10 82% 43.5%)',
               // tomato12: 'hsl(10 50% 13.5%)',
-              tomato12: 'hsl(8, 60%, 22%)',
+              tomato12: 'hsl(8, 45%, 24%)',
             },
           }}
           darkThemeConfig={{
