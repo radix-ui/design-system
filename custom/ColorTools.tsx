@@ -87,7 +87,7 @@ export function ColorTools() {
               gray1: 'hsl(0 0% 99.0%)',
               gray9: 'hsl(0 0% 55.2%)',
               gray11: 'hsl(0 0% 39.3%)',
-              gray12: 'hsl(0 0% 19%)',
+              gray12: 'hsl(0, 0%, 12.5%)',
             },
           }}
           darkThemeConfig={{
@@ -98,7 +98,7 @@ export function ColorTools() {
               gray1: 'hsl(0 0% 9.5%)',
               gray9: 'hsl(0 0% 43%)',
               gray11: 'hsl(0 0% 69.5%)',
-              gray12: 'hsl(0, 0%, 89.8%)',
+              gray12: 'hsl(0 0% 93.5%)',
             },
           }}
         />
@@ -112,7 +112,7 @@ export function ColorTools() {
               mauve1: 'hsl(300, 26%, 99%)',
               mauve9: 'hsl(252 6% 57.3%)',
               mauve11: 'hsl(252 5% 40.7%)',
-              mauve12: 'hsl(260 14% 21.5%)',
+              mauve12: 'hsl(260, 10%, 13.5%)',
             },
           }}
           darkThemeConfig={{
@@ -123,7 +123,7 @@ export function ColorTools() {
               mauve1: 'hsl(300, 5%, 9.5%)',
               mauve9: 'hsl(250, 5%, 45%)',
               mauve11: 'hsl(250, 6%, 70.5%)',
-              mauve12: 'hsl(240, 11%, 90.7%)',
+              mauve12: 'hsl(240, 7%, 93.8%)',
             },
           }}
         />
@@ -144,7 +144,7 @@ export function ColorTools() {
               slate8: 'hsl(231, 10.2%, 75.1%)',
               slate9: 'hsl(230, 6%, 57%)',
               slate11: 'hsl(220, 6%, 40%)',
-              slate12: 'hsl(210, 16%, 20%)',
+              slate12: 'hsl(210, 12%, 12.5%)',
             },
           }}
           darkThemeConfig={{
@@ -162,7 +162,7 @@ export function ColorTools() {
               slate8: 'hsl(225, 7.2%, 32.5%)',
               slate9: 'hsl(220, 6%, 44%)',
               slate11: 'hsl(220, 7%, 70%)',
-              slate12: 'hsl(220, 10%, 90%)',
+              slate12: 'hsl(220, 7%, 93.5%)',
             },
           }}
         />
@@ -175,7 +175,7 @@ export function ColorTools() {
             overrides: {
               sage9: 'hsl(155 3.5% 54.2%)',
               sage11: 'hsl(155 3% 38.5%)',
-              sage12: 'hsl(155 12% 18.2%)',
+              sage12: 'hsl(155 12% 11.5%)',
             },
           }}
           darkThemeConfig={{
@@ -187,7 +187,7 @@ export function ColorTools() {
               sage9: 'hsl(155 6% 41.5%)',
               // sage11: 'hsl(155 5% 51.9%)',
               sage11: 'hsl(155 5% 68.3%)',
-              sage12: 'hsl(155 12% 89%)',
+              slate12: 'hsl(155, 7%, 93.5%)',
             },
           }}
         />
@@ -200,7 +200,7 @@ export function ColorTools() {
             overrides: {
               olive9: 'hsl(110 3% 54.5%)',
               olive11: 'hsl(110 3% 38.5%)',
-              olive12: 'hsl(110 8% 18.5%)',
+              olive12: 'hsl(110 8% 12%)',
             },
           }}
           darkThemeConfig={{
@@ -212,7 +212,6 @@ export function ColorTools() {
               olive9: 'hsl(110 6% 41.5%)',
               // olive11: 'hsl(110 5% 51.9%)',
               olive11: 'hsl(110 5% 68.8%)',
-              olive12: 'hsl(110 6% 89.5%)',
             },
           }}
         />
@@ -225,7 +224,7 @@ export function ColorTools() {
             overrides: {
               sand9: 'hsl(60 3% 53.9%)',
               sand11: 'hsl(50 2.5% 38.5%)',
-              sand12: 'hsl(50 8% 18.1%)',
+              sand12: 'hsl(50 8% 12%)',
             },
           }}
           darkThemeConfig={{
@@ -236,7 +235,7 @@ export function ColorTools() {
               sand1: 'hsl(60 6% 9%)',
               sand9: 'hsl(50 4% 41.8%)',
               sand11: 'hsl(50 5% 68.3%)',
-              sand12: 'hsl(56 12% 88.5%)',
+              sand12: 'hsl(56 7% 93%)',
             },
           }}
         />
