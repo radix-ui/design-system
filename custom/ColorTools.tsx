@@ -694,8 +694,8 @@ export function ColorTools() {
           name="sky"
           lightThemeConfig={{
             start: 'hsl(191 100% 97.3%)',
-            end: 'hsl(193 78% 54%)',
-            saturationBoost: 2,
+            end: 'hsl(193 65% 56%)',
+            saturationBoost: 3,
             mixAmount: 0.1,
             defaultCurve: [0.55, 0.17, 0.64, 0.44],
             overrides: {
@@ -721,10 +721,10 @@ export function ColorTools() {
           name="mint"
           lightThemeConfig={{
             start: 'hsl(166 88% 96.6%)',
-            end: 'hsl(168 53% 51%)',
-            saturationBoost: 1.8,
+            end: 'hsl(168 45% 53%)',
+            saturationBoost: 3,
             mixAmount: 0.08,
-            defaultCurve: [0.52, 0.21, 0.585, 0.3],
+            defaultCurve: [0.52, 0.215, 0.635, 0.345],
             overrides: {
               mint9: 'hsl(167 70% 72%)',
               mint10: 'hsl(167 62% 69%)',
@@ -749,10 +749,10 @@ export function ColorTools() {
           name="lime"
           lightThemeConfig={{
             start: 'hsl(85 70% 96.5%)',
-            end: 'hsl(76 62% 45%)',
-            saturationBoost: 3,
+            end: 'hsl(76 40% 52%)',
+            saturationBoost: 5,
             mixAmount: 0.12,
-            defaultCurve: [1.0, 0.3, 0.73, 0.765],
+            defaultCurve: [0.62, 0.195, 0.72, 0.565],
             overrides: {
               lime9: 'hsl(81 80% 66%)',
               lime10: 'hsl(81 75% 60%)',
@@ -775,10 +775,10 @@ export function ColorTools() {
         <EditableScale
           name="yellow"
           lightThemeConfig={{
-            start: 'hsl(53 100% 95.5%)',
-            end: 'hsl(48 100% 46%)',
-            saturationBoost: 8,
-            defaultCurve: [0.695, 0.09, 0.71, 0.49],
+            start: 'hsl(53 100% 94%)',
+            end: 'hsl(46 55% 53%)',
+            saturationBoost: 9,
+            defaultCurve: [0.665, 0.14, 0.71, 0.49],
             overrides: {
               yellow9: 'hsl(53 96% 58%)',
               yellow10: 'hsl(52 95% 52%)',
@@ -798,9 +798,9 @@ export function ColorTools() {
           name="amber"
           lightThemeConfig={{
             start: 'hsl(39 100% 96.5%)',
-            end: 'hsl(35 85% 55.0%)',
-            saturationBoost: 3,
-            defaultCurve: [0.805, 0.265, 0.725, 0.63],
+            end: 'hsl(35 60% 60.0%)',
+            saturationBoost: 8,
+            defaultCurve: [0.595, 0.165, 0.74, 0.615],
             overrides: {
               amber9: 'hsl(42 100% 62%)',
               amber10: 'hsl(42 100% 55%)',
@@ -827,9 +827,10 @@ export function ColorTools() {
         <EditableScale
           name="orange"
           lightThemeConfig={{
-            start: 'hsl(24 90% 97.8%)',
-            end: 'hsl(24 95% 64.5%)',
-            defaultCurve: [0.605, 0.235, 0.79, 0.56],
+            start: 'hsl(22 100% 97.8%)',
+            end: 'hsl(19 80% 64.5%)',
+            saturationBoost: 8,
+            defaultCurve: [0.635, 0.175, 0.79, 0.56],
             overrides: {
               orange1: 'hsl(24 70% 99.0%)',
               orange9: 'hsl(24 94% 50%)',
