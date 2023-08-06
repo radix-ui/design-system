@@ -169,9 +169,9 @@ export function ColorTools() {
         <EditableScale
           name="sage"
           lightThemeConfig={{
-            start: 'hsl(155 17% 97.6%)',
-            end: 'hsl(155 6% 72.5%)',
-            defaultCurve: [0.65, 0.47, 0.89, 0.475],
+            start: 'hsl(155 17% 97.3%)',
+            end: 'hsl(155 3% 73%)',
+            defaultCurve: [0.665, 0.45, 0.865, 0.42],
             overrides: {
               sage9: 'hsl(155 3.5% 54.2%)',
               sage11: 'hsl(155 3% 38.5%)',
@@ -195,7 +195,7 @@ export function ColorTools() {
           name="olive"
           lightThemeConfig={{
             start: 'hsl(110 17% 97.6%)',
-            end: 'hsl(110 5% 72.5%)',
+            end: 'hsl(110 3% 73%)',
             defaultCurve: [0.64, 0.45, 0.885, 0.465],
             overrides: {
               olive9: 'hsl(110 3% 54.5%)',
@@ -219,11 +219,11 @@ export function ColorTools() {
           name="sand"
           lightThemeConfig={{
             start: 'hsl(50 9% 97.5%)',
-            end: 'hsl(50 6% 72.2%)',
+            end: 'hsl(50 5% 72.5%)',
             defaultCurve: [0.65, 0.45, 0.875, 0.48],
             overrides: {
               sand9: 'hsl(60 3% 53.9%)',
-              sand11: 'hsl(50 2.5% 38.5%)',
+              sand11: 'hsl(50 2.5% 38%)',
               sand12: 'hsl(50 8% 12%)',
             },
           }}
