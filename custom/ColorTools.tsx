@@ -187,7 +187,7 @@ export function ColorTools() {
               sage9: 'hsl(155 6% 41.5%)',
               // sage11: 'hsl(155 5% 51.9%)',
               sage11: 'hsl(155 5% 68.3%)',
-              slate12: 'hsl(155, 7%, 93.5%)',
+              sage12: 'hsl(155, 7%, 93%)',
             },
           }}
         />
@@ -212,6 +212,7 @@ export function ColorTools() {
               olive9: 'hsl(110 6% 41.5%)',
               // olive11: 'hsl(110 5% 51.9%)',
               olive11: 'hsl(110 5% 68.8%)',
+              olive12: 'hsl(110, 7%, 93%)',
             },
           }}
         />
@@ -260,8 +261,8 @@ export function ColorTools() {
             mixAmount: 0.55,
             defaultCurve: [0.34, 0.375, 0.605, 0.205],
             overrides: {
-              tomato9: 'hsl(10 78% 54%)',
-              tomato11: 'hsl(10 85% 62.8%)',
+              tomato9: 'hsl(10 78% 54.0%)',
+              tomato11: 'hsl(10 85% 68%)',
               tomato12: 'hsl(10, 85%, 89%)',
             },
           }}
@@ -298,7 +299,7 @@ export function ColorTools() {
             defaultCurve: [0.275, 0.35, 0.61, 0.18],
             overrides: {
               red1: 'hsl(353 23% 9.8%)',
-              red11: 'hsl(358 100% 69.5%)',
+              red11: 'hsl(358 100% 74%)',
               red12: 'hsl(350, 100%, 91%)',
             },
           }}
@@ -326,7 +327,8 @@ export function ColorTools() {
             defaultCurve: [0.29, 0.41, 0.65, 0.185],
             overrides: {
               crimson1: 'hsl(335 20% 9.6%)',
-              crimson11: 'hsl(341 90% 67.3%)',
+              crimson9: 'hsl(336 80% 57.8%)',
+              crimson11: 'hsl(341 90% 73%)',
               crimson12: 'hsl(330, 90%, 91%)',
             },
           }}
@@ -354,7 +356,8 @@ export function ColorTools() {
             defaultCurve: [0.34, 0.425, 0.65, 0.185],
             overrides: {
               pink1: 'hsl(318 25% 9.6%)',
-              pink11: 'hsl(325 90% 66.4%)',
+              pink9: 'hsl(322 65% 54.5%)',
+              pink11: 'hsl(325 80% 72%)',
               pink12: 'hsl(325, 90%, 90.5%)',
             },
           }}
@@ -382,7 +385,8 @@ export function ColorTools() {
             defaultCurve: [0.385, 0.425, 0.65, 0.25],
             overrides: {
               plum1: 'hsl(301 20% 9.4%)',
-              plum11: 'hsl(300 60% 62.0%)',
+              plum9: 'hsl(292 45% 51.0%)',
+              plum11: 'hsl(300 45% 68.0%)',
               plum12: 'hsl(300, 60%, 89.5%)',
             },
           }}
@@ -407,7 +411,7 @@ export function ColorTools() {
             defaultCurve: [0.385, 0.425, 0.65, 0.25],
             overrides: {
               purple1: 'hsl(284 20% 9.6%)',
-              purple11: 'hsl(275 80% 71%)',
+              purple11: 'hsl(270 70% 74%)',
               purple12: 'hsl(275, 75%, 91.5%)',
             },
           }}
@@ -455,6 +459,7 @@ export function ColorTools() {
               // violet10: 'hsl(241, 63%, 66%)',
               // violet11: 'hsl(242, 95%, 77%)',
               // violet12: 'hsl(240, 93%, 93%)',
+              violet11: 'hsl(250, 95%, 79%)',
               violet12: 'hsl(250, 93%, 93%)',
             },
           }}
@@ -481,7 +486,8 @@ export function ColorTools() {
             defaultCurve: [0.385, 0.425, 0.635, 0.265],
             overrides: {
               indigo1: 'hsl(229 24% 10%)',
-              indigo11: 'hsl(228 100% 75.9%)',
+              indigo9: 'hsl(226 70% 55.5%)',
+              indigo11: 'hsl(228 100% 77%)',
               indigo12: 'hsl(235, 93%, 93%)',
             },
           }}
@@ -508,6 +514,7 @@ export function ColorTools() {
             defaultCurve: [0.4, 0.425, 0.63, 0.285],
             overrides: {
               blue1: 'hsl(212 35% 9.2%)',
+              blue11: 'hsl(210, 100%, 68%)',
               blue12: 'hsl(210, 100%, 90%)',
             },
           }}
@@ -533,7 +540,8 @@ export function ColorTools() {
             defaultCurve: [0.4, 0.425, 0.61, 0.285],
             overrides: {
               cyan1: 'hsl(192 60% 7.2%)',
-              cyan11: 'hsl(186 100% 42.2%)',
+              cyan9: 'hsl(190 95% 39.0%)',
+              cyan11: 'hsl(186 100% 44%)',
               cyan12: 'hsl(190, 80%, 84%)',
             },
           }}
@@ -558,7 +566,8 @@ export function ColorTools() {
             mixAmount: 0.45,
             defaultCurve: [0.45, 0.4, 0.66, 0.28],
             overrides: {
-              teal11: 'hsl(174 90% 40.7%)',
+              teal9: 'hsl(173 80% 36.0%)',
+              teal11: 'hsl(174 90% 42%)',
               teal12: 'hsl(163, 70%, 81%)',
             },
           }}
@@ -583,7 +592,8 @@ export function ColorTools() {
             mixAmount: 0.42,
             defaultCurve: [0.45, 0.4, 0.66, 0.28],
             overrides: {
-              green11: 'hsl(151 50% 53.2%)',
+              green9: 'hsl(151 55% 41.5%)',
+              green11: 'hsl(151 50% 56%)',
               green12: 'hsl(144, 70%, 82%)',
             },
           }}
@@ -609,7 +619,7 @@ export function ColorTools() {
             defaultCurve: [0.445, 0.385, 0.64, 0.29],
             overrides: {
               grass9: 'hsl(131 41% 46.5%)',
-              grass11: 'hsl(131 43% 57.2%)',
+              grass11: 'hsl(131 43% 62%)',
               grass12: 'hsl(120, 60%, 85%)',
             },
           }}
@@ -634,7 +644,7 @@ export function ColorTools() {
             defaultCurve: [0.34, 0.375, 0.625, 0.185],
             overrides: {
               brown1: 'hsl(22 15% 8.7%)',
-              brown11: 'hsl(28 60% 64.5%)',
+              brown11: 'hsl(28 50% 69%)',
               brown12: 'hsl(35 60% 87%)',
             },
           }}
@@ -659,7 +669,7 @@ export function ColorTools() {
             defaultCurve: [0.48, 0.475, 0.625, 0.185],
             overrides: {
               bronze1: 'hsl(17 10% 8.8%)',
-              bronze11: 'hsl(18 35% 68.5%)',
+              bronze11: 'hsl(18 35% 72%)',
               bronze12: 'hsl(22 35% 89%)',
             },
           }}
@@ -685,7 +695,8 @@ export function ColorTools() {
             defaultCurve: [0.48, 0.475, 0.625, 0.185],
             overrides: {
               gold1: 'hsl(44 9% 8.3%)',
-              gold11: 'hsl(35 30% 64.0%)',
+              gold9: 'hsl(36 20% 49.5%)',
+              gold11: 'hsl(35 30% 68%)',
               gold12: 'hsl(35 25% 88%)',
             },
           }}
@@ -711,8 +722,9 @@ export function ColorTools() {
             defaultCurve: [0.425, 0.415, 0.64, 0.35],
             overrides: {
               sky1: 'hsl(205 45% 8.6%)',
+              sky9: 'hsl(193 98% 74%)',
               sky10: 'hsl(192 100% 77%)',
-              sky11: 'hsl(192 85% 55.8%)',
+              sky11: 'hsl(192 100% 63%)',
               sky12: 'hsl(192 100% 88%)',
             },
           }}
@@ -738,9 +750,9 @@ export function ColorTools() {
             defaultCurve: [0.475, 0.365, 0.655, 0.345],
             overrides: {
               mint1: 'hsl(173 50% 6.6%)',
-              mint9: 'hsl(167 65% 66%)',
+              mint9: 'hsl(167 70% 72%)',
               mint10: 'hsl(163 80% 77%)',
-              mint11: 'hsl(167 70% 48%)',
+              mint11: 'hsl(167 70% 55%)',
               mint12: 'hsl(155 70% 86.5%)',
             },
           }}
@@ -766,8 +778,9 @@ export function ColorTools() {
             defaultCurve: [0.46, 0.385, 0.635, 0.35],
             overrides: {
               lime1: 'hsl(75 55% 6.0%)',
+              lime9: 'hsl(81 80% 66%)',
               lime10: 'hsl(75 85% 60%)',
-              lime11: 'hsl(81 70% 43.8%)',
+              lime11: 'hsl(75 70% 50%)',
               lime12: 'hsl(100 80% 86%)',
             },
           }}
@@ -791,7 +804,9 @@ export function ColorTools() {
             end: 'hsl(50 100% 22%)',
             saturationBoost: 3,
             defaultCurve: [0.48, 0.355, 0.635, 0.35],
-            overrides: {},
+            overrides: {
+              yellow9: 'hsl(53 96% 58%)',
+            },
           }}
         />
         <EditableScale
@@ -817,9 +832,10 @@ export function ColorTools() {
             saturationBoost: 2.5,
             defaultCurve: [0.445, 0.33, 0.64, 0.41],
             overrides: {
+              amber9: 'hsl(42 100% 62%)',
               amber1: 'hsl(36 100% 6.1%)',
               amber10: 'hsl(43 100% 64%)',
-              amber11: 'hsl(39 90% 49.8%)',
+              amber11: 'hsl(39 90% 64%)',
               amber12: 'hsl(41 100% 85%)',
             },
           }}
@@ -845,8 +861,9 @@ export function ColorTools() {
             defaultCurve: [0.355, 0.355, 0.59, 0.265],
             overrides: {
               orange1: 'hsl(30 70% 7.2%)',
+              orange9: 'hsl(24 94% 50%)',
               orange10: 'hsl(24 100% 58.5%)',
-              orange11: 'hsl(24 100% 62.2%)',
+              orange11: 'hsl(20 100% 70%)',
               orange12: 'hsl(24 100% 88%)',
             },
           }}
