@@ -92,8 +92,8 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             start: 'hsl(0 0% 10.5%)',
-            end: 'hsl(0 0% 31.2%)',
-            defaultCurve: [0.235, 0.605, 0.695, 0.385],
+            end: 'hsl(0 0% 37.5%)',
+            defaultCurve: [0.2, 0.42, 0.78, 0.4],
             overrides: {
               gray1: 'hsl(0 0% 9.5%)',
               gray9: 'hsl(0 0% 43%)',
@@ -117,8 +117,8 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             start: 'hsl(300 7% 11%)',
-            end: 'hsl(260 7% 33.2%)',
-            defaultCurve: [0.235, 0.605, 0.72, 0.38],
+            end: 'hsl(260 5% 39.2%)',
+            defaultCurve: [0.21, 0.405, 0.78, 0.4],
             overrides: {
               mauve1: 'hsl(300, 5%, 9.5%)',
               mauve9: 'hsl(250, 5%, 45%)',
@@ -148,18 +148,11 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(200 6% 11%)',
-            end: 'hsl(204 6% 31.5%)',
-            defaultCurve: [0.38, 0.355, 0.79, 0.385],
+            start: 'hsl(240, 6.9%, 11.4%)',
+            end: 'hsl(204 6% 37.5%)',
+            defaultCurve: [0.21, 0.405, 0.78, 0.4],
             overrides: {
               slate1: 'hsl(240, 5%, 9.8%)',
-              slate2: 'hsl(240, 6.9%, 11.4%)',
-              slate3: 'hsl(235, 6.8%, 17.1%)',
-              slate4: 'hsl(233, 6.8%, 19.9%)',
-              slate5: 'hsl(231, 6.8%, 21.7%)',
-              slate6: 'hsl(230, 6.9%, 23.8%)',
-              slate7: 'hsl(228, 7%, 27%)',
-              slate8: 'hsl(225, 7.2%, 32.5%)',
               slate9: 'hsl(220, 6%, 44%)',
               slate11: 'hsl(220, 7%, 70%)',
               slate12: 'hsl(220, 7%, 93.5%)',
@@ -180,8 +173,8 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             start: 'hsl(155 9% 10.2%)',
-            end: 'hsl(155 5% 30.5%)',
-            defaultCurve: [0.235, 0.605, 0.72, 0.38],
+            end: 'hsl(155 3% 37%)',
+            defaultCurve: [0.21, 0.405, 0.78, 0.4],
             overrides: {
               sage1: 'hsl(155 7% 9.2%)',
               sage9: 'hsl(155 6% 41.5%)',
@@ -205,8 +198,8 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             start: 'hsl(110 6% 10.4%)',
-            end: 'hsl(110 4% 30.5%)',
-            defaultCurve: [0.235, 0.605, 0.705, 0.375],
+            end: 'hsl(110 3% 37%)',
+            defaultCurve: [0.21, 0.405, 0.78, 0.4],
             overrides: {
               olive1: 'hsl(110 5% 9.2%)',
               olive9: 'hsl(110 6% 41.5%)',
@@ -230,8 +223,8 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             start: 'hsl(61 2% 10.3%)',
-            end: 'hsl(46 4% 30.6%)',
-            defaultCurve: [0.235, 0.605, 0.705, 0.375],
+            end: 'hsl(46 4% 37%)',
+            defaultCurve: [0.21, 0.405, 0.78, 0.4],
             overrides: {
               sand1: 'hsl(60 6% 9%)',
               sand9: 'hsl(50 4% 41.8%)',
@@ -256,10 +249,10 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(10 45% 11.3%)',
-            end: 'hsl(10 80% 35.8%)',
+            start: 'hsl(10 40% 11.8%)',
+            end: 'hsl(10 60% 45.5%)',
             mixAmount: 0.55,
-            defaultCurve: [0.34, 0.375, 0.605, 0.205],
+            defaultCurve: [0.255, 0.37, 0.675, 0.14],
             overrides: {
               tomato9: 'hsl(10 78% 54.0%)',
               tomato11: 'hsl(10 85% 68%)',
@@ -293,10 +286,10 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(356 35% 11.8%)',
-            end: 'hsl(358 65% 40.5%)',
+            start: 'hsl(356 30% 12.5%)',
+            end: 'hsl(358 50% 50.2%)',
             mixAmount: 0.48,
-            defaultCurve: [0.275, 0.35, 0.61, 0.18],
+            defaultCurve: [0.255, 0.37, 0.71, 0.175],
             overrides: {
               red1: 'hsl(353 23% 9.8%)',
               red11: 'hsl(358 100% 74%)',
@@ -321,10 +314,10 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(335 33% 11.5%)',
-            end: 'hsl(336 75% 39%)',
+            start: 'hsl(335 33% 12%)',
+            end: 'hsl(336 55% 50%)',
             mixAmount: 0.48,
-            defaultCurve: [0.29, 0.41, 0.65, 0.185],
+            defaultCurve: [0.375, 0.45, 0.68, 0.12],
             overrides: {
               crimson1: 'hsl(335 20% 9.6%)',
               crimson9: 'hsl(336 80% 57.8%)',
@@ -350,10 +343,10 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(318 33% 11.5%)',
-            end: 'hsl(322 75% 37.5%)',
+            start: 'hsl(318 33% 12%)',
+            end: 'hsl(322 50% 48%)',
             mixAmount: 0.4,
-            defaultCurve: [0.34, 0.425, 0.65, 0.185],
+            defaultCurve: [0.365, 0.435, 0.695, 0.14],
             overrides: {
               pink1: 'hsl(318 25% 9.6%)',
               pink9: 'hsl(322 65% 54.5%)',
@@ -379,10 +372,10 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(301 30% 11.3%)',
-            end: 'hsl(292 45% 40.0%)',
+            start: 'hsl(301 30% 11.5%)',
+            end: 'hsl(292 40% 46.2%)',
             mixAmount: 0.4,
-            defaultCurve: [0.385, 0.425, 0.65, 0.25],
+            defaultCurve: [0.345, 0.485, 0.64, 0.085],
             overrides: {
               plum1: 'hsl(301 20% 9.4%)',
               plum9: 'hsl(292 45% 51.0%)',
@@ -561,11 +554,12 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(168 76% 7.2%)',
+            start: 'hsl(168 69% 7.2%)',
             end: 'hsl(173 80% 23.8%)',
             mixAmount: 0.45,
             defaultCurve: [0.45, 0.4, 0.66, 0.28],
             overrides: {
+              teal1: 'hsl(167 50% 6.7%)',
               teal9: 'hsl(173 80% 36.0%)',
               teal11: 'hsl(174 90% 42%)',
               teal12: 'hsl(163, 70%, 81%)',
@@ -806,6 +800,7 @@ export function ColorTools() {
             defaultCurve: [0.48, 0.355, 0.635, 0.35],
             overrides: {
               yellow9: 'hsl(53 96% 58%)',
+              yellow11: 'hsl(52 100% 50%)',
             },
           }}
         />
@@ -835,7 +830,7 @@ export function ColorTools() {
               amber9: 'hsl(42 100% 62%)',
               amber1: 'hsl(36 100% 6.1%)',
               amber10: 'hsl(43 100% 64%)',
-              amber11: 'hsl(39 90% 64%)',
+              amber11: 'hsl(39 100% 66%)',
               amber12: 'hsl(41 100% 85%)',
             },
           }}
@@ -984,7 +979,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         const targetColor = computedStyles.getPropertyValue(`--colors-${name}${index + 1}`);
 
         const backdropColor = isDarkTheme
-          ? computedStyles.getPropertyValue(`--colors-${name}1`)
+          ? computedStyles.getPropertyValue(`--colors-gray1`)
           : '#ffffff';
 
         const alphaValue =
