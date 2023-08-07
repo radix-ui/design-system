@@ -1580,7 +1580,10 @@ function getAlphaColor(targetColor: string, backdropColor: string) {
   // Is the backdrop color lighter, RGB-wise, than target color?
   // Decide whether we want to add as little color or as much color as possible,
   // darkening or lightening the backdrop respectively.
-  const desiredRGB = targetR + targetG + targetB < backdropR + backdropG + backdropB ? 0 : 255;
+  // If at least one of the bits of the target RGB value
+  // is lighter than the backdrop, we want to lighten it.
+  let desiredRGB =
+    targetR > backdropR ? 255 : targetG > backdropG ? 255 : targetB > backdropB ? 255 : 0;
 
   // Light theme example:
   // Consider a 200 120 150 target color with 255 255 255 backdrop
