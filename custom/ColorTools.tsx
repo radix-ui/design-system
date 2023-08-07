@@ -980,10 +980,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
           ? computedStyles.getPropertyValue(`--colors-gray1`)
           : '#ffffff';
 
-        const alphaValue =
-          isDarkTheme && index === 0
-            ? 'hsl(0 0% 0% / 0)'
-            : getAlphaColor(targetColor, backdropColor);
+        const alphaValue = getAlphaColor(targetColor, backdropColor);
         newColors.push({ name: `${name}A${index + 1}`, value: alphaValue });
       });
 
