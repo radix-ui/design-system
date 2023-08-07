@@ -527,10 +527,10 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(192 72% 8.3%)',
-            end: 'hsl(192 75% 37%)',
+            start: 'hsl(192 50% 8.8%)',
+            end: 'hsl(192 60% 39%)',
             mixAmount: 0.45,
-            defaultCurve: [0.365, 0.275, 0.735, 0.15],
+            defaultCurve: [0.36, 0.295, 0.735, 0.15],
             overrides: {
               cyan1: 'hsl(192 60% 7.2%)',
               cyan9: 'hsl(190 95% 39.0%)',
@@ -554,10 +554,10 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(168 69% 7%)',
-            end: 'hsl(173 70% 32%)',
+            start: 'hsl(168 55% 7.8%)',
+            end: 'hsl(173 60% 34%)',
             mixAmount: 0.45,
-            defaultCurve: [0.36, 0.285, 0.725, 0.15],
+            defaultCurve: [0.375, 0.3, 0.725, 0.15],
             overrides: {
               teal1: 'hsl(167 50% 6.7%)',
               teal9: 'hsl(173 80% 36.0%)',
@@ -581,10 +581,10 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(154 43% 8.2%)',
+            start: 'hsl(154 33% 8.6%)',
             end: 'hsl(151 52% 36%)',
             mixAmount: 0.42,
-            defaultCurve: [0.41, 0.3, 0.74, 0.155],
+            defaultCurve: [0.405, 0.33, 0.735, 0.165],
             overrides: {
               green9: 'hsl(151 55% 41.5%)',
               green11: 'hsl(151 65% 54%)',
@@ -607,10 +607,10 @@ export function ColorTools() {
             },
           }}
           darkThemeConfig={{
-            start: 'hsl(134 20% 9%)',
+            start: 'hsl(134 20% 9.5%)',
             end: 'hsl(131 35% 40%)',
             mixAmount: 0.52,
-            defaultCurve: [0.41, 0.3, 0.73, 0.165],
+            defaultCurve: [0.41, 0.33, 0.73, 0.165],
             overrides: {
               grass9: 'hsl(131 41% 46.5%)',
               grass11: 'hsl(131 50% 63%)',
@@ -713,7 +713,7 @@ export function ColorTools() {
           darkThemeConfig={{
             start: 'hsl(202 50% 10%)',
             end: 'hsl(200 60% 44%)',
-            defaultCurve: [0.445, 0.285, 0.745, 0.2],
+            defaultCurve: [0.415, 0.305, 0.76, 0.175],
             overrides: {
               sky1: 'hsl(205 45% 8.6%)',
               sky9: 'hsl(193 98% 74%)',
@@ -741,7 +741,7 @@ export function ColorTools() {
           darkThemeConfig={{
             start: 'hsl(176 50% 8%)',
             end: 'hsl(170 60% 35%)',
-            defaultCurve: [0.445, 0.285, 0.745, 0.2],
+            defaultCurve: [0.415, 0.3, 0.745, 0.2],
             overrides: {
               mint1: 'hsl(173 50% 6.6%)',
               mint9: 'hsl(167 70% 72%)',
