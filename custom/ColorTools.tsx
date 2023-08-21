@@ -298,6 +298,31 @@ export function ColorTools() {
           }}
         />
         <EditableScale
+          name="ruby"
+          lightThemeConfig={{
+            start: 'hsl(350 100% 98.5%)',
+            end: 'hsl(348 62% 73.5%)',
+            saturationBoost: 1.2,
+            mixAmount: 0.4,
+            defaultCurve: [0.6, 0.26, 0.71, 0.5],
+            overrides: {
+              ruby9: 'hsl(348, 75%, 58.5%)',
+              ruby11: 'hsl(345, 70%, 46.5%)',
+            },
+          }}
+          darkThemeConfig={{
+            start: 'hsl(347, 34%, 12.2%)',
+            end: 'hsl(348, 77%, 46%)',
+            mixAmount: 0.46,
+            defaultCurve: [0.355, 0.315, 0.725, 0.11],
+            overrides: {
+              ruby1: 'hsl(343, 23%, 10%)',
+              ruby9: 'hsl(348, 75%, 58.5%)',
+              ruby11: 'hsl(348, 100%, 76%)',
+            },
+          }}
+        />
+        <EditableScale
           name="crimson"
           lightThemeConfig={{
             start: 'hsl(332 100% 98.5%)',
@@ -458,6 +483,40 @@ export function ColorTools() {
           }}
         />
         <EditableScale
+          name="iris"
+          lightThemeConfig={{
+            start: 'hsl(238, 100%, 99%)',
+            end: 'hsl(238, 74%, 77.5%)',
+            saturationBoost: 1.2,
+            mixAmount: 0.4,
+            defaultCurve: [0.575, 0.21, 0.8, 0.565],
+            overrides: {
+              iris1: 'hsl(243, 65%, 99.5%)',
+              iris9: 'hsl(240, 60%, 59.8%)',
+              iris11: 'hsl(240, 50%, 52%)',
+              iris12: 'hsl(238, 43%, 26.8%)',
+              // WorkOS
+              // iris9: 'hsl(240, 78%, 66%)',
+              // iris11: 'hsl(238, 63%, 58%)',
+            },
+          }}
+          darkThemeConfig={{
+            start: 'hsl(243, 31%, 13.5%)',
+            end: 'hsl(240, 45%, 54.8%)',
+            mixAmount: 0.28,
+            defaultCurve: [0.355, 0.38, 0.705, 0.195],
+            overrides: {
+              iris1: 'hsl(240, 22%, 10.5%)',
+              iris9: 'hsl(240, 60%, 59.8%)',
+              iris11: 'hsl(242, 100%, 81%)',
+              iris12: 'hsl(242, 92%, 93.5%)',
+              // WorkOS
+              // iris9: 'hsl(240, 78%, 66%)',
+              // iris11: 'hsl(240, 100%, 80%)',
+            },
+          }}
+        />
+        <EditableScale
           name="indigo"
           lightThemeConfig={{
             start: 'hsl(226 100% 98.7%)',
@@ -563,6 +622,31 @@ export function ColorTools() {
               teal9: 'hsl(173 80% 36.0%)',
               teal11: 'hsl(170 90% 44.5%)',
               teal12: 'hsl(163, 70%, 81%)',
+            },
+          }}
+        />
+        <EditableScale
+          name="jade"
+          lightThemeConfig={{
+            start: 'hsl(151 82% 96.5%)',
+            end: 'hsl(164 42% 53.2%)',
+            saturationBoost: 2,
+            defaultCurve: [0.505, 0.155, 0.78, 0.51],
+            overrides: {
+              jade9: 'hsl(164, 60%, 40%)',
+              jade11: 'hsl(163, 65%, 28.9%)',
+              jade12: 'hsl(160, 34%, 17.2%)',
+            },
+          }}
+          darkThemeConfig={{
+            start: 'hsl(153, 47%, 8.4%)',
+            end: 'hsl(164, 60%, 34%)',
+            mixAmount: 0.435,
+            defaultCurve: [0.415, 0.315, 0.725, 0.16],
+            overrides: {
+              jade9: 'hsl(164, 60%, 40%)',
+              jade11: 'hsl(163, 75%, 48.4%)',
+              jade12: 'hsl(155, 70%, 81%)',
             },
           }}
         />
