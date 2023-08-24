@@ -114,21 +114,21 @@ export const grayBackground: Record<ElementType<typeof colors>, string> = {
 
 export default function Colors() {
   const [palette, setPalette] = useLocalStorage('colors-palette', true);
-  const [panels, setPanels] = useLocalStorage('colors-panels', true);
+  const [panels, setPanels] = useLocalStorage('colors-panels', false);
   const [layers, setLayers] = useLocalStorage('colors-layers', true);
   const [layersAlpha, setLayersAlpha] = useLocalStorage('colors-layers-alpha', false);
-  const [alerts, setAlerts] = useLocalStorage('colors-alerts', true);
+  const [alerts, setAlerts] = useLocalStorage('colors-alerts', false);
   const [alertsAlpha, setAlertsAlpha] = useLocalStorage('colors-alerts-alpha', false);
-  const [buttons, setButtons] = useLocalStorage('colors-buttons', true);
-  const [lines, setLines] = useLocalStorage('colors-lines', true);
+  const [buttons, setButtons] = useLocalStorage('colors-buttons', false);
+  const [lines, setLines] = useLocalStorage('colors-lines', false);
   const [linesAlpha, setLinesAlpha] = useLocalStorage('colors-lines-alpha', false);
-  const [textBlocks, setTextBlocks] = useLocalStorage('colors-textBlocks', true);
+  const [textBlocks, setTextBlocks] = useLocalStorage('colors-textBlocks', false);
   const [alphaScales, setAlphaScales] = useLocalStorage('colors-alphaScales', false);
 
   const [darkTheme, setDarkTheme] = useLocalStorage('colors-darkTheme', false);
   const [grayscale, setGrayscale] = useLocalStorage('colors-grayscale', false);
   const [blur, setBlur] = useLocalStorage('colors-blur', false);
-  const [gap, setGap] = useLocalStorage('colors-gap', true);
+  const [gap, setGap] = useLocalStorage('colors-gap', false);
 
   // No SSR please
   if (typeof window === 'undefined') {
@@ -143,11 +143,23 @@ export default function Colors() {
     document.documentElement.classList.toggle('gap', gap);
   }, [gap]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     document.body.classList.toggle('theme-default', !darkTheme);
     document.body.classList.toggle(darkThemeClassName, darkTheme);
     document.documentElement.style.backgroundColor = darkTheme ? 'black' : '';
   }, [darkTheme]);
+
+  React.useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'd' && event.metaKey) {
+        event.preventDefault();
+        document.getElementById('dark-theme')?.querySelector('label')?.click();
+      }
+    };
+
+    addEventListener('keydown', handleKeyDown);
+    return () => removeEventListener('keydown', handleKeyDown);
+  });
 
   return (
     <>
@@ -200,9 +212,11 @@ export default function Colors() {
             <Checkbox defaultChecked={blur} onChange={(e) => setBlur(e.target.checked)}>
               Blur
             </Checkbox>
-            <Checkbox defaultChecked={darkTheme} onChange={(e) => setDarkTheme(e.target.checked)}>
-              Dark theme
-            </Checkbox>
+            <span id="dark-theme">
+              <Checkbox checked={darkTheme} onChange={() => setDarkTheme((value) => !value)}>
+                Dark theme (⌘D)
+              </Checkbox>
+            </span>
             <Separator css={{ my: '$3' }} />
             <Checkbox
               data-alpha-scales

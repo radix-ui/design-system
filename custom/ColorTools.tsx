@@ -16,19 +16,16 @@ import {
   CheckIcon,
   TextAlignJustifyIcon,
 } from '@radix-ui/react-icons';
-import { darkTheme as darkThemeClassName, theme as lightThemeClassName } from '../stitches.config';
-import { colors, getHiContrast, loContrasts } from '../pages/colors';
+import { darkTheme as darkThemeClassName } from '../stitches.config';
+import { colors, getHiContrast, grayBackground, loContrasts } from '../pages/colors';
 
-const steps = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
-
-// We are editing steps 2 through 8 via the tools
-const stepsToGenerate = 7;
+const steps = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'] as const;
 
 // How much to boost the saturation towards the left end of the bezier curve
-const defaultSaturationBoost = 1;
+const defaultScaleStartSaturationBoost = 1;
 
 // How much to mix step 9 and 11
-const defaultMixAmount = 0.3;
+const defaultMixRatioStep10 = 0.3;
 
 type Curve = [number, number, number, number];
 
@@ -39,32 +36,52 @@ type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<inf
 type EditableScaleProps = {
   name: ElementType<typeof colors>;
   lightThemeConfig: {
-    /** Step 2 */
-    start: string;
-    /** Step 8 */
-    end: string;
-    /** Initial Bezier curve */
+    // Steps to interpolate between
+    step2?: string;
+    step8?: string;
+
+    // Optional overrides of the scale
+    step1?: string;
+    step3?: string;
+    step4?: string;
+    step5?: string;
+    step6?: string;
+    step7?: string;
+    step9?: string;
+    step10?: string;
+    step11?: string;
+    step12?: string;
+
+    // Initial Bezier curve for step 2 to step 8
     defaultCurve: Curve;
-    /** Colors to override, e.g. "red1", "red6", "red11", etc */
-    overrides?: Record<string, string>;
-    /** How much to boost the saturation towards the left end of the bezier curve */
-    saturationBoost?: number;
+    // How much to boost the saturation towards the left end of the bezier curve
+    scaleStartSaturationBoost?: number;
     // How much to mix step 9 and 11
-    mixAmount?: number;
+    mixRatioStep10?: number;
   };
   darkThemeConfig: {
-    /** Step 2 */
-    start: string;
-    /** Step 8 */
-    end: string;
-    /** Initial Bezier curve */
+    // Steps to interpolate between
+    step2?: string;
+    step8?: string;
+
+    // Optional overrides of the scale
+    step1?: string;
+    step3?: string;
+    step4?: string;
+    step5?: string;
+    step6?: string;
+    step7?: string;
+    step9?: string;
+    step10?: string;
+    step11?: string;
+    step12?: string;
+
+    // Initial Bezier curve for step 2 to step 8
     defaultCurve: Curve;
-    /** Colors to override, e.g. "red1", "red6", "red11", etc */
-    overrides?: Record<string, string>;
-    /** How much to boost the saturation towards the left end of the bezier curve */
-    saturationBoost?: number;
+    // How much to boost the saturation towards the left end of the bezier curve
+    scaleStartSaturationBoost?: number;
     // How much to mix step 9 and 11
-    mixAmount?: number;
+    mixRatioStep10?: number;
   };
 };
 
@@ -80,869 +97,462 @@ export function ColorTools() {
         <EditableScale
           name="gray"
           lightThemeConfig={{
-            start: 'hsl(0 0% 97.5%)',
-            end: 'hsl(0 0% 73.2%)',
+            step2: 'hsl(0 0% 97.5%)',
+            step8: 'hsl(0 0% 73.2%)',
             defaultCurve: [0.625, 0.455, 0.875, 0.405],
-            overrides: {
-              gray1: 'hsl(0 0% 99.0%)',
-              gray9: 'hsl(0 0% 55.2%)',
-              gray11: 'hsl(0 0% 39.3%)',
-              gray12: 'hsl(0, 0%, 12.5%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(0 0% 10.5%)',
-            end: 'hsl(0 0% 37.5%)',
+            step2: '#1c1c1c',
+            step8: 'hsl(0 0% 37.5%)',
             defaultCurve: [0.2, 0.42, 0.78, 0.4],
-            overrides: {
-              gray1: 'hsl(0 0% 9.5%)',
-              gray9: 'hsl(0 0% 43%)',
-              gray11: 'hsl(0 0% 69.5%)',
-              gray12: 'hsl(0 0% 93.5%)',
-            },
           }}
         />
         <EditableScale
           name="mauve"
           lightThemeConfig={{
-            start: 'hsl(280, 23%, 98%)',
-            end: 'hsl(250 11% 75.5%)',
+            step2: 'hsl(280, 23%, 98%)',
+            step8: 'hsl(250 11% 75.5%)',
             defaultCurve: [0.64, 0.47, 0.905, 0.47],
-            overrides: {
-              mauve1: 'hsl(300, 26%, 99%)',
-              mauve9: 'hsl(252 6% 57.3%)',
-              mauve11: 'hsl(252 5% 40.7%)',
-              mauve12: 'hsl(260, 10%, 13.5%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(300 7% 11%)',
-            end: 'hsl(260 5% 39.2%)',
-            defaultCurve: [0.21, 0.405, 0.78, 0.4],
-            overrides: {
-              mauve1: 'hsl(300, 5%, 9.5%)',
-              mauve9: 'hsl(250, 5%, 45%)',
-              mauve11: 'hsl(250, 6%, 70.5%)',
-              mauve12: 'hsl(240, 7%, 93.8%)',
-            },
+            step2: '#1e1c1e',
+            step8: 'hsl(260 5% 39.2%)',
+            scaleStartSaturationBoost: 0.3,
+            defaultCurve: [0.21, 0.43, 0.77, 0.375],
           }}
         />
         <EditableScale
           name="slate"
           lightThemeConfig={{
-            start: 'hsl(206 17% 97.6%)',
-            end: 'hsl(206 10% 78%)',
             defaultCurve: [0.65, 0.47, 0.905, 0.47],
-            overrides: {
-              slate1: 'hsl(240, 22%, 99%)',
-              slate2: 'hsl(240, 20%, 98%)',
-              slate3: 'hsl(239, 13.4%, 95.4%)',
-              slate4: 'hsl(238, 11.8%, 92.9%)',
-              slate5: 'hsl(237, 11.1%, 90.5%)',
-              slate6: 'hsl(236, 10.6%, 87.9%)',
-              slate7: 'hsl(234, 10.4%, 84.4%)',
-              slate8: 'hsl(231, 10.2%, 75.1%)',
-              slate9: 'hsl(230, 6%, 57%)',
-              slate11: 'hsl(220, 6%, 40%)',
-              slate12: 'hsl(210, 12%, 12.5%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(240, 6.9%, 11.4%)',
-            end: 'hsl(204 6% 37.5%)',
-            defaultCurve: [0.21, 0.405, 0.78, 0.4],
-            overrides: {
-              slate1: 'hsl(240, 5%, 9.8%)',
-              slate9: 'hsl(220, 6%, 44%)',
-              slate11: 'hsl(220, 7%, 70%)',
-              slate12: 'hsl(220, 7%, 93.5%)',
-            },
+            step2: '#1C1C1f',
+            step8: 'hsl(210 6% 38.2%)',
+            defaultCurve: [0.235, 0.435, 0.775, 0.395],
           }}
         />
         <EditableScale
           name="sage"
           lightThemeConfig={{
-            start: 'hsl(155 17% 97.3%)',
-            end: 'hsl(155 3% 73%)',
+            step2: 'hsl(155 17% 97.3%)',
+            step8: 'hsl(155 3% 73%)',
             defaultCurve: [0.665, 0.45, 0.865, 0.42],
-            overrides: {
-              sage9: 'hsl(155 3.5% 54.2%)',
-              sage11: 'hsl(155 3% 38.5%)',
-              sage12: 'hsl(155 12% 11.5%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(155 9% 10.2%)',
-            end: 'hsl(155 3% 37%)',
-            defaultCurve: [0.21, 0.405, 0.78, 0.4],
-            overrides: {
-              sage1: 'hsl(155 7% 9.2%)',
-              sage9: 'hsl(155 6% 41.5%)',
-              // sage11: 'hsl(155 5% 51.9%)',
-              sage11: 'hsl(155 5% 68.3%)',
-              sage12: 'hsl(155, 7%, 93%)',
-            },
+            step2: '#1a1d1c',
+            step8: 'hsl(155 5% 37%)',
+            defaultCurve: [0.21, 0.405, 0.785, 0.38],
           }}
         />
         <EditableScale
           name="olive"
           lightThemeConfig={{
-            start: 'hsl(110 17% 97.6%)',
-            end: 'hsl(110 3% 73%)',
+            step2: 'hsl(110 17% 97.6%)',
+            step8: 'hsl(110 3% 73%)',
             defaultCurve: [0.64, 0.45, 0.885, 0.465],
-            overrides: {
-              olive9: 'hsl(110 3% 54.5%)',
-              olive11: 'hsl(110 3% 38.5%)',
-              olive12: 'hsl(110 8% 12%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(110 6% 10.4%)',
-            end: 'hsl(110 3% 37%)',
+            step2: '#1c1d1b',
+            step8: 'hsl(110 3% 37%)',
             defaultCurve: [0.21, 0.405, 0.78, 0.4],
-            overrides: {
-              olive1: 'hsl(110 5% 9.2%)',
-              olive9: 'hsl(110 6% 41.5%)',
-              // olive11: 'hsl(110 5% 51.9%)',
-              olive11: 'hsl(110 5% 68.8%)',
-              olive12: 'hsl(110, 7%, 93%)',
-            },
           }}
         />
         <EditableScale
           name="sand"
           lightThemeConfig={{
-            start: 'hsl(50 9% 97.5%)',
-            end: 'hsl(50 5% 72.5%)',
+            step2: 'hsl(50 9% 97.5%)',
+            step8: 'hsl(50 5% 72.5%)',
             defaultCurve: [0.65, 0.45, 0.875, 0.48],
-            overrides: {
-              sand9: 'hsl(60 3% 53.9%)',
-              sand11: 'hsl(50 2.5% 38%)',
-              sand12: 'hsl(50 8% 12%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(61 2% 10.3%)',
-            end: 'hsl(46 4% 37%)',
+            step2: 'hsl(61 2% 10.3%)',
+            step8: 'hsl(46 4% 37%)',
             defaultCurve: [0.21, 0.405, 0.78, 0.4],
-            overrides: {
-              sand1: 'hsl(60 6% 9%)',
-              sand9: 'hsl(50 4% 41.8%)',
-              sand11: 'hsl(50 5% 68.3%)',
-              sand12: 'hsl(56 7% 93%)',
-            },
           }}
         />
         <EditableScale
           name="tomato"
           lightThemeConfig={{
-            start: 'hsl(10 90% 98.3%)',
-            end: 'hsl(10 72% 71%)',
-            saturationBoost: 1.2,
-            mixAmount: 0.38,
+            step2: 'hsl(10 90% 98.3%)',
+            step8: 'hsl(10 72% 71%)',
+            scaleStartSaturationBoost: 1.2,
+            mixRatioStep10: 0.38,
             defaultCurve: [0.55, 0.225, 0.74, 0.525],
-            overrides: {
-              tomato9: 'hsl(10 78% 54.0%)',
-              tomato11: 'hsl(10 82% 42%)',
-              // tomato12: 'hsl(10 50% 13.5%)',
-              tomato12: 'hsl(8, 50%, 24%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(10 40% 11.5%)',
-            end: 'hsl(10 80% 44%)',
-            mixAmount: 0.55,
+            step2: 'hsl(10 40% 11.5%)',
+            step8: 'hsl(10 80% 44%)',
+            mixRatioStep10: 0.55,
             defaultCurve: [0.295, 0.29, 0.77, 0.15],
-            overrides: {
-              tomato9: 'hsl(10 78% 54.0%)',
-              tomato11: 'hsl(10 100% 72%)',
-              tomato12: 'hsl(10, 85%, 89%)',
-            },
           }}
         />
         <EditableScale
           name="red"
           lightThemeConfig={{
-            start: 'hsl(359 100% 98.5%)',
-            end: 'hsl(359 70% 74.5%)',
-            saturationBoost: 1.2,
-            mixAmount: 0.38,
+            step2: 'hsl(359 100% 98.5%)',
+            step8: 'hsl(359 70% 74.5%)',
+            scaleStartSaturationBoost: 1.2,
+            mixRatioStep10: 0.38,
             defaultCurve: [0.61, 0.265, 0.72, 0.52],
-            overrides: {
-              // WorkOS red
-              // red1: 'hsl(348, 100%, 99%)',
-              // red2: 'hsl(348, 100%, 98.5%)',
-              // red3: 'hsl(349, 100%, 97%)',
-              // red4: 'hsl(349, 98%, 95.5%)',
-              // red5: 'hsl(349, 96%, 94%)',
-              // red6: 'hsl(349, 82%, 92%)',
-              // red7: 'hsl(348, 78%, 83%)',
-              // red8: 'hsl(348, 75%, 75.5%)',
-              // red9: 'hsl(347, 75%, 58.5%)',
-              // red10: 'hsl(347, 70%, 54.5%)',
-              red11: 'hsl(358, 65%, 47%)',
-              // red12: 'hsl(344, 63%, 24%)',
-              red12: 'hsl(350, 63%, 24%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(356 30% 12.5%)',
-            end: 'hsl(358 75% 47%)',
-            mixAmount: 0.48,
+            step2: 'hsl(356 30% 12.5%)',
+            step8: 'hsl(358 75% 47%)',
+            mixRatioStep10: 0.48,
             defaultCurve: [0.325, 0.28, 0.765, 0.16],
-            overrides: {
-              red1: 'hsl(353 23% 9.8%)',
-              red11: 'hsl(358 100% 76%)',
-              red12: 'hsl(350, 100%, 91%)',
-            },
           }}
         />
         <EditableScale
           name="ruby"
           lightThemeConfig={{
-            start: 'hsl(350 100% 98.5%)',
-            end: 'hsl(348 62% 73.5%)',
-            saturationBoost: 1.2,
-            mixAmount: 0.4,
+            step2: 'hsl(350 100% 98.5%)',
+            step8: 'hsl(348 62% 73.5%)',
+            scaleStartSaturationBoost: 1.2,
+            mixRatioStep10: 0.4,
             defaultCurve: [0.6, 0.26, 0.71, 0.5],
-            overrides: {
-              ruby9: 'hsl(348, 75%, 58.5%)',
-              ruby11: 'hsl(345, 70%, 46.5%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(347, 34%, 12.2%)',
-            end: 'hsl(348, 77%, 46%)',
-            mixAmount: 0.46,
+            step2: 'hsl(347, 34%, 12.2%)',
+            step8: 'hsl(348, 77%, 46%)',
+            mixRatioStep10: 0.46,
             defaultCurve: [0.355, 0.315, 0.725, 0.11],
-            overrides: {
-              ruby1: 'hsl(343, 23%, 10%)',
-              ruby9: 'hsl(348, 75%, 58.5%)',
-              ruby11: 'hsl(348, 100%, 76%)',
-            },
           }}
         />
         <EditableScale
           name="crimson"
           lightThemeConfig={{
-            start: 'hsl(332 100% 98.5%)',
-            end: 'hsl(336 62% 72.8%)',
-            saturationBoost: 1.2,
-            mixAmount: 0.42,
+            step2: 'hsl(332 100% 98.5%)',
+            step8: 'hsl(336 62% 72.8%)',
+            scaleStartSaturationBoost: 1.2,
+            mixRatioStep10: 0.42,
             defaultCurve: [0.6, 0.26, 0.71, 0.5],
-            overrides: {
-              crimson1: 'hsl(332 100% 99.4%)',
-              crimson9: 'hsl(336 80% 57.8%)',
-              crimson11: 'hsl(336 75% 45.5%)',
-              // crimson12: 'hsl(340 65% 14.5%)',
-              crimson12: 'hsl(332, 63%, 23.5%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(335 33% 12%)',
-            end: 'hsl(336 80% 45%)',
-            mixAmount: 0.48,
+            step2: 'hsl(335 33% 12%)',
+            step8: 'hsl(336 80% 45%)',
+            mixRatioStep10: 0.48,
             defaultCurve: [0.32, 0.28, 0.73, 0.12],
-            overrides: {
-              crimson1: 'hsl(335 20% 9.6%)',
-              crimson9: 'hsl(336 80% 57.8%)',
-              crimson11: 'hsl(341 100% 76%)',
-              crimson12: 'hsl(330, 90%, 91%)',
-            },
           }}
         />
         <EditableScale
           name="pink"
           lightThemeConfig={{
-            start: 'hsl(322 100% 98.5%)',
-            end: 'hsl(322 60% 72.2%)',
-            saturationBoost: 1.2,
-            mixAmount: 0.5,
+            step2: 'hsl(322 100% 98.5%)',
+            step8: 'hsl(322 60% 72.2%)',
+            scaleStartSaturationBoost: 1.2,
+            mixRatioStep10: 0.5,
             defaultCurve: [0.61, 0.27, 0.715, 0.5],
-            overrides: {
-              pink1: 'hsl(322 100% 99.4%)',
-              pink9: 'hsl(322 65% 54.5%)',
-              pink11: 'hsl(322 75% 44%)',
-              // pink12: 'hsl(320 70% 13.5%)',
-              pink12: 'hsl(320, 70%, 23.2%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(318 33% 12%)',
-            end: 'hsl(322 60% 46%)',
-            mixAmount: 0.4,
+            step2: 'hsl(318 33% 12%)',
+            step8: 'hsl(322 60% 46%)',
+            mixRatioStep10: 0.4,
             defaultCurve: [0.32, 0.28, 0.73, 0.12],
-            overrides: {
-              pink1: 'hsl(318 25% 9.6%)',
-              pink9: 'hsl(322 65% 54.5%)',
-              pink11: 'hsl(325 90% 75%)',
-              pink12: 'hsl(325, 90%, 90.5%)',
-            },
           }}
         />
         <EditableScale
           name="plum"
           lightThemeConfig={{
-            start: 'hsl(297 100% 98.6%)',
-            end: 'hsl(292 48% 70.9%)',
-            saturationBoost: 1.2,
-            mixAmount: 0.5,
+            step2: 'hsl(297 100% 98.6%)',
+            step8: 'hsl(292 48% 70.9%)',
+            scaleStartSaturationBoost: 1.2,
+            mixRatioStep10: 0.5,
             defaultCurve: [0.64, 0.29, 0.715, 0.495],
-            overrides: {
-              plum1: 'hsl(292 90% 99.4%)',
-              plum9: 'hsl(292 45% 51.0%)',
-              plum11: 'hsl(292 60% 42.5%)',
-              // plum12: 'hsl(291 66% 14.0%)',
-              plum12: 'hsl(291, 57%, 23.2%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(301 30% 11.5%)',
-            end: 'hsl(292 40% 48%)',
-            mixAmount: 0.4,
+            step2: 'hsl(301 30% 11.5%)',
+            step8: 'hsl(292 40% 48%)',
+            mixRatioStep10: 0.4,
             defaultCurve: [0.36, 0.335, 0.73, 0.15],
-            overrides: {
-              plum1: 'hsl(301 20% 9.4%)',
-              plum9: 'hsl(292 45% 51.0%)',
-              plum11: 'hsl(290 70% 74.0%)',
-              plum12: 'hsl(300, 60%, 89.5%)',
-            },
           }}
         />
         <EditableScale
           name="purple"
           lightThemeConfig={{
-            start: 'hsl(280 100% 99.0%)',
-            end: 'hsl(272 60% 73.5%)',
-            saturationBoost: 1.2,
-            mixAmount: 0.45,
+            step2: 'hsl(280 100% 99.0%)',
+            step8: 'hsl(272 60% 73.5%)',
+            scaleStartSaturationBoost: 1.2,
+            mixRatioStep10: 0.45,
             defaultCurve: [0.635, 0.3, 0.755, 0.485],
-            overrides: {
-              purple1: 'hsl(280 65% 99.4%)',
-              purple11: 'hsl(272 50% 45.8%)',
-              purple12: 'hsl(270 50% 25%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(284 31% 12%)',
-            end: 'hsl(272 43% 50%)',
+            step2: 'hsl(284 31% 12%)',
+            step8: 'hsl(272 43% 50%)',
             defaultCurve: [0.335, 0.385, 0.705, 0.17],
-            overrides: {
-              purple1: 'hsl(284 20% 9.6%)',
-              purple11: 'hsl(270 90% 78%)',
-              purple12: 'hsl(275, 75%, 91.5%)',
-            },
           }}
         />
         <EditableScale
           name="violet"
           lightThemeConfig={{
-            start: 'hsl(252 100% 99.0%)',
-            end: 'hsl(252 68% 76.2%)',
-            saturationBoost: 1.2,
-            mixAmount: 0.42,
+            step2: 'hsl(252 100% 99.0%)',
+            step8: 'hsl(252 68% 76.2%)',
+            scaleStartSaturationBoost: 1.2,
+            mixRatioStep10: 0.42,
             defaultCurve: [0.69, 0.31, 0.76, 0.525],
-            overrides: {
-              // WorkOS brand
-              // violet1: 'hsl(243, 65%, 99.5%)',
-              // violet2: 'hsl(240, 100%, 99%)',
-              // violet3: 'hsl(240, 99%, 97.5%)',
-              // violet4: 'hsl(240, 98%, 96%)',
-              // violet5: 'hsl(240, 96%, 95%)',
-              // violet6: 'hsl(240, 78%, 93%)',
-              // violet7: 'hsl(240, 72%, 85%)',
-              // violet8: 'hsl(240, 74%, 79%)',
-              // violet9: 'hsl(240, 78%, 66%)',
-              // violet10: 'hsl(239, 72%, 62%)',
-              // violet11: 'hsl(238, 63%, 58%)',
-              // violet12: hsl(244, 43%, 28%);
-              violet12: 'hsl(250, 43%, 26%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(255 30% 13.1%)',
-            end: 'hsl(250 46% 54%)',
+            step2: 'hsl(255 30% 13.1%)',
+            step8: 'hsl(250 46% 54%)',
             defaultCurve: [0.34, 0.38, 0.685, 0.185],
-            overrides: {
-              // WorkOS brand
-              // violet1: 'hsl(240, 20%, 10%)',
-              // violet2: 'hsl(240, 30%, 13%)',
-              // violet3: 'hsl(242, 37%, 23%)',
-              // violet4: 'hsl(242, 39%, 26%)',
-              // violet5: 'hsl(242, 42%, 30%)',
-              // violet6: 'hsl(240, 45%, 33%)',
-              // violet7: 'hsl(240, 45%, 41%)',
-              // violet8: 'hsl(240, 52%, 51%)',
-              // violet9: 'hsl(240, 56%, 62%)',
-              // violet10: 'hsl(241, 63%, 66%)',
-              // violet11: 'hsl(242, 95%, 77%)',
-              // violet12: 'hsl(240, 93%, 93%)',
-              violet11: 'hsl(255, 100%, 80%)',
-              violet12: 'hsl(250, 93%, 93%)',
-            },
           }}
         />
         <EditableScale
           name="iris"
           lightThemeConfig={{
-            start: 'hsl(238, 100%, 99%)',
-            end: 'hsl(238, 74%, 77.5%)',
-            saturationBoost: 1.2,
-            mixAmount: 0.4,
+            step2: 'hsl(238, 100%, 99%)',
+            step8: 'hsl(238, 74%, 77.5%)',
+            scaleStartSaturationBoost: 1.2,
+            mixRatioStep10: 0.4,
             defaultCurve: [0.575, 0.21, 0.8, 0.565],
-            overrides: {
-              iris1: 'hsl(243, 65%, 99.5%)',
-              iris9: 'hsl(240, 60%, 59.8%)',
-              iris11: 'hsl(240, 50%, 52%)',
-              iris12: 'hsl(238, 43%, 26.8%)',
-              // WorkOS
-              // iris9: 'hsl(240, 78%, 66%)',
-              // iris11: 'hsl(238, 63%, 58%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(243, 31%, 13.5%)',
-            end: 'hsl(240, 45%, 54.8%)',
-            mixAmount: 0.28,
+            step2: 'hsl(243, 31%, 13.5%)',
+            step8: 'hsl(240, 45%, 54.8%)',
+            mixRatioStep10: 0.28,
             defaultCurve: [0.355, 0.38, 0.705, 0.195],
-            overrides: {
-              iris1: 'hsl(240, 22%, 10.5%)',
-              iris9: 'hsl(240, 60%, 59.8%)',
-              iris11: 'hsl(242, 100%, 81%)',
-              iris12: 'hsl(242, 92%, 93.5%)',
-              // WorkOS
-              // iris9: 'hsl(240, 78%, 66%)',
-              // iris11: 'hsl(240, 100%, 80%)',
-            },
           }}
         />
         <EditableScale
           name="indigo"
           lightThemeConfig={{
-            start: 'hsl(226 100% 98.7%)',
-            end: 'hsl(226 76% 74.5%)',
-            saturationBoost: 1.2,
-            mixAmount: 0.4,
+            step2: 'hsl(226 100% 98.7%)',
+            step8: 'hsl(226 76% 74.5%)',
+            scaleStartSaturationBoost: 1.2,
+            mixRatioStep10: 0.4,
             defaultCurve: [0.575, 0.18, 0.815, 0.61],
-            overrides: {
-              indigo1: 'hsl(225 60% 99.4%)',
-              indigo9: 'hsl(226 70% 55.5%)',
-              indigo11: 'hsl(226 55% 45%)',
-              indigo12: 'hsl(226 50% 24%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(229 37% 12.8%)',
-            end: 'hsl(226 60% 52%)',
-            mixAmount: 0.28,
+            step1: '#181821',
+            step2: 'hsl(230 25% 13%)',
+            step8: 'hsl(226 60% 52%)',
+            mixRatioStep10: 0.28,
+            scaleStartSaturationBoost: 0.8,
             defaultCurve: [0.34, 0.38, 0.715, 0.165],
-            overrides: {
-              indigo1: 'hsl(229 24% 10%)',
-              indigo9: 'hsl(226 70% 55.5%)',
-              indigo11: 'hsl(235 100% 80%)',
-              indigo12: 'hsl(235, 93%, 93%)',
-            },
           }}
         />
         <EditableScale
           name="blue"
           lightThemeConfig={{
-            start: 'hsl(207 100% 98%)',
-            end: 'hsl(205.6 82% 65.4%)',
-            saturationBoost: 1.9,
-            mixAmount: 0.4,
+            step2: 'hsl(207 100% 98%)',
+            step8: 'hsl(205.6 82% 65.4%)',
+            scaleStartSaturationBoost: 1.9,
+            mixRatioStep10: 0.4,
             defaultCurve: [0.48, 0.095, 0.795, 0.575],
-            overrides: {
-              blue5: 'hsl(209 95% 90.1%)',
-              blue11: 'hsl(211 90% 42%)',
-              // blue12: 'hsl(211 100% 15%)',
-              blue12: 'hsl(216 71% 23%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(216 50% 11.7%)',
-            end: 'hsl(211 85% 48%)',
-            mixAmount: 0.5,
+            step1: '#181921',
+            step2: 'hsl(216 50% 11.7%)',
+            step8: 'hsl(211 85% 48%)',
+            mixRatioStep10: 0.5,
             defaultCurve: [0.355, 0.3, 0.735, 0.15],
-            overrides: {
-              blue1: 'hsl(212 35% 9.2%)',
-              blue11: 'hsl(205, 100%, 71%)',
-              blue12: 'hsl(205, 100%, 88%)',
-            },
           }}
         />
         <EditableScale
           name="cyan"
           lightThemeConfig={{
-            start: 'hsl(185 70% 97.0%)',
-            end: 'hsl(189 60% 52.5%)',
-            saturationBoost: 2,
+            step2: 'hsl(185 70% 97.0%)',
+            step8: 'hsl(189 60% 52.5%)',
+            scaleStartSaturationBoost: 2,
             defaultCurve: [0.505, 0.13, 0.78, 0.565],
-            overrides: {
-              cyan1: 'hsl(185 60% 98.7%)',
-              cyan9: 'hsl(190 95% 39.0%)',
-              cyan11: 'hsl(192 85% 31.0%)',
-              cyan12: 'hsl(192 70% 16.5%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(192 50% 8.8%)',
-            end: 'hsl(192 60% 39%)',
-            mixAmount: 0.45,
+            step2: 'hsl(192 50% 8.8%)',
+            step8: 'hsl(192 60% 39%)',
+            mixRatioStep10: 0.45,
             defaultCurve: [0.36, 0.295, 0.735, 0.15],
-            overrides: {
-              cyan1: 'hsl(192 60% 7.2%)',
-              cyan9: 'hsl(190 95% 39.0%)',
-              cyan11: 'hsl(190 90% 54%)',
-              cyan12: 'hsl(190, 80%, 84%)',
-            },
           }}
         />
         <EditableScale
           name="teal"
           lightThemeConfig={{
-            start: 'hsl(165 70% 96.7%)',
-            end: 'hsl(172 42% 52.5%)',
-            saturationBoost: 2,
+            step2: 'hsl(165 70% 96.7%)',
+            step8: 'hsl(172 42% 52.5%)',
+            scaleStartSaturationBoost: 2,
             defaultCurve: [0.505, 0.13, 0.795, 0.55],
-            overrides: {
-              teal1: 'hsl(165 60% 98.8%)',
-              teal9: 'hsl(173 80% 36.0%)',
-              teal11: 'hsl(174 90% 25.2%)',
-              teal12: 'hsl(174 65% 14.5%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(168 55% 7.8%)',
-            end: 'hsl(173 60% 34%)',
-            mixAmount: 0.45,
+            step2: 'hsl(168 55% 7.8%)',
+            step8: 'hsl(173 60% 34%)',
+            mixRatioStep10: 0.45,
             defaultCurve: [0.375, 0.3, 0.725, 0.15],
-            overrides: {
-              teal1: 'hsl(167 50% 6.7%)',
-              teal9: 'hsl(173 80% 36.0%)',
-              teal11: 'hsl(170 90% 44.5%)',
-              teal12: 'hsl(163, 70%, 81%)',
-            },
           }}
         />
         <EditableScale
           name="jade"
           lightThemeConfig={{
-            start: 'hsl(151 82% 96.5%)',
-            end: 'hsl(164 42% 53.2%)',
-            saturationBoost: 2,
+            step2: 'hsl(151 82% 96.5%)',
+            step8: 'hsl(164 42% 53.2%)',
+            scaleStartSaturationBoost: 2,
             defaultCurve: [0.505, 0.155, 0.78, 0.51],
-            overrides: {
-              jade9: 'hsl(164, 60%, 40%)',
-              jade11: 'hsl(163, 65%, 28.9%)',
-              jade12: 'hsl(160, 34%, 17.2%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(153, 47%, 8.4%)',
-            end: 'hsl(164, 60%, 34%)',
-            mixAmount: 0.435,
+            step2: 'hsl(153, 47%, 8.4%)',
+            step8: 'hsl(164, 60%, 34%)',
+            mixRatioStep10: 0.435,
             defaultCurve: [0.415, 0.315, 0.725, 0.16],
-            overrides: {
-              jade9: 'hsl(164, 60%, 40%)',
-              jade11: 'hsl(163, 75%, 48.4%)',
-              jade12: 'hsl(155, 70%, 81%)',
-            },
           }}
         />
         <EditableScale
           name="green"
           lightThemeConfig={{
-            start: 'hsl(136 66% 97%)',
-            end: 'hsl(151 40% 54.0%)',
-            saturationBoost: 1.6,
+            step2: 'hsl(136 66% 97%)',
+            step8: 'hsl(151 40% 54.0%)',
+            scaleStartSaturationBoost: 1.6,
             defaultCurve: [0.505, 0.13, 0.775, 0.51],
-            overrides: {
-              green1: 'hsl(136 50% 98.9%)',
-              green9: 'hsl(151 55% 41.5%)',
-              green11: 'hsl(153 67% 28.5%)',
-              green12: 'hsl(155 40% 16.5%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(154 33% 8.6%)',
-            end: 'hsl(151 52% 36%)',
-            mixAmount: 0.42,
+            step2: 'hsl(154 33% 8.6%)',
+            step8: 'hsl(151 52% 36%)',
+            mixRatioStep10: 0.42,
             defaultCurve: [0.405, 0.33, 0.735, 0.165],
-            overrides: {
-              green9: 'hsl(151 55% 41.5%)',
-              green11: 'hsl(151 65% 54%)',
-              green12: 'hsl(144, 70%, 82%)',
-            },
           }}
         />
         <EditableScale
           name="grass"
           lightThemeConfig={{
-            start: 'hsl(120 60% 97%)',
-            end: 'hsl(131 38% 56.2%)',
-            saturationBoost: 1.6,
+            step2: 'hsl(120 60% 97%)',
+            step8: 'hsl(131 38% 56.2%)',
+            scaleStartSaturationBoost: 1.6,
             defaultCurve: [0.505, 0.13, 0.775, 0.51],
-            overrides: {
-              grass1: 'hsl(116 50% 98.9%)',
-              grass9: 'hsl(131 41% 46.5%)',
-              grass11: 'hsl(133 50% 32.5%)',
-              grass12: 'hsl(131 30% 18%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(134 20% 9.5%)',
-            end: 'hsl(131 35% 40%)',
-            mixAmount: 0.52,
+            step2: 'hsl(134 20% 9.5%)',
+            step8: 'hsl(131 35% 40%)',
+            mixRatioStep10: 0.52,
             defaultCurve: [0.41, 0.33, 0.73, 0.165],
-            overrides: {
-              grass9: 'hsl(131 41% 46.5%)',
-              grass11: 'hsl(131 50% 63%)',
-              grass12: 'hsl(120, 60%, 85%)',
-            },
           }}
         />
         <EditableScale
           name="brown"
           lightThemeConfig={{
-            start: 'hsl(30 55% 97.8%)',
-            end: 'hsl(28 50% 63.1%)',
-            mixAmount: 0.35,
+            step2: 'hsl(30 55% 97.8%)',
+            step8: 'hsl(28 50% 63.1%)',
+            mixRatioStep10: 0.35,
             defaultCurve: [0.58, 0.275, 0.71, 0.485],
-            overrides: {
-              brown1: 'hsl(30 40% 99.1%)',
-              brown11: 'hsl(25 30% 39.0%)',
-              brown12: 'hsl(20 15% 21.0%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(22 12% 10.4%)',
-            end: 'hsl(28 28% 45%)',
-            mixAmount: 0.35,
+            step2: 'hsl(22 12% 10.4%)',
+            step8: 'hsl(28 28% 45%)',
+            mixRatioStep10: 0.35,
             defaultCurve: [0.41, 0.295, 0.75, 0.185],
-            overrides: {
-              brown1: 'hsl(22 15% 8.7%)',
-              brown11: 'hsl(28 50% 72%)',
-              brown12: 'hsl(35 60% 87%)',
-            },
           }}
         />
         <EditableScale
           name="bronze"
           lightThemeConfig={{
-            start: 'hsl(18 70% 98.0%)',
-            end: 'hsl(16 25% 66.5%)',
-            mixAmount: 0.35,
+            step2: 'hsl(18 70% 98.0%)',
+            step8: 'hsl(16 25% 66.5%)',
+            mixRatioStep10: 0.35,
             defaultCurve: [0.58, 0.275, 0.725, 0.48],
-            overrides: {
-              bronze1: 'hsl(15 30% 99.1%)',
-              bronze11: 'hsl(15 20% 41%)',
-              bronze12: 'hsl(12 22% 21.5%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(17 8% 10.2%)',
-            end: 'hsl(18 16% 47.7%)',
-            mixAmount: 0.35,
+            step2: 'hsl(17 8% 10.2%)',
+            step8: 'hsl(18 16% 47.7%)',
+            mixRatioStep10: 0.35,
             defaultCurve: [0.4, 0.31, 0.75, 0.185],
-            overrides: {
-              bronze1: 'hsl(17 10% 8.8%)',
-              bronze11: 'hsl(18 35% 74%)',
-              bronze12: 'hsl(22 35% 89%)',
-            },
           }}
         />
         <EditableScale
           name="gold"
           lightThemeConfig={{
-            start: 'hsl(50 50% 96.6%)',
-            end: 'hsl(36 27% 61.8%)',
-            mixAmount: 0.35,
+            step2: 'hsl(50 50% 96.6%)',
+            step8: 'hsl(36 27% 61.8%)',
+            mixRatioStep10: 0.35,
             defaultCurve: [0.535, 0.24, 0.745, 0.485],
-            overrides: {
-              gold1: 'hsl(50 20% 99.1%)',
-              gold9: 'hsl(36 20% 49.5%)',
-              gold11: 'hsl(36 20% 37.0%)',
-              gold12: 'hsl(36 16% 20.0%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(43 8% 9.7%)',
-            end: 'hsl(36 15% 45%)',
-            mixAmount: 0.35,
+            step2: 'hsl(43 8% 9.7%)',
+            step8: 'hsl(36 15% 45%)',
+            mixRatioStep10: 0.35,
             defaultCurve: [0.41, 0.29, 0.78, 0.23],
-            overrides: {
-              gold1: 'hsl(44 9% 8.3%)',
-              gold9: 'hsl(36 20% 49.5%)',
-              gold11: 'hsl(35 30% 71%)',
-              gold12: 'hsl(35 25% 88%)',
-            },
           }}
         />
         <EditableScale
           name="sky"
           lightThemeConfig={{
-            start: 'hsl(191 100% 97.3%)',
-            end: 'hsl(193 65% 56%)',
-            saturationBoost: 3,
-            mixAmount: 0.1,
+            step2: 'hsl(191 100% 97.3%)',
+            step8: 'hsl(193 65% 56%)',
+            scaleStartSaturationBoost: 3,
+            mixRatioStep10: 0.1,
             defaultCurve: [0.55, 0.17, 0.64, 0.44],
-            overrides: {
-              sky9: 'hsl(193 98% 74%)',
-              sky10: 'hsl(193 90% 71%)',
-              sky11: 'hsl(200 60% 36%)',
-              sky12: 'hsl(195 50% 20%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(202 50% 10%)',
-            end: 'hsl(200 60% 44%)',
+            step2: 'hsl(202 50% 10%)',
+            step8: 'hsl(200 60% 44%)',
             defaultCurve: [0.415, 0.305, 0.76, 0.175],
-            overrides: {
-              sky1: 'hsl(205 45% 8.6%)',
-              sky9: 'hsl(193 98% 74%)',
-              sky10: 'hsl(192 100% 77%)',
-              sky11: 'hsl(195 100% 66%)',
-              sky12: 'hsl(192 100% 88%)',
-            },
           }}
         />
         <EditableScale
           name="mint"
           lightThemeConfig={{
-            start: 'hsl(166 88% 96.6%)',
-            end: 'hsl(168 45% 53%)',
-            saturationBoost: 3,
-            mixAmount: 0.08,
+            step2: 'hsl(166 88% 96.6%)',
+            step8: 'hsl(168 45% 53%)',
+            scaleStartSaturationBoost: 3,
+            mixRatioStep10: 0.08,
             defaultCurve: [0.52, 0.215, 0.635, 0.345],
-            overrides: {
-              mint9: 'hsl(167 70% 72%)',
-              mint10: 'hsl(167 62% 69%)',
-              mint11: 'hsl(172 50% 30.5%)',
-              mint12: 'hsl(171 50% 17.5%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(176 50% 8%)',
-            end: 'hsl(170 60% 35%)',
+            step2: 'hsl(176 50% 8%)',
+            step8: 'hsl(170 60% 35%)',
             defaultCurve: [0.415, 0.3, 0.745, 0.2],
-            overrides: {
-              mint1: 'hsl(173 50% 6.6%)',
-              mint9: 'hsl(167 70% 72%)',
-              mint10: 'hsl(163 80% 77%)',
-              mint11: 'hsl(167 70% 58%)',
-              mint12: 'hsl(155 70% 86.5%)',
-            },
           }}
         />
         <EditableScale
           name="lime"
           lightThemeConfig={{
-            start: 'hsl(85 70% 96.5%)',
-            end: 'hsl(76 40% 52%)',
-            saturationBoost: 5,
-            mixAmount: 0.12,
+            step2: 'hsl(85 70% 96.5%)',
+            step8: 'hsl(76 40% 52%)',
+            scaleStartSaturationBoost: 5,
+            mixRatioStep10: 0.12,
             defaultCurve: [0.62, 0.195, 0.72, 0.565],
-            overrides: {
-              lime9: 'hsl(81 80% 66%)',
-              lime10: 'hsl(81 75% 60%)',
-              lime11: 'hsl(75 40% 29%)',
-              lime12: 'hsl(75 40% 18%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(75 40% 8%)',
-            end: 'hsl(75 50% 35%)',
+            step2: 'hsl(75 40% 8%)',
+            step8: 'hsl(75 50% 35%)',
             defaultCurve: [0.44, 0.31, 0.76, 0.195],
-            overrides: {
-              lime1: 'hsl(75 55% 6.0%)',
-              lime9: 'hsl(81 80% 66%)',
-              lime10: 'hsl(75 85% 60%)',
-              lime11: 'hsl(70 70% 50%)',
-              lime12: 'hsl(80 80% 85%)',
-            },
           }}
         />
         <EditableScale
           name="yellow"
           lightThemeConfig={{
-            start: 'hsl(53 100% 94%)',
-            end: 'hsl(46 55% 53%)',
-            saturationBoost: 9,
+            step2: 'hsl(53 100% 94%)',
+            step8: 'hsl(46 55% 53%)',
+            scaleStartSaturationBoost: 9,
             defaultCurve: [0.665, 0.14, 0.71, 0.49],
-            overrides: {
-              yellow9: 'hsl(53 96% 58%)',
-              yellow10: 'hsl(52 95% 52%)',
-              yellow11: 'hsl(42 50% 31%)',
-              yellow12: 'hsl(42 40% 20%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(45 80% 7.3%)',
-            end: 'hsl(50 60% 35%)',
+            step2: 'hsl(45 80% 7.3%)',
+            step8: 'hsl(50 60% 35%)',
             defaultCurve: [0.44, 0.31, 0.76, 0.195],
-            overrides: {
-              yellow9: 'hsl(53 96% 58%)',
-              yellow11: 'hsl(55 100% 60%)',
-            },
           }}
         />
         <EditableScale
           name="amber"
           lightThemeConfig={{
-            start: 'hsl(39 100% 96.5%)',
-            end: 'hsl(35 60% 60.0%)',
-            saturationBoost: 8,
+            step2: 'hsl(39 100% 96.5%)',
+            step8: 'hsl(35 60% 60.0%)',
+            scaleStartSaturationBoost: 8,
             defaultCurve: [0.595, 0.165, 0.74, 0.615],
-            overrides: {
-              amber9: 'hsl(42 100% 62%)',
-              amber10: 'hsl(42 100% 55%)',
-              amber11: 'hsl(25 50% 38%)',
-              amber12: 'hsl(25 40% 22.0%)',
-              // amber10: 'hsl(35 100% 55.5%)',
-              // amber11: 'hsl(30 100% 34.0%)',
-              // amber12: 'hsl(25 60% 21.0%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(36 80% 8%)',
-            end: 'hsl(36 60% 41.5%)',
+            step2: 'hsl(36 80% 8%)',
+            step8: 'hsl(36 60% 41.5%)',
             defaultCurve: [0.45, 0.29, 0.76, 0.195],
-            overrides: {
-              amber9: 'hsl(42 100% 62%)',
-              amber1: 'hsl(36 100% 6.1%)',
-              amber10: 'hsl(43 100% 64%)',
-              amber11: 'hsl(43 100% 65%)',
-              amber12: 'hsl(41 100% 85%)',
-            },
           }}
         />
         <EditableScale
           name="orange"
           lightThemeConfig={{
-            start: 'hsl(22 100% 97.8%)',
-            end: 'hsl(19 80% 64.5%)',
-            saturationBoost: 8,
+            step2: 'hsl(22 100% 97.8%)',
+            step8: 'hsl(19 80% 64.5%)',
+            scaleStartSaturationBoost: 8,
             defaultCurve: [0.635, 0.175, 0.79, 0.56],
-            overrides: {
-              orange1: 'hsl(24 70% 99.0%)',
-              orange9: 'hsl(24 94% 50%)',
-              orange10: 'hsl(24 100% 46.5%)',
-              orange11: 'hsl(16 45% 41.5%)',
-              orange12: 'hsl(16 50% 23.0%)',
-            },
           }}
           darkThemeConfig={{
-            start: 'hsl(28 80% 8.6%)',
-            end: 'hsl(25 70% 45%)',
+            step2: 'hsl(28 80% 8.6%)',
+            step8: 'hsl(25 70% 45%)',
             defaultCurve: [0.45, 0.29, 0.76, 0.195],
-            overrides: {
-              orange1: 'hsl(30 70% 7.2%)',
-              orange9: 'hsl(24 94% 50%)',
-              orange10: 'hsl(24 100% 58.5%)',
-              orange11: 'hsl(24 100% 70%)',
-              orange12: 'hsl(30 100% 88%)',
-            },
           }}
         />
       </Box>
@@ -1001,7 +611,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       const config = isDarkTheme ? darkThemeConfig : lightThemeConfig;
 
       // Saturation speed adjustment for the left end of the bezier curve
-      const boost1 = config.saturationBoost ?? defaultSaturationBoost;
+      const boost1 = config.scaleStartSaturationBoost ?? defaultScaleStartSaturationBoost;
       // Smaller speed adjustment for the right end of the bezier curve to reduce the left end pull
       const boost2 = boost1 / 10 + 0.9;
 
@@ -1013,23 +623,26 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
       const newColors = generateColors({
         name,
-        start: config.start,
-        end: config.end,
-        steps: stepsToGenerate,
+        start: config.step2 ?? computedStyles.getPropertyValue(`--colors-${name}2`) ?? '#000000',
+        end: config.step8 ?? computedStyles.getPropertyValue(`--colors-${name}8`) ?? '#000000',
+        stepsCount: 7,
         hueCurve,
         chromaCurve,
         lumCurve,
       });
 
-      // Set overrides
-      if (config.overrides) {
-        for (const key in config.overrides) {
-          // Make sure that color name matches the desired override
-          if (key.includes(name)) {
-            newColors.push({ name: key, value: config.overrides[key] });
-          }
+      steps.forEach((n) => {
+        if (n === '2' || n === '8') {
+          return;
         }
-      }
+
+        if (config['step' + n]) {
+          newColors.push({
+            name: name + n,
+            value: config['step' + n],
+          });
+        }
+      });
 
       // Add 10 as a mix of 9 and 11, unless they have been added manually before
       if (!newColors.find((color) => color.name === `${name}10`)) {
@@ -1049,23 +662,42 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         const step10 = chroma.interpolate(
           prepareColorStringForChroma(baseColor),
           prepareColorStringForChroma(mixColor),
-          config.mixAmount ?? defaultMixAmount,
+          config.mixRatioStep10 ?? defaultMixRatioStep10,
           'hcl'
         );
 
         newColors.push({ name: `${name}10`, value: getCssHsl(step10) });
       }
 
+      newColors.slice().forEach((color) => {
+        const backdropColor = isDarkTheme
+          ? computedStyles.getPropertyValue(grayBackground[name])
+          : '#ffffff';
+        const alphaColor = getAlphaColor(color.value, backdropColor);
+        newColors.push({ name: color.name.replace(/(\d)/, 'A$1'), value: alphaColor });
+      });
+
       // Set alpha scales
       Array.from(Array(12)).forEach((_, index) => {
-        const targetColor = computedStyles.getPropertyValue(`--colors-${name}${index + 1}`);
+        let targetColorValue = '';
 
+        const newColor = newColors.find((color) => color.name === name + (index + 1));
         const backdropColor = isDarkTheme
-          ? computedStyles.getPropertyValue(`--colors-gray1`)
+          ? computedStyles.getPropertyValue(grayBackground[name])
           : '#ffffff';
 
-        const alphaValue = getAlphaColor(targetColor, backdropColor);
-        newColors.push({ name: `${name}A${index + 1}`, value: alphaValue });
+        // Generate alpha colors from the new colors if this color is being updated
+        if (newColor) {
+          targetColorValue = newColor.value;
+          // Otherwise, generate the alpha color if it doesn't exist only
+        } else if (!computedStyles.getPropertyValue(`--colors-${name}A${index + 1}`)) {
+          targetColorValue = computedStyles.getPropertyValue(`--colors-${name}${index + 1}`);
+        }
+
+        if (targetColorValue) {
+          const alphaValue = getAlphaColor(targetColorValue, backdropColor);
+          newColors.push({ name: `${name}A${index + 1}`, value: alphaValue });
+        }
       });
 
       // Set CSS variables
@@ -1550,7 +1182,7 @@ type ScaleSpec = {
   name: string;
   start: string;
   end: string;
-  steps: number;
+  stepsCount: number;
   hueCurve: Curve;
   chromaCurve: Curve;
   lumCurve: Curve;
@@ -1565,17 +1197,17 @@ function generateColors({
   name,
   start,
   end,
-  steps,
+  stepsCount,
   hueCurve,
   chromaCurve,
   lumCurve,
 }: ScaleSpec): Color[] {
   function generateNumberOfSteps(curve: Curve) {
     const array: number[] = [];
-    for (const key in Array.from(Array(steps).keys())) {
+    for (const key in Array.from(Array(stepsCount).keys())) {
       const step = parseInt(key);
       const easingFunction = bezier(...curve);
-      const value = easingFunction(step / (steps - 1));
+      const value = easingFunction(step / (stepsCount - 1));
       array.push(value);
     }
     array.reverse();
