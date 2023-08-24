@@ -163,10 +163,10 @@
   resolved "https://registry.yarnpkg.com/@opentelemetry/context-base/-/context-base-0.14.0.tgz#c67fc20a4d891447ca1a855d7d70fa79a3533001"
   integrity sha512-sDOAZcYwynHFTbLo6n8kIbLiVF3a3BLkrmehJUyEbT9F+Smbi47kLGS2gG2g0fjBLR/Lr1InPD7kXL7FaTqEkw==
 
-"@radix-ui/colors@2.0.0-alpha.1":
-  version "2.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@radix-ui/colors/-/colors-2.0.0-alpha.1.tgz#03aac51d41bd7e893e04f277bc27abdd8ee541b3"
-  integrity sha512-1bdGw5NQT8FyL8jx8wYLBupwvYaqyDMALIMoAvaSw1lQUn5Y6bwU4SDclHeac1jlrCd0ujtlRezqmbV5HiTMFQ==
+"@radix-ui/colors@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@radix-ui/colors/-/colors-2.1.0.tgz#8aa6f233f68076a92c57db93d7235172e88fda44"
+  integrity sha512-gcBnxjS2u2c6thQz/9K1+Pt2ZYcm5WKU4SLi0emYkRmYbVUw+37rlc5wgLtYOsSsRP9nxVtbJJYj6WVO7UUmZg==
 
 "@radix-ui/number@1.0.0":
   version "1.0.0"
