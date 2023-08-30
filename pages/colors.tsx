@@ -74,42 +74,42 @@ type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<inf
   : never;
 
 export const grayBackground: Record<ElementType<typeof colors>, string> = {
-  gray: '--colors-gray1',
-  mauve: '--colors-mauve1',
-  slate: '--colors-slate1',
-  sage: '--colors-sage1',
-  olive: '--colors-olive1',
-  sand: '--colors-sand1',
+  gray: 'gray1',
+  mauve: 'mauve1',
+  slate: 'slate1',
+  sage: 'sage1',
+  olive: 'olive1',
+  sand: 'sand1',
 
-  tomato: '--colors-gray1',
-  red: '--colors-gray1',
-  ruby: '--colors-gray1',
-  crimson: '--colors-gray1',
-  pink: '--colors-gray1',
-  plum: '--colors-gray1',
-  purple: '--colors-gray1',
-  violet: '--colors-gray1',
+  tomato: 'gray1',
+  red: 'gray1',
+  ruby: 'gray1',
+  crimson: 'gray1',
+  pink: 'gray1',
+  plum: 'gray1',
+  purple: 'gray1',
+  violet: 'gray1',
 
-  iris: '--colors-gray1',
-  indigo: '--colors-gray1',
-  blue: '--colors-gray1',
-  cyan: '--colors-gray1',
-  sky: '--colors-gray1',
+  iris: 'gray1',
+  indigo: 'gray1',
+  blue: 'gray1',
+  cyan: 'gray1',
+  sky: 'gray1',
 
-  teal: '--colors-gray1',
-  jade: '--colors-gray1',
-  green: '--colors-gray1',
-  mint: '--colors-gray1',
+  teal: 'gray1',
+  jade: 'gray1',
+  green: 'gray1',
+  mint: 'gray1',
 
-  grass: '--colors-gray1',
-  lime: '--colors-gray1',
+  grass: 'gray1',
+  lime: 'gray1',
 
-  yellow: '--colors-gray1',
-  gold: '--colors-gray1',
-  brown: '--colors-gray1',
-  bronze: '--colors-gray1',
-  amber: '--colors-gray1',
-  orange: '--colors-gray1',
+  yellow: 'gray1',
+  gold: 'gray1',
+  brown: 'gray1',
+  bronze: 'gray1',
+  amber: 'gray1',
+  orange: 'gray1',
 } as const;
 
 export default function Colors() {
@@ -1431,7 +1431,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
             {showAlphaScales && (
               <>
                 <Box />
-                <Box css={darkThemeColor(`var(${grayBackground[color]})`)}>
+                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
                     css={{ bc: `$${color}A1`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1442,7 +1442,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`var(${grayBackground[color]})`)}>
+                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
                     css={{ bc: `$${color}A2`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1453,7 +1453,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`var(${grayBackground[color]})`)}>
+                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
                     css={{ bc: `$${color}A3`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1464,7 +1464,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`var(${grayBackground[color]})`)}>
+                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
                     css={{ bc: `$${color}A4`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1475,7 +1475,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`var(${grayBackground[color]})`)}>
+                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
                     css={{ bc: `$${color}A5`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1486,7 +1486,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`var(${grayBackground[color]})`)}>
+                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
                     css={{ bc: `$${color}A6`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1497,7 +1497,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`var(${grayBackground[color]})`)}>
+                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
                     css={{ bc: `$${color}A7`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1508,7 +1508,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`var(${grayBackground[color]})`)}>
+                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
                     css={{ bc: `$${color}A8`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1519,7 +1519,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`var(${grayBackground[color]})`)}>
+                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
                     css={{ bc: `$${color}A9`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1530,7 +1530,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`var(${grayBackground[color]})`)}>
+                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
                     css={{ bc: `$${color}A10`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1541,7 +1541,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`var(${grayBackground[color]})`)}>
+                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
                     css={{ bc: `$${color}A11`, width: '100%', height: '100%' }}
                     onClick={() => {
@@ -1552,7 +1552,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`var(${grayBackground[color]})`)}>
+                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
                     css={{ bc: `$${color}A12`, width: '100%', height: '100%' }}
                     onClick={() => {
