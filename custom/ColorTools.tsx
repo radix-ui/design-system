@@ -634,15 +634,17 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       });
 
       steps.forEach((n) => {
-        if (n === '2' || n === '8') {
-          return;
-        }
-
         if (config['step' + n]) {
-          newColors.push({
-            name: name + n,
-            value: config['step' + n],
-          });
+          const index = newColors.findIndex((color) => color.name === name + n);
+
+          if (newColors[index]) {
+            newColors[index].value = config['step' + n];
+          } else {
+            newColors.push({
+              name: name + n,
+              value: config['step' + n],
+            });
+          }
         }
       });
 
