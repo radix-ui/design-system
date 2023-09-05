@@ -18,11 +18,9 @@ import {
 } from '@radix-ui/react-icons';
 import { darkTheme as darkThemeClassName } from '../stitches.config';
 import { colors, getHiContrast, grayBackground, loContrasts } from '../pages/colors';
+import { APCAcontrast, calcAPCA, displayP3toY, sRGBtoY } from '../apca-w3';
 
 const steps = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'] as const;
-
-// How much to boost the saturation towards the left end of the bezier curve
-const defaultScaleStartSaturationBoost = 1;
 
 // How much to mix step 9 and 11
 const defaultMixRatioStep10 = 0.3;
@@ -52,6 +50,21 @@ type EditableScaleProps = {
     step11?: string;
     step12?: string;
 
+    p3?: {
+      step1?: string;
+      step2?: string;
+      step3?: string;
+      step4?: string;
+      step5?: string;
+      step6?: string;
+      step7?: string;
+      step8?: string;
+      step9?: string;
+      step10?: string;
+      step11?: string;
+      step12?: string;
+    };
+
     // Initial Bezier curve for step 2 to step 8
     defaultCurve: Curve;
     // How much to boost the saturation towards the left end of the bezier curve
@@ -75,6 +88,21 @@ type EditableScaleProps = {
     step10?: string;
     step11?: string;
     step12?: string;
+
+    p3?: {
+      step1?: string;
+      step2?: string;
+      step3?: string;
+      step4?: string;
+      step5?: string;
+      step6?: string;
+      step7?: string;
+      step8?: string;
+      step9?: string;
+      step10?: string;
+      step11?: string;
+      step12?: string;
+    };
 
     // Initial Bezier curve for step 2 to step 8
     defaultCurve: Curve;
@@ -102,9 +130,14 @@ export function ColorTools() {
             defaultCurve: [0.625, 0.455, 0.875, 0.405],
           }}
           darkThemeConfig={{
-            step2: '#1e1e1e',
+            // step1: '#181818',
+            // step1: '#141414',
+            step1: '#111111',
+            step2: '#191919',
             step8: 'hsl(0, 0%, 37.5%)',
-            defaultCurve: [0.2, 0.42, 0.78, 0.4],
+            step11: 'hsl(0, 0%, 70%)',
+            mixRatioStep10: 0.2,
+            defaultCurve: [0.265, 0.31, 0.775, 0.34],
           }}
         />
         <EditableScale
@@ -115,10 +148,14 @@ export function ColorTools() {
             defaultCurve: [0.64, 0.47, 0.905, 0.47],
           }}
           darkThemeConfig={{
-            step2: '#1e1c1e',
+            // step1: '#191719',
+            step1: '#121113',
+            step2: '#1a191b',
             step8: 'hsl(260, 5%, 39.2%)',
-            scaleStartSaturationBoost: 0.3,
-            defaultCurve: [0.21, 0.43, 0.77, 0.375],
+            step11: 'hsl(255, 7%, 71.9%)',
+            // scaleStartSaturationBoost: 0.3,
+            mixRatioStep10: 0.2,
+            defaultCurve: [0.27, 0.3, 0.775, 0.34],
           }}
         />
         <EditableScale
@@ -127,9 +164,32 @@ export function ColorTools() {
             defaultCurve: [0.65, 0.47, 0.905, 0.47],
           }}
           darkThemeConfig={{
-            step2: '#1C1C1f',
-            step8: 'hsl(210, 6%, 38.2%)',
-            defaultCurve: [0.235, 0.435, 0.775, 0.395],
+            // step1: '#141416',
+            // step2: '#19191c',
+            // defaultCurve: [0.28, 0.31, 0.755, 0.34],
+            step1: '#111113',
+            step2: '#18191b',
+            step8: 'hsl(210, 8%, 38.2%)',
+            step11: 'hsl(218, 7%, 70.8%)',
+            defaultCurve: [0.295, 0.325, 0.765, 0.325],
+            mixRatioStep10: 0.2,
+
+            // GitHub
+            // step1: '#0D1116',
+
+            // Initial WorkOS gray
+            // step1: 'hsl(240, 5%, 9.8%)',
+            // step2: 'hsl(240, 6.9%, 11.4%)',
+            // step3: 'hsl(235, 6.8%, 17.1%)',
+            // step4: 'hsl(233, 6.8%, 19.9%)',
+            // step5: 'hsl(231, 6.8%, 21.7%)',
+            // step6: 'hsl(230, 6.9%, 23.8%)',
+            // step7: 'hsl(228, 7%, 27%)',
+            // step8: 'hsl(225, 7.2%, 32.5%)',
+            // step9: 'hsl(220, 6%, 44%)',
+            // step10: 'hsl(220, 5.2%, 49.8%)',
+            // step11: 'hsl(220, 7%, 70%)',
+            // step12: 'hsl(220, 10%, 90%)',
           }}
         />
         <EditableScale
@@ -140,9 +200,13 @@ export function ColorTools() {
             defaultCurve: [0.665, 0.45, 0.865, 0.42],
           }}
           darkThemeConfig={{
-            step2: '#1a1d1c',
-            step8: 'hsl(155, 5%, 37%)',
-            defaultCurve: [0.21, 0.405, 0.785, 0.38],
+            step1: '#101211',
+            step2: '#171918',
+            step8: 'hsl(155, 3.5%, 37%)',
+            step11: 'hsl(153, 5%, 69%)',
+            scaleStartSaturationBoost: 0.5,
+            mixRatioStep10: 0.2,
+            defaultCurve: [0.28, 0.31, 0.755, 0.34],
           }}
         />
         <EditableScale
@@ -153,11 +217,14 @@ export function ColorTools() {
             defaultCurve: [0.64, 0.45, 0.885, 0.465],
           }}
           darkThemeConfig={{
-            // step1: 'hsl(90, 6%, 9%)',
-            step1: '#171816',
-            step2: 'hsl(90, 4%, 11%)',
-            step8: 'hsl(110, 3%, 37%)',
-            defaultCurve: [0.21, 0.405, 0.78, 0.4],
+            step1: '#111210',
+            step2: '#181917',
+            step8: 'hsl(110, 3.5%, 37%)',
+            step9: 'hsl(108, 4.5%, 42%)',
+            step11: 'hsl(109, 5%, 69.5%)',
+            scaleStartSaturationBoost: 0.5,
+            mixRatioStep10: 0.2,
+            defaultCurve: [0.285, 0.325, 0.755, 0.34],
           }}
         />
         <EditableScale
@@ -168,9 +235,12 @@ export function ColorTools() {
             defaultCurve: [0.65, 0.45, 0.875, 0.48],
           }}
           darkThemeConfig={{
-            step2: 'hsl(61, 2%, 10.3%)',
+            step1: '#111110',
+            step2: '#191918',
             step8: 'hsl(46, 4%, 37%)',
-            defaultCurve: [0.21, 0.405, 0.78, 0.4],
+            step11: 'hsl(50, 5%, 68.9%)',
+            mixRatioStep10: 0.2,
+            defaultCurve: [0.28, 0.31, 0.755, 0.34],
           }}
         />
         <EditableScale
@@ -183,10 +253,21 @@ export function ColorTools() {
             defaultCurve: [0.55, 0.225, 0.74, 0.525],
           }}
           darkThemeConfig={{
-            step2: 'hsl(10, 40%, 11.5%)',
-            step8: 'hsl(10, 80%, 44%)',
-            mixRatioStep10: 0.55,
-            defaultCurve: [0.295, 0.29, 0.77, 0.15],
+            // step1: '#15100f',
+            step1: '#181111',
+            step2: 'hsl(10, 25%, 10%)',
+            // step8: 'hsl(10, 80%, 40.8%)',
+            // step11: 'hsl(10, 100%, 75.5%)',
+            step11: 'hsl(12, 100%, 74.5%)',
+            mixRatioStep10: 0.2,
+            // scaleStartSaturationBoost: 1.8,
+            defaultCurve: [0.445, 0.295, 0.69, 0.37],
+
+            scaleStartSaturationBoost: 3,
+            step8: 'hsl(10, 55%, 45%)',
+            p3: {
+              step11: 'color(display-p3 1 0.585 0.455)',
+            },
           }}
         />
         <EditableScale
@@ -199,10 +280,17 @@ export function ColorTools() {
             defaultCurve: [0.61, 0.265, 0.72, 0.52],
           }}
           darkThemeConfig={{
-            step2: 'hsl(356, 30%, 12.5%)',
-            step8: 'hsl(358, 75%, 47%)',
-            mixRatioStep10: 0.48,
-            defaultCurve: [0.325, 0.28, 0.765, 0.16],
+            // step1: '#151010',
+            step1: '#191111',
+            step2: 'hsl(356, 25%, 10%)',
+            step8: 'hsl(358, 45%, 49%)',
+            step11: 'hsl(2, 100%, 78.6%)',
+            p3: {
+              step11: 'color(display-p3 1 0.57 0.55)',
+            },
+            mixRatioStep10: 0.2,
+            scaleStartSaturationBoost: 2.8,
+            defaultCurve: [0.425, 0.315, 0.71, 0.4],
           }}
         />
         <EditableScale
@@ -215,10 +303,19 @@ export function ColorTools() {
             defaultCurve: [0.6, 0.26, 0.71, 0.5],
           }}
           darkThemeConfig={{
-            step2: 'hsl(347, 34%, 12.2%)',
-            step8: 'hsl(348, 77%, 46%)',
-            mixRatioStep10: 0.46,
-            defaultCurve: [0.355, 0.315, 0.725, 0.11],
+            step1: '#191113',
+            step2: 'hsl(347, 30%, 10%)',
+            step8: 'hsl(348, 45%, 48.5%)',
+            scaleStartSaturationBoost: 2.8,
+
+            // TODO step 10 hovers
+            step11: 'hsl(355, 100%, 79%)',
+            p3: {
+              step11: 'color(display-p3 1 0.57 0.59)',
+            },
+
+            mixRatioStep10: 0.23,
+            defaultCurve: [0.42, 0.325, 0.69, 0.4],
           }}
         />
         <EditableScale
@@ -231,10 +328,16 @@ export function ColorTools() {
             defaultCurve: [0.6, 0.26, 0.71, 0.5],
           }}
           darkThemeConfig={{
-            step2: 'hsl(335, 33%, 12%)',
-            step8: 'hsl(336, 80%, 45%)',
-            mixRatioStep10: 0.48,
-            defaultCurve: [0.32, 0.28, 0.73, 0.12],
+            step1: '#191114',
+            step2: 'hsl(335, 32%, 10%)',
+            step8: 'hsl(336, 45%, 47.5%)',
+            step11: 'hsl(345, 100%, 78.6%)',
+            p3: {
+              step11: 'color(display-p3 1 0.56 0.66)',
+            },
+            scaleStartSaturationBoost: 3.1,
+            mixRatioStep10: 0.25,
+            defaultCurve: [0.405, 0.315, 0.675, 0.365],
           }}
         />
         <EditableScale
@@ -247,10 +350,16 @@ export function ColorTools() {
             defaultCurve: [0.61, 0.27, 0.715, 0.5],
           }}
           darkThemeConfig={{
-            step2: 'hsl(318, 33%, 12%)',
-            step8: 'hsl(322, 60%, 46%)',
-            mixRatioStep10: 0.4,
-            defaultCurve: [0.32, 0.28, 0.73, 0.12],
+            step1: '#191117',
+            step2: 'hsl(318, 30%, 10%)',
+            step8: 'hsl(322, 40%, 47%)',
+            step11: 'hsl(327, 100%, 77.6%)',
+            p3: {
+              step11: 'color(display-p3 1 0.535 0.78)',
+            },
+            mixRatioStep10: 0.23,
+            scaleStartSaturationBoost: 2.8,
+            defaultCurve: [0.465, 0.405, 0.56, 0.225],
           }}
         />
         <EditableScale
@@ -263,10 +372,14 @@ export function ColorTools() {
             defaultCurve: [0.64, 0.29, 0.715, 0.495],
           }}
           darkThemeConfig={{
-            step2: 'hsl(301, 30%, 11.5%)',
-            step8: 'hsl(292, 40%, 48%)',
-            mixRatioStep10: 0.4,
-            defaultCurve: [0.36, 0.335, 0.73, 0.15],
+            // step1: '#141014',
+            step1: '#181118',
+            step2: 'hsl(301, 25%, 10%)',
+            step8: 'hsl(292, 30%, 47%)',
+            step11: 'hsl(292, 80%, 77.1%)',
+            mixRatioStep10: 0.22,
+            scaleStartSaturationBoost: 2.4,
+            defaultCurve: [0.485, 0.445, 0.585, 0.25],
           }}
         />
         <EditableScale
@@ -279,9 +392,17 @@ export function ColorTools() {
             defaultCurve: [0.635, 0.3, 0.755, 0.485],
           }}
           darkThemeConfig={{
-            step2: 'hsl(284, 31%, 12%)',
-            step8: 'hsl(272, 43%, 50%)',
-            defaultCurve: [0.335, 0.385, 0.705, 0.17],
+            // step1: '#131014',
+            step1: '#18111B',
+            step2: 'hsl(280, 24%, 11%)',
+            step8: 'hsl(272, 37%, 51%)',
+            step11: 'hsl(272, 100%, 80.8%)',
+            scaleStartSaturationBoost: 2,
+            mixRatioStep10: 0.2,
+            defaultCurve: [0.405, 0.41, 0.585, 0.25],
+            p3: {
+              step11: 'color(display-p3 0.8 0.62 1)',
+            },
           }}
         />
         <EditableScale
@@ -294,9 +415,17 @@ export function ColorTools() {
             defaultCurve: [0.69, 0.31, 0.76, 0.525],
           }}
           darkThemeConfig={{
-            step2: 'hsl(255, 30%, 13.1%)',
-            step8: 'hsl(250, 46%, 54%)',
-            defaultCurve: [0.34, 0.38, 0.685, 0.185],
+            // step1: '#121016',
+            step1: '#14121F',
+            step2: 'hsl(260, 27%, 11.6%)',
+            step8: 'hsl(252, 38%, 52%)',
+            scaleStartSaturationBoost: 2,
+            step11: 'hsl(253, 100%, 82.65%)',
+            defaultCurve: [0.45, 0.43, 0.605, 0.335],
+            mixRatioStep10: 0.2,
+            p3: {
+              step11: 'color(display-p3 0.72 0.65 1)',
+            },
           }}
         />
         <EditableScale
@@ -309,10 +438,18 @@ export function ColorTools() {
             defaultCurve: [0.575, 0.21, 0.8, 0.565],
           }}
           darkThemeConfig={{
-            step2: 'hsl(243, 31%, 13.5%)',
-            step8: 'hsl(240, 45%, 54.8%)',
-            mixRatioStep10: 0.28,
-            defaultCurve: [0.355, 0.38, 0.705, 0.195],
+            step1: '#13131E',
+            step2: 'hsl(243, 25%, 11.5%)',
+            // step8: 'hsl(240, 40%, 53%)',
+            step8: 'hsl(241, 40%, 53%)',
+            step11: 'hsl(246, 100%, 83.1%)',
+            p3: {
+              step11: 'color(display-p3 0.685 0.662 1)',
+            },
+
+            mixRatioStep10: 0.2,
+            scaleStartSaturationBoost: 2.1,
+            defaultCurve: [0.4, 0.445, 0.6, 0.38],
           }}
         />
         <EditableScale
@@ -325,12 +462,21 @@ export function ColorTools() {
             defaultCurve: [0.575, 0.18, 0.815, 0.61],
           }}
           darkThemeConfig={{
-            step1: '#181821',
-            step2: 'hsl(230, 25%, 13%)',
-            step8: 'hsl(226, 60%, 52%)',
-            mixRatioStep10: 0.28,
-            scaleStartSaturationBoost: 0.8,
-            defaultCurve: [0.34, 0.38, 0.715, 0.165],
+            mixRatioStep10: 0.2,
+            defaultCurve: [0.43, 0.51, 0.61, 0.47],
+
+            step1: '#11131F',
+            step2: 'hsl(232, 30%, 11.4%)',
+            step8: 'hsl(226, 50%, 49%)',
+            step11: 'hsl(228, 100%, 81%)',
+            step12: 'hsl(224, 100%, 92%)',
+            p3: {
+              step11: 'color(display-p3 0.63 0.69 1)',
+            },
+
+            scaleStartSaturationBoost: 1.8,
+            // step8: 'hsl(226, 55%, 49%)',
+            // scaleStartSaturationBoost: 2.6,
           }}
         />
         <EditableScale
@@ -343,7 +489,7 @@ export function ColorTools() {
             defaultCurve: [0.48, 0.095, 0.795, 0.575],
           }}
           darkThemeConfig={{
-            step1: '#181921',
+            step1: '#0F1118',
             step2: 'hsl(216, 50%, 11.7%)',
             step8: 'hsl(211, 85%, 48%)',
             mixRatioStep10: 0.5,
@@ -359,6 +505,7 @@ export function ColorTools() {
             defaultCurve: [0.505, 0.13, 0.78, 0.565],
           }}
           darkThemeConfig={{
+            step1: '#0C1214',
             step2: 'hsl(192, 50%, 8.8%)',
             step8: 'hsl(192, 60%, 39%)',
             mixRatioStep10: 0.45,
@@ -374,6 +521,7 @@ export function ColorTools() {
             defaultCurve: [0.505, 0.13, 0.795, 0.55],
           }}
           darkThemeConfig={{
+            step1: '#0C1312',
             step2: 'hsl(168, 55%, 7.8%)',
             step8: 'hsl(173, 60%, 34%)',
             mixRatioStep10: 0.45,
@@ -389,10 +537,13 @@ export function ColorTools() {
             defaultCurve: [0.505, 0.155, 0.78, 0.51],
           }}
           darkThemeConfig={{
-            step2: 'hsl(153, 47%, 8.4%)',
-            step8: 'hsl(164, 60%, 34%)',
+            step1: '#0C1311',
+            step2: 'hsl(153, 25%, 8.2%)',
+            step8: 'hsl(164, 50%, 32%)',
+            // step11: 'hsl(164, 100%, 42%)',
+            scaleStartSaturationBoost: 2,
             mixRatioStep10: 0.435,
-            defaultCurve: [0.415, 0.315, 0.725, 0.16],
+            defaultCurve: [0.425, 0.29, 0.67, 0.445],
           }}
         />
         <EditableScale
@@ -404,6 +555,7 @@ export function ColorTools() {
             defaultCurve: [0.505, 0.13, 0.775, 0.51],
           }}
           darkThemeConfig={{
+            step1: '#0D1310',
             step2: 'hsl(154, 33%, 8.6%)',
             step8: 'hsl(151, 52%, 36%)',
             mixRatioStep10: 0.42,
@@ -419,6 +571,7 @@ export function ColorTools() {
             defaultCurve: [0.505, 0.13, 0.775, 0.51],
           }}
           darkThemeConfig={{
+            step1: '#0D130F',
             step2: 'hsl(134, 20%, 9.5%)',
             step8: 'hsl(131, 35%, 40%)',
             mixRatioStep10: 0.52,
@@ -434,6 +587,7 @@ export function ColorTools() {
             defaultCurve: [0.58, 0.275, 0.71, 0.485],
           }}
           darkThemeConfig={{
+            step1: '#131210',
             step2: 'hsl(22, 12%, 10.4%)',
             step8: 'hsl(28, 28%, 45%)',
             mixRatioStep10: 0.35,
@@ -449,6 +603,7 @@ export function ColorTools() {
             defaultCurve: [0.58, 0.275, 0.725, 0.48],
           }}
           darkThemeConfig={{
+            step1: '#141110',
             step2: 'hsl(17, 8%, 10.2%)',
             step8: 'hsl(18, 16%, 47.7%)',
             mixRatioStep10: 0.35,
@@ -464,6 +619,7 @@ export function ColorTools() {
             defaultCurve: [0.535, 0.24, 0.745, 0.485],
           }}
           darkThemeConfig={{
+            step1: '#121211',
             step2: 'hsl(43, 8%, 9.7%)',
             step8: 'hsl(36, 15%, 45%)',
             mixRatioStep10: 0.35,
@@ -480,6 +636,7 @@ export function ColorTools() {
             defaultCurve: [0.55, 0.17, 0.64, 0.44],
           }}
           darkThemeConfig={{
+            step1: '#0D1217',
             step2: 'hsl(202, 50%, 10%)',
             step8: 'hsl(200, 60%, 44%)',
             defaultCurve: [0.415, 0.305, 0.76, 0.175],
@@ -495,6 +652,7 @@ export function ColorTools() {
             defaultCurve: [0.52, 0.215, 0.635, 0.345],
           }}
           darkThemeConfig={{
+            step1: '#0C1313',
             step2: 'hsl(176, 50%, 8%)',
             step8: 'hsl(170, 60%, 35%)',
             defaultCurve: [0.415, 0.3, 0.745, 0.2],
@@ -510,6 +668,7 @@ export function ColorTools() {
             defaultCurve: [0.62, 0.195, 0.72, 0.565],
           }}
           darkThemeConfig={{
+            step1: '#111304',
             step2: 'hsl(75, 40%, 8%)',
             step8: 'hsl(75, 50%, 35%)',
             defaultCurve: [0.44, 0.31, 0.76, 0.195],
@@ -524,6 +683,7 @@ export function ColorTools() {
             defaultCurve: [0.665, 0.14, 0.71, 0.49],
           }}
           darkThemeConfig={{
+            step1: '#141100',
             step2: 'hsl(45, 80%, 7.3%)',
             step8: 'hsl(50, 60%, 35%)',
             defaultCurve: [0.44, 0.31, 0.76, 0.195],
@@ -538,6 +698,7 @@ export function ColorTools() {
             defaultCurve: [0.595, 0.165, 0.74, 0.615],
           }}
           darkThemeConfig={{
+            step1: '#151002',
             step2: 'hsl(36, 80%, 8%)',
             step8: 'hsl(36, 60%, 41.5%)',
             defaultCurve: [0.45, 0.29, 0.76, 0.195],
@@ -552,6 +713,7 @@ export function ColorTools() {
             defaultCurve: [0.635, 0.175, 0.79, 0.56],
           }}
           darkThemeConfig={{
+            step1: '#160f02',
             step2: 'hsl(28, 80%, 8.6%)',
             step8: 'hsl(25, 70%, 45%)',
             defaultCurve: [0.45, 0.29, 0.76, 0.195],
@@ -611,16 +773,14 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   const onCurveChange = React.useCallback(
     (newCurve: Curve) => {
       const config = isDarkTheme ? darkThemeConfig : lightThemeConfig;
-
       // Saturation speed adjustment for the left end of the bezier curve
-      const boost1 = config.scaleStartSaturationBoost ?? defaultScaleStartSaturationBoost;
-      // Smaller speed adjustment for the right end of the bezier curve to reduce the left end pull
-      const boost2 = boost1 / 10 + 0.9;
+      const satBoost = config.scaleStartSaturationBoost ?? 1;
 
       const [x1, y1, x2, y2] = newCurve;
-      const hueCurve = newCurve;
-      // Boost saturation speed on the left end of the curve, reduce slightly on the right end of the curve
-      const chromaCurve: Curve = [x1, y1 * boost1, Math.min(1, x2 * boost2), y2];
+      // Boost hue speed on the left end of the curve
+      const hueCurve: Curve = [x1, y1, x2, y2];
+      // Boost saturation speed on the left end of the curve
+      const chromaCurve: Curve = [x1, y1 * satBoost, x2, y2];
       const lumCurve: Curve = [1 - x2, 1 - y2, 1 - x1, 1 - y1];
 
       const newColors = generateColors({
@@ -633,18 +793,29 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         lumCurve,
       });
 
+      // Normal steps
       steps.forEach((n) => {
         if (config['step' + n]) {
           const index = newColors.findIndex((color) => color.name === name + n);
 
           if (newColors[index]) {
-            newColors[index].value = config['step' + n];
+            newColors[index].value = chroma(config['step' + n]).hex();
           } else {
             newColors.push({
               name: name + n,
-              value: config['step' + n],
+              value: chroma(config['step' + n]).hex(),
             });
           }
+        }
+      });
+
+      // P3 steps
+      steps.forEach((n) => {
+        if (config.p3?.['step' + n]) {
+          newColors.push({
+            name: name + n + '-p3',
+            value: config.p3['step' + n],
+          });
         }
       });
 
@@ -716,6 +887,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
     Array.from(Array(12)).forEach((_, index) => {
       document.body.style.removeProperty(`--colors-${name}${index + 1}`);
       document.body.style.removeProperty(`--colors-${name}A${index + 1}`);
+      document.body.style.removeProperty(`--colors-${name}${index + 1}-p3`);
     });
 
     // Set relevant values if active
@@ -738,22 +910,44 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       return computedStyles.getPropertyValue(`--colors-${name}${step}`);
     };
 
-    const step1 = getValue('1');
-    const step2 = getValue('2');
-    const step3 = getValue('3');
-    const step9 = getValue('9');
-    const step11 = getValue('11');
-    const bgContrastColor = getHiContrast(name);
+    const step11ValueP3 = getValue('11-p3')
+      .replace(/color\(display-p3 |\)/g, '')
+      .split(' ')
+      .filter(Boolean)
+      .map(Number);
+
+    const p3Step11Y = step11ValueP3.length ? displayP3toY(step11ValueP3) : 0;
+    const step1Y = sRGBtoY(chroma(getValue('1')).rgb());
+    const step2Y = sRGBtoY(chroma(getValue('2')).rgb());
+    const p3Step1Contrast = +Math.abs(p3Step11Y ? +APCAcontrast(p3Step11Y, step1Y) : 0).toFixed(1);
+    const p3Step2Contrast = +Math.abs(p3Step11Y ? +APCAcontrast(p3Step11Y, step2Y) : 0).toFixed(1);
+    const background = isDarkTheme ? computedStyles.getPropertyValue(`--colors-gray1`) : '#FFFFFF';
 
     const newContrasts = [
-      chroma.contrast(step1, step11),
-      chroma.contrast(step2, step11),
-      chroma.contrast(step3, step11),
-      chroma.contrast(step9, bgContrastColor),
+      apca(getValue('A11'), getValue('1')),
+      apca(getValue('A11'), getValue('2')),
+      apca(getValue('A11'), getValue('3')),
+      apca(getValue('A11'), getValue('4')),
+      apca(getValue('A11'), getValue('5')),
+      apca(getValue('6'), background),
+      apca(getValue('7'), background),
+      apca(getValue('8'), background),
+      apca(getHiContrast(name), getValue('9')),
+      p3Step1Contrast,
+      p3Step2Contrast,
     ];
 
     setContrasts(newContrasts);
-    setFailsContrast(newContrasts.slice(0, -1).some((ratio) => ratio < 4.5) || newContrasts[3] < 3);
+    setFailsContrast(
+      newContrasts[0] < 60 ||
+        newContrasts[1] < 60 ||
+        newContrasts[2] < 45 ||
+        newContrasts[3] < 45 ||
+        newContrasts[4] < 45 ||
+        newContrasts[8] < 60 ||
+        (!!newContrasts[9] && newContrasts[9] < 60) ||
+        (!!newContrasts[10] && newContrasts[10] < 60)
+    );
   }, [active, isDarkTheme, darkColors, lightColors]);
 
   return (
@@ -836,17 +1030,108 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
             // Toggle all and copy color codes for all scales on the Command key
             if (event.metaKey) {
               let clipboard = '';
+              let format: 'js' | 'css' = 'css';
+
+              const computedStyle = getComputedStyle(document.body);
 
               document.querySelectorAll(`[data-color-code]`).forEach((element) => {
                 const parent = element.closest('[data-editable-scale]')!;
-                const scaleName =
-                  parent.getAttribute('data-editable-scale')! + (showAlphaValues ? 'A' : '');
-                const colorCodes = Array.from((element as HTMLElement).childNodes)
-                  .map((child) => '  ' + child.textContent + '\n')
-                  .join('');
-                const codeToCopy = `export const ${scaleName} = {\n` + colorCodes + `};\n\n`;
+                const color = parent.getAttribute('data-editable-scale')!;
 
-                clipboard = clipboard + codeToCopy;
+                if (format === 'css') {
+                  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
+                    let value = computedStyle.getPropertyValue(`--colors-${color}${step}`);
+
+                    if (value) {
+                      value = chroma(value).hex();
+                      clipboard += `--${color}-${step}: ${value};\n`;
+                    }
+                  });
+
+                  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
+                    let value = computedStyle.getPropertyValue(`--colors-${color}A${step}`);
+
+                    if (value) {
+                      value = chroma(value).hex();
+                      clipboard += `--${color}-a${step}: ${value};\n`;
+                    }
+                  });
+
+                  clipboard += `\n`;
+                }
+
+                if (format === 'js') {
+                  clipboard += isDarkTheme
+                    ? `export const ${color}Dark = {\n`
+                    : `export const ${color} = {\n`;
+
+                  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
+                    let value = computedStyle.getPropertyValue(`--colors-${color}${step}`);
+
+                    if (value) {
+                      value = chroma(value).hex();
+                      clipboard += `  ${color}${step}: '${value}',\n`;
+                    }
+                  });
+
+                  clipboard += `};\n\n`;
+                  clipboard += isDarkTheme
+                    ? `export const ${color}DarkA = {\n`
+                    : `export const ${color}A = {\n`;
+
+                  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
+                    let value = computedStyle.getPropertyValue(`--colors-${color}A${step}`);
+
+                    if (value) {
+                      value = chroma(value).hex();
+                      clipboard += `  ${color}A${step}: '${value}',\n`;
+                    }
+                  });
+
+                  clipboard += `};\n\n`;
+                  clipboard += isDarkTheme
+                    ? `export const ${color}DarkP3 = {\n`
+                    : `export const ${color}P3 = {\n`;
+
+                  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
+                    let value = computedStyle.getPropertyValue(`--colors-${color}${step}-p3`);
+
+                    if (value) {
+                      clipboard += `  ${color}${step}: '${value}',\n`;
+                    }
+                  });
+
+                  clipboard += `};\n\n`;
+                }
+
+                //   if (format === 'js') {
+                //     const scaleName =
+                //       parent.getAttribute('data-editable-scale')! + (showAlphaValues ? 'A' : '');
+                //     const colorCodes = Array.from((element as HTMLElement).childNodes)
+                //       .map((child) => '  ' + child.textContent + '\n')
+                //       .join('');
+                //     const codeToCopy = `export const ${scaleName} = {\n` + colorCodes + `};\n\n`;
+
+                //     clipboard = clipboard + codeToCopy;
+                //   }
+
+                //   if (format === 'css') {
+                //     // + (showAlphaValues ? 'A' : '')
+                //     const codeToCopy = Array.from((element as HTMLElement).childNodes)
+                //       .map(
+                //         (child) =>
+                //           '--' +
+                //           child.textContent
+                //             ?.replace(/(A?\d)/, '-$1')
+                //             .replace('A', 'a')
+                //             .replace(/'/g, '')
+                //             .replace(',', ';') +
+                //           '\n'
+                //       )
+                //       .join('');
+
+                //     clipboard = clipboard + codeToCopy;
+                //   }
 
                 // Show check icon for a moment after copying
                 parent
@@ -952,18 +1237,49 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
           {!showCode && (
             <Grid css={{ mx: '$2', gridAutoRows: '25px' }}>
-              <RatioBox css={{ bc: `$${name}1`, color: `$${name}11` }} ratio={contrasts[0]} />
-              <RatioBox css={{ bc: `$${name}2`, color: `$${name}11` }} ratio={contrasts[1]} />
-              <RatioBox css={{ bc: `$${name}3`, color: `$${name}11` }} ratio={contrasts[2]} />
-              <RatioBox css={{ bc: `$${name}4` }} />
-              <RatioBox css={{ bc: `$${name}5` }} />
-              <RatioBox css={{ bc: `$${name}6` }} />
-              <RatioBox css={{ bc: `$${name}7` }} />
-              <RatioBox css={{ bc: `$${name}8` }} />
+              <RatioBox
+                css={{ bc: `$${name}1`, color: `$${name}A11` }}
+                ratio={contrasts[0]}
+                ratioP3={contrasts[9]}
+                target={60}
+              />
+              <RatioBox
+                css={{ bc: `$${name}2`, color: `$${name}A11` }}
+                ratio={contrasts[1]}
+                ratioP3={contrasts[10]}
+                target={60}
+              />
+              <RatioBox
+                css={{ bc: `$${name}3`, color: `$${name}A11` }}
+                ratio={contrasts[2]}
+                target={45}
+              />
+              <RatioBox
+                css={{ bc: `$${name}4`, color: `$${name}A11` }}
+                ratio={contrasts[3]}
+                target={45}
+              />
+              <RatioBox
+                css={{ bc: `$${name}5`, color: `$${name}A11` }}
+                ratio={contrasts[4]}
+                target={45}
+              />
+              <RatioBox
+                css={{ bc: `$${name}6`, color: getHiContrast(name) }}
+                ratio={contrasts[5]}
+              />
+              <RatioBox
+                css={{ bc: `$${name}7`, color: getHiContrast(name) }}
+                ratio={contrasts[6]}
+              />
+              <RatioBox
+                css={{ bc: `$${name}8`, color: getHiContrast(name) }}
+                ratio={contrasts[7]}
+              />
               <RatioBox
                 css={{ bc: `$${name}9`, color: getHiContrast(name) }}
-                ratio={contrasts[3]}
-                type="AA Large Text"
+                ratio={contrasts[8]}
+                target={60}
               />
               <RatioBox css={{ bc: `$${name}10` }} />
               <RatioBox css={{ bc: `$${name}11` }} />
@@ -983,11 +1299,12 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
 type RatioBoxProps = {
   ratio?: number;
-  type?: 'AA' | 'AA Large Text';
+  ratioP3?: number;
+  target?: number;
   css?: any;
 };
 
-function RatioBox({ css, ratio, type = 'AA' }: RatioBoxProps) {
+function RatioBox({ css, ratio, ratioP3, target }: RatioBoxProps) {
   return (
     <Text
       css={{
@@ -1000,10 +1317,11 @@ function RatioBox({ css, ratio, type = 'AA' }: RatioBoxProps) {
         ...css,
       }}
     >
-      {ratio !== undefined &&
-        (type === 'AA'
-          ? `${type} ${ratio >= 4.5 ? 'Pass' : 'Fail'} ${ratio.toFixed(2)}`
-          : `${type} ${ratio >= 3 ? 'Pass' : 'Fail'} ${ratio.toFixed(2)}`)}
+      {target !== undefined &&
+        ratio !== undefined &&
+        (ratio >= target ? `Lc ${target} Pass ` : `Lc ${target} Fail `)}
+      {ratio !== undefined && ratio.toFixed(2)}
+      {!!ratioP3 && ', P3 ' + ratioP3.toFixed(2)}
     </Text>
   );
 }
@@ -1174,19 +1492,23 @@ function generateColors({
   const startColor = chroma(start);
   const endColor = chroma(end);
 
-  const hueStart = startColor.hcl()[0];
+  const hclHueStart = startColor.hcl()[0];
+  const hslHueStart = startColor.hsl()[0];
   const chrStart = startColor.hcl()[1] * 100;
   const lumStart = startColor.hcl()[2] * 100;
-  const hueEnd = endColor.hcl()[0];
+  const hclHueEnd = endColor.hcl()[0];
+  const hslHueEnd = endColor.hsl()[0];
   const chrEnd = endColor.hcl()[1] * 100;
   const lumEnd = endColor.hcl()[2] * 100;
 
   let lumArray = generateNumberOfSteps(lumCurve);
   let chrArray = generateNumberOfSteps(chromaCurve);
-  let hueArray = generateNumberOfSteps(hueCurve);
+  let hclHueArray = generateNumberOfSteps(hueCurve);
+  let hslHueArray = generateNumberOfSteps(hueCurve);
   let lumArrayAdjusted: number[] = [];
   let chrArrayAdjusted: number[] = [];
-  let hueArrayAdjusted: number[] = [];
+  let hclHueArrayAdjusted: number[] = [];
+  let hslHueArrayAdjusted: number[] = [];
 
   for (const index in lumArray) {
     const step = lumArray[index];
@@ -1199,17 +1521,20 @@ function generateColors({
     chrArrayAdjusted.push(chrStep);
   }
 
-  for (const index in hueArray) {
-    const step = hueArray[index];
-    hueArrayAdjusted.push(distributeHue(step, [0, 1], [hueStart, hueEnd]));
+  for (const index in hclHueArray) {
+    const step = hclHueArray[index];
+    hclHueArrayAdjusted.push(distributeHue(step, [0, 1], [hclHueStart, hclHueEnd]));
+    hslHueArrayAdjusted.push(distributeHue(step, [0, 1], [hslHueStart, hslHueEnd]));
   }
 
   chrArrayAdjusted.reverse();
-  hueArrayAdjusted.reverse();
+  hclHueArrayAdjusted.reverse();
+  hslHueArrayAdjusted.reverse();
 
   lumArray = lumArrayAdjusted;
   chrArray = chrArrayAdjusted;
-  hueArray = hueArrayAdjusted;
+  hclHueArray = hclHueArrayAdjusted;
+  hslHueArray = hslHueArrayAdjusted;
 
   const colorMap: Color[] = [];
 
@@ -1217,12 +1542,14 @@ function generateColors({
     const index = parseInt(key);
 
     const params = {
-      hue: hueArray[index],
+      hue: hclHueArray[index],
       chroma: chrArray[index],
       luminosity: lumArray[index],
     };
 
-    const color = chroma(chroma.lch(params.luminosity, params.chroma, params.hue));
+    let color = chroma(chroma.lch(params.luminosity, params.chroma, params.hue));
+    // Reduce hue drift from the hcl interpolation, mixing with the hsl value
+    color = color.set('hsl.h', (color.hsl()[0] + hslHueArray[index] * 2) / 3);
 
     const colorObj: Color = {
       name: `${name}${index + indexOffset}`,
@@ -1310,4 +1637,8 @@ function getAlphaColor(targetColor: string, backgroundColor: string, debugColorN
 // transparent RGB bits over each other. It does NOT round the whole result altogether.
 function overlayRgbBits(foreground: number, alpha: number, background: number) {
   return Math.round(background * (1 - alpha)) + Math.round(foreground * alpha);
+}
+
+function apca(textColor: string, bgColor: string) {
+  return Math.abs(+(+calcAPCA(chroma(textColor).rgba(), chroma(bgColor).rgba())).toFixed(1));
 }

@@ -112,6 +112,45 @@ export const grayBackground: Record<ElementType<typeof colors>, string> = {
   orange: 'gray1',
 } as const;
 
+export const grayPair: Record<ElementType<typeof colors>, string> = {
+  gray: 'gray',
+  mauve: 'mauve',
+  slate: 'slate',
+  sage: 'sage',
+  olive: 'olive',
+  sand: 'sand',
+
+  tomato: 'mauve',
+  red: 'mauve',
+  ruby: 'mauve',
+  crimson: 'mauve',
+  pink: 'mauve',
+  plum: 'mauve',
+  purple: 'mauve',
+  violet: 'mauve',
+
+  iris: 'slate',
+  indigo: 'slate',
+  blue: 'slate',
+  cyan: 'slate',
+  sky: 'slate',
+
+  teal: 'sage',
+  jade: 'sage',
+  green: 'sage',
+  mint: 'sage',
+
+  grass: 'olive',
+  lime: 'olive',
+
+  yellow: 'sand',
+  gold: 'sand',
+  brown: 'sand',
+  bronze: 'sand',
+  amber: 'sand',
+  orange: 'sand',
+} as const;
+
 export default function Colors() {
   const [palette, setPalette] = useLocalStorage('colors-palette', true);
   const [panels, setPanels] = useLocalStorage('colors-panels', false);
@@ -129,6 +168,7 @@ export default function Colors() {
   const [grayscale, setGrayscale] = useLocalStorage('colors-grayscale', false);
   const [blur, setBlur] = useLocalStorage('colors-blur', false);
   const [gap, setGap] = useLocalStorage('colors-gap', false);
+  const [p3, setP3] = useLocalStorage('colors-p3', false);
 
   // No SSR please
   if (typeof window === 'undefined') {
@@ -142,6 +182,31 @@ export default function Colors() {
   React.useLayoutEffect(() => {
     document.documentElement.classList.toggle('gap', gap);
   }, [gap]);
+
+  React.useEffect(() => {
+    const nextElement = document.body.querySelector('#__next') as HTMLDivElement;
+
+    if (p3) {
+      const computedStyle = getComputedStyle(document.body);
+
+      colors.forEach((color) =>
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
+          const valueP3 = computedStyle.getPropertyValue(`--colors-${color}${step}-p3`);
+          if (valueP3) {
+            nextElement.style.setProperty(`--colors-${color}${step}`, valueP3);
+            nextElement.style.setProperty(`--colors-${color}A${step}`, valueP3);
+          }
+        })
+      );
+    } else {
+      colors.forEach((color) =>
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
+          nextElement.style.removeProperty(`--colors-${color}${step}`);
+          nextElement.style.removeProperty(`--colors-${color}A${step}`);
+        })
+      );
+    }
+  }, [p3]);
 
   React.useEffect(() => {
     document.body.classList.toggle('theme-default', !darkTheme);
@@ -224,6 +289,9 @@ export default function Colors() {
               onChange={(e) => setAlphaScales(e.target.checked)}
             >
               Show alpha scales
+            </Checkbox>
+            <Checkbox defaultChecked={p3} onChange={(e) => setP3(e.target.checked)}>
+              Use P3 colors
             </Checkbox>
           </Box>
         </Container>
@@ -407,7 +475,6 @@ function Buttons() {
       <Grid css={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: '$5' }}>
         {colors.map((color) => (
           <Box key={color} css={{ '&[class] * + *': { ml: '$2', verticalAlign: 'top' } }}>
-            <Button variant="gray">Neutral</Button>
             <Button
               css={{
                 fontWeight: 500,
@@ -435,24 +502,24 @@ function Buttons() {
               css={{
                 fontWeight: 500,
                 textTransform: 'capitalize',
-                backgroundColor: `$${color}A2`,
-                boxShadow: `inset 0 0 0 1px $colors$${color}A7`,
-                color: `$${color}A11`,
+                backgroundColor: `transparent`,
+                boxShadow: `inset 0 0 0 1px $colors$${color}8`,
+                color: `$${color}11`,
                 '@hover': {
                   '&:hover': {
-                    boxShadow: `inset 0 0 0 1px $colors$${color}A8`,
+                    boxShadow: `inset 0 0 0 1px $colors$${color}9`,
                   },
                 },
                 '&:active': {
-                  backgroundColor: `$${color}A3`,
-                  boxShadow: `inset 0 0 0 1px $colors$${color}A8`,
+                  backgroundColor: `$${color}3`,
+                  boxShadow: `inset 0 0 0 1px $colors$${color}9`,
                 },
                 '&:focus': {
-                  boxShadow: `inset 0 0 0 1px $colors$${color}A8, 0 0 0 1px $colors$${color}A8`,
+                  boxShadow: `inset 0 0 0 1px $colors$${color}8, 0 0 0 1px $colors$${color}A8`,
                 },
               }}
             >
-              {color} A
+              {color}
             </Button>
           </Box>
         ))}
@@ -944,6 +1011,131 @@ function Lines() {
           }}
         ></Box>
       </Flex>
+
+      <Flex css={{ position: 'relative' }}>
+        <Box
+          css={{
+            fb: '0',
+            fg: 1,
+            height: 160,
+            backgroundColor: '$mauve1',
+          }}
+        ></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$mauve2' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$mauve3' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$mauve4' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$mauve5' }}></Box>
+        <Box
+          css={{
+            position: 'absolute',
+            top: '50%',
+            left: '0',
+            width: '100%',
+            height: 1,
+            backgroundColor: '$mauve6',
+          }}
+        ></Box>
+      </Flex>
+
+      <Flex css={{ position: 'relative' }}>
+        <Box
+          css={{
+            fb: '0',
+            fg: 1,
+            height: 160,
+            backgroundColor: '$slate1',
+          }}
+        ></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$slate2' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$slate3' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$slate4' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$slate5' }}></Box>
+        <Box
+          css={{
+            position: 'absolute',
+            top: '50%',
+            left: '0',
+            width: '100%',
+            height: 1,
+            backgroundColor: '$slate6',
+          }}
+        ></Box>
+      </Flex>
+
+      <Flex css={{ position: 'relative' }}>
+        <Box
+          css={{
+            fb: '0',
+            fg: 1,
+            height: 160,
+            backgroundColor: '$sage1',
+          }}
+        ></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$sage2' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$sage3' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$sage4' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$sage5' }}></Box>
+        <Box
+          css={{
+            position: 'absolute',
+            top: '50%',
+            left: '0',
+            width: '100%',
+            height: 1,
+            backgroundColor: '$sage6',
+          }}
+        ></Box>
+      </Flex>
+
+      <Flex css={{ position: 'relative' }}>
+        <Box
+          css={{
+            fb: '0',
+            fg: 1,
+            height: 160,
+            backgroundColor: '$olive1',
+          }}
+        ></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$olive2' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$olive3' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$olive4' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$olive5' }}></Box>
+        <Box
+          css={{
+            position: 'absolute',
+            top: '50%',
+            left: '0',
+            width: '100%',
+            height: 1,
+            backgroundColor: '$olive6',
+          }}
+        ></Box>
+      </Flex>
+
+      <Flex css={{ position: 'relative' }}>
+        <Box
+          css={{
+            fb: '0',
+            fg: 1,
+            height: 160,
+            backgroundColor: '$sand1',
+          }}
+        ></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$sand2' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$sand3' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$sand4' }}></Box>
+        <Box css={{ fb: '0', fg: 1, height: 160, backgroundColor: '$sand5' }}></Box>
+        <Box
+          css={{
+            position: 'absolute',
+            top: '50%',
+            left: '0',
+            width: '100%',
+            height: 1,
+            backgroundColor: '$sand6',
+          }}
+        ></Box>
+      </Flex>
     </Container>
   );
 }
@@ -1331,240 +1523,40 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                 {color}
               </Text>
             </Box>
-            <Box
-              css={{ bc: `$${color}1` }}
-              onClick={() => {
-                const thisColor = `var(--colors-${color}1)`;
-                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                document.body.style.backgroundColor = newColor;
-              }}
-            />
-            <Box
-              css={{ bc: `$${color}2` }}
-              onClick={() => {
-                const thisColor = `var(--colors-${color}2)`;
-                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                document.body.style.backgroundColor = newColor;
-              }}
-            />
-            <Box
-              css={{ bc: `$${color}3` }}
-              onClick={() => {
-                const thisColor = `var(--colors-${color}3)`;
-                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                document.body.style.backgroundColor = newColor;
-              }}
-            />
-            <Box
-              css={{ bc: `$${color}4` }}
-              onClick={() => {
-                const thisColor = `var(--colors-${color}4)`;
-                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                document.body.style.backgroundColor = newColor;
-              }}
-            />
-            <Box
-              css={{ bc: `$${color}5` }}
-              onClick={() => {
-                const thisColor = `var(--colors-${color}5)`;
-                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                document.body.style.backgroundColor = newColor;
-              }}
-            />
-            <Box
-              css={{ bc: `$${color}6` }}
-              onClick={() => {
-                const thisColor = `var(--colors-${color}6)`;
-                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                document.body.style.backgroundColor = newColor;
-              }}
-            />
-            <Box
-              css={{ bc: `$${color}7` }}
-              onClick={() => {
-                const thisColor = `var(--colors-${color}7)`;
-                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                document.body.style.backgroundColor = newColor;
-              }}
-            />
-            <Box
-              css={{ bc: `$${color}8` }}
-              onClick={() => {
-                const thisColor = `var(--colors-${color}8)`;
-                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                document.body.style.backgroundColor = newColor;
-              }}
-            />
-            <Box
-              css={{ bc: `$${color}9` }}
-              onClick={() => {
-                const thisColor = `var(--colors-${color}9)`;
-                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                document.body.style.backgroundColor = newColor;
-              }}
-            />
-            <Box
-              css={{ bc: `$${color}10` }}
-              onClick={() => {
-                const thisColor = `var(--colors-${color}10)`;
-                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                document.body.style.backgroundColor = newColor;
-              }}
-            />
-            <Box
-              css={{ bc: `$${color}11` }}
-              onClick={() => {
-                const thisColor = `var(--colors-${color}11)`;
-                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                document.body.style.backgroundColor = newColor;
-              }}
-            />
-            <Box
-              css={{ bc: `$${color}12` }}
-              onClick={() => {
-                const thisColor = `var(--colors-${color}12)`;
-                const newColor = document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                document.body.style.backgroundColor = newColor;
-              }}
-            />
 
-            {showAlphaScales && (
-              <>
-                <Box />
-                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
+              <Box
+                key={i}
+                css={{ bc: `$${color}${i}` }}
+                onClick={() => {
+                  const thisColor = `var(--colors-${color}${i})`;
+                  const newColor =
+                    document.body.style.backgroundColor === thisColor ? '' : thisColor;
+                  document.body.style.backgroundColor = newColor;
+                }}
+              >
+                <Box
+                  css={{ marginLeft: 'auto', width: '50%', height: '100%', bc: `$${color}${i}-p3` }}
+                />
+              </Box>
+            ))}
+
+            {showAlphaScales && <Box />}
+
+            {showAlphaScales &&
+              [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
+                <Box key={i} css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
                   <Box
-                    css={{ bc: `$${color}A1`, width: '100%', height: '100%' }}
+                    css={{ bc: `$${color}A${i}`, height: '100%' }}
                     onClick={() => {
-                      const thisColor = `var(--colors-${color}A1)`;
+                      const thisColor = `var(--colors-${color}A${i})`;
                       const newColor =
                         document.body.style.backgroundColor === thisColor ? '' : thisColor;
                       document.body.style.backgroundColor = newColor;
                     }}
                   />
                 </Box>
-                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
-                  <Box
-                    css={{ bc: `$${color}A2`, width: '100%', height: '100%' }}
-                    onClick={() => {
-                      const thisColor = `var(--colors-${color}A2)`;
-                      const newColor =
-                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                      document.body.style.backgroundColor = newColor;
-                    }}
-                  />
-                </Box>
-                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
-                  <Box
-                    css={{ bc: `$${color}A3`, width: '100%', height: '100%' }}
-                    onClick={() => {
-                      const thisColor = `var(--colors-${color}A3)`;
-                      const newColor =
-                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                      document.body.style.backgroundColor = newColor;
-                    }}
-                  />
-                </Box>
-                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
-                  <Box
-                    css={{ bc: `$${color}A4`, width: '100%', height: '100%' }}
-                    onClick={() => {
-                      const thisColor = `var(--colors-${color}A4)`;
-                      const newColor =
-                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                      document.body.style.backgroundColor = newColor;
-                    }}
-                  />
-                </Box>
-                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
-                  <Box
-                    css={{ bc: `$${color}A5`, width: '100%', height: '100%' }}
-                    onClick={() => {
-                      const thisColor = `var(--colors-${color}A5)`;
-                      const newColor =
-                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                      document.body.style.backgroundColor = newColor;
-                    }}
-                  />
-                </Box>
-                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
-                  <Box
-                    css={{ bc: `$${color}A6`, width: '100%', height: '100%' }}
-                    onClick={() => {
-                      const thisColor = `var(--colors-${color}A6)`;
-                      const newColor =
-                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                      document.body.style.backgroundColor = newColor;
-                    }}
-                  />
-                </Box>
-                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
-                  <Box
-                    css={{ bc: `$${color}A7`, width: '100%', height: '100%' }}
-                    onClick={() => {
-                      const thisColor = `var(--colors-${color}A7)`;
-                      const newColor =
-                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                      document.body.style.backgroundColor = newColor;
-                    }}
-                  />
-                </Box>
-                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
-                  <Box
-                    css={{ bc: `$${color}A8`, width: '100%', height: '100%' }}
-                    onClick={() => {
-                      const thisColor = `var(--colors-${color}A8)`;
-                      const newColor =
-                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                      document.body.style.backgroundColor = newColor;
-                    }}
-                  />
-                </Box>
-                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
-                  <Box
-                    css={{ bc: `$${color}A9`, width: '100%', height: '100%' }}
-                    onClick={() => {
-                      const thisColor = `var(--colors-${color}A9)`;
-                      const newColor =
-                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                      document.body.style.backgroundColor = newColor;
-                    }}
-                  />
-                </Box>
-                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
-                  <Box
-                    css={{ bc: `$${color}A10`, width: '100%', height: '100%' }}
-                    onClick={() => {
-                      const thisColor = `var(--colors-${color}A10)`;
-                      const newColor =
-                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                      document.body.style.backgroundColor = newColor;
-                    }}
-                  />
-                </Box>
-                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
-                  <Box
-                    css={{ bc: `$${color}A11`, width: '100%', height: '100%' }}
-                    onClick={() => {
-                      const thisColor = `var(--colors-${color}A11)`;
-                      const newColor =
-                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                      document.body.style.backgroundColor = newColor;
-                    }}
-                  />
-                </Box>
-                <Box css={darkThemeColor(`var(--colors-${grayBackground[color]})`)}>
-                  <Box
-                    css={{ bc: `$${color}A12`, width: '100%', height: '100%' }}
-                    onClick={() => {
-                      const thisColor = `var(--colors-${color}A12)`;
-                      const newColor =
-                        document.body.style.backgroundColor === thisColor ? '' : thisColor;
-                      document.body.style.backgroundColor = newColor;
-                    }}
-                  />
-                </Box>
-              </>
-            )}
+              ))}
           </Grid>
         ))}
       </Box>
@@ -1590,8 +1582,8 @@ function Checkbox({
   );
 }
 
-export function getHiContrast(color: string) {
-  if (loContrasts.includes(color)) {
+export function getHiContrast(color: ElementType<typeof colors>) {
+  if (loContrasts.includes(color as any)) {
     return 'hsl(0, 0%, 0%)';
   }
 
