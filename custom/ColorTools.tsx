@@ -911,7 +911,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   // Keep contrast ratios up to date
   React.useEffect(() => {
     const getValue = (step: string) => {
-      return getCssVariable(`--colors-${name}${step}`);
+      return getCssVariable(`--colors-${name}${step}`) || '#00000000';
     };
 
     const step11ValueP3 = getValue('A11-p3')
