@@ -192,9 +192,20 @@ export default function Colors() {
       colors.forEach((color) =>
         [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
           const valueP3 = computedStyle.getPropertyValue(`--colors-${color}${step}-p3`);
+          const valueAlphaP3 = computedStyle.getPropertyValue(`--colors-${color}A${step}-p3`);
+
           if (valueP3) {
-            nextElement.style.setProperty(`--colors-${color}${step}`, valueP3);
-            nextElement.style.setProperty(`--colors-${color}A${step}`, valueP3);
+            nextElement.style.setProperty(
+              `--colors-${color}${step}`,
+              `var(--colors-${color}${step}-p3)`
+            );
+          }
+
+          if (valueAlphaP3) {
+            nextElement.style.setProperty(
+              `--colors-${color}A${step}`,
+              `var(--colors-${color}A${step}-p3)`
+            );
           }
         })
       );
@@ -1546,7 +1557,13 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
               />
             ))}
 
-            {showAlphaScales && <Box />}
+            {showAlphaScales && (
+              <Box css={{ alignSelf: 'center' }}>
+                <Text size="2" style={{ textTransform: 'capitalize' }}>
+                  {color} A.
+                </Text>
+              </Box>
+            )}
 
             {showAlphaScales &&
               [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (

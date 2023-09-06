@@ -815,54 +815,57 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       // Normal steps
       steps.forEach((n) => {
         const index = newColors.findIndex((color) => color.name === name + n);
-        let value = config['step' + n] ?? getCssVariable(`--colors-${name}${n}`);
+        let sRgbValue: string = config['step' + n] ?? getCssVariable(`--colors-${name}${n}`);
+        let p3Value: string = config.p3?.['step' + n] ?? sRgbValue;
 
         // Generate step 10 if it's not coming from the config
-        if (n === '10' && config.step10 === undefined) {
+        if (n === '10') {
           const baseColor = config.step9 ?? getCssVariable(`--colors-${name}9`);
           const mixColor = config.step11 ?? getCssVariable(`--colors-${name}11`);
           const mixRatio = config.mixRatioStep10 ?? defaultMixRatioStep10;
-          value = new Color(Color.mix(baseColor, mixColor, mixRatio, { space: 'lch' }));
+          const step10 = new Color(Color.mix(baseColor, mixColor, mixRatio, { space: 'lch' }));
+
+          if (config.step10 === undefined) {
+            sRgbValue = toHex(step10);
+          }
+
+          if (config.p3?.step10 === undefined) {
+            p3Value = toP3(step10);
+          }
         }
 
         if (newColors[index]) {
-          newColors[index].value = toHex(value);
+          newColors[index].value = toHex(sRgbValue);
+          newColors[index].valueP3 = toP3(p3Value);
         } else {
           newColors.push({
             name: name + n,
-            value: toHex(value),
+            value: toHex(sRgbValue),
+            valueP3: toP3(p3Value),
           });
         }
       });
 
-      // P3 steps
-      // steps.forEach((n) => {
-      //   if (config.p3?.['step' + n]) {
-      //     newColors.push({
-      //       name: name + n + '-p3',
-      //       value: config.p3['step' + n],
-      //     });
-      //   }
-      // });
-
       // Set alpha scales
-      newColors.forEach((targetColor) => {
+      newColors.forEach((target) => {
         const darkThemeBackdrop = grayBackground[name];
 
-        const background = isDarkTheme
+        const backgroundValue = isDarkTheme
           ? newColors.find((color) => color.name === darkThemeBackdrop)?.value ??
             getCssVariable(`--colors-${darkThemeBackdrop}`)
           : '#ffffff';
 
         newColors.push({
-          name: targetColor.name.replace(/(\d)/, 'A$1'),
-          value: getAlphaColor(targetColor.value, background),
+          name: target.name.replace(/(\d)/, 'A$1'),
+          value: getAlphaColorSrgb(target.value, backgroundValue),
+          valueP3: getAlphaColorP3(target.value, backgroundValue),
         });
       });
 
       // Set CSS variables
       newColors.forEach((color) => {
         document.body.style.setProperty(`--colors-${color.name}`, color.value);
+        document.body.style.setProperty(`--colors-${color.name}-p3`, color.valueP3);
       });
 
       setActive(true);
@@ -880,16 +883,18 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   // Set new CSS variables when active or theme is changed
   React.useEffect(() => {
     // Deactivate and/or clear potentially stale stuff
-    steps.forEach((step) => {
-      document.body.style.removeProperty(`--colors-${name}${step}`);
-      document.body.style.removeProperty(`--colors-${name}A${step}`);
-      // document.body.style.removeProperty(`--colors-${name}${step}-p3`);
+    steps.forEach((n) => {
+      document.body.style.removeProperty(`--colors-${name}${n}`);
+      document.body.style.removeProperty(`--colors-${name}A${n}`);
+      document.body.style.removeProperty(`--colors-${name}${n}-p3`);
+      document.body.style.removeProperty(`--colors-${name}A${n}-p3`);
     });
 
     // Set relevant values if active
     if (active) {
       generatedColorsRef.current.forEach((color) => {
         document.body.style.setProperty(`--colors-${color.name}`, color.value);
+        document.body.style.setProperty(`--colors-${color.name}-p3`, color.valueP3);
       });
     }
   }, [active, isDarkTheme]);
@@ -1060,12 +1065,12 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                     ? `export const ${color}Dark = {\n`
                     : `export const ${color} = {\n`;
 
-                  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
-                    let value = computedStyle.getPropertyValue(`--colors-${color}${step}`);
+                  steps.forEach((n) => {
+                    let value = computedStyle.getPropertyValue(`--colors-${color}${n}`);
 
                     if (value) {
                       value = toHex(value);
-                      clipboard += `  ${color}${step}: '${value}',\n`;
+                      clipboard += `  ${color}${n}: '${value}',\n`;
                     }
                   });
 
@@ -1074,12 +1079,12 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                     ? `export const ${color}DarkA = {\n`
                     : `export const ${color}A = {\n`;
 
-                  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
-                    let value = computedStyle.getPropertyValue(`--colors-${color}A${step}`);
+                  steps.forEach((n) => {
+                    let value = computedStyle.getPropertyValue(`--colors-${color}A${n}`);
 
                     if (value) {
                       value = toHex(value);
-                      clipboard += `  ${color}A${step}: '${value}',\n`;
+                      clipboard += `  ${color}A${n}: '${value}',\n`;
                     }
                   });
 
@@ -1088,11 +1093,11 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                     ? `export const ${color}DarkP3 = {\n`
                     : `export const ${color}P3 = {\n`;
 
-                  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
-                    let value = computedStyle.getPropertyValue(`--colors-${color}${step}-p3`);
+                  steps.forEach((n) => {
+                    let value = computedStyle.getPropertyValue(`--colors-${color}${n}-p3`);
 
                     if (value) {
-                      clipboard += `  ${color}${step}: '${value}',\n`;
+                      clipboard += `  ${color}${n}: '${value}',\n`;
                     }
                   });
 
@@ -1174,16 +1179,16 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               pointerEvents: showCode ? 'auto' : 'none',
             }}
           >
-            {steps.map((step) => {
+            {steps.map((n) => {
               const variableName = showAlphaValues
-                ? `--colors-${name}A${step}`
-                : `--colors-${name}${step}`;
+                ? `--colors-${name}A${n}`
+                : `--colors-${name}${n}`;
               const valueToShow = getCssVariable(variableName);
               const nameToShow = showAlphaValues ? `${name}A` : name;
 
               return (
                 <Text
-                  key={step}
+                  key={n}
                   css={{
                     fontSize: '10px',
                     fontFamily: '$mono',
@@ -1193,8 +1198,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                     lineHeight: '25px',
                   }}
                 >
-                  {nameToShow}
-                  {step}: '{toHex(valueToShow)}',
+                  {nameToShow + n}: '{valueToShow}',
                 </Text>
               );
             })}
@@ -1429,7 +1433,7 @@ type ScaleSpec = {
 type GeneratedColor = {
   name: string;
   value: string;
-  // valueP3: string;
+  valueP3: string;
 };
 
 function generateColors({
@@ -1506,6 +1510,7 @@ function generateColors({
     colorMap.push({
       name: `${name}${index + indexOffset}`,
       value: toHex(color),
+      valueP3: toP3(color),
     });
   }
 
@@ -1514,19 +1519,22 @@ function generateColors({
 
 // target = background * (1 - alpha) + foreground * alpha
 // alpha = (target - background) / (foreground - background)
-function getAlphaColor(targetColor: string, backgroundColor: string, debugColorName?: string) {
-  const [targetR, targetG, targetB] = new Color(targetColor).srgb.map((c) => Math.round(c * 255));
-  const [backgroundR, backgroundG, backgroundB] = new Color(backgroundColor).srgb.map((c) =>
-    Math.round(c * 255)
-  );
+// Expects 0-1 numbers for the RGB channels
+function getAlphaColor(
+  targetRgb: number[],
+  backgroundRgb: number[],
+  rgbPrecision: number,
+  alphaPrecision: number
+) {
+  const [tr, tg, tb] = targetRgb.map((c) => Math.round(c * rgbPrecision));
+  const [br, bg, bb] = backgroundRgb.map((c) => Math.round(c * rgbPrecision));
 
   // Is the background color lighter, RGB-wise, than target color?
   // Decide whether we want to add as little color or as much color as possible,
   // darkening or lightening the background respectively.
   // If at least one of the bits of the target RGB value
   // is lighter than the background, we want to lighten it.
-  let desiredRGB =
-    targetR > backgroundR ? 255 : targetG > backgroundG ? 255 : targetB > backgroundB ? 255 : 0;
+  let desiredRgb = tr > br ? rgbPrecision : tg > bg ? rgbPrecision : tb > bb ? rgbPrecision : 0;
 
   // Light theme example:
   // Consider a 200 120 150 target color with 255 255 255 background
@@ -1535,59 +1543,87 @@ function getAlphaColor(targetColor: string, backgroundColor: string, debugColorN
   // Dark theme example:
   // Consider a 200 120 150 target color with 12 24 28 background
   // What is the alpha value that will nudge background's 12 red to 200?
-  const alphaR = (targetR - backgroundR) / (desiredRGB - backgroundR);
-  const alphaG = (targetG - backgroundG) / (desiredRGB - backgroundG);
-  const alphaB = (targetB - backgroundB) / (desiredRGB - backgroundB);
+  const alphaR = (tr - br) / (desiredRgb - br);
+  const alphaG = (tg - bg) / (desiredRgb - bg);
+  const alphaB = (tb - bb) / (desiredRgb - bb);
 
-  const clamp = (n: number) => (isNaN(n) ? 0 : Math.min(255, Math.max(0, n)));
+  const clampRgb = (n: number) => (isNaN(n) ? 0 : Math.min(rgbPrecision, Math.max(0, n)));
+  const clampA = (n: number) => (isNaN(n) ? 0 : Math.min(alphaPrecision, Math.max(0, n)));
 
-  // Round alpha in 1/255 increments as it’s going to be converted to hex after
-  const A = clamp(Math.ceil(Math.max(alphaR, alphaG, alphaB) * 255)) / 255;
-
-  let R = clamp(((backgroundR * (1 - A) - targetR) / A) * -1);
-  let G = clamp(((backgroundG * (1 - A) - targetG) / A) * -1);
-  let B = clamp(((backgroundB * (1 - A) - targetB) / A) * -1);
+  let A = clampA(Math.ceil(Math.max(alphaR, alphaG, alphaB) * alphaPrecision)) / alphaPrecision;
+  let R = clampRgb(((br * (1 - A) - tr) / A) * -1);
+  let G = clampRgb(((bg * (1 - A) - tg) / A) * -1);
+  let B = clampRgb(((bb * (1 - A) - tb) / A) * -1);
 
   R = Math.ceil(R);
   G = Math.ceil(G);
   B = Math.ceil(B);
 
-  const overlayR = overlayRgbBits(R, A, backgroundR);
-  const overlayG = overlayRgbBits(G, A, backgroundG);
-  const overlayB = overlayRgbBits(B, A, backgroundB);
+  const overlayR = overlayAlphaInSingleChannel(R, A, br);
+  const overlayG = overlayAlphaInSingleChannel(G, A, bg);
+  const overlayB = overlayAlphaInSingleChannel(B, A, bb);
 
   // Correct for rounding errors in light mode
-  if (desiredRGB === 0) {
-    if (targetR <= backgroundR && targetR !== overlayR) {
-      R = targetR > overlayR ? R + 1 : R - 1;
+  if (desiredRgb === 0) {
+    if (tr <= br && tr !== overlayR) {
+      R = tr > overlayR ? R + 1 : R - 1;
     }
-    if (targetG <= backgroundG && targetG !== overlayG) {
-      G = targetG > overlayG ? G + 1 : G - 1;
+    if (tg <= bg && tg !== overlayG) {
+      G = tg > overlayG ? G + 1 : G - 1;
     }
-    if (targetB <= backgroundB && targetB !== overlayB) {
-      B = targetB > overlayB ? B + 1 : B - 1;
+    if (tb <= bb && tb !== overlayB) {
+      B = tb > overlayB ? B + 1 : B - 1;
     }
   }
 
   // Correct for rounding errors in dark mode
-  if (desiredRGB === 255) {
-    if (targetR >= backgroundR && targetR !== overlayR) {
-      R = targetR > overlayR ? R + 1 : R - 1;
+  if (desiredRgb === rgbPrecision) {
+    if (tr >= br && tr !== overlayR) {
+      R = tr > overlayR ? R + 1 : R - 1;
     }
-    if (targetG >= backgroundG && targetG !== overlayG) {
-      G = targetG > overlayG ? G + 1 : G - 1;
+    if (tg >= bg && tg !== overlayG) {
+      G = tg > overlayG ? G + 1 : G - 1;
     }
-    if (targetB >= backgroundB && targetB !== overlayB) {
-      B = targetB > overlayB ? B + 1 : B - 1;
+    if (tb >= bb && tb !== overlayB) {
+      B = tb > overlayB ? B + 1 : B - 1;
     }
   }
 
-  return toHex(`rgb(${R} ${G} ${B} / ${A})`);
+  // Convert back to 0-1 values
+  R = R / rgbPrecision;
+  G = G / rgbPrecision;
+  B = B / rgbPrecision;
+
+  return [R, G, B, A] as const;
+}
+
+function getAlphaColorSrgb(targetColor: string, backgroundColor: string) {
+  const [r, g, b, a] = getAlphaColor(
+    new Color(targetColor).to('srgb').coords,
+    new Color(backgroundColor).to('srgb').coords,
+    255,
+    255
+  );
+
+  return new Color('srgb', [r, g, b], a).toString({ format: 'hex' });
+}
+
+function getAlphaColorP3(targetColor: string, backgroundColor: string) {
+  const [r, g, b, a] = getAlphaColor(
+    new Color(targetColor).to('p3').coords,
+    new Color(backgroundColor).to('p3').coords,
+    // Not sure why, but the resulting P3 alpha colors are blended in the browser most precisely when
+    // rounded to 255 integers too. Is the browser using 0-255 rather than 0-1 under the hood for P3 too?
+    255,
+    1000
+  );
+
+  return new Color('p3', [r, g, b], a).toString();
 }
 
 // Important – I empirically discovered that this rounding is how the browser actually overlays
 // transparent RGB bits over each other. It does NOT round the whole result altogether.
-function overlayRgbBits(foreground: number, alpha: number, background: number) {
+function overlayAlphaInSingleChannel(foreground: number, alpha: number, background: number) {
   return Math.round(background * (1 - alpha)) + Math.round(foreground * alpha);
 }
 
@@ -1607,6 +1643,14 @@ function toHex(color: Color | string) {
   }
 
   return new Color(color).to('srgb').toString({ format: 'hex' });
+}
+
+function toP3(color: Color | string) {
+  if (color instanceof Color) {
+    return color.to('p3').toString();
+  }
+
+  return new Color(color).to('p3').toString();
 }
 
 const getCssVariable = (name: string) => getComputedStyle(document.body).getPropertyValue(name);
