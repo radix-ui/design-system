@@ -804,8 +804,8 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
       const newColors = generateColors({
         name,
-        start: config.step2 ?? computedStyles.getPropertyValue(`--colors-${name}2`) ?? '#000000',
-        end: config.step8 ?? computedStyles.getPropertyValue(`--colors-${name}8`) ?? '#000000',
+        start: config.step2 ?? getCssVariable(`--colors-${name}2`) ?? '#000000',
+        end: config.step8 ?? getCssVariable(`--colors-${name}8`) ?? '#000000',
         stepsCount: 7,
         hueCurve,
         chromaCurve,
@@ -814,68 +814,50 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
       // Normal steps
       steps.forEach((n) => {
-        if (config['step' + n]) {
-          const index = newColors.findIndex((color) => color.name === name + n);
-          if (newColors[index]) {
-            newColors[index].value = toHex(config['step' + n]);
-          } else {
-            newColors.push({
-              name: name + n,
-              value: toHex(config['step' + n]),
-            });
-          }
-        }
-      });
+        const index = newColors.findIndex((color) => color.name === name + n);
+        let value = config['step' + n] ?? getCssVariable(`--colors-${name}${n}`);
 
-      // P3 steps
-      steps.forEach((n) => {
-        if (config.p3?.['step' + n]) {
+        // Generate step 10 if it's not coming from the config
+        if (n === '10' && config.step10 === undefined) {
+          const baseColor = config.step9 ?? getCssVariable(`--colors-${name}9`);
+          const mixColor = config.step11 ?? getCssVariable(`--colors-${name}11`);
+          const mixRatio = config.mixRatioStep10 ?? defaultMixRatioStep10;
+          value = new Color(Color.mix(baseColor, mixColor, mixRatio, { space: 'lch' }));
+        }
+
+        if (newColors[index]) {
+          newColors[index].value = toHex(value);
+        } else {
           newColors.push({
-            name: name + n + '-p3',
-            value: config.p3['step' + n],
+            name: name + n,
+            value: toHex(value),
           });
         }
       });
 
-      // Add 10 as a mix of 9 and 11, unless they have been added manually before
-      if (!newColors.find((color) => color.name === `${name}10`)) {
-        const computedStyles = getComputedStyle(document.body);
-        const isLoContrast = loContrasts.includes(name);
-        const baseStep = '9';
-        const mixStep = isDarkTheme && isLoContrast ? '12' : '11';
-
-        const baseColor =
-          newColors.find((color) => color.name === `${name}${baseStep}`)?.value ??
-          computedStyles.getPropertyValue(`--colors-${name}${baseStep}`);
-
-        const mixColor =
-          newColors.find((color) => color.name === `${name}${mixStep}`)?.value ??
-          computedStyles.getPropertyValue(`--colors-${name}${mixStep}`);
-
-        const mixRatio = config.mixRatioStep10 ?? defaultMixRatioStep10;
-        const step10 = new Color(Color.mix(baseColor, mixColor, mixRatio, { space: 'lch' }));
-
-        newColors.push({ name: `${name}10`, value: toHex(step10) });
-      }
+      // P3 steps
+      // steps.forEach((n) => {
+      //   if (config.p3?.['step' + n]) {
+      //     newColors.push({
+      //       name: name + n + '-p3',
+      //       value: config.p3['step' + n],
+      //     });
+      //   }
+      // });
 
       // Set alpha scales
-      Array.from(Array(12)).forEach((_, index) => {
-        const newColor = newColors.find((color) => color.name === name + (index + 1));
+      newColors.forEach((targetColor) => {
+        const darkThemeBackdrop = grayBackground[name];
 
-        const targetColorValue =
-          newColor?.value ?? computedStyles.getPropertyValue(`--colors-${name}${index + 1}`);
+        const background = isDarkTheme
+          ? newColors.find((color) => color.name === darkThemeBackdrop)?.value ??
+            getCssVariable(`--colors-${darkThemeBackdrop}`)
+          : '#ffffff';
 
-        if (targetColorValue) {
-          const darkThemeBackdrop = grayBackground[name];
-
-          const backgroundColor = isDarkTheme
-            ? newColors.find((color) => color.name === darkThemeBackdrop)?.value ??
-              computedStyles.getPropertyValue(`--colors-${darkThemeBackdrop}`)
-            : '#ffffff';
-
-          const alphaValue = getAlphaColor(targetColorValue, backgroundColor, name + (index + 1));
-          newColors.push({ name: `${name}A${index + 1}`, value: alphaValue });
-        }
+        newColors.push({
+          name: targetColor.name.replace(/(\d)/, 'A$1'),
+          value: getAlphaColor(targetColor.value, background),
+        });
       });
 
       // Set CSS variables
@@ -898,10 +880,10 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   // Set new CSS variables when active or theme is changed
   React.useEffect(() => {
     // Deactivate and/or clear potentially stale stuff
-    Array.from(Array(12)).forEach((_, index) => {
-      document.body.style.removeProperty(`--colors-${name}${index + 1}`);
-      document.body.style.removeProperty(`--colors-${name}A${index + 1}`);
-      document.body.style.removeProperty(`--colors-${name}${index + 1}-p3`);
+    steps.forEach((step) => {
+      document.body.style.removeProperty(`--colors-${name}${step}`);
+      document.body.style.removeProperty(`--colors-${name}A${step}`);
+      // document.body.style.removeProperty(`--colors-${name}${step}-p3`);
     });
 
     // Set relevant values if active
@@ -918,10 +900,9 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   }, [onCurveChange]);
 
   // Keep contrast ratios up to date
-  const computedStyles = getComputedStyle(document.body);
   React.useEffect(() => {
     const getValue = (step: string) => {
-      return computedStyles.getPropertyValue(`--colors-${name}${step}`);
+      return getCssVariable(`--colors-${name}${step}`);
     };
 
     const step11ValueP3 = getValue('11-p3')
@@ -935,7 +916,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
     const step2Y = sRGBtoY(new Color(getValue('2')).srgb.map((c) => c * 255));
     const p3Step1Contrast = +Math.abs(p3Step11Y ? +APCAcontrast(p3Step11Y, step1Y) : 0).toFixed(1);
     const p3Step2Contrast = +Math.abs(p3Step11Y ? +APCAcontrast(p3Step11Y, step2Y) : 0).toFixed(1);
-    const background = isDarkTheme ? computedStyles.getPropertyValue(`--colors-gray1`) : '#FFFFFF';
+    const background = isDarkTheme ? getCssVariable(`--colors-gray1`) : '#FFFFFF';
 
     const newContrasts = [
       apca(getValue('A11'), getValue('1')),
@@ -962,7 +943,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         (!!newContrasts[9] && newContrasts[9] < 60) ||
         (!!newContrasts[10] && newContrasts[10] < 60)
     );
-  }, [active, isDarkTheme, darkColors, lightColors]);
+  }, [active, isDarkTheme]);
 
   return (
     <Box data-editable-scale={name} css={{ mb: '-$2', color: '$hiContrast' }}>
@@ -1197,7 +1178,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
               const variableName = showAlphaValues
                 ? `--colors-${name}A${step}`
                 : `--colors-${name}${step}`;
-              const valueToShow = computedStyles.getPropertyValue(variableName);
+              const valueToShow = getCssVariable(variableName);
               const nameToShow = showAlphaValues ? `${name}A` : name;
 
               return (
@@ -1627,3 +1608,5 @@ function toHex(color: Color | string) {
 
   return new Color(color).to('srgb').toString({ format: 'hex' });
 }
+
+const getCssVariable = (name: string) => getComputedStyle(document.body).getPropertyValue(name);
