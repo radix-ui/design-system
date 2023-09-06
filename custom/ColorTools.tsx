@@ -1514,7 +1514,8 @@ function generateColors({
     colorMap.push({
       name: `${name}${index + indexOffset}`,
       value: toHex(color),
-      valueP3: toP3(color),
+      // Double conversion to minimise differences between sRGB and P3 versions without good reason
+      valueP3: toP3(toHex(color)),
     });
   }
 
