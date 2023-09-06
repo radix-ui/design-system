@@ -263,7 +263,7 @@ export function ColorTools() {
             // scaleStartSaturationBoost: 1.8,
             defaultCurve: [0.47, 0.305, 0.665, 0.375],
 
-            scaleStartSaturationBoost: 3,
+            scaleStartSaturationBoost: 3.5,
             step8: 'hsl(10, 55%, 45%)',
             p3: {
               step11: 'color(display-p3 1 0.585 0.455)',
@@ -289,7 +289,7 @@ export function ColorTools() {
               step11: 'color(display-p3 1 0.57 0.55)',
             },
             mixRatioStep10: 0.2,
-            scaleStartSaturationBoost: 2.8,
+            scaleStartSaturationBoost: 3.2,
             defaultCurve: [0.425, 0.315, 0.71, 0.4],
           }}
         />
@@ -306,7 +306,7 @@ export function ColorTools() {
             step1: '#191113',
             step2: 'hsl(347, 30%, 10%)',
             step8: 'hsl(348, 45%, 48.5%)',
-            scaleStartSaturationBoost: 2.8,
+            scaleStartSaturationBoost: 3,
 
             // TODO step 10 hovers
             step11: 'hsl(355, 100%, 79%)',
@@ -335,9 +335,9 @@ export function ColorTools() {
             p3: {
               step11: 'color(display-p3 1 0.56 0.66)',
             },
-            scaleStartSaturationBoost: 3.1,
+            scaleStartSaturationBoost: 3.2,
             mixRatioStep10: 0.25,
-            defaultCurve: [0.405, 0.315, 0.675, 0.365],
+            defaultCurve: [0.4, 0.33, 0.65, 0.345],
           }}
         />
         <EditableScale
@@ -358,8 +358,8 @@ export function ColorTools() {
               step11: 'color(display-p3 1 0.535 0.78)',
             },
             mixRatioStep10: 0.23,
-            scaleStartSaturationBoost: 2.8,
-            defaultCurve: [0.465, 0.405, 0.56, 0.225],
+            scaleStartSaturationBoost: 2.9,
+            defaultCurve: [0.415, 0.395, 0.55, 0.255],
           }}
         />
         <EditableScale
@@ -378,8 +378,8 @@ export function ColorTools() {
             step8: 'hsl(292, 30%, 47%)',
             step11: 'hsl(292, 80%, 77.1%)',
             mixRatioStep10: 0.22,
-            scaleStartSaturationBoost: 2.4,
-            defaultCurve: [0.485, 0.445, 0.585, 0.25],
+            scaleStartSaturationBoost: 2.5,
+            defaultCurve: [0.46, 0.46, 0.575, 0.265],
           }}
         />
         <EditableScale
@@ -397,9 +397,9 @@ export function ColorTools() {
             step2: 'hsl(280, 24%, 11%)',
             step8: 'hsl(272, 37%, 51%)',
             step11: 'hsl(272, 100%, 80.8%)',
-            scaleStartSaturationBoost: 2,
+            scaleStartSaturationBoost: 2.3,
             mixRatioStep10: 0.2,
-            defaultCurve: [0.405, 0.41, 0.585, 0.25],
+            defaultCurve: [0.375, 0.385, 0.615, 0.325],
             p3: {
               step11: 'color(display-p3 0.8 0.62 1)',
             },
@@ -419,9 +419,9 @@ export function ColorTools() {
             step1: '#14121F',
             step2: 'hsl(260, 27%, 11.6%)',
             step8: 'hsl(252, 38%, 52%)',
-            scaleStartSaturationBoost: 2,
+            scaleStartSaturationBoost: 2.6,
             step11: 'hsl(253, 100%, 82.65%)',
-            defaultCurve: [0.45, 0.43, 0.605, 0.335],
+            defaultCurve: [0.4, 0.44, 0.605, 0.335],
             mixRatioStep10: 0.2,
             p3: {
               step11: 'color(display-p3 0.72 0.65 1)',
@@ -448,7 +448,7 @@ export function ColorTools() {
             },
 
             mixRatioStep10: 0.2,
-            scaleStartSaturationBoost: 2.1,
+            scaleStartSaturationBoost: 2.4,
             defaultCurve: [0.4, 0.445, 0.6, 0.38],
           }}
         />
@@ -474,9 +474,7 @@ export function ColorTools() {
             },
 
             mixRatioStep10: 0.2,
-            scaleStartSaturationBoost: 1.8,
-            // step8: 'hsl(226, 55%, 49%)',
-            // scaleStartSaturationBoost: 2.6,
+            scaleStartSaturationBoost: 2.2,
           }}
         />
         <EditableScale
@@ -494,7 +492,7 @@ export function ColorTools() {
             step8: 'hsl(211, 60%, 45%)',
             step11: 'hsl(205, 100%, 68%)',
             mixRatioStep10: 0.35,
-            scaleStartSaturationBoost: 1.7,
+            scaleStartSaturationBoost: 2.2,
             defaultCurve: [0.305, 0.335, 0.605, 0.45],
           }}
         />
@@ -521,7 +519,7 @@ export function ColorTools() {
             },
             mixRatioStep10: 0.45,
             // scaleStartSaturationBoost: 3,
-            scaleStartSaturationBoost: 1.6,
+            scaleStartSaturationBoost: 2.5,
             defaultCurve: [0.355, 0.37, 0.635, 0.435],
           }}
         />
@@ -538,8 +536,8 @@ export function ColorTools() {
             step2: 'hsl(171, 25%, 8.5%)',
             step8: 'hsl(173, 60%, 31%)',
             mixRatioStep10: 0.45,
-            scaleStartSaturationBoost: 1.6,
-            defaultCurve: [0.42, 0.445, 0.485, 0.37],
+            scaleStartSaturationBoost: 1.9,
+            defaultCurve: [0.37, 0.43, 0.495, 0.355],
           }}
         />
         <EditableScale
@@ -556,7 +554,7 @@ export function ColorTools() {
             step8: 'hsl(164, 50%, 33%)',
             scaleStartSaturationBoost: 2,
             mixRatioStep10: 0.435,
-            defaultCurve: [0.355, 0.37, 0.605, 0.495],
+            defaultCurve: [0.325, 0.405, 0.62, 0.46],
           }}
         />
         <EditableScale
@@ -831,10 +829,10 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
           if (config.step10 === undefined) {
             sRgbValue = toHex(step10);
-          }
 
-          if (config.p3?.step10 === undefined) {
-            p3Value = toP3(step10);
+            if (config.p3?.step10 === undefined) {
+              p3Value = toP3(step10);
+            }
           }
         }
 

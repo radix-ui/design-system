@@ -241,6 +241,11 @@ export default function Colors() {
         event.preventDefault();
         document.getElementById('dark-theme')?.querySelector('label')?.click();
       }
+
+      if (event.key === 'p' && event.metaKey) {
+        event.preventDefault();
+        document.getElementById('use-p3')?.querySelector('label')?.click();
+      }
     };
 
     addEventListener('keydown', handleKeyDown);
@@ -311,9 +316,11 @@ export default function Colors() {
             >
               Show alpha scales
             </Checkbox>
-            <Checkbox data-use-p3 defaultChecked={p3} onChange={(e) => setP3(e.target.checked)}>
-              Use P3 colors
-            </Checkbox>
+            <span id="use-p3">
+              <Checkbox data-use-p3 defaultChecked={p3} onChange={(e) => setP3(e.target.checked)}>
+                Use P3 colors (⌘P)
+              </Checkbox>
+            </span>
             <Checkbox
               data-output-js
               defaultChecked={outputJs}
