@@ -261,7 +261,7 @@ export function ColorTools() {
             step11: 'hsl(12, 100%, 74.5%)',
             mixRatioStep10: 0.2,
             // scaleStartSaturationBoost: 1.8,
-            defaultCurve: [0.445, 0.295, 0.69, 0.37],
+            defaultCurve: [0.47, 0.305, 0.665, 0.375],
 
             scaleStartSaturationBoost: 3,
             step8: 'hsl(10, 55%, 45%)',
@@ -914,17 +914,12 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       return getCssVariable(`--colors-${name}${step}`);
     };
 
-    const step11ValueP3 = getValue('11-p3')
+    const step11ValueP3 = getValue('A11-p3')
       .replace(/color\(display-p3 |\)/g, '')
       .split(' ')
       .filter(Boolean)
       .map(Number);
 
-    const p3Step11Y = step11ValueP3.length ? displayP3toY(step11ValueP3) : 0;
-    const step1Y = sRGBtoY(new Color(getValue('1')).srgb.map((c) => c * 255));
-    const step2Y = sRGBtoY(new Color(getValue('2')).srgb.map((c) => c * 255));
-    const p3Step1Contrast = +Math.abs(p3Step11Y ? +APCAcontrast(p3Step11Y, step1Y) : 0).toFixed(1);
-    const p3Step2Contrast = +Math.abs(p3Step11Y ? +APCAcontrast(p3Step11Y, step2Y) : 0).toFixed(1);
     const background = isDarkTheme ? getCssVariable(`--colors-gray1`) : '#FFFFFF';
 
     const newContrasts = [
@@ -937,8 +932,8 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       apca(getValue('7'), background),
       apca(getValue('8'), background),
       apca(getHiContrast(name), getValue('9')),
-      p3Step1Contrast,
-      p3Step2Contrast,
+      apca(getValue('A11-p3'), getValue('1')),
+      apca(getValue('A11-p3'), getValue('2')),
     ];
 
     setContrasts(newContrasts);
@@ -952,7 +947,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
         (!!newContrasts[9] && newContrasts[9] < 60) ||
         (!!newContrasts[10] && newContrasts[10] < 60)
     );
-  }, [active, isDarkTheme]);
+  }, [active, isDarkTheme, lightColors, darkColors]);
 
   return (
     <Box data-editable-scale={name} css={{ mb: '-$2', color: '$hiContrast' }}>
@@ -1237,18 +1232,9 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                 ratio={contrasts[4]}
                 target={45}
               />
-              <RatioBox
-                css={{ bc: `$${name}6`, color: getHiContrast(name) }}
-                ratio={contrasts[5]}
-              />
-              <RatioBox
-                css={{ bc: `$${name}7`, color: getHiContrast(name) }}
-                ratio={contrasts[6]}
-              />
-              <RatioBox
-                css={{ bc: `$${name}8`, color: getHiContrast(name) }}
-                ratio={contrasts[7]}
-              />
+              <RatioBox css={{ bc: `$${name}6`, color: `$${name}A11` }} ratio={contrasts[5]} />
+              <RatioBox css={{ bc: `$${name}7`, color: `$${name}A11` }} ratio={contrasts[6]} />
+              <RatioBox css={{ bc: `$${name}8`, color: `$${name}A11` }} ratio={contrasts[7]} />
               <RatioBox
                 css={{ bc: `$${name}9`, color: getHiContrast(name) }}
                 ratio={contrasts[8]}
@@ -1293,8 +1279,8 @@ function RatioBox({ css, ratio, ratioP3, target }: RatioBoxProps) {
       {target !== undefined &&
         ratio !== undefined &&
         (ratio >= target ? `Lc ${target} Pass ` : `Lc ${target} Fail `)}
-      {ratio !== undefined && ratio.toFixed(2)}
-      {!!ratioP3 && ', P3 ' + ratioP3.toFixed(2)}
+      {ratio !== undefined && ratio.toFixed(1)}
+      {!!ratioP3 && ', P3 ' + ratioP3.toFixed(1)}
     </Text>
   );
 }
@@ -1564,33 +1550,33 @@ function getAlphaColor(
   G = Math.ceil(G);
   B = Math.ceil(B);
 
-  const overlayR = overlayAlphaInSingleChannel(R, A, br);
-  const overlayG = overlayAlphaInSingleChannel(G, A, bg);
-  const overlayB = overlayAlphaInSingleChannel(B, A, bb);
+  const blendedR = blendAlpha(R, A, br);
+  const blendedG = blendAlpha(G, A, bg);
+  const blendedB = blendAlpha(B, A, bb);
 
   // Correct for rounding errors in light mode
   if (desiredRgb === 0) {
-    if (tr <= br && tr !== overlayR) {
-      R = tr > overlayR ? R + 1 : R - 1;
+    if (tr <= br && tr !== blendedR) {
+      R = tr > blendedR ? R + 1 : R - 1;
     }
-    if (tg <= bg && tg !== overlayG) {
-      G = tg > overlayG ? G + 1 : G - 1;
+    if (tg <= bg && tg !== blendedG) {
+      G = tg > blendedG ? G + 1 : G - 1;
     }
-    if (tb <= bb && tb !== overlayB) {
-      B = tb > overlayB ? B + 1 : B - 1;
+    if (tb <= bb && tb !== blendedB) {
+      B = tb > blendedB ? B + 1 : B - 1;
     }
   }
 
   // Correct for rounding errors in dark mode
   if (desiredRgb === rgbPrecision) {
-    if (tr >= br && tr !== overlayR) {
-      R = tr > overlayR ? R + 1 : R - 1;
+    if (tr >= br && tr !== blendedR) {
+      R = tr > blendedR ? R + 1 : R - 1;
     }
-    if (tg >= bg && tg !== overlayG) {
-      G = tg > overlayG ? G + 1 : G - 1;
+    if (tg >= bg && tg !== blendedG) {
+      G = tg > blendedG ? G + 1 : G - 1;
     }
-    if (tb >= bb && tb !== overlayB) {
-      B = tb > overlayB ? B + 1 : B - 1;
+    if (tb >= bb && tb !== blendedB) {
+      B = tb > blendedB ? B + 1 : B - 1;
     }
   }
 
@@ -1628,18 +1614,50 @@ function getAlphaColorP3(targetColor: string, backgroundColor: string) {
 
 // Important – I empirically discovered that this rounding is how the browser actually overlays
 // transparent RGB bits over each other. It does NOT round the whole result altogether.
-function overlayAlphaInSingleChannel(foreground: number, alpha: number, background: number) {
-  return Math.round(background * (1 - alpha)) + Math.round(foreground * alpha);
+function blendAlpha(foreground: number, alpha: number, background: number, round = true) {
+  if (round) {
+    return Math.round(background * (1 - alpha)) + Math.round(foreground * alpha);
+  }
+
+  return background * (1 - alpha) + foreground * alpha;
 }
 
-function apca(textColor: string, bgColor: string) {
-  const textRgba = new Color(textColor).srgb.map((c) => Math.round(c * 255));
-  const bgRgba = new Color(bgColor).srgb.map((c) => Math.round(c * 255));
+function apca(foreground: string, background: string) {
+  const foregroundColor = new Color(foreground);
+  const backgroundColor = new Color(background);
 
-  textRgba[3] = new Color(textColor).alpha;
-  bgRgba[3] = new Color(bgColor).alpha;
+  const getLc = (foregroundY: number, backgroundY: number) =>
+    Math.abs(+(+APCAcontrast(foregroundY, backgroundY)).toFixed(1));
 
-  return Math.abs(+(+calcAPCA(textRgba as any, bgRgba as any)).toFixed(1));
+  if (foregroundColor.space.id === 'p3') {
+    const [fr, fg, fb] = foregroundColor.to('p3').coords;
+    const [br, bg, bb] = backgroundColor.to('p3').coords;
+    const fa = foregroundColor.alpha;
+
+    const [blendedR, blendedG, blendedB] = [
+      blendAlpha(fr, fa, br, false),
+      blendAlpha(fg, fa, bg, false),
+      blendAlpha(fb, fa, bb, false),
+    ];
+
+    const foregroundY = displayP3toY([blendedR, blendedG, blendedB]);
+    const backgroundY = displayP3toY([br, bg, bb]);
+    return getLc(foregroundY, backgroundY);
+  }
+
+  const [fr, fg, fb] = foregroundColor.to('srgb').coords.map((c) => Math.round(c * 255));
+  const [br, bg, bb] = backgroundColor.to('srgb').coords.map((c) => Math.round(c * 255));
+  const fa = foregroundColor.alpha;
+
+  const [blendedR, blendedG, blendedB] = [
+    blendAlpha(fr, fa, br, false),
+    blendAlpha(fg, fa, bg, false),
+    blendAlpha(fb, fa, bb, false),
+  ];
+
+  const foregroundY = sRGBtoY([blendedR, blendedG, blendedB]);
+  const backgroundY = sRGBtoY([br, bg, bb]);
+  return getLc(foregroundY, backgroundY);
 }
 
 function toHex(color: Color | string) {
