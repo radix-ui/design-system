@@ -206,6 +206,15 @@ export default function Colors() {
         })
       );
     }
+
+    return () => {
+      colors.forEach((color) =>
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
+          nextElement.style.removeProperty(`--colors-${color}${step}`);
+          nextElement.style.removeProperty(`--colors-${color}A${step}`);
+        })
+      );
+    };
   }, [p3]);
 
   React.useEffect(() => {
@@ -1534,11 +1543,7 @@ function Palette({ showAlphaScales = false }: { showAlphaScales: boolean }) {
                     document.body.style.backgroundColor === thisColor ? '' : thisColor;
                   document.body.style.backgroundColor = newColor;
                 }}
-              >
-                <Box
-                  css={{ marginLeft: 'auto', width: '50%', height: '100%', bc: `$${color}${i}-p3` }}
-                />
-              </Box>
+              />
             ))}
 
             {showAlphaScales && <Box />}

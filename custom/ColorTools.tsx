@@ -1,5 +1,4 @@
 import React from 'react';
-import chroma from 'chroma-js';
 import bezier from 'bezier-easing';
 import { Box } from '../components/Box';
 import { Flex } from '../components/Flex';
@@ -19,6 +18,7 @@ import {
 import { darkTheme as darkThemeClassName } from '../stitches.config';
 import { colors, getHiContrast, grayBackground, loContrasts } from '../pages/colors';
 import { APCAcontrast, calcAPCA, displayP3toY, sRGBtoY } from '../apca-w3';
+import Color from 'colorjs.io';
 
 const steps = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'] as const;
 
@@ -462,7 +462,6 @@ export function ColorTools() {
             defaultCurve: [0.575, 0.18, 0.815, 0.61],
           }}
           darkThemeConfig={{
-            mixRatioStep10: 0.2,
             defaultCurve: [0.43, 0.51, 0.61, 0.47],
 
             step1: '#11131F',
@@ -474,6 +473,7 @@ export function ColorTools() {
               step11: 'color(display-p3 0.63 0.69 1)',
             },
 
+            mixRatioStep10: 0.2,
             scaleStartSaturationBoost: 1.8,
             // step8: 'hsl(226, 55%, 49%)',
             // scaleStartSaturationBoost: 2.6,
@@ -489,11 +489,13 @@ export function ColorTools() {
             defaultCurve: [0.48, 0.095, 0.795, 0.575],
           }}
           darkThemeConfig={{
-            step1: '#0F1118',
-            step2: 'hsl(216, 50%, 11.7%)',
-            step8: 'hsl(211, 85%, 48%)',
-            mixRatioStep10: 0.5,
-            defaultCurve: [0.355, 0.3, 0.735, 0.15],
+            step1: '#0d1520',
+            step2: 'hsl(216, 34%, 10.7%)',
+            step8: 'hsl(211, 60%, 45%)',
+            step11: 'hsl(205, 100%, 68%)',
+            mixRatioStep10: 0.35,
+            scaleStartSaturationBoost: 1.7,
+            defaultCurve: [0.305, 0.335, 0.605, 0.45],
           }}
         />
         <EditableScale
@@ -501,15 +503,26 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(185, 70%, 97.0%)',
             step8: 'hsl(189, 60%, 52.5%)',
+            step9: 'hsl(191, 100%, 39%)',
+            p3: {
+              step9: 'color(display-p3 0.19 0.64 0.82)',
+            },
             scaleStartSaturationBoost: 2,
             defaultCurve: [0.505, 0.13, 0.78, 0.565],
           }}
           darkThemeConfig={{
-            step1: '#0C1214',
-            step2: 'hsl(192, 50%, 8.8%)',
-            step8: 'hsl(192, 60%, 39%)',
+            step1: 'hsl(195, 35%, 7.2%)',
+            step2: '#111B1F',
+            step8: 'hsl(192, 80%, 34%)',
+            step9: 'hsl(191, 100%, 39%)',
+            step11: 'hsl(190, 85%, 50%)',
+            p3: {
+              step9: 'color(display-p3 0.19 0.64 0.82)',
+            },
             mixRatioStep10: 0.45,
-            defaultCurve: [0.36, 0.295, 0.735, 0.15],
+            // scaleStartSaturationBoost: 3,
+            scaleStartSaturationBoost: 1.6,
+            defaultCurve: [0.355, 0.37, 0.635, 0.435],
           }}
         />
         <EditableScale
@@ -521,11 +534,12 @@ export function ColorTools() {
             defaultCurve: [0.505, 0.13, 0.795, 0.55],
           }}
           darkThemeConfig={{
-            step1: '#0C1312',
-            step2: 'hsl(168, 55%, 7.8%)',
-            step8: 'hsl(173, 60%, 34%)',
+            step1: 'hsl(171, 23%, 6.8%)',
+            step2: 'hsl(171, 25%, 8.5%)',
+            step8: 'hsl(173, 60%, 31%)',
             mixRatioStep10: 0.45,
-            defaultCurve: [0.375, 0.3, 0.725, 0.15],
+            scaleStartSaturationBoost: 1.6,
+            defaultCurve: [0.42, 0.445, 0.485, 0.37],
           }}
         />
         <EditableScale
@@ -537,13 +551,12 @@ export function ColorTools() {
             defaultCurve: [0.505, 0.155, 0.78, 0.51],
           }}
           darkThemeConfig={{
-            step1: '#0C1311',
-            step2: 'hsl(153, 25%, 8.2%)',
-            step8: 'hsl(164, 50%, 32%)',
-            // step11: 'hsl(164, 100%, 42%)',
+            step1: 'hsl(155, 23%, 6.8%)',
+            step2: 'hsl(154, 25%, 8.4%)',
+            step8: 'hsl(164, 50%, 33%)',
             scaleStartSaturationBoost: 2,
             mixRatioStep10: 0.435,
-            defaultCurve: [0.425, 0.29, 0.67, 0.445],
+            defaultCurve: [0.355, 0.37, 0.605, 0.495],
           }}
         />
         <EditableScale
@@ -631,6 +644,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(191, 100%, 97.3%)',
             step8: 'hsl(193, 65%, 56%)',
+            step10: '#74DAF8',
             scaleStartSaturationBoost: 3,
             mixRatioStep10: 0.1,
             defaultCurve: [0.55, 0.17, 0.64, 0.44],
@@ -663,6 +677,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(85, 70%, 96.5%)',
             step8: 'hsl(76, 40%, 52%)',
+            step10: '#B0E64C',
             scaleStartSaturationBoost: 5,
             mixRatioStep10: 0.12,
             defaultCurve: [0.62, 0.195, 0.72, 0.565],
@@ -679,6 +694,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(53, 100%, 94%)',
             step8: 'hsl(46, 55%, 53%)',
+            step10: '#F9DA11',
             scaleStartSaturationBoost: 9,
             defaultCurve: [0.665, 0.14, 0.71, 0.49],
           }}
@@ -694,6 +710,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(39, 100%, 96.5%)',
             step8: 'hsl(35, 60%, 60.0%)',
+            step10: '#FFBA18',
             scaleStartSaturationBoost: 8,
             defaultCurve: [0.595, 0.165, 0.74, 0.615],
           }}
@@ -709,6 +726,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(22, 100%, 97.8%)',
             step8: 'hsl(19, 80%, 64.5%)',
+            step10: '#ED5F01',
             scaleStartSaturationBoost: 8,
             defaultCurve: [0.635, 0.175, 0.79, 0.56],
           }}
@@ -737,8 +755,8 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
   const [darkThemeCurve, setDarkThemeCurve] = React.useState(darkThemeConfig.defaultCurve);
 
   // Colors that we generated
-  const [lightColors, setLightColors] = React.useState<Color[]>([]);
-  const [darkColors, setDarkColors] = React.useState<Color[]>([]);
+  const [lightColors, setLightColors] = React.useState<GeneratedColor[]>([]);
+  const [darkColors, setDarkColors] = React.useState<GeneratedColor[]>([]);
 
   // Contrast ratios for a couple of colors
   const [contrasts, setContrasts] = React.useState<number[]>([]);
@@ -758,7 +776,8 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
   // Refs to current values
   const curveRef = React.useRef<Curve>(isDarkTheme ? darkThemeCurve : lightThemeCurve);
-  const generatedColorsRef = React.useRef<Color[]>([]);
+  const generatedColorsRef = React.useRef<GeneratedColor[]>([]);
+
   React.useEffect(() => {
     curveRef.current = isDarkTheme ? darkThemeCurve : lightThemeCurve;
     generatedColorsRef.current = isDarkTheme ? darkColors : lightColors;
@@ -797,13 +816,12 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       steps.forEach((n) => {
         if (config['step' + n]) {
           const index = newColors.findIndex((color) => color.name === name + n);
-
           if (newColors[index]) {
-            newColors[index].value = chroma(config['step' + n]).hex();
+            newColors[index].value = toHex(config['step' + n]);
           } else {
             newColors.push({
               name: name + n,
-              value: chroma(config['step' + n]).hex(),
+              value: toHex(config['step' + n]),
             });
           }
         }
@@ -834,14 +852,10 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
           newColors.find((color) => color.name === `${name}${mixStep}`)?.value ??
           computedStyles.getPropertyValue(`--colors-${name}${mixStep}`);
 
-        const step10 = chroma.interpolate(
-          baseColor,
-          mixColor,
-          config.mixRatioStep10 ?? defaultMixRatioStep10,
-          'hcl'
-        );
+        const mixRatio = config.mixRatioStep10 ?? defaultMixRatioStep10;
+        const step10 = new Color(Color.mix(baseColor, mixColor, mixRatio, { space: 'lch' }));
 
-        newColors.push({ name: `${name}10`, value: step10.hex() });
+        newColors.push({ name: `${name}10`, value: toHex(step10) });
       }
 
       // Set alpha scales
@@ -917,8 +931,8 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       .map(Number);
 
     const p3Step11Y = step11ValueP3.length ? displayP3toY(step11ValueP3) : 0;
-    const step1Y = sRGBtoY(chroma(getValue('1')).rgb());
-    const step2Y = sRGBtoY(chroma(getValue('2')).rgb());
+    const step1Y = sRGBtoY(new Color(getValue('1')).srgb.map((c) => c * 255));
+    const step2Y = sRGBtoY(new Color(getValue('2')).srgb.map((c) => c * 255));
     const p3Step1Contrast = +Math.abs(p3Step11Y ? +APCAcontrast(p3Step11Y, step1Y) : 0).toFixed(1);
     const p3Step2Contrast = +Math.abs(p3Step11Y ? +APCAcontrast(p3Step11Y, step2Y) : 0).toFixed(1);
     const background = isDarkTheme ? computedStyles.getPropertyValue(`--colors-gray1`) : '#FFFFFF';
@@ -1043,7 +1057,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                     let value = computedStyle.getPropertyValue(`--colors-${color}${step}`);
 
                     if (value) {
-                      value = chroma(value).hex();
+                      value = toHex(value);
                       clipboard += `--${color}-${step}: ${value};\n`;
                     }
                   });
@@ -1052,7 +1066,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                     let value = computedStyle.getPropertyValue(`--colors-${color}A${step}`);
 
                     if (value) {
-                      value = chroma(value).hex();
+                      value = toHex(value);
                       clipboard += `--${color}-a${step}: ${value};\n`;
                     }
                   });
@@ -1069,7 +1083,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                     let value = computedStyle.getPropertyValue(`--colors-${color}${step}`);
 
                     if (value) {
-                      value = chroma(value).hex();
+                      value = toHex(value);
                       clipboard += `  ${color}${step}: '${value}',\n`;
                     }
                   });
@@ -1083,7 +1097,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                     let value = computedStyle.getPropertyValue(`--colors-${color}A${step}`);
 
                     if (value) {
-                      value = chroma(value).hex();
+                      value = toHex(value);
                       clipboard += `  ${color}A${step}: '${value}',\n`;
                     }
                   });
@@ -1104,35 +1118,6 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                   clipboard += `};\n\n`;
                 }
 
-                //   if (format === 'js') {
-                //     const scaleName =
-                //       parent.getAttribute('data-editable-scale')! + (showAlphaValues ? 'A' : '');
-                //     const colorCodes = Array.from((element as HTMLElement).childNodes)
-                //       .map((child) => '  ' + child.textContent + '\n')
-                //       .join('');
-                //     const codeToCopy = `export const ${scaleName} = {\n` + colorCodes + `};\n\n`;
-
-                //     clipboard = clipboard + codeToCopy;
-                //   }
-
-                //   if (format === 'css') {
-                //     // + (showAlphaValues ? 'A' : '')
-                //     const codeToCopy = Array.from((element as HTMLElement).childNodes)
-                //       .map(
-                //         (child) =>
-                //           '--' +
-                //           child.textContent
-                //             ?.replace(/(A?\d)/, '-$1')
-                //             .replace('A', 'a')
-                //             .replace(/'/g, '')
-                //             .replace(',', ';') +
-                //           '\n'
-                //       )
-                //       .join('');
-
-                //     clipboard = clipboard + codeToCopy;
-                //   }
-
                 // Show check icon for a moment after copying
                 parent
                   .querySelector('[data-code-button]')!
@@ -1147,7 +1132,6 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
               // Remove redundant newline
               clipboard = clipboard.replace(/\n\n$/m, '\n');
-
               navigator.clipboard.writeText(clipboard);
               return;
             }
@@ -1229,7 +1213,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                   }}
                 >
                   {nameToShow}
-                  {step}: '{chroma(valueToShow).hex()}',
+                  {step}: '{toHex(valueToShow)}',
                 </Text>
               );
             })}
@@ -1461,9 +1445,10 @@ type ScaleSpec = {
   lumCurve: Curve;
 };
 
-type Color = {
+type GeneratedColor = {
   name: string;
   value: string;
+  // valueP3: string;
 };
 
 function generateColors({
@@ -1474,7 +1459,7 @@ function generateColors({
   hueCurve,
   chromaCurve,
   lumCurve,
-}: ScaleSpec): Color[] {
+}: ScaleSpec): GeneratedColor[] {
   function generateNumberOfSteps(curve: Curve) {
     const array: number[] = [];
     for (const key in Array.from(Array(stepsCount).keys())) {
@@ -1489,17 +1474,13 @@ function generateColors({
 
   const indexOffset = 2;
 
-  const startColor = chroma(start);
-  const endColor = chroma(end);
+  const startColor = new Color(start);
+  const endColor = new Color(end);
 
-  const hclHueStart = startColor.hcl()[0];
-  const hslHueStart = startColor.hsl()[0];
-  const chrStart = startColor.hcl()[1] * 100;
-  const lumStart = startColor.hcl()[2] * 100;
-  const hclHueEnd = endColor.hcl()[0];
-  const hslHueEnd = endColor.hsl()[0];
-  const chrEnd = endColor.hcl()[1] * 100;
-  const lumEnd = endColor.hcl()[2] * 100;
+  const [lumStart, chrStart, lchHueStart] = startColor.lch;
+  const [lumEnd, chrEnd, lchHueEnd] = endColor.lch;
+  const hslHueStart = +startColor.to('hsl').coords[0];
+  const hslHueEnd = +endColor.to('hsl').coords[0];
 
   let lumArray = generateNumberOfSteps(lumCurve);
   let chrArray = generateNumberOfSteps(chromaCurve);
@@ -1512,18 +1493,18 @@ function generateColors({
 
   for (const index in lumArray) {
     const step = lumArray[index];
-    lumArrayAdjusted.push(distribute(step, [0, 1], [lumEnd * 0.01, lumStart * 0.01]));
+    lumArrayAdjusted.push(distribute(step, [0, 1], [lumEnd, lumStart]));
   }
 
   for (const index in chrArray) {
     const step = chrArray[index];
-    const chrStep = distribute(step, [0, 1], [chrStart * 0.01, chrEnd * 0.01]);
+    const chrStep = distribute(step, [0, 1], [chrStart, chrEnd]);
     chrArrayAdjusted.push(chrStep);
   }
 
   for (const index in hclHueArray) {
     const step = hclHueArray[index];
-    hclHueArrayAdjusted.push(distributeHue(step, [0, 1], [hclHueStart, hclHueEnd]));
+    hclHueArrayAdjusted.push(distributeHue(step, [0, 1], [lchHueStart, lchHueEnd]));
     hslHueArrayAdjusted.push(distributeHue(step, [0, 1], [hslHueStart, hslHueEnd]));
   }
 
@@ -1536,27 +1517,15 @@ function generateColors({
   hclHueArray = hclHueArrayAdjusted;
   hslHueArray = hslHueArrayAdjusted;
 
-  const colorMap: Color[] = [];
+  const colorMap: GeneratedColor[] = [];
 
   for (const key in lumArray) {
     const index = parseInt(key);
-
-    const params = {
-      hue: hclHueArray[index],
-      chroma: chrArray[index],
-      luminosity: lumArray[index],
-    };
-
-    let color = chroma(chroma.lch(params.luminosity, params.chroma, params.hue));
-    // Reduce hue drift from the hcl interpolation, mixing with the hsl value
-    color = color.set('hsl.h', (color.hsl()[0] + hslHueArray[index] * 2) / 3);
-
-    const colorObj: Color = {
+    const color = new Color('lch', [lumArray[index], chrArray[index], hclHueArray[index]]);
+    colorMap.push({
       name: `${name}${index + indexOffset}`,
-      value: color.hex(),
-    };
-
-    colorMap.push(colorObj);
+      value: toHex(color),
+    });
   }
 
   return colorMap;
@@ -1565,8 +1534,10 @@ function generateColors({
 // target = background * (1 - alpha) + foreground * alpha
 // alpha = (target - background) / (foreground - background)
 function getAlphaColor(targetColor: string, backgroundColor: string, debugColorName?: string) {
-  const [targetR, targetG, targetB] = chroma(targetColor).rgb();
-  const [backgroundR, backgroundG, backgroundB] = chroma(backgroundColor).rgb();
+  const [targetR, targetG, targetB] = new Color(targetColor).srgb.map((c) => Math.round(c * 255));
+  const [backgroundR, backgroundG, backgroundB] = new Color(backgroundColor).srgb.map((c) =>
+    Math.round(c * 255)
+  );
 
   // Is the background color lighter, RGB-wise, than target color?
   // Decide whether we want to add as little color or as much color as possible,
@@ -1630,7 +1601,7 @@ function getAlphaColor(targetColor: string, backgroundColor: string, debugColorN
     }
   }
 
-  return chroma.rgb(R, G, B).alpha(A).hex();
+  return toHex(`rgb(${R} ${G} ${B} / ${A})`);
 }
 
 // Important – I empirically discovered that this rounding is how the browser actually overlays
@@ -1640,5 +1611,19 @@ function overlayRgbBits(foreground: number, alpha: number, background: number) {
 }
 
 function apca(textColor: string, bgColor: string) {
-  return Math.abs(+(+calcAPCA(chroma(textColor).rgba(), chroma(bgColor).rgba())).toFixed(1));
+  const textRgba = new Color(textColor).srgb.map((c) => Math.round(c * 255));
+  const bgRgba = new Color(bgColor).srgb.map((c) => Math.round(c * 255));
+
+  textRgba[3] = new Color(textColor).alpha;
+  bgRgba[3] = new Color(bgColor).alpha;
+
+  return Math.abs(+(+calcAPCA(textRgba as any, bgRgba as any)).toFixed(1));
+}
+
+function toHex(color: Color | string) {
+  if (color instanceof Color) {
+    return color.to('srgb').toString({ format: 'hex' });
+  }
+
+  return new Color(color).to('srgb').toString({ format: 'hex' });
 }
