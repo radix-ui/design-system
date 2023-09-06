@@ -804,8 +804,8 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
       const newColors = generateColors({
         name,
-        start: config.step2 ?? getCssVariable(`--colors-${name}2`) ?? '#000000',
-        end: config.step8 ?? getCssVariable(`--colors-${name}8`) ?? '#000000',
+        start: config.step2 ?? getCssVariable(`--colors-${name}2`),
+        end: config.step8 ?? getCssVariable(`--colors-${name}8`),
         stepsCount: 7,
         hueCurve,
         chromaCurve,
@@ -815,8 +815,12 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       // Normal steps
       steps.forEach((n) => {
         const index = newColors.findIndex((color) => color.name === name + n);
-        let sRgbValue: string = config['step' + n] ?? getCssVariable(`--colors-${name}${n}`);
-        let p3Value: string = config.p3?.['step' + n] ?? sRgbValue;
+
+        let sRgbValue: string =
+          config['step' + n] ?? newColors[index]?.value ?? getCssVariable(`--colors-${name}${n}`);
+
+        let p3Value: string =
+          config.p3?.['step' + n] ?? newColors[index]?.valueP3 ?? toHex(sRgbValue);
 
         // Generate step 10 if it's not coming from the config
         if (n === '10') {
