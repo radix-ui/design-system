@@ -914,12 +914,6 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
       return getCssVariable(`--colors-${name}${step}`) || '#00000000';
     };
 
-    const step11ValueP3 = getValue('A11-p3')
-      .replace(/color\(display-p3 |\)/g, '')
-      .split(' ')
-      .filter(Boolean)
-      .map(Number);
-
     const background = isDarkTheme ? getCssVariable(`--colors-gray1`) : '#FFFFFF';
 
     const newContrasts = [
@@ -1028,8 +1022,14 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
             // Toggle all and copy color codes for all scales on the Command key
             if (event.metaKey) {
+              const outputJs = (document.querySelector(
+                '[data-output-js]'
+              ) as HTMLInputElement | null)?.checked;
+
+              const useP3 = (document.querySelector('[data-use-p3]') as HTMLInputElement | null)
+                ?.checked;
+
               let clipboard = '';
-              let format: 'js' | 'css' = 'css';
 
               const computedStyle = getComputedStyle(document.body);
 
@@ -1037,29 +1037,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                 const parent = element.closest('[data-editable-scale]')!;
                 const color = parent.getAttribute('data-editable-scale')!;
 
-                if (format === 'css') {
-                  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
-                    let value = computedStyle.getPropertyValue(`--colors-${color}${step}`);
-
-                    if (value) {
-                      value = toHex(value);
-                      clipboard += `--${color}-${step}: ${value};\n`;
-                    }
-                  });
-
-                  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach((step) => {
-                    let value = computedStyle.getPropertyValue(`--colors-${color}A${step}`);
-
-                    if (value) {
-                      value = toHex(value);
-                      clipboard += `--${color}-a${step}: ${value};\n`;
-                    }
-                  });
-
-                  clipboard += `\n`;
-                }
-
-                if (format === 'js') {
+                if (outputJs) {
                   clipboard += isDarkTheme
                     ? `export const ${color}Dark = {\n`
                     : `export const ${color} = {\n`;
@@ -1101,6 +1079,39 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                   });
 
                   clipboard += `};\n\n`;
+                  clipboard += isDarkTheme
+                    ? `export const ${color}DarkP3A = {\n`
+                    : `export const ${color}P3A = {\n`;
+
+                  steps.forEach((n) => {
+                    let value = computedStyle.getPropertyValue(`--colors-${color}A${n}-p3`);
+
+                    if (value) {
+                      clipboard += `  ${color}${n}: '${value}',\n`;
+                    }
+                  });
+
+                  clipboard += `};\n\n`;
+                } else {
+                  steps.forEach((n) => {
+                    const name = useP3 ? `--colors-${color}${n}-p3` : `--colors-${color}${n}`;
+                    const value = computedStyle.getPropertyValue(name);
+
+                    if (value) {
+                      clipboard += `--${color}-${n}: ${value};\n`;
+                    }
+                  });
+
+                  steps.forEach((n) => {
+                    const name = useP3 ? `--colors-${color}A${n}-p3` : `--colors-${color}A${n}`;
+                    const value = computedStyle.getPropertyValue(name);
+
+                    if (value) {
+                      clipboard += `--${color}-a${n}: ${value};\n`;
+                    }
+                  });
+
+                  clipboard += `\n`;
                 }
 
                 // Show check icon for a moment after copying
@@ -1183,7 +1194,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                 ? `--colors-${name}A${n}`
                 : `--colors-${name}${n}`;
               const valueToShow = getCssVariable(variableName);
-              const nameToShow = showAlphaValues ? `${name}A` : name;
+              const nameToShow = showAlphaValues ? `--${name}-a${n}` : `--${name}-${n}`;
 
               return (
                 <Text
@@ -1197,7 +1208,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                     lineHeight: '25px',
                   }}
                 >
-                  {nameToShow + n}: '{valueToShow}',
+                  {nameToShow}: {valueToShow};
                 </Text>
               );
             })}

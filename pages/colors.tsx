@@ -169,6 +169,7 @@ export default function Colors() {
   const [blur, setBlur] = useLocalStorage('colors-blur', false);
   const [gap, setGap] = useLocalStorage('colors-gap', false);
   const [p3, setP3] = useLocalStorage('colors-p3', false);
+  const [outputJs, setOutputJs] = useLocalStorage('colors-output-js', false);
 
   // No SSR please
   if (typeof window === 'undefined') {
@@ -310,8 +311,15 @@ export default function Colors() {
             >
               Show alpha scales
             </Checkbox>
-            <Checkbox defaultChecked={p3} onChange={(e) => setP3(e.target.checked)}>
+            <Checkbox data-use-p3 defaultChecked={p3} onChange={(e) => setP3(e.target.checked)}>
               Use P3 colors
+            </Checkbox>
+            <Checkbox
+              data-output-js
+              defaultChecked={outputJs}
+              onChange={(e) => setOutputJs(e.target.checked)}
+            >
+              Output JS
             </Checkbox>
           </Box>
         </Container>
