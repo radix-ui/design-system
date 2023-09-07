@@ -237,14 +237,20 @@ export default function Colors() {
 
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      const top = window.scrollY;
+
       if (event.key === 'd' && event.metaKey) {
         event.preventDefault();
         document.getElementById('dark-theme')?.querySelector('label')?.click();
+        // Enforce scroll position, as it gets reset sometimes
+        scrollTo({ top });
       }
 
       if (event.key === 'p' && event.metaKey) {
         event.preventDefault();
         document.getElementById('use-p3')?.querySelector('label')?.click();
+        // Enforce scroll position, as it gets reset sometimes
+        scrollTo({ top });
       }
     };
 
@@ -254,7 +260,15 @@ export default function Colors() {
 
   return (
     <>
-      <Section size="3" css={{ py: '$7', ml: sidebarWidth, overflowY: 'scroll', height: '100vh' }}>
+      <Section
+        size="3"
+        css={{
+          py: '$7',
+          ml: sidebarWidth,
+          // overflowY: 'scroll',
+          minHeight: '100vh',
+        }}
+      >
         <Container size="3" css={{ mb: '$5' }}>
           <Box>
             <Checkbox defaultChecked={palette} onChange={(e) => setPalette(e.target.checked)}>

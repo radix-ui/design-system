@@ -18,14 +18,14 @@ svg {
   vertical-align: middle;
 }
 
-html,
+/* html,
 body,
 #root,
 #__next,
 #__next > div,
 .theme-0 {
   height: 100%;
-}
+} */
 
 #__next {
   position: relative;
