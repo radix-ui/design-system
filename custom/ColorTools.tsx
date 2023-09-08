@@ -250,7 +250,7 @@ export function ColorTools() {
             step8: 'hsl(10, 65%, 71%)',
             scaleStartSaturationBoost: 3,
             mixRatioStep10: 0.38,
-            defaultCurve: [0.55, 0.225, 0.74, 0.525],
+            defaultCurve: [0.515, 0.295, 0.74, 0.52],
           }}
           darkThemeConfig={{
             step1: '#181111',
@@ -342,7 +342,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(322, 100%, 98.5%)',
             step8: 'hsl(322, 60%, 72.2%)',
-            scaleStartSaturationBoost: 1.2,
+            scaleStartSaturationBoost: 1.8,
             mixRatioStep10: 0.5,
             defaultCurve: [0.61, 0.27, 0.715, 0.5],
           }}
@@ -364,7 +364,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(297, 100%, 98.6%)',
             step8: 'hsl(292, 48%, 70.9%)',
-            scaleStartSaturationBoost: 1.2,
+            scaleStartSaturationBoost: 1.9,
             mixRatioStep10: 0.5,
             defaultCurve: [0.64, 0.29, 0.715, 0.495],
           }}
@@ -384,7 +384,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(280, 100%, 99.0%)',
             step8: 'hsl(272, 60%, 73.5%)',
-            scaleStartSaturationBoost: 1.2,
+            scaleStartSaturationBoost: 1.9,
             mixRatioStep10: 0.45,
             defaultCurve: [0.635, 0.3, 0.755, 0.485],
           }}
@@ -408,7 +408,7 @@ export function ColorTools() {
             step2: 'hsl(252, 100%, 99.0%)',
             step8: 'hsl(252, 68%, 76.2%)',
             mixRatioStep10: 0.42,
-            scaleStartSaturationBoost: 1.2,
+            scaleStartSaturationBoost: 1.9,
             defaultCurve: [0.69, 0.31, 0.76, 0.525],
           }}
           darkThemeConfig={{
@@ -429,7 +429,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(238, 100%, 99%)',
             step8: 'hsl(238, 74%, 77.5%)',
-            scaleStartSaturationBoost: 1.2,
+            scaleStartSaturationBoost: 2,
             mixRatioStep10: 0.4,
             defaultCurve: [0.575, 0.21, 0.8, 0.565],
           }}
@@ -453,7 +453,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(226, 100%, 98.7%)',
             step8: 'hsl(226, 76%, 74.5%)',
-            scaleStartSaturationBoost: 1.2,
+            scaleStartSaturationBoost: 2.5,
             mixRatioStep10: 0.4,
             defaultCurve: [0.575, 0.18, 0.815, 0.61],
           }}
@@ -477,7 +477,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(207, 100%, 98%)',
             step8: 'hsl(205.6, 82%, 65.4%)',
-            scaleStartSaturationBoost: 1.9,
+            scaleStartSaturationBoost: 2.6,
             mixRatioStep10: 0.4,
             defaultCurve: [0.48, 0.095, 0.795, 0.575],
           }}
@@ -501,7 +501,7 @@ export function ColorTools() {
             step2: 'hsl(185, 70%, 97.0%)',
             step8: 'hsl(189, 60%, 52.5%)',
             step9: 'hsl(191, 100%, 39%)',
-            scaleStartSaturationBoost: 2,
+            scaleStartSaturationBoost: 2.5,
             defaultCurve: [0.505, 0.13, 0.78, 0.565],
           }}
           darkThemeConfig={{
@@ -850,8 +850,8 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
 
       const newColors = generateColors({
         name,
-        start: config.step2 ?? getCssVariable(`--colors-${name}2`),
-        end: config.step8 ?? getCssVariable(`--colors-${name}8`),
+        start: config.p3?.step2 ?? config.step2 ?? getCssVariable(`--colors-${name}2`),
+        end: config.p3?.step8 ?? config.step8 ?? getCssVariable(`--colors-${name}8`),
         stepsCount: 7,
         hueCurve,
         chromaCurve,
@@ -1559,8 +1559,7 @@ function generateColors({
     colorMap.push({
       name: `${name}${index + indexOffset}`,
       value: toHex(color),
-      // Double conversion to minimise differences between sRGB and P3 versions without good reason
-      valueP3: toP3(toHex(color)),
+      valueP3: toP3(color),
     });
   }
 
