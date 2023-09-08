@@ -521,9 +521,9 @@ function Buttons() {
         Buttons & TextFields
       </Text>
 
-      <Grid css={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: '$5' }}>
+      <Grid css={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: '$5', mx: '-$9' }}>
         {colors.map((color) => (
-          <Box key={color} css={{ '&[class] * + *': { ml: '$2', verticalAlign: 'top' } }}>
+          <Box key={color} css={{ '&[class] * + *': { ml: '$2', verticalAlign: 'middle' } }}>
             <Button
               css={{
                 fontWeight: 500,
@@ -570,6 +570,31 @@ function Buttons() {
             >
               {color}
             </Button>
+
+            <Flex
+              align="center"
+              css={{ display: 'inline-flex', gap: 6, color: `$${color}11`, fontSize: 13 }}
+            >
+              <Box css={{ borderRadius: 8, width: 8, height: 8, bc: `$colors$${color}8` }} />
+              Status
+            </Flex>
+
+            <Flex
+              align="center"
+              css={{
+                display: 'inline-flex',
+                gap: 6,
+                color: `$${color}11`,
+                fontSize: 12,
+                py: 4,
+                px: 6,
+                borderRadius: 100,
+                backgroundColor: `$${color}A3`,
+              }}
+            >
+              <Box css={{ borderRadius: 8, width: 8, height: 8, bc: `$colors$${color}A8` }} />
+              Status
+            </Flex>
           </Box>
         ))}
       </Grid>

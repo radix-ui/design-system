@@ -127,7 +127,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(0, 0%, 97.5%)',
             step8: 'hsl(0, 0%, 73.2%)',
-            defaultCurve: [0.625, 0.455, 0.875, 0.405],
+            defaultCurve: [0.525, 0.48, 0.785, 0.44],
           }}
           darkThemeConfig={{
             // step1: '#181818',
@@ -145,7 +145,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(280, 23%, 98%)',
             step8: 'hsl(250, 11%, 75.5%)',
-            defaultCurve: [0.64, 0.47, 0.905, 0.47],
+            defaultCurve: [0.525, 0.49, 0.785, 0.44],
           }}
           darkThemeConfig={{
             // step1: '#191719',
@@ -161,7 +161,8 @@ export function ColorTools() {
         <EditableScale
           name="slate"
           lightThemeConfig={{
-            defaultCurve: [0.65, 0.47, 0.905, 0.47],
+            // defaultCurve: [0.65, 0.47, 0.905, 0.47],
+            defaultCurve: [0.575, 0.525, 0.74, 0.385],
           }}
           darkThemeConfig={{
             // step1: '#141416',
@@ -171,7 +172,7 @@ export function ColorTools() {
             step2: '#18191b',
             step8: 'hsl(210, 8%, 38.2%)',
             step11: 'hsl(218, 7%, 70.8%)',
-            defaultCurve: [0.295, 0.325, 0.765, 0.325],
+            defaultCurve: [0.555, 0.57, 0.745, 0.235],
             mixRatioStep10: 0.2,
 
             // GitHub
@@ -197,7 +198,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(155, 17%, 97.3%)',
             step8: 'hsl(155, 3%, 73%)',
-            defaultCurve: [0.665, 0.45, 0.865, 0.42],
+            defaultCurve: [0.54, 0.47, 0.765, 0.435],
           }}
           darkThemeConfig={{
             step1: '#101211',
@@ -214,7 +215,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(110, 17%, 97.6%)',
             step8: 'hsl(110, 3%, 73%)',
-            defaultCurve: [0.64, 0.45, 0.885, 0.465],
+            defaultCurve: [0.545, 0.48, 0.79, 0.46],
           }}
           darkThemeConfig={{
             step1: '#111210',
@@ -232,7 +233,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(50, 9%, 97.5%)',
             step8: 'hsl(50, 5%, 72.5%)',
-            defaultCurve: [0.65, 0.45, 0.875, 0.48],
+            defaultCurve: [0.48, 0.43, 0.805, 0.46],
           }}
           darkThemeConfig={{
             step1: '#111110',
@@ -247,10 +248,11 @@ export function ColorTools() {
           name="tomato"
           lightThemeConfig={{
             step2: 'hsl(10, 90%, 98.3%)',
-            step8: 'hsl(10, 65%, 71%)',
-            scaleStartSaturationBoost: 3,
+            step8: 'hsl(10, 75%, 70.5%)',
+            step11: 'hsl(10, 82%, 45%)',
+            scaleStartSaturationBoost: 2.8,
             mixRatioStep10: 0.38,
-            defaultCurve: [0.515, 0.295, 0.74, 0.52],
+            defaultCurve: [0.51, 0.305, 0.715, 0.53],
           }}
           darkThemeConfig={{
             step1: '#181111',
@@ -271,10 +273,11 @@ export function ColorTools() {
           name="red"
           lightThemeConfig={{
             step2: 'hsl(359, 100%, 98.5%)',
-            step8: 'hsl(359, 60%, 73.5%)',
-            scaleStartSaturationBoost: 3.2,
+            step8: 'hsl(359, 70%, 74%)',
+            step11: 'hsl(358, 65%, 49%)',
+            scaleStartSaturationBoost: 3,
             mixRatioStep10: 0.38,
-            defaultCurve: [0.61, 0.265, 0.72, 0.52],
+            defaultCurve: [0.53, 0.34, 0.72, 0.52],
           }}
           darkThemeConfig={{
             // step1: '#151010',
@@ -297,7 +300,7 @@ export function ColorTools() {
             step8: 'hsl(348, 62%, 73.5%)',
             scaleStartSaturationBoost: 3,
             mixRatioStep10: 0.4,
-            defaultCurve: [0.6, 0.26, 0.71, 0.5],
+            defaultCurve: [0.52, 0.35, 0.71, 0.5],
           }}
           darkThemeConfig={{
             step1: '#191113',
@@ -318,11 +321,11 @@ export function ColorTools() {
         <EditableScale
           name="crimson"
           lightThemeConfig={{
-            step2: 'hsl(332, 100%, 98.5%)',
+            step2: 'hsl(332, 100%, 98.4%)',
             step8: 'hsl(336, 55%, 72.8%)',
             scaleStartSaturationBoost: 3.2,
             mixRatioStep10: 0.42,
-            defaultCurve: [0.6, 0.26, 0.71, 0.5],
+            defaultCurve: [0.575, 0.395, 0.71, 0.5],
           }}
           darkThemeConfig={{
             step1: '#191114',
@@ -340,11 +343,12 @@ export function ColorTools() {
         <EditableScale
           name="pink"
           lightThemeConfig={{
-            step2: 'hsl(322, 100%, 98.5%)',
+            step2: 'hsl(322, 100%, 98.3%)',
             step8: 'hsl(322, 60%, 72.2%)',
-            scaleStartSaturationBoost: 1.8,
+            step11: 'hsl(322, 65%, 46%)',
+            scaleStartSaturationBoost: 2,
             mixRatioStep10: 0.5,
-            defaultCurve: [0.61, 0.27, 0.715, 0.5],
+            defaultCurve: [0.455, 0.33, 0.71, 0.445],
           }}
           darkThemeConfig={{
             step1: '#191117',
@@ -362,11 +366,12 @@ export function ColorTools() {
         <EditableScale
           name="plum"
           lightThemeConfig={{
-            step2: 'hsl(297, 100%, 98.6%)',
+            step2: 'hsl(297, 100%, 98.3%)',
             step8: 'hsl(292, 48%, 70.9%)',
+            step11: 'hsl(292, 52%, 46%)',
             scaleStartSaturationBoost: 1.9,
             mixRatioStep10: 0.5,
-            defaultCurve: [0.64, 0.29, 0.715, 0.495],
+            defaultCurve: [0.48, 0.34, 0.74, 0.455],
           }}
           darkThemeConfig={{
             // step1: '#141014',
@@ -382,11 +387,12 @@ export function ColorTools() {
         <EditableScale
           name="purple"
           lightThemeConfig={{
-            step2: 'hsl(280, 100%, 99.0%)',
+            step2: 'hsl(280, 100%, 98.5%)',
             step8: 'hsl(272, 60%, 73.5%)',
+            step11: 'hsl(272, 51%, 51%)',
             scaleStartSaturationBoost: 1.9,
             mixRatioStep10: 0.45,
-            defaultCurve: [0.635, 0.3, 0.755, 0.485],
+            defaultCurve: [0.545, 0.335, 0.755, 0.485],
           }}
           darkThemeConfig={{
             // step1: '#131014',
@@ -405,11 +411,12 @@ export function ColorTools() {
         <EditableScale
           name="violet"
           lightThemeConfig={{
-            step2: 'hsl(252, 100%, 99.0%)',
+            step2: 'hsl(252, 100%, 98.7%)',
             step8: 'hsl(252, 68%, 76.2%)',
+            step11: 'hsl(252, 43%, 52%)',
             mixRatioStep10: 0.42,
             scaleStartSaturationBoost: 1.9,
-            defaultCurve: [0.69, 0.31, 0.76, 0.525],
+            defaultCurve: [0.62, 0.33, 0.76, 0.525],
           }}
           darkThemeConfig={{
             step1: '#14121F',
@@ -427,11 +434,12 @@ export function ColorTools() {
         <EditableScale
           name="iris"
           lightThemeConfig={{
-            step2: 'hsl(238, 100%, 99%)',
+            step2: 'hsl(238, 100%, 98.6%)',
             step8: 'hsl(238, 74%, 77.5%)',
+            step11: 'hsl(242, 50%, 55%)',
             scaleStartSaturationBoost: 2,
             mixRatioStep10: 0.4,
-            defaultCurve: [0.575, 0.21, 0.8, 0.565],
+            defaultCurve: [0.57, 0.26, 0.8, 0.565],
           }}
           darkThemeConfig={{
             step1: '#13131E',
@@ -451,11 +459,12 @@ export function ColorTools() {
         <EditableScale
           name="indigo"
           lightThemeConfig={{
-            step2: 'hsl(226, 100%, 98.7%)',
+            step2: 'hsl(226, 100%, 98.5%)',
             step8: 'hsl(226, 76%, 74.5%)',
+            step11: 'hsl(226, 56%, 50.5%)',
             scaleStartSaturationBoost: 2.5,
             mixRatioStep10: 0.4,
-            defaultCurve: [0.575, 0.18, 0.815, 0.61],
+            defaultCurve: [0.565, 0.25, 0.815, 0.61],
           }}
           darkThemeConfig={{
             step1: '#11131F',
@@ -475,11 +484,12 @@ export function ColorTools() {
         <EditableScale
           name="blue"
           lightThemeConfig={{
-            step2: 'hsl(207, 100%, 98%)',
+            step2: 'hsl(207, 100%, 97.8%)',
             step8: 'hsl(205.6, 82%, 65.4%)',
+            step11: 'hsl(208, 89%, 44%)',
             scaleStartSaturationBoost: 2.6,
             mixRatioStep10: 0.4,
-            defaultCurve: [0.48, 0.095, 0.795, 0.575],
+            defaultCurve: [0.445, 0.165, 0.785, 0.535],
           }}
           darkThemeConfig={{
             step1: '#0d1520',
@@ -498,11 +508,12 @@ export function ColorTools() {
         <EditableScale
           name="cyan"
           lightThemeConfig={{
-            step2: 'hsl(185, 70%, 97.0%)',
+            step2: 'hsl(185, 70%, 96.6%)',
             step8: 'hsl(189, 60%, 52.5%)',
             step9: 'hsl(191, 100%, 39%)',
+            step11: 'hsl(192, 83%, 34%)',
             scaleStartSaturationBoost: 2.5,
-            defaultCurve: [0.505, 0.13, 0.78, 0.565],
+            defaultCurve: [0.465, 0.175, 0.78, 0.565],
           }}
           darkThemeConfig={{
             step1: 'hsl(195, 39%, 7.2%)',
@@ -519,10 +530,11 @@ export function ColorTools() {
         <EditableScale
           name="teal"
           lightThemeConfig={{
-            step2: 'hsl(165, 70%, 96.7%)',
+            step2: 'hsl(165, 70%, 96.6%)',
             step8: 'hsl(172, 42%, 52.5%)',
-            scaleStartSaturationBoost: 3,
-            defaultCurve: [0.505, 0.13, 0.795, 0.55],
+            step11: 'hsl(172, 85%, 28%)',
+            scaleStartSaturationBoost: 3.5,
+            defaultCurve: [0.49, 0.185, 0.775, 0.55],
           }}
           darkThemeConfig={{
             step1: 'hsl(171, 23%, 6.8%)',
@@ -538,8 +550,9 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(151, 82%, 96.5%)',
             step8: 'hsl(164, 42%, 53.2%)',
-            scaleStartSaturationBoost: 2,
-            defaultCurve: [0.505, 0.155, 0.78, 0.51],
+            step11: 'hsl(164, 60%, 32%)',
+            scaleStartSaturationBoost: 2.4,
+            defaultCurve: [0.56, 0.255, 0.765, 0.52],
           }}
           darkThemeConfig={{
             step1: 'hsl(155, 23%, 6.8%)',
@@ -555,8 +568,9 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(136, 66%, 97%)',
             step8: 'hsl(151, 40%, 54.0%)',
-            scaleStartSaturationBoost: 1.6,
-            defaultCurve: [0.505, 0.13, 0.775, 0.51],
+            step11: 'hsl(154, 60%, 32%)',
+            scaleStartSaturationBoost: 2,
+            defaultCurve: [0.525, 0.24, 0.775, 0.51],
           }}
           darkThemeConfig={{
             step1: 'hsl(150, 20%, 7%)',
@@ -572,8 +586,9 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(120, 60%, 97%)',
             step8: 'hsl(131, 38%, 56.2%)',
-            scaleStartSaturationBoost: 1.6,
-            defaultCurve: [0.505, 0.13, 0.775, 0.51],
+            step11: 'hsl(132, 45%, 35%)',
+            scaleStartSaturationBoost: 1.8,
+            defaultCurve: [0.495, 0.21, 0.775, 0.51],
           }}
           darkThemeConfig={{
             step1: 'hsl(140, 20%, 7%)',
@@ -588,9 +603,9 @@ export function ColorTools() {
           name="brown"
           lightThemeConfig={{
             step2: 'hsl(30, 55%, 97.8%)',
-            step8: 'hsl(28, 50%, 63.1%)',
+            step8: 'hsl(28, 45%, 65.1%)',
             mixRatioStep10: 0.35,
-            defaultCurve: [0.58, 0.275, 0.71, 0.485],
+            defaultCurve: [0.47, 0.36, 0.73, 0.44],
           }}
           darkThemeConfig={{
             step1: 'hsl(38, 10%, 6.5%)',
@@ -604,9 +619,9 @@ export function ColorTools() {
           name="bronze"
           lightThemeConfig={{
             step2: 'hsl(18, 70%, 98.0%)',
-            step8: 'hsl(16, 25%, 66.5%)',
+            step8: 'hsl(16, 25%, 68%)',
             mixRatioStep10: 0.35,
-            defaultCurve: [0.58, 0.275, 0.725, 0.48],
+            defaultCurve: [0.485, 0.34, 0.745, 0.47],
           }}
           darkThemeConfig={{
             step1: '#141110',
@@ -620,9 +635,9 @@ export function ColorTools() {
           name="gold"
           lightThemeConfig={{
             step2: 'hsl(50, 50%, 96.6%)',
-            step8: 'hsl(36, 27%, 61.8%)',
+            step8: 'hsl(36, 24%, 64%)',
             mixRatioStep10: 0.35,
-            defaultCurve: [0.535, 0.24, 0.745, 0.485],
+            defaultCurve: [0.475, 0.33, 0.75, 0.46],
           }}
           darkThemeConfig={{
             step1: '#121211',
@@ -635,12 +650,14 @@ export function ColorTools() {
         <EditableScale
           name="sky"
           lightThemeConfig={{
-            step2: 'hsl(191, 100%, 97.3%)',
-            step8: 'hsl(193, 65%, 56%)',
+            step2: 'hsl(192, 100%, 96.7%)',
+            step8: 'hsl(198, 60%, 61%)',
             step10: '#74DAF8',
-            scaleStartSaturationBoost: 3,
+            step11: 'hsl(204, 70%, 43%)',
+            step12: 'hsl(208, 40%, 24%)',
+            scaleStartSaturationBoost: 4,
             mixRatioStep10: 0.1,
-            defaultCurve: [0.55, 0.17, 0.64, 0.44],
+            defaultCurve: [0.51, 0.215, 0.685, 0.45],
           }}
           darkThemeConfig={{
             step1: 'hsl(215, 41%, 8.5%)',
@@ -655,8 +672,9 @@ export function ColorTools() {
         <EditableScale
           name="mint"
           lightThemeConfig={{
-            step2: 'hsl(166, 88%, 96.6%)',
+            step2: 'hsl(166, 88%, 96.4%)',
             step8: 'hsl(168, 45%, 53%)',
+            step11: 'hsl(170, 60%, 32%)',
             scaleStartSaturationBoost: 3,
             mixRatioStep10: 0.08,
             defaultCurve: [0.52, 0.215, 0.635, 0.345],
@@ -675,12 +693,13 @@ export function ColorTools() {
         <EditableScale
           name="lime"
           lightThemeConfig={{
-            step2: 'hsl(85, 70%, 96.5%)',
-            step8: 'hsl(76, 40%, 52%)',
+            step2: 'hsl(75, 60%, 95.5%)',
+            step8: 'hsl(85, 40%, 52%)',
             step10: '#B0E64C',
+            step11: 'hsl(85, 45%, 33.5%)',
             scaleStartSaturationBoost: 5,
             mixRatioStep10: 0.12,
-            defaultCurve: [0.62, 0.195, 0.72, 0.565],
+            defaultCurve: [0.58, 0.215, 0.75, 0.56],
           }}
           darkThemeConfig={{
             step1: '#111304',
@@ -697,15 +716,21 @@ export function ColorTools() {
         <EditableScale
           name="yellow"
           lightThemeConfig={{
-            step2: 'hsl(53, 100%, 94%)',
-            step8: 'hsl(46, 55%, 53%)',
+            step2: 'hsl(53, 90%, 94.5%)',
+            step3: 'hsl(54, 100%, 83.5%)',
+            step4: 'hsl(52, 100%, 76%)',
+            // step3: 'hsl(53, 95%, 84%)',
+            step5: 'hsl(50, 100%, 70%)',
+            step6: 'hsl(48, 80%, 70%)',
+            step8: 'hsl(45, 65%, 58%)',
             step9: 'hsl(53 100% 58%)',
             step10: '#F9DA11',
+            step11: 'hsl(43 71% 33%)',
             p3: {
               step9: 'color(display-p3 1 0.92 0.22)',
             },
-            scaleStartSaturationBoost: 9,
-            defaultCurve: [0.665, 0.14, 0.71, 0.49],
+            scaleStartSaturationBoost: 5,
+            defaultCurve: [0.735, 0.36, 0.735, 0.44],
           }}
           darkThemeConfig={{
             step1: 'hsl(42, 28%, 6.2%)',
@@ -728,14 +753,15 @@ export function ColorTools() {
         <EditableScale
           name="amber"
           lightThemeConfig={{
-            step2: 'hsl(39, 100%, 96.5%)',
-            step8: 'hsl(35, 60%, 60.0%)',
+            step2: 'hsl(45, 100%, 95.5%)',
+            step8: 'hsl(38, 75%, 55.0%)',
             step10: '#FFBA18',
+            step11: 'hsl(38 100% 31.5%)',
             p3: {
               step9: 'color(display-p3 1 0.77 0.26)',
             },
             scaleStartSaturationBoost: 8,
-            defaultCurve: [0.595, 0.165, 0.74, 0.615],
+            defaultCurve: [0.43, 0.205, 0.635, 0.255],
           }}
           darkThemeConfig={{
             step1: 'hsl(36, 28%, 6.6%)',
@@ -756,15 +782,17 @@ export function ColorTools() {
         <EditableScale
           name="orange"
           lightThemeConfig={{
-            step2: 'hsl(22, 100%, 97.8%)',
-            step8: 'hsl(19, 80%, 64.5%)',
+            step2: 'hsl(32, 100%, 97%)',
+            step8: 'hsl(25, 80%, 63%)',
             step9: '#F76B15',
             step10: '#ED5F01',
+            step11: 'hsl(28 100% 37%)',
             p3: {
               step9: 'color(display-p3 0.9 0.45 0.2)',
+              // step11: 'color(display-p3 0.73 0.35 0)',
             },
-            scaleStartSaturationBoost: 8,
-            defaultCurve: [0.635, 0.175, 0.79, 0.56],
+            scaleStartSaturationBoost: 4,
+            defaultCurve: [0.535, 0.36, 0.625, 0.39],
           }}
           darkThemeConfig={{
             step1: 'hsl(24, 25%, 7.3%)',
