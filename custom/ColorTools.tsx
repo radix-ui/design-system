@@ -16,8 +16,8 @@ import {
   TextAlignJustifyIcon,
 } from '@radix-ui/react-icons';
 import { darkTheme as darkThemeClassName } from '../stitches.config';
-import { colors, getHiContrast, grayBackground, loContrasts } from '../pages/colors';
-import { APCAcontrast, calcAPCA, displayP3toY, sRGBtoY } from '../apca-w3';
+import { colors, getHiContrast, grayBackground } from '../pages/colors';
+import { APCAcontrast, displayP3toY, sRGBtoY } from '../apca-w3';
 import Color from 'colorjs.io';
 
 const steps = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'] as const;
@@ -396,7 +396,7 @@ export function ColorTools() {
             step11: 'hsl(272, 100%, 80.8%)',
             scaleStartSaturationBoost: 2.3,
             mixRatioStep10: 0.2,
-            defaultCurve: [0.375, 0.385, 0.615, 0.325],
+            defaultCurve: [0.37, 0.4, 0.67, 0.335],
             p3: {
               step11: 'color(display-p3 0.8 0.62 1)',
             },
@@ -407,22 +407,21 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(252, 100%, 99.0%)',
             step8: 'hsl(252, 68%, 76.2%)',
-            scaleStartSaturationBoost: 1.2,
             mixRatioStep10: 0.42,
+            scaleStartSaturationBoost: 1.2,
             defaultCurve: [0.69, 0.31, 0.76, 0.525],
           }}
           darkThemeConfig={{
-            // step1: '#121016',
             step1: '#14121F',
             step2: 'hsl(260, 27%, 11.6%)',
             step8: 'hsl(252, 38%, 52%)',
-            scaleStartSaturationBoost: 2.6,
             step11: 'hsl(253, 100%, 82.65%)',
-            defaultCurve: [0.4, 0.44, 0.605, 0.335],
-            mixRatioStep10: 0.2,
             p3: {
               step11: 'color(display-p3 0.72 0.65 1)',
             },
+            mixRatioStep10: 0.2,
+            scaleStartSaturationBoost: 2.6,
+            defaultCurve: [0.4, 0.44, 0.59, 0.355],
           }}
         />
         <EditableScale
@@ -446,7 +445,7 @@ export function ColorTools() {
 
             mixRatioStep10: 0.2,
             scaleStartSaturationBoost: 2.4,
-            defaultCurve: [0.4, 0.445, 0.6, 0.38],
+            defaultCurve: [0.385, 0.46, 0.555, 0.4],
           }}
         />
         <EditableScale
@@ -459,8 +458,6 @@ export function ColorTools() {
             defaultCurve: [0.575, 0.18, 0.815, 0.61],
           }}
           darkThemeConfig={{
-            defaultCurve: [0.43, 0.51, 0.61, 0.47],
-
             step1: '#11131F',
             step2: 'hsl(232, 30%, 11.4%)',
             step8: 'hsl(226, 50%, 49%)',
@@ -472,6 +469,7 @@ export function ColorTools() {
 
             mixRatioStep10: 0.2,
             scaleStartSaturationBoost: 2.2,
+            defaultCurve: [0.415, 0.52, 0.61, 0.47],
           }}
         />
         <EditableScale
@@ -1137,7 +1135,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                     let value = computedStyle.getPropertyValue(`--colors-${color}A${n}-p3`);
 
                     if (value) {
-                      clipboard += `  ${color}${n}: '${value}',\n`;
+                      clipboard += `  ${color}A${n}: '${value}',\n`;
                     }
                   });
 
@@ -1599,6 +1597,15 @@ function getAlphaColor(
   const alphaG = (tg - bg) / (desiredRgb - bg);
   const alphaB = (tb - bb) / (desiredRgb - bb);
 
+  const isPureGray = [alphaR, alphaG, alphaB].every((alpha) => alpha === alphaR);
+
+  // No need for precision gymnastics with pure grays, and we can get cleaner output
+  if (isPureGray) {
+    // Convert back to 0-1 values
+    const V = desiredRgb / rgbPrecision;
+    return [V, V, V, alphaR] as const;
+  }
+
   const clampRgb = (n: number) => (isNaN(n) ? 0 : Math.min(rgbPrecision, Math.max(0, n)));
   const clampA = (n: number) => (isNaN(n) ? 0 : Math.min(alphaPrecision, Math.max(0, n)));
 
@@ -1657,7 +1664,7 @@ function getAlphaColorSrgb(targetColor: string, backgroundColor: string) {
     255
   );
 
-  return new Color('srgb', [r, g, b], a).toString({ format: 'hex' });
+  return formatHex(new Color('srgb', [r, g, b], a).toString({ format: 'hex' }));
 }
 
 function getAlphaColorP3(targetColor: string, backgroundColor: string) {
@@ -1723,10 +1730,10 @@ function apca(foreground: string, background: string) {
 
 function toHex(color: Color | string) {
   if (color instanceof Color) {
-    return color.to('srgb').toString({ format: 'hex' });
+    return formatHex(color.to('srgb').toString({ format: 'hex' }));
   }
 
-  return new Color(color).to('srgb').toString({ format: 'hex' });
+  return formatHex(new Color(color).to('srgb').toString({ format: 'hex' }));
 }
 
 function toP3(color: Color | string) {
@@ -1735,6 +1742,27 @@ function toP3(color: Color | string) {
   }
 
   return new Color(color).to('p3').toString();
+}
+
+// Format shortform hex to longform
+function formatHex(str: string) {
+  if (!str.startsWith('#')) {
+    return str;
+  }
+
+  if (str.length === 4) {
+    // @ts-ignore
+    const [hash, r, g, b] = str;
+    return hash + r + r + g + g + b + b;
+  }
+
+  if (str.length === 5) {
+    // @ts-ignore
+    const [hash, r, g, b, a] = str;
+    return hash + r + r + g + g + b + b + a + a;
+  }
+
+  return str;
 }
 
 const getCssVariable = (name: string) => getComputedStyle(document.body).getPropertyValue(name);
