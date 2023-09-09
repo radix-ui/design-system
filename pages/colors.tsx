@@ -31,13 +31,10 @@ const sidebarWidth = 240;
 
 export const loContrasts = ['lime', 'yellow', 'amber', 'sky', 'mint'];
 
+export const grays = ['gray', 'mauve', 'slate', 'sage', 'olive', 'sand'];
+
 export const colors = [
-  'gray',
-  'mauve',
-  'slate',
-  'sage',
-  'olive',
-  'sand',
+  ...grays,
 
   'tomato',
   'red',

@@ -16,7 +16,7 @@ import {
   TextAlignJustifyIcon,
 } from '@radix-ui/react-icons';
 import { darkTheme as darkThemeClassName } from '../stitches.config';
-import { colors, getHiContrast, grayBackground } from '../pages/colors';
+import { colors, getHiContrast, grayBackground, grays } from '../pages/colors';
 import { APCAcontrast, displayP3toY, sRGBtoY } from '../apca-w3';
 import Color from 'colorjs.io';
 
@@ -172,7 +172,7 @@ export function ColorTools() {
             step2: '#18191b',
             step8: 'hsl(210, 8%, 38.2%)',
             step11: 'hsl(218, 7%, 70.8%)',
-            defaultCurve: [0.555, 0.57, 0.745, 0.235],
+            defaultCurve: [0.295, 0.325, 0.765, 0.325],
             mixRatioStep10: 0.2,
 
             // GitHub
@@ -280,7 +280,6 @@ export function ColorTools() {
             defaultCurve: [0.53, 0.34, 0.72, 0.52],
           }}
           darkThemeConfig={{
-            // step1: '#151010',
             step1: '#191111',
             step2: 'hsl(356, 25%, 10%)',
             step8: 'hsl(358, 45%, 49%)',
@@ -296,7 +295,7 @@ export function ColorTools() {
         <EditableScale
           name="ruby"
           lightThemeConfig={{
-            step2: 'hsl(350, 100%, 98.5%)',
+            step2: 'hsl(353, 100%, 98.5%)',
             step8: 'hsl(348, 62%, 73.5%)',
             scaleStartSaturationBoost: 3,
             mixRatioStep10: 0.4,
@@ -530,7 +529,7 @@ export function ColorTools() {
         <EditableScale
           name="teal"
           lightThemeConfig={{
-            step2: 'hsl(165, 70%, 96.6%)',
+            step2: 'hsl(160, 70%, 96.6%)',
             step8: 'hsl(172, 42%, 52.5%)',
             step11: 'hsl(172, 85%, 28%)',
             scaleStartSaturationBoost: 3.5,
@@ -548,10 +547,10 @@ export function ColorTools() {
         <EditableScale
           name="jade"
           lightThemeConfig={{
-            step2: 'hsl(151, 82%, 96.5%)',
+            step2: 'hsl(145, 82%, 96.5%)',
             step8: 'hsl(164, 42%, 53.2%)',
             step11: 'hsl(164, 60%, 32%)',
-            scaleStartSaturationBoost: 2.4,
+            scaleStartSaturationBoost: 2,
             defaultCurve: [0.56, 0.255, 0.765, 0.52],
           }}
           darkThemeConfig={{
@@ -653,8 +652,8 @@ export function ColorTools() {
             step2: 'hsl(192, 100%, 96.7%)',
             step8: 'hsl(198, 60%, 61%)',
             step10: '#74DAF8',
-            step11: 'hsl(204, 70%, 43%)',
-            step12: 'hsl(208, 40%, 24%)',
+            step11: 'hsl(196, 100%, 31%)',
+            step12: 'hsl(205, 50%, 22.5%)',
             scaleStartSaturationBoost: 4,
             mixRatioStep10: 0.1,
             defaultCurve: [0.51, 0.215, 0.685, 0.45],
@@ -725,9 +724,12 @@ export function ColorTools() {
             step8: 'hsl(45, 65%, 58%)',
             step9: 'hsl(53 100% 58%)',
             step10: '#F9DA11',
-            step11: 'hsl(43 71% 33%)',
+            // step11: 'hsl(44 100% 32.3%)',
+            // step11: 'hsl(44 100% 32.3%)',
+            step11: 'hsl(41 100% 31%)',
             p3: {
               step9: 'color(display-p3 1 0.92 0.22)',
+              step11: 'color(display-p3 0.6 0.44 0)',
             },
             scaleStartSaturationBoost: 5,
             defaultCurve: [0.735, 0.36, 0.735, 0.44],
@@ -756,9 +758,11 @@ export function ColorTools() {
             step2: 'hsl(45, 100%, 95.5%)',
             step8: 'hsl(38, 75%, 55.0%)',
             step10: '#FFBA18',
-            step11: 'hsl(38 100% 31.5%)',
+            // step11: 'hsl(38 100% 31.5%)',
+            step11: 'hsl(35 100% 33.6%)',
             p3: {
               step9: 'color(display-p3 1 0.77 0.26)',
+              step11: 'color(display-p3 0.64 0.4 0)',
             },
             scaleStartSaturationBoost: 8,
             defaultCurve: [0.43, 0.205, 0.635, 0.255],
@@ -786,10 +790,11 @@ export function ColorTools() {
             step8: 'hsl(25, 80%, 63%)',
             step9: '#F76B15',
             step10: '#ED5F01',
-            step11: 'hsl(28 100% 37%)',
+            // step11: 'hsl(28 100% 37%)',
+            step11: 'hsl(23, 100%, 40%)',
             p3: {
               step9: 'color(display-p3 0.9 0.45 0.2)',
-              // step11: 'color(display-p3 0.73 0.35 0)',
+              step11: 'color(display-p3 0.76 0.34 0)',
             },
             scaleStartSaturationBoost: 4,
             defaultCurve: [0.535, 0.36, 0.625, 0.39],
@@ -935,10 +940,16 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
             getCssVariable(`--colors-${darkThemeBackdrop}`)
           : '#ffffff';
 
+        // As of Sep 2023, Chrome renders Display P3 colors on text incorrectly (super desaturated)
+        // if they have an alpha channel. We skip P3 for non-gray 11’s and 12’s.
+        const isGray = grays.find((value) => target.name.includes(value));
+        const isTextColor = target.name.match(/11|12/);
+        const chromeBooo = !isGray && isTextColor;
+
         newColors.push({
           name: target.name.replace(/(\d)/, 'A$1'),
           value: getAlphaColorSrgb(target.value, backgroundValue),
-          valueP3: getAlphaColorP3(target.valueP3, backgroundValue),
+          valueP3: chromeBooo ? target.valueP3 : getAlphaColorP3(target.valueP3, backgroundValue),
         });
       });
 
