@@ -341,7 +341,7 @@ export function ColorTools() {
               step11: 'color(display-p3 1 0.56 0.66)',
             },
             scaleStartSaturationBoost: 3.2,
-            mixRatioStep10: 0.25,
+            mixRatioStep10: 0.2,
             defaultCurve: [0.4, 0.33, 0.65, 0.345],
           }}
         />
@@ -363,7 +363,7 @@ export function ColorTools() {
             p3: {
               step11: 'color(display-p3 1 0.535 0.78)',
             },
-            mixRatioStep10: 0.23,
+            mixRatioStep10: 0.2,
             scaleStartSaturationBoost: 2.9,
             defaultCurve: [0.415, 0.385, 0.55, 0.255],
           }}
@@ -384,7 +384,7 @@ export function ColorTools() {
             step2: 'hsl(301, 25%, 10%)',
             step8: 'hsl(292, 30%, 47%)',
             step11: 'hsl(292, 80%, 77.1%)',
-            mixRatioStep10: 0.22,
+            mixRatioStep10: 0.18,
             scaleStartSaturationBoost: 2.5,
             defaultCurve: [0.46, 0.46, 0.575, 0.265],
           }}
@@ -406,7 +406,7 @@ export function ColorTools() {
             step8: 'hsl(272, 33%, 50.5%)',
             step11: 'hsl(272, 100%, 80.8%)',
             scaleStartSaturationBoost: 2.3,
-            mixRatioStep10: 0.2,
+            mixRatioStep10: 0.18,
             defaultCurve: [0.355, 0.395, 0.67, 0.335],
             p3: {
               step11: 'color(display-p3 0.8 0.62 1)',
@@ -532,7 +532,7 @@ export function ColorTools() {
             step8: 'hsl(192, 80%, 34%)',
             step9: 'hsl(191, 100%, 39%)',
             step11: 'hsl(190, 75%, 60%)',
-            mixRatioStep10: 0.38,
+            mixRatioStep10: 0.3,
             // scaleStartSaturationBoost: 3,
             scaleStartSaturationBoost: 2.5,
             defaultCurve: [0.355, 0.37, 0.635, 0.435],
@@ -554,7 +554,7 @@ export function ColorTools() {
             step1: 'hsl(171, 23%, 6.8%)',
             step2: 'hsl(171, 23%, 9%)',
             step8: 'hsl(173, 60%, 31%)',
-            mixRatioStep10: 0.4,
+            mixRatioStep10: 0.27,
             scaleStartSaturationBoost: 2.2,
             defaultCurve: [0.37, 0.415, 0.495, 0.355],
           }}
@@ -576,7 +576,7 @@ export function ColorTools() {
             step2: 'hsl(154, 23%, 9%)',
             step8: 'hsl(164, 50%, 33%)',
             scaleStartSaturationBoost: 2.5,
-            mixRatioStep10: 0.42,
+            mixRatioStep10: 0.25,
             defaultCurve: [0.335, 0.38, 0.615, 0.47],
           }}
         />
@@ -596,7 +596,7 @@ export function ColorTools() {
             step1: 'hsl(150, 20%, 7%)',
             step2: 'hsl(150, 17%, 9%)',
             step8: 'hsl(151, 45%, 33.5%)',
-            mixRatioStep10: 0.42,
+            mixRatioStep10: 0.25,
             scaleStartSaturationBoost: 2,
             defaultCurve: [0.325, 0.39, 0.585, 0.495],
           }}
@@ -614,7 +614,7 @@ export function ColorTools() {
             step1: 'hsl(140, 20%, 7%)',
             step2: 'hsl(134, 11%, 9.2%)',
             step8: 'hsl(131, 32%, 36%)',
-            mixRatioStep10: 0.52,
+            mixRatioStep10: 0.3,
             scaleStartSaturationBoost: 1.7,
             defaultCurve: [0.28, 0.345, 0.53, 0.485],
           }}
@@ -624,14 +624,14 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(30, 55%, 97.8%)',
             step8: 'hsl(28, 45%, 65.1%)',
-            mixRatioStep10: 0.28,
+            mixRatioStep10: 0.3,
             defaultCurve: [0.47, 0.36, 0.73, 0.44],
           }}
           darkThemeConfig={{
             step1: 'hsl(38, 10%, 6.5%)',
             step2: 'hsl(22, 12%, 9.8%)',
             step8: 'hsl(28, 28%, 38%)',
-            mixRatioStep10: 0.35,
+            mixRatioStep10: 0.25,
             defaultCurve: [0.3, 0.28, 0.665, 0.365],
           }}
         />
@@ -640,14 +640,14 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(18, 70%, 98.0%)',
             step8: 'hsl(16, 25%, 68%)',
-            mixRatioStep10: 0.28,
+            mixRatioStep10: 0.34,
             defaultCurve: [0.485, 0.34, 0.745, 0.47],
           }}
           darkThemeConfig={{
             step1: '#141110',
             step2: 'hsl(17, 8%, 10%)',
             step8: 'hsl(18, 12%, 39%)',
-            mixRatioStep10: 0.35,
+            mixRatioStep10: 0.25,
             defaultCurve: [0.3, 0.28, 0.63, 0.405],
           }}
         />
@@ -663,7 +663,7 @@ export function ColorTools() {
             step1: '#121211',
             step2: 'hsl(43, 8%, 9.7%)',
             step8: 'hsl(36, 10%, 37.5%)',
-            mixRatioStep10: 0.35,
+            mixRatioStep10: 0.24,
             defaultCurve: [0.31, 0.275, 0.63, 0.405],
           }}
         />
@@ -683,7 +683,7 @@ export function ColorTools() {
             step1: 'hsl(215, 41%, 8.5%)',
             step2: 'hsl(215, 35%, 11%)',
             step8: 'hsl(200, 75%, 39%)',
-            step10: 'hsl(192, 100%, 82%)',
+            step10: 'hsl(192, 100%, 83%)',
             step11: 'hsl(200, 80%, 70%)',
             scaleStartSaturationBoost: 2.2,
             defaultCurve: [0.335, 0.325, 0.595, 0.475],
@@ -704,7 +704,7 @@ export function ColorTools() {
             step2: 'hsl(176, 20%, 9.2%)',
             // step8: 'hsl(170, 60%, 35%)',
             step8: 'hsl(170, 53%, 32.5%)',
-            step10: 'hsl(167, 80%, 80%)',
+            step10: 'hsl(167, 80%, 81%)',
             step11: 'hsl(167, 60%, 59%)',
             scaleStartSaturationBoost: 2.5,
             defaultCurve: [0.37, 0.415, 0.555, 0.405],
@@ -761,13 +761,13 @@ export function ColorTools() {
             step3: 'hsl(45, 80%, 9.2%)',
             step8: 'hsl(45, 60%, 32%)',
             step9: 'hsl(53 100% 58%)',
-            step10: 'hsl(60, 100%, 65%)',
+            step10: 'hsl(60, 100%, 67%)',
             // step11: 'hsl(48, 70%, 64%)',
             step11: 'hsl(53, 90%, 62%)',
             step12: '#f6eeb4',
             p3: {
               step9: 'color(display-p3 1 0.92 0.22)',
-              step10: 'color(display-p3 1 1 0.25)',
+              // step10: 'color(display-p3 1 1 0.35)',
             },
             scaleStartSaturationBoost: 5,
             defaultCurve: [0.4, 0.345, 0.61, 0.35],
@@ -793,7 +793,7 @@ export function ColorTools() {
             step2: 'hsl(36, 20%, 9%)',
             step3: 'hsl(36, 74%, 10.2%)',
             step8: 'hsl(36, 60%, 35%)',
-            step10: 'hsl(50, 100%, 51%)',
+            step10: 'hsl(50, 100%, 52%)',
             step11: '#FFCA16',
             p3: {
               step9: 'color(display-p3 1 0.77 0.26)',
@@ -826,11 +826,11 @@ export function ColorTools() {
             step3: 'hsl(28, 74%, 11.3%)',
             step8: 'hsl(23, 60%, 40%)',
             step9: '#F76B15',
-            step10: 'hsl(24 100% 58% / 1)',
+            step10: 'hsl(26, 100%, 56%)',
             step11: 'hsl(26, 100%, 67%)',
             p3: {
               step9: 'color(display-p3 0.9 0.45 0.2)',
-              step10: 'color(display-p3 1 0.51 0.2)',
+              step10: 'color(display-p3 0.98 0.51 0.23)',
               step11: 'color(display-p3 1 0.63 0.38)',
             },
             scaleStartSaturationBoost: 5,
