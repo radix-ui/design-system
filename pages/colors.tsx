@@ -236,11 +236,24 @@ export default function Colors() {
     const handleKeyDown = (event: KeyboardEvent) => {
       const top = window.scrollY;
 
+      if (event.key === 'a' && event.metaKey) {
+        if (event.target instanceof HTMLInputElement) {
+          return;
+        }
+
+        event.preventDefault();
+        document.getElementById('show-alpha')?.querySelector('label')?.click();
+        // Enforce scroll position, as it gets reset sometimes
+        scrollTo({ top });
+        setTimeout(() => document.activeElement?.blur());
+      }
+
       if (event.key === 'd' && event.metaKey) {
         event.preventDefault();
         document.getElementById('dark-theme')?.querySelector('label')?.click();
         // Enforce scroll position, as it gets reset sometimes
         scrollTo({ top });
+        setTimeout(() => document.activeElement?.blur());
       }
 
       if (event.key === 'p' && event.metaKey) {
@@ -248,6 +261,7 @@ export default function Colors() {
         document.getElementById('use-p3')?.querySelector('label')?.click();
         // Enforce scroll position, as it gets reset sometimes
         scrollTo({ top });
+        setTimeout(() => document.activeElement?.blur());
       }
     };
 
@@ -320,13 +334,15 @@ export default function Colors() {
               </Checkbox>
             </span>
             <Separator css={{ my: '$3' }} />
-            <Checkbox
-              data-alpha-scales
-              defaultChecked={alphaScales}
-              onChange={(e) => setAlphaScales(e.target.checked)}
-            >
-              Show alpha scales
-            </Checkbox>
+            <span id="show-alpha">
+              <Checkbox
+                data-alpha-scales
+                defaultChecked={alphaScales}
+                onChange={(e) => setAlphaScales(e.target.checked)}
+              >
+                Show alpha scales (⌘A)
+              </Checkbox>
+            </span>
             <span id="use-p3">
               <Checkbox data-use-p3 defaultChecked={p3} onChange={(e) => setP3(e.target.checked)}>
                 Use P3 colors (⌘P)
