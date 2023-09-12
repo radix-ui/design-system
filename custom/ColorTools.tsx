@@ -254,6 +254,7 @@ export function ColorTools() {
           name="tomato"
           lightThemeConfig={{
             step2: 'hsl(10, 90%, 98.3%)',
+            step3: 'hsl(10, 95%, 95.2%)',
             step8: 'hsl(10, 75%, 70.5%)',
             step11: 'hsl(10, 82%, 45%)',
             scaleStartSaturationBoost: 1.7,
@@ -279,6 +280,7 @@ export function ColorTools() {
           name="red"
           lightThemeConfig={{
             step2: 'hsl(359, 100%, 98.5%)',
+            step3: 'hsl(359, 93%, 96%)',
             step8: 'hsl(359, 70%, 74%)',
             step11: 'hsl(358, 65%, 49%)',
             scaleStartSaturationBoost: 1.9,
@@ -302,6 +304,7 @@ export function ColorTools() {
           name="ruby"
           lightThemeConfig={{
             step2: 'hsl(353, 100%, 98.5%)',
+            step3: 'hsl(352, 92%, 95.7%)',
             step8: 'hsl(348, 61%, 73.5%)',
             scaleStartSaturationBoost: 1.9,
             mixRatioStep10: 0.34,
@@ -327,6 +330,7 @@ export function ColorTools() {
           name="crimson"
           lightThemeConfig={{
             step2: 'hsl(342, 78%, 98.2%)',
+            step3: 'hsl(337, 92%, 95.8%)',
             step8: 'hsl(336, 55%, 72.8%)',
             scaleStartSaturationBoost: 2.3,
             mixRatioStep10: 0.32,
@@ -349,6 +353,7 @@ export function ColorTools() {
           name="pink"
           lightThemeConfig={{
             step2: 'hsl(324, 85%, 98.3%)',
+            step3: 'hsl(326, 92%, 95.9%)',
             step8: 'hsl(322, 52%, 72.2%)',
             step11: 'hsl(322, 65%, 46%)',
             scaleStartSaturationBoost: 1.6,
@@ -372,6 +377,7 @@ export function ColorTools() {
           name="plum"
           lightThemeConfig={{
             step2: 'hsl(297, 100%, 98.3%)',
+            step3: 'hsl(297, 90%, 95.9%)',
             step8: 'hsl(292, 48%, 70.9%)',
             step11: 'hsl(292, 45%, 44%)',
             scaleStartSaturationBoost: 1.9,
@@ -392,7 +398,8 @@ export function ColorTools() {
         <EditableScale
           name="purple"
           lightThemeConfig={{
-            step2: 'hsl(280, 100%, 98.5%)',
+            step2: 'hsl(280, 100%, 98.4%)',
+            step3: 'hsl(284, 90%, 96.4%)',
             step8: 'hsl(272, 60%, 73.5%)',
             step11: 'hsl(272, 45%, 49%)',
             scaleStartSaturationBoost: 1.9,
@@ -417,6 +424,7 @@ export function ColorTools() {
           name="violet"
           lightThemeConfig={{
             step2: 'hsl(252, 100%, 98.7%)',
+            step3: 'hsl(254, 90%, 97%)',
             step8: 'hsl(252, 68%, 76.2%)',
             step10: 'hsl(252, 50%, 53.5%)',
             step11: 'hsl(252, 43%, 52%)',
@@ -440,6 +448,7 @@ export function ColorTools() {
           name="iris"
           lightThemeConfig={{
             step2: 'hsl(238, 100%, 98.6%)',
+            step3: 'hsl(238, 90%, 97%)',
             step8: 'hsl(238, 74%, 77.5%)',
             step10: 'hsl(240, 55%, 56%)',
             step11: 'hsl(242, 50%, 55%)',
@@ -465,6 +474,7 @@ export function ColorTools() {
           name="indigo"
           lightThemeConfig={{
             step2: 'hsl(226, 100%, 98.5%)',
+            step3: 'hsl(223, 90%, 96.3%)',
             step8: 'hsl(226, 76%, 74.5%)',
             step10: 'hsl(226, 65%, 51.5%)',
             step11: 'hsl(226, 56%, 50.5%)',
@@ -490,6 +500,7 @@ export function ColorTools() {
           name="blue"
           lightThemeConfig={{
             step2: 'hsl(207, 100%, 97.8%)',
+            step3: 'hsl(204, 90%, 94.8%)',
             step8: 'hsl(205.6, 82%, 65.4%)',
             step11: 'hsl(208, 88%, 43%)',
             p3: {
@@ -517,6 +528,7 @@ export function ColorTools() {
           name="cyan"
           lightThemeConfig={{
             step2: 'hsl(185, 70%, 96.6%)',
+            step3: 'hsl(184, 70%, 93%)',
             step8: 'hsl(189, 60%, 52.5%)',
             step9: 'hsl(191, 100%, 39%)',
             step11: 'hsl(192, 81%, 33%)',
@@ -542,6 +554,7 @@ export function ColorTools() {
           name="teal"
           lightThemeConfig={{
             step2: 'hsl(160, 70%, 96.6%)',
+            step3: 'hsl(160, 70%, 92.7%)',
             step8: 'hsl(172, 42%, 52.5%)',
             step11: 'hsl(172, 100%, 26%)',
             p3: {
@@ -568,7 +581,7 @@ export function ColorTools() {
             p3: {
               step11: 'color(display-p3 0.15 0.5 0.37)',
             },
-            scaleStartSaturationBoost: 2,
+            scaleStartSaturationBoost: 1.8,
             defaultCurve: [0.56, 0.255, 0.765, 0.52],
           }}
           darkThemeConfig={{
@@ -589,7 +602,7 @@ export function ColorTools() {
             p3: {
               step11: 'color(display-p3 0.19 0.5 0.32)',
             },
-            scaleStartSaturationBoost: 2,
+            scaleStartSaturationBoost: 1.8,
             defaultCurve: [0.525, 0.24, 0.775, 0.51],
           }}
           darkThemeConfig={{
@@ -607,7 +620,7 @@ export function ColorTools() {
             step2: 'hsl(120, 60%, 97%)',
             step8: 'hsl(131, 38%, 56.2%)',
             step11: 'hsl(132, 50%, 33%)',
-            scaleStartSaturationBoost: 1.8,
+            scaleStartSaturationBoost: 1.6,
             defaultCurve: [0.495, 0.21, 0.775, 0.51],
           }}
           darkThemeConfig={{
@@ -625,6 +638,7 @@ export function ColorTools() {
             step2: 'hsl(30, 55%, 97.8%)',
             step8: 'hsl(28, 45%, 65.1%)',
             mixRatioStep10: 0.3,
+            scaleStartSaturationBoost: 0.8,
             defaultCurve: [0.47, 0.36, 0.73, 0.44],
           }}
           darkThemeConfig={{
@@ -641,6 +655,7 @@ export function ColorTools() {
             step2: 'hsl(18, 70%, 98.0%)',
             step8: 'hsl(16, 25%, 68%)',
             mixRatioStep10: 0.34,
+            scaleStartSaturationBoost: 0.8,
             defaultCurve: [0.485, 0.34, 0.745, 0.47],
           }}
           darkThemeConfig={{
@@ -654,9 +669,10 @@ export function ColorTools() {
         <EditableScale
           name="gold"
           lightThemeConfig={{
-            step2: 'hsl(50, 50%, 96.6%)',
+            step2: 'hsl(50, 45%, 96.6%)',
             step8: 'hsl(36, 24%, 64%)',
             mixRatioStep10: 0.28,
+            scaleStartSaturationBoost: 0.7,
             defaultCurve: [0.475, 0.33, 0.75, 0.46],
           }}
           darkThemeConfig={{
@@ -671,6 +687,7 @@ export function ColorTools() {
           name="sky"
           lightThemeConfig={{
             step2: 'hsl(192, 100%, 96.7%)',
+            step3: 'hsl(189, 93%, 93%)',
             step8: 'hsl(198, 60%, 61%)',
             step10: '#74DAF8',
             step11: 'hsl(196, 100%, 31%)',
@@ -693,6 +710,7 @@ export function ColorTools() {
           name="mint"
           lightThemeConfig={{
             step2: 'hsl(166, 88%, 96.4%)',
+            step3: 'hsl(167, 75%, 92%)',
             step8: 'hsl(168, 45%, 53%)',
             step11: 'hsl(170, 96%, 24%)',
             scaleStartSaturationBoost: 3,
@@ -714,6 +732,7 @@ export function ColorTools() {
           name="lime"
           lightThemeConfig={{
             step2: 'hsl(75, 60%, 95.5%)',
+            step3: 'hsl(77, 67%, 89.5%)',
             step8: 'hsl(85, 40%, 52%)',
             step10: '#B0E64C',
             step11: 'hsl(85, 45%, 33.5%)',
@@ -737,10 +756,10 @@ export function ColorTools() {
           name="yellow"
           lightThemeConfig={{
             step2: 'hsl(53, 90%, 94.5%)',
-            step3: 'hsl(54, 100%, 83.5%)',
-            step4: 'hsl(52, 100%, 76%)',
+            step3: 'hsl(54, 100%, 84.5%)',
+            step4: 'hsl(52, 100%, 78%)',
             // step3: 'hsl(53, 95%, 84%)',
-            step5: 'hsl(50, 100%, 70%)',
+            step5: 'hsl(50, 100%, 72%)',
             step6: 'hsl(48, 80%, 70%)',
             step8: 'hsl(45, 65%, 58%)',
             step9: 'hsl(53 100% 58%)',
@@ -777,6 +796,7 @@ export function ColorTools() {
           name="amber"
           lightThemeConfig={{
             step2: 'hsl(45, 100%, 95.5%)',
+            step3: 'hsl(48, 100%, 89%)',
             step8: 'hsl(38, 75%, 55.0%)',
             step10: '#FFBA18',
             // step11: 'hsl(38 100% 31.5%)',
@@ -808,6 +828,7 @@ export function ColorTools() {
           name="orange"
           lightThemeConfig={{
             step2: 'hsl(32, 100%, 97%)',
+            step3: 'hsl(36, 100%, 92%)',
             step8: 'hsl(25, 80%, 63%)',
             step9: '#F76B15',
             step10: '#ef5f00',
