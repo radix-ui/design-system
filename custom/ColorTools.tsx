@@ -264,6 +264,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: '#181111',
             step2: 'hsl(10, 24%, 9.8%)',
+            step3: 'hsl(5, 48%, 15%)',
             step8: 'hsl(10, 50%, 45%)',
             step11: 'hsl(12, 100%, 74.5%)',
             mixRatioStep10: 0.25,
@@ -290,6 +291,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: '#191111',
             step2: 'hsl(356, 25%, 10%)',
+            step3: 'hsl(350, 53%, 15%)',
             step8: 'hsl(358, 45%, 49%)',
             step11: 'hsl(2, 100%, 78.6%)',
             p3: {
@@ -313,6 +315,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: '#191113',
             step2: 'hsl(347, 19%, 10%)',
+            step3: 'hsl(345, 48%, 15.4%)',
             step8: 'hsl(348, 45%, 48.5%)',
             scaleStartSaturationBoost: 3.5,
 
@@ -339,6 +342,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: '#191114',
             step2: 'hsl(335, 24%, 10%)',
+            step3: 'hsl(333, 45%, 15.2%)',
             step8: 'hsl(336, 45%, 47.5%)',
             step11: 'hsl(345, 100%, 78.6%)',
             p3: {
@@ -363,6 +367,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: '#191117',
             step2: 'hsl(318, 30%, 10%)',
+            step3: 'hsl(315, 40%, 15.3%)',
             step8: 'hsl(322, 40%, 47%)',
             step11: 'hsl(327, 100%, 77.6%)',
             p3: {
@@ -388,6 +393,7 @@ export function ColorTools() {
             // step1: '#141014',
             step1: '#181118',
             step2: 'hsl(301, 25%, 10%)',
+            step3: 'hsl(299, 35%, 15.4%)',
             step8: 'hsl(292, 30%, 47%)',
             step11: 'hsl(292, 80%, 77.1%)',
             mixRatioStep10: 0.18,
@@ -410,6 +416,7 @@ export function ColorTools() {
             // step1: '#131014',
             step1: '#18111B',
             step2: 'hsl(280, 26%, 10.8%)',
+            step3: 'hsl(278, 36%, 17%)',
             step8: 'hsl(272, 33%, 50.5%)',
             step11: 'hsl(272, 100%, 80.8%)',
             scaleStartSaturationBoost: 2.3,
@@ -434,6 +441,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: '#14121F',
             step2: 'hsl(260, 27%, 11.5%)',
+            step3: 'hsl(256, 37%, 19.6%)',
             step8: 'hsl(252, 34%, 51%)',
             step11: 'hsl(253, 100%, 82.65%)',
             p3: {
@@ -458,6 +466,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: '#13131E',
             step2: 'hsl(243, 25%, 11.5%)',
+            step3: 'hsl(237, 38%, 20.5%)',
             // step8: 'hsl(240, 40%, 53%)',
             step8: 'hsl(241, 36.5%, 52%)',
             step11: 'hsl(246, 100%, 83.1%)',
@@ -484,6 +493,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: '#11131F',
             step2: 'hsl(232, 30%, 11.4%)',
+            step3: 'hsl(225, 50%, 19%)',
             step8: 'hsl(226, 45%, 48%)',
             step11: 'hsl(228, 100%, 81%)',
             step12: 'hsl(224, 100%, 92%)',
@@ -513,7 +523,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: '#0d1520',
             step2: 'hsl(216, 40%, 10.8%)',
-            step3: 'hsl(212, 70%, 15.8%)',
+            step3: 'hsl(212, 70%, 16.4%)',
             step8: 'hsl(211, 65%, 45%)',
             step11: 'hsl(210, 100%, 72%)',
             p3: {
@@ -541,6 +551,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: 'hsl(195, 39%, 7.2%)',
             step2: '#111B1F',
+            step3: 'hsl(194, 75%, 12.2%)',
             step8: 'hsl(192, 80%, 34%)',
             step9: 'hsl(191, 100%, 39%)',
             step11: 'hsl(190, 75%, 60%)',
@@ -566,6 +577,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: 'hsl(171, 23%, 6.8%)',
             step2: 'hsl(171, 23%, 9%)',
+            step3: 'hsl(174, 55%, 11.5%)',
             step8: 'hsl(173, 60%, 31%)',
             mixRatioStep10: 0.27,
             scaleStartSaturationBoost: 2.2,
@@ -587,6 +599,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: 'hsl(155, 23%, 6.8%)',
             step2: 'hsl(154, 23%, 9%)',
+            step3: 'hsl(158, 50%, 11.9%)',
             step8: 'hsl(164, 50%, 33%)',
             scaleStartSaturationBoost: 2.5,
             mixRatioStep10: 0.25,
@@ -608,6 +621,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: 'hsl(150, 20%, 7%)',
             step2: 'hsl(150, 17%, 9%)',
+            step3: 'hsl(153, 40%, 12.5%)',
             step8: 'hsl(151, 45%, 33.5%)',
             mixRatioStep10: 0.25,
             scaleStartSaturationBoost: 2,
@@ -626,6 +640,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: 'hsl(140, 20%, 7%)',
             step2: 'hsl(134, 11%, 9.2%)',
+            step3: 'hsl(133, 22%, 13.5%)',
             step8: 'hsl(131, 32%, 36%)',
             mixRatioStep10: 0.3,
             scaleStartSaturationBoost: 1.7,
@@ -646,6 +661,7 @@ export function ColorTools() {
             step2: 'hsl(22, 12%, 9.8%)',
             step8: 'hsl(28, 28%, 38%)',
             mixRatioStep10: 0.25,
+            scaleStartSaturationBoost: 0.8,
             defaultCurve: [0.3, 0.28, 0.665, 0.365],
           }}
         />
@@ -720,6 +736,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: 'hsl(176, 22%, 6.8%)',
             step2: 'hsl(176, 20%, 9.2%)',
+            step3: 'hsl(178, 65%, 10.5%)',
             // step8: 'hsl(170, 60%, 35%)',
             step8: 'hsl(170, 53%, 32.5%)',
             step10: 'hsl(167, 80%, 81%)',
@@ -777,7 +794,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: 'hsl(42, 28%, 6.2%)',
             step2: 'hsl(42, 20%, 8.6%)',
-            step3: 'hsl(45, 80%, 9.2%)',
+            step3: 'hsl(45, 80%, 9.7%)',
             step8: 'hsl(45, 60%, 32%)',
             step9: 'hsl(53 100% 58%)',
             step10: 'hsl(60, 100%, 67%)',
@@ -811,7 +828,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: 'hsl(36, 28%, 6.6%)',
             step2: 'hsl(36, 20%, 9%)',
-            step3: 'hsl(36, 74%, 10.2%)',
+            step3: 'hsl(36, 70%, 11%)',
             step8: 'hsl(36, 60%, 35%)',
             step10: 'hsl(50, 100%, 52%)',
             step11: '#FFCA16',
@@ -844,7 +861,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: 'hsl(24, 25%, 7.3%)',
             step2: 'hsl(28, 23%, 9%)',
-            step3: 'hsl(28, 74%, 11.3%)',
+            step3: 'hsl(28, 65%, 12.2%)',
             step8: 'hsl(23, 60%, 40%)',
             step9: '#F76B15',
             step10: 'hsl(26, 100%, 56%)',
