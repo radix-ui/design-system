@@ -502,8 +502,8 @@ export function ColorTools() {
             },
 
             mixRatioStep10: 0.2,
-            scaleStartSaturationBoost: 2.4,
-            defaultCurve: [0.405, 0.525, 0.605, 0.475],
+            scaleStartSaturationBoost: 2,
+            defaultCurve: [0.39, 0.495, 0.56, 0.5],
           }}
         />
         <EditableScale
