@@ -703,7 +703,7 @@ export function ColorTools() {
           name="sky"
           lightThemeConfig={{
             step2: 'hsl(192, 100%, 96.7%)',
-            step3: 'hsl(189, 93%, 93%)',
+            step3: 'hsl(189, 93%, 93.5%)',
             step8: 'hsl(198, 60%, 61%)',
             step10: '#74DAF8',
             step11: 'hsl(196, 100%, 31%)',
@@ -731,7 +731,7 @@ export function ColorTools() {
             step11: 'hsl(170, 96%, 24%)',
             scaleStartSaturationBoost: 3,
             mixRatioStep10: 0.08,
-            defaultCurve: [0.52, 0.215, 0.635, 0.345],
+            defaultCurve: [0.495, 0.25, 0.635, 0.345],
           }}
           darkThemeConfig={{
             step1: 'hsl(176, 22%, 6.8%)',
@@ -773,8 +773,8 @@ export function ColorTools() {
           name="yellow"
           lightThemeConfig={{
             step2: 'hsl(53, 90%, 94.5%)',
-            step3: 'hsl(54, 100%, 84.5%)',
-            step4: 'hsl(52, 100%, 78%)',
+            step3: 'hsl(54, 94%, 87.5%)',
+            step4: 'hsl(52, 95%, 79%)',
             // step3: 'hsl(53, 95%, 84%)',
             step5: 'hsl(50, 100%, 72%)',
             step6: 'hsl(48, 80%, 70%)',
@@ -814,6 +814,7 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(45, 100%, 95.5%)',
             step3: 'hsl(48, 100%, 89%)',
+            step4: 'hsl(48, 100%, 80.5%)',
             step8: 'hsl(38, 75%, 55.0%)',
             step10: '#FFBA18',
             // step11: 'hsl(38 100% 31.5%)',
