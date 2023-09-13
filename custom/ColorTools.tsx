@@ -333,7 +333,7 @@ export function ColorTools() {
           name="crimson"
           lightThemeConfig={{
             step2: 'hsl(342, 78%, 98.2%)',
-            step3: 'hsl(337, 92%, 95.8%)',
+            step3: 'hsl(342, 92%, 95.8%)',
             step8: 'hsl(336, 55%, 72.8%)',
             scaleStartSaturationBoost: 2.3,
             mixRatioStep10: 0.32,
@@ -357,7 +357,7 @@ export function ColorTools() {
           name="pink"
           lightThemeConfig={{
             step2: 'hsl(324, 85%, 98.3%)',
-            step3: 'hsl(326, 92%, 95.9%)',
+            step3: 'hsl(324, 92%, 95.9%)',
             step8: 'hsl(322, 52%, 72.2%)',
             step11: 'hsl(322, 65%, 46%)',
             scaleStartSaturationBoost: 1.6,
@@ -381,8 +381,8 @@ export function ColorTools() {
         <EditableScale
           name="plum"
           lightThemeConfig={{
-            step2: 'hsl(297, 100%, 98.3%)',
-            step3: 'hsl(297, 90%, 95.9%)',
+            step2: 'hsl(298, 100%, 98.3%)',
+            step3: 'hsl(297, 88%, 95.9%)',
             step8: 'hsl(292, 48%, 70.9%)',
             step11: 'hsl(292, 45%, 44%)',
             scaleStartSaturationBoost: 1.9,
@@ -405,7 +405,7 @@ export function ColorTools() {
           name="purple"
           lightThemeConfig={{
             step2: 'hsl(280, 100%, 98.4%)',
-            step3: 'hsl(284, 90%, 96.4%)',
+            step3: 'hsl(279, 92%, 96.4%)',
             step8: 'hsl(272, 60%, 73.5%)',
             step11: 'hsl(272, 45%, 49%)',
             scaleStartSaturationBoost: 1.9,
@@ -564,8 +564,8 @@ export function ColorTools() {
         <EditableScale
           name="teal"
           lightThemeConfig={{
-            step2: 'hsl(160, 70%, 96.6%)',
-            step3: 'hsl(160, 70%, 92.7%)',
+            step2: 'hsl(162, 70%, 96.6%)',
+            step3: 'hsl(164, 70%, 92.5%)',
             step8: 'hsl(172, 42%, 52.5%)',
             step11: 'hsl(172, 100%, 26%)',
             p3: {
@@ -631,7 +631,7 @@ export function ColorTools() {
         <EditableScale
           name="grass"
           lightThemeConfig={{
-            step2: 'hsl(120, 60%, 97%)',
+            step2: 'hsl(123, 60%, 97%)',
             step8: 'hsl(131, 38%, 56.2%)',
             step11: 'hsl(132, 50%, 33%)',
             scaleStartSaturationBoost: 1.6,
@@ -650,7 +650,7 @@ export function ColorTools() {
         <EditableScale
           name="brown"
           lightThemeConfig={{
-            step2: 'hsl(30, 55%, 97.8%)',
+            step2: 'hsl(30, 55%, 97.6%)',
             step8: 'hsl(28, 45%, 65.1%)',
             mixRatioStep10: 0.3,
             scaleStartSaturationBoost: 0.8,
@@ -668,7 +668,7 @@ export function ColorTools() {
         <EditableScale
           name="bronze"
           lightThemeConfig={{
-            step2: 'hsl(18, 70%, 98.0%)',
+            step2: 'hsl(18, 70%, 97.6%)',
             step8: 'hsl(16, 25%, 68%)',
             mixRatioStep10: 0.34,
             scaleStartSaturationBoost: 0.8,
@@ -702,8 +702,8 @@ export function ColorTools() {
         <EditableScale
           name="sky"
           lightThemeConfig={{
-            step2: 'hsl(192, 100%, 96.7%)',
-            step3: 'hsl(189, 93%, 93.5%)',
+            step2: 'hsl(193, 100%, 96.7%)',
+            step3: 'hsl(192, 93%, 93%)',
             step8: 'hsl(198, 60%, 61%)',
             step10: '#74DAF8',
             step11: 'hsl(196, 100%, 31%)',
@@ -772,7 +772,7 @@ export function ColorTools() {
         <EditableScale
           name="yellow"
           lightThemeConfig={{
-            step2: 'hsl(53, 90%, 94.5%)',
+            step2: 'hsl(53, 90%, 95%)',
             step3: 'hsl(54, 94%, 87.5%)',
             step4: 'hsl(52, 95%, 79%)',
             // step3: 'hsl(53, 95%, 84%)',
