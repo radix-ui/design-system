@@ -774,6 +774,8 @@ export function ColorTools() {
           lightThemeConfig={{
             step2: 'hsl(53, 90%, 95%)',
             step3: 'hsl(54, 94%, 87.5%)',
+            // step2: 'hsl(54, 100%, 96%)',
+            // step3: 'hsl(54, 100%, 89.5%)',
             step4: 'hsl(52, 95%, 79%)',
             // step3: 'hsl(53, 95%, 84%)',
             step5: 'hsl(50, 100%, 72%)',
