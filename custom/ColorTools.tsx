@@ -1886,26 +1886,26 @@ const getCssVariable = (name: string) => getComputedStyle(document.body).getProp
 //   '--ruby-2': '#fff7f8',
 //   '--crimson-2': '#fef7f9',
 //   '--pink-2': '#fef7fb',
-//   '--plum-2': '#fff6ff',
-//   '--purple-2': '#fcf7ff',
+//   '--plum-2': '#fdf7fd',
+//   '--purple-2': '#fbf7fe',
 //   '--violet-2': '#faf8ff',
 //   '--iris-2': '#f8f8ff',
 //   '--indigo-2': '#f7f9ff',
 //   '--blue-2': '#f4faff',
-//   '--cyan-2': '#f0fbfc',
-//   '--teal-2': '#f0fcf9',
-//   '--jade-2': '#effdf5',
-//   '--green-2': '#f2fcf5',
-//   '--grass-2': '#f3fcf3',
+//   '--cyan-2': '#f2fafb',
+//   '--teal-2': '#f3fbf9',
+//   '--jade-2': '#f4fbf7',
+//   '--green-2': '#f4fbf6',
+//   '--grass-2': '#f5fbf5',
 //   '--brown-2': '#fcf9f6',
 //   '--bronze-2': '#fdf7f5',
 //   '--gold-2': '#faf9f2',
-//   '--sky-2': '#eefbff',
-//   '--mint-2': '#eefefa',
-//   '--lime-2': '#f7faed',
-//   '--yellow-2': '#fefbe7',
-//   '--amber-2': '#fff9e8',
-//   '--orange-2': '#fff8f0',
+//   '--sky-2': '#f1fafd',
+//   '--mint-2': '#f2fbf9',
+//   '--lime-2': '#f8faf3',
+//   '--yellow-2': '#fefce9',
+//   '--amber-2': '#fefbe9',
+//   '--orange-2': '#fff7ed',
 // };
 
 // const lightMode2sP3 = {
@@ -1920,26 +1920,26 @@ const getCssVariable = (name: string) => getComputedStyle(document.body).getProp
 //   '--ruby-2': 'color(display-p3 0.9948 0.971 0.9737)',
 //   '--crimson-2': 'color(display-p3 0.9911 0.9689 0.9761)',
 //   '--pink-2': 'color(display-p3 0.9924 0.9695 0.9848)',
-//   '--plum-2': 'color(display-p3 0.9931 0.9671 0.9976)',
-//   '--purple-2': 'color(display-p3 0.9856 0.9687 0.9975)',
+//   '--plum-2': 'color(display-p3 0.9876 0.971 0.9897)',
+//   '--purple-2': 'color(display-p3 0.9828 0.971 0.9926)',
 //   '--violet-2': 'color(display-p3 0.9783 0.9742 0.9978)',
 //   '--iris-2': 'color(display-p3 0.9722 0.9729 0.9976)',
 //   '--indigo-2': 'color(display-p3 0.9712 0.9768 0.9979)',
 //   '--blue-2': 'color(display-p3 0.9604 0.9794 0.9979)',
-//   '--cyan-2': 'color(display-p3 0.9501 0.9844 0.9887)',
-//   '--teal-2': 'color(display-p3 0.9509 0.9883 0.976)',
-//   '--jade-2': 'color(display-p3 0.9468 0.9919 0.9623)',
-//   '--green-2': 'color(display-p3 0.9574 0.9885 0.9627)',
-//   '--grass-2': 'color(display-p3 0.9585 0.9868 0.9563)',
+//   '--cyan-2': 'color(display-p3 0.9548 0.9809 0.9842)',
+//   '--teal-2': 'color(display-p3 0.958 0.9831 0.9763)',
+//   '--jade-2': 'color(display-p3 0.9617 0.9831 0.9692)',
+//   '--green-2': 'color(display-p3 0.9632 0.9831 0.9674)',
+//   '--grass-2': 'color(display-p3 0.9662 0.9827 0.964)',
 //   '--brown-2': 'color(display-p3 0.9869 0.9764 0.9642)',
 //   '--bronze-2': 'color(display-p3 0.9887 0.9701 0.9605)',
 //   '--gold-2': 'color(display-p3 0.9804 0.9764 0.9531)',
-//   '--sky-2': 'color(display-p3 0.9435 0.984 0.9979)',
-//   '--mint-2': 'color(display-p3 0.944 0.9937 0.9812)',
-//   '--lime-2': 'color(display-p3 0.9709 0.9816 0.9328)',
-//   '--yellow-2': 'color(display-p3 0.9931 0.9849 0.9127)',
-//   '--amber-2': 'color(display-p3 0.9961 0.9783 0.9167)',
-//   '--orange-2': 'color(display-p3 0.9951 0.9729 0.9434)',
+//   '--sky-2': 'color(display-p3 0.9525 0.9797 0.9899)',
+//   '--mint-2': 'color(display-p3 0.957 0.9849 0.9773)',
+//   '--lime-2': 'color(display-p3 0.975 0.9804 0.9539)',
+//   '--yellow-2': 'color(display-p3 0.9945 0.9903 0.9217)',
+//   '--amber-2': 'color(display-p3 0.9938 0.9864 0.9214)',
+//   '--orange-2': 'color(display-p3 0.9943 0.9684 0.934)',
 // };
 
 // for (const color in lightMode2sSrgb) {
@@ -1950,110 +1950,133 @@ const getCssVariable = (name: string) => getComputedStyle(document.body).getProp
 //   console.log(color, getAlphaColorP3(lightMode2sP3[color], '#fff', 0.8));
 // }
 
-const darkMode2sSrgb = {
-  '--gray-2': '#191919',
-  '--mauve-2': '#1a191b',
-  '--slate-2': '#18191b',
-  '--sage-2': '#171918',
-  '--olive-2': '#181917',
-  '--sand-2': '#191918',
-  '--tomato-2': '#1f1513',
-  '--red-2': '#201314',
-  '--ruby-2': '#1e1517',
-  '--crimson-2': '#201318',
-  '--pink-2': '#21121d',
-  '--plum-2': '#201320',
-  '--purple-2': '#1e1423',
-  '--violet-2': '#1b1525',
-  '--iris-2': '#171625',
-  '--indigo-2': '#141726',
-  '--blue-2': '#111927',
-  '--cyan-2': '#111b1f',
-  '--teal-2': '#121c1b',
-  '--jade-2': '#121c18',
-  '--green-2': '#131b17',
-  '--grass-2': '#151a16',
-  '--brown-2': '#1c1816',
-  '--bronze-2': '#1c1917',
-  '--gold-2': '#1b1a17',
-  '--sky-2': '#121a26',
-  '--mint-2': '#131c1c',
-  '--lime-2': '#161913',
-  '--yellow-2': '#1a1812',
-  '--amber-2': '#1c1812',
-  '--orange-2': '#1c1712',
-};
+// const darkMode2sSrgb = {
+//   '--gray-2': '#191919',
+//   '--mauve-2': '#1a191b',
+//   '--slate-2': '#18191b',
+//   '--sage-2': '#171918',
+//   '--olive-2': '#181917',
+//   '--sand-2': '#191918',
+//   '--tomato-2': '#1f1513',
+//   '--red-2': '#201314',
+//   '--ruby-2': '#1e1517',
+//   '--crimson-2': '#201318',
+//   '--pink-2': '#21121d',
+//   '--plum-2': '#201320',
+//   '--purple-2': '#1e1423',
+//   '--violet-2': '#1b1525',
+//   '--iris-2': '#171625',
+//   '--indigo-2': '#141726',
+//   '--blue-2': '#111927',
+//   '--cyan-2': '#111b1f',
+//   '--teal-2': '#121c1b',
+//   '--jade-2': '#121c18',
+//   '--green-2': '#131b17',
+//   '--grass-2': '#151a16',
+//   '--brown-2': '#1c1816',
+//   '--bronze-2': '#1c1917',
+//   '--gold-2': '#1b1a17',
+//   '--sky-2': '#121a26',
+//   '--mint-2': '#131c1c',
+//   '--lime-2': '#161913',
+//   '--yellow-2': '#1a1812',
+//   '--amber-2': '#1c1812',
+//   '--orange-2': '#1c1712',
+// };
 
-const darkMode2sP3 = {
-  '--gray-2': 'color(display-p3 0.098 0.098 0.098)',
-  '--mauve-2': 'color(display-p3 0.1013 0.0982 0.1053)',
-  '--slate-2': 'color(display-p3 0.0948 0.0979 0.1051)',
-  '--sage-2': 'color(display-p3 0.0916 0.0978 0.0943)',
-  '--olive-2': 'color(display-p3 0.0948 0.0979 0.0909)',
-  '--sand-2': 'color(display-p3 0.098 0.098 0.0945)',
-  '--tomato-2': 'color(display-p3 0.1155 0.0839 0.0761)',
-  '--red-2': 'color(display-p3 0.1176 0.0771 0.0791)',
-  '--ruby-2': 'color(display-p3 0.1131 0.0825 0.0892)',
-  '--crimson-2': 'color(display-p3 0.1168 0.078 0.0952)',
-  '--pink-2': 'color(display-p3 0.1214 0.0727 0.1098)',
-  '--plum-2': 'color(display-p3 0.1176 0.0771 0.1212)',
-  '--purple-2': 'color(display-p3 0.1116 0.0814 0.1325)',
-  '--violet-2': 'color(display-p3 0.1013 0.0847 0.1418)',
-  '--iris-2': 'color(display-p3 0.0886 0.0863 0.1396)',
-  '--indigo-2': 'color(display-p3 0.0815 0.0886 0.1438)',
-  '--blue-2': 'color(display-p3 0.0719 0.0984 0.147)',
-  '--cyan-2': 'color(display-p3 0.0749 0.1048 0.1197)',
-  '--teal-2': 'color(display-p3 0.078 0.1096 0.1044)',
-  '--jade-2': 'color(display-p3 0.078 0.1096 0.0938)',
-  '--green-2': 'color(display-p3 0.0809 0.1044 0.0909)',
-  '--grass-2': 'color(display-p3 0.0858 0.1015 0.0877)',
-  '--brown-2': 'color(display-p3 0.1073 0.0954 0.0873)',
-  '--bronze-2': 'color(display-p3 0.106 0.0969 0.0926)',
-  '--gold-2': 'color(display-p3 0.104 0.1005 0.0904)',
-  '--sky-2': 'color(display-p3 0.078 0.1027 0.1447)',
-  '--mint-2': 'color(display-p3 0.0812 0.1094 0.1076)',
-  '--lime-2': 'color(display-p3 0.0884 0.0985 0.0754)',
-  '--yellow-2': 'color(display-p3 0.1014 0.0932 0.0715)',
-  '--amber-2': 'color(display-p3 0.1056 0.0941 0.0745)',
-  '--orange-2': 'color(display-p3 0.1071 0.0894 0.0717)',
-};
+// const darkMode2sP3 = {
+//   '--gray-2': 'color(display-p3 0.098 0.098 0.098)',
+//   '--mauve-2': 'color(display-p3 0.1013 0.0982 0.1053)',
+//   '--slate-2': 'color(display-p3 0.0948 0.0979 0.1051)',
+//   '--sage-2': 'color(display-p3 0.0916 0.0978 0.0943)',
+//   '--olive-2': 'color(display-p3 0.0948 0.0979 0.0909)',
+//   '--sand-2': 'color(display-p3 0.098 0.098 0.0945)',
+//   '--tomato-2': 'color(display-p3 0.1155 0.0839 0.0761)',
+//   '--red-2': 'color(display-p3 0.1176 0.0771 0.0791)',
+//   '--ruby-2': 'color(display-p3 0.1131 0.0825 0.0892)',
+//   '--crimson-2': 'color(display-p3 0.1168 0.078 0.0952)',
+//   '--pink-2': 'color(display-p3 0.1214 0.0727 0.1098)',
+//   '--plum-2': 'color(display-p3 0.1176 0.0771 0.1212)',
+//   '--purple-2': 'color(display-p3 0.1116 0.0814 0.1325)',
+//   '--violet-2': 'color(display-p3 0.1013 0.0847 0.1418)',
+//   '--iris-2': 'color(display-p3 0.0886 0.0863 0.1396)',
+//   '--indigo-2': 'color(display-p3 0.0815 0.0886 0.1438)',
+//   '--blue-2': 'color(display-p3 0.0719 0.0984 0.147)',
+//   '--cyan-2': 'color(display-p3 0.0749 0.1048 0.1197)',
+//   '--teal-2': 'color(display-p3 0.078 0.1096 0.1044)',
+//   '--jade-2': 'color(display-p3 0.078 0.1096 0.0938)',
+//   '--green-2': 'color(display-p3 0.0809 0.1044 0.0909)',
+//   '--grass-2': 'color(display-p3 0.0858 0.1015 0.0877)',
+//   '--brown-2': 'color(display-p3 0.1073 0.0954 0.0873)',
+//   '--bronze-2': 'color(display-p3 0.106 0.0969 0.0926)',
+//   '--gold-2': 'color(display-p3 0.104 0.1005 0.0904)',
+//   '--sky-2': 'color(display-p3 0.078 0.1027 0.1447)',
+//   '--mint-2': 'color(display-p3 0.0812 0.1094 0.1076)',
+//   '--lime-2': 'color(display-p3 0.0884 0.0985 0.0754)',
+//   '--yellow-2': 'color(display-p3 0.1014 0.0932 0.0715)',
+//   '--amber-2': 'color(display-p3 0.1056 0.0941 0.0745)',
+//   '--orange-2': 'color(display-p3 0.1071 0.0894 0.0717)',
+// };
 
-const graysBgsSrgb = {
-  '--gray-1': '#111111',
-  '--mauve-1': '#121113',
-  '--slate-1': '#111113',
-  '--sage-1': '#101211',
-  '--olive-1': '#111210',
-  '--sand-1': '#111110',
-};
+// const graysBgsSrgb = {
+//   '--gray-1': '#111111',
+//   '--mauve-1': '#121113',
+//   '--slate-1': '#111113',
+//   '--sage-1': '#101211',
+//   '--olive-1': '#111210',
+//   '--sand-1': '#111110',
+// };
 
-const graysBgsP3 = {
-  '--gray-1': 'color(display-p3 0.0667 0.0667 0.0667)',
-  '--mauve-1': 'color(display-p3 0.0699 0.0668 0.0739)',
-  '--slate-1': 'color(display-p3 0.0667 0.0667 0.0738)',
-  '--sage-1': 'color(display-p3 0.0642 0.0703 0.0669)',
-  '--olive-1': 'color(display-p3 0.0674 0.0705 0.0634)',
-  '--sand-1': 'color(display-p3 0.0667 0.0667 0.0631)',
-};
+// const graysBgsP3 = {
+//   '--gray-1': 'color(display-p3 0.0667 0.0667 0.0667)',
+//   '--mauve-1': 'color(display-p3 0.0699 0.0668 0.0739)',
+//   '--slate-1': 'color(display-p3 0.0667 0.0667 0.0738)',
+//   '--sage-1': 'color(display-p3 0.0642 0.0703 0.0669)',
+//   '--olive-1': 'color(display-p3 0.0674 0.0705 0.0634)',
+//   '--sand-1': 'color(display-p3 0.0667 0.0667 0.0631)',
+// };
 
-for (const color in darkMode2sSrgb) {
-  console.log(
-    color,
-    getAlphaColorSrgb(
-      darkMode2sSrgb[color],
-      graysBgsSrgb[color.replace('-2', '-1')] ?? graysBgsSrgb['--gray-1'],
-      0.5
-    )
-  );
-}
+// for (const color in darkMode2sSrgb) {
+//   console.log(
+//     color,
+//     getAlphaColorSrgb(
+//       darkMode2sSrgb[color],
+//       graysBgsSrgb[color.replace('-2', '-1')] ?? graysBgsSrgb['--gray-1'],
+//       0.5
+//     )
+//   );
+// }
 
-for (const color in darkMode2sP3) {
-  console.log(
-    color,
-    getAlphaColorP3(
-      darkMode2sP3[color],
-      graysBgsP3[color.replace('-2', '-1')] ?? graysBgsP3['--gray-1'],
-      0.5
-    )
-  );
-}
+// for (const color in darkMode2sP3) {
+//   console.log(
+//     color,
+//     getAlphaColorP3(
+//       darkMode2sP3[color],
+//       graysBgsP3[color.replace('-2', '-1')] ?? graysBgsP3['--gray-1'],
+//       0.5
+//     )
+//   );
+// }
+
+// // translucents
+// for (const color in darkMode2sSrgb) {
+//   console.log(
+//     color,
+//     getAlphaColorSrgb(
+//       darkMode2sSrgb[color],
+//       graysBgsSrgb[color.replace('-2', '-1')] ?? graysBgsSrgb['--gray-1'],
+//       0.7
+//     )
+//   );
+// }
+
+// for (const color in darkMode2sP3) {
+//   console.log(
+//     color,
+//     getAlphaColorP3(
+//       darkMode2sP3[color],
+//       graysBgsP3[color.replace('-2', '-1')] ?? graysBgsP3['--gray-1'],
+//       0.7
+//     )
+//   );
+// }
