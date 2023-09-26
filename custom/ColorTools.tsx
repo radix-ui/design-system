@@ -775,14 +775,15 @@ export function ColorTools() {
             // step2: 'hsl(53, 90%, 95%)',
             // step3: 'hsl(54, 94%, 87.5%)',
             // step2: '#fffef0',
-            step2: 'hsl(56, 100%, 94%)',
+            // step2: 'hsl(56, 100%, 94%)',
+            step2: 'hsl(56, 90%, 95.5%)',
             step3: 'hsl(56, 100%, 86%)',
             step4: 'hsl(53, 100%, 79%)',
             // step3: 'hsl(53, 95%, 84%)',
             step5: 'hsl(50, 100%, 72%)',
             step6: 'hsl(48, 85%, 68%)',
             step7: 'hsl(46, 70%, 65%)',
-            step8: 'hsl(45, 65%, 58%)',
+            step8: 'hsl(45, 65%, 53%)',
             step9: 'hsl(53 100% 58%)',
             step10: '#ffdc00',
             // step11: 'hsl(44 100% 32.3%)',
@@ -816,7 +817,7 @@ export function ColorTools() {
         <EditableScale
           name="amber"
           lightThemeConfig={{
-            step2: 'hsl(53, 100%, 95%)',
+            step2: 'hsl(53, 90%, 95.5%)',
             step3: 'hsl(52, 100%, 88%)',
             step4: 'hsl(50, 100%, 80.5%)',
             step8: 'hsl(38, 75%, 55.0%)',
@@ -849,7 +850,7 @@ export function ColorTools() {
         <EditableScale
           name="orange"
           lightThemeConfig={{
-            step2: 'hsl(32, 100%, 97%)',
+            step2: 'hsl(32, 100%, 96.5%)',
             step3: 'hsl(36, 100%, 92%)',
             step8: 'hsl(25, 80%, 63%)',
             step9: '#F76B15',
