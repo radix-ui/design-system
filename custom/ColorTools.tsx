@@ -19,6 +19,7 @@ import { darkTheme as darkThemeClassName } from '../stitches.config';
 import { colors, getHiContrast, grayBackground, grays } from '../pages/colors';
 import { APCAcontrast, displayP3toY, sRGBtoY } from '../apca-w3';
 import Color from 'colorjs.io';
+import { Button } from '../components/Button';
 
 const steps = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'] as const;
 
@@ -136,7 +137,7 @@ export function ColorTools() {
             step1: '#111111',
             step2: '#191919',
             step8: 'hsl(0, 0%, 37.5%)',
-            step11: 'hsl(0, 0%, 70%)',
+            step11: '#b4b4b4',
             mixRatioStep10: 0.2,
             defaultCurve: [0.31, 0.335, 0.71, 0.31],
           }}
@@ -174,7 +175,7 @@ export function ColorTools() {
             step1: '#111113',
             step2: '#18191b',
             step8: 'hsl(210, 8%, 38.2%)',
-            step11: 'hsl(218, 7%, 70.8%)',
+            step11: 'hsl(218, 7%, 71%)',
             defaultCurve: [0.295, 0.325, 0.765, 0.325],
             mixRatioStep10: 0.2,
 
@@ -208,7 +209,7 @@ export function ColorTools() {
             step1: '#101211',
             step2: '#171918',
             step8: 'hsl(155, 3.5%, 37%)',
-            step11: 'hsl(153, 5%, 69%)',
+            step11: 'hsl(153, 5%, 69.5%)',
             scaleStartSaturationBoost: 0.5,
             mixRatioStep10: 0.2,
             defaultCurve: [0.28, 0.31, 0.755, 0.34],
@@ -245,7 +246,7 @@ export function ColorTools() {
             step1: '#111110',
             step2: '#191918',
             step8: 'hsl(46, 4%, 37%)',
-            step11: 'hsl(50, 5%, 68.9%)',
+            step11: 'hsl(50, 5%, 69.3%)',
             mixRatioStep10: 0.2,
             defaultCurve: [0.28, 0.31, 0.755, 0.34],
           }}
@@ -315,7 +316,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: '#191113',
             step2: 'hsl(347, 19%, 10%)',
-            step3: 'hsl(345, 48%, 15.4%)',
+            step3: 'hsl(345, 48%, 15.3%)',
             step8: 'hsl(348, 45%, 48.5%)',
             step11: 'hsl(355, 100%, 79%)',
             p3: {
@@ -324,7 +325,7 @@ export function ColorTools() {
 
             scaleStartSaturationBoost: 3.5,
             mixRatioStep10: 0.23,
-            defaultCurve: [0.345, 0.285, 0.7, 0.385],
+            defaultCurve: [0.345, 0.28, 0.7, 0.385],
           }}
         />
         <EditableScale
@@ -414,7 +415,7 @@ export function ColorTools() {
           darkThemeConfig={{
             // step1: '#131014',
             step1: '#18111B',
-            step2: 'hsl(280, 26%, 10.8%)',
+            step2: 'hsl(280, 26%, 10.9%)',
             step3: 'hsl(278, 36%, 17%)',
             step8: 'hsl(272, 33%, 50.5%)',
             step11: 'hsl(272, 100%, 80.8%)',
@@ -439,8 +440,8 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             step1: '#14121F',
-            step2: 'hsl(260, 27%, 11.5%)',
-            step3: 'hsl(256, 37%, 19.6%)',
+            step2: 'hsl(260, 27%, 11.45%)',
+            step3: 'hsl(256, 37%, 19.3%)',
             step8: 'hsl(252, 34%, 51%)',
             step11: 'hsl(253, 100%, 82.65%)',
             p3: {
@@ -465,7 +466,7 @@ export function ColorTools() {
           darkThemeConfig={{
             step1: '#13131E',
             step2: 'hsl(243, 25%, 11.5%)',
-            step3: 'hsl(237, 38%, 20.5%)',
+            step3: 'hsl(237, 38%, 20.4%)',
             // step8: 'hsl(240, 40%, 53%)',
             step8: 'hsl(241, 36.5%, 52%)',
             step11: 'hsl(246, 100%, 83.1%)',
@@ -549,7 +550,7 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             step1: 'hsl(195, 39%, 7.2%)',
-            step2: '#111B1F',
+            step2: 'oklch(0.2143 0.018 224.6)',
             step3: 'hsl(194, 75%, 12.2%)',
             step8: 'hsl(192, 80%, 34%)',
             step9: 'hsl(191, 100%, 39%)',
@@ -575,7 +576,7 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             step1: 'hsl(171, 23%, 6.8%)',
-            step2: 'hsl(171, 23%, 9%)',
+            step2: 'oklch(0.2164 0.017 188.47)',
             step3: 'hsl(174, 55%, 11.5%)',
             step8: 'hsl(173, 60%, 31%)',
             mixRatioStep10: 0.27,
@@ -620,7 +621,7 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             step1: 'hsl(150, 20%, 7%)',
-            step2: 'hsl(150, 17%, 9%)',
+            step2: 'oklch(0.2125 0.016 163.25)',
             step3: 'hsl(153, 40%, 12.5%)',
             step8: 'hsl(151, 45%, 33.5%)',
             mixRatioStep10: 0.25,
@@ -639,7 +640,7 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             step1: 'hsl(140, 20%, 7%)',
-            step2: 'hsl(134, 11%, 9.2%)',
+            step2: 'oklch(0.211 0.014 151.21)',
             step3: 'hsl(133, 22%, 13.5%)',
             step8: 'hsl(131, 32%, 36%)',
             mixRatioStep10: 0.3,
@@ -714,12 +715,12 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             step1: 'hsl(215, 41%, 8.5%)',
-            step2: 'hsl(215, 35%, 11%)',
+            step2: 'oklch(0.216 0.029 258.31)',
             step8: 'hsl(200, 75%, 39%)',
             step10: 'hsl(192, 100%, 83%)',
             step11: 'hsl(200, 80%, 70%)',
             scaleStartSaturationBoost: 2.2,
-            defaultCurve: [0.335, 0.325, 0.595, 0.475],
+            defaultCurve: [0.33, 0.335, 0.595, 0.475],
           }}
         />
         <EditableScale
@@ -735,7 +736,7 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             step1: 'hsl(176, 22%, 6.8%)',
-            step2: 'hsl(176, 20%, 9.2%)',
+            step2: 'oklch(0.21 0.017 196.23)',
             step3: 'hsl(178, 65%, 10.5%)',
             // step8: 'hsl(170, 60%, 35%)',
             step8: 'hsl(170, 53%, 32.5%)',
@@ -758,8 +759,8 @@ export function ColorTools() {
             defaultCurve: [0.53, 0.225, 0.75, 0.56],
           }}
           darkThemeConfig={{
-            step1: '#111304',
-            step2: 'hsl(90, 15%, 8.6%)',
+            step1: 'oklch(0.18 0.014 120)',
+            step2: 'oklch(0.2079 0.019 129.15)',
             // step3: 'hsl(90, 50%, 10.4%)',
             step8: 'hsl(90, 35%, 34%)',
             step10: 'hsl(78, 100%, 72%)',
@@ -798,7 +799,7 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             step1: 'hsl(42, 28%, 6.2%)',
-            step2: 'hsl(42, 20%, 8.6%)',
+            step2: 'oklch(0.2092 0.017 91.776)',
             step3: 'hsl(45, 80%, 9.7%)',
             step8: 'hsl(45, 60%, 32%)',
             step9: 'hsl(53 100% 58%)',
@@ -833,7 +834,7 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             step1: 'hsl(36, 28%, 6.6%)',
-            step2: 'hsl(36, 20%, 9%)',
+            step2: 'oklch(0.2116 0.018 77.925)',
             step3: 'hsl(36, 70%, 11%)',
             step8: 'hsl(36, 60%, 35%)',
             step10: 'hsl(50, 100%, 52%)',
@@ -866,7 +867,7 @@ export function ColorTools() {
           }}
           darkThemeConfig={{
             step1: 'hsl(24, 25%, 7.3%)',
-            step2: 'hsl(28, 23%, 9%)',
+            step2: 'oklch(0.2088 0.019 67.053)',
             step3: 'hsl(28, 65%, 12.2%)',
             step8: 'hsl(23, 60%, 40%)',
             step9: '#F76B15',
@@ -883,9 +884,76 @@ export function ColorTools() {
         />
       </Box>
 
-      <Text size="1" variant="gray" css={{ p: '$2', my: '$1' }}>
-        Hint: Hold Alt for bulk icon actions
-      </Text>
+      <Box css={{ p: '$2' }}>
+        <Button
+          size="1"
+          css={{ my: '$2' }}
+          onClick={() => {
+            const contrast = {};
+
+            for (const color of colors) {
+              const step1 = getCssVariable(`--colors-${color}1`) || '#00000000';
+              const step2 = getCssVariable(`--colors-${color}2`) || '#00000000';
+              const step3 = getCssVariable(`--colors-${color}3`) || '#00000000';
+              const step4 = getCssVariable(`--colors-${color}4`) || '#00000000';
+              const step5 = getCssVariable(`--colors-${color}5`) || '#00000000';
+              const step9 = getCssVariable(`--colors-${color}9`) || '#00000000';
+              const step10 = getCssVariable(`--colors-${color}10`) || '#00000000';
+              const step11 = getCssVariable(`--colors-${color}11`) || '#00000000';
+              const step12 = getCssVariable(`--colors-${color}12`) || '#00000000';
+
+              contrast[`${color}-1`] = {};
+              contrast[`${color}-1`]['step11'] = apca(step11, step1);
+              contrast[`${color}-1`]['step12'] = apca(step12, step1);
+
+              contrast[`${color}-2`] = {};
+              contrast[`${color}-2`]['step11'] = apca(step11, step2);
+              contrast[`${color}-2`]['step12'] = apca(step12, step2);
+
+              contrast[`${color}-3`] = {};
+              contrast[`${color}-3`]['step11'] = apca(step11, step3);
+              contrast[`${color}-3`]['step12'] = apca(step12, step3);
+
+              contrast[`${color}-4`] = {};
+              contrast[`${color}-4`]['step11'] = apca(step11, step4);
+              contrast[`${color}-4`]['step12'] = apca(step12, step4);
+
+              contrast[`${color}-5`] = {};
+              contrast[`${color}-5`]['step11'] = apca(step11, step5);
+              contrast[`${color}-5`]['step12'] = apca(step12, step5);
+
+              contrast[`${color}-9`] = {};
+              contrast[`${color}-9`][`black`] = apca('#000', step9);
+              contrast[`${color}-9`][`white`] = apca('#fff', step9);
+
+              contrast[`${color}-10`] = {};
+              contrast[`${color}-10`][`black`] = apca('#000', step10);
+              contrast[`${color}-10`][`white`] = apca('#fff', step10);
+
+              contrast[`${color}-11`] = {};
+              contrast[`${color}-11`]['step1'] = apca(step11, step1);
+              contrast[`${color}-11`]['step2'] = apca(step11, step2);
+              contrast[`${color}-11`]['step3'] = apca(step11, step3);
+              contrast[`${color}-11`]['step4'] = apca(step11, step4);
+              contrast[`${color}-11`]['step5'] = apca(step11, step5);
+
+              contrast[`${color}-12`] = {};
+              contrast[`${color}-12`]['step1'] = apca(step12, step1);
+              contrast[`${color}-12`]['step2'] = apca(step12, step2);
+              contrast[`${color}-12`]['step3'] = apca(step12, step3);
+              contrast[`${color}-12`]['step4'] = apca(step12, step4);
+              contrast[`${color}-12`]['step5'] = apca(step12, step5);
+            }
+
+            navigator.clipboard.writeText(JSON.stringify(contrast, null, 2));
+          }}
+        >
+          Copy contrast info
+        </Button>
+        <Text size="1" variant="gray" css={{ my: '$1' }}>
+          Hint: Hold Alt for bulk icon actions
+        </Text>
+      </Box>
     </Flex>
   );
 }
@@ -1069,17 +1137,17 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
     const background = isDarkTheme ? getCssVariable(`--colors-gray1`) : '#FFFFFF';
 
     const newContrasts = [
-      apca(getValue('A11'), getValue('1')),
-      apca(getValue('A11'), getValue('2')),
-      apca(getValue('A11'), getValue('3')),
-      apca(getValue('A11'), getValue('4')),
-      apca(getValue('A11'), getValue('5')),
+      apca(getValue('11'), getValue('1')),
+      apca(getValue('11'), getValue('2')),
+      apca(getValue('11'), getValue('3')),
+      apca(getValue('11'), getValue('4')),
+      apca(getValue('11'), getValue('5')),
       apca(getValue('6'), background),
       apca(getValue('7'), background),
       apca(getValue('8'), background),
       apca(getHiContrast(name), getValue('9')),
-      apca(getValue('A11-p3'), getValue('1')),
-      apca(getValue('A11-p3'), getValue('2')),
+      apca(getValue('11-p3'), getValue('1')),
+      apca(getValue('11-p3'), getValue('2')),
     ];
 
     setContrasts(newContrasts);
@@ -1361,6 +1429,7 @@ function EditableScale({ name, lightThemeConfig, darkThemeConfig }: EditableScal
                   }}
                 >
                   {nameToShow}: {new Color(valueToShow).to('oklch').toString({ format: 'oklch' })};
+                  {/* {nameToShow}: {valueToShow}; */}
                 </Text>
               );
             })}
@@ -1784,7 +1853,7 @@ function getAlphaColorP3(targetColor: string, backgroundColor: string, targetAlp
     targetAlpha
   );
 
-  return new Color('p3', [r, g, b], a).toString();
+  return new Color('p3', [r, g, b], a).toString({ precision: 4 });
 }
 
 // Important – I empirically discovered that this rounding is how the browser actually overlays
@@ -1845,10 +1914,10 @@ function toHex(color: Color | string) {
 
 function toP3(color: Color | string) {
   if (color instanceof Color) {
-    return color.to('p3').toString();
+    return color.to('p3').toString({ precision: 4 });
   }
 
-  return new Color(color).to('p3').toString();
+  return new Color(color).to('p3').toString({ precision: 4 });
 }
 
 // Format shortform hex to longform
